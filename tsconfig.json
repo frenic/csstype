@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "lib": ["es7"],
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "noEmit": true
+    }
+}

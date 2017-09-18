@@ -1,0 +1,11 @@
+.gitignore
+.prettierrc
+__tests__
+src
+typings
+build.ts
+jest.config.js
+preprocessor.js
+tsconfig.json
+typecheck.ts
+yarn.lock
