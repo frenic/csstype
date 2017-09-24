@@ -1,6 +1,6 @@
 {
   "name": "csstype",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "index.d.ts",
   "author": "Fredrik Nicol <fredrik.nicol@gmail.com>",
   "license": "MIT",
