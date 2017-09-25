@@ -82,7 +82,7 @@ function property(leftHand: string, rightHand: string) {
 }
 
 export default function create() {
-  let output = `declare namespace ${NAMESPACE} {`;
+  let output = `export as namespace ${NAMESPACE};`;
 
   // Standard CSS properties
   for (const name in standardProperties) {
@@ -118,9 +118,6 @@ export default function create() {
   for (const name in dataTypes) {
     output += typeAlias(internalTypeAliasName(name), dataTypes[name]);
   }
-
-  // End of CSS namespace
-  output += '}';
 
   return output;
 }

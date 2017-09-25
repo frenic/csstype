@@ -1,3 +1,5 @@
+import * as CSS from './';
+
 const css: CSS.Properties = {
   display: 'flex',
   flexGrow: 1,
