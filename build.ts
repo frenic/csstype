@@ -23,6 +23,7 @@ async function format(output: string) {
   const options = await prettier.resolveConfig(path.join(ROOT_DIR, '.prettierrc'));
   return prettier.format(output, {
     ...options,
+    printWidth: 180,
     parser: 'typescript',
   });
 }
@@ -35,7 +36,9 @@ function typecheck() {
   const result = spawnSync(
     path.join(ROOT_DIR, 'node_modules/.bin/tsc'),
     [path.join(ROOT_DIR, DEFINITIONS_FILENAME), path.join(ROOT_DIR, TEST_FILENAME), '--noEmit'],
-    { cwd: ROOT_DIR },
+    {
+      cwd: ROOT_DIR,
+    },
   );
   if (result.error || result.status) {
     console.info(result.stdout.toString());

@@ -1,6 +1,6 @@
 import type, { Type, TypeType } from './typer';
 import dataTypes from './data-types';
-import { standardProperties, vendorPrefixedProperties } from './properties';
+import { all, standardProperties, vendorPrefixedProperties } from './properties';
 
 const REGEX_LEADING_LETTER = /^(\w)/;
 const REGEX_KEBAB_SEPARATOR = /-(\w)/g;
@@ -38,19 +38,20 @@ function _export(declaration: string): string {
   return `export ${declaration}`;
 }
 
-function internalTypeAliasName(name: string) {
-  return `T${toPascalCase(name)}`;
-}
+// function _export(declaration: string): string {
+//   return `export ${declaration}`;
+// }
 
-function externalTypeAliasName(name: string) {
-  return `${toPascalCase(name)}`;
-}
+const ALL_TYPE_ALIAS_NAME = 'all';
+const allTypeAlias: TypeType = { type: Type.TypeAlias, alias: ALL_TYPE_ALIAS_NAME };
 
-export function typeAlias(name: string, originalTypes: TypeType[]) {
+export function unions(originalTypes: TypeType[]) {
   let types = [...originalTypes];
 
   // Exclude type aliases that's not of interest
-  types = types.filter(type => type.type !== Type.TypeAlias || type.alias in dataTypes);
+  types = types.filter(
+    type => type.type !== Type.TypeAlias || type.alias in dataTypes || type.alias === ALL_TYPE_ALIAS_NAME,
+  );
 
   // Those excluded type aliases need to resolve to string
   if (types.length < originalTypes.length && types.every(type => type.type !== Type.String)) {
@@ -66,47 +67,45 @@ export function typeAlias(name: string, originalTypes: TypeType[]) {
       case Type.Literal:
         return quote(type.literal);
       case Type.TypeAlias:
-        return type.alias in dataTypes ? internalTypeAliasName(type.alias) : originalTypes.includes;
+        return typeAliasName(type.alias);
     }
   });
 
-  return `type ${name} = ${unions.join(' | ')};`;
+  return unions;
+}
+
+function typeAliasName(name: string) {
+  return toPascalCase(name);
+}
+
+export function typeAlias(name: string, types: TypeType[]) {
+  return `type ${typeAliasName(name)} = ${unions(types).join(' | ')};`;
 }
 
 function propertyName(name: string) {
   return `${toCamelCase(name)}`;
 }
 
-function property(leftHand: string, rightHand: string) {
-  return `${leftHand}?: ${rightHand};`;
+export function property(name: string, types: TypeType[]) {
+  return `${propertyName(name)}?: ${unions(types).join(' | ')};`;
 }
 
 export default function create() {
   let output = `export as namespace ${NAMESPACE};`;
 
-  // Standard CSS properties
-  for (const name in standardProperties) {
-    output += _export(typeAlias(externalTypeAliasName(name), standardProperties[name]));
-  }
-
   output += `export interface ${INTERFACE_STANDARD_PROPERTIES} {`;
 
   for (const name in standardProperties) {
-    output += property(propertyName(name), externalTypeAliasName(name));
+    output += property(name, [allTypeAlias, ...standardProperties[name]]);
   }
 
   // End of Properties interface
   output += '}';
 
-  // Vendor prefixed properties
-  for (const name in vendorPrefixedProperties) {
-    output += _export(typeAlias(externalTypeAliasName(name), vendorPrefixedProperties[name]));
-  }
-
   output += `export interface ${INTERFACE_VENDOR_PROPERTIES} {`;
 
   for (const name in vendorPrefixedProperties) {
-    output += property(propertyName(name), externalTypeAliasName(name));
+    output += property(name, [allTypeAlias, ...vendorPrefixedProperties[name]]);
   }
 
   // End of VendorProperties interface
@@ -114,9 +113,11 @@ export default function create() {
 
   output += `export interface ${INTERFACE_ALL_PROPERTIES} extends ${INTERFACE_STANDARD_PROPERTIES}, ${INTERFACE_VENDOR_PROPERTIES} {}`;
 
+  output += typeAlias(ALL_TYPE_ALIAS_NAME, all);
+
   // Data types
   for (const name in dataTypes) {
-    output += typeAlias(internalTypeAliasName(name), dataTypes[name]);
+    output += typeAlias(name, dataTypes[name]);
   }
 
   return output;

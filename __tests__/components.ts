@@ -1,6 +1,6 @@
-import parse, { Entity, Component, Combinator } from '../src/parser';
+import parse, { Component } from '../src/parser';
 import type, { Type } from '../src/typer';
-import { typeAlias } from '../src//output';
+import { typeAlias, property } from '../src//output';
 
 test('parser to parse CSS syntax components', () => {
   expect(parse('something <color> [ ]')).toMatchObject([
@@ -16,5 +16,6 @@ test('typer to type CSS syntax components', () => {
 });
 
 test('output of CSS syntax components', () => {
-  expect(typeAlias('Component', type(parse('something | <color>')))).toBe("type Component = TColor | 'something';");
+  expect(typeAlias('component', type(parse('something | <color>')))).toBe("type Component = Color | 'something';");
+  expect(property('component', type(parse('something | <color>')))).toBe("component?: Color | 'something';");
 });

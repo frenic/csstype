@@ -1,6 +1,6 @@
-import parse, { Entity, Component, Combinator } from '../src/parser';
-import type, { Type } from '../src/typer';
-import { typeAlias } from '../src//output';
+import parse, { Combinator } from '../src/parser';
+import type from '../src/typer';
+import { typeAlias, property } from '../src//output';
 
 test('parser to parse CSS syntax combinators', () => {
   expect(parse('something another-thing && | ||')).toMatchObject([
@@ -21,12 +21,20 @@ test('typer to type CSS syntax combinators', () => {
 });
 
 test('output of CSS syntax combinators', () => {
-  expect(typeAlias('Component', type(parse('something another-thing')))).toBe('type Component = string;');
-  expect(typeAlias('Component', type(parse('something && another-thing')))).toBe('type Component = string;');
-  expect(typeAlias('Component', type(parse('something | another-thing')))).toBe(
+  expect(typeAlias('component', type(parse('something another-thing')))).toBe('type Component = string;');
+  expect(typeAlias('component', type(parse('something && another-thing')))).toBe('type Component = string;');
+  expect(typeAlias('component', type(parse('something | another-thing')))).toBe(
     "type Component = 'something' | 'another-thing';",
   );
-  expect(typeAlias('Component', type(parse('something || another-thing')))).toBe(
+  expect(typeAlias('component', type(parse('something || another-thing')))).toBe(
     "type Component = 'something' | 'another-thing' | string;",
+  );
+  expect(property('component', type(parse('something another-thing')))).toBe('component?: string;');
+  expect(property('component', type(parse('something && another-thing')))).toBe('component?: string;');
+  expect(property('component', type(parse('something | another-thing')))).toBe(
+    "component?: 'something' | 'another-thing';",
+  );
+  expect(property('component', type(parse('something || another-thing')))).toBe(
+    "component?: 'something' | 'another-thing' | string;",
   );
 });

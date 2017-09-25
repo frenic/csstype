@@ -2,10 +2,11 @@ import * as properties from 'mdn-data/css/properties.json';
 import parse, { EntityType } from './parser';
 import type, { TypeType } from './typer';
 
-const IGNORES = ['--*'];
+const IGNORES = ['--*', 'all'];
 
 const REGEX_VENDOR_PROPERTY = /^-/;
 
+export const all = type(parse(properties.all.syntax));
 export const vendorPrefixedProperties: { [name: string]: TypeType[] } = {};
 export const standardProperties: { [name: string]: TypeType[] } = {};
 
