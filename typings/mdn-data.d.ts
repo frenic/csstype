@@ -35,3 +35,13 @@ declare module 'mdn-data/css/syntaxes.json' {
 
   export = syntaxes;
 }
+
+declare module 'mdn-data/css/selectors.json' {
+  interface Selectors {
+    [selector: string]: any;
+  }
+
+  var selectors: Selectors;
+
+  export = selectors;
+}

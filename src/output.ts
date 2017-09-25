@@ -1,6 +1,7 @@
 import type, { Type, TypeType } from './typer';
 import dataTypes from './data-types';
 import { all, standardProperties, vendorPrefixedProperties } from './properties';
+import pseusos from './pseudos';
 
 const REGEX_LEADING_LETTER = /^(\w)/;
 const REGEX_KEBAB_SEPARATOR = /-(\w)/g;
@@ -10,6 +11,7 @@ const NAMESPACE = 'CSS';
 const INTERFACE_STANDARD_PROPERTIES = 'StandardProperties';
 const INTERFACE_VENDOR_PROPERTIES = 'VendorProperties';
 const INTERFACE_ALL_PROPERTIES = 'Properties';
+const TYPE_PSEUDOS = 'Pseudos';
 
 function quote(value: String) {
   return `'${value}'`;
@@ -112,6 +114,8 @@ export default function create() {
   output += '}';
 
   output += `export interface ${INTERFACE_ALL_PROPERTIES} extends ${INTERFACE_STANDARD_PROPERTIES}, ${INTERFACE_VENDOR_PROPERTIES} {}`;
+
+  output += _export(typeAlias(TYPE_PSEUDOS, pseusos));
 
   output += typeAlias(ALL_TYPE_ALIAS_NAME, all);
 
