@@ -12,6 +12,9 @@ const NAMESPACE = 'CSS';
 const INTERFACE_STANDARD_PROPERTIES = 'StandardProperties';
 const INTERFACE_VENDOR_PROPERTIES = 'VendorProperties';
 const INTERFACE_ALL_PROPERTIES = 'Properties';
+const INTERFACE_STANDARD_PROPERTIES_FALLBACK = 'StandardPropertiesFallback';
+const INTERFACE_VENDOR_PROPERTIES_FALLBACK = 'VendorPropertiesFallback';
+const INTERFACE_ALL_PROPERTIES_FALLBACK = 'PropertiesFallback';
 const TYPE_PSEUDOS = 'Pseudos';
 
 const GENERIC_LENGTH = 'TLength';
@@ -81,33 +84,72 @@ export function unions(originalTypes: TypeType[]) {
   return unions;
 }
 
+function generics(hasLength: boolean) {
+  return hasLength ? `<${GENERIC_LENGTH}>` : '';
+}
+
+function lengthInTypeAlias(name: string) {
+  return name in dataTypes && !dataTypes[name].every(type => type.type !== Type.Length);
+}
+
 function typeAliasName(name: string) {
-  const hasLength = name in dataTypes && !dataTypes[name].every(type => type.type !== Type.Length);
-  const generic = hasLength ? `<${GENERIC_LENGTH}>` : '';
-  return toPascalCase(name) + generic;
+  return toPascalCase(name) + 'Alias' + generics(lengthInTypeAlias(name));
 }
 
 export function typeAlias(name: string, types: TypeType[]) {
   return `type ${typeAliasName(name)} = ${unions(types).join(' | ')};`;
 }
 
+function lengthInPropertyType(name: string) {
+  return ![standardProperties, vendorPrefixedProperties].every(properties => {
+    if (name in properties) {
+      return properties[name].every(type => {
+        if (type.type === Type.Length) {
+          return false;
+        }
+        if (type.type === Type.TypeAlias && lengthInTypeAlias(type.alias)) {
+          return false;
+        }
+        return true;
+      });
+    }
+    return true;
+  });
+}
+
+function propertyTypeName(name: string) {
+  return toPascalCase(name) + generics(lengthInPropertyType(name));
+}
+
+export function propertyType(name: string, types: TypeType[]) {
+  return `type ${propertyTypeName(name)} = ${unions(types).join(' | ')};`;
+}
+
 function propertyName(name: string) {
   return `${toCamelCase(name)}`;
 }
 
-export function property(name: string, types: TypeType[]) {
-  return `${propertyName(name)}?: ${unions(types).join(' | ')};`;
+export function property(name: string, fallback = false) {
+  let type = propertyTypeName(name);
+
+  if (fallback) {
+    type += ` | ${type}[]`;
+  }
+
+  return `${propertyName(name)}?: ${type};`;
 }
 
 export default function create() {
+  const lengthGeneric = `${GENERIC_LENGTH} = string`;
+
   let output = `export as namespace ${NAMESPACE};`;
 
   output += EOL + EOL;
 
-  output += `export interface ${INTERFACE_STANDARD_PROPERTIES}<${GENERIC_LENGTH} = string> {`;
+  output += `export interface ${INTERFACE_STANDARD_PROPERTIES}<${lengthGeneric}> {`;
 
   for (const name in standardProperties) {
-    output += property(name, [allTypeAlias, ...standardProperties[name]]);
+    output += property(name);
   }
 
   // End of Properties interface
@@ -115,10 +157,21 @@ export default function create() {
 
   output += EOL + EOL;
 
-  output += `export interface ${INTERFACE_VENDOR_PROPERTIES}<${GENERIC_LENGTH} = string> {`;
+  output += `export interface ${INTERFACE_STANDARD_PROPERTIES_FALLBACK}<${lengthGeneric}> {`;
+
+  for (const name in standardProperties) {
+    output += property(name, true);
+  }
+
+  // End of Properties interface
+  output += '}';
+
+  output += EOL + EOL;
+
+  output += `export interface ${INTERFACE_VENDOR_PROPERTIES}<${lengthGeneric}> {`;
 
   for (const name in vendorPrefixedProperties) {
-    output += property(name, [allTypeAlias, ...vendorPrefixedProperties[name]]);
+    output += property(name);
   }
 
   // End of VendorProperties interface
@@ -126,13 +179,36 @@ export default function create() {
 
   output += EOL + EOL;
 
-  output += `export interface ${INTERFACE_ALL_PROPERTIES}<${GENERIC_LENGTH} = string> extends ${INTERFACE_STANDARD_PROPERTIES}<${GENERIC_LENGTH}>, ${INTERFACE_VENDOR_PROPERTIES}<${GENERIC_LENGTH}> {}`;
+  output += `export interface ${INTERFACE_VENDOR_PROPERTIES_FALLBACK}<${lengthGeneric}> {`;
+
+  for (const name in vendorPrefixedProperties) {
+    output += property(name, true);
+  }
+
+  // End of VendorProperties interface
+  output += '}';
+
+  output += EOL + EOL;
+
+  output += `export interface ${INTERFACE_ALL_PROPERTIES}<${lengthGeneric}> extends ${INTERFACE_STANDARD_PROPERTIES}<${GENERIC_LENGTH}>, ${INTERFACE_VENDOR_PROPERTIES}<${GENERIC_LENGTH}> {}`;
+
+  output += EOL + EOL;
+
+  output += `export interface ${INTERFACE_ALL_PROPERTIES_FALLBACK}<${lengthGeneric}> extends ${INTERFACE_STANDARD_PROPERTIES_FALLBACK}<${GENERIC_LENGTH}>, ${INTERFACE_VENDOR_PROPERTIES_FALLBACK}<${GENERIC_LENGTH}> {}`;
 
   output += EOL + EOL;
 
   output += _export(typeAlias(TYPE_PSEUDOS, pseudos));
 
-  output += EOL + EOL;
+  for (const name in standardProperties) {
+    output += propertyType(name, [allTypeAlias, ...standardProperties[name]]);
+    output += EOL + EOL;
+  }
+
+  for (const name in vendorPrefixedProperties) {
+    output += propertyType(name, [allTypeAlias, ...vendorPrefixedProperties[name]]);
+    output += EOL + EOL;
+  }
 
   output += typeAlias(ALL_TYPE_ALIAS_NAME, all);
 

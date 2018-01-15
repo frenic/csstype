@@ -21,20 +21,13 @@ test('typer to type CSS syntax combinators', () => {
 });
 
 test('output of CSS syntax combinators', () => {
-  expect(typeAlias('component', type(parse('something another-thing')))).toBe('type Component = string;');
-  expect(typeAlias('component', type(parse('something && another-thing')))).toBe('type Component = string;');
+  expect(typeAlias('component', type(parse('something another-thing')))).toBe('type ComponentAlias = string;');
+  expect(typeAlias('component', type(parse('something && another-thing')))).toBe('type ComponentAlias = string;');
   expect(typeAlias('component', type(parse('something | another-thing')))).toBe(
-    "type Component = 'something' | 'another-thing';",
+    "type ComponentAlias = 'something' | 'another-thing';",
   );
   expect(typeAlias('component', type(parse('something || another-thing')))).toBe(
-    "type Component = 'something' | 'another-thing' | string;",
+    "type ComponentAlias = 'something' | 'another-thing' | string;",
   );
-  expect(property('component', type(parse('something another-thing')))).toBe('component?: string;');
-  expect(property('component', type(parse('something && another-thing')))).toBe('component?: string;');
-  expect(property('component', type(parse('something | another-thing')))).toBe(
-    "component?: 'something' | 'another-thing';",
-  );
-  expect(property('component', type(parse('something || another-thing')))).toBe(
-    "component?: 'something' | 'another-thing' | string;",
-  );
+  expect(property('component')).toBe('component?: Component;');
 });
