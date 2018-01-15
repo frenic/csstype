@@ -1,9 +1,9 @@
 {
   "name": "csstype",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "main": "index.d.ts",
   "description": "TypeScript definitions for CSS",
-  "repository": "https://github.com/faddee/csstype",
+  "repository": "https://github.com/frenic/csstype",
   "author": "Fredrik Nicol <fredrik.nicol@gmail.com>",
   "license": "MIT",
   "devDependencies": {
