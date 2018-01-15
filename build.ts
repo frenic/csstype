@@ -34,15 +34,18 @@ function write(content: string) {
 
 function typecheck() {
   const result = spawnSync(
-    path.join(ROOT_DIR, 'node_modules/.bin/tsc'),
+    path.join(ROOT_DIR, `node_modules/.bin/${process.platform === 'win32' ? 'tsc.cmd' : 'tsc'}`),
     [path.join(ROOT_DIR, DEFINITIONS_FILENAME), path.join(ROOT_DIR, TEST_FILENAME), '--noEmit'],
     {
       cwd: ROOT_DIR,
     },
   );
-  if (result.error || result.status) {
+  if (result.error) {
+    throw result.error;
+  }
+  if (result.status) {
     console.info(result.stdout.toString());
-    throw result.error || new Error(result.stderr.toString());
+    throw new Error(result.stderr.toString());
   }
 }
 
