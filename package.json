@@ -22,7 +22,7 @@
   "scripts": {
     "build": "ts-node build.ts",
     "watch": "ts-node build.ts --watch",
-    "pretty": "prettier --single-quote --write build.ts */*.ts",
+    "pretty": "prettier --single-quote --write build.ts **/*.ts",
     "test": "jest --no-cache",
     "prepare": "tsc && npm run test && npm run build"
   },
