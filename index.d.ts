@@ -1,5 +1,6 @@
 export as namespace CSS;
-export interface StandardProperties {
+
+export interface StandardProperties<TLength = string> {
   alignContent?: All | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | "stretch";
   alignItems?: All | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
   alignSelf?: All | "auto" | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
@@ -29,7 +30,7 @@ export interface StandardProperties {
   backgroundRepeat?: All | string;
   backgroundSize?: All | string;
   blockSize?: All | string;
-  border?: All | BrWidth | BrStyle | Color | string;
+  border?: All | BrWidth<TLength> | BrStyle | Color | string;
   borderBlockEnd?: All | string;
   borderBlockEndColor?: All | string;
   borderBlockEndStyle?: All | string;
@@ -38,12 +39,12 @@ export interface StandardProperties {
   borderBlockStartColor?: All | string;
   borderBlockStartStyle?: All | string;
   borderBlockStartWidth?: All | string;
-  borderBottom?: All | BrWidth | BrStyle | Color | string;
+  borderBottom?: All | BrWidth<TLength> | BrStyle | Color | string;
   borderBottomColor?: All | Color;
-  borderBottomLeftRadius?: All | string;
-  borderBottomRightRadius?: All | string;
+  borderBottomLeftRadius?: All | LengthPercentage<TLength>;
+  borderBottomRightRadius?: All | LengthPercentage<TLength>;
   borderBottomStyle?: All | BrStyle;
-  borderBottomWidth?: All | BrWidth;
+  borderBottomWidth?: All | BrWidth<TLength>;
   borderCollapse?: All | "collapse" | "separate";
   borderColor?: All | Color;
   borderImage?: All | string;
@@ -60,25 +61,25 @@ export interface StandardProperties {
   borderInlineStartColor?: All | string;
   borderInlineStartStyle?: All | string;
   borderInlineStartWidth?: All | string;
-  borderLeft?: All | BrWidth | BrStyle | Color | string;
+  borderLeft?: All | BrWidth<TLength> | BrStyle | Color | string;
   borderLeftColor?: All | Color;
   borderLeftStyle?: All | BrStyle;
-  borderLeftWidth?: All | BrWidth;
+  borderLeftWidth?: All | BrWidth<TLength>;
   borderRadius?: All | string;
-  borderRight?: All | BrWidth | BrStyle | Color | string;
+  borderRight?: All | BrWidth<TLength> | BrStyle | Color | string;
   borderRightColor?: All | Color;
   borderRightStyle?: All | BrStyle;
-  borderRightWidth?: All | BrWidth;
+  borderRightWidth?: All | BrWidth<TLength>;
   borderSpacing?: All | string;
   borderStyle?: All | BrStyle;
-  borderTop?: All | BrWidth | BrStyle | Color | string;
+  borderTop?: All | BrWidth<TLength> | BrStyle | Color | string;
   borderTopColor?: All | Color;
-  borderTopLeftRadius?: All | string;
-  borderTopRightRadius?: All | string;
+  borderTopLeftRadius?: All | LengthPercentage<TLength>;
+  borderTopRightRadius?: All | LengthPercentage<TLength>;
   borderTopStyle?: All | BrStyle;
-  borderTopWidth?: All | BrWidth;
-  borderWidth?: All | BrWidth;
-  bottom?: All | "auto" | string;
+  borderTopWidth?: All | BrWidth<TLength>;
+  borderWidth?: All | BrWidth<TLength>;
+  bottom?: All | "auto" | string | TLength;
   boxAlign?: All | "start" | "center" | "end" | "baseline" | "stretch";
   boxDecorationBreak?: All | "slice" | "clone";
   boxDirection?: All | "normal" | "reverse" | "inherit";
@@ -101,13 +102,13 @@ export interface StandardProperties {
   color?: All | Color;
   columnCount?: All | "auto" | number;
   columnFill?: All | "auto" | "balance";
-  columnGap?: All | "normal" | string;
+  columnGap?: All | "normal" | TLength;
   columnRule?: All | string;
   columnRuleColor?: All | Color;
   columnRuleStyle?: All | BrStyle;
-  columnRuleWidth?: All | BrWidth;
+  columnRuleWidth?: All | BrWidth<TLength>;
   columnSpan?: All | "none" | "all";
-  columnWidth?: All | "auto" | string;
+  columnWidth?: All | "auto" | TLength;
   columns?: All | string;
   contain?: All | string;
   content?: All | string;
@@ -153,7 +154,7 @@ export interface StandardProperties {
   fontKerning?: All | "auto" | "normal" | "none";
   fontLanguageOverride?: All | "normal" | string;
   fontVariationSettings?: All | string;
-  fontSize?: All | AbsoluteSize | RelativeSize | string;
+  fontSize?: All | AbsoluteSize | RelativeSize | LengthPercentage<TLength>;
   fontSizeAdjust?: All | "none" | number;
   fontStretch?: All | "normal" | "ultra-condensed" | "extra-condensed" | "condensed" | "semi-condensed" | "semi-expanded" | "expanded" | "extra-expanded" | "ultra-expanded";
   fontStyle?: All | "normal" | "italic" | "oblique";
@@ -173,12 +174,12 @@ export interface StandardProperties {
   gridAutoRows?: All | string;
   gridColumn?: All | string;
   gridColumnEnd?: All | string;
-  gridColumnGap?: All | string;
+  gridColumnGap?: All | LengthPercentage<TLength>;
   gridColumnStart?: All | string;
   gridGap?: All | string;
   gridRow?: All | string;
   gridRowEnd?: All | string;
-  gridRowGap?: All | string;
+  gridRowGap?: All | LengthPercentage<TLength>;
   gridRowStart?: All | string;
   gridTemplate?: All | string;
   gridTemplateAreas?: All | "none" | string;
@@ -195,10 +196,10 @@ export interface StandardProperties {
   inlineSize?: All | string;
   isolation?: All | "auto" | "isolate";
   justifyContent?: All | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
-  left?: All | "auto" | string;
-  letterSpacing?: All | "normal" | string;
+  left?: All | "auto" | string | TLength;
+  letterSpacing?: All | "normal" | TLength;
   lineBreak?: All | "auto" | "loose" | "normal" | "strict";
-  lineHeight?: All | "normal" | string | number;
+  lineHeight?: All | "normal" | string | number | TLength;
   listStyle?: All | string;
   listStyleImage?: All | "none" | string;
   listStylePosition?: All | "inside" | "outside";
@@ -206,13 +207,13 @@ export interface StandardProperties {
   margin?: All | string;
   marginBlockEnd?: All | string;
   marginBlockStart?: All | string;
-  marginBottom?: All | "auto" | string;
+  marginBottom?: All | "auto" | string | TLength;
   marginInlineEnd?: All | string;
   marginInlineStart?: All | string;
-  marginLeft?: All | "auto" | string;
-  marginRight?: All | "auto" | string;
-  marginTop?: All | "auto" | string;
-  markerOffset?: All | "auto" | string;
+  marginLeft?: All | "auto" | string | TLength;
+  marginRight?: All | "auto" | string | TLength;
+  marginTop?: All | "auto" | string | TLength;
+  markerOffset?: All | "auto" | TLength;
   mask?: All | string;
   maskClip?: All | string;
   maskComposite?: All | CompositingOperator;
@@ -224,13 +225,13 @@ export interface StandardProperties {
   maskSize?: All | string;
   maskType?: All | "luminance" | "alpha";
   maxBlockSize?: All | string;
-  maxHeight?: All | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string;
+  maxHeight?: All | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
   maxInlineSize?: All | string;
-  maxWidth?: All | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string;
+  maxWidth?: All | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
   minBlockSize?: All | string;
-  minHeight?: All | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string;
+  minHeight?: All | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
   minInlineSize?: All | string;
-  minWidth?: All | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string;
+  minWidth?: All | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
   mixBlendMode?: All | BlendMode;
   objectFit?: All | "fill" | "contain" | "cover" | "none" | "scale-down";
   objectPosition?: All | string;
@@ -240,7 +241,7 @@ export interface StandardProperties {
   offsetBlockStart?: All | string;
   offsetInlineEnd?: All | string;
   offsetInlineStart?: All | string;
-  offsetDistance?: All | string;
+  offsetDistance?: All | LengthPercentage<TLength>;
   offsetPath?: All | string;
   offsetPosition?: All | "auto" | string;
   offsetRotate?: All | string;
@@ -249,9 +250,9 @@ export interface StandardProperties {
   orphans?: All | number;
   outline?: All | string;
   outlineColor?: All | Color | "invert";
-  outlineOffset?: All | string;
+  outlineOffset?: All | TLength;
   outlineStyle?: All | BrStyle | "auto";
-  outlineWidth?: All | BrWidth;
+  outlineWidth?: All | BrWidth<TLength>;
   overflow?: All | "visible" | "hidden" | "scroll" | "auto";
   overflowClipBox?: All | "padding-box" | "content-box";
   overflowWrap?: All | "normal" | "break-word";
@@ -260,22 +261,22 @@ export interface StandardProperties {
   padding?: All | string;
   paddingBlockEnd?: All | string;
   paddingBlockStart?: All | string;
-  paddingBottom?: All | string;
+  paddingBottom?: All | string | TLength;
   paddingInlineEnd?: All | string;
   paddingInlineStart?: All | string;
-  paddingLeft?: All | string;
-  paddingRight?: All | string;
-  paddingTop?: All | string;
+  paddingLeft?: All | string | TLength;
+  paddingRight?: All | string | TLength;
+  paddingTop?: All | string | TLength;
   pageBreakAfter?: All | "auto" | "always" | "avoid" | "left" | "right";
   pageBreakBefore?: All | "auto" | "always" | "avoid" | "left" | "right";
   pageBreakInside?: All | "auto" | "avoid";
-  perspective?: All | "none" | string;
+  perspective?: All | "none" | TLength;
   perspectiveOrigin?: All | string;
   pointerEvents?: All | "inherit" | "none" | "visiblePainted" | "visibleFill" | "visibleStroke" | "auto" | "painted" | "fill" | "stroke" | "all" | "visible";
   position?: All | "static" | "relative" | "absolute" | "sticky" | "fixed";
   quotes?: All | string;
   resize?: All | "none" | "both" | "horizontal" | "vertical";
-  right?: All | "auto" | string;
+  right?: All | "auto" | string | TLength;
   rubyAlign?: All | "start" | "center" | "space-between" | "space-around";
   rubyMerge?: All | "separate" | "collapse" | "auto";
   rubyPosition?: All | "over" | "under" | "inter-character";
@@ -288,9 +289,9 @@ export interface StandardProperties {
   scrollSnapTypeX?: All | "none" | "mandatory" | "proximity";
   scrollSnapTypeY?: All | "none" | "mandatory" | "proximity";
   shapeImageThreshold?: All | number;
-  shapeMargin?: All | string;
+  shapeMargin?: All | LengthPercentage<TLength>;
   shapeOutside?: All | ShapeBox | "none" | string;
-  tabSize?: All | string | number;
+  tabSize?: All | number | TLength;
   tableLayout?: All | "auto" | "fixed";
   textAlign?: All | "start" | "end" | "left" | "right" | "center" | "justify" | "match-parent";
   textAlignLast?: All | "auto" | "start" | "end" | "left" | "right" | "center" | "justify";
@@ -313,7 +314,7 @@ export interface StandardProperties {
   textSizeAdjust?: All | "none" | "auto" | string;
   textTransform?: All | "none" | "capitalize" | "uppercase" | "lowercase" | "full-width";
   textUnderlinePosition?: All | string;
-  top?: All | "auto" | string;
+  top?: All | "auto" | string | TLength;
   touchAction?: All | string;
   transform?: All | "none" | string;
   transformBox?: All | "border-box" | "fill-box" | "view-box";
@@ -326,19 +327,20 @@ export interface StandardProperties {
   transitionTimingFunction?: All | SingleTransitionTimingFunction;
   unicodeBidi?: All | "normal" | "embed" | "isolate" | "bidi-override" | "isolate-override" | "plaintext";
   userSelect?: All | "auto" | "text" | "none" | "contain" | "all";
-  verticalAlign?: All | "baseline" | "sub" | "super" | "text-top" | "text-bottom" | "middle" | "top" | "bottom" | string;
+  verticalAlign?: All | "text-bottom" | "sub" | "super" | "text-top" | "baseline" | "middle" | "top" | "bottom" | string | TLength;
   visibility?: All | "visible" | "hidden" | "collapse";
   whiteSpace?: All | "normal" | "pre" | "nowrap" | "pre-wrap" | "pre-line";
   widows?: All | number;
   width?: All | string;
   willChange?: All | AnimateableFeature | "auto";
   wordBreak?: All | "normal" | "break-all" | "keep-all";
-  wordSpacing?: All | "normal" | string;
+  wordSpacing?: All | LengthPercentage<TLength> | "normal";
   wordWrap?: All | "normal" | "break-word";
   writingMode?: All | "horizontal-tb" | "vertical-rl" | "vertical-lr" | "sideways-rl" | "sideways-lr";
   zIndex?: All | "auto" | number;
 }
-export interface VendorProperties {
+
+export interface VendorProperties<TLength = string> {
   msOverflowStyle?: All | "auto" | "none" | "scrollbar" | "-ms-autohiding-scrollbar";
   mozAppearance?:
     | All
@@ -492,12 +494,14 @@ export interface VendorProperties {
   webkitMaskRepeatY?: All | "repeat" | "no-repeat" | "space" | "round";
   webkitTapHighlightColor?: All | Color;
   webkitTextFillColor?: All | Color;
-  webkitTextStroke?: All | Color | string;
+  webkitTextStroke?: All | Color | string | TLength;
   webkitTextStrokeColor?: All | Color;
-  webkitTextStrokeWidth?: All | string;
+  webkitTextStrokeWidth?: All | TLength;
   webkitTouchCallout?: All | "default" | "none";
 }
-export interface Properties extends StandardProperties, VendorProperties {}
+
+export interface Properties<TLength = string> extends StandardProperties<TLength>, VendorProperties<TLength> {}
+
 export type Pseudos =
   | ":out-of-range"
   | ":active"
@@ -564,14 +568,23 @@ export type Pseudos =
   | "::first-line"
   | "::selection"
   | "::cue";
+
 type All = "initial" | "inherit" | "unset";
+
 type SingleAnimationDirection = "normal" | "reverse" | "alternate" | "alternate-reverse";
+
 type SingleAnimationFillMode = "none" | "forwards" | "backwards" | "both";
+
 type SingleAnimationIterationCount = "infinite" | number;
+
 type SingleAnimationPlayState = "running" | "paused";
+
 type SingleTimingFunction = StepTimingFunction | "linear" | string;
+
 type StepTimingFunction = "step-start" | "step-end" | string;
+
 type Attachment = "scroll" | "fixed" | "local";
+
 type BlendMode =
   | "hard-light"
   | "normal"
@@ -589,8 +602,11 @@ type BlendMode =
   | "saturation"
   | "color"
   | "luminosity";
+
 type Box = "border-box" | "padding-box" | "content-box";
+
 type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+
 type NamedColor =
   | "lightgrey"
   | "transparent"
@@ -741,6 +757,7 @@ type NamedColor =
   | "whitesmoke"
   | "yellow"
   | "yellowgreen";
+
 type DeprecatedSystemColor =
   | "InactiveCaptionText"
   | "ActiveBorder"
@@ -770,16 +787,31 @@ type DeprecatedSystemColor =
   | "Window"
   | "WindowFrame"
   | "WindowText";
+
 type BgImage = "none" | string;
-type BrWidth = "thin" | "medium" | "thick" | string;
+
+type BrWidth<TLength> = "thin" | "medium" | "thick" | TLength;
+
 type BrStyle = "none" | "hidden" | "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset";
+
+type LengthPercentage<TLength> = string | TLength;
+
 type AbsoluteSize = "xx-small" | "x-small" | "small" | "medium" | "large" | "x-large" | "xx-large";
+
 type RelativeSize = "larger" | "smaller";
+
 type CompositingOperator = "add" | "subtract" | "intersect" | "exclude";
+
 type MaskReference = "none" | string;
+
 type MaskingMode = "alpha" | "luminance" | "match-source";
+
 type GeometryBox = ShapeBox | "fill-box" | "stroke-box" | "view-box";
+
 type ShapeBox = Box | "margin-box";
+
 type SingleTransitionProperty = "all" | string;
+
 type SingleTransitionTimingFunction = SingleTimingFunction;
+
 type AnimateableFeature = "scroll-position" | "contents" | string;

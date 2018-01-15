@@ -1,7 +1,8 @@
 import type, { Type, TypeType } from './typer';
 import dataTypes from './data-types';
 import { all, standardProperties, vendorPrefixedProperties } from './properties';
-import pseusos from './pseudos';
+import pseudos from './pseudos';
+import {EOL} from 'os';
 
 const REGEX_LEADING_LETTER = /^(\w)/;
 const REGEX_KEBAB_SEPARATOR = /-(\w)/g;
@@ -12,6 +13,8 @@ const INTERFACE_STANDARD_PROPERTIES = 'StandardProperties';
 const INTERFACE_VENDOR_PROPERTIES = 'VendorProperties';
 const INTERFACE_ALL_PROPERTIES = 'Properties';
 const TYPE_PSEUDOS = 'Pseudos';
+
+const GENERIC_LENGTH = 'TLength';
 
 function quote(value: String) {
   return `'${value}'`;
@@ -70,6 +73,8 @@ export function unions(originalTypes: TypeType[]) {
         return quote(type.literal);
       case Type.TypeAlias:
         return typeAliasName(type.alias);
+      case Type.Length:
+        return 'TLength';
     }
   });
 
@@ -77,7 +82,9 @@ export function unions(originalTypes: TypeType[]) {
 }
 
 function typeAliasName(name: string) {
-  return toPascalCase(name);
+  const hasLength = name in dataTypes && !dataTypes[name].every(type => type.type !== Type.Length);
+  const generic = hasLength ? `<${GENERIC_LENGTH}>` : '';
+  return toPascalCase(name) + generic;
 }
 
 export function typeAlias(name: string, types: TypeType[]) {
@@ -95,7 +102,9 @@ export function property(name: string, types: TypeType[]) {
 export default function create() {
   let output = `export as namespace ${NAMESPACE};`;
 
-  output += `export interface ${INTERFACE_STANDARD_PROPERTIES} {`;
+  output += EOL + EOL;
+
+  output += `export interface ${INTERFACE_STANDARD_PROPERTIES}<${GENERIC_LENGTH} = string> {`;
 
   for (const name in standardProperties) {
     output += property(name, [allTypeAlias, ...standardProperties[name]]);
@@ -104,7 +113,9 @@ export default function create() {
   // End of Properties interface
   output += '}';
 
-  output += `export interface ${INTERFACE_VENDOR_PROPERTIES} {`;
+  output += EOL + EOL;
+
+  output += `export interface ${INTERFACE_VENDOR_PROPERTIES}<${GENERIC_LENGTH} = string> {`;
 
   for (const name in vendorPrefixedProperties) {
     output += property(name, [allTypeAlias, ...vendorPrefixedProperties[name]]);
@@ -113,15 +124,24 @@ export default function create() {
   // End of VendorProperties interface
   output += '}';
 
-  output += `export interface ${INTERFACE_ALL_PROPERTIES} extends ${INTERFACE_STANDARD_PROPERTIES}, ${INTERFACE_VENDOR_PROPERTIES} {}`;
+  output += EOL + EOL;
 
-  output += _export(typeAlias(TYPE_PSEUDOS, pseusos));
+  output += `export interface ${INTERFACE_ALL_PROPERTIES}<${GENERIC_LENGTH} = string> extends ${INTERFACE_STANDARD_PROPERTIES}<${GENERIC_LENGTH}>, ${INTERFACE_VENDOR_PROPERTIES}<${GENERIC_LENGTH}> {}`;
+
+  output += EOL + EOL;
+
+  output += _export(typeAlias(TYPE_PSEUDOS, pseudos));
+
+  output += EOL + EOL;
 
   output += typeAlias(ALL_TYPE_ALIAS_NAME, all);
+
+  output += EOL + EOL;
 
   // Data types
   for (const name in dataTypes) {
     output += typeAlias(name, dataTypes[name]);
+    output += EOL + EOL;
   }
 
   return output;

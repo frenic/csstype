@@ -38,14 +38,14 @@ function addDependentTypeAliases(availableDataTypes: DataTypesType, name: string
   }
 }
 
-const allCssPropertyDesciptions = {
+const allCssPropertyDescriptions = {
   ...standardProperties,
   ...vendorPrefixedProperties,
 };
 
-for (const name in allCssPropertyDesciptions) {
+for (const name in allCssPropertyDescriptions) {
   const typeAliases: TypeAliasType[] = [];
-  for (const type of allCssPropertyDesciptions[name]) {
+  for (const type of allCssPropertyDescriptions[name]) {
     if (isTypeAlias(type)) {
       typeAliases.push(type);
     }
@@ -62,7 +62,7 @@ function filterInterestingDataTypes(dataTypesMayBeOfInterest: DataTypesType): Da
     const onlyContainsString =
       dataTypesMayBeOfInterest[name].length === 1 && dataTypesMayBeOfInterest[name][0].type === Type.String;
 
-    const hasUninterestingDependecies = !dataTypesMayBeOfInterest[name].every(
+    const hasUninterestingDependencies = !dataTypesMayBeOfInterest[name].every(
       dataType => dataType.type !== Type.TypeAlias || dataType.alias in dataTypesMayBeOfInterest,
     );
     if (onlyContainsString) {

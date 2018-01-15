@@ -5,10 +5,11 @@ export enum Type {
   Literal,
   String,
   Number,
+  Length,
 }
 
 export type BasicType = {
-  type: Type.String | Type.Number;
+  type: Type.String | Type.Number | Type.Length;
 };
 
 export type TypeAliasType = {
@@ -29,7 +30,7 @@ export const knownBasicDataTypes: { [name: string]: Type } = {
   number: Type.Number,
   'hex-color': Type.String,
   url: Type.String,
-  length: Type.String,
+  length: Type.Length,
   percentage: Type.String,
   integer: Type.Number,
   string: Type.String,
@@ -61,6 +62,10 @@ export default function type(entities: EntityType[]): TypeType[] {
               pushString();
             } else if (basicDataType === Type.Number) {
               pushNumber();
+            } else if (basicDataType === Type.Length) {
+              types.push({
+                type: Type.Length,
+              });
             }
           } else {
             types.push({
