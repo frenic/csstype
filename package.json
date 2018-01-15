@@ -22,8 +22,11 @@
   "scripts": {
     "build": "ts-node build.ts",
     "watch": "ts-node build.ts --watch",
-    "prettier": "prettier --single-quote --write build.ts */*.ts",
-    "test": "jest",
-    "prepublish": "npm run test && npm run build"
-  }
+    "pretty": "prettier --single-quote --write build.ts */*.ts",
+    "test": "jest --no-cache",
+    "prepare": "tsc && npm run test && npm run build"
+  },
+  "files": [
+    "index.d.ts"
+  ]
 }

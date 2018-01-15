@@ -2,7 +2,7 @@ import type, { Type, TypeType } from './typer';
 import dataTypes from './data-types';
 import { all, standardProperties, vendorPrefixedProperties } from './properties';
 import pseudos from './pseudos';
-import {EOL} from 'os';
+import { EOL } from 'os';
 
 const REGEX_LEADING_LETTER = /^(\w)/;
 const REGEX_KEBAB_SEPARATOR = /-(\w)/g;
