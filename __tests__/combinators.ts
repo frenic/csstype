@@ -21,13 +21,13 @@ test('typer to type CSS syntax combinators', () => {
 });
 
 test('output of CSS syntax combinators', () => {
-  expect(typeAlias('component', type(parse('something another-thing')))).toBe('type ComponentAlias = string;');
-  expect(typeAlias('component', type(parse('something && another-thing')))).toBe('type ComponentAlias = string;');
+  expect(typeAlias('component', type(parse('something another-thing')))).toBe('type Component = string;');
+  expect(typeAlias('component', type(parse('something && another-thing')))).toBe('type Component = string;');
   expect(typeAlias('component', type(parse('something | another-thing')))).toBe(
-    "type ComponentAlias = 'something' | 'another-thing';",
+    "type Component = 'something' | 'another-thing';",
   );
   expect(typeAlias('component', type(parse('something || another-thing')))).toBe(
-    "type ComponentAlias = 'something' | 'another-thing' | string;",
+    "type Component = 'something' | 'another-thing' | string;",
   );
-  expect(property('component')).toBe('component?: Component;');
+  expect(property('component')).toBe('component?: ComponentProperty;');
 });

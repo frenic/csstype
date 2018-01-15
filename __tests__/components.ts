@@ -16,8 +16,6 @@ test('typer to type CSS syntax components', () => {
 });
 
 test('output of CSS syntax components', () => {
-  expect(typeAlias('component', type(parse('something | <color>')))).toBe(
-    "type ComponentAlias = ColorAlias | 'something';",
-  );
-  expect(property('component')).toBe('component?: Component;');
+  expect(typeAlias('component', type(parse('something | <color>')))).toBe("type Component = Color | 'something';");
+  expect(property('component')).toBe('component?: ComponentProperty;');
 });

@@ -1,752 +1,752 @@
 export as namespace CSS;
 
 export interface StandardProperties<TLength = string> {
-  alignContent?: AlignContent;
-  alignItems?: AlignItems;
-  alignSelf?: AlignSelf;
-  animation?: Animation;
-  animationDelay?: AnimationDelay;
-  animationDirection?: AnimationDirection;
-  animationDuration?: AnimationDuration;
-  animationFillMode?: AnimationFillMode;
-  animationIterationCount?: AnimationIterationCount;
-  animationName?: AnimationName;
-  animationPlayState?: AnimationPlayState;
-  animationTimingFunction?: AnimationTimingFunction;
-  appearance?: Appearance;
-  azimuth?: Azimuth;
-  backdropFilter?: BackdropFilter;
-  backfaceVisibility?: BackfaceVisibility;
-  background?: Background;
-  backgroundAttachment?: BackgroundAttachment;
-  backgroundBlendMode?: BackgroundBlendMode;
-  backgroundClip?: BackgroundClip;
-  backgroundColor?: BackgroundColor;
-  backgroundImage?: BackgroundImage;
-  backgroundOrigin?: BackgroundOrigin;
-  backgroundPosition?: BackgroundPosition;
-  backgroundPositionX?: BackgroundPositionX;
-  backgroundPositionY?: BackgroundPositionY;
-  backgroundRepeat?: BackgroundRepeat;
-  backgroundSize?: BackgroundSize;
-  blockSize?: BlockSize;
-  border?: Border<TLength>;
-  borderBlockEnd?: BorderBlockEnd;
-  borderBlockEndColor?: BorderBlockEndColor;
-  borderBlockEndStyle?: BorderBlockEndStyle;
-  borderBlockEndWidth?: BorderBlockEndWidth;
-  borderBlockStart?: BorderBlockStart;
-  borderBlockStartColor?: BorderBlockStartColor;
-  borderBlockStartStyle?: BorderBlockStartStyle;
-  borderBlockStartWidth?: BorderBlockStartWidth;
-  borderBottom?: BorderBottom<TLength>;
-  borderBottomColor?: BorderBottomColor;
-  borderBottomLeftRadius?: BorderBottomLeftRadius<TLength>;
-  borderBottomRightRadius?: BorderBottomRightRadius<TLength>;
-  borderBottomStyle?: BorderBottomStyle;
-  borderBottomWidth?: BorderBottomWidth<TLength>;
-  borderCollapse?: BorderCollapse;
-  borderColor?: BorderColor;
-  borderImage?: BorderImage;
-  borderImageOutset?: BorderImageOutset;
-  borderImageRepeat?: BorderImageRepeat;
-  borderImageSlice?: BorderImageSlice;
-  borderImageSource?: BorderImageSource;
-  borderImageWidth?: BorderImageWidth;
-  borderInlineEnd?: BorderInlineEnd;
-  borderInlineEndColor?: BorderInlineEndColor;
-  borderInlineEndStyle?: BorderInlineEndStyle;
-  borderInlineEndWidth?: BorderInlineEndWidth;
-  borderInlineStart?: BorderInlineStart;
-  borderInlineStartColor?: BorderInlineStartColor;
-  borderInlineStartStyle?: BorderInlineStartStyle;
-  borderInlineStartWidth?: BorderInlineStartWidth;
-  borderLeft?: BorderLeft<TLength>;
-  borderLeftColor?: BorderLeftColor;
-  borderLeftStyle?: BorderLeftStyle;
-  borderLeftWidth?: BorderLeftWidth<TLength>;
-  borderRadius?: BorderRadius;
-  borderRight?: BorderRight<TLength>;
-  borderRightColor?: BorderRightColor;
-  borderRightStyle?: BorderRightStyle;
-  borderRightWidth?: BorderRightWidth<TLength>;
-  borderSpacing?: BorderSpacing;
-  borderStyle?: BorderStyle;
-  borderTop?: BorderTop<TLength>;
-  borderTopColor?: BorderTopColor;
-  borderTopLeftRadius?: BorderTopLeftRadius<TLength>;
-  borderTopRightRadius?: BorderTopRightRadius<TLength>;
-  borderTopStyle?: BorderTopStyle;
-  borderTopWidth?: BorderTopWidth<TLength>;
-  borderWidth?: BorderWidth<TLength>;
-  bottom?: Bottom<TLength>;
-  boxAlign?: BoxAlign;
-  boxDecorationBreak?: BoxDecorationBreak;
-  boxDirection?: BoxDirection;
-  boxFlex?: BoxFlex;
-  boxFlexGroup?: BoxFlexGroup;
-  boxLines?: BoxLines;
-  boxOrdinalGroup?: BoxOrdinalGroup;
-  boxOrient?: BoxOrient;
-  boxPack?: BoxPack;
-  boxShadow?: BoxShadow;
-  boxSizing?: BoxSizing;
-  breakAfter?: BreakAfter;
-  breakBefore?: BreakBefore;
-  breakInside?: BreakInside;
-  captionSide?: CaptionSide;
-  caretColor?: CaretColor;
-  clear?: Clear;
-  clip?: Clip;
-  clipPath?: ClipPath;
-  color?: Color;
-  columnCount?: ColumnCount;
-  columnFill?: ColumnFill;
-  columnGap?: ColumnGap<TLength>;
-  columnRule?: ColumnRule;
-  columnRuleColor?: ColumnRuleColor;
-  columnRuleStyle?: ColumnRuleStyle;
-  columnRuleWidth?: ColumnRuleWidth<TLength>;
-  columnSpan?: ColumnSpan;
-  columnWidth?: ColumnWidth<TLength>;
-  columns?: Columns;
-  contain?: Contain;
-  content?: Content;
-  counterIncrement?: CounterIncrement;
-  counterReset?: CounterReset;
-  cursor?: Cursor;
-  direction?: Direction;
-  display?: Display;
-  displayInside?: DisplayInside;
-  displayList?: DisplayList;
-  displayOutside?: DisplayOutside;
-  emptyCells?: EmptyCells;
-  filter?: Filter;
-  flex?: Flex;
-  flexBasis?: FlexBasis;
-  flexDirection?: FlexDirection;
-  flexFlow?: FlexFlow;
-  flexGrow?: FlexGrow;
-  flexShrink?: FlexShrink;
-  flexWrap?: FlexWrap;
-  float?: Float;
-  font?: Font;
-  fontFamily?: FontFamily;
-  fontFeatureSettings?: FontFeatureSettings;
-  fontKerning?: FontKerning;
-  fontLanguageOverride?: FontLanguageOverride;
-  fontVariationSettings?: FontVariationSettings;
-  fontSize?: FontSize<TLength>;
-  fontSizeAdjust?: FontSizeAdjust;
-  fontStretch?: FontStretch;
-  fontStyle?: FontStyle;
-  fontSynthesis?: FontSynthesis;
-  fontVariant?: FontVariant;
-  fontVariantAlternates?: FontVariantAlternates;
-  fontVariantCaps?: FontVariantCaps;
-  fontVariantEastAsian?: FontVariantEastAsian;
-  fontVariantLigatures?: FontVariantLigatures;
-  fontVariantNumeric?: FontVariantNumeric;
-  fontVariantPosition?: FontVariantPosition;
-  fontWeight?: FontWeight;
-  grid?: Grid;
-  gridArea?: GridArea;
-  gridAutoColumns?: GridAutoColumns;
-  gridAutoFlow?: GridAutoFlow;
-  gridAutoRows?: GridAutoRows;
-  gridColumn?: GridColumn;
-  gridColumnEnd?: GridColumnEnd;
-  gridColumnGap?: GridColumnGap<TLength>;
-  gridColumnStart?: GridColumnStart;
-  gridGap?: GridGap;
-  gridRow?: GridRow;
-  gridRowEnd?: GridRowEnd;
-  gridRowGap?: GridRowGap<TLength>;
-  gridRowStart?: GridRowStart;
-  gridTemplate?: GridTemplate;
-  gridTemplateAreas?: GridTemplateAreas;
-  gridTemplateColumns?: GridTemplateColumns;
-  gridTemplateRows?: GridTemplateRows;
-  height?: Height;
-  hyphens?: Hyphens;
-  imageOrientation?: ImageOrientation;
-  imageRendering?: ImageRendering;
-  imageResolution?: ImageResolution;
-  imeMode?: ImeMode;
-  initialLetter?: InitialLetter;
-  initialLetterAlign?: InitialLetterAlign;
-  inlineSize?: InlineSize;
-  isolation?: Isolation;
-  justifyContent?: JustifyContent;
-  left?: Left<TLength>;
-  letterSpacing?: LetterSpacing<TLength>;
-  lineBreak?: LineBreak;
-  lineHeight?: LineHeight<TLength>;
-  listStyle?: ListStyle;
-  listStyleImage?: ListStyleImage;
-  listStylePosition?: ListStylePosition;
-  listStyleType?: ListStyleType;
-  margin?: Margin;
-  marginBlockEnd?: MarginBlockEnd;
-  marginBlockStart?: MarginBlockStart;
-  marginBottom?: MarginBottom<TLength>;
-  marginInlineEnd?: MarginInlineEnd;
-  marginInlineStart?: MarginInlineStart;
-  marginLeft?: MarginLeft<TLength>;
-  marginRight?: MarginRight<TLength>;
-  marginTop?: MarginTop<TLength>;
-  markerOffset?: MarkerOffset<TLength>;
-  mask?: Mask;
-  maskClip?: MaskClip;
-  maskComposite?: MaskComposite;
-  maskImage?: MaskImage;
-  maskMode?: MaskMode;
-  maskOrigin?: MaskOrigin;
-  maskPosition?: MaskPosition;
-  maskRepeat?: MaskRepeat;
-  maskSize?: MaskSize;
-  maskType?: MaskType;
-  maxBlockSize?: MaxBlockSize;
-  maxHeight?: MaxHeight<TLength>;
-  maxInlineSize?: MaxInlineSize;
-  maxWidth?: MaxWidth<TLength>;
-  minBlockSize?: MinBlockSize;
-  minHeight?: MinHeight<TLength>;
-  minInlineSize?: MinInlineSize;
-  minWidth?: MinWidth<TLength>;
-  mixBlendMode?: MixBlendMode;
-  objectFit?: ObjectFit;
-  objectPosition?: ObjectPosition;
-  offset?: Offset;
-  offsetAnchor?: OffsetAnchor;
-  offsetBlockEnd?: OffsetBlockEnd;
-  offsetBlockStart?: OffsetBlockStart;
-  offsetInlineEnd?: OffsetInlineEnd;
-  offsetInlineStart?: OffsetInlineStart;
-  offsetDistance?: OffsetDistance<TLength>;
-  offsetPath?: OffsetPath;
-  offsetPosition?: OffsetPosition;
-  offsetRotate?: OffsetRotate;
-  opacity?: Opacity;
-  order?: Order;
-  orphans?: Orphans;
-  outline?: Outline;
-  outlineColor?: OutlineColor;
-  outlineOffset?: OutlineOffset<TLength>;
-  outlineStyle?: OutlineStyle;
-  outlineWidth?: OutlineWidth<TLength>;
-  overflow?: Overflow;
-  overflowClipBox?: OverflowClipBox;
-  overflowWrap?: OverflowWrap;
-  overflowX?: OverflowX;
-  overflowY?: OverflowY;
-  padding?: Padding;
-  paddingBlockEnd?: PaddingBlockEnd;
-  paddingBlockStart?: PaddingBlockStart;
-  paddingBottom?: PaddingBottom<TLength>;
-  paddingInlineEnd?: PaddingInlineEnd;
-  paddingInlineStart?: PaddingInlineStart;
-  paddingLeft?: PaddingLeft<TLength>;
-  paddingRight?: PaddingRight<TLength>;
-  paddingTop?: PaddingTop<TLength>;
-  pageBreakAfter?: PageBreakAfter;
-  pageBreakBefore?: PageBreakBefore;
-  pageBreakInside?: PageBreakInside;
-  perspective?: Perspective<TLength>;
-  perspectiveOrigin?: PerspectiveOrigin;
-  pointerEvents?: PointerEvents;
-  position?: Position;
-  quotes?: Quotes;
-  resize?: Resize;
-  right?: Right<TLength>;
-  rubyAlign?: RubyAlign;
-  rubyMerge?: RubyMerge;
-  rubyPosition?: RubyPosition;
-  scrollBehavior?: ScrollBehavior;
-  scrollSnapCoordinate?: ScrollSnapCoordinate;
-  scrollSnapDestination?: ScrollSnapDestination;
-  scrollSnapPointsX?: ScrollSnapPointsX;
-  scrollSnapPointsY?: ScrollSnapPointsY;
-  scrollSnapType?: ScrollSnapType;
-  scrollSnapTypeX?: ScrollSnapTypeX;
-  scrollSnapTypeY?: ScrollSnapTypeY;
-  shapeImageThreshold?: ShapeImageThreshold;
-  shapeMargin?: ShapeMargin<TLength>;
-  shapeOutside?: ShapeOutside;
-  tabSize?: TabSize<TLength>;
-  tableLayout?: TableLayout;
-  textAlign?: TextAlign;
-  textAlignLast?: TextAlignLast;
-  textCombineUpright?: TextCombineUpright;
-  textDecoration?: TextDecoration;
-  textDecorationColor?: TextDecorationColor;
-  textDecorationLine?: TextDecorationLine;
-  textDecorationSkip?: TextDecorationSkip;
-  textDecorationStyle?: TextDecorationStyle;
-  textEmphasis?: TextEmphasis;
-  textEmphasisColor?: TextEmphasisColor;
-  textEmphasisPosition?: TextEmphasisPosition;
-  textEmphasisStyle?: TextEmphasisStyle;
-  textIndent?: TextIndent;
-  textJustify?: TextJustify;
-  textOrientation?: TextOrientation;
-  textOverflow?: TextOverflow;
-  textRendering?: TextRendering;
-  textShadow?: TextShadow;
-  textSizeAdjust?: TextSizeAdjust;
-  textTransform?: TextTransform;
-  textUnderlinePosition?: TextUnderlinePosition;
-  top?: Top<TLength>;
-  touchAction?: TouchAction;
-  transform?: Transform;
-  transformBox?: TransformBox;
-  transformOrigin?: TransformOrigin;
-  transformStyle?: TransformStyle;
-  transition?: Transition;
-  transitionDelay?: TransitionDelay;
-  transitionDuration?: TransitionDuration;
-  transitionProperty?: TransitionProperty;
-  transitionTimingFunction?: TransitionTimingFunction;
-  unicodeBidi?: UnicodeBidi;
-  userSelect?: UserSelect;
-  verticalAlign?: VerticalAlign<TLength>;
-  visibility?: Visibility;
-  whiteSpace?: WhiteSpace;
-  widows?: Widows;
-  width?: Width;
-  willChange?: WillChange;
-  wordBreak?: WordBreak;
-  wordSpacing?: WordSpacing<TLength>;
-  wordWrap?: WordWrap;
-  writingMode?: WritingMode;
-  zIndex?: ZIndex;
+  alignContent?: AlignContentProperty;
+  alignItems?: AlignItemsProperty;
+  alignSelf?: AlignSelfProperty;
+  animation?: AnimationProperty;
+  animationDelay?: AnimationDelayProperty;
+  animationDirection?: AnimationDirectionProperty;
+  animationDuration?: AnimationDurationProperty;
+  animationFillMode?: AnimationFillModeProperty;
+  animationIterationCount?: AnimationIterationCountProperty;
+  animationName?: AnimationNameProperty;
+  animationPlayState?: AnimationPlayStateProperty;
+  animationTimingFunction?: AnimationTimingFunctionProperty;
+  appearance?: AppearanceProperty;
+  azimuth?: AzimuthProperty;
+  backdropFilter?: BackdropFilterProperty;
+  backfaceVisibility?: BackfaceVisibilityProperty;
+  background?: BackgroundProperty;
+  backgroundAttachment?: BackgroundAttachmentProperty;
+  backgroundBlendMode?: BackgroundBlendModeProperty;
+  backgroundClip?: BackgroundClipProperty;
+  backgroundColor?: BackgroundColorProperty;
+  backgroundImage?: BackgroundImageProperty;
+  backgroundOrigin?: BackgroundOriginProperty;
+  backgroundPosition?: BackgroundPositionProperty;
+  backgroundPositionX?: BackgroundPositionXProperty;
+  backgroundPositionY?: BackgroundPositionYProperty;
+  backgroundRepeat?: BackgroundRepeatProperty;
+  backgroundSize?: BackgroundSizeProperty;
+  blockSize?: BlockSizeProperty;
+  border?: BorderProperty<TLength>;
+  borderBlockEnd?: BorderBlockEndProperty;
+  borderBlockEndColor?: BorderBlockEndColorProperty;
+  borderBlockEndStyle?: BorderBlockEndStyleProperty;
+  borderBlockEndWidth?: BorderBlockEndWidthProperty;
+  borderBlockStart?: BorderBlockStartProperty;
+  borderBlockStartColor?: BorderBlockStartColorProperty;
+  borderBlockStartStyle?: BorderBlockStartStyleProperty;
+  borderBlockStartWidth?: BorderBlockStartWidthProperty;
+  borderBottom?: BorderBottomProperty<TLength>;
+  borderBottomColor?: BorderBottomColorProperty;
+  borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength>;
+  borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength>;
+  borderBottomStyle?: BorderBottomStyleProperty;
+  borderBottomWidth?: BorderBottomWidthProperty<TLength>;
+  borderCollapse?: BorderCollapseProperty;
+  borderColor?: BorderColorProperty;
+  borderImage?: BorderImageProperty;
+  borderImageOutset?: BorderImageOutsetProperty;
+  borderImageRepeat?: BorderImageRepeatProperty;
+  borderImageSlice?: BorderImageSliceProperty;
+  borderImageSource?: BorderImageSourceProperty;
+  borderImageWidth?: BorderImageWidthProperty;
+  borderInlineEnd?: BorderInlineEndProperty;
+  borderInlineEndColor?: BorderInlineEndColorProperty;
+  borderInlineEndStyle?: BorderInlineEndStyleProperty;
+  borderInlineEndWidth?: BorderInlineEndWidthProperty;
+  borderInlineStart?: BorderInlineStartProperty;
+  borderInlineStartColor?: BorderInlineStartColorProperty;
+  borderInlineStartStyle?: BorderInlineStartStyleProperty;
+  borderInlineStartWidth?: BorderInlineStartWidthProperty;
+  borderLeft?: BorderLeftProperty<TLength>;
+  borderLeftColor?: BorderLeftColorProperty;
+  borderLeftStyle?: BorderLeftStyleProperty;
+  borderLeftWidth?: BorderLeftWidthProperty<TLength>;
+  borderRadius?: BorderRadiusProperty;
+  borderRight?: BorderRightProperty<TLength>;
+  borderRightColor?: BorderRightColorProperty;
+  borderRightStyle?: BorderRightStyleProperty;
+  borderRightWidth?: BorderRightWidthProperty<TLength>;
+  borderSpacing?: BorderSpacingProperty;
+  borderStyle?: BorderStyleProperty;
+  borderTop?: BorderTopProperty<TLength>;
+  borderTopColor?: BorderTopColorProperty;
+  borderTopLeftRadius?: BorderTopLeftRadiusProperty<TLength>;
+  borderTopRightRadius?: BorderTopRightRadiusProperty<TLength>;
+  borderTopStyle?: BorderTopStyleProperty;
+  borderTopWidth?: BorderTopWidthProperty<TLength>;
+  borderWidth?: BorderWidthProperty<TLength>;
+  bottom?: BottomProperty<TLength>;
+  boxAlign?: BoxAlignProperty;
+  boxDecorationBreak?: BoxDecorationBreakProperty;
+  boxDirection?: BoxDirectionProperty;
+  boxFlex?: BoxFlexProperty;
+  boxFlexGroup?: BoxFlexGroupProperty;
+  boxLines?: BoxLinesProperty;
+  boxOrdinalGroup?: BoxOrdinalGroupProperty;
+  boxOrient?: BoxOrientProperty;
+  boxPack?: BoxPackProperty;
+  boxShadow?: BoxShadowProperty;
+  boxSizing?: BoxSizingProperty;
+  breakAfter?: BreakAfterProperty;
+  breakBefore?: BreakBeforeProperty;
+  breakInside?: BreakInsideProperty;
+  captionSide?: CaptionSideProperty;
+  caretColor?: CaretColorProperty;
+  clear?: ClearProperty;
+  clip?: ClipProperty;
+  clipPath?: ClipPathProperty;
+  color?: ColorProperty;
+  columnCount?: ColumnCountProperty;
+  columnFill?: ColumnFillProperty;
+  columnGap?: ColumnGapProperty<TLength>;
+  columnRule?: ColumnRuleProperty;
+  columnRuleColor?: ColumnRuleColorProperty;
+  columnRuleStyle?: ColumnRuleStyleProperty;
+  columnRuleWidth?: ColumnRuleWidthProperty<TLength>;
+  columnSpan?: ColumnSpanProperty;
+  columnWidth?: ColumnWidthProperty<TLength>;
+  columns?: ColumnsProperty;
+  contain?: ContainProperty;
+  content?: ContentProperty;
+  counterIncrement?: CounterIncrementProperty;
+  counterReset?: CounterResetProperty;
+  cursor?: CursorProperty;
+  direction?: DirectionProperty;
+  display?: DisplayProperty;
+  displayInside?: DisplayInsideProperty;
+  displayList?: DisplayListProperty;
+  displayOutside?: DisplayOutsideProperty;
+  emptyCells?: EmptyCellsProperty;
+  filter?: FilterProperty;
+  flex?: FlexProperty;
+  flexBasis?: FlexBasisProperty;
+  flexDirection?: FlexDirectionProperty;
+  flexFlow?: FlexFlowProperty;
+  flexGrow?: FlexGrowProperty;
+  flexShrink?: FlexShrinkProperty;
+  flexWrap?: FlexWrapProperty;
+  float?: FloatProperty;
+  font?: FontProperty;
+  fontFamily?: FontFamilyProperty;
+  fontFeatureSettings?: FontFeatureSettingsProperty;
+  fontKerning?: FontKerningProperty;
+  fontLanguageOverride?: FontLanguageOverrideProperty;
+  fontVariationSettings?: FontVariationSettingsProperty;
+  fontSize?: FontSizeProperty<TLength>;
+  fontSizeAdjust?: FontSizeAdjustProperty;
+  fontStretch?: FontStretchProperty;
+  fontStyle?: FontStyleProperty;
+  fontSynthesis?: FontSynthesisProperty;
+  fontVariant?: FontVariantProperty;
+  fontVariantAlternates?: FontVariantAlternatesProperty;
+  fontVariantCaps?: FontVariantCapsProperty;
+  fontVariantEastAsian?: FontVariantEastAsianProperty;
+  fontVariantLigatures?: FontVariantLigaturesProperty;
+  fontVariantNumeric?: FontVariantNumericProperty;
+  fontVariantPosition?: FontVariantPositionProperty;
+  fontWeight?: FontWeightProperty;
+  grid?: GridProperty;
+  gridArea?: GridAreaProperty;
+  gridAutoColumns?: GridAutoColumnsProperty;
+  gridAutoFlow?: GridAutoFlowProperty;
+  gridAutoRows?: GridAutoRowsProperty;
+  gridColumn?: GridColumnProperty;
+  gridColumnEnd?: GridColumnEndProperty;
+  gridColumnGap?: GridColumnGapProperty<TLength>;
+  gridColumnStart?: GridColumnStartProperty;
+  gridGap?: GridGapProperty;
+  gridRow?: GridRowProperty;
+  gridRowEnd?: GridRowEndProperty;
+  gridRowGap?: GridRowGapProperty<TLength>;
+  gridRowStart?: GridRowStartProperty;
+  gridTemplate?: GridTemplateProperty;
+  gridTemplateAreas?: GridTemplateAreasProperty;
+  gridTemplateColumns?: GridTemplateColumnsProperty;
+  gridTemplateRows?: GridTemplateRowsProperty;
+  height?: HeightProperty;
+  hyphens?: HyphensProperty;
+  imageOrientation?: ImageOrientationProperty;
+  imageRendering?: ImageRenderingProperty;
+  imageResolution?: ImageResolutionProperty;
+  imeMode?: ImeModeProperty;
+  initialLetter?: InitialLetterProperty;
+  initialLetterAlign?: InitialLetterAlignProperty;
+  inlineSize?: InlineSizeProperty;
+  isolation?: IsolationProperty;
+  justifyContent?: JustifyContentProperty;
+  left?: LeftProperty<TLength>;
+  letterSpacing?: LetterSpacingProperty<TLength>;
+  lineBreak?: LineBreakProperty;
+  lineHeight?: LineHeightProperty<TLength>;
+  listStyle?: ListStyleProperty;
+  listStyleImage?: ListStyleImageProperty;
+  listStylePosition?: ListStylePositionProperty;
+  listStyleType?: ListStyleTypeProperty;
+  margin?: MarginProperty;
+  marginBlockEnd?: MarginBlockEndProperty;
+  marginBlockStart?: MarginBlockStartProperty;
+  marginBottom?: MarginBottomProperty<TLength>;
+  marginInlineEnd?: MarginInlineEndProperty;
+  marginInlineStart?: MarginInlineStartProperty;
+  marginLeft?: MarginLeftProperty<TLength>;
+  marginRight?: MarginRightProperty<TLength>;
+  marginTop?: MarginTopProperty<TLength>;
+  markerOffset?: MarkerOffsetProperty<TLength>;
+  mask?: MaskProperty;
+  maskClip?: MaskClipProperty;
+  maskComposite?: MaskCompositeProperty;
+  maskImage?: MaskImageProperty;
+  maskMode?: MaskModeProperty;
+  maskOrigin?: MaskOriginProperty;
+  maskPosition?: MaskPositionProperty;
+  maskRepeat?: MaskRepeatProperty;
+  maskSize?: MaskSizeProperty;
+  maskType?: MaskTypeProperty;
+  maxBlockSize?: MaxBlockSizeProperty;
+  maxHeight?: MaxHeightProperty<TLength>;
+  maxInlineSize?: MaxInlineSizeProperty;
+  maxWidth?: MaxWidthProperty<TLength>;
+  minBlockSize?: MinBlockSizeProperty;
+  minHeight?: MinHeightProperty<TLength>;
+  minInlineSize?: MinInlineSizeProperty;
+  minWidth?: MinWidthProperty<TLength>;
+  mixBlendMode?: MixBlendModeProperty;
+  objectFit?: ObjectFitProperty;
+  objectPosition?: ObjectPositionProperty;
+  offset?: OffsetProperty;
+  offsetAnchor?: OffsetAnchorProperty;
+  offsetBlockEnd?: OffsetBlockEndProperty;
+  offsetBlockStart?: OffsetBlockStartProperty;
+  offsetInlineEnd?: OffsetInlineEndProperty;
+  offsetInlineStart?: OffsetInlineStartProperty;
+  offsetDistance?: OffsetDistanceProperty<TLength>;
+  offsetPath?: OffsetPathProperty;
+  offsetPosition?: OffsetPositionProperty;
+  offsetRotate?: OffsetRotateProperty;
+  opacity?: OpacityProperty;
+  order?: OrderProperty;
+  orphans?: OrphansProperty;
+  outline?: OutlineProperty;
+  outlineColor?: OutlineColorProperty;
+  outlineOffset?: OutlineOffsetProperty<TLength>;
+  outlineStyle?: OutlineStyleProperty;
+  outlineWidth?: OutlineWidthProperty<TLength>;
+  overflow?: OverflowProperty;
+  overflowClipBox?: OverflowClipBoxProperty;
+  overflowWrap?: OverflowWrapProperty;
+  overflowX?: OverflowXProperty;
+  overflowY?: OverflowYProperty;
+  padding?: PaddingProperty;
+  paddingBlockEnd?: PaddingBlockEndProperty;
+  paddingBlockStart?: PaddingBlockStartProperty;
+  paddingBottom?: PaddingBottomProperty<TLength>;
+  paddingInlineEnd?: PaddingInlineEndProperty;
+  paddingInlineStart?: PaddingInlineStartProperty;
+  paddingLeft?: PaddingLeftProperty<TLength>;
+  paddingRight?: PaddingRightProperty<TLength>;
+  paddingTop?: PaddingTopProperty<TLength>;
+  pageBreakAfter?: PageBreakAfterProperty;
+  pageBreakBefore?: PageBreakBeforeProperty;
+  pageBreakInside?: PageBreakInsideProperty;
+  perspective?: PerspectiveProperty<TLength>;
+  perspectiveOrigin?: PerspectiveOriginProperty;
+  pointerEvents?: PointerEventsProperty;
+  position?: PositionProperty;
+  quotes?: QuotesProperty;
+  resize?: ResizeProperty;
+  right?: RightProperty<TLength>;
+  rubyAlign?: RubyAlignProperty;
+  rubyMerge?: RubyMergeProperty;
+  rubyPosition?: RubyPositionProperty;
+  scrollBehavior?: ScrollBehaviorProperty;
+  scrollSnapCoordinate?: ScrollSnapCoordinateProperty;
+  scrollSnapDestination?: ScrollSnapDestinationProperty;
+  scrollSnapPointsX?: ScrollSnapPointsXProperty;
+  scrollSnapPointsY?: ScrollSnapPointsYProperty;
+  scrollSnapType?: ScrollSnapTypeProperty;
+  scrollSnapTypeX?: ScrollSnapTypeXProperty;
+  scrollSnapTypeY?: ScrollSnapTypeYProperty;
+  shapeImageThreshold?: ShapeImageThresholdProperty;
+  shapeMargin?: ShapeMarginProperty<TLength>;
+  shapeOutside?: ShapeOutsideProperty;
+  tabSize?: TabSizeProperty<TLength>;
+  tableLayout?: TableLayoutProperty;
+  textAlign?: TextAlignProperty;
+  textAlignLast?: TextAlignLastProperty;
+  textCombineUpright?: TextCombineUprightProperty;
+  textDecoration?: TextDecorationProperty;
+  textDecorationColor?: TextDecorationColorProperty;
+  textDecorationLine?: TextDecorationLineProperty;
+  textDecorationSkip?: TextDecorationSkipProperty;
+  textDecorationStyle?: TextDecorationStyleProperty;
+  textEmphasis?: TextEmphasisProperty;
+  textEmphasisColor?: TextEmphasisColorProperty;
+  textEmphasisPosition?: TextEmphasisPositionProperty;
+  textEmphasisStyle?: TextEmphasisStyleProperty;
+  textIndent?: TextIndentProperty;
+  textJustify?: TextJustifyProperty;
+  textOrientation?: TextOrientationProperty;
+  textOverflow?: TextOverflowProperty;
+  textRendering?: TextRenderingProperty;
+  textShadow?: TextShadowProperty;
+  textSizeAdjust?: TextSizeAdjustProperty;
+  textTransform?: TextTransformProperty;
+  textUnderlinePosition?: TextUnderlinePositionProperty;
+  top?: TopProperty<TLength>;
+  touchAction?: TouchActionProperty;
+  transform?: TransformProperty;
+  transformBox?: TransformBoxProperty;
+  transformOrigin?: TransformOriginProperty;
+  transformStyle?: TransformStyleProperty;
+  transition?: TransitionProperty;
+  transitionDelay?: TransitionDelayProperty;
+  transitionDuration?: TransitionDurationProperty;
+  transitionProperty?: TransitionPropertyProperty;
+  transitionTimingFunction?: TransitionTimingFunctionProperty;
+  unicodeBidi?: UnicodeBidiProperty;
+  userSelect?: UserSelectProperty;
+  verticalAlign?: VerticalAlignProperty<TLength>;
+  visibility?: VisibilityProperty;
+  whiteSpace?: WhiteSpaceProperty;
+  widows?: WidowsProperty;
+  width?: WidthProperty;
+  willChange?: WillChangeProperty;
+  wordBreak?: WordBreakProperty;
+  wordSpacing?: WordSpacingProperty<TLength>;
+  wordWrap?: WordWrapProperty;
+  writingMode?: WritingModeProperty;
+  zIndex?: ZIndexProperty;
 }
 
 export interface StandardPropertiesFallback<TLength = string> {
-  alignContent?: AlignContent | AlignContent[];
-  alignItems?: AlignItems | AlignItems[];
-  alignSelf?: AlignSelf | AlignSelf[];
-  animation?: Animation | Animation[];
-  animationDelay?: AnimationDelay | AnimationDelay[];
-  animationDirection?: AnimationDirection | AnimationDirection[];
-  animationDuration?: AnimationDuration | AnimationDuration[];
-  animationFillMode?: AnimationFillMode | AnimationFillMode[];
-  animationIterationCount?: AnimationIterationCount | AnimationIterationCount[];
-  animationName?: AnimationName | AnimationName[];
-  animationPlayState?: AnimationPlayState | AnimationPlayState[];
-  animationTimingFunction?: AnimationTimingFunction | AnimationTimingFunction[];
-  appearance?: Appearance | Appearance[];
-  azimuth?: Azimuth | Azimuth[];
-  backdropFilter?: BackdropFilter | BackdropFilter[];
-  backfaceVisibility?: BackfaceVisibility | BackfaceVisibility[];
-  background?: Background | Background[];
-  backgroundAttachment?: BackgroundAttachment | BackgroundAttachment[];
-  backgroundBlendMode?: BackgroundBlendMode | BackgroundBlendMode[];
-  backgroundClip?: BackgroundClip | BackgroundClip[];
-  backgroundColor?: BackgroundColor | BackgroundColor[];
-  backgroundImage?: BackgroundImage | BackgroundImage[];
-  backgroundOrigin?: BackgroundOrigin | BackgroundOrigin[];
-  backgroundPosition?: BackgroundPosition | BackgroundPosition[];
-  backgroundPositionX?: BackgroundPositionX | BackgroundPositionX[];
-  backgroundPositionY?: BackgroundPositionY | BackgroundPositionY[];
-  backgroundRepeat?: BackgroundRepeat | BackgroundRepeat[];
-  backgroundSize?: BackgroundSize | BackgroundSize[];
-  blockSize?: BlockSize | BlockSize[];
-  border?: Border<TLength> | Border<TLength>[];
-  borderBlockEnd?: BorderBlockEnd | BorderBlockEnd[];
-  borderBlockEndColor?: BorderBlockEndColor | BorderBlockEndColor[];
-  borderBlockEndStyle?: BorderBlockEndStyle | BorderBlockEndStyle[];
-  borderBlockEndWidth?: BorderBlockEndWidth | BorderBlockEndWidth[];
-  borderBlockStart?: BorderBlockStart | BorderBlockStart[];
-  borderBlockStartColor?: BorderBlockStartColor | BorderBlockStartColor[];
-  borderBlockStartStyle?: BorderBlockStartStyle | BorderBlockStartStyle[];
-  borderBlockStartWidth?: BorderBlockStartWidth | BorderBlockStartWidth[];
-  borderBottom?: BorderBottom<TLength> | BorderBottom<TLength>[];
-  borderBottomColor?: BorderBottomColor | BorderBottomColor[];
-  borderBottomLeftRadius?: BorderBottomLeftRadius<TLength> | BorderBottomLeftRadius<TLength>[];
-  borderBottomRightRadius?: BorderBottomRightRadius<TLength> | BorderBottomRightRadius<TLength>[];
-  borderBottomStyle?: BorderBottomStyle | BorderBottomStyle[];
-  borderBottomWidth?: BorderBottomWidth<TLength> | BorderBottomWidth<TLength>[];
-  borderCollapse?: BorderCollapse | BorderCollapse[];
-  borderColor?: BorderColor | BorderColor[];
-  borderImage?: BorderImage | BorderImage[];
-  borderImageOutset?: BorderImageOutset | BorderImageOutset[];
-  borderImageRepeat?: BorderImageRepeat | BorderImageRepeat[];
-  borderImageSlice?: BorderImageSlice | BorderImageSlice[];
-  borderImageSource?: BorderImageSource | BorderImageSource[];
-  borderImageWidth?: BorderImageWidth | BorderImageWidth[];
-  borderInlineEnd?: BorderInlineEnd | BorderInlineEnd[];
-  borderInlineEndColor?: BorderInlineEndColor | BorderInlineEndColor[];
-  borderInlineEndStyle?: BorderInlineEndStyle | BorderInlineEndStyle[];
-  borderInlineEndWidth?: BorderInlineEndWidth | BorderInlineEndWidth[];
-  borderInlineStart?: BorderInlineStart | BorderInlineStart[];
-  borderInlineStartColor?: BorderInlineStartColor | BorderInlineStartColor[];
-  borderInlineStartStyle?: BorderInlineStartStyle | BorderInlineStartStyle[];
-  borderInlineStartWidth?: BorderInlineStartWidth | BorderInlineStartWidth[];
-  borderLeft?: BorderLeft<TLength> | BorderLeft<TLength>[];
-  borderLeftColor?: BorderLeftColor | BorderLeftColor[];
-  borderLeftStyle?: BorderLeftStyle | BorderLeftStyle[];
-  borderLeftWidth?: BorderLeftWidth<TLength> | BorderLeftWidth<TLength>[];
-  borderRadius?: BorderRadius | BorderRadius[];
-  borderRight?: BorderRight<TLength> | BorderRight<TLength>[];
-  borderRightColor?: BorderRightColor | BorderRightColor[];
-  borderRightStyle?: BorderRightStyle | BorderRightStyle[];
-  borderRightWidth?: BorderRightWidth<TLength> | BorderRightWidth<TLength>[];
-  borderSpacing?: BorderSpacing | BorderSpacing[];
-  borderStyle?: BorderStyle | BorderStyle[];
-  borderTop?: BorderTop<TLength> | BorderTop<TLength>[];
-  borderTopColor?: BorderTopColor | BorderTopColor[];
-  borderTopLeftRadius?: BorderTopLeftRadius<TLength> | BorderTopLeftRadius<TLength>[];
-  borderTopRightRadius?: BorderTopRightRadius<TLength> | BorderTopRightRadius<TLength>[];
-  borderTopStyle?: BorderTopStyle | BorderTopStyle[];
-  borderTopWidth?: BorderTopWidth<TLength> | BorderTopWidth<TLength>[];
-  borderWidth?: BorderWidth<TLength> | BorderWidth<TLength>[];
-  bottom?: Bottom<TLength> | Bottom<TLength>[];
-  boxAlign?: BoxAlign | BoxAlign[];
-  boxDecorationBreak?: BoxDecorationBreak | BoxDecorationBreak[];
-  boxDirection?: BoxDirection | BoxDirection[];
-  boxFlex?: BoxFlex | BoxFlex[];
-  boxFlexGroup?: BoxFlexGroup | BoxFlexGroup[];
-  boxLines?: BoxLines | BoxLines[];
-  boxOrdinalGroup?: BoxOrdinalGroup | BoxOrdinalGroup[];
-  boxOrient?: BoxOrient | BoxOrient[];
-  boxPack?: BoxPack | BoxPack[];
-  boxShadow?: BoxShadow | BoxShadow[];
-  boxSizing?: BoxSizing | BoxSizing[];
-  breakAfter?: BreakAfter | BreakAfter[];
-  breakBefore?: BreakBefore | BreakBefore[];
-  breakInside?: BreakInside | BreakInside[];
-  captionSide?: CaptionSide | CaptionSide[];
-  caretColor?: CaretColor | CaretColor[];
-  clear?: Clear | Clear[];
-  clip?: Clip | Clip[];
-  clipPath?: ClipPath | ClipPath[];
-  color?: Color | Color[];
-  columnCount?: ColumnCount | ColumnCount[];
-  columnFill?: ColumnFill | ColumnFill[];
-  columnGap?: ColumnGap<TLength> | ColumnGap<TLength>[];
-  columnRule?: ColumnRule | ColumnRule[];
-  columnRuleColor?: ColumnRuleColor | ColumnRuleColor[];
-  columnRuleStyle?: ColumnRuleStyle | ColumnRuleStyle[];
-  columnRuleWidth?: ColumnRuleWidth<TLength> | ColumnRuleWidth<TLength>[];
-  columnSpan?: ColumnSpan | ColumnSpan[];
-  columnWidth?: ColumnWidth<TLength> | ColumnWidth<TLength>[];
-  columns?: Columns | Columns[];
-  contain?: Contain | Contain[];
-  content?: Content | Content[];
-  counterIncrement?: CounterIncrement | CounterIncrement[];
-  counterReset?: CounterReset | CounterReset[];
-  cursor?: Cursor | Cursor[];
-  direction?: Direction | Direction[];
-  display?: Display | Display[];
-  displayInside?: DisplayInside | DisplayInside[];
-  displayList?: DisplayList | DisplayList[];
-  displayOutside?: DisplayOutside | DisplayOutside[];
-  emptyCells?: EmptyCells | EmptyCells[];
-  filter?: Filter | Filter[];
-  flex?: Flex | Flex[];
-  flexBasis?: FlexBasis | FlexBasis[];
-  flexDirection?: FlexDirection | FlexDirection[];
-  flexFlow?: FlexFlow | FlexFlow[];
-  flexGrow?: FlexGrow | FlexGrow[];
-  flexShrink?: FlexShrink | FlexShrink[];
-  flexWrap?: FlexWrap | FlexWrap[];
-  float?: Float | Float[];
-  font?: Font | Font[];
-  fontFamily?: FontFamily | FontFamily[];
-  fontFeatureSettings?: FontFeatureSettings | FontFeatureSettings[];
-  fontKerning?: FontKerning | FontKerning[];
-  fontLanguageOverride?: FontLanguageOverride | FontLanguageOverride[];
-  fontVariationSettings?: FontVariationSettings | FontVariationSettings[];
-  fontSize?: FontSize<TLength> | FontSize<TLength>[];
-  fontSizeAdjust?: FontSizeAdjust | FontSizeAdjust[];
-  fontStretch?: FontStretch | FontStretch[];
-  fontStyle?: FontStyle | FontStyle[];
-  fontSynthesis?: FontSynthesis | FontSynthesis[];
-  fontVariant?: FontVariant | FontVariant[];
-  fontVariantAlternates?: FontVariantAlternates | FontVariantAlternates[];
-  fontVariantCaps?: FontVariantCaps | FontVariantCaps[];
-  fontVariantEastAsian?: FontVariantEastAsian | FontVariantEastAsian[];
-  fontVariantLigatures?: FontVariantLigatures | FontVariantLigatures[];
-  fontVariantNumeric?: FontVariantNumeric | FontVariantNumeric[];
-  fontVariantPosition?: FontVariantPosition | FontVariantPosition[];
-  fontWeight?: FontWeight | FontWeight[];
-  grid?: Grid | Grid[];
-  gridArea?: GridArea | GridArea[];
-  gridAutoColumns?: GridAutoColumns | GridAutoColumns[];
-  gridAutoFlow?: GridAutoFlow | GridAutoFlow[];
-  gridAutoRows?: GridAutoRows | GridAutoRows[];
-  gridColumn?: GridColumn | GridColumn[];
-  gridColumnEnd?: GridColumnEnd | GridColumnEnd[];
-  gridColumnGap?: GridColumnGap<TLength> | GridColumnGap<TLength>[];
-  gridColumnStart?: GridColumnStart | GridColumnStart[];
-  gridGap?: GridGap | GridGap[];
-  gridRow?: GridRow | GridRow[];
-  gridRowEnd?: GridRowEnd | GridRowEnd[];
-  gridRowGap?: GridRowGap<TLength> | GridRowGap<TLength>[];
-  gridRowStart?: GridRowStart | GridRowStart[];
-  gridTemplate?: GridTemplate | GridTemplate[];
-  gridTemplateAreas?: GridTemplateAreas | GridTemplateAreas[];
-  gridTemplateColumns?: GridTemplateColumns | GridTemplateColumns[];
-  gridTemplateRows?: GridTemplateRows | GridTemplateRows[];
-  height?: Height | Height[];
-  hyphens?: Hyphens | Hyphens[];
-  imageOrientation?: ImageOrientation | ImageOrientation[];
-  imageRendering?: ImageRendering | ImageRendering[];
-  imageResolution?: ImageResolution | ImageResolution[];
-  imeMode?: ImeMode | ImeMode[];
-  initialLetter?: InitialLetter | InitialLetter[];
-  initialLetterAlign?: InitialLetterAlign | InitialLetterAlign[];
-  inlineSize?: InlineSize | InlineSize[];
-  isolation?: Isolation | Isolation[];
-  justifyContent?: JustifyContent | JustifyContent[];
-  left?: Left<TLength> | Left<TLength>[];
-  letterSpacing?: LetterSpacing<TLength> | LetterSpacing<TLength>[];
-  lineBreak?: LineBreak | LineBreak[];
-  lineHeight?: LineHeight<TLength> | LineHeight<TLength>[];
-  listStyle?: ListStyle | ListStyle[];
-  listStyleImage?: ListStyleImage | ListStyleImage[];
-  listStylePosition?: ListStylePosition | ListStylePosition[];
-  listStyleType?: ListStyleType | ListStyleType[];
-  margin?: Margin | Margin[];
-  marginBlockEnd?: MarginBlockEnd | MarginBlockEnd[];
-  marginBlockStart?: MarginBlockStart | MarginBlockStart[];
-  marginBottom?: MarginBottom<TLength> | MarginBottom<TLength>[];
-  marginInlineEnd?: MarginInlineEnd | MarginInlineEnd[];
-  marginInlineStart?: MarginInlineStart | MarginInlineStart[];
-  marginLeft?: MarginLeft<TLength> | MarginLeft<TLength>[];
-  marginRight?: MarginRight<TLength> | MarginRight<TLength>[];
-  marginTop?: MarginTop<TLength> | MarginTop<TLength>[];
-  markerOffset?: MarkerOffset<TLength> | MarkerOffset<TLength>[];
-  mask?: Mask | Mask[];
-  maskClip?: MaskClip | MaskClip[];
-  maskComposite?: MaskComposite | MaskComposite[];
-  maskImage?: MaskImage | MaskImage[];
-  maskMode?: MaskMode | MaskMode[];
-  maskOrigin?: MaskOrigin | MaskOrigin[];
-  maskPosition?: MaskPosition | MaskPosition[];
-  maskRepeat?: MaskRepeat | MaskRepeat[];
-  maskSize?: MaskSize | MaskSize[];
-  maskType?: MaskType | MaskType[];
-  maxBlockSize?: MaxBlockSize | MaxBlockSize[];
-  maxHeight?: MaxHeight<TLength> | MaxHeight<TLength>[];
-  maxInlineSize?: MaxInlineSize | MaxInlineSize[];
-  maxWidth?: MaxWidth<TLength> | MaxWidth<TLength>[];
-  minBlockSize?: MinBlockSize | MinBlockSize[];
-  minHeight?: MinHeight<TLength> | MinHeight<TLength>[];
-  minInlineSize?: MinInlineSize | MinInlineSize[];
-  minWidth?: MinWidth<TLength> | MinWidth<TLength>[];
-  mixBlendMode?: MixBlendMode | MixBlendMode[];
-  objectFit?: ObjectFit | ObjectFit[];
-  objectPosition?: ObjectPosition | ObjectPosition[];
-  offset?: Offset | Offset[];
-  offsetAnchor?: OffsetAnchor | OffsetAnchor[];
-  offsetBlockEnd?: OffsetBlockEnd | OffsetBlockEnd[];
-  offsetBlockStart?: OffsetBlockStart | OffsetBlockStart[];
-  offsetInlineEnd?: OffsetInlineEnd | OffsetInlineEnd[];
-  offsetInlineStart?: OffsetInlineStart | OffsetInlineStart[];
-  offsetDistance?: OffsetDistance<TLength> | OffsetDistance<TLength>[];
-  offsetPath?: OffsetPath | OffsetPath[];
-  offsetPosition?: OffsetPosition | OffsetPosition[];
-  offsetRotate?: OffsetRotate | OffsetRotate[];
-  opacity?: Opacity | Opacity[];
-  order?: Order | Order[];
-  orphans?: Orphans | Orphans[];
-  outline?: Outline | Outline[];
-  outlineColor?: OutlineColor | OutlineColor[];
-  outlineOffset?: OutlineOffset<TLength> | OutlineOffset<TLength>[];
-  outlineStyle?: OutlineStyle | OutlineStyle[];
-  outlineWidth?: OutlineWidth<TLength> | OutlineWidth<TLength>[];
-  overflow?: Overflow | Overflow[];
-  overflowClipBox?: OverflowClipBox | OverflowClipBox[];
-  overflowWrap?: OverflowWrap | OverflowWrap[];
-  overflowX?: OverflowX | OverflowX[];
-  overflowY?: OverflowY | OverflowY[];
-  padding?: Padding | Padding[];
-  paddingBlockEnd?: PaddingBlockEnd | PaddingBlockEnd[];
-  paddingBlockStart?: PaddingBlockStart | PaddingBlockStart[];
-  paddingBottom?: PaddingBottom<TLength> | PaddingBottom<TLength>[];
-  paddingInlineEnd?: PaddingInlineEnd | PaddingInlineEnd[];
-  paddingInlineStart?: PaddingInlineStart | PaddingInlineStart[];
-  paddingLeft?: PaddingLeft<TLength> | PaddingLeft<TLength>[];
-  paddingRight?: PaddingRight<TLength> | PaddingRight<TLength>[];
-  paddingTop?: PaddingTop<TLength> | PaddingTop<TLength>[];
-  pageBreakAfter?: PageBreakAfter | PageBreakAfter[];
-  pageBreakBefore?: PageBreakBefore | PageBreakBefore[];
-  pageBreakInside?: PageBreakInside | PageBreakInside[];
-  perspective?: Perspective<TLength> | Perspective<TLength>[];
-  perspectiveOrigin?: PerspectiveOrigin | PerspectiveOrigin[];
-  pointerEvents?: PointerEvents | PointerEvents[];
-  position?: Position | Position[];
-  quotes?: Quotes | Quotes[];
-  resize?: Resize | Resize[];
-  right?: Right<TLength> | Right<TLength>[];
-  rubyAlign?: RubyAlign | RubyAlign[];
-  rubyMerge?: RubyMerge | RubyMerge[];
-  rubyPosition?: RubyPosition | RubyPosition[];
-  scrollBehavior?: ScrollBehavior | ScrollBehavior[];
-  scrollSnapCoordinate?: ScrollSnapCoordinate | ScrollSnapCoordinate[];
-  scrollSnapDestination?: ScrollSnapDestination | ScrollSnapDestination[];
-  scrollSnapPointsX?: ScrollSnapPointsX | ScrollSnapPointsX[];
-  scrollSnapPointsY?: ScrollSnapPointsY | ScrollSnapPointsY[];
-  scrollSnapType?: ScrollSnapType | ScrollSnapType[];
-  scrollSnapTypeX?: ScrollSnapTypeX | ScrollSnapTypeX[];
-  scrollSnapTypeY?: ScrollSnapTypeY | ScrollSnapTypeY[];
-  shapeImageThreshold?: ShapeImageThreshold | ShapeImageThreshold[];
-  shapeMargin?: ShapeMargin<TLength> | ShapeMargin<TLength>[];
-  shapeOutside?: ShapeOutside | ShapeOutside[];
-  tabSize?: TabSize<TLength> | TabSize<TLength>[];
-  tableLayout?: TableLayout | TableLayout[];
-  textAlign?: TextAlign | TextAlign[];
-  textAlignLast?: TextAlignLast | TextAlignLast[];
-  textCombineUpright?: TextCombineUpright | TextCombineUpright[];
-  textDecoration?: TextDecoration | TextDecoration[];
-  textDecorationColor?: TextDecorationColor | TextDecorationColor[];
-  textDecorationLine?: TextDecorationLine | TextDecorationLine[];
-  textDecorationSkip?: TextDecorationSkip | TextDecorationSkip[];
-  textDecorationStyle?: TextDecorationStyle | TextDecorationStyle[];
-  textEmphasis?: TextEmphasis | TextEmphasis[];
-  textEmphasisColor?: TextEmphasisColor | TextEmphasisColor[];
-  textEmphasisPosition?: TextEmphasisPosition | TextEmphasisPosition[];
-  textEmphasisStyle?: TextEmphasisStyle | TextEmphasisStyle[];
-  textIndent?: TextIndent | TextIndent[];
-  textJustify?: TextJustify | TextJustify[];
-  textOrientation?: TextOrientation | TextOrientation[];
-  textOverflow?: TextOverflow | TextOverflow[];
-  textRendering?: TextRendering | TextRendering[];
-  textShadow?: TextShadow | TextShadow[];
-  textSizeAdjust?: TextSizeAdjust | TextSizeAdjust[];
-  textTransform?: TextTransform | TextTransform[];
-  textUnderlinePosition?: TextUnderlinePosition | TextUnderlinePosition[];
-  top?: Top<TLength> | Top<TLength>[];
-  touchAction?: TouchAction | TouchAction[];
-  transform?: Transform | Transform[];
-  transformBox?: TransformBox | TransformBox[];
-  transformOrigin?: TransformOrigin | TransformOrigin[];
-  transformStyle?: TransformStyle | TransformStyle[];
-  transition?: Transition | Transition[];
-  transitionDelay?: TransitionDelay | TransitionDelay[];
-  transitionDuration?: TransitionDuration | TransitionDuration[];
-  transitionProperty?: TransitionProperty | TransitionProperty[];
-  transitionTimingFunction?: TransitionTimingFunction | TransitionTimingFunction[];
-  unicodeBidi?: UnicodeBidi | UnicodeBidi[];
-  userSelect?: UserSelect | UserSelect[];
-  verticalAlign?: VerticalAlign<TLength> | VerticalAlign<TLength>[];
-  visibility?: Visibility | Visibility[];
-  whiteSpace?: WhiteSpace | WhiteSpace[];
-  widows?: Widows | Widows[];
-  width?: Width | Width[];
-  willChange?: WillChange | WillChange[];
-  wordBreak?: WordBreak | WordBreak[];
-  wordSpacing?: WordSpacing<TLength> | WordSpacing<TLength>[];
-  wordWrap?: WordWrap | WordWrap[];
-  writingMode?: WritingMode | WritingMode[];
-  zIndex?: ZIndex | ZIndex[];
+  alignContent?: AlignContentProperty | AlignContentProperty[];
+  alignItems?: AlignItemsProperty | AlignItemsProperty[];
+  alignSelf?: AlignSelfProperty | AlignSelfProperty[];
+  animation?: AnimationProperty | AnimationProperty[];
+  animationDelay?: AnimationDelayProperty | AnimationDelayProperty[];
+  animationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[];
+  animationDuration?: AnimationDurationProperty | AnimationDurationProperty[];
+  animationFillMode?: AnimationFillModeProperty | AnimationFillModeProperty[];
+  animationIterationCount?: AnimationIterationCountProperty | AnimationIterationCountProperty[];
+  animationName?: AnimationNameProperty | AnimationNameProperty[];
+  animationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
+  animationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
+  appearance?: AppearanceProperty | AppearanceProperty[];
+  azimuth?: AzimuthProperty | AzimuthProperty[];
+  backdropFilter?: BackdropFilterProperty | BackdropFilterProperty[];
+  backfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
+  background?: BackgroundProperty | BackgroundProperty[];
+  backgroundAttachment?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
+  backgroundBlendMode?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
+  backgroundClip?: BackgroundClipProperty | BackgroundClipProperty[];
+  backgroundColor?: BackgroundColorProperty | BackgroundColorProperty[];
+  backgroundImage?: BackgroundImageProperty | BackgroundImageProperty[];
+  backgroundOrigin?: BackgroundOriginProperty | BackgroundOriginProperty[];
+  backgroundPosition?: BackgroundPositionProperty | BackgroundPositionProperty[];
+  backgroundPositionX?: BackgroundPositionXProperty | BackgroundPositionXProperty[];
+  backgroundPositionY?: BackgroundPositionYProperty | BackgroundPositionYProperty[];
+  backgroundRepeat?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
+  backgroundSize?: BackgroundSizeProperty | BackgroundSizeProperty[];
+  blockSize?: BlockSizeProperty | BlockSizeProperty[];
+  border?: BorderProperty<TLength> | BorderProperty<TLength>[];
+  borderBlockEnd?: BorderBlockEndProperty | BorderBlockEndProperty[];
+  borderBlockEndColor?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
+  borderBlockEndStyle?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
+  borderBlockEndWidth?: BorderBlockEndWidthProperty | BorderBlockEndWidthProperty[];
+  borderBlockStart?: BorderBlockStartProperty | BorderBlockStartProperty[];
+  borderBlockStartColor?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
+  borderBlockStartStyle?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
+  borderBlockStartWidth?: BorderBlockStartWidthProperty | BorderBlockStartWidthProperty[];
+  borderBottom?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
+  borderBottomColor?: BorderBottomColorProperty | BorderBottomColorProperty[];
+  borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
+  borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
+  borderBottomStyle?: BorderBottomStyleProperty | BorderBottomStyleProperty[];
+  borderBottomWidth?: BorderBottomWidthProperty<TLength> | BorderBottomWidthProperty<TLength>[];
+  borderCollapse?: BorderCollapseProperty | BorderCollapseProperty[];
+  borderColor?: BorderColorProperty | BorderColorProperty[];
+  borderImage?: BorderImageProperty | BorderImageProperty[];
+  borderImageOutset?: BorderImageOutsetProperty | BorderImageOutsetProperty[];
+  borderImageRepeat?: BorderImageRepeatProperty | BorderImageRepeatProperty[];
+  borderImageSlice?: BorderImageSliceProperty | BorderImageSliceProperty[];
+  borderImageSource?: BorderImageSourceProperty | BorderImageSourceProperty[];
+  borderImageWidth?: BorderImageWidthProperty | BorderImageWidthProperty[];
+  borderInlineEnd?: BorderInlineEndProperty | BorderInlineEndProperty[];
+  borderInlineEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
+  borderInlineEndStyle?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
+  borderInlineEndWidth?: BorderInlineEndWidthProperty | BorderInlineEndWidthProperty[];
+  borderInlineStart?: BorderInlineStartProperty | BorderInlineStartProperty[];
+  borderInlineStartColor?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
+  borderInlineStartStyle?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
+  borderInlineStartWidth?: BorderInlineStartWidthProperty | BorderInlineStartWidthProperty[];
+  borderLeft?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[];
+  borderLeftColor?: BorderLeftColorProperty | BorderLeftColorProperty[];
+  borderLeftStyle?: BorderLeftStyleProperty | BorderLeftStyleProperty[];
+  borderLeftWidth?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
+  borderRadius?: BorderRadiusProperty | BorderRadiusProperty[];
+  borderRight?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
+  borderRightColor?: BorderRightColorProperty | BorderRightColorProperty[];
+  borderRightStyle?: BorderRightStyleProperty | BorderRightStyleProperty[];
+  borderRightWidth?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[];
+  borderSpacing?: BorderSpacingProperty | BorderSpacingProperty[];
+  borderStyle?: BorderStyleProperty | BorderStyleProperty[];
+  borderTop?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
+  borderTopColor?: BorderTopColorProperty | BorderTopColorProperty[];
+  borderTopLeftRadius?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[];
+  borderTopRightRadius?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
+  borderTopStyle?: BorderTopStyleProperty | BorderTopStyleProperty[];
+  borderTopWidth?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[];
+  borderWidth?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
+  bottom?: BottomProperty<TLength> | BottomProperty<TLength>[];
+  boxAlign?: BoxAlignProperty | BoxAlignProperty[];
+  boxDecorationBreak?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
+  boxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
+  boxFlex?: BoxFlexProperty | BoxFlexProperty[];
+  boxFlexGroup?: BoxFlexGroupProperty | BoxFlexGroupProperty[];
+  boxLines?: BoxLinesProperty | BoxLinesProperty[];
+  boxOrdinalGroup?: BoxOrdinalGroupProperty | BoxOrdinalGroupProperty[];
+  boxOrient?: BoxOrientProperty | BoxOrientProperty[];
+  boxPack?: BoxPackProperty | BoxPackProperty[];
+  boxShadow?: BoxShadowProperty | BoxShadowProperty[];
+  boxSizing?: BoxSizingProperty | BoxSizingProperty[];
+  breakAfter?: BreakAfterProperty | BreakAfterProperty[];
+  breakBefore?: BreakBeforeProperty | BreakBeforeProperty[];
+  breakInside?: BreakInsideProperty | BreakInsideProperty[];
+  captionSide?: CaptionSideProperty | CaptionSideProperty[];
+  caretColor?: CaretColorProperty | CaretColorProperty[];
+  clear?: ClearProperty | ClearProperty[];
+  clip?: ClipProperty | ClipProperty[];
+  clipPath?: ClipPathProperty | ClipPathProperty[];
+  color?: ColorProperty | ColorProperty[];
+  columnCount?: ColumnCountProperty | ColumnCountProperty[];
+  columnFill?: ColumnFillProperty | ColumnFillProperty[];
+  columnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
+  columnRule?: ColumnRuleProperty | ColumnRuleProperty[];
+  columnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[];
+  columnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
+  columnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
+  columnSpan?: ColumnSpanProperty | ColumnSpanProperty[];
+  columnWidth?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[];
+  columns?: ColumnsProperty | ColumnsProperty[];
+  contain?: ContainProperty | ContainProperty[];
+  content?: ContentProperty | ContentProperty[];
+  counterIncrement?: CounterIncrementProperty | CounterIncrementProperty[];
+  counterReset?: CounterResetProperty | CounterResetProperty[];
+  cursor?: CursorProperty | CursorProperty[];
+  direction?: DirectionProperty | DirectionProperty[];
+  display?: DisplayProperty | DisplayProperty[];
+  displayInside?: DisplayInsideProperty | DisplayInsideProperty[];
+  displayList?: DisplayListProperty | DisplayListProperty[];
+  displayOutside?: DisplayOutsideProperty | DisplayOutsideProperty[];
+  emptyCells?: EmptyCellsProperty | EmptyCellsProperty[];
+  filter?: FilterProperty | FilterProperty[];
+  flex?: FlexProperty | FlexProperty[];
+  flexBasis?: FlexBasisProperty | FlexBasisProperty[];
+  flexDirection?: FlexDirectionProperty | FlexDirectionProperty[];
+  flexFlow?: FlexFlowProperty | FlexFlowProperty[];
+  flexGrow?: FlexGrowProperty | FlexGrowProperty[];
+  flexShrink?: FlexShrinkProperty | FlexShrinkProperty[];
+  flexWrap?: FlexWrapProperty | FlexWrapProperty[];
+  float?: FloatProperty | FloatProperty[];
+  font?: FontProperty | FontProperty[];
+  fontFamily?: FontFamilyProperty | FontFamilyProperty[];
+  fontFeatureSettings?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[];
+  fontKerning?: FontKerningProperty | FontKerningProperty[];
+  fontLanguageOverride?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
+  fontVariationSettings?: FontVariationSettingsProperty | FontVariationSettingsProperty[];
+  fontSize?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[];
+  fontSizeAdjust?: FontSizeAdjustProperty | FontSizeAdjustProperty[];
+  fontStretch?: FontStretchProperty | FontStretchProperty[];
+  fontStyle?: FontStyleProperty | FontStyleProperty[];
+  fontSynthesis?: FontSynthesisProperty | FontSynthesisProperty[];
+  fontVariant?: FontVariantProperty | FontVariantProperty[];
+  fontVariantAlternates?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
+  fontVariantCaps?: FontVariantCapsProperty | FontVariantCapsProperty[];
+  fontVariantEastAsian?: FontVariantEastAsianProperty | FontVariantEastAsianProperty[];
+  fontVariantLigatures?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[];
+  fontVariantNumeric?: FontVariantNumericProperty | FontVariantNumericProperty[];
+  fontVariantPosition?: FontVariantPositionProperty | FontVariantPositionProperty[];
+  fontWeight?: FontWeightProperty | FontWeightProperty[];
+  grid?: GridProperty | GridProperty[];
+  gridArea?: GridAreaProperty | GridAreaProperty[];
+  gridAutoColumns?: GridAutoColumnsProperty | GridAutoColumnsProperty[];
+  gridAutoFlow?: GridAutoFlowProperty | GridAutoFlowProperty[];
+  gridAutoRows?: GridAutoRowsProperty | GridAutoRowsProperty[];
+  gridColumn?: GridColumnProperty | GridColumnProperty[];
+  gridColumnEnd?: GridColumnEndProperty | GridColumnEndProperty[];
+  gridColumnGap?: GridColumnGapProperty<TLength> | GridColumnGapProperty<TLength>[];
+  gridColumnStart?: GridColumnStartProperty | GridColumnStartProperty[];
+  gridGap?: GridGapProperty | GridGapProperty[];
+  gridRow?: GridRowProperty | GridRowProperty[];
+  gridRowEnd?: GridRowEndProperty | GridRowEndProperty[];
+  gridRowGap?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
+  gridRowStart?: GridRowStartProperty | GridRowStartProperty[];
+  gridTemplate?: GridTemplateProperty | GridTemplateProperty[];
+  gridTemplateAreas?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
+  gridTemplateColumns?: GridTemplateColumnsProperty | GridTemplateColumnsProperty[];
+  gridTemplateRows?: GridTemplateRowsProperty | GridTemplateRowsProperty[];
+  height?: HeightProperty | HeightProperty[];
+  hyphens?: HyphensProperty | HyphensProperty[];
+  imageOrientation?: ImageOrientationProperty | ImageOrientationProperty[];
+  imageRendering?: ImageRenderingProperty | ImageRenderingProperty[];
+  imageResolution?: ImageResolutionProperty | ImageResolutionProperty[];
+  imeMode?: ImeModeProperty | ImeModeProperty[];
+  initialLetter?: InitialLetterProperty | InitialLetterProperty[];
+  initialLetterAlign?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
+  inlineSize?: InlineSizeProperty | InlineSizeProperty[];
+  isolation?: IsolationProperty | IsolationProperty[];
+  justifyContent?: JustifyContentProperty | JustifyContentProperty[];
+  left?: LeftProperty<TLength> | LeftProperty<TLength>[];
+  letterSpacing?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[];
+  lineBreak?: LineBreakProperty | LineBreakProperty[];
+  lineHeight?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[];
+  listStyle?: ListStyleProperty | ListStyleProperty[];
+  listStyleImage?: ListStyleImageProperty | ListStyleImageProperty[];
+  listStylePosition?: ListStylePositionProperty | ListStylePositionProperty[];
+  listStyleType?: ListStyleTypeProperty | ListStyleTypeProperty[];
+  margin?: MarginProperty | MarginProperty[];
+  marginBlockEnd?: MarginBlockEndProperty | MarginBlockEndProperty[];
+  marginBlockStart?: MarginBlockStartProperty | MarginBlockStartProperty[];
+  marginBottom?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
+  marginInlineEnd?: MarginInlineEndProperty | MarginInlineEndProperty[];
+  marginInlineStart?: MarginInlineStartProperty | MarginInlineStartProperty[];
+  marginLeft?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
+  marginRight?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
+  marginTop?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[];
+  markerOffset?: MarkerOffsetProperty<TLength> | MarkerOffsetProperty<TLength>[];
+  mask?: MaskProperty | MaskProperty[];
+  maskClip?: MaskClipProperty | MaskClipProperty[];
+  maskComposite?: MaskCompositeProperty | MaskCompositeProperty[];
+  maskImage?: MaskImageProperty | MaskImageProperty[];
+  maskMode?: MaskModeProperty | MaskModeProperty[];
+  maskOrigin?: MaskOriginProperty | MaskOriginProperty[];
+  maskPosition?: MaskPositionProperty | MaskPositionProperty[];
+  maskRepeat?: MaskRepeatProperty | MaskRepeatProperty[];
+  maskSize?: MaskSizeProperty | MaskSizeProperty[];
+  maskType?: MaskTypeProperty | MaskTypeProperty[];
+  maxBlockSize?: MaxBlockSizeProperty | MaxBlockSizeProperty[];
+  maxHeight?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
+  maxInlineSize?: MaxInlineSizeProperty | MaxInlineSizeProperty[];
+  maxWidth?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
+  minBlockSize?: MinBlockSizeProperty | MinBlockSizeProperty[];
+  minHeight?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
+  minInlineSize?: MinInlineSizeProperty | MinInlineSizeProperty[];
+  minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
+  mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
+  objectFit?: ObjectFitProperty | ObjectFitProperty[];
+  objectPosition?: ObjectPositionProperty | ObjectPositionProperty[];
+  offset?: OffsetProperty | OffsetProperty[];
+  offsetAnchor?: OffsetAnchorProperty | OffsetAnchorProperty[];
+  offsetBlockEnd?: OffsetBlockEndProperty | OffsetBlockEndProperty[];
+  offsetBlockStart?: OffsetBlockStartProperty | OffsetBlockStartProperty[];
+  offsetInlineEnd?: OffsetInlineEndProperty | OffsetInlineEndProperty[];
+  offsetInlineStart?: OffsetInlineStartProperty | OffsetInlineStartProperty[];
+  offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  offsetPath?: OffsetPathProperty | OffsetPathProperty[];
+  offsetPosition?: OffsetPositionProperty | OffsetPositionProperty[];
+  offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[];
+  opacity?: OpacityProperty | OpacityProperty[];
+  order?: OrderProperty | OrderProperty[];
+  orphans?: OrphansProperty | OrphansProperty[];
+  outline?: OutlineProperty | OutlineProperty[];
+  outlineColor?: OutlineColorProperty | OutlineColorProperty[];
+  outlineOffset?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[];
+  outlineStyle?: OutlineStyleProperty | OutlineStyleProperty[];
+  outlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
+  overflow?: OverflowProperty | OverflowProperty[];
+  overflowClipBox?: OverflowClipBoxProperty | OverflowClipBoxProperty[];
+  overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[];
+  overflowX?: OverflowXProperty | OverflowXProperty[];
+  overflowY?: OverflowYProperty | OverflowYProperty[];
+  padding?: PaddingProperty | PaddingProperty[];
+  paddingBlockEnd?: PaddingBlockEndProperty | PaddingBlockEndProperty[];
+  paddingBlockStart?: PaddingBlockStartProperty | PaddingBlockStartProperty[];
+  paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
+  paddingInlineEnd?: PaddingInlineEndProperty | PaddingInlineEndProperty[];
+  paddingInlineStart?: PaddingInlineStartProperty | PaddingInlineStartProperty[];
+  paddingLeft?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
+  paddingRight?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
+  paddingTop?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[];
+  pageBreakAfter?: PageBreakAfterProperty | PageBreakAfterProperty[];
+  pageBreakBefore?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
+  pageBreakInside?: PageBreakInsideProperty | PageBreakInsideProperty[];
+  perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
+  perspectiveOrigin?: PerspectiveOriginProperty | PerspectiveOriginProperty[];
+  pointerEvents?: PointerEventsProperty | PointerEventsProperty[];
+  position?: PositionProperty | PositionProperty[];
+  quotes?: QuotesProperty | QuotesProperty[];
+  resize?: ResizeProperty | ResizeProperty[];
+  right?: RightProperty<TLength> | RightProperty<TLength>[];
+  rubyAlign?: RubyAlignProperty | RubyAlignProperty[];
+  rubyMerge?: RubyMergeProperty | RubyMergeProperty[];
+  rubyPosition?: RubyPositionProperty | RubyPositionProperty[];
+  scrollBehavior?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
+  scrollSnapCoordinate?: ScrollSnapCoordinateProperty | ScrollSnapCoordinateProperty[];
+  scrollSnapDestination?: ScrollSnapDestinationProperty | ScrollSnapDestinationProperty[];
+  scrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
+  scrollSnapPointsY?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
+  scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
+  scrollSnapTypeX?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[];
+  scrollSnapTypeY?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[];
+  shapeImageThreshold?: ShapeImageThresholdProperty | ShapeImageThresholdProperty[];
+  shapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[];
+  shapeOutside?: ShapeOutsideProperty | ShapeOutsideProperty[];
+  tabSize?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
+  tableLayout?: TableLayoutProperty | TableLayoutProperty[];
+  textAlign?: TextAlignProperty | TextAlignProperty[];
+  textAlignLast?: TextAlignLastProperty | TextAlignLastProperty[];
+  textCombineUpright?: TextCombineUprightProperty | TextCombineUprightProperty[];
+  textDecoration?: TextDecorationProperty | TextDecorationProperty[];
+  textDecorationColor?: TextDecorationColorProperty | TextDecorationColorProperty[];
+  textDecorationLine?: TextDecorationLineProperty | TextDecorationLineProperty[];
+  textDecorationSkip?: TextDecorationSkipProperty | TextDecorationSkipProperty[];
+  textDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
+  textEmphasis?: TextEmphasisProperty | TextEmphasisProperty[];
+  textEmphasisColor?: TextEmphasisColorProperty | TextEmphasisColorProperty[];
+  textEmphasisPosition?: TextEmphasisPositionProperty | TextEmphasisPositionProperty[];
+  textEmphasisStyle?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[];
+  textIndent?: TextIndentProperty | TextIndentProperty[];
+  textJustify?: TextJustifyProperty | TextJustifyProperty[];
+  textOrientation?: TextOrientationProperty | TextOrientationProperty[];
+  textOverflow?: TextOverflowProperty | TextOverflowProperty[];
+  textRendering?: TextRenderingProperty | TextRenderingProperty[];
+  textShadow?: TextShadowProperty | TextShadowProperty[];
+  textSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
+  textTransform?: TextTransformProperty | TextTransformProperty[];
+  textUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
+  top?: TopProperty<TLength> | TopProperty<TLength>[];
+  touchAction?: TouchActionProperty | TouchActionProperty[];
+  transform?: TransformProperty | TransformProperty[];
+  transformBox?: TransformBoxProperty | TransformBoxProperty[];
+  transformOrigin?: TransformOriginProperty | TransformOriginProperty[];
+  transformStyle?: TransformStyleProperty | TransformStyleProperty[];
+  transition?: TransitionProperty | TransitionProperty[];
+  transitionDelay?: TransitionDelayProperty | TransitionDelayProperty[];
+  transitionDuration?: TransitionDurationProperty | TransitionDurationProperty[];
+  transitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[];
+  transitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
+  unicodeBidi?: UnicodeBidiProperty | UnicodeBidiProperty[];
+  userSelect?: UserSelectProperty | UserSelectProperty[];
+  verticalAlign?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[];
+  visibility?: VisibilityProperty | VisibilityProperty[];
+  whiteSpace?: WhiteSpaceProperty | WhiteSpaceProperty[];
+  widows?: WidowsProperty | WidowsProperty[];
+  width?: WidthProperty | WidthProperty[];
+  willChange?: WillChangeProperty | WillChangeProperty[];
+  wordBreak?: WordBreakProperty | WordBreakProperty[];
+  wordSpacing?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
+  wordWrap?: WordWrapProperty | WordWrapProperty[];
+  writingMode?: WritingModeProperty | WritingModeProperty[];
+  zIndex?: ZIndexProperty | ZIndexProperty[];
 }
 
 export interface VendorProperties<TLength = string> {
-  msOverflowStyle?: MsOverflowStyle;
-  mozAppearance?: MozAppearance;
-  mozBinding?: MozBinding;
-  mozBorderBottomColors?: MozBorderBottomColors;
-  mozBorderLeftColors?: MozBorderLeftColors;
-  mozBorderRightColors?: MozBorderRightColors;
-  mozBorderTopColors?: MozBorderTopColors;
-  mozContextProperties?: MozContextProperties;
-  mozFloatEdge?: MozFloatEdge;
-  mozForceBrokenImageIcon?: MozForceBrokenImageIcon;
-  mozImageRegion?: MozImageRegion;
-  mozOrient?: MozOrient;
-  mozOutlineRadius?: MozOutlineRadius;
-  mozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleft;
-  mozOutlineRadiusBottomright?: MozOutlineRadiusBottomright;
-  mozOutlineRadiusTopleft?: MozOutlineRadiusTopleft;
-  mozOutlineRadiusTopright?: MozOutlineRadiusTopright;
-  mozStackSizing?: MozStackSizing;
-  mozTextBlink?: MozTextBlink;
-  mozUserFocus?: MozUserFocus;
-  mozUserInput?: MozUserInput;
-  mozUserModify?: MozUserModify;
-  mozWindowShadow?: MozWindowShadow;
-  webkitBorderBefore?: WebkitBorderBefore;
-  webkitBorderBeforeColor?: WebkitBorderBeforeColor;
-  webkitBorderBeforeStyle?: WebkitBorderBeforeStyle;
-  webkitBorderBeforeWidth?: WebkitBorderBeforeWidth;
-  webkitBoxReflect?: WebkitBoxReflect;
-  webkitMask?: WebkitMask;
-  webkitMaskAttachment?: WebkitMaskAttachment;
-  webkitMaskClip?: WebkitMaskClip;
-  webkitMaskComposite?: WebkitMaskComposite;
-  webkitMaskImage?: WebkitMaskImage;
-  webkitMaskOrigin?: WebkitMaskOrigin;
-  webkitMaskPosition?: WebkitMaskPosition;
-  webkitMaskPositionX?: WebkitMaskPositionX;
-  webkitMaskPositionY?: WebkitMaskPositionY;
-  webkitMaskRepeat?: WebkitMaskRepeat;
-  webkitMaskRepeatX?: WebkitMaskRepeatX;
-  webkitMaskRepeatY?: WebkitMaskRepeatY;
-  webkitTapHighlightColor?: WebkitTapHighlightColor;
-  webkitTextFillColor?: WebkitTextFillColor;
-  webkitTextStroke?: WebkitTextStroke<TLength>;
-  webkitTextStrokeColor?: WebkitTextStrokeColor;
-  webkitTextStrokeWidth?: WebkitTextStrokeWidth<TLength>;
-  webkitTouchCallout?: WebkitTouchCallout;
+  msOverflowStyle?: MsOverflowStyleProperty;
+  mozAppearance?: MozAppearanceProperty;
+  mozBinding?: MozBindingProperty;
+  mozBorderBottomColors?: MozBorderBottomColorsProperty;
+  mozBorderLeftColors?: MozBorderLeftColorsProperty;
+  mozBorderRightColors?: MozBorderRightColorsProperty;
+  mozBorderTopColors?: MozBorderTopColorsProperty;
+  mozContextProperties?: MozContextPropertiesProperty;
+  mozFloatEdge?: MozFloatEdgeProperty;
+  mozForceBrokenImageIcon?: MozForceBrokenImageIconProperty;
+  mozImageRegion?: MozImageRegionProperty;
+  mozOrient?: MozOrientProperty;
+  mozOutlineRadius?: MozOutlineRadiusProperty;
+  mozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty;
+  mozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty;
+  mozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty;
+  mozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty;
+  mozStackSizing?: MozStackSizingProperty;
+  mozTextBlink?: MozTextBlinkProperty;
+  mozUserFocus?: MozUserFocusProperty;
+  mozUserInput?: MozUserInputProperty;
+  mozUserModify?: MozUserModifyProperty;
+  mozWindowShadow?: MozWindowShadowProperty;
+  webkitBorderBefore?: WebkitBorderBeforeProperty;
+  webkitBorderBeforeColor?: WebkitBorderBeforeColorProperty;
+  webkitBorderBeforeStyle?: WebkitBorderBeforeStyleProperty;
+  webkitBorderBeforeWidth?: WebkitBorderBeforeWidthProperty;
+  webkitBoxReflect?: WebkitBoxReflectProperty;
+  webkitMask?: WebkitMaskProperty;
+  webkitMaskAttachment?: WebkitMaskAttachmentProperty;
+  webkitMaskClip?: WebkitMaskClipProperty;
+  webkitMaskComposite?: WebkitMaskCompositeProperty;
+  webkitMaskImage?: WebkitMaskImageProperty;
+  webkitMaskOrigin?: WebkitMaskOriginProperty;
+  webkitMaskPosition?: WebkitMaskPositionProperty;
+  webkitMaskPositionX?: WebkitMaskPositionXProperty;
+  webkitMaskPositionY?: WebkitMaskPositionYProperty;
+  webkitMaskRepeat?: WebkitMaskRepeatProperty;
+  webkitMaskRepeatX?: WebkitMaskRepeatXProperty;
+  webkitMaskRepeatY?: WebkitMaskRepeatYProperty;
+  webkitTapHighlightColor?: WebkitTapHighlightColorProperty;
+  webkitTextFillColor?: WebkitTextFillColorProperty;
+  webkitTextStroke?: WebkitTextStrokeProperty<TLength>;
+  webkitTextStrokeColor?: WebkitTextStrokeColorProperty;
+  webkitTextStrokeWidth?: WebkitTextStrokeWidthProperty<TLength>;
+  webkitTouchCallout?: WebkitTouchCalloutProperty;
 }
 
 export interface VendorPropertiesFallback<TLength = string> {
-  msOverflowStyle?: MsOverflowStyle | MsOverflowStyle[];
-  mozAppearance?: MozAppearance | MozAppearance[];
-  mozBinding?: MozBinding | MozBinding[];
-  mozBorderBottomColors?: MozBorderBottomColors | MozBorderBottomColors[];
-  mozBorderLeftColors?: MozBorderLeftColors | MozBorderLeftColors[];
-  mozBorderRightColors?: MozBorderRightColors | MozBorderRightColors[];
-  mozBorderTopColors?: MozBorderTopColors | MozBorderTopColors[];
-  mozContextProperties?: MozContextProperties | MozContextProperties[];
-  mozFloatEdge?: MozFloatEdge | MozFloatEdge[];
-  mozForceBrokenImageIcon?: MozForceBrokenImageIcon | MozForceBrokenImageIcon[];
-  mozImageRegion?: MozImageRegion | MozImageRegion[];
-  mozOrient?: MozOrient | MozOrient[];
-  mozOutlineRadius?: MozOutlineRadius | MozOutlineRadius[];
-  mozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleft | MozOutlineRadiusBottomleft[];
-  mozOutlineRadiusBottomright?: MozOutlineRadiusBottomright | MozOutlineRadiusBottomright[];
-  mozOutlineRadiusTopleft?: MozOutlineRadiusTopleft | MozOutlineRadiusTopleft[];
-  mozOutlineRadiusTopright?: MozOutlineRadiusTopright | MozOutlineRadiusTopright[];
-  mozStackSizing?: MozStackSizing | MozStackSizing[];
-  mozTextBlink?: MozTextBlink | MozTextBlink[];
-  mozUserFocus?: MozUserFocus | MozUserFocus[];
-  mozUserInput?: MozUserInput | MozUserInput[];
-  mozUserModify?: MozUserModify | MozUserModify[];
-  mozWindowShadow?: MozWindowShadow | MozWindowShadow[];
-  webkitBorderBefore?: WebkitBorderBefore | WebkitBorderBefore[];
-  webkitBorderBeforeColor?: WebkitBorderBeforeColor | WebkitBorderBeforeColor[];
-  webkitBorderBeforeStyle?: WebkitBorderBeforeStyle | WebkitBorderBeforeStyle[];
-  webkitBorderBeforeWidth?: WebkitBorderBeforeWidth | WebkitBorderBeforeWidth[];
-  webkitBoxReflect?: WebkitBoxReflect | WebkitBoxReflect[];
-  webkitMask?: WebkitMask | WebkitMask[];
-  webkitMaskAttachment?: WebkitMaskAttachment | WebkitMaskAttachment[];
-  webkitMaskClip?: WebkitMaskClip | WebkitMaskClip[];
-  webkitMaskComposite?: WebkitMaskComposite | WebkitMaskComposite[];
-  webkitMaskImage?: WebkitMaskImage | WebkitMaskImage[];
-  webkitMaskOrigin?: WebkitMaskOrigin | WebkitMaskOrigin[];
-  webkitMaskPosition?: WebkitMaskPosition | WebkitMaskPosition[];
-  webkitMaskPositionX?: WebkitMaskPositionX | WebkitMaskPositionX[];
-  webkitMaskPositionY?: WebkitMaskPositionY | WebkitMaskPositionY[];
-  webkitMaskRepeat?: WebkitMaskRepeat | WebkitMaskRepeat[];
-  webkitMaskRepeatX?: WebkitMaskRepeatX | WebkitMaskRepeatX[];
-  webkitMaskRepeatY?: WebkitMaskRepeatY | WebkitMaskRepeatY[];
-  webkitTapHighlightColor?: WebkitTapHighlightColor | WebkitTapHighlightColor[];
-  webkitTextFillColor?: WebkitTextFillColor | WebkitTextFillColor[];
-  webkitTextStroke?: WebkitTextStroke<TLength> | WebkitTextStroke<TLength>[];
-  webkitTextStrokeColor?: WebkitTextStrokeColor | WebkitTextStrokeColor[];
-  webkitTextStrokeWidth?: WebkitTextStrokeWidth<TLength> | WebkitTextStrokeWidth<TLength>[];
-  webkitTouchCallout?: WebkitTouchCallout | WebkitTouchCallout[];
+  msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[];
+  mozAppearance?: MozAppearanceProperty | MozAppearanceProperty[];
+  mozBinding?: MozBindingProperty | MozBindingProperty[];
+  mozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
+  mozBorderLeftColors?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[];
+  mozBorderRightColors?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[];
+  mozBorderTopColors?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
+  mozContextProperties?: MozContextPropertiesProperty | MozContextPropertiesProperty[];
+  mozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[];
+  mozForceBrokenImageIcon?: MozForceBrokenImageIconProperty | MozForceBrokenImageIconProperty[];
+  mozImageRegion?: MozImageRegionProperty | MozImageRegionProperty[];
+  mozOrient?: MozOrientProperty | MozOrientProperty[];
+  mozOutlineRadius?: MozOutlineRadiusProperty | MozOutlineRadiusProperty[];
+  mozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty | MozOutlineRadiusBottomleftProperty[];
+  mozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty | MozOutlineRadiusBottomrightProperty[];
+  mozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty | MozOutlineRadiusTopleftProperty[];
+  mozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty | MozOutlineRadiusToprightProperty[];
+  mozStackSizing?: MozStackSizingProperty | MozStackSizingProperty[];
+  mozTextBlink?: MozTextBlinkProperty | MozTextBlinkProperty[];
+  mozUserFocus?: MozUserFocusProperty | MozUserFocusProperty[];
+  mozUserInput?: MozUserInputProperty | MozUserInputProperty[];
+  mozUserModify?: MozUserModifyProperty | MozUserModifyProperty[];
+  mozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[];
+  webkitBorderBefore?: WebkitBorderBeforeProperty | WebkitBorderBeforeProperty[];
+  webkitBorderBeforeColor?: WebkitBorderBeforeColorProperty | WebkitBorderBeforeColorProperty[];
+  webkitBorderBeforeStyle?: WebkitBorderBeforeStyleProperty | WebkitBorderBeforeStyleProperty[];
+  webkitBorderBeforeWidth?: WebkitBorderBeforeWidthProperty | WebkitBorderBeforeWidthProperty[];
+  webkitBoxReflect?: WebkitBoxReflectProperty | WebkitBoxReflectProperty[];
+  webkitMask?: WebkitMaskProperty | WebkitMaskProperty[];
+  webkitMaskAttachment?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
+  webkitMaskClip?: WebkitMaskClipProperty | WebkitMaskClipProperty[];
+  webkitMaskComposite?: WebkitMaskCompositeProperty | WebkitMaskCompositeProperty[];
+  webkitMaskImage?: WebkitMaskImageProperty | WebkitMaskImageProperty[];
+  webkitMaskOrigin?: WebkitMaskOriginProperty | WebkitMaskOriginProperty[];
+  webkitMaskPosition?: WebkitMaskPositionProperty | WebkitMaskPositionProperty[];
+  webkitMaskPositionX?: WebkitMaskPositionXProperty | WebkitMaskPositionXProperty[];
+  webkitMaskPositionY?: WebkitMaskPositionYProperty | WebkitMaskPositionYProperty[];
+  webkitMaskRepeat?: WebkitMaskRepeatProperty | WebkitMaskRepeatProperty[];
+  webkitMaskRepeatX?: WebkitMaskRepeatXProperty | WebkitMaskRepeatXProperty[];
+  webkitMaskRepeatY?: WebkitMaskRepeatYProperty | WebkitMaskRepeatYProperty[];
+  webkitTapHighlightColor?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[];
+  webkitTextFillColor?: WebkitTextFillColorProperty | WebkitTextFillColorProperty[];
+  webkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
+  webkitTextStrokeColor?: WebkitTextStrokeColorProperty | WebkitTextStrokeColorProperty[];
+  webkitTextStrokeWidth?: WebkitTextStrokeWidthProperty<TLength> | WebkitTextStrokeWidthProperty<TLength>[];
+  webkitTouchCallout?: WebkitTouchCalloutProperty | WebkitTouchCalloutProperty[];
 }
 
 export interface Properties<TLength = string> extends StandardProperties<TLength>, VendorProperties<TLength> {}
 
 export interface PropertiesFallback<TLength = string> extends StandardPropertiesFallback<TLength>, VendorPropertiesFallback<TLength> {}
 
-export type PseudosAlias =
+export type Pseudos =
   | ":out-of-range"
   | ":active"
   | ":any-link"
@@ -812,244 +812,244 @@ export type PseudosAlias =
   | "::first-line"
   | "::selection"
   | "::cue";
-type AlignContent = AllAlias | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | "stretch";
+type AlignContentProperty = All | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | "stretch";
 
-type AlignItems = AllAlias | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
+type AlignItemsProperty = All | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
 
-type AlignSelf = AllAlias | "auto" | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
+type AlignSelfProperty = All | "auto" | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
 
-type Animation = AllAlias | string;
+type AnimationProperty = All | string;
 
-type AnimationDelay = AllAlias | string;
+type AnimationDelayProperty = All | string;
 
-type AnimationDirection = AllAlias | SingleAnimationDirectionAlias;
+type AnimationDirectionProperty = All | SingleAnimationDirection;
 
-type AnimationDuration = AllAlias | string;
+type AnimationDurationProperty = All | string;
 
-type AnimationFillMode = AllAlias | SingleAnimationFillModeAlias;
+type AnimationFillModeProperty = All | SingleAnimationFillMode;
 
-type AnimationIterationCount = AllAlias | SingleAnimationIterationCountAlias;
+type AnimationIterationCountProperty = All | SingleAnimationIterationCount;
 
-type AnimationName = AllAlias | string;
+type AnimationNameProperty = All | string;
 
-type AnimationPlayState = AllAlias | SingleAnimationPlayStateAlias;
+type AnimationPlayStateProperty = All | SingleAnimationPlayState;
 
-type AnimationTimingFunction = AllAlias | SingleTimingFunctionAlias;
+type AnimationTimingFunctionProperty = All | SingleTimingFunction;
 
-type Appearance = AllAlias | "auto" | "none";
+type AppearanceProperty = All | "auto" | "none";
 
-type Azimuth = AllAlias | string;
+type AzimuthProperty = All | string;
 
-type BackdropFilter = AllAlias | "none" | string;
+type BackdropFilterProperty = All | "none" | string;
 
-type BackfaceVisibility = AllAlias | "visible" | "hidden";
+type BackfaceVisibilityProperty = All | "visible" | "hidden";
 
-type Background = AllAlias | string;
+type BackgroundProperty = All | string;
 
-type BackgroundAttachment = AllAlias | AttachmentAlias;
+type BackgroundAttachmentProperty = All | Attachment;
 
-type BackgroundBlendMode = AllAlias | BlendModeAlias;
+type BackgroundBlendModeProperty = All | BlendMode;
 
-type BackgroundClip = AllAlias | BoxAlias;
+type BackgroundClipProperty = All | Box;
 
-type BackgroundColor = AllAlias | ColorAlias;
+type BackgroundColorProperty = All | Color;
 
-type BackgroundImage = AllAlias | BgImageAlias;
+type BackgroundImageProperty = All | BgImage;
 
-type BackgroundOrigin = AllAlias | BoxAlias;
+type BackgroundOriginProperty = All | Box;
 
-type BackgroundPosition = AllAlias | string;
+type BackgroundPositionProperty = All | string;
 
-type BackgroundPositionX = AllAlias | string;
+type BackgroundPositionXProperty = All | string;
 
-type BackgroundPositionY = AllAlias | string;
+type BackgroundPositionYProperty = All | string;
 
-type BackgroundRepeat = AllAlias | string;
+type BackgroundRepeatProperty = All | string;
 
-type BackgroundSize = AllAlias | string;
+type BackgroundSizeProperty = All | string;
 
-type BlockSize = AllAlias | string;
+type BlockSizeProperty = All | string;
 
-type Border<TLength> = AllAlias | BrWidthAlias<TLength> | BrStyleAlias | ColorAlias | string;
+type BorderProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderBlockEnd = AllAlias | string;
+type BorderBlockEndProperty = All | string;
 
-type BorderBlockEndColor = AllAlias | string;
+type BorderBlockEndColorProperty = All | string;
 
-type BorderBlockEndStyle = AllAlias | string;
+type BorderBlockEndStyleProperty = All | string;
 
-type BorderBlockEndWidth = AllAlias | string;
+type BorderBlockEndWidthProperty = All | string;
 
-type BorderBlockStart = AllAlias | string;
+type BorderBlockStartProperty = All | string;
 
-type BorderBlockStartColor = AllAlias | string;
+type BorderBlockStartColorProperty = All | string;
 
-type BorderBlockStartStyle = AllAlias | string;
+type BorderBlockStartStyleProperty = All | string;
 
-type BorderBlockStartWidth = AllAlias | string;
+type BorderBlockStartWidthProperty = All | string;
 
-type BorderBottom<TLength> = AllAlias | BrWidthAlias<TLength> | BrStyleAlias | ColorAlias | string;
+type BorderBottomProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderBottomColor = AllAlias | ColorAlias;
+type BorderBottomColorProperty = All | Color;
 
-type BorderBottomLeftRadius<TLength> = AllAlias | LengthPercentageAlias<TLength>;
+type BorderBottomLeftRadiusProperty<TLength> = All | LengthPercentage<TLength>;
 
-type BorderBottomRightRadius<TLength> = AllAlias | LengthPercentageAlias<TLength>;
+type BorderBottomRightRadiusProperty<TLength> = All | LengthPercentage<TLength>;
 
-type BorderBottomStyle = AllAlias | BrStyleAlias;
+type BorderBottomStyleProperty = All | BrStyle;
 
-type BorderBottomWidth<TLength> = AllAlias | BrWidthAlias<TLength>;
+type BorderBottomWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type BorderCollapse = AllAlias | "collapse" | "separate";
+type BorderCollapseProperty = All | "collapse" | "separate";
 
-type BorderColor = AllAlias | ColorAlias;
+type BorderColorProperty = All | Color;
 
-type BorderImage = AllAlias | string;
+type BorderImageProperty = All | string;
 
-type BorderImageOutset = AllAlias | string;
+type BorderImageOutsetProperty = All | string;
 
-type BorderImageRepeat = AllAlias | string;
+type BorderImageRepeatProperty = All | string;
 
-type BorderImageSlice = AllAlias | string;
+type BorderImageSliceProperty = All | string;
 
-type BorderImageSource = AllAlias | "none" | string;
+type BorderImageSourceProperty = All | "none" | string;
 
-type BorderImageWidth = AllAlias | string;
+type BorderImageWidthProperty = All | string;
 
-type BorderInlineEnd = AllAlias | string;
+type BorderInlineEndProperty = All | string;
 
-type BorderInlineEndColor = AllAlias | string;
+type BorderInlineEndColorProperty = All | string;
 
-type BorderInlineEndStyle = AllAlias | string;
+type BorderInlineEndStyleProperty = All | string;
 
-type BorderInlineEndWidth = AllAlias | string;
+type BorderInlineEndWidthProperty = All | string;
 
-type BorderInlineStart = AllAlias | string;
+type BorderInlineStartProperty = All | string;
 
-type BorderInlineStartColor = AllAlias | string;
+type BorderInlineStartColorProperty = All | string;
 
-type BorderInlineStartStyle = AllAlias | string;
+type BorderInlineStartStyleProperty = All | string;
 
-type BorderInlineStartWidth = AllAlias | string;
+type BorderInlineStartWidthProperty = All | string;
 
-type BorderLeft<TLength> = AllAlias | BrWidthAlias<TLength> | BrStyleAlias | ColorAlias | string;
+type BorderLeftProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderLeftColor = AllAlias | ColorAlias;
+type BorderLeftColorProperty = All | Color;
 
-type BorderLeftStyle = AllAlias | BrStyleAlias;
+type BorderLeftStyleProperty = All | BrStyle;
 
-type BorderLeftWidth<TLength> = AllAlias | BrWidthAlias<TLength>;
+type BorderLeftWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type BorderRadius = AllAlias | string;
+type BorderRadiusProperty = All | string;
 
-type BorderRight<TLength> = AllAlias | BrWidthAlias<TLength> | BrStyleAlias | ColorAlias | string;
+type BorderRightProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderRightColor = AllAlias | ColorAlias;
+type BorderRightColorProperty = All | Color;
 
-type BorderRightStyle = AllAlias | BrStyleAlias;
+type BorderRightStyleProperty = All | BrStyle;
 
-type BorderRightWidth<TLength> = AllAlias | BrWidthAlias<TLength>;
+type BorderRightWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type BorderSpacing = AllAlias | string;
+type BorderSpacingProperty = All | string;
 
-type BorderStyle = AllAlias | BrStyleAlias;
+type BorderStyleProperty = All | BrStyle;
 
-type BorderTop<TLength> = AllAlias | BrWidthAlias<TLength> | BrStyleAlias | ColorAlias | string;
+type BorderTopProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderTopColor = AllAlias | ColorAlias;
+type BorderTopColorProperty = All | Color;
 
-type BorderTopLeftRadius<TLength> = AllAlias | LengthPercentageAlias<TLength>;
+type BorderTopLeftRadiusProperty<TLength> = All | LengthPercentage<TLength>;
 
-type BorderTopRightRadius<TLength> = AllAlias | LengthPercentageAlias<TLength>;
+type BorderTopRightRadiusProperty<TLength> = All | LengthPercentage<TLength>;
 
-type BorderTopStyle = AllAlias | BrStyleAlias;
+type BorderTopStyleProperty = All | BrStyle;
 
-type BorderTopWidth<TLength> = AllAlias | BrWidthAlias<TLength>;
+type BorderTopWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type BorderWidth<TLength> = AllAlias | BrWidthAlias<TLength>;
+type BorderWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type Bottom<TLength> = AllAlias | "auto" | string | TLength;
+type BottomProperty<TLength> = All | "auto" | string | TLength;
 
-type BoxAlign = AllAlias | "start" | "center" | "end" | "baseline" | "stretch";
+type BoxAlignProperty = All | "start" | "center" | "end" | "baseline" | "stretch";
 
-type BoxDecorationBreak = AllAlias | "slice" | "clone";
+type BoxDecorationBreakProperty = All | "slice" | "clone";
 
-type BoxDirection = AllAlias | "normal" | "reverse" | "inherit";
+type BoxDirectionProperty = All | "normal" | "reverse" | "inherit";
 
-type BoxFlex = AllAlias | number;
+type BoxFlexProperty = All | number;
 
-type BoxFlexGroup = AllAlias | number;
+type BoxFlexGroupProperty = All | number;
 
-type BoxLines = AllAlias | "single" | "multiple";
+type BoxLinesProperty = All | "single" | "multiple";
 
-type BoxOrdinalGroup = AllAlias | number;
+type BoxOrdinalGroupProperty = All | number;
 
-type BoxOrient = AllAlias | "horizontal" | "vertical" | "inline-axis" | "block-axis" | "inherit";
+type BoxOrientProperty = All | "horizontal" | "vertical" | "inline-axis" | "block-axis" | "inherit";
 
-type BoxPack = AllAlias | "start" | "center" | "end" | "justify";
+type BoxPackProperty = All | "start" | "center" | "end" | "justify";
 
-type BoxShadow = AllAlias | "none" | string;
+type BoxShadowProperty = All | "none" | string;
 
-type BoxSizing = AllAlias | "content-box" | "border-box";
+type BoxSizingProperty = All | "content-box" | "border-box";
 
-type BreakAfter = AllAlias | "region" | "avoid" | "avoid-page" | "page" | "left" | "auto" | "recto" | "verso" | "avoid-column" | "column" | "avoid-region" | "right";
+type BreakAfterProperty = All | "region" | "avoid" | "avoid-page" | "page" | "left" | "auto" | "recto" | "verso" | "avoid-column" | "column" | "avoid-region" | "right";
 
-type BreakBefore = AllAlias | "region" | "avoid" | "avoid-page" | "page" | "left" | "auto" | "recto" | "verso" | "avoid-column" | "column" | "avoid-region" | "right";
+type BreakBeforeProperty = All | "region" | "avoid" | "avoid-page" | "page" | "left" | "auto" | "recto" | "verso" | "avoid-column" | "column" | "avoid-region" | "right";
 
-type BreakInside = AllAlias | "auto" | "avoid" | "avoid-page" | "avoid-column" | "avoid-region";
+type BreakInsideProperty = All | "auto" | "avoid" | "avoid-page" | "avoid-column" | "avoid-region";
 
-type CaptionSide = AllAlias | "top" | "bottom" | "block-start" | "block-end" | "inline-start" | "inline-end";
+type CaptionSideProperty = All | "top" | "bottom" | "block-start" | "block-end" | "inline-start" | "inline-end";
 
-type CaretColor = AllAlias | ColorAlias | "auto";
+type CaretColorProperty = All | Color | "auto";
 
-type Clear = AllAlias | "none" | "left" | "right" | "both" | "inline-start" | "inline-end";
+type ClearProperty = All | "none" | "left" | "right" | "both" | "inline-start" | "inline-end";
 
-type Clip = AllAlias | "auto" | string;
+type ClipProperty = All | "auto" | string;
 
-type ClipPath = AllAlias | string;
+type ClipPathProperty = All | string;
 
-type Color = AllAlias | ColorAlias;
+type ColorProperty = All | Color;
 
-type ColumnCount = AllAlias | "auto" | number;
+type ColumnCountProperty = All | "auto" | number;
 
-type ColumnFill = AllAlias | "auto" | "balance";
+type ColumnFillProperty = All | "auto" | "balance";
 
-type ColumnGap<TLength> = AllAlias | "normal" | TLength;
+type ColumnGapProperty<TLength> = All | "normal" | TLength;
 
-type ColumnRule = AllAlias | string;
+type ColumnRuleProperty = All | string;
 
-type ColumnRuleColor = AllAlias | ColorAlias;
+type ColumnRuleColorProperty = All | Color;
 
-type ColumnRuleStyle = AllAlias | BrStyleAlias;
+type ColumnRuleStyleProperty = All | BrStyle;
 
-type ColumnRuleWidth<TLength> = AllAlias | BrWidthAlias<TLength>;
+type ColumnRuleWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type ColumnSpan = AllAlias | "none" | "all";
+type ColumnSpanProperty = All | "none" | "all";
 
-type ColumnWidth<TLength> = AllAlias | "auto" | TLength;
+type ColumnWidthProperty<TLength> = All | "auto" | TLength;
 
-type Columns = AllAlias | string;
+type ColumnsProperty = All | string;
 
-type Contain = AllAlias | string;
+type ContainProperty = All | string;
 
-type Content = AllAlias | string;
+type ContentProperty = All | string;
 
-type CounterIncrement = AllAlias | string;
+type CounterIncrementProperty = All | string;
 
-type CounterReset = AllAlias | string;
+type CounterResetProperty = All | string;
 
-type Cursor = AllAlias | string;
+type CursorProperty = All | string;
 
-type Direction = AllAlias | "ltr" | "rtl";
+type DirectionProperty = All | "ltr" | "rtl";
 
-type Display = AllAlias | string;
+type DisplayProperty = All | string;
 
-type DisplayInside = AllAlias | "auto" | "block" | "table" | "flex" | "grid" | "ruby";
+type DisplayInsideProperty = All | "auto" | "block" | "table" | "flex" | "grid" | "ruby";
 
-type DisplayList = AllAlias | "none" | "list-item";
+type DisplayListProperty = All | "none" | "list-item";
 
-type DisplayOutside =
-  | AllAlias
+type DisplayOutsideProperty =
+  | All
   | "ruby-text-container"
   | "inline-level"
   | "run-in"
@@ -1068,44 +1068,44 @@ type DisplayOutside =
   | "ruby-base-container"
   | "table-row";
 
-type EmptyCells = AllAlias | "show" | "hide";
+type EmptyCellsProperty = All | "show" | "hide";
 
-type Filter = AllAlias | "none" | string;
+type FilterProperty = All | "none" | string;
 
-type Flex = AllAlias | string;
+type FlexProperty = All | string;
 
-type FlexBasis = AllAlias | "content" | string;
+type FlexBasisProperty = All | "content" | string;
 
-type FlexDirection = AllAlias | "row" | "row-reverse" | "column" | "column-reverse";
+type FlexDirectionProperty = All | "row" | "row-reverse" | "column" | "column-reverse";
 
-type FlexFlow = AllAlias | string;
+type FlexFlowProperty = All | string;
 
-type FlexGrow = AllAlias | number;
+type FlexGrowProperty = All | number;
 
-type FlexShrink = AllAlias | number;
+type FlexShrinkProperty = All | number;
 
-type FlexWrap = AllAlias | "nowrap" | "wrap" | "wrap-reverse";
+type FlexWrapProperty = All | "nowrap" | "wrap" | "wrap-reverse";
 
-type Float = AllAlias | "left" | "right" | "none" | "inline-start" | "inline-end";
+type FloatProperty = All | "left" | "right" | "none" | "inline-start" | "inline-end";
 
-type Font = AllAlias | string;
+type FontProperty = All | string;
 
-type FontFamily = AllAlias | string;
+type FontFamilyProperty = All | string;
 
-type FontFeatureSettings = AllAlias | "normal" | string;
+type FontFeatureSettingsProperty = All | "normal" | string;
 
-type FontKerning = AllAlias | "auto" | "normal" | "none";
+type FontKerningProperty = All | "auto" | "normal" | "none";
 
-type FontLanguageOverride = AllAlias | "normal" | string;
+type FontLanguageOverrideProperty = All | "normal" | string;
 
-type FontVariationSettings = AllAlias | string;
+type FontVariationSettingsProperty = All | string;
 
-type FontSize<TLength> = AllAlias | AbsoluteSizeAlias | RelativeSizeAlias | LengthPercentageAlias<TLength>;
+type FontSizeProperty<TLength> = All | AbsoluteSize | RelativeSize | LengthPercentage<TLength>;
 
-type FontSizeAdjust = AllAlias | "none" | number;
+type FontSizeAdjustProperty = All | "none" | number;
 
-type FontStretch =
-  | AllAlias
+type FontStretchProperty =
+  | All
   | "normal"
   | "ultra-condensed"
   | "extra-condensed"
@@ -1116,372 +1116,372 @@ type FontStretch =
   | "extra-expanded"
   | "ultra-expanded";
 
-type FontStyle = AllAlias | "normal" | "italic" | "oblique";
+type FontStyleProperty = All | "normal" | "italic" | "oblique";
 
-type FontSynthesis = AllAlias | string;
+type FontSynthesisProperty = All | string;
 
-type FontVariant = AllAlias | string;
+type FontVariantProperty = All | string;
 
-type FontVariantAlternates = AllAlias | string;
+type FontVariantAlternatesProperty = All | string;
 
-type FontVariantCaps = AllAlias | "normal" | "small-caps" | "all-small-caps" | "petite-caps" | "all-petite-caps" | "unicase" | "titling-caps";
+type FontVariantCapsProperty = All | "normal" | "small-caps" | "all-small-caps" | "petite-caps" | "all-petite-caps" | "unicase" | "titling-caps";
 
-type FontVariantEastAsian = AllAlias | string;
+type FontVariantEastAsianProperty = All | string;
 
-type FontVariantLigatures = AllAlias | string;
+type FontVariantLigaturesProperty = All | string;
 
-type FontVariantNumeric = AllAlias | string;
+type FontVariantNumericProperty = All | string;
 
-type FontVariantPosition = AllAlias | "normal" | "sub" | "super";
+type FontVariantPositionProperty = All | "normal" | "sub" | "super";
 
-type FontWeight = AllAlias | "900" | "bold" | "bolder" | "lighter" | "100" | "200" | "normal" | "400" | "500" | "600" | "700" | "800" | "300";
+type FontWeightProperty = All | "900" | "bold" | "bolder" | "lighter" | "100" | "200" | "normal" | "400" | "500" | "600" | "700" | "800" | "300";
 
-type Grid = AllAlias | string;
+type GridProperty = All | string;
 
-type GridArea = AllAlias | string;
+type GridAreaProperty = All | string;
 
-type GridAutoColumns = AllAlias | string;
+type GridAutoColumnsProperty = All | string;
 
-type GridAutoFlow = AllAlias | string;
+type GridAutoFlowProperty = All | string;
 
-type GridAutoRows = AllAlias | string;
+type GridAutoRowsProperty = All | string;
 
-type GridColumn = AllAlias | string;
+type GridColumnProperty = All | string;
 
-type GridColumnEnd = AllAlias | string;
+type GridColumnEndProperty = All | string;
 
-type GridColumnGap<TLength> = AllAlias | LengthPercentageAlias<TLength>;
+type GridColumnGapProperty<TLength> = All | LengthPercentage<TLength>;
 
-type GridColumnStart = AllAlias | string;
+type GridColumnStartProperty = All | string;
 
-type GridGap = AllAlias | string;
+type GridGapProperty = All | string;
 
-type GridRow = AllAlias | string;
+type GridRowProperty = All | string;
 
-type GridRowEnd = AllAlias | string;
+type GridRowEndProperty = All | string;
 
-type GridRowGap<TLength> = AllAlias | LengthPercentageAlias<TLength>;
+type GridRowGapProperty<TLength> = All | LengthPercentage<TLength>;
 
-type GridRowStart = AllAlias | string;
+type GridRowStartProperty = All | string;
 
-type GridTemplate = AllAlias | string;
+type GridTemplateProperty = All | string;
 
-type GridTemplateAreas = AllAlias | "none" | string;
+type GridTemplateAreasProperty = All | "none" | string;
 
-type GridTemplateColumns = AllAlias | "none" | string;
+type GridTemplateColumnsProperty = All | "none" | string;
 
-type GridTemplateRows = AllAlias | "none" | string;
+type GridTemplateRowsProperty = All | "none" | string;
 
-type Height = AllAlias | string;
+type HeightProperty = All | string;
 
-type Hyphens = AllAlias | "none" | "manual" | "auto";
+type HyphensProperty = All | "none" | "manual" | "auto";
 
-type ImageOrientation = AllAlias | string;
+type ImageOrientationProperty = All | string;
 
-type ImageRendering = AllAlias | "auto" | "crisp-edges" | "pixelated";
+type ImageRenderingProperty = All | "auto" | "crisp-edges" | "pixelated";
 
-type ImageResolution = AllAlias | string;
+type ImageResolutionProperty = All | string;
 
-type ImeMode = AllAlias | "auto" | "normal" | "active" | "inactive" | "disabled";
+type ImeModeProperty = All | "auto" | "normal" | "active" | "inactive" | "disabled";
 
-type InitialLetter = AllAlias | string;
+type InitialLetterProperty = All | string;
 
-type InitialLetterAlign = AllAlias | string;
+type InitialLetterAlignProperty = All | string;
 
-type InlineSize = AllAlias | string;
+type InlineSizeProperty = All | string;
 
-type Isolation = AllAlias | "auto" | "isolate";
+type IsolationProperty = All | "auto" | "isolate";
 
-type JustifyContent = AllAlias | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
+type JustifyContentProperty = All | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
 
-type Left<TLength> = AllAlias | "auto" | string | TLength;
+type LeftProperty<TLength> = All | "auto" | string | TLength;
 
-type LetterSpacing<TLength> = AllAlias | "normal" | TLength;
+type LetterSpacingProperty<TLength> = All | "normal" | TLength;
 
-type LineBreak = AllAlias | "auto" | "loose" | "normal" | "strict";
+type LineBreakProperty = All | "auto" | "loose" | "normal" | "strict";
 
-type LineHeight<TLength> = AllAlias | "normal" | string | number | TLength;
+type LineHeightProperty<TLength> = All | "normal" | string | number | TLength;
 
-type ListStyle = AllAlias | string;
+type ListStyleProperty = All | string;
 
-type ListStyleImage = AllAlias | "none" | string;
+type ListStyleImageProperty = All | "none" | string;
 
-type ListStylePosition = AllAlias | "inside" | "outside";
+type ListStylePositionProperty = All | "inside" | "outside";
 
-type ListStyleType = AllAlias | "none" | string;
+type ListStyleTypeProperty = All | "none" | string;
 
-type Margin = AllAlias | string;
+type MarginProperty = All | string;
 
-type MarginBlockEnd = AllAlias | string;
+type MarginBlockEndProperty = All | string;
 
-type MarginBlockStart = AllAlias | string;
+type MarginBlockStartProperty = All | string;
 
-type MarginBottom<TLength> = AllAlias | "auto" | string | TLength;
+type MarginBottomProperty<TLength> = All | "auto" | string | TLength;
 
-type MarginInlineEnd = AllAlias | string;
+type MarginInlineEndProperty = All | string;
 
-type MarginInlineStart = AllAlias | string;
+type MarginInlineStartProperty = All | string;
 
-type MarginLeft<TLength> = AllAlias | "auto" | string | TLength;
+type MarginLeftProperty<TLength> = All | "auto" | string | TLength;
 
-type MarginRight<TLength> = AllAlias | "auto" | string | TLength;
+type MarginRightProperty<TLength> = All | "auto" | string | TLength;
 
-type MarginTop<TLength> = AllAlias | "auto" | string | TLength;
+type MarginTopProperty<TLength> = All | "auto" | string | TLength;
 
-type MarkerOffset<TLength> = AllAlias | "auto" | TLength;
+type MarkerOffsetProperty<TLength> = All | "auto" | TLength;
 
-type Mask = AllAlias | string;
+type MaskProperty = All | string;
 
-type MaskClip = AllAlias | string;
+type MaskClipProperty = All | string;
 
-type MaskComposite = AllAlias | CompositingOperatorAlias;
+type MaskCompositeProperty = All | CompositingOperator;
 
-type MaskImage = AllAlias | MaskReferenceAlias;
+type MaskImageProperty = All | MaskReference;
 
-type MaskMode = AllAlias | MaskingModeAlias;
+type MaskModeProperty = All | MaskingMode;
 
-type MaskOrigin = AllAlias | GeometryBoxAlias;
+type MaskOriginProperty = All | GeometryBox;
 
-type MaskPosition = AllAlias | string;
+type MaskPositionProperty = All | string;
 
-type MaskRepeat = AllAlias | string;
+type MaskRepeatProperty = All | string;
 
-type MaskSize = AllAlias | string;
+type MaskSizeProperty = All | string;
 
-type MaskType = AllAlias | "luminance" | "alpha";
+type MaskTypeProperty = All | "luminance" | "alpha";
 
-type MaxBlockSize = AllAlias | string;
+type MaxBlockSizeProperty = All | string;
 
-type MaxHeight<TLength> = AllAlias | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
+type MaxHeightProperty<TLength> = All | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
 
-type MaxInlineSize = AllAlias | string;
+type MaxInlineSizeProperty = All | string;
 
-type MaxWidth<TLength> = AllAlias | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
+type MaxWidthProperty<TLength> = All | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
 
-type MinBlockSize = AllAlias | string;
+type MinBlockSizeProperty = All | string;
 
-type MinHeight<TLength> = AllAlias | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
+type MinHeightProperty<TLength> = All | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
 
-type MinInlineSize = AllAlias | string;
+type MinInlineSizeProperty = All | string;
 
-type MinWidth<TLength> = AllAlias | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
+type MinWidthProperty<TLength> = All | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string | TLength;
 
-type MixBlendMode = AllAlias | BlendModeAlias;
+type MixBlendModeProperty = All | BlendMode;
 
-type ObjectFit = AllAlias | "fill" | "contain" | "cover" | "none" | "scale-down";
+type ObjectFitProperty = All | "fill" | "contain" | "cover" | "none" | "scale-down";
 
-type ObjectPosition = AllAlias | string;
+type ObjectPositionProperty = All | string;
 
-type Offset = AllAlias | string;
+type OffsetProperty = All | string;
 
-type OffsetAnchor = AllAlias | "auto" | string;
+type OffsetAnchorProperty = All | "auto" | string;
 
-type OffsetBlockEnd = AllAlias | string;
+type OffsetBlockEndProperty = All | string;
 
-type OffsetBlockStart = AllAlias | string;
+type OffsetBlockStartProperty = All | string;
 
-type OffsetInlineEnd = AllAlias | string;
+type OffsetInlineEndProperty = All | string;
 
-type OffsetInlineStart = AllAlias | string;
+type OffsetInlineStartProperty = All | string;
 
-type OffsetDistance<TLength> = AllAlias | LengthPercentageAlias<TLength>;
+type OffsetDistanceProperty<TLength> = All | LengthPercentage<TLength>;
 
-type OffsetPath = AllAlias | string;
+type OffsetPathProperty = All | string;
 
-type OffsetPosition = AllAlias | "auto" | string;
+type OffsetPositionProperty = All | "auto" | string;
 
-type OffsetRotate = AllAlias | string;
+type OffsetRotateProperty = All | string;
 
-type Opacity = AllAlias | number;
+type OpacityProperty = All | number;
 
-type Order = AllAlias | number;
+type OrderProperty = All | number;
 
-type Orphans = AllAlias | number;
+type OrphansProperty = All | number;
 
-type Outline = AllAlias | string;
+type OutlineProperty = All | string;
 
-type OutlineColor = AllAlias | ColorAlias | "invert";
+type OutlineColorProperty = All | Color | "invert";
 
-type OutlineOffset<TLength> = AllAlias | TLength;
+type OutlineOffsetProperty<TLength> = All | TLength;
 
-type OutlineStyle = AllAlias | BrStyleAlias | "auto";
+type OutlineStyleProperty = All | BrStyle | "auto";
 
-type OutlineWidth<TLength> = AllAlias | BrWidthAlias<TLength>;
+type OutlineWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type Overflow = AllAlias | "visible" | "hidden" | "scroll" | "auto";
+type OverflowProperty = All | "visible" | "hidden" | "scroll" | "auto";
 
-type OverflowClipBox = AllAlias | "padding-box" | "content-box";
+type OverflowClipBoxProperty = All | "padding-box" | "content-box";
 
-type OverflowWrap = AllAlias | "normal" | "break-word";
+type OverflowWrapProperty = All | "normal" | "break-word";
 
-type OverflowX = AllAlias | "visible" | "hidden" | "scroll" | "auto";
+type OverflowXProperty = All | "visible" | "hidden" | "scroll" | "auto";
 
-type OverflowY = AllAlias | "visible" | "hidden" | "scroll" | "auto";
+type OverflowYProperty = All | "visible" | "hidden" | "scroll" | "auto";
 
-type Padding = AllAlias | string;
+type PaddingProperty = All | string;
 
-type PaddingBlockEnd = AllAlias | string;
+type PaddingBlockEndProperty = All | string;
 
-type PaddingBlockStart = AllAlias | string;
+type PaddingBlockStartProperty = All | string;
 
-type PaddingBottom<TLength> = AllAlias | string | TLength;
+type PaddingBottomProperty<TLength> = All | string | TLength;
 
-type PaddingInlineEnd = AllAlias | string;
+type PaddingInlineEndProperty = All | string;
 
-type PaddingInlineStart = AllAlias | string;
+type PaddingInlineStartProperty = All | string;
 
-type PaddingLeft<TLength> = AllAlias | string | TLength;
+type PaddingLeftProperty<TLength> = All | string | TLength;
 
-type PaddingRight<TLength> = AllAlias | string | TLength;
+type PaddingRightProperty<TLength> = All | string | TLength;
 
-type PaddingTop<TLength> = AllAlias | string | TLength;
+type PaddingTopProperty<TLength> = All | string | TLength;
 
-type PageBreakAfter = AllAlias | "auto" | "always" | "avoid" | "left" | "right";
+type PageBreakAfterProperty = All | "auto" | "always" | "avoid" | "left" | "right";
 
-type PageBreakBefore = AllAlias | "auto" | "always" | "avoid" | "left" | "right";
+type PageBreakBeforeProperty = All | "auto" | "always" | "avoid" | "left" | "right";
 
-type PageBreakInside = AllAlias | "auto" | "avoid";
+type PageBreakInsideProperty = All | "auto" | "avoid";
 
-type Perspective<TLength> = AllAlias | "none" | TLength;
+type PerspectiveProperty<TLength> = All | "none" | TLength;
 
-type PerspectiveOrigin = AllAlias | string;
+type PerspectiveOriginProperty = All | string;
 
-type PointerEvents = AllAlias | "inherit" | "none" | "visiblePainted" | "visibleFill" | "visibleStroke" | "auto" | "painted" | "fill" | "stroke" | "all" | "visible";
+type PointerEventsProperty = All | "inherit" | "none" | "visiblePainted" | "visibleFill" | "visibleStroke" | "auto" | "painted" | "fill" | "stroke" | "all" | "visible";
 
-type Position = AllAlias | "static" | "relative" | "absolute" | "sticky" | "fixed";
+type PositionProperty = All | "static" | "relative" | "absolute" | "sticky" | "fixed";
 
-type Quotes = AllAlias | string;
+type QuotesProperty = All | string;
 
-type Resize = AllAlias | "none" | "both" | "horizontal" | "vertical";
+type ResizeProperty = All | "none" | "both" | "horizontal" | "vertical";
 
-type Right<TLength> = AllAlias | "auto" | string | TLength;
+type RightProperty<TLength> = All | "auto" | string | TLength;
 
-type RubyAlign = AllAlias | "start" | "center" | "space-between" | "space-around";
+type RubyAlignProperty = All | "start" | "center" | "space-between" | "space-around";
 
-type RubyMerge = AllAlias | "separate" | "collapse" | "auto";
+type RubyMergeProperty = All | "separate" | "collapse" | "auto";
 
-type RubyPosition = AllAlias | "over" | "under" | "inter-character";
+type RubyPositionProperty = All | "over" | "under" | "inter-character";
 
-type ScrollBehavior = AllAlias | "auto" | "smooth";
+type ScrollBehaviorProperty = All | "auto" | "smooth";
 
-type ScrollSnapCoordinate = AllAlias | "none" | string;
+type ScrollSnapCoordinateProperty = All | "none" | string;
 
-type ScrollSnapDestination = AllAlias | string;
+type ScrollSnapDestinationProperty = All | string;
 
-type ScrollSnapPointsX = AllAlias | "none" | string;
+type ScrollSnapPointsXProperty = All | "none" | string;
 
-type ScrollSnapPointsY = AllAlias | "none" | string;
+type ScrollSnapPointsYProperty = All | "none" | string;
 
-type ScrollSnapType = AllAlias | "none" | "mandatory" | "proximity";
+type ScrollSnapTypeProperty = All | "none" | "mandatory" | "proximity";
 
-type ScrollSnapTypeX = AllAlias | "none" | "mandatory" | "proximity";
+type ScrollSnapTypeXProperty = All | "none" | "mandatory" | "proximity";
 
-type ScrollSnapTypeY = AllAlias | "none" | "mandatory" | "proximity";
+type ScrollSnapTypeYProperty = All | "none" | "mandatory" | "proximity";
 
-type ShapeImageThreshold = AllAlias | number;
+type ShapeImageThresholdProperty = All | number;
 
-type ShapeMargin<TLength> = AllAlias | LengthPercentageAlias<TLength>;
+type ShapeMarginProperty<TLength> = All | LengthPercentage<TLength>;
 
-type ShapeOutside = AllAlias | ShapeBoxAlias | "none" | string;
+type ShapeOutsideProperty = All | ShapeBox | "none" | string;
 
-type TabSize<TLength> = AllAlias | number | TLength;
+type TabSizeProperty<TLength> = All | number | TLength;
 
-type TableLayout = AllAlias | "auto" | "fixed";
+type TableLayoutProperty = All | "auto" | "fixed";
 
-type TextAlign = AllAlias | "start" | "end" | "left" | "right" | "center" | "justify" | "match-parent";
+type TextAlignProperty = All | "start" | "end" | "left" | "right" | "center" | "justify" | "match-parent";
 
-type TextAlignLast = AllAlias | "auto" | "start" | "end" | "left" | "right" | "center" | "justify";
+type TextAlignLastProperty = All | "auto" | "start" | "end" | "left" | "right" | "center" | "justify";
 
-type TextCombineUpright = AllAlias | string;
+type TextCombineUprightProperty = All | string;
 
-type TextDecoration = AllAlias | string;
+type TextDecorationProperty = All | string;
 
-type TextDecorationColor = AllAlias | ColorAlias;
+type TextDecorationColorProperty = All | Color;
 
-type TextDecorationLine = AllAlias | string;
+type TextDecorationLineProperty = All | string;
 
-type TextDecorationSkip = AllAlias | string;
+type TextDecorationSkipProperty = All | string;
 
-type TextDecorationStyle = AllAlias | "solid" | "double" | "dotted" | "dashed" | "wavy";
+type TextDecorationStyleProperty = All | "solid" | "double" | "dotted" | "dashed" | "wavy";
 
-type TextEmphasis = AllAlias | string;
+type TextEmphasisProperty = All | string;
 
-type TextEmphasisColor = AllAlias | ColorAlias;
+type TextEmphasisColorProperty = All | Color;
 
-type TextEmphasisPosition = AllAlias | string;
+type TextEmphasisPositionProperty = All | string;
 
-type TextEmphasisStyle = AllAlias | string;
+type TextEmphasisStyleProperty = All | string;
 
-type TextIndent = AllAlias | string;
+type TextIndentProperty = All | string;
 
-type TextJustify = AllAlias | "auto" | "inter-character" | "inter-word" | "none";
+type TextJustifyProperty = All | "auto" | "inter-character" | "inter-word" | "none";
 
-type TextOrientation = AllAlias | "mixed" | "upright" | "sideways";
+type TextOrientationProperty = All | "mixed" | "upright" | "sideways";
 
-type TextOverflow = AllAlias | string;
+type TextOverflowProperty = All | string;
 
-type TextRendering = AllAlias | "auto" | "optimizeSpeed" | "optimizeLegibility" | "geometricPrecision";
+type TextRenderingProperty = All | "auto" | "optimizeSpeed" | "optimizeLegibility" | "geometricPrecision";
 
-type TextShadow = AllAlias | "none" | string;
+type TextShadowProperty = All | "none" | string;
 
-type TextSizeAdjust = AllAlias | "none" | "auto" | string;
+type TextSizeAdjustProperty = All | "none" | "auto" | string;
 
-type TextTransform = AllAlias | "none" | "capitalize" | "uppercase" | "lowercase" | "full-width";
+type TextTransformProperty = All | "none" | "capitalize" | "uppercase" | "lowercase" | "full-width";
 
-type TextUnderlinePosition = AllAlias | string;
+type TextUnderlinePositionProperty = All | string;
 
-type Top<TLength> = AllAlias | "auto" | string | TLength;
+type TopProperty<TLength> = All | "auto" | string | TLength;
 
-type TouchAction = AllAlias | string;
+type TouchActionProperty = All | string;
 
-type Transform = AllAlias | "none" | string;
+type TransformProperty = All | "none" | string;
 
-type TransformBox = AllAlias | "border-box" | "fill-box" | "view-box";
+type TransformBoxProperty = All | "border-box" | "fill-box" | "view-box";
 
-type TransformOrigin = AllAlias | string;
+type TransformOriginProperty = All | string;
 
-type TransformStyle = AllAlias | "flat" | "preserve-3d";
+type TransformStyleProperty = All | "flat" | "preserve-3d";
 
-type Transition = AllAlias | string;
+type TransitionProperty = All | string;
 
-type TransitionDelay = AllAlias | string;
+type TransitionDelayProperty = All | string;
 
-type TransitionDuration = AllAlias | string;
+type TransitionDurationProperty = All | string;
 
-type TransitionProperty = AllAlias | SingleTransitionPropertyAlias | "none";
+type TransitionPropertyProperty = All | SingleTransitionProperty | "none";
 
-type TransitionTimingFunction = AllAlias | SingleTransitionTimingFunctionAlias;
+type TransitionTimingFunctionProperty = All | SingleTransitionTimingFunction;
 
-type UnicodeBidi = AllAlias | "normal" | "embed" | "isolate" | "bidi-override" | "isolate-override" | "plaintext";
+type UnicodeBidiProperty = All | "normal" | "embed" | "isolate" | "bidi-override" | "isolate-override" | "plaintext";
 
-type UserSelect = AllAlias | "auto" | "text" | "none" | "contain" | "all";
+type UserSelectProperty = All | "auto" | "text" | "none" | "contain" | "all";
 
-type VerticalAlign<TLength> = AllAlias | "text-bottom" | "sub" | "super" | "text-top" | "baseline" | "middle" | "top" | "bottom" | string | TLength;
+type VerticalAlignProperty<TLength> = All | "text-bottom" | "sub" | "super" | "text-top" | "baseline" | "middle" | "top" | "bottom" | string | TLength;
 
-type Visibility = AllAlias | "visible" | "hidden" | "collapse";
+type VisibilityProperty = All | "visible" | "hidden" | "collapse";
 
-type WhiteSpace = AllAlias | "normal" | "pre" | "nowrap" | "pre-wrap" | "pre-line";
+type WhiteSpaceProperty = All | "normal" | "pre" | "nowrap" | "pre-wrap" | "pre-line";
 
-type Widows = AllAlias | number;
+type WidowsProperty = All | number;
 
-type Width = AllAlias | string;
+type WidthProperty = All | string;
 
-type WillChange = AllAlias | AnimateableFeatureAlias | "auto";
+type WillChangeProperty = All | AnimateableFeature | "auto";
 
-type WordBreak = AllAlias | "normal" | "break-all" | "keep-all";
+type WordBreakProperty = All | "normal" | "break-all" | "keep-all";
 
-type WordSpacing<TLength> = AllAlias | LengthPercentageAlias<TLength> | "normal";
+type WordSpacingProperty<TLength> = All | LengthPercentage<TLength> | "normal";
 
-type WordWrap = AllAlias | "normal" | "break-word";
+type WordWrapProperty = All | "normal" | "break-word";
 
-type WritingMode = AllAlias | "horizontal-tb" | "vertical-rl" | "vertical-lr" | "sideways-rl" | "sideways-lr";
+type WritingModeProperty = All | "horizontal-tb" | "vertical-rl" | "vertical-lr" | "sideways-rl" | "sideways-lr";
 
-type ZIndex = AllAlias | "auto" | number;
+type ZIndexProperty = All | "auto" | number;
 
-type MsOverflowStyle = AllAlias | "auto" | "none" | "scrollbar" | "-ms-autohiding-scrollbar";
+type MsOverflowStyleProperty = All | "auto" | "none" | "scrollbar" | "-ms-autohiding-scrollbar";
 
-type MozAppearance =
-  | AllAlias
+type MozAppearanceProperty =
+  | All
   | "-moz-window-titlebar-maximized"
   | "button"
   | "button-arrow-down"
@@ -1593,111 +1593,111 @@ type MozAppearance =
   | "-moz-window-titlebar"
   | "scrollbarbutton-up";
 
-type MozBinding = AllAlias | "none" | string;
+type MozBindingProperty = All | "none" | string;
 
-type MozBorderBottomColors = AllAlias | string;
+type MozBorderBottomColorsProperty = All | string;
 
-type MozBorderLeftColors = AllAlias | string;
+type MozBorderLeftColorsProperty = All | string;
 
-type MozBorderRightColors = AllAlias | string;
+type MozBorderRightColorsProperty = All | string;
 
-type MozBorderTopColors = AllAlias | string;
+type MozBorderTopColorsProperty = All | string;
 
-type MozContextProperties = AllAlias | string;
+type MozContextPropertiesProperty = All | string;
 
-type MozFloatEdge = AllAlias | "border-box" | "content-box" | "margin-box" | "padding-box";
+type MozFloatEdgeProperty = All | "border-box" | "content-box" | "margin-box" | "padding-box";
 
-type MozForceBrokenImageIcon = AllAlias | number;
+type MozForceBrokenImageIconProperty = All | number;
 
-type MozImageRegion = AllAlias | "auto" | string;
+type MozImageRegionProperty = All | "auto" | string;
 
-type MozOrient = AllAlias | "inline" | "block" | "horizontal" | "vertical";
+type MozOrientProperty = All | "inline" | "block" | "horizontal" | "vertical";
 
-type MozOutlineRadius = AllAlias | string;
+type MozOutlineRadiusProperty = All | string;
 
-type MozOutlineRadiusBottomleft = AllAlias | string;
+type MozOutlineRadiusBottomleftProperty = All | string;
 
-type MozOutlineRadiusBottomright = AllAlias | string;
+type MozOutlineRadiusBottomrightProperty = All | string;
 
-type MozOutlineRadiusTopleft = AllAlias | string;
+type MozOutlineRadiusTopleftProperty = All | string;
 
-type MozOutlineRadiusTopright = AllAlias | string;
+type MozOutlineRadiusToprightProperty = All | string;
 
-type MozStackSizing = AllAlias | "ignore" | "stretch-to-fit";
+type MozStackSizingProperty = All | "ignore" | "stretch-to-fit";
 
-type MozTextBlink = AllAlias | "none" | "blink";
+type MozTextBlinkProperty = All | "none" | "blink";
 
-type MozUserFocus = AllAlias | "ignore" | "normal" | "select-after" | "select-before" | "select-menu" | "select-same" | "select-all" | "none";
+type MozUserFocusProperty = All | "ignore" | "normal" | "select-after" | "select-before" | "select-menu" | "select-same" | "select-all" | "none";
 
-type MozUserInput = AllAlias | "auto" | "none" | "enabled" | "disabled";
+type MozUserInputProperty = All | "auto" | "none" | "enabled" | "disabled";
 
-type MozUserModify = AllAlias | "read-only" | "read-write" | "write-only";
+type MozUserModifyProperty = All | "read-only" | "read-write" | "write-only";
 
-type MozWindowShadow = AllAlias | "default" | "menu" | "tooltip" | "sheet" | "none";
+type MozWindowShadowProperty = All | "default" | "menu" | "tooltip" | "sheet" | "none";
 
-type WebkitBorderBefore = AllAlias | string;
+type WebkitBorderBeforeProperty = All | string;
 
-type WebkitBorderBeforeColor = AllAlias | string;
+type WebkitBorderBeforeColorProperty = All | string;
 
-type WebkitBorderBeforeStyle = AllAlias | string;
+type WebkitBorderBeforeStyleProperty = All | string;
 
-type WebkitBorderBeforeWidth = AllAlias | string;
+type WebkitBorderBeforeWidthProperty = All | string;
 
-type WebkitBoxReflect = AllAlias | string;
+type WebkitBoxReflectProperty = All | string;
 
-type WebkitMask = AllAlias | string;
+type WebkitMaskProperty = All | string;
 
-type WebkitMaskAttachment = AllAlias | string;
+type WebkitMaskAttachmentProperty = All | string;
 
-type WebkitMaskClip = AllAlias | string;
+type WebkitMaskClipProperty = All | string;
 
-type WebkitMaskComposite = AllAlias | string;
+type WebkitMaskCompositeProperty = All | string;
 
-type WebkitMaskImage = AllAlias | string;
+type WebkitMaskImageProperty = All | string;
 
-type WebkitMaskOrigin = AllAlias | string;
+type WebkitMaskOriginProperty = All | string;
 
-type WebkitMaskPosition = AllAlias | string;
+type WebkitMaskPositionProperty = All | string;
 
-type WebkitMaskPositionX = AllAlias | string;
+type WebkitMaskPositionXProperty = All | string;
 
-type WebkitMaskPositionY = AllAlias | string;
+type WebkitMaskPositionYProperty = All | string;
 
-type WebkitMaskRepeat = AllAlias | string;
+type WebkitMaskRepeatProperty = All | string;
 
-type WebkitMaskRepeatX = AllAlias | "repeat" | "no-repeat" | "space" | "round";
+type WebkitMaskRepeatXProperty = All | "repeat" | "no-repeat" | "space" | "round";
 
-type WebkitMaskRepeatY = AllAlias | "repeat" | "no-repeat" | "space" | "round";
+type WebkitMaskRepeatYProperty = All | "repeat" | "no-repeat" | "space" | "round";
 
-type WebkitTapHighlightColor = AllAlias | ColorAlias;
+type WebkitTapHighlightColorProperty = All | Color;
 
-type WebkitTextFillColor = AllAlias | ColorAlias;
+type WebkitTextFillColorProperty = All | Color;
 
-type WebkitTextStroke<TLength> = AllAlias | ColorAlias | string | TLength;
+type WebkitTextStrokeProperty<TLength> = All | Color | string | TLength;
 
-type WebkitTextStrokeColor = AllAlias | ColorAlias;
+type WebkitTextStrokeColorProperty = All | Color;
 
-type WebkitTextStrokeWidth<TLength> = AllAlias | TLength;
+type WebkitTextStrokeWidthProperty<TLength> = All | TLength;
 
-type WebkitTouchCallout = AllAlias | "default" | "none";
+type WebkitTouchCalloutProperty = All | "default" | "none";
 
-type AllAlias = "initial" | "inherit" | "unset";
+type All = "initial" | "inherit" | "unset";
 
-type SingleAnimationDirectionAlias = "normal" | "reverse" | "alternate" | "alternate-reverse";
+type SingleAnimationDirection = "normal" | "reverse" | "alternate" | "alternate-reverse";
 
-type SingleAnimationFillModeAlias = "none" | "forwards" | "backwards" | "both";
+type SingleAnimationFillMode = "none" | "forwards" | "backwards" | "both";
 
-type SingleAnimationIterationCountAlias = "infinite" | number;
+type SingleAnimationIterationCount = "infinite" | number;
 
-type SingleAnimationPlayStateAlias = "running" | "paused";
+type SingleAnimationPlayState = "running" | "paused";
 
-type SingleTimingFunctionAlias = StepTimingFunctionAlias | "linear" | string;
+type SingleTimingFunction = StepTimingFunction | "linear" | string;
 
-type StepTimingFunctionAlias = "step-start" | "step-end" | string;
+type StepTimingFunction = "step-start" | "step-end" | string;
 
-type AttachmentAlias = "scroll" | "fixed" | "local";
+type Attachment = "scroll" | "fixed" | "local";
 
-type BlendModeAlias =
+type BlendMode =
   | "hard-light"
   | "normal"
   | "screen"
@@ -1715,11 +1715,11 @@ type BlendModeAlias =
   | "color"
   | "luminosity";
 
-type BoxAlias = "border-box" | "padding-box" | "content-box";
+type Box = "border-box" | "padding-box" | "content-box";
 
-type ColorAlias = NamedColorAlias | DeprecatedSystemColorAlias | "currentcolor" | string;
+type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type NamedColorAlias =
+type NamedColor =
   | "lightgrey"
   | "transparent"
   | "antiquewhite"
@@ -1870,7 +1870,7 @@ type NamedColorAlias =
   | "yellow"
   | "yellowgreen";
 
-type DeprecatedSystemColorAlias =
+type DeprecatedSystemColor =
   | "InactiveCaptionText"
   | "ActiveBorder"
   | "AppWorkspace"
@@ -1900,30 +1900,30 @@ type DeprecatedSystemColorAlias =
   | "WindowFrame"
   | "WindowText";
 
-type BgImageAlias = "none" | string;
+type BgImage = "none" | string;
 
-type BrWidthAlias<TLength> = "thin" | "medium" | "thick" | TLength;
+type BrWidth<TLength> = "thin" | "medium" | "thick" | TLength;
 
-type BrStyleAlias = "none" | "hidden" | "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset";
+type BrStyle = "none" | "hidden" | "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset";
 
-type LengthPercentageAlias<TLength> = string | TLength;
+type LengthPercentage<TLength> = string | TLength;
 
-type AbsoluteSizeAlias = "xx-small" | "x-small" | "small" | "medium" | "large" | "x-large" | "xx-large";
+type AbsoluteSize = "xx-small" | "x-small" | "small" | "medium" | "large" | "x-large" | "xx-large";
 
-type RelativeSizeAlias = "larger" | "smaller";
+type RelativeSize = "larger" | "smaller";
 
-type CompositingOperatorAlias = "add" | "subtract" | "intersect" | "exclude";
+type CompositingOperator = "add" | "subtract" | "intersect" | "exclude";
 
-type MaskReferenceAlias = "none" | string;
+type MaskReference = "none" | string;
 
-type MaskingModeAlias = "alpha" | "luminance" | "match-source";
+type MaskingMode = "alpha" | "luminance" | "match-source";
 
-type GeometryBoxAlias = ShapeBoxAlias | "fill-box" | "stroke-box" | "view-box";
+type GeometryBox = ShapeBox | "fill-box" | "stroke-box" | "view-box";
 
-type ShapeBoxAlias = BoxAlias | "margin-box";
+type ShapeBox = Box | "margin-box";
 
-type SingleTransitionPropertyAlias = "all" | string;
+type SingleTransitionProperty = "all" | string;
 
-type SingleTransitionTimingFunctionAlias = SingleTimingFunctionAlias;
+type SingleTransitionTimingFunction = SingleTimingFunction;
 
-type AnimateableFeatureAlias = "scroll-position" | "contents" | string;
+type AnimateableFeature = "scroll-position" | "contents" | string;

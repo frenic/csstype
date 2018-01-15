@@ -93,7 +93,7 @@ function lengthInTypeAlias(name: string) {
 }
 
 function typeAliasName(name: string) {
-  return toPascalCase(name) + 'Alias' + generics(lengthInTypeAlias(name));
+  return toPascalCase(name) + generics(lengthInTypeAlias(name));
 }
 
 export function typeAlias(name: string, types: TypeType[]) {
@@ -118,7 +118,7 @@ function lengthInPropertyType(name: string) {
 }
 
 function propertyTypeName(name: string) {
-  return toPascalCase(name) + generics(lengthInPropertyType(name));
+  return `${toPascalCase(name)}Property${generics(lengthInPropertyType(name))}`;
 }
 
 export function propertyType(name: string, types: TypeType[]) {
