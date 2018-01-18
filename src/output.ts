@@ -88,12 +88,20 @@ function generics(hasLength: boolean) {
   return hasLength ? `<${GENERIC_LENGTH}>` : '';
 }
 
-function lengthInTypeAlias(name: string) {
-  return name in dataTypes && !dataTypes[name].every(type => type.type !== Type.Length);
+function lengthInList(types: TypeType[]) {
+  return !types.every(type => {
+    if (type.type === Type.Length) {
+      return false;
+    }
+    if (type.type === Type.TypeAlias && type.alias in dataTypes && lengthInList(dataTypes[type.alias])) {
+      return false;
+    }
+    return true;
+  });
 }
 
 function typeAliasName(name: string) {
-  return toPascalCase(name) + generics(lengthInTypeAlias(name));
+  return toPascalCase(name) + generics(name in dataTypes && lengthInList(dataTypes[name]));
 }
 
 export function typeAlias(name: string, types: TypeType[]) {
@@ -103,15 +111,7 @@ export function typeAlias(name: string, types: TypeType[]) {
 function lengthInPropertyType(name: string) {
   return ![standardProperties, vendorPrefixedProperties].every(properties => {
     if (name in properties) {
-      return properties[name].every(type => {
-        if (type.type === Type.Length) {
-          return false;
-        }
-        if (type.type === Type.TypeAlias && lengthInTypeAlias(type.alias)) {
-          return false;
-        }
-        return true;
-      });
+      return !lengthInList(properties[name]);
     }
     return true;
   });

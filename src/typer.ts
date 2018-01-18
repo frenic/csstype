@@ -1,11 +1,22 @@
-import { Entity, Component, Combinator, EntityType, ComponentType, CombinatorType, FunctionType } from './parser';
+import {
+  Entity,
+  Component,
+  Combinator,
+  EntityType,
+  ComponentType,
+  CombinatorType,
+  FunctionType,
+  MultiplierQurlyBracetType,
+  MultiplierType,
+  Multiplier,
+} from './parser';
 
 export enum Type {
   TypeAlias,
+  Length,
   Literal,
   String,
   Number,
-  Length,
 }
 
 export type BasicType = {
@@ -75,12 +86,13 @@ export default function type(entities: EntityType[]): TypeType[] {
           }
           break;
         }
-        default:
-          return [
-            {
-              type: Type.String,
-            },
-          ];
+        case Component.Group: {
+          if (entity.multiplier && isQurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min === 1) {
+            types.push(...type(entity.entities));
+          }
+
+          pushString();
+        }
       }
     } else if (isCombinator(entity)) {
       switch (entity.combinator) {
@@ -131,4 +143,8 @@ function isComponent(entity: EntityType): entity is ComponentType {
 
 function isCombinator(entity: EntityType): entity is CombinatorType {
   return entity.entity === Entity.Combinator;
+}
+
+function isQurlyBracetMultiplier(multiplier: MultiplierType): multiplier is MultiplierQurlyBracetType {
+  return multiplier.sign === Multiplier.QurlyBracet;
 }

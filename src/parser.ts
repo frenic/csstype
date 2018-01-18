@@ -41,20 +41,22 @@ export enum Multiplier {
   QurlyBracet,
 }
 
-export type MultiplierType =
-  | {
-      sign:
-        | Multiplier.Asterisk
-        | Multiplier.PlusSign
-        | Multiplier.QuestionMark
-        | Multiplier.HashMark
-        | Multiplier.ExclamationPoint;
-    }
-  | {
-      sign: Multiplier.QurlyBracet;
-      min: number;
-      max: number;
-    };
+export type MultiplierQurlyBracetType = {
+  sign: Multiplier.QurlyBracet;
+  min: number;
+  max: number;
+};
+
+export type MultiplierSimpleType = {
+  sign:
+    | Multiplier.Asterisk
+    | Multiplier.PlusSign
+    | Multiplier.QuestionMark
+    | Multiplier.HashMark
+    | Multiplier.ExclamationPoint;
+};
+
+export type MultiplierType = MultiplierQurlyBracetType | MultiplierSimpleType;
 
 export type NonGroupDataType = {
   entity: Entity.Component;
