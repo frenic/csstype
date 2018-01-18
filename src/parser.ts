@@ -60,14 +60,14 @@ export type MultiplierType = MultiplierQurlyBracetType | MultiplierSimpleType;
 
 export type NonGroupDataType = {
   entity: Entity.Component;
-  multiplier: MultiplierType;
+  multiplier: MultiplierType | null;
   component: Component.Keyword | Component.DataType;
   value: string;
 };
 
 export type GroupDataType = {
   entity: Entity.Component;
-  multiplier: MultiplierType;
+  multiplier: MultiplierType | null;
   component: Component.Group;
   entities: EntityType[];
 };
@@ -76,19 +76,18 @@ export type ComponentType = NonGroupDataType | GroupDataType;
 
 export type CombinatorType = {
   entity: Entity.Combinator;
-  multiplier: MultiplierType;
-} & {
+  multiplier: MultiplierType | null;
   combinator: Combinator;
 };
 
 export type FunctionType = {
   entity: Entity.Function;
-  multiplier: MultiplierType;
+  multiplier: MultiplierType | null;
 };
 
 type UnknownType = {
   entity: Entity.Unknown;
-  multiplier: MultiplierType;
+  multiplier: MultiplierType | null;
 };
 
 export type EntityType = ComponentType | CombinatorType | FunctionType | UnknownType;
@@ -97,7 +96,7 @@ export default function parse(syntax: string): EntityType[] {
   const levels: EntityType[][] = [[]];
   const deepestLevel = () => levels[levels.length - 1];
   let previousMatchWasComponent = false;
-  let entityMatch: RegExpExecArray;
+  let entityMatch: RegExpExecArray | null;
   while ((entityMatch = REGEX_ENTITY.exec(syntax))) {
     const [, value, ...rawMultiplier] = entityMatch;
     if (value.indexOf('(') !== -1) {
@@ -122,14 +121,16 @@ export default function parse(syntax: string): EntityType[] {
       continue;
     } else if (value.indexOf(']') === 0) {
       const definitions = levels.pop();
-      deepestLevel().push(componentGroupData(definitions, multiplierData(rawMultiplier)));
-      previousMatchWasComponent = true;
+      if (definitions) {
+        deepestLevel().push(componentGroupData(definitions, multiplierData(rawMultiplier)));
+        previousMatchWasComponent = true;
+      }
       continue;
     } else {
       if (previousMatchWasComponent === true) {
         deepestLevel().push(combinatorData(Combinator.Juxtaposition));
       }
-      let componentMatch: RegExpMatchArray;
+      let componentMatch: RegExpMatchArray | null;
       if ((componentMatch = value.match(REGEX_DATA_TYPE))) {
         const name = componentMatch[0];
         deepestLevel().push(componentData(Component.DataType, name, multiplierData(rawMultiplier)));
@@ -147,7 +148,7 @@ export default function parse(syntax: string): EntityType[] {
   return levels[0];
 }
 
-function combinatorData(combinator: Combinator, multiplier?: MultiplierType): CombinatorType {
+function combinatorData(combinator: Combinator, multiplier: MultiplierType | null = null): CombinatorType {
   return {
     entity: Entity.Combinator,
     combinator,
@@ -158,7 +159,7 @@ function combinatorData(combinator: Combinator, multiplier?: MultiplierType): Co
 function componentData(
   component: Component.Keyword | Component.DataType,
   value: string,
-  multiplier: MultiplierType,
+  multiplier: MultiplierType | null,
 ): ComponentType {
   return {
     entity: Entity.Component,
@@ -168,7 +169,7 @@ function componentData(
   };
 }
 
-function componentGroupData(entities: EntityType[], multiplier: MultiplierType): ComponentType {
+function componentGroupData(entities: EntityType[], multiplier: MultiplierType | null): ComponentType {
   return {
     entity: Entity.Component,
     component: Component.Group,
@@ -177,9 +178,9 @@ function componentGroupData(entities: EntityType[], multiplier: MultiplierType):
   };
 }
 
-function multiplierData(raw: string[]): MultiplierType {
+function multiplierData(raw: string[]): MultiplierType | null {
   if (!raw[0]) {
-    return;
+    return null;
   }
   switch (raw[0].slice(0, 1)) {
     case '*':
@@ -194,5 +195,7 @@ function multiplierData(raw: string[]): MultiplierType {
       return { sign: Multiplier.ExclamationPoint };
     case '{':
       return { sign: Multiplier.QurlyBracet, min: +raw[1], max: +raw[2] };
+    default:
+      return null;
   }
 }
