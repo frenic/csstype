@@ -9,6 +9,7 @@ import {
   MultiplierQurlyBracetType,
   MultiplierType,
   Multiplier,
+  MultiplierSimpleType,
 } from './parser';
 
 export enum Type {
@@ -87,11 +88,52 @@ export default function type(entities: EntityType[]): TypeType[] {
           break;
         }
         case Component.Group: {
-          if (entity.multiplier && isQurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min === 1) {
-            types.push(...type(entity.entities));
+          if (entity.multiplier) {
+            if (
+              (isQurlyBracetMultiplier(entity.multiplier) &&
+                (entity.multiplier.min > 1 || entity.multiplier.max === 1)) ||
+              entity.multiplier.sign === Multiplier.Asterisk ||
+              entity.multiplier.sign === Multiplier.PlusSign ||
+              entity.multiplier.sign === Multiplier.HashMark ||
+              entity.multiplier.sign === Multiplier.ExclamationPoint
+            ) {
+              pushString();
+            }
           }
 
-          pushString();
+          const newTypes = type(entity.entities).filter(groupType => {
+            if (groupType.type === Type.Length && !types.every(type => type.type !== Type.Length)) {
+              return false;
+            }
+
+            if (
+              groupType.type === Type.Literal &&
+              !types.every(type => !(type.type === Type.Literal && type.literal === groupType.literal))
+            ) {
+              return false;
+            }
+
+            if (groupType.type === Type.String) {
+              pushString();
+              return false;
+            }
+
+            if (groupType.type === Type.Number) {
+              pushNumber();
+              return false;
+            }
+
+            if (
+              groupType.type === Type.TypeAlias &&
+              !types.every(type => !(type.type === Type.TypeAlias && type.alias === groupType.alias))
+            ) {
+              return false;
+            }
+
+            return true;
+          });
+
+          types.push(...newTypes);
         }
       }
     } else if (isCombinator(entity)) {

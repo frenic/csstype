@@ -11,8 +11,21 @@ test('parser to parse CSS syntax components', () => {
   ]);
 });
 
+test('parser to parse CSS syntax group components', () => {
+  expect(parse('[ something | <color> ]')).toMatchObject([
+    {
+      component: Component.Group,
+      entities: [{ component: Component.Keyword }, {}, { component: Component.DataType }],
+    },
+  ]);
+});
+
 test('typer to type CSS syntax components', () => {
   expect(type(parse('something | <color>'))).toMatchObject([{ type: Type.Literal }, { type: Type.TypeAlias }]);
+});
+
+test('typer to type CSS syntax group components', () => {
+  expect(type(parse('[ something | <color> ]'))).toMatchObject([{ type: Type.Literal }, { type: Type.TypeAlias }]);
 });
 
 test('output of CSS syntax components', () => {

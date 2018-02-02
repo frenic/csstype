@@ -197,7 +197,7 @@ export interface StandardProperties<TLength = string> {
   marginLeft?: MarginLeftProperty<TLength>;
   marginRight?: MarginRightProperty<TLength>;
   marginTop?: MarginTopProperty<TLength>;
-  mask?: MaskProperty;
+  mask?: MaskProperty<TLength>;
   maskBorder?: MaskBorderProperty;
   maskBorderMode?: MaskBorderModeProperty;
   maskBorderOutset?: MaskBorderOutsetProperty<TLength>;
@@ -528,7 +528,7 @@ export interface StandardPropertiesFallback<TLength = string> {
   marginLeft?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
   marginRight?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
   marginTop?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[];
-  mask?: MaskProperty | MaskProperty[];
+  mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   maskBorder?: MaskBorderProperty | MaskBorderProperty[];
   maskBorderMode?: MaskBorderModeProperty | MaskBorderModeProperty[];
   maskBorderOutset?: MaskBorderOutsetProperty<TLength> | MaskBorderOutsetProperty<TLength>[];
@@ -698,9 +698,9 @@ export interface VendorProperties<TLength = string> {
   webkitMaskComposite?: WebkitMaskCompositeProperty;
   webkitMaskImage?: WebkitMaskImageProperty;
   webkitMaskOrigin?: WebkitMaskOriginProperty;
-  webkitMaskPosition?: WebkitMaskPositionProperty;
-  webkitMaskPositionX?: WebkitMaskPositionXProperty;
-  webkitMaskPositionY?: WebkitMaskPositionYProperty;
+  webkitMaskPosition?: WebkitMaskPositionProperty<TLength>;
+  webkitMaskPositionX?: WebkitMaskPositionXProperty<TLength>;
+  webkitMaskPositionY?: WebkitMaskPositionYProperty<TLength>;
   webkitMaskRepeat?: WebkitMaskRepeatProperty;
   webkitMaskRepeatX?: WebkitMaskRepeatXProperty;
   webkitMaskRepeatY?: WebkitMaskRepeatYProperty;
@@ -749,9 +749,9 @@ export interface VendorPropertiesFallback<TLength = string> {
   webkitMaskComposite?: WebkitMaskCompositeProperty | WebkitMaskCompositeProperty[];
   webkitMaskImage?: WebkitMaskImageProperty | WebkitMaskImageProperty[];
   webkitMaskOrigin?: WebkitMaskOriginProperty | WebkitMaskOriginProperty[];
-  webkitMaskPosition?: WebkitMaskPositionProperty | WebkitMaskPositionProperty[];
-  webkitMaskPositionX?: WebkitMaskPositionXProperty | WebkitMaskPositionXProperty[];
-  webkitMaskPositionY?: WebkitMaskPositionYProperty | WebkitMaskPositionYProperty[];
+  webkitMaskPosition?: WebkitMaskPositionProperty<TLength> | WebkitMaskPositionProperty<TLength>[];
+  webkitMaskPositionX?: WebkitMaskPositionXProperty<TLength> | WebkitMaskPositionXProperty<TLength>[];
+  webkitMaskPositionY?: WebkitMaskPositionYProperty<TLength> | WebkitMaskPositionYProperty<TLength>[];
   webkitMaskRepeat?: WebkitMaskRepeatProperty | WebkitMaskRepeatProperty[];
   webkitMaskRepeatX?: WebkitMaskRepeatXProperty | WebkitMaskRepeatXProperty[];
   webkitMaskRepeatY?: WebkitMaskRepeatYProperty | WebkitMaskRepeatYProperty[];
@@ -855,7 +855,7 @@ type AnimationFillModeProperty = All | SingleAnimationFillMode;
 
 type AnimationIterationCountProperty = All | SingleAnimationIterationCount;
 
-type AnimationNameProperty = All | string;
+type AnimationNameProperty = All | "none" | string;
 
 type AnimationPlayStateProperty = All | SingleAnimationPlayState;
 
@@ -863,7 +863,21 @@ type AnimationTimingFunctionProperty = All | SingleTimingFunction;
 
 type AppearanceProperty = All | "auto" | "none";
 
-type AzimuthProperty = All | "leftwards" | "rightwards" | string;
+type AzimuthProperty =
+  | All
+  | "rightwards"
+  | "left-side"
+  | "far-left"
+  | "left"
+  | "center-left"
+  | "center"
+  | "leftwards"
+  | "right"
+  | "far-right"
+  | "right-side"
+  | "behind"
+  | "center-right"
+  | string;
 
 type BackdropFilterProperty = All | "none" | string;
 
@@ -931,15 +945,15 @@ type BorderColorProperty = All | Color;
 
 type BorderImageProperty = All | string;
 
-type BorderImageOutsetProperty<TLength> = All | TLength | string | number;
+type BorderImageOutsetProperty<TLength> = All | TLength | number;
 
-type BorderImageRepeatProperty = All | "stretch" | "repeat" | "round" | "space" | string;
+type BorderImageRepeatProperty = All | "stretch" | "repeat" | "round" | "space";
 
 type BorderImageSliceProperty = All | string;
 
 type BorderImageSourceProperty = All | "none" | string;
 
-type BorderImageWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | string | number;
+type BorderImageWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | number;
 
 type BorderInlineEndProperty = All | string;
 
@@ -965,7 +979,7 @@ type BorderLeftStyleProperty = All | BrStyle;
 
 type BorderLeftWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type BorderRadiusProperty<TLength> = All | LengthPercentage<TLength> | string;
+type BorderRadiusProperty<TLength> = All | LengthPercentage<TLength>;
 
 type BorderRightProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
 
@@ -1031,7 +1045,7 @@ type ClearProperty = All | "none" | "left" | "right" | "both" | "inline-start" |
 
 type ClipProperty = All | "auto" | string;
 
-type ClipPathProperty = All | "none" | string;
+type ClipPathProperty = All | GeometryBox | "none" | string;
 
 type ColorProperty = All | Color;
 
@@ -1055,19 +1069,57 @@ type ColumnWidthProperty<TLength> = All | TLength | "auto";
 
 type ColumnsProperty = All | string;
 
-type ContainProperty = All | "none" | "strict" | "content" | string;
+type ContainProperty = All | "none" | "strict" | "content" | "size" | "layout" | "style" | "paint" | string;
 
-type ContentProperty = All | "normal" | "none" | string;
+type ContentProperty = All | ContentList | "normal" | "none" | string;
 
 type CounterIncrementProperty = All | "none" | string;
 
 type CounterResetProperty = All | "none" | string;
 
-type CursorProperty = All | string;
+type CursorProperty =
+  | All
+  | "grabbing"
+  | "auto"
+  | "default"
+  | "none"
+  | "context-menu"
+  | "help"
+  | "pointer"
+  | "progress"
+  | "wait"
+  | "cell"
+  | "crosshair"
+  | "text"
+  | "vertical-text"
+  | "alias"
+  | "copy"
+  | "move"
+  | "no-drop"
+  | "not-allowed"
+  | "grab"
+  | "n-resize"
+  | "ne-resize"
+  | "nw-resize"
+  | "s-resize"
+  | "se-resize"
+  | "sw-resize"
+  | "w-resize"
+  | "ew-resize"
+  | "ns-resize"
+  | "nesw-resize"
+  | "nwse-resize"
+  | "col-resize"
+  | "row-resize"
+  | "all-scroll"
+  | "zoom-in"
+  | "zoom-out"
+  | "e-resize"
+  | string;
 
 type DirectionProperty = All | "ltr" | "rtl";
 
-type DisplayProperty = All | DisplayInternal | DisplayBox | DisplayLegacy | string;
+type DisplayProperty = All | DisplayOutside | DisplayInside | DisplayInternal | DisplayBox | DisplayLegacy | string;
 
 type DisplayInsideProperty = All | "auto" | "block" | "table" | "flex" | "grid" | "ruby";
 
@@ -1115,9 +1167,9 @@ type FloatProperty = All | "left" | "right" | "none" | "inline-start" | "inline-
 
 type FontProperty = All | "caption" | "icon" | "menu" | "message-box" | "small-caption" | "status-bar" | string;
 
-type FontFamilyProperty = All | string;
+type FontFamilyProperty = All | GenericFamily | string;
 
-type FontFeatureSettingsProperty = All | "normal" | string;
+type FontFeatureSettingsProperty = All | FeatureTagValue | "normal";
 
 type FontKerningProperty = All | "auto" | "normal" | "none";
 
@@ -1143,7 +1195,7 @@ type FontStretchProperty =
 
 type FontStyleProperty = All | "normal" | "italic" | "oblique";
 
-type FontSynthesisProperty = All | "none" | string;
+type FontSynthesisProperty = All | "none" | "weight" | "style" | string;
 
 type FontVariantProperty = All | "normal" | "none" | string;
 
@@ -1151,11 +1203,11 @@ type FontVariantAlternatesProperty = All | "normal" | string;
 
 type FontVariantCapsProperty = All | "normal" | "small-caps" | "all-small-caps" | "petite-caps" | "all-petite-caps" | "unicase" | "titling-caps";
 
-type FontVariantEastAsianProperty = All | "normal" | string;
+type FontVariantEastAsianProperty = All | EastAsianVariantValues | EastAsianWidthValues | "normal" | "ruby" | string;
 
-type FontVariantLigaturesProperty = All | "normal" | "none" | string;
+type FontVariantLigaturesProperty = All | CommonLigValues | DiscretionaryLigValues | HistoricalLigValues | ContextualAltValues | "normal" | "none" | string;
 
-type FontVariantNumericProperty = All | "normal" | string;
+type FontVariantNumericProperty = All | NumericFigureValues | NumericSpacingValues | NumericFractionValues | "normal" | "ordinal" | "slashed-zero" | string;
 
 type FontVariantPositionProperty = All | "normal" | "sub" | "super";
 
@@ -1163,15 +1215,15 @@ type FontWeightProperty = All | "900" | "bold" | "bolder" | "lighter" | "100" | 
 
 type GridProperty = All | string;
 
-type GridAreaProperty = All | GridLine | string;
+type GridAreaProperty = All | GridLine;
 
 type GridAutoColumnsProperty = All | string;
 
-type GridAutoFlowProperty = All | "dense" | string;
+type GridAutoFlowProperty = All | "row" | "column" | "dense" | string;
 
 type GridAutoRowsProperty = All | string;
 
-type GridColumnProperty = All | GridLine | string;
+type GridColumnProperty = All | GridLine;
 
 type GridColumnEndProperty = All | GridLine;
 
@@ -1181,7 +1233,7 @@ type GridColumnStartProperty = All | GridLine;
 
 type GridGapProperty = All | string;
 
-type GridRowProperty = All | GridLine | string;
+type GridRowProperty = All | GridLine;
 
 type GridRowEndProperty = All | GridLine;
 
@@ -1197,7 +1249,7 @@ type GridTemplateColumnsProperty = All | "none" | string;
 
 type GridTemplateRowsProperty = All | "none" | string;
 
-type HangingPunctuationProperty = All | "none" | string;
+type HangingPunctuationProperty = All | "none" | "first" | "force-end" | "allow-end" | "last" | string;
 
 type HeightProperty = All | string;
 
@@ -1213,7 +1265,7 @@ type ImeModeProperty = All | "auto" | "normal" | "active" | "inactive" | "disabl
 
 type InitialLetterProperty = All | "normal" | string;
 
-type InitialLetterAlignProperty = All | string;
+type InitialLetterAlignProperty = All | "auto" | "alphabetic" | "hanging" | "ideographic";
 
 type InlineSizeProperty = All | string;
 
@@ -1239,7 +1291,7 @@ type ListStylePositionProperty = All | "inside" | "outside";
 
 type ListStyleTypeProperty = All | "none" | string;
 
-type MarginProperty<TLength> = All | TLength | "auto" | string | string;
+type MarginProperty<TLength> = All | TLength | "auto" | string;
 
 type MarginBlockEndProperty = All | string;
 
@@ -1257,23 +1309,23 @@ type MarginRightProperty<TLength> = All | TLength | "auto" | string;
 
 type MarginTopProperty<TLength> = All | TLength | "auto" | string;
 
-type MaskProperty = All | MaskLayer;
+type MaskProperty<TLength> = All | MaskLayer<TLength>;
 
 type MaskBorderProperty = All | string;
 
 type MaskBorderModeProperty = All | "luminance" | "alpha";
 
-type MaskBorderOutsetProperty<TLength> = All | TLength | string | number;
+type MaskBorderOutsetProperty<TLength> = All | TLength | number;
 
-type MaskBorderRepeatProperty = All | "stretch" | "repeat" | "round" | "space" | string;
+type MaskBorderRepeatProperty = All | "stretch" | "repeat" | "round" | "space";
 
 type MaskBorderSliceProperty = All | string;
 
 type MaskBorderSourceProperty = All | "none" | string;
 
-type MaskBorderWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | string | number;
+type MaskBorderWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | number;
 
-type MaskClipProperty = All | string;
+type MaskClipProperty = All | GeometryBox | "no-clip" | string;
 
 type MaskCompositeProperty = All | CompositingOperator;
 
@@ -1327,11 +1379,11 @@ type OffsetInlineStartProperty = All | string;
 
 type OffsetDistanceProperty<TLength> = All | LengthPercentage<TLength>;
 
-type OffsetPathProperty = All | "none" | string;
+type OffsetPathProperty = All | GeometryBox | "none" | string;
 
 type OffsetPositionProperty = All | "auto" | string;
 
-type OffsetRotateProperty = All | string;
+type OffsetRotateProperty = All | "auto" | "reverse" | string;
 
 type OpacityProperty = All | number;
 
@@ -1359,7 +1411,7 @@ type OverflowXProperty = All | "visible" | "hidden" | "scroll" | "auto";
 
 type OverflowYProperty = All | "visible" | "hidden" | "scroll" | "auto";
 
-type PaddingProperty<TLength> = All | TLength | string | string;
+type PaddingProperty<TLength> = All | TLength | string;
 
 type PaddingBlockEndProperty = All | string;
 
@@ -1439,9 +1491,9 @@ type TextDecorationProperty = All | string;
 
 type TextDecorationColorProperty = All | Color;
 
-type TextDecorationLineProperty = All | "none" | string;
+type TextDecorationLineProperty = All | "none" | "underline" | "overline" | "line-through" | "blink" | string;
 
-type TextDecorationSkipProperty = All | "none" | string;
+type TextDecorationSkipProperty = All | "none" | "objects" | "spaces" | "leading-spaces" | "trailing-spaces" | "edges" | "box-decoration" | string;
 
 type TextDecorationSkipInkProperty = All | "auto" | "none";
 
@@ -1453,7 +1505,7 @@ type TextEmphasisColorProperty = All | Color;
 
 type TextEmphasisPositionProperty = All | string;
 
-type TextEmphasisStyleProperty = All | "none" | string;
+type TextEmphasisStyleProperty = All | "none" | "filled" | "open" | "dot" | "circle" | "double-circle" | "triangle" | "sesame" | string;
 
 type TextIndentProperty = All | string;
 
@@ -1461,7 +1513,7 @@ type TextJustifyProperty = All | "auto" | "inter-character" | "inter-word" | "no
 
 type TextOrientationProperty = All | "mixed" | "upright" | "sideways";
 
-type TextOverflowProperty = All | "clip" | "ellipsis" | string | string;
+type TextOverflowProperty = All | "clip" | "ellipsis" | string;
 
 type TextRenderingProperty = All | "auto" | "optimizeSpeed" | "optimizeLegibility" | "geometricPrecision";
 
@@ -1471,11 +1523,11 @@ type TextSizeAdjustProperty = All | "none" | "auto" | string;
 
 type TextTransformProperty = All | "none" | "capitalize" | "uppercase" | "lowercase" | "full-width";
 
-type TextUnderlinePositionProperty = All | "auto" | string;
+type TextUnderlinePositionProperty = All | "auto" | "under" | "left" | "right" | string;
 
 type TopProperty<TLength> = All | TLength | "auto" | string;
 
-type TouchActionProperty = All | "auto" | "none" | "manipulation" | string;
+type TouchActionProperty = All | "manipulation" | "none" | "pinch-zoom" | "pan-x" | "pan-left" | "auto" | "pan-y" | "pan-up" | "pan-down" | "pan-right" | string;
 
 type TransformProperty = All | "none" | string;
 
@@ -1646,7 +1698,7 @@ type MozBorderRightColorsProperty = All | string;
 
 type MozBorderTopColorsProperty = All | string;
 
-type MozContextPropertiesProperty = All | "none" | string;
+type MozContextPropertiesProperty = All | "none" | "fill" | "fill-opacity" | "stroke" | "stroke-opacity" | string;
 
 type MozFloatEdgeProperty = All | "border-box" | "content-box" | "margin-box" | "padding-box";
 
@@ -1694,19 +1746,19 @@ type WebkitMaskProperty = All | string;
 
 type WebkitMaskAttachmentProperty = All | Attachment | string;
 
-type WebkitMaskClipProperty = All | string;
+type WebkitMaskClipProperty = All | "border" | "border-box" | "padding" | "padding-box" | "content" | "content-box" | "text" | string;
 
 type WebkitMaskCompositeProperty = All | CompositeStyle | string;
 
 type WebkitMaskImageProperty = All | string;
 
-type WebkitMaskOriginProperty = All | string;
+type WebkitMaskOriginProperty = All | "padding" | "border" | "content" | string;
 
-type WebkitMaskPositionProperty = All | string;
+type WebkitMaskPositionProperty<TLength> = All | MaskPosition<TLength>;
 
-type WebkitMaskPositionXProperty = All | string;
+type WebkitMaskPositionXProperty<TLength> = All | LengthPercentage<TLength> | "left" | "center" | "right" | string;
 
-type WebkitMaskPositionYProperty = All | string;
+type WebkitMaskPositionYProperty<TLength> = All | LengthPercentage<TLength> | "top" | "center" | "bottom" | string;
 
 type WebkitMaskRepeatProperty = All | RepeatStyle | string;
 
@@ -1730,7 +1782,7 @@ type WebkitTouchCalloutProperty = All | "default" | "none";
 
 type All = "initial" | "inherit" | "unset" | "revert";
 
-type SingleAnimation = SingleTimingFunction | SingleAnimationIterationCount | SingleAnimationDirection | SingleAnimationFillMode | SingleAnimationPlayState | string;
+type SingleAnimation = SingleTimingFunction | SingleAnimationIterationCount | SingleAnimationDirection | SingleAnimationFillMode | SingleAnimationPlayState | "none" | string;
 
 type SingleTimingFunction = StepTimingFunction | "linear" | string;
 
@@ -1951,15 +2003,27 @@ type DeprecatedSystemColor =
 
 type BgImage = "none" | string;
 
-type RepeatStyle = "repeat-x" | "repeat-y" | "repeat" | "space" | "round" | "no-repeat" | string;
+type RepeatStyle = "repeat-x" | "repeat-y" | "repeat" | "space" | "round" | "no-repeat";
 
-type BgSize<TLength> = LengthPercentage<TLength> | "auto" | "cover" | "contain" | string;
+type BgSize<TLength> = LengthPercentage<TLength> | "auto" | "cover" | "contain";
 
 type LengthPercentage<TLength> = TLength | string;
 
 type BrWidth<TLength> = TLength | "thin" | "medium" | "thick";
 
 type BrStyle = "none" | "hidden" | "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset";
+
+type GeometryBox = ShapeBox | "fill-box" | "stroke-box" | "view-box";
+
+type ShapeBox = Box | "margin-box";
+
+type ContentList = Quote | "contents" | string;
+
+type Quote = "open-quote" | "close-quote" | "no-open-quote" | "no-close-quote";
+
+type DisplayOutside = "block" | "inline" | "run-in";
+
+type DisplayInside = "flow" | "flow-root" | "table" | "flex" | "grid" | "subgrid" | "ruby";
 
 type DisplayInternal =
   | "table-column"
@@ -1979,29 +2043,47 @@ type DisplayBox = "contents" | "none";
 
 type DisplayLegacy = "inline-block" | "inline-list-item" | "inline-table" | "inline-flex" | "inline-grid";
 
+type GenericFamily = "serif" | "sans-serif" | "cursive" | "fantasy" | "monospace";
+
+type FeatureTagValue = "on" | "off" | string | number;
+
 type AbsoluteSize = "xx-small" | "x-small" | "small" | "medium" | "large" | "x-large" | "xx-large";
 
 type RelativeSize = "larger" | "smaller";
 
+type EastAsianVariantValues = "jis78" | "jis83" | "jis90" | "jis04" | "simplified" | "traditional";
+
+type EastAsianWidthValues = "full-width" | "proportional-width";
+
+type CommonLigValues = "common-ligatures" | "no-common-ligatures";
+
+type DiscretionaryLigValues = "discretionary-ligatures" | "no-discretionary-ligatures";
+
+type HistoricalLigValues = "historical-ligatures" | "no-historical-ligatures";
+
+type ContextualAltValues = "contextual" | "no-contextual";
+
+type NumericFigureValues = "lining-nums" | "oldstyle-nums";
+
+type NumericSpacingValues = "proportional-nums" | "tabular-nums";
+
+type NumericFractionValues = "diagonal-fractions" | "stacked-fractions";
+
 type GridLine = "auto" | string;
 
-type MaskLayer = MaskReference | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | string;
+type MaskLayer<TLength> = MaskReference | BgSize<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | string;
 
 type MaskReference = "none" | string;
-
-type GeometryBox = ShapeBox | "fill-box" | "stroke-box" | "view-box";
-
-type ShapeBox = Box | "margin-box";
 
 type CompositingOperator = "add" | "subtract" | "intersect" | "exclude";
 
 type MaskingMode = "alpha" | "luminance" | "match-source";
 
-type SingleTransition = SingleTransitionTimingFunction | string;
-
-type SingleTransitionTimingFunction = SingleTimingFunction;
+type SingleTransition = SingleTransitionProperty | SingleTransitionTimingFunction | "none" | string;
 
 type SingleTransitionProperty = "all" | string;
+
+type SingleTransitionTimingFunction = SingleTimingFunction;
 
 type AnimateableFeature = "scroll-position" | "contents" | string;
 
@@ -2017,3 +2099,5 @@ type CompositeStyle =
   | "destination-out"
   | "destination-atop"
   | "xor";
+
+type MaskPosition<TLength> = LengthPercentage<TLength> | "left" | "center" | "right" | "top" | "bottom";
