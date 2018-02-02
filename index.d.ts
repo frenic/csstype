@@ -106,7 +106,7 @@ export interface StandardProperties<TLength = string> {
   columnRule?: ColumnRuleProperty;
   columnRuleColor?: ColumnRuleColorProperty;
   columnRuleStyle?: ColumnRuleStyleProperty;
-  columnRuleWidth?: ColumnRuleWidthProperty<TLength>;
+  columnRuleWidth?: ColumnRuleWidthProperty;
   columnSpan?: ColumnSpanProperty;
   columnWidth?: ColumnWidthProperty<TLength>;
   columns?: ColumnsProperty;
@@ -167,6 +167,7 @@ export interface StandardProperties<TLength = string> {
   gridTemplateAreas?: GridTemplateAreasProperty;
   gridTemplateColumns?: GridTemplateColumnsProperty;
   gridTemplateRows?: GridTemplateRowsProperty;
+  hangingPunctuation?: HangingPunctuationProperty;
   height?: HeightProperty;
   hyphens?: HyphensProperty;
   imageOrientation?: ImageOrientationProperty;
@@ -182,6 +183,7 @@ export interface StandardProperties<TLength = string> {
   letterSpacing?: LetterSpacingProperty<TLength>;
   lineBreak?: LineBreakProperty;
   lineHeight?: LineHeightProperty<TLength>;
+  lineHeightStep?: LineHeightStepProperty<TLength>;
   listStyle?: ListStyleProperty;
   listStyleImage?: ListStyleImageProperty;
   listStylePosition?: ListStylePositionProperty;
@@ -195,8 +197,14 @@ export interface StandardProperties<TLength = string> {
   marginLeft?: MarginLeftProperty<TLength>;
   marginRight?: MarginRightProperty<TLength>;
   marginTop?: MarginTopProperty<TLength>;
-  markerOffset?: MarkerOffsetProperty<TLength>;
   mask?: MaskProperty;
+  maskBorder?: MaskBorderProperty;
+  maskBorderMode?: MaskBorderModeProperty;
+  maskBorderOutset?: MaskBorderOutsetProperty<TLength>;
+  maskBorderRepeat?: MaskBorderRepeatProperty;
+  maskBorderSlice?: MaskBorderSliceProperty;
+  maskBorderSource?: MaskBorderSourceProperty;
+  maskBorderWidth?: MaskBorderWidthProperty<TLength>;
   maskClip?: MaskClipProperty;
   maskComposite?: MaskCompositeProperty;
   maskImage?: MaskImageProperty;
@@ -282,6 +290,7 @@ export interface StandardProperties<TLength = string> {
   textDecorationColor?: TextDecorationColorProperty;
   textDecorationLine?: TextDecorationLineProperty;
   textDecorationSkip?: TextDecorationSkipProperty;
+  textDecorationSkipInk?: TextDecorationSkipInkProperty;
   textDecorationStyle?: TextDecorationStyleProperty;
   textEmphasis?: TextEmphasisProperty;
   textEmphasisColor?: TextEmphasisColorProperty;
@@ -428,7 +437,7 @@ export interface StandardPropertiesFallback<TLength = string> {
   columnRule?: ColumnRuleProperty | ColumnRuleProperty[];
   columnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[];
   columnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
-  columnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
+  columnRuleWidth?: ColumnRuleWidthProperty | ColumnRuleWidthProperty[];
   columnSpan?: ColumnSpanProperty | ColumnSpanProperty[];
   columnWidth?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[];
   columns?: ColumnsProperty | ColumnsProperty[];
@@ -489,6 +498,7 @@ export interface StandardPropertiesFallback<TLength = string> {
   gridTemplateAreas?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
   gridTemplateColumns?: GridTemplateColumnsProperty | GridTemplateColumnsProperty[];
   gridTemplateRows?: GridTemplateRowsProperty | GridTemplateRowsProperty[];
+  hangingPunctuation?: HangingPunctuationProperty | HangingPunctuationProperty[];
   height?: HeightProperty | HeightProperty[];
   hyphens?: HyphensProperty | HyphensProperty[];
   imageOrientation?: ImageOrientationProperty | ImageOrientationProperty[];
@@ -504,6 +514,7 @@ export interface StandardPropertiesFallback<TLength = string> {
   letterSpacing?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[];
   lineBreak?: LineBreakProperty | LineBreakProperty[];
   lineHeight?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[];
+  lineHeightStep?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
   listStyle?: ListStyleProperty | ListStyleProperty[];
   listStyleImage?: ListStyleImageProperty | ListStyleImageProperty[];
   listStylePosition?: ListStylePositionProperty | ListStylePositionProperty[];
@@ -517,8 +528,14 @@ export interface StandardPropertiesFallback<TLength = string> {
   marginLeft?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
   marginRight?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
   marginTop?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[];
-  markerOffset?: MarkerOffsetProperty<TLength> | MarkerOffsetProperty<TLength>[];
   mask?: MaskProperty | MaskProperty[];
+  maskBorder?: MaskBorderProperty | MaskBorderProperty[];
+  maskBorderMode?: MaskBorderModeProperty | MaskBorderModeProperty[];
+  maskBorderOutset?: MaskBorderOutsetProperty<TLength> | MaskBorderOutsetProperty<TLength>[];
+  maskBorderRepeat?: MaskBorderRepeatProperty | MaskBorderRepeatProperty[];
+  maskBorderSlice?: MaskBorderSliceProperty | MaskBorderSliceProperty[];
+  maskBorderSource?: MaskBorderSourceProperty | MaskBorderSourceProperty[];
+  maskBorderWidth?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
   maskClip?: MaskClipProperty | MaskClipProperty[];
   maskComposite?: MaskCompositeProperty | MaskCompositeProperty[];
   maskImage?: MaskImageProperty | MaskImageProperty[];
@@ -604,6 +621,7 @@ export interface StandardPropertiesFallback<TLength = string> {
   textDecorationColor?: TextDecorationColorProperty | TextDecorationColorProperty[];
   textDecorationLine?: TextDecorationLineProperty | TextDecorationLineProperty[];
   textDecorationSkip?: TextDecorationSkipProperty | TextDecorationSkipProperty[];
+  textDecorationSkipInk?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[];
   textDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
   textEmphasis?: TextEmphasisProperty | TextEmphasisProperty[];
   textEmphasisColor?: TextEmphasisColorProperty | TextEmphasisColorProperty[];
@@ -667,6 +685,7 @@ export interface VendorProperties<TLength = string> {
   mozUserFocus?: MozUserFocusProperty;
   mozUserInput?: MozUserInputProperty;
   mozUserModify?: MozUserModifyProperty;
+  mozWindowDragging?: MozWindowDraggingProperty;
   mozWindowShadow?: MozWindowShadowProperty;
   webkitBorderBefore?: WebkitBorderBeforeProperty;
   webkitBorderBeforeColor?: WebkitBorderBeforeColorProperty;
@@ -685,6 +704,7 @@ export interface VendorProperties<TLength = string> {
   webkitMaskRepeat?: WebkitMaskRepeatProperty;
   webkitMaskRepeatX?: WebkitMaskRepeatXProperty;
   webkitMaskRepeatY?: WebkitMaskRepeatYProperty;
+  webkitOverflowScrolling?: WebkitOverflowScrollingProperty;
   webkitTapHighlightColor?: WebkitTapHighlightColorProperty;
   webkitTextFillColor?: WebkitTextFillColorProperty;
   webkitTextStroke?: WebkitTextStrokeProperty<TLength>;
@@ -716,6 +736,7 @@ export interface VendorPropertiesFallback<TLength = string> {
   mozUserFocus?: MozUserFocusProperty | MozUserFocusProperty[];
   mozUserInput?: MozUserInputProperty | MozUserInputProperty[];
   mozUserModify?: MozUserModifyProperty | MozUserModifyProperty[];
+  mozWindowDragging?: MozWindowDraggingProperty | MozWindowDraggingProperty[];
   mozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[];
   webkitBorderBefore?: WebkitBorderBeforeProperty | WebkitBorderBeforeProperty[];
   webkitBorderBeforeColor?: WebkitBorderBeforeColorProperty | WebkitBorderBeforeColorProperty[];
@@ -734,6 +755,7 @@ export interface VendorPropertiesFallback<TLength = string> {
   webkitMaskRepeat?: WebkitMaskRepeatProperty | WebkitMaskRepeatProperty[];
   webkitMaskRepeatX?: WebkitMaskRepeatXProperty | WebkitMaskRepeatXProperty[];
   webkitMaskRepeatY?: WebkitMaskRepeatYProperty | WebkitMaskRepeatYProperty[];
+  webkitOverflowScrolling?: WebkitOverflowScrollingProperty | WebkitOverflowScrollingProperty[];
   webkitTapHighlightColor?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[];
   webkitTextFillColor?: WebkitTextFillColorProperty | WebkitTextFillColorProperty[];
   webkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
@@ -747,11 +769,12 @@ export interface Properties<TLength = string> extends StandardProperties<TLength
 export interface PropertiesFallback<TLength = string> extends StandardPropertiesFallback<TLength>, VendorPropertiesFallback<TLength> {}
 
 export type Pseudos =
-  | ":out-of-range"
+  | ":placeholder-shown"
   | ":active"
   | ":any-link"
   | ":checked"
   | ":default"
+  | ":defined"
   | ":dir"
   | ":disabled"
   | ":empty"
@@ -779,8 +802,8 @@ export type Pseudos =
   | ":only-child"
   | ":only-of-type"
   | ":optional"
+  | ":out-of-range"
   | ":any"
-  | ":placeholder-shown"
   | ":read-only"
   | ":read-write"
   | ":required"
@@ -788,7 +811,6 @@ export type Pseudos =
   | ":root"
   | ":scope"
   | ":target"
-  | ":unresolved"
   | ":valid"
   | ":visited"
   | "::-moz-progress-bar"
@@ -808,10 +830,13 @@ export type Pseudos =
   | "::after"
   | "::backdrop"
   | "::before"
+  | "::cue"
   | "::first-letter"
   | "::first-line"
+  | "::grammar-error"
+  | "::placeholder"
   | "::selection"
-  | "::cue";
+  | "::spelling-error";
 type AlignContentProperty = All | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | "stretch";
 
 type AlignItemsProperty = All | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
@@ -1012,17 +1037,17 @@ type ColorProperty = All | Color;
 
 type ColumnCountProperty = All | "auto" | number;
 
-type ColumnFillProperty = All | "auto" | "balance";
+type ColumnFillProperty = All | "auto" | "balance" | "balance-all";
 
-type ColumnGapProperty<TLength> = All | TLength | "normal";
+type ColumnGapProperty<TLength> = All | LengthPercentage<TLength> | "normal";
 
 type ColumnRuleProperty = All | string;
 
 type ColumnRuleColorProperty = All | Color;
 
-type ColumnRuleStyleProperty = All | BrStyle;
+type ColumnRuleStyleProperty = All | string;
 
-type ColumnRuleWidthProperty<TLength> = All | BrWidth<TLength>;
+type ColumnRuleWidthProperty = All | string;
 
 type ColumnSpanProperty = All | "none" | "all";
 
@@ -1172,6 +1197,8 @@ type GridTemplateColumnsProperty = All | "none" | string;
 
 type GridTemplateRowsProperty = All | "none" | string;
 
+type HangingPunctuationProperty = All | "none" | string;
+
 type HeightProperty = All | string;
 
 type HyphensProperty = All | "none" | "manual" | "auto";
@@ -1202,6 +1229,8 @@ type LineBreakProperty = All | "auto" | "loose" | "normal" | "strict";
 
 type LineHeightProperty<TLength> = All | TLength | "normal" | string | number;
 
+type LineHeightStepProperty<TLength> = All | TLength | "none";
+
 type ListStyleProperty = All | string;
 
 type ListStyleImageProperty = All | "none" | string;
@@ -1228,9 +1257,21 @@ type MarginRightProperty<TLength> = All | TLength | "auto" | string;
 
 type MarginTopProperty<TLength> = All | TLength | "auto" | string;
 
-type MarkerOffsetProperty<TLength> = All | TLength | "auto";
-
 type MaskProperty = All | MaskLayer;
+
+type MaskBorderProperty = All | string;
+
+type MaskBorderModeProperty = All | "luminance" | "alpha";
+
+type MaskBorderOutsetProperty<TLength> = All | TLength | string | number;
+
+type MaskBorderRepeatProperty = All | "stretch" | "repeat" | "round" | "space" | string;
+
+type MaskBorderSliceProperty = All | string;
+
+type MaskBorderSourceProperty = All | "none" | string;
+
+type MaskBorderWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | string | number;
 
 type MaskClipProperty = All | string;
 
@@ -1401,6 +1442,8 @@ type TextDecorationColorProperty = All | Color;
 type TextDecorationLineProperty = All | "none" | string;
 
 type TextDecorationSkipProperty = All | "none" | string;
+
+type TextDecorationSkipInkProperty = All | "auto" | "none";
 
 type TextDecorationStyleProperty = All | "solid" | "double" | "dotted" | "dashed" | "wavy";
 
@@ -1633,6 +1676,8 @@ type MozUserInputProperty = All | "auto" | "none" | "enabled" | "disabled";
 
 type MozUserModifyProperty = All | "read-only" | "read-write" | "write-only";
 
+type MozWindowDraggingProperty = All | "drag" | "no-drag";
+
 type MozWindowShadowProperty = All | "default" | "menu" | "tooltip" | "sheet" | "none";
 
 type WebkitBorderBeforeProperty = All | string;
@@ -1669,6 +1714,8 @@ type WebkitMaskRepeatXProperty = All | "repeat" | "no-repeat" | "space" | "round
 
 type WebkitMaskRepeatYProperty = All | "repeat" | "no-repeat" | "space" | "round";
 
+type WebkitOverflowScrollingProperty = All | "auto" | "touch";
+
 type WebkitTapHighlightColorProperty = All | Color;
 
 type WebkitTextFillColorProperty = All | Color;
@@ -1681,7 +1728,7 @@ type WebkitTextStrokeWidthProperty<TLength> = All | TLength;
 
 type WebkitTouchCalloutProperty = All | "default" | "none";
 
-type All = "initial" | "inherit" | "unset";
+type All = "initial" | "inherit" | "unset" | "revert";
 
 type SingleAnimation = SingleTimingFunction | SingleAnimationIterationCount | SingleAnimationDirection | SingleAnimationFillMode | SingleAnimationPlayState | string;
 

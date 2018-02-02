@@ -13,7 +13,7 @@
     "@types/prettier": "^1.6.1",
     "chokidar": "^2.0.0",
     "jest": "^22.0.6",
-    "mdn-data": "1.0.0",
+    "mdn-data": "1.1.0",
     "prettier": "^1.7.0",
     "ts-node": "^4.1.0",
     "tslint": "^5.7.0",
