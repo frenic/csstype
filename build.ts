@@ -24,6 +24,7 @@ async function format(output: string) {
   return prettier.format(output, {
     ...options,
     printWidth: 180,
+    singleQuote: false,
     parser: 'typescript',
   });
 }
