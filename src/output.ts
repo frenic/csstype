@@ -46,26 +46,32 @@ function _export(declaration: string): string {
   return `export ${declaration}`;
 }
 
-// function _export(declaration: string): string {
-//   return `export ${declaration}`;
-// }
-
-const ALL_TYPE_ALIAS_NAME = 'all';
+const ALL_TYPE_ALIAS_NAME = 'All';
 const allTypeAlias: TypeType = { type: Type.TypeAlias, alias: ALL_TYPE_ALIAS_NAME };
 
-export function unions(originalTypes: TypeType[]) {
-  let types = [...originalTypes];
+const ALL_STRING_TYPE_ALIAS_NAME = 'AllString';
+const allStringTypeAlias: TypeType = { type: Type.TypeAlias, alias: ALL_STRING_TYPE_ALIAS_NAME };
+const allString: TypeType[] = [{ type: Type.TypeAlias, alias: ALL_TYPE_ALIAS_NAME }, { type: Type.String }];
 
+const ALL_NUMBER_TYPE_ALIAS_NAME = 'AllNumber';
+const allNumberTypeAlias: TypeType = { type: Type.TypeAlias, alias: ALL_NUMBER_TYPE_ALIAS_NAME };
+const allNumber: TypeType[] = [{ type: Type.TypeAlias, alias: ALL_TYPE_ALIAS_NAME }, { type: Type.Number }];
+
+function filterInterestingTypes(types: TypeType[]) {
   // Exclude type aliases that's not of interest
-  types = types.filter(
+  let filteredTypes = types.filter(
     type => type.type !== Type.TypeAlias || type.alias in dataTypes || type.alias === ALL_TYPE_ALIAS_NAME,
   );
 
   // Those excluded type aliases need to resolve to string
-  if (types.length < originalTypes.length && types.every(type => type.type !== Type.String)) {
-    types.push({ type: Type.String });
+  if (filteredTypes.length < types.length && filteredTypes.every(type => type.type !== Type.String)) {
+    filteredTypes.push({ type: Type.String });
   }
 
+  return filteredTypes;
+}
+
+function unions(types: TypeType[]) {
   const unions = types.sort(({ type: a }, { type: b }) => a - b).map(type => {
     switch (type.type) {
       case Type.String:
@@ -105,7 +111,7 @@ function typeAliasName(name: string) {
 }
 
 export function typeAlias(name: string, types: TypeType[]) {
-  return `type ${typeAliasName(name)} = ${unions(types).join(' | ')};`;
+  return `type ${typeAliasName(name)} = ${unions(filterInterestingTypes(types)).join(' | ')};`;
 }
 
 function lengthInPropertyType(name: string) {
@@ -117,12 +123,38 @@ function lengthInPropertyType(name: string) {
   });
 }
 
+function isStringType(types: TypeType[]) {
+  return types.every(type => type.type === Type.String);
+}
+
+function isNumberType(types: TypeType[]) {
+  return types.every(type => type.type === Type.Number);
+}
+
+function isStringPropertyType(name: string) {
+  return [standardProperties, vendorPrefixedProperties].every(properties => {
+    if (name in properties) {
+      return isStringType(filterInterestingTypes(properties[name]));
+    }
+    return true;
+  });
+}
+
+function isNumberPropertyType(name: string) {
+  return [standardProperties, vendorPrefixedProperties].every(properties => {
+    if (name in properties) {
+      return isNumberType(filterInterestingTypes(properties[name]));
+    }
+    return true;
+  });
+}
+
 function propertyTypeName(name: string) {
   return `${toPascalCase(name)}Property${generics(lengthInPropertyType(name))}`;
 }
 
-export function propertyType(name: string, types: TypeType[]) {
-  return `type ${propertyTypeName(name)} = ${unions(types).join(' | ')};`;
+function propertyType(name: string, interestingTypes: TypeType[]) {
+  return `type ${propertyTypeName(name)} = ${unions(interestingTypes).join(' | ')};`;
 }
 
 function propertyName(name: string) {
@@ -130,7 +162,9 @@ function propertyName(name: string) {
 }
 
 export function property(name: string, fallback = false) {
-  let type = propertyTypeName(name);
+  let type = isStringPropertyType(name)
+    ? ALL_STRING_TYPE_ALIAS_NAME
+    : isNumberPropertyType(name) ? ALL_NUMBER_TYPE_ALIAS_NAME : propertyTypeName(name);
 
   if (fallback) {
     type += ` | ${type}[]`;
@@ -183,6 +217,7 @@ export default function create() {
 
   for (const name in vendorPrefixedProperties) {
     output += property(name, true);
+    output += EOL + EOL;
   }
 
   // End of VendorProperties interface
@@ -200,17 +235,33 @@ export default function create() {
 
   output += _export(typeAlias(TYPE_PSEUDOS, pseudos));
 
+  output += EOL + EOL;
+
   for (const name in standardProperties) {
-    output += propertyType(name, [allTypeAlias, ...standardProperties[name]]);
-    output += EOL + EOL;
+    const interestingTypes = filterInterestingTypes(standardProperties[name]);
+    if (!isStringType(interestingTypes) && !isNumberType(interestingTypes)) {
+      output += propertyType(name, [allTypeAlias, ...interestingTypes]);
+      output += EOL + EOL;
+    }
   }
 
   for (const name in vendorPrefixedProperties) {
-    output += propertyType(name, [allTypeAlias, ...vendorPrefixedProperties[name]]);
-    output += EOL + EOL;
+    const interestingTypes = filterInterestingTypes(vendorPrefixedProperties[name]);
+    if (!isStringType(interestingTypes) && !isNumberType(interestingTypes)) {
+      output += propertyType(name, [allTypeAlias, ...interestingTypes]);
+      output += EOL + EOL;
+    }
   }
 
   output += typeAlias(ALL_TYPE_ALIAS_NAME, all);
+
+  output += EOL + EOL;
+
+  output += typeAlias(ALL_STRING_TYPE_ALIAS_NAME, allString);
+
+  output += EOL + EOL;
+
+  output += typeAlias(ALL_NUMBER_TYPE_ALIAS_NAME, allNumber);
 
   output += EOL + EOL;
 

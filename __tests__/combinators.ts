@@ -29,5 +29,4 @@ test('output of CSS syntax combinators', () => {
   expect(typeAlias('component', type(parse('something || another-thing')))).toBe(
     "type Component = 'something' | 'another-thing' | string;",
   );
-  expect(property('component')).toBe('component?: ComponentProperty;');
 });
