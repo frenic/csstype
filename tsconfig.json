@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
-        "lib": ["es7"],
-        "strict": true,
-        "sourceMap": false,
-        "noEmit": true
-    }
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["es7"],
+    "strict": true,
+    "sourceMap": false,
+    "noEmit": true
+  }
 }

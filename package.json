@@ -7,24 +7,24 @@
   "author": "Fredrik Nicol <fredrik.nicol@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/chokidar": "^1.7.2",
-    "@types/jest": "^22.0.1",
-    "@types/node": "^9.3.0",
-    "@types/prettier": "^1.6.1",
+    "@types/chokidar": "^1.7.4",
+    "@types/jest": "^22.1.1",
+    "@types/node": "^9.4.0",
+    "@types/prettier": "^1.10.0",
     "chokidar": "^2.0.0",
-    "jest": "^22.0.6",
+    "jest": "^22.1.4",
     "mdn-data": "1.1.0",
-    "prettier": "^1.7.0",
+    "prettier": "^1.10.2",
     "ts-node": "^4.1.0",
-    "tslint": "^5.7.0",
-    "typescript": "^2.5.2"
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
   },
   "scripts": {
     "build": "ts-node build.ts",
     "watch": "ts-node build.ts --watch",
-    "pretty": "prettier --write build.ts **/*.ts",
+    "pretty": "prettier --write build.ts **/*.{ts,js,json}",
     "test": "jest --no-cache",
-    "prepublish": "npm run test && npm run build && tsc typecheck.ts --noEmit"
+    "prepublish": "tsc && npm run test && npm run build && tsc typecheck.ts --noEmit"
   },
   "files": [
     "index.d.ts"
