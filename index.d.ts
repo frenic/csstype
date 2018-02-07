@@ -769,50 +769,6 @@ export interface Properties<TLength = string | number> extends StandardPropertie
 export interface PropertiesFallback<TLength = string | number> extends StandardPropertiesFallback<TLength>, VendorPropertiesFallback<TLength> {}
 
 export type Pseudos =
-  | ":placeholder-shown"
-  | ":active"
-  | ":any-link"
-  | ":checked"
-  | ":default"
-  | ":defined"
-  | ":dir"
-  | ":disabled"
-  | ":empty"
-  | ":enabled"
-  | ":first"
-  | ":first-child"
-  | ":first-of-type"
-  | ":fullscreen"
-  | ":focus"
-  | ":focus-within"
-  | ":hover"
-  | ":indeterminate"
-  | ":in-range"
-  | ":invalid"
-  | ":lang"
-  | ":last-child"
-  | ":last-of-type"
-  | ":left"
-  | ":link"
-  | ":not"
-  | ":nth-child"
-  | ":nth-last-child"
-  | ":nth-last-of-type"
-  | ":nth-of-type"
-  | ":only-child"
-  | ":only-of-type"
-  | ":optional"
-  | ":out-of-range"
-  | ":any"
-  | ":read-only"
-  | ":read-write"
-  | ":required"
-  | ":right"
-  | ":root"
-  | ":scope"
-  | ":target"
-  | ":valid"
-  | ":visited"
   | "::-moz-progress-bar"
   | "::-moz-range-progress"
   | "::-moz-range-thumb"
@@ -836,19 +792,63 @@ export type Pseudos =
   | "::grammar-error"
   | "::placeholder"
   | "::selection"
-  | "::spelling-error";
+  | "::spelling-error"
+  | ":active"
+  | ":any"
+  | ":any-link"
+  | ":checked"
+  | ":default"
+  | ":defined"
+  | ":dir"
+  | ":disabled"
+  | ":empty"
+  | ":enabled"
+  | ":first"
+  | ":first-child"
+  | ":first-of-type"
+  | ":focus"
+  | ":focus-within"
+  | ":fullscreen"
+  | ":hover"
+  | ":in-range"
+  | ":indeterminate"
+  | ":invalid"
+  | ":lang"
+  | ":last-child"
+  | ":last-of-type"
+  | ":left"
+  | ":link"
+  | ":not"
+  | ":nth-child"
+  | ":nth-last-child"
+  | ":nth-last-of-type"
+  | ":nth-of-type"
+  | ":only-child"
+  | ":only-of-type"
+  | ":optional"
+  | ":out-of-range"
+  | ":placeholder-shown"
+  | ":read-only"
+  | ":read-write"
+  | ":required"
+  | ":right"
+  | ":root"
+  | ":scope"
+  | ":target"
+  | ":valid"
+  | ":visited";
 
-type All = "initial" | "inherit" | "unset" | "revert";
+type All = "inherit" | "initial" | "revert" | "unset";
 
 type AllString = All | string;
 
 type AllNumber = All | number;
 
-type AlignContentProperty = All | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | "stretch";
+type AlignContentProperty = All | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly" | "stretch";
 
-type AlignItemsProperty = All | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
+type AlignItemsProperty = All | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
 
-type AlignSelfProperty = All | "auto" | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
+type AlignSelfProperty = All | "auto" | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
 
 type AnimationProperty = All | SingleAnimation;
 
@@ -868,23 +868,23 @@ type AppearanceProperty = All | "auto" | "none";
 
 type AzimuthProperty =
   | All
-  | "rightwards"
-  | "left-side"
-  | "far-left"
-  | "left"
-  | "center-left"
+  | "behind"
   | "center"
+  | "center-left"
+  | "center-right"
+  | "far-left"
+  | "far-right"
+  | "left"
+  | "left-side"
   | "leftwards"
   | "right"
-  | "far-right"
   | "right-side"
-  | "behind"
-  | "center-right"
+  | "rightwards"
   | string;
 
 type BackdropFilterProperty = All | "none" | string;
 
-type BackfaceVisibilityProperty = All | "visible" | "hidden";
+type BackfaceVisibilityProperty = All | "hidden" | "visible";
 
 type BackgroundAttachmentProperty = All | Attachment;
 
@@ -922,7 +922,7 @@ type BorderColorProperty = All | Color;
 
 type BorderImageOutsetProperty<TLength> = All | TLength | number;
 
-type BorderImageRepeatProperty = All | "stretch" | "repeat" | "round" | "space";
+type BorderImageRepeatProperty = All | "repeat" | "round" | "space" | "stretch";
 
 type BorderImageSourceProperty = All | "none" | string;
 
@@ -964,33 +964,33 @@ type BorderWidthProperty<TLength> = All | BrWidth<TLength>;
 
 type BottomProperty<TLength> = All | TLength | "auto" | string;
 
-type BoxAlignProperty = All | "start" | "center" | "end" | "baseline" | "stretch";
+type BoxAlignProperty = All | "baseline" | "center" | "end" | "start" | "stretch";
 
-type BoxDecorationBreakProperty = All | "slice" | "clone";
+type BoxDecorationBreakProperty = All | "clone" | "slice";
 
-type BoxDirectionProperty = All | "normal" | "reverse" | "inherit";
+type BoxDirectionProperty = All | "inherit" | "normal" | "reverse";
 
-type BoxLinesProperty = All | "single" | "multiple";
+type BoxLinesProperty = All | "multiple" | "single";
 
-type BoxOrientProperty = All | "horizontal" | "vertical" | "inline-axis" | "block-axis" | "inherit";
+type BoxOrientProperty = All | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
 
-type BoxPackProperty = All | "start" | "center" | "end" | "justify";
+type BoxPackProperty = All | "center" | "end" | "justify" | "start";
 
 type BoxShadowProperty = All | "none" | string;
 
-type BoxSizingProperty = All | "content-box" | "border-box";
+type BoxSizingProperty = All | "border-box" | "content-box";
 
-type BreakAfterProperty = All | "region" | "avoid" | "avoid-page" | "page" | "left" | "auto" | "recto" | "verso" | "avoid-column" | "column" | "avoid-region" | "right";
+type BreakAfterProperty = All | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
 
-type BreakBeforeProperty = All | "region" | "avoid" | "avoid-page" | "page" | "left" | "auto" | "recto" | "verso" | "avoid-column" | "column" | "avoid-region" | "right";
+type BreakBeforeProperty = All | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
 
-type BreakInsideProperty = All | "auto" | "avoid" | "avoid-page" | "avoid-column" | "avoid-region";
+type BreakInsideProperty = All | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region";
 
-type CaptionSideProperty = All | "top" | "bottom" | "block-start" | "block-end" | "inline-start" | "inline-end";
+type CaptionSideProperty = All | "block-end" | "block-start" | "bottom" | "inline-end" | "inline-start" | "top";
 
 type CaretColorProperty = All | Color | "auto";
 
-type ClearProperty = All | "none" | "left" | "right" | "both" | "inline-start" | "inline-end";
+type ClearProperty = All | "both" | "inline-end" | "inline-start" | "left" | "none" | "right";
 
 type ClipProperty = All | "auto" | string;
 
@@ -1006,13 +1006,13 @@ type ColumnGapProperty<TLength> = All | LengthPercentage<TLength> | "normal";
 
 type ColumnRuleColorProperty = All | Color;
 
-type ColumnSpanProperty = All | "none" | "all";
+type ColumnSpanProperty = All | "all" | "none";
 
 type ColumnWidthProperty<TLength> = All | TLength | "auto";
 
-type ContainProperty = All | "none" | "strict" | "content" | "size" | "layout" | "style" | "paint" | string;
+type ContainProperty = All | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
 
-type ContentProperty = All | ContentList | "normal" | "none" | string;
+type ContentProperty = All | ContentList | "none" | "normal" | string;
 
 type CounterIncrementProperty = All | "none" | string;
 
@@ -1020,73 +1020,73 @@ type CounterResetProperty = All | "none" | string;
 
 type CursorProperty =
   | All
-  | "grabbing"
-  | "auto"
-  | "default"
-  | "none"
-  | "context-menu"
-  | "help"
-  | "pointer"
-  | "progress"
-  | "wait"
-  | "cell"
-  | "crosshair"
-  | "text"
-  | "vertical-text"
   | "alias"
+  | "all-scroll"
+  | "auto"
+  | "cell"
+  | "col-resize"
+  | "context-menu"
   | "copy"
-  | "move"
-  | "no-drop"
-  | "not-allowed"
+  | "crosshair"
+  | "default"
+  | "e-resize"
+  | "ew-resize"
   | "grab"
+  | "grabbing"
+  | "help"
+  | "move"
   | "n-resize"
   | "ne-resize"
+  | "nesw-resize"
+  | "no-drop"
+  | "none"
+  | "not-allowed"
+  | "ns-resize"
   | "nw-resize"
+  | "nwse-resize"
+  | "pointer"
+  | "progress"
+  | "row-resize"
   | "s-resize"
   | "se-resize"
   | "sw-resize"
+  | "text"
+  | "vertical-text"
   | "w-resize"
-  | "ew-resize"
-  | "ns-resize"
-  | "nesw-resize"
-  | "nwse-resize"
-  | "col-resize"
-  | "row-resize"
-  | "all-scroll"
+  | "wait"
   | "zoom-in"
   | "zoom-out"
-  | "e-resize"
   | string;
 
 type DirectionProperty = All | "ltr" | "rtl";
 
 type DisplayProperty = All | DisplayOutside | DisplayInside | DisplayInternal | DisplayBox | DisplayLegacy | string;
 
-type DisplayInsideProperty = All | "auto" | "block" | "table" | "flex" | "grid" | "ruby";
+type DisplayInsideProperty = All | "auto" | "block" | "flex" | "grid" | "ruby" | "table";
 
-type DisplayListProperty = All | "none" | "list-item";
+type DisplayListProperty = All | "list-item" | "none";
 
 type DisplayOutsideProperty =
   | All
-  | "ruby-text-container"
-  | "inline-level"
-  | "run-in"
-  | "contents"
-  | "none"
-  | "table-row-group"
-  | "table-header-group"
-  | "table-footer-group"
   | "block-level"
-  | "table-cell"
-  | "table-column-group"
-  | "table-column"
-  | "table-caption"
+  | "contents"
+  | "inline-level"
+  | "none"
   | "ruby-base"
-  | "ruby-text"
   | "ruby-base-container"
-  | "table-row";
+  | "ruby-text"
+  | "ruby-text-container"
+  | "run-in"
+  | "table-caption"
+  | "table-cell"
+  | "table-column"
+  | "table-column-group"
+  | "table-footer-group"
+  | "table-header-group"
+  | "table-row"
+  | "table-row-group";
 
-type EmptyCellsProperty = All | "show" | "hide";
+type EmptyCellsProperty = All | "hide" | "show";
 
 type FilterProperty = All | "none" | string;
 
@@ -1094,11 +1094,11 @@ type FlexProperty = All | "none" | string;
 
 type FlexBasisProperty = All | "content" | string;
 
-type FlexDirectionProperty = All | "row" | "row-reverse" | "column" | "column-reverse";
+type FlexDirectionProperty = All | "column" | "column-reverse" | "row" | "row-reverse";
 
 type FlexWrapProperty = All | "nowrap" | "wrap" | "wrap-reverse";
 
-type FloatProperty = All | "left" | "right" | "none" | "inline-start" | "inline-end";
+type FloatProperty = All | "inline-end" | "inline-start" | "left" | "none" | "right";
 
 type FontProperty = All | "caption" | "icon" | "menu" | "message-box" | "small-caption" | "status-bar" | string;
 
@@ -1106,7 +1106,7 @@ type FontFamilyProperty = All | GenericFamily | string;
 
 type FontFeatureSettingsProperty = All | FeatureTagValue | "normal";
 
-type FontKerningProperty = All | "auto" | "normal" | "none";
+type FontKerningProperty = All | "auto" | "none" | "normal";
 
 type FontLanguageOverrideProperty = All | "normal" | string;
 
@@ -1118,39 +1118,39 @@ type FontSizeAdjustProperty = All | "none" | number;
 
 type FontStretchProperty =
   | All
-  | "normal"
-  | "ultra-condensed"
-  | "extra-condensed"
   | "condensed"
+  | "expanded"
+  | "extra-condensed"
+  | "extra-expanded"
+  | "normal"
   | "semi-condensed"
   | "semi-expanded"
-  | "expanded"
-  | "extra-expanded"
+  | "ultra-condensed"
   | "ultra-expanded";
 
-type FontStyleProperty = All | "normal" | "italic" | "oblique";
+type FontStyleProperty = All | "italic" | "normal" | "oblique";
 
-type FontSynthesisProperty = All | "none" | "weight" | "style" | string;
+type FontSynthesisProperty = All | "none" | "style" | "weight" | string;
 
-type FontVariantProperty = All | "normal" | "none" | string;
+type FontVariantProperty = All | "none" | "normal" | string;
 
 type FontVariantAlternatesProperty = All | "normal" | string;
 
-type FontVariantCapsProperty = All | "normal" | "small-caps" | "all-small-caps" | "petite-caps" | "all-petite-caps" | "unicase" | "titling-caps";
+type FontVariantCapsProperty = All | "all-petite-caps" | "all-small-caps" | "normal" | "petite-caps" | "small-caps" | "titling-caps" | "unicase";
 
 type FontVariantEastAsianProperty = All | EastAsianVariantValues | EastAsianWidthValues | "normal" | "ruby" | string;
 
-type FontVariantLigaturesProperty = All | CommonLigValues | DiscretionaryLigValues | HistoricalLigValues | ContextualAltValues | "normal" | "none" | string;
+type FontVariantLigaturesProperty = All | CommonLigValues | DiscretionaryLigValues | HistoricalLigValues | ContextualAltValues | "none" | "normal" | string;
 
 type FontVariantNumericProperty = All | NumericFigureValues | NumericSpacingValues | NumericFractionValues | "normal" | "ordinal" | "slashed-zero" | string;
 
 type FontVariantPositionProperty = All | "normal" | "sub" | "super";
 
-type FontWeightProperty = All | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 900 | 400 | 500 | 600 | 700 | 800 | 300;
+type FontWeightProperty = All | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
 type GridAreaProperty = All | GridLine;
 
-type GridAutoFlowProperty = All | "row" | "column" | "dense" | string;
+type GridAutoFlowProperty = All | "column" | "dense" | "row" | string;
 
 type GridColumnProperty = All | GridLine;
 
@@ -1176,23 +1176,23 @@ type GridTemplateColumnsProperty = All | "none" | string;
 
 type GridTemplateRowsProperty = All | "none" | string;
 
-type HangingPunctuationProperty = All | "none" | "first" | "force-end" | "allow-end" | "last" | string;
+type HangingPunctuationProperty = All | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
-type HyphensProperty = All | "none" | "manual" | "auto";
+type HyphensProperty = All | "auto" | "manual" | "none";
 
 type ImageOrientationProperty = All | "from-image" | string;
 
 type ImageRenderingProperty = All | "auto" | "crisp-edges" | "pixelated";
 
-type ImeModeProperty = All | "auto" | "normal" | "active" | "inactive" | "disabled";
+type ImeModeProperty = All | "active" | "auto" | "disabled" | "inactive" | "normal";
 
 type InitialLetterProperty = All | "normal" | string;
 
-type InitialLetterAlignProperty = All | "auto" | "alphabetic" | "hanging" | "ideographic";
+type InitialLetterAlignProperty = All | "alphabetic" | "auto" | "hanging" | "ideographic";
 
 type IsolationProperty = All | "auto" | "isolate";
 
-type JustifyContentProperty = All | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
+type JustifyContentProperty = All | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly";
 
 type LeftProperty<TLength> = All | TLength | "auto" | string;
 
@@ -1222,11 +1222,11 @@ type MarginTopProperty<TLength> = All | TLength | "auto" | string;
 
 type MaskProperty<TLength> = All | MaskLayer<TLength>;
 
-type MaskBorderModeProperty = All | "luminance" | "alpha";
+type MaskBorderModeProperty = All | "alpha" | "luminance";
 
 type MaskBorderOutsetProperty<TLength> = All | TLength | number;
 
-type MaskBorderRepeatProperty = All | "stretch" | "repeat" | "round" | "space";
+type MaskBorderRepeatProperty = All | "repeat" | "round" | "space" | "stretch";
 
 type MaskBorderSourceProperty = All | "none" | string;
 
@@ -1246,19 +1246,19 @@ type MaskRepeatProperty = All | RepeatStyle;
 
 type MaskSizeProperty<TLength> = All | BgSize<TLength>;
 
-type MaskTypeProperty = All | "luminance" | "alpha";
+type MaskTypeProperty = All | "alpha" | "luminance";
 
-type MaxHeightProperty<TLength> = All | TLength | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string;
+type MaxHeightProperty<TLength> = All | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
-type MaxWidthProperty<TLength> = All | TLength | "none" | "max-content" | "min-content" | "fit-content" | "fill-available" | string;
+type MaxWidthProperty<TLength> = All | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
-type MinHeightProperty<TLength> = All | TLength | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string;
+type MinHeightProperty<TLength> = All | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
 
-type MinWidthProperty<TLength> = All | TLength | "auto" | "max-content" | "min-content" | "fit-content" | "fill-available" | string;
+type MinWidthProperty<TLength> = All | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
 
 type MixBlendModeProperty = All | BlendMode;
 
-type ObjectFitProperty = All | "fill" | "contain" | "cover" | "none" | "scale-down";
+type ObjectFitProperty = All | "contain" | "cover" | "fill" | "none" | "scale-down";
 
 type OffsetAnchorProperty = All | "auto" | string;
 
@@ -1278,15 +1278,15 @@ type OutlineStyleProperty = All | BrStyle | "auto";
 
 type OutlineWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type OverflowProperty = All | "visible" | "hidden" | "scroll" | "auto";
+type OverflowProperty = All | "auto" | "hidden" | "scroll" | "visible";
 
-type OverflowClipBoxProperty = All | "padding-box" | "content-box";
+type OverflowClipBoxProperty = All | "content-box" | "padding-box";
 
-type OverflowWrapProperty = All | "normal" | "break-word";
+type OverflowWrapProperty = All | "break-word" | "normal";
 
-type OverflowXProperty = All | "visible" | "hidden" | "scroll" | "auto";
+type OverflowXProperty = All | "auto" | "hidden" | "scroll" | "visible";
 
-type OverflowYProperty = All | "visible" | "hidden" | "scroll" | "auto";
+type OverflowYProperty = All | "auto" | "hidden" | "scroll" | "visible";
 
 type PaddingProperty<TLength> = All | TLength | string;
 
@@ -1298,29 +1298,29 @@ type PaddingRightProperty<TLength> = All | TLength | string;
 
 type PaddingTopProperty<TLength> = All | TLength | string;
 
-type PageBreakAfterProperty = All | "auto" | "always" | "avoid" | "left" | "right";
+type PageBreakAfterProperty = All | "always" | "auto" | "avoid" | "left" | "right";
 
-type PageBreakBeforeProperty = All | "auto" | "always" | "avoid" | "left" | "right";
+type PageBreakBeforeProperty = All | "always" | "auto" | "avoid" | "left" | "right";
 
 type PageBreakInsideProperty = All | "auto" | "avoid";
 
 type PerspectiveProperty<TLength> = All | TLength | "none";
 
-type PointerEventsProperty = All | "inherit" | "none" | "visiblePainted" | "visibleFill" | "visibleStroke" | "auto" | "painted" | "fill" | "stroke" | "all" | "visible";
+type PointerEventsProperty = All | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
 
-type PositionProperty = All | "static" | "relative" | "absolute" | "sticky" | "fixed";
+type PositionProperty = All | "absolute" | "fixed" | "relative" | "static" | "sticky";
 
 type QuotesProperty = All | "none" | string;
 
-type ResizeProperty = All | "none" | "both" | "horizontal" | "vertical";
+type ResizeProperty = All | "both" | "horizontal" | "none" | "vertical";
 
 type RightProperty<TLength> = All | TLength | "auto" | string;
 
-type RubyAlignProperty = All | "start" | "center" | "space-between" | "space-around";
+type RubyAlignProperty = All | "center" | "space-around" | "space-between" | "start";
 
-type RubyMergeProperty = All | "separate" | "collapse" | "auto";
+type RubyMergeProperty = All | "auto" | "collapse" | "separate";
 
-type RubyPositionProperty = All | "over" | "under" | "inter-character";
+type RubyPositionProperty = All | "inter-character" | "over" | "under";
 
 type ScrollBehaviorProperty = All | "auto" | "smooth";
 
@@ -1330,11 +1330,11 @@ type ScrollSnapPointsXProperty = All | "none" | string;
 
 type ScrollSnapPointsYProperty = All | "none" | string;
 
-type ScrollSnapTypeProperty = All | "none" | "mandatory" | "proximity";
+type ScrollSnapTypeProperty = All | "mandatory" | "none" | "proximity";
 
-type ScrollSnapTypeXProperty = All | "none" | "mandatory" | "proximity";
+type ScrollSnapTypeXProperty = All | "mandatory" | "none" | "proximity";
 
-type ScrollSnapTypeYProperty = All | "none" | "mandatory" | "proximity";
+type ScrollSnapTypeYProperty = All | "mandatory" | "none" | "proximity";
 
 type ShapeMarginProperty<TLength> = All | LengthPercentage<TLength>;
 
@@ -1344,45 +1344,45 @@ type TabSizeProperty<TLength> = All | TLength | number;
 
 type TableLayoutProperty = All | "auto" | "fixed";
 
-type TextAlignProperty = All | "start" | "end" | "left" | "right" | "center" | "justify" | "match-parent";
+type TextAlignProperty = All | "center" | "end" | "justify" | "left" | "match-parent" | "right" | "start";
 
-type TextAlignLastProperty = All | "auto" | "start" | "end" | "left" | "right" | "center" | "justify";
+type TextAlignLastProperty = All | "auto" | "center" | "end" | "justify" | "left" | "right" | "start";
 
-type TextCombineUprightProperty = All | "none" | "all" | string;
+type TextCombineUprightProperty = All | "all" | "none" | string;
 
 type TextDecorationColorProperty = All | Color;
 
-type TextDecorationLineProperty = All | "none" | "underline" | "overline" | "line-through" | "blink" | string;
+type TextDecorationLineProperty = All | "blink" | "line-through" | "none" | "overline" | "underline" | string;
 
-type TextDecorationSkipProperty = All | "none" | "objects" | "spaces" | "leading-spaces" | "trailing-spaces" | "edges" | "box-decoration" | string;
+type TextDecorationSkipProperty = All | "box-decoration" | "edges" | "leading-spaces" | "none" | "objects" | "spaces" | "trailing-spaces" | string;
 
 type TextDecorationSkipInkProperty = All | "auto" | "none";
 
-type TextDecorationStyleProperty = All | "solid" | "double" | "dotted" | "dashed" | "wavy";
+type TextDecorationStyleProperty = All | "dashed" | "dotted" | "double" | "solid" | "wavy";
 
 type TextEmphasisColorProperty = All | Color;
 
-type TextEmphasisStyleProperty = All | "none" | "filled" | "open" | "dot" | "circle" | "double-circle" | "triangle" | "sesame" | string;
+type TextEmphasisStyleProperty = All | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
 type TextJustifyProperty = All | "auto" | "inter-character" | "inter-word" | "none";
 
-type TextOrientationProperty = All | "mixed" | "upright" | "sideways";
+type TextOrientationProperty = All | "mixed" | "sideways" | "upright";
 
 type TextOverflowProperty = All | "clip" | "ellipsis" | string;
 
-type TextRenderingProperty = All | "auto" | "optimizeSpeed" | "optimizeLegibility" | "geometricPrecision";
+type TextRenderingProperty = All | "auto" | "geometricPrecision" | "optimizeLegibility" | "optimizeSpeed";
 
 type TextShadowProperty = All | "none" | string;
 
-type TextSizeAdjustProperty = All | "none" | "auto" | string;
+type TextSizeAdjustProperty = All | "auto" | "none" | string;
 
-type TextTransformProperty = All | "none" | "capitalize" | "uppercase" | "lowercase" | "full-width";
+type TextTransformProperty = All | "capitalize" | "full-width" | "lowercase" | "none" | "uppercase";
 
-type TextUnderlinePositionProperty = All | "auto" | "under" | "left" | "right" | string;
+type TextUnderlinePositionProperty = All | "auto" | "left" | "right" | "under" | string;
 
 type TopProperty<TLength> = All | TLength | "auto" | string;
 
-type TouchActionProperty = All | "manipulation" | "none" | "pinch-zoom" | "pan-x" | "pan-left" | "auto" | "pan-y" | "pan-up" | "pan-down" | "pan-right" | string;
+type TouchActionProperty = All | "auto" | "manipulation" | "none" | "pan-down" | "pan-left" | "pan-right" | "pan-up" | "pan-x" | "pan-y" | "pinch-zoom" | string;
 
 type TransformProperty = All | "none" | string;
 
@@ -1396,32 +1396,51 @@ type TransitionPropertyProperty = All | SingleTransitionProperty | "none";
 
 type TransitionTimingFunctionProperty = All | SingleTransitionTimingFunction;
 
-type UnicodeBidiProperty = All | "normal" | "embed" | "isolate" | "bidi-override" | "isolate-override" | "plaintext";
+type UnicodeBidiProperty = All | "bidi-override" | "embed" | "isolate" | "isolate-override" | "normal" | "plaintext";
 
-type UserSelectProperty = All | "auto" | "text" | "none" | "contain" | "all";
+type UserSelectProperty = All | "all" | "auto" | "contain" | "none" | "text";
 
-type VerticalAlignProperty<TLength> = All | TLength | "sub" | "super" | "text-top" | "baseline" | "middle" | "top" | "bottom" | "text-bottom" | string;
+type VerticalAlignProperty<TLength> = All | TLength | "baseline" | "bottom" | "middle" | "sub" | "super" | "text-bottom" | "text-top" | "top" | string;
 
-type VisibilityProperty = All | "visible" | "hidden" | "collapse";
+type VisibilityProperty = All | "collapse" | "hidden" | "visible";
 
-type WhiteSpaceProperty = All | "normal" | "pre" | "nowrap" | "pre-wrap" | "pre-line";
+type WhiteSpaceProperty = All | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 
 type WillChangeProperty = All | AnimateableFeature | "auto";
 
-type WordBreakProperty = All | "normal" | "break-all" | "keep-all";
+type WordBreakProperty = All | "break-all" | "keep-all" | "normal";
 
 type WordSpacingProperty<TLength> = All | LengthPercentage<TLength> | "normal";
 
-type WordWrapProperty = All | "normal" | "break-word";
+type WordWrapProperty = All | "break-word" | "normal";
 
-type WritingModeProperty = All | "horizontal-tb" | "vertical-rl" | "vertical-lr" | "sideways-rl" | "sideways-lr";
+type WritingModeProperty = All | "horizontal-tb" | "sideways-lr" | "sideways-rl" | "vertical-lr" | "vertical-rl";
 
 type ZIndexProperty = All | "auto" | number;
 
-type MsOverflowStyleProperty = All | "auto" | "none" | "scrollbar" | "-ms-autohiding-scrollbar";
+type MsOverflowStyleProperty = All | "-ms-autohiding-scrollbar" | "auto" | "none" | "scrollbar";
 
 type MozAppearanceProperty =
   | All
+  | "-moz-mac-unified-toolbar"
+  | "-moz-win-borderless-glass"
+  | "-moz-win-browsertabbar-toolbox"
+  | "-moz-win-communications-toolbox"
+  | "-moz-win-communicationstext"
+  | "-moz-win-exclude-glass"
+  | "-moz-win-glass"
+  | "-moz-win-media-toolbox"
+  | "-moz-win-mediatext"
+  | "-moz-window-button-box"
+  | "-moz-window-button-box-maximized"
+  | "-moz-window-button-close"
+  | "-moz-window-button-maximize"
+  | "-moz-window-button-minimize"
+  | "-moz-window-button-restore"
+  | "-moz-window-frame-bottom"
+  | "-moz-window-frame-left"
+  | "-moz-window-frame-right"
+  | "-moz-window-titlebar"
   | "-moz-window-titlebar-maximized"
   | "button"
   | "button-arrow-down"
@@ -1454,6 +1473,7 @@ type MozAppearanceProperty =
   | "menuseparator"
   | "meterbar"
   | "meterchunk"
+  | "none"
   | "progressbar"
   | "progressbar-vertical"
   | "progresschunk"
@@ -1467,16 +1487,16 @@ type MozAppearanceProperty =
   | "resizer"
   | "resizerpanel"
   | "scale-horizontal"
-  | "scalethumbend"
+  | "scale-vertical"
   | "scalethumb-horizontal"
+  | "scalethumb-vertical"
+  | "scalethumbend"
   | "scalethumbstart"
   | "scalethumbtick"
-  | "scalethumb-vertical"
-  | "scale-vertical"
   | "scrollbarbutton-down"
   | "scrollbarbutton-left"
   | "scrollbarbutton-right"
-  | "none"
+  | "scrollbarbutton-up"
   | "scrollbarthumb-horizontal"
   | "scrollbarthumb-vertical"
   | "scrollbartrack-horizontal"
@@ -1492,10 +1512,10 @@ type MozAppearanceProperty =
   | "statusbar"
   | "statusbarpanel"
   | "tab"
-  | "tabpanel"
-  | "tabpanels"
   | "tab-scroll-arrow-back"
   | "tab-scroll-arrow-forward"
+  | "tabpanel"
+  | "tabpanels"
   | "textfield"
   | "textfield-multiline"
   | "toolbar"
@@ -1511,71 +1531,51 @@ type MozAppearanceProperty =
   | "treeline"
   | "treetwisty"
   | "treetwistyopen"
-  | "treeview"
-  | "-moz-mac-unified-toolbar"
-  | "-moz-win-borderless-glass"
-  | "-moz-win-browsertabbar-toolbox"
-  | "-moz-win-communicationstext"
-  | "-moz-win-communications-toolbox"
-  | "-moz-win-exclude-glass"
-  | "-moz-win-glass"
-  | "-moz-win-mediatext"
-  | "-moz-win-media-toolbox"
-  | "-moz-window-button-box"
-  | "-moz-window-button-box-maximized"
-  | "-moz-window-button-close"
-  | "-moz-window-button-maximize"
-  | "-moz-window-button-minimize"
-  | "-moz-window-button-restore"
-  | "-moz-window-frame-bottom"
-  | "-moz-window-frame-left"
-  | "-moz-window-frame-right"
-  | "-moz-window-titlebar"
-  | "scrollbarbutton-up";
+  | "treeview";
 
 type MozBindingProperty = All | "none" | string;
 
-type MozContextPropertiesProperty = All | "none" | "fill" | "fill-opacity" | "stroke" | "stroke-opacity" | string;
+type MozContextPropertiesProperty = All | "fill" | "fill-opacity" | "none" | "stroke" | "stroke-opacity" | string;
 
 type MozFloatEdgeProperty = All | "border-box" | "content-box" | "margin-box" | "padding-box";
 
 type MozImageRegionProperty = All | "auto" | string;
 
-type MozOrientProperty = All | "inline" | "block" | "horizontal" | "vertical";
+type MozOrientProperty = All | "block" | "horizontal" | "inline" | "vertical";
 
 type MozStackSizingProperty = All | "ignore" | "stretch-to-fit";
 
-type MozTextBlinkProperty = All | "none" | "blink";
+type MozTextBlinkProperty = All | "blink" | "none";
 
-type MozUserFocusProperty = All | "ignore" | "normal" | "select-after" | "select-before" | "select-menu" | "select-same" | "select-all" | "none";
+type MozUserFocusProperty = All | "ignore" | "none" | "normal" | "select-after" | "select-all" | "select-before" | "select-menu" | "select-same";
 
-type MozUserInputProperty = All | "auto" | "none" | "enabled" | "disabled";
+type MozUserInputProperty = All | "auto" | "disabled" | "enabled" | "none";
 
 type MozUserModifyProperty = All | "read-only" | "read-write" | "write-only";
 
 type MozWindowDraggingProperty = All | "drag" | "no-drag";
 
-type MozWindowShadowProperty = All | "default" | "menu" | "tooltip" | "sheet" | "none";
+type MozWindowShadowProperty = All | "default" | "menu" | "none" | "sheet" | "tooltip";
 
 type WebkitMaskAttachmentProperty = All | Attachment | string;
 
-type WebkitMaskClipProperty = All | "border" | "border-box" | "padding" | "padding-box" | "content" | "content-box" | "text" | string;
+type WebkitMaskClipProperty = All | "border" | "border-box" | "content" | "content-box" | "padding" | "padding-box" | "text" | string;
 
 type WebkitMaskCompositeProperty = All | CompositeStyle | string;
 
-type WebkitMaskOriginProperty = All | "padding" | "border" | "content" | string;
+type WebkitMaskOriginProperty = All | "border" | "content" | "padding" | string;
 
 type WebkitMaskPositionProperty<TLength> = All | MaskPosition<TLength>;
 
-type WebkitMaskPositionXProperty<TLength> = All | LengthPercentage<TLength> | "left" | "center" | "right" | string;
+type WebkitMaskPositionXProperty<TLength> = All | LengthPercentage<TLength> | "center" | "left" | "right" | string;
 
-type WebkitMaskPositionYProperty<TLength> = All | LengthPercentage<TLength> | "top" | "center" | "bottom" | string;
+type WebkitMaskPositionYProperty<TLength> = All | LengthPercentage<TLength> | "bottom" | "center" | "top" | string;
 
 type WebkitMaskRepeatProperty = All | RepeatStyle | string;
 
-type WebkitMaskRepeatXProperty = All | "repeat" | "no-repeat" | "space" | "round";
+type WebkitMaskRepeatXProperty = All | "no-repeat" | "repeat" | "round" | "space";
 
-type WebkitMaskRepeatYProperty = All | "repeat" | "no-repeat" | "space" | "round";
+type WebkitMaskRepeatYProperty = All | "no-repeat" | "repeat" | "round" | "space";
 
 type WebkitOverflowScrollingProperty = All | "auto" | "touch";
 
@@ -1595,43 +1595,42 @@ type SingleAnimation = SingleTimingFunction | SingleAnimationIterationCount | Si
 
 type SingleTimingFunction = StepTimingFunction | "linear" | string;
 
-type StepTimingFunction = "step-start" | "step-end" | string;
+type StepTimingFunction = "step-end" | "step-start" | string;
 
 type SingleAnimationIterationCount = "infinite" | number;
 
-type SingleAnimationDirection = "normal" | "reverse" | "alternate" | "alternate-reverse";
+type SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 
-type SingleAnimationFillMode = "none" | "forwards" | "backwards" | "both";
+type SingleAnimationFillMode = "backwards" | "both" | "forwards" | "none";
 
-type SingleAnimationPlayState = "running" | "paused";
+type SingleAnimationPlayState = "paused" | "running";
 
-type Attachment = "scroll" | "fixed" | "local";
+type Attachment = "fixed" | "local" | "scroll";
 
 type BlendMode =
-  | "hard-light"
-  | "normal"
-  | "screen"
-  | "overlay"
-  | "darken"
-  | "lighten"
-  | "color-dodge"
+  | "color"
   | "color-burn"
-  | "multiply"
-  | "soft-light"
+  | "color-dodge"
+  | "darken"
   | "difference"
   | "exclusion"
+  | "hard-light"
   | "hue"
+  | "lighten"
+  | "luminosity"
+  | "multiply"
+  | "normal"
+  | "overlay"
   | "saturation"
-  | "color"
-  | "luminosity";
+  | "screen"
+  | "soft-light";
 
-type Box = "border-box" | "padding-box" | "content-box";
+type Box = "border-box" | "content-box" | "padding-box";
 
 type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
 type NamedColor =
-  | "lightgrey"
-  | "transparent"
+  | "aliceblue"
   | "antiquewhite"
   | "aqua"
   | "aquamarine"
@@ -1704,7 +1703,7 @@ type NamedColor =
   | "lightgoldenrodyellow"
   | "lightgray"
   | "lightgreen"
-  | "aliceblue"
+  | "lightgrey"
   | "lightpink"
   | "lightsalmon"
   | "lightseagreen"
@@ -1772,6 +1771,7 @@ type NamedColor =
   | "teal"
   | "thistle"
   | "tomato"
+  | "transparent"
   | "turquoise"
   | "violet"
   | "wheat"
@@ -1781,8 +1781,8 @@ type NamedColor =
   | "yellowgreen";
 
 type DeprecatedSystemColor =
-  | "InactiveCaptionText"
   | "ActiveBorder"
+  | "ActiveCaption"
   | "AppWorkspace"
   | "Background"
   | "ButtonFace"
@@ -1795,7 +1795,7 @@ type DeprecatedSystemColor =
   | "HighlightText"
   | "InactiveBorder"
   | "InactiveCaption"
-  | "ActiveCaption"
+  | "InactiveCaptionText"
   | "InfoBackground"
   | "InfoText"
   | "Menu"
@@ -1812,15 +1812,15 @@ type DeprecatedSystemColor =
 
 type BgImage = "none" | string;
 
-type RepeatStyle = "repeat-x" | "repeat-y" | "repeat" | "space" | "round" | "no-repeat";
+type RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "round" | "space";
 
-type BgSize<TLength> = LengthPercentage<TLength> | "auto" | "cover" | "contain";
+type BgSize<TLength> = LengthPercentage<TLength> | "auto" | "contain" | "cover";
 
 type LengthPercentage<TLength> = TLength | string;
 
-type BrWidth<TLength> = TLength | "thin" | "medium" | "thick";
+type BrWidth<TLength> = TLength | "medium" | "thick" | "thin";
 
-type BrStyle = "none" | "hidden" | "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset";
+type BrStyle = "dashed" | "dotted" | "double" | "groove" | "hidden" | "inset" | "none" | "outset" | "ridge" | "solid";
 
 type GeometryBox = ShapeBox | "fill-box" | "stroke-box" | "view-box";
 
@@ -1828,39 +1828,39 @@ type ShapeBox = Box | "margin-box";
 
 type ContentList = Quote | "contents" | string;
 
-type Quote = "open-quote" | "close-quote" | "no-open-quote" | "no-close-quote";
+type Quote = "close-quote" | "no-close-quote" | "no-open-quote" | "open-quote";
 
 type DisplayOutside = "block" | "inline" | "run-in";
 
-type DisplayInside = "flow" | "flow-root" | "table" | "flex" | "grid" | "subgrid" | "ruby";
+type DisplayInside = "flex" | "flow" | "flow-root" | "grid" | "ruby" | "subgrid" | "table";
 
 type DisplayInternal =
-  | "table-column"
-  | "table-row-group"
-  | "table-footer-group"
-  | "table-row"
-  | "table-cell"
-  | "table-column-group"
-  | "table-header-group"
-  | "table-caption"
   | "ruby-base"
-  | "ruby-text"
   | "ruby-base-container"
-  | "ruby-text-container";
+  | "ruby-text"
+  | "ruby-text-container"
+  | "table-caption"
+  | "table-cell"
+  | "table-column"
+  | "table-column-group"
+  | "table-footer-group"
+  | "table-header-group"
+  | "table-row"
+  | "table-row-group";
 
 type DisplayBox = "contents" | "none";
 
-type DisplayLegacy = "inline-block" | "inline-list-item" | "inline-table" | "inline-flex" | "inline-grid";
+type DisplayLegacy = "inline-block" | "inline-flex" | "inline-grid" | "inline-list-item" | "inline-table";
 
-type GenericFamily = "serif" | "sans-serif" | "cursive" | "fantasy" | "monospace";
+type GenericFamily = "cursive" | "fantasy" | "monospace" | "sans-serif" | "serif";
 
-type FeatureTagValue = "on" | "off" | string | number;
+type FeatureTagValue = "off" | "on" | string | number;
 
-type AbsoluteSize = "xx-small" | "x-small" | "small" | "medium" | "large" | "x-large" | "xx-large";
+type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small";
 
 type RelativeSize = "larger" | "smaller";
 
-type EastAsianVariantValues = "jis78" | "jis83" | "jis90" | "jis04" | "simplified" | "traditional";
+type EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
 
 type EastAsianWidthValues = "full-width" | "proportional-width";
 
@@ -1884,7 +1884,7 @@ type MaskLayer<TLength> = MaskReference | BgSize<TLength> | RepeatStyle | Geomet
 
 type MaskReference = "none" | string;
 
-type CompositingOperator = "add" | "subtract" | "intersect" | "exclude";
+type CompositingOperator = "add" | "exclude" | "intersect" | "subtract";
 
 type MaskingMode = "alpha" | "luminance" | "match-source";
 
@@ -1894,19 +1894,19 @@ type SingleTransitionProperty = "all" | string;
 
 type SingleTransitionTimingFunction = SingleTimingFunction;
 
-type AnimateableFeature = "scroll-position" | "contents" | string;
+type AnimateableFeature = "contents" | "scroll-position" | string;
 
 type CompositeStyle =
-  | "source-atop"
   | "clear"
-  | "source-over"
-  | "source-in"
-  | "source-out"
   | "copy"
-  | "destination-over"
+  | "destination-atop"
   | "destination-in"
   | "destination-out"
-  | "destination-atop"
+  | "destination-over"
+  | "source-atop"
+  | "source-in"
+  | "source-out"
+  | "source-over"
   | "xor";
 
-type MaskPosition<TLength> = LengthPercentage<TLength> | "left" | "center" | "right" | "top" | "bottom";
+type MaskPosition<TLength> = LengthPercentage<TLength> | "bottom" | "center" | "left" | "right" | "top";

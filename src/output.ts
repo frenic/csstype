@@ -41,9 +41,19 @@ export default function create() {
   return output;
 }
 
+function sorter(a: CompleteTypeType, b: CompleteTypeType) {
+  if (a.type === Type.StringLiteral && b.type === Type.StringLiteral) {
+    return a.literal < b.literal ? -1 : a.literal > b.literal ? 1 : 0;
+  }
+  if (a.type === Type.NumericLiteral && b.type === Type.NumericLiteral) {
+    return a.literal - b.literal;
+  }
+  return a.type - b.type;
+}
+
 function unions(types: CompleteTypeType[]) {
   return types
-    .sort(({ type: a }, { type: b }) => a - b)
+    .sort(sorter)
     .map(type => {
       switch (type.type) {
         case Type.String:
