@@ -20,9 +20,17 @@ test('parser to parse CSS syntax group components', () => {
 });
 
 test('typer to type CSS syntax components', () => {
-  expect(typing(parse('something | <color>'))).toMatchObject([{ type: Type.Literal }, { type: Type.Alias }]);
+  expect(typing(parse('something | 100 | <color>'))).toMatchObject([
+    { type: Type.StringLiteral },
+    { type: Type.NumericLiteral },
+    { type: Type.Alias },
+  ]);
 });
 
 test('typer to type CSS syntax group components', () => {
-  expect(typing(parse('[ something | <color> ]'))).toMatchObject([{ type: Type.Literal }, { type: Type.Alias }]);
+  expect(typing(parse('[ something | 100 | <color> ]'))).toMatchObject([
+    { type: Type.StringLiteral },
+    { type: Type.NumericLiteral },
+    { type: Type.Alias },
+  ]);
 });

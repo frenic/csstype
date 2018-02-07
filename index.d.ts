@@ -1146,7 +1146,7 @@ type FontVariantNumericProperty = All | NumericFigureValues | NumericSpacingValu
 
 type FontVariantPositionProperty = All | "normal" | "sub" | "super";
 
-type FontWeightProperty = All | "900" | "bold" | "bolder" | "lighter" | "100" | "200" | "normal" | "400" | "500" | "600" | "700" | "800" | "300";
+type FontWeightProperty = All | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 900 | 400 | 500 | 600 | 700 | 800 | 300;
 
 type GridAreaProperty = All | GridLine;
 

@@ -1,13 +1,13 @@
 import * as selectors from 'mdn-data/css/selectors.json';
-import { ILiteral, Type } from './typer';
+import { IStringLiteral, Type } from './typer';
 
 const REGEX_PSEUDO_SELECTOR = /^:/;
 
-const pseudos: ILiteral[] = [];
+const pseudos: IStringLiteral[] = [];
 
 for (const selector in selectors) {
   if (REGEX_PSEUDO_SELECTOR.test(selector)) {
-    pseudos.push({ type: Type.Literal, literal: selector });
+    pseudos.push({ type: Type.StringLiteral, literal: selector });
   }
 }
 

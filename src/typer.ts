@@ -15,12 +15,13 @@ import {
 export enum Type {
   Alias,
   Length,
-  Literal,
+  StringLiteral,
+  NumericLiteral,
   String,
   Number,
 }
 
-export interface IBasic {
+interface IBasic {
   type: Type.String | Type.Number | Type.Length;
 }
 
@@ -30,13 +31,18 @@ export type AliasType<TAliasAddons = {}> = {
   dataTypeName?: string;
 } & TAliasAddons;
 
-export interface ILiteral {
-  type: Type.Literal;
+export interface IStringLiteral {
+  type: Type.StringLiteral;
   literal: string;
 }
 
+interface INumericLiteral {
+  type: Type.NumericLiteral;
+  literal: number;
+}
+
 // Yet another reminder; naming is hard
-export type TypeType<TAliasAddons = {}> = IBasic | AliasType<TAliasAddons> | ILiteral;
+export type TypeType<TAliasAddons = {}> = IBasic | AliasType<TAliasAddons> | IStringLiteral | INumericLiteral;
 
 export const knownBasicDataTypes: { [name: string]: Type } = {
   time: Type.String,
@@ -59,10 +65,17 @@ export default function typing(entities: EntityType[]): TypeType[] {
     if (isComponent(entity)) {
       switch (entity.component) {
         case Component.Keyword:
-          types.push({
-            type: Type.Literal,
-            literal: entity.value,
-          });
+          if (String(Number(entity.value)) === entity.value) {
+            types.push({
+              type: Type.NumericLiteral,
+              literal: Number(entity.value),
+            });
+          } else {
+            types.push({
+              type: Type.StringLiteral,
+              literal: entity.value,
+            });
+          }
           break;
         case Component.DataType: {
           const value = entity.value.slice(1, -1);
@@ -109,8 +122,8 @@ export default function typing(entities: EntityType[]): TypeType[] {
             }
 
             if (
-              groupType.type === Type.Literal &&
-              !types.every(type => !(type.type === Type.Literal && type.literal === groupType.literal))
+              groupType.type === Type.StringLiteral &&
+              !types.every(type => !(type.type === Type.StringLiteral && type.literal === groupType.literal))
             ) {
               return false;
             }

@@ -50,8 +50,10 @@ function unions(types: CompleteTypeType[]) {
           return 'string';
         case Type.Number:
           return 'number';
-        case Type.Literal:
-          return quote(type.literal);
+        case Type.StringLiteral:
+          return JSON.stringify(type.literal);
+        case Type.NumericLiteral:
+          return type.literal;
         case Type.Alias:
           return type.name + generics(type.generics, true);
         case Type.Length:
@@ -69,8 +71,4 @@ function generics(items: IGenerics[] | undefined, ignoreDefault = false) {
   return `<${items
     .map(({ name, defaults }) => (defaults && !ignoreDefault ? `${name} = ${defaults}` : name))
     .join(', ')}>`;
-}
-
-export function quote(value: string) {
-  return `'${value}'`;
 }
