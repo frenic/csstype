@@ -1,6 +1,5 @@
 import parse, { Combinator } from '../src/parser';
-import type from '../src/typer';
-import { typeAlias, property } from '../src//output';
+import typing from '../src/typer';
 
 test('parser to parse CSS syntax combinators', () => {
   expect(parse('something another-thing && | ||')).toMatchObject([
@@ -14,19 +13,8 @@ test('parser to parse CSS syntax combinators', () => {
 });
 
 test('typer to type CSS syntax combinators', () => {
-  expect(type(parse('something another-thing'))).toHaveLength(1);
-  expect(type(parse('something && another-thing'))).toHaveLength(1);
-  expect(type(parse('something | another-thing'))).toHaveLength(2);
-  expect(type(parse('something || another-thing'))).toHaveLength(3);
-});
-
-test('output of CSS syntax combinators', () => {
-  expect(typeAlias('component', type(parse('something another-thing')))).toBe('type Component = string;');
-  expect(typeAlias('component', type(parse('something && another-thing')))).toBe('type Component = string;');
-  expect(typeAlias('component', type(parse('something | another-thing')))).toBe(
-    "type Component = 'something' | 'another-thing';",
-  );
-  expect(typeAlias('component', type(parse('something || another-thing')))).toBe(
-    "type Component = 'something' | 'another-thing' | string;",
-  );
+  expect(typing(parse('something another-thing'))).toHaveLength(1);
+  expect(typing(parse('something && another-thing'))).toHaveLength(1);
+  expect(typing(parse('something | another-thing'))).toHaveLength(2);
+  expect(typing(parse('something || another-thing'))).toHaveLength(3);
 });

@@ -1,39 +1,41 @@
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
 import parse from './parser';
-import type, { knownBasicDataTypes, Type, TypeType, TypeAliasType } from './typer';
 import { standardProperties, vendorPrefixedProperties } from './properties';
+import typing, { AliasType, Type, TypeType } from './typer';
 
-type DataTypesType = { [key: string]: TypeType[] };
+interface IDataTypes {
+  [key: string]: TypeType[];
+}
 
-const availableDataTypes: DataTypesType = {};
+const availableDataTypes: IDataTypes = {};
 
 for (const name in syntaxes) {
   const { syntax } = syntaxes[name];
-  availableDataTypes[name] = type(parse(syntax));
+  availableDataTypes[name] = typing(parse(syntax));
 }
 
-const dataTypesMayBeOfInterest: DataTypesType = {};
+const dataTypesMayBeOfInterest: IDataTypes = {};
 
-function isTypeAlias(type: TypeType): type is TypeAliasType {
-  return type.type === Type.TypeAlias;
+function isTypeAlias(type: TypeType): type is AliasType {
+  return type.type === Type.Alias;
 }
 
-function addDependentTypeAliases(availableDataTypes: DataTypesType, name: string) {
-  if (name in availableDataTypes) {
-    const isDoesntResolveToJustString = !(
-      availableDataTypes[name].length === 1 && availableDataTypes[name][0].type === Type.String
-    );
+function addDependentTypeAliases(dataTypes: IDataTypes, name: string) {
+  if (name in dataTypes) {
+    const isDoesntResolveToJustString = !(dataTypes[name].length === 1 && dataTypes[name][0].type === Type.String);
     if (!(name in dataTypesMayBeOfInterest) && isDoesntResolveToJustString) {
-      dataTypesMayBeOfInterest[name] = availableDataTypes[name];
+      dataTypesMayBeOfInterest[name] = dataTypes[name];
     }
-    const typeAliases: TypeAliasType[] = [];
-    for (const type of availableDataTypes[name]) {
+    const typeAliases: AliasType[] = [];
+    for (const type of dataTypes[name]) {
       if (isTypeAlias(type)) {
         typeAliases.push(type);
       }
     }
     for (const type of typeAliases) {
-      addDependentTypeAliases(availableDataTypes, type.alias);
+      if (type.dataTypeName) {
+        addDependentTypeAliases(dataTypes, type.dataTypeName);
+      }
     }
   }
 }
@@ -44,47 +46,45 @@ const allCssPropertyDescriptions = {
 };
 
 for (const name in allCssPropertyDescriptions) {
-  const typeAliases: TypeAliasType[] = [];
+  const typeAliases: AliasType[] = [];
   for (const type of allCssPropertyDescriptions[name]) {
     if (isTypeAlias(type)) {
       typeAliases.push(type);
     }
   }
   for (const type of typeAliases) {
-    addDependentTypeAliases(availableDataTypes, type.alias);
+    if (type.dataTypeName) {
+      addDependentTypeAliases(availableDataTypes, type.dataTypeName);
+    }
   }
 }
 
-function filterInterestingDataTypes(dataTypesMayBeOfInterest: DataTypesType): DataTypesType {
-  const interestingDataTypes: DataTypesType = {};
+function filterInterestingDataTypes(dataTypes: IDataTypes): IDataTypes {
+  const interesting: IDataTypes = {};
   let happy = true;
-  for (const name in dataTypesMayBeOfInterest) {
-    const onlyContainsString =
-      dataTypesMayBeOfInterest[name].length === 1 && dataTypesMayBeOfInterest[name][0].type === Type.String;
+  for (const name in dataTypes) {
+    const onlyContainsString = dataTypes[name].length === 1 && dataTypes[name][0].type === Type.String;
 
-    const hasUninterestingDependencies = !dataTypesMayBeOfInterest[name].every(
-      dataType => dataType.type !== Type.TypeAlias || dataType.alias in dataTypesMayBeOfInterest,
-    );
     if (onlyContainsString) {
       happy = false;
     } else {
       // Exclude type aliases that's not of interest
-      const dataTypeWithInterestingDependencies = dataTypesMayBeOfInterest[name].filter(
-        type => type.type !== Type.TypeAlias || type.alias in dataTypesMayBeOfInterest,
+      const dataTypeWithInterestingDependencies = dataTypes[name].filter(
+        type => type.type !== Type.Alias || (!!type.dataTypeName && type.dataTypeName in dataTypes),
       );
 
       // Those excluded type aliases need to resolve to string
-      if (dataTypeWithInterestingDependencies.length < dataTypesMayBeOfInterest[name].length) {
+      if (dataTypeWithInterestingDependencies.length < dataTypes[name].length) {
         happy = false;
         if (dataTypeWithInterestingDependencies.every(type => type.type !== Type.String)) {
           dataTypeWithInterestingDependencies.push({ type: Type.String });
         }
       }
 
-      interestingDataTypes[name] = dataTypeWithInterestingDependencies;
+      interesting[name] = dataTypeWithInterestingDependencies;
     }
   }
-  return happy ? interestingDataTypes : filterInterestingDataTypes(interestingDataTypes);
+  return happy ? interesting : filterInterestingDataTypes(interesting);
 }
 
 const interestingDataTypes = filterInterestingDataTypes(dataTypesMayBeOfInterest);

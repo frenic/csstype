@@ -1,3 +1,5 @@
+// tslint:disable no-unused-expression
+
 import * as CSS from './';
 
 const css: CSS.Properties = {
@@ -9,11 +11,11 @@ const css: CSS.Properties = {
   fontWeight: 'normal',
 };
 
-const lengthNumber: CSS.Properties<number> = {
+const cssWithLengthAsNumber: CSS.Properties<number> = {
   top: 0,
 };
 
-const fallbackValues: CSS.PropertiesFallback = {
+const cssWithFallbackValues: CSS.PropertiesFallback = {
   flexGrow: [1],
   flexShrink: [0],
   flexDirection: ['row'],
@@ -21,3 +23,7 @@ const fallbackValues: CSS.PropertiesFallback = {
   top: ['0px'],
   fontWeight: ['normal'],
 };
+
+css;
+cssWithLengthAsNumber;
+cssWithFallbackValues;

@@ -1,41 +1,42 @@
+import { toPascalCase } from './casing';
 import {
-  Entity,
-  Component,
   Combinator,
-  EntityType,
+  Component,
   ComponentType,
-  CombinatorType,
-  FunctionType,
-  MultiplierQurlyBracetType,
-  MultiplierType,
+  Entity,
+  EntityType,
+  ICombinator,
+  IFunction,
+  IMultiplierQurlyBracet,
   Multiplier,
-  MultiplierSimpleType,
+  MultiplierType,
 } from './parser';
 
 export enum Type {
-  TypeAlias,
+  Alias,
   Length,
   Literal,
   String,
   Number,
 }
 
-export type BasicType = {
+export interface IBasic {
   type: Type.String | Type.Number | Type.Length;
-};
+}
 
-export type TypeAliasType = {
-  type: Type.TypeAlias;
-  alias: string;
-};
+export type AliasType<TAliasAddons = {}> = {
+  type: Type.Alias;
+  name: string;
+  dataTypeName?: string;
+} & TAliasAddons;
 
-export type LiteralType = {
+export interface ILiteral {
   type: Type.Literal;
   literal: string;
-};
+}
 
 // Yet another reminder; naming is hard
-export type TypeType = BasicType | TypeAliasType | LiteralType;
+export type TypeType<TAliasAddons = {}> = IBasic | AliasType<TAliasAddons> | ILiteral;
 
 export const knownBasicDataTypes: { [name: string]: Type } = {
   time: Type.String,
@@ -50,7 +51,7 @@ export const knownBasicDataTypes: { [name: string]: Type } = {
   'outline-radius': Type.String,
 };
 
-export default function type(entities: EntityType[]): TypeType[] {
+export default function typing(entities: EntityType[]): TypeType[] {
   const types: TypeType[] = [];
   let hasString = false;
   let hasNumber = false;
@@ -81,8 +82,9 @@ export default function type(entities: EntityType[]): TypeType[] {
             }
           } else {
             types.push({
-              type: Type.TypeAlias,
-              alias: value,
+              type: Type.Alias,
+              name: toPascalCase(value),
+              dataTypeName: value,
             });
           }
           break;
@@ -101,7 +103,7 @@ export default function type(entities: EntityType[]): TypeType[] {
             }
           }
 
-          const newTypes = type(entity.entities).filter(groupType => {
+          const newTypes = typing(entity.entities).filter(groupType => {
             if (groupType.type === Type.Length && !types.every(type => type.type !== Type.Length)) {
               return false;
             }
@@ -124,8 +126,8 @@ export default function type(entities: EntityType[]): TypeType[] {
             }
 
             if (
-              groupType.type === Type.TypeAlias &&
-              !types.every(type => !(type.type === Type.TypeAlias && type.alias === groupType.alias))
+              groupType.type === Type.Alias &&
+              !types.every(type => !(type.type === Type.Alias && type.dataTypeName === groupType.dataTypeName))
             ) {
               return false;
             }
@@ -175,7 +177,7 @@ export default function type(entities: EntityType[]): TypeType[] {
   return types;
 }
 
-function isFunction(entity: EntityType): entity is FunctionType {
+function isFunction(entity: EntityType): entity is IFunction {
   return entity.entity === Entity.Function;
 }
 
@@ -183,10 +185,10 @@ function isComponent(entity: EntityType): entity is ComponentType {
   return entity.entity === Entity.Component;
 }
 
-function isCombinator(entity: EntityType): entity is CombinatorType {
+function isCombinator(entity: EntityType): entity is ICombinator {
   return entity.entity === Entity.Combinator;
 }
 
-function isQurlyBracetMultiplier(multiplier: MultiplierType): multiplier is MultiplierQurlyBracetType {
+function isQurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMultiplierQurlyBracet {
   return multiplier.sign === Multiplier.QurlyBracet;
 }

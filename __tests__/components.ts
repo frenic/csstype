@@ -1,6 +1,5 @@
 import parse, { Component } from '../src/parser';
-import type, { Type } from '../src/typer';
-import { typeAlias, property } from '../src//output';
+import typing, { Type } from '../src/typer';
 
 test('parser to parse CSS syntax components', () => {
   expect(parse('something <color> [ ]')).toMatchObject([
@@ -21,13 +20,9 @@ test('parser to parse CSS syntax group components', () => {
 });
 
 test('typer to type CSS syntax components', () => {
-  expect(type(parse('something | <color>'))).toMatchObject([{ type: Type.Literal }, { type: Type.TypeAlias }]);
+  expect(typing(parse('something | <color>'))).toMatchObject([{ type: Type.Literal }, { type: Type.Alias }]);
 });
 
 test('typer to type CSS syntax group components', () => {
-  expect(type(parse('[ something | <color> ]'))).toMatchObject([{ type: Type.Literal }, { type: Type.TypeAlias }]);
-});
-
-test('output of CSS syntax components', () => {
-  expect(typeAlias('component', type(parse('something | <color>')))).toBe("type Component = Color | 'something';");
+  expect(typing(parse('[ something | <color> ]'))).toMatchObject([{ type: Type.Literal }, { type: Type.Alias }]);
 });

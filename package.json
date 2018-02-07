@@ -17,12 +17,15 @@
     "prettier": "^1.10.2",
     "ts-node": "^4.1.0",
     "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.7.0",
     "typescript": "^2.7.1"
   },
   "scripts": {
     "build": "ts-node build.ts",
     "watch": "ts-node build.ts --watch",
+    "lint": "tslint --exclude node_modules/**/* --exclude **/*.d.ts --fix **/*.ts",
     "pretty": "prettier --write build.ts **/*.{ts,js,json}",
+    "sloppy": "tsc && npm run lint && npm run pretty",
     "test": "jest --no-cache",
     "prepublish": "tsc && npm run test && npm run build && tsc typecheck.ts --noEmit"
   },

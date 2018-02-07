@@ -41,56 +41,56 @@ export enum Multiplier {
   QurlyBracet,
 }
 
-export type MultiplierQurlyBracetType = {
+export interface IMultiplierQurlyBracet {
   sign: Multiplier.QurlyBracet;
   min: number;
   max: number;
-};
+}
 
-export type MultiplierSimpleType = {
+export interface IMultiplierSimple {
   sign:
     | Multiplier.Asterisk
     | Multiplier.PlusSign
     | Multiplier.QuestionMark
     | Multiplier.HashMark
     | Multiplier.ExclamationPoint;
-};
+}
 
-export type MultiplierType = MultiplierQurlyBracetType | MultiplierSimpleType;
+export type MultiplierType = IMultiplierQurlyBracet | IMultiplierSimple;
 
-export type NonGroupDataType = {
+export interface INonGroupData {
   entity: Entity.Component;
   multiplier: MultiplierType | null;
   component: Component.Keyword | Component.DataType;
   value: string;
-};
+}
 
-export type GroupDataType = {
+export interface IGroupData {
   entity: Entity.Component;
   multiplier: MultiplierType | null;
   component: Component.Group;
   entities: EntityType[];
-};
+}
 
-export type ComponentType = NonGroupDataType | GroupDataType;
+export type ComponentType = INonGroupData | IGroupData;
 
-export type CombinatorType = {
+export interface ICombinator {
   entity: Entity.Combinator;
   multiplier: MultiplierType | null;
   combinator: Combinator;
-};
+}
 
-export type FunctionType = {
+export interface IFunction {
   entity: Entity.Function;
   multiplier: MultiplierType | null;
-};
+}
 
-type UnknownType = {
+interface IUnknown {
   entity: Entity.Unknown;
   multiplier: MultiplierType | null;
-};
+}
 
-export type EntityType = ComponentType | CombinatorType | FunctionType | UnknownType;
+export type EntityType = ComponentType | ICombinator | IFunction | IUnknown;
 
 export default function parse(syntax: string): EntityType[] {
   const levels: EntityType[][] = [[]];
@@ -148,7 +148,7 @@ export default function parse(syntax: string): EntityType[] {
   return levels[0];
 }
 
-function combinatorData(combinator: Combinator, multiplier: MultiplierType | null = null): CombinatorType {
+function combinatorData(combinator: Combinator, multiplier: MultiplierType | null = null): ICombinator {
   return {
     entity: Entity.Combinator,
     combinator,

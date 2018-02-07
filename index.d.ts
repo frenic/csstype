@@ -1,6 +1,6 @@
 export as namespace CSS;
 
-export interface StandardProperties<TLength = string> {
+export interface StandardProperties<TLength = string | number> {
   alignContent?: AlignContentProperty;
   alignItems?: AlignItemsProperty;
   alignSelf?: AlignSelfProperty;
@@ -331,7 +331,7 @@ export interface StandardProperties<TLength = string> {
   zIndex?: ZIndexProperty;
 }
 
-export interface StandardPropertiesFallback<TLength = string> {
+export interface StandardPropertiesFallback<TLength = string | number> {
   alignContent?: AlignContentProperty | AlignContentProperty[];
   alignItems?: AlignItemsProperty | AlignItemsProperty[];
   alignSelf?: AlignSelfProperty | AlignSelfProperty[];
@@ -662,7 +662,7 @@ export interface StandardPropertiesFallback<TLength = string> {
   zIndex?: ZIndexProperty | ZIndexProperty[];
 }
 
-export interface VendorProperties<TLength = string> {
+export interface VendorProperties<TLength = string | number> {
   msOverflowStyle?: MsOverflowStyleProperty;
   mozAppearance?: MozAppearanceProperty;
   mozBinding?: MozBindingProperty;
@@ -713,107 +713,60 @@ export interface VendorProperties<TLength = string> {
   webkitTouchCallout?: WebkitTouchCalloutProperty;
 }
 
-export interface VendorPropertiesFallback<TLength = string> {
+export interface VendorPropertiesFallback<TLength = string | number> {
   msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[];
-
   mozAppearance?: MozAppearanceProperty | MozAppearanceProperty[];
-
   mozBinding?: MozBindingProperty | MozBindingProperty[];
-
   mozBorderBottomColors?: AllString | AllString[];
-
   mozBorderLeftColors?: AllString | AllString[];
-
   mozBorderRightColors?: AllString | AllString[];
-
   mozBorderTopColors?: AllString | AllString[];
-
   mozContextProperties?: MozContextPropertiesProperty | MozContextPropertiesProperty[];
-
   mozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[];
-
   mozForceBrokenImageIcon?: AllNumber | AllNumber[];
-
   mozImageRegion?: MozImageRegionProperty | MozImageRegionProperty[];
-
   mozOrient?: MozOrientProperty | MozOrientProperty[];
-
   mozOutlineRadius?: AllString | AllString[];
-
   mozOutlineRadiusBottomleft?: AllString | AllString[];
-
   mozOutlineRadiusBottomright?: AllString | AllString[];
-
   mozOutlineRadiusTopleft?: AllString | AllString[];
-
   mozOutlineRadiusTopright?: AllString | AllString[];
-
   mozStackSizing?: MozStackSizingProperty | MozStackSizingProperty[];
-
   mozTextBlink?: MozTextBlinkProperty | MozTextBlinkProperty[];
-
   mozUserFocus?: MozUserFocusProperty | MozUserFocusProperty[];
-
   mozUserInput?: MozUserInputProperty | MozUserInputProperty[];
-
   mozUserModify?: MozUserModifyProperty | MozUserModifyProperty[];
-
   mozWindowDragging?: MozWindowDraggingProperty | MozWindowDraggingProperty[];
-
   mozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[];
-
   webkitBorderBefore?: AllString | AllString[];
-
   webkitBorderBeforeColor?: AllString | AllString[];
-
   webkitBorderBeforeStyle?: AllString | AllString[];
-
   webkitBorderBeforeWidth?: AllString | AllString[];
-
   webkitBoxReflect?: AllString | AllString[];
-
   webkitMask?: AllString | AllString[];
-
   webkitMaskAttachment?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
-
   webkitMaskClip?: WebkitMaskClipProperty | WebkitMaskClipProperty[];
-
   webkitMaskComposite?: WebkitMaskCompositeProperty | WebkitMaskCompositeProperty[];
-
   webkitMaskImage?: AllString | AllString[];
-
   webkitMaskOrigin?: WebkitMaskOriginProperty | WebkitMaskOriginProperty[];
-
   webkitMaskPosition?: WebkitMaskPositionProperty<TLength> | WebkitMaskPositionProperty<TLength>[];
-
   webkitMaskPositionX?: WebkitMaskPositionXProperty<TLength> | WebkitMaskPositionXProperty<TLength>[];
-
   webkitMaskPositionY?: WebkitMaskPositionYProperty<TLength> | WebkitMaskPositionYProperty<TLength>[];
-
   webkitMaskRepeat?: WebkitMaskRepeatProperty | WebkitMaskRepeatProperty[];
-
   webkitMaskRepeatX?: WebkitMaskRepeatXProperty | WebkitMaskRepeatXProperty[];
-
   webkitMaskRepeatY?: WebkitMaskRepeatYProperty | WebkitMaskRepeatYProperty[];
-
   webkitOverflowScrolling?: WebkitOverflowScrollingProperty | WebkitOverflowScrollingProperty[];
-
   webkitTapHighlightColor?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[];
-
   webkitTextFillColor?: WebkitTextFillColorProperty | WebkitTextFillColorProperty[];
-
   webkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
-
   webkitTextStrokeColor?: WebkitTextStrokeColorProperty | WebkitTextStrokeColorProperty[];
-
   webkitTextStrokeWidth?: WebkitTextStrokeWidthProperty<TLength> | WebkitTextStrokeWidthProperty<TLength>[];
-
   webkitTouchCallout?: WebkitTouchCalloutProperty | WebkitTouchCalloutProperty[];
 }
 
-export interface Properties<TLength = string> extends StandardProperties<TLength>, VendorProperties<TLength> {}
+export interface Properties<TLength = string | number> extends StandardProperties<TLength>, VendorProperties<TLength> {}
 
-export interface PropertiesFallback<TLength = string> extends StandardPropertiesFallback<TLength>, VendorPropertiesFallback<TLength> {}
+export interface PropertiesFallback<TLength = string | number> extends StandardPropertiesFallback<TLength>, VendorPropertiesFallback<TLength> {}
 
 export type Pseudos =
   | ":placeholder-shown"
@@ -884,6 +837,12 @@ export type Pseudos =
   | "::placeholder"
   | "::selection"
   | "::spelling-error";
+
+type All = "initial" | "inherit" | "unset" | "revert";
+
+type AllString = All | string;
+
+type AllNumber = All | number;
 
 type AlignContentProperty = All | "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly" | "stretch";
 
@@ -1631,12 +1590,6 @@ type WebkitTextStrokeColorProperty = All | Color;
 type WebkitTextStrokeWidthProperty<TLength> = All | TLength;
 
 type WebkitTouchCalloutProperty = All | "default" | "none";
-
-type All = "initial" | "inherit" | "unset" | "revert";
-
-type AllString = All | string;
-
-type AllNumber = All | number;
 
 type SingleAnimation = SingleTimingFunction | SingleAnimationIterationCount | SingleAnimationDirection | SingleAnimationFillMode | SingleAnimationPlayState | "none" | string;
 

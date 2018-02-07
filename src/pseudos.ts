@@ -1,9 +1,9 @@
 import * as selectors from 'mdn-data/css/selectors.json';
-import { Type, LiteralType } from './typer';
+import { ILiteral, Type } from './typer';
 
 const REGEX_PSEUDO_SELECTOR = /^:/;
 
-const pseudos: LiteralType[] = [];
+const pseudos: ILiteral[] = [];
 
 for (const selector in selectors) {
   if (REGEX_PSEUDO_SELECTOR.test(selector)) {

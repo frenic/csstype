@@ -1,8 +1,8 @@
-import * as prettier from 'prettier';
-import { writeFileSync } from 'fs';
-import * as path from 'path';
 import { spawnSync } from 'child_process';
 import * as chokidar from 'chokidar';
+import { writeFileSync } from 'fs';
+import * as path from 'path';
+import * as prettier from 'prettier';
 
 const ROOT_DIR = __dirname;
 const DEFINITIONS_FILENAME = 'index.d.ts';
@@ -15,8 +15,8 @@ async function create() {
       delete require.cache[key];
     }
   }
-  const { default: create } = await import('./src/output');
-  return create();
+  const { default: output } = await import('./src/output');
+  return output();
 }
 
 async function format(output: string) {
@@ -69,18 +69,16 @@ if (process.argv.indexOf('--watch') !== -1) {
     .then(() => {
       console.info('Done! Watching...');
       let debounce: NodeJS.Timer;
-      chokidar
-        .watch(path.join(ROOT_DIR, 'generate'), { ignoreInitial: true })
-        .on('all', (event: string, path: string) => {
-          clearTimeout(debounce);
-          debounce = setTimeout(
-            () =>
-              trigger()
-                .catch(e => console.error(e))
-                .then(() => console.info('Done! Moving on...')),
-            300,
-          );
-        });
+      chokidar.watch(path.join(ROOT_DIR, 'generate'), { ignoreInitial: true }).on('all', (event: string) => {
+        clearTimeout(debounce);
+        debounce = setTimeout(
+          () =>
+            trigger()
+              .catch(e => console.error(e))
+              .then(() => console.info('Done! Moving on...')),
+          300,
+        );
+      });
     });
 } else {
   trigger().catch(e => {
