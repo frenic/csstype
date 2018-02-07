@@ -23,7 +23,7 @@ test('typer to type CSS syntax components', () => {
   expect(typing(parse('something | 100 | <color>'))).toMatchObject([
     { type: Type.StringLiteral },
     { type: Type.NumericLiteral },
-    { type: Type.Data },
+    { type: Type.DataType },
   ]);
 });
 
@@ -31,6 +31,6 @@ test('typer to type CSS syntax group components', () => {
   expect(typing(parse('[ something | 100 | <color> ]'))).toMatchObject([
     { type: Type.StringLiteral },
     { type: Type.NumericLiteral },
-    { type: Type.Data },
+    { type: Type.DataType },
   ]);
 });

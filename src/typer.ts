@@ -13,7 +13,7 @@ import {
 
 export enum Type {
   Alias,
-  Data,
+  DataType,
   Length,
   StringLiteral,
   NumericLiteral,
@@ -37,7 +37,7 @@ export interface IGenerics {
 }
 
 export interface IDataType {
-  type: Type.Data;
+  type: Type.DataType;
   name: string;
 }
 
@@ -105,7 +105,7 @@ export default function typing(entities: EntityType[]): TypeType[] {
             }
           } else {
             types.push({
-              type: Type.Data,
+              type: Type.DataType,
               name: value,
             });
           }
@@ -148,8 +148,8 @@ export default function typing(entities: EntityType[]): TypeType[] {
             }
 
             if (
-              groupType.type === Type.Data &&
-              !types.every(type => !(type.type === Type.Data && type.name === groupType.name))
+              groupType.type === Type.DataType &&
+              !types.every(type => !(type.type === Type.DataType && type.name === groupType.name))
             ) {
               return false;
             }

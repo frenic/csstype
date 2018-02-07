@@ -33,7 +33,7 @@ export const lengthGeneric: IGenerics = {
   defaults: 'string | number',
 };
 
-const allAlias: IDeclaration = {
+const allDeclaration: IDeclaration = {
   name: 'All',
   export: false,
   types: declarable(all),
@@ -43,18 +43,18 @@ const allAlias: IDeclaration = {
 const allAndStringDeclaration: IDeclaration = {
   name: 'AllString',
   export: false,
-  types: [aliasOf(allAlias), { type: Type.String }],
+  types: [aliasOf(allDeclaration), { type: Type.String }],
   generics: [],
 };
 
 const allAndNumberDeclaration: IDeclaration = {
   name: 'AllNumber',
   export: false,
-  types: [aliasOf(allAlias), { type: Type.Number }],
+  types: [aliasOf(allDeclaration), { type: Type.Number }],
   generics: [],
 };
 
-const pseudoAlias: IDeclaration = {
+const pseudoDeclaration: IDeclaration = {
   name: 'Pseudos',
   export: true,
   types: pseudos,
@@ -65,7 +65,12 @@ const standardPropertiesDefinition: IProperty[] = [];
 const standardPropertiesHyphenDefinition: IProperty[] = [];
 const vendorPropertiesDefinition: IProperty[] = [];
 const vendorPropertiesHyphenDefinition: IProperty[] = [];
-export const declarations: IDeclaration[] = [pseudoAlias, allAlias, allAndStringDeclaration, allAndNumberDeclaration];
+export const declarations: IDeclaration[] = [
+  pseudoDeclaration,
+  allDeclaration,
+  allAndStringDeclaration,
+  allAndNumberDeclaration,
+];
 
 for (const properties of [standardProperties, vendorPrefixedProperties]) {
   const definitions = properties === standardProperties ? standardPropertiesDefinition : vendorPropertiesDefinition;
@@ -84,7 +89,7 @@ for (const properties of [standardProperties, vendorPrefixedProperties]) {
       declaration = {
         name: toPascalCase(name) + 'Property',
         export: false,
-        types: [aliasOf(allAlias), ...declarable(types)],
+        types: [aliasOf(allDeclaration), ...declarable(types)],
         generics: propertyGenerics,
       };
       declarations.push(declaration);
@@ -231,7 +236,7 @@ export const interfaces = [
 function declarable(types: MixedType[]): DeclarableType[] {
   return types.map<DeclarableType>(
     type =>
-      type.type === Type.Data
+      type.type === Type.DataType
         ? {
             type: Type.Alias,
             name: toPascalCase(type.name),
@@ -246,7 +251,7 @@ export function lengthIn(types: MixedType[]) {
     if (type.type === Type.Length) {
       return false;
     }
-    if (type.type === Type.Data && type.name && type.name in dataTypes && lengthIn(dataTypes[type.name])) {
+    if (type.type === Type.DataType && type.name && type.name in dataTypes && lengthIn(dataTypes[type.name])) {
       return false;
     }
     return true;
@@ -263,7 +268,7 @@ function aliasOf({ name, types }: IDeclaration): IAlias {
 
 function filterMissingDataTypes(types: MixedType[]) {
   // Exclude type aliases that's not of interest
-  const filtered = types.filter(type => type.type !== Type.Data || (!!type.name && type.name in dataTypes));
+  const filtered = types.filter(type => type.type !== Type.DataType || (!!type.name && type.name in dataTypes));
 
   // Those excluded type aliases need to resolve to string
   if (filtered.length < types.length && filtered.every(type => type.type !== Type.String)) {

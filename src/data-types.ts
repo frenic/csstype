@@ -17,7 +17,7 @@ for (const name in syntaxes) {
 const dataTypesMayBeOfInterest: IDataTypes = {};
 
 function isTypeAlias(type: TypeType): type is IDataType {
-  return type.type === Type.Data;
+  return type.type === Type.DataType;
 }
 
 function addDependentTypeAliases(dataTypes: IDataTypes, name: string) {
@@ -70,7 +70,7 @@ function filterInterestingDataTypes(dataTypes: IDataTypes): IDataTypes {
     } else {
       // Exclude type aliases that's not of interest
       const dataTypeWithInterestingDependencies = dataTypes[name].filter(
-        type => type.type !== Type.Data || (!!type.name && type.name in dataTypes),
+        type => type.type !== Type.DataType || (!!type.name && type.name in dataTypes),
       );
 
       // Those excluded type aliases need to resolve to string

@@ -10,8 +10,8 @@ export default function create() {
   output += EOL + EOL;
 
   for (const item of interfaces) {
-    const isExtend = item.extends.map(extend => extend.name + generics(extend.generics, true)).join(', ');
-    output += `export interface ${item.name + generics(item.generics)}${isExtend ? ` extends ${isExtend}` : ''} {`;
+    const extendList = item.extends.map(extend => extend.name + generics(extend.generics, true)).join(', ');
+    output += `export interface ${item.name + generics(item.generics)}${extendList ? ` extends ${extendList}` : ''} {`;
 
     for (const property of item.properties) {
       const propertyGenerics = generics(property.generics, true);
