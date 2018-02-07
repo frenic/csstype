@@ -24,6 +24,21 @@ const cssWithFallbackValues: CSS.PropertiesFallback = {
   fontWeight: ['normal'],
 };
 
+const cssWithHyphenProperties: CSS.PropertiesHyphen = {
+  'flex-grow': 1,
+  'flex-shrink': 0,
+  'flex-direction': 'row',
+  opacity: 1,
+  top: '0px',
+  'font-weight': 'normal',
+};
+
+const cssWithBothCamelAndHyphenProperties: CSS.Properties & CSS.PropertiesHyphen = {
+  animation: '',
+};
+
 css;
 cssWithLengthAsNumber;
 cssWithFallbackValues;
+cssWithHyphenProperties;
+cssWithBothCamelAndHyphenProperties;

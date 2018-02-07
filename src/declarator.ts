@@ -5,7 +5,7 @@ import pseudos from './pseudos';
 import { IAlias, IDataType, IGenerics, Type, TypeType } from './typer';
 
 interface Interface {
-  name: string; // Pascal case
+  name: string;
   generics: IGenerics[];
   extends: Interface[];
   fallback: boolean;
@@ -13,8 +13,7 @@ interface Interface {
 }
 
 interface IProperty {
-  name: string; // Kebab case
-  camel: string; // Camel case
+  name: string;
   generics: IGenerics[];
   alias: IAlias;
 }
@@ -23,7 +22,7 @@ export type MixedType = TypeType<IDataType | IAlias>;
 export type DeclarableType = TypeType<IAlias>;
 
 export interface IDeclaration {
-  name: string; // Pascal case
+  name: string;
   export: boolean;
   types: DeclarableType[];
   generics: IGenerics[];
@@ -63,11 +62,15 @@ const pseudoAlias: IDeclaration = {
 };
 
 const standardPropertiesDefinition: IProperty[] = [];
+const standardPropertiesHyphenDefinition: IProperty[] = [];
 const vendorPropertiesDefinition: IProperty[] = [];
+const vendorPropertiesHyphenDefinition: IProperty[] = [];
 export const declarations: IDeclaration[] = [pseudoAlias, allAlias, allAndStringDeclaration, allAndNumberDeclaration];
 
 for (const properties of [standardProperties, vendorPrefixedProperties]) {
   const definitions = properties === standardProperties ? standardPropertiesDefinition : vendorPropertiesDefinition;
+  const hyphenDefinitions =
+    properties === standardProperties ? standardPropertiesHyphenDefinition : vendorPropertiesHyphenDefinition;
   for (const name in properties) {
     const types = filterMissingDataTypes(properties[name]);
     let declaration: IDeclaration;
@@ -88,8 +91,12 @@ for (const properties of [standardProperties, vendorPrefixedProperties]) {
     }
 
     definitions.push({
+      name: toCamelCase(name),
+      generics: propertyGenerics,
+      alias: aliasOf(declaration),
+    });
+    hyphenDefinitions.push({
       name,
-      camel: toCamelCase(name),
       generics: propertyGenerics,
       alias: aliasOf(declaration),
     });
@@ -108,10 +115,17 @@ for (const name in dataTypes) {
 const INTERFACE_STANDARD_PROPERTIES = 'StandardProperties';
 const INTERFACE_VENDOR_PROPERTIES = 'VendorProperties';
 const INTERFACE_ALL_PROPERTIES = 'Properties';
+const HYPHEN = 'Hyphen';
+const INTERFACE_STANDARD_PROPERTIES_HYPHEN = INTERFACE_STANDARD_PROPERTIES + HYPHEN;
+const INTERFACE_VENDOR_PROPERTIES_HYPHEN = INTERFACE_VENDOR_PROPERTIES + HYPHEN;
+const INTERFACE_ALL_PROPERTIES_HYPHEN = INTERFACE_ALL_PROPERTIES + HYPHEN;
 const FALLBACK = 'Fallback';
 const INTERFACE_STANDARD_PROPERTIES_FALLBACK = INTERFACE_STANDARD_PROPERTIES + FALLBACK;
 const INTERFACE_VENDOR_PROPERTIES_FALLBACK = INTERFACE_VENDOR_PROPERTIES + FALLBACK;
 const INTERFACE_ALL_PROPERTIES_FALLBACK = INTERFACE_ALL_PROPERTIES + FALLBACK;
+const INTERFACE_STANDARD_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_STANDARD_PROPERTIES + HYPHEN + FALLBACK;
+const INTERFACE_VENDOR_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_PROPERTIES + HYPHEN + FALLBACK;
+const INTERFACE_ALL_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_ALL_PROPERTIES + HYPHEN + FALLBACK;
 
 const standardPropertiesInterface: Interface = {
   name: INTERFACE_STANDARD_PROPERTIES,
@@ -137,6 +151,30 @@ const allPropertiesInterface: Interface = {
   properties: [],
 };
 
+const standardPropertiesHyphenInterface: Interface = {
+  name: INTERFACE_STANDARD_PROPERTIES_HYPHEN,
+  generics: [lengthGeneric],
+  extends: [],
+  fallback: false,
+  properties: standardPropertiesHyphenDefinition,
+};
+
+const vendorPropertiesHyphenInterface: Interface = {
+  name: INTERFACE_VENDOR_PROPERTIES_HYPHEN,
+  generics: [lengthGeneric],
+  extends: [],
+  fallback: false,
+  properties: vendorPropertiesHyphenDefinition,
+};
+
+const allPropertiesHyphenInterface: Interface = {
+  name: INTERFACE_ALL_PROPERTIES_HYPHEN,
+  generics: [lengthGeneric],
+  extends: [standardPropertiesHyphenInterface, vendorPropertiesHyphenInterface],
+  fallback: false,
+  properties: [],
+};
+
 const standardPropertiesFallbackInterface: Interface = {
   ...standardPropertiesInterface,
   name: INTERFACE_STANDARD_PROPERTIES_FALLBACK,
@@ -156,13 +194,38 @@ const allPropertiesFallbackInterface: Interface = {
   fallback: true,
 };
 
+const standardPropertiesHyphenFallbackInterface: Interface = {
+  ...standardPropertiesHyphenInterface,
+  name: INTERFACE_STANDARD_PROPERTIES_HYPHEN_FALLBACK,
+  fallback: true,
+};
+
+const vendorPropertiesHyphenFallbackInterface: Interface = {
+  ...vendorPropertiesHyphenInterface,
+  name: INTERFACE_VENDOR_PROPERTIES_HYPHEN_FALLBACK,
+  fallback: true,
+};
+
+const allPropertiesHyphenFallbackInterface: Interface = {
+  ...allPropertiesHyphenInterface,
+  name: INTERFACE_ALL_PROPERTIES_HYPHEN_FALLBACK,
+  extends: [standardPropertiesFallbackInterface, vendorPropertiesFallbackInterface],
+  fallback: true,
+};
+
 export const interfaces = [
   standardPropertiesInterface,
+  standardPropertiesHyphenInterface,
   standardPropertiesFallbackInterface,
+  standardPropertiesHyphenFallbackInterface,
   vendorPropertiesInterface,
+  vendorPropertiesHyphenInterface,
   vendorPropertiesFallbackInterface,
+  vendorPropertiesHyphenFallbackInterface,
   allPropertiesInterface,
+  allPropertiesHyphenInterface,
   allPropertiesFallbackInterface,
+  allPropertiesHyphenFallbackInterface,
 ];
 
 function declarable(types: MixedType[]): DeclarableType[] {
