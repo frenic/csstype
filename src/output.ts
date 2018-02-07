@@ -15,7 +15,7 @@ export default function create() {
 
     for (const property of item.properties) {
       const propertyGenerics = generics(property.generics, true);
-      output += `${property.camel}?: ${
+      output += `${JSON.stringify(property.name)}?: ${
         item.fallback
           ? `${property.alias.name + propertyGenerics} | ${property.alias.name + propertyGenerics}[];`
           : `${property.alias.name + propertyGenerics};`
