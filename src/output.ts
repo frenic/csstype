@@ -1,6 +1,6 @@
 import { EOL } from 'os';
-import { CompleteTypeType, declarations, IGenerics, interfaces } from './declarator';
-import { Type } from './typer';
+import { DeclarableType, declarations, interfaces } from './declarator';
+import { IGenerics, Type } from './typer';
 
 const NAMESPACE = 'CSS';
 
@@ -41,7 +41,7 @@ export default function create() {
   return output;
 }
 
-function sorter(a: CompleteTypeType, b: CompleteTypeType) {
+function sorter(a: DeclarableType, b: DeclarableType) {
   if (a.type === Type.StringLiteral && b.type === Type.StringLiteral) {
     return a.literal < b.literal ? -1 : a.literal > b.literal ? 1 : 0;
   }
@@ -51,7 +51,7 @@ function sorter(a: CompleteTypeType, b: CompleteTypeType) {
   return a.type - b.type;
 }
 
-function unions(types: CompleteTypeType[]) {
+function unions(types: DeclarableType[]) {
   return types
     .sort(sorter)
     .map(type => {

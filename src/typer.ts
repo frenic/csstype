@@ -1,4 +1,3 @@
-import { toPascalCase } from './casing';
 import {
   Combinator,
   Component,
@@ -14,6 +13,7 @@ import {
 
 export enum Type {
   Alias,
+  Data,
   Length,
   StringLiteral,
   NumericLiteral,
@@ -25,11 +25,21 @@ interface IBasic {
   type: Type.String | Type.Number | Type.Length;
 }
 
-export type AliasType<TAliasAddons = {}> = {
+export interface IAlias {
   type: Type.Alias;
   name: string;
-  dataTypeName?: string;
-} & TAliasAddons;
+  generics: IGenerics[];
+}
+
+export interface IGenerics {
+  name: string;
+  defaults?: string;
+}
+
+export interface IDataType {
+  type: Type.Data;
+  name: string;
+}
 
 export interface IStringLiteral {
   type: Type.StringLiteral;
@@ -42,7 +52,7 @@ interface INumericLiteral {
 }
 
 // Yet another reminder; naming is hard
-export type TypeType<TAliasAddons = {}> = IBasic | AliasType<TAliasAddons> | IStringLiteral | INumericLiteral;
+export type TypeType<TAlias = IDataType> = IBasic | IStringLiteral | INumericLiteral | TAlias;
 
 export const knownBasicDataTypes: { [name: string]: Type } = {
   time: Type.String,
@@ -95,9 +105,8 @@ export default function typing(entities: EntityType[]): TypeType[] {
             }
           } else {
             types.push({
-              type: Type.Alias,
-              name: toPascalCase(value),
-              dataTypeName: value,
+              type: Type.Data,
+              name: value,
             });
           }
           break;
@@ -139,8 +148,8 @@ export default function typing(entities: EntityType[]): TypeType[] {
             }
 
             if (
-              groupType.type === Type.Alias &&
-              !types.every(type => !(type.type === Type.Alias && type.dataTypeName === groupType.dataTypeName))
+              groupType.type === Type.Data &&
+              !types.every(type => !(type.type === Type.Data && type.name === groupType.name))
             ) {
               return false;
             }

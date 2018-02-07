@@ -2,7 +2,7 @@ import { toCamelCase, toPascalCase } from './casing';
 import dataTypes from './data-types';
 import { all, standardProperties, vendorPrefixedProperties } from './properties';
 import pseudos from './pseudos';
-import { AliasType, Type, TypeType } from './typer';
+import { IAlias, IDataType, IGenerics, Type, TypeType } from './typer';
 
 interface Interface {
   name: string; // Pascal case
@@ -16,21 +16,17 @@ interface IProperty {
   name: string; // Kebab case
   camel: string; // Camel case
   generics: IGenerics[];
-  alias: AliasType;
+  alias: IAlias;
 }
 
-export type CompleteTypeType = TypeType<{ generics: IGenerics[] }>;
+export type MixedType = TypeType<IDataType | IAlias>;
+export type DeclarableType = TypeType<IAlias>;
 
 export interface IDeclaration {
   name: string; // Pascal case
   export: boolean;
-  types: CompleteTypeType[];
+  types: DeclarableType[];
   generics: IGenerics[];
-}
-
-export interface IGenerics {
-  name: string;
-  defaults?: string;
 }
 
 export const lengthGeneric: IGenerics = {
@@ -41,7 +37,7 @@ export const lengthGeneric: IGenerics = {
 const allAlias: IDeclaration = {
   name: 'All',
   export: false,
-  types: complete(all),
+  types: declarable(all),
   generics: [],
 };
 
@@ -85,7 +81,7 @@ for (const properties of [standardProperties, vendorPrefixedProperties]) {
       declaration = {
         name: toPascalCase(name) + 'Property',
         export: false,
-        types: [aliasOf(allAlias), ...complete(types)],
+        types: [aliasOf(allAlias), ...declarable(types)],
         generics: propertyGenerics,
       };
       declarations.push(declaration);
@@ -104,7 +100,7 @@ for (const name in dataTypes) {
   declarations.push({
     name: toPascalCase(name),
     export: false,
-    types: complete(dataTypes[name]),
+    types: declarable(dataTypes[name]),
     generics: lengthIn(dataTypes[name]) ? [lengthGeneric] : [],
   });
 }
@@ -169,39 +165,32 @@ export const interfaces = [
   allPropertiesFallbackInterface,
 ];
 
-function complete(types: TypeType[]): CompleteTypeType[] {
-  return types.map(
+function declarable(types: MixedType[]): DeclarableType[] {
+  return types.map<DeclarableType>(
     type =>
-      type.type === Type.Alias
+      type.type === Type.Data
         ? {
-            ...type,
-            generics:
-              type.dataTypeName && type.dataTypeName in dataTypes && lengthIn(dataTypes[type.dataTypeName])
-                ? [lengthGeneric]
-                : [],
+            type: Type.Alias,
+            name: toPascalCase(type.name),
+            generics: type.name && type.name in dataTypes && lengthIn(dataTypes[type.name]) ? [lengthGeneric] : [],
           }
         : type,
   );
 }
 
-export function lengthIn(types: TypeType[]) {
+export function lengthIn(types: MixedType[]) {
   return !types.every(type => {
     if (type.type === Type.Length) {
       return false;
     }
-    if (
-      type.type === Type.Alias &&
-      type.dataTypeName &&
-      type.dataTypeName in dataTypes &&
-      lengthIn(dataTypes[type.dataTypeName])
-    ) {
+    if (type.type === Type.Data && type.name && type.name in dataTypes && lengthIn(dataTypes[type.name])) {
       return false;
     }
     return true;
   });
 }
 
-function aliasOf({ name, types }: IDeclaration): AliasType<{ generics: IGenerics[] }> {
+function aliasOf({ name, types }: IDeclaration): IAlias {
   return {
     type: Type.Alias,
     name,
@@ -209,11 +198,9 @@ function aliasOf({ name, types }: IDeclaration): AliasType<{ generics: IGenerics
   };
 }
 
-function filterMissingDataTypes(types: TypeType[]) {
+function filterMissingDataTypes(types: MixedType[]) {
   // Exclude type aliases that's not of interest
-  const filtered = types.filter(
-    type => type.type !== Type.Alias || (!!type.dataTypeName && type.dataTypeName in dataTypes),
-  );
+  const filtered = types.filter(type => type.type !== Type.Data || (!!type.name && type.name in dataTypes));
 
   // Those excluded type aliases need to resolve to string
   if (filtered.length < types.length && filtered.every(type => type.type !== Type.String)) {
@@ -223,10 +210,10 @@ function filterMissingDataTypes(types: TypeType[]) {
   return filtered;
 }
 
-function onlyContainsString(types: TypeType[]) {
+function onlyContainsString(types: MixedType[]) {
   return types.every(type => type.type === Type.String);
 }
 
-function onlyContainsNumber(types: TypeType[]) {
+function onlyContainsNumber(types: MixedType[]) {
   return types.every(type => type.type === Type.Number);
 }

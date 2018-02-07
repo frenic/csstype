@@ -1,7 +1,7 @@
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
 import parse from './parser';
 import { standardProperties, vendorPrefixedProperties } from './properties';
-import typing, { AliasType, Type, TypeType } from './typer';
+import typing, { IDataType, Type, TypeType } from './typer';
 
 interface IDataTypes {
   [key: string]: TypeType[];
@@ -16,8 +16,8 @@ for (const name in syntaxes) {
 
 const dataTypesMayBeOfInterest: IDataTypes = {};
 
-function isTypeAlias(type: TypeType): type is AliasType {
-  return type.type === Type.Alias;
+function isTypeAlias(type: TypeType): type is IDataType {
+  return type.type === Type.Data;
 }
 
 function addDependentTypeAliases(dataTypes: IDataTypes, name: string) {
@@ -26,15 +26,15 @@ function addDependentTypeAliases(dataTypes: IDataTypes, name: string) {
     if (!(name in dataTypesMayBeOfInterest) && isDoesntResolveToJustString) {
       dataTypesMayBeOfInterest[name] = dataTypes[name];
     }
-    const typeAliases: AliasType[] = [];
+    const typeAliases: IDataType[] = [];
     for (const type of dataTypes[name]) {
       if (isTypeAlias(type)) {
         typeAliases.push(type);
       }
     }
     for (const type of typeAliases) {
-      if (type.dataTypeName) {
-        addDependentTypeAliases(dataTypes, type.dataTypeName);
+      if (type.name) {
+        addDependentTypeAliases(dataTypes, type.name);
       }
     }
   }
@@ -46,15 +46,15 @@ const allCssPropertyDescriptions = {
 };
 
 for (const name in allCssPropertyDescriptions) {
-  const typeAliases: AliasType[] = [];
+  const typeAliases: IDataType[] = [];
   for (const type of allCssPropertyDescriptions[name]) {
     if (isTypeAlias(type)) {
       typeAliases.push(type);
     }
   }
   for (const type of typeAliases) {
-    if (type.dataTypeName) {
-      addDependentTypeAliases(availableDataTypes, type.dataTypeName);
+    if (type.name) {
+      addDependentTypeAliases(availableDataTypes, type.name);
     }
   }
 }
@@ -70,7 +70,7 @@ function filterInterestingDataTypes(dataTypes: IDataTypes): IDataTypes {
     } else {
       // Exclude type aliases that's not of interest
       const dataTypeWithInterestingDependencies = dataTypes[name].filter(
-        type => type.type !== Type.Alias || (!!type.dataTypeName && type.dataTypeName in dataTypes),
+        type => type.type !== Type.Data || (!!type.name && type.name in dataTypes),
       );
 
       // Those excluded type aliases need to resolve to string
