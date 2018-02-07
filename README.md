@@ -13,20 +13,21 @@ const style: CSS.Properties = {
 
 ## Getting started
 
-```bash
-$ npm install csstype@latest  # For projects
-$ npm install csstype@*       # For libraries
+```sh
+$ npm install csstype
+$ # or
+$ yarn add csstype
 ```
 
 ## Usage
 
-Lengths defaults to `string`. But it's possible to add `number` as well using generics.
+Lengths defaults to `string | number`. But it's possible to override it using generics.
 
 ```ts
 import * as CSS from 'csstype';
 
-const style: CSS.Properties<string | number> = {
-  padding: 10,
+const style: CSS.Properties<string> = {
+  padding: '10px',
   margin: '1rem',
 }
 ```
@@ -54,5 +55,20 @@ const pseudos: { [P in CSS.Pseudos]?: CSS.Properties } = {
   ':hover': {
     display: 'flex',
   },
+}
+```
+
+Hyphen cased (kebab cased) properties are provided in `CSS.PropertiesHyphen` and `CSS.PropertiesHyphenFallback`. It's not **not** added by default in `CSS.Properties`. To allow both of them, you can simply extend with `CSS.PropertiesHyphen` or/and `CSS.PropertiesHyphenFallback`.
+
+```ts
+import * as CSS from 'csstype';
+
+interface Style extends CSS.Properties, CSS.PropertiesHyphen { }
+
+const style: Style = {
+  'flex-grow': 1,
+  'flex-shrink': 0,
+  'font-weight': 'normal',
+  backgroundColor: 'white',
 }
 ```
