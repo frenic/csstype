@@ -1,5 +1,3 @@
-export as namespace CSS;
-
 export interface StandardProperties<TLength = string | number> {
   alignContent?: AlignContentProperty;
   alignItems?: AlignItemsProperty;
@@ -1913,16 +1911,16 @@ type FontStyleProperty = All | "italic" | "normal" | "oblique";
 type FontSynthesisProperty = All | "none" | "style" | "weight" | string;
 
 type FontVariantProperty =
-  | EastAsianVariantValues
   | All
-  | CommonLigValues
+  | NumericFigureValues
   | EastAsianWidthValues
   | DiscretionaryLigValues
   | HistoricalLigValues
   | ContextualAltValues
-  | NumericFigureValues
-  | NumericFractionValues
+  | CommonLigValues
+  | EastAsianVariantValues
   | NumericSpacingValues
+  | NumericFractionValues
   | "all-petite-caps"
   | "all-small-caps"
   | "historical-forms"

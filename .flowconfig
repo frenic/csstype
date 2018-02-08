@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules
+
+[include]
+flow-typed/csstype.js
+typecheck.js
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

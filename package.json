@@ -9,10 +9,11 @@
   "devDependencies": {
     "@types/chokidar": "^1.7.4",
     "@types/jest": "^22.1.1",
-    "@types/node": "^9.4.0",
+    "@types/node": "^9.4.2",
     "@types/prettier": "^1.10.0",
     "chokidar": "^2.0.0",
-    "jest": "^22.1.4",
+    "flow-bin": "^0.65.0",
+    "jest": "^22.2.1",
     "mdn-data": "1.1.0",
     "prettier": "^1.10.2",
     "ts-node": "^4.1.0",
@@ -30,6 +31,7 @@
     "prepublish": "tsc && npm run test && npm run build && tsc typecheck.ts --noEmit"
   },
   "files": [
-    "index.d.ts"
+    "index.d.ts",
+    "flow-typed/"
   ]
 }

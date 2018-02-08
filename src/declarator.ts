@@ -43,21 +43,21 @@ const allDeclaration: IDeclaration = {
 const allAndStringDeclaration: IDeclaration = {
   name: 'AllString',
   export: false,
-  types: [aliasOf(allDeclaration), { type: Type.String }],
+  types: declarable([aliasOf(allDeclaration), { type: Type.String }]),
   generics: [],
 };
 
 const allAndNumberDeclaration: IDeclaration = {
   name: 'AllNumber',
   export: false,
-  types: [aliasOf(allDeclaration), { type: Type.Number }],
+  types: declarable([aliasOf(allDeclaration), { type: Type.Number }]),
   generics: [],
 };
 
 const pseudoDeclaration: IDeclaration = {
   name: 'Pseudos',
   export: true,
-  types: pseudos,
+  types: declarable(pseudos),
   generics: [],
 };
 
@@ -234,7 +234,7 @@ export const interfaces = [
 ];
 
 function declarable(types: MixedType[]): DeclarableType[] {
-  return types.map<DeclarableType>(
+  return types.sort(sorter).map<DeclarableType>(
     type =>
       type.type === Type.DataType
         ? {
@@ -244,6 +244,16 @@ function declarable(types: MixedType[]): DeclarableType[] {
           }
         : type,
   );
+}
+
+function sorter(a: MixedType, b: MixedType) {
+  if (a.type === Type.StringLiteral && b.type === Type.StringLiteral) {
+    return a.literal < b.literal ? -1 : a.literal > b.literal ? 1 : 0;
+  }
+  if (a.type === Type.NumericLiteral && b.type === Type.NumericLiteral) {
+    return a.literal - b.literal;
+  }
+  return a.type - b.type;
 }
 
 export function lengthIn(types: MixedType[]) {
