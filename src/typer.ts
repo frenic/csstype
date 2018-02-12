@@ -229,24 +229,32 @@ export default function typing(entities: EntityType[]): TypeType[] {
     return entities[entities.indexOf(currentEntity) + 1];
   }
 
-  function previousComponentWasOptional(combinator: ICombinator) {
-    const component = previousEntity(combinator);
-    return !!component && isComponent(component) && isOptionalComponent(component);
-  }
-
-  function nextComponentIsOptional(combinator: ICombinator) {
-    const component = nextEntity(combinator);
-    return !!component && isComponent(component) && isOptionalComponent(component);
-  }
-
-  function shouldIncludeComponent(entity: ComponentType) {
-    const nextCombinator = nextEntity(entity);
-    if (nextCombinator && isCombinator(nextCombinator) && isMandatoryCombinator(nextCombinator)) {
-      return nextComponentIsOptional(nextCombinator);
+  function shouldIncludeComponent(component: ComponentType) {
+    for (let i = entities.indexOf(component) - 1; i >= 0; i--) {
+      const entity = entities[i];
+      if (entity && entity.entity === Entity.Combinator) {
+        if (isMandatoryCombinator(entity)) {
+          const previous = previousEntity(entity);
+          if (previous && !isOptionalEntity(previous)) {
+            return false;
+          }
+        } else {
+          break;
+        }
+      }
     }
-    const previousCombinator = previousEntity(entity);
-    if (previousCombinator && isCombinator(previousCombinator) && isMandatoryCombinator(previousCombinator)) {
-      return previousComponentWasOptional(previousCombinator);
+    for (let i = entities.indexOf(component) + 1; i < entities.length; i++) {
+      const entity = entities[i];
+      if (entity && entity.entity === Entity.Combinator) {
+        if (isMandatoryCombinator(entity)) {
+          const next = nextEntity(entity);
+          if (next && !isOptionalEntity(next)) {
+            return false;
+          }
+        } else {
+          break;
+        }
+      }
     }
     return true;
   }
@@ -274,11 +282,11 @@ function isMandatoryCombinator({ combinator }: ICombinator) {
   return combinator === Combinator.DoubleAmpersand || combinator === Combinator.Juxtaposition;
 }
 
-function isOptionalComponent(component: ComponentType) {
+function isOptionalEntity(entity: EntityType) {
   return (
-    component.multiplier &&
-    ((isQurlyBracetMultiplier(component.multiplier) && component.multiplier.min > 0) ||
-      component.multiplier.sign === Multiplier.Asterisk ||
-      component.multiplier.sign === Multiplier.QuestionMark)
+    entity.multiplier &&
+    ((isQurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
+      entity.multiplier.sign === Multiplier.Asterisk ||
+      entity.multiplier.sign === Multiplier.QuestionMark)
   );
 }

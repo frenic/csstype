@@ -148,7 +148,7 @@ declare module "csstype" {
     fontVariantNumeric?: FontVariantNumericProperty,
     fontVariantPosition?: FontVariantPositionProperty,
     fontWeight?: FontWeightProperty,
-    grid?: GridProperty,
+    grid?: AllString,
     gridArea?: AllString,
     gridAutoColumns?: GridAutoColumnsProperty<TLength>,
     gridAutoFlow?: GridAutoFlowProperty,
@@ -162,7 +162,7 @@ declare module "csstype" {
     gridRowEnd?: GridRowEndProperty,
     gridRowGap?: GridRowGapProperty<TLength>,
     gridRowStart?: GridRowStartProperty,
-    gridTemplate?: GridTemplateProperty<TLength>,
+    gridTemplate?: GridTemplateProperty,
     gridTemplateAreas?: GridTemplateAreasProperty,
     gridTemplateColumns?: GridTemplateColumnsProperty<TLength>,
     gridTemplateRows?: GridTemplateRowsProperty<TLength>,
@@ -479,7 +479,7 @@ declare module "csstype" {
     "font-variant-numeric"?: FontVariantNumericProperty,
     "font-variant-position"?: FontVariantPositionProperty,
     "font-weight"?: FontWeightProperty,
-    grid?: GridProperty,
+    grid?: AllString,
     "grid-area"?: AllString,
     "grid-auto-columns"?: GridAutoColumnsProperty<TLength>,
     "grid-auto-flow"?: GridAutoFlowProperty,
@@ -493,7 +493,7 @@ declare module "csstype" {
     "grid-row-end"?: GridRowEndProperty,
     "grid-row-gap"?: GridRowGapProperty<TLength>,
     "grid-row-start"?: GridRowStartProperty,
-    "grid-template"?: GridTemplateProperty<TLength>,
+    "grid-template"?: GridTemplateProperty,
     "grid-template-areas"?: GridTemplateAreasProperty,
     "grid-template-columns"?: GridTemplateColumnsProperty<TLength>,
     "grid-template-rows"?: GridTemplateRowsProperty<TLength>,
@@ -810,7 +810,7 @@ declare module "csstype" {
     fontVariantNumeric?: FontVariantNumericProperty | FontVariantNumericProperty[],
     fontVariantPosition?: FontVariantPositionProperty | FontVariantPositionProperty[],
     fontWeight?: FontWeightProperty | FontWeightProperty[],
-    grid?: GridProperty | GridProperty[],
+    grid?: AllString | AllString[],
     gridArea?: AllString | AllString[],
     gridAutoColumns?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[],
     gridAutoFlow?: GridAutoFlowProperty | GridAutoFlowProperty[],
@@ -824,7 +824,7 @@ declare module "csstype" {
     gridRowEnd?: GridRowEndProperty | GridRowEndProperty[],
     gridRowGap?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[],
     gridRowStart?: GridRowStartProperty | GridRowStartProperty[],
-    gridTemplate?: GridTemplateProperty<TLength> | GridTemplateProperty<TLength>[],
+    gridTemplate?: GridTemplateProperty | GridTemplateProperty[],
     gridTemplateAreas?: GridTemplateAreasProperty | GridTemplateAreasProperty[],
     gridTemplateColumns?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[],
     gridTemplateRows?: GridTemplateRowsProperty<TLength> | GridTemplateRowsProperty<TLength>[],
@@ -1141,7 +1141,7 @@ declare module "csstype" {
     "font-variant-numeric"?: FontVariantNumericProperty | FontVariantNumericProperty[],
     "font-variant-position"?: FontVariantPositionProperty | FontVariantPositionProperty[],
     "font-weight"?: FontWeightProperty | FontWeightProperty[],
-    grid?: GridProperty | GridProperty[],
+    grid?: AllString | AllString[],
     "grid-area"?: AllString | AllString[],
     "grid-auto-columns"?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[],
     "grid-auto-flow"?: GridAutoFlowProperty | GridAutoFlowProperty[],
@@ -1155,7 +1155,7 @@ declare module "csstype" {
     "grid-row-end"?: GridRowEndProperty | GridRowEndProperty[],
     "grid-row-gap"?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[],
     "grid-row-start"?: GridRowStartProperty | GridRowStartProperty[],
-    "grid-template"?: GridTemplateProperty<TLength> | GridTemplateProperty<TLength>[],
+    "grid-template"?: GridTemplateProperty | GridTemplateProperty[],
     "grid-template-areas"?: GridTemplateAreasProperty | GridTemplateAreasProperty[],
     "grid-template-columns"?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[],
     "grid-template-rows"?: GridTemplateRowsProperty<TLength> | GridTemplateRowsProperty<TLength>[],
@@ -1950,8 +1950,6 @@ declare module "csstype" {
 
   declare type FontWeightProperty = All | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
-  declare type GridProperty = All | "auto-flow" | string;
-
   declare type GridAutoColumnsProperty<TLength> = All | TrackSize<TLength>;
 
   declare type GridAutoFlowProperty = All | "column" | "dense" | "row" | string;
@@ -1974,13 +1972,13 @@ declare module "csstype" {
 
   declare type GridRowStartProperty = All | GridLine;
 
-  declare type GridTemplateProperty<TLength> = All | TrackSize<TLength> | "none" | string;
+  declare type GridTemplateProperty = All | "none" | string;
 
   declare type GridTemplateAreasProperty = All | "none" | string;
 
-  declare type GridTemplateColumnsProperty<TLength> = All | TrackList<TLength> | AutoTrackList<TLength> | "none";
+  declare type GridTemplateColumnsProperty<TLength> = All | TrackList<TLength> | "none" | string;
 
-  declare type GridTemplateRowsProperty<TLength> = All | TrackList<TLength> | AutoTrackList<TLength> | "none";
+  declare type GridTemplateRowsProperty<TLength> = All | TrackList<TLength> | "none" | string;
 
   declare type HangingPunctuationProperty = All | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
@@ -2184,7 +2182,7 @@ declare module "csstype" {
 
   declare type TextEmphasisStyleProperty = All | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
-  declare type TextIndentProperty<TLength> = All | LengthPercentage<TLength> | "each-line" | "hanging" | string;
+  declare type TextIndentProperty<TLength> = All | LengthPercentage<TLength> | string;
 
   declare type TextJustifyProperty = All | "auto" | "inter-character" | "inter-word" | "none";
 
@@ -2687,7 +2685,7 @@ declare module "csstype" {
 
   declare type DisplayInside = "flex" | "flow" | "flow-root" | "grid" | "ruby" | "subgrid" | "table";
 
-  declare type DisplayListitem = DisplayOutside | "flow" | "flow-root" | "list-item" | string;
+  declare type DisplayListitem = "list-item" | string;
 
   declare type DisplayInternal =
     | "ruby-base"
@@ -2738,12 +2736,6 @@ declare module "csstype" {
   declare type GridLine = "auto" | string | number;
 
   declare type TrackList<TLength> = TrackSize<TLength> | string;
-
-  declare type AutoTrackList<TLength> = FixedSize<TLength> | string;
-
-  declare type FixedSize<TLength> = FixedBreadth<TLength> | string;
-
-  declare type FixedBreadth<TLength> = LengthPercentage<TLength>;
 
   declare type MaskLayer<TLength> = MaskReference | Position<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | string;
 

@@ -147,7 +147,7 @@ export interface StandardProperties<TLength = string | number> {
   fontVariantNumeric?: FontVariantNumericProperty;
   fontVariantPosition?: FontVariantPositionProperty;
   fontWeight?: FontWeightProperty;
-  grid?: GridProperty;
+  grid?: AllString;
   gridArea?: AllString;
   gridAutoColumns?: GridAutoColumnsProperty<TLength>;
   gridAutoFlow?: GridAutoFlowProperty;
@@ -161,7 +161,7 @@ export interface StandardProperties<TLength = string | number> {
   gridRowEnd?: GridRowEndProperty;
   gridRowGap?: GridRowGapProperty<TLength>;
   gridRowStart?: GridRowStartProperty;
-  gridTemplate?: GridTemplateProperty<TLength>;
+  gridTemplate?: GridTemplateProperty;
   gridTemplateAreas?: GridTemplateAreasProperty;
   gridTemplateColumns?: GridTemplateColumnsProperty<TLength>;
   gridTemplateRows?: GridTemplateRowsProperty<TLength>;
@@ -478,7 +478,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "font-variant-numeric"?: FontVariantNumericProperty;
   "font-variant-position"?: FontVariantPositionProperty;
   "font-weight"?: FontWeightProperty;
-  grid?: GridProperty;
+  grid?: AllString;
   "grid-area"?: AllString;
   "grid-auto-columns"?: GridAutoColumnsProperty<TLength>;
   "grid-auto-flow"?: GridAutoFlowProperty;
@@ -492,7 +492,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "grid-row-end"?: GridRowEndProperty;
   "grid-row-gap"?: GridRowGapProperty<TLength>;
   "grid-row-start"?: GridRowStartProperty;
-  "grid-template"?: GridTemplateProperty<TLength>;
+  "grid-template"?: GridTemplateProperty;
   "grid-template-areas"?: GridTemplateAreasProperty;
   "grid-template-columns"?: GridTemplateColumnsProperty<TLength>;
   "grid-template-rows"?: GridTemplateRowsProperty<TLength>;
@@ -809,7 +809,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   fontVariantNumeric?: FontVariantNumericProperty | FontVariantNumericProperty[];
   fontVariantPosition?: FontVariantPositionProperty | FontVariantPositionProperty[];
   fontWeight?: FontWeightProperty | FontWeightProperty[];
-  grid?: GridProperty | GridProperty[];
+  grid?: AllString | AllString[];
   gridArea?: AllString | AllString[];
   gridAutoColumns?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
   gridAutoFlow?: GridAutoFlowProperty | GridAutoFlowProperty[];
@@ -823,7 +823,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   gridRowEnd?: GridRowEndProperty | GridRowEndProperty[];
   gridRowGap?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
   gridRowStart?: GridRowStartProperty | GridRowStartProperty[];
-  gridTemplate?: GridTemplateProperty<TLength> | GridTemplateProperty<TLength>[];
+  gridTemplate?: GridTemplateProperty | GridTemplateProperty[];
   gridTemplateAreas?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
   gridTemplateColumns?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
   gridTemplateRows?: GridTemplateRowsProperty<TLength> | GridTemplateRowsProperty<TLength>[];
@@ -1140,7 +1140,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "font-variant-numeric"?: FontVariantNumericProperty | FontVariantNumericProperty[];
   "font-variant-position"?: FontVariantPositionProperty | FontVariantPositionProperty[];
   "font-weight"?: FontWeightProperty | FontWeightProperty[];
-  grid?: GridProperty | GridProperty[];
+  grid?: AllString | AllString[];
   "grid-area"?: AllString | AllString[];
   "grid-auto-columns"?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
   "grid-auto-flow"?: GridAutoFlowProperty | GridAutoFlowProperty[];
@@ -1154,7 +1154,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "grid-row-end"?: GridRowEndProperty | GridRowEndProperty[];
   "grid-row-gap"?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
   "grid-row-start"?: GridRowStartProperty | GridRowStartProperty[];
-  "grid-template"?: GridTemplateProperty<TLength> | GridTemplateProperty<TLength>[];
+  "grid-template"?: GridTemplateProperty | GridTemplateProperty[];
   "grid-template-areas"?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
   "grid-template-columns"?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
   "grid-template-rows"?: GridTemplateRowsProperty<TLength> | GridTemplateRowsProperty<TLength>[];
@@ -1949,8 +1949,6 @@ type FontVariantPositionProperty = All | "normal" | "sub" | "super";
 
 type FontWeightProperty = All | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
-type GridProperty = All | "auto-flow" | string;
-
 type GridAutoColumnsProperty<TLength> = All | TrackSize<TLength>;
 
 type GridAutoFlowProperty = All | "column" | "dense" | "row" | string;
@@ -1973,13 +1971,13 @@ type GridRowGapProperty<TLength> = All | LengthPercentage<TLength>;
 
 type GridRowStartProperty = All | GridLine;
 
-type GridTemplateProperty<TLength> = All | TrackSize<TLength> | "none" | string;
+type GridTemplateProperty = All | "none" | string;
 
 type GridTemplateAreasProperty = All | "none" | string;
 
-type GridTemplateColumnsProperty<TLength> = All | TrackList<TLength> | AutoTrackList<TLength> | "none";
+type GridTemplateColumnsProperty<TLength> = All | TrackList<TLength> | "none" | string;
 
-type GridTemplateRowsProperty<TLength> = All | TrackList<TLength> | AutoTrackList<TLength> | "none";
+type GridTemplateRowsProperty<TLength> = All | TrackList<TLength> | "none" | string;
 
 type HangingPunctuationProperty = All | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
@@ -2183,7 +2181,7 @@ type TextEmphasisColorProperty = All | Color;
 
 type TextEmphasisStyleProperty = All | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
-type TextIndentProperty<TLength> = All | LengthPercentage<TLength> | "each-line" | "hanging" | string;
+type TextIndentProperty<TLength> = All | LengthPercentage<TLength> | string;
 
 type TextJustifyProperty = All | "auto" | "inter-character" | "inter-word" | "none";
 
@@ -2679,7 +2677,7 @@ type DisplayOutside = "block" | "inline" | "run-in";
 
 type DisplayInside = "flex" | "flow" | "flow-root" | "grid" | "ruby" | "subgrid" | "table";
 
-type DisplayListitem = DisplayOutside | "flow" | "flow-root" | "list-item" | string;
+type DisplayListitem = "list-item" | string;
 
 type DisplayInternal =
   | "ruby-base"
@@ -2730,12 +2728,6 @@ type TrackBreadth<TLength> = LengthPercentage<TLength> | "auto" | "max-content" 
 type GridLine = "auto" | string | number;
 
 type TrackList<TLength> = TrackSize<TLength> | string;
-
-type AutoTrackList<TLength> = FixedSize<TLength> | string;
-
-type FixedSize<TLength> = FixedBreadth<TLength> | string;
-
-type FixedBreadth<TLength> = LengthPercentage<TLength>;
 
 type MaskLayer<TLength> = MaskReference | Position<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | string;
 
