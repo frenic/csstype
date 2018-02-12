@@ -4,24 +4,24 @@ import * as CSS from './';
 
 const css: CSS.Properties = {
   flexGrow: 1,
-  flexShrink: 0,
+  flexShrink: 1,
   flexDirection: 'row',
   opacity: 1,
-  top: '0px',
+  top: '1',
   fontWeight: 'normal',
-};
-
-const cssWithLengthAsNumber: CSS.Properties<number> = {
-  top: 0,
+  width: 1,
+  height: '1',
 };
 
 const cssWithFallbackValues: CSS.PropertiesFallback = {
   flexGrow: [1],
-  flexShrink: [0],
+  flexShrink: [1],
   flexDirection: ['row'],
   opacity: [1],
   top: ['0px'],
   fontWeight: ['normal'],
+  width: [1],
+  height: ['1'],
 };
 
 const cssWithHyphenProperties: CSS.PropertiesHyphen = {
@@ -31,6 +31,8 @@ const cssWithHyphenProperties: CSS.PropertiesHyphen = {
   opacity: 1,
   top: '0px',
   'font-weight': 'normal',
+  width: 1,
+  height: '1',
 };
 
 const cssWithBothCamelAndHyphenProperties: CSS.Properties & CSS.PropertiesHyphen = {
@@ -38,7 +40,6 @@ const cssWithBothCamelAndHyphenProperties: CSS.Properties & CSS.PropertiesHyphen
 };
 
 css;
-cssWithLengthAsNumber;
 cssWithFallbackValues;
 cssWithHyphenProperties;
 cssWithBothCamelAndHyphenProperties;

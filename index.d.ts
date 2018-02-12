@@ -17,16 +17,16 @@ export interface StandardProperties<TLength = string | number> {
   azimuth?: AzimuthProperty;
   backdropFilter?: BackdropFilterProperty;
   backfaceVisibility?: BackfaceVisibilityProperty;
-  background?: AllString;
+  background?: BackgroundProperty<TLength>;
   backgroundAttachment?: BackgroundAttachmentProperty;
   backgroundBlendMode?: BackgroundBlendModeProperty;
   backgroundClip?: BackgroundClipProperty;
   backgroundColor?: BackgroundColorProperty;
   backgroundImage?: BackgroundImageProperty;
   backgroundOrigin?: BackgroundOriginProperty;
-  backgroundPosition?: AllString;
-  backgroundPositionX?: AllString;
-  backgroundPositionY?: AllString;
+  backgroundPosition?: BackgroundPositionProperty<TLength>;
+  backgroundPositionX?: BackgroundPositionXProperty<TLength>;
+  backgroundPositionY?: BackgroundPositionYProperty<TLength>;
   backgroundRepeat?: BackgroundRepeatProperty;
   backgroundSize?: BackgroundSizeProperty<TLength>;
   blockSize?: AllString;
@@ -50,7 +50,7 @@ export interface StandardProperties<TLength = string | number> {
   borderImage?: AllString;
   borderImageOutset?: BorderImageOutsetProperty<TLength>;
   borderImageRepeat?: BorderImageRepeatProperty;
-  borderImageSlice?: AllString;
+  borderImageSlice?: BorderImageSliceProperty;
   borderImageSource?: BorderImageSourceProperty;
   borderImageWidth?: BorderImageWidthProperty<TLength>;
   borderInlineEnd?: AllString;
@@ -70,7 +70,7 @@ export interface StandardProperties<TLength = string | number> {
   borderRightColor?: BorderRightColorProperty;
   borderRightStyle?: BorderRightStyleProperty;
   borderRightWidth?: BorderRightWidthProperty<TLength>;
-  borderSpacing?: AllString;
+  borderSpacing?: BorderSpacingProperty<TLength>;
   borderStyle?: BorderStyleProperty;
   borderTop?: BorderTopProperty<TLength>;
   borderTopColor?: BorderTopColorProperty;
@@ -89,7 +89,7 @@ export interface StandardProperties<TLength = string | number> {
   boxOrdinalGroup?: AllNumber;
   boxOrient?: BoxOrientProperty;
   boxPack?: BoxPackProperty;
-  boxShadow?: BoxShadowProperty;
+  boxShadow?: BoxShadowProperty<TLength>;
   boxSizing?: BoxSizingProperty;
   breakAfter?: BreakAfterProperty;
   breakBefore?: BreakBeforeProperty;
@@ -149,11 +149,11 @@ export interface StandardProperties<TLength = string | number> {
   fontVariantNumeric?: FontVariantNumericProperty;
   fontVariantPosition?: FontVariantPositionProperty;
   fontWeight?: FontWeightProperty;
-  grid?: AllString;
-  gridArea?: GridAreaProperty;
-  gridAutoColumns?: AllString;
+  grid?: GridProperty;
+  gridArea?: AllString;
+  gridAutoColumns?: GridAutoColumnsProperty<TLength>;
   gridAutoFlow?: GridAutoFlowProperty;
-  gridAutoRows?: AllString;
+  gridAutoRows?: GridAutoRowsProperty<TLength>;
   gridColumn?: GridColumnProperty;
   gridColumnEnd?: GridColumnEndProperty;
   gridColumnGap?: GridColumnGapProperty<TLength>;
@@ -163,16 +163,16 @@ export interface StandardProperties<TLength = string | number> {
   gridRowEnd?: GridRowEndProperty;
   gridRowGap?: GridRowGapProperty<TLength>;
   gridRowStart?: GridRowStartProperty;
-  gridTemplate?: GridTemplateProperty;
+  gridTemplate?: GridTemplateProperty<TLength>;
   gridTemplateAreas?: GridTemplateAreasProperty;
-  gridTemplateColumns?: GridTemplateColumnsProperty;
-  gridTemplateRows?: GridTemplateRowsProperty;
+  gridTemplateColumns?: GridTemplateColumnsProperty<TLength>;
+  gridTemplateRows?: GridTemplateRowsProperty<TLength>;
   hangingPunctuation?: HangingPunctuationProperty;
-  height?: AllString;
+  height?: HeightProperty<TLength>;
   hyphens?: HyphensProperty;
   imageOrientation?: ImageOrientationProperty;
   imageRendering?: ImageRenderingProperty;
-  imageResolution?: AllString;
+  imageResolution?: ImageResolutionProperty;
   imeMode?: ImeModeProperty;
   initialLetter?: InitialLetterProperty;
   initialLetterAlign?: InitialLetterAlignProperty;
@@ -202,7 +202,7 @@ export interface StandardProperties<TLength = string | number> {
   maskBorderMode?: MaskBorderModeProperty;
   maskBorderOutset?: MaskBorderOutsetProperty<TLength>;
   maskBorderRepeat?: MaskBorderRepeatProperty;
-  maskBorderSlice?: AllString;
+  maskBorderSlice?: MaskBorderSliceProperty;
   maskBorderSource?: MaskBorderSourceProperty;
   maskBorderWidth?: MaskBorderWidthProperty<TLength>;
   maskClip?: MaskClipProperty;
@@ -210,7 +210,7 @@ export interface StandardProperties<TLength = string | number> {
   maskImage?: MaskImageProperty;
   maskMode?: MaskModeProperty;
   maskOrigin?: MaskOriginProperty;
-  maskPosition?: AllString;
+  maskPosition?: MaskPositionProperty<TLength>;
   maskRepeat?: MaskRepeatProperty;
   maskSize?: MaskSizeProperty<TLength>;
   maskType?: MaskTypeProperty;
@@ -224,16 +224,16 @@ export interface StandardProperties<TLength = string | number> {
   minWidth?: MinWidthProperty<TLength>;
   mixBlendMode?: MixBlendModeProperty;
   objectFit?: ObjectFitProperty;
-  objectPosition?: AllString;
+  objectPosition?: ObjectPositionProperty<TLength>;
   offset?: AllString;
-  offsetAnchor?: OffsetAnchorProperty;
+  offsetAnchor?: OffsetAnchorProperty<TLength>;
   offsetBlockEnd?: AllString;
   offsetBlockStart?: AllString;
   offsetInlineEnd?: AllString;
   offsetInlineStart?: AllString;
   offsetDistance?: OffsetDistanceProperty<TLength>;
   offsetPath?: OffsetPathProperty;
-  offsetPosition?: OffsetPositionProperty;
+  offsetPosition?: OffsetPositionProperty<TLength>;
   offsetRotate?: OffsetRotateProperty;
   opacity?: AllNumber;
   order?: AllNumber;
@@ -261,7 +261,7 @@ export interface StandardProperties<TLength = string | number> {
   pageBreakBefore?: PageBreakBeforeProperty;
   pageBreakInside?: PageBreakInsideProperty;
   perspective?: PerspectiveProperty<TLength>;
-  perspectiveOrigin?: AllString;
+  perspectiveOrigin?: PerspectiveOriginProperty<TLength>;
   pointerEvents?: PointerEventsProperty;
   position?: PositionProperty;
   quotes?: QuotesProperty;
@@ -271,8 +271,8 @@ export interface StandardProperties<TLength = string | number> {
   rubyMerge?: RubyMergeProperty;
   rubyPosition?: RubyPositionProperty;
   scrollBehavior?: ScrollBehaviorProperty;
-  scrollSnapCoordinate?: ScrollSnapCoordinateProperty;
-  scrollSnapDestination?: AllString;
+  scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength>;
+  scrollSnapDestination?: ScrollSnapDestinationProperty<TLength>;
   scrollSnapPointsX?: ScrollSnapPointsXProperty;
   scrollSnapPointsY?: ScrollSnapPointsYProperty;
   scrollSnapType?: ScrollSnapTypeProperty;
@@ -296,12 +296,12 @@ export interface StandardProperties<TLength = string | number> {
   textEmphasisColor?: TextEmphasisColorProperty;
   textEmphasisPosition?: AllString;
   textEmphasisStyle?: TextEmphasisStyleProperty;
-  textIndent?: AllString;
+  textIndent?: TextIndentProperty<TLength>;
   textJustify?: TextJustifyProperty;
   textOrientation?: TextOrientationProperty;
   textOverflow?: TextOverflowProperty;
   textRendering?: TextRenderingProperty;
-  textShadow?: TextShadowProperty;
+  textShadow?: TextShadowProperty<TLength>;
   textSizeAdjust?: TextSizeAdjustProperty;
   textTransform?: TextTransformProperty;
   textUnderlinePosition?: TextUnderlinePositionProperty;
@@ -309,7 +309,7 @@ export interface StandardProperties<TLength = string | number> {
   touchAction?: TouchActionProperty;
   transform?: TransformProperty;
   transformBox?: TransformBoxProperty;
-  transformOrigin?: AllString;
+  transformOrigin?: TransformOriginProperty<TLength>;
   transformStyle?: TransformStyleProperty;
   transition?: TransitionProperty;
   transitionDelay?: AllString;
@@ -322,7 +322,7 @@ export interface StandardProperties<TLength = string | number> {
   visibility?: VisibilityProperty;
   whiteSpace?: WhiteSpaceProperty;
   widows?: AllNumber;
-  width?: AllString;
+  width?: WidthProperty<TLength>;
   willChange?: WillChangeProperty;
   wordBreak?: WordBreakProperty;
   wordSpacing?: WordSpacingProperty<TLength>;
@@ -348,16 +348,16 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   azimuth?: AzimuthProperty;
   "backdrop-filter"?: BackdropFilterProperty;
   "backface-visibility"?: BackfaceVisibilityProperty;
-  background?: AllString;
+  background?: BackgroundProperty<TLength>;
   "background-attachment"?: BackgroundAttachmentProperty;
   "background-blend-mode"?: BackgroundBlendModeProperty;
   "background-clip"?: BackgroundClipProperty;
   "background-color"?: BackgroundColorProperty;
   "background-image"?: BackgroundImageProperty;
   "background-origin"?: BackgroundOriginProperty;
-  "background-position"?: AllString;
-  "background-position-x"?: AllString;
-  "background-position-y"?: AllString;
+  "background-position"?: BackgroundPositionProperty<TLength>;
+  "background-position-x"?: BackgroundPositionXProperty<TLength>;
+  "background-position-y"?: BackgroundPositionYProperty<TLength>;
   "background-repeat"?: BackgroundRepeatProperty;
   "background-size"?: BackgroundSizeProperty<TLength>;
   "block-size"?: AllString;
@@ -381,7 +381,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "border-image"?: AllString;
   "border-image-outset"?: BorderImageOutsetProperty<TLength>;
   "border-image-repeat"?: BorderImageRepeatProperty;
-  "border-image-slice"?: AllString;
+  "border-image-slice"?: BorderImageSliceProperty;
   "border-image-source"?: BorderImageSourceProperty;
   "border-image-width"?: BorderImageWidthProperty<TLength>;
   "border-inline-end"?: AllString;
@@ -401,7 +401,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "border-right-color"?: BorderRightColorProperty;
   "border-right-style"?: BorderRightStyleProperty;
   "border-right-width"?: BorderRightWidthProperty<TLength>;
-  "border-spacing"?: AllString;
+  "border-spacing"?: BorderSpacingProperty<TLength>;
   "border-style"?: BorderStyleProperty;
   "border-top"?: BorderTopProperty<TLength>;
   "border-top-color"?: BorderTopColorProperty;
@@ -420,7 +420,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "box-ordinal-group"?: AllNumber;
   "box-orient"?: BoxOrientProperty;
   "box-pack"?: BoxPackProperty;
-  "box-shadow"?: BoxShadowProperty;
+  "box-shadow"?: BoxShadowProperty<TLength>;
   "box-sizing"?: BoxSizingProperty;
   "break-after"?: BreakAfterProperty;
   "break-before"?: BreakBeforeProperty;
@@ -480,11 +480,11 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "font-variant-numeric"?: FontVariantNumericProperty;
   "font-variant-position"?: FontVariantPositionProperty;
   "font-weight"?: FontWeightProperty;
-  grid?: AllString;
-  "grid-area"?: GridAreaProperty;
-  "grid-auto-columns"?: AllString;
+  grid?: GridProperty;
+  "grid-area"?: AllString;
+  "grid-auto-columns"?: GridAutoColumnsProperty<TLength>;
   "grid-auto-flow"?: GridAutoFlowProperty;
-  "grid-auto-rows"?: AllString;
+  "grid-auto-rows"?: GridAutoRowsProperty<TLength>;
   "grid-column"?: GridColumnProperty;
   "grid-column-end"?: GridColumnEndProperty;
   "grid-column-gap"?: GridColumnGapProperty<TLength>;
@@ -494,16 +494,16 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "grid-row-end"?: GridRowEndProperty;
   "grid-row-gap"?: GridRowGapProperty<TLength>;
   "grid-row-start"?: GridRowStartProperty;
-  "grid-template"?: GridTemplateProperty;
+  "grid-template"?: GridTemplateProperty<TLength>;
   "grid-template-areas"?: GridTemplateAreasProperty;
-  "grid-template-columns"?: GridTemplateColumnsProperty;
-  "grid-template-rows"?: GridTemplateRowsProperty;
+  "grid-template-columns"?: GridTemplateColumnsProperty<TLength>;
+  "grid-template-rows"?: GridTemplateRowsProperty<TLength>;
   "hanging-punctuation"?: HangingPunctuationProperty;
-  height?: AllString;
+  height?: HeightProperty<TLength>;
   hyphens?: HyphensProperty;
   "image-orientation"?: ImageOrientationProperty;
   "image-rendering"?: ImageRenderingProperty;
-  "image-resolution"?: AllString;
+  "image-resolution"?: ImageResolutionProperty;
   "ime-mode"?: ImeModeProperty;
   "initial-letter"?: InitialLetterProperty;
   "initial-letter-align"?: InitialLetterAlignProperty;
@@ -533,7 +533,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "mask-border-mode"?: MaskBorderModeProperty;
   "mask-border-outset"?: MaskBorderOutsetProperty<TLength>;
   "mask-border-repeat"?: MaskBorderRepeatProperty;
-  "mask-border-slice"?: AllString;
+  "mask-border-slice"?: MaskBorderSliceProperty;
   "mask-border-source"?: MaskBorderSourceProperty;
   "mask-border-width"?: MaskBorderWidthProperty<TLength>;
   "mask-clip"?: MaskClipProperty;
@@ -541,7 +541,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "mask-image"?: MaskImageProperty;
   "mask-mode"?: MaskModeProperty;
   "mask-origin"?: MaskOriginProperty;
-  "mask-position"?: AllString;
+  "mask-position"?: MaskPositionProperty<TLength>;
   "mask-repeat"?: MaskRepeatProperty;
   "mask-size"?: MaskSizeProperty<TLength>;
   "mask-type"?: MaskTypeProperty;
@@ -555,16 +555,16 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "min-width"?: MinWidthProperty<TLength>;
   "mix-blend-mode"?: MixBlendModeProperty;
   "object-fit"?: ObjectFitProperty;
-  "object-position"?: AllString;
+  "object-position"?: ObjectPositionProperty<TLength>;
   offset?: AllString;
-  "offset-anchor"?: OffsetAnchorProperty;
+  "offset-anchor"?: OffsetAnchorProperty<TLength>;
   "offset-block-end"?: AllString;
   "offset-block-start"?: AllString;
   "offset-inline-end"?: AllString;
   "offset-inline-start"?: AllString;
   "offset-distance"?: OffsetDistanceProperty<TLength>;
   "offset-path"?: OffsetPathProperty;
-  "offset-position"?: OffsetPositionProperty;
+  "offset-position"?: OffsetPositionProperty<TLength>;
   "offset-rotate"?: OffsetRotateProperty;
   opacity?: AllNumber;
   order?: AllNumber;
@@ -592,7 +592,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "page-break-before"?: PageBreakBeforeProperty;
   "page-break-inside"?: PageBreakInsideProperty;
   perspective?: PerspectiveProperty<TLength>;
-  "perspective-origin"?: AllString;
+  "perspective-origin"?: PerspectiveOriginProperty<TLength>;
   "pointer-events"?: PointerEventsProperty;
   position?: PositionProperty;
   quotes?: QuotesProperty;
@@ -602,8 +602,8 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "ruby-merge"?: RubyMergeProperty;
   "ruby-position"?: RubyPositionProperty;
   "scroll-behavior"?: ScrollBehaviorProperty;
-  "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty;
-  "scroll-snap-destination"?: AllString;
+  "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength>;
+  "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength>;
   "scroll-snap-points-x"?: ScrollSnapPointsXProperty;
   "scroll-snap-points-y"?: ScrollSnapPointsYProperty;
   "scroll-snap-type"?: ScrollSnapTypeProperty;
@@ -627,12 +627,12 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "text-emphasis-color"?: TextEmphasisColorProperty;
   "text-emphasis-position"?: AllString;
   "text-emphasis-style"?: TextEmphasisStyleProperty;
-  "text-indent"?: AllString;
+  "text-indent"?: TextIndentProperty<TLength>;
   "text-justify"?: TextJustifyProperty;
   "text-orientation"?: TextOrientationProperty;
   "text-overflow"?: TextOverflowProperty;
   "text-rendering"?: TextRenderingProperty;
-  "text-shadow"?: TextShadowProperty;
+  "text-shadow"?: TextShadowProperty<TLength>;
   "text-size-adjust"?: TextSizeAdjustProperty;
   "text-transform"?: TextTransformProperty;
   "text-underline-position"?: TextUnderlinePositionProperty;
@@ -640,7 +640,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   "touch-action"?: TouchActionProperty;
   transform?: TransformProperty;
   "transform-box"?: TransformBoxProperty;
-  "transform-origin"?: AllString;
+  "transform-origin"?: TransformOriginProperty<TLength>;
   "transform-style"?: TransformStyleProperty;
   transition?: TransitionProperty;
   "transition-delay"?: AllString;
@@ -653,7 +653,7 @@ export interface StandardPropertiesHyphen<TLength = string | number> {
   visibility?: VisibilityProperty;
   "white-space"?: WhiteSpaceProperty;
   widows?: AllNumber;
-  width?: AllString;
+  width?: WidthProperty<TLength>;
   "will-change"?: WillChangeProperty;
   "word-break"?: WordBreakProperty;
   "word-spacing"?: WordSpacingProperty<TLength>;
@@ -679,16 +679,16 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   azimuth?: AzimuthProperty | AzimuthProperty[];
   backdropFilter?: BackdropFilterProperty | BackdropFilterProperty[];
   backfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
-  background?: AllString | AllString[];
+  background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   backgroundAttachment?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
   backgroundBlendMode?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
   backgroundClip?: BackgroundClipProperty | BackgroundClipProperty[];
   backgroundColor?: BackgroundColorProperty | BackgroundColorProperty[];
   backgroundImage?: BackgroundImageProperty | BackgroundImageProperty[];
   backgroundOrigin?: BackgroundOriginProperty | BackgroundOriginProperty[];
-  backgroundPosition?: AllString | AllString[];
-  backgroundPositionX?: AllString | AllString[];
-  backgroundPositionY?: AllString | AllString[];
+  backgroundPosition?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
+  backgroundPositionX?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[];
+  backgroundPositionY?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
   backgroundRepeat?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
   backgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
   blockSize?: AllString | AllString[];
@@ -712,7 +712,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   borderImage?: AllString | AllString[];
   borderImageOutset?: BorderImageOutsetProperty<TLength> | BorderImageOutsetProperty<TLength>[];
   borderImageRepeat?: BorderImageRepeatProperty | BorderImageRepeatProperty[];
-  borderImageSlice?: AllString | AllString[];
+  borderImageSlice?: BorderImageSliceProperty | BorderImageSliceProperty[];
   borderImageSource?: BorderImageSourceProperty | BorderImageSourceProperty[];
   borderImageWidth?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
   borderInlineEnd?: AllString | AllString[];
@@ -732,7 +732,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   borderRightColor?: BorderRightColorProperty | BorderRightColorProperty[];
   borderRightStyle?: BorderRightStyleProperty | BorderRightStyleProperty[];
   borderRightWidth?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[];
-  borderSpacing?: AllString | AllString[];
+  borderSpacing?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[];
   borderStyle?: BorderStyleProperty | BorderStyleProperty[];
   borderTop?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
   borderTopColor?: BorderTopColorProperty | BorderTopColorProperty[];
@@ -751,7 +751,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   boxOrdinalGroup?: AllNumber | AllNumber[];
   boxOrient?: BoxOrientProperty | BoxOrientProperty[];
   boxPack?: BoxPackProperty | BoxPackProperty[];
-  boxShadow?: BoxShadowProperty | BoxShadowProperty[];
+  boxShadow?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
   boxSizing?: BoxSizingProperty | BoxSizingProperty[];
   breakAfter?: BreakAfterProperty | BreakAfterProperty[];
   breakBefore?: BreakBeforeProperty | BreakBeforeProperty[];
@@ -811,11 +811,11 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   fontVariantNumeric?: FontVariantNumericProperty | FontVariantNumericProperty[];
   fontVariantPosition?: FontVariantPositionProperty | FontVariantPositionProperty[];
   fontWeight?: FontWeightProperty | FontWeightProperty[];
-  grid?: AllString | AllString[];
-  gridArea?: GridAreaProperty | GridAreaProperty[];
-  gridAutoColumns?: AllString | AllString[];
+  grid?: GridProperty | GridProperty[];
+  gridArea?: AllString | AllString[];
+  gridAutoColumns?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
   gridAutoFlow?: GridAutoFlowProperty | GridAutoFlowProperty[];
-  gridAutoRows?: AllString | AllString[];
+  gridAutoRows?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
   gridColumn?: GridColumnProperty | GridColumnProperty[];
   gridColumnEnd?: GridColumnEndProperty | GridColumnEndProperty[];
   gridColumnGap?: GridColumnGapProperty<TLength> | GridColumnGapProperty<TLength>[];
@@ -825,16 +825,16 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   gridRowEnd?: GridRowEndProperty | GridRowEndProperty[];
   gridRowGap?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
   gridRowStart?: GridRowStartProperty | GridRowStartProperty[];
-  gridTemplate?: GridTemplateProperty | GridTemplateProperty[];
+  gridTemplate?: GridTemplateProperty<TLength> | GridTemplateProperty<TLength>[];
   gridTemplateAreas?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
-  gridTemplateColumns?: GridTemplateColumnsProperty | GridTemplateColumnsProperty[];
-  gridTemplateRows?: GridTemplateRowsProperty | GridTemplateRowsProperty[];
+  gridTemplateColumns?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
+  gridTemplateRows?: GridTemplateRowsProperty<TLength> | GridTemplateRowsProperty<TLength>[];
   hangingPunctuation?: HangingPunctuationProperty | HangingPunctuationProperty[];
-  height?: AllString | AllString[];
+  height?: HeightProperty<TLength> | HeightProperty<TLength>[];
   hyphens?: HyphensProperty | HyphensProperty[];
   imageOrientation?: ImageOrientationProperty | ImageOrientationProperty[];
   imageRendering?: ImageRenderingProperty | ImageRenderingProperty[];
-  imageResolution?: AllString | AllString[];
+  imageResolution?: ImageResolutionProperty | ImageResolutionProperty[];
   imeMode?: ImeModeProperty | ImeModeProperty[];
   initialLetter?: InitialLetterProperty | InitialLetterProperty[];
   initialLetterAlign?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
@@ -864,7 +864,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   maskBorderMode?: MaskBorderModeProperty | MaskBorderModeProperty[];
   maskBorderOutset?: MaskBorderOutsetProperty<TLength> | MaskBorderOutsetProperty<TLength>[];
   maskBorderRepeat?: MaskBorderRepeatProperty | MaskBorderRepeatProperty[];
-  maskBorderSlice?: AllString | AllString[];
+  maskBorderSlice?: MaskBorderSliceProperty | MaskBorderSliceProperty[];
   maskBorderSource?: MaskBorderSourceProperty | MaskBorderSourceProperty[];
   maskBorderWidth?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
   maskClip?: MaskClipProperty | MaskClipProperty[];
@@ -872,7 +872,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   maskImage?: MaskImageProperty | MaskImageProperty[];
   maskMode?: MaskModeProperty | MaskModeProperty[];
   maskOrigin?: MaskOriginProperty | MaskOriginProperty[];
-  maskPosition?: AllString | AllString[];
+  maskPosition?: MaskPositionProperty<TLength> | MaskPositionProperty<TLength>[];
   maskRepeat?: MaskRepeatProperty | MaskRepeatProperty[];
   maskSize?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[];
   maskType?: MaskTypeProperty | MaskTypeProperty[];
@@ -886,16 +886,16 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
   objectFit?: ObjectFitProperty | ObjectFitProperty[];
-  objectPosition?: AllString | AllString[];
+  objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   offset?: AllString | AllString[];
-  offsetAnchor?: OffsetAnchorProperty | OffsetAnchorProperty[];
+  offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   offsetBlockEnd?: AllString | AllString[];
   offsetBlockStart?: AllString | AllString[];
   offsetInlineEnd?: AllString | AllString[];
   offsetInlineStart?: AllString | AllString[];
   offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   offsetPath?: OffsetPathProperty | OffsetPathProperty[];
-  offsetPosition?: OffsetPositionProperty | OffsetPositionProperty[];
+  offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
   offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[];
   opacity?: AllNumber | AllNumber[];
   order?: AllNumber | AllNumber[];
@@ -923,7 +923,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   pageBreakBefore?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
   pageBreakInside?: PageBreakInsideProperty | PageBreakInsideProperty[];
   perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
-  perspectiveOrigin?: AllString | AllString[];
+  perspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   pointerEvents?: PointerEventsProperty | PointerEventsProperty[];
   position?: PositionProperty | PositionProperty[];
   quotes?: QuotesProperty | QuotesProperty[];
@@ -933,8 +933,8 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   rubyMerge?: RubyMergeProperty | RubyMergeProperty[];
   rubyPosition?: RubyPositionProperty | RubyPositionProperty[];
   scrollBehavior?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
-  scrollSnapCoordinate?: ScrollSnapCoordinateProperty | ScrollSnapCoordinateProperty[];
-  scrollSnapDestination?: AllString | AllString[];
+  scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[];
+  scrollSnapDestination?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[];
   scrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
   scrollSnapPointsY?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
   scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
@@ -958,12 +958,12 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   textEmphasisColor?: TextEmphasisColorProperty | TextEmphasisColorProperty[];
   textEmphasisPosition?: AllString | AllString[];
   textEmphasisStyle?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[];
-  textIndent?: AllString | AllString[];
+  textIndent?: TextIndentProperty<TLength> | TextIndentProperty<TLength>[];
   textJustify?: TextJustifyProperty | TextJustifyProperty[];
   textOrientation?: TextOrientationProperty | TextOrientationProperty[];
   textOverflow?: TextOverflowProperty | TextOverflowProperty[];
   textRendering?: TextRenderingProperty | TextRenderingProperty[];
-  textShadow?: TextShadowProperty | TextShadowProperty[];
+  textShadow?: TextShadowProperty<TLength> | TextShadowProperty<TLength>[];
   textSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
   textTransform?: TextTransformProperty | TextTransformProperty[];
   textUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
@@ -971,7 +971,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   touchAction?: TouchActionProperty | TouchActionProperty[];
   transform?: TransformProperty | TransformProperty[];
   transformBox?: TransformBoxProperty | TransformBoxProperty[];
-  transformOrigin?: AllString | AllString[];
+  transformOrigin?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[];
   transformStyle?: TransformStyleProperty | TransformStyleProperty[];
   transition?: TransitionProperty | TransitionProperty[];
   transitionDelay?: AllString | AllString[];
@@ -984,7 +984,7 @@ export interface StandardPropertiesFallback<TLength = string | number> {
   visibility?: VisibilityProperty | VisibilityProperty[];
   whiteSpace?: WhiteSpaceProperty | WhiteSpaceProperty[];
   widows?: AllNumber | AllNumber[];
-  width?: AllString | AllString[];
+  width?: WidthProperty<TLength> | WidthProperty<TLength>[];
   willChange?: WillChangeProperty | WillChangeProperty[];
   wordBreak?: WordBreakProperty | WordBreakProperty[];
   wordSpacing?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
@@ -1010,16 +1010,16 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   azimuth?: AzimuthProperty | AzimuthProperty[];
   "backdrop-filter"?: BackdropFilterProperty | BackdropFilterProperty[];
   "backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
-  background?: AllString | AllString[];
+  background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   "background-attachment"?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
   "background-blend-mode"?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
   "background-clip"?: BackgroundClipProperty | BackgroundClipProperty[];
   "background-color"?: BackgroundColorProperty | BackgroundColorProperty[];
   "background-image"?: BackgroundImageProperty | BackgroundImageProperty[];
   "background-origin"?: BackgroundOriginProperty | BackgroundOriginProperty[];
-  "background-position"?: AllString | AllString[];
-  "background-position-x"?: AllString | AllString[];
-  "background-position-y"?: AllString | AllString[];
+  "background-position"?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
+  "background-position-x"?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[];
+  "background-position-y"?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
   "background-repeat"?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
   "background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
   "block-size"?: AllString | AllString[];
@@ -1043,7 +1043,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "border-image"?: AllString | AllString[];
   "border-image-outset"?: BorderImageOutsetProperty<TLength> | BorderImageOutsetProperty<TLength>[];
   "border-image-repeat"?: BorderImageRepeatProperty | BorderImageRepeatProperty[];
-  "border-image-slice"?: AllString | AllString[];
+  "border-image-slice"?: BorderImageSliceProperty | BorderImageSliceProperty[];
   "border-image-source"?: BorderImageSourceProperty | BorderImageSourceProperty[];
   "border-image-width"?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
   "border-inline-end"?: AllString | AllString[];
@@ -1063,7 +1063,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "border-right-color"?: BorderRightColorProperty | BorderRightColorProperty[];
   "border-right-style"?: BorderRightStyleProperty | BorderRightStyleProperty[];
   "border-right-width"?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[];
-  "border-spacing"?: AllString | AllString[];
+  "border-spacing"?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[];
   "border-style"?: BorderStyleProperty | BorderStyleProperty[];
   "border-top"?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
   "border-top-color"?: BorderTopColorProperty | BorderTopColorProperty[];
@@ -1082,7 +1082,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "box-ordinal-group"?: AllNumber | AllNumber[];
   "box-orient"?: BoxOrientProperty | BoxOrientProperty[];
   "box-pack"?: BoxPackProperty | BoxPackProperty[];
-  "box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
+  "box-shadow"?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
   "box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
   "break-after"?: BreakAfterProperty | BreakAfterProperty[];
   "break-before"?: BreakBeforeProperty | BreakBeforeProperty[];
@@ -1142,11 +1142,11 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "font-variant-numeric"?: FontVariantNumericProperty | FontVariantNumericProperty[];
   "font-variant-position"?: FontVariantPositionProperty | FontVariantPositionProperty[];
   "font-weight"?: FontWeightProperty | FontWeightProperty[];
-  grid?: AllString | AllString[];
-  "grid-area"?: GridAreaProperty | GridAreaProperty[];
-  "grid-auto-columns"?: AllString | AllString[];
+  grid?: GridProperty | GridProperty[];
+  "grid-area"?: AllString | AllString[];
+  "grid-auto-columns"?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
   "grid-auto-flow"?: GridAutoFlowProperty | GridAutoFlowProperty[];
-  "grid-auto-rows"?: AllString | AllString[];
+  "grid-auto-rows"?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
   "grid-column"?: GridColumnProperty | GridColumnProperty[];
   "grid-column-end"?: GridColumnEndProperty | GridColumnEndProperty[];
   "grid-column-gap"?: GridColumnGapProperty<TLength> | GridColumnGapProperty<TLength>[];
@@ -1156,16 +1156,16 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "grid-row-end"?: GridRowEndProperty | GridRowEndProperty[];
   "grid-row-gap"?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
   "grid-row-start"?: GridRowStartProperty | GridRowStartProperty[];
-  "grid-template"?: GridTemplateProperty | GridTemplateProperty[];
+  "grid-template"?: GridTemplateProperty<TLength> | GridTemplateProperty<TLength>[];
   "grid-template-areas"?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
-  "grid-template-columns"?: GridTemplateColumnsProperty | GridTemplateColumnsProperty[];
-  "grid-template-rows"?: GridTemplateRowsProperty | GridTemplateRowsProperty[];
+  "grid-template-columns"?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
+  "grid-template-rows"?: GridTemplateRowsProperty<TLength> | GridTemplateRowsProperty<TLength>[];
   "hanging-punctuation"?: HangingPunctuationProperty | HangingPunctuationProperty[];
-  height?: AllString | AllString[];
+  height?: HeightProperty<TLength> | HeightProperty<TLength>[];
   hyphens?: HyphensProperty | HyphensProperty[];
   "image-orientation"?: ImageOrientationProperty | ImageOrientationProperty[];
   "image-rendering"?: ImageRenderingProperty | ImageRenderingProperty[];
-  "image-resolution"?: AllString | AllString[];
+  "image-resolution"?: ImageResolutionProperty | ImageResolutionProperty[];
   "ime-mode"?: ImeModeProperty | ImeModeProperty[];
   "initial-letter"?: InitialLetterProperty | InitialLetterProperty[];
   "initial-letter-align"?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
@@ -1195,7 +1195,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "mask-border-mode"?: MaskBorderModeProperty | MaskBorderModeProperty[];
   "mask-border-outset"?: MaskBorderOutsetProperty<TLength> | MaskBorderOutsetProperty<TLength>[];
   "mask-border-repeat"?: MaskBorderRepeatProperty | MaskBorderRepeatProperty[];
-  "mask-border-slice"?: AllString | AllString[];
+  "mask-border-slice"?: MaskBorderSliceProperty | MaskBorderSliceProperty[];
   "mask-border-source"?: MaskBorderSourceProperty | MaskBorderSourceProperty[];
   "mask-border-width"?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
   "mask-clip"?: MaskClipProperty | MaskClipProperty[];
@@ -1203,7 +1203,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "mask-image"?: MaskImageProperty | MaskImageProperty[];
   "mask-mode"?: MaskModeProperty | MaskModeProperty[];
   "mask-origin"?: MaskOriginProperty | MaskOriginProperty[];
-  "mask-position"?: AllString | AllString[];
+  "mask-position"?: MaskPositionProperty<TLength> | MaskPositionProperty<TLength>[];
   "mask-repeat"?: MaskRepeatProperty | MaskRepeatProperty[];
   "mask-size"?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[];
   "mask-type"?: MaskTypeProperty | MaskTypeProperty[];
@@ -1217,16 +1217,16 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "min-width"?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[];
   "object-fit"?: ObjectFitProperty | ObjectFitProperty[];
-  "object-position"?: AllString | AllString[];
+  "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   offset?: AllString | AllString[];
-  "offset-anchor"?: OffsetAnchorProperty | OffsetAnchorProperty[];
+  "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   "offset-block-end"?: AllString | AllString[];
   "offset-block-start"?: AllString | AllString[];
   "offset-inline-end"?: AllString | AllString[];
   "offset-inline-start"?: AllString | AllString[];
   "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   "offset-path"?: OffsetPathProperty | OffsetPathProperty[];
-  "offset-position"?: OffsetPositionProperty | OffsetPositionProperty[];
+  "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
   "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[];
   opacity?: AllNumber | AllNumber[];
   order?: AllNumber | AllNumber[];
@@ -1254,7 +1254,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "page-break-before"?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
   "page-break-inside"?: PageBreakInsideProperty | PageBreakInsideProperty[];
   perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
-  "perspective-origin"?: AllString | AllString[];
+  "perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   "pointer-events"?: PointerEventsProperty | PointerEventsProperty[];
   position?: PositionProperty | PositionProperty[];
   quotes?: QuotesProperty | QuotesProperty[];
@@ -1264,8 +1264,8 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "ruby-merge"?: RubyMergeProperty | RubyMergeProperty[];
   "ruby-position"?: RubyPositionProperty | RubyPositionProperty[];
   "scroll-behavior"?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
-  "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty | ScrollSnapCoordinateProperty[];
-  "scroll-snap-destination"?: AllString | AllString[];
+  "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[];
+  "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[];
   "scroll-snap-points-x"?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
   "scroll-snap-points-y"?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
   "scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
@@ -1289,12 +1289,12 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "text-emphasis-color"?: TextEmphasisColorProperty | TextEmphasisColorProperty[];
   "text-emphasis-position"?: AllString | AllString[];
   "text-emphasis-style"?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[];
-  "text-indent"?: AllString | AllString[];
+  "text-indent"?: TextIndentProperty<TLength> | TextIndentProperty<TLength>[];
   "text-justify"?: TextJustifyProperty | TextJustifyProperty[];
   "text-orientation"?: TextOrientationProperty | TextOrientationProperty[];
   "text-overflow"?: TextOverflowProperty | TextOverflowProperty[];
   "text-rendering"?: TextRenderingProperty | TextRenderingProperty[];
-  "text-shadow"?: TextShadowProperty | TextShadowProperty[];
+  "text-shadow"?: TextShadowProperty<TLength> | TextShadowProperty<TLength>[];
   "text-size-adjust"?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
   "text-transform"?: TextTransformProperty | TextTransformProperty[];
   "text-underline-position"?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
@@ -1302,7 +1302,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   "touch-action"?: TouchActionProperty | TouchActionProperty[];
   transform?: TransformProperty | TransformProperty[];
   "transform-box"?: TransformBoxProperty | TransformBoxProperty[];
-  "transform-origin"?: AllString | AllString[];
+  "transform-origin"?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[];
   "transform-style"?: TransformStyleProperty | TransformStyleProperty[];
   transition?: TransitionProperty | TransitionProperty[];
   "transition-delay"?: AllString | AllString[];
@@ -1315,7 +1315,7 @@ export interface StandardPropertiesHyphenFallback<TLength = string | number> {
   visibility?: VisibilityProperty | VisibilityProperty[];
   "white-space"?: WhiteSpaceProperty | WhiteSpaceProperty[];
   widows?: AllNumber | AllNumber[];
-  width?: AllString | AllString[];
+  width?: WidthProperty<TLength> | WidthProperty<TLength>[];
   "will-change"?: WillChangeProperty | WillChangeProperty[];
   "word-break"?: WordBreakProperty | WordBreakProperty[];
   "word-spacing"?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
@@ -1328,10 +1328,10 @@ export interface VendorProperties<TLength = string | number> {
   msOverflowStyle?: MsOverflowStyleProperty;
   mozAppearance?: MozAppearanceProperty;
   mozBinding?: MozBindingProperty;
-  mozBorderBottomColors?: AllString;
-  mozBorderLeftColors?: AllString;
-  mozBorderRightColors?: AllString;
-  mozBorderTopColors?: AllString;
+  mozBorderBottomColors?: MozBorderBottomColorsProperty;
+  mozBorderLeftColors?: MozBorderLeftColorsProperty;
+  mozBorderRightColors?: MozBorderRightColorsProperty;
+  mozBorderTopColors?: MozBorderTopColorsProperty;
   mozContextProperties?: MozContextPropertiesProperty;
   mozFloatEdge?: MozFloatEdgeProperty;
   mozForceBrokenImageIcon?: AllNumber;
@@ -1353,7 +1353,7 @@ export interface VendorProperties<TLength = string | number> {
   webkitBorderBeforeColor?: AllString;
   webkitBorderBeforeStyle?: AllString;
   webkitBorderBeforeWidth?: AllString;
-  webkitBoxReflect?: AllString;
+  webkitBoxReflect?: WebkitBoxReflectProperty<TLength>;
   webkitMask?: AllString;
   webkitMaskAttachment?: WebkitMaskAttachmentProperty;
   webkitMaskClip?: WebkitMaskClipProperty;
@@ -1379,10 +1379,10 @@ export interface VendorPropertiesHyphen<TLength = string | number> {
   "-ms-overflow-style"?: MsOverflowStyleProperty;
   "-moz-appearance"?: MozAppearanceProperty;
   "-moz-binding"?: MozBindingProperty;
-  "-moz-border-bottom-colors"?: AllString;
-  "-moz-border-left-colors"?: AllString;
-  "-moz-border-right-colors"?: AllString;
-  "-moz-border-top-colors"?: AllString;
+  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty;
+  "-moz-border-left-colors"?: MozBorderLeftColorsProperty;
+  "-moz-border-right-colors"?: MozBorderRightColorsProperty;
+  "-moz-border-top-colors"?: MozBorderTopColorsProperty;
   "-moz-context-properties"?: MozContextPropertiesProperty;
   "-moz-float-edge"?: MozFloatEdgeProperty;
   "-moz-force-broken-image-icon"?: AllNumber;
@@ -1404,7 +1404,7 @@ export interface VendorPropertiesHyphen<TLength = string | number> {
   "-webkit-border-before-color"?: AllString;
   "-webkit-border-before-style"?: AllString;
   "-webkit-border-before-width"?: AllString;
-  "-webkit-box-reflect"?: AllString;
+  "-webkit-box-reflect"?: WebkitBoxReflectProperty<TLength>;
   "-webkit-mask"?: AllString;
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty;
   "-webkit-mask-clip"?: WebkitMaskClipProperty;
@@ -1430,10 +1430,10 @@ export interface VendorPropertiesFallback<TLength = string | number> {
   msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[];
   mozAppearance?: MozAppearanceProperty | MozAppearanceProperty[];
   mozBinding?: MozBindingProperty | MozBindingProperty[];
-  mozBorderBottomColors?: AllString | AllString[];
-  mozBorderLeftColors?: AllString | AllString[];
-  mozBorderRightColors?: AllString | AllString[];
-  mozBorderTopColors?: AllString | AllString[];
+  mozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
+  mozBorderLeftColors?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[];
+  mozBorderRightColors?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[];
+  mozBorderTopColors?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
   mozContextProperties?: MozContextPropertiesProperty | MozContextPropertiesProperty[];
   mozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[];
   mozForceBrokenImageIcon?: AllNumber | AllNumber[];
@@ -1455,7 +1455,7 @@ export interface VendorPropertiesFallback<TLength = string | number> {
   webkitBorderBeforeColor?: AllString | AllString[];
   webkitBorderBeforeStyle?: AllString | AllString[];
   webkitBorderBeforeWidth?: AllString | AllString[];
-  webkitBoxReflect?: AllString | AllString[];
+  webkitBoxReflect?: WebkitBoxReflectProperty<TLength> | WebkitBoxReflectProperty<TLength>[];
   webkitMask?: AllString | AllString[];
   webkitMaskAttachment?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   webkitMaskClip?: WebkitMaskClipProperty | WebkitMaskClipProperty[];
@@ -1481,10 +1481,10 @@ export interface VendorPropertiesHyphenFallback<TLength = string | number> {
   "-ms-overflow-style"?: MsOverflowStyleProperty | MsOverflowStyleProperty[];
   "-moz-appearance"?: MozAppearanceProperty | MozAppearanceProperty[];
   "-moz-binding"?: MozBindingProperty | MozBindingProperty[];
-  "-moz-border-bottom-colors"?: AllString | AllString[];
-  "-moz-border-left-colors"?: AllString | AllString[];
-  "-moz-border-right-colors"?: AllString | AllString[];
-  "-moz-border-top-colors"?: AllString | AllString[];
+  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
+  "-moz-border-left-colors"?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[];
+  "-moz-border-right-colors"?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[];
+  "-moz-border-top-colors"?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
   "-moz-context-properties"?: MozContextPropertiesProperty | MozContextPropertiesProperty[];
   "-moz-float-edge"?: MozFloatEdgeProperty | MozFloatEdgeProperty[];
   "-moz-force-broken-image-icon"?: AllNumber | AllNumber[];
@@ -1506,7 +1506,7 @@ export interface VendorPropertiesHyphenFallback<TLength = string | number> {
   "-webkit-border-before-color"?: AllString | AllString[];
   "-webkit-border-before-style"?: AllString | AllString[];
   "-webkit-border-before-width"?: AllString | AllString[];
-  "-webkit-box-reflect"?: AllString | AllString[];
+  "-webkit-box-reflect"?: WebkitBoxReflectProperty<TLength> | WebkitBoxReflectProperty<TLength>[];
   "-webkit-mask"?: AllString | AllString[];
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   "-webkit-mask-clip"?: WebkitMaskClipProperty | WebkitMaskClipProperty[];
@@ -1654,6 +1654,8 @@ type BackdropFilterProperty = All | "none" | string;
 
 type BackfaceVisibilityProperty = All | "hidden" | "visible";
 
+type BackgroundProperty<TLength> = All | FinalBgLayer<TLength> | string;
+
 type BackgroundAttachmentProperty = All | Attachment;
 
 type BackgroundBlendModeProperty = All | BlendMode;
@@ -1665,6 +1667,12 @@ type BackgroundColorProperty = All | Color;
 type BackgroundImageProperty = All | BgImage;
 
 type BackgroundOriginProperty = All | Box;
+
+type BackgroundPositionProperty<TLength> = All | BgPosition<TLength>;
+
+type BackgroundPositionXProperty<TLength> = All | LengthPercentage<TLength> | "center" | "left" | "right" | "x-end" | "x-start" | string;
+
+type BackgroundPositionYProperty<TLength> = All | LengthPercentage<TLength> | "bottom" | "center" | "top" | "y-end" | "y-start" | string;
 
 type BackgroundRepeatProperty = All | RepeatStyle;
 
@@ -1692,6 +1700,8 @@ type BorderImageOutsetProperty<TLength> = All | TLength | number;
 
 type BorderImageRepeatProperty = All | "repeat" | "round" | "space" | "stretch";
 
+type BorderImageSliceProperty = All | NumberPercentage | "fill" | string;
+
 type BorderImageSourceProperty = All | "none" | string;
 
 type BorderImageWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | number;
@@ -1704,7 +1714,7 @@ type BorderLeftStyleProperty = All | BrStyle;
 
 type BorderLeftWidthProperty<TLength> = All | BrWidth<TLength>;
 
-type BorderRadiusProperty<TLength> = All | LengthPercentage<TLength>;
+type BorderRadiusProperty<TLength> = All | LengthPercentage<TLength> | string;
 
 type BorderRightProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
 
@@ -1713,6 +1723,8 @@ type BorderRightColorProperty = All | Color;
 type BorderRightStyleProperty = All | BrStyle;
 
 type BorderRightWidthProperty<TLength> = All | BrWidth<TLength>;
+
+type BorderSpacingProperty<TLength> = All | TLength | string;
 
 type BorderStyleProperty = All | BrStyle;
 
@@ -1744,7 +1756,7 @@ type BoxOrientProperty = All | "block-axis" | "horizontal" | "inherit" | "inline
 
 type BoxPackProperty = All | "center" | "end" | "justify" | "start";
 
-type BoxShadowProperty = All | "none" | string;
+type BoxShadowProperty<TLength> = All | Shadow<TLength> | "none";
 
 type BoxSizingProperty = All | "border-box" | "content-box";
 
@@ -1828,7 +1840,7 @@ type CursorProperty =
 
 type DirectionProperty = All | "ltr" | "rtl";
 
-type DisplayProperty = All | DisplayOutside | DisplayInside | DisplayInternal | DisplayBox | DisplayLegacy | string;
+type DisplayProperty = All | DisplayOutside | DisplayInside | DisplayListitem | DisplayInternal | DisplayBox | DisplayLegacy | string;
 
 type DisplayInsideProperty = All | "auto" | "block" | "flex" | "grid" | "ruby" | "table";
 
@@ -1872,7 +1884,7 @@ type FontProperty = All | "caption" | "icon" | "menu" | "message-box" | "small-c
 
 type FontFamilyProperty = All | GenericFamily | string;
 
-type FontFeatureSettingsProperty = All | FeatureTagValue | "normal";
+type FontFeatureSettingsProperty = All | "normal" | string;
 
 type FontKerningProperty = All | "auto" | "none" | "normal";
 
@@ -1900,9 +1912,32 @@ type FontStyleProperty = All | "italic" | "normal" | "oblique";
 
 type FontSynthesisProperty = All | "none" | "style" | "weight" | string;
 
-type FontVariantProperty = All | "none" | "normal" | string;
+type FontVariantProperty =
+  | EastAsianVariantValues
+  | All
+  | CommonLigValues
+  | EastAsianWidthValues
+  | DiscretionaryLigValues
+  | HistoricalLigValues
+  | ContextualAltValues
+  | NumericFigureValues
+  | NumericFractionValues
+  | NumericSpacingValues
+  | "all-petite-caps"
+  | "all-small-caps"
+  | "historical-forms"
+  | "none"
+  | "normal"
+  | "ordinal"
+  | "petite-caps"
+  | "ruby"
+  | "slashed-zero"
+  | "small-caps"
+  | "titling-caps"
+  | "unicase"
+  | string;
 
-type FontVariantAlternatesProperty = All | "normal" | string;
+type FontVariantAlternatesProperty = All | "historical-forms" | "normal" | string;
 
 type FontVariantCapsProperty = All | "all-petite-caps" | "all-small-caps" | "normal" | "petite-caps" | "small-caps" | "titling-caps" | "unicase";
 
@@ -1916,11 +1951,15 @@ type FontVariantPositionProperty = All | "normal" | "sub" | "super";
 
 type FontWeightProperty = All | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
-type GridAreaProperty = All | GridLine;
+type GridProperty = All | "auto-flow" | string;
+
+type GridAutoColumnsProperty<TLength> = All | TrackSize<TLength>;
 
 type GridAutoFlowProperty = All | "column" | "dense" | "row" | string;
 
-type GridColumnProperty = All | GridLine;
+type GridAutoRowsProperty<TLength> = All | TrackSize<TLength>;
+
+type GridColumnProperty = All | GridLine | string;
 
 type GridColumnEndProperty = All | GridLine;
 
@@ -1928,7 +1967,7 @@ type GridColumnGapProperty<TLength> = All | LengthPercentage<TLength>;
 
 type GridColumnStartProperty = All | GridLine;
 
-type GridRowProperty = All | GridLine;
+type GridRowProperty = All | GridLine | string;
 
 type GridRowEndProperty = All | GridLine;
 
@@ -1936,25 +1975,29 @@ type GridRowGapProperty<TLength> = All | LengthPercentage<TLength>;
 
 type GridRowStartProperty = All | GridLine;
 
-type GridTemplateProperty = All | "none" | string;
+type GridTemplateProperty<TLength> = All | TrackSize<TLength> | "none" | string;
 
 type GridTemplateAreasProperty = All | "none" | string;
 
-type GridTemplateColumnsProperty = All | "none" | string;
+type GridTemplateColumnsProperty<TLength> = All | TrackList<TLength> | AutoTrackList<TLength> | "none";
 
-type GridTemplateRowsProperty = All | "none" | string;
+type GridTemplateRowsProperty<TLength> = All | TrackList<TLength> | AutoTrackList<TLength> | "none";
 
 type HangingPunctuationProperty = All | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
+type HeightProperty<TLength> = All | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+
 type HyphensProperty = All | "auto" | "manual" | "none";
 
-type ImageOrientationProperty = All | "from-image" | string;
+type ImageOrientationProperty = All | "flip" | "from-image" | string;
 
 type ImageRenderingProperty = All | "auto" | "crisp-edges" | "pixelated";
 
+type ImageResolutionProperty = All | "from-image" | string;
+
 type ImeModeProperty = All | "active" | "auto" | "disabled" | "inactive" | "normal";
 
-type InitialLetterProperty = All | "normal" | string;
+type InitialLetterProperty = All | "normal" | string | number;
 
 type InitialLetterAlignProperty = All | "alphabetic" | "auto" | "hanging" | "ideographic";
 
@@ -1996,6 +2039,8 @@ type MaskBorderOutsetProperty<TLength> = All | TLength | number;
 
 type MaskBorderRepeatProperty = All | "repeat" | "round" | "space" | "stretch";
 
+type MaskBorderSliceProperty = All | NumberPercentage | "fill" | string;
+
 type MaskBorderSourceProperty = All | "none" | string;
 
 type MaskBorderWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | number;
@@ -2009,6 +2054,8 @@ type MaskImageProperty = All | MaskReference;
 type MaskModeProperty = All | MaskingMode;
 
 type MaskOriginProperty = All | GeometryBox;
+
+type MaskPositionProperty<TLength> = All | Position<TLength>;
 
 type MaskRepeatProperty = All | RepeatStyle;
 
@@ -2028,13 +2075,15 @@ type MixBlendModeProperty = All | BlendMode;
 
 type ObjectFitProperty = All | "contain" | "cover" | "fill" | "none" | "scale-down";
 
-type OffsetAnchorProperty = All | "auto" | string;
+type ObjectPositionProperty<TLength> = All | Position<TLength>;
+
+type OffsetAnchorProperty<TLength> = All | Position<TLength> | "auto";
 
 type OffsetDistanceProperty<TLength> = All | LengthPercentage<TLength>;
 
 type OffsetPathProperty = All | GeometryBox | "none" | string;
 
-type OffsetPositionProperty = All | "auto" | string;
+type OffsetPositionProperty<TLength> = All | Position<TLength> | "auto";
 
 type OffsetRotateProperty = All | "auto" | "reverse" | string;
 
@@ -2074,6 +2123,8 @@ type PageBreakInsideProperty = All | "auto" | "avoid";
 
 type PerspectiveProperty<TLength> = All | TLength | "none";
 
+type PerspectiveOriginProperty<TLength> = All | Position<TLength>;
+
 type PointerEventsProperty = All | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
 
 type PositionProperty = All | "absolute" | "fixed" | "relative" | "static" | "sticky";
@@ -2092,7 +2143,9 @@ type RubyPositionProperty = All | "inter-character" | "over" | "under";
 
 type ScrollBehaviorProperty = All | "auto" | "smooth";
 
-type ScrollSnapCoordinateProperty = All | "none" | string;
+type ScrollSnapCoordinateProperty<TLength> = All | Position<TLength> | "none";
+
+type ScrollSnapDestinationProperty<TLength> = All | Position<TLength>;
 
 type ScrollSnapPointsXProperty = All | "none" | string;
 
@@ -2116,7 +2169,7 @@ type TextAlignProperty = All | "center" | "end" | "justify" | "left" | "match-pa
 
 type TextAlignLastProperty = All | "auto" | "center" | "end" | "justify" | "left" | "right" | "start";
 
-type TextCombineUprightProperty = All | "all" | "none" | string;
+type TextCombineUprightProperty = All | "all" | "digits" | "none" | string;
 
 type TextDecorationColorProperty = All | Color;
 
@@ -2132,6 +2185,8 @@ type TextEmphasisColorProperty = All | Color;
 
 type TextEmphasisStyleProperty = All | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
+type TextIndentProperty<TLength> = All | LengthPercentage<TLength> | "each-line" | "hanging" | string;
+
 type TextJustifyProperty = All | "auto" | "inter-character" | "inter-word" | "none";
 
 type TextOrientationProperty = All | "mixed" | "sideways" | "upright";
@@ -2140,7 +2195,7 @@ type TextOverflowProperty = All | "clip" | "ellipsis" | string;
 
 type TextRenderingProperty = All | "auto" | "geometricPrecision" | "optimizeLegibility" | "optimizeSpeed";
 
-type TextShadowProperty = All | "none" | string;
+type TextShadowProperty<TLength> = All | ShadowT<TLength> | "none";
 
 type TextSizeAdjustProperty = All | "auto" | "none" | string;
 
@@ -2155,6 +2210,8 @@ type TouchActionProperty = All | "auto" | "manipulation" | "none" | "pan-down" |
 type TransformProperty = All | "none" | string;
 
 type TransformBoxProperty = All | "border-box" | "fill-box" | "view-box";
+
+type TransformOriginProperty<TLength> = All | LengthPercentage<TLength> | "bottom" | "center" | "left" | "right" | "top" | string;
 
 type TransformStyleProperty = All | "flat" | "preserve-3d";
 
@@ -2173,6 +2230,8 @@ type VerticalAlignProperty<TLength> = All | TLength | "baseline" | "bottom" | "m
 type VisibilityProperty = All | "collapse" | "hidden" | "visible";
 
 type WhiteSpaceProperty = All | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+
+type WidthProperty<TLength> = All | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
 
 type WillChangeProperty = All | AnimateableFeature | "auto";
 
@@ -2303,6 +2362,14 @@ type MozAppearanceProperty =
 
 type MozBindingProperty = All | "none" | string;
 
+type MozBorderBottomColorsProperty = All | Color | "none" | string;
+
+type MozBorderLeftColorsProperty = All | Color | "none" | string;
+
+type MozBorderRightColorsProperty = All | Color | "none" | string;
+
+type MozBorderTopColorsProperty = All | Color | "none" | string;
+
 type MozContextPropertiesProperty = All | "fill" | "fill-opacity" | "none" | "stroke" | "stroke-opacity" | string;
 
 type MozFloatEdgeProperty = All | "border-box" | "content-box" | "margin-box" | "padding-box";
@@ -2324,6 +2391,8 @@ type MozUserModifyProperty = All | "read-only" | "read-write" | "write-only";
 type MozWindowDraggingProperty = All | "drag" | "no-drag";
 
 type MozWindowShadowProperty = All | "default" | "menu" | "none" | "sheet" | "tooltip";
+
+type WebkitBoxReflectProperty<TLength> = All | TLength | "above" | "below" | "left" | "right" | string;
 
 type WebkitMaskAttachmentProperty = All | Attachment | string;
 
@@ -2361,7 +2430,9 @@ type WebkitTouchCalloutProperty = All | "default" | "none";
 
 type SingleAnimation = SingleTimingFunction | SingleAnimationIterationCount | SingleAnimationDirection | SingleAnimationFillMode | SingleAnimationPlayState | "none" | string;
 
-type SingleTimingFunction = StepTimingFunction | "linear" | string;
+type SingleTimingFunction = CubicBezierTimingFunction | StepTimingFunction | "linear" | string;
+
+type CubicBezierTimingFunction = "ease" | "ease-in" | "ease-in-out" | "ease-out" | string;
 
 type StepTimingFunction = "step-end" | "step-start" | string;
 
@@ -2373,7 +2444,19 @@ type SingleAnimationFillMode = "backwards" | "both" | "forwards" | "none";
 
 type SingleAnimationPlayState = "paused" | "running";
 
+type FinalBgLayer<TLength> = BgImage | BgPosition<TLength> | RepeatStyle | Attachment | Box | string;
+
+type BgImage = "none" | string;
+
+type BgPosition<TLength> = LengthPercentage<TLength> | "bottom" | "center" | "left" | "right" | "top" | string;
+
+type LengthPercentage<TLength> = TLength | string;
+
+type RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "round" | "space";
+
 type Attachment = "fixed" | "local" | "scroll";
+
+type Box = "border-box" | "content-box" | "padding-box";
 
 type BlendMode =
   | "color"
@@ -2392,8 +2475,6 @@ type BlendMode =
   | "saturation"
   | "screen"
   | "soft-light";
-
-type Box = "border-box" | "content-box" | "padding-box";
 
 type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
@@ -2578,17 +2659,15 @@ type DeprecatedSystemColor =
   | "WindowFrame"
   | "WindowText";
 
-type BgImage = "none" | string;
-
-type RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "round" | "space";
-
 type BgSize<TLength> = LengthPercentage<TLength> | "auto" | "contain" | "cover";
-
-type LengthPercentage<TLength> = TLength | string;
 
 type BrWidth<TLength> = TLength | "medium" | "thick" | "thin";
 
 type BrStyle = "dashed" | "dotted" | "double" | "groove" | "hidden" | "inset" | "none" | "outset" | "ridge" | "solid";
+
+type NumberPercentage = string | number;
+
+type Shadow<TLength> = Color | TLength | "inset" | string;
 
 type GeometryBox = ShapeBox | "fill-box" | "stroke-box" | "view-box";
 
@@ -2601,6 +2680,8 @@ type Quote = "close-quote" | "no-close-quote" | "no-open-quote" | "open-quote";
 type DisplayOutside = "block" | "inline" | "run-in";
 
 type DisplayInside = "flex" | "flow" | "flow-root" | "grid" | "ruby" | "subgrid" | "table";
+
+type DisplayListitem = DisplayOutside | "flow" | "flow-root" | "list-item" | string;
 
 type DisplayInternal =
   | "ruby-base"
@@ -2622,15 +2703,9 @@ type DisplayLegacy = "inline-block" | "inline-flex" | "inline-grid" | "inline-li
 
 type GenericFamily = "cursive" | "fantasy" | "monospace" | "sans-serif" | "serif";
 
-type FeatureTagValue = "off" | "on" | string | number;
-
 type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small";
 
 type RelativeSize = "larger" | "smaller";
-
-type EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
-
-type EastAsianWidthValues = "full-width" | "proportional-width";
 
 type CommonLigValues = "common-ligatures" | "no-common-ligatures";
 
@@ -2646,15 +2721,35 @@ type NumericSpacingValues = "proportional-nums" | "tabular-nums";
 
 type NumericFractionValues = "diagonal-fractions" | "stacked-fractions";
 
-type GridLine = "auto" | string;
+type EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
 
-type MaskLayer<TLength> = MaskReference | BgSize<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | string;
+type EastAsianWidthValues = "full-width" | "proportional-width";
+
+type TrackSize<TLength> = TrackBreadth<TLength> | string;
+
+type TrackBreadth<TLength> = LengthPercentage<TLength> | "auto" | "max-content" | "min-content" | string;
+
+type GridLine = "auto" | string | number;
+
+type TrackList<TLength> = TrackSize<TLength> | string;
+
+type AutoTrackList<TLength> = FixedSize<TLength> | string;
+
+type FixedSize<TLength> = FixedBreadth<TLength> | string;
+
+type FixedBreadth<TLength> = LengthPercentage<TLength>;
+
+type MaskLayer<TLength> = MaskReference | Position<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | string;
 
 type MaskReference = "none" | string;
+
+type Position<TLength> = LengthPercentage<TLength> | "bottom" | "center" | "left" | "right" | "top" | string;
 
 type CompositingOperator = "add" | "exclude" | "intersect" | "subtract";
 
 type MaskingMode = "alpha" | "luminance" | "match-source";
+
+type ShadowT<TLength> = Color | TLength | string;
 
 type SingleTransition = SingleTransitionProperty | SingleTransitionTimingFunction | "none" | string;
 
@@ -2677,4 +2772,4 @@ type CompositeStyle =
   | "source-over"
   | "xor";
 
-type MaskPosition<TLength> = LengthPercentage<TLength> | "bottom" | "center" | "left" | "right" | "top";
+type MaskPosition<TLength> = LengthPercentage<TLength> | "center" | "left" | "right" | string;

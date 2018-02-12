@@ -1,7 +1,3 @@
-const REGEX_ENTITY = /(?:^|\s)((?:[\w]+\([^\)]*\))|[^\s*+?#!{]+)([*+?#!]|{(\d+),(\d+)})?/g;
-const REGEX_DATA_TYPE = /^(<[^>]+>)/g;
-const REGEX_KEYWORD = /^([\w-]+)/g;
-
 export enum Entity {
   Component,
   Combinator,
@@ -92,6 +88,10 @@ interface IUnknown {
 
 export type EntityType = ComponentType | ICombinator | IFunction | IUnknown;
 
+const REGEX_ENTITY = /(?:^|\s)((?:[\w]+\([^\)]*\))|[^\s*+?#!{]+)([*+?#!]|{(\d+),(\d+)})?/g;
+const REGEX_DATA_TYPE = /^(<[^>]+>)/g;
+const REGEX_KEYWORD = /^([\w-]+)/g;
+
 export default function parse(syntax: string): EntityType[] {
   const levels: EntityType[][] = [[]];
   const deepestLevel = () => levels[levels.length - 1];
@@ -115,21 +115,24 @@ export default function parse(syntax: string): EntityType[] {
       deepestLevel().push(combinatorData(Combinator.SingleBar, multiplierData(rawMultiplier)));
       previousMatchWasComponent = false;
       continue;
-    } else if (value.indexOf('[') === 0) {
-      levels.push([]);
-      previousMatchWasComponent = false;
-      continue;
     } else if (value.indexOf(']') === 0) {
       const definitions = levels.pop();
       if (definitions) {
         deepestLevel().push(componentGroupData(definitions, multiplierData(rawMultiplier)));
-        previousMatchWasComponent = true;
       }
+      previousMatchWasComponent = true;
       continue;
     } else {
       if (previousMatchWasComponent === true) {
         deepestLevel().push(combinatorData(Combinator.Juxtaposition));
       }
+
+      if (value.indexOf('[') === 0) {
+        levels.push([]);
+        previousMatchWasComponent = false;
+        continue;
+      }
+
       let componentMatch: RegExpMatchArray | null;
       if ((componentMatch = value.match(REGEX_DATA_TYPE))) {
         const name = componentMatch[0];
@@ -145,6 +148,7 @@ export default function parse(syntax: string): EntityType[] {
     }
     deepestLevel().push({ entity: Entity.Unknown, multiplier: multiplierData(rawMultiplier) });
   }
+
   return levels[0];
 }
 

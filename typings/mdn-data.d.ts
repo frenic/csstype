@@ -45,3 +45,13 @@ declare module 'mdn-data/css/selectors.json' {
 
   export = selectors;
 }
+
+declare module 'mdn-data/css/types.json' {
+  interface Types {
+    [name: string]: any;
+  }
+
+  var types: Types;
+
+  export = types;
+}
