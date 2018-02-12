@@ -7,8 +7,10 @@ const IGNORES = ['--*', 'all'];
 const REGEX_VENDOR_PROPERTY = /^-/;
 
 export const all = typing(parse(properties.all.syntax));
-export const vendorPrefixedProperties: { [name: string]: TypeType[] } = {};
-export const standardProperties: { [name: string]: TypeType[] } = {};
+export const standardLonghandProperties: { [name: string]: TypeType[] } = {};
+export const standardShorthandProperties: { [name: string]: TypeType[] } = {};
+export const vendorPrefixedLonghandProperties: { [name: string]: TypeType[] } = {};
+export const vendorPrefixedShorthandProperties: { [name: string]: TypeType[] } = {};
 
 for (const name in properties) {
   if (IGNORES.includes(name)) {
@@ -17,8 +19,16 @@ for (const name in properties) {
 
   const types = typing(parse(properties[name].syntax));
   if (REGEX_VENDOR_PROPERTY.test(name)) {
-    vendorPrefixedProperties[name] = types;
+    if (Array.isArray(properties[name].computed)) {
+      vendorPrefixedShorthandProperties[name] = types;
+    } else {
+      vendorPrefixedLonghandProperties[name] = types;
+    }
   } else {
-    standardProperties[name] = types;
+    if (Array.isArray(properties[name].computed)) {
+      standardShorthandProperties[name] = types;
+    } else {
+      standardLonghandProperties[name] = types;
+    }
   }
 }

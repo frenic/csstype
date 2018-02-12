@@ -1,6 +1,11 @@
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
 import parse from './parser';
-import { standardProperties, vendorPrefixedProperties } from './properties';
+import {
+  standardLonghandProperties,
+  standardShorthandProperties,
+  vendorPrefixedLonghandProperties,
+  vendorPrefixedShorthandProperties,
+} from './properties';
 import typing, { IDataType, Type, TypeType } from './typer';
 
 interface IDataTypes {
@@ -41,8 +46,10 @@ function addDependentTypeAliases(dataTypes: IDataTypes, name: string) {
 }
 
 const allCssPropertyDescriptions = {
-  ...standardProperties,
-  ...vendorPrefixedProperties,
+  ...standardLonghandProperties,
+  ...standardShorthandProperties,
+  ...vendorPrefixedLonghandProperties,
+  ...vendorPrefixedShorthandProperties,
 };
 
 for (const name in allCssPropertyDescriptions) {

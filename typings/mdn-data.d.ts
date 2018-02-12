@@ -8,7 +8,7 @@ declare module 'mdn-data/css/properties.json' {
     groups: string[];
     initial: string;
     appliesto: string;
-    computed: string;
+    computed: string | string[];
     order: string;
     status: string;
   }
