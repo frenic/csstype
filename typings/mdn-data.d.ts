@@ -55,3 +55,34 @@ declare module 'mdn-data/css/types.json' {
 
   export = types;
 }
+
+declare module 'mdn-data/css/at-rules.json' {
+  interface Descriptor {
+    syntax: string;
+    media: string;
+    percentages: string | string[];
+    initial: string | string[];
+    computed: string | string[];
+    order: string;
+  }
+
+  interface Descriptors {
+    [descriptor: string]: Descriptor;
+  }
+
+  interface AtRule {
+    syntax: string;
+    interfaces: string[];
+    groups: string[];
+    descriptors: Descriptors;
+    status: string;
+  }
+
+  interface AtRules {
+    [name: string]: AtRule;
+  }
+
+  var atRules: AtRules;
+
+  export = atRules;
+}

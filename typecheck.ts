@@ -39,7 +39,13 @@ const cssWithBothCamelAndHyphenProperties: CSS.Properties & CSS.PropertiesHyphen
   animation: '',
 };
 
+const atRuleFontFace: CSS.FontFace = {
+  fontFamily: '',
+  fontWeight: 'normal',
+};
+
 css;
 cssWithFallbackValues;
 cssWithHyphenProperties;
 cssWithBothCamelAndHyphenProperties;
+atRuleFontFace;

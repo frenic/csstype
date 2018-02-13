@@ -19,6 +19,66 @@ $ # or
 $ yarn add csstype
 ```
 
+## Interfaces
+
+CSS Properties with **camel** cased property names:
+
+- `Properties`
+  - `StandardProperties`
+    - `StandardLonghandProperties`
+    - `StandardShorthandProperties`
+  - `VendorProperties`
+    - `VendorLonghandProperties`
+    - `VendorShorthandProperties`
+
+CSS Properties with **kebab** cased property names:
+
+- `PropertiesHyphen`
+  - `StandardPropertiesHyphen`
+    - `StandardLonghandPropertiesHyphen`
+    - `StandardShorthandPropertiesHyphen`
+  - `VendorPropertiesHyphen`
+    - `VendorLonghandPropertiesHyphen`
+    - `VendorShorthandPropertiesHyphen`
+
+Equals to **`Properties`** but also allows array of values:
+
+- `PropertiesFallback`
+  - `StandardPropertiesFallback`
+    - `StandardLonghandPropertiesFallback`
+    - `StandardShorthandPropertiesFallback`
+  - `VendorPropertiesFallback`
+    - `VendorLonghandPropertiesFallback`
+    - `VendorShorthandPropertiesFallback`
+
+Equals to **`PropertiesHyphen`** but also allows array of values:
+
+- `PropertiesHyphenFallback`
+  - `StandardPropertiesHyphenFallback`
+    - `StandardLonghandPropertiesHyphenFallback`
+    - `StandardShorthandPropertiesHyphenFallback`
+  - `VendorPropertiesHyphenFallback`
+    - `VendorLonghandPropertiesHyphenFallback`
+    - `VendorShorthandPropertiesHyphenFallback`
+
+### At rules
+- `CounterStyle`
+- `CounterStyleFallback`
+- `CounterStyleHyphen`
+- `CounterStyleHyphenFallback`
+- `FontFace`
+- `FontFaceFallback`
+- `FontFaceHyphen`
+- `FontFaceHyphenFallback`
+- `Page`
+- `PageFallback`
+- `PageHyphen`
+- `PageHyphenFallback`
+- `Viewport`
+- `ViewportFallback`
+- `ViewportHyphen`
+- `ViewportHyphenFallback`
+
 ## Usage
 
 Lengths defaults to `string | number`. But it's possible to override it using generics.

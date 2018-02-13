@@ -1578,6 +1578,200 @@ declare module "csstype" {
 
   declare export interface PropertiesHyphenFallback<TLength = string | number> extends StandardPropertiesHyphenFallback<TLength>, VendorPropertiesHyphenFallback<TLength> {}
 
+  declare export type CounterStyle = {
+    additiveSymbols?: AllString,
+    fallback?: AllString,
+    negative?: AllString,
+    pad?: AllString,
+    prefix?: AllString,
+    range?: CounterStyleRangeProperty,
+    speakAs?: CounterStyleSpeakAsProperty,
+    suffix?: AllString,
+    symbols?: AllString,
+    system?: CounterStyleSystemProperty,
+  };
+
+  declare export type CounterStyleHyphen = {
+    "additive-symbols"?: AllString,
+    fallback?: AllString,
+    negative?: AllString,
+    pad?: AllString,
+    prefix?: AllString,
+    range?: CounterStyleRangeProperty,
+    "speak-as"?: CounterStyleSpeakAsProperty,
+    suffix?: AllString,
+    symbols?: AllString,
+    system?: CounterStyleSystemProperty,
+  };
+
+  declare export type CounterStyleFallback = {
+    additiveSymbols?: AllString | AllString[],
+    fallback?: AllString | AllString[],
+    negative?: AllString | AllString[],
+    pad?: AllString | AllString[],
+    prefix?: AllString | AllString[],
+    range?: CounterStyleRangeProperty | CounterStyleRangeProperty[],
+    speakAs?: CounterStyleSpeakAsProperty | CounterStyleSpeakAsProperty[],
+    suffix?: AllString | AllString[],
+    symbols?: AllString | AllString[],
+    system?: CounterStyleSystemProperty | CounterStyleSystemProperty[],
+  };
+
+  declare export type CounterStyleHyphenFallback = {
+    "additive-symbols"?: AllString | AllString[],
+    fallback?: AllString | AllString[],
+    negative?: AllString | AllString[],
+    pad?: AllString | AllString[],
+    prefix?: AllString | AllString[],
+    range?: CounterStyleRangeProperty | CounterStyleRangeProperty[],
+    "speak-as"?: CounterStyleSpeakAsProperty | CounterStyleSpeakAsProperty[],
+    suffix?: AllString | AllString[],
+    symbols?: AllString | AllString[],
+    system?: CounterStyleSystemProperty | CounterStyleSystemProperty[],
+  };
+
+  declare export type FontFace = {
+    fontDisplay?: FontFaceFontDisplayProperty,
+    fontFamily?: AllString,
+    fontFeatureSettings?: FontFaceFontFeatureSettingsProperty,
+    fontVariationSettings?: FontFaceFontVariationSettingsProperty,
+    fontStretch?: FontFaceFontStretchProperty,
+    fontStyle?: FontFaceFontStyleProperty,
+    fontWeight?: FontFaceFontWeightProperty,
+    fontVariant?: FontFaceFontVariantProperty,
+    src?: AllString,
+    unicodeRange?: AllString,
+  };
+
+  declare export type FontFaceHyphen = {
+    "font-display"?: FontFaceFontDisplayProperty,
+    "font-family"?: AllString,
+    "font-feature-settings"?: FontFaceFontFeatureSettingsProperty,
+    "font-variation-settings"?: FontFaceFontVariationSettingsProperty,
+    "font-stretch"?: FontFaceFontStretchProperty,
+    "font-style"?: FontFaceFontStyleProperty,
+    "font-weight"?: FontFaceFontWeightProperty,
+    "font-variant"?: FontFaceFontVariantProperty,
+    src?: AllString,
+    "unicode-range"?: AllString,
+  };
+
+  declare export type FontFaceFallback = {
+    fontDisplay?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[],
+    fontFamily?: AllString | AllString[],
+    fontFeatureSettings?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[],
+    fontVariationSettings?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[],
+    fontStretch?: FontFaceFontStretchProperty | FontFaceFontStretchProperty[],
+    fontStyle?: FontFaceFontStyleProperty | FontFaceFontStyleProperty[],
+    fontWeight?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[],
+    fontVariant?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[],
+    src?: AllString | AllString[],
+    unicodeRange?: AllString | AllString[],
+  };
+
+  declare export type FontFaceHyphenFallback = {
+    "font-display"?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[],
+    "font-family"?: AllString | AllString[],
+    "font-feature-settings"?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[],
+    "font-variation-settings"?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[],
+    "font-stretch"?: FontFaceFontStretchProperty | FontFaceFontStretchProperty[],
+    "font-style"?: FontFaceFontStyleProperty | FontFaceFontStyleProperty[],
+    "font-weight"?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[],
+    "font-variant"?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[],
+    src?: AllString | AllString[],
+    "unicode-range"?: AllString | AllString[],
+  };
+
+  declare export type Page<TLength = string | number> = {
+    bleed?: PageBleedProperty<TLength>,
+    marks?: PageMarksProperty,
+  };
+
+  declare export type PageHyphen<TLength = string | number> = {
+    bleed?: PageBleedProperty<TLength>,
+    marks?: PageMarksProperty,
+  };
+
+  declare export type PageFallback<TLength = string | number> = {
+    bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[],
+    marks?: PageMarksProperty | PageMarksProperty[],
+  };
+
+  declare export type PageHyphenFallback<TLength = string | number> = {
+    bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[],
+    marks?: PageMarksProperty | PageMarksProperty[],
+  };
+
+  declare export type Viewport<TLength = string | number> = {
+    height?: ViewportHeightProperty<TLength>,
+    maxHeight?: ViewportMaxHeightProperty<TLength>,
+    maxWidth?: ViewportMaxWidthProperty<TLength>,
+    maxZoom?: ViewportMaxZoomProperty,
+    minHeight?: ViewportMinHeightProperty<TLength>,
+    minWidth?: ViewportMinWidthProperty<TLength>,
+    minZoom?: ViewportMinZoomProperty,
+    orientation?: ViewportOrientationProperty,
+    userZoom?: ViewportUserZoomProperty,
+    width?: ViewportWidthProperty<TLength>,
+    zoom?: ViewportZoomProperty,
+  };
+
+  declare export type ViewportHyphen<TLength = string | number> = {
+    height?: ViewportHeightProperty<TLength>,
+    "max-height"?: ViewportMaxHeightProperty<TLength>,
+    "max-width"?: ViewportMaxWidthProperty<TLength>,
+    "max-zoom"?: ViewportMaxZoomProperty,
+    "min-height"?: ViewportMinHeightProperty<TLength>,
+    "min-width"?: ViewportMinWidthProperty<TLength>,
+    "min-zoom"?: ViewportMinZoomProperty,
+    orientation?: ViewportOrientationProperty,
+    "user-zoom"?: ViewportUserZoomProperty,
+    width?: ViewportWidthProperty<TLength>,
+    zoom?: ViewportZoomProperty,
+  };
+
+  declare export type ViewportFallback<TLength = string | number> = {
+    height?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[],
+    maxHeight?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[],
+    maxWidth?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[],
+    maxZoom?: ViewportMaxZoomProperty | ViewportMaxZoomProperty[],
+    minHeight?: ViewportMinHeightProperty<TLength> | ViewportMinHeightProperty<TLength>[],
+    minWidth?: ViewportMinWidthProperty<TLength> | ViewportMinWidthProperty<TLength>[],
+    minZoom?: ViewportMinZoomProperty | ViewportMinZoomProperty[],
+    orientation?: ViewportOrientationProperty | ViewportOrientationProperty[],
+    userZoom?: ViewportUserZoomProperty | ViewportUserZoomProperty[],
+    width?: ViewportWidthProperty<TLength> | ViewportWidthProperty<TLength>[],
+    zoom?: ViewportZoomProperty | ViewportZoomProperty[],
+  };
+
+  declare export type ViewportHyphenFallback<TLength = string | number> = {
+    height?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[],
+    "max-height"?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[],
+    "max-width"?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[],
+    "max-zoom"?: ViewportMaxZoomProperty | ViewportMaxZoomProperty[],
+    "min-height"?: ViewportMinHeightProperty<TLength> | ViewportMinHeightProperty<TLength>[],
+    "min-width"?: ViewportMinWidthProperty<TLength> | ViewportMinWidthProperty<TLength>[],
+    "min-zoom"?: ViewportMinZoomProperty | ViewportMinZoomProperty[],
+    orientation?: ViewportOrientationProperty | ViewportOrientationProperty[],
+    "user-zoom"?: ViewportUserZoomProperty | ViewportUserZoomProperty[],
+    width?: ViewportWidthProperty<TLength> | ViewportWidthProperty<TLength>[],
+    zoom?: ViewportZoomProperty | ViewportZoomProperty[],
+  };
+
+  declare export type AtRules =
+    | "@charset"
+    | "@counter-style"
+    | "@document"
+    | "@font-face"
+    | "@font-feature-values"
+    | "@import"
+    | "@keyframes"
+    | "@media"
+    | "@namespace"
+    | "@page"
+    | "@supports"
+    | "@viewport";
+
   declare export type Pseudos =
     | "::-moz-progress-bar"
     | "::-moz-range-progress"
@@ -2468,6 +2662,83 @@ declare module "csstype" {
 
   declare type WebkitTextStrokeProperty<TLength> = All | Color | TLength | string;
 
+  declare type CounterStyleRangeProperty = "auto" | "infinite" | string | number;
+
+  declare type CounterStyleSpeakAsProperty = "auto" | "bullets" | "numbers" | "spell-out" | "words" | string;
+
+  declare type CounterStyleSystemProperty = "additive" | "alphabetic" | "cyclic" | "fixed" | "numeric" | "symbolic" | string;
+
+  declare type FontFaceFontDisplayProperty = "auto" | "block" | "fallback" | "optional" | "swap";
+
+  declare type FontFaceFontFeatureSettingsProperty = "normal" | string;
+
+  declare type FontFaceFontVariationSettingsProperty = "normal";
+
+  declare type FontFaceFontStretchProperty =
+    | "condensed"
+    | "expanded"
+    | "extra-condensed"
+    | "extra-expanded"
+    | "normal"
+    | "semi-condensed"
+    | "semi-expanded"
+    | "ultra-condensed"
+    | "ultra-expanded";
+
+  declare type FontFaceFontStyleProperty = "italic" | "normal" | "oblique";
+
+  declare type FontFaceFontWeightProperty = "bold" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+
+  declare type FontFaceFontVariantProperty =
+    | NumericFigureValues
+    | EastAsianWidthValues
+    | DiscretionaryLigValues
+    | HistoricalLigValues
+    | ContextualAltValues
+    | CommonLigValues
+    | EastAsianVariantValues
+    | NumericSpacingValues
+    | NumericFractionValues
+    | "all-petite-caps"
+    | "all-small-caps"
+    | "historical-forms"
+    | "none"
+    | "normal"
+    | "ordinal"
+    | "petite-caps"
+    | "ruby"
+    | "slashed-zero"
+    | "small-caps"
+    | "titling-caps"
+    | "unicase"
+    | string;
+
+  declare type PageBleedProperty<TLength> = TLength | "auto";
+
+  declare type PageMarksProperty = "crop" | "cross" | "none" | string;
+
+  declare type ViewportHeightProperty<TLength> = ViewportLength<TLength>;
+
+  declare type ViewportMaxHeightProperty<TLength> = ViewportLength<TLength>;
+
+  declare type ViewportMaxWidthProperty<TLength> = ViewportLength<TLength>;
+
+  declare type ViewportMaxZoomProperty = "auto" | string | number;
+
+  declare type ViewportMinHeightProperty<TLength> = ViewportLength<TLength>;
+
+  declare type ViewportMinWidthProperty<TLength> = ViewportLength<TLength>;
+
+  declare type ViewportMinZoomProperty = "auto" | string | number;
+
+  declare type ViewportOrientationProperty = "auto" | "landscape" | "portrait";
+
+  declare type ViewportUserZoomProperty = "fixed" | "zoom";
+
+  declare type ViewportWidthProperty<TLength> = ViewportLength<TLength>;
+
+  declare type ViewportZoomProperty = "auto" | string | number;
+
   declare type SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 
   declare type SingleAnimationFillMode = "backwards" | "both" | "forwards" | "none";
@@ -2814,4 +3085,6 @@ declare module "csstype" {
     | "xor";
 
   declare type MaskPosition<TLength> = LengthPercentage<TLength> | "center" | "left" | "right" | string;
+
+  declare type ViewportLength<TLength> = LengthPercentage<TLength> | "auto";
 }

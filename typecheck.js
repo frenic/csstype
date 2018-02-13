@@ -38,3 +38,8 @@ const cssWithHyphenProperties: CSS.PropertiesHyphen<*> = {
 const cssWithBothCamelAndHyphenProperties: CSS.Properties<*> & CSS.PropertiesHyphen<*> = {
   animation: '',
 };
+
+const atRuleFontFace: CSS.FontFace = {
+  fontFamily: '',
+  fontWeight: 'normal',
+};

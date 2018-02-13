@@ -1,4 +1,5 @@
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
+import { atRuleDescriptors, IAtRuleDescriptors } from './at-rules';
 import parse from './parser';
 import {
   standardLonghandProperties,
@@ -45,23 +46,33 @@ function addDependentTypeAliases(dataTypes: IDataTypes, name: string) {
   }
 }
 
-const allCssPropertyDescriptions = {
+const atRuleProperties: IAtRuleDescriptors = {};
+
+for (const name in atRuleDescriptors) {
+  for (const property in atRuleDescriptors[name]) {
+    atRuleProperties[property] = atRuleDescriptors[name][property];
+  }
+}
+
+const allCssPropertyDescriptors = {
   ...standardLonghandProperties,
   ...standardShorthandProperties,
   ...vendorPrefixedLonghandProperties,
   ...vendorPrefixedShorthandProperties,
 };
 
-for (const name in allCssPropertyDescriptions) {
-  const typeAliases: IDataType[] = [];
-  for (const type of allCssPropertyDescriptions[name]) {
-    if (isTypeAlias(type)) {
-      typeAliases.push(type);
+for (const descriptors of [allCssPropertyDescriptors, atRuleProperties]) {
+  for (const name in descriptors) {
+    const typeAliases: IDataType[] = [];
+    for (const type of descriptors[name]) {
+      if (isTypeAlias(type)) {
+        typeAliases.push(type);
+      }
     }
-  }
-  for (const type of typeAliases) {
-    if (type.name) {
-      addDependentTypeAliases(availableDataTypes, type.name);
+    for (const type of typeAliases) {
+      if (type.name) {
+        addDependentTypeAliases(availableDataTypes, type.name);
+      }
     }
   }
 }

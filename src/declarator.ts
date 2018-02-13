@@ -1,3 +1,4 @@
+import { atRuleDescriptors, atRuleList } from './at-rules';
 import { toCamelCase, toPascalCase } from './casing';
 import dataTypes from './data-types';
 import {
@@ -67,6 +68,13 @@ const pseudoDeclaration: IDeclaration = {
   generics: [],
 };
 
+const atRuleDeclaration: IDeclaration = {
+  name: 'AtRules',
+  export: true,
+  types: declarable(atRuleList),
+  generics: [],
+};
+
 const standardLonghandPropertiesDefinition: IProperty[] = [];
 const standardShorthandPropertiesDefinition: IProperty[] = [];
 const standardLonghandPropertiesHyphenDefinition: IProperty[] = [];
@@ -75,7 +83,11 @@ const vendorLonghandPropertiesDefinition: IProperty[] = [];
 const vendorShorthandPropertiesDefinition: IProperty[] = [];
 const vendorLonghandPropertiesHyphenDefinition: IProperty[] = [];
 const vendorShorthandPropertiesHyphenDefinition: IProperty[] = [];
+
+const PROPERTY = 'Property';
+
 export const declarations: IDeclaration[] = [
+  atRuleDeclaration,
   pseudoDeclaration,
   allDeclaration,
   allAndStringDeclaration,
@@ -107,7 +119,7 @@ for (const properties of [
   for (const name in properties) {
     const types = filterMissingDataTypes(properties[name]);
     let declaration: IDeclaration;
-    const propertyGenerics = lengthIn(types) ? [lengthGeneric] : [];
+    const generics = lengthIn(types) ? [lengthGeneric] : [];
 
     if (onlyContainsString(types)) {
       declaration = allAndStringDeclaration;
@@ -115,22 +127,61 @@ for (const properties of [
       declaration = allAndNumberDeclaration;
     } else {
       declaration = {
-        name: toPascalCase(name) + 'Property',
+        name: toPascalCase(name) + PROPERTY,
         export: false,
         types: [aliasOf(allDeclaration), ...declarable(types)],
-        generics: propertyGenerics,
+        generics,
       };
       declarations.push(declaration);
     }
 
     definitions.push({
       name: toCamelCase(name),
-      generics: propertyGenerics,
+      generics,
       alias: aliasOf(declaration),
     });
     hyphenDefinitions.push({
       name,
-      generics: propertyGenerics,
+      generics,
+      alias: aliasOf(declaration),
+    });
+  }
+}
+
+const atRuleDefinitions: { [name: string]: IProperty[] } = {};
+const atRuleHyphenDefinitions: { [name: string]: IProperty[] } = {};
+
+for (const name in atRuleDescriptors) {
+  atRuleDefinitions[name] = [];
+  atRuleHyphenDefinitions[name] = [];
+
+  for (const property in atRuleDescriptors[name]) {
+    const types = filterMissingDataTypes(atRuleDescriptors[name][property]);
+    let declaration: IDeclaration;
+    const generics = lengthIn(types) ? [lengthGeneric] : [];
+
+    if (onlyContainsString(types)) {
+      declaration = allAndStringDeclaration;
+    } else if (onlyContainsNumber(types)) {
+      declaration = allAndNumberDeclaration;
+    } else {
+      declaration = {
+        name: toPascalCase(name.slice(1)) + toPascalCase(property) + PROPERTY,
+        export: false,
+        types: declarable(types),
+        generics,
+      };
+      declarations.push(declaration);
+    }
+
+    atRuleDefinitions[name].push({
+      name: toCamelCase(property),
+      generics,
+      alias: aliasOf(declaration),
+    });
+    atRuleHyphenDefinitions[name].push({
+      name: property,
+      generics,
       alias: aliasOf(declaration),
     });
   }
@@ -183,9 +234,28 @@ const INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_S
 const INTERFACE_VENDOR_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_PROPERTIES + HYPHEN + FALLBACK;
 const INTERFACE_ALL_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_ALL_PROPERTIES + HYPHEN + FALLBACK;
 
+const standardLonghandPropertiesGenerics = genericsOf(standardLonghandPropertiesDefinition);
+const standardShorthandPropertiesGenerics = genericsOf(standardShorthandPropertiesDefinition);
+const standardPropertiesGenerics = genericsOf([
+  ...standardLonghandPropertiesDefinition,
+  ...standardShorthandPropertiesDefinition,
+]);
+const vendorLonghandPropertiesGenerics = genericsOf(vendorLonghandPropertiesDefinition);
+const vendorShorthandPropertiesGenerics = genericsOf(vendorShorthandPropertiesDefinition);
+const vendorPropertiesGenerics = genericsOf([
+  ...vendorLonghandPropertiesDefinition,
+  ...vendorShorthandPropertiesDefinition,
+]);
+const allPropertiesGenerics = genericsOf([
+  ...standardLonghandPropertiesDefinition,
+  ...standardShorthandPropertiesDefinition,
+  ...vendorLonghandPropertiesDefinition,
+  ...vendorShorthandPropertiesDefinition,
+]);
+
 const standardLonghandPropertiesInterface: Interface = {
   name: INTERFACE_STANDARD_LONGHAND_PROPERTIES,
-  generics: [lengthGeneric],
+  generics: standardLonghandPropertiesGenerics,
   extends: [],
   fallback: false,
   properties: standardLonghandPropertiesDefinition,
@@ -193,7 +263,7 @@ const standardLonghandPropertiesInterface: Interface = {
 
 const standardShorthandPropertiesInterface: Interface = {
   name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES,
-  generics: [lengthGeneric],
+  generics: standardShorthandPropertiesGenerics,
   extends: [],
   fallback: false,
   properties: standardShorthandPropertiesDefinition,
@@ -201,7 +271,7 @@ const standardShorthandPropertiesInterface: Interface = {
 
 const standardPropertiesInterface: Interface = {
   name: INTERFACE_STANDARD_PROPERTIES,
-  generics: [lengthGeneric],
+  generics: standardPropertiesGenerics,
   extends: [standardLonghandPropertiesInterface, standardShorthandPropertiesInterface],
   fallback: false,
   properties: [],
@@ -209,7 +279,7 @@ const standardPropertiesInterface: Interface = {
 
 const vendorLonghandPropertiesInterface: Interface = {
   name: INTERFACE_VENDOR_LONGHAND_PROPERTIES,
-  generics: [lengthGeneric],
+  generics: vendorLonghandPropertiesGenerics,
   extends: [],
   fallback: false,
   properties: vendorLonghandPropertiesDefinition,
@@ -217,7 +287,7 @@ const vendorLonghandPropertiesInterface: Interface = {
 
 const vendorShorthandPropertiesInterface: Interface = {
   name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES,
-  generics: [lengthGeneric],
+  generics: vendorShorthandPropertiesGenerics,
   extends: [],
   fallback: false,
   properties: vendorShorthandPropertiesDefinition,
@@ -225,7 +295,7 @@ const vendorShorthandPropertiesInterface: Interface = {
 
 const vendorPropertiesInterface: Interface = {
   name: INTERFACE_VENDOR_PROPERTIES,
-  generics: [lengthGeneric],
+  generics: vendorPropertiesGenerics,
   extends: [vendorLonghandPropertiesInterface, vendorShorthandPropertiesInterface],
   fallback: false,
   properties: [],
@@ -233,7 +303,7 @@ const vendorPropertiesInterface: Interface = {
 
 const allPropertiesInterface: Interface = {
   name: INTERFACE_ALL_PROPERTIES,
-  generics: [lengthGeneric],
+  generics: allPropertiesGenerics,
   extends: [standardPropertiesInterface, vendorPropertiesInterface],
   fallback: false,
   properties: [],
@@ -241,7 +311,7 @@ const allPropertiesInterface: Interface = {
 
 const standardLonghandPropertiesHyphenInterface: Interface = {
   name: INTERFACE_STANDARD_LONGHAND_PROPERTIES_HYPHEN,
-  generics: [lengthGeneric],
+  generics: standardLonghandPropertiesGenerics,
   extends: [],
   fallback: false,
   properties: standardLonghandPropertiesHyphenDefinition,
@@ -249,7 +319,7 @@ const standardLonghandPropertiesHyphenInterface: Interface = {
 
 const standardShorthandPropertiesHyphenInterface: Interface = {
   name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES_HYPHEN,
-  generics: [lengthGeneric],
+  generics: standardShorthandPropertiesGenerics,
   extends: [],
   fallback: false,
   properties: standardShorthandPropertiesHyphenDefinition,
@@ -257,7 +327,7 @@ const standardShorthandPropertiesHyphenInterface: Interface = {
 
 const standardPropertiesHyphenInterface: Interface = {
   name: INTERFACE_STANDARD_PROPERTIES_HYPHEN,
-  generics: [lengthGeneric],
+  generics: standardPropertiesGenerics,
   extends: [standardLonghandPropertiesHyphenInterface, standardShorthandPropertiesHyphenInterface],
   fallback: false,
   properties: [],
@@ -265,7 +335,7 @@ const standardPropertiesHyphenInterface: Interface = {
 
 const vendorLonghandPropertiesHyphenInterface: Interface = {
   name: INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN,
-  generics: [lengthGeneric],
+  generics: vendorLonghandPropertiesGenerics,
   extends: [],
   fallback: false,
   properties: vendorLonghandPropertiesHyphenDefinition,
@@ -273,7 +343,7 @@ const vendorLonghandPropertiesHyphenInterface: Interface = {
 
 const vendorShorthandPropertiesHyphenInterface: Interface = {
   name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN,
-  generics: [lengthGeneric],
+  generics: vendorShorthandPropertiesGenerics,
   extends: [],
   fallback: false,
   properties: vendorShorthandPropertiesHyphenDefinition,
@@ -281,7 +351,7 @@ const vendorShorthandPropertiesHyphenInterface: Interface = {
 
 const vendorPropertiesHyphenInterface: Interface = {
   name: INTERFACE_VENDOR_PROPERTIES_HYPHEN,
-  generics: [lengthGeneric],
+  generics: vendorPropertiesGenerics,
   extends: [vendorLonghandPropertiesHyphenInterface, vendorShorthandPropertiesHyphenInterface],
   fallback: false,
   properties: [],
@@ -289,7 +359,7 @@ const vendorPropertiesHyphenInterface: Interface = {
 
 const allPropertiesHyphenInterface: Interface = {
   name: INTERFACE_ALL_PROPERTIES_HYPHEN,
-  generics: [lengthGeneric],
+  generics: allPropertiesGenerics,
   extends: [standardPropertiesHyphenInterface, vendorPropertiesHyphenInterface],
   fallback: false,
   properties: [],
@@ -308,11 +378,10 @@ const standardShorthandPropertiesFallbackInterface: Interface = {
 };
 
 const standardPropertiesFallbackInterface: Interface = {
+  ...standardPropertiesInterface,
   name: INTERFACE_STANDARD_PROPERTIES_FALLBACK,
-  generics: [lengthGeneric],
   extends: [standardLongformPropertiesFallbackInterface, standardShorthandPropertiesFallbackInterface],
   fallback: true,
-  properties: [],
 };
 
 const vendorLonghandPropertiesFallbackInterface: Interface = {
@@ -328,19 +397,17 @@ const vendorShorthandPropertiesFallbackInterface: Interface = {
 };
 
 const vendorPropertiesFallbackInterface: Interface = {
+  ...vendorPropertiesInterface,
   name: INTERFACE_VENDOR_PROPERTIES_FALLBACK,
-  generics: [lengthGeneric],
   extends: [vendorLonghandPropertiesFallbackInterface, vendorShorthandPropertiesFallbackInterface],
   fallback: true,
-  properties: [],
 };
 
 const allPropertiesFallbackInterface: Interface = {
+  ...allPropertiesInterface,
   name: INTERFACE_ALL_PROPERTIES_FALLBACK,
-  generics: [lengthGeneric],
   extends: [standardPropertiesFallbackInterface, vendorPropertiesFallbackInterface],
   fallback: true,
-  properties: [],
 };
 
 const standardLongformPropertiesHyphenFallbackInterface: Interface = {
@@ -356,11 +423,10 @@ const standardShorthandPropertiesHyphenFallbackInterface: Interface = {
 };
 
 const standardPropertiesHyphenFallbackInterface: Interface = {
+  ...standardPropertiesHyphenInterface,
   name: INTERFACE_STANDARD_PROPERTIES_HYPHEN_FALLBACK,
-  generics: [lengthGeneric],
   extends: [standardLongformPropertiesHyphenFallbackInterface, standardShorthandPropertiesHyphenFallbackInterface],
   fallback: true,
-  properties: [],
 };
 
 const vendorLonghandPropertiesHyphenFallbackInterface: Interface = {
@@ -376,20 +442,55 @@ const vendorShorthandPropertiesHyphenFallbackInterface: Interface = {
 };
 
 const vendorPropertiesHyphenFallbackInterface: Interface = {
+  ...vendorPropertiesHyphenInterface,
   name: INTERFACE_VENDOR_PROPERTIES_HYPHEN_FALLBACK,
-  generics: [lengthGeneric],
   extends: [vendorLonghandPropertiesHyphenFallbackInterface, vendorShorthandPropertiesHyphenFallbackInterface],
   fallback: true,
-  properties: [],
 };
 
 const allPropertiesHyphenFallbackInterface: Interface = {
+  ...allPropertiesHyphenInterface,
   name: INTERFACE_ALL_PROPERTIES_HYPHEN_FALLBACK,
-  generics: [lengthGeneric],
   extends: [standardPropertiesHyphenFallbackInterface, vendorPropertiesHyphenFallbackInterface],
   fallback: true,
-  properties: [],
 };
+
+const atRuleInterfaces: Interface[] = [];
+
+for (const name in atRuleDefinitions) {
+  const pascalName = toPascalCase(name.slice(1));
+  const generics = genericsOf(atRuleDefinitions[name]);
+  atRuleInterfaces.push(
+    {
+      name: pascalName,
+      generics,
+      extends: [],
+      fallback: false,
+      properties: atRuleDefinitions[name],
+    },
+    {
+      name: pascalName + HYPHEN,
+      generics,
+      extends: [],
+      fallback: false,
+      properties: atRuleHyphenDefinitions[name],
+    },
+    {
+      name: pascalName + FALLBACK,
+      generics,
+      extends: [],
+      fallback: true,
+      properties: atRuleDefinitions[name],
+    },
+    {
+      name: pascalName + HYPHEN + FALLBACK,
+      generics,
+      extends: [],
+      fallback: true,
+      properties: atRuleHyphenDefinitions[name],
+    },
+  );
+}
 
 export const interfaces = [
   standardLonghandPropertiesInterface,
@@ -420,6 +521,7 @@ export const interfaces = [
   vendorShorthandPropertiesHyphenFallbackInterface,
   vendorPropertiesHyphenFallbackInterface,
   allPropertiesHyphenFallbackInterface,
+  ...atRuleInterfaces,
 ];
 
 function declarable(types: MixedType[]): DeclarableType[] {
@@ -443,6 +545,10 @@ function sorter(a: MixedType, b: MixedType) {
     return a.literal - b.literal;
   }
   return a.type - b.type;
+}
+
+function genericsOf(definitions: IProperty[]) {
+  return Array.from(new Set(([] as IGenerics[]).concat(...definitions.map(definition => definition.generics))));
 }
 
 export function lengthIn(types: MixedType[]) {
