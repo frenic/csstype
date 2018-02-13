@@ -1,7 +1,8 @@
 {
   "name": "csstype",
   "version": "1.6.0",
-  "main": "index.d.ts",
+  "main": "",
+  "types": "index.d.ts",
   "description": "TypeScript definitions for CSS",
   "repository": "https://github.com/frenic/csstype",
   "author": "Fredrik Nicol <fredrik.nicol@gmail.com>",
