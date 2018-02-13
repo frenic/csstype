@@ -2,7 +2,7 @@ import { atRuleDescriptors, atRuleList } from './at-rules';
 import { toCamelCase, toPascalCase } from './casing';
 import dataTypes from './data-types';
 import {
-  all,
+  globals,
   standardLonghandProperties,
   standardShorthandProperties,
   vendorPrefixedLonghandProperties,
@@ -16,14 +16,21 @@ interface Interface {
   generics: IGenerics[];
   extends: Interface[];
   fallback: boolean;
-  properties: IProperty[];
+  properties: PropertyType[];
 }
 
-interface IProperty {
+interface IPropertyAlias {
   name: string;
   generics: IGenerics[];
   alias: IAlias;
 }
+
+interface IPropertyType {
+  name: string;
+  type: DeclarableType;
+}
+
+type PropertyType = IPropertyAlias | IPropertyType;
 
 export type MixedType = TypeType<IDataType | IAlias>;
 export type DeclarableType = TypeType<IAlias>;
@@ -40,24 +47,24 @@ export const lengthGeneric: IGenerics = {
   defaults: 'string | number',
 };
 
-const allDeclaration: IDeclaration = {
-  name: 'All',
+const globalsDeclaration: IDeclaration = {
+  name: 'Globals',
   export: false,
-  types: declarable(all),
+  types: declarable(globals),
   generics: [],
 };
 
-const allAndStringDeclaration: IDeclaration = {
-  name: 'AllString',
+const globalsAndStringDeclaration: IDeclaration = {
+  name: 'GlobalsString',
   export: false,
-  types: declarable([aliasOf(allDeclaration), { type: Type.String }]),
+  types: declarable([aliasOf(globalsDeclaration), { type: Type.String }]),
   generics: [],
 };
 
-const allAndNumberDeclaration: IDeclaration = {
-  name: 'AllNumber',
+const globalsAndNumberDeclaration: IDeclaration = {
+  name: 'GlobalsNumber',
   export: false,
-  types: declarable([aliasOf(allDeclaration), { type: Type.Number }]),
+  types: declarable([aliasOf(globalsDeclaration), { type: Type.Number }]),
   generics: [],
 };
 
@@ -75,23 +82,23 @@ const atRuleDeclaration: IDeclaration = {
   generics: [],
 };
 
-const standardLonghandPropertiesDefinition: IProperty[] = [];
-const standardShorthandPropertiesDefinition: IProperty[] = [];
-const standardLonghandPropertiesHyphenDefinition: IProperty[] = [];
-const standardShorthandPropertiesHyphenDefinition: IProperty[] = [];
-const vendorLonghandPropertiesDefinition: IProperty[] = [];
-const vendorShorthandPropertiesDefinition: IProperty[] = [];
-const vendorLonghandPropertiesHyphenDefinition: IProperty[] = [];
-const vendorShorthandPropertiesHyphenDefinition: IProperty[] = [];
+const standardLonghandPropertiesDefinition: IPropertyAlias[] = [];
+const standardShorthandPropertiesDefinition: IPropertyAlias[] = [];
+const standardLonghandPropertiesHyphenDefinition: IPropertyAlias[] = [];
+const standardShorthandPropertiesHyphenDefinition: IPropertyAlias[] = [];
+const vendorLonghandPropertiesDefinition: IPropertyAlias[] = [];
+const vendorShorthandPropertiesDefinition: IPropertyAlias[] = [];
+const vendorLonghandPropertiesHyphenDefinition: IPropertyAlias[] = [];
+const vendorShorthandPropertiesHyphenDefinition: IPropertyAlias[] = [];
 
 const PROPERTY = 'Property';
 
 export const declarations: IDeclaration[] = [
   atRuleDeclaration,
   pseudoDeclaration,
-  allDeclaration,
-  allAndStringDeclaration,
-  allAndNumberDeclaration,
+  globalsDeclaration,
+  globalsAndStringDeclaration,
+  globalsAndNumberDeclaration,
 ];
 
 for (const properties of [
@@ -122,14 +129,14 @@ for (const properties of [
     const generics = lengthIn(types) ? [lengthGeneric] : [];
 
     if (onlyContainsString(types)) {
-      declaration = allAndStringDeclaration;
+      declaration = globalsAndStringDeclaration;
     } else if (onlyContainsNumber(types)) {
-      declaration = allAndNumberDeclaration;
+      declaration = globalsAndNumberDeclaration;
     } else {
       declaration = {
         name: toPascalCase(name) + PROPERTY,
         export: false,
-        types: [aliasOf(allDeclaration), ...declarable(types)],
+        types: [aliasOf(globalsDeclaration), ...declarable(types)],
         generics,
       };
       declarations.push(declaration);
@@ -148,8 +155,8 @@ for (const properties of [
   }
 }
 
-const atRuleDefinitions: { [name: string]: IProperty[] } = {};
-const atRuleHyphenDefinitions: { [name: string]: IProperty[] } = {};
+const atRuleDefinitions: { [name: string]: PropertyType[] } = {};
+const atRuleHyphenDefinitions: { [name: string]: PropertyType[] } = {};
 
 for (const name in atRuleDescriptors) {
   atRuleDefinitions[name] = [];
@@ -157,33 +164,41 @@ for (const name in atRuleDescriptors) {
 
   for (const property in atRuleDescriptors[name]) {
     const types = filterMissingDataTypes(atRuleDescriptors[name][property]);
-    let declaration: IDeclaration;
     const generics = lengthIn(types) ? [lengthGeneric] : [];
 
-    if (onlyContainsString(types)) {
-      declaration = allAndStringDeclaration;
-    } else if (onlyContainsNumber(types)) {
-      declaration = allAndNumberDeclaration;
+    if (onlyContainsString(types) || onlyContainsNumber(types)) {
+      const type: DeclarableType = {
+        type: onlyContainsString(types) ? Type.String : Type.Number,
+      };
+
+      atRuleDefinitions[name].push({
+        name: toCamelCase(property),
+        type,
+      });
+      atRuleHyphenDefinitions[name].push({
+        name: property,
+        type,
+      });
     } else {
-      declaration = {
+      const declaration: IDeclaration = {
         name: toPascalCase(name.slice(1)) + toPascalCase(property) + PROPERTY,
         export: false,
         types: declarable(types),
         generics,
       };
       declarations.push(declaration);
-    }
 
-    atRuleDefinitions[name].push({
-      name: toCamelCase(property),
-      generics,
-      alias: aliasOf(declaration),
-    });
-    atRuleHyphenDefinitions[name].push({
-      name: property,
-      generics,
-      alias: aliasOf(declaration),
-    });
+      atRuleDefinitions[name].push({
+        name: toCamelCase(property),
+        generics,
+        alias: aliasOf(declaration),
+      });
+      atRuleHyphenDefinitions[name].push({
+        name: property,
+        generics,
+        alias: aliasOf(declaration),
+      });
+    }
   }
 }
 
@@ -459,7 +474,7 @@ const atRuleInterfaces: Interface[] = [];
 
 for (const name in atRuleDefinitions) {
   const pascalName = toPascalCase(name.slice(1));
-  const generics = genericsOf(atRuleDefinitions[name]);
+  const generics = genericsOf(atRuleDefinitions[name].filter(isAliasProperty));
   atRuleInterfaces.push(
     {
       name: pascalName,
@@ -547,8 +562,12 @@ function sorter(a: MixedType, b: MixedType) {
   return a.type - b.type;
 }
 
-function genericsOf(definitions: IProperty[]) {
+function genericsOf(definitions: IPropertyAlias[]) {
   return Array.from(new Set(([] as IGenerics[]).concat(...definitions.map(definition => definition.generics))));
+}
+
+export function isAliasProperty(value: PropertyType): value is IPropertyAlias {
+  return 'alias' in value;
 }
 
 export function lengthIn(types: MixedType[]) {

@@ -1,12 +1,25 @@
 import * as properties from 'mdn-data/css/properties.json';
 import parse from './parser';
-import typing, { TypeType } from './typer';
+import typing, { Type, TypeType } from './typer';
 
 const IGNORES = ['--*', 'all'];
 
 const REGEX_VENDOR_PROPERTY = /^-/;
 
-export const all = typing(parse(properties.all.syntax));
+export const globals: TypeType[] = [
+  {
+    type: Type.StringLiteral,
+    literal: 'initial',
+  },
+  {
+    type: Type.StringLiteral,
+    literal: 'inherit',
+  },
+  {
+    type: Type.StringLiteral,
+    literal: 'unset',
+  },
+];
 export const standardLonghandProperties: { [name: string]: TypeType[] } = {};
 export const standardShorthandProperties: { [name: string]: TypeType[] } = {};
 export const vendorPrefixedLonghandProperties: { [name: string]: TypeType[] } = {};

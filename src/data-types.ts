@@ -54,14 +54,13 @@ for (const name in atRuleDescriptors) {
   }
 }
 
-const allCssPropertyDescriptors = {
-  ...standardLonghandProperties,
-  ...standardShorthandProperties,
-  ...vendorPrefixedLonghandProperties,
-  ...vendorPrefixedShorthandProperties,
-};
-
-for (const descriptors of [allCssPropertyDescriptors, atRuleProperties]) {
+for (const descriptors of [
+  standardLonghandProperties,
+  standardShorthandProperties,
+  vendorPrefixedLonghandProperties,
+  vendorPrefixedShorthandProperties,
+  atRuleProperties,
+]) {
   for (const name in descriptors) {
     const typeAliases: IDataType[] = [];
     for (const type of descriptors[name]) {

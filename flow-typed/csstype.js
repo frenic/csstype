@@ -3,9 +3,9 @@ declare module "csstype" {
     alignContent?: AlignContentProperty,
     alignItems?: AlignItemsProperty,
     alignSelf?: AlignSelfProperty,
-    animationDelay?: AllString,
+    animationDelay?: GlobalsString,
     animationDirection?: AnimationDirectionProperty,
-    animationDuration?: AllString,
+    animationDuration?: GlobalsString,
     animationFillMode?: AnimationFillModeProperty,
     animationIterationCount?: AnimationIterationCountProperty,
     animationName?: AnimationNameProperty,
@@ -26,13 +26,13 @@ declare module "csstype" {
     backgroundPositionY?: BackgroundPositionYProperty<TLength>,
     backgroundRepeat?: BackgroundRepeatProperty,
     backgroundSize?: BackgroundSizeProperty<TLength>,
-    blockSize?: AllString,
-    borderBlockEndColor?: AllString,
-    borderBlockEndStyle?: AllString,
-    borderBlockEndWidth?: AllString,
-    borderBlockStartColor?: AllString,
-    borderBlockStartStyle?: AllString,
-    borderBlockStartWidth?: AllString,
+    blockSize?: GlobalsString,
+    borderBlockEndColor?: GlobalsString,
+    borderBlockEndStyle?: GlobalsString,
+    borderBlockEndWidth?: GlobalsString,
+    borderBlockStartColor?: GlobalsString,
+    borderBlockStartStyle?: GlobalsString,
+    borderBlockStartWidth?: GlobalsString,
     borderBottomColor?: BorderBottomColorProperty,
     borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength>,
     borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength>,
@@ -44,12 +44,12 @@ declare module "csstype" {
     borderImageSlice?: BorderImageSliceProperty,
     borderImageSource?: BorderImageSourceProperty,
     borderImageWidth?: BorderImageWidthProperty<TLength>,
-    borderInlineEndColor?: AllString,
-    borderInlineEndStyle?: AllString,
-    borderInlineEndWidth?: AllString,
-    borderInlineStartColor?: AllString,
-    borderInlineStartStyle?: AllString,
-    borderInlineStartWidth?: AllString,
+    borderInlineEndColor?: GlobalsString,
+    borderInlineEndStyle?: GlobalsString,
+    borderInlineEndWidth?: GlobalsString,
+    borderInlineStartColor?: GlobalsString,
+    borderInlineStartStyle?: GlobalsString,
+    borderInlineStartWidth?: GlobalsString,
     borderLeftColor?: BorderLeftColorProperty,
     borderLeftStyle?: BorderLeftStyleProperty,
     borderLeftWidth?: BorderLeftWidthProperty<TLength>,
@@ -66,10 +66,10 @@ declare module "csstype" {
     boxAlign?: BoxAlignProperty,
     boxDecorationBreak?: BoxDecorationBreakProperty,
     boxDirection?: BoxDirectionProperty,
-    boxFlex?: AllNumber,
-    boxFlexGroup?: AllNumber,
+    boxFlex?: GlobalsNumber,
+    boxFlexGroup?: GlobalsNumber,
     boxLines?: BoxLinesProperty,
-    boxOrdinalGroup?: AllNumber,
+    boxOrdinalGroup?: GlobalsNumber,
     boxOrient?: BoxOrientProperty,
     boxPack?: BoxPackProperty,
     boxShadow?: BoxShadowProperty<TLength>,
@@ -87,8 +87,8 @@ declare module "csstype" {
     columnFill?: ColumnFillProperty,
     columnGap?: ColumnGapProperty<TLength>,
     columnRuleColor?: ColumnRuleColorProperty,
-    columnRuleStyle?: AllString,
-    columnRuleWidth?: AllString,
+    columnRuleStyle?: GlobalsString,
+    columnRuleWidth?: GlobalsString,
     columnSpan?: ColumnSpanProperty,
     columnWidth?: ColumnWidthProperty<TLength>,
     contain?: ContainProperty,
@@ -105,8 +105,8 @@ declare module "csstype" {
     filter?: FilterProperty,
     flexBasis?: FlexBasisProperty,
     flexDirection?: FlexDirectionProperty,
-    flexGrow?: AllNumber,
-    flexShrink?: AllNumber,
+    flexGrow?: GlobalsNumber,
+    flexShrink?: GlobalsNumber,
     flexWrap?: FlexWrapProperty,
     float?: FloatProperty,
     fontFamily?: FontFamilyProperty,
@@ -148,7 +148,7 @@ declare module "csstype" {
     imeMode?: ImeModeProperty,
     initialLetter?: InitialLetterProperty,
     initialLetterAlign?: InitialLetterAlignProperty,
-    inlineSize?: AllString,
+    inlineSize?: GlobalsString,
     isolation?: IsolationProperty,
     justifyContent?: JustifyContentProperty,
     left?: LeftProperty<TLength>,
@@ -159,11 +159,11 @@ declare module "csstype" {
     listStyleImage?: ListStyleImageProperty,
     listStylePosition?: ListStylePositionProperty,
     listStyleType?: ListStyleTypeProperty,
-    marginBlockEnd?: AllString,
-    marginBlockStart?: AllString,
+    marginBlockEnd?: GlobalsString,
+    marginBlockStart?: GlobalsString,
     marginBottom?: MarginBottomProperty<TLength>,
-    marginInlineEnd?: AllString,
-    marginInlineStart?: AllString,
+    marginInlineEnd?: GlobalsString,
+    marginInlineStart?: GlobalsString,
     marginLeft?: MarginLeftProperty<TLength>,
     marginRight?: MarginRightProperty<TLength>,
     marginTop?: MarginTopProperty<TLength>,
@@ -182,29 +182,29 @@ declare module "csstype" {
     maskRepeat?: MaskRepeatProperty,
     maskSize?: MaskSizeProperty<TLength>,
     maskType?: MaskTypeProperty,
-    maxBlockSize?: AllString,
+    maxBlockSize?: GlobalsString,
     maxHeight?: MaxHeightProperty<TLength>,
-    maxInlineSize?: AllString,
+    maxInlineSize?: GlobalsString,
     maxWidth?: MaxWidthProperty<TLength>,
-    minBlockSize?: AllString,
+    minBlockSize?: GlobalsString,
     minHeight?: MinHeightProperty<TLength>,
-    minInlineSize?: AllString,
+    minInlineSize?: GlobalsString,
     minWidth?: MinWidthProperty<TLength>,
     mixBlendMode?: MixBlendModeProperty,
     objectFit?: ObjectFitProperty,
     objectPosition?: ObjectPositionProperty<TLength>,
     offsetAnchor?: OffsetAnchorProperty<TLength>,
-    offsetBlockEnd?: AllString,
-    offsetBlockStart?: AllString,
-    offsetInlineEnd?: AllString,
-    offsetInlineStart?: AllString,
+    offsetBlockEnd?: GlobalsString,
+    offsetBlockStart?: GlobalsString,
+    offsetInlineEnd?: GlobalsString,
+    offsetInlineStart?: GlobalsString,
     offsetDistance?: OffsetDistanceProperty<TLength>,
     offsetPath?: OffsetPathProperty,
     offsetPosition?: OffsetPositionProperty<TLength>,
     offsetRotate?: OffsetRotateProperty,
-    opacity?: AllNumber,
-    order?: AllNumber,
-    orphans?: AllNumber,
+    opacity?: GlobalsNumber,
+    order?: GlobalsNumber,
+    orphans?: GlobalsNumber,
     outlineColor?: OutlineColorProperty,
     outlineOffset?: OutlineOffsetProperty<TLength>,
     outlineStyle?: OutlineStyleProperty,
@@ -214,11 +214,11 @@ declare module "csstype" {
     overflowWrap?: OverflowWrapProperty,
     overflowX?: OverflowXProperty,
     overflowY?: OverflowYProperty,
-    paddingBlockEnd?: AllString,
-    paddingBlockStart?: AllString,
+    paddingBlockEnd?: GlobalsString,
+    paddingBlockStart?: GlobalsString,
     paddingBottom?: PaddingBottomProperty<TLength>,
-    paddingInlineEnd?: AllString,
-    paddingInlineStart?: AllString,
+    paddingInlineEnd?: GlobalsString,
+    paddingInlineStart?: GlobalsString,
     paddingLeft?: PaddingLeftProperty<TLength>,
     paddingRight?: PaddingRightProperty<TLength>,
     paddingTop?: PaddingTopProperty<TLength>,
@@ -243,7 +243,7 @@ declare module "csstype" {
     scrollSnapType?: ScrollSnapTypeProperty,
     scrollSnapTypeX?: ScrollSnapTypeXProperty,
     scrollSnapTypeY?: ScrollSnapTypeYProperty,
-    shapeImageThreshold?: AllNumber,
+    shapeImageThreshold?: GlobalsNumber,
     shapeMargin?: ShapeMarginProperty<TLength>,
     shapeOutside?: ShapeOutsideProperty,
     tabSize?: TabSizeProperty<TLength>,
@@ -257,7 +257,7 @@ declare module "csstype" {
     textDecorationSkipInk?: TextDecorationSkipInkProperty,
     textDecorationStyle?: TextDecorationStyleProperty,
     textEmphasisColor?: TextEmphasisColorProperty,
-    textEmphasisPosition?: AllString,
+    textEmphasisPosition?: GlobalsString,
     textEmphasisStyle?: TextEmphasisStyleProperty,
     textIndent?: TextIndentProperty<TLength>,
     textJustify?: TextJustifyProperty,
@@ -274,8 +274,8 @@ declare module "csstype" {
     transformBox?: TransformBoxProperty,
     transformOrigin?: TransformOriginProperty<TLength>,
     transformStyle?: TransformStyleProperty,
-    transitionDelay?: AllString,
-    transitionDuration?: AllString,
+    transitionDelay?: GlobalsString,
+    transitionDuration?: GlobalsString,
     transitionProperty?: TransitionPropertyProperty,
     transitionTimingFunction?: TransitionTimingFunctionProperty,
     unicodeBidi?: UnicodeBidiProperty,
@@ -283,7 +283,7 @@ declare module "csstype" {
     verticalAlign?: VerticalAlignProperty<TLength>,
     visibility?: VisibilityProperty,
     whiteSpace?: WhiteSpaceProperty,
-    widows?: AllNumber,
+    widows?: GlobalsNumber,
     width?: WidthProperty<TLength>,
     willChange?: WillChangeProperty,
     wordBreak?: WordBreakProperty,
@@ -297,39 +297,39 @@ declare module "csstype" {
     animation?: AnimationProperty,
     background?: BackgroundProperty<TLength>,
     border?: BorderProperty<TLength>,
-    borderBlockEnd?: AllString,
-    borderBlockStart?: AllString,
+    borderBlockEnd?: GlobalsString,
+    borderBlockStart?: GlobalsString,
     borderBottom?: BorderBottomProperty<TLength>,
     borderColor?: BorderColorProperty,
-    borderImage?: AllString,
-    borderInlineEnd?: AllString,
-    borderInlineStart?: AllString,
+    borderImage?: GlobalsString,
+    borderInlineEnd?: GlobalsString,
+    borderInlineStart?: GlobalsString,
     borderLeft?: BorderLeftProperty<TLength>,
     borderRadius?: BorderRadiusProperty<TLength>,
     borderRight?: BorderRightProperty<TLength>,
     borderStyle?: BorderStyleProperty,
     borderTop?: BorderTopProperty<TLength>,
     borderWidth?: BorderWidthProperty<TLength>,
-    columnRule?: AllString,
-    columns?: AllString,
+    columnRule?: GlobalsString,
+    columns?: GlobalsString,
     flex?: FlexProperty,
-    flexFlow?: AllString,
+    flexFlow?: GlobalsString,
     font?: FontProperty,
-    grid?: AllString,
-    gridArea?: AllString,
+    grid?: GlobalsString,
+    gridArea?: GlobalsString,
     gridColumn?: GridColumnProperty,
-    gridGap?: AllString,
+    gridGap?: GlobalsString,
     gridRow?: GridRowProperty,
     gridTemplate?: GridTemplateProperty,
-    listStyle?: AllString,
+    listStyle?: GlobalsString,
     margin?: MarginProperty<TLength>,
     mask?: MaskProperty<TLength>,
-    maskBorder?: AllString,
-    offset?: AllString,
-    outline?: AllString,
+    maskBorder?: GlobalsString,
+    offset?: GlobalsString,
+    outline?: GlobalsString,
     padding?: PaddingProperty<TLength>,
-    textDecoration?: AllString,
-    textEmphasis?: AllString,
+    textDecoration?: GlobalsString,
+    textEmphasis?: GlobalsString,
     transition?: TransitionProperty,
   };
 
@@ -345,13 +345,13 @@ declare module "csstype" {
     mozBorderTopColors?: MozBorderTopColorsProperty,
     mozContextProperties?: MozContextPropertiesProperty,
     mozFloatEdge?: MozFloatEdgeProperty,
-    mozForceBrokenImageIcon?: AllNumber,
+    mozForceBrokenImageIcon?: GlobalsNumber,
     mozImageRegion?: MozImageRegionProperty,
     mozOrient?: MozOrientProperty,
-    mozOutlineRadiusBottomleft?: AllString,
-    mozOutlineRadiusBottomright?: AllString,
-    mozOutlineRadiusTopleft?: AllString,
-    mozOutlineRadiusTopright?: AllString,
+    mozOutlineRadiusBottomleft?: GlobalsString,
+    mozOutlineRadiusBottomright?: GlobalsString,
+    mozOutlineRadiusTopleft?: GlobalsString,
+    mozOutlineRadiusTopright?: GlobalsString,
     mozStackSizing?: MozStackSizingProperty,
     mozTextBlink?: MozTextBlinkProperty,
     mozUserFocus?: MozUserFocusProperty,
@@ -359,14 +359,14 @@ declare module "csstype" {
     mozUserModify?: MozUserModifyProperty,
     mozWindowDragging?: MozWindowDraggingProperty,
     mozWindowShadow?: MozWindowShadowProperty,
-    webkitBorderBeforeColor?: AllString,
-    webkitBorderBeforeStyle?: AllString,
-    webkitBorderBeforeWidth?: AllString,
+    webkitBorderBeforeColor?: GlobalsString,
+    webkitBorderBeforeStyle?: GlobalsString,
+    webkitBorderBeforeWidth?: GlobalsString,
     webkitBoxReflect?: WebkitBoxReflectProperty<TLength>,
     webkitMaskAttachment?: WebkitMaskAttachmentProperty,
     webkitMaskClip?: WebkitMaskClipProperty,
     webkitMaskComposite?: WebkitMaskCompositeProperty,
-    webkitMaskImage?: AllString,
+    webkitMaskImage?: GlobalsString,
     webkitMaskOrigin?: WebkitMaskOriginProperty,
     webkitMaskPosition?: WebkitMaskPositionProperty<TLength>,
     webkitMaskPositionX?: WebkitMaskPositionXProperty<TLength>,
@@ -383,9 +383,9 @@ declare module "csstype" {
   };
 
   declare export type VendorShorthandProperties<TLength = string | number> = {
-    mozOutlineRadius?: AllString,
-    webkitBorderBefore?: AllString,
-    webkitMask?: AllString,
+    mozOutlineRadius?: GlobalsString,
+    webkitBorderBefore?: GlobalsString,
+    webkitMask?: GlobalsString,
     webkitTextStroke?: WebkitTextStrokeProperty<TLength>,
   };
 
@@ -397,9 +397,9 @@ declare module "csstype" {
     "align-content"?: AlignContentProperty,
     "align-items"?: AlignItemsProperty,
     "align-self"?: AlignSelfProperty,
-    "animation-delay"?: AllString,
+    "animation-delay"?: GlobalsString,
     "animation-direction"?: AnimationDirectionProperty,
-    "animation-duration"?: AllString,
+    "animation-duration"?: GlobalsString,
     "animation-fill-mode"?: AnimationFillModeProperty,
     "animation-iteration-count"?: AnimationIterationCountProperty,
     "animation-name"?: AnimationNameProperty,
@@ -420,13 +420,13 @@ declare module "csstype" {
     "background-position-y"?: BackgroundPositionYProperty<TLength>,
     "background-repeat"?: BackgroundRepeatProperty,
     "background-size"?: BackgroundSizeProperty<TLength>,
-    "block-size"?: AllString,
-    "border-block-end-color"?: AllString,
-    "border-block-end-style"?: AllString,
-    "border-block-end-width"?: AllString,
-    "border-block-start-color"?: AllString,
-    "border-block-start-style"?: AllString,
-    "border-block-start-width"?: AllString,
+    "block-size"?: GlobalsString,
+    "border-block-end-color"?: GlobalsString,
+    "border-block-end-style"?: GlobalsString,
+    "border-block-end-width"?: GlobalsString,
+    "border-block-start-color"?: GlobalsString,
+    "border-block-start-style"?: GlobalsString,
+    "border-block-start-width"?: GlobalsString,
     "border-bottom-color"?: BorderBottomColorProperty,
     "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength>,
     "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength>,
@@ -438,12 +438,12 @@ declare module "csstype" {
     "border-image-slice"?: BorderImageSliceProperty,
     "border-image-source"?: BorderImageSourceProperty,
     "border-image-width"?: BorderImageWidthProperty<TLength>,
-    "border-inline-end-color"?: AllString,
-    "border-inline-end-style"?: AllString,
-    "border-inline-end-width"?: AllString,
-    "border-inline-start-color"?: AllString,
-    "border-inline-start-style"?: AllString,
-    "border-inline-start-width"?: AllString,
+    "border-inline-end-color"?: GlobalsString,
+    "border-inline-end-style"?: GlobalsString,
+    "border-inline-end-width"?: GlobalsString,
+    "border-inline-start-color"?: GlobalsString,
+    "border-inline-start-style"?: GlobalsString,
+    "border-inline-start-width"?: GlobalsString,
     "border-left-color"?: BorderLeftColorProperty,
     "border-left-style"?: BorderLeftStyleProperty,
     "border-left-width"?: BorderLeftWidthProperty<TLength>,
@@ -460,10 +460,10 @@ declare module "csstype" {
     "box-align"?: BoxAlignProperty,
     "box-decoration-break"?: BoxDecorationBreakProperty,
     "box-direction"?: BoxDirectionProperty,
-    "box-flex"?: AllNumber,
-    "box-flex-group"?: AllNumber,
+    "box-flex"?: GlobalsNumber,
+    "box-flex-group"?: GlobalsNumber,
     "box-lines"?: BoxLinesProperty,
-    "box-ordinal-group"?: AllNumber,
+    "box-ordinal-group"?: GlobalsNumber,
     "box-orient"?: BoxOrientProperty,
     "box-pack"?: BoxPackProperty,
     "box-shadow"?: BoxShadowProperty<TLength>,
@@ -481,8 +481,8 @@ declare module "csstype" {
     "column-fill"?: ColumnFillProperty,
     "column-gap"?: ColumnGapProperty<TLength>,
     "column-rule-color"?: ColumnRuleColorProperty,
-    "column-rule-style"?: AllString,
-    "column-rule-width"?: AllString,
+    "column-rule-style"?: GlobalsString,
+    "column-rule-width"?: GlobalsString,
     "column-span"?: ColumnSpanProperty,
     "column-width"?: ColumnWidthProperty<TLength>,
     contain?: ContainProperty,
@@ -499,8 +499,8 @@ declare module "csstype" {
     filter?: FilterProperty,
     "flex-basis"?: FlexBasisProperty,
     "flex-direction"?: FlexDirectionProperty,
-    "flex-grow"?: AllNumber,
-    "flex-shrink"?: AllNumber,
+    "flex-grow"?: GlobalsNumber,
+    "flex-shrink"?: GlobalsNumber,
     "flex-wrap"?: FlexWrapProperty,
     float?: FloatProperty,
     "font-family"?: FontFamilyProperty,
@@ -542,7 +542,7 @@ declare module "csstype" {
     "ime-mode"?: ImeModeProperty,
     "initial-letter"?: InitialLetterProperty,
     "initial-letter-align"?: InitialLetterAlignProperty,
-    "inline-size"?: AllString,
+    "inline-size"?: GlobalsString,
     isolation?: IsolationProperty,
     "justify-content"?: JustifyContentProperty,
     left?: LeftProperty<TLength>,
@@ -553,11 +553,11 @@ declare module "csstype" {
     "list-style-image"?: ListStyleImageProperty,
     "list-style-position"?: ListStylePositionProperty,
     "list-style-type"?: ListStyleTypeProperty,
-    "margin-block-end"?: AllString,
-    "margin-block-start"?: AllString,
+    "margin-block-end"?: GlobalsString,
+    "margin-block-start"?: GlobalsString,
     "margin-bottom"?: MarginBottomProperty<TLength>,
-    "margin-inline-end"?: AllString,
-    "margin-inline-start"?: AllString,
+    "margin-inline-end"?: GlobalsString,
+    "margin-inline-start"?: GlobalsString,
     "margin-left"?: MarginLeftProperty<TLength>,
     "margin-right"?: MarginRightProperty<TLength>,
     "margin-top"?: MarginTopProperty<TLength>,
@@ -576,29 +576,29 @@ declare module "csstype" {
     "mask-repeat"?: MaskRepeatProperty,
     "mask-size"?: MaskSizeProperty<TLength>,
     "mask-type"?: MaskTypeProperty,
-    "max-block-size"?: AllString,
+    "max-block-size"?: GlobalsString,
     "max-height"?: MaxHeightProperty<TLength>,
-    "max-inline-size"?: AllString,
+    "max-inline-size"?: GlobalsString,
     "max-width"?: MaxWidthProperty<TLength>,
-    "min-block-size"?: AllString,
+    "min-block-size"?: GlobalsString,
     "min-height"?: MinHeightProperty<TLength>,
-    "min-inline-size"?: AllString,
+    "min-inline-size"?: GlobalsString,
     "min-width"?: MinWidthProperty<TLength>,
     "mix-blend-mode"?: MixBlendModeProperty,
     "object-fit"?: ObjectFitProperty,
     "object-position"?: ObjectPositionProperty<TLength>,
     "offset-anchor"?: OffsetAnchorProperty<TLength>,
-    "offset-block-end"?: AllString,
-    "offset-block-start"?: AllString,
-    "offset-inline-end"?: AllString,
-    "offset-inline-start"?: AllString,
+    "offset-block-end"?: GlobalsString,
+    "offset-block-start"?: GlobalsString,
+    "offset-inline-end"?: GlobalsString,
+    "offset-inline-start"?: GlobalsString,
     "offset-distance"?: OffsetDistanceProperty<TLength>,
     "offset-path"?: OffsetPathProperty,
     "offset-position"?: OffsetPositionProperty<TLength>,
     "offset-rotate"?: OffsetRotateProperty,
-    opacity?: AllNumber,
-    order?: AllNumber,
-    orphans?: AllNumber,
+    opacity?: GlobalsNumber,
+    order?: GlobalsNumber,
+    orphans?: GlobalsNumber,
     "outline-color"?: OutlineColorProperty,
     "outline-offset"?: OutlineOffsetProperty<TLength>,
     "outline-style"?: OutlineStyleProperty,
@@ -608,11 +608,11 @@ declare module "csstype" {
     "overflow-wrap"?: OverflowWrapProperty,
     "overflow-x"?: OverflowXProperty,
     "overflow-y"?: OverflowYProperty,
-    "padding-block-end"?: AllString,
-    "padding-block-start"?: AllString,
+    "padding-block-end"?: GlobalsString,
+    "padding-block-start"?: GlobalsString,
     "padding-bottom"?: PaddingBottomProperty<TLength>,
-    "padding-inline-end"?: AllString,
-    "padding-inline-start"?: AllString,
+    "padding-inline-end"?: GlobalsString,
+    "padding-inline-start"?: GlobalsString,
     "padding-left"?: PaddingLeftProperty<TLength>,
     "padding-right"?: PaddingRightProperty<TLength>,
     "padding-top"?: PaddingTopProperty<TLength>,
@@ -637,7 +637,7 @@ declare module "csstype" {
     "scroll-snap-type"?: ScrollSnapTypeProperty,
     "scroll-snap-type-x"?: ScrollSnapTypeXProperty,
     "scroll-snap-type-y"?: ScrollSnapTypeYProperty,
-    "shape-image-threshold"?: AllNumber,
+    "shape-image-threshold"?: GlobalsNumber,
     "shape-margin"?: ShapeMarginProperty<TLength>,
     "shape-outside"?: ShapeOutsideProperty,
     "tab-size"?: TabSizeProperty<TLength>,
@@ -651,7 +651,7 @@ declare module "csstype" {
     "text-decoration-skip-ink"?: TextDecorationSkipInkProperty,
     "text-decoration-style"?: TextDecorationStyleProperty,
     "text-emphasis-color"?: TextEmphasisColorProperty,
-    "text-emphasis-position"?: AllString,
+    "text-emphasis-position"?: GlobalsString,
     "text-emphasis-style"?: TextEmphasisStyleProperty,
     "text-indent"?: TextIndentProperty<TLength>,
     "text-justify"?: TextJustifyProperty,
@@ -668,8 +668,8 @@ declare module "csstype" {
     "transform-box"?: TransformBoxProperty,
     "transform-origin"?: TransformOriginProperty<TLength>,
     "transform-style"?: TransformStyleProperty,
-    "transition-delay"?: AllString,
-    "transition-duration"?: AllString,
+    "transition-delay"?: GlobalsString,
+    "transition-duration"?: GlobalsString,
     "transition-property"?: TransitionPropertyProperty,
     "transition-timing-function"?: TransitionTimingFunctionProperty,
     "unicode-bidi"?: UnicodeBidiProperty,
@@ -677,7 +677,7 @@ declare module "csstype" {
     "vertical-align"?: VerticalAlignProperty<TLength>,
     visibility?: VisibilityProperty,
     "white-space"?: WhiteSpaceProperty,
-    widows?: AllNumber,
+    widows?: GlobalsNumber,
     width?: WidthProperty<TLength>,
     "will-change"?: WillChangeProperty,
     "word-break"?: WordBreakProperty,
@@ -691,39 +691,39 @@ declare module "csstype" {
     animation?: AnimationProperty,
     background?: BackgroundProperty<TLength>,
     border?: BorderProperty<TLength>,
-    "border-block-end"?: AllString,
-    "border-block-start"?: AllString,
+    "border-block-end"?: GlobalsString,
+    "border-block-start"?: GlobalsString,
     "border-bottom"?: BorderBottomProperty<TLength>,
     "border-color"?: BorderColorProperty,
-    "border-image"?: AllString,
-    "border-inline-end"?: AllString,
-    "border-inline-start"?: AllString,
+    "border-image"?: GlobalsString,
+    "border-inline-end"?: GlobalsString,
+    "border-inline-start"?: GlobalsString,
     "border-left"?: BorderLeftProperty<TLength>,
     "border-radius"?: BorderRadiusProperty<TLength>,
     "border-right"?: BorderRightProperty<TLength>,
     "border-style"?: BorderStyleProperty,
     "border-top"?: BorderTopProperty<TLength>,
     "border-width"?: BorderWidthProperty<TLength>,
-    "column-rule"?: AllString,
-    columns?: AllString,
+    "column-rule"?: GlobalsString,
+    columns?: GlobalsString,
     flex?: FlexProperty,
-    "flex-flow"?: AllString,
+    "flex-flow"?: GlobalsString,
     font?: FontProperty,
-    grid?: AllString,
-    "grid-area"?: AllString,
+    grid?: GlobalsString,
+    "grid-area"?: GlobalsString,
     "grid-column"?: GridColumnProperty,
-    "grid-gap"?: AllString,
+    "grid-gap"?: GlobalsString,
     "grid-row"?: GridRowProperty,
     "grid-template"?: GridTemplateProperty,
-    "list-style"?: AllString,
+    "list-style"?: GlobalsString,
     margin?: MarginProperty<TLength>,
     mask?: MaskProperty<TLength>,
-    "mask-border"?: AllString,
-    offset?: AllString,
-    outline?: AllString,
+    "mask-border"?: GlobalsString,
+    offset?: GlobalsString,
+    outline?: GlobalsString,
     padding?: PaddingProperty<TLength>,
-    "text-decoration"?: AllString,
-    "text-emphasis"?: AllString,
+    "text-decoration"?: GlobalsString,
+    "text-emphasis"?: GlobalsString,
     transition?: TransitionProperty,
   };
 
@@ -739,13 +739,13 @@ declare module "csstype" {
     "-moz-border-top-colors"?: MozBorderTopColorsProperty,
     "-moz-context-properties"?: MozContextPropertiesProperty,
     "-moz-float-edge"?: MozFloatEdgeProperty,
-    "-moz-force-broken-image-icon"?: AllNumber,
+    "-moz-force-broken-image-icon"?: GlobalsNumber,
     "-moz-image-region"?: MozImageRegionProperty,
     "-moz-orient"?: MozOrientProperty,
-    "-moz-outline-radius-bottomleft"?: AllString,
-    "-moz-outline-radius-bottomright"?: AllString,
-    "-moz-outline-radius-topleft"?: AllString,
-    "-moz-outline-radius-topright"?: AllString,
+    "-moz-outline-radius-bottomleft"?: GlobalsString,
+    "-moz-outline-radius-bottomright"?: GlobalsString,
+    "-moz-outline-radius-topleft"?: GlobalsString,
+    "-moz-outline-radius-topright"?: GlobalsString,
     "-moz-stack-sizing"?: MozStackSizingProperty,
     "-moz-text-blink"?: MozTextBlinkProperty,
     "-moz-user-focus"?: MozUserFocusProperty,
@@ -753,14 +753,14 @@ declare module "csstype" {
     "-moz-user-modify"?: MozUserModifyProperty,
     "-moz-window-dragging"?: MozWindowDraggingProperty,
     "-moz-window-shadow"?: MozWindowShadowProperty,
-    "-webkit-border-before-color"?: AllString,
-    "-webkit-border-before-style"?: AllString,
-    "-webkit-border-before-width"?: AllString,
+    "-webkit-border-before-color"?: GlobalsString,
+    "-webkit-border-before-style"?: GlobalsString,
+    "-webkit-border-before-width"?: GlobalsString,
     "-webkit-box-reflect"?: WebkitBoxReflectProperty<TLength>,
     "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty,
     "-webkit-mask-clip"?: WebkitMaskClipProperty,
     "-webkit-mask-composite"?: WebkitMaskCompositeProperty,
-    "-webkit-mask-image"?: AllString,
+    "-webkit-mask-image"?: GlobalsString,
     "-webkit-mask-origin"?: WebkitMaskOriginProperty,
     "-webkit-mask-position"?: WebkitMaskPositionProperty<TLength>,
     "-webkit-mask-position-x"?: WebkitMaskPositionXProperty<TLength>,
@@ -777,9 +777,9 @@ declare module "csstype" {
   };
 
   declare export type VendorShorthandPropertiesHyphen<TLength = string | number> = {
-    "-moz-outline-radius"?: AllString,
-    "-webkit-border-before"?: AllString,
-    "-webkit-mask"?: AllString,
+    "-moz-outline-radius"?: GlobalsString,
+    "-webkit-border-before"?: GlobalsString,
+    "-webkit-mask"?: GlobalsString,
     "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>,
   };
 
@@ -791,9 +791,9 @@ declare module "csstype" {
     alignContent?: AlignContentProperty | AlignContentProperty[],
     alignItems?: AlignItemsProperty | AlignItemsProperty[],
     alignSelf?: AlignSelfProperty | AlignSelfProperty[],
-    animationDelay?: AllString | AllString[],
+    animationDelay?: GlobalsString | GlobalsString[],
     animationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[],
-    animationDuration?: AllString | AllString[],
+    animationDuration?: GlobalsString | GlobalsString[],
     animationFillMode?: AnimationFillModeProperty | AnimationFillModeProperty[],
     animationIterationCount?: AnimationIterationCountProperty | AnimationIterationCountProperty[],
     animationName?: AnimationNameProperty | AnimationNameProperty[],
@@ -814,13 +814,13 @@ declare module "csstype" {
     backgroundPositionY?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[],
     backgroundRepeat?: BackgroundRepeatProperty | BackgroundRepeatProperty[],
     backgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
-    blockSize?: AllString | AllString[],
-    borderBlockEndColor?: AllString | AllString[],
-    borderBlockEndStyle?: AllString | AllString[],
-    borderBlockEndWidth?: AllString | AllString[],
-    borderBlockStartColor?: AllString | AllString[],
-    borderBlockStartStyle?: AllString | AllString[],
-    borderBlockStartWidth?: AllString | AllString[],
+    blockSize?: GlobalsString | GlobalsString[],
+    borderBlockEndColor?: GlobalsString | GlobalsString[],
+    borderBlockEndStyle?: GlobalsString | GlobalsString[],
+    borderBlockEndWidth?: GlobalsString | GlobalsString[],
+    borderBlockStartColor?: GlobalsString | GlobalsString[],
+    borderBlockStartStyle?: GlobalsString | GlobalsString[],
+    borderBlockStartWidth?: GlobalsString | GlobalsString[],
     borderBottomColor?: BorderBottomColorProperty | BorderBottomColorProperty[],
     borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[],
     borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[],
@@ -832,12 +832,12 @@ declare module "csstype" {
     borderImageSlice?: BorderImageSliceProperty | BorderImageSliceProperty[],
     borderImageSource?: BorderImageSourceProperty | BorderImageSourceProperty[],
     borderImageWidth?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[],
-    borderInlineEndColor?: AllString | AllString[],
-    borderInlineEndStyle?: AllString | AllString[],
-    borderInlineEndWidth?: AllString | AllString[],
-    borderInlineStartColor?: AllString | AllString[],
-    borderInlineStartStyle?: AllString | AllString[],
-    borderInlineStartWidth?: AllString | AllString[],
+    borderInlineEndColor?: GlobalsString | GlobalsString[],
+    borderInlineEndStyle?: GlobalsString | GlobalsString[],
+    borderInlineEndWidth?: GlobalsString | GlobalsString[],
+    borderInlineStartColor?: GlobalsString | GlobalsString[],
+    borderInlineStartStyle?: GlobalsString | GlobalsString[],
+    borderInlineStartWidth?: GlobalsString | GlobalsString[],
     borderLeftColor?: BorderLeftColorProperty | BorderLeftColorProperty[],
     borderLeftStyle?: BorderLeftStyleProperty | BorderLeftStyleProperty[],
     borderLeftWidth?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[],
@@ -854,10 +854,10 @@ declare module "csstype" {
     boxAlign?: BoxAlignProperty | BoxAlignProperty[],
     boxDecorationBreak?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
     boxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
-    boxFlex?: AllNumber | AllNumber[],
-    boxFlexGroup?: AllNumber | AllNumber[],
+    boxFlex?: GlobalsNumber | GlobalsNumber[],
+    boxFlexGroup?: GlobalsNumber | GlobalsNumber[],
     boxLines?: BoxLinesProperty | BoxLinesProperty[],
-    boxOrdinalGroup?: AllNumber | AllNumber[],
+    boxOrdinalGroup?: GlobalsNumber | GlobalsNumber[],
     boxOrient?: BoxOrientProperty | BoxOrientProperty[],
     boxPack?: BoxPackProperty | BoxPackProperty[],
     boxShadow?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[],
@@ -875,8 +875,8 @@ declare module "csstype" {
     columnFill?: ColumnFillProperty | ColumnFillProperty[],
     columnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
     columnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
-    columnRuleStyle?: AllString | AllString[],
-    columnRuleWidth?: AllString | AllString[],
+    columnRuleStyle?: GlobalsString | GlobalsString[],
+    columnRuleWidth?: GlobalsString | GlobalsString[],
     columnSpan?: ColumnSpanProperty | ColumnSpanProperty[],
     columnWidth?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[],
     contain?: ContainProperty | ContainProperty[],
@@ -893,8 +893,8 @@ declare module "csstype" {
     filter?: FilterProperty | FilterProperty[],
     flexBasis?: FlexBasisProperty | FlexBasisProperty[],
     flexDirection?: FlexDirectionProperty | FlexDirectionProperty[],
-    flexGrow?: AllNumber | AllNumber[],
-    flexShrink?: AllNumber | AllNumber[],
+    flexGrow?: GlobalsNumber | GlobalsNumber[],
+    flexShrink?: GlobalsNumber | GlobalsNumber[],
     flexWrap?: FlexWrapProperty | FlexWrapProperty[],
     float?: FloatProperty | FloatProperty[],
     fontFamily?: FontFamilyProperty | FontFamilyProperty[],
@@ -936,7 +936,7 @@ declare module "csstype" {
     imeMode?: ImeModeProperty | ImeModeProperty[],
     initialLetter?: InitialLetterProperty | InitialLetterProperty[],
     initialLetterAlign?: InitialLetterAlignProperty | InitialLetterAlignProperty[],
-    inlineSize?: AllString | AllString[],
+    inlineSize?: GlobalsString | GlobalsString[],
     isolation?: IsolationProperty | IsolationProperty[],
     justifyContent?: JustifyContentProperty | JustifyContentProperty[],
     left?: LeftProperty<TLength> | LeftProperty<TLength>[],
@@ -947,11 +947,11 @@ declare module "csstype" {
     listStyleImage?: ListStyleImageProperty | ListStyleImageProperty[],
     listStylePosition?: ListStylePositionProperty | ListStylePositionProperty[],
     listStyleType?: ListStyleTypeProperty | ListStyleTypeProperty[],
-    marginBlockEnd?: AllString | AllString[],
-    marginBlockStart?: AllString | AllString[],
+    marginBlockEnd?: GlobalsString | GlobalsString[],
+    marginBlockStart?: GlobalsString | GlobalsString[],
     marginBottom?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[],
-    marginInlineEnd?: AllString | AllString[],
-    marginInlineStart?: AllString | AllString[],
+    marginInlineEnd?: GlobalsString | GlobalsString[],
+    marginInlineStart?: GlobalsString | GlobalsString[],
     marginLeft?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[],
     marginRight?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[],
     marginTop?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[],
@@ -970,29 +970,29 @@ declare module "csstype" {
     maskRepeat?: MaskRepeatProperty | MaskRepeatProperty[],
     maskSize?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[],
     maskType?: MaskTypeProperty | MaskTypeProperty[],
-    maxBlockSize?: AllString | AllString[],
+    maxBlockSize?: GlobalsString | GlobalsString[],
     maxHeight?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[],
-    maxInlineSize?: AllString | AllString[],
+    maxInlineSize?: GlobalsString | GlobalsString[],
     maxWidth?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[],
-    minBlockSize?: AllString | AllString[],
+    minBlockSize?: GlobalsString | GlobalsString[],
     minHeight?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[],
-    minInlineSize?: AllString | AllString[],
+    minInlineSize?: GlobalsString | GlobalsString[],
     minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[],
     mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[],
     objectFit?: ObjectFitProperty | ObjectFitProperty[],
     objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[],
     offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
-    offsetBlockEnd?: AllString | AllString[],
-    offsetBlockStart?: AllString | AllString[],
-    offsetInlineEnd?: AllString | AllString[],
-    offsetInlineStart?: AllString | AllString[],
+    offsetBlockEnd?: GlobalsString | GlobalsString[],
+    offsetBlockStart?: GlobalsString | GlobalsString[],
+    offsetInlineEnd?: GlobalsString | GlobalsString[],
+    offsetInlineStart?: GlobalsString | GlobalsString[],
     offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
     offsetPath?: OffsetPathProperty | OffsetPathProperty[],
     offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
     offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[],
-    opacity?: AllNumber | AllNumber[],
-    order?: AllNumber | AllNumber[],
-    orphans?: AllNumber | AllNumber[],
+    opacity?: GlobalsNumber | GlobalsNumber[],
+    order?: GlobalsNumber | GlobalsNumber[],
+    orphans?: GlobalsNumber | GlobalsNumber[],
     outlineColor?: OutlineColorProperty | OutlineColorProperty[],
     outlineOffset?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[],
     outlineStyle?: OutlineStyleProperty | OutlineStyleProperty[],
@@ -1002,11 +1002,11 @@ declare module "csstype" {
     overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[],
     overflowX?: OverflowXProperty | OverflowXProperty[],
     overflowY?: OverflowYProperty | OverflowYProperty[],
-    paddingBlockEnd?: AllString | AllString[],
-    paddingBlockStart?: AllString | AllString[],
+    paddingBlockEnd?: GlobalsString | GlobalsString[],
+    paddingBlockStart?: GlobalsString | GlobalsString[],
     paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[],
-    paddingInlineEnd?: AllString | AllString[],
-    paddingInlineStart?: AllString | AllString[],
+    paddingInlineEnd?: GlobalsString | GlobalsString[],
+    paddingInlineStart?: GlobalsString | GlobalsString[],
     paddingLeft?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[],
     paddingRight?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[],
     paddingTop?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[],
@@ -1031,7 +1031,7 @@ declare module "csstype" {
     scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
     scrollSnapTypeX?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
     scrollSnapTypeY?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
-    shapeImageThreshold?: AllNumber | AllNumber[],
+    shapeImageThreshold?: GlobalsNumber | GlobalsNumber[],
     shapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
     shapeOutside?: ShapeOutsideProperty | ShapeOutsideProperty[],
     tabSize?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[],
@@ -1045,7 +1045,7 @@ declare module "csstype" {
     textDecorationSkipInk?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[],
     textDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
     textEmphasisColor?: TextEmphasisColorProperty | TextEmphasisColorProperty[],
-    textEmphasisPosition?: AllString | AllString[],
+    textEmphasisPosition?: GlobalsString | GlobalsString[],
     textEmphasisStyle?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[],
     textIndent?: TextIndentProperty<TLength> | TextIndentProperty<TLength>[],
     textJustify?: TextJustifyProperty | TextJustifyProperty[],
@@ -1062,8 +1062,8 @@ declare module "csstype" {
     transformBox?: TransformBoxProperty | TransformBoxProperty[],
     transformOrigin?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[],
     transformStyle?: TransformStyleProperty | TransformStyleProperty[],
-    transitionDelay?: AllString | AllString[],
-    transitionDuration?: AllString | AllString[],
+    transitionDelay?: GlobalsString | GlobalsString[],
+    transitionDuration?: GlobalsString | GlobalsString[],
     transitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[],
     transitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[],
     unicodeBidi?: UnicodeBidiProperty | UnicodeBidiProperty[],
@@ -1071,7 +1071,7 @@ declare module "csstype" {
     verticalAlign?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[],
     visibility?: VisibilityProperty | VisibilityProperty[],
     whiteSpace?: WhiteSpaceProperty | WhiteSpaceProperty[],
-    widows?: AllNumber | AllNumber[],
+    widows?: GlobalsNumber | GlobalsNumber[],
     width?: WidthProperty<TLength> | WidthProperty<TLength>[],
     willChange?: WillChangeProperty | WillChangeProperty[],
     wordBreak?: WordBreakProperty | WordBreakProperty[],
@@ -1085,39 +1085,39 @@ declare module "csstype" {
     animation?: AnimationProperty | AnimationProperty[],
     background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
     border?: BorderProperty<TLength> | BorderProperty<TLength>[],
-    borderBlockEnd?: AllString | AllString[],
-    borderBlockStart?: AllString | AllString[],
+    borderBlockEnd?: GlobalsString | GlobalsString[],
+    borderBlockStart?: GlobalsString | GlobalsString[],
     borderBottom?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[],
     borderColor?: BorderColorProperty | BorderColorProperty[],
-    borderImage?: AllString | AllString[],
-    borderInlineEnd?: AllString | AllString[],
-    borderInlineStart?: AllString | AllString[],
+    borderImage?: GlobalsString | GlobalsString[],
+    borderInlineEnd?: GlobalsString | GlobalsString[],
+    borderInlineStart?: GlobalsString | GlobalsString[],
     borderLeft?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[],
     borderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[],
     borderRight?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[],
     borderStyle?: BorderStyleProperty | BorderStyleProperty[],
     borderTop?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[],
     borderWidth?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[],
-    columnRule?: AllString | AllString[],
-    columns?: AllString | AllString[],
+    columnRule?: GlobalsString | GlobalsString[],
+    columns?: GlobalsString | GlobalsString[],
     flex?: FlexProperty | FlexProperty[],
-    flexFlow?: AllString | AllString[],
+    flexFlow?: GlobalsString | GlobalsString[],
     font?: FontProperty | FontProperty[],
-    grid?: AllString | AllString[],
-    gridArea?: AllString | AllString[],
+    grid?: GlobalsString | GlobalsString[],
+    gridArea?: GlobalsString | GlobalsString[],
     gridColumn?: GridColumnProperty | GridColumnProperty[],
-    gridGap?: AllString | AllString[],
+    gridGap?: GlobalsString | GlobalsString[],
     gridRow?: GridRowProperty | GridRowProperty[],
     gridTemplate?: GridTemplateProperty | GridTemplateProperty[],
-    listStyle?: AllString | AllString[],
+    listStyle?: GlobalsString | GlobalsString[],
     margin?: MarginProperty<TLength> | MarginProperty<TLength>[],
     mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
-    maskBorder?: AllString | AllString[],
-    offset?: AllString | AllString[],
-    outline?: AllString | AllString[],
+    maskBorder?: GlobalsString | GlobalsString[],
+    offset?: GlobalsString | GlobalsString[],
+    outline?: GlobalsString | GlobalsString[],
     padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
-    textDecoration?: AllString | AllString[],
-    textEmphasis?: AllString | AllString[],
+    textDecoration?: GlobalsString | GlobalsString[],
+    textEmphasis?: GlobalsString | GlobalsString[],
     transition?: TransitionProperty | TransitionProperty[],
   };
 
@@ -1134,13 +1134,13 @@ declare module "csstype" {
     mozBorderTopColors?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[],
     mozContextProperties?: MozContextPropertiesProperty | MozContextPropertiesProperty[],
     mozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[],
-    mozForceBrokenImageIcon?: AllNumber | AllNumber[],
+    mozForceBrokenImageIcon?: GlobalsNumber | GlobalsNumber[],
     mozImageRegion?: MozImageRegionProperty | MozImageRegionProperty[],
     mozOrient?: MozOrientProperty | MozOrientProperty[],
-    mozOutlineRadiusBottomleft?: AllString | AllString[],
-    mozOutlineRadiusBottomright?: AllString | AllString[],
-    mozOutlineRadiusTopleft?: AllString | AllString[],
-    mozOutlineRadiusTopright?: AllString | AllString[],
+    mozOutlineRadiusBottomleft?: GlobalsString | GlobalsString[],
+    mozOutlineRadiusBottomright?: GlobalsString | GlobalsString[],
+    mozOutlineRadiusTopleft?: GlobalsString | GlobalsString[],
+    mozOutlineRadiusTopright?: GlobalsString | GlobalsString[],
     mozStackSizing?: MozStackSizingProperty | MozStackSizingProperty[],
     mozTextBlink?: MozTextBlinkProperty | MozTextBlinkProperty[],
     mozUserFocus?: MozUserFocusProperty | MozUserFocusProperty[],
@@ -1148,14 +1148,14 @@ declare module "csstype" {
     mozUserModify?: MozUserModifyProperty | MozUserModifyProperty[],
     mozWindowDragging?: MozWindowDraggingProperty | MozWindowDraggingProperty[],
     mozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[],
-    webkitBorderBeforeColor?: AllString | AllString[],
-    webkitBorderBeforeStyle?: AllString | AllString[],
-    webkitBorderBeforeWidth?: AllString | AllString[],
+    webkitBorderBeforeColor?: GlobalsString | GlobalsString[],
+    webkitBorderBeforeStyle?: GlobalsString | GlobalsString[],
+    webkitBorderBeforeWidth?: GlobalsString | GlobalsString[],
     webkitBoxReflect?: WebkitBoxReflectProperty<TLength> | WebkitBoxReflectProperty<TLength>[],
     webkitMaskAttachment?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[],
     webkitMaskClip?: WebkitMaskClipProperty | WebkitMaskClipProperty[],
     webkitMaskComposite?: WebkitMaskCompositeProperty | WebkitMaskCompositeProperty[],
-    webkitMaskImage?: AllString | AllString[],
+    webkitMaskImage?: GlobalsString | GlobalsString[],
     webkitMaskOrigin?: WebkitMaskOriginProperty | WebkitMaskOriginProperty[],
     webkitMaskPosition?: WebkitMaskPositionProperty<TLength> | WebkitMaskPositionProperty<TLength>[],
     webkitMaskPositionX?: WebkitMaskPositionXProperty<TLength> | WebkitMaskPositionXProperty<TLength>[],
@@ -1172,9 +1172,9 @@ declare module "csstype" {
   };
 
   declare export type VendorShorthandPropertiesFallback<TLength = string | number> = {
-    mozOutlineRadius?: AllString | AllString[],
-    webkitBorderBefore?: AllString | AllString[],
-    webkitMask?: AllString | AllString[],
+    mozOutlineRadius?: GlobalsString | GlobalsString[],
+    webkitBorderBefore?: GlobalsString | GlobalsString[],
+    webkitMask?: GlobalsString | GlobalsString[],
     webkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[],
   };
 
@@ -1186,9 +1186,9 @@ declare module "csstype" {
     "align-content"?: AlignContentProperty | AlignContentProperty[],
     "align-items"?: AlignItemsProperty | AlignItemsProperty[],
     "align-self"?: AlignSelfProperty | AlignSelfProperty[],
-    "animation-delay"?: AllString | AllString[],
+    "animation-delay"?: GlobalsString | GlobalsString[],
     "animation-direction"?: AnimationDirectionProperty | AnimationDirectionProperty[],
-    "animation-duration"?: AllString | AllString[],
+    "animation-duration"?: GlobalsString | GlobalsString[],
     "animation-fill-mode"?: AnimationFillModeProperty | AnimationFillModeProperty[],
     "animation-iteration-count"?: AnimationIterationCountProperty | AnimationIterationCountProperty[],
     "animation-name"?: AnimationNameProperty | AnimationNameProperty[],
@@ -1209,13 +1209,13 @@ declare module "csstype" {
     "background-position-y"?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[],
     "background-repeat"?: BackgroundRepeatProperty | BackgroundRepeatProperty[],
     "background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
-    "block-size"?: AllString | AllString[],
-    "border-block-end-color"?: AllString | AllString[],
-    "border-block-end-style"?: AllString | AllString[],
-    "border-block-end-width"?: AllString | AllString[],
-    "border-block-start-color"?: AllString | AllString[],
-    "border-block-start-style"?: AllString | AllString[],
-    "border-block-start-width"?: AllString | AllString[],
+    "block-size"?: GlobalsString | GlobalsString[],
+    "border-block-end-color"?: GlobalsString | GlobalsString[],
+    "border-block-end-style"?: GlobalsString | GlobalsString[],
+    "border-block-end-width"?: GlobalsString | GlobalsString[],
+    "border-block-start-color"?: GlobalsString | GlobalsString[],
+    "border-block-start-style"?: GlobalsString | GlobalsString[],
+    "border-block-start-width"?: GlobalsString | GlobalsString[],
     "border-bottom-color"?: BorderBottomColorProperty | BorderBottomColorProperty[],
     "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[],
     "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[],
@@ -1227,12 +1227,12 @@ declare module "csstype" {
     "border-image-slice"?: BorderImageSliceProperty | BorderImageSliceProperty[],
     "border-image-source"?: BorderImageSourceProperty | BorderImageSourceProperty[],
     "border-image-width"?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[],
-    "border-inline-end-color"?: AllString | AllString[],
-    "border-inline-end-style"?: AllString | AllString[],
-    "border-inline-end-width"?: AllString | AllString[],
-    "border-inline-start-color"?: AllString | AllString[],
-    "border-inline-start-style"?: AllString | AllString[],
-    "border-inline-start-width"?: AllString | AllString[],
+    "border-inline-end-color"?: GlobalsString | GlobalsString[],
+    "border-inline-end-style"?: GlobalsString | GlobalsString[],
+    "border-inline-end-width"?: GlobalsString | GlobalsString[],
+    "border-inline-start-color"?: GlobalsString | GlobalsString[],
+    "border-inline-start-style"?: GlobalsString | GlobalsString[],
+    "border-inline-start-width"?: GlobalsString | GlobalsString[],
     "border-left-color"?: BorderLeftColorProperty | BorderLeftColorProperty[],
     "border-left-style"?: BorderLeftStyleProperty | BorderLeftStyleProperty[],
     "border-left-width"?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[],
@@ -1249,10 +1249,10 @@ declare module "csstype" {
     "box-align"?: BoxAlignProperty | BoxAlignProperty[],
     "box-decoration-break"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
     "box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
-    "box-flex"?: AllNumber | AllNumber[],
-    "box-flex-group"?: AllNumber | AllNumber[],
+    "box-flex"?: GlobalsNumber | GlobalsNumber[],
+    "box-flex-group"?: GlobalsNumber | GlobalsNumber[],
     "box-lines"?: BoxLinesProperty | BoxLinesProperty[],
-    "box-ordinal-group"?: AllNumber | AllNumber[],
+    "box-ordinal-group"?: GlobalsNumber | GlobalsNumber[],
     "box-orient"?: BoxOrientProperty | BoxOrientProperty[],
     "box-pack"?: BoxPackProperty | BoxPackProperty[],
     "box-shadow"?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[],
@@ -1270,8 +1270,8 @@ declare module "csstype" {
     "column-fill"?: ColumnFillProperty | ColumnFillProperty[],
     "column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
     "column-rule-color"?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
-    "column-rule-style"?: AllString | AllString[],
-    "column-rule-width"?: AllString | AllString[],
+    "column-rule-style"?: GlobalsString | GlobalsString[],
+    "column-rule-width"?: GlobalsString | GlobalsString[],
     "column-span"?: ColumnSpanProperty | ColumnSpanProperty[],
     "column-width"?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[],
     contain?: ContainProperty | ContainProperty[],
@@ -1288,8 +1288,8 @@ declare module "csstype" {
     filter?: FilterProperty | FilterProperty[],
     "flex-basis"?: FlexBasisProperty | FlexBasisProperty[],
     "flex-direction"?: FlexDirectionProperty | FlexDirectionProperty[],
-    "flex-grow"?: AllNumber | AllNumber[],
-    "flex-shrink"?: AllNumber | AllNumber[],
+    "flex-grow"?: GlobalsNumber | GlobalsNumber[],
+    "flex-shrink"?: GlobalsNumber | GlobalsNumber[],
     "flex-wrap"?: FlexWrapProperty | FlexWrapProperty[],
     float?: FloatProperty | FloatProperty[],
     "font-family"?: FontFamilyProperty | FontFamilyProperty[],
@@ -1331,7 +1331,7 @@ declare module "csstype" {
     "ime-mode"?: ImeModeProperty | ImeModeProperty[],
     "initial-letter"?: InitialLetterProperty | InitialLetterProperty[],
     "initial-letter-align"?: InitialLetterAlignProperty | InitialLetterAlignProperty[],
-    "inline-size"?: AllString | AllString[],
+    "inline-size"?: GlobalsString | GlobalsString[],
     isolation?: IsolationProperty | IsolationProperty[],
     "justify-content"?: JustifyContentProperty | JustifyContentProperty[],
     left?: LeftProperty<TLength> | LeftProperty<TLength>[],
@@ -1342,11 +1342,11 @@ declare module "csstype" {
     "list-style-image"?: ListStyleImageProperty | ListStyleImageProperty[],
     "list-style-position"?: ListStylePositionProperty | ListStylePositionProperty[],
     "list-style-type"?: ListStyleTypeProperty | ListStyleTypeProperty[],
-    "margin-block-end"?: AllString | AllString[],
-    "margin-block-start"?: AllString | AllString[],
+    "margin-block-end"?: GlobalsString | GlobalsString[],
+    "margin-block-start"?: GlobalsString | GlobalsString[],
     "margin-bottom"?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[],
-    "margin-inline-end"?: AllString | AllString[],
-    "margin-inline-start"?: AllString | AllString[],
+    "margin-inline-end"?: GlobalsString | GlobalsString[],
+    "margin-inline-start"?: GlobalsString | GlobalsString[],
     "margin-left"?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[],
     "margin-right"?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[],
     "margin-top"?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[],
@@ -1365,29 +1365,29 @@ declare module "csstype" {
     "mask-repeat"?: MaskRepeatProperty | MaskRepeatProperty[],
     "mask-size"?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[],
     "mask-type"?: MaskTypeProperty | MaskTypeProperty[],
-    "max-block-size"?: AllString | AllString[],
+    "max-block-size"?: GlobalsString | GlobalsString[],
     "max-height"?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[],
-    "max-inline-size"?: AllString | AllString[],
+    "max-inline-size"?: GlobalsString | GlobalsString[],
     "max-width"?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[],
-    "min-block-size"?: AllString | AllString[],
+    "min-block-size"?: GlobalsString | GlobalsString[],
     "min-height"?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[],
-    "min-inline-size"?: AllString | AllString[],
+    "min-inline-size"?: GlobalsString | GlobalsString[],
     "min-width"?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[],
     "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[],
     "object-fit"?: ObjectFitProperty | ObjectFitProperty[],
     "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[],
     "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
-    "offset-block-end"?: AllString | AllString[],
-    "offset-block-start"?: AllString | AllString[],
-    "offset-inline-end"?: AllString | AllString[],
-    "offset-inline-start"?: AllString | AllString[],
+    "offset-block-end"?: GlobalsString | GlobalsString[],
+    "offset-block-start"?: GlobalsString | GlobalsString[],
+    "offset-inline-end"?: GlobalsString | GlobalsString[],
+    "offset-inline-start"?: GlobalsString | GlobalsString[],
     "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
     "offset-path"?: OffsetPathProperty | OffsetPathProperty[],
     "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
     "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[],
-    opacity?: AllNumber | AllNumber[],
-    order?: AllNumber | AllNumber[],
-    orphans?: AllNumber | AllNumber[],
+    opacity?: GlobalsNumber | GlobalsNumber[],
+    order?: GlobalsNumber | GlobalsNumber[],
+    orphans?: GlobalsNumber | GlobalsNumber[],
     "outline-color"?: OutlineColorProperty | OutlineColorProperty[],
     "outline-offset"?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[],
     "outline-style"?: OutlineStyleProperty | OutlineStyleProperty[],
@@ -1397,11 +1397,11 @@ declare module "csstype" {
     "overflow-wrap"?: OverflowWrapProperty | OverflowWrapProperty[],
     "overflow-x"?: OverflowXProperty | OverflowXProperty[],
     "overflow-y"?: OverflowYProperty | OverflowYProperty[],
-    "padding-block-end"?: AllString | AllString[],
-    "padding-block-start"?: AllString | AllString[],
+    "padding-block-end"?: GlobalsString | GlobalsString[],
+    "padding-block-start"?: GlobalsString | GlobalsString[],
     "padding-bottom"?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[],
-    "padding-inline-end"?: AllString | AllString[],
-    "padding-inline-start"?: AllString | AllString[],
+    "padding-inline-end"?: GlobalsString | GlobalsString[],
+    "padding-inline-start"?: GlobalsString | GlobalsString[],
     "padding-left"?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[],
     "padding-right"?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[],
     "padding-top"?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[],
@@ -1426,7 +1426,7 @@ declare module "csstype" {
     "scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
     "scroll-snap-type-x"?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
     "scroll-snap-type-y"?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
-    "shape-image-threshold"?: AllNumber | AllNumber[],
+    "shape-image-threshold"?: GlobalsNumber | GlobalsNumber[],
     "shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
     "shape-outside"?: ShapeOutsideProperty | ShapeOutsideProperty[],
     "tab-size"?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[],
@@ -1440,7 +1440,7 @@ declare module "csstype" {
     "text-decoration-skip-ink"?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[],
     "text-decoration-style"?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
     "text-emphasis-color"?: TextEmphasisColorProperty | TextEmphasisColorProperty[],
-    "text-emphasis-position"?: AllString | AllString[],
+    "text-emphasis-position"?: GlobalsString | GlobalsString[],
     "text-emphasis-style"?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[],
     "text-indent"?: TextIndentProperty<TLength> | TextIndentProperty<TLength>[],
     "text-justify"?: TextJustifyProperty | TextJustifyProperty[],
@@ -1457,8 +1457,8 @@ declare module "csstype" {
     "transform-box"?: TransformBoxProperty | TransformBoxProperty[],
     "transform-origin"?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[],
     "transform-style"?: TransformStyleProperty | TransformStyleProperty[],
-    "transition-delay"?: AllString | AllString[],
-    "transition-duration"?: AllString | AllString[],
+    "transition-delay"?: GlobalsString | GlobalsString[],
+    "transition-duration"?: GlobalsString | GlobalsString[],
     "transition-property"?: TransitionPropertyProperty | TransitionPropertyProperty[],
     "transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[],
     "unicode-bidi"?: UnicodeBidiProperty | UnicodeBidiProperty[],
@@ -1466,7 +1466,7 @@ declare module "csstype" {
     "vertical-align"?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[],
     visibility?: VisibilityProperty | VisibilityProperty[],
     "white-space"?: WhiteSpaceProperty | WhiteSpaceProperty[],
-    widows?: AllNumber | AllNumber[],
+    widows?: GlobalsNumber | GlobalsNumber[],
     width?: WidthProperty<TLength> | WidthProperty<TLength>[],
     "will-change"?: WillChangeProperty | WillChangeProperty[],
     "word-break"?: WordBreakProperty | WordBreakProperty[],
@@ -1480,39 +1480,39 @@ declare module "csstype" {
     animation?: AnimationProperty | AnimationProperty[],
     background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
     border?: BorderProperty<TLength> | BorderProperty<TLength>[],
-    "border-block-end"?: AllString | AllString[],
-    "border-block-start"?: AllString | AllString[],
+    "border-block-end"?: GlobalsString | GlobalsString[],
+    "border-block-start"?: GlobalsString | GlobalsString[],
     "border-bottom"?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[],
     "border-color"?: BorderColorProperty | BorderColorProperty[],
-    "border-image"?: AllString | AllString[],
-    "border-inline-end"?: AllString | AllString[],
-    "border-inline-start"?: AllString | AllString[],
+    "border-image"?: GlobalsString | GlobalsString[],
+    "border-inline-end"?: GlobalsString | GlobalsString[],
+    "border-inline-start"?: GlobalsString | GlobalsString[],
     "border-left"?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[],
     "border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[],
     "border-right"?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[],
     "border-style"?: BorderStyleProperty | BorderStyleProperty[],
     "border-top"?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[],
     "border-width"?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[],
-    "column-rule"?: AllString | AllString[],
-    columns?: AllString | AllString[],
+    "column-rule"?: GlobalsString | GlobalsString[],
+    columns?: GlobalsString | GlobalsString[],
     flex?: FlexProperty | FlexProperty[],
-    "flex-flow"?: AllString | AllString[],
+    "flex-flow"?: GlobalsString | GlobalsString[],
     font?: FontProperty | FontProperty[],
-    grid?: AllString | AllString[],
-    "grid-area"?: AllString | AllString[],
+    grid?: GlobalsString | GlobalsString[],
+    "grid-area"?: GlobalsString | GlobalsString[],
     "grid-column"?: GridColumnProperty | GridColumnProperty[],
-    "grid-gap"?: AllString | AllString[],
+    "grid-gap"?: GlobalsString | GlobalsString[],
     "grid-row"?: GridRowProperty | GridRowProperty[],
     "grid-template"?: GridTemplateProperty | GridTemplateProperty[],
-    "list-style"?: AllString | AllString[],
+    "list-style"?: GlobalsString | GlobalsString[],
     margin?: MarginProperty<TLength> | MarginProperty<TLength>[],
     mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
-    "mask-border"?: AllString | AllString[],
-    offset?: AllString | AllString[],
-    outline?: AllString | AllString[],
+    "mask-border"?: GlobalsString | GlobalsString[],
+    offset?: GlobalsString | GlobalsString[],
+    outline?: GlobalsString | GlobalsString[],
     padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
-    "text-decoration"?: AllString | AllString[],
-    "text-emphasis"?: AllString | AllString[],
+    "text-decoration"?: GlobalsString | GlobalsString[],
+    "text-emphasis"?: GlobalsString | GlobalsString[],
     transition?: TransitionProperty | TransitionProperty[],
   };
 
@@ -1529,13 +1529,13 @@ declare module "csstype" {
     "-moz-border-top-colors"?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[],
     "-moz-context-properties"?: MozContextPropertiesProperty | MozContextPropertiesProperty[],
     "-moz-float-edge"?: MozFloatEdgeProperty | MozFloatEdgeProperty[],
-    "-moz-force-broken-image-icon"?: AllNumber | AllNumber[],
+    "-moz-force-broken-image-icon"?: GlobalsNumber | GlobalsNumber[],
     "-moz-image-region"?: MozImageRegionProperty | MozImageRegionProperty[],
     "-moz-orient"?: MozOrientProperty | MozOrientProperty[],
-    "-moz-outline-radius-bottomleft"?: AllString | AllString[],
-    "-moz-outline-radius-bottomright"?: AllString | AllString[],
-    "-moz-outline-radius-topleft"?: AllString | AllString[],
-    "-moz-outline-radius-topright"?: AllString | AllString[],
+    "-moz-outline-radius-bottomleft"?: GlobalsString | GlobalsString[],
+    "-moz-outline-radius-bottomright"?: GlobalsString | GlobalsString[],
+    "-moz-outline-radius-topleft"?: GlobalsString | GlobalsString[],
+    "-moz-outline-radius-topright"?: GlobalsString | GlobalsString[],
     "-moz-stack-sizing"?: MozStackSizingProperty | MozStackSizingProperty[],
     "-moz-text-blink"?: MozTextBlinkProperty | MozTextBlinkProperty[],
     "-moz-user-focus"?: MozUserFocusProperty | MozUserFocusProperty[],
@@ -1543,14 +1543,14 @@ declare module "csstype" {
     "-moz-user-modify"?: MozUserModifyProperty | MozUserModifyProperty[],
     "-moz-window-dragging"?: MozWindowDraggingProperty | MozWindowDraggingProperty[],
     "-moz-window-shadow"?: MozWindowShadowProperty | MozWindowShadowProperty[],
-    "-webkit-border-before-color"?: AllString | AllString[],
-    "-webkit-border-before-style"?: AllString | AllString[],
-    "-webkit-border-before-width"?: AllString | AllString[],
+    "-webkit-border-before-color"?: GlobalsString | GlobalsString[],
+    "-webkit-border-before-style"?: GlobalsString | GlobalsString[],
+    "-webkit-border-before-width"?: GlobalsString | GlobalsString[],
     "-webkit-box-reflect"?: WebkitBoxReflectProperty<TLength> | WebkitBoxReflectProperty<TLength>[],
     "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[],
     "-webkit-mask-clip"?: WebkitMaskClipProperty | WebkitMaskClipProperty[],
     "-webkit-mask-composite"?: WebkitMaskCompositeProperty | WebkitMaskCompositeProperty[],
-    "-webkit-mask-image"?: AllString | AllString[],
+    "-webkit-mask-image"?: GlobalsString | GlobalsString[],
     "-webkit-mask-origin"?: WebkitMaskOriginProperty | WebkitMaskOriginProperty[],
     "-webkit-mask-position"?: WebkitMaskPositionProperty<TLength> | WebkitMaskPositionProperty<TLength>[],
     "-webkit-mask-position-x"?: WebkitMaskPositionXProperty<TLength> | WebkitMaskPositionXProperty<TLength>[],
@@ -1567,9 +1567,9 @@ declare module "csstype" {
   };
 
   declare export type VendorShorthandPropertiesHyphenFallback<TLength = string | number> = {
-    "-moz-outline-radius"?: AllString | AllString[],
-    "-webkit-border-before"?: AllString | AllString[],
-    "-webkit-mask"?: AllString | AllString[],
+    "-moz-outline-radius"?: GlobalsString | GlobalsString[],
+    "-webkit-border-before"?: GlobalsString | GlobalsString[],
+    "-webkit-mask"?: GlobalsString | GlobalsString[],
     "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[],
   };
 
@@ -1579,107 +1579,107 @@ declare module "csstype" {
   declare export interface PropertiesHyphenFallback<TLength = string | number> extends StandardPropertiesHyphenFallback<TLength>, VendorPropertiesHyphenFallback<TLength> {}
 
   declare export type CounterStyle = {
-    additiveSymbols?: AllString,
-    fallback?: AllString,
-    negative?: AllString,
-    pad?: AllString,
-    prefix?: AllString,
+    additiveSymbols?: string,
+    fallback?: string,
+    negative?: string,
+    pad?: string,
+    prefix?: string,
     range?: CounterStyleRangeProperty,
     speakAs?: CounterStyleSpeakAsProperty,
-    suffix?: AllString,
-    symbols?: AllString,
+    suffix?: string,
+    symbols?: string,
     system?: CounterStyleSystemProperty,
   };
 
   declare export type CounterStyleHyphen = {
-    "additive-symbols"?: AllString,
-    fallback?: AllString,
-    negative?: AllString,
-    pad?: AllString,
-    prefix?: AllString,
+    "additive-symbols"?: string,
+    fallback?: string,
+    negative?: string,
+    pad?: string,
+    prefix?: string,
     range?: CounterStyleRangeProperty,
     "speak-as"?: CounterStyleSpeakAsProperty,
-    suffix?: AllString,
-    symbols?: AllString,
+    suffix?: string,
+    symbols?: string,
     system?: CounterStyleSystemProperty,
   };
 
   declare export type CounterStyleFallback = {
-    additiveSymbols?: AllString | AllString[],
-    fallback?: AllString | AllString[],
-    negative?: AllString | AllString[],
-    pad?: AllString | AllString[],
-    prefix?: AllString | AllString[],
+    additiveSymbols?: string | string[],
+    fallback?: string | string[],
+    negative?: string | string[],
+    pad?: string | string[],
+    prefix?: string | string[],
     range?: CounterStyleRangeProperty | CounterStyleRangeProperty[],
     speakAs?: CounterStyleSpeakAsProperty | CounterStyleSpeakAsProperty[],
-    suffix?: AllString | AllString[],
-    symbols?: AllString | AllString[],
+    suffix?: string | string[],
+    symbols?: string | string[],
     system?: CounterStyleSystemProperty | CounterStyleSystemProperty[],
   };
 
   declare export type CounterStyleHyphenFallback = {
-    "additive-symbols"?: AllString | AllString[],
-    fallback?: AllString | AllString[],
-    negative?: AllString | AllString[],
-    pad?: AllString | AllString[],
-    prefix?: AllString | AllString[],
+    "additive-symbols"?: string | string[],
+    fallback?: string | string[],
+    negative?: string | string[],
+    pad?: string | string[],
+    prefix?: string | string[],
     range?: CounterStyleRangeProperty | CounterStyleRangeProperty[],
     "speak-as"?: CounterStyleSpeakAsProperty | CounterStyleSpeakAsProperty[],
-    suffix?: AllString | AllString[],
-    symbols?: AllString | AllString[],
+    suffix?: string | string[],
+    symbols?: string | string[],
     system?: CounterStyleSystemProperty | CounterStyleSystemProperty[],
   };
 
   declare export type FontFace = {
     fontDisplay?: FontFaceFontDisplayProperty,
-    fontFamily?: AllString,
+    fontFamily?: string,
     fontFeatureSettings?: FontFaceFontFeatureSettingsProperty,
     fontVariationSettings?: FontFaceFontVariationSettingsProperty,
     fontStretch?: FontFaceFontStretchProperty,
     fontStyle?: FontFaceFontStyleProperty,
     fontWeight?: FontFaceFontWeightProperty,
     fontVariant?: FontFaceFontVariantProperty,
-    src?: AllString,
-    unicodeRange?: AllString,
+    src?: string,
+    unicodeRange?: string,
   };
 
   declare export type FontFaceHyphen = {
     "font-display"?: FontFaceFontDisplayProperty,
-    "font-family"?: AllString,
+    "font-family"?: string,
     "font-feature-settings"?: FontFaceFontFeatureSettingsProperty,
     "font-variation-settings"?: FontFaceFontVariationSettingsProperty,
     "font-stretch"?: FontFaceFontStretchProperty,
     "font-style"?: FontFaceFontStyleProperty,
     "font-weight"?: FontFaceFontWeightProperty,
     "font-variant"?: FontFaceFontVariantProperty,
-    src?: AllString,
-    "unicode-range"?: AllString,
+    src?: string,
+    "unicode-range"?: string,
   };
 
   declare export type FontFaceFallback = {
     fontDisplay?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[],
-    fontFamily?: AllString | AllString[],
+    fontFamily?: string | string[],
     fontFeatureSettings?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[],
     fontVariationSettings?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[],
     fontStretch?: FontFaceFontStretchProperty | FontFaceFontStretchProperty[],
     fontStyle?: FontFaceFontStyleProperty | FontFaceFontStyleProperty[],
     fontWeight?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[],
     fontVariant?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[],
-    src?: AllString | AllString[],
-    unicodeRange?: AllString | AllString[],
+    src?: string | string[],
+    unicodeRange?: string | string[],
   };
 
   declare export type FontFaceHyphenFallback = {
     "font-display"?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[],
-    "font-family"?: AllString | AllString[],
+    "font-family"?: string | string[],
     "font-feature-settings"?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[],
     "font-variation-settings"?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[],
     "font-stretch"?: FontFaceFontStretchProperty | FontFaceFontStretchProperty[],
     "font-style"?: FontFaceFontStyleProperty | FontFaceFontStyleProperty[],
     "font-weight"?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[],
     "font-variant"?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[],
-    src?: AllString | AllString[],
-    "unicode-range"?: AllString | AllString[],
+    src?: string | string[],
+    "unicode-range"?: string | string[],
   };
 
   declare export type Page<TLength = string | number> = {
@@ -1842,34 +1842,34 @@ declare module "csstype" {
     | ":valid"
     | ":visited";
 
-  declare type All = "inherit" | "initial" | "revert" | "unset";
+  declare type Globals = "inherit" | "initial" | "unset";
 
-  declare type AllString = All | string;
+  declare type GlobalsString = Globals | string;
 
-  declare type AllNumber = All | number;
+  declare type GlobalsNumber = Globals | number;
 
-  declare type AlignContentProperty = All | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly" | "stretch";
+  declare type AlignContentProperty = Globals | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly" | "stretch";
 
-  declare type AlignItemsProperty = All | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
+  declare type AlignItemsProperty = Globals | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
 
-  declare type AlignSelfProperty = All | "auto" | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
+  declare type AlignSelfProperty = Globals | "auto" | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
 
-  declare type AnimationDirectionProperty = All | SingleAnimationDirection;
+  declare type AnimationDirectionProperty = Globals | SingleAnimationDirection;
 
-  declare type AnimationFillModeProperty = All | SingleAnimationFillMode;
+  declare type AnimationFillModeProperty = Globals | SingleAnimationFillMode;
 
-  declare type AnimationIterationCountProperty = All | SingleAnimationIterationCount;
+  declare type AnimationIterationCountProperty = Globals | SingleAnimationIterationCount;
 
-  declare type AnimationNameProperty = All | "none" | string;
+  declare type AnimationNameProperty = Globals | "none" | string;
 
-  declare type AnimationPlayStateProperty = All | SingleAnimationPlayState;
+  declare type AnimationPlayStateProperty = Globals | SingleAnimationPlayState;
 
-  declare type AnimationTimingFunctionProperty = All | SingleTimingFunction;
+  declare type AnimationTimingFunctionProperty = Globals | SingleTimingFunction;
 
-  declare type AppearanceProperty = All | "auto" | "none";
+  declare type AppearanceProperty = Globals | "auto" | "none";
 
   declare type AzimuthProperty =
-    | All
+    | Globals
     | "behind"
     | "center"
     | "center-left"
@@ -1884,136 +1884,162 @@ declare module "csstype" {
     | "rightwards"
     | string;
 
-  declare type BackdropFilterProperty = All | "none" | string;
+  declare type BackdropFilterProperty = Globals | "none" | string;
 
-  declare type BackfaceVisibilityProperty = All | "hidden" | "visible";
+  declare type BackfaceVisibilityProperty = Globals | "hidden" | "visible";
 
-  declare type BackgroundAttachmentProperty = All | Attachment;
+  declare type BackgroundAttachmentProperty = Globals | Attachment;
 
-  declare type BackgroundBlendModeProperty = All | BlendMode;
+  declare type BackgroundBlendModeProperty = Globals | BlendMode;
 
-  declare type BackgroundClipProperty = All | Box;
+  declare type BackgroundClipProperty = Globals | Box;
 
-  declare type BackgroundColorProperty = All | Color;
+  declare type BackgroundColorProperty = Globals | Color;
 
-  declare type BackgroundImageProperty = All | BgImage;
+  declare type BackgroundImageProperty = Globals | BgImage;
 
-  declare type BackgroundOriginProperty = All | Box;
+  declare type BackgroundOriginProperty = Globals | Box;
 
-  declare type BackgroundPositionProperty<TLength> = All | BgPosition<TLength>;
+  declare type BackgroundPositionProperty<TLength> = Globals | BgPosition<TLength>;
 
-  declare type BackgroundPositionXProperty<TLength> = All | LengthPercentage<TLength> | "center" | "left" | "right" | "x-end" | "x-start" | string;
+  declare type BackgroundPositionXProperty<TLength> = Globals | LengthPercentage<TLength> | "center" | "left" | "right" | "x-end" | "x-start" | string;
 
-  declare type BackgroundPositionYProperty<TLength> = All | LengthPercentage<TLength> | "bottom" | "center" | "top" | "y-end" | "y-start" | string;
+  declare type BackgroundPositionYProperty<TLength> = Globals | LengthPercentage<TLength> | "bottom" | "center" | "top" | "y-end" | "y-start" | string;
 
-  declare type BackgroundRepeatProperty = All | RepeatStyle;
+  declare type BackgroundRepeatProperty = Globals | RepeatStyle;
 
-  declare type BackgroundSizeProperty<TLength> = All | BgSize<TLength>;
+  declare type BackgroundSizeProperty<TLength> = Globals | BgSize<TLength>;
 
-  declare type BorderBottomColorProperty = All | Color;
+  declare type BorderBottomColorProperty = Globals | Color;
 
-  declare type BorderBottomLeftRadiusProperty<TLength> = All | LengthPercentage<TLength>;
+  declare type BorderBottomLeftRadiusProperty<TLength> = Globals | LengthPercentage<TLength>;
 
-  declare type BorderBottomRightRadiusProperty<TLength> = All | LengthPercentage<TLength>;
+  declare type BorderBottomRightRadiusProperty<TLength> = Globals | LengthPercentage<TLength>;
 
-  declare type BorderBottomStyleProperty = All | BrStyle;
+  declare type BorderBottomStyleProperty = Globals | BrStyle;
 
-  declare type BorderBottomWidthProperty<TLength> = All | BrWidth<TLength>;
+  declare type BorderBottomWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-  declare type BorderCollapseProperty = All | "collapse" | "separate";
+  declare type BorderCollapseProperty = Globals | "collapse" | "separate";
 
-  declare type BorderImageOutsetProperty<TLength> = All | TLength | number;
+  declare type BorderImageOutsetProperty<TLength> = Globals | TLength | number;
 
-  declare type BorderImageRepeatProperty = All | "repeat" | "round" | "space" | "stretch";
+  declare type BorderImageRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch";
 
-  declare type BorderImageSliceProperty = All | NumberPercentage | "fill" | string;
+  declare type BorderImageSliceProperty = Globals | NumberPercentage | "fill" | string;
 
-  declare type BorderImageSourceProperty = All | "none" | string;
+  declare type BorderImageSourceProperty = Globals | "none" | string;
 
-  declare type BorderImageWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | number;
+  declare type BorderImageWidthProperty<TLength> = Globals | LengthPercentage<TLength> | "auto" | number;
 
-  declare type BorderLeftColorProperty = All | Color;
+  declare type BorderLeftColorProperty = Globals | Color;
 
-  declare type BorderLeftStyleProperty = All | BrStyle;
+  declare type BorderLeftStyleProperty = Globals | BrStyle;
 
-  declare type BorderLeftWidthProperty<TLength> = All | BrWidth<TLength>;
+  declare type BorderLeftWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-  declare type BorderRightColorProperty = All | Color;
+  declare type BorderRightColorProperty = Globals | Color;
 
-  declare type BorderRightStyleProperty = All | BrStyle;
+  declare type BorderRightStyleProperty = Globals | BrStyle;
 
-  declare type BorderRightWidthProperty<TLength> = All | BrWidth<TLength>;
+  declare type BorderRightWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-  declare type BorderSpacingProperty<TLength> = All | TLength | string;
+  declare type BorderSpacingProperty<TLength> = Globals | TLength | string;
 
-  declare type BorderTopColorProperty = All | Color;
+  declare type BorderTopColorProperty = Globals | Color;
 
-  declare type BorderTopLeftRadiusProperty<TLength> = All | LengthPercentage<TLength>;
+  declare type BorderTopLeftRadiusProperty<TLength> = Globals | LengthPercentage<TLength>;
 
-  declare type BorderTopRightRadiusProperty<TLength> = All | LengthPercentage<TLength>;
+  declare type BorderTopRightRadiusProperty<TLength> = Globals | LengthPercentage<TLength>;
 
-  declare type BorderTopStyleProperty = All | BrStyle;
+  declare type BorderTopStyleProperty = Globals | BrStyle;
 
-  declare type BorderTopWidthProperty<TLength> = All | BrWidth<TLength>;
+  declare type BorderTopWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-  declare type BottomProperty<TLength> = All | TLength | "auto" | string;
+  declare type BottomProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type BoxAlignProperty = All | "baseline" | "center" | "end" | "start" | "stretch";
+  declare type BoxAlignProperty = Globals | "baseline" | "center" | "end" | "start" | "stretch";
 
-  declare type BoxDecorationBreakProperty = All | "clone" | "slice";
+  declare type BoxDecorationBreakProperty = Globals | "clone" | "slice";
 
-  declare type BoxDirectionProperty = All | "inherit" | "normal" | "reverse";
+  declare type BoxDirectionProperty = Globals | "inherit" | "normal" | "reverse";
 
-  declare type BoxLinesProperty = All | "multiple" | "single";
+  declare type BoxLinesProperty = Globals | "multiple" | "single";
 
-  declare type BoxOrientProperty = All | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
+  declare type BoxOrientProperty = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
 
-  declare type BoxPackProperty = All | "center" | "end" | "justify" | "start";
+  declare type BoxPackProperty = Globals | "center" | "end" | "justify" | "start";
 
-  declare type BoxShadowProperty<TLength> = All | Shadow<TLength> | "none";
+  declare type BoxShadowProperty<TLength> = Globals | Shadow<TLength> | "none";
 
-  declare type BoxSizingProperty = All | "border-box" | "content-box";
+  declare type BoxSizingProperty = Globals | "border-box" | "content-box";
 
-  declare type BreakAfterProperty = All | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
+  declare type BreakAfterProperty =
+    | Globals
+    | "auto"
+    | "avoid"
+    | "avoid-column"
+    | "avoid-page"
+    | "avoid-region"
+    | "column"
+    | "left"
+    | "page"
+    | "recto"
+    | "region"
+    | "right"
+    | "verso";
 
-  declare type BreakBeforeProperty = All | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
+  declare type BreakBeforeProperty =
+    | Globals
+    | "auto"
+    | "avoid"
+    | "avoid-column"
+    | "avoid-page"
+    | "avoid-region"
+    | "column"
+    | "left"
+    | "page"
+    | "recto"
+    | "region"
+    | "right"
+    | "verso";
 
-  declare type BreakInsideProperty = All | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region";
+  declare type BreakInsideProperty = Globals | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region";
 
-  declare type CaptionSideProperty = All | "block-end" | "block-start" | "bottom" | "inline-end" | "inline-start" | "top";
+  declare type CaptionSideProperty = Globals | "block-end" | "block-start" | "bottom" | "inline-end" | "inline-start" | "top";
 
-  declare type CaretColorProperty = All | Color | "auto";
+  declare type CaretColorProperty = Globals | Color | "auto";
 
-  declare type ClearProperty = All | "both" | "inline-end" | "inline-start" | "left" | "none" | "right";
+  declare type ClearProperty = Globals | "both" | "inline-end" | "inline-start" | "left" | "none" | "right";
 
-  declare type ClipProperty = All | "auto" | string;
+  declare type ClipProperty = Globals | "auto" | string;
 
-  declare type ClipPathProperty = All | GeometryBox | "none" | string;
+  declare type ClipPathProperty = Globals | GeometryBox | "none" | string;
 
-  declare type ColorProperty = All | Color;
+  declare type ColorProperty = Globals | Color;
 
-  declare type ColumnCountProperty = All | "auto" | number;
+  declare type ColumnCountProperty = Globals | "auto" | number;
 
-  declare type ColumnFillProperty = All | "auto" | "balance" | "balance-all";
+  declare type ColumnFillProperty = Globals | "auto" | "balance" | "balance-all";
 
-  declare type ColumnGapProperty<TLength> = All | LengthPercentage<TLength> | "normal";
+  declare type ColumnGapProperty<TLength> = Globals | LengthPercentage<TLength> | "normal";
 
-  declare type ColumnRuleColorProperty = All | Color;
+  declare type ColumnRuleColorProperty = Globals | Color;
 
-  declare type ColumnSpanProperty = All | "all" | "none";
+  declare type ColumnSpanProperty = Globals | "all" | "none";
 
-  declare type ColumnWidthProperty<TLength> = All | TLength | "auto";
+  declare type ColumnWidthProperty<TLength> = Globals | TLength | "auto";
 
-  declare type ContainProperty = All | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
+  declare type ContainProperty = Globals | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
 
-  declare type ContentProperty = All | ContentList | "none" | "normal" | string;
+  declare type ContentProperty = Globals | ContentList | "none" | "normal" | string;
 
-  declare type CounterIncrementProperty = All | "none" | string;
+  declare type CounterIncrementProperty = Globals | "none" | string;
 
-  declare type CounterResetProperty = All | "none" | string;
+  declare type CounterResetProperty = Globals | "none" | string;
 
   declare type CursorProperty =
-    | All
+    | Globals
     | "alias"
     | "all-scroll"
     | "auto"
@@ -2052,16 +2078,16 @@ declare module "csstype" {
     | "zoom-out"
     | string;
 
-  declare type DirectionProperty = All | "ltr" | "rtl";
+  declare type DirectionProperty = Globals | "ltr" | "rtl";
 
-  declare type DisplayProperty = All | DisplayOutside | DisplayInside | DisplayListitem | DisplayInternal | DisplayBox | DisplayLegacy | string;
+  declare type DisplayProperty = Globals | DisplayOutside | DisplayInside | DisplayListitem | DisplayInternal | DisplayBox | DisplayLegacy | string;
 
-  declare type DisplayInsideProperty = All | "auto" | "block" | "flex" | "grid" | "ruby" | "table";
+  declare type DisplayInsideProperty = Globals | "auto" | "block" | "flex" | "grid" | "ruby" | "table";
 
-  declare type DisplayListProperty = All | "list-item" | "none";
+  declare type DisplayListProperty = Globals | "list-item" | "none";
 
   declare type DisplayOutsideProperty =
-    | All
+    | Globals
     | "block-level"
     | "contents"
     | "inline-level"
@@ -2080,34 +2106,34 @@ declare module "csstype" {
     | "table-row"
     | "table-row-group";
 
-  declare type EmptyCellsProperty = All | "hide" | "show";
+  declare type EmptyCellsProperty = Globals | "hide" | "show";
 
-  declare type FilterProperty = All | "none" | string;
+  declare type FilterProperty = Globals | "none" | string;
 
-  declare type FlexBasisProperty = All | "content" | string;
+  declare type FlexBasisProperty = Globals | "content" | string;
 
-  declare type FlexDirectionProperty = All | "column" | "column-reverse" | "row" | "row-reverse";
+  declare type FlexDirectionProperty = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
-  declare type FlexWrapProperty = All | "nowrap" | "wrap" | "wrap-reverse";
+  declare type FlexWrapProperty = Globals | "nowrap" | "wrap" | "wrap-reverse";
 
-  declare type FloatProperty = All | "inline-end" | "inline-start" | "left" | "none" | "right";
+  declare type FloatProperty = Globals | "inline-end" | "inline-start" | "left" | "none" | "right";
 
-  declare type FontFamilyProperty = All | GenericFamily | string;
+  declare type FontFamilyProperty = Globals | GenericFamily | string;
 
-  declare type FontFeatureSettingsProperty = All | "normal" | string;
+  declare type FontFeatureSettingsProperty = Globals | "normal" | string;
 
-  declare type FontKerningProperty = All | "auto" | "none" | "normal";
+  declare type FontKerningProperty = Globals | "auto" | "none" | "normal";
 
-  declare type FontLanguageOverrideProperty = All | "normal" | string;
+  declare type FontLanguageOverrideProperty = Globals | "normal" | string;
 
-  declare type FontVariationSettingsProperty = All | "normal" | string;
+  declare type FontVariationSettingsProperty = Globals | "normal" | string;
 
-  declare type FontSizeProperty<TLength> = All | AbsoluteSize | RelativeSize | LengthPercentage<TLength>;
+  declare type FontSizeProperty<TLength> = Globals | AbsoluteSize | RelativeSize | LengthPercentage<TLength>;
 
-  declare type FontSizeAdjustProperty = All | "none" | number;
+  declare type FontSizeAdjustProperty = Globals | "none" | number;
 
   declare type FontStretchProperty =
-    | All
+    | Globals
     | "condensed"
     | "expanded"
     | "extra-condensed"
@@ -2118,12 +2144,12 @@ declare module "csstype" {
     | "ultra-condensed"
     | "ultra-expanded";
 
-  declare type FontStyleProperty = All | "italic" | "normal" | "oblique";
+  declare type FontStyleProperty = Globals | "italic" | "normal" | "oblique";
 
-  declare type FontSynthesisProperty = All | "none" | "style" | "weight" | string;
+  declare type FontSynthesisProperty = Globals | "none" | "style" | "weight" | string;
 
   declare type FontVariantProperty =
-    | All
+    | Globals
     | NumericFigureValues
     | EastAsianWidthValues
     | DiscretionaryLigValues
@@ -2147,342 +2173,354 @@ declare module "csstype" {
     | "unicase"
     | string;
 
-  declare type FontVariantAlternatesProperty = All | "historical-forms" | "normal" | string;
+  declare type FontVariantAlternatesProperty = Globals | "historical-forms" | "normal" | string;
 
-  declare type FontVariantCapsProperty = All | "all-petite-caps" | "all-small-caps" | "normal" | "petite-caps" | "small-caps" | "titling-caps" | "unicase";
+  declare type FontVariantCapsProperty = Globals | "all-petite-caps" | "all-small-caps" | "normal" | "petite-caps" | "small-caps" | "titling-caps" | "unicase";
 
-  declare type FontVariantEastAsianProperty = All | EastAsianVariantValues | EastAsianWidthValues | "normal" | "ruby" | string;
+  declare type FontVariantEastAsianProperty = Globals | EastAsianVariantValues | EastAsianWidthValues | "normal" | "ruby" | string;
 
-  declare type FontVariantLigaturesProperty = All | CommonLigValues | DiscretionaryLigValues | HistoricalLigValues | ContextualAltValues | "none" | "normal" | string;
+  declare type FontVariantLigaturesProperty = Globals | CommonLigValues | DiscretionaryLigValues | HistoricalLigValues | ContextualAltValues | "none" | "normal" | string;
 
-  declare type FontVariantNumericProperty = All | NumericFigureValues | NumericSpacingValues | NumericFractionValues | "normal" | "ordinal" | "slashed-zero" | string;
+  declare type FontVariantNumericProperty = Globals | NumericFigureValues | NumericSpacingValues | NumericFractionValues | "normal" | "ordinal" | "slashed-zero" | string;
 
-  declare type FontVariantPositionProperty = All | "normal" | "sub" | "super";
+  declare type FontVariantPositionProperty = Globals | "normal" | "sub" | "super";
 
-  declare type FontWeightProperty = All | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+  declare type FontWeightProperty = Globals | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
-  declare type GridAutoColumnsProperty<TLength> = All | TrackSize<TLength>;
+  declare type GridAutoColumnsProperty<TLength> = Globals | TrackSize<TLength>;
 
-  declare type GridAutoFlowProperty = All | "column" | "dense" | "row" | string;
+  declare type GridAutoFlowProperty = Globals | "column" | "dense" | "row" | string;
 
-  declare type GridAutoRowsProperty<TLength> = All | TrackSize<TLength>;
+  declare type GridAutoRowsProperty<TLength> = Globals | TrackSize<TLength>;
 
-  declare type GridColumnEndProperty = All | GridLine;
+  declare type GridColumnEndProperty = Globals | GridLine;
 
-  declare type GridColumnGapProperty<TLength> = All | LengthPercentage<TLength>;
+  declare type GridColumnGapProperty<TLength> = Globals | LengthPercentage<TLength>;
 
-  declare type GridColumnStartProperty = All | GridLine;
+  declare type GridColumnStartProperty = Globals | GridLine;
 
-  declare type GridRowEndProperty = All | GridLine;
+  declare type GridRowEndProperty = Globals | GridLine;
 
-  declare type GridRowGapProperty<TLength> = All | LengthPercentage<TLength>;
+  declare type GridRowGapProperty<TLength> = Globals | LengthPercentage<TLength>;
 
-  declare type GridRowStartProperty = All | GridLine;
+  declare type GridRowStartProperty = Globals | GridLine;
 
-  declare type GridTemplateAreasProperty = All | "none" | string;
+  declare type GridTemplateAreasProperty = Globals | "none" | string;
 
-  declare type GridTemplateColumnsProperty<TLength> = All | TrackList<TLength> | "none" | string;
+  declare type GridTemplateColumnsProperty<TLength> = Globals | TrackList<TLength> | "none" | string;
 
-  declare type GridTemplateRowsProperty<TLength> = All | TrackList<TLength> | "none" | string;
+  declare type GridTemplateRowsProperty<TLength> = Globals | TrackList<TLength> | "none" | string;
 
-  declare type HangingPunctuationProperty = All | "allow-end" | "first" | "force-end" | "last" | "none" | string;
+  declare type HangingPunctuationProperty = Globals | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
-  declare type HeightProperty<TLength> = All | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+  declare type HeightProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
 
-  declare type HyphensProperty = All | "auto" | "manual" | "none";
+  declare type HyphensProperty = Globals | "auto" | "manual" | "none";
 
-  declare type ImageOrientationProperty = All | "flip" | "from-image" | string;
+  declare type ImageOrientationProperty = Globals | "flip" | "from-image" | string;
 
-  declare type ImageRenderingProperty = All | "auto" | "crisp-edges" | "pixelated";
+  declare type ImageRenderingProperty = Globals | "auto" | "crisp-edges" | "pixelated";
 
-  declare type ImageResolutionProperty = All | "from-image" | string;
+  declare type ImageResolutionProperty = Globals | "from-image" | string;
 
-  declare type ImeModeProperty = All | "active" | "auto" | "disabled" | "inactive" | "normal";
+  declare type ImeModeProperty = Globals | "active" | "auto" | "disabled" | "inactive" | "normal";
 
-  declare type InitialLetterProperty = All | "normal" | string | number;
+  declare type InitialLetterProperty = Globals | "normal" | string | number;
 
-  declare type InitialLetterAlignProperty = All | "alphabetic" | "auto" | "hanging" | "ideographic";
+  declare type InitialLetterAlignProperty = Globals | "alphabetic" | "auto" | "hanging" | "ideographic";
 
-  declare type IsolationProperty = All | "auto" | "isolate";
+  declare type IsolationProperty = Globals | "auto" | "isolate";
 
-  declare type JustifyContentProperty = All | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly";
+  declare type JustifyContentProperty = Globals | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly";
 
-  declare type LeftProperty<TLength> = All | TLength | "auto" | string;
+  declare type LeftProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type LetterSpacingProperty<TLength> = All | TLength | "normal";
+  declare type LetterSpacingProperty<TLength> = Globals | TLength | "normal";
 
-  declare type LineBreakProperty = All | "auto" | "loose" | "normal" | "strict";
+  declare type LineBreakProperty = Globals | "auto" | "loose" | "normal" | "strict";
 
-  declare type LineHeightProperty<TLength> = All | TLength | "normal" | string | number;
+  declare type LineHeightProperty<TLength> = Globals | TLength | "normal" | string | number;
 
-  declare type LineHeightStepProperty<TLength> = All | TLength | "none";
+  declare type LineHeightStepProperty<TLength> = Globals | TLength | "none";
 
-  declare type ListStyleImageProperty = All | "none" | string;
+  declare type ListStyleImageProperty = Globals | "none" | string;
 
-  declare type ListStylePositionProperty = All | "inside" | "outside";
+  declare type ListStylePositionProperty = Globals | "inside" | "outside";
 
-  declare type ListStyleTypeProperty = All | "none" | string;
+  declare type ListStyleTypeProperty = Globals | "none" | string;
 
-  declare type MarginBottomProperty<TLength> = All | TLength | "auto" | string;
+  declare type MarginBottomProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type MarginLeftProperty<TLength> = All | TLength | "auto" | string;
+  declare type MarginLeftProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type MarginRightProperty<TLength> = All | TLength | "auto" | string;
+  declare type MarginRightProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type MarginTopProperty<TLength> = All | TLength | "auto" | string;
+  declare type MarginTopProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type MaskBorderModeProperty = All | "alpha" | "luminance";
+  declare type MaskBorderModeProperty = Globals | "alpha" | "luminance";
 
-  declare type MaskBorderOutsetProperty<TLength> = All | TLength | number;
+  declare type MaskBorderOutsetProperty<TLength> = Globals | TLength | number;
 
-  declare type MaskBorderRepeatProperty = All | "repeat" | "round" | "space" | "stretch";
+  declare type MaskBorderRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch";
 
-  declare type MaskBorderSliceProperty = All | NumberPercentage | "fill" | string;
+  declare type MaskBorderSliceProperty = Globals | NumberPercentage | "fill" | string;
 
-  declare type MaskBorderSourceProperty = All | "none" | string;
+  declare type MaskBorderSourceProperty = Globals | "none" | string;
 
-  declare type MaskBorderWidthProperty<TLength> = All | LengthPercentage<TLength> | "auto" | number;
+  declare type MaskBorderWidthProperty<TLength> = Globals | LengthPercentage<TLength> | "auto" | number;
 
-  declare type MaskClipProperty = All | GeometryBox | "no-clip" | string;
+  declare type MaskClipProperty = Globals | GeometryBox | "no-clip" | string;
 
-  declare type MaskCompositeProperty = All | CompositingOperator;
+  declare type MaskCompositeProperty = Globals | CompositingOperator;
 
-  declare type MaskImageProperty = All | MaskReference;
+  declare type MaskImageProperty = Globals | MaskReference;
 
-  declare type MaskModeProperty = All | MaskingMode;
+  declare type MaskModeProperty = Globals | MaskingMode;
 
-  declare type MaskOriginProperty = All | GeometryBox;
+  declare type MaskOriginProperty = Globals | GeometryBox;
 
-  declare type MaskPositionProperty<TLength> = All | Position<TLength>;
+  declare type MaskPositionProperty<TLength> = Globals | Position<TLength>;
 
-  declare type MaskRepeatProperty = All | RepeatStyle;
+  declare type MaskRepeatProperty = Globals | RepeatStyle;
 
-  declare type MaskSizeProperty<TLength> = All | BgSize<TLength>;
+  declare type MaskSizeProperty<TLength> = Globals | BgSize<TLength>;
 
-  declare type MaskTypeProperty = All | "alpha" | "luminance";
+  declare type MaskTypeProperty = Globals | "alpha" | "luminance";
 
-  declare type MaxHeightProperty<TLength> = All | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
+  declare type MaxHeightProperty<TLength> = Globals | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
-  declare type MaxWidthProperty<TLength> = All | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
+  declare type MaxWidthProperty<TLength> = Globals | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
-  declare type MinHeightProperty<TLength> = All | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
+  declare type MinHeightProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
 
-  declare type MinWidthProperty<TLength> = All | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
+  declare type MinWidthProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
 
-  declare type MixBlendModeProperty = All | BlendMode;
+  declare type MixBlendModeProperty = Globals | BlendMode;
 
-  declare type ObjectFitProperty = All | "contain" | "cover" | "fill" | "none" | "scale-down";
+  declare type ObjectFitProperty = Globals | "contain" | "cover" | "fill" | "none" | "scale-down";
 
-  declare type ObjectPositionProperty<TLength> = All | Position<TLength>;
+  declare type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 
-  declare type OffsetAnchorProperty<TLength> = All | Position<TLength> | "auto";
+  declare type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
 
-  declare type OffsetDistanceProperty<TLength> = All | LengthPercentage<TLength>;
+  declare type OffsetDistanceProperty<TLength> = Globals | LengthPercentage<TLength>;
 
-  declare type OffsetPathProperty = All | GeometryBox | "none" | string;
+  declare type OffsetPathProperty = Globals | GeometryBox | "none" | string;
 
-  declare type OffsetPositionProperty<TLength> = All | Position<TLength> | "auto";
+  declare type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
 
-  declare type OffsetRotateProperty = All | "auto" | "reverse" | string;
+  declare type OffsetRotateProperty = Globals | "auto" | "reverse" | string;
 
-  declare type OutlineColorProperty = All | Color | "invert";
+  declare type OutlineColorProperty = Globals | Color | "invert";
 
-  declare type OutlineOffsetProperty<TLength> = All | TLength;
+  declare type OutlineOffsetProperty<TLength> = Globals | TLength;
 
-  declare type OutlineStyleProperty = All | BrStyle | "auto";
+  declare type OutlineStyleProperty = Globals | BrStyle | "auto";
 
-  declare type OutlineWidthProperty<TLength> = All | BrWidth<TLength>;
+  declare type OutlineWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-  declare type OverflowProperty = All | "auto" | "hidden" | "scroll" | "visible";
+  declare type OverflowProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
-  declare type OverflowClipBoxProperty = All | "content-box" | "padding-box";
+  declare type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
-  declare type OverflowWrapProperty = All | "break-word" | "normal";
+  declare type OverflowWrapProperty = Globals | "break-word" | "normal";
 
-  declare type OverflowXProperty = All | "auto" | "hidden" | "scroll" | "visible";
+  declare type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
-  declare type OverflowYProperty = All | "auto" | "hidden" | "scroll" | "visible";
+  declare type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
-  declare type PaddingBottomProperty<TLength> = All | TLength | string;
+  declare type PaddingBottomProperty<TLength> = Globals | TLength | string;
 
-  declare type PaddingLeftProperty<TLength> = All | TLength | string;
+  declare type PaddingLeftProperty<TLength> = Globals | TLength | string;
 
-  declare type PaddingRightProperty<TLength> = All | TLength | string;
+  declare type PaddingRightProperty<TLength> = Globals | TLength | string;
 
-  declare type PaddingTopProperty<TLength> = All | TLength | string;
+  declare type PaddingTopProperty<TLength> = Globals | TLength | string;
 
-  declare type PageBreakAfterProperty = All | "always" | "auto" | "avoid" | "left" | "right";
+  declare type PageBreakAfterProperty = Globals | "always" | "auto" | "avoid" | "left" | "right";
 
-  declare type PageBreakBeforeProperty = All | "always" | "auto" | "avoid" | "left" | "right";
+  declare type PageBreakBeforeProperty = Globals | "always" | "auto" | "avoid" | "left" | "right";
 
-  declare type PageBreakInsideProperty = All | "auto" | "avoid";
+  declare type PageBreakInsideProperty = Globals | "auto" | "avoid";
 
-  declare type PerspectiveProperty<TLength> = All | TLength | "none";
+  declare type PerspectiveProperty<TLength> = Globals | TLength | "none";
 
-  declare type PerspectiveOriginProperty<TLength> = All | Position<TLength>;
+  declare type PerspectiveOriginProperty<TLength> = Globals | Position<TLength>;
 
-  declare type PointerEventsProperty = All | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
+  declare type PointerEventsProperty =
+    | Globals
+    | "all"
+    | "auto"
+    | "fill"
+    | "inherit"
+    | "none"
+    | "painted"
+    | "stroke"
+    | "visible"
+    | "visibleFill"
+    | "visiblePainted"
+    | "visibleStroke";
 
-  declare type PositionProperty = All | "absolute" | "fixed" | "relative" | "static" | "sticky";
+  declare type PositionProperty = Globals | "absolute" | "fixed" | "relative" | "static" | "sticky";
 
-  declare type QuotesProperty = All | "none" | string;
+  declare type QuotesProperty = Globals | "none" | string;
 
-  declare type ResizeProperty = All | "both" | "horizontal" | "none" | "vertical";
+  declare type ResizeProperty = Globals | "both" | "horizontal" | "none" | "vertical";
 
-  declare type RightProperty<TLength> = All | TLength | "auto" | string;
+  declare type RightProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type RubyAlignProperty = All | "center" | "space-around" | "space-between" | "start";
+  declare type RubyAlignProperty = Globals | "center" | "space-around" | "space-between" | "start";
 
-  declare type RubyMergeProperty = All | "auto" | "collapse" | "separate";
+  declare type RubyMergeProperty = Globals | "auto" | "collapse" | "separate";
 
-  declare type RubyPositionProperty = All | "inter-character" | "over" | "under";
+  declare type RubyPositionProperty = Globals | "inter-character" | "over" | "under";
 
-  declare type ScrollBehaviorProperty = All | "auto" | "smooth";
+  declare type ScrollBehaviorProperty = Globals | "auto" | "smooth";
 
-  declare type ScrollSnapCoordinateProperty<TLength> = All | Position<TLength> | "none";
+  declare type ScrollSnapCoordinateProperty<TLength> = Globals | Position<TLength> | "none";
 
-  declare type ScrollSnapDestinationProperty<TLength> = All | Position<TLength>;
+  declare type ScrollSnapDestinationProperty<TLength> = Globals | Position<TLength>;
 
-  declare type ScrollSnapPointsXProperty = All | "none" | string;
+  declare type ScrollSnapPointsXProperty = Globals | "none" | string;
 
-  declare type ScrollSnapPointsYProperty = All | "none" | string;
+  declare type ScrollSnapPointsYProperty = Globals | "none" | string;
 
-  declare type ScrollSnapTypeProperty = All | "mandatory" | "none" | "proximity";
+  declare type ScrollSnapTypeProperty = Globals | "mandatory" | "none" | "proximity";
 
-  declare type ScrollSnapTypeXProperty = All | "mandatory" | "none" | "proximity";
+  declare type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximity";
 
-  declare type ScrollSnapTypeYProperty = All | "mandatory" | "none" | "proximity";
+  declare type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximity";
 
-  declare type ShapeMarginProperty<TLength> = All | LengthPercentage<TLength>;
+  declare type ShapeMarginProperty<TLength> = Globals | LengthPercentage<TLength>;
 
-  declare type ShapeOutsideProperty = All | ShapeBox | "none" | string;
+  declare type ShapeOutsideProperty = Globals | ShapeBox | "none" | string;
 
-  declare type TabSizeProperty<TLength> = All | TLength | number;
+  declare type TabSizeProperty<TLength> = Globals | TLength | number;
 
-  declare type TableLayoutProperty = All | "auto" | "fixed";
+  declare type TableLayoutProperty = Globals | "auto" | "fixed";
 
-  declare type TextAlignProperty = All | "center" | "end" | "justify" | "left" | "match-parent" | "right" | "start";
+  declare type TextAlignProperty = Globals | "center" | "end" | "justify" | "left" | "match-parent" | "right" | "start";
 
-  declare type TextAlignLastProperty = All | "auto" | "center" | "end" | "justify" | "left" | "right" | "start";
+  declare type TextAlignLastProperty = Globals | "auto" | "center" | "end" | "justify" | "left" | "right" | "start";
 
-  declare type TextCombineUprightProperty = All | "all" | "digits" | "none" | string;
+  declare type TextCombineUprightProperty = Globals | "all" | "digits" | "none" | string;
 
-  declare type TextDecorationColorProperty = All | Color;
+  declare type TextDecorationColorProperty = Globals | Color;
 
-  declare type TextDecorationLineProperty = All | "blink" | "line-through" | "none" | "overline" | "underline" | string;
+  declare type TextDecorationLineProperty = Globals | "blink" | "line-through" | "none" | "overline" | "underline" | string;
 
-  declare type TextDecorationSkipProperty = All | "box-decoration" | "edges" | "leading-spaces" | "none" | "objects" | "spaces" | "trailing-spaces" | string;
+  declare type TextDecorationSkipProperty = Globals | "box-decoration" | "edges" | "leading-spaces" | "none" | "objects" | "spaces" | "trailing-spaces" | string;
 
-  declare type TextDecorationSkipInkProperty = All | "auto" | "none";
+  declare type TextDecorationSkipInkProperty = Globals | "auto" | "none";
 
-  declare type TextDecorationStyleProperty = All | "dashed" | "dotted" | "double" | "solid" | "wavy";
+  declare type TextDecorationStyleProperty = Globals | "dashed" | "dotted" | "double" | "solid" | "wavy";
 
-  declare type TextEmphasisColorProperty = All | Color;
+  declare type TextEmphasisColorProperty = Globals | Color;
 
-  declare type TextEmphasisStyleProperty = All | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
+  declare type TextEmphasisStyleProperty = Globals | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
-  declare type TextIndentProperty<TLength> = All | LengthPercentage<TLength> | string;
+  declare type TextIndentProperty<TLength> = Globals | LengthPercentage<TLength> | string;
 
-  declare type TextJustifyProperty = All | "auto" | "inter-character" | "inter-word" | "none";
+  declare type TextJustifyProperty = Globals | "auto" | "inter-character" | "inter-word" | "none";
 
-  declare type TextOrientationProperty = All | "mixed" | "sideways" | "upright";
+  declare type TextOrientationProperty = Globals | "mixed" | "sideways" | "upright";
 
-  declare type TextOverflowProperty = All | "clip" | "ellipsis" | string;
+  declare type TextOverflowProperty = Globals | "clip" | "ellipsis" | string;
 
-  declare type TextRenderingProperty = All | "auto" | "geometricPrecision" | "optimizeLegibility" | "optimizeSpeed";
+  declare type TextRenderingProperty = Globals | "auto" | "geometricPrecision" | "optimizeLegibility" | "optimizeSpeed";
 
-  declare type TextShadowProperty<TLength> = All | ShadowT<TLength> | "none";
+  declare type TextShadowProperty<TLength> = Globals | ShadowT<TLength> | "none";
 
-  declare type TextSizeAdjustProperty = All | "auto" | "none" | string;
+  declare type TextSizeAdjustProperty = Globals | "auto" | "none" | string;
 
-  declare type TextTransformProperty = All | "capitalize" | "full-width" | "lowercase" | "none" | "uppercase";
+  declare type TextTransformProperty = Globals | "capitalize" | "full-width" | "lowercase" | "none" | "uppercase";
 
-  declare type TextUnderlinePositionProperty = All | "auto" | "left" | "right" | "under" | string;
+  declare type TextUnderlinePositionProperty = Globals | "auto" | "left" | "right" | "under" | string;
 
-  declare type TopProperty<TLength> = All | TLength | "auto" | string;
+  declare type TopProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type TouchActionProperty = All | "auto" | "manipulation" | "none" | "pan-down" | "pan-left" | "pan-right" | "pan-up" | "pan-x" | "pan-y" | "pinch-zoom" | string;
+  declare type TouchActionProperty = Globals | "auto" | "manipulation" | "none" | "pan-down" | "pan-left" | "pan-right" | "pan-up" | "pan-x" | "pan-y" | "pinch-zoom" | string;
 
-  declare type TransformProperty = All | "none" | string;
+  declare type TransformProperty = Globals | "none" | string;
 
-  declare type TransformBoxProperty = All | "border-box" | "fill-box" | "view-box";
+  declare type TransformBoxProperty = Globals | "border-box" | "fill-box" | "view-box";
 
-  declare type TransformOriginProperty<TLength> = All | LengthPercentage<TLength> | "bottom" | "center" | "left" | "right" | "top" | string;
+  declare type TransformOriginProperty<TLength> = Globals | LengthPercentage<TLength> | "bottom" | "center" | "left" | "right" | "top" | string;
 
-  declare type TransformStyleProperty = All | "flat" | "preserve-3d";
+  declare type TransformStyleProperty = Globals | "flat" | "preserve-3d";
 
-  declare type TransitionPropertyProperty = All | SingleTransitionProperty | "none";
+  declare type TransitionPropertyProperty = Globals | SingleTransitionProperty | "none";
 
-  declare type TransitionTimingFunctionProperty = All | SingleTransitionTimingFunction;
+  declare type TransitionTimingFunctionProperty = Globals | SingleTransitionTimingFunction;
 
-  declare type UnicodeBidiProperty = All | "bidi-override" | "embed" | "isolate" | "isolate-override" | "normal" | "plaintext";
+  declare type UnicodeBidiProperty = Globals | "bidi-override" | "embed" | "isolate" | "isolate-override" | "normal" | "plaintext";
 
-  declare type UserSelectProperty = All | "all" | "auto" | "contain" | "none" | "text";
+  declare type UserSelectProperty = Globals | "all" | "auto" | "contain" | "none" | "text";
 
-  declare type VerticalAlignProperty<TLength> = All | TLength | "baseline" | "bottom" | "middle" | "sub" | "super" | "text-bottom" | "text-top" | "top" | string;
+  declare type VerticalAlignProperty<TLength> = Globals | TLength | "baseline" | "bottom" | "middle" | "sub" | "super" | "text-bottom" | "text-top" | "top" | string;
 
-  declare type VisibilityProperty = All | "collapse" | "hidden" | "visible";
+  declare type VisibilityProperty = Globals | "collapse" | "hidden" | "visible";
 
-  declare type WhiteSpaceProperty = All | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+  declare type WhiteSpaceProperty = Globals | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 
-  declare type WidthProperty<TLength> = All | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+  declare type WidthProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
 
-  declare type WillChangeProperty = All | AnimateableFeature | "auto";
+  declare type WillChangeProperty = Globals | AnimateableFeature | "auto";
 
-  declare type WordBreakProperty = All | "break-all" | "keep-all" | "normal";
+  declare type WordBreakProperty = Globals | "break-all" | "keep-all" | "normal";
 
-  declare type WordSpacingProperty<TLength> = All | LengthPercentage<TLength> | "normal";
+  declare type WordSpacingProperty<TLength> = Globals | LengthPercentage<TLength> | "normal";
 
-  declare type WordWrapProperty = All | "break-word" | "normal";
+  declare type WordWrapProperty = Globals | "break-word" | "normal";
 
-  declare type WritingModeProperty = All | "horizontal-tb" | "sideways-lr" | "sideways-rl" | "vertical-lr" | "vertical-rl";
+  declare type WritingModeProperty = Globals | "horizontal-tb" | "sideways-lr" | "sideways-rl" | "vertical-lr" | "vertical-rl";
 
-  declare type ZIndexProperty = All | "auto" | number;
+  declare type ZIndexProperty = Globals | "auto" | number;
 
-  declare type AnimationProperty = All | SingleAnimation;
+  declare type AnimationProperty = Globals | SingleAnimation;
 
-  declare type BackgroundProperty<TLength> = All | FinalBgLayer<TLength> | string;
+  declare type BackgroundProperty<TLength> = Globals | FinalBgLayer<TLength> | string;
 
-  declare type BorderProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
+  declare type BorderProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-  declare type BorderBottomProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
+  declare type BorderBottomProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-  declare type BorderColorProperty = All | Color;
+  declare type BorderColorProperty = Globals | Color;
 
-  declare type BorderLeftProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
+  declare type BorderLeftProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-  declare type BorderRadiusProperty<TLength> = All | LengthPercentage<TLength> | string;
+  declare type BorderRadiusProperty<TLength> = Globals | LengthPercentage<TLength> | string;
 
-  declare type BorderRightProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
+  declare type BorderRightProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-  declare type BorderStyleProperty = All | BrStyle;
+  declare type BorderStyleProperty = Globals | BrStyle;
 
-  declare type BorderTopProperty<TLength> = All | BrWidth<TLength> | BrStyle | Color | string;
+  declare type BorderTopProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-  declare type BorderWidthProperty<TLength> = All | BrWidth<TLength>;
+  declare type BorderWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-  declare type FlexProperty = All | "none" | string;
+  declare type FlexProperty = Globals | "none" | string;
 
-  declare type FontProperty = All | "caption" | "icon" | "menu" | "message-box" | "small-caption" | "status-bar" | string;
+  declare type FontProperty = Globals | "caption" | "icon" | "menu" | "message-box" | "small-caption" | "status-bar" | string;
 
-  declare type GridColumnProperty = All | GridLine | string;
+  declare type GridColumnProperty = Globals | GridLine | string;
 
-  declare type GridRowProperty = All | GridLine | string;
+  declare type GridRowProperty = Globals | GridLine | string;
 
-  declare type GridTemplateProperty = All | "none" | string;
+  declare type GridTemplateProperty = Globals | "none" | string;
 
-  declare type MarginProperty<TLength> = All | TLength | "auto" | string;
+  declare type MarginProperty<TLength> = Globals | TLength | "auto" | string;
 
-  declare type MaskProperty<TLength> = All | MaskLayer<TLength>;
+  declare type MaskProperty<TLength> = Globals | MaskLayer<TLength>;
 
-  declare type PaddingProperty<TLength> = All | TLength | string;
+  declare type PaddingProperty<TLength> = Globals | TLength | string;
 
-  declare type TransitionProperty = All | SingleTransition;
+  declare type TransitionProperty = Globals | SingleTransition;
 
-  declare type MsOverflowStyleProperty = All | "-ms-autohiding-scrollbar" | "auto" | "none" | "scrollbar";
+  declare type MsOverflowStyleProperty = Globals | "-ms-autohiding-scrollbar" | "auto" | "none" | "scrollbar";
 
   declare type MozAppearanceProperty =
-    | All
+    | Globals
     | "-moz-mac-unified-toolbar"
     | "-moz-win-borderless-glass"
     | "-moz-win-browsertabbar-toolbox"
@@ -2594,73 +2632,73 @@ declare module "csstype" {
     | "treetwistyopen"
     | "treeview";
 
-  declare type MozBindingProperty = All | "none" | string;
+  declare type MozBindingProperty = Globals | "none" | string;
 
-  declare type MozBorderBottomColorsProperty = All | Color | "none" | string;
+  declare type MozBorderBottomColorsProperty = Globals | Color | "none" | string;
 
-  declare type MozBorderLeftColorsProperty = All | Color | "none" | string;
+  declare type MozBorderLeftColorsProperty = Globals | Color | "none" | string;
 
-  declare type MozBorderRightColorsProperty = All | Color | "none" | string;
+  declare type MozBorderRightColorsProperty = Globals | Color | "none" | string;
 
-  declare type MozBorderTopColorsProperty = All | Color | "none" | string;
+  declare type MozBorderTopColorsProperty = Globals | Color | "none" | string;
 
-  declare type MozContextPropertiesProperty = All | "fill" | "fill-opacity" | "none" | "stroke" | "stroke-opacity" | string;
+  declare type MozContextPropertiesProperty = Globals | "fill" | "fill-opacity" | "none" | "stroke" | "stroke-opacity" | string;
 
-  declare type MozFloatEdgeProperty = All | "border-box" | "content-box" | "margin-box" | "padding-box";
+  declare type MozFloatEdgeProperty = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
 
-  declare type MozImageRegionProperty = All | "auto" | string;
+  declare type MozImageRegionProperty = Globals | "auto" | string;
 
-  declare type MozOrientProperty = All | "block" | "horizontal" | "inline" | "vertical";
+  declare type MozOrientProperty = Globals | "block" | "horizontal" | "inline" | "vertical";
 
-  declare type MozStackSizingProperty = All | "ignore" | "stretch-to-fit";
+  declare type MozStackSizingProperty = Globals | "ignore" | "stretch-to-fit";
 
-  declare type MozTextBlinkProperty = All | "blink" | "none";
+  declare type MozTextBlinkProperty = Globals | "blink" | "none";
 
-  declare type MozUserFocusProperty = All | "ignore" | "none" | "normal" | "select-after" | "select-all" | "select-before" | "select-menu" | "select-same";
+  declare type MozUserFocusProperty = Globals | "ignore" | "none" | "normal" | "select-after" | "select-all" | "select-before" | "select-menu" | "select-same";
 
-  declare type MozUserInputProperty = All | "auto" | "disabled" | "enabled" | "none";
+  declare type MozUserInputProperty = Globals | "auto" | "disabled" | "enabled" | "none";
 
-  declare type MozUserModifyProperty = All | "read-only" | "read-write" | "write-only";
+  declare type MozUserModifyProperty = Globals | "read-only" | "read-write" | "write-only";
 
-  declare type MozWindowDraggingProperty = All | "drag" | "no-drag";
+  declare type MozWindowDraggingProperty = Globals | "drag" | "no-drag";
 
-  declare type MozWindowShadowProperty = All | "default" | "menu" | "none" | "sheet" | "tooltip";
+  declare type MozWindowShadowProperty = Globals | "default" | "menu" | "none" | "sheet" | "tooltip";
 
-  declare type WebkitBoxReflectProperty<TLength> = All | TLength | "above" | "below" | "left" | "right" | string;
+  declare type WebkitBoxReflectProperty<TLength> = Globals | TLength | "above" | "below" | "left" | "right" | string;
 
-  declare type WebkitMaskAttachmentProperty = All | Attachment | string;
+  declare type WebkitMaskAttachmentProperty = Globals | Attachment | string;
 
-  declare type WebkitMaskClipProperty = All | "border" | "border-box" | "content" | "content-box" | "padding" | "padding-box" | "text" | string;
+  declare type WebkitMaskClipProperty = Globals | "border" | "border-box" | "content" | "content-box" | "padding" | "padding-box" | "text" | string;
 
-  declare type WebkitMaskCompositeProperty = All | CompositeStyle | string;
+  declare type WebkitMaskCompositeProperty = Globals | CompositeStyle | string;
 
-  declare type WebkitMaskOriginProperty = All | "border" | "content" | "padding" | string;
+  declare type WebkitMaskOriginProperty = Globals | "border" | "content" | "padding" | string;
 
-  declare type WebkitMaskPositionProperty<TLength> = All | MaskPosition<TLength>;
+  declare type WebkitMaskPositionProperty<TLength> = Globals | MaskPosition<TLength>;
 
-  declare type WebkitMaskPositionXProperty<TLength> = All | LengthPercentage<TLength> | "center" | "left" | "right" | string;
+  declare type WebkitMaskPositionXProperty<TLength> = Globals | LengthPercentage<TLength> | "center" | "left" | "right" | string;
 
-  declare type WebkitMaskPositionYProperty<TLength> = All | LengthPercentage<TLength> | "bottom" | "center" | "top" | string;
+  declare type WebkitMaskPositionYProperty<TLength> = Globals | LengthPercentage<TLength> | "bottom" | "center" | "top" | string;
 
-  declare type WebkitMaskRepeatProperty = All | RepeatStyle | string;
+  declare type WebkitMaskRepeatProperty = Globals | RepeatStyle | string;
 
-  declare type WebkitMaskRepeatXProperty = All | "no-repeat" | "repeat" | "round" | "space";
+  declare type WebkitMaskRepeatXProperty = Globals | "no-repeat" | "repeat" | "round" | "space";
 
-  declare type WebkitMaskRepeatYProperty = All | "no-repeat" | "repeat" | "round" | "space";
+  declare type WebkitMaskRepeatYProperty = Globals | "no-repeat" | "repeat" | "round" | "space";
 
-  declare type WebkitOverflowScrollingProperty = All | "auto" | "touch";
+  declare type WebkitOverflowScrollingProperty = Globals | "auto" | "touch";
 
-  declare type WebkitTapHighlightColorProperty = All | Color;
+  declare type WebkitTapHighlightColorProperty = Globals | Color;
 
-  declare type WebkitTextFillColorProperty = All | Color;
+  declare type WebkitTextFillColorProperty = Globals | Color;
 
-  declare type WebkitTextStrokeColorProperty = All | Color;
+  declare type WebkitTextStrokeColorProperty = Globals | Color;
 
-  declare type WebkitTextStrokeWidthProperty<TLength> = All | TLength;
+  declare type WebkitTextStrokeWidthProperty<TLength> = Globals | TLength;
 
-  declare type WebkitTouchCalloutProperty = All | "default" | "none";
+  declare type WebkitTouchCalloutProperty = Globals | "default" | "none";
 
-  declare type WebkitTextStrokeProperty<TLength> = All | Color | TLength | string;
+  declare type WebkitTextStrokeProperty<TLength> = Globals | Color | TLength | string;
 
   declare type CounterStyleRangeProperty = "auto" | "infinite" | string | number;
 
