@@ -21,7 +21,7 @@ $ yarn add csstype
 
 ## Types
 
-CSS Properties interface with **camel** cased property names:
+CSS properties interface with **camel** cased property names:
 
 * `Properties`
   * `StandardProperties`
@@ -31,7 +31,7 @@ CSS Properties interface with **camel** cased property names:
     * `VendorLonghandProperties`
     * `VendorShorthandProperties`
 
-CSS Properties interface with **kebab** cased property names:
+CSS properties interface with **kebab** cased property names:
 
 * `PropertiesHyphen`
   * `StandardPropertiesHyphen`
@@ -63,7 +63,7 @@ Equals to **`PropertiesHyphen`** but also allows array of values:
 
 ### At-rules
 
-At-rule interfaces containing descriptors.
+At-rule interfaces with descriptors.
 
 #### `@counter-style`
 
@@ -97,13 +97,13 @@ At-rule interfaces containing descriptors.
 
 String literals of pseudo classes and pseudo elements
 
-* `Pseudo`
+* `Pseudos`
   * `AdvancedPseudos` Function-like pseudos like `:not(...)`
   * `SimplePseudos`
 
 ## Usage
 
-Lengths defaults to `string | number`. But it's possible to override it using generics.
+Length unit defaults to `string | number`. But it's possible to override it using generics.
 
 ```ts
 import * as CSS from 'csstype';
