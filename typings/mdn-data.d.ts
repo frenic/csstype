@@ -37,8 +37,13 @@ declare module 'mdn-data/css/syntaxes.json' {
 }
 
 declare module 'mdn-data/css/selectors.json' {
+  interface Selector {
+    syntax: string;
+    groups: string[];
+    status: string;
+  }
   interface Selectors {
-    [selector: string]: any;
+    [selector: string]: Selector;
   }
 
   var selectors: Selectors;

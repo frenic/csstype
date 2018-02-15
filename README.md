@@ -7,8 +7,8 @@ import * as CSS from 'csstype';
 
 const style: CSS.Properties = {
   alignSelf: 'stretsh', // Type error on value
-  colour: 'white',      // Type error on property
-}
+  colour: 'white', // Type error on property
+};
 ```
 
 ## Getting started
@@ -19,65 +19,87 @@ $ # or
 $ yarn add csstype
 ```
 
-## Interfaces
+## Types
 
-CSS Properties with **camel** cased property names:
+CSS Properties interface with **camel** cased property names:
 
-- `Properties`
-  - `StandardProperties`
-    - `StandardLonghandProperties`
-    - `StandardShorthandProperties`
-  - `VendorProperties`
-    - `VendorLonghandProperties`
-    - `VendorShorthandProperties`
+* `Properties`
+  * `StandardProperties`
+    * `StandardLonghandProperties`
+    * `StandardShorthandProperties`
+  * `VendorProperties`
+    * `VendorLonghandProperties`
+    * `VendorShorthandProperties`
 
-CSS Properties with **kebab** cased property names:
+CSS Properties interface with **kebab** cased property names:
 
-- `PropertiesHyphen`
-  - `StandardPropertiesHyphen`
-    - `StandardLonghandPropertiesHyphen`
-    - `StandardShorthandPropertiesHyphen`
-  - `VendorPropertiesHyphen`
-    - `VendorLonghandPropertiesHyphen`
-    - `VendorShorthandPropertiesHyphen`
+* `PropertiesHyphen`
+  * `StandardPropertiesHyphen`
+    * `StandardLonghandPropertiesHyphen`
+    * `StandardShorthandPropertiesHyphen`
+  * `VendorPropertiesHyphen`
+    * `VendorLonghandPropertiesHyphen`
+    * `VendorShorthandPropertiesHyphen`
 
 Equals to **`Properties`** but also allows array of values:
 
-- `PropertiesFallback`
-  - `StandardPropertiesFallback`
-    - `StandardLonghandPropertiesFallback`
-    - `StandardShorthandPropertiesFallback`
-  - `VendorPropertiesFallback`
-    - `VendorLonghandPropertiesFallback`
-    - `VendorShorthandPropertiesFallback`
+* `PropertiesFallback`
+  * `StandardPropertiesFallback`
+    * `StandardLonghandPropertiesFallback`
+    * `StandardShorthandPropertiesFallback`
+  * `VendorPropertiesFallback`
+    * `VendorLonghandPropertiesFallback`
+    * `VendorShorthandPropertiesFallback`
 
 Equals to **`PropertiesHyphen`** but also allows array of values:
 
-- `PropertiesHyphenFallback`
-  - `StandardPropertiesHyphenFallback`
-    - `StandardLonghandPropertiesHyphenFallback`
-    - `StandardShorthandPropertiesHyphenFallback`
-  - `VendorPropertiesHyphenFallback`
-    - `VendorLonghandPropertiesHyphenFallback`
-    - `VendorShorthandPropertiesHyphenFallback`
+* `PropertiesHyphenFallback`
+  * `StandardPropertiesHyphenFallback`
+    * `StandardLonghandPropertiesHyphenFallback`
+    * `StandardShorthandPropertiesHyphenFallback`
+  * `VendorPropertiesHyphenFallback`
+    * `VendorLonghandPropertiesHyphenFallback`
+    * `VendorShorthandPropertiesHyphenFallback`
 
-### At rules
-- `CounterStyle`
-- `CounterStyleFallback`
-- `CounterStyleHyphen`
-- `CounterStyleHyphenFallback`
-- `FontFace`
-- `FontFaceFallback`
-- `FontFaceHyphen`
-- `FontFaceHyphenFallback`
-- `Page`
-- `PageFallback`
-- `PageHyphen`
-- `PageHyphenFallback`
-- `Viewport`
-- `ViewportFallback`
-- `ViewportHyphen`
-- `ViewportHyphenFallback`
+### At-rules
+
+At-rule interfaces containing descriptors.
+
+#### `@counter-style`
+
+* `CounterStyle`
+* `CounterStyleFallback`
+* `CounterStyleHyphen`
+* `CounterStyleHyphenFallback`
+
+#### `@font-face`
+
+* `FontFace`
+* `FontFaceFallback`
+* `FontFaceHyphen`
+* `FontFaceHyphenFallback`
+
+#### `@page`
+
+* `Page`
+* `PageFallback`
+* `PageHyphen`
+* `PageHyphenFallback`
+
+#### `@viewport`
+
+* `Viewport`
+* `ViewportFallback`
+* `ViewportHyphen`
+* `ViewportHyphenFallback`
+
+### Pseudo
+
+String literals of pseudo classes and pseudo elements
+
+* `Pseudo`
+  * `AdvancedPseudos` Function-like pseudos like `:not(...)`
+  * `SimplePseudos`
 
 ## Usage
 
@@ -89,21 +111,18 @@ import * as CSS from 'csstype';
 const style: CSS.Properties<string> = {
   padding: '10px',
   margin: '1rem',
-}
+};
 ```
 
-In some cases, like for CSS-in-JS libraries, an array of values is a way to provide fallback values in CSS. Using `CSS.PropertiesFallback` instead of `CSS.Properties` will add the possibility to use any property value as an array of values. 
+In some cases, like for CSS-in-JS libraries, an array of values is a way to provide fallback values in CSS. Using `CSS.PropertiesFallback` instead of `CSS.Properties` will add the possibility to use any property value as an array of values.
 
 ```ts
 import * as CSS from 'csstype';
 
 const style: CSS.PropertiesFallback = {
-  display: [
-    '-webkit-flex',
-    'flex',
-  ],
+  display: ['-webkit-flex', 'flex'],
   color: 'white',
-}
+};
 ```
 
 There's even string literals for pseudo selectors and elements.
@@ -111,11 +130,11 @@ There's even string literals for pseudo selectors and elements.
 ```ts
 import * as CSS from 'csstype';
 
-const pseudos: { [P in CSS.Pseudos]?: CSS.Properties } = {
+const pseudos: { [P in CSS.SimplePseudos]?: CSS.Properties } = {
   ':hover': {
     display: 'flex',
   },
-}
+};
 ```
 
 Hyphen cased (kebab cased) properties are provided in `CSS.PropertiesHyphen` and `CSS.PropertiesHyphenFallback`. It's not **not** added by default in `CSS.Properties`. To allow both of them, you can simply extend with `CSS.PropertiesHyphen` or/and `CSS.PropertiesHyphenFallback`.
@@ -123,12 +142,12 @@ Hyphen cased (kebab cased) properties are provided in `CSS.PropertiesHyphen` and
 ```ts
 import * as CSS from 'csstype';
 
-interface Style extends CSS.Properties, CSS.PropertiesHyphen { }
+interface Style extends CSS.Properties, CSS.PropertiesHyphen {}
 
 const style: Style = {
   'flex-grow': 1,
   'flex-shrink': 0,
   'font-weight': 'normal',
   backgroundColor: 'white',
-}
+};
 ```

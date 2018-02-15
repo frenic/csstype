@@ -1772,7 +1772,19 @@ declare module "csstype" {
     | "@supports"
     | "@viewport";
 
-  declare export type Pseudos =
+  declare export type AdvancedPseudos =
+    | ":-moz-any"
+    | ":-webkit-any"
+    | "::cue"
+    | ":dir"
+    | ":lang"
+    | ":not"
+    | ":nth-child"
+    | ":nth-last-child"
+    | ":nth-last-of-type"
+    | ":nth-of-type";
+
+  declare export type SimplePseudos =
     | "::-moz-progress-bar"
     | "::-moz-range-progress"
     | "::-moz-range-thumb"
@@ -1798,17 +1810,19 @@ declare module "csstype" {
     | "::selection"
     | "::spelling-error"
     | ":active"
-    | ":any"
+    | ":after"
     | ":any-link"
+    | ":before"
     | ":checked"
     | ":default"
     | ":defined"
-    | ":dir"
     | ":disabled"
     | ":empty"
     | ":enabled"
     | ":first"
     | ":first-child"
+    | ":first-letter"
+    | ":first-line"
     | ":first-of-type"
     | ":focus"
     | ":focus-within"
@@ -1817,16 +1831,10 @@ declare module "csstype" {
     | ":in-range"
     | ":indeterminate"
     | ":invalid"
-    | ":lang"
     | ":last-child"
     | ":last-of-type"
     | ":left"
     | ":link"
-    | ":not"
-    | ":nth-child"
-    | ":nth-last-child"
-    | ":nth-last-of-type"
-    | ":nth-of-type"
     | ":only-child"
     | ":only-of-type"
     | ":optional"
@@ -1841,6 +1849,8 @@ declare module "csstype" {
     | ":target"
     | ":valid"
     | ":visited";
+
+  declare export type Pseudos = AdvancedPseudos | SimplePseudos;
 
   declare type Globals = "inherit" | "initial" | "unset";
 

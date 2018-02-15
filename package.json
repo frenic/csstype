@@ -27,7 +27,7 @@
     "watch": "ts-node build.ts --watch",
     "lint": "tslint --exclude node_modules/**/* --exclude **/*.d.ts --fix **/*.ts",
     "pretty": "prettier --write build.ts **/*.{ts,js,json}",
-    "sloppy": "tsc && npm run lint && npm run pretty",
+    "lazy": "tsc && npm run lint && npm run pretty",
     "test": "jest --no-cache",
     "prepublish": "tsc && npm run test && npm run build && tsc typecheck.ts --noEmit"
   },

@@ -8,7 +8,7 @@ import {
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
 } from './properties';
-import pseudos from './pseudos';
+import { advancedPseudos, simplePseudos } from './pseudos';
 import { IAlias, IDataType, IGenerics, Type, TypeType } from './typer';
 
 interface Interface {
@@ -68,10 +68,24 @@ const globalsAndNumberDeclaration: IDeclaration = {
   generics: [],
 };
 
+const advancedPseudoDeclaration: IDeclaration = {
+  name: 'AdvancedPseudos',
+  export: true,
+  types: declarable(advancedPseudos),
+  generics: [],
+};
+
+const simplePseudoDeclaration: IDeclaration = {
+  name: 'SimplePseudos',
+  export: true,
+  types: declarable(simplePseudos),
+  generics: [],
+};
+
 const pseudoDeclaration: IDeclaration = {
   name: 'Pseudos',
   export: true,
-  types: declarable(pseudos),
+  types: [aliasOf(advancedPseudoDeclaration), aliasOf(simplePseudoDeclaration)],
   generics: [],
 };
 
@@ -95,6 +109,8 @@ const PROPERTY = 'Property';
 
 export const declarations: IDeclaration[] = [
   atRuleDeclaration,
+  advancedPseudoDeclaration,
+  simplePseudoDeclaration,
   pseudoDeclaration,
   globalsDeclaration,
   globalsAndStringDeclaration,
