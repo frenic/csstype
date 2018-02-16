@@ -1,6 +1,6 @@
 // @flow
 
-import * as CSS from 'csstype';
+import * as CSS from './';
 
 const css: CSS.Properties<*> = {
   flexGrow: 1,
