@@ -33,6 +33,6 @@
   },
   "files": [
     "index.d.ts",
-    "flow-typed/"
+    "index.js.flow"
   ]
 }

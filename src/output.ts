@@ -17,7 +17,7 @@ function flow() {
 
     const extendList = item.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)).join(', ');
     const isInterface = !!extendList;
-    interfacesOutput += isInterface ? 'declare export interface ' : 'declare export type ';
+    interfacesOutput += isInterface ? 'export interface ' : 'export type ';
     interfacesOutput += item.name + stringifyGenerics(item.generics);
     interfacesOutput += extendList ? ` extends ${extendList}` : '= ';
     interfacesOutput += '{' + EOL;
@@ -49,7 +49,7 @@ function flow() {
       declarationsOutput += EOL + EOL;
     }
 
-    declarationsOutput += 'declare ';
+    declarationsOutput += ' ';
 
     if (declaration.export) {
       declarationsOutput += 'export ';
@@ -60,7 +60,7 @@ function flow() {
     ) + EOL}`;
   }
 
-  return `declare module "csstype" {${EOL + interfacesOutput + EOL + EOL + declarationsOutput + EOL}}`;
+  return `// @flow ${EOL + interfacesOutput + EOL + EOL + declarationsOutput + EOL}`;
 }
 
 function typescript() {

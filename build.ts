@@ -6,7 +6,7 @@ import * as prettier from 'prettier';
 
 const ROOT_DIR = __dirname;
 const TYPESCRIPT_FILENAME = 'index.d.ts';
-const FLOW_FILENAME = 'flow-typed/csstype.js';
+const FLOW_FILENAME = 'index.js.flow';
 const TEST_FILENAME = 'typecheck.ts';
 
 if (process.argv.indexOf('--watch') !== -1) {
