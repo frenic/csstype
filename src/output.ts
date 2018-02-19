@@ -1,6 +1,7 @@
-import { EOL } from 'os';
 import { DeclarableType, declarations, interfaces, isAliasProperty } from './declarator';
 import { IGenerics, Type } from './typer';
+
+const EOL = '\n';
 
 export default () => ({
   flow: flow(),
