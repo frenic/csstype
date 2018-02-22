@@ -1,6 +1,7 @@
+import * as properties from 'mdn-data/css/properties.json';
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
 import * as cssTypes from 'mdn-data/css/types.json';
-import {
+import parse, {
   Combinator,
   Component,
   ComponentType,
@@ -99,9 +100,20 @@ export default function typing(entities: EntityType[]): TypeType[] {
             break;
           case Component.DataType: {
             const value = entity.value.slice(1, -1);
-            if (value.indexOf("'") === 0) {
-              // Lets skip these for now
-              addString();
+            const property = /'([^']+)'/.exec(value);
+            if (property) {
+              const name = property[1];
+              if (name in properties) {
+                if (entity.multiplier && isMultiplied(entity.multiplier)) {
+                  addString();
+                }
+
+                for (const type of typing(parse(properties[name].syntax))) {
+                  add(type);
+                }
+              } else {
+                addString();
+              }
             } else if (value in basicDataTypes) {
               add(basicDataTypes[value]);
             } else {
@@ -110,17 +122,8 @@ export default function typing(entities: EntityType[]): TypeType[] {
             break;
           }
           case Component.Group: {
-            if (entity.multiplier) {
-              if (
-                (isQurlyBracetMultiplier(entity.multiplier) &&
-                  (entity.multiplier.min > 1 || entity.multiplier.max === 1)) ||
-                entity.multiplier.sign === Multiplier.Asterisk ||
-                entity.multiplier.sign === Multiplier.PlusSign ||
-                entity.multiplier.sign === Multiplier.HashMark ||
-                entity.multiplier.sign === Multiplier.ExclamationPoint
-              ) {
-                addString();
-              }
+            if (entity.multiplier && isMultiplied(entity.multiplier)) {
+              addString();
             }
 
             for (const type of typing(entity.entities)) {
@@ -276,6 +279,16 @@ function isCombinator(entity: EntityType): entity is ICombinator {
 
 function isQurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMultiplierQurlyBracet {
   return multiplier.sign === Multiplier.QurlyBracet;
+}
+
+function isMultiplied(multiplier: MultiplierType) {
+  return (
+    (isQurlyBracetMultiplier(multiplier) && (multiplier.min > 1 || multiplier.max === 1)) ||
+    multiplier.sign === Multiplier.Asterisk ||
+    multiplier.sign === Multiplier.PlusSign ||
+    multiplier.sign === Multiplier.HashMark ||
+    multiplier.sign === Multiplier.ExclamationPoint
+  );
 }
 
 function isMandatoryCombinator({ combinator }: ICombinator) {

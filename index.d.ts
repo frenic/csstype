@@ -25,13 +25,13 @@ export interface StandardLonghandProperties<TLength = string | number> {
   backgroundPositionY?: BackgroundPositionYProperty<TLength>;
   backgroundRepeat?: BackgroundRepeatProperty;
   backgroundSize?: BackgroundSizeProperty<TLength>;
-  blockSize?: GlobalsString;
-  borderBlockEndColor?: GlobalsString;
-  borderBlockEndStyle?: GlobalsString;
-  borderBlockEndWidth?: GlobalsString;
-  borderBlockStartColor?: GlobalsString;
-  borderBlockStartStyle?: GlobalsString;
-  borderBlockStartWidth?: GlobalsString;
+  blockSize?: BlockSizeProperty<TLength>;
+  borderBlockEndColor?: BorderBlockEndColorProperty;
+  borderBlockEndStyle?: BorderBlockEndStyleProperty;
+  borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength>;
+  borderBlockStartColor?: BorderBlockStartColorProperty;
+  borderBlockStartStyle?: BorderBlockStartStyleProperty;
+  borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength>;
   borderBottomColor?: BorderBottomColorProperty;
   borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength>;
   borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength>;
@@ -43,12 +43,12 @@ export interface StandardLonghandProperties<TLength = string | number> {
   borderImageSlice?: BorderImageSliceProperty;
   borderImageSource?: BorderImageSourceProperty;
   borderImageWidth?: BorderImageWidthProperty<TLength>;
-  borderInlineEndColor?: GlobalsString;
-  borderInlineEndStyle?: GlobalsString;
-  borderInlineEndWidth?: GlobalsString;
-  borderInlineStartColor?: GlobalsString;
-  borderInlineStartStyle?: GlobalsString;
-  borderInlineStartWidth?: GlobalsString;
+  borderInlineEndColor?: BorderInlineEndColorProperty;
+  borderInlineEndStyle?: BorderInlineEndStyleProperty;
+  borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength>;
+  borderInlineStartColor?: BorderInlineStartColorProperty;
+  borderInlineStartStyle?: BorderInlineStartStyleProperty;
+  borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength>;
   borderLeftColor?: BorderLeftColorProperty;
   borderLeftStyle?: BorderLeftStyleProperty;
   borderLeftWidth?: BorderLeftWidthProperty<TLength>;
@@ -86,8 +86,8 @@ export interface StandardLonghandProperties<TLength = string | number> {
   columnFill?: ColumnFillProperty;
   columnGap?: ColumnGapProperty<TLength>;
   columnRuleColor?: ColumnRuleColorProperty;
-  columnRuleStyle?: GlobalsString;
-  columnRuleWidth?: GlobalsString;
+  columnRuleStyle?: ColumnRuleStyleProperty;
+  columnRuleWidth?: ColumnRuleWidthProperty<TLength>;
   columnSpan?: ColumnSpanProperty;
   columnWidth?: ColumnWidthProperty<TLength>;
   contain?: ContainProperty;
@@ -102,7 +102,7 @@ export interface StandardLonghandProperties<TLength = string | number> {
   displayOutside?: DisplayOutsideProperty;
   emptyCells?: EmptyCellsProperty;
   filter?: FilterProperty;
-  flexBasis?: FlexBasisProperty;
+  flexBasis?: FlexBasisProperty<TLength>;
   flexDirection?: FlexDirectionProperty;
   flexGrow?: GlobalsNumber;
   flexShrink?: GlobalsNumber;
@@ -147,7 +147,7 @@ export interface StandardLonghandProperties<TLength = string | number> {
   imeMode?: ImeModeProperty;
   initialLetter?: InitialLetterProperty;
   initialLetterAlign?: InitialLetterAlignProperty;
-  inlineSize?: GlobalsString;
+  inlineSize?: InlineSizeProperty<TLength>;
   isolation?: IsolationProperty;
   justifyContent?: JustifyContentProperty;
   left?: LeftProperty<TLength>;
@@ -158,11 +158,11 @@ export interface StandardLonghandProperties<TLength = string | number> {
   listStyleImage?: ListStyleImageProperty;
   listStylePosition?: ListStylePositionProperty;
   listStyleType?: ListStyleTypeProperty;
-  marginBlockEnd?: GlobalsString;
-  marginBlockStart?: GlobalsString;
+  marginBlockEnd?: MarginBlockEndProperty<TLength>;
+  marginBlockStart?: MarginBlockStartProperty<TLength>;
   marginBottom?: MarginBottomProperty<TLength>;
-  marginInlineEnd?: GlobalsString;
-  marginInlineStart?: GlobalsString;
+  marginInlineEnd?: MarginInlineEndProperty<TLength>;
+  marginInlineStart?: MarginInlineStartProperty<TLength>;
   marginLeft?: MarginLeftProperty<TLength>;
   marginRight?: MarginRightProperty<TLength>;
   marginTop?: MarginTopProperty<TLength>;
@@ -181,22 +181,22 @@ export interface StandardLonghandProperties<TLength = string | number> {
   maskRepeat?: MaskRepeatProperty;
   maskSize?: MaskSizeProperty<TLength>;
   maskType?: MaskTypeProperty;
-  maxBlockSize?: GlobalsString;
+  maxBlockSize?: MaxBlockSizeProperty<TLength>;
   maxHeight?: MaxHeightProperty<TLength>;
-  maxInlineSize?: GlobalsString;
+  maxInlineSize?: MaxInlineSizeProperty<TLength>;
   maxWidth?: MaxWidthProperty<TLength>;
-  minBlockSize?: GlobalsString;
+  minBlockSize?: MinBlockSizeProperty<TLength>;
   minHeight?: MinHeightProperty<TLength>;
-  minInlineSize?: GlobalsString;
+  minInlineSize?: MinInlineSizeProperty<TLength>;
   minWidth?: MinWidthProperty<TLength>;
   mixBlendMode?: MixBlendModeProperty;
   objectFit?: ObjectFitProperty;
   objectPosition?: ObjectPositionProperty<TLength>;
   offsetAnchor?: OffsetAnchorProperty<TLength>;
-  offsetBlockEnd?: GlobalsString;
-  offsetBlockStart?: GlobalsString;
-  offsetInlineEnd?: GlobalsString;
-  offsetInlineStart?: GlobalsString;
+  offsetBlockEnd?: OffsetBlockEndProperty<TLength>;
+  offsetBlockStart?: OffsetBlockStartProperty<TLength>;
+  offsetInlineEnd?: OffsetInlineEndProperty<TLength>;
+  offsetInlineStart?: OffsetInlineStartProperty<TLength>;
   offsetDistance?: OffsetDistanceProperty<TLength>;
   offsetPath?: OffsetPathProperty;
   offsetPosition?: OffsetPositionProperty<TLength>;
@@ -213,11 +213,11 @@ export interface StandardLonghandProperties<TLength = string | number> {
   overflowWrap?: OverflowWrapProperty;
   overflowX?: OverflowXProperty;
   overflowY?: OverflowYProperty;
-  paddingBlockEnd?: GlobalsString;
-  paddingBlockStart?: GlobalsString;
+  paddingBlockEnd?: PaddingBlockEndProperty<TLength>;
+  paddingBlockStart?: PaddingBlockStartProperty<TLength>;
   paddingBottom?: PaddingBottomProperty<TLength>;
-  paddingInlineEnd?: GlobalsString;
-  paddingInlineStart?: GlobalsString;
+  paddingInlineEnd?: PaddingInlineEndProperty<TLength>;
+  paddingInlineStart?: PaddingInlineStartProperty<TLength>;
   paddingLeft?: PaddingLeftProperty<TLength>;
   paddingRight?: PaddingRightProperty<TLength>;
   paddingTop?: PaddingTopProperty<TLength>;
@@ -296,39 +296,39 @@ export interface StandardShorthandProperties<TLength = string | number> {
   animation?: AnimationProperty;
   background?: BackgroundProperty<TLength>;
   border?: BorderProperty<TLength>;
-  borderBlockEnd?: GlobalsString;
-  borderBlockStart?: GlobalsString;
+  borderBlockEnd?: BorderBlockEndProperty<TLength>;
+  borderBlockStart?: BorderBlockStartProperty<TLength>;
   borderBottom?: BorderBottomProperty<TLength>;
   borderColor?: BorderColorProperty;
-  borderImage?: GlobalsString;
-  borderInlineEnd?: GlobalsString;
-  borderInlineStart?: GlobalsString;
+  borderImage?: BorderImageProperty;
+  borderInlineEnd?: BorderInlineEndProperty<TLength>;
+  borderInlineStart?: BorderInlineStartProperty<TLength>;
   borderLeft?: BorderLeftProperty<TLength>;
   borderRadius?: BorderRadiusProperty<TLength>;
   borderRight?: BorderRightProperty<TLength>;
   borderStyle?: BorderStyleProperty;
   borderTop?: BorderTopProperty<TLength>;
   borderWidth?: BorderWidthProperty<TLength>;
-  columnRule?: GlobalsString;
-  columns?: GlobalsString;
-  flex?: FlexProperty;
-  flexFlow?: GlobalsString;
+  columnRule?: ColumnRuleProperty<TLength>;
+  columns?: ColumnsProperty<TLength>;
+  flex?: FlexProperty<TLength>;
+  flexFlow?: FlexFlowProperty;
   font?: FontProperty;
-  grid?: GlobalsString;
+  grid?: GridProperty;
   gridArea?: GlobalsString;
   gridColumn?: GridColumnProperty;
-  gridGap?: GlobalsString;
+  gridGap?: GridGapProperty<TLength>;
   gridRow?: GridRowProperty;
   gridTemplate?: GridTemplateProperty;
-  listStyle?: GlobalsString;
+  listStyle?: ListStyleProperty;
   margin?: MarginProperty<TLength>;
   mask?: MaskProperty<TLength>;
-  maskBorder?: GlobalsString;
-  offset?: GlobalsString;
-  outline?: GlobalsString;
+  maskBorder?: MaskBorderProperty;
+  offset?: OffsetProperty<TLength>;
+  outline?: OutlineProperty<TLength>;
   padding?: PaddingProperty<TLength>;
-  textDecoration?: GlobalsString;
-  textEmphasis?: GlobalsString;
+  textDecoration?: TextDecorationProperty;
+  textEmphasis?: TextEmphasisProperty;
   transition?: TransitionProperty;
 }
 
@@ -358,9 +358,9 @@ export interface VendorLonghandProperties<TLength = string | number> {
   mozUserModify?: MozUserModifyProperty;
   mozWindowDragging?: MozWindowDraggingProperty;
   mozWindowShadow?: MozWindowShadowProperty;
-  webkitBorderBeforeColor?: GlobalsString;
-  webkitBorderBeforeStyle?: GlobalsString;
-  webkitBorderBeforeWidth?: GlobalsString;
+  webkitBorderBeforeColor?: WebkitBorderBeforeColorProperty;
+  webkitBorderBeforeStyle?: WebkitBorderBeforeStyleProperty;
+  webkitBorderBeforeWidth?: WebkitBorderBeforeWidthProperty<TLength>;
   webkitBoxReflect?: WebkitBoxReflectProperty<TLength>;
   webkitMaskAttachment?: WebkitMaskAttachmentProperty;
   webkitMaskClip?: WebkitMaskClipProperty;
@@ -383,7 +383,7 @@ export interface VendorLonghandProperties<TLength = string | number> {
 
 export interface VendorShorthandProperties<TLength = string | number> {
   mozOutlineRadius?: GlobalsString;
-  webkitBorderBefore?: GlobalsString;
+  webkitBorderBefore?: WebkitBorderBeforeProperty<TLength>;
   webkitMask?: GlobalsString;
   webkitTextStroke?: WebkitTextStrokeProperty<TLength>;
 }
@@ -419,13 +419,13 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | number> {
   "background-position-y"?: BackgroundPositionYProperty<TLength>;
   "background-repeat"?: BackgroundRepeatProperty;
   "background-size"?: BackgroundSizeProperty<TLength>;
-  "block-size"?: GlobalsString;
-  "border-block-end-color"?: GlobalsString;
-  "border-block-end-style"?: GlobalsString;
-  "border-block-end-width"?: GlobalsString;
-  "border-block-start-color"?: GlobalsString;
-  "border-block-start-style"?: GlobalsString;
-  "border-block-start-width"?: GlobalsString;
+  "block-size"?: BlockSizeProperty<TLength>;
+  "border-block-end-color"?: BorderBlockEndColorProperty;
+  "border-block-end-style"?: BorderBlockEndStyleProperty;
+  "border-block-end-width"?: BorderBlockEndWidthProperty<TLength>;
+  "border-block-start-color"?: BorderBlockStartColorProperty;
+  "border-block-start-style"?: BorderBlockStartStyleProperty;
+  "border-block-start-width"?: BorderBlockStartWidthProperty<TLength>;
   "border-bottom-color"?: BorderBottomColorProperty;
   "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength>;
   "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength>;
@@ -437,12 +437,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | number> {
   "border-image-slice"?: BorderImageSliceProperty;
   "border-image-source"?: BorderImageSourceProperty;
   "border-image-width"?: BorderImageWidthProperty<TLength>;
-  "border-inline-end-color"?: GlobalsString;
-  "border-inline-end-style"?: GlobalsString;
-  "border-inline-end-width"?: GlobalsString;
-  "border-inline-start-color"?: GlobalsString;
-  "border-inline-start-style"?: GlobalsString;
-  "border-inline-start-width"?: GlobalsString;
+  "border-inline-end-color"?: BorderInlineEndColorProperty;
+  "border-inline-end-style"?: BorderInlineEndStyleProperty;
+  "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength>;
+  "border-inline-start-color"?: BorderInlineStartColorProperty;
+  "border-inline-start-style"?: BorderInlineStartStyleProperty;
+  "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength>;
   "border-left-color"?: BorderLeftColorProperty;
   "border-left-style"?: BorderLeftStyleProperty;
   "border-left-width"?: BorderLeftWidthProperty<TLength>;
@@ -480,8 +480,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | number> {
   "column-fill"?: ColumnFillProperty;
   "column-gap"?: ColumnGapProperty<TLength>;
   "column-rule-color"?: ColumnRuleColorProperty;
-  "column-rule-style"?: GlobalsString;
-  "column-rule-width"?: GlobalsString;
+  "column-rule-style"?: ColumnRuleStyleProperty;
+  "column-rule-width"?: ColumnRuleWidthProperty<TLength>;
   "column-span"?: ColumnSpanProperty;
   "column-width"?: ColumnWidthProperty<TLength>;
   contain?: ContainProperty;
@@ -496,7 +496,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | number> {
   "display-outside"?: DisplayOutsideProperty;
   "empty-cells"?: EmptyCellsProperty;
   filter?: FilterProperty;
-  "flex-basis"?: FlexBasisProperty;
+  "flex-basis"?: FlexBasisProperty<TLength>;
   "flex-direction"?: FlexDirectionProperty;
   "flex-grow"?: GlobalsNumber;
   "flex-shrink"?: GlobalsNumber;
@@ -541,7 +541,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | number> {
   "ime-mode"?: ImeModeProperty;
   "initial-letter"?: InitialLetterProperty;
   "initial-letter-align"?: InitialLetterAlignProperty;
-  "inline-size"?: GlobalsString;
+  "inline-size"?: InlineSizeProperty<TLength>;
   isolation?: IsolationProperty;
   "justify-content"?: JustifyContentProperty;
   left?: LeftProperty<TLength>;
@@ -552,11 +552,11 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | number> {
   "list-style-image"?: ListStyleImageProperty;
   "list-style-position"?: ListStylePositionProperty;
   "list-style-type"?: ListStyleTypeProperty;
-  "margin-block-end"?: GlobalsString;
-  "margin-block-start"?: GlobalsString;
+  "margin-block-end"?: MarginBlockEndProperty<TLength>;
+  "margin-block-start"?: MarginBlockStartProperty<TLength>;
   "margin-bottom"?: MarginBottomProperty<TLength>;
-  "margin-inline-end"?: GlobalsString;
-  "margin-inline-start"?: GlobalsString;
+  "margin-inline-end"?: MarginInlineEndProperty<TLength>;
+  "margin-inline-start"?: MarginInlineStartProperty<TLength>;
   "margin-left"?: MarginLeftProperty<TLength>;
   "margin-right"?: MarginRightProperty<TLength>;
   "margin-top"?: MarginTopProperty<TLength>;
@@ -575,22 +575,22 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | number> {
   "mask-repeat"?: MaskRepeatProperty;
   "mask-size"?: MaskSizeProperty<TLength>;
   "mask-type"?: MaskTypeProperty;
-  "max-block-size"?: GlobalsString;
+  "max-block-size"?: MaxBlockSizeProperty<TLength>;
   "max-height"?: MaxHeightProperty<TLength>;
-  "max-inline-size"?: GlobalsString;
+  "max-inline-size"?: MaxInlineSizeProperty<TLength>;
   "max-width"?: MaxWidthProperty<TLength>;
-  "min-block-size"?: GlobalsString;
+  "min-block-size"?: MinBlockSizeProperty<TLength>;
   "min-height"?: MinHeightProperty<TLength>;
-  "min-inline-size"?: GlobalsString;
+  "min-inline-size"?: MinInlineSizeProperty<TLength>;
   "min-width"?: MinWidthProperty<TLength>;
   "mix-blend-mode"?: MixBlendModeProperty;
   "object-fit"?: ObjectFitProperty;
   "object-position"?: ObjectPositionProperty<TLength>;
   "offset-anchor"?: OffsetAnchorProperty<TLength>;
-  "offset-block-end"?: GlobalsString;
-  "offset-block-start"?: GlobalsString;
-  "offset-inline-end"?: GlobalsString;
-  "offset-inline-start"?: GlobalsString;
+  "offset-block-end"?: OffsetBlockEndProperty<TLength>;
+  "offset-block-start"?: OffsetBlockStartProperty<TLength>;
+  "offset-inline-end"?: OffsetInlineEndProperty<TLength>;
+  "offset-inline-start"?: OffsetInlineStartProperty<TLength>;
   "offset-distance"?: OffsetDistanceProperty<TLength>;
   "offset-path"?: OffsetPathProperty;
   "offset-position"?: OffsetPositionProperty<TLength>;
@@ -607,11 +607,11 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | number> {
   "overflow-wrap"?: OverflowWrapProperty;
   "overflow-x"?: OverflowXProperty;
   "overflow-y"?: OverflowYProperty;
-  "padding-block-end"?: GlobalsString;
-  "padding-block-start"?: GlobalsString;
+  "padding-block-end"?: PaddingBlockEndProperty<TLength>;
+  "padding-block-start"?: PaddingBlockStartProperty<TLength>;
   "padding-bottom"?: PaddingBottomProperty<TLength>;
-  "padding-inline-end"?: GlobalsString;
-  "padding-inline-start"?: GlobalsString;
+  "padding-inline-end"?: PaddingInlineEndProperty<TLength>;
+  "padding-inline-start"?: PaddingInlineStartProperty<TLength>;
   "padding-left"?: PaddingLeftProperty<TLength>;
   "padding-right"?: PaddingRightProperty<TLength>;
   "padding-top"?: PaddingTopProperty<TLength>;
@@ -690,39 +690,39 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | number> {
   animation?: AnimationProperty;
   background?: BackgroundProperty<TLength>;
   border?: BorderProperty<TLength>;
-  "border-block-end"?: GlobalsString;
-  "border-block-start"?: GlobalsString;
+  "border-block-end"?: BorderBlockEndProperty<TLength>;
+  "border-block-start"?: BorderBlockStartProperty<TLength>;
   "border-bottom"?: BorderBottomProperty<TLength>;
   "border-color"?: BorderColorProperty;
-  "border-image"?: GlobalsString;
-  "border-inline-end"?: GlobalsString;
-  "border-inline-start"?: GlobalsString;
+  "border-image"?: BorderImageProperty;
+  "border-inline-end"?: BorderInlineEndProperty<TLength>;
+  "border-inline-start"?: BorderInlineStartProperty<TLength>;
   "border-left"?: BorderLeftProperty<TLength>;
   "border-radius"?: BorderRadiusProperty<TLength>;
   "border-right"?: BorderRightProperty<TLength>;
   "border-style"?: BorderStyleProperty;
   "border-top"?: BorderTopProperty<TLength>;
   "border-width"?: BorderWidthProperty<TLength>;
-  "column-rule"?: GlobalsString;
-  columns?: GlobalsString;
-  flex?: FlexProperty;
-  "flex-flow"?: GlobalsString;
+  "column-rule"?: ColumnRuleProperty<TLength>;
+  columns?: ColumnsProperty<TLength>;
+  flex?: FlexProperty<TLength>;
+  "flex-flow"?: FlexFlowProperty;
   font?: FontProperty;
-  grid?: GlobalsString;
+  grid?: GridProperty;
   "grid-area"?: GlobalsString;
   "grid-column"?: GridColumnProperty;
-  "grid-gap"?: GlobalsString;
+  "grid-gap"?: GridGapProperty<TLength>;
   "grid-row"?: GridRowProperty;
   "grid-template"?: GridTemplateProperty;
-  "list-style"?: GlobalsString;
+  "list-style"?: ListStyleProperty;
   margin?: MarginProperty<TLength>;
   mask?: MaskProperty<TLength>;
-  "mask-border"?: GlobalsString;
-  offset?: GlobalsString;
-  outline?: GlobalsString;
+  "mask-border"?: MaskBorderProperty;
+  offset?: OffsetProperty<TLength>;
+  outline?: OutlineProperty<TLength>;
   padding?: PaddingProperty<TLength>;
-  "text-decoration"?: GlobalsString;
-  "text-emphasis"?: GlobalsString;
+  "text-decoration"?: TextDecorationProperty;
+  "text-emphasis"?: TextEmphasisProperty;
   transition?: TransitionProperty;
 }
 
@@ -752,9 +752,9 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | number> {
   "-moz-user-modify"?: MozUserModifyProperty;
   "-moz-window-dragging"?: MozWindowDraggingProperty;
   "-moz-window-shadow"?: MozWindowShadowProperty;
-  "-webkit-border-before-color"?: GlobalsString;
-  "-webkit-border-before-style"?: GlobalsString;
-  "-webkit-border-before-width"?: GlobalsString;
+  "-webkit-border-before-color"?: WebkitBorderBeforeColorProperty;
+  "-webkit-border-before-style"?: WebkitBorderBeforeStyleProperty;
+  "-webkit-border-before-width"?: WebkitBorderBeforeWidthProperty<TLength>;
   "-webkit-box-reflect"?: WebkitBoxReflectProperty<TLength>;
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty;
   "-webkit-mask-clip"?: WebkitMaskClipProperty;
@@ -777,7 +777,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | number> {
 
 export interface VendorShorthandPropertiesHyphen<TLength = string | number> {
   "-moz-outline-radius"?: GlobalsString;
-  "-webkit-border-before"?: GlobalsString;
+  "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength>;
   "-webkit-mask"?: GlobalsString;
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>;
 }
@@ -813,13 +813,13 @@ export interface StandardLonghandPropertiesFallback<TLength = string | number> {
   backgroundPositionY?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
   backgroundRepeat?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
   backgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
-  blockSize?: GlobalsString | GlobalsString[];
-  borderBlockEndColor?: GlobalsString | GlobalsString[];
-  borderBlockEndStyle?: GlobalsString | GlobalsString[];
-  borderBlockEndWidth?: GlobalsString | GlobalsString[];
-  borderBlockStartColor?: GlobalsString | GlobalsString[];
-  borderBlockStartStyle?: GlobalsString | GlobalsString[];
-  borderBlockStartWidth?: GlobalsString | GlobalsString[];
+  blockSize?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
+  borderBlockEndColor?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
+  borderBlockEndStyle?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
+  borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[];
+  borderBlockStartColor?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
+  borderBlockStartStyle?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
+  borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[];
   borderBottomColor?: BorderBottomColorProperty | BorderBottomColorProperty[];
   borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
   borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
@@ -831,12 +831,12 @@ export interface StandardLonghandPropertiesFallback<TLength = string | number> {
   borderImageSlice?: BorderImageSliceProperty | BorderImageSliceProperty[];
   borderImageSource?: BorderImageSourceProperty | BorderImageSourceProperty[];
   borderImageWidth?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
-  borderInlineEndColor?: GlobalsString | GlobalsString[];
-  borderInlineEndStyle?: GlobalsString | GlobalsString[];
-  borderInlineEndWidth?: GlobalsString | GlobalsString[];
-  borderInlineStartColor?: GlobalsString | GlobalsString[];
-  borderInlineStartStyle?: GlobalsString | GlobalsString[];
-  borderInlineStartWidth?: GlobalsString | GlobalsString[];
+  borderInlineEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
+  borderInlineEndStyle?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
+  borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
+  borderInlineStartColor?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
+  borderInlineStartStyle?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
+  borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[];
   borderLeftColor?: BorderLeftColorProperty | BorderLeftColorProperty[];
   borderLeftStyle?: BorderLeftStyleProperty | BorderLeftStyleProperty[];
   borderLeftWidth?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
@@ -874,8 +874,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | number> {
   columnFill?: ColumnFillProperty | ColumnFillProperty[];
   columnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   columnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[];
-  columnRuleStyle?: GlobalsString | GlobalsString[];
-  columnRuleWidth?: GlobalsString | GlobalsString[];
+  columnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
+  columnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
   columnSpan?: ColumnSpanProperty | ColumnSpanProperty[];
   columnWidth?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[];
   contain?: ContainProperty | ContainProperty[];
@@ -890,7 +890,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | number> {
   displayOutside?: DisplayOutsideProperty | DisplayOutsideProperty[];
   emptyCells?: EmptyCellsProperty | EmptyCellsProperty[];
   filter?: FilterProperty | FilterProperty[];
-  flexBasis?: FlexBasisProperty | FlexBasisProperty[];
+  flexBasis?: FlexBasisProperty<TLength> | FlexBasisProperty<TLength>[];
   flexDirection?: FlexDirectionProperty | FlexDirectionProperty[];
   flexGrow?: GlobalsNumber | GlobalsNumber[];
   flexShrink?: GlobalsNumber | GlobalsNumber[];
@@ -935,7 +935,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | number> {
   imeMode?: ImeModeProperty | ImeModeProperty[];
   initialLetter?: InitialLetterProperty | InitialLetterProperty[];
   initialLetterAlign?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
-  inlineSize?: GlobalsString | GlobalsString[];
+  inlineSize?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
   isolation?: IsolationProperty | IsolationProperty[];
   justifyContent?: JustifyContentProperty | JustifyContentProperty[];
   left?: LeftProperty<TLength> | LeftProperty<TLength>[];
@@ -946,11 +946,11 @@ export interface StandardLonghandPropertiesFallback<TLength = string | number> {
   listStyleImage?: ListStyleImageProperty | ListStyleImageProperty[];
   listStylePosition?: ListStylePositionProperty | ListStylePositionProperty[];
   listStyleType?: ListStyleTypeProperty | ListStyleTypeProperty[];
-  marginBlockEnd?: GlobalsString | GlobalsString[];
-  marginBlockStart?: GlobalsString | GlobalsString[];
+  marginBlockEnd?: MarginBlockEndProperty<TLength> | MarginBlockEndProperty<TLength>[];
+  marginBlockStart?: MarginBlockStartProperty<TLength> | MarginBlockStartProperty<TLength>[];
   marginBottom?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
-  marginInlineEnd?: GlobalsString | GlobalsString[];
-  marginInlineStart?: GlobalsString | GlobalsString[];
+  marginInlineEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  marginInlineStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   marginLeft?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
   marginRight?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
   marginTop?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[];
@@ -969,22 +969,22 @@ export interface StandardLonghandPropertiesFallback<TLength = string | number> {
   maskRepeat?: MaskRepeatProperty | MaskRepeatProperty[];
   maskSize?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[];
   maskType?: MaskTypeProperty | MaskTypeProperty[];
-  maxBlockSize?: GlobalsString | GlobalsString[];
+  maxBlockSize?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[];
   maxHeight?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
-  maxInlineSize?: GlobalsString | GlobalsString[];
+  maxInlineSize?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
   maxWidth?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
-  minBlockSize?: GlobalsString | GlobalsString[];
+  minBlockSize?: MinBlockSizeProperty<TLength> | MinBlockSizeProperty<TLength>[];
   minHeight?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
-  minInlineSize?: GlobalsString | GlobalsString[];
+  minInlineSize?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[];
   minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
   objectFit?: ObjectFitProperty | ObjectFitProperty[];
   objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
-  offsetBlockEnd?: GlobalsString | GlobalsString[];
-  offsetBlockStart?: GlobalsString | GlobalsString[];
-  offsetInlineEnd?: GlobalsString | GlobalsString[];
-  offsetInlineStart?: GlobalsString | GlobalsString[];
+  offsetBlockEnd?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
+  offsetBlockStart?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
+  offsetInlineEnd?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
+  offsetInlineStart?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
   offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   offsetPath?: OffsetPathProperty | OffsetPathProperty[];
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
@@ -1001,11 +1001,11 @@ export interface StandardLonghandPropertiesFallback<TLength = string | number> {
   overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[];
   overflowX?: OverflowXProperty | OverflowXProperty[];
   overflowY?: OverflowYProperty | OverflowYProperty[];
-  paddingBlockEnd?: GlobalsString | GlobalsString[];
-  paddingBlockStart?: GlobalsString | GlobalsString[];
+  paddingBlockEnd?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
+  paddingBlockStart?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
-  paddingInlineEnd?: GlobalsString | GlobalsString[];
-  paddingInlineStart?: GlobalsString | GlobalsString[];
+  paddingInlineEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
+  paddingInlineStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   paddingLeft?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
   paddingRight?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
   paddingTop?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[];
@@ -1084,39 +1084,39 @@ export interface StandardShorthandPropertiesFallback<TLength = string | number> 
   animation?: AnimationProperty | AnimationProperty[];
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   border?: BorderProperty<TLength> | BorderProperty<TLength>[];
-  borderBlockEnd?: GlobalsString | GlobalsString[];
-  borderBlockStart?: GlobalsString | GlobalsString[];
+  borderBlockEnd?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[];
+  borderBlockStart?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[];
   borderBottom?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
   borderColor?: BorderColorProperty | BorderColorProperty[];
-  borderImage?: GlobalsString | GlobalsString[];
-  borderInlineEnd?: GlobalsString | GlobalsString[];
-  borderInlineStart?: GlobalsString | GlobalsString[];
+  borderImage?: BorderImageProperty | BorderImageProperty[];
+  borderInlineEnd?: BorderInlineEndProperty<TLength> | BorderInlineEndProperty<TLength>[];
+  borderInlineStart?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[];
   borderLeft?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[];
   borderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   borderRight?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
   borderStyle?: BorderStyleProperty | BorderStyleProperty[];
   borderTop?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
   borderWidth?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
-  columnRule?: GlobalsString | GlobalsString[];
-  columns?: GlobalsString | GlobalsString[];
-  flex?: FlexProperty | FlexProperty[];
-  flexFlow?: GlobalsString | GlobalsString[];
+  columnRule?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
+  columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
+  flex?: FlexProperty<TLength> | FlexProperty<TLength>[];
+  flexFlow?: FlexFlowProperty | FlexFlowProperty[];
   font?: FontProperty | FontProperty[];
-  grid?: GlobalsString | GlobalsString[];
+  grid?: GridProperty | GridProperty[];
   gridArea?: GlobalsString | GlobalsString[];
   gridColumn?: GridColumnProperty | GridColumnProperty[];
-  gridGap?: GlobalsString | GlobalsString[];
+  gridGap?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
   gridRow?: GridRowProperty | GridRowProperty[];
   gridTemplate?: GridTemplateProperty | GridTemplateProperty[];
-  listStyle?: GlobalsString | GlobalsString[];
+  listStyle?: ListStyleProperty | ListStyleProperty[];
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
-  maskBorder?: GlobalsString | GlobalsString[];
-  offset?: GlobalsString | GlobalsString[];
-  outline?: GlobalsString | GlobalsString[];
+  maskBorder?: MaskBorderProperty | MaskBorderProperty[];
+  offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
+  outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[];
-  textDecoration?: GlobalsString | GlobalsString[];
-  textEmphasis?: GlobalsString | GlobalsString[];
+  textDecoration?: TextDecorationProperty | TextDecorationProperty[];
+  textEmphasis?: TextEmphasisProperty | TextEmphasisProperty[];
   transition?: TransitionProperty | TransitionProperty[];
 }
 
@@ -1146,9 +1146,9 @@ export interface VendorLonghandPropertiesFallback<TLength = string | number> {
   mozUserModify?: MozUserModifyProperty | MozUserModifyProperty[];
   mozWindowDragging?: MozWindowDraggingProperty | MozWindowDraggingProperty[];
   mozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[];
-  webkitBorderBeforeColor?: GlobalsString | GlobalsString[];
-  webkitBorderBeforeStyle?: GlobalsString | GlobalsString[];
-  webkitBorderBeforeWidth?: GlobalsString | GlobalsString[];
+  webkitBorderBeforeColor?: WebkitBorderBeforeColorProperty | WebkitBorderBeforeColorProperty[];
+  webkitBorderBeforeStyle?: WebkitBorderBeforeStyleProperty | WebkitBorderBeforeStyleProperty[];
+  webkitBorderBeforeWidth?: WebkitBorderBeforeWidthProperty<TLength> | WebkitBorderBeforeWidthProperty<TLength>[];
   webkitBoxReflect?: WebkitBoxReflectProperty<TLength> | WebkitBoxReflectProperty<TLength>[];
   webkitMaskAttachment?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   webkitMaskClip?: WebkitMaskClipProperty | WebkitMaskClipProperty[];
@@ -1171,7 +1171,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | number> {
 
 export interface VendorShorthandPropertiesFallback<TLength = string | number> {
   mozOutlineRadius?: GlobalsString | GlobalsString[];
-  webkitBorderBefore?: GlobalsString | GlobalsString[];
+  webkitBorderBefore?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[];
   webkitMask?: GlobalsString | GlobalsString[];
   webkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
 }
@@ -1207,13 +1207,13 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | num
   "background-position-y"?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
   "background-repeat"?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
   "background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
-  "block-size"?: GlobalsString | GlobalsString[];
-  "border-block-end-color"?: GlobalsString | GlobalsString[];
-  "border-block-end-style"?: GlobalsString | GlobalsString[];
-  "border-block-end-width"?: GlobalsString | GlobalsString[];
-  "border-block-start-color"?: GlobalsString | GlobalsString[];
-  "border-block-start-style"?: GlobalsString | GlobalsString[];
-  "border-block-start-width"?: GlobalsString | GlobalsString[];
+  "block-size"?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
+  "border-block-end-color"?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
+  "border-block-end-style"?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
+  "border-block-end-width"?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[];
+  "border-block-start-color"?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
+  "border-block-start-style"?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
+  "border-block-start-width"?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[];
   "border-bottom-color"?: BorderBottomColorProperty | BorderBottomColorProperty[];
   "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
   "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
@@ -1225,12 +1225,12 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | num
   "border-image-slice"?: BorderImageSliceProperty | BorderImageSliceProperty[];
   "border-image-source"?: BorderImageSourceProperty | BorderImageSourceProperty[];
   "border-image-width"?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
-  "border-inline-end-color"?: GlobalsString | GlobalsString[];
-  "border-inline-end-style"?: GlobalsString | GlobalsString[];
-  "border-inline-end-width"?: GlobalsString | GlobalsString[];
-  "border-inline-start-color"?: GlobalsString | GlobalsString[];
-  "border-inline-start-style"?: GlobalsString | GlobalsString[];
-  "border-inline-start-width"?: GlobalsString | GlobalsString[];
+  "border-inline-end-color"?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
+  "border-inline-end-style"?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
+  "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
+  "border-inline-start-color"?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
+  "border-inline-start-style"?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
+  "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[];
   "border-left-color"?: BorderLeftColorProperty | BorderLeftColorProperty[];
   "border-left-style"?: BorderLeftStyleProperty | BorderLeftStyleProperty[];
   "border-left-width"?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
@@ -1268,8 +1268,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | num
   "column-fill"?: ColumnFillProperty | ColumnFillProperty[];
   "column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   "column-rule-color"?: ColumnRuleColorProperty | ColumnRuleColorProperty[];
-  "column-rule-style"?: GlobalsString | GlobalsString[];
-  "column-rule-width"?: GlobalsString | GlobalsString[];
+  "column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
+  "column-rule-width"?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
   "column-span"?: ColumnSpanProperty | ColumnSpanProperty[];
   "column-width"?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[];
   contain?: ContainProperty | ContainProperty[];
@@ -1284,7 +1284,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | num
   "display-outside"?: DisplayOutsideProperty | DisplayOutsideProperty[];
   "empty-cells"?: EmptyCellsProperty | EmptyCellsProperty[];
   filter?: FilterProperty | FilterProperty[];
-  "flex-basis"?: FlexBasisProperty | FlexBasisProperty[];
+  "flex-basis"?: FlexBasisProperty<TLength> | FlexBasisProperty<TLength>[];
   "flex-direction"?: FlexDirectionProperty | FlexDirectionProperty[];
   "flex-grow"?: GlobalsNumber | GlobalsNumber[];
   "flex-shrink"?: GlobalsNumber | GlobalsNumber[];
@@ -1329,7 +1329,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | num
   "ime-mode"?: ImeModeProperty | ImeModeProperty[];
   "initial-letter"?: InitialLetterProperty | InitialLetterProperty[];
   "initial-letter-align"?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
-  "inline-size"?: GlobalsString | GlobalsString[];
+  "inline-size"?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
   isolation?: IsolationProperty | IsolationProperty[];
   "justify-content"?: JustifyContentProperty | JustifyContentProperty[];
   left?: LeftProperty<TLength> | LeftProperty<TLength>[];
@@ -1340,11 +1340,11 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | num
   "list-style-image"?: ListStyleImageProperty | ListStyleImageProperty[];
   "list-style-position"?: ListStylePositionProperty | ListStylePositionProperty[];
   "list-style-type"?: ListStyleTypeProperty | ListStyleTypeProperty[];
-  "margin-block-end"?: GlobalsString | GlobalsString[];
-  "margin-block-start"?: GlobalsString | GlobalsString[];
+  "margin-block-end"?: MarginBlockEndProperty<TLength> | MarginBlockEndProperty<TLength>[];
+  "margin-block-start"?: MarginBlockStartProperty<TLength> | MarginBlockStartProperty<TLength>[];
   "margin-bottom"?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
-  "margin-inline-end"?: GlobalsString | GlobalsString[];
-  "margin-inline-start"?: GlobalsString | GlobalsString[];
+  "margin-inline-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  "margin-inline-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   "margin-left"?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
   "margin-right"?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
   "margin-top"?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[];
@@ -1363,22 +1363,22 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | num
   "mask-repeat"?: MaskRepeatProperty | MaskRepeatProperty[];
   "mask-size"?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[];
   "mask-type"?: MaskTypeProperty | MaskTypeProperty[];
-  "max-block-size"?: GlobalsString | GlobalsString[];
+  "max-block-size"?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[];
   "max-height"?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
-  "max-inline-size"?: GlobalsString | GlobalsString[];
+  "max-inline-size"?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
   "max-width"?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
-  "min-block-size"?: GlobalsString | GlobalsString[];
+  "min-block-size"?: MinBlockSizeProperty<TLength> | MinBlockSizeProperty<TLength>[];
   "min-height"?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
-  "min-inline-size"?: GlobalsString | GlobalsString[];
+  "min-inline-size"?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[];
   "min-width"?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[];
   "object-fit"?: ObjectFitProperty | ObjectFitProperty[];
   "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
-  "offset-block-end"?: GlobalsString | GlobalsString[];
-  "offset-block-start"?: GlobalsString | GlobalsString[];
-  "offset-inline-end"?: GlobalsString | GlobalsString[];
-  "offset-inline-start"?: GlobalsString | GlobalsString[];
+  "offset-block-end"?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
+  "offset-block-start"?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
+  "offset-inline-end"?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
+  "offset-inline-start"?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
   "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   "offset-path"?: OffsetPathProperty | OffsetPathProperty[];
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
@@ -1395,11 +1395,11 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | num
   "overflow-wrap"?: OverflowWrapProperty | OverflowWrapProperty[];
   "overflow-x"?: OverflowXProperty | OverflowXProperty[];
   "overflow-y"?: OverflowYProperty | OverflowYProperty[];
-  "padding-block-end"?: GlobalsString | GlobalsString[];
-  "padding-block-start"?: GlobalsString | GlobalsString[];
+  "padding-block-end"?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
+  "padding-block-start"?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   "padding-bottom"?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
-  "padding-inline-end"?: GlobalsString | GlobalsString[];
-  "padding-inline-start"?: GlobalsString | GlobalsString[];
+  "padding-inline-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
+  "padding-inline-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   "padding-left"?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
   "padding-right"?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
   "padding-top"?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[];
@@ -1478,39 +1478,39 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | nu
   animation?: AnimationProperty | AnimationProperty[];
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   border?: BorderProperty<TLength> | BorderProperty<TLength>[];
-  "border-block-end"?: GlobalsString | GlobalsString[];
-  "border-block-start"?: GlobalsString | GlobalsString[];
+  "border-block-end"?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[];
+  "border-block-start"?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[];
   "border-bottom"?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
   "border-color"?: BorderColorProperty | BorderColorProperty[];
-  "border-image"?: GlobalsString | GlobalsString[];
-  "border-inline-end"?: GlobalsString | GlobalsString[];
-  "border-inline-start"?: GlobalsString | GlobalsString[];
+  "border-image"?: BorderImageProperty | BorderImageProperty[];
+  "border-inline-end"?: BorderInlineEndProperty<TLength> | BorderInlineEndProperty<TLength>[];
+  "border-inline-start"?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[];
   "border-left"?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[];
   "border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   "border-right"?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
   "border-style"?: BorderStyleProperty | BorderStyleProperty[];
   "border-top"?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
   "border-width"?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
-  "column-rule"?: GlobalsString | GlobalsString[];
-  columns?: GlobalsString | GlobalsString[];
-  flex?: FlexProperty | FlexProperty[];
-  "flex-flow"?: GlobalsString | GlobalsString[];
+  "column-rule"?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
+  columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
+  flex?: FlexProperty<TLength> | FlexProperty<TLength>[];
+  "flex-flow"?: FlexFlowProperty | FlexFlowProperty[];
   font?: FontProperty | FontProperty[];
-  grid?: GlobalsString | GlobalsString[];
+  grid?: GridProperty | GridProperty[];
   "grid-area"?: GlobalsString | GlobalsString[];
   "grid-column"?: GridColumnProperty | GridColumnProperty[];
-  "grid-gap"?: GlobalsString | GlobalsString[];
+  "grid-gap"?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
   "grid-row"?: GridRowProperty | GridRowProperty[];
   "grid-template"?: GridTemplateProperty | GridTemplateProperty[];
-  "list-style"?: GlobalsString | GlobalsString[];
+  "list-style"?: ListStyleProperty | ListStyleProperty[];
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
-  "mask-border"?: GlobalsString | GlobalsString[];
-  offset?: GlobalsString | GlobalsString[];
-  outline?: GlobalsString | GlobalsString[];
+  "mask-border"?: MaskBorderProperty | MaskBorderProperty[];
+  offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
+  outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[];
-  "text-decoration"?: GlobalsString | GlobalsString[];
-  "text-emphasis"?: GlobalsString | GlobalsString[];
+  "text-decoration"?: TextDecorationProperty | TextDecorationProperty[];
+  "text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[];
   transition?: TransitionProperty | TransitionProperty[];
 }
 
@@ -1542,9 +1542,9 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | numbe
   "-moz-user-modify"?: MozUserModifyProperty | MozUserModifyProperty[];
   "-moz-window-dragging"?: MozWindowDraggingProperty | MozWindowDraggingProperty[];
   "-moz-window-shadow"?: MozWindowShadowProperty | MozWindowShadowProperty[];
-  "-webkit-border-before-color"?: GlobalsString | GlobalsString[];
-  "-webkit-border-before-style"?: GlobalsString | GlobalsString[];
-  "-webkit-border-before-width"?: GlobalsString | GlobalsString[];
+  "-webkit-border-before-color"?: WebkitBorderBeforeColorProperty | WebkitBorderBeforeColorProperty[];
+  "-webkit-border-before-style"?: WebkitBorderBeforeStyleProperty | WebkitBorderBeforeStyleProperty[];
+  "-webkit-border-before-width"?: WebkitBorderBeforeWidthProperty<TLength> | WebkitBorderBeforeWidthProperty<TLength>[];
   "-webkit-box-reflect"?: WebkitBoxReflectProperty<TLength> | WebkitBoxReflectProperty<TLength>[];
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   "-webkit-mask-clip"?: WebkitMaskClipProperty | WebkitMaskClipProperty[];
@@ -1567,7 +1567,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | numbe
 
 export interface VendorShorthandPropertiesHyphenFallback<TLength = string | number> {
   "-moz-outline-radius"?: GlobalsString | GlobalsString[];
-  "-webkit-border-before"?: GlobalsString | GlobalsString[];
+  "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[];
   "-webkit-mask"?: GlobalsString | GlobalsString[];
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
 }
@@ -1910,6 +1910,20 @@ type BackgroundRepeatProperty = Globals | RepeatStyle;
 
 type BackgroundSizeProperty<TLength> = Globals | BgSize<TLength>;
 
+type BlockSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+
+type BorderBlockEndColorProperty = Globals | Color;
+
+type BorderBlockEndStyleProperty = Globals | BrStyle;
+
+type BorderBlockEndWidthProperty<TLength> = Globals | BrWidth<TLength>;
+
+type BorderBlockStartColorProperty = Globals | Color;
+
+type BorderBlockStartStyleProperty = Globals | BrStyle;
+
+type BorderBlockStartWidthProperty<TLength> = Globals | BrWidth<TLength>;
+
 type BorderBottomColorProperty = Globals | Color;
 
 type BorderBottomLeftRadiusProperty<TLength> = Globals | LengthPercentage<TLength>;
@@ -1931,6 +1945,18 @@ type BorderImageSliceProperty = Globals | NumberPercentage | "fill" | string;
 type BorderImageSourceProperty = Globals | "none" | string;
 
 type BorderImageWidthProperty<TLength> = Globals | LengthPercentage<TLength> | "auto" | number;
+
+type BorderInlineEndColorProperty = Globals | Color;
+
+type BorderInlineEndStyleProperty = Globals | BrStyle;
+
+type BorderInlineEndWidthProperty<TLength> = Globals | BrWidth<TLength>;
+
+type BorderInlineStartColorProperty = Globals | Color;
+
+type BorderInlineStartStyleProperty = Globals | BrStyle;
+
+type BorderInlineStartWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
 type BorderLeftColorProperty = Globals | Color;
 
@@ -1999,6 +2025,10 @@ type ColumnFillProperty = Globals | "auto" | "balance" | "balance-all";
 type ColumnGapProperty<TLength> = Globals | LengthPercentage<TLength> | "normal";
 
 type ColumnRuleColorProperty = Globals | Color;
+
+type ColumnRuleStyleProperty = Globals | BrStyle;
+
+type ColumnRuleWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
 type ColumnSpanProperty = Globals | "all" | "none";
 
@@ -2084,7 +2114,7 @@ type EmptyCellsProperty = Globals | "hide" | "show";
 
 type FilterProperty = Globals | "none" | string;
 
-type FlexBasisProperty = Globals | "content" | string;
+type FlexBasisProperty<TLength> = Globals | TLength | "auto" | "available" | "content" | "fit-content" | "max-content" | "min-content" | string;
 
 type FlexDirectionProperty = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
@@ -2203,6 +2233,8 @@ type InitialLetterProperty = Globals | "normal" | string | number;
 
 type InitialLetterAlignProperty = Globals | "alphabetic" | "auto" | "hanging" | "ideographic";
 
+type InlineSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+
 type IsolationProperty = Globals | "auto" | "isolate";
 
 type JustifyContentProperty = Globals | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly";
@@ -2223,7 +2255,15 @@ type ListStylePositionProperty = Globals | "inside" | "outside";
 
 type ListStyleTypeProperty = Globals | "none" | string;
 
+type MarginBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
+
+type MarginBlockStartProperty<TLength> = Globals | TLength | "auto" | string;
+
 type MarginBottomProperty<TLength> = Globals | TLength | "auto" | string;
+
+type MarginInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
+
+type MarginInlineStartProperty<TLength> = Globals | TLength | "auto" | string;
 
 type MarginLeftProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -2261,11 +2301,19 @@ type MaskSizeProperty<TLength> = Globals | BgSize<TLength>;
 
 type MaskTypeProperty = Globals | "alpha" | "luminance";
 
+type MaxBlockSizeProperty<TLength> = Globals | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
+
 type MaxHeightProperty<TLength> = Globals | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
+
+type MaxInlineSizeProperty<TLength> = Globals | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
 type MaxWidthProperty<TLength> = Globals | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
+type MinBlockSizeProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
+
 type MinHeightProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
+
+type MinInlineSizeProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
 
 type MinWidthProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
 
@@ -2276,6 +2324,14 @@ type ObjectFitProperty = Globals | "contain" | "cover" | "fill" | "none" | "scal
 type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 
 type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
+
+type OffsetBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
+
+type OffsetBlockStartProperty<TLength> = Globals | TLength | "auto" | string;
+
+type OffsetInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
+
+type OffsetInlineStartProperty<TLength> = Globals | TLength | "auto" | string;
 
 type OffsetDistanceProperty<TLength> = Globals | LengthPercentage<TLength>;
 
@@ -2303,7 +2359,15 @@ type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
 type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
+type PaddingBlockEndProperty<TLength> = Globals | TLength | string;
+
+type PaddingBlockStartProperty<TLength> = Globals | TLength | string;
+
 type PaddingBottomProperty<TLength> = Globals | TLength | string;
+
+type PaddingInlineEndProperty<TLength> = Globals | TLength | string;
+
+type PaddingInlineStartProperty<TLength> = Globals | TLength | string;
 
 type PaddingLeftProperty<TLength> = Globals | TLength | string;
 
@@ -2445,9 +2509,19 @@ type BackgroundProperty<TLength> = Globals | FinalBgLayer<TLength> | string;
 
 type BorderProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
+type BorderBlockEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
+type BorderBlockStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
 type BorderBottomProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type BorderColorProperty = Globals | Color;
+
+type BorderImageProperty = Globals | NumberPercentage | "fill" | "none" | "repeat" | "round" | "space" | "stretch" | string;
+
+type BorderInlineEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
+type BorderInlineStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type BorderLeftProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
@@ -2461,21 +2535,43 @@ type BorderTopProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color |
 
 type BorderWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-type FlexProperty = Globals | "none" | string;
+type ColumnRuleProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
+type ColumnsProperty<TLength> = Globals | TLength | "auto" | string | number;
+
+type FlexProperty<TLength> = Globals | TLength | "auto" | "available" | "content" | "fit-content" | "max-content" | "min-content" | "none" | string | number;
+
+type FlexFlowProperty = Globals | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | string;
 
 type FontProperty = Globals | "caption" | "icon" | "menu" | "message-box" | "small-caption" | "status-bar" | string;
 
+type GridProperty = Globals | "none" | string;
+
 type GridColumnProperty = Globals | GridLine | string;
+
+type GridGapProperty<TLength> = Globals | LengthPercentage<TLength> | string;
 
 type GridRowProperty = Globals | GridLine | string;
 
 type GridTemplateProperty = Globals | "none" | string;
 
+type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
+
 type MarginProperty<TLength> = Globals | TLength | "auto" | string;
 
 type MaskProperty<TLength> = Globals | MaskLayer<TLength>;
 
+type MaskBorderProperty = Globals | NumberPercentage | "alpha" | "fill" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | string;
+
+type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
+
+type OutlineProperty<TLength> = Globals | Color | BrStyle | BrWidth<TLength> | "auto" | "invert" | string;
+
 type PaddingProperty<TLength> = Globals | TLength | string;
+
+type TextDecorationProperty = Globals | Color | "blink" | "dashed" | "dotted" | "double" | "line-through" | "none" | "overline" | "solid" | "underline" | "wavy" | string;
+
+type TextEmphasisProperty = Globals | Color | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
 type TransitionProperty = Globals | SingleTransition;
 
@@ -2626,6 +2722,12 @@ type MozWindowDraggingProperty = Globals | "drag" | "no-drag";
 
 type MozWindowShadowProperty = Globals | "default" | "menu" | "none" | "sheet" | "tooltip";
 
+type WebkitBorderBeforeColorProperty = Globals | Color;
+
+type WebkitBorderBeforeStyleProperty = Globals | BrStyle;
+
+type WebkitBorderBeforeWidthProperty<TLength> = Globals | BrWidth<TLength>;
+
 type WebkitBoxReflectProperty<TLength> = Globals | TLength | "above" | "below" | "left" | "right" | string;
 
 type WebkitMaskAttachmentProperty = Globals | Attachment | string;
@@ -2659,6 +2761,8 @@ type WebkitTextStrokeColorProperty = Globals | Color;
 type WebkitTextStrokeWidthProperty<TLength> = Globals | TLength;
 
 type WebkitTouchCalloutProperty = Globals | "default" | "none";
+
+type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type WebkitTextStrokeProperty<TLength> = Globals | Color | TLength | string;
 
@@ -3058,7 +3162,7 @@ type AnimateableFeature = "contents" | "scroll-position" | string;
 
 type SingleAnimation = SingleTimingFunction | SingleAnimationIterationCount | SingleAnimationDirection | SingleAnimationFillMode | SingleAnimationPlayState | "none" | string;
 
-type FinalBgLayer<TLength> = BgImage | BgPosition<TLength> | RepeatStyle | Attachment | Box | string;
+type FinalBgLayer<TLength> = Color | BgImage | BgPosition<TLength> | RepeatStyle | Attachment | Box | string;
 
 type MaskLayer<TLength> = MaskReference | Position<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | string;
 
