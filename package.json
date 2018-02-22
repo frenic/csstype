@@ -29,7 +29,8 @@
     "pretty": "prettier --write build.ts **/*.{ts,js,json}",
     "lazy": "tsc && npm run lint && npm run pretty",
     "test": "jest --no-cache",
-    "prepublish": "tsc && npm run test && npm run build && tsc typecheck.ts --noEmit"
+    "typecheck": "tsc typecheck.ts --noEmit --pretty & flow check typecheck.js",
+    "prepublish": "tsc && npm run test && npm run build && npm run typecheck"
   },
   "files": [
     "index.d.ts",
