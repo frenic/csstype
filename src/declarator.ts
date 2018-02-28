@@ -44,7 +44,7 @@ export interface IDeclaration {
 
 export const lengthGeneric: IGenerics = {
   name: 'TLength',
-  defaults: 'string | number',
+  defaults: 'string | 0',
 };
 
 const globalsDeclaration: IDeclaration = {

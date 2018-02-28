@@ -1,5 +1,5 @@
 // @flow
-export type StandardLonghandProperties<TLength = string | number> = {
+export type StandardLonghandProperties<TLength = string | 0> = {
   alignContent?: AlignContentProperty,
   alignItems?: AlignItemsProperty,
   alignSelf?: AlignSelfProperty,
@@ -293,7 +293,7 @@ export type StandardLonghandProperties<TLength = string | number> = {
   zIndex?: ZIndexProperty,
 };
 
-export type StandardShorthandProperties<TLength = string | number> = {
+export type StandardShorthandProperties<TLength = string | 0> = {
   animation?: AnimationProperty,
   background?: BackgroundProperty<TLength>,
   border?: BorderProperty<TLength>,
@@ -333,9 +333,9 @@ export type StandardShorthandProperties<TLength = string | number> = {
   transition?: TransitionProperty,
 };
 
-export interface StandardProperties<TLength = string | number> extends StandardLonghandProperties<TLength>, StandardShorthandProperties<TLength> {}
+export interface StandardProperties<TLength = string | 0> extends StandardLonghandProperties<TLength>, StandardShorthandProperties<TLength> {}
 
-export type VendorLonghandProperties<TLength = string | number> = {
+export type VendorLonghandProperties<TLength = string | 0> = {
   msOverflowStyle?: MsOverflowStyleProperty,
   mozAppearance?: MozAppearanceProperty,
   mozBinding?: MozBindingProperty,
@@ -382,18 +382,18 @@ export type VendorLonghandProperties<TLength = string | number> = {
   webkitTouchCallout?: WebkitTouchCalloutProperty,
 };
 
-export type VendorShorthandProperties<TLength = string | number> = {
+export type VendorShorthandProperties<TLength = string | 0> = {
   mozOutlineRadius?: GlobalsString,
   webkitBorderBefore?: WebkitBorderBeforeProperty<TLength>,
   webkitMask?: GlobalsString,
   webkitTextStroke?: WebkitTextStrokeProperty<TLength>,
 };
 
-export interface VendorProperties<TLength = string | number> extends VendorLonghandProperties<TLength>, VendorShorthandProperties<TLength> {}
+export interface VendorProperties<TLength = string | 0> extends VendorLonghandProperties<TLength>, VendorShorthandProperties<TLength> {}
 
-export interface Properties<TLength = string | number> extends StandardProperties<TLength>, VendorProperties<TLength> {}
+export interface Properties<TLength = string | 0> extends StandardProperties<TLength>, VendorProperties<TLength> {}
 
-export type StandardLonghandPropertiesHyphen<TLength = string | number> = {
+export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "align-content"?: AlignContentProperty,
   "align-items"?: AlignItemsProperty,
   "align-self"?: AlignSelfProperty,
@@ -687,7 +687,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | number> = {
   "z-index"?: ZIndexProperty,
 };
 
-export type StandardShorthandPropertiesHyphen<TLength = string | number> = {
+export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   animation?: AnimationProperty,
   background?: BackgroundProperty<TLength>,
   border?: BorderProperty<TLength>,
@@ -727,9 +727,9 @@ export type StandardShorthandPropertiesHyphen<TLength = string | number> = {
   transition?: TransitionProperty,
 };
 
-export interface StandardPropertiesHyphen<TLength = string | number> extends StandardLonghandPropertiesHyphen<TLength>, StandardShorthandPropertiesHyphen<TLength> {}
+export interface StandardPropertiesHyphen<TLength = string | 0> extends StandardLonghandPropertiesHyphen<TLength>, StandardShorthandPropertiesHyphen<TLength> {}
 
-export type VendorLonghandPropertiesHyphen<TLength = string | number> = {
+export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-overflow-style"?: MsOverflowStyleProperty,
   "-moz-appearance"?: MozAppearanceProperty,
   "-moz-binding"?: MozBindingProperty,
@@ -776,18 +776,18 @@ export type VendorLonghandPropertiesHyphen<TLength = string | number> = {
   "-webkit-touch-callout"?: WebkitTouchCalloutProperty,
 };
 
-export type VendorShorthandPropertiesHyphen<TLength = string | number> = {
+export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
   "-moz-outline-radius"?: GlobalsString,
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength>,
   "-webkit-mask"?: GlobalsString,
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>,
 };
 
-export interface VendorPropertiesHyphen<TLength = string | number> extends VendorLonghandPropertiesHyphen<TLength>, VendorShorthandPropertiesHyphen<TLength> {}
+export interface VendorPropertiesHyphen<TLength = string | 0> extends VendorLonghandPropertiesHyphen<TLength>, VendorShorthandPropertiesHyphen<TLength> {}
 
-export interface PropertiesHyphen<TLength = string | number> extends StandardPropertiesHyphen<TLength>, VendorPropertiesHyphen<TLength> {}
+export interface PropertiesHyphen<TLength = string | 0> extends StandardPropertiesHyphen<TLength>, VendorPropertiesHyphen<TLength> {}
 
-export type StandardLonghandPropertiesFallback<TLength = string | number> = {
+export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   alignContent?: AlignContentProperty | AlignContentProperty[],
   alignItems?: AlignItemsProperty | AlignItemsProperty[],
   alignSelf?: AlignSelfProperty | AlignSelfProperty[],
@@ -1081,7 +1081,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | number> = {
   zIndex?: ZIndexProperty | ZIndexProperty[],
 };
 
-export type StandardShorthandPropertiesFallback<TLength = string | number> = {
+export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   animation?: AnimationProperty | AnimationProperty[],
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
   border?: BorderProperty<TLength> | BorderProperty<TLength>[],
@@ -1121,9 +1121,9 @@ export type StandardShorthandPropertiesFallback<TLength = string | number> = {
   transition?: TransitionProperty | TransitionProperty[],
 };
 
-export interface StandardPropertiesFallback<TLength = string | number> extends StandardLonghandPropertiesFallback<TLength>, StandardShorthandPropertiesFallback<TLength> {}
+export interface StandardPropertiesFallback<TLength = string | 0> extends StandardLonghandPropertiesFallback<TLength>, StandardShorthandPropertiesFallback<TLength> {}
 
-export type VendorLonghandPropertiesFallback<TLength = string | number> = {
+export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
   mozAppearance?: MozAppearanceProperty | MozAppearanceProperty[],
   mozBinding?: MozBindingProperty | MozBindingProperty[],
@@ -1170,18 +1170,18 @@ export type VendorLonghandPropertiesFallback<TLength = string | number> = {
   webkitTouchCallout?: WebkitTouchCalloutProperty | WebkitTouchCalloutProperty[],
 };
 
-export type VendorShorthandPropertiesFallback<TLength = string | number> = {
+export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
   mozOutlineRadius?: GlobalsString | GlobalsString[],
   webkitBorderBefore?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[],
   webkitMask?: GlobalsString | GlobalsString[],
   webkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[],
 };
 
-export interface VendorPropertiesFallback<TLength = string | number> extends VendorLonghandPropertiesFallback<TLength>, VendorShorthandPropertiesFallback<TLength> {}
+export interface VendorPropertiesFallback<TLength = string | 0> extends VendorLonghandPropertiesFallback<TLength>, VendorShorthandPropertiesFallback<TLength> {}
 
-export interface PropertiesFallback<TLength = string | number> extends StandardPropertiesFallback<TLength>, VendorPropertiesFallback<TLength> {}
+export interface PropertiesFallback<TLength = string | 0> extends StandardPropertiesFallback<TLength>, VendorPropertiesFallback<TLength> {}
 
-export type StandardLonghandPropertiesHyphenFallback<TLength = string | number> = {
+export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "align-content"?: AlignContentProperty | AlignContentProperty[],
   "align-items"?: AlignItemsProperty | AlignItemsProperty[],
   "align-self"?: AlignSelfProperty | AlignSelfProperty[],
@@ -1475,7 +1475,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | number> 
   "z-index"?: ZIndexProperty | ZIndexProperty[],
 };
 
-export type StandardShorthandPropertiesHyphenFallback<TLength = string | number> = {
+export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   animation?: AnimationProperty | AnimationProperty[],
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
   border?: BorderProperty<TLength> | BorderProperty<TLength>[],
@@ -1515,10 +1515,10 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | number>
   transition?: TransitionProperty | TransitionProperty[],
 };
 
-export interface StandardPropertiesHyphenFallback<TLength = string | number>
+export interface StandardPropertiesHyphenFallback<TLength = string | 0>
   extends StandardLonghandPropertiesHyphenFallback<TLength>, StandardShorthandPropertiesHyphenFallback<TLength> {}
 
-export type VendorLonghandPropertiesHyphenFallback<TLength = string | number> = {
+export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-overflow-style"?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
   "-moz-appearance"?: MozAppearanceProperty | MozAppearanceProperty[],
   "-moz-binding"?: MozBindingProperty | MozBindingProperty[],
@@ -1565,17 +1565,16 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | number> = 
   "-webkit-touch-callout"?: WebkitTouchCalloutProperty | WebkitTouchCalloutProperty[],
 };
 
-export type VendorShorthandPropertiesHyphenFallback<TLength = string | number> = {
+export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-outline-radius"?: GlobalsString | GlobalsString[],
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[],
   "-webkit-mask"?: GlobalsString | GlobalsString[],
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[],
 };
 
-export interface VendorPropertiesHyphenFallback<TLength = string | number>
-  extends VendorLonghandPropertiesHyphenFallback<TLength>, VendorShorthandPropertiesHyphenFallback<TLength> {}
+export interface VendorPropertiesHyphenFallback<TLength = string | 0> extends VendorLonghandPropertiesHyphenFallback<TLength>, VendorShorthandPropertiesHyphenFallback<TLength> {}
 
-export interface PropertiesHyphenFallback<TLength = string | number> extends StandardPropertiesHyphenFallback<TLength>, VendorPropertiesHyphenFallback<TLength> {}
+export interface PropertiesHyphenFallback<TLength = string | 0> extends StandardPropertiesHyphenFallback<TLength>, VendorPropertiesHyphenFallback<TLength> {}
 
 export type CounterStyle = {
   additiveSymbols?: string,
@@ -1681,27 +1680,27 @@ export type FontFaceHyphenFallback = {
   "unicode-range"?: string | string[],
 };
 
-export type Page<TLength = string | number> = {
+export type Page<TLength = string | 0> = {
   bleed?: PageBleedProperty<TLength>,
   marks?: PageMarksProperty,
 };
 
-export type PageHyphen<TLength = string | number> = {
+export type PageHyphen<TLength = string | 0> = {
   bleed?: PageBleedProperty<TLength>,
   marks?: PageMarksProperty,
 };
 
-export type PageFallback<TLength = string | number> = {
+export type PageFallback<TLength = string | 0> = {
   bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[],
   marks?: PageMarksProperty | PageMarksProperty[],
 };
 
-export type PageHyphenFallback<TLength = string | number> = {
+export type PageHyphenFallback<TLength = string | 0> = {
   bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[],
   marks?: PageMarksProperty | PageMarksProperty[],
 };
 
-export type Viewport<TLength = string | number> = {
+export type Viewport<TLength = string | 0> = {
   height?: ViewportHeightProperty<TLength>,
   maxHeight?: ViewportMaxHeightProperty<TLength>,
   maxWidth?: ViewportMaxWidthProperty<TLength>,
@@ -1715,7 +1714,7 @@ export type Viewport<TLength = string | number> = {
   zoom?: ViewportZoomProperty,
 };
 
-export type ViewportHyphen<TLength = string | number> = {
+export type ViewportHyphen<TLength = string | 0> = {
   height?: ViewportHeightProperty<TLength>,
   "max-height"?: ViewportMaxHeightProperty<TLength>,
   "max-width"?: ViewportMaxWidthProperty<TLength>,
@@ -1729,7 +1728,7 @@ export type ViewportHyphen<TLength = string | number> = {
   zoom?: ViewportZoomProperty,
 };
 
-export type ViewportFallback<TLength = string | number> = {
+export type ViewportFallback<TLength = string | 0> = {
   height?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[],
   maxHeight?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[],
   maxWidth?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[],
@@ -1743,7 +1742,7 @@ export type ViewportFallback<TLength = string | number> = {
   zoom?: ViewportZoomProperty | ViewportZoomProperty[],
 };
 
-export type ViewportHyphenFallback<TLength = string | number> = {
+export type ViewportHyphenFallback<TLength = string | 0> = {
   height?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[],
   "max-height"?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[],
   "max-width"?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[],

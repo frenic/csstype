@@ -5,36 +5,36 @@ import * as CSS from './';
 const css: CSS.Properties<*> = {
   flexGrow: 1,
   flexShrink: 1,
-  flexBasis: 1,
+  flexBasis: '1px',
   flexDirection: 'row',
   opacity: 1,
-  top: '0px',
+  top: '1px',
   fontWeight: 'normal',
-  width: 1,
+  width: 0,
   height: '1px',
 };
 
 const cssWithFallbackValues: CSS.PropertiesFallback<*> = {
   flexGrow: [1],
   flexShrink: [1],
-  flexBasis: [1],
+  flexBasis: ['1px'],
   flexDirection: ['row'],
   opacity: [1],
-  top: ['0px'],
+  top: ['1px'],
   fontWeight: ['normal'],
-  width: [1],
+  width: [0],
   height: ['1px'],
 };
 
 const cssWithHyphenProperties: CSS.PropertiesHyphen<*> = {
   'flex-grow': 1,
   'flex-shrink': 0,
-  'flex-basis': 0,
+  'flex-basis': '1px',
   'flex-direction': 'row',
   opacity: 1,
-  top: '0px',
+  top: '1px',
   'font-weight': 'normal',
-  width: 1,
+  width: 0,
   height: '1px',
 };
 
