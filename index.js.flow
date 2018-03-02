@@ -333,7 +333,7 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   transition?: TransitionProperty,
 };
 
-export interface StandardProperties<TLength = string | 0> extends StandardLonghandProperties<TLength>, StandardShorthandProperties<TLength> {}
+export type StandardProperties<TLength = string | 0> = StandardLonghandProperties<TLength> & StandardShorthandProperties<TLength>;
 
 export type VendorLonghandProperties<TLength = string | 0> = {
   msOverflowStyle?: MsOverflowStyleProperty,
@@ -389,9 +389,9 @@ export type VendorShorthandProperties<TLength = string | 0> = {
   webkitTextStroke?: WebkitTextStrokeProperty<TLength>,
 };
 
-export interface VendorProperties<TLength = string | 0> extends VendorLonghandProperties<TLength>, VendorShorthandProperties<TLength> {}
+export type VendorProperties<TLength = string | 0> = VendorLonghandProperties<TLength> & VendorShorthandProperties<TLength>;
 
-export interface Properties<TLength = string | 0> extends StandardProperties<TLength>, VendorProperties<TLength> {}
+export type Properties<TLength = string | 0> = StandardProperties<TLength> & VendorProperties<TLength>;
 
 export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "align-content"?: AlignContentProperty,
@@ -727,7 +727,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   transition?: TransitionProperty,
 };
 
-export interface StandardPropertiesHyphen<TLength = string | 0> extends StandardLonghandPropertiesHyphen<TLength>, StandardShorthandPropertiesHyphen<TLength> {}
+export type StandardPropertiesHyphen<TLength = string | 0> = StandardLonghandPropertiesHyphen<TLength> & StandardShorthandPropertiesHyphen<TLength>;
 
 export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-overflow-style"?: MsOverflowStyleProperty,
@@ -783,9 +783,9 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>,
 };
 
-export interface VendorPropertiesHyphen<TLength = string | 0> extends VendorLonghandPropertiesHyphen<TLength>, VendorShorthandPropertiesHyphen<TLength> {}
+export type VendorPropertiesHyphen<TLength = string | 0> = VendorLonghandPropertiesHyphen<TLength> & VendorShorthandPropertiesHyphen<TLength>;
 
-export interface PropertiesHyphen<TLength = string | 0> extends StandardPropertiesHyphen<TLength>, VendorPropertiesHyphen<TLength> {}
+export type PropertiesHyphen<TLength = string | 0> = StandardPropertiesHyphen<TLength> & VendorPropertiesHyphen<TLength>;
 
 export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   alignContent?: AlignContentProperty | AlignContentProperty[],
@@ -1121,7 +1121,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   transition?: TransitionProperty | TransitionProperty[],
 };
 
-export interface StandardPropertiesFallback<TLength = string | 0> extends StandardLonghandPropertiesFallback<TLength>, StandardShorthandPropertiesFallback<TLength> {}
+export type StandardPropertiesFallback<TLength = string | 0> = StandardLonghandPropertiesFallback<TLength> & StandardShorthandPropertiesFallback<TLength>;
 
 export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
@@ -1177,9 +1177,9 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
   webkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[],
 };
 
-export interface VendorPropertiesFallback<TLength = string | 0> extends VendorLonghandPropertiesFallback<TLength>, VendorShorthandPropertiesFallback<TLength> {}
+export type VendorPropertiesFallback<TLength = string | 0> = VendorLonghandPropertiesFallback<TLength> & VendorShorthandPropertiesFallback<TLength>;
 
-export interface PropertiesFallback<TLength = string | 0> extends StandardPropertiesFallback<TLength>, VendorPropertiesFallback<TLength> {}
+export type PropertiesFallback<TLength = string | 0> = StandardPropertiesFallback<TLength> & VendorPropertiesFallback<TLength>;
 
 export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "align-content"?: AlignContentProperty | AlignContentProperty[],
@@ -1515,8 +1515,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   transition?: TransitionProperty | TransitionProperty[],
 };
 
-export interface StandardPropertiesHyphenFallback<TLength = string | 0>
-  extends StandardLonghandPropertiesHyphenFallback<TLength>, StandardShorthandPropertiesHyphenFallback<TLength> {}
+export type StandardPropertiesHyphenFallback<TLength = string | 0> = StandardLonghandPropertiesHyphenFallback<TLength> & StandardShorthandPropertiesHyphenFallback<TLength>;
 
 export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-overflow-style"?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
@@ -1572,9 +1571,9 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[],
 };
 
-export interface VendorPropertiesHyphenFallback<TLength = string | 0> extends VendorLonghandPropertiesHyphenFallback<TLength>, VendorShorthandPropertiesHyphenFallback<TLength> {}
+export type VendorPropertiesHyphenFallback<TLength = string | 0> = VendorLonghandPropertiesHyphenFallback<TLength> & VendorShorthandPropertiesHyphenFallback<TLength>;
 
-export interface PropertiesHyphenFallback<TLength = string | 0> extends StandardPropertiesHyphenFallback<TLength>, VendorPropertiesHyphenFallback<TLength> {}
+export type PropertiesHyphenFallback<TLength = string | 0> = StandardPropertiesHyphenFallback<TLength> & VendorPropertiesHyphenFallback<TLength>;
 
 export type CounterStyle = {
   additiveSymbols?: string,
