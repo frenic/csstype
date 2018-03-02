@@ -15,32 +15,38 @@ function flow() {
       interfacesOutput += EOL + EOL;
     }
 
-    const extendList = item.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)).join(', ');
-    const isInterface = !!extendList;
-    interfacesOutput += isInterface ? 'export interface ' : 'export type ';
+    const extendList = item.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)).join(' & ');
+    interfacesOutput += 'export type ';
     interfacesOutput += item.name + stringifyGenerics(item.generics);
-    interfacesOutput += extendList ? ` extends ${extendList}` : '= ';
-    interfacesOutput += '{' + EOL;
+    interfacesOutput += ' = ' + extendList;
 
-    for (const property of item.properties) {
-      if (isAliasProperty(property)) {
-        const generics = stringifyGenerics(property.generics, true);
-        interfacesOutput += `${JSON.stringify(property.name)}?: ${
-          item.fallback
-            ? `${property.alias.name + generics} | ${property.alias.name + generics}[]${isInterface ? ';' : ','}`
-            : property.alias.name + generics + (isInterface ? ';' : ',')
-        }`;
-      } else {
-        const value = stringifyTypes(property.type);
-        interfacesOutput += `${JSON.stringify(property.name)}?: ${
-          item.fallback ? `${value} | ${value}[]${isInterface ? ';' : ','}` : value + (isInterface ? ';' : ',')
-        }`;
+    if (item.properties.length > 0) {
+      if (extendList) {
+        interfacesOutput += ' & ';
       }
 
-      interfacesOutput += EOL;
-    }
+      interfacesOutput += '{' + EOL;
 
-    interfacesOutput += '}';
+      for (const property of item.properties) {
+        if (isAliasProperty(property)) {
+          const generics = stringifyGenerics(property.generics, true);
+          interfacesOutput += `${JSON.stringify(property.name)}?: ${
+            item.fallback
+              ? `${property.alias.name + generics} | ${property.alias.name + generics}[],`
+              : property.alias.name + generics + ','
+          }`;
+        } else {
+          const value = stringifyTypes(property.type);
+          interfacesOutput += `${JSON.stringify(property.name)}?: ${
+            item.fallback ? `${value} | ${value}[],` : value + ','
+          }`;
+        }
+
+        interfacesOutput += EOL;
+      }
+
+      interfacesOutput += '}';
+    }
   }
 
   let declarationsOutput = '';
