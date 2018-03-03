@@ -103,12 +103,12 @@ String literals of pseudo classes and pseudo elements
 
 ## Usage
 
-Length unit defaults to `string | number`. But it's possible to override it using generics.
+Length unit defaults to `string | 0` because `0` is the [only unitless length number](https://www.w3.org/TR/REC-CSS2/syndata.html#length-units). But it's possible to override it using generics.
 
 ```ts
 import * as CSS from 'csstype';
 
-const style: CSS.Properties<string> = {
+const style: CSS.Properties<string | number> = {
   padding: '10px',
   margin: '1rem',
 };
