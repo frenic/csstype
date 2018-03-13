@@ -97,9 +97,6 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   cursor?: CursorProperty;
   direction?: DirectionProperty;
   display?: DisplayProperty;
-  displayInside?: DisplayInsideProperty;
-  displayList?: DisplayListProperty;
-  displayOutside?: DisplayOutsideProperty;
   emptyCells?: EmptyCellsProperty;
   filter?: FilterProperty;
   flexBasis?: FlexBasisProperty<TLength>;
@@ -213,6 +210,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   overflowWrap?: OverflowWrapProperty;
   overflowX?: OverflowXProperty;
   overflowY?: OverflowYProperty;
+  overscrollBehavior?: OverscrollBehaviorProperty;
+  overscrollBehaviorX?: OverscrollBehaviorXProperty;
+  overscrollBehaviorY?: OverscrollBehaviorYProperty;
   paddingBlockEnd?: PaddingBlockEndProperty<TLength>;
   paddingBlockStart?: PaddingBlockStartProperty<TLength>;
   paddingBottom?: PaddingBottomProperty<TLength>;
@@ -224,16 +224,20 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   pageBreakAfter?: PageBreakAfterProperty;
   pageBreakBefore?: PageBreakBeforeProperty;
   pageBreakInside?: PageBreakInsideProperty;
+  paintOrder?: PaintOrderProperty;
   perspective?: PerspectiveProperty<TLength>;
   perspectiveOrigin?: PerspectiveOriginProperty<TLength>;
+  placeContent?: PlaceContentProperty;
   pointerEvents?: PointerEventsProperty;
   position?: PositionProperty;
   quotes?: QuotesProperty;
   resize?: ResizeProperty;
   right?: RightProperty<TLength>;
+  rotate?: RotateProperty;
   rubyAlign?: RubyAlignProperty;
   rubyMerge?: RubyMergeProperty;
   rubyPosition?: RubyPositionProperty;
+  scale?: ScaleProperty;
   scrollBehavior?: ScrollBehaviorProperty;
   scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength>;
   scrollSnapDestination?: ScrollSnapDestinationProperty<TLength>;
@@ -277,6 +281,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   transitionDuration?: GlobalsString;
   transitionProperty?: TransitionPropertyProperty;
   transitionTimingFunction?: TransitionTimingFunctionProperty;
+  translate?: TranslateProperty<TLength>;
   unicodeBidi?: UnicodeBidiProperty;
   userSelect?: UserSelectProperty;
   verticalAlign?: VerticalAlignProperty<TLength>;
@@ -335,7 +340,42 @@ export interface StandardShorthandProperties<TLength = string | 0> {
 export interface StandardProperties<TLength = string | 0> extends StandardLonghandProperties<TLength>, StandardShorthandProperties<TLength> {}
 
 export interface VendorLonghandProperties<TLength = string | 0> {
+  msAccelerator?: MsAcceleratorProperty;
+  msBlockProgression?: MsBlockProgressionProperty;
+  msContentZoomChaining?: MsContentZoomChainingProperty;
+  msContentZooming?: MsContentZoomingProperty;
+  msContentZoomLimitMax?: GlobalsString;
+  msContentZoomLimitMin?: GlobalsString;
+  msContentZoomSnapPoints?: GlobalsString;
+  msContentZoomSnapType?: MsContentZoomSnapTypeProperty;
+  msFilter?: GlobalsString;
+  msFlowFrom?: MsFlowFromProperty;
+  msFlowInto?: MsFlowIntoProperty;
+  msHighContrastAdjust?: MsHighContrastAdjustProperty;
+  msHyphenateLimitChars?: MsHyphenateLimitCharsProperty;
+  msHyphenateLimitLines?: MsHyphenateLimitLinesProperty;
+  msHyphenateLimitZone?: MsHyphenateLimitZoneProperty<TLength>;
+  msImeAlign?: MsImeAlignProperty;
   msOverflowStyle?: MsOverflowStyleProperty;
+  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty;
+  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty;
+  msScrollbarShadowColor?: MsScrollbarShadowColorProperty;
+  msScrollChaining?: MsScrollChainingProperty;
+  msScrollLimitXMax?: MsScrollLimitXMaxProperty<TLength>;
+  msScrollLimitXMin?: MsScrollLimitXMinProperty<TLength>;
+  msScrollLimitYMax?: MsScrollLimitYMaxProperty<TLength>;
+  msScrollLimitYMin?: MsScrollLimitYMinProperty<TLength>;
+  msScrollRails?: MsScrollRailsProperty;
+  msScrollSnapPointsX?: GlobalsString;
+  msScrollSnapPointsY?: GlobalsString;
+  msScrollSnapType?: MsScrollSnapTypeProperty;
+  msScrollTranslation?: MsScrollTranslationProperty;
+  msTextAutospace?: MsTextAutospaceProperty;
+  msTouchSelect?: MsTouchSelectProperty;
+  msUserSelect?: MsUserSelectProperty;
+  msWrapFlow?: MsWrapFlowProperty;
+  msWrapMargin?: MsWrapMarginProperty<TLength>;
+  msWrapThrough?: MsWrapThroughProperty;
   MozAppearance?: MozAppearanceProperty;
   MozBinding?: MozBindingProperty;
   MozBorderBottomColors?: MozBorderBottomColorsProperty;
@@ -382,6 +422,11 @@ export interface VendorLonghandProperties<TLength = string | 0> {
 }
 
 export interface VendorShorthandProperties<TLength = string | 0> {
+  msContentZoomLimit?: GlobalsString;
+  msContentZoomSnap?: MsContentZoomSnapProperty;
+  msScrollLimit?: GlobalsString;
+  msScrollSnapX?: GlobalsString;
+  msScrollSnapY?: GlobalsString;
   MozOutlineRadius?: GlobalsString;
   WebkitBorderBefore?: WebkitBorderBeforeProperty<TLength>;
   WebkitMask?: GlobalsString;
@@ -491,9 +536,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   cursor?: CursorProperty;
   direction?: DirectionProperty;
   display?: DisplayProperty;
-  "display-inside"?: DisplayInsideProperty;
-  "display-list"?: DisplayListProperty;
-  "display-outside"?: DisplayOutsideProperty;
   "empty-cells"?: EmptyCellsProperty;
   filter?: FilterProperty;
   "flex-basis"?: FlexBasisProperty<TLength>;
@@ -607,6 +649,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "overflow-wrap"?: OverflowWrapProperty;
   "overflow-x"?: OverflowXProperty;
   "overflow-y"?: OverflowYProperty;
+  "overscroll-behavior"?: OverscrollBehaviorProperty;
+  "overscroll-behavior-x"?: OverscrollBehaviorXProperty;
+  "overscroll-behavior-y"?: OverscrollBehaviorYProperty;
   "padding-block-end"?: PaddingBlockEndProperty<TLength>;
   "padding-block-start"?: PaddingBlockStartProperty<TLength>;
   "padding-bottom"?: PaddingBottomProperty<TLength>;
@@ -618,16 +663,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "page-break-after"?: PageBreakAfterProperty;
   "page-break-before"?: PageBreakBeforeProperty;
   "page-break-inside"?: PageBreakInsideProperty;
+  "paint-order"?: PaintOrderProperty;
   perspective?: PerspectiveProperty<TLength>;
   "perspective-origin"?: PerspectiveOriginProperty<TLength>;
+  "place-content"?: PlaceContentProperty;
   "pointer-events"?: PointerEventsProperty;
   position?: PositionProperty;
   quotes?: QuotesProperty;
   resize?: ResizeProperty;
   right?: RightProperty<TLength>;
+  rotate?: RotateProperty;
   "ruby-align"?: RubyAlignProperty;
   "ruby-merge"?: RubyMergeProperty;
   "ruby-position"?: RubyPositionProperty;
+  scale?: ScaleProperty;
   "scroll-behavior"?: ScrollBehaviorProperty;
   "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength>;
   "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength>;
@@ -671,6 +720,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "transition-duration"?: GlobalsString;
   "transition-property"?: TransitionPropertyProperty;
   "transition-timing-function"?: TransitionTimingFunctionProperty;
+  translate?: TranslateProperty<TLength>;
   "unicode-bidi"?: UnicodeBidiProperty;
   "user-select"?: UserSelectProperty;
   "vertical-align"?: VerticalAlignProperty<TLength>;
@@ -729,7 +779,42 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
 export interface StandardPropertiesHyphen<TLength = string | 0> extends StandardLonghandPropertiesHyphen<TLength>, StandardShorthandPropertiesHyphen<TLength> {}
 
 export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
+  "-ms-accelerator"?: MsAcceleratorProperty;
+  "-ms-block-progression"?: MsBlockProgressionProperty;
+  "-ms-content-zoom-chaining"?: MsContentZoomChainingProperty;
+  "-ms-content-zooming"?: MsContentZoomingProperty;
+  "-ms-content-zoom-limit-max"?: GlobalsString;
+  "-ms-content-zoom-limit-min"?: GlobalsString;
+  "-ms-content-zoom-snap-points"?: GlobalsString;
+  "-ms-content-zoom-snap-type"?: MsContentZoomSnapTypeProperty;
+  "-ms-filter"?: GlobalsString;
+  "-ms-flow-from"?: MsFlowFromProperty;
+  "-ms-flow-into"?: MsFlowIntoProperty;
+  "-ms-high-contrast-adjust"?: MsHighContrastAdjustProperty;
+  "-ms-hyphenate-limit-chars"?: MsHyphenateLimitCharsProperty;
+  "-ms-hyphenate-limit-lines"?: MsHyphenateLimitLinesProperty;
+  "-ms-hyphenate-limit-zone"?: MsHyphenateLimitZoneProperty<TLength>;
+  "-ms-ime-align"?: MsImeAlignProperty;
   "-ms-overflow-style"?: MsOverflowStyleProperty;
+  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty;
+  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty;
+  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty;
+  "-ms-scroll-chaining"?: MsScrollChainingProperty;
+  "-ms-scroll-limit-x-max"?: MsScrollLimitXMaxProperty<TLength>;
+  "-ms-scroll-limit-x-min"?: MsScrollLimitXMinProperty<TLength>;
+  "-ms-scroll-limit-y-max"?: MsScrollLimitYMaxProperty<TLength>;
+  "-ms-scroll-limit-y-min"?: MsScrollLimitYMinProperty<TLength>;
+  "-ms-scroll-rails"?: MsScrollRailsProperty;
+  "-ms-scroll-snap-points-x"?: GlobalsString;
+  "-ms-scroll-snap-points-y"?: GlobalsString;
+  "-ms-scroll-snap-type"?: MsScrollSnapTypeProperty;
+  "-ms-scroll-translation"?: MsScrollTranslationProperty;
+  "-ms-text-autospace"?: MsTextAutospaceProperty;
+  "-ms-touch-select"?: MsTouchSelectProperty;
+  "-ms-user-select"?: MsUserSelectProperty;
+  "-ms-wrap-flow"?: MsWrapFlowProperty;
+  "-ms-wrap-margin"?: MsWrapMarginProperty<TLength>;
+  "-ms-wrap-through"?: MsWrapThroughProperty;
   "-moz-appearance"?: MozAppearanceProperty;
   "-moz-binding"?: MozBindingProperty;
   "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty;
@@ -776,6 +861,11 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
 }
 
 export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
+  "-ms-content-zoom-limit"?: GlobalsString;
+  "-ms-content-zoom-snap"?: MsContentZoomSnapProperty;
+  "-ms-scroll-limit"?: GlobalsString;
+  "-ms-scroll-snap-x"?: GlobalsString;
+  "-ms-scroll-snap-y"?: GlobalsString;
   "-moz-outline-radius"?: GlobalsString;
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength>;
   "-webkit-mask"?: GlobalsString;
@@ -885,9 +975,6 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   cursor?: CursorProperty | CursorProperty[];
   direction?: DirectionProperty | DirectionProperty[];
   display?: DisplayProperty | DisplayProperty[];
-  displayInside?: DisplayInsideProperty | DisplayInsideProperty[];
-  displayList?: DisplayListProperty | DisplayListProperty[];
-  displayOutside?: DisplayOutsideProperty | DisplayOutsideProperty[];
   emptyCells?: EmptyCellsProperty | EmptyCellsProperty[];
   filter?: FilterProperty | FilterProperty[];
   flexBasis?: FlexBasisProperty<TLength> | FlexBasisProperty<TLength>[];
@@ -1001,6 +1088,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[];
   overflowX?: OverflowXProperty | OverflowXProperty[];
   overflowY?: OverflowYProperty | OverflowYProperty[];
+  overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
+  overscrollBehaviorX?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[];
+  overscrollBehaviorY?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
   paddingBlockEnd?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
   paddingBlockStart?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
@@ -1012,16 +1102,20 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   pageBreakAfter?: PageBreakAfterProperty | PageBreakAfterProperty[];
   pageBreakBefore?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
   pageBreakInside?: PageBreakInsideProperty | PageBreakInsideProperty[];
+  paintOrder?: PaintOrderProperty | PaintOrderProperty[];
   perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   perspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
+  placeContent?: PlaceContentProperty | PlaceContentProperty[];
   pointerEvents?: PointerEventsProperty | PointerEventsProperty[];
   position?: PositionProperty | PositionProperty[];
   quotes?: QuotesProperty | QuotesProperty[];
   resize?: ResizeProperty | ResizeProperty[];
   right?: RightProperty<TLength> | RightProperty<TLength>[];
+  rotate?: RotateProperty | RotateProperty[];
   rubyAlign?: RubyAlignProperty | RubyAlignProperty[];
   rubyMerge?: RubyMergeProperty | RubyMergeProperty[];
   rubyPosition?: RubyPositionProperty | RubyPositionProperty[];
+  scale?: ScaleProperty | ScaleProperty[];
   scrollBehavior?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
   scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[];
   scrollSnapDestination?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[];
@@ -1065,6 +1159,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   transitionDuration?: GlobalsString | GlobalsString[];
   transitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[];
   transitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
+  translate?: TranslateProperty<TLength> | TranslateProperty<TLength>[];
   unicodeBidi?: UnicodeBidiProperty | UnicodeBidiProperty[];
   userSelect?: UserSelectProperty | UserSelectProperty[];
   verticalAlign?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[];
@@ -1123,7 +1218,42 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
 export interface StandardPropertiesFallback<TLength = string | 0> extends StandardLonghandPropertiesFallback<TLength>, StandardShorthandPropertiesFallback<TLength> {}
 
 export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
+  msAccelerator?: MsAcceleratorProperty | MsAcceleratorProperty[];
+  msBlockProgression?: MsBlockProgressionProperty | MsBlockProgressionProperty[];
+  msContentZoomChaining?: MsContentZoomChainingProperty | MsContentZoomChainingProperty[];
+  msContentZooming?: MsContentZoomingProperty | MsContentZoomingProperty[];
+  msContentZoomLimitMax?: GlobalsString | GlobalsString[];
+  msContentZoomLimitMin?: GlobalsString | GlobalsString[];
+  msContentZoomSnapPoints?: GlobalsString | GlobalsString[];
+  msContentZoomSnapType?: MsContentZoomSnapTypeProperty | MsContentZoomSnapTypeProperty[];
+  msFilter?: GlobalsString | GlobalsString[];
+  msFlowFrom?: MsFlowFromProperty | MsFlowFromProperty[];
+  msFlowInto?: MsFlowIntoProperty | MsFlowIntoProperty[];
+  msHighContrastAdjust?: MsHighContrastAdjustProperty | MsHighContrastAdjustProperty[];
+  msHyphenateLimitChars?: MsHyphenateLimitCharsProperty | MsHyphenateLimitCharsProperty[];
+  msHyphenateLimitLines?: MsHyphenateLimitLinesProperty | MsHyphenateLimitLinesProperty[];
+  msHyphenateLimitZone?: MsHyphenateLimitZoneProperty<TLength> | MsHyphenateLimitZoneProperty<TLength>[];
+  msImeAlign?: MsImeAlignProperty | MsImeAlignProperty[];
   msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[];
+  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[];
+  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[];
+  msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[];
+  msScrollChaining?: MsScrollChainingProperty | MsScrollChainingProperty[];
+  msScrollLimitXMax?: MsScrollLimitXMaxProperty<TLength> | MsScrollLimitXMaxProperty<TLength>[];
+  msScrollLimitXMin?: MsScrollLimitXMinProperty<TLength> | MsScrollLimitXMinProperty<TLength>[];
+  msScrollLimitYMax?: MsScrollLimitYMaxProperty<TLength> | MsScrollLimitYMaxProperty<TLength>[];
+  msScrollLimitYMin?: MsScrollLimitYMinProperty<TLength> | MsScrollLimitYMinProperty<TLength>[];
+  msScrollRails?: MsScrollRailsProperty | MsScrollRailsProperty[];
+  msScrollSnapPointsX?: GlobalsString | GlobalsString[];
+  msScrollSnapPointsY?: GlobalsString | GlobalsString[];
+  msScrollSnapType?: MsScrollSnapTypeProperty | MsScrollSnapTypeProperty[];
+  msScrollTranslation?: MsScrollTranslationProperty | MsScrollTranslationProperty[];
+  msTextAutospace?: MsTextAutospaceProperty | MsTextAutospaceProperty[];
+  msTouchSelect?: MsTouchSelectProperty | MsTouchSelectProperty[];
+  msUserSelect?: MsUserSelectProperty | MsUserSelectProperty[];
+  msWrapFlow?: MsWrapFlowProperty | MsWrapFlowProperty[];
+  msWrapMargin?: MsWrapMarginProperty<TLength> | MsWrapMarginProperty<TLength>[];
+  msWrapThrough?: MsWrapThroughProperty | MsWrapThroughProperty[];
   MozAppearance?: MozAppearanceProperty | MozAppearanceProperty[];
   MozBinding?: MozBindingProperty | MozBindingProperty[];
   MozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
@@ -1170,6 +1300,11 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
 }
 
 export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
+  msContentZoomLimit?: GlobalsString | GlobalsString[];
+  msContentZoomSnap?: MsContentZoomSnapProperty | MsContentZoomSnapProperty[];
+  msScrollLimit?: GlobalsString | GlobalsString[];
+  msScrollSnapX?: GlobalsString | GlobalsString[];
+  msScrollSnapY?: GlobalsString | GlobalsString[];
   MozOutlineRadius?: GlobalsString | GlobalsString[];
   WebkitBorderBefore?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[];
   WebkitMask?: GlobalsString | GlobalsString[];
@@ -1279,9 +1414,6 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   cursor?: CursorProperty | CursorProperty[];
   direction?: DirectionProperty | DirectionProperty[];
   display?: DisplayProperty | DisplayProperty[];
-  "display-inside"?: DisplayInsideProperty | DisplayInsideProperty[];
-  "display-list"?: DisplayListProperty | DisplayListProperty[];
-  "display-outside"?: DisplayOutsideProperty | DisplayOutsideProperty[];
   "empty-cells"?: EmptyCellsProperty | EmptyCellsProperty[];
   filter?: FilterProperty | FilterProperty[];
   "flex-basis"?: FlexBasisProperty<TLength> | FlexBasisProperty<TLength>[];
@@ -1395,6 +1527,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "overflow-wrap"?: OverflowWrapProperty | OverflowWrapProperty[];
   "overflow-x"?: OverflowXProperty | OverflowXProperty[];
   "overflow-y"?: OverflowYProperty | OverflowYProperty[];
+  "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
+  "overscroll-behavior-x"?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[];
+  "overscroll-behavior-y"?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
   "padding-block-end"?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
   "padding-block-start"?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   "padding-bottom"?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
@@ -1406,16 +1541,20 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "page-break-after"?: PageBreakAfterProperty | PageBreakAfterProperty[];
   "page-break-before"?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
   "page-break-inside"?: PageBreakInsideProperty | PageBreakInsideProperty[];
+  "paint-order"?: PaintOrderProperty | PaintOrderProperty[];
   perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   "perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
+  "place-content"?: PlaceContentProperty | PlaceContentProperty[];
   "pointer-events"?: PointerEventsProperty | PointerEventsProperty[];
   position?: PositionProperty | PositionProperty[];
   quotes?: QuotesProperty | QuotesProperty[];
   resize?: ResizeProperty | ResizeProperty[];
   right?: RightProperty<TLength> | RightProperty<TLength>[];
+  rotate?: RotateProperty | RotateProperty[];
   "ruby-align"?: RubyAlignProperty | RubyAlignProperty[];
   "ruby-merge"?: RubyMergeProperty | RubyMergeProperty[];
   "ruby-position"?: RubyPositionProperty | RubyPositionProperty[];
+  scale?: ScaleProperty | ScaleProperty[];
   "scroll-behavior"?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
   "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[];
   "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[];
@@ -1459,6 +1598,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "transition-duration"?: GlobalsString | GlobalsString[];
   "transition-property"?: TransitionPropertyProperty | TransitionPropertyProperty[];
   "transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
+  translate?: TranslateProperty<TLength> | TranslateProperty<TLength>[];
   "unicode-bidi"?: UnicodeBidiProperty | UnicodeBidiProperty[];
   "user-select"?: UserSelectProperty | UserSelectProperty[];
   "vertical-align"?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[];
@@ -1519,7 +1659,42 @@ export interface StandardPropertiesHyphenFallback<TLength = string | 0>
     StandardShorthandPropertiesHyphenFallback<TLength> {}
 
 export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
+  "-ms-accelerator"?: MsAcceleratorProperty | MsAcceleratorProperty[];
+  "-ms-block-progression"?: MsBlockProgressionProperty | MsBlockProgressionProperty[];
+  "-ms-content-zoom-chaining"?: MsContentZoomChainingProperty | MsContentZoomChainingProperty[];
+  "-ms-content-zooming"?: MsContentZoomingProperty | MsContentZoomingProperty[];
+  "-ms-content-zoom-limit-max"?: GlobalsString | GlobalsString[];
+  "-ms-content-zoom-limit-min"?: GlobalsString | GlobalsString[];
+  "-ms-content-zoom-snap-points"?: GlobalsString | GlobalsString[];
+  "-ms-content-zoom-snap-type"?: MsContentZoomSnapTypeProperty | MsContentZoomSnapTypeProperty[];
+  "-ms-filter"?: GlobalsString | GlobalsString[];
+  "-ms-flow-from"?: MsFlowFromProperty | MsFlowFromProperty[];
+  "-ms-flow-into"?: MsFlowIntoProperty | MsFlowIntoProperty[];
+  "-ms-high-contrast-adjust"?: MsHighContrastAdjustProperty | MsHighContrastAdjustProperty[];
+  "-ms-hyphenate-limit-chars"?: MsHyphenateLimitCharsProperty | MsHyphenateLimitCharsProperty[];
+  "-ms-hyphenate-limit-lines"?: MsHyphenateLimitLinesProperty | MsHyphenateLimitLinesProperty[];
+  "-ms-hyphenate-limit-zone"?: MsHyphenateLimitZoneProperty<TLength> | MsHyphenateLimitZoneProperty<TLength>[];
+  "-ms-ime-align"?: MsImeAlignProperty | MsImeAlignProperty[];
   "-ms-overflow-style"?: MsOverflowStyleProperty | MsOverflowStyleProperty[];
+  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[];
+  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[];
+  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[];
+  "-ms-scroll-chaining"?: MsScrollChainingProperty | MsScrollChainingProperty[];
+  "-ms-scroll-limit-x-max"?: MsScrollLimitXMaxProperty<TLength> | MsScrollLimitXMaxProperty<TLength>[];
+  "-ms-scroll-limit-x-min"?: MsScrollLimitXMinProperty<TLength> | MsScrollLimitXMinProperty<TLength>[];
+  "-ms-scroll-limit-y-max"?: MsScrollLimitYMaxProperty<TLength> | MsScrollLimitYMaxProperty<TLength>[];
+  "-ms-scroll-limit-y-min"?: MsScrollLimitYMinProperty<TLength> | MsScrollLimitYMinProperty<TLength>[];
+  "-ms-scroll-rails"?: MsScrollRailsProperty | MsScrollRailsProperty[];
+  "-ms-scroll-snap-points-x"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-snap-points-y"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-snap-type"?: MsScrollSnapTypeProperty | MsScrollSnapTypeProperty[];
+  "-ms-scroll-translation"?: MsScrollTranslationProperty | MsScrollTranslationProperty[];
+  "-ms-text-autospace"?: MsTextAutospaceProperty | MsTextAutospaceProperty[];
+  "-ms-touch-select"?: MsTouchSelectProperty | MsTouchSelectProperty[];
+  "-ms-user-select"?: MsUserSelectProperty | MsUserSelectProperty[];
+  "-ms-wrap-flow"?: MsWrapFlowProperty | MsWrapFlowProperty[];
+  "-ms-wrap-margin"?: MsWrapMarginProperty<TLength> | MsWrapMarginProperty<TLength>[];
+  "-ms-wrap-through"?: MsWrapThroughProperty | MsWrapThroughProperty[];
   "-moz-appearance"?: MozAppearanceProperty | MozAppearanceProperty[];
   "-moz-binding"?: MozBindingProperty | MozBindingProperty[];
   "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
@@ -1566,6 +1741,11 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
 }
 
 export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
+  "-ms-content-zoom-limit"?: GlobalsString | GlobalsString[];
+  "-ms-content-zoom-snap"?: MsContentZoomSnapProperty | MsContentZoomSnapProperty[];
+  "-ms-scroll-limit"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-snap-x"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-snap-y"?: GlobalsString | GlobalsString[];
   "-moz-outline-radius"?: GlobalsString | GlobalsString[];
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[];
   "-webkit-mask"?: GlobalsString | GlobalsString[];
@@ -1777,11 +1957,20 @@ export type SimplePseudos =
   | "::-moz-range-progress"
   | "::-moz-range-thumb"
   | "::-moz-range-track"
+  | "::-ms-browse"
+  | "::-ms-check"
+  | "::-ms-clear"
+  | "::-ms-clear"
   | "::-ms-fill"
   | "::-ms-fill-lower"
   | "::-ms-fill-upper"
+  | "::-ms-reveal"
   | "::-ms-thumb"
+  | "::-ms-ticks-after"
+  | "::-ms-ticks-before"
+  | "::-ms-tooltip"
   | "::-ms-track"
+  | "::-ms-value"
   | "::-webkit-progress-bar"
   | "::-webkit-progress-inner-value"
   | "::-webkit-progress-value"
@@ -1846,9 +2035,9 @@ type GlobalsString = Globals | string;
 
 type GlobalsNumber = Globals | number;
 
-type AlignContentProperty = Globals | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly" | "stretch";
+type AlignContentProperty = Globals | BaselinePosition | ContentDistribution | "normal" | string;
 
-type AlignItemsProperty = Globals | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
+type AlignItemsProperty = Globals | BaselinePosition | SelfPosition | "normal" | "stretch" | string;
 
 type AlignSelfProperty = Globals | "auto" | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
 
@@ -2084,30 +2273,6 @@ type DirectionProperty = Globals | "ltr" | "rtl";
 
 type DisplayProperty = Globals | DisplayOutside | DisplayInside | DisplayListitem | DisplayInternal | DisplayBox | DisplayLegacy | string;
 
-type DisplayInsideProperty = Globals | "auto" | "block" | "flex" | "grid" | "ruby" | "table";
-
-type DisplayListProperty = Globals | "list-item" | "none";
-
-type DisplayOutsideProperty =
-  | Globals
-  | "block-level"
-  | "contents"
-  | "inline-level"
-  | "none"
-  | "ruby-base"
-  | "ruby-base-container"
-  | "ruby-text"
-  | "ruby-text-container"
-  | "run-in"
-  | "table-caption"
-  | "table-cell"
-  | "table-column"
-  | "table-column-group"
-  | "table-footer-group"
-  | "table-header-group"
-  | "table-row"
-  | "table-row-group";
-
 type EmptyCellsProperty = Globals | "hide" | "show";
 
 type FilterProperty = Globals | "none" | string;
@@ -2235,7 +2400,7 @@ type InlineSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "f
 
 type IsolationProperty = Globals | "auto" | "isolate";
 
-type JustifyContentProperty = Globals | "center" | "flex-end" | "flex-start" | "space-around" | "space-between" | "space-evenly";
+type JustifyContentProperty = Globals | ContentDistribution | "normal" | string;
 
 type LeftProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -2357,6 +2522,12 @@ type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
 type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
+type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none";
+
+type OverscrollBehaviorXProperty = Globals | "auto" | "contain" | "none";
+
+type OverscrollBehaviorYProperty = Globals | "auto" | "contain" | "none";
+
 type PaddingBlockEndProperty<TLength> = Globals | TLength | string;
 
 type PaddingBlockStartProperty<TLength> = Globals | TLength | string;
@@ -2379,9 +2550,13 @@ type PageBreakBeforeProperty = Globals | "always" | "auto" | "avoid" | "left" | 
 
 type PageBreakInsideProperty = Globals | "auto" | "avoid";
 
+type PaintOrderProperty = Globals | "fill" | "markers" | "normal" | "stroke" | string;
+
 type PerspectiveProperty<TLength> = Globals | TLength | "none";
 
 type PerspectiveOriginProperty<TLength> = Globals | Position<TLength>;
+
+type PlaceContentProperty = Globals | BaselinePosition | ContentDistribution | "normal" | string;
 
 type PointerEventsProperty = Globals | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
 
@@ -2393,11 +2568,15 @@ type ResizeProperty = Globals | "both" | "horizontal" | "none" | "vertical";
 
 type RightProperty<TLength> = Globals | TLength | "auto" | string;
 
+type RotateProperty = Globals | "none" | string;
+
 type RubyAlignProperty = Globals | "center" | "space-around" | "space-between" | "start";
 
 type RubyMergeProperty = Globals | "auto" | "collapse" | "separate";
 
 type RubyPositionProperty = Globals | "inter-character" | "over" | "under";
+
+type ScaleProperty = Globals | "none" | number;
 
 type ScrollBehaviorProperty = Globals | "auto" | "smooth";
 
@@ -2477,6 +2656,8 @@ type TransitionPropertyProperty = Globals | SingleTransitionProperty | "none";
 
 type TransitionTimingFunctionProperty = Globals | SingleTransitionTimingFunction;
 
+type TranslateProperty<TLength> = Globals | LengthPercentage<TLength> | "none" | string;
+
 type UnicodeBidiProperty = Globals | "bidi-override" | "embed" | "isolate" | "isolate-override" | "normal" | "plaintext";
 
 type UserSelectProperty = Globals | "all" | "auto" | "contain" | "none" | "text";
@@ -2491,7 +2672,7 @@ type WidthProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-co
 
 type WillChangeProperty = Globals | AnimateableFeature | "auto";
 
-type WordBreakProperty = Globals | "break-all" | "keep-all" | "normal";
+type WordBreakProperty = Globals | "break-all" | "break-word" | "keep-all" | "normal";
 
 type WordSpacingProperty<TLength> = Globals | LengthPercentage<TLength> | "normal";
 
@@ -2573,7 +2754,65 @@ type TextEmphasisProperty = Globals | Color | "circle" | "dot" | "double-circle"
 
 type TransitionProperty = Globals | SingleTransition;
 
+type MsAcceleratorProperty = Globals | "false" | "true";
+
+type MsBlockProgressionProperty = Globals | "bt" | "lr" | "rl" | "tb";
+
+type MsContentZoomChainingProperty = Globals | "chained" | "none";
+
+type MsContentZoomingProperty = Globals | "none" | "zoom";
+
+type MsContentZoomSnapTypeProperty = Globals | "mandatory" | "none" | "proximity";
+
+type MsFlowFromProperty = Globals | "none" | string;
+
+type MsFlowIntoProperty = Globals | "none" | string;
+
+type MsHighContrastAdjustProperty = Globals | "auto" | "none";
+
+type MsHyphenateLimitCharsProperty = Globals | "auto" | number;
+
+type MsHyphenateLimitLinesProperty = Globals | "no-limit" | number;
+
+type MsHyphenateLimitZoneProperty<TLength> = Globals | TLength | string;
+
+type MsImeAlignProperty = Globals | "after" | "auto";
+
 type MsOverflowStyleProperty = Globals | "-ms-autohiding-scrollbar" | "auto" | "none" | "scrollbar";
+
+type MsScrollbar3dlightColorProperty = Globals | "variant";
+
+type MsScrollbarDarkshadowColorProperty = Globals | "variant";
+
+type MsScrollbarShadowColorProperty = Globals | "variant";
+
+type MsScrollChainingProperty = Globals | "chained" | "none";
+
+type MsScrollLimitXMaxProperty<TLength> = Globals | TLength | "auto";
+
+type MsScrollLimitXMinProperty<TLength> = Globals | TLength;
+
+type MsScrollLimitYMaxProperty<TLength> = Globals | TLength | "auto";
+
+type MsScrollLimitYMinProperty<TLength> = Globals | TLength;
+
+type MsScrollRailsProperty = Globals | "none" | "railed";
+
+type MsScrollSnapTypeProperty = Globals | "mandatory" | "none" | "proximity";
+
+type MsScrollTranslationProperty = Globals | "inherit" | "none" | "vertical-to-horizontal";
+
+type MsTextAutospaceProperty = Globals | "ideograph-alpha" | "ideograph-numeric" | "ideograph-parenthesis" | "ideograph-space" | "none";
+
+type MsTouchSelectProperty = Globals | "grippers" | "none";
+
+type MsUserSelectProperty = Globals | "element" | "none" | "text";
+
+type MsWrapFlowProperty = Globals | "auto" | "both" | "clear" | "end" | "maximum" | "start";
+
+type MsWrapMarginProperty<TLength> = Globals | TLength;
+
+type MsWrapThroughProperty = Globals | "none" | "wrap";
 
 type MozAppearanceProperty =
   | Globals
@@ -2760,6 +2999,8 @@ type WebkitTextStrokeWidthProperty<TLength> = Globals | TLength;
 
 type WebkitTouchCalloutProperty = Globals | "default" | "none";
 
+type MsContentZoomSnapProperty = Globals | "mandatory" | "none" | "proximity" | string;
+
 type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type WebkitTextStrokeProperty<TLength> = Globals | Color | TLength | string;
@@ -2840,6 +3081,12 @@ type ViewportUserZoomProperty = "fixed" | "zoom";
 type ViewportWidthProperty<TLength> = ViewportLength<TLength>;
 
 type ViewportZoomProperty = "auto" | string | number;
+
+type BaselinePosition = "baseline" | string;
+
+type ContentDistribution = "space-around" | "space-between" | "space-evenly" | "stretch";
+
+type SelfPosition = "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
 
 type SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 
