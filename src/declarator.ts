@@ -123,22 +123,29 @@ for (const properties of [
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
 ]) {
-  const definitions =
-    properties === standardLonghandProperties
-      ? standardLonghandPropertiesDefinition
-      : properties === standardShorthandProperties
-        ? standardShorthandPropertiesDefinition
-        : properties === vendorPrefixedLonghandProperties
-          ? vendorLonghandPropertiesDefinition
-          : vendorShorthandPropertiesDefinition;
-  const hyphenDefinitions =
-    properties === standardLonghandProperties
-      ? standardLonghandPropertiesHyphenDefinition
-      : properties === standardShorthandProperties
-        ? standardShorthandPropertiesHyphenDefinition
-        : properties === vendorPrefixedLonghandProperties
-          ? vendorLonghandPropertiesHyphenDefinition
-          : vendorShorthandPropertiesHyphenDefinition;
+  let definitions: IPropertyAlias[];
+  let hyphenDefinitions: IPropertyAlias[];
+  let isVendorProperties = false;
+  switch (properties) {
+    case vendorPrefixedShorthandProperties:
+      definitions = vendorShorthandPropertiesDefinition;
+      hyphenDefinitions = vendorShorthandPropertiesHyphenDefinition;
+      isVendorProperties = true;
+      break;
+    case vendorPrefixedLonghandProperties:
+      definitions = vendorLonghandPropertiesDefinition;
+      hyphenDefinitions = vendorLonghandPropertiesHyphenDefinition;
+      isVendorProperties = true;
+      break;
+    case standardShorthandProperties:
+      definitions = standardShorthandPropertiesDefinition;
+      hyphenDefinitions = standardShorthandPropertiesHyphenDefinition;
+      break;
+    default:
+      definitions = standardLonghandPropertiesDefinition;
+      hyphenDefinitions = standardLonghandPropertiesHyphenDefinition;
+      break;
+  }
   for (const name in properties) {
     const types = filterMissingDataTypes(properties[name]);
     let declaration: IDeclaration;
@@ -159,7 +166,7 @@ for (const properties of [
     }
 
     definitions.push({
-      name: toCamelCase(name),
+      name: isVendorProperties ? toPascalCase(name) : toCamelCase(name),
       generics,
       alias: aliasOf(declaration),
     });
