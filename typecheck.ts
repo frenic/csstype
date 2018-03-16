@@ -13,6 +13,7 @@ const css: CSS.Properties = {
   width: 0,
   height: '1px',
   MozAppearance: 'button',
+  msOverflowStyle: 'scrollbar',
 };
 
 const cssWithFallbackValues: CSS.PropertiesFallback = {
@@ -26,6 +27,7 @@ const cssWithFallbackValues: CSS.PropertiesFallback = {
   width: [0],
   height: ['1px'],
   MozAppearance: ['button'],
+  msOverflowStyle: ['scrollbar'],
 };
 
 const cssWithHyphenProperties: CSS.PropertiesHyphen = {
@@ -39,6 +41,7 @@ const cssWithHyphenProperties: CSS.PropertiesHyphen = {
   width: 0,
   height: '1px',
   '-moz-appearance': 'button',
+  '-ms-overflow-style': 'scrollbar',
 };
 
 const cssWithBothCamelAndHyphenProperties: CSS.Properties & CSS.PropertiesHyphen = {

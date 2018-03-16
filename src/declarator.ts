@@ -1,5 +1,5 @@
 import { atRuleDescriptors, atRuleList } from './at-rules';
-import { toCamelCase, toPascalCase } from './casing';
+import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
 import dataTypes from './data-types';
 import {
   globals,
@@ -166,7 +166,7 @@ for (const properties of [
     }
 
     definitions.push({
-      name: isVendorProperties ? toPascalCase(name) : toCamelCase(name),
+      name: isVendorProperties ? toVendorPrefixCase(name) : toCamelCase(name),
       generics,
       alias: aliasOf(declaration),
     });

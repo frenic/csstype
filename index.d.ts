@@ -335,7 +335,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
 export interface StandardProperties<TLength = string | 0> extends StandardLonghandProperties<TLength>, StandardShorthandProperties<TLength> {}
 
 export interface VendorLonghandProperties<TLength = string | 0> {
-  MsOverflowStyle?: MsOverflowStyleProperty;
+  msOverflowStyle?: MsOverflowStyleProperty;
   MozAppearance?: MozAppearanceProperty;
   MozBinding?: MozBindingProperty;
   MozBorderBottomColors?: MozBorderBottomColorsProperty;
@@ -1123,7 +1123,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
 export interface StandardPropertiesFallback<TLength = string | 0> extends StandardLonghandPropertiesFallback<TLength>, StandardShorthandPropertiesFallback<TLength> {}
 
 export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
-  MsOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[];
+  msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[];
   MozAppearance?: MozAppearanceProperty | MozAppearanceProperty[];
   MozBinding?: MozBindingProperty | MozBindingProperty[];
   MozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
