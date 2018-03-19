@@ -15,6 +15,8 @@ const css: Exact<CSS.Properties<*>> = {
   fontWeight: 'normal',
   width: 0,
   height: '1px',
+  MozAppearance: 'button',
+  msOverflowStyle: 'scrollbar',
 };
 
 const cssWithFallbackValues: Exact<CSS.PropertiesFallback<*>> = {
@@ -27,6 +29,8 @@ const cssWithFallbackValues: Exact<CSS.PropertiesFallback<*>> = {
   fontWeight: ['normal'],
   width: [0],
   height: ['1px'],
+  MozAppearance: ['button'],
+  msOverflowStyle: ['scrollbar'],
 };
 
 const cssWithHyphenProperties: Exact<CSS.PropertiesHyphen<*>> = {
@@ -39,6 +43,8 @@ const cssWithHyphenProperties: Exact<CSS.PropertiesHyphen<*>> = {
   'font-weight': 'normal',
   width: 0,
   height: '1px',
+  '-moz-appearance': 'button',
+  '-ms-overflow-style': 'scrollbar',
 };
 
 const cssWithBothCamelAndHyphenProperties: $Exact<CSS.Properties<*>> & $Exact<CSS.PropertiesHyphen<*>> = {
