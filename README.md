@@ -19,7 +19,22 @@ $ # or
 $ yarn add csstype
 ```
 
+## Table of content
+
+* [Types](#types)
+  * [Properties](#properties)
+  * [At-rules](#at-rules)
+    * [`@counter-style`](#counter-style)
+    * [`@font-face`](#font-face)
+    * [`@page`](#page)
+    * [`@viewport`](#viewport)
+  * [Pseudo](#pseudo)
+* [Usage](#usage)
+* [Version 2.0](#version-20)
+
 ## Types
+
+### Properties
 
 CSS properties interface with **camel** cased property names:
 
@@ -151,3 +166,13 @@ const style: Style = {
   backgroundColor: 'white',
 };
 ```
+
+## Version 2.0
+
+The casing of CSS vendor properties are changed matching the casing of prefixes in Javascript. So all of them are capitalized except for `ms`.
+
+* `msOverflowStyle` is still `msOverflowStyle`
+* `mozAppearance` is now `MozAppearance`
+* `webkitOverflowScrolling` is now `WebkitOverflowScrolling`
+
+More info: https://www.andismith.com/blogs/2012/02/modernizr-prefixed/
