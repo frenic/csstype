@@ -21,94 +21,107 @@ $ yarn add csstype
 
 ## Table of content
 
-* [Types](#types)
-  * [Properties](#properties)
-  * [At-rules](#at-rules)
-    * [`@counter-style`](#counter-style)
-    * [`@font-face`](#font-face)
-    * [`@page`](#page)
-    * [`@viewport`](#viewport)
-  * [Pseudo](#pseudo)
+* [Style types](#style-types)
+  * [`Properties`](#properties)
+  * [`PropertiesHyphen`](#propertieshyphen)
+  * [`PropertiesFallback`](#propertiesfallback)
+  * [`PropertiesHyphenFallback`](#propertieshyphenfallback)
+* [At-rule types](#at-rule-types)
+  * [`@counter-style`](#counter-style)
+  * [`@font-face`](#font-face)
+  * [`@page`](#page)
+  * [`@viewport`](#viewport)
+* [Pseudo types](#pseudo-types)
 * [Usage](#usage)
 * [Version 2.0](#version-20)
 
-## Types
+## Style types
 
-### Properties
+### `Properties`
 
 CSS properties interface with **camel** cased property names:
 
-* `Properties`
-  * `StandardProperties`
-    * `StandardLonghandProperties`
-    * `StandardShorthandProperties`
-  * `VendorProperties`
-    * `VendorLonghandProperties`
-    * `VendorShorthandProperties`
+Extends:
+
+* `StandardProperties`
+  * `StandardLonghandProperties`
+  * `StandardShorthandProperties`
+* `VendorProperties`
+  * `VendorLonghandProperties`
+  * `VendorShorthandProperties`
+
+### `PropertiesHyphen`
 
 CSS properties interface with **kebab** cased property names:
 
-* `PropertiesHyphen`
-  * `StandardPropertiesHyphen`
-    * `StandardLonghandPropertiesHyphen`
-    * `StandardShorthandPropertiesHyphen`
-  * `VendorPropertiesHyphen`
-    * `VendorLonghandPropertiesHyphen`
-    * `VendorShorthandPropertiesHyphen`
+Extends:
+
+* `StandardPropertiesHyphen`
+  * `StandardLonghandPropertiesHyphen`
+  * `StandardShorthandPropertiesHyphen`
+* `VendorPropertiesHyphen`
+  * `VendorLonghandPropertiesHyphen`
+  * `VendorShorthandPropertiesHyphen`
+
+### `PropertiesFallback`
 
 Equals to **`Properties`** but also allows array of values:
 
-* `PropertiesFallback`
-  * `StandardPropertiesFallback`
-    * `StandardLonghandPropertiesFallback`
-    * `StandardShorthandPropertiesFallback`
-  * `VendorPropertiesFallback`
-    * `VendorLonghandPropertiesFallback`
-    * `VendorShorthandPropertiesFallback`
+Extends:
+
+* `StandardPropertiesFallback`
+  * `StandardLonghandPropertiesFallback`
+  * `StandardShorthandPropertiesFallback`
+* `VendorPropertiesFallback`
+  * `VendorLonghandPropertiesFallback`
+  * `VendorShorthandPropertiesFallback`
+
+### `PropertiesHyphenFallback`
 
 Equals to **`PropertiesHyphen`** but also allows array of values:
 
-* `PropertiesHyphenFallback`
-  * `StandardPropertiesHyphenFallback`
-    * `StandardLonghandPropertiesHyphenFallback`
-    * `StandardShorthandPropertiesHyphenFallback`
-  * `VendorPropertiesHyphenFallback`
-    * `VendorLonghandPropertiesHyphenFallback`
-    * `VendorShorthandPropertiesHyphenFallback`
+Extends:
 
-### At-rules
+* `StandardPropertiesHyphenFallback`
+  * `StandardLonghandPropertiesHyphenFallback`
+  * `StandardShorthandPropertiesHyphenFallback`
+* `VendorPropertiesHyphenFallback`
+  * `VendorLonghandPropertiesHyphenFallback`
+  * `VendorShorthandPropertiesHyphenFallback`
+
+## At-rule types
 
 At-rule interfaces with descriptors.
 
-#### `@counter-style`
+### `@counter-style`
 
 * `CounterStyle`
 * `CounterStyleFallback`
 * `CounterStyleHyphen`
 * `CounterStyleHyphenFallback`
 
-#### `@font-face`
+### `@font-face`
 
 * `FontFace`
 * `FontFaceFallback`
 * `FontFaceHyphen`
 * `FontFaceHyphenFallback`
 
-#### `@page`
+### `@page`
 
 * `Page`
 * `PageFallback`
 * `PageHyphen`
 * `PageHyphenFallback`
 
-#### `@viewport`
+### `@viewport`
 
 * `Viewport`
 * `ViewportFallback`
 * `ViewportHyphen`
 * `ViewportHyphenFallback`
 
-### Pseudo
+## Pseudo types
 
 String literals of pseudo classes and pseudo elements
 
