@@ -35,5 +35,14 @@
   "files": [
     "index.d.ts",
     "index.js.flow"
+  ],
+  "keywords": [
+    "css",
+    "style",
+    "typescript",
+    "flow",
+    "typings",
+    "types",
+    "definitions"
   ]
 }
