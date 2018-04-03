@@ -1,4 +1,4 @@
-declare module 'mdn-data/css/properties.json' {
+declare namespace MDN {
   interface Property {
     syntax: string;
     media: string;
@@ -17,12 +17,6 @@ declare module 'mdn-data/css/properties.json' {
     [property: string]: Property;
   }
 
-  var properties: Properties;
-
-  export = properties;
-}
-
-declare module 'mdn-data/css/syntaxes.json' {
   interface Syntax {
     syntax: string;
   }
@@ -31,37 +25,20 @@ declare module 'mdn-data/css/syntaxes.json' {
     [property: string]: Syntax;
   }
 
-  var syntaxes: Syntaxes;
-
-  export = syntaxes;
-}
-
-declare module 'mdn-data/css/selectors.json' {
   interface Selector {
     syntax: string;
     groups: string[];
     status: string;
   }
+
   interface Selectors {
     [selector: string]: Selector;
   }
 
-  var selectors: Selectors;
-
-  export = selectors;
-}
-
-declare module 'mdn-data/css/types.json' {
   interface Types {
     [name: string]: any;
   }
 
-  var types: Types;
-
-  export = types;
-}
-
-declare module 'mdn-data/css/at-rules.json' {
   interface Descriptor {
     syntax: string;
     media: string;
@@ -86,8 +63,29 @@ declare module 'mdn-data/css/at-rules.json' {
   interface AtRules {
     [name: string]: AtRule;
   }
+}
 
-  var atRules: AtRules;
+declare module 'mdn-data/css/properties.json' {
+  var properties: MDN.Properties;
+  export = properties;
+}
 
+declare module 'mdn-data/css/syntaxes.json' {
+  var syntaxes: MDN.Syntaxes;
+  export = syntaxes;
+}
+
+declare module 'mdn-data/css/selectors.json' {
+  var selectors: MDN.Selectors;
+  export = selectors;
+}
+
+declare module 'mdn-data/css/types.json' {
+  var types: MDN.Types;
+  export = types;
+}
+
+declare module 'mdn-data/css/at-rules.json' {
+  var atRules: MDN.AtRules;
   export = atRules;
 }

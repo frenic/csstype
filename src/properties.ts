@@ -1,4 +1,5 @@
 import * as properties from 'mdn-data/css/properties.json';
+import { properties as svgData } from './data/svg';
 import parse from './parser';
 import typing, { Type, TypeType } from './typer';
 
@@ -24,6 +25,7 @@ export const standardLonghandProperties: { [name: string]: TypeType[] } = {};
 export const standardShorthandProperties: { [name: string]: TypeType[] } = {};
 export const vendorPrefixedLonghandProperties: { [name: string]: TypeType[] } = {};
 export const vendorPrefixedShorthandProperties: { [name: string]: TypeType[] } = {};
+export const svgProperties: { [name: string]: TypeType[] } = {};
 
 for (const name in properties) {
   if (IGNORES.includes(name)) {
@@ -43,5 +45,12 @@ for (const name in properties) {
     } else {
       standardLonghandProperties[name] = types;
     }
+  }
+}
+
+for (const name in svgData) {
+  const syntax = svgData[name].syntax;
+  if (syntax) {
+    svgProperties[name] = typing(parse(syntax));
   }
 }

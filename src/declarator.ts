@@ -5,6 +5,7 @@ import {
   globals,
   standardLonghandProperties,
   standardShorthandProperties,
+  svgProperties,
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
 } from './properties';
@@ -104,6 +105,8 @@ const vendorLonghandPropertiesDefinition: IPropertyAlias[] = [];
 const vendorShorthandPropertiesDefinition: IPropertyAlias[] = [];
 const vendorLonghandPropertiesHyphenDefinition: IPropertyAlias[] = [];
 const vendorShorthandPropertiesHyphenDefinition: IPropertyAlias[] = [];
+const svgPropertiesDefinition: IPropertyAlias[] = [];
+const svgPropertiesHyphenDefinition: IPropertyAlias[] = [];
 
 const PROPERTY = 'Property';
 
@@ -122,11 +125,16 @@ for (const properties of [
   standardShorthandProperties,
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
+  svgProperties,
 ]) {
   let definitions: IPropertyAlias[];
   let hyphenDefinitions: IPropertyAlias[];
   let isVendorProperties = false;
   switch (properties) {
+    case svgProperties:
+      definitions = svgPropertiesDefinition;
+      hyphenDefinitions = svgPropertiesHyphenDefinition;
+      break;
     case vendorPrefixedShorthandProperties:
       definitions = vendorShorthandPropertiesDefinition;
       hyphenDefinitions = vendorShorthandPropertiesHyphenDefinition;
@@ -156,13 +164,20 @@ for (const properties of [
     } else if (onlyContainsNumber(types)) {
       declaration = globalsAndNumberDeclaration;
     } else {
+      const declarationName = toPascalCase(name) + PROPERTY;
+
       declaration = {
-        name: toPascalCase(name) + PROPERTY,
+        name: declarationName,
         export: false,
         types: [aliasOf(globalsDeclaration), ...declarable(types)],
         generics,
       };
-      declarations.push(declaration);
+
+      // Some SVG properties are shared with regular style properties
+      // and we assume here that they are identical
+      if (!declarationExists(declarationName)) {
+        declarations.push(declaration);
+      }
     }
 
     definitions.push({
@@ -245,6 +260,8 @@ const VENDOR = 'Vendor';
 const INTERFACE_VENDOR_LONGHAND_PROPERTIES = VENDOR + LONGHAND + PROPERTIES;
 const INTERFACE_VENDOR_SHORTHAND_PROPERTIES = VENDOR + SHORTHAND + PROPERTIES;
 const INTERFACE_VENDOR_PROPERTIES = VENDOR + PROPERTIES;
+const SVG = 'Svg';
+const INTERFACE_SVG_PROPERTIES = SVG + PROPERTIES;
 const INTERFACE_ALL_PROPERTIES = PROPERTIES;
 const HYPHEN = 'Hyphen';
 const INTERFACE_STANDARD_LONGHAND_PROPERTIES_HYPHEN = INTERFACE_STANDARD_LONGHAND_PROPERTIES + HYPHEN;
@@ -253,6 +270,7 @@ const INTERFACE_STANDARD_PROPERTIES_HYPHEN = INTERFACE_STANDARD_PROPERTIES + HYP
 const INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN = INTERFACE_VENDOR_LONGHAND_PROPERTIES + HYPHEN;
 const INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN = INTERFACE_VENDOR_SHORTHAND_PROPERTIES + HYPHEN;
 const INTERFACE_VENDOR_PROPERTIES_HYPHEN = INTERFACE_VENDOR_PROPERTIES + HYPHEN;
+const INTERFACE_SVG_PROPERTIES_HYPHEN = INTERFACE_SVG_PROPERTIES + HYPHEN;
 const INTERFACE_ALL_PROPERTIES_HYPHEN = INTERFACE_ALL_PROPERTIES + HYPHEN;
 const FALLBACK = 'Fallback';
 const INTERFACE_STANDARD_LONGHAND_PROPERTIES_FALLBACK = INTERFACE_STANDARD_LONGHAND_PROPERTIES + FALLBACK;
@@ -261,6 +279,7 @@ const INTERFACE_STANDARD_PROPERTIES_FALLBACK = INTERFACE_STANDARD_PROPERTIES + F
 const INTERFACE_VENDOR_LONGHAND_PROPERTIES_FALLBACK = INTERFACE_VENDOR_LONGHAND_PROPERTIES + FALLBACK;
 const INTERFACE_VENDOR_SHORTHAND_PROPERTIES_FALLBACK = INTERFACE_VENDOR_SHORTHAND_PROPERTIES + FALLBACK;
 const INTERFACE_VENDOR_PROPERTIES_FALLBACK = INTERFACE_VENDOR_PROPERTIES + FALLBACK;
+const INTERFACE_SVG_PROPERTIES_FALLBACK = INTERFACE_SVG_PROPERTIES + FALLBACK;
 const INTERFACE_ALL_PROPERTIES_FALLBACK = INTERFACE_ALL_PROPERTIES + FALLBACK;
 const INTERFACE_STANDARD_LONGHAND_PROPERTIES_HYPHEN_FALLBACK =
   INTERFACE_STANDARD_LONGHAND_PROPERTIES + HYPHEN + FALLBACK;
@@ -270,6 +289,7 @@ const INTERFACE_STANDARD_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_STANDARD_PROPERT
 const INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_LONGHAND_PROPERTIES + HYPHEN + FALLBACK;
 const INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_SHORTHAND_PROPERTIES + HYPHEN + FALLBACK;
 const INTERFACE_VENDOR_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_PROPERTIES + HYPHEN + FALLBACK;
+const INTERFACE_SVG_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_SVG_PROPERTIES + HYPHEN + FALLBACK;
 const INTERFACE_ALL_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_ALL_PROPERTIES + HYPHEN + FALLBACK;
 
 const standardLonghandPropertiesGenerics = genericsOf(standardLonghandPropertiesDefinition);
@@ -284,11 +304,13 @@ const vendorPropertiesGenerics = genericsOf([
   ...vendorLonghandPropertiesDefinition,
   ...vendorShorthandPropertiesDefinition,
 ]);
+const svgPropertiesGenerics = genericsOf([...svgPropertiesDefinition]);
 const allPropertiesGenerics = genericsOf([
   ...standardLonghandPropertiesDefinition,
   ...standardShorthandPropertiesDefinition,
   ...vendorLonghandPropertiesDefinition,
   ...vendorShorthandPropertiesDefinition,
+  ...svgPropertiesDefinition,
 ]);
 
 const standardLonghandPropertiesInterface: Interface = {
@@ -339,10 +361,18 @@ const vendorPropertiesInterface: Interface = {
   properties: [],
 };
 
+const svgPropertiesInterface: Interface = {
+  name: INTERFACE_SVG_PROPERTIES,
+  generics: svgPropertiesGenerics,
+  extends: [],
+  fallback: false,
+  properties: svgPropertiesDefinition,
+};
+
 const allPropertiesInterface: Interface = {
   name: INTERFACE_ALL_PROPERTIES,
   generics: allPropertiesGenerics,
-  extends: [standardPropertiesInterface, vendorPropertiesInterface],
+  extends: [standardPropertiesInterface, vendorPropertiesInterface, svgPropertiesInterface],
   fallback: false,
   properties: [],
 };
@@ -395,10 +425,18 @@ const vendorPropertiesHyphenInterface: Interface = {
   properties: [],
 };
 
+const svgPropertiesHyphenInterface: Interface = {
+  name: INTERFACE_SVG_PROPERTIES_HYPHEN,
+  generics: svgPropertiesGenerics,
+  extends: [],
+  fallback: false,
+  properties: svgPropertiesHyphenDefinition,
+};
+
 const allPropertiesHyphenInterface: Interface = {
   name: INTERFACE_ALL_PROPERTIES_HYPHEN,
   generics: allPropertiesGenerics,
-  extends: [standardPropertiesHyphenInterface, vendorPropertiesHyphenInterface],
+  extends: [standardPropertiesHyphenInterface, vendorPropertiesHyphenInterface, svgPropertiesHyphenInterface],
   fallback: false,
   properties: [],
 };
@@ -441,10 +479,16 @@ const vendorPropertiesFallbackInterface: Interface = {
   fallback: true,
 };
 
+const svgPropertiesFallbackInterface: Interface = {
+  ...svgPropertiesInterface,
+  name: INTERFACE_SVG_PROPERTIES_FALLBACK,
+  fallback: true,
+};
+
 const allPropertiesFallbackInterface: Interface = {
   ...allPropertiesInterface,
   name: INTERFACE_ALL_PROPERTIES_FALLBACK,
-  extends: [standardPropertiesFallbackInterface, vendorPropertiesFallbackInterface],
+  extends: [standardPropertiesFallbackInterface, vendorPropertiesFallbackInterface, svgPropertiesFallbackInterface],
   fallback: true,
 };
 
@@ -486,10 +530,20 @@ const vendorPropertiesHyphenFallbackInterface: Interface = {
   fallback: true,
 };
 
+const svgPropertiesHyphenFallbackInterface: Interface = {
+  ...svgPropertiesHyphenInterface,
+  name: INTERFACE_SVG_PROPERTIES_HYPHEN_FALLBACK,
+  fallback: true,
+};
+
 const allPropertiesHyphenFallbackInterface: Interface = {
   ...allPropertiesHyphenInterface,
   name: INTERFACE_ALL_PROPERTIES_HYPHEN_FALLBACK,
-  extends: [standardPropertiesHyphenFallbackInterface, vendorPropertiesHyphenFallbackInterface],
+  extends: [
+    standardPropertiesHyphenFallbackInterface,
+    vendorPropertiesHyphenFallbackInterface,
+    svgPropertiesHyphenFallbackInterface,
+  ],
   fallback: true,
 };
 
@@ -537,6 +591,7 @@ export const interfaces = [
   vendorLonghandPropertiesInterface,
   vendorShorthandPropertiesInterface,
   vendorPropertiesInterface,
+  svgPropertiesInterface,
   allPropertiesInterface,
   standardLonghandPropertiesHyphenInterface,
   standardShorthandPropertiesHyphenInterface,
@@ -544,6 +599,7 @@ export const interfaces = [
   vendorLonghandPropertiesHyphenInterface,
   vendorShorthandPropertiesHyphenInterface,
   vendorPropertiesHyphenInterface,
+  svgPropertiesHyphenInterface,
   allPropertiesHyphenInterface,
   standardLongformPropertiesFallbackInterface,
   standardShorthandPropertiesFallbackInterface,
@@ -551,6 +607,7 @@ export const interfaces = [
   vendorLonghandPropertiesFallbackInterface,
   vendorShorthandPropertiesFallbackInterface,
   vendorPropertiesFallbackInterface,
+  svgPropertiesFallbackInterface,
   allPropertiesFallbackInterface,
   standardLongformPropertiesHyphenFallbackInterface,
   standardShorthandPropertiesHyphenFallbackInterface,
@@ -558,6 +615,7 @@ export const interfaces = [
   vendorLonghandPropertiesHyphenFallbackInterface,
   vendorShorthandPropertiesHyphenFallbackInterface,
   vendorPropertiesHyphenFallbackInterface,
+  svgPropertiesHyphenFallbackInterface,
   allPropertiesHyphenFallbackInterface,
   ...atRuleInterfaces,
 ];
@@ -631,4 +689,8 @@ function onlyContainsString(types: MixedType[]) {
 
 function onlyContainsNumber(types: MixedType[]) {
   return types.every(type => type.type === Type.Number);
+}
+
+function declarationExists(name: string) {
+  return !declarations.every(declaration => declaration.name !== name);
 }
