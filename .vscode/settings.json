@@ -1,5 +1,6 @@
 {
   "javascript.validate.enable": false,
   "flow.useNPMPackagedFlow": true,
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "editor.formatOnSave": true
 }
