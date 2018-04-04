@@ -49,6 +49,7 @@ Extends:
 * `VendorProperties`
   * `VendorLonghandProperties`
   * `VendorShorthandProperties`
+* `SvgProperties`
 
 ### `PropertiesHyphen`
 
@@ -62,6 +63,7 @@ Extends:
 * `VendorPropertiesHyphen`
   * `VendorLonghandPropertiesHyphen`
   * `VendorShorthandPropertiesHyphen`
+* `SvgPropertiesHyphen`
 
 ### `PropertiesFallback`
 
@@ -75,6 +77,7 @@ Extends:
 * `VendorPropertiesFallback`
   * `VendorLonghandPropertiesFallback`
   * `VendorShorthandPropertiesFallback`
+* `SvgPropertiesFallback`
 
 ### `PropertiesHyphenFallback`
 
@@ -88,6 +91,7 @@ Extends:
 * `VendorPropertiesHyphenFallback`
   * `VendorLonghandPropertiesHyphenFallback`
   * `VendorShorthandPropertiesHyphenFallback`
+* `SvgPropertiesHyphenFallback`
 
 ## At-rule types
 
