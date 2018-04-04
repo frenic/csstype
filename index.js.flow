@@ -436,7 +436,70 @@ export type VendorShorthandProperties<TLength = string | 0> = {
 
 export type VendorProperties<TLength = string | 0> = VendorLonghandProperties<TLength> & VendorShorthandProperties<TLength>;
 
-export type Properties<TLength = string | 0> = StandardProperties<TLength> & VendorProperties<TLength>;
+export type SvgProperties<TLength = string | 0> = {
+  alignmentBaseline?: AlignmentBaselineProperty,
+  baselineShift?: BaselineShiftProperty<TLength>,
+  clip?: ClipProperty,
+  clipPath?: ClipPathProperty,
+  clipRule?: ClipRuleProperty,
+  color?: ColorProperty,
+  colorInterpolation?: ColorInterpolationProperty,
+  colorRendering?: ColorRenderingProperty,
+  cursor?: CursorProperty,
+  direction?: DirectionProperty,
+  display?: DisplayProperty,
+  dominantBaseline?: DominantBaselineProperty,
+  fill?: FillProperty,
+  fillOpacity?: GlobalsNumber,
+  fillRule?: FillRuleProperty,
+  filter?: FilterProperty,
+  floodColor?: FloodColorProperty,
+  floodOpacity?: GlobalsNumber,
+  font?: FontProperty,
+  fontFamily?: FontFamilyProperty,
+  fontSize?: FontSizeProperty<TLength>,
+  fontSizeAdjust?: FontSizeAdjustProperty,
+  fontStretch?: FontStretchProperty,
+  fontStyle?: FontStyleProperty,
+  fontVariant?: FontVariantProperty,
+  fontWeight?: FontWeightProperty,
+  glyphOrientationVertical?: GlyphOrientationVerticalProperty,
+  imageRendering?: ImageRenderingProperty,
+  letterSpacing?: LetterSpacingProperty<TLength>,
+  lightingColor?: LightingColorProperty,
+  lineHeight?: LineHeightProperty<TLength>,
+  marker?: MarkerProperty,
+  markerEnd?: MarkerEndProperty,
+  markerMid?: MarkerMidProperty,
+  markerStart?: MarkerStartProperty,
+  mask?: MaskProperty<TLength>,
+  opacity?: GlobalsNumber,
+  overflow?: OverflowProperty,
+  paintOrder?: PaintOrderProperty,
+  pointerEvents?: PointerEventsProperty,
+  shapeRendering?: ShapeRenderingProperty,
+  stopColor?: StopColorProperty,
+  stopOpacity?: GlobalsNumber,
+  stroke?: StrokeProperty,
+  strokeDasharray?: StrokeDasharrayProperty,
+  strokeDashoffset?: StrokeDashoffsetProperty<TLength>,
+  strokeLinecap?: StrokeLinecapProperty,
+  strokeLinejoin?: StrokeLinejoinProperty,
+  strokeMiterlimit?: GlobalsNumber,
+  strokeOpacity?: GlobalsNumber,
+  strokeWidth?: StrokeWidthProperty<TLength>,
+  textAnchor?: TextAnchorProperty,
+  textDecoration?: TextDecorationProperty,
+  textRendering?: TextRenderingProperty,
+  unicodeBidi?: UnicodeBidiProperty,
+  vectorEffect?: VectorEffectProperty,
+  visibility?: VisibilityProperty,
+  wordSpacing?: WordSpacingProperty<TLength>,
+  whiteSpace?: WhiteSpaceProperty,
+  writingMode?: WritingModeProperty,
+};
+
+export type Properties<TLength = string | 0> = StandardProperties<TLength> & VendorProperties<TLength> & SvgProperties<TLength>;
 
 export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "align-content"?: AlignContentProperty,
@@ -875,7 +938,70 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
 
 export type VendorPropertiesHyphen<TLength = string | 0> = VendorLonghandPropertiesHyphen<TLength> & VendorShorthandPropertiesHyphen<TLength>;
 
-export type PropertiesHyphen<TLength = string | 0> = StandardPropertiesHyphen<TLength> & VendorPropertiesHyphen<TLength>;
+export type SvgPropertiesHyphen<TLength = string | 0> = {
+  "alignment-baseline"?: AlignmentBaselineProperty,
+  "baseline-shift"?: BaselineShiftProperty<TLength>,
+  clip?: ClipProperty,
+  "clip-path"?: ClipPathProperty,
+  "clip-rule"?: ClipRuleProperty,
+  color?: ColorProperty,
+  "color-interpolation"?: ColorInterpolationProperty,
+  "color-rendering"?: ColorRenderingProperty,
+  cursor?: CursorProperty,
+  direction?: DirectionProperty,
+  display?: DisplayProperty,
+  "dominant-baseline"?: DominantBaselineProperty,
+  fill?: FillProperty,
+  "fill-opacity"?: GlobalsNumber,
+  "fill-rule"?: FillRuleProperty,
+  filter?: FilterProperty,
+  "flood-color"?: FloodColorProperty,
+  "flood-opacity"?: GlobalsNumber,
+  font?: FontProperty,
+  "font-family"?: FontFamilyProperty,
+  "font-size"?: FontSizeProperty<TLength>,
+  "font-size-adjust"?: FontSizeAdjustProperty,
+  "font-stretch"?: FontStretchProperty,
+  "font-style"?: FontStyleProperty,
+  "font-variant"?: FontVariantProperty,
+  "font-weight"?: FontWeightProperty,
+  "glyph-orientation-vertical"?: GlyphOrientationVerticalProperty,
+  "image-rendering"?: ImageRenderingProperty,
+  "letter-spacing"?: LetterSpacingProperty<TLength>,
+  "lighting-color"?: LightingColorProperty,
+  "line-height"?: LineHeightProperty<TLength>,
+  marker?: MarkerProperty,
+  "marker-end"?: MarkerEndProperty,
+  "marker-mid"?: MarkerMidProperty,
+  "marker-start"?: MarkerStartProperty,
+  mask?: MaskProperty<TLength>,
+  opacity?: GlobalsNumber,
+  overflow?: OverflowProperty,
+  "paint-order"?: PaintOrderProperty,
+  "pointer-events"?: PointerEventsProperty,
+  "shape-rendering"?: ShapeRenderingProperty,
+  "stop-color"?: StopColorProperty,
+  "stop-opacity"?: GlobalsNumber,
+  stroke?: StrokeProperty,
+  "stroke-dasharray"?: StrokeDasharrayProperty,
+  "stroke-dashoffset"?: StrokeDashoffsetProperty<TLength>,
+  "stroke-linecap"?: StrokeLinecapProperty,
+  "stroke-linejoin"?: StrokeLinejoinProperty,
+  "stroke-miterlimit"?: GlobalsNumber,
+  "stroke-opacity"?: GlobalsNumber,
+  "stroke-width"?: StrokeWidthProperty<TLength>,
+  "text-anchor"?: TextAnchorProperty,
+  "text-decoration"?: TextDecorationProperty,
+  "text-rendering"?: TextRenderingProperty,
+  "unicode-bidi"?: UnicodeBidiProperty,
+  "vector-effect"?: VectorEffectProperty,
+  visibility?: VisibilityProperty,
+  "word-spacing"?: WordSpacingProperty<TLength>,
+  "white-space"?: WhiteSpaceProperty,
+  "writing-mode"?: WritingModeProperty,
+};
+
+export type PropertiesHyphen<TLength = string | 0> = StandardPropertiesHyphen<TLength> & VendorPropertiesHyphen<TLength> & SvgPropertiesHyphen<TLength>;
 
 export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   alignContent?: AlignContentProperty | AlignContentProperty[],
@@ -1314,7 +1440,70 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
 
 export type VendorPropertiesFallback<TLength = string | 0> = VendorLonghandPropertiesFallback<TLength> & VendorShorthandPropertiesFallback<TLength>;
 
-export type PropertiesFallback<TLength = string | 0> = StandardPropertiesFallback<TLength> & VendorPropertiesFallback<TLength>;
+export type SvgPropertiesFallback<TLength = string | 0> = {
+  alignmentBaseline?: AlignmentBaselineProperty | AlignmentBaselineProperty[],
+  baselineShift?: BaselineShiftProperty<TLength> | BaselineShiftProperty<TLength>[],
+  clip?: ClipProperty | ClipProperty[],
+  clipPath?: ClipPathProperty | ClipPathProperty[],
+  clipRule?: ClipRuleProperty | ClipRuleProperty[],
+  color?: ColorProperty | ColorProperty[],
+  colorInterpolation?: ColorInterpolationProperty | ColorInterpolationProperty[],
+  colorRendering?: ColorRenderingProperty | ColorRenderingProperty[],
+  cursor?: CursorProperty | CursorProperty[],
+  direction?: DirectionProperty | DirectionProperty[],
+  display?: DisplayProperty | DisplayProperty[],
+  dominantBaseline?: DominantBaselineProperty | DominantBaselineProperty[],
+  fill?: FillProperty | FillProperty[],
+  fillOpacity?: GlobalsNumber | GlobalsNumber[],
+  fillRule?: FillRuleProperty | FillRuleProperty[],
+  filter?: FilterProperty | FilterProperty[],
+  floodColor?: FloodColorProperty | FloodColorProperty[],
+  floodOpacity?: GlobalsNumber | GlobalsNumber[],
+  font?: FontProperty | FontProperty[],
+  fontFamily?: FontFamilyProperty | FontFamilyProperty[],
+  fontSize?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[],
+  fontSizeAdjust?: FontSizeAdjustProperty | FontSizeAdjustProperty[],
+  fontStretch?: FontStretchProperty | FontStretchProperty[],
+  fontStyle?: FontStyleProperty | FontStyleProperty[],
+  fontVariant?: FontVariantProperty | FontVariantProperty[],
+  fontWeight?: FontWeightProperty | FontWeightProperty[],
+  glyphOrientationVertical?: GlyphOrientationVerticalProperty | GlyphOrientationVerticalProperty[],
+  imageRendering?: ImageRenderingProperty | ImageRenderingProperty[],
+  letterSpacing?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[],
+  lightingColor?: LightingColorProperty | LightingColorProperty[],
+  lineHeight?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[],
+  marker?: MarkerProperty | MarkerProperty[],
+  markerEnd?: MarkerEndProperty | MarkerEndProperty[],
+  markerMid?: MarkerMidProperty | MarkerMidProperty[],
+  markerStart?: MarkerStartProperty | MarkerStartProperty[],
+  mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
+  opacity?: GlobalsNumber | GlobalsNumber[],
+  overflow?: OverflowProperty | OverflowProperty[],
+  paintOrder?: PaintOrderProperty | PaintOrderProperty[],
+  pointerEvents?: PointerEventsProperty | PointerEventsProperty[],
+  shapeRendering?: ShapeRenderingProperty | ShapeRenderingProperty[],
+  stopColor?: StopColorProperty | StopColorProperty[],
+  stopOpacity?: GlobalsNumber | GlobalsNumber[],
+  stroke?: StrokeProperty | StrokeProperty[],
+  strokeDasharray?: StrokeDasharrayProperty | StrokeDasharrayProperty[],
+  strokeDashoffset?: StrokeDashoffsetProperty<TLength> | StrokeDashoffsetProperty<TLength>[],
+  strokeLinecap?: StrokeLinecapProperty | StrokeLinecapProperty[],
+  strokeLinejoin?: StrokeLinejoinProperty | StrokeLinejoinProperty[],
+  strokeMiterlimit?: GlobalsNumber | GlobalsNumber[],
+  strokeOpacity?: GlobalsNumber | GlobalsNumber[],
+  strokeWidth?: StrokeWidthProperty<TLength> | StrokeWidthProperty<TLength>[],
+  textAnchor?: TextAnchorProperty | TextAnchorProperty[],
+  textDecoration?: TextDecorationProperty | TextDecorationProperty[],
+  textRendering?: TextRenderingProperty | TextRenderingProperty[],
+  unicodeBidi?: UnicodeBidiProperty | UnicodeBidiProperty[],
+  vectorEffect?: VectorEffectProperty | VectorEffectProperty[],
+  visibility?: VisibilityProperty | VisibilityProperty[],
+  wordSpacing?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[],
+  whiteSpace?: WhiteSpaceProperty | WhiteSpaceProperty[],
+  writingMode?: WritingModeProperty | WritingModeProperty[],
+};
+
+export type PropertiesFallback<TLength = string | 0> = StandardPropertiesFallback<TLength> & VendorPropertiesFallback<TLength> & SvgPropertiesFallback<TLength>;
 
 export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "align-content"?: AlignContentProperty | AlignContentProperty[],
@@ -1753,7 +1942,72 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
 
 export type VendorPropertiesHyphenFallback<TLength = string | 0> = VendorLonghandPropertiesHyphenFallback<TLength> & VendorShorthandPropertiesHyphenFallback<TLength>;
 
-export type PropertiesHyphenFallback<TLength = string | 0> = StandardPropertiesHyphenFallback<TLength> & VendorPropertiesHyphenFallback<TLength>;
+export type SvgPropertiesHyphenFallback<TLength = string | 0> = {
+  "alignment-baseline"?: AlignmentBaselineProperty | AlignmentBaselineProperty[],
+  "baseline-shift"?: BaselineShiftProperty<TLength> | BaselineShiftProperty<TLength>[],
+  clip?: ClipProperty | ClipProperty[],
+  "clip-path"?: ClipPathProperty | ClipPathProperty[],
+  "clip-rule"?: ClipRuleProperty | ClipRuleProperty[],
+  color?: ColorProperty | ColorProperty[],
+  "color-interpolation"?: ColorInterpolationProperty | ColorInterpolationProperty[],
+  "color-rendering"?: ColorRenderingProperty | ColorRenderingProperty[],
+  cursor?: CursorProperty | CursorProperty[],
+  direction?: DirectionProperty | DirectionProperty[],
+  display?: DisplayProperty | DisplayProperty[],
+  "dominant-baseline"?: DominantBaselineProperty | DominantBaselineProperty[],
+  fill?: FillProperty | FillProperty[],
+  "fill-opacity"?: GlobalsNumber | GlobalsNumber[],
+  "fill-rule"?: FillRuleProperty | FillRuleProperty[],
+  filter?: FilterProperty | FilterProperty[],
+  "flood-color"?: FloodColorProperty | FloodColorProperty[],
+  "flood-opacity"?: GlobalsNumber | GlobalsNumber[],
+  font?: FontProperty | FontProperty[],
+  "font-family"?: FontFamilyProperty | FontFamilyProperty[],
+  "font-size"?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[],
+  "font-size-adjust"?: FontSizeAdjustProperty | FontSizeAdjustProperty[],
+  "font-stretch"?: FontStretchProperty | FontStretchProperty[],
+  "font-style"?: FontStyleProperty | FontStyleProperty[],
+  "font-variant"?: FontVariantProperty | FontVariantProperty[],
+  "font-weight"?: FontWeightProperty | FontWeightProperty[],
+  "glyph-orientation-vertical"?: GlyphOrientationVerticalProperty | GlyphOrientationVerticalProperty[],
+  "image-rendering"?: ImageRenderingProperty | ImageRenderingProperty[],
+  "letter-spacing"?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[],
+  "lighting-color"?: LightingColorProperty | LightingColorProperty[],
+  "line-height"?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[],
+  marker?: MarkerProperty | MarkerProperty[],
+  "marker-end"?: MarkerEndProperty | MarkerEndProperty[],
+  "marker-mid"?: MarkerMidProperty | MarkerMidProperty[],
+  "marker-start"?: MarkerStartProperty | MarkerStartProperty[],
+  mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
+  opacity?: GlobalsNumber | GlobalsNumber[],
+  overflow?: OverflowProperty | OverflowProperty[],
+  "paint-order"?: PaintOrderProperty | PaintOrderProperty[],
+  "pointer-events"?: PointerEventsProperty | PointerEventsProperty[],
+  "shape-rendering"?: ShapeRenderingProperty | ShapeRenderingProperty[],
+  "stop-color"?: StopColorProperty | StopColorProperty[],
+  "stop-opacity"?: GlobalsNumber | GlobalsNumber[],
+  stroke?: StrokeProperty | StrokeProperty[],
+  "stroke-dasharray"?: StrokeDasharrayProperty | StrokeDasharrayProperty[],
+  "stroke-dashoffset"?: StrokeDashoffsetProperty<TLength> | StrokeDashoffsetProperty<TLength>[],
+  "stroke-linecap"?: StrokeLinecapProperty | StrokeLinecapProperty[],
+  "stroke-linejoin"?: StrokeLinejoinProperty | StrokeLinejoinProperty[],
+  "stroke-miterlimit"?: GlobalsNumber | GlobalsNumber[],
+  "stroke-opacity"?: GlobalsNumber | GlobalsNumber[],
+  "stroke-width"?: StrokeWidthProperty<TLength> | StrokeWidthProperty<TLength>[],
+  "text-anchor"?: TextAnchorProperty | TextAnchorProperty[],
+  "text-decoration"?: TextDecorationProperty | TextDecorationProperty[],
+  "text-rendering"?: TextRenderingProperty | TextRenderingProperty[],
+  "unicode-bidi"?: UnicodeBidiProperty | UnicodeBidiProperty[],
+  "vector-effect"?: VectorEffectProperty | VectorEffectProperty[],
+  visibility?: VisibilityProperty | VisibilityProperty[],
+  "word-spacing"?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[],
+  "white-space"?: WhiteSpaceProperty | WhiteSpaceProperty[],
+  "writing-mode"?: WritingModeProperty | WritingModeProperty[],
+};
+
+export type PropertiesHyphenFallback<TLength = string | 0> = StandardPropertiesHyphenFallback<TLength> &
+  VendorPropertiesHyphenFallback<TLength> &
+  SvgPropertiesHyphenFallback<TLength>;
 
 export type CounterStyle = {
   additiveSymbols?: string,
@@ -3004,6 +3258,82 @@ type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle 
 
 type WebkitTextStrokeProperty<TLength> = Globals | Color | TLength | string;
 
+type AlignmentBaselineProperty =
+  | Globals
+  | "after-edge"
+  | "alphabetic"
+  | "auto"
+  | "baseline"
+  | "before-edge"
+  | "central"
+  | "hanging"
+  | "ideographic"
+  | "mathematical"
+  | "middle"
+  | "text-after-edge"
+  | "text-before-edge";
+
+type BaselineShiftProperty<TLength> = Globals | TLength | "baseline" | "sub" | "super" | string;
+
+type ClipRuleProperty = Globals | "evenodd" | "nonzero";
+
+type ColorInterpolationProperty = Globals | "auto" | "linearRGB" | "sRGB";
+
+type ColorRenderingProperty = Globals | "auto" | "optimizeQuality" | "optimizeSpeed";
+
+type DominantBaselineProperty =
+  | Globals
+  | "alphabetic"
+  | "auto"
+  | "central"
+  | "hanging"
+  | "ideographic"
+  | "mathematical"
+  | "middle"
+  | "no-change"
+  | "reset-size"
+  | "text-after-edge"
+  | "text-before-edge"
+  | "use-script";
+
+type FillProperty = Globals | Paint;
+
+type FillRuleProperty = Globals | "evenodd" | "nonzero";
+
+type FloodColorProperty = Globals | Color | "currentColor";
+
+type GlyphOrientationVerticalProperty = Globals | "auto" | string | number;
+
+type LightingColorProperty = Globals | Color | "currentColor";
+
+type MarkerProperty = Globals | "none" | string;
+
+type MarkerEndProperty = Globals | "none" | string;
+
+type MarkerMidProperty = Globals | "none" | string;
+
+type MarkerStartProperty = Globals | "none" | string;
+
+type ShapeRenderingProperty = Globals | "auto" | "crispEdges" | "geometricPrecision" | "optimizeSpeed";
+
+type StopColorProperty = Globals | Color | "currentColor";
+
+type StrokeProperty = Globals | Paint;
+
+type StrokeDasharrayProperty = Globals | "none" | string;
+
+type StrokeDashoffsetProperty<TLength> = Globals | TLength | string;
+
+type StrokeLinecapProperty = Globals | "butt" | "round" | "square";
+
+type StrokeLinejoinProperty = Globals | "bevel" | "miter" | "round";
+
+type StrokeWidthProperty<TLength> = Globals | TLength | string;
+
+type TextAnchorProperty = Globals | "end" | "middle" | "start";
+
+type VectorEffectProperty = Globals | "non-scaling-stroke" | "none";
+
 type CounterStyleRangeProperty = "auto" | "infinite" | string | number;
 
 type CounterStyleSpeakAsProperty = "auto" | "bullets" | "numbers" | "spell-out" | "words" | string;
@@ -3426,5 +3756,7 @@ type CompositeStyle =
   | "xor";
 
 type MaskPosition<TLength> = LengthPercentage<TLength> | "center" | "left" | "right" | string;
+
+type Paint = Color | "child" | "context-fill" | "context-stroke" | "none" | string;
 
 type ViewportLength<TLength> = LengthPercentage<TLength> | "auto";

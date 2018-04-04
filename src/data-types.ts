@@ -1,9 +1,11 @@
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
 import { atRuleDescriptors, IAtRuleDescriptors } from './at-rules';
+import { syntaxes as svgSyntaxes } from './data/svg';
 import parse from './parser';
 import {
   standardLonghandProperties,
   standardShorthandProperties,
+  svgProperties,
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
 } from './properties';
@@ -17,6 +19,11 @@ const availableDataTypes: IDataTypes = {};
 
 for (const name in syntaxes) {
   const { syntax } = syntaxes[name];
+  availableDataTypes[name] = typing(parse(syntax));
+}
+
+for (const name in svgSyntaxes) {
+  const { syntax } = svgSyntaxes[name];
   availableDataTypes[name] = typing(parse(syntax));
 }
 
@@ -59,6 +66,7 @@ for (const descriptors of [
   standardShorthandProperties,
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
+  svgProperties,
   atRuleProperties,
 ]) {
   for (const name in descriptors) {
