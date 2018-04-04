@@ -1,6 +1,6 @@
 {
   "name": "csstype",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "",
   "types": "index.d.ts",
   "description": "TypeScript definitions for CSS",
