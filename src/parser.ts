@@ -11,15 +11,16 @@ export enum Component {
   Group,
 }
 
+// Higher number is higher precedence
 export enum Combinator {
   /** Components are mandatory and should appear in that order */
-  Juxtaposition,
+  Juxtaposition = 0,
   /** Components are mandatory but may appear in any order */
-  DoubleAmpersand,
+  DoubleAmpersand = 1,
   /** At least one of the components must be present, and they may appear in any order */
-  DoubleBar,
+  DoubleBar = 2,
   /** Exactly one of the components must be present */
-  SingleBar,
+  SingleBar = 3,
 }
 
 export enum Multiplier {
@@ -72,7 +73,6 @@ export type ComponentType = INonGroupData | IGroupData;
 
 export interface ICombinator {
   entity: Entity.Combinator;
-  multiplier: MultiplierType | null;
   combinator: Combinator;
 }
 
@@ -81,7 +81,7 @@ export interface IFunction {
   multiplier: MultiplierType | null;
 }
 
-interface IUnknown {
+export interface IUnknown {
   entity: Entity.Unknown;
   multiplier: MultiplierType | null;
 }
@@ -92,10 +92,29 @@ const REGEX_ENTITY = /(?:^|\s)((?:[\w]+\([^\)]*\))|[^\s*+?#!{]+)([*+?#!]|{(\d+),
 const REGEX_DATA_TYPE = /^(<[^>]+>)/g;
 const REGEX_KEYWORD = /^([\w-]+)/g;
 
+export const combinators: { [key: number]: ICombinator } = {
+  [Combinator.Juxtaposition]: {
+    entity: Entity.Combinator,
+    combinator: Combinator.Juxtaposition,
+  },
+  [Combinator.DoubleAmpersand]: {
+    entity: Entity.Combinator,
+    combinator: Combinator.DoubleAmpersand,
+  },
+  [Combinator.DoubleBar]: {
+    entity: Entity.Combinator,
+    combinator: Combinator.DoubleBar,
+  },
+  [Combinator.SingleBar]: {
+    entity: Entity.Combinator,
+    combinator: Combinator.SingleBar,
+  },
+};
+
 export default function parse(syntax: string): EntityType[] {
   const levels: EntityType[][] = [[]];
-  const deepestLevel = () => levels[levels.length - 1];
   let previousMatchWasComponent = false;
+
   let entityMatch: RegExpExecArray | null;
   while ((entityMatch = REGEX_ENTITY.exec(syntax))) {
     const [, value, ...rawMultiplier] = entityMatch;
@@ -104,27 +123,27 @@ export default function parse(syntax: string): EntityType[] {
       previousMatchWasComponent = false;
       continue;
     } else if (value.indexOf('&&') === 0) {
-      deepestLevel().push(combinatorData(Combinator.DoubleAmpersand, multiplierData(rawMultiplier)));
+      deepestLevel().push(combinators[Combinator.DoubleAmpersand]);
       previousMatchWasComponent = false;
       continue;
     } else if (value.indexOf('||') === 0) {
-      deepestLevel().push(combinatorData(Combinator.DoubleBar, multiplierData(rawMultiplier)));
+      deepestLevel().push(combinators[Combinator.DoubleBar]);
       previousMatchWasComponent = false;
       continue;
     } else if (value.indexOf('|') === 0) {
-      deepestLevel().push(combinatorData(Combinator.SingleBar, multiplierData(rawMultiplier)));
+      deepestLevel().push(combinators[Combinator.SingleBar]);
       previousMatchWasComponent = false;
       continue;
     } else if (value.indexOf(']') === 0) {
       const definitions = levels.pop();
       if (definitions) {
-        deepestLevel().push(componentGroupData(definitions, multiplierData(rawMultiplier)));
+        deepestLevel().push(componentGroupData(groupByPrecedence(definitions), multiplierData(rawMultiplier)));
       }
       previousMatchWasComponent = true;
       continue;
     } else {
-      if (previousMatchWasComponent === true) {
-        deepestLevel().push(combinatorData(Combinator.Juxtaposition));
+      if (previousMatchWasComponent) {
+        deepestLevel().push(combinators[Combinator.Juxtaposition]);
       }
 
       if (value.indexOf('[') === 0) {
@@ -149,15 +168,55 @@ export default function parse(syntax: string): EntityType[] {
     deepestLevel().push({ entity: Entity.Unknown, multiplier: multiplierData(rawMultiplier) });
   }
 
-  return levels[0];
+  function deepestLevel() {
+    return levels[levels.length - 1];
+  }
+
+  return groupByPrecedence(levels[0]);
 }
 
-export function combinatorData(combinator: Combinator, multiplier: MultiplierType | null = null): ICombinator {
-  return {
-    entity: Entity.Combinator,
-    combinator,
-    multiplier,
-  };
+export function isComponent(entity: EntityType): entity is ComponentType {
+  return entity.entity === Entity.Component;
+}
+
+export function isCombinator(entity: EntityType): entity is ICombinator {
+  return entity.entity === Entity.Combinator;
+}
+
+export function isCurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMultiplierCurlyBracet {
+  return multiplier.sign === Multiplier.CurlyBracet;
+}
+
+export function isMandatoryMultiplied(multiplier: MultiplierType | null) {
+  return multiplier !== null && (isCurlyBracetMultiplier(multiplier) && multiplier.min > 1);
+}
+
+export function isOptionallyMultiplied(multiplier: MultiplierType | null) {
+  return (
+    multiplier !== null &&
+    ((isCurlyBracetMultiplier(multiplier) && multiplier.min < multiplier.max && multiplier.max > 1) ||
+      multiplier.sign === Multiplier.Asterisk ||
+      multiplier.sign === Multiplier.PlusSign ||
+      multiplier.sign === Multiplier.HashMark ||
+      multiplier.sign === Multiplier.ExclamationPoint)
+  );
+}
+
+export function isMandatoryEntity(entity: EntityType) {
+  if (isCombinator(entity)) {
+    return entity === combinators[Combinator.DoubleAmpersand] || entity === combinators[Combinator.Juxtaposition];
+  }
+
+  if (entity.multiplier) {
+    return (
+      (isCurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
+      entity.multiplier.sign === Multiplier.PlusSign ||
+      entity.multiplier.sign === Multiplier.HashMark ||
+      entity.multiplier.sign === Multiplier.ExclamationPoint
+    );
+  }
+
+  return true;
 }
 
 export function componentData(
@@ -198,8 +257,63 @@ function multiplierData(raw: string[]): MultiplierType | null {
     case '!':
       return { sign: Multiplier.ExclamationPoint };
     case '{':
-      return { sign: Multiplier.CurlyBracet, min: +raw[1], max: +raw[2] };
+      return { sign: Multiplier.CurlyBracet, min: Number(raw[1]), max: Number(raw[2]) };
     default:
       return null;
   }
+}
+
+function groupByPrecedence(entities: EntityType[], precedence: number = Combinator.SingleBar): EntityType[] {
+  if (precedence < 0) {
+    // We've reached the lowest precedence possible
+    return entities;
+  }
+
+  const combinator = combinators[precedence];
+  const combinatorIndexes: number[] = [];
+
+  // Search for indexes where the combinator is used
+  for (let i = entities.indexOf(combinator); i > -1; i = entities.indexOf(combinator, i + 1)) {
+    combinatorIndexes.push(i);
+  }
+
+  const nextPrecedence = precedence - 1;
+
+  if (combinatorIndexes.length === 0) {
+    return groupByPrecedence(entities, nextPrecedence);
+  }
+
+  const groupedEntities: EntityType[] = [];
+
+  // Yes, what you see is correct: it's index of indexes
+  for (
+    let i = 0;
+    // Add one loop to finnish up the last entities
+    i < combinatorIndexes.length + 1;
+    i++
+  ) {
+    const sectionEntities = entities.slice(
+      i > 0
+        ? combinatorIndexes[i - 1] + 1
+        : // Slice from beginning
+          0,
+      i < combinatorIndexes.length
+        ? combinatorIndexes[i]
+        : // Slice to end
+          entities.length,
+    );
+
+    // Only group if there's more than one entity in between
+    if (sectionEntities.length > 1) {
+      groupedEntities.push(componentGroupData(groupByPrecedence(sectionEntities, nextPrecedence)));
+    } else {
+      groupedEntities.push(...sectionEntities);
+    }
+
+    if (i < combinatorIndexes.length) {
+      groupedEntities.push(entities[combinatorIndexes[i]]);
+    }
+  }
+
+  return groupedEntities;
 }

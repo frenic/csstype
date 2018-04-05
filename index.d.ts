@@ -3554,7 +3554,7 @@ type BorderImageOutsetProperty<TLength> = Globals | TLength | string | number;
 
 type BorderImageRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch" | string;
 
-type BorderImageSliceProperty = Globals | "fill" | string | number;
+type BorderImageSliceProperty = Globals | string | number;
 
 type BorderImageSourceProperty = Globals | "none" | string;
 
@@ -3894,7 +3894,7 @@ type MaskBorderOutsetProperty<TLength> = Globals | TLength | string | number;
 
 type MaskBorderRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch" | string;
 
-type MaskBorderSliceProperty = Globals | "fill" | string | number;
+type MaskBorderSliceProperty = Globals | string | number;
 
 type MaskBorderSourceProperty = Globals | "none" | string;
 
@@ -4184,7 +4184,7 @@ type BorderBottomProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Colo
 
 type BorderColorProperty = Globals | Color | string;
 
-type BorderImageProperty = Globals | "fill" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
+type BorderImageProperty = Globals | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
 type BorderInlineEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
@@ -4232,7 +4232,7 @@ type MarginProperty<TLength> = Globals | TLength | "auto" | string;
 
 type MaskProperty<TLength> = Globals | MaskLayer<TLength> | string;
 
-type MaskBorderProperty = Globals | "alpha" | "fill" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
+type MaskBorderProperty = Globals | "alpha" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
 type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
 

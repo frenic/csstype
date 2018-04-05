@@ -1,4 +1,4 @@
-import { Combinator, combinatorData, Component, componentData, componentGroupData, Entity, EntityType } from './parser';
+import { Combinator, combinators, Component, componentData, componentGroupData, Entity, EntityType } from './parser';
 
 const importsCache: { [cssPath: string]: MDN.PropertiesCompat | null } = {};
 
@@ -108,7 +108,7 @@ export function compatSyntax(data: MDN.CompatData, entities: EntityType[]): Enti
             const alternativeEntities: EntityType[] = [entity];
 
             for (const keyword of alternatives) {
-              alternativeEntities.push(combinatorData(Combinator.SingleBar), componentData(Component.Keyword, keyword));
+              alternativeEntities.push(combinators[Combinator.SingleBar], componentData(Component.Keyword, keyword));
             }
 
             compatEntities.push(componentGroupData(alternativeEntities));
