@@ -148,6 +148,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   inlineSize?: InlineSizeProperty<TLength>,
   isolation?: IsolationProperty,
   justifyContent?: JustifyContentProperty,
+  justifyItems?: JustifyItemsProperty,
+  justifySelf?: JustifySelfProperty,
   left?: LeftProperty<TLength>,
   letterSpacing?: LetterSpacingProperty<TLength>,
   lineBreak?: LineBreakProperty,
@@ -296,6 +298,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   wordWrap?: WordWrapProperty,
   writingMode?: WritingModeProperty,
   zIndex?: ZIndexProperty,
+  zoom?: ZoomProperty,
 };
 
 export type StandardShorthandProperties<TLength = string | 0> = {
@@ -359,8 +362,13 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   msImeAlign?: MsImeAlignProperty,
   msOverflowStyle?: MsOverflowStyleProperty,
   msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty,
+  msScrollbarArrowColor?: MsScrollbarArrowColorProperty,
+  msScrollbarBaseColor?: MsScrollbarBaseColorProperty,
   msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty,
+  msScrollbarFaceColor?: MsScrollbarFaceColorProperty,
+  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty,
   msScrollbarShadowColor?: MsScrollbarShadowColorProperty,
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   msScrollChaining?: MsScrollChainingProperty,
   msScrollLimitXMax?: MsScrollLimitXMaxProperty<TLength>,
   msScrollLimitXMin?: MsScrollLimitXMinProperty<TLength>,
@@ -650,6 +658,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "inline-size"?: InlineSizeProperty<TLength>,
   isolation?: IsolationProperty,
   "justify-content"?: JustifyContentProperty,
+  "justify-items"?: JustifyItemsProperty,
+  "justify-self"?: JustifySelfProperty,
   left?: LeftProperty<TLength>,
   "letter-spacing"?: LetterSpacingProperty<TLength>,
   "line-break"?: LineBreakProperty,
@@ -798,6 +808,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "word-wrap"?: WordWrapProperty,
   "writing-mode"?: WritingModeProperty,
   "z-index"?: ZIndexProperty,
+  zoom?: ZoomProperty,
 };
 
 export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
@@ -861,8 +872,13 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-ime-align"?: MsImeAlignProperty,
   "-ms-overflow-style"?: MsOverflowStyleProperty,
   "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty,
+  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty,
+  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty,
   "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty,
+  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty,
+  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty,
   "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty,
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-ms-scroll-chaining"?: MsScrollChainingProperty,
   "-ms-scroll-limit-x-max"?: MsScrollLimitXMaxProperty<TLength>,
   "-ms-scroll-limit-x-min"?: MsScrollLimitXMinProperty<TLength>,
@@ -1152,6 +1168,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   inlineSize?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[],
   isolation?: IsolationProperty | IsolationProperty[],
   justifyContent?: JustifyContentProperty | JustifyContentProperty[],
+  justifyItems?: JustifyItemsProperty | JustifyItemsProperty[],
+  justifySelf?: JustifySelfProperty | JustifySelfProperty[],
   left?: LeftProperty<TLength> | LeftProperty<TLength>[],
   letterSpacing?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[],
   lineBreak?: LineBreakProperty | LineBreakProperty[],
@@ -1300,6 +1318,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   wordWrap?: WordWrapProperty | WordWrapProperty[],
   writingMode?: WritingModeProperty | WritingModeProperty[],
   zIndex?: ZIndexProperty | ZIndexProperty[],
+  zoom?: ZoomProperty | ZoomProperty[],
 };
 
 export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
@@ -1363,8 +1382,13 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msImeAlign?: MsImeAlignProperty | MsImeAlignProperty[],
   msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
   msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[],
+  msScrollbarArrowColor?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[],
+  msScrollbarBaseColor?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[],
   msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[],
+  msScrollbarFaceColor?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
+  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
   msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   msScrollChaining?: MsScrollChainingProperty | MsScrollChainingProperty[],
   msScrollLimitXMax?: MsScrollLimitXMaxProperty<TLength> | MsScrollLimitXMaxProperty<TLength>[],
   msScrollLimitXMin?: MsScrollLimitXMinProperty<TLength> | MsScrollLimitXMinProperty<TLength>[],
@@ -1654,6 +1678,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "inline-size"?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[],
   isolation?: IsolationProperty | IsolationProperty[],
   "justify-content"?: JustifyContentProperty | JustifyContentProperty[],
+  "justify-items"?: JustifyItemsProperty | JustifyItemsProperty[],
+  "justify-self"?: JustifySelfProperty | JustifySelfProperty[],
   left?: LeftProperty<TLength> | LeftProperty<TLength>[],
   "letter-spacing"?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[],
   "line-break"?: LineBreakProperty | LineBreakProperty[],
@@ -1802,6 +1828,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "word-wrap"?: WordWrapProperty | WordWrapProperty[],
   "writing-mode"?: WritingModeProperty | WritingModeProperty[],
   "z-index"?: ZIndexProperty | ZIndexProperty[],
+  zoom?: ZoomProperty | ZoomProperty[],
 };
 
 export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
@@ -1865,8 +1892,13 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-ime-align"?: MsImeAlignProperty | MsImeAlignProperty[],
   "-ms-overflow-style"?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
   "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[],
+  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[],
+  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[],
   "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[],
+  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
+  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
   "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "-ms-scroll-chaining"?: MsScrollChainingProperty | MsScrollChainingProperty[],
   "-ms-scroll-limit-x-max"?: MsScrollLimitXMaxProperty<TLength> | MsScrollLimitXMaxProperty<TLength>[],
   "-ms-scroll-limit-x-min"?: MsScrollLimitXMinProperty<TLength> | MsScrollLimitXMinProperty<TLength>[],
@@ -2288,7 +2320,7 @@ type GlobalsString = Globals | string;
 
 type GlobalsNumber = Globals | number;
 
-type AlignContentProperty = Globals | BaselinePosition | ContentDistribution | "normal" | string;
+type AlignContentProperty = Globals | BaselinePosition | ContentDistribution | ContentPosition | "normal" | string;
 
 type AlignItemsProperty = Globals | BaselinePosition | SelfPosition | "normal" | "stretch" | string;
 
@@ -2653,7 +2685,11 @@ type InlineSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "f
 
 type IsolationProperty = Globals | "auto" | "isolate";
 
-type JustifyContentProperty = Globals | ContentDistribution | "normal" | string;
+type JustifyContentProperty = Globals | ContentDistribution | ContentPosition | "left" | "normal" | "right" | string;
+
+type JustifyItemsProperty = Globals | BaselinePosition | SelfPosition | "left" | "legacy" | "normal" | "right" | "stretch" | string;
+
+type JustifySelfProperty = Globals | BaselinePosition | SelfPosition | "auto" | "left" | "normal" | "right" | "stretch" | string;
 
 type LeftProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -2809,7 +2845,7 @@ type PerspectiveProperty<TLength> = Globals | TLength | "none";
 
 type PerspectiveOriginProperty<TLength> = Globals | Position<TLength>;
 
-type PlaceContentProperty = Globals | BaselinePosition | ContentDistribution | "normal" | string;
+type PlaceContentProperty = Globals | BaselinePosition | ContentDistribution | ContentPosition | "normal" | string;
 
 type PointerEventsProperty = Globals | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
 
@@ -2935,6 +2971,8 @@ type WritingModeProperty = Globals | "horizontal-tb" | "sideways-lr" | "sideways
 
 type ZIndexProperty = Globals | "auto" | number;
 
+type ZoomProperty = Globals | "normal" | "reset" | string | number;
+
 type AnimationProperty = Globals | SingleAnimation;
 
 type BackgroundProperty<TLength> = Globals | FinalBgLayer<TLength> | string;
@@ -3033,11 +3071,21 @@ type MsImeAlignProperty = Globals | "after" | "auto";
 
 type MsOverflowStyleProperty = Globals | "-ms-autohiding-scrollbar" | "auto" | "none" | "scrollbar";
 
-type MsScrollbar3dlightColorProperty = Globals | "variant";
+type MsScrollbar3dlightColorProperty = Globals | Color;
 
-type MsScrollbarDarkshadowColorProperty = Globals | "variant";
+type MsScrollbarArrowColorProperty = Globals | Color;
 
-type MsScrollbarShadowColorProperty = Globals | "variant";
+type MsScrollbarBaseColorProperty = Globals | Color;
+
+type MsScrollbarDarkshadowColorProperty = Globals | Color;
+
+type MsScrollbarFaceColorProperty = Globals | Color;
+
+type MsScrollbarHighlightColorProperty = Globals | Color;
+
+type MsScrollbarShadowColorProperty = Globals | Color;
+
+type MsScrollbarTrackColorProperty = Globals | Color;
 
 type MsScrollChainingProperty = Globals | "chained" | "none";
 
@@ -3053,7 +3101,7 @@ type MsScrollRailsProperty = Globals | "none" | "railed";
 
 type MsScrollSnapTypeProperty = Globals | "mandatory" | "none" | "proximity";
 
-type MsScrollTranslationProperty = Globals | "inherit" | "none" | "vertical-to-horizontal";
+type MsScrollTranslationProperty = Globals | "none" | "vertical-to-horizontal";
 
 type MsTextAutospaceProperty = Globals | "ideograph-alpha" | "ideograph-numeric" | "ideograph-parenthesis" | "ideograph-space" | "none";
 
@@ -3414,6 +3462,8 @@ type ViewportZoomProperty = "auto" | string | number;
 type BaselinePosition = "baseline" | string;
 
 type ContentDistribution = "space-around" | "space-between" | "space-evenly" | "stretch";
+
+type ContentPosition = "center" | "end" | "flex-end" | "flex-start" | "start";
 
 type SelfPosition = "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
 

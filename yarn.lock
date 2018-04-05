@@ -2078,9 +2078,9 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-"mdn-data@git+ssh://git@github.com:mdn/data.git#7905ee69f51248a1f3b506f31078f08f1fd7d5c4":
+"mdn-data@git+https://github.com/mdn/data.git#9513169e8dd59e5c076e879ac462af2d386b4699":
   version "1.1.0"
-  resolved "git+ssh://git@github.com:mdn/data.git#7905ee69f51248a1f3b506f31078f08f1fd7d5c4"
+  resolved "git+https://github.com/mdn/data.git#9513169e8dd59e5c076e879ac462af2d386b4699"
 
 mem@^1.1.0:
   version "1.1.0"
