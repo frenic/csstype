@@ -1,4 +1,5 @@
 import * as properties from 'mdn-data/css/properties.json';
+import { compatProperties } from './compat';
 import { properties as svgData } from './data/svg';
 import parse from './parser';
 import typing, { TypeType } from './typer';
@@ -25,23 +26,29 @@ export const vendorPrefixedLonghandProperties: { [name: string]: TypeType[] } = 
 export const vendorPrefixedShorthandProperties: { [name: string]: TypeType[] } = {};
 export const svgProperties: { [name: string]: TypeType[] } = {};
 
-for (const name in properties) {
-  if (IGNORES.includes(name)) {
+for (const originalName in properties) {
+  if (IGNORES.includes(originalName)) {
     continue;
   }
 
-  const types = typing(parse(properties[name].syntax));
-  if (REGEX_VENDOR_PROPERTY.test(name)) {
-    if (Array.isArray(properties[name].computed)) {
-      vendorPrefixedShorthandProperties[name] = types;
+  const propertyNames = [originalName, ...compatProperties(originalName)];
+  const types = typing(parse(properties[originalName].syntax));
+
+  for (const name of propertyNames) {
+    const isShorthand = Array.isArray(properties[originalName].computed);
+
+    if (REGEX_VENDOR_PROPERTY.test(name)) {
+      if (isShorthand) {
+        vendorPrefixedShorthandProperties[name] = types;
+      } else {
+        vendorPrefixedLonghandProperties[name] = types;
+      }
     } else {
-      vendorPrefixedLonghandProperties[name] = types;
-    }
-  } else {
-    if (Array.isArray(properties[name].computed)) {
-      standardShorthandProperties[name] = types;
-    } else {
-      standardLonghandProperties[name] = types;
+      if (isShorthand) {
+        standardShorthandProperties[name] = types;
+      } else {
+        standardLonghandProperties[name] = types;
+      }
     }
   }
 }

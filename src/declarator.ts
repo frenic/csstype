@@ -130,6 +130,7 @@ for (const properties of [
   let definitions: IPropertyAlias[];
   let hyphenDefinitions: IPropertyAlias[];
   let isVendorProperties = false;
+
   switch (properties) {
     case svgProperties:
       definitions = svgPropertiesDefinition;
@@ -154,7 +155,9 @@ for (const properties of [
       hyphenDefinitions = standardLonghandPropertiesHyphenDefinition;
       break;
   }
-  for (const name in properties) {
+
+  // Loop in alphabetical order
+  for (const name of Object.keys(properties).sort()) {
     const types = filterMissingDataTypes(properties[name]);
     let declaration: IDeclaration;
     const generics = lengthIn(types) ? [lengthGeneric] : [];
