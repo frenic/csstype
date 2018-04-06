@@ -2316,7 +2316,7 @@ export type SimplePseudos =
 
 export type Pseudos = AdvancedPseudos | SimplePseudos;
 
-type Globals = "inherit" | "initial" | "unset";
+type Globals = "inherit" | "initial" | "revert" | "unset";
 
 type GlobalsString = Globals | string;
 
