@@ -1,28 +1,26 @@
 import * as properties from 'mdn-data/css/properties.json';
 import { properties as svgData } from './data/svg';
 import parse from './parser';
-import typing, { Type, TypeType } from './typer';
+import typing, { TypeType } from './typer';
 
-const IGNORES = ['--*', 'all'];
+const IGNORES = [
+  // Custom properties
+  '--*',
+  // We define this manually
+  'all',
+];
 
 const REGEX_VENDOR_PROPERTY = /^-/;
 
-export const globals: TypeType[] = [
-  {
-    type: Type.StringLiteral,
-    literal: 'initial',
-  },
-  {
-    type: Type.StringLiteral,
-    literal: 'inherit',
-  },
-  {
-    type: Type.StringLiteral,
-    literal: 'unset',
-  },
-];
+// The CSS-wide keywords are identical to the `all` property
+// https://www.w3.org/TR/2016/CR-css-cascade-4-20160114/#all-shorthand
+export const globals: TypeType[] = typing(parse(properties.all.syntax));
+
 export const standardLonghandProperties: { [name: string]: TypeType[] } = {};
-export const standardShorthandProperties: { [name: string]: TypeType[] } = {};
+export const standardShorthandProperties: { [name: string]: TypeType[] } = {
+  // Empty so that it only receives CSS-wide keywords
+  all: [],
+};
 export const vendorPrefixedLonghandProperties: { [name: string]: TypeType[] } = {};
 export const vendorPrefixedShorthandProperties: { [name: string]: TypeType[] } = {};
 export const svgProperties: { [name: string]: TypeType[] } = {};
