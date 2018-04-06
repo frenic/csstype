@@ -302,6 +302,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
 };
 
 export type StandardShorthandProperties<TLength = string | 0> = {
+  all?: Globals,
   animation?: AnimationProperty,
   background?: BackgroundProperty<TLength>,
   border?: BorderProperty<TLength>,
@@ -812,6 +813,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
 };
 
 export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
+  all?: Globals,
   animation?: AnimationProperty,
   background?: BackgroundProperty<TLength>,
   border?: BorderProperty<TLength>,
@@ -1322,6 +1324,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
 };
 
 export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
+  all?: Globals | Globals[],
   animation?: AnimationProperty | AnimationProperty[],
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
   border?: BorderProperty<TLength> | BorderProperty<TLength>[],
@@ -1832,6 +1835,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
 };
 
 export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
+  all?: Globals | Globals[],
   animation?: AnimationProperty | AnimationProperty[],
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
   border?: BorderProperty<TLength> | BorderProperty<TLength>[],
@@ -2314,7 +2318,7 @@ export type SimplePseudos =
 
 export type Pseudos = AdvancedPseudos | SimplePseudos;
 
-type Globals = "inherit" | "initial" | "unset";
+type Globals = "inherit" | "initial" | "revert" | "unset";
 
 type GlobalsString = Globals | string;
 

@@ -159,7 +159,9 @@ for (const properties of [
     let declaration: IDeclaration;
     const generics = lengthIn(types) ? [lengthGeneric] : [];
 
-    if (onlyContainsString(types)) {
+    if (types.length === 0) {
+      declaration = globalsDeclaration;
+    } else if (onlyContainsString(types)) {
       declaration = globalsAndStringDeclaration;
     } else if (onlyContainsNumber(types)) {
       declaration = globalsAndNumberDeclaration;
