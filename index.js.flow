@@ -2408,15 +2408,15 @@ type BorderBottomWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
 type BorderCollapseProperty = Globals | "collapse" | "separate";
 
-type BorderImageOutsetProperty<TLength> = Globals | TLength | number;
+type BorderImageOutsetProperty<TLength> = Globals | TLength | string | number;
 
-type BorderImageRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch";
+type BorderImageRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch" | string;
 
 type BorderImageSliceProperty = Globals | NumberPercentage | "fill" | string;
 
 type BorderImageSourceProperty = Globals | "none" | string;
 
-type BorderImageWidthProperty<TLength> = Globals | LengthPercentage<TLength> | "auto" | number;
+type BorderImageWidthProperty<TLength> = Globals | LengthPercentage<TLength> | "auto" | string | number;
 
 type BorderInlineEndColorProperty = Globals | Color;
 
@@ -2725,15 +2725,15 @@ type MarginTopProperty<TLength> = Globals | TLength | "auto" | string;
 
 type MaskBorderModeProperty = Globals | "alpha" | "luminance";
 
-type MaskBorderOutsetProperty<TLength> = Globals | TLength | number;
+type MaskBorderOutsetProperty<TLength> = Globals | TLength | string | number;
 
-type MaskBorderRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch";
+type MaskBorderRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch" | string;
 
 type MaskBorderSliceProperty = Globals | NumberPercentage | "fill" | string;
 
 type MaskBorderSourceProperty = Globals | "none" | string;
 
-type MaskBorderWidthProperty<TLength> = Globals | LengthPercentage<TLength> | "auto" | number;
+type MaskBorderWidthProperty<TLength> = Globals | LengthPercentage<TLength> | "auto" | string | number;
 
 type MaskClipProperty = Globals | GeometryBox | "no-clip" | string;
 
@@ -2811,7 +2811,7 @@ type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
 type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
-type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none";
+type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none" | string;
 
 type OverscrollBehaviorXProperty = Globals | "auto" | "contain" | "none";
 
@@ -3692,9 +3692,9 @@ type BgPosition<TLength> = LengthPercentage<TLength> | "bottom" | "center" | "le
 
 type LengthPercentage<TLength> = TLength | string;
 
-type RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "round" | "space";
+type RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "round" | "space" | string;
 
-type BgSize<TLength> = LengthPercentage<TLength> | "auto" | "contain" | "cover";
+type BgSize<TLength> = LengthPercentage<TLength> | "auto" | "contain" | "cover" | string;
 
 type BrStyle = "dashed" | "dotted" | "double" | "groove" | "hidden" | "inset" | "none" | "outset" | "ridge" | "solid";
 

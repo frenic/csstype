@@ -9,7 +9,7 @@ import parse, {
   EntityType,
   ICombinator,
   IFunction,
-  IMultiplierQurlyBracet,
+  IMultiplierCurlyBracet,
   Multiplier,
   MultiplierType,
 } from './parser';
@@ -277,13 +277,13 @@ function isCombinator(entity: EntityType): entity is ICombinator {
   return entity.entity === Entity.Combinator;
 }
 
-function isQurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMultiplierQurlyBracet {
-  return multiplier.sign === Multiplier.QurlyBracet;
+function isCurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMultiplierCurlyBracet {
+  return multiplier.sign === Multiplier.CurlyBracet;
 }
 
 function isMultiplied(multiplier: MultiplierType) {
   return (
-    (isQurlyBracetMultiplier(multiplier) && (multiplier.min > 1 || multiplier.max === 1)) ||
+    (isCurlyBracetMultiplier(multiplier) && (multiplier.min > 1 || multiplier.max > 1)) ||
     multiplier.sign === Multiplier.Asterisk ||
     multiplier.sign === Multiplier.PlusSign ||
     multiplier.sign === Multiplier.HashMark ||
@@ -298,7 +298,7 @@ function isMandatoryCombinator({ combinator }: ICombinator) {
 function isOptionalEntity(entity: EntityType) {
   return (
     entity.multiplier &&
-    ((isQurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
+    ((isCurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
       entity.multiplier.sign === Multiplier.Asterisk ||
       entity.multiplier.sign === Multiplier.QuestionMark)
   );

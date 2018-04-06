@@ -34,11 +34,11 @@ export enum Multiplier {
   /** Group must produce at least 1 value */
   ExclamationPoint,
   /** At least A times, at most B times */
-  QurlyBracet,
+  CurlyBracet,
 }
 
-export interface IMultiplierQurlyBracet {
-  sign: Multiplier.QurlyBracet;
+export interface IMultiplierCurlyBracet {
+  sign: Multiplier.CurlyBracet;
   min: number;
   max: number;
 }
@@ -52,7 +52,7 @@ export interface IMultiplierSimple {
     | Multiplier.ExclamationPoint;
 }
 
-export type MultiplierType = IMultiplierQurlyBracet | IMultiplierSimple;
+export type MultiplierType = IMultiplierCurlyBracet | IMultiplierSimple;
 
 export interface INonGroupData {
   entity: Entity.Component;
@@ -198,7 +198,7 @@ function multiplierData(raw: string[]): MultiplierType | null {
     case '!':
       return { sign: Multiplier.ExclamationPoint };
     case '{':
-      return { sign: Multiplier.QurlyBracet, min: +raw[1], max: +raw[2] };
+      return { sign: Multiplier.CurlyBracet, min: +raw[1], max: +raw[2] };
     default:
       return null;
   }
