@@ -20,6 +20,10 @@ export const globals: TypeType[] = [
     type: Type.StringLiteral,
     literal: 'unset',
   },
+  {
+    type: Type.StringLiteral,
+    literal: 'revert',
+  },
 ];
 export const standardLonghandProperties: { [name: string]: TypeType[] } = {};
 export const standardShorthandProperties: { [name: string]: TypeType[] } = {};
