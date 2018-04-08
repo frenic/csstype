@@ -50,7 +50,7 @@ function flow() {
   }
 
   let declarationsOutput = '';
-  for (const declaration of declarations) {
+  for (const declaration of declarations.values()) {
     if (declarationsOutput) {
       declarationsOutput += EOL + EOL;
     }
@@ -111,7 +111,7 @@ function typescript() {
   }
 
   let declarationsOutput = '';
-  for (const declaration of declarations) {
+  for (const declaration of declarations.values()) {
     if (declarationsOutput) {
       declarationsOutput += EOL + EOL;
     }

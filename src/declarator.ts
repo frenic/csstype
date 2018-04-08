@@ -46,10 +46,45 @@ export interface IDeclaration {
   generics: IGenerics[];
 }
 
-export const lengthGeneric: IGenerics = {
-  name: 'TLength',
-  defaults: 'string | 0',
+export const declarations: Map<MixedType[], IDeclaration> = new Map();
+
+const atRuleDeclaration: IDeclaration = {
+  name: 'AtRules',
+  export: true,
+  types: declarable(atRuleList),
+  generics: [],
 };
+
+declarations.set(atRuleList, atRuleDeclaration);
+
+const advancedPseudosDeclaration: IDeclaration = {
+  name: 'AdvancedPseudos',
+  export: true,
+  types: declarable(advancedPseudos),
+  generics: [],
+};
+
+declarations.set(advancedPseudos, advancedPseudosDeclaration);
+
+const simplePseudosDeclaration: IDeclaration = {
+  name: 'SimplePseudos',
+  export: true,
+  types: declarable(simplePseudos),
+  generics: [],
+};
+
+declarations.set(simplePseudos, simplePseudosDeclaration);
+
+const pseudos = [aliasOf(advancedPseudosDeclaration), aliasOf(simplePseudosDeclaration)];
+
+const pseudosDeclaration: IDeclaration = {
+  name: 'Pseudos',
+  export: true,
+  types: pseudos,
+  generics: [],
+};
+
+declarations.set(pseudos, pseudosDeclaration);
 
 const globalsDeclaration: IDeclaration = {
   name: 'Globals',
@@ -58,46 +93,33 @@ const globalsDeclaration: IDeclaration = {
   generics: [],
 };
 
+declarations.set(globals, globalsDeclaration);
+
+const globalsAndString: DeclarableType[] = [aliasOf(globalsDeclaration), { type: Type.String }];
+
 const globalsAndStringDeclaration: IDeclaration = {
   name: 'GlobalsString',
   export: false,
-  types: declarable([aliasOf(globalsDeclaration), { type: Type.String }]),
+  types: globalsAndString,
   generics: [],
 };
+
+declarations.set(globalsAndString, globalsAndStringDeclaration);
+
+const declarableGlobalsAndNumber: DeclarableType[] = [aliasOf(globalsDeclaration), { type: Type.Number }];
 
 const globalsAndNumberDeclaration: IDeclaration = {
   name: 'GlobalsNumber',
   export: false,
-  types: declarable([aliasOf(globalsDeclaration), { type: Type.Number }]),
+  types: declarableGlobalsAndNumber,
   generics: [],
 };
 
-const advancedPseudoDeclaration: IDeclaration = {
-  name: 'AdvancedPseudos',
-  export: true,
-  types: declarable(advancedPseudos),
-  generics: [],
-};
+declarations.set(declarableGlobalsAndNumber, globalsAndNumberDeclaration);
 
-const simplePseudoDeclaration: IDeclaration = {
-  name: 'SimplePseudos',
-  export: true,
-  types: declarable(simplePseudos),
-  generics: [],
-};
-
-const pseudoDeclaration: IDeclaration = {
-  name: 'Pseudos',
-  export: true,
-  types: [aliasOf(advancedPseudoDeclaration), aliasOf(simplePseudoDeclaration)],
-  generics: [],
-};
-
-const atRuleDeclaration: IDeclaration = {
-  name: 'AtRules',
-  export: true,
-  types: declarable(atRuleList),
-  generics: [],
+export const lengthGeneric: IGenerics = {
+  name: 'TLength',
+  defaults: 'string | 0',
 };
 
 const standardLonghandPropertiesDefinition: IPropertyAlias[] = [];
@@ -114,16 +136,6 @@ const svgPropertiesDefinition: IPropertyAlias[] = [];
 const svgPropertiesHyphenDefinition: IPropertyAlias[] = [];
 
 const PROPERTY = 'Property';
-
-export const declarations: IDeclaration[] = [
-  atRuleDeclaration,
-  advancedPseudoDeclaration,
-  simplePseudoDeclaration,
-  pseudoDeclaration,
-  globalsDeclaration,
-  globalsAndStringDeclaration,
-  globalsAndNumberDeclaration,
-];
 
 for (const properties of [
   standardLonghandProperties,
@@ -170,30 +182,36 @@ for (const properties of [
 
   // Loop in alphabetical order
   for (const name of Object.keys(properties).sort()) {
-    const types = filterMissingDataTypes(properties[name]);
-    let declaration: IDeclaration;
-    const generics = lengthIn(types) ? [lengthGeneric] : [];
+    const originalTypes = properties[name];
+    const safeTypes = filterMissingDataTypes(properties[name]);
+    const generics = lengthIn(safeTypes) ? [lengthGeneric] : [];
 
-    if (types.length === 0) {
-      declaration = globalsDeclaration;
-    } else if (onlyContainsString(types)) {
-      declaration = globalsAndStringDeclaration;
-    } else if (onlyContainsNumber(types)) {
-      declaration = globalsAndNumberDeclaration;
-    } else {
-      const declarationName = toPascalCase(name) + PROPERTY;
+    // Some properties are prefixed and share the same type so we
+    // make sure to reuse the same declaration of that type
+    let declaration = declarations.get(originalTypes);
 
-      declaration = {
-        name: declarationName,
-        export: false,
-        types: [aliasOf(globalsDeclaration), ...declarable(types)],
-        generics,
-      };
+    if (!declaration) {
+      if (safeTypes.length === 0) {
+        declaration = globalsDeclaration;
+      } else if (onlyContainsString(safeTypes)) {
+        declaration = globalsAndStringDeclaration;
+      } else if (onlyContainsNumber(safeTypes)) {
+        declaration = globalsAndNumberDeclaration;
+      } else {
+        const declarationName = toPascalCase(name) + PROPERTY;
 
-      // Some SVG properties are shared with regular style properties
-      // and we assume here that they are identical
-      if (!declarationExists(declarationName)) {
-        declarations.push(declaration);
+        declaration = {
+          name: declarationName,
+          export: false,
+          types: [aliasOf(globalsDeclaration), ...declarable(safeTypes)],
+          generics,
+        };
+
+        // Some SVG properties are shared with regular style properties
+        // and we assume here that they are identical
+        if (!declarationNameExists(declarationName)) {
+          declarations.set(originalTypes, declaration);
+        }
       }
     }
 
@@ -245,7 +263,7 @@ for (const name in atRuleDescriptors) {
         types: declarable(types),
         generics,
       };
-      declarations.push(declaration);
+      declarations.set(types, declaration);
 
       atRuleDefinitions[name].push({
         name: toCamelCase(property),
@@ -263,11 +281,13 @@ for (const name in atRuleDescriptors) {
   }
 }
 
-for (const name in dataTypes) {
-  declarations.push({
+// Loop in alphabetical order
+for (const name of Object.keys(dataTypes).sort()) {
+  const declarableDataType = declarable(dataTypes[name]);
+  declarations.set(declarableDataType, {
     name: toPascalCase(name),
     export: false,
-    types: declarable(dataTypes[name]),
+    types: declarableDataType,
     generics: lengthIn(dataTypes[name]) ? [lengthGeneric] : [],
   });
 }
@@ -623,7 +643,8 @@ const allPropertiesHyphenFallbackInterface: Interface = {
 
 const atRuleInterfaces: Interface[] = [];
 
-for (const name in atRuleDefinitions) {
+// Loop in alphabetical order
+for (const name of Object.keys(atRuleDefinitions).sort()) {
   const pascalName = toPascalCase(name.slice(1));
   const generics = genericsOf(atRuleDefinitions[name].filter(isAliasProperty));
   atRuleInterfaces.push(
@@ -769,6 +790,12 @@ function onlyContainsNumber(types: MixedType[]) {
   return types.every(type => type.type === Type.Number);
 }
 
-function declarationExists(name: string) {
-  return !declarations.every(declaration => declaration.name !== name);
+function declarationNameExists(name: string) {
+  for (const declaration of declarations.values()) {
+    if (declaration.name === name) {
+      return true;
+    }
+  }
+
+  return false;
 }
