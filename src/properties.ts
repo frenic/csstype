@@ -40,7 +40,7 @@ for (const originalName in properties) {
     for (const name of currentPropertyNames) {
       const isShorthand = Array.isArray(properties[originalName].computed);
 
-      if (REGEX_VENDOR_PROPERTY.test(name)) {
+      if (isVendorProperty(name)) {
         if (isShorthand) {
           vendorPrefixedShorthandProperties[name] = types;
         } else {
@@ -70,4 +70,8 @@ for (const name in svgData) {
   if (syntax) {
     svgProperties[name] = typing(parse(syntax));
   }
+}
+
+export function isVendorProperty(name: string) {
+  return REGEX_VENDOR_PROPERTY.test(name);
 }

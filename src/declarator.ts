@@ -3,6 +3,7 @@ import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
 import dataTypes from './data-types';
 import {
   globals,
+  isVendorProperty,
   obsoleteProperties,
   standardLonghandProperties,
   standardShorthandProperties,
@@ -148,7 +149,6 @@ for (const properties of [
   let definitions: IPropertyAlias[];
   let hyphenDefinitions: IPropertyAlias[];
   let isObsoleteProperties = false;
-  let isVendorProperties = false;
 
   switch (properties) {
     case svgProperties:
@@ -163,12 +163,10 @@ for (const properties of [
     case vendorPrefixedShorthandProperties:
       definitions = vendorShorthandPropertiesDefinition;
       hyphenDefinitions = vendorShorthandPropertiesHyphenDefinition;
-      isVendorProperties = true;
       break;
     case vendorPrefixedLonghandProperties:
       definitions = vendorLonghandPropertiesDefinition;
       hyphenDefinitions = vendorLonghandPropertiesHyphenDefinition;
-      isVendorProperties = true;
       break;
     case standardShorthandProperties:
       definitions = standardShorthandPropertiesDefinition;
@@ -225,7 +223,7 @@ for (const properties of [
     }
 
     definitions.push({
-      name: isVendorProperties ? toVendorPrefixCase(name) : toCamelCase(name),
+      name: isVendorProperty(name) ? toVendorPrefixCase(name) : toCamelCase(name),
       generics,
       alias: aliasOf(declaration),
       obsolete: isObsoleteProperties,

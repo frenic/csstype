@@ -618,93 +618,93 @@ export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
   textCombineHorizontal?: TextCombineUprightProperty;
   /** @deprecated */
-  khtmlBoxDirection?: BoxDirectionProperty;
+  KhtmlBoxDirection?: BoxDirectionProperty;
   /** @deprecated */
-  khtmlBoxFlex?: GlobalsNumber;
+  KhtmlBoxFlex?: GlobalsNumber;
   /** @deprecated */
-  khtmlBoxOrient?: BoxOrientProperty;
+  KhtmlBoxOrient?: BoxOrientProperty;
   /** @deprecated */
-  khtmlBoxPack?: BoxPackProperty;
+  KhtmlBoxPack?: BoxPackProperty;
   /** @deprecated */
-  mozBackgroundInlinePolicy?: BoxDecorationBreakProperty;
+  MozBackgroundInlinePolicy?: BoxDecorationBreakProperty;
   /** @deprecated */
-  mozBorderRadius?: BorderRadiusProperty<TLength>;
+  MozBorderRadius?: BorderRadiusProperty<TLength>;
   /** @deprecated */
-  mozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>;
+  MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>;
   /** @deprecated */
-  mozBoxDirection?: BoxDirectionProperty;
+  MozBoxDirection?: BoxDirectionProperty;
   /** @deprecated */
-  mozBoxFlex?: GlobalsNumber;
+  MozBoxFlex?: GlobalsNumber;
   /** @deprecated */
-  mozBoxOrient?: BoxOrientProperty;
+  MozBoxOrient?: BoxOrientProperty;
   /** @deprecated */
-  mozBoxPack?: BoxPackProperty;
+  MozBoxPack?: BoxPackProperty;
   /** @deprecated */
-  mozBoxShadow?: BoxShadowProperty<TLength>;
+  MozBoxShadow?: BoxShadowProperty<TLength>;
   /** @deprecated */
-  mozOpacity?: GlobalsNumber;
+  MozOpacity?: GlobalsNumber;
   /** @deprecated */
-  mozOutline?: OutlineProperty<TLength>;
+  MozOutline?: OutlineProperty<TLength>;
   /** @deprecated */
-  mozOutlineColor?: OutlineColorProperty;
+  MozOutlineColor?: OutlineColorProperty;
   /** @deprecated */
-  mozOutlineStyle?: OutlineStyleProperty;
+  MozOutlineStyle?: OutlineStyleProperty;
   /** @deprecated */
-  mozOutlineWidth?: OutlineWidthProperty<TLength>;
+  MozOutlineWidth?: OutlineWidthProperty<TLength>;
   /** @deprecated */
-  mozTextAlignLast?: TextAlignLastProperty;
+  MozTextAlignLast?: TextAlignLastProperty;
   /** @deprecated */
-  mozTextDecorationColor?: TextDecorationColorProperty;
+  MozTextDecorationColor?: TextDecorationColorProperty;
   /** @deprecated */
-  mozTextDecorationLine?: TextDecorationLineProperty;
+  MozTextDecorationLine?: TextDecorationLineProperty;
   /** @deprecated */
-  mozTextDecorationStyle?: TextDecorationStyleProperty;
+  MozTextDecorationStyle?: TextDecorationStyleProperty;
   /** @deprecated */
   msImeMode?: ImeModeProperty;
   /** @deprecated */
-  oAnimation?: AnimationProperty;
+  OAnimation?: AnimationProperty;
   /** @deprecated */
-  oAnimationDelay?: GlobalsString;
+  OAnimationDelay?: GlobalsString;
   /** @deprecated */
-  oAnimationDirection?: AnimationDirectionProperty;
+  OAnimationDirection?: AnimationDirectionProperty;
   /** @deprecated */
-  oAnimationDuration?: GlobalsString;
+  OAnimationDuration?: GlobalsString;
   /** @deprecated */
-  oAnimationFillMode?: AnimationFillModeProperty;
+  OAnimationFillMode?: AnimationFillModeProperty;
   /** @deprecated */
-  oAnimationIterationCount?: AnimationIterationCountProperty;
+  OAnimationIterationCount?: AnimationIterationCountProperty;
   /** @deprecated */
-  oAnimationName?: AnimationNameProperty;
+  OAnimationName?: AnimationNameProperty;
   /** @deprecated */
-  oAnimationPlayState?: AnimationPlayStateProperty;
+  OAnimationPlayState?: AnimationPlayStateProperty;
   /** @deprecated */
-  oAnimationTimingFunction?: AnimationTimingFunctionProperty;
+  OAnimationTimingFunction?: AnimationTimingFunctionProperty;
   /** @deprecated */
-  oTransform?: TransformProperty;
+  OTransform?: TransformProperty;
   /** @deprecated */
-  oTransition?: TransitionProperty;
+  OTransition?: TransitionProperty;
   /** @deprecated */
-  oTransitionDelay?: GlobalsString;
+  OTransitionDelay?: GlobalsString;
   /** @deprecated */
-  oTransitionDuration?: GlobalsString;
+  OTransitionDuration?: GlobalsString;
   /** @deprecated */
-  oTransitionProperty?: TransitionPropertyProperty;
+  OTransitionProperty?: TransitionPropertyProperty;
   /** @deprecated */
-  oTransitionTimingFunction?: TransitionTimingFunctionProperty;
+  OTransitionTimingFunction?: TransitionTimingFunctionProperty;
   /** @deprecated */
-  webkitBoxDirection?: BoxDirectionProperty;
+  WebkitBoxDirection?: BoxDirectionProperty;
   /** @deprecated */
-  webkitBoxFlex?: GlobalsNumber;
+  WebkitBoxFlex?: GlobalsNumber;
   /** @deprecated */
-  webkitBoxOrient?: BoxOrientProperty;
+  WebkitBoxOrient?: BoxOrientProperty;
   /** @deprecated */
-  webkitBoxPack?: BoxPackProperty;
+  WebkitBoxPack?: BoxPackProperty;
   /** @deprecated */
-  webkitBoxSizing?: BoxSizingProperty;
+  WebkitBoxSizing?: BoxSizingProperty;
   /** @deprecated */
-  webkitScrollSnapPointsX?: ScrollSnapPointsXProperty;
+  WebkitScrollSnapPointsX?: ScrollSnapPointsXProperty;
   /** @deprecated */
-  webkitScrollSnapPointsY?: ScrollSnapPointsYProperty;
+  WebkitScrollSnapPointsY?: ScrollSnapPointsYProperty;
 }
 
 export interface SvgProperties<TLength = string | 0> {
@@ -2170,93 +2170,93 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
   textCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[];
   /** @deprecated */
-  khtmlBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
+  KhtmlBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
-  khtmlBoxFlex?: GlobalsNumber | GlobalsNumber[];
+  KhtmlBoxFlex?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  khtmlBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
+  KhtmlBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  khtmlBoxPack?: BoxPackProperty | BoxPackProperty[];
+  KhtmlBoxPack?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
-  mozBackgroundInlinePolicy?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
+  MozBackgroundInlinePolicy?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   /** @deprecated */
-  mozBorderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
+  MozBorderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /** @deprecated */
-  mozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
+  MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   /** @deprecated */
-  mozBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
+  MozBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
-  mozBoxFlex?: GlobalsNumber | GlobalsNumber[];
+  MozBoxFlex?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  mozBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
+  MozBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  mozBoxPack?: BoxPackProperty | BoxPackProperty[];
+  MozBoxPack?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
-  mozBoxShadow?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
+  MozBoxShadow?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
   /** @deprecated */
-  mozOpacity?: GlobalsNumber | GlobalsNumber[];
+  MozOpacity?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  mozOutline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
+  MozOutline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
   /** @deprecated */
-  mozOutlineColor?: OutlineColorProperty | OutlineColorProperty[];
+  MozOutlineColor?: OutlineColorProperty | OutlineColorProperty[];
   /** @deprecated */
-  mozOutlineStyle?: OutlineStyleProperty | OutlineStyleProperty[];
+  MozOutlineStyle?: OutlineStyleProperty | OutlineStyleProperty[];
   /** @deprecated */
-  mozOutlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
+  MozOutlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
   /** @deprecated */
-  mozTextAlignLast?: TextAlignLastProperty | TextAlignLastProperty[];
+  MozTextAlignLast?: TextAlignLastProperty | TextAlignLastProperty[];
   /** @deprecated */
-  mozTextDecorationColor?: TextDecorationColorProperty | TextDecorationColorProperty[];
+  MozTextDecorationColor?: TextDecorationColorProperty | TextDecorationColorProperty[];
   /** @deprecated */
-  mozTextDecorationLine?: TextDecorationLineProperty | TextDecorationLineProperty[];
+  MozTextDecorationLine?: TextDecorationLineProperty | TextDecorationLineProperty[];
   /** @deprecated */
-  mozTextDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
+  MozTextDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
   /** @deprecated */
   msImeMode?: ImeModeProperty | ImeModeProperty[];
   /** @deprecated */
-  oAnimation?: AnimationProperty | AnimationProperty[];
+  OAnimation?: AnimationProperty | AnimationProperty[];
   /** @deprecated */
-  oAnimationDelay?: GlobalsString | GlobalsString[];
+  OAnimationDelay?: GlobalsString | GlobalsString[];
   /** @deprecated */
-  oAnimationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[];
+  OAnimationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[];
   /** @deprecated */
-  oAnimationDuration?: GlobalsString | GlobalsString[];
+  OAnimationDuration?: GlobalsString | GlobalsString[];
   /** @deprecated */
-  oAnimationFillMode?: AnimationFillModeProperty | AnimationFillModeProperty[];
+  OAnimationFillMode?: AnimationFillModeProperty | AnimationFillModeProperty[];
   /** @deprecated */
-  oAnimationIterationCount?: AnimationIterationCountProperty | AnimationIterationCountProperty[];
+  OAnimationIterationCount?: AnimationIterationCountProperty | AnimationIterationCountProperty[];
   /** @deprecated */
-  oAnimationName?: AnimationNameProperty | AnimationNameProperty[];
+  OAnimationName?: AnimationNameProperty | AnimationNameProperty[];
   /** @deprecated */
-  oAnimationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
+  OAnimationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   /** @deprecated */
-  oAnimationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
+  OAnimationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   /** @deprecated */
-  oTransform?: TransformProperty | TransformProperty[];
+  OTransform?: TransformProperty | TransformProperty[];
   /** @deprecated */
-  oTransition?: TransitionProperty | TransitionProperty[];
+  OTransition?: TransitionProperty | TransitionProperty[];
   /** @deprecated */
-  oTransitionDelay?: GlobalsString | GlobalsString[];
+  OTransitionDelay?: GlobalsString | GlobalsString[];
   /** @deprecated */
-  oTransitionDuration?: GlobalsString | GlobalsString[];
+  OTransitionDuration?: GlobalsString | GlobalsString[];
   /** @deprecated */
-  oTransitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[];
+  OTransitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[];
   /** @deprecated */
-  oTransitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
+  OTransitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
   /** @deprecated */
-  webkitBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
+  WebkitBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
-  webkitBoxFlex?: GlobalsNumber | GlobalsNumber[];
+  WebkitBoxFlex?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  webkitBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
+  WebkitBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  webkitBoxPack?: BoxPackProperty | BoxPackProperty[];
+  WebkitBoxPack?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
-  webkitBoxSizing?: BoxSizingProperty | BoxSizingProperty[];
+  WebkitBoxSizing?: BoxSizingProperty | BoxSizingProperty[];
   /** @deprecated */
-  webkitScrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
+  WebkitScrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
   /** @deprecated */
-  webkitScrollSnapPointsY?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
+  WebkitScrollSnapPointsY?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
 }
 
 export interface SvgPropertiesFallback<TLength = string | 0> {
