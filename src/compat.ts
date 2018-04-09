@@ -12,7 +12,7 @@ function getData(cssPath: string): MDN.PropertiesCompat | null {
   }
 }
 
-export function compatProperties(name: string) {
+export function compatProperties(name: string, onlyObsolete = false): string[] {
   const data = getData('properties/' + name);
 
   const properties = [];
@@ -25,17 +25,15 @@ export function compatProperties(name: string) {
       const support = compat.support[browser];
 
       for (const version of Array.isArray(support) ? support : [support]) {
-        const isImplemented =
-          // Assume that the version has the property implemented
-          (version.version_added || version.version_added === null) &&
-          // Make sure to ignore versions where the property has been removed (should it be doing this?)
-          !version.version_removed;
+        // Assume that the version has the property implemented
+        const hasBeenAdded = !!version.version_added || version.version_added === null;
+        const isObsolete = isDeprecated(name) || !!version.version_removed;
 
-        if (isImplemented) {
-          if (version.prefix) {
-            properties.push(version.prefix + name);
-          } else if (version.alternative_name) {
-            properties.push(version.alternative_name);
+        if (hasBeenAdded && isObsolete === onlyObsolete) {
+          const compatName = version.prefix ? version.prefix + name : version.alternative_name;
+
+          if (compatName) {
+            properties.push(compatName);
           }
         }
       }
@@ -43,4 +41,17 @@ export function compatProperties(name: string) {
   }
 
   return properties;
+}
+
+export function isDeprecated(name: string) {
+  const data = getData('properties/' + name);
+
+  if (data) {
+    const status = data.css.properties[name].__compat.status;
+
+    // Assume not deprecated if is status i missing
+    return !!status && status.deprecated;
+  }
+
+  return null;
 }

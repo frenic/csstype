@@ -86,6 +86,10 @@ function typescript() {
     interfacesOutput += '{' + EOL;
 
     for (const property of item.properties) {
+      if (property.obsolete) {
+        interfacesOutput += '/** @deprecated */' + EOL;
+      }
+
       if (isAliasProperty(property)) {
         const generics = stringifyGenerics(property.generics, true);
         interfacesOutput += `${JSON.stringify(property.name)}?: ${

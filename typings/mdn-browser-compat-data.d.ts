@@ -31,7 +31,11 @@ declare namespace MDN {
     support: Supports;
     mdn_url?: string;
     description?: string;
-    status?: {};
+    status?: {
+      experimental: boolean;
+      standard_track: boolean;
+      deprecated: boolean;
+    };
   }
 
   type PropertyCompat = { __compat: MDN.Compat } & { [value: string]: { __compat: MDN.Compat } };

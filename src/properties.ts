@@ -1,5 +1,5 @@
 import * as properties from 'mdn-data/css/properties.json';
-import { compatProperties } from './compat';
+import { compatProperties, isDeprecated } from './compat';
 import { properties as svgData } from './data/svg';
 import parse from './parser';
 import typing, { TypeType } from './typer';
@@ -24,6 +24,7 @@ export const standardShorthandProperties: { [name: string]: TypeType[] } = {
 };
 export const vendorPrefixedLonghandProperties: { [name: string]: TypeType[] } = {};
 export const vendorPrefixedShorthandProperties: { [name: string]: TypeType[] } = {};
+export const obsoleteProperties: { [name: string]: TypeType[] } = {};
 export const svgProperties: { [name: string]: TypeType[] } = {};
 
 for (const originalName in properties) {
@@ -31,25 +32,36 @@ for (const originalName in properties) {
     continue;
   }
 
-  const propertyNames = [originalName, ...compatProperties(originalName)];
   const types = typing(parse(properties[originalName].syntax));
 
-  for (const name of propertyNames) {
-    const isShorthand = Array.isArray(properties[originalName].computed);
+  if (!isDeprecated(originalName)) {
+    const currentPropertyNames = [originalName, ...compatProperties(originalName)];
 
-    if (REGEX_VENDOR_PROPERTY.test(name)) {
-      if (isShorthand) {
-        vendorPrefixedShorthandProperties[name] = types;
+    for (const name of currentPropertyNames) {
+      const isShorthand = Array.isArray(properties[originalName].computed);
+
+      if (REGEX_VENDOR_PROPERTY.test(name)) {
+        if (isShorthand) {
+          vendorPrefixedShorthandProperties[name] = types;
+        } else {
+          vendorPrefixedLonghandProperties[name] = types;
+        }
       } else {
-        vendorPrefixedLonghandProperties[name] = types;
-      }
-    } else {
-      if (isShorthand) {
-        standardShorthandProperties[name] = types;
-      } else {
-        standardLonghandProperties[name] = types;
+        if (isShorthand) {
+          standardShorthandProperties[name] = types;
+        } else {
+          standardLonghandProperties[name] = types;
+        }
       }
     }
+  } else {
+    obsoleteProperties[originalName] = types;
+  }
+
+  const obsoletePropertyNames = compatProperties(originalName, true);
+
+  for (const name of obsoletePropertyNames) {
+    obsoleteProperties[name] = types;
   }
 }
 
