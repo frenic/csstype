@@ -590,13 +590,41 @@ export interface VendorProperties<TLength = string | 0> extends VendorLonghandPr
 
 export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
-  khtmlBoxDirection?: KhtmlBoxDirectionProperty;
+  boxDirection?: BoxDirectionProperty;
+  /** @deprecated */
+  boxFlex?: GlobalsNumber;
+  /** @deprecated */
+  boxOrient?: BoxOrientProperty;
+  /** @deprecated */
+  boxPack?: BoxPackProperty;
+  /** @deprecated */
+  clip?: ClipProperty;
+  /** @deprecated */
+  fontVariantAlternates?: FontVariantAlternatesProperty;
+  /** @deprecated */
+  imeMode?: ImeModeProperty;
+  /** @deprecated */
+  scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength>;
+  /** @deprecated */
+  scrollSnapDestination?: ScrollSnapDestinationProperty<TLength>;
+  /** @deprecated */
+  scrollSnapPointsX?: ScrollSnapPointsXProperty;
+  /** @deprecated */
+  scrollSnapPointsY?: ScrollSnapPointsYProperty;
+  /** @deprecated */
+  scrollSnapTypeX?: ScrollSnapTypeXProperty;
+  /** @deprecated */
+  scrollSnapTypeY?: ScrollSnapTypeYProperty;
+  /** @deprecated */
+  textCombineHorizontal?: TextCombineUprightProperty;
+  /** @deprecated */
+  khtmlBoxDirection?: BoxDirectionProperty;
   /** @deprecated */
   khtmlBoxFlex?: GlobalsNumber;
   /** @deprecated */
-  khtmlBoxOrient?: KhtmlBoxOrientProperty;
+  khtmlBoxOrient?: BoxOrientProperty;
   /** @deprecated */
-  khtmlBoxPack?: KhtmlBoxPackProperty;
+  khtmlBoxPack?: BoxPackProperty;
   /** @deprecated */
   mozBackgroundInlinePolicy?: BoxDecorationBreakProperty;
   /** @deprecated */
@@ -604,13 +632,13 @@ export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
   mozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>;
   /** @deprecated */
-  mozBoxDirection?: KhtmlBoxDirectionProperty;
+  mozBoxDirection?: BoxDirectionProperty;
   /** @deprecated */
   mozBoxFlex?: GlobalsNumber;
   /** @deprecated */
-  mozBoxOrient?: KhtmlBoxOrientProperty;
+  mozBoxOrient?: BoxOrientProperty;
   /** @deprecated */
-  mozBoxPack?: KhtmlBoxPackProperty;
+  mozBoxPack?: BoxPackProperty;
   /** @deprecated */
   mozBoxShadow?: BoxShadowProperty<TLength>;
   /** @deprecated */
@@ -632,7 +660,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
   mozTextDecorationStyle?: TextDecorationStyleProperty;
   /** @deprecated */
-  msImeMode?: MsImeModeProperty;
+  msImeMode?: ImeModeProperty;
   /** @deprecated */
   oAnimation?: AnimationProperty;
   /** @deprecated */
@@ -664,47 +692,19 @@ export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
   oTransitionTimingFunction?: TransitionTimingFunctionProperty;
   /** @deprecated */
-  webkitBoxDirection?: KhtmlBoxDirectionProperty;
+  webkitBoxDirection?: BoxDirectionProperty;
   /** @deprecated */
   webkitBoxFlex?: GlobalsNumber;
   /** @deprecated */
-  webkitBoxOrient?: KhtmlBoxOrientProperty;
+  webkitBoxOrient?: BoxOrientProperty;
   /** @deprecated */
-  webkitBoxPack?: KhtmlBoxPackProperty;
+  webkitBoxPack?: BoxPackProperty;
   /** @deprecated */
   webkitBoxSizing?: BoxSizingProperty;
   /** @deprecated */
-  webkitScrollSnapPointsX?: WebkitScrollSnapPointsXProperty;
+  webkitScrollSnapPointsX?: ScrollSnapPointsXProperty;
   /** @deprecated */
-  webkitScrollSnapPointsY?: WebkitScrollSnapPointsYProperty;
-  /** @deprecated */
-  boxDirection?: KhtmlBoxDirectionProperty;
-  /** @deprecated */
-  boxFlex?: GlobalsNumber;
-  /** @deprecated */
-  boxOrient?: KhtmlBoxOrientProperty;
-  /** @deprecated */
-  boxPack?: KhtmlBoxPackProperty;
-  /** @deprecated */
-  clip?: ClipProperty;
-  /** @deprecated */
-  fontVariantAlternates?: FontVariantAlternatesProperty;
-  /** @deprecated */
-  imeMode?: MsImeModeProperty;
-  /** @deprecated */
-  scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength>;
-  /** @deprecated */
-  scrollSnapDestination?: ScrollSnapDestinationProperty<TLength>;
-  /** @deprecated */
-  scrollSnapPointsX?: WebkitScrollSnapPointsXProperty;
-  /** @deprecated */
-  scrollSnapPointsY?: WebkitScrollSnapPointsYProperty;
-  /** @deprecated */
-  scrollSnapTypeX?: ScrollSnapTypeXProperty;
-  /** @deprecated */
-  scrollSnapTypeY?: ScrollSnapTypeYProperty;
-  /** @deprecated */
-  textCombineHorizontal?: TextCombineUprightProperty;
+  webkitScrollSnapPointsY?: ScrollSnapPointsYProperty;
 }
 
 export interface SvgProperties<TLength = string | 0> {
@@ -1364,13 +1364,41 @@ export interface VendorPropertiesHyphen<TLength = string | 0> extends VendorLong
 
 export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /** @deprecated */
-  "-khtml-box-direction"?: KhtmlBoxDirectionProperty;
+  "box-direction"?: BoxDirectionProperty;
+  /** @deprecated */
+  "box-flex"?: GlobalsNumber;
+  /** @deprecated */
+  "box-orient"?: BoxOrientProperty;
+  /** @deprecated */
+  "box-pack"?: BoxPackProperty;
+  /** @deprecated */
+  clip?: ClipProperty;
+  /** @deprecated */
+  "font-variant-alternates"?: FontVariantAlternatesProperty;
+  /** @deprecated */
+  "ime-mode"?: ImeModeProperty;
+  /** @deprecated */
+  "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength>;
+  /** @deprecated */
+  "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength>;
+  /** @deprecated */
+  "scroll-snap-points-x"?: ScrollSnapPointsXProperty;
+  /** @deprecated */
+  "scroll-snap-points-y"?: ScrollSnapPointsYProperty;
+  /** @deprecated */
+  "scroll-snap-type-x"?: ScrollSnapTypeXProperty;
+  /** @deprecated */
+  "scroll-snap-type-y"?: ScrollSnapTypeYProperty;
+  /** @deprecated */
+  "text-combine-horizontal"?: TextCombineUprightProperty;
+  /** @deprecated */
+  "-khtml-box-direction"?: BoxDirectionProperty;
   /** @deprecated */
   "-khtml-box-flex"?: GlobalsNumber;
   /** @deprecated */
-  "-khtml-box-orient"?: KhtmlBoxOrientProperty;
+  "-khtml-box-orient"?: BoxOrientProperty;
   /** @deprecated */
-  "-khtml-box-pack"?: KhtmlBoxPackProperty;
+  "-khtml-box-pack"?: BoxPackProperty;
   /** @deprecated */
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty;
   /** @deprecated */
@@ -1378,13 +1406,13 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /** @deprecated */
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength>;
   /** @deprecated */
-  "-moz-box-direction"?: KhtmlBoxDirectionProperty;
+  "-moz-box-direction"?: BoxDirectionProperty;
   /** @deprecated */
   "-moz-box-flex"?: GlobalsNumber;
   /** @deprecated */
-  "-moz-box-orient"?: KhtmlBoxOrientProperty;
+  "-moz-box-orient"?: BoxOrientProperty;
   /** @deprecated */
-  "-moz-box-pack"?: KhtmlBoxPackProperty;
+  "-moz-box-pack"?: BoxPackProperty;
   /** @deprecated */
   "-moz-box-shadow"?: BoxShadowProperty<TLength>;
   /** @deprecated */
@@ -1406,7 +1434,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /** @deprecated */
   "-moz-text-decoration-style"?: TextDecorationStyleProperty;
   /** @deprecated */
-  "-ms-ime-mode"?: MsImeModeProperty;
+  "-ms-ime-mode"?: ImeModeProperty;
   /** @deprecated */
   "-o-animation"?: AnimationProperty;
   /** @deprecated */
@@ -1438,47 +1466,19 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /** @deprecated */
   "-o-transition-timing-function"?: TransitionTimingFunctionProperty;
   /** @deprecated */
-  "-webkit-box-direction"?: KhtmlBoxDirectionProperty;
+  "-webkit-box-direction"?: BoxDirectionProperty;
   /** @deprecated */
   "-webkit-box-flex"?: GlobalsNumber;
   /** @deprecated */
-  "-webkit-box-orient"?: KhtmlBoxOrientProperty;
+  "-webkit-box-orient"?: BoxOrientProperty;
   /** @deprecated */
-  "-webkit-box-pack"?: KhtmlBoxPackProperty;
+  "-webkit-box-pack"?: BoxPackProperty;
   /** @deprecated */
   "-webkit-box-sizing"?: BoxSizingProperty;
   /** @deprecated */
-  "-webkit-scroll-snap-points-x"?: WebkitScrollSnapPointsXProperty;
+  "-webkit-scroll-snap-points-x"?: ScrollSnapPointsXProperty;
   /** @deprecated */
-  "-webkit-scroll-snap-points-y"?: WebkitScrollSnapPointsYProperty;
-  /** @deprecated */
-  "box-direction"?: KhtmlBoxDirectionProperty;
-  /** @deprecated */
-  "box-flex"?: GlobalsNumber;
-  /** @deprecated */
-  "box-orient"?: KhtmlBoxOrientProperty;
-  /** @deprecated */
-  "box-pack"?: KhtmlBoxPackProperty;
-  /** @deprecated */
-  clip?: ClipProperty;
-  /** @deprecated */
-  "font-variant-alternates"?: FontVariantAlternatesProperty;
-  /** @deprecated */
-  "ime-mode"?: MsImeModeProperty;
-  /** @deprecated */
-  "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength>;
-  /** @deprecated */
-  "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength>;
-  /** @deprecated */
-  "scroll-snap-points-x"?: WebkitScrollSnapPointsXProperty;
-  /** @deprecated */
-  "scroll-snap-points-y"?: WebkitScrollSnapPointsYProperty;
-  /** @deprecated */
-  "scroll-snap-type-x"?: ScrollSnapTypeXProperty;
-  /** @deprecated */
-  "scroll-snap-type-y"?: ScrollSnapTypeYProperty;
-  /** @deprecated */
-  "text-combine-horizontal"?: TextCombineUprightProperty;
+  "-webkit-scroll-snap-points-y"?: ScrollSnapPointsYProperty;
 }
 
 export interface SvgPropertiesHyphen<TLength = string | 0> {
@@ -2142,13 +2142,41 @@ export interface VendorPropertiesFallback<TLength = string | 0> extends VendorLo
 
 export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
-  khtmlBoxDirection?: KhtmlBoxDirectionProperty | KhtmlBoxDirectionProperty[];
+  boxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
+  /** @deprecated */
+  boxFlex?: GlobalsNumber | GlobalsNumber[];
+  /** @deprecated */
+  boxOrient?: BoxOrientProperty | BoxOrientProperty[];
+  /** @deprecated */
+  boxPack?: BoxPackProperty | BoxPackProperty[];
+  /** @deprecated */
+  clip?: ClipProperty | ClipProperty[];
+  /** @deprecated */
+  fontVariantAlternates?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
+  /** @deprecated */
+  imeMode?: ImeModeProperty | ImeModeProperty[];
+  /** @deprecated */
+  scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[];
+  /** @deprecated */
+  scrollSnapDestination?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[];
+  /** @deprecated */
+  scrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
+  /** @deprecated */
+  scrollSnapPointsY?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
+  /** @deprecated */
+  scrollSnapTypeX?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[];
+  /** @deprecated */
+  scrollSnapTypeY?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[];
+  /** @deprecated */
+  textCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[];
+  /** @deprecated */
+  khtmlBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
   khtmlBoxFlex?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  khtmlBoxOrient?: KhtmlBoxOrientProperty | KhtmlBoxOrientProperty[];
+  khtmlBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  khtmlBoxPack?: KhtmlBoxPackProperty | KhtmlBoxPackProperty[];
+  khtmlBoxPack?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
   mozBackgroundInlinePolicy?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   /** @deprecated */
@@ -2156,13 +2184,13 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
   mozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   /** @deprecated */
-  mozBoxDirection?: KhtmlBoxDirectionProperty | KhtmlBoxDirectionProperty[];
+  mozBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
   mozBoxFlex?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  mozBoxOrient?: KhtmlBoxOrientProperty | KhtmlBoxOrientProperty[];
+  mozBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  mozBoxPack?: KhtmlBoxPackProperty | KhtmlBoxPackProperty[];
+  mozBoxPack?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
   mozBoxShadow?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
   /** @deprecated */
@@ -2184,7 +2212,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
   mozTextDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
   /** @deprecated */
-  msImeMode?: MsImeModeProperty | MsImeModeProperty[];
+  msImeMode?: ImeModeProperty | ImeModeProperty[];
   /** @deprecated */
   oAnimation?: AnimationProperty | AnimationProperty[];
   /** @deprecated */
@@ -2216,47 +2244,19 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
   oTransitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
   /** @deprecated */
-  webkitBoxDirection?: KhtmlBoxDirectionProperty | KhtmlBoxDirectionProperty[];
+  webkitBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
   webkitBoxFlex?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  webkitBoxOrient?: KhtmlBoxOrientProperty | KhtmlBoxOrientProperty[];
+  webkitBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  webkitBoxPack?: KhtmlBoxPackProperty | KhtmlBoxPackProperty[];
+  webkitBoxPack?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
   webkitBoxSizing?: BoxSizingProperty | BoxSizingProperty[];
   /** @deprecated */
-  webkitScrollSnapPointsX?: WebkitScrollSnapPointsXProperty | WebkitScrollSnapPointsXProperty[];
+  webkitScrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
   /** @deprecated */
-  webkitScrollSnapPointsY?: WebkitScrollSnapPointsYProperty | WebkitScrollSnapPointsYProperty[];
-  /** @deprecated */
-  boxDirection?: KhtmlBoxDirectionProperty | KhtmlBoxDirectionProperty[];
-  /** @deprecated */
-  boxFlex?: GlobalsNumber | GlobalsNumber[];
-  /** @deprecated */
-  boxOrient?: KhtmlBoxOrientProperty | KhtmlBoxOrientProperty[];
-  /** @deprecated */
-  boxPack?: KhtmlBoxPackProperty | KhtmlBoxPackProperty[];
-  /** @deprecated */
-  clip?: ClipProperty | ClipProperty[];
-  /** @deprecated */
-  fontVariantAlternates?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
-  /** @deprecated */
-  imeMode?: MsImeModeProperty | MsImeModeProperty[];
-  /** @deprecated */
-  scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[];
-  /** @deprecated */
-  scrollSnapDestination?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[];
-  /** @deprecated */
-  scrollSnapPointsX?: WebkitScrollSnapPointsXProperty | WebkitScrollSnapPointsXProperty[];
-  /** @deprecated */
-  scrollSnapPointsY?: WebkitScrollSnapPointsYProperty | WebkitScrollSnapPointsYProperty[];
-  /** @deprecated */
-  scrollSnapTypeX?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[];
-  /** @deprecated */
-  scrollSnapTypeY?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[];
-  /** @deprecated */
-  textCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[];
+  webkitScrollSnapPointsY?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
 }
 
 export interface SvgPropertiesFallback<TLength = string | 0> {
@@ -2922,13 +2922,41 @@ export interface VendorPropertiesHyphenFallback<TLength = string | 0> extends Ve
 
 export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /** @deprecated */
-  "-khtml-box-direction"?: KhtmlBoxDirectionProperty | KhtmlBoxDirectionProperty[];
+  "box-direction"?: BoxDirectionProperty | BoxDirectionProperty[];
+  /** @deprecated */
+  "box-flex"?: GlobalsNumber | GlobalsNumber[];
+  /** @deprecated */
+  "box-orient"?: BoxOrientProperty | BoxOrientProperty[];
+  /** @deprecated */
+  "box-pack"?: BoxPackProperty | BoxPackProperty[];
+  /** @deprecated */
+  clip?: ClipProperty | ClipProperty[];
+  /** @deprecated */
+  "font-variant-alternates"?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
+  /** @deprecated */
+  "ime-mode"?: ImeModeProperty | ImeModeProperty[];
+  /** @deprecated */
+  "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[];
+  /** @deprecated */
+  "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[];
+  /** @deprecated */
+  "scroll-snap-points-x"?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
+  /** @deprecated */
+  "scroll-snap-points-y"?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
+  /** @deprecated */
+  "scroll-snap-type-x"?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[];
+  /** @deprecated */
+  "scroll-snap-type-y"?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[];
+  /** @deprecated */
+  "text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[];
+  /** @deprecated */
+  "-khtml-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
   "-khtml-box-flex"?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  "-khtml-box-orient"?: KhtmlBoxOrientProperty | KhtmlBoxOrientProperty[];
+  "-khtml-box-orient"?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  "-khtml-box-pack"?: KhtmlBoxPackProperty | KhtmlBoxPackProperty[];
+  "-khtml-box-pack"?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   /** @deprecated */
@@ -2936,13 +2964,13 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /** @deprecated */
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   /** @deprecated */
-  "-moz-box-direction"?: KhtmlBoxDirectionProperty | KhtmlBoxDirectionProperty[];
+  "-moz-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
   "-moz-box-flex"?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  "-moz-box-orient"?: KhtmlBoxOrientProperty | KhtmlBoxOrientProperty[];
+  "-moz-box-orient"?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  "-moz-box-pack"?: KhtmlBoxPackProperty | KhtmlBoxPackProperty[];
+  "-moz-box-pack"?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
   "-moz-box-shadow"?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
   /** @deprecated */
@@ -2964,7 +2992,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /** @deprecated */
   "-moz-text-decoration-style"?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
   /** @deprecated */
-  "-ms-ime-mode"?: MsImeModeProperty | MsImeModeProperty[];
+  "-ms-ime-mode"?: ImeModeProperty | ImeModeProperty[];
   /** @deprecated */
   "-o-animation"?: AnimationProperty | AnimationProperty[];
   /** @deprecated */
@@ -2996,47 +3024,19 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /** @deprecated */
   "-o-transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
   /** @deprecated */
-  "-webkit-box-direction"?: KhtmlBoxDirectionProperty | KhtmlBoxDirectionProperty[];
+  "-webkit-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
   "-webkit-box-flex"?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
-  "-webkit-box-orient"?: KhtmlBoxOrientProperty | KhtmlBoxOrientProperty[];
+  "-webkit-box-orient"?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
-  "-webkit-box-pack"?: KhtmlBoxPackProperty | KhtmlBoxPackProperty[];
+  "-webkit-box-pack"?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
   "-webkit-box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
   /** @deprecated */
-  "-webkit-scroll-snap-points-x"?: WebkitScrollSnapPointsXProperty | WebkitScrollSnapPointsXProperty[];
+  "-webkit-scroll-snap-points-x"?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
   /** @deprecated */
-  "-webkit-scroll-snap-points-y"?: WebkitScrollSnapPointsYProperty | WebkitScrollSnapPointsYProperty[];
-  /** @deprecated */
-  "box-direction"?: KhtmlBoxDirectionProperty | KhtmlBoxDirectionProperty[];
-  /** @deprecated */
-  "box-flex"?: GlobalsNumber | GlobalsNumber[];
-  /** @deprecated */
-  "box-orient"?: KhtmlBoxOrientProperty | KhtmlBoxOrientProperty[];
-  /** @deprecated */
-  "box-pack"?: KhtmlBoxPackProperty | KhtmlBoxPackProperty[];
-  /** @deprecated */
-  clip?: ClipProperty | ClipProperty[];
-  /** @deprecated */
-  "font-variant-alternates"?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
-  /** @deprecated */
-  "ime-mode"?: MsImeModeProperty | MsImeModeProperty[];
-  /** @deprecated */
-  "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[];
-  /** @deprecated */
-  "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[];
-  /** @deprecated */
-  "scroll-snap-points-x"?: WebkitScrollSnapPointsXProperty | WebkitScrollSnapPointsXProperty[];
-  /** @deprecated */
-  "scroll-snap-points-y"?: WebkitScrollSnapPointsYProperty | WebkitScrollSnapPointsYProperty[];
-  /** @deprecated */
-  "scroll-snap-type-x"?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[];
-  /** @deprecated */
-  "scroll-snap-type-y"?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[];
-  /** @deprecated */
-  "text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[];
+  "-webkit-scroll-snap-points-y"?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[];
 }
 
 export interface SvgPropertiesHyphenFallback<TLength = string | 0> {
@@ -4344,25 +4344,25 @@ type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle 
 
 type WebkitTextStrokeProperty<TLength> = Globals | Color | TLength | string;
 
-type KhtmlBoxDirectionProperty = Globals | "inherit" | "normal" | "reverse";
+type BoxDirectionProperty = Globals | "inherit" | "normal" | "reverse";
 
-type KhtmlBoxOrientProperty = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
+type BoxOrientProperty = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
 
-type KhtmlBoxPackProperty = Globals | "center" | "end" | "justify" | "start";
-
-type MsImeModeProperty = Globals | "active" | "auto" | "disabled" | "inactive" | "normal";
-
-type WebkitScrollSnapPointsXProperty = Globals | "none" | string;
-
-type WebkitScrollSnapPointsYProperty = Globals | "none" | string;
+type BoxPackProperty = Globals | "center" | "end" | "justify" | "start";
 
 type ClipProperty = Globals | "auto" | string;
 
 type FontVariantAlternatesProperty = Globals | "historical-forms" | "normal" | string;
 
+type ImeModeProperty = Globals | "active" | "auto" | "disabled" | "inactive" | "normal";
+
 type ScrollSnapCoordinateProperty<TLength> = Globals | Position<TLength> | "none";
 
 type ScrollSnapDestinationProperty<TLength> = Globals | Position<TLength>;
+
+type ScrollSnapPointsXProperty = Globals | "none" | string;
+
+type ScrollSnapPointsYProperty = Globals | "none" | string;
 
 type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximity";
 

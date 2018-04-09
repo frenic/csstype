@@ -180,8 +180,17 @@ for (const properties of [
       break;
   }
 
-  // Loop in alphabetical order
-  for (const name of Object.keys(properties).sort()) {
+  // Sort alphabetical, starting with standard properties
+  const propertyNames = ([] as string[]).concat(
+    Object.keys(properties)
+      .filter(name => name[0] !== '-')
+      .sort(),
+    Object.keys(properties)
+      .filter(name => name[0] === '-')
+      .sort(),
+  );
+
+  for (const name of propertyNames) {
     const originalTypes = properties[name];
     const safeTypes = filterMissingDataTypes(properties[name]);
     const generics = lengthIn(safeTypes) ? [lengthGeneric] : [];
