@@ -3580,6 +3580,8 @@ type CounterResetProperty = Globals | "none" | string;
 
 type CursorProperty =
   | Globals
+  | "-moz-grab"
+  | "-webkit-grab"
   | "alias"
   | "all-scroll"
   | "auto"
@@ -3733,7 +3735,7 @@ type HyphensProperty = Globals | "auto" | "manual" | "none";
 
 type ImageOrientationProperty = Globals | "flip" | "from-image" | string;
 
-type ImageRenderingProperty = Globals | "auto" | "crisp-edges" | "pixelated";
+type ImageRenderingProperty = Globals | "-moz-crisp-edges" | "-o-crisp-edges" | "-webkit-optimize-contrast" | "auto" | "crisp-edges" | "pixelated";
 
 type ImageResolutionProperty = Globals | "from-image" | string;
 
@@ -3827,7 +3829,7 @@ type MinHeightProperty<TLength> = Globals | TLength | "auto" | "fill-available" 
 
 type MinInlineSizeProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
 
-type MinWidthProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
+type MinWidthProperty<TLength> = Globals | TLength | "-webkit-fill-available" | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
 
 type MixBlendModeProperty = Globals | BlendMode;
 
@@ -3909,7 +3911,7 @@ type PlaceContentProperty = Globals | BaselinePosition | ContentDistribution | C
 
 type PointerEventsProperty = Globals | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
 
-type PositionProperty = Globals | "absolute" | "fixed" | "relative" | "static" | "sticky";
+type PositionProperty = Globals | "-webkit-sticky" | "absolute" | "fixed" | "relative" | "static" | "sticky";
 
 type QuotesProperty = Globals | "none" | string;
 
@@ -3981,7 +3983,21 @@ type TextUnderlinePositionProperty = Globals | "auto" | "left" | "right" | "unde
 
 type TopProperty<TLength> = Globals | TLength | "auto" | string;
 
-type TouchActionProperty = Globals | "auto" | "manipulation" | "none" | "pan-down" | "pan-left" | "pan-right" | "pan-up" | "pan-x" | "pan-y" | "pinch-zoom" | string;
+type TouchActionProperty =
+  | Globals
+  | "-ms-manipulation"
+  | "-ms-pinch-zoom"
+  | "auto"
+  | "manipulation"
+  | "none"
+  | "pan-down"
+  | "pan-left"
+  | "pan-right"
+  | "pan-up"
+  | "pan-x"
+  | "pan-y"
+  | "pinch-zoom"
+  | string;
 
 type TransformProperty = Globals | "none" | string;
 
@@ -3997,17 +4013,34 @@ type TransitionTimingFunctionProperty = Globals | SingleTransitionTimingFunction
 
 type TranslateProperty<TLength> = Globals | LengthPercentage<TLength> | "none" | string;
 
-type UnicodeBidiProperty = Globals | "bidi-override" | "embed" | "isolate" | "isolate-override" | "normal" | "plaintext";
+type UnicodeBidiProperty = Globals | "-webkit-isolate" | "bidi-override" | "embed" | "isolate" | "isolate-override" | "normal" | "plaintext";
 
-type UserSelectProperty = Globals | "all" | "auto" | "contain" | "none" | "text";
+type UserSelectProperty = Globals | "-webkit-contain" | "all" | "auto" | "contain" | "element" | "none" | "text";
 
 type VerticalAlignProperty<TLength> = Globals | TLength | "baseline" | "bottom" | "middle" | "sub" | "super" | "text-bottom" | "text-top" | "top" | string;
 
 type VisibilityProperty = Globals | "collapse" | "hidden" | "visible";
 
-type WhiteSpaceProperty = Globals | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+type WhiteSpaceProperty = Globals | "-moz-pre-wrap" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 
-type WidthProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+type WidthProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-available"
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
+  | "auto"
+  | "available"
+  | "fit-content"
+  | "intrinsic"
+  | "max-content"
+  | "min-content"
+  | "min-intrinsic"
+  | string;
 
 type WillChangeProperty = Globals | AnimateableFeature | "auto";
 

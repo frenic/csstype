@@ -152,7 +152,7 @@ export default function parse(syntax: string): EntityType[] {
   return levels[0];
 }
 
-function combinatorData(combinator: Combinator, multiplier: MultiplierType | null = null): ICombinator {
+export function combinatorData(combinator: Combinator, multiplier: MultiplierType | null = null): ICombinator {
   return {
     entity: Entity.Combinator,
     combinator,
@@ -160,10 +160,10 @@ function combinatorData(combinator: Combinator, multiplier: MultiplierType | nul
   };
 }
 
-function componentData(
+export function componentData(
   component: Component.Keyword | Component.DataType,
   value: string,
-  multiplier: MultiplierType | null,
+  multiplier: MultiplierType | null = null,
 ): ComponentType {
   return {
     entity: Entity.Component,
@@ -173,7 +173,7 @@ function componentData(
   };
 }
 
-function componentGroupData(entities: EntityType[], multiplier: MultiplierType | null): ComponentType {
+export function componentGroupData(entities: EntityType[], multiplier: MultiplierType | null = null): ComponentType {
   return {
     entity: Entity.Component,
     component: Component.Group,

@@ -1,5 +1,5 @@
 import * as properties from 'mdn-data/css/properties.json';
-import { compatProperties, isDeprecated } from './compat';
+import { compatProperties, compatSyntax, isDeprecated } from './compat';
 import { properties as svgData } from './data/svg';
 import parse from './parser';
 import typing, { TypeType } from './typer';
@@ -32,7 +32,7 @@ for (const originalName in properties) {
     continue;
   }
 
-  const types = typing(parse(properties[originalName].syntax));
+  const types = typing(compatSyntax(originalName, parse(properties[originalName].syntax)));
 
   if (!isDeprecated(originalName)) {
     const currentPropertyNames = [originalName, ...compatProperties(originalName)];
