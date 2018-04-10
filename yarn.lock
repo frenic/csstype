@@ -2078,15 +2078,15 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-mdn-browser-compat-data@^0.0.30:
+mdn-browser-compat-data@0.0.30:
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/mdn-browser-compat-data/-/mdn-browser-compat-data-0.0.30.tgz#6cd9f14ff475dd503b45cac094b65524519dfae7"
   dependencies:
     extend "3.0.1"
 
-"mdn-data@git+https://github.com/mdn/data.git#9513169e8dd59e5c076e879ac462af2d386b4699":
-  version "1.1.0"
-  resolved "git+https://github.com/mdn/data.git#9513169e8dd59e5c076e879ac462af2d386b4699"
+mdn-data@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-1.1.1.tgz#79586c90321787e5a2e51eb6823bb448949bc1ab"
 
 mem@^1.1.0:
   version "1.1.0"
