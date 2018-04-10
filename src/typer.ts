@@ -83,19 +83,16 @@ const basicDataTypes = [...Object.keys(cssTypes), 'hex-color'].reduce<{
 }, {});
 
 export default function typing(entities: EntityType[]): TypeType[] {
-  const types: TypeType[] = [];
-  let hasLength = false;
-  let hasString = false;
-  let hasNumber = false;
+  let types: TypeType[] = [];
   for (const entity of entities) {
     if (isComponent(entity)) {
       if (shouldIncludeComponent(entity)) {
         switch (entity.component) {
           case Component.Keyword:
             if (String(Number(entity.value)) === entity.value) {
-              addNumericLiteral(Number(entity.value));
+              types = addNumericLiteral(types, Number(entity.value));
             } else {
-              addStringLiteral(entity.value);
+              types = addStringLiteral(types, entity.value);
             }
             break;
           case Component.DataType: {
@@ -105,122 +102,39 @@ export default function typing(entities: EntityType[]): TypeType[] {
               const name = property[1];
               if (name in properties) {
                 if (entity.multiplier && isMultiplied(entity.multiplier)) {
-                  addString();
+                  types = addString(types);
                 }
 
                 for (const type of typing(parse(properties[name].syntax))) {
-                  add(type);
+                  types = addType(types, type);
                 }
               } else {
-                addString();
+                types = addString(types);
               }
             } else if (value in basicDataTypes) {
-              add(basicDataTypes[value]);
+              types = addType(types, basicDataTypes[value]);
             } else {
-              addDataType(value);
+              types = addDataType(types, value);
             }
             break;
           }
           case Component.Group: {
             if (entity.multiplier && isMultiplied(entity.multiplier)) {
-              addString();
+              types = addString(types);
             }
 
             for (const type of typing(entity.entities)) {
-              add(type);
+              types = addType(types, type);
             }
           }
         }
       }
     } else if (isCombinator(entity)) {
       if (entity.combinator === Combinator.DoubleBar || isMandatoryCombinator(entity)) {
-        addString();
+        types = addString(types);
       }
     } else if (isFunction(entity)) {
-      addString();
-    }
-  }
-
-  function addLength() {
-    if (!hasLength) {
-      types.push({
-        type: Type.Length,
-      });
-      hasLength = true;
-    }
-  }
-
-  function addString() {
-    if (!hasString) {
-      types.push({
-        type: Type.String,
-      });
-      hasString = true;
-    }
-  }
-
-  function addNumber() {
-    if (!hasNumber) {
-      types.push({
-        type: Type.Number,
-      });
-      hasNumber = true;
-    }
-  }
-
-  function addStringLiteral(literal: string) {
-    if (types.every(type => !(type.type === Type.StringLiteral && type.literal === literal))) {
-      types.push({
-        type: Type.StringLiteral,
-        literal,
-      });
-    }
-  }
-
-  function addNumericLiteral(literal: number) {
-    if (types.every(type => !(type.type === Type.NumericLiteral && type.literal === literal))) {
-      types.push({
-        type: Type.NumericLiteral,
-        literal,
-      });
-    }
-  }
-
-  function addDataType(name: string) {
-    if (types.every(type => !(type.type === Type.DataType && type.name === name))) {
-      types.push({
-        type: Type.DataType,
-        name,
-      });
-    }
-  }
-
-  function add(type: TypeType) {
-    switch (type.type) {
-      case Type.Length: {
-        addLength();
-        break;
-      }
-      case Type.String: {
-        addString();
-        break;
-      }
-      case Type.Number: {
-        addNumber();
-        break;
-      }
-      case Type.StringLiteral: {
-        addStringLiteral(type.literal);
-        break;
-      }
-      case Type.NumericLiteral: {
-        addNumericLiteral(type.literal);
-        break;
-      }
-      case Type.DataType: {
-        addDataType(type.name);
-        break;
-      }
+      types = addString(types);
     }
   }
 
@@ -263,6 +177,104 @@ export default function typing(entities: EntityType[]): TypeType[] {
   }
 
   return types;
+}
+
+function addLength(types: TypeType[]): TypeType[] {
+  if (types.every(type => type.type !== Type.Length)) {
+    return [
+      ...types,
+      {
+        type: Type.Length,
+      },
+    ];
+  }
+
+  return types;
+}
+
+function addString(types: TypeType[]): TypeType[] {
+  if (types.every(type => type.type !== Type.String)) {
+    return [
+      ...types,
+      {
+        type: Type.String,
+      },
+    ];
+  }
+
+  return types;
+}
+
+function addNumber(types: TypeType[]): TypeType[] {
+  if (types.every(type => type.type !== Type.Number)) {
+    return [
+      ...types,
+      {
+        type: Type.Number,
+      },
+    ];
+  }
+
+  return types;
+}
+
+function addStringLiteral(types: TypeType[], literal: string): TypeType[] {
+  if (types.every(type => !(type.type === Type.StringLiteral && type.literal === literal))) {
+    return [
+      ...types,
+      {
+        type: Type.StringLiteral,
+        literal,
+      },
+    ];
+  }
+
+  return types;
+}
+
+function addNumericLiteral(types: TypeType[], literal: number): TypeType[] {
+  if (types.every(type => !(type.type === Type.NumericLiteral && type.literal === literal))) {
+    return [
+      ...types,
+      {
+        type: Type.NumericLiteral,
+        literal,
+      },
+    ];
+  }
+
+  return types;
+}
+
+function addDataType(types: TypeType[], name: string): TypeType[] {
+  if (types.every(type => !(type.type === Type.DataType && type.name === name))) {
+    return [
+      ...types,
+      {
+        type: Type.DataType,
+        name,
+      },
+    ];
+  }
+
+  return types;
+}
+
+export function addType(types: TypeType[], type: TypeType): TypeType[] {
+  switch (type.type) {
+    case Type.Length:
+      return addLength(types);
+    case Type.String:
+      return addString(types);
+    case Type.Number:
+      return addNumber(types);
+    case Type.StringLiteral:
+      return addStringLiteral(types, type.literal);
+    case Type.NumericLiteral:
+      return addNumericLiteral(types, type.literal);
+    case Type.DataType:
+      return addDataType(types, type.name);
+  }
 }
 
 function isFunction(entity: EntityType): entity is IFunction {
