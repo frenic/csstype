@@ -262,7 +262,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   textOrientation?: TextOrientationProperty;
   textOverflow?: TextOverflowProperty;
   textRendering?: TextRenderingProperty;
-  textShadow?: TextShadowProperty<TLength>;
+  textShadow?: TextShadowProperty;
   textSizeAdjust?: TextSizeAdjustProperty;
   textTransform?: TextTransformProperty;
   textUnderlinePosition?: TextUnderlinePositionProperty;
@@ -318,7 +318,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   font?: FontProperty;
   gap?: GapProperty<TLength>;
   grid?: GridProperty;
-  gridArea?: GlobalsString;
+  gridArea?: GridAreaProperty;
   gridColumn?: GridColumnProperty;
   gridGap?: GridGapProperty<TLength>;
   gridRow?: GridRowProperty;
@@ -1036,7 +1036,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "text-orientation"?: TextOrientationProperty;
   "text-overflow"?: TextOverflowProperty;
   "text-rendering"?: TextRenderingProperty;
-  "text-shadow"?: TextShadowProperty<TLength>;
+  "text-shadow"?: TextShadowProperty;
   "text-size-adjust"?: TextSizeAdjustProperty;
   "text-transform"?: TextTransformProperty;
   "text-underline-position"?: TextUnderlinePositionProperty;
@@ -1092,7 +1092,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   font?: FontProperty;
   gap?: GapProperty<TLength>;
   grid?: GridProperty;
-  "grid-area"?: GlobalsString;
+  "grid-area"?: GridAreaProperty;
   "grid-column"?: GridColumnProperty;
   "grid-gap"?: GridGapProperty<TLength>;
   "grid-row"?: GridRowProperty;
@@ -1814,7 +1814,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   textOrientation?: TextOrientationProperty | TextOrientationProperty[];
   textOverflow?: TextOverflowProperty | TextOverflowProperty[];
   textRendering?: TextRenderingProperty | TextRenderingProperty[];
-  textShadow?: TextShadowProperty<TLength> | TextShadowProperty<TLength>[];
+  textShadow?: TextShadowProperty | TextShadowProperty[];
   textSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
   textTransform?: TextTransformProperty | TextTransformProperty[];
   textUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
@@ -1870,7 +1870,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   font?: FontProperty | FontProperty[];
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
   grid?: GridProperty | GridProperty[];
-  gridArea?: GlobalsString | GlobalsString[];
+  gridArea?: GridAreaProperty | GridAreaProperty[];
   gridColumn?: GridColumnProperty | GridColumnProperty[];
   gridGap?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
   gridRow?: GridRowProperty | GridRowProperty[];
@@ -2592,7 +2592,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "text-orientation"?: TextOrientationProperty | TextOrientationProperty[];
   "text-overflow"?: TextOverflowProperty | TextOverflowProperty[];
   "text-rendering"?: TextRenderingProperty | TextRenderingProperty[];
-  "text-shadow"?: TextShadowProperty<TLength> | TextShadowProperty<TLength>[];
+  "text-shadow"?: TextShadowProperty | TextShadowProperty[];
   "text-size-adjust"?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
   "text-transform"?: TextTransformProperty | TextTransformProperty[];
   "text-underline-position"?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
@@ -2648,7 +2648,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   font?: FontProperty | FontProperty[];
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
   grid?: GridProperty | GridProperty[];
-  "grid-area"?: GlobalsString | GlobalsString[];
+  "grid-area"?: GridAreaProperty | GridAreaProperty[];
   "grid-column"?: GridColumnProperty | GridColumnProperty[];
   "grid-gap"?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
   "grid-row"?: GridRowProperty | GridRowProperty[];
@@ -3396,17 +3396,17 @@ type AlignItemsProperty = Globals | SelfPosition | "baseline" | "normal" | "stre
 
 type AlignSelfProperty = Globals | SelfPosition | "auto" | "baseline" | "normal" | "stretch" | string;
 
-type AnimationDirectionProperty = Globals | SingleAnimationDirection;
+type AnimationDirectionProperty = Globals | SingleAnimationDirection | string;
 
-type AnimationFillModeProperty = Globals | SingleAnimationFillMode;
+type AnimationFillModeProperty = Globals | SingleAnimationFillMode | string;
 
-type AnimationIterationCountProperty = Globals | "infinite" | number;
+type AnimationIterationCountProperty = Globals | "infinite" | string | number;
 
 type AnimationNameProperty = Globals | "none" | string;
 
-type AnimationPlayStateProperty = Globals | "paused" | "running";
+type AnimationPlayStateProperty = Globals | "paused" | "running" | string;
 
-type AnimationTimingFunctionProperty = Globals | SingleTimingFunction;
+type AnimationTimingFunctionProperty = Globals | SingleTimingFunction | string;
 
 type AppearanceProperty = Globals | "auto" | "none";
 
@@ -3430,41 +3430,41 @@ type BackdropFilterProperty = Globals | "none" | string;
 
 type BackfaceVisibilityProperty = Globals | "hidden" | "visible";
 
-type BackgroundAttachmentProperty = Globals | Attachment;
+type BackgroundAttachmentProperty = Globals | Attachment | string;
 
-type BackgroundBlendModeProperty = Globals | BlendMode;
+type BackgroundBlendModeProperty = Globals | BlendMode | string;
 
-type BackgroundClipProperty = Globals | Box;
+type BackgroundClipProperty = Globals | Box | string;
 
 type BackgroundColorProperty = Globals | Color;
 
 type BackgroundImageProperty = Globals | "none" | string;
 
-type BackgroundOriginProperty = Globals | Box;
+type BackgroundOriginProperty = Globals | Box | string;
 
-type BackgroundPositionProperty<TLength> = Globals | BgPosition<TLength>;
+type BackgroundPositionProperty<TLength> = Globals | BgPosition<TLength> | string;
 
 type BackgroundPositionXProperty<TLength> = Globals | TLength | "center" | "left" | "right" | "x-end" | "x-start" | string;
 
 type BackgroundPositionYProperty<TLength> = Globals | TLength | "bottom" | "center" | "top" | "y-end" | "y-start" | string;
 
-type BackgroundRepeatProperty = Globals | RepeatStyle;
+type BackgroundRepeatProperty = Globals | RepeatStyle | string;
 
-type BackgroundSizeProperty<TLength> = Globals | BgSize<TLength>;
+type BackgroundSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
 type BlockSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
 
 type BorderBlockEndColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type BorderBlockEndStyleProperty = Globals | BrStyle;
+type BorderBlockEndStyleProperty = Globals | BrStyle | string;
 
-type BorderBlockEndWidthProperty<TLength> = Globals | BrWidth<TLength>;
+type BorderBlockEndWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
 type BorderBlockStartColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type BorderBlockStartStyleProperty = Globals | BrStyle;
+type BorderBlockStartStyleProperty = Globals | BrStyle | string;
 
-type BorderBlockStartWidthProperty<TLength> = Globals | BrWidth<TLength>;
+type BorderBlockStartWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
 type BorderBottomColorProperty = Globals | Color;
 
@@ -3490,15 +3490,15 @@ type BorderImageWidthProperty<TLength> = Globals | TLength | "auto" | string | n
 
 type BorderInlineEndColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type BorderInlineEndStyleProperty = Globals | BrStyle;
+type BorderInlineEndStyleProperty = Globals | BrStyle | string;
 
-type BorderInlineEndWidthProperty<TLength> = Globals | BrWidth<TLength>;
+type BorderInlineEndWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
 type BorderInlineStartColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type BorderInlineStartStyleProperty = Globals | BrStyle;
+type BorderInlineStartStyleProperty = Globals | BrStyle | string;
 
-type BorderInlineStartWidthProperty<TLength> = Globals | BrWidth<TLength>;
+type BorderInlineStartWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
 type BorderLeftColorProperty = Globals | Color;
 
@@ -3532,7 +3532,7 @@ type BoxDecorationBreakProperty = Globals | "clone" | "slice";
 
 type BoxLinesProperty = Globals | "multiple" | "single";
 
-type BoxShadowProperty = Globals | Shadow | "none";
+type BoxShadowProperty = Globals | "none" | string;
 
 type BoxSizingProperty = Globals | "border-box" | "content-box";
 
@@ -3562,9 +3562,9 @@ type ColumnGapProperty<TLength> = Globals | TLength | "normal" | string;
 
 type ColumnRuleColorProperty = Globals | Color;
 
-type ColumnRuleStyleProperty = Globals | BrStyle;
+type ColumnRuleStyleProperty = Globals | BrStyle | string;
 
-type ColumnRuleWidthProperty<TLength> = Globals | BrWidth<TLength>;
+type ColumnRuleWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
 type ColumnSpanProperty = Globals | "all" | "none";
 
@@ -3830,19 +3830,19 @@ type MaskBorderWidthProperty<TLength> = Globals | TLength | "auto" | string | nu
 
 type MaskClipProperty = Globals | GeometryBox | "no-clip" | string;
 
-type MaskCompositeProperty = Globals | CompositingOperator;
+type MaskCompositeProperty = Globals | CompositingOperator | string;
 
 type MaskImageProperty = Globals | "none" | string;
 
-type MaskModeProperty = Globals | MaskingMode;
+type MaskModeProperty = Globals | MaskingMode | string;
 
-type MaskOriginProperty = Globals | GeometryBox;
+type MaskOriginProperty = Globals | GeometryBox | string;
 
-type MaskPositionProperty<TLength> = Globals | Position<TLength>;
+type MaskPositionProperty<TLength> = Globals | Position<TLength> | string;
 
-type MaskRepeatProperty = Globals | RepeatStyle;
+type MaskRepeatProperty = Globals | RepeatStyle | string;
 
-type MaskSizeProperty<TLength> = Globals | BgSize<TLength>;
+type MaskSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
 type MaskTypeProperty = Globals | "alpha" | "luminance";
 
@@ -3960,7 +3960,7 @@ type RubyMergeProperty = Globals | "auto" | "collapse" | "separate";
 
 type RubyPositionProperty = Globals | "inter-character" | "over" | "under";
 
-type ScaleProperty = Globals | "none" | number;
+type ScaleProperty = Globals | "none" | string | number;
 
 type ScrollBehaviorProperty = Globals | "auto" | "smooth";
 
@@ -4004,7 +4004,7 @@ type TextOverflowProperty = Globals | "clip" | "ellipsis" | string;
 
 type TextRenderingProperty = Globals | "auto" | "geometricPrecision" | "optimizeLegibility" | "optimizeSpeed";
 
-type TextShadowProperty<TLength> = Globals | ShadowT<TLength> | "none";
+type TextShadowProperty = Globals | "none" | string;
 
 type TextSizeAdjustProperty = Globals | "auto" | "none" | string;
 
@@ -4040,7 +4040,7 @@ type TransformStyleProperty = Globals | "flat" | "preserve-3d";
 
 type TransitionPropertyProperty = Globals | "all" | "none" | string;
 
-type TransitionTimingFunctionProperty = Globals | SingleTimingFunction;
+type TransitionTimingFunctionProperty = Globals | SingleTimingFunction | string;
 
 type TranslateProperty<TLength> = Globals | TLength | "none" | string;
 
@@ -4073,7 +4073,7 @@ type WidthProperty<TLength> =
   | "min-intrinsic"
   | string;
 
-type WillChangeProperty = Globals | AnimateableFeature | "auto";
+type WillChangeProperty = Globals | AnimateableFeature | "auto" | string;
 
 type WordBreakProperty = Globals | "break-all" | "break-word" | "keep-all" | "normal";
 
@@ -4087,7 +4087,7 @@ type ZIndexProperty = Globals | "auto" | number;
 
 type ZoomProperty = Globals | "normal" | "reset" | string | number;
 
-type AnimationProperty = Globals | SingleAnimation;
+type AnimationProperty = Globals | SingleAnimation | string;
 
 type BackgroundProperty<TLength> = Globals | FinalBgLayer<TLength> | string;
 
@@ -4099,7 +4099,7 @@ type BorderBlockStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | 
 
 type BorderBottomProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderColorProperty = Globals | Color;
+type BorderColorProperty = Globals | Color | string;
 
 type BorderImageProperty = Globals | "fill" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
@@ -4113,11 +4113,11 @@ type BorderRadiusProperty<TLength> = Globals | TLength | string;
 
 type BorderRightProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderStyleProperty = Globals | BrStyle;
+type BorderStyleProperty = Globals | BrStyle | string;
 
 type BorderTopProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderWidthProperty<TLength> = Globals | BrWidth<TLength>;
+type BorderWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
 type ColumnRuleProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
@@ -4133,6 +4133,8 @@ type GapProperty<TLength> = Globals | TLength | "normal" | string;
 
 type GridProperty = Globals | "none" | string;
 
+type GridAreaProperty = Globals | GridLine | string;
+
 type GridColumnProperty = Globals | GridLine | string;
 
 type GridGapProperty<TLength> = Globals | TLength | string;
@@ -4145,7 +4147,7 @@ type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
 
 type MarginProperty<TLength> = Globals | TLength | "auto" | string;
 
-type MaskProperty<TLength> = Globals | MaskLayer<TLength>;
+type MaskProperty<TLength> = Globals | MaskLayer<TLength> | string;
 
 type MaskBorderProperty = Globals | "alpha" | "fill" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
@@ -4159,7 +4161,7 @@ type TextDecorationProperty = Globals | Color | "blink" | "dashed" | "dotted" | 
 
 type TextEmphasisProperty = Globals | Color | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
-type TransitionProperty = Globals | SingleTransition;
+type TransitionProperty = Globals | SingleTransition | string;
 
 type MozAppearanceProperty =
   | Globals
@@ -4322,7 +4324,7 @@ type MsFlowIntoProperty = Globals | "none" | string;
 
 type MsHighContrastAdjustProperty = Globals | "auto" | "none";
 
-type MsHyphenateLimitCharsProperty = Globals | "auto" | number;
+type MsHyphenateLimitCharsProperty = Globals | "auto" | string | number;
 
 type MsHyphenateLimitLinesProperty = Globals | "no-limit" | number;
 
@@ -4378,9 +4380,9 @@ type MsWrapThroughProperty = Globals | "none" | "wrap";
 
 type WebkitBorderBeforeColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type WebkitBorderBeforeStyleProperty = Globals | BrStyle;
+type WebkitBorderBeforeStyleProperty = Globals | BrStyle | string;
 
-type WebkitBorderBeforeWidthProperty<TLength> = Globals | BrWidth<TLength>;
+type WebkitBorderBeforeWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
 type WebkitBoxReflectProperty<TLength> = Globals | TLength | "above" | "below" | "left" | "right" | string;
 
@@ -4394,7 +4396,7 @@ type WebkitMaskImageProperty = Globals | "none" | string;
 
 type WebkitMaskOriginProperty = Globals | "border" | "content" | "padding" | string;
 
-type WebkitMaskPositionProperty<TLength> = Globals | MaskPosition<TLength>;
+type WebkitMaskPositionProperty<TLength> = Globals | MaskPosition<TLength> | string;
 
 type WebkitMaskPositionXProperty<TLength> = Globals | TLength | "center" | "left" | "right" | string;
 
@@ -4438,7 +4440,7 @@ type FontVariantAlternatesProperty = Globals | "historical-forms" | "normal" | s
 
 type ImeModeProperty = Globals | "active" | "auto" | "disabled" | "inactive" | "normal";
 
-type ScrollSnapCoordinateProperty<TLength> = Globals | Position<TLength> | "none";
+type ScrollSnapCoordinateProperty<TLength> = Globals | Position<TLength> | "none" | string;
 
 type ScrollSnapDestinationProperty<TLength> = Globals | Position<TLength>;
 
@@ -4589,7 +4591,7 @@ type PageBleedProperty<TLength> = TLength | "auto";
 
 type PageMarksProperty = "crop" | "cross" | "none" | string;
 
-type ViewportHeightProperty<TLength> = ViewportLength<TLength>;
+type ViewportHeightProperty<TLength> = ViewportLength<TLength> | string;
 
 type ViewportMaxHeightProperty<TLength> = ViewportLength<TLength>;
 
@@ -4607,7 +4609,7 @@ type ViewportOrientationProperty = "auto" | "landscape" | "portrait";
 
 type ViewportUserZoomProperty = "fixed" | "zoom";
 
-type ViewportWidthProperty<TLength> = ViewportLength<TLength>;
+type ViewportWidthProperty<TLength> = ViewportLength<TLength> | string;
 
 type ViewportZoomProperty = "auto" | string | number;
 
@@ -4896,10 +4898,6 @@ type Quote = "close-quote" | "no-close-quote" | "no-open-quote" | "open-quote";
 type RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "round" | "space" | string;
 
 type SelfPosition = "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
-
-type Shadow = "-webkit-inset" | "inset" | string;
-
-type ShadowT<TLength> = Color | TLength | string;
 
 type SingleAnimation = SingleTimingFunction | SingleAnimationDirection | SingleAnimationFillMode | "infinite" | "none" | "paused" | "running" | string | number;
 

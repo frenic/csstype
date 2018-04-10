@@ -80,34 +80,36 @@ export default function typing(entities: EntityType[]): TypeType[] {
   for (const entity of entities) {
     if (isComponent(entity)) {
       if (shouldIncludeComponent(entity)) {
-        switch (entity.component) {
-          case Component.Keyword:
-            if (String(Number(entity.value)) === entity.value) {
-              types = addNumericLiteral(types, Number(entity.value));
-            } else {
-              types = addStringLiteral(types, entity.value);
-            }
-            break;
-          case Component.DataType: {
-            const value = entity.value.slice(1, -1);
-            const property = /'([^']+)'/.exec(value);
-            if (property) {
-              const name = property[1];
-              types = addPropertyReference(types, name);
-            } else if (value in basicDataTypes) {
-              types = addType(types, basicDataTypes[value]);
-            } else {
-              types = addDataType(types, value);
-            }
-            break;
-          }
-          case Component.Group: {
-            if (entity.multiplier && isMultiplied(entity.multiplier)) {
-              types = addString(types);
-            }
+        if (mayBeMultiplied(entity.multiplier)) {
+          types = addString(types);
+        }
 
-            for (const type of typing(entity.entities)) {
-              types = addType(types, type);
+        if (!isMultiplied(entity.multiplier)) {
+          switch (entity.component) {
+            case Component.Keyword:
+              if (String(Number(entity.value)) === entity.value) {
+                types = addNumericLiteral(types, Number(entity.value));
+              } else {
+                types = addStringLiteral(types, entity.value);
+              }
+              break;
+            case Component.DataType: {
+              const value = entity.value.slice(1, -1);
+              const property = /'([^']+)'/.exec(value);
+              if (property) {
+                const name = property[1];
+                types = addPropertyReference(types, name);
+              } else if (value in basicDataTypes) {
+                types = addType(types, basicDataTypes[value]);
+              } else {
+                types = addDataType(types, value);
+              }
+              break;
+            }
+            case Component.Group: {
+              for (const type of typing(entity.entities)) {
+                types = addType(types, type);
+              }
             }
           }
         }
@@ -312,13 +314,18 @@ function isCurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMul
   return multiplier.sign === Multiplier.CurlyBracet;
 }
 
-function isMultiplied(multiplier: MultiplierType) {
+function isMultiplied(multiplier: MultiplierType | null) {
+  return multiplier !== null && (isCurlyBracetMultiplier(multiplier) && multiplier.min > 1);
+}
+
+function mayBeMultiplied(multiplier: MultiplierType | null) {
   return (
-    (isCurlyBracetMultiplier(multiplier) && (multiplier.min > 1 || multiplier.max > 1)) ||
-    multiplier.sign === Multiplier.Asterisk ||
-    multiplier.sign === Multiplier.PlusSign ||
-    multiplier.sign === Multiplier.HashMark ||
-    multiplier.sign === Multiplier.ExclamationPoint
+    multiplier !== null &&
+    ((isCurlyBracetMultiplier(multiplier) && multiplier.max > 1) ||
+      multiplier.sign === Multiplier.Asterisk ||
+      multiplier.sign === Multiplier.PlusSign ||
+      multiplier.sign === Multiplier.HashMark ||
+      multiplier.sign === Multiplier.ExclamationPoint)
   );
 }
 
@@ -329,7 +336,7 @@ function isMandatoryCombinator({ combinator }: ICombinator) {
 function isOptionalEntity(entity: EntityType) {
   return (
     entity.multiplier &&
-    ((isCurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
+    ((isCurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min < 2) ||
       entity.multiplier.sign === Multiplier.Asterisk ||
       entity.multiplier.sign === Multiplier.QuestionMark)
   );
