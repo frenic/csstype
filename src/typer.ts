@@ -1,7 +1,6 @@
-import * as properties from 'mdn-data/css/properties.json';
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
 import * as cssTypes from 'mdn-data/css/types.json';
-import parse, {
+import {
   Combinator,
   Component,
   ComponentType,
@@ -17,6 +16,7 @@ import parse, {
 export enum Type {
   Alias,
   DataType,
+  PropertyReference,
   Length,
   StringLiteral,
   NumericLiteral,
@@ -28,19 +28,8 @@ interface IBasic {
   type: Type.String | Type.Number | Type.Length;
 }
 
-export interface IAlias {
-  type: Type.Alias;
-  name: string;
-  generics: IGenerics[];
-}
-
-export interface IGenerics {
-  name: string;
-  defaults?: string;
-}
-
-export interface IDataType {
-  type: Type.DataType;
+export interface IDataType<TType = Type.DataType | Type.PropertyReference> {
+  type: TType;
   name: string;
 }
 
@@ -54,8 +43,12 @@ interface INumericLiteral {
   literal: number;
 }
 
+export type DataType = IDataType<Type.DataType>;
+
 // Yet another reminder; naming is hard
-export type TypeType<TAlias = IDataType> = IBasic | IStringLiteral | INumericLiteral | TAlias;
+export type TypeType<TDataType = IDataType> = IBasic | IStringLiteral | INumericLiteral | TDataType;
+
+export type ResolvedType = TypeType<DataType>;
 
 const basicDataTypes = [...Object.keys(cssTypes), 'hex-color'].reduce<{
   [name: string]: IBasic;
@@ -100,17 +93,7 @@ export default function typing(entities: EntityType[]): TypeType[] {
             const property = /'([^']+)'/.exec(value);
             if (property) {
               const name = property[1];
-              if (name in properties) {
-                if (entity.multiplier && isMultiplied(entity.multiplier)) {
-                  types = addString(types);
-                }
-
-                for (const type of typing(parse(properties[name].syntax))) {
-                  types = addType(types, type);
-                }
-              } else {
-                types = addString(types);
-              }
+              types = addPropertyReference(types, name);
             } else if (value in basicDataTypes) {
               types = addType(types, basicDataTypes[value]);
             } else {
@@ -179,7 +162,7 @@ export default function typing(entities: EntityType[]): TypeType[] {
   return types;
 }
 
-function addLength(types: TypeType[]): TypeType[] {
+function addLength<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
   if (types.every(type => type.type !== Type.Length)) {
     return [
       ...types,
@@ -192,7 +175,7 @@ function addLength(types: TypeType[]): TypeType[] {
   return types;
 }
 
-function addString(types: TypeType[]): TypeType[] {
+function addString<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
   if (types.every(type => type.type !== Type.String)) {
     return [
       ...types,
@@ -205,7 +188,7 @@ function addString(types: TypeType[]): TypeType[] {
   return types;
 }
 
-function addNumber(types: TypeType[]): TypeType[] {
+function addNumber<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
   if (types.every(type => type.type !== Type.Number)) {
     return [
       ...types,
@@ -218,7 +201,10 @@ function addNumber(types: TypeType[]): TypeType[] {
   return types;
 }
 
-function addStringLiteral(types: TypeType[], literal: string): TypeType[] {
+function addStringLiteral<TDataType extends IDataType>(
+  types: Array<TypeType<TDataType>>,
+  literal: string,
+): Array<TypeType<TDataType>> {
   if (types.every(type => !(type.type === Type.StringLiteral && type.literal === literal))) {
     return [
       ...types,
@@ -232,7 +218,10 @@ function addStringLiteral(types: TypeType[], literal: string): TypeType[] {
   return types;
 }
 
-function addNumericLiteral(types: TypeType[], literal: number): TypeType[] {
+function addNumericLiteral<TDataType extends IDataType>(
+  types: Array<TypeType<TDataType>>,
+  literal: number,
+): Array<TypeType<TDataType>> {
   if (types.every(type => !(type.type === Type.NumericLiteral && type.literal === literal))) {
     return [
       ...types,
@@ -246,21 +235,44 @@ function addNumericLiteral(types: TypeType[], literal: number): TypeType[] {
   return types;
 }
 
-function addDataType(types: TypeType[], name: string): TypeType[] {
+function addDataType<TDataType extends IDataType>(
+  types: Array<TypeType<TDataType>>,
+  name: string,
+): Array<TypeType<TDataType>> {
   if (types.every(type => !(type.type === Type.DataType && type.name === name))) {
     return [
       ...types,
       {
         type: Type.DataType,
         name,
-      },
+      } as TDataType,
     ];
   }
 
   return types;
 }
 
-export function addType(types: TypeType[], type: TypeType): TypeType[] {
+function addPropertyReference<TDataType extends IDataType>(
+  types: Array<TypeType<TDataType>>,
+  name: string,
+): Array<TypeType<TDataType>> {
+  if (types.every(type => !(type.type === Type.PropertyReference && type.name === name))) {
+    return [
+      ...types,
+      {
+        type: Type.PropertyReference,
+        name,
+      } as TDataType,
+    ];
+  }
+
+  return types;
+}
+
+export function addType<TDataType extends IDataType>(
+  types: Array<TypeType<TDataType>>,
+  type: TypeType,
+): Array<TypeType<TDataType>> {
   switch (type.type) {
     case Type.Length:
       return addLength(types);
@@ -274,7 +286,14 @@ export function addType(types: TypeType[], type: TypeType): TypeType[] {
       return addNumericLiteral(types, type.literal);
     case Type.DataType:
       return addDataType(types, type.name);
+    case Type.PropertyReference:
+      return addPropertyReference(types, type.name);
   }
+}
+
+export function hasType(originalTypes: TypeType[], type: TypeType): boolean {
+  const testTypes = addType(originalTypes, type);
+  return originalTypes === testTypes;
 }
 
 function isFunction(entity: EntityType): entity is IFunction {

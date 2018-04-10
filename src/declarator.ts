@@ -12,7 +12,18 @@ import {
   vendorPrefixedShorthandProperties,
 } from './properties';
 import { advancedPseudos, simplePseudos } from './pseudos';
-import { IAlias, IDataType, IGenerics, Type, TypeType } from './typer';
+import { IDataType, Type, TypeType } from './typer';
+
+export interface IAlias {
+  type: Type.Alias;
+  name: string;
+  generics: IGenerics[];
+}
+
+export interface IGenerics {
+  name: string;
+  defaults?: string;
+}
 
 interface Interface {
   name: string;
@@ -37,7 +48,7 @@ interface IPropertyType {
 
 type PropertyType = IPropertyAlias | IPropertyType;
 
-export type MixedType = TypeType<IDataType | IAlias>;
+export type MixedType = TypeType<IDataType<Type.DataType> | IAlias>;
 export type DeclarableType = TypeType<IAlias>;
 
 export interface IDeclaration {
@@ -138,6 +149,10 @@ const svgPropertiesHyphenDefinition: IPropertyAlias[] = [];
 
 const PROPERTY = 'Property';
 
+function toPropertyDeclarationName(name: string) {
+  return toPascalCase(name) + PROPERTY;
+}
+
 for (const properties of [
   standardLonghandProperties,
   standardShorthandProperties,
@@ -189,35 +204,34 @@ for (const properties of [
   );
 
   for (const name of propertyNames) {
-    const originalTypes = properties[name];
-    const safeTypes = filterMissingDataTypes(properties[name]);
-    const generics = lengthIn(safeTypes) ? [lengthGeneric] : [];
+    const property = properties[name];
+    const generics = lengthIn(property.types) ? [lengthGeneric] : [];
 
     // Some properties are prefixed and share the same type so we
     // make sure to reuse the same declaration of that type
-    let declaration = declarations.get(originalTypes);
+    let declaration = declarations.get(property.types);
 
     if (!declaration) {
-      if (safeTypes.length === 0) {
+      if (property.types.length === 0) {
         declaration = globalsDeclaration;
-      } else if (onlyContainsString(safeTypes)) {
+      } else if (onlyContainsString(property.types)) {
         declaration = globalsAndStringDeclaration;
-      } else if (onlyContainsNumber(safeTypes)) {
+      } else if (onlyContainsNumber(property.types)) {
         declaration = globalsAndNumberDeclaration;
       } else {
-        const declarationName = toPascalCase(name) + PROPERTY;
+        const declarationName = toPropertyDeclarationName(property.name);
 
         declaration = {
           name: declarationName,
           export: false,
-          types: [aliasOf(globalsDeclaration), ...declarable(safeTypes)],
+          types: [aliasOf(globalsDeclaration), ...declarable(property.types)],
           generics,
         };
 
         // Some SVG properties are shared with regular style properties
         // and we assume here that they are identical
         if (!declarationNameExists(declarationName)) {
-          declarations.set(originalTypes, declaration);
+          declarations.set(property.types, declaration);
         }
       }
     }
@@ -245,7 +259,7 @@ for (const name in atRuleDescriptors) {
   atRuleHyphenDefinitions[name] = [];
 
   for (const property in atRuleDescriptors[name]) {
-    const types = filterMissingDataTypes(atRuleDescriptors[name][property]);
+    const types = atRuleDescriptors[name][property];
     const generics = lengthIn(types) ? [lengthGeneric] : [];
 
     if (onlyContainsString(types) || onlyContainsNumber(types)) {
@@ -265,11 +279,12 @@ for (const name in atRuleDescriptors) {
       });
     } else {
       const declaration: IDeclaration = {
-        name: toPascalCase(name.slice(1)) + toPascalCase(property) + PROPERTY,
+        name: toPascalCase(name.slice(1)) + toPropertyDeclarationName(property),
         export: false,
         types: declarable(types),
         generics,
       };
+
       declarations.set(types, declaration);
 
       atRuleDefinitions[name].push({
@@ -726,17 +741,19 @@ export const interfaces = [
   ...atRuleInterfaces,
 ];
 
+export function isAliasProperty(value: PropertyType): value is IPropertyAlias {
+  return 'alias' in value;
+}
+
 function declarable(types: MixedType[]): DeclarableType[] {
-  return types.sort(sorter).map<DeclarableType>(
-    type =>
-      type.type === Type.DataType
-        ? {
-            type: Type.Alias,
-            name: toPascalCase(type.name),
-            generics: type.name && type.name in dataTypes && lengthIn(dataTypes[type.name]) ? [lengthGeneric] : [],
-          }
-        : type,
-  );
+  return types.sort(sorter).map<DeclarableType>(type => {
+    switch (type.type) {
+      case Type.DataType:
+        return alias(toPascalCase(type.name), type.name in dataTypes ? dataTypes[type.name] : null);
+      default:
+        return type;
+    }
+  });
 }
 
 function sorter(a: MixedType, b: MixedType) {
@@ -753,40 +770,29 @@ function genericsOf(definitions: IPropertyAlias[]) {
   return Array.from(new Set(([] as IGenerics[]).concat(...definitions.map(definition => definition.generics))));
 }
 
-export function isAliasProperty(value: PropertyType): value is IPropertyAlias {
-  return 'alias' in value;
-}
-
-export function lengthIn(types: MixedType[]) {
+function lengthIn(types: MixedType[]): boolean {
   return !types.every(type => {
-    if (type.type === Type.Length) {
-      return false;
+    switch (type.type) {
+      case Type.Length:
+        return false;
+      case Type.DataType:
+        return !(type.name in dataTypes && lengthIn(dataTypes[type.name]));
+      default:
+        return true;
     }
-    if (type.type === Type.DataType && type.name && type.name in dataTypes && lengthIn(dataTypes[type.name])) {
-      return false;
-    }
-    return true;
   });
 }
 
-function aliasOf({ name, types }: IDeclaration): IAlias {
+function alias(name: string, types?: null | MixedType[]): IAlias {
   return {
     type: Type.Alias,
     name,
-    generics: lengthIn(types) ? [lengthGeneric] : [],
+    generics: types && lengthIn(types) ? [lengthGeneric] : [],
   };
 }
 
-function filterMissingDataTypes(types: MixedType[]) {
-  // Exclude type aliases that's not of interest
-  const filtered = types.filter(type => type.type !== Type.DataType || (!!type.name && type.name in dataTypes));
-
-  // Those excluded type aliases need to resolve to string
-  if (filtered.length < types.length && filtered.every(type => type.type !== Type.String)) {
-    filtered.push({ type: Type.String });
-  }
-
-  return filtered;
+function aliasOf({ name, types }: IDeclaration): IAlias {
+  return alias(name, types);
 }
 
 function onlyContainsString(types: MixedType[]) {

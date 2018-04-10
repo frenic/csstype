@@ -83,9 +83,6 @@ export function compatPropertySyntax(name: string, entities: EntityType[]): Enti
           compatEntities.push(componentGroupData(compatPropertySyntax(name, entity.entities), entity.multiplier));
           continue;
         }
-        case Component.DataType: {
-          // TODO
-        }
       }
     }
 

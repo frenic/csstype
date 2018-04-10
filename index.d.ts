@@ -67,7 +67,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   boxFlexGroup?: GlobalsNumber;
   boxLines?: BoxLinesProperty;
   boxOrdinalGroup?: GlobalsNumber;
-  boxShadow?: BoxShadowProperty<TLength>;
+  boxShadow?: BoxShadowProperty;
   boxSizing?: BoxSizingProperty;
   breakAfter?: BreakAfterProperty;
   breakBefore?: BreakBeforeProperty;
@@ -183,21 +183,21 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   minInlineSize?: MinInlineSizeProperty<TLength>;
   minWidth?: MinWidthProperty<TLength>;
   mixBlendMode?: MixBlendModeProperty;
-  motionDistance?: MotionDistanceProperty<TLength>;
-  motionPath?: MotionPathProperty;
-  motionRotation?: MotionRotationProperty;
+  motionDistance?: OffsetDistanceProperty<TLength>;
+  motionPath?: OffsetPathProperty;
+  motionRotation?: OffsetRotateProperty;
   objectFit?: ObjectFitProperty;
   objectPosition?: ObjectPositionProperty<TLength>;
   offsetAnchor?: OffsetAnchorProperty<TLength>;
   offsetBlockEnd?: OffsetBlockEndProperty<TLength>;
   offsetBlockStart?: OffsetBlockStartProperty<TLength>;
-  offsetDistance?: MotionDistanceProperty<TLength>;
+  offsetDistance?: OffsetDistanceProperty<TLength>;
   offsetInlineEnd?: OffsetInlineEndProperty<TLength>;
   offsetInlineStart?: OffsetInlineStartProperty<TLength>;
-  offsetPath?: MotionPathProperty;
+  offsetPath?: OffsetPathProperty;
   offsetPosition?: OffsetPositionProperty<TLength>;
-  offsetRotate?: MotionRotationProperty;
-  offsetRotation?: MotionRotationProperty;
+  offsetRotate?: OffsetRotateProperty;
+  offsetRotation?: OffsetRotateProperty;
   opacity?: GlobalsNumber;
   order?: GlobalsNumber;
   orphans?: GlobalsNumber;
@@ -327,8 +327,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   margin?: MarginProperty<TLength>;
   mask?: MaskProperty<TLength>;
   maskBorder?: MaskBorderProperty;
-  motion?: MotionProperty<TLength>;
-  offset?: MotionProperty<TLength>;
+  motion?: OffsetProperty<TLength>;
+  offset?: OffsetProperty<TLength>;
   outline?: OutlineProperty<TLength>;
   padding?: PaddingProperty<TLength>;
   textDecoration?: TextDecorationProperty;
@@ -489,7 +489,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitBorderTopRightRadius?: BorderTopRightRadiusProperty<TLength>;
   WebkitBoxDecorationBreak?: BoxDecorationBreakProperty;
   WebkitBoxReflect?: WebkitBoxReflectProperty<TLength>;
-  WebkitBoxShadow?: BoxShadowProperty<TLength>;
+  WebkitBoxShadow?: BoxShadowProperty;
   WebkitBoxSizing?: BoxSizingProperty;
   WebkitClipPath?: ClipPathProperty;
   WebkitColumnCount?: ColumnCountProperty;
@@ -513,7 +513,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitMaskAttachment?: WebkitMaskAttachmentProperty;
   WebkitMaskClip?: WebkitMaskClipProperty;
   WebkitMaskComposite?: WebkitMaskCompositeProperty;
-  WebkitMaskImage?: GlobalsString;
+  WebkitMaskImage?: WebkitMaskImageProperty;
   WebkitMaskOrigin?: WebkitMaskOriginProperty;
   WebkitMaskPosition?: WebkitMaskPositionProperty<TLength>;
   WebkitMaskPositionX?: WebkitMaskPositionXProperty<TLength>;
@@ -580,7 +580,7 @@ export interface VendorShorthandProperties<TLength = string | 0> {
   WebkitColumns?: ColumnsProperty<TLength>;
   WebkitFlex?: FlexProperty<TLength>;
   WebkitFlexFlow?: FlexFlowProperty;
-  WebkitMask?: GlobalsString;
+  WebkitMask?: WebkitMaskProperty;
   WebkitTextEmphasis?: TextEmphasisProperty;
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength>;
   WebkitTransition?: TransitionProperty;
@@ -640,7 +640,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
   MozBoxPack?: BoxPackProperty;
   /** @deprecated */
-  MozBoxShadow?: BoxShadowProperty<TLength>;
+  MozBoxShadow?: BoxShadowProperty;
   /** @deprecated */
   MozOpacity?: GlobalsNumber;
   /** @deprecated */
@@ -841,7 +841,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "box-flex-group"?: GlobalsNumber;
   "box-lines"?: BoxLinesProperty;
   "box-ordinal-group"?: GlobalsNumber;
-  "box-shadow"?: BoxShadowProperty<TLength>;
+  "box-shadow"?: BoxShadowProperty;
   "box-sizing"?: BoxSizingProperty;
   "break-after"?: BreakAfterProperty;
   "break-before"?: BreakBeforeProperty;
@@ -957,21 +957,21 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "min-inline-size"?: MinInlineSizeProperty<TLength>;
   "min-width"?: MinWidthProperty<TLength>;
   "mix-blend-mode"?: MixBlendModeProperty;
-  "motion-distance"?: MotionDistanceProperty<TLength>;
-  "motion-path"?: MotionPathProperty;
-  "motion-rotation"?: MotionRotationProperty;
+  "motion-distance"?: OffsetDistanceProperty<TLength>;
+  "motion-path"?: OffsetPathProperty;
+  "motion-rotation"?: OffsetRotateProperty;
   "object-fit"?: ObjectFitProperty;
   "object-position"?: ObjectPositionProperty<TLength>;
   "offset-anchor"?: OffsetAnchorProperty<TLength>;
   "offset-block-end"?: OffsetBlockEndProperty<TLength>;
   "offset-block-start"?: OffsetBlockStartProperty<TLength>;
-  "offset-distance"?: MotionDistanceProperty<TLength>;
+  "offset-distance"?: OffsetDistanceProperty<TLength>;
   "offset-inline-end"?: OffsetInlineEndProperty<TLength>;
   "offset-inline-start"?: OffsetInlineStartProperty<TLength>;
-  "offset-path"?: MotionPathProperty;
+  "offset-path"?: OffsetPathProperty;
   "offset-position"?: OffsetPositionProperty<TLength>;
-  "offset-rotate"?: MotionRotationProperty;
-  "offset-rotation"?: MotionRotationProperty;
+  "offset-rotate"?: OffsetRotateProperty;
+  "offset-rotation"?: OffsetRotateProperty;
   opacity?: GlobalsNumber;
   order?: GlobalsNumber;
   orphans?: GlobalsNumber;
@@ -1101,8 +1101,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   margin?: MarginProperty<TLength>;
   mask?: MaskProperty<TLength>;
   "mask-border"?: MaskBorderProperty;
-  motion?: MotionProperty<TLength>;
-  offset?: MotionProperty<TLength>;
+  motion?: OffsetProperty<TLength>;
+  offset?: OffsetProperty<TLength>;
   outline?: OutlineProperty<TLength>;
   padding?: PaddingProperty<TLength>;
   "text-decoration"?: TextDecorationProperty;
@@ -1263,7 +1263,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-border-top-right-radius"?: BorderTopRightRadiusProperty<TLength>;
   "-webkit-box-decoration-break"?: BoxDecorationBreakProperty;
   "-webkit-box-reflect"?: WebkitBoxReflectProperty<TLength>;
-  "-webkit-box-shadow"?: BoxShadowProperty<TLength>;
+  "-webkit-box-shadow"?: BoxShadowProperty;
   "-webkit-box-sizing"?: BoxSizingProperty;
   "-webkit-clip-path"?: ClipPathProperty;
   "-webkit-column-count"?: ColumnCountProperty;
@@ -1287,7 +1287,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty;
   "-webkit-mask-clip"?: WebkitMaskClipProperty;
   "-webkit-mask-composite"?: WebkitMaskCompositeProperty;
-  "-webkit-mask-image"?: GlobalsString;
+  "-webkit-mask-image"?: WebkitMaskImageProperty;
   "-webkit-mask-origin"?: WebkitMaskOriginProperty;
   "-webkit-mask-position"?: WebkitMaskPositionProperty<TLength>;
   "-webkit-mask-position-x"?: WebkitMaskPositionXProperty<TLength>;
@@ -1354,7 +1354,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
   "-webkit-columns"?: ColumnsProperty<TLength>;
   "-webkit-flex"?: FlexProperty<TLength>;
   "-webkit-flex-flow"?: FlexFlowProperty;
-  "-webkit-mask"?: GlobalsString;
+  "-webkit-mask"?: WebkitMaskProperty;
   "-webkit-text-emphasis"?: TextEmphasisProperty;
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>;
   "-webkit-transition"?: TransitionProperty;
@@ -1414,7 +1414,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /** @deprecated */
   "-moz-box-pack"?: BoxPackProperty;
   /** @deprecated */
-  "-moz-box-shadow"?: BoxShadowProperty<TLength>;
+  "-moz-box-shadow"?: BoxShadowProperty;
   /** @deprecated */
   "-moz-opacity"?: GlobalsNumber;
   /** @deprecated */
@@ -1619,7 +1619,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   boxFlexGroup?: GlobalsNumber | GlobalsNumber[];
   boxLines?: BoxLinesProperty | BoxLinesProperty[];
   boxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
-  boxShadow?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
+  boxShadow?: BoxShadowProperty | BoxShadowProperty[];
   boxSizing?: BoxSizingProperty | BoxSizingProperty[];
   breakAfter?: BreakAfterProperty | BreakAfterProperty[];
   breakBefore?: BreakBeforeProperty | BreakBeforeProperty[];
@@ -1735,21 +1735,21 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   minInlineSize?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[];
   minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
-  motionDistance?: MotionDistanceProperty<TLength> | MotionDistanceProperty<TLength>[];
-  motionPath?: MotionPathProperty | MotionPathProperty[];
-  motionRotation?: MotionRotationProperty | MotionRotationProperty[];
+  motionDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  motionPath?: OffsetPathProperty | OffsetPathProperty[];
+  motionRotation?: OffsetRotateProperty | OffsetRotateProperty[];
   objectFit?: ObjectFitProperty | ObjectFitProperty[];
   objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   offsetBlockEnd?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
   offsetBlockStart?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
-  offsetDistance?: MotionDistanceProperty<TLength> | MotionDistanceProperty<TLength>[];
+  offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   offsetInlineEnd?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
   offsetInlineStart?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
-  offsetPath?: MotionPathProperty | MotionPathProperty[];
+  offsetPath?: OffsetPathProperty | OffsetPathProperty[];
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
-  offsetRotate?: MotionRotationProperty | MotionRotationProperty[];
-  offsetRotation?: MotionRotationProperty | MotionRotationProperty[];
+  offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[];
+  offsetRotation?: OffsetRotateProperty | OffsetRotateProperty[];
   opacity?: GlobalsNumber | GlobalsNumber[];
   order?: GlobalsNumber | GlobalsNumber[];
   orphans?: GlobalsNumber | GlobalsNumber[];
@@ -1879,8 +1879,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   maskBorder?: MaskBorderProperty | MaskBorderProperty[];
-  motion?: MotionProperty<TLength> | MotionProperty<TLength>[];
-  offset?: MotionProperty<TLength> | MotionProperty<TLength>[];
+  motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
+  offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[];
   textDecoration?: TextDecorationProperty | TextDecorationProperty[];
@@ -2041,7 +2041,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitBorderTopRightRadius?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   WebkitBoxDecorationBreak?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   WebkitBoxReflect?: WebkitBoxReflectProperty<TLength> | WebkitBoxReflectProperty<TLength>[];
-  WebkitBoxShadow?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
+  WebkitBoxShadow?: BoxShadowProperty | BoxShadowProperty[];
   WebkitBoxSizing?: BoxSizingProperty | BoxSizingProperty[];
   WebkitClipPath?: ClipPathProperty | ClipPathProperty[];
   WebkitColumnCount?: ColumnCountProperty | ColumnCountProperty[];
@@ -2065,7 +2065,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitMaskAttachment?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   WebkitMaskClip?: WebkitMaskClipProperty | WebkitMaskClipProperty[];
   WebkitMaskComposite?: WebkitMaskCompositeProperty | WebkitMaskCompositeProperty[];
-  WebkitMaskImage?: GlobalsString | GlobalsString[];
+  WebkitMaskImage?: WebkitMaskImageProperty | WebkitMaskImageProperty[];
   WebkitMaskOrigin?: WebkitMaskOriginProperty | WebkitMaskOriginProperty[];
   WebkitMaskPosition?: WebkitMaskPositionProperty<TLength> | WebkitMaskPositionProperty<TLength>[];
   WebkitMaskPositionX?: WebkitMaskPositionXProperty<TLength> | WebkitMaskPositionXProperty<TLength>[];
@@ -2132,7 +2132,7 @@ export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
   WebkitColumns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   WebkitFlex?: FlexProperty<TLength> | FlexProperty<TLength>[];
   WebkitFlexFlow?: FlexFlowProperty | FlexFlowProperty[];
-  WebkitMask?: GlobalsString | GlobalsString[];
+  WebkitMask?: WebkitMaskProperty | WebkitMaskProperty[];
   WebkitTextEmphasis?: TextEmphasisProperty | TextEmphasisProperty[];
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
   WebkitTransition?: TransitionProperty | TransitionProperty[];
@@ -2192,7 +2192,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
   MozBoxPack?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
-  MozBoxShadow?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
+  MozBoxShadow?: BoxShadowProperty | BoxShadowProperty[];
   /** @deprecated */
   MozOpacity?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
@@ -2397,7 +2397,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "box-flex-group"?: GlobalsNumber | GlobalsNumber[];
   "box-lines"?: BoxLinesProperty | BoxLinesProperty[];
   "box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
-  "box-shadow"?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
+  "box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
   "box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
   "break-after"?: BreakAfterProperty | BreakAfterProperty[];
   "break-before"?: BreakBeforeProperty | BreakBeforeProperty[];
@@ -2513,21 +2513,21 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "min-inline-size"?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[];
   "min-width"?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[];
-  "motion-distance"?: MotionDistanceProperty<TLength> | MotionDistanceProperty<TLength>[];
-  "motion-path"?: MotionPathProperty | MotionPathProperty[];
-  "motion-rotation"?: MotionRotationProperty | MotionRotationProperty[];
+  "motion-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  "motion-path"?: OffsetPathProperty | OffsetPathProperty[];
+  "motion-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
   "object-fit"?: ObjectFitProperty | ObjectFitProperty[];
   "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   "offset-block-end"?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
   "offset-block-start"?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
-  "offset-distance"?: MotionDistanceProperty<TLength> | MotionDistanceProperty<TLength>[];
+  "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   "offset-inline-end"?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
   "offset-inline-start"?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
-  "offset-path"?: MotionPathProperty | MotionPathProperty[];
+  "offset-path"?: OffsetPathProperty | OffsetPathProperty[];
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
-  "offset-rotate"?: MotionRotationProperty | MotionRotationProperty[];
-  "offset-rotation"?: MotionRotationProperty | MotionRotationProperty[];
+  "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[];
+  "offset-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
   opacity?: GlobalsNumber | GlobalsNumber[];
   order?: GlobalsNumber | GlobalsNumber[];
   orphans?: GlobalsNumber | GlobalsNumber[];
@@ -2657,8 +2657,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[];
-  motion?: MotionProperty<TLength> | MotionProperty<TLength>[];
-  offset?: MotionProperty<TLength> | MotionProperty<TLength>[];
+  motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
+  offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[];
   "text-decoration"?: TextDecorationProperty | TextDecorationProperty[];
@@ -2821,7 +2821,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-border-top-right-radius"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   "-webkit-box-decoration-break"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   "-webkit-box-reflect"?: WebkitBoxReflectProperty<TLength> | WebkitBoxReflectProperty<TLength>[];
-  "-webkit-box-shadow"?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
+  "-webkit-box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
   "-webkit-box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
   "-webkit-clip-path"?: ClipPathProperty | ClipPathProperty[];
   "-webkit-column-count"?: ColumnCountProperty | ColumnCountProperty[];
@@ -2845,7 +2845,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   "-webkit-mask-clip"?: WebkitMaskClipProperty | WebkitMaskClipProperty[];
   "-webkit-mask-composite"?: WebkitMaskCompositeProperty | WebkitMaskCompositeProperty[];
-  "-webkit-mask-image"?: GlobalsString | GlobalsString[];
+  "-webkit-mask-image"?: WebkitMaskImageProperty | WebkitMaskImageProperty[];
   "-webkit-mask-origin"?: WebkitMaskOriginProperty | WebkitMaskOriginProperty[];
   "-webkit-mask-position"?: WebkitMaskPositionProperty<TLength> | WebkitMaskPositionProperty<TLength>[];
   "-webkit-mask-position-x"?: WebkitMaskPositionXProperty<TLength> | WebkitMaskPositionXProperty<TLength>[];
@@ -2912,7 +2912,7 @@ export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-columns"?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   "-webkit-flex"?: FlexProperty<TLength> | FlexProperty<TLength>[];
   "-webkit-flex-flow"?: FlexFlowProperty | FlexFlowProperty[];
-  "-webkit-mask"?: GlobalsString | GlobalsString[];
+  "-webkit-mask"?: WebkitMaskProperty | WebkitMaskProperty[];
   "-webkit-text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[];
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
   "-webkit-transition"?: TransitionProperty | TransitionProperty[];
@@ -2972,7 +2972,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /** @deprecated */
   "-moz-box-pack"?: BoxPackProperty | BoxPackProperty[];
   /** @deprecated */
-  "-moz-box-shadow"?: BoxShadowProperty<TLength> | BoxShadowProperty<TLength>[];
+  "-moz-box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
   /** @deprecated */
   "-moz-opacity"?: GlobalsNumber | GlobalsNumber[];
   /** @deprecated */
@@ -3454,13 +3454,13 @@ type BackgroundSizeProperty<TLength> = Globals | BgSize<TLength>;
 
 type BlockSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
 
-type BorderBlockEndColorProperty = Globals | Color;
+type BorderBlockEndColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
 type BorderBlockEndStyleProperty = Globals | BrStyle;
 
 type BorderBlockEndWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-type BorderBlockStartColorProperty = Globals | Color;
+type BorderBlockStartColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
 type BorderBlockStartStyleProperty = Globals | BrStyle;
 
@@ -3488,13 +3488,13 @@ type BorderImageSourceProperty = Globals | "none" | string;
 
 type BorderImageWidthProperty<TLength> = Globals | TLength | "auto" | string | number;
 
-type BorderInlineEndColorProperty = Globals | Color;
+type BorderInlineEndColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
 type BorderInlineEndStyleProperty = Globals | BrStyle;
 
 type BorderInlineEndWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-type BorderInlineStartColorProperty = Globals | Color;
+type BorderInlineStartColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
 type BorderInlineStartStyleProperty = Globals | BrStyle;
 
@@ -3532,7 +3532,7 @@ type BoxDecorationBreakProperty = Globals | "clone" | "slice";
 
 type BoxLinesProperty = Globals | "multiple" | "single";
 
-type BoxShadowProperty<TLength> = Globals | Shadow<TLength> | "none";
+type BoxShadowProperty = Globals | Shadow | "none";
 
 type BoxSizingProperty = Globals | "border-box" | "content-box";
 
@@ -3628,7 +3628,7 @@ type EmptyCellsProperty = Globals | "hide" | "show";
 
 type FilterProperty = Globals | "none" | string;
 
-type FlexBasisProperty<TLength> = Globals | TLength | "auto" | "available" | "content" | "fit-content" | "max-content" | "min-content" | string;
+type FlexBasisProperty<TLength> = Globals | TLength | "-webkit-auto" | "auto" | "available" | "content" | "fit-content" | "max-content" | "min-content" | string;
 
 type FlexDirectionProperty = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
@@ -3864,11 +3864,11 @@ type MinWidthProperty<TLength> = Globals | TLength | "-webkit-fill-available" | 
 
 type MixBlendModeProperty = Globals | BlendMode;
 
-type MotionDistanceProperty<TLength> = Globals | TLength | string;
+type OffsetDistanceProperty<TLength> = Globals | TLength | string;
 
-type MotionPathProperty = Globals | GeometryBox | "none" | string;
+type OffsetPathProperty = Globals | GeometryBox | "none" | string;
 
-type MotionRotationProperty = Globals | "auto" | "reverse" | string;
+type OffsetRotateProperty = Globals | "auto" | "reverse" | string;
 
 type ObjectFitProperty = Globals | "contain" | "cover" | "fill" | "none" | "scale-down";
 
@@ -4093,9 +4093,9 @@ type BackgroundProperty<TLength> = Globals | FinalBgLayer<TLength> | string;
 
 type BorderProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderBlockEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+type BorderBlockEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type BorderBlockStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+type BorderBlockStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
 type BorderBottomProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
@@ -4103,9 +4103,9 @@ type BorderColorProperty = Globals | Color;
 
 type BorderImageProperty = Globals | "fill" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
-type BorderInlineEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+type BorderInlineEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type BorderInlineStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+type BorderInlineStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
 type BorderLeftProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
@@ -4149,7 +4149,7 @@ type MaskProperty<TLength> = Globals | MaskLayer<TLength>;
 
 type MaskBorderProperty = Globals | "alpha" | "fill" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
-type MotionProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
+type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
 
 type OutlineProperty<TLength> = Globals | Color | BrStyle | BrWidth<TLength> | "auto" | "invert" | string;
 
@@ -4376,7 +4376,7 @@ type MsWrapMarginProperty<TLength> = Globals | TLength;
 
 type MsWrapThroughProperty = Globals | "none" | "wrap";
 
-type WebkitBorderBeforeColorProperty = Globals | Color;
+type WebkitBorderBeforeColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
 type WebkitBorderBeforeStyleProperty = Globals | BrStyle;
 
@@ -4389,6 +4389,8 @@ type WebkitMaskAttachmentProperty = Globals | Attachment | string;
 type WebkitMaskClipProperty = Globals | "border" | "border-box" | "content" | "content-box" | "padding" | "padding-box" | "text" | string;
 
 type WebkitMaskCompositeProperty = Globals | CompositeStyle | string;
+
+type WebkitMaskImageProperty = Globals | "none" | string;
 
 type WebkitMaskOriginProperty = Globals | "border" | "content" | "padding" | string;
 
@@ -4418,7 +4420,9 @@ type WebkitTouchCalloutProperty = Globals | "default" | "none";
 
 type MsContentZoomSnapProperty = Globals | "mandatory" | "none" | "proximity" | string;
 
-type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+
+type WebkitMaskProperty = Globals | "none" | string;
 
 type WebkitTextStrokeProperty<TLength> = Globals | Color | TLength | string;
 
@@ -4696,7 +4700,7 @@ type DeprecatedSystemColor =
   | "WindowFrame"
   | "WindowText";
 
-type DisplayInside = "flex" | "flow" | "flow-root" | "grid" | "ruby" | "subgrid" | "table";
+type DisplayInside = "-ms-flexbox" | "-ms-grid" | "-webkit-flex" | "flex" | "flow" | "flow-root" | "grid" | "ruby" | "subgrid" | "table";
 
 type DisplayInternal =
   | "ruby-base"
@@ -4712,7 +4716,7 @@ type DisplayInternal =
   | "table-row"
   | "table-row-group";
 
-type DisplayLegacy = "inline-block" | "inline-flex" | "inline-grid" | "inline-list-item" | "inline-table";
+type DisplayLegacy = "-ms-inline-flexbox" | "-ms-inline-grid" | "-webkit-inline-flex" | "inline-block" | "inline-flex" | "inline-grid" | "inline-list-item" | "inline-table";
 
 type DisplayOutside = "block" | "inline" | "run-in";
 
@@ -4893,7 +4897,7 @@ type RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "round" | 
 
 type SelfPosition = "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
 
-type Shadow<TLength> = Color | TLength | "inset" | string;
+type Shadow = "-webkit-inset" | "inset" | string;
 
 type ShadowT<TLength> = Color | TLength | string;
 

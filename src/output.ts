@@ -1,5 +1,5 @@
-import { DeclarableType, declarations, interfaces, isAliasProperty } from './declarator';
-import { IGenerics, Type } from './typer';
+import { DeclarableType, declarations, IGenerics, interfaces, isAliasProperty } from './declarator';
+import { Type } from './typer';
 
 const EOL = '\n';
 

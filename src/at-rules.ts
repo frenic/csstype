@@ -1,10 +1,10 @@
 import * as atRules from 'mdn-data/css/at-rules.json';
 import { resolveDataTypes } from './data-types';
 import parse from './parser';
-import typing, { IStringLiteral, Type, TypeType } from './typer';
+import typing, { IStringLiteral, ResolvedType, Type } from './typer';
 
 export interface IAtRuleDescriptors {
-  [descriptor: string]: TypeType[];
+  [descriptor: string]: ResolvedType[];
 }
 
 export const atRuleList: IStringLiteral[] = [];
