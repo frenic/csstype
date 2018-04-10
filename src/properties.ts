@@ -1,6 +1,7 @@
 import * as properties from 'mdn-data/css/properties.json';
-import { compatProperties, compatSyntax, isDeprecated } from './compat';
-import { properties as svgData } from './data/svg';
+import { compatPropertyNames, compatPropertySyntax, isDeprecated } from './compat';
+import { dataTypeResolver, resolveDataTypes } from './data-types';
+import { properties as svgData, syntaxes as svgSyntaxes } from './data/svg';
 import parse from './parser';
 import typing, { TypeType } from './typer';
 
@@ -32,10 +33,10 @@ for (const originalName in properties) {
     continue;
   }
 
-  const types = typing(compatSyntax(originalName, parse(properties[originalName].syntax)));
+  const types = resolveDataTypes(typing(compatPropertySyntax(originalName, parse(properties[originalName].syntax))));
 
   if (!isDeprecated(originalName)) {
-    const currentPropertyNames = [originalName, ...compatProperties(originalName)];
+    const currentPropertyNames = [originalName, ...filterMissingProperties(compatPropertyNames(originalName))];
 
     for (const name of currentPropertyNames) {
       const isShorthand = Array.isArray(properties[originalName].computed);
@@ -58,7 +59,7 @@ for (const originalName in properties) {
     obsoleteProperties[originalName] = types;
   }
 
-  const obsoletePropertyNames = compatProperties(originalName, true);
+  const obsoletePropertyNames = filterMissingProperties(compatPropertyNames(originalName, true));
 
   for (const name of obsoletePropertyNames) {
     obsoleteProperties[name] = types;
@@ -68,10 +69,21 @@ for (const originalName in properties) {
 for (const name in svgData) {
   const syntax = svgData[name].syntax;
   if (syntax) {
-    svgProperties[name] = typing(parse(syntax));
+    svgProperties[name] = resolveDataTypes(typing(parse(syntax)), svgDataTypeResolver);
   }
 }
 
 export function isVendorProperty(name: string) {
   return REGEX_VENDOR_PROPERTY.test(name);
+}
+
+export function svgDataTypeResolver(name: string): TypeType[] {
+  return name in svgSyntaxes
+    ? resolveDataTypes(typing(parse(svgSyntaxes[name].syntax)), svgDataTypeResolver)
+    : dataTypeResolver(name);
+}
+
+export function filterMissingProperties(propertyNames: string[]) {
+  // Filter only those which isn't defined in MDN data
+  return propertyNames.filter(name => !(name in properties));
 }

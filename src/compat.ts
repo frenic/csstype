@@ -14,7 +14,7 @@ function getData(cssPath: string): MDN.PropertiesCompat | null {
   }
 }
 
-export function compatProperties(name: string, onlyObsolete = false): string[] {
+export function compatPropertyNames(name: string, onlyObsolete = false): string[] {
   const data = getData('properties/' + name);
 
   const properties = [];
@@ -58,7 +58,7 @@ export function isDeprecated(name: string) {
   return null;
 }
 
-export function compatSyntax(name: string, entities: EntityType[]): EntityType[] {
+export function compatPropertySyntax(name: string, entities: EntityType[]): EntityType[] {
   const compatEntities: EntityType[] = [];
 
   for (const entity of entities) {
@@ -80,7 +80,7 @@ export function compatSyntax(name: string, entities: EntityType[]): EntityType[]
           break;
         }
         case Component.Group: {
-          compatEntities.push(componentGroupData(compatSyntax(name, entity.entities), entity.multiplier));
+          compatEntities.push(componentGroupData(compatPropertySyntax(name, entity.entities), entity.multiplier));
           continue;
         }
         case Component.DataType: {

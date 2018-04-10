@@ -1,117 +1,48 @@
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
-import { atRuleDescriptors, IAtRuleDescriptors } from './at-rules';
-import { syntaxes as svgSyntaxes } from './data/svg';
 import parse from './parser';
-import {
-  standardLonghandProperties,
-  standardShorthandProperties,
-  svgProperties,
-  vendorPrefixedLonghandProperties,
-  vendorPrefixedShorthandProperties,
-} from './properties';
-import typing, { IDataType, Type, TypeType } from './typer';
+import typing, { addType, Type, TypeType } from './typer';
 
-interface IDataTypes {
-  [key: string]: TypeType[];
-}
+const MIN_TYPES = 3;
 
-const availableDataTypes: IDataTypes = {};
+const dataTypes: { [key: string]: TypeType[] } = {};
 
-for (const name in syntaxes) {
-  const { syntax } = syntaxes[name];
-  availableDataTypes[name] = typing(parse(syntax));
-}
+export default dataTypes;
 
-for (const name in svgSyntaxes) {
-  const { syntax } = svgSyntaxes[name];
-  availableDataTypes[name] = typing(parse(syntax));
-}
+export function resolveDataTypes(
+  types: TypeType[],
+  resolver: (name: string) => TypeType[] = dataTypeResolver,
+): TypeType[] {
+  let resolvedDataTypes: TypeType[] = [];
 
-const dataTypesMayBeOfInterest: IDataTypes = {};
+  for (const type of types) {
+    if (type.type === Type.DataType) {
+      const resolvedDataType = resolver(type.name);
 
-function isTypeAlias(type: TypeType): type is IDataType {
-  return type.type === Type.DataType;
-}
-
-function addDependentTypeAliases(dataTypes: IDataTypes, name: string) {
-  if (name in dataTypes) {
-    const isDoesntResolveToJustString = !(dataTypes[name].length === 1 && dataTypes[name][0].type === Type.String);
-    if (!(name in dataTypesMayBeOfInterest) && isDoesntResolveToJustString) {
-      dataTypesMayBeOfInterest[name] = dataTypes[name];
-    }
-    const typeAliases: IDataType[] = [];
-    for (const type of dataTypes[name]) {
-      if (isTypeAlias(type)) {
-        typeAliases.push(type);
-      }
-    }
-    for (const type of typeAliases) {
-      if (type.name) {
-        addDependentTypeAliases(dataTypes, type.name);
-      }
-    }
-  }
-}
-
-const atRuleProperties: IAtRuleDescriptors = {};
-
-for (const name in atRuleDescriptors) {
-  for (const property in atRuleDescriptors[name]) {
-    atRuleProperties[property] = atRuleDescriptors[name][property];
-  }
-}
-
-for (const descriptors of [
-  standardLonghandProperties,
-  standardShorthandProperties,
-  vendorPrefixedLonghandProperties,
-  vendorPrefixedShorthandProperties,
-  svgProperties,
-  atRuleProperties,
-]) {
-  for (const name in descriptors) {
-    const typeAliases: IDataType[] = [];
-    for (const type of descriptors[name]) {
-      if (isTypeAlias(type)) {
-        typeAliases.push(type);
-      }
-    }
-    for (const type of typeAliases) {
-      if (type.name) {
-        addDependentTypeAliases(availableDataTypes, type.name);
-      }
-    }
-  }
-}
-
-function filterInterestingDataTypes(dataTypes: IDataTypes): IDataTypes {
-  const interesting: IDataTypes = {};
-  let happy = true;
-  for (const name in dataTypes) {
-    const onlyContainsString = dataTypes[name].length === 1 && dataTypes[name][0].type === Type.String;
-
-    if (onlyContainsString) {
-      happy = false;
-    } else {
-      // Exclude type aliases that's not of interest
-      const dataTypeWithInterestingDependencies = dataTypes[name].filter(
-        type => type.type !== Type.DataType || (!!type.name && type.name in dataTypes),
-      );
-
-      // Those excluded type aliases need to resolve to string
-      if (dataTypeWithInterestingDependencies.length < dataTypes[name].length) {
-        happy = false;
-        if (dataTypeWithInterestingDependencies.every(type => type.type !== Type.String)) {
-          dataTypeWithInterestingDependencies.push({ type: Type.String });
+      if (resolvedDataType.length >= MIN_TYPES) {
+        resolvedDataTypes = addType(resolvedDataTypes, addDataType(type.name, resolvedDataType));
+      } else {
+        for (const resolvedType of resolvedDataType) {
+          resolvedDataTypes = addType(resolvedDataTypes, resolvedType);
         }
       }
-
-      interesting[name] = dataTypeWithInterestingDependencies;
+    } else {
+      resolvedDataTypes = addType(resolvedDataTypes, type);
     }
   }
-  return happy ? interesting : filterInterestingDataTypes(interesting);
+
+  return resolvedDataTypes;
 }
 
-const interestingDataTypes = filterInterestingDataTypes(dataTypesMayBeOfInterest);
+export function dataTypeResolver(name: string): TypeType[] {
+  return name in syntaxes
+    ? resolveDataTypes(typing(parse(syntaxes[name].syntax)), dataTypeResolver)
+    : [{ type: Type.String }];
+}
 
-export default interestingDataTypes;
+function addDataType(name: string, types: TypeType[]): TypeType {
+  dataTypes[name] = types;
+  return {
+    type: Type.DataType,
+    name,
+  };
+}
