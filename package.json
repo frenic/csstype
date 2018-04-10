@@ -31,7 +31,8 @@
     "lazy": "tsc && npm run lint && npm run pretty",
     "test": "jest --no-cache",
     "typecheck": "tsc typecheck.ts --noEmit --pretty & flow check typecheck.js",
-    "prepublish": "tsc && npm run test && npm run build && npm run typecheck"
+    "prepublish": "tsc && npm run test && npm run build && npm run typecheck",
+    "rebase-build": "git rebase -s recursive -X theirs --exec \"yarn build && git commit -a --amend --no-verify --no-edit --allow-empty\""
   },
   "files": [
     "index.d.ts",
