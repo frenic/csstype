@@ -1,9 +1,9 @@
 {
   "name": "csstype",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "main": "",
   "types": "index.d.ts",
-  "description": "TypeScript definitions for CSS",
+  "description": "Strict TypeScript and Flow types for style based on MDN data",
   "repository": "https://github.com/frenic/csstype",
   "author": "Fredrik Nicol <fredrik.nicol@gmail.com>",
   "license": "MIT",
