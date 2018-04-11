@@ -1,5 +1,5 @@
-import { DeclarableType, declarations, interfaces, isAliasProperty } from './declarator';
-import { IGenerics, Type } from './typer';
+import { DeclarableType, declarations, IGenerics, interfaces, isAliasProperty } from './declarator';
+import { Type } from './typer';
 
 const EOL = '\n';
 
@@ -50,7 +50,7 @@ function flow() {
   }
 
   let declarationsOutput = '';
-  for (const declaration of declarations) {
+  for (const declaration of declarations.values()) {
     if (declarationsOutput) {
       declarationsOutput += EOL + EOL;
     }
@@ -86,6 +86,10 @@ function typescript() {
     interfacesOutput += '{' + EOL;
 
     for (const property of item.properties) {
+      if (property.obsolete) {
+        interfacesOutput += '/** @deprecated */' + EOL;
+      }
+
       if (isAliasProperty(property)) {
         const generics = stringifyGenerics(property.generics, true);
         interfacesOutput += `${JSON.stringify(property.name)}?: ${
@@ -107,7 +111,7 @@ function typescript() {
   }
 
   let declarationsOutput = '';
-  for (const declaration of declarations) {
+  for (const declaration of declarations.values()) {
     if (declarationsOutput) {
       declarationsOutput += EOL + EOL;
     }

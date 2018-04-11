@@ -37,6 +37,23 @@ $ yarn add csstype
 
 ## Style types
 
+All properties are categorized in different uses and in several technical variations to provide the type that suits as many as possible.
+
+Categories:
+
+* `Standard` - Current properties
+* `Vendor` - Vendor prefixed properties
+* `Obsolete` - Removed or deprecated properties
+* `Svg` - SVG-specific properties
+
+Variations:
+
+* _Default variation_ - JavaScript default (camel) cased property names
+* `Hyphen` - CSS default (kebab) cased property names
+* `Fallback` - Accepts array of values e.g. `string | string[]`
+
+All interfaces has one optional generic argument to define length. It defaults to `string | 0` because `0` is the [only unitless length](https://www.w3.org/TR/REC-CSS2/syndata.html#length-units) by default. You can specify this, e.g. `string | number`, for platforms and libraries that accepts any numeric value with a specific unit.
+
 ### `Properties`
 
 CSS properties interface with **camel** cased property names:
@@ -49,6 +66,7 @@ Extends:
 * `VendorProperties`
   * `VendorLonghandProperties`
   * `VendorShorthandProperties`
+* `ObsoleteProperties`
 * `SvgProperties`
 
 ### `PropertiesHyphen`
@@ -63,6 +81,7 @@ Extends:
 * `VendorPropertiesHyphen`
   * `VendorLonghandPropertiesHyphen`
   * `VendorShorthandPropertiesHyphen`
+* `ObsoletePropertiesHyphen`
 * `SvgPropertiesHyphen`
 
 ### `PropertiesFallback`
@@ -77,6 +96,7 @@ Extends:
 * `VendorPropertiesFallback`
   * `VendorLonghandPropertiesFallback`
   * `VendorShorthandPropertiesFallback`
+* `ObsoletePropertiesFallback`
 * `SvgPropertiesFallback`
 
 ### `PropertiesHyphenFallback`
@@ -91,6 +111,7 @@ Extends:
 * `VendorPropertiesHyphenFallback`
   * `VendorLonghandPropertiesHyphenFallback`
   * `VendorShorthandPropertiesHyphenFallback`
+* `ObsoletePropertiesHyphenFallback`
 * `SvgPropertiesHyphenFallback`
 
 ## At-rule types
@@ -135,7 +156,7 @@ String literals of pseudo classes and pseudo elements
 
 ## Usage
 
-Length unit defaults to `string | 0` because `0` is the [only unitless length](https://www.w3.org/TR/REC-CSS2/syndata.html#length-units). But it's possible to override it using generics.
+Length defaults to `string | 0`. But it's possible to override it using generics.
 
 ```ts
 import * as CSS from 'csstype';

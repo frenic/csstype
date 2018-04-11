@@ -3,6 +3,8 @@ import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
 import dataTypes from './data-types';
 import {
   globals,
+  isVendorProperty,
+  obsoleteProperties,
   standardLonghandProperties,
   standardShorthandProperties,
   svgProperties,
@@ -10,7 +12,18 @@ import {
   vendorPrefixedShorthandProperties,
 } from './properties';
 import { advancedPseudos, simplePseudos } from './pseudos';
-import { IAlias, IDataType, IGenerics, Type, TypeType } from './typer';
+import { IDataType, Type, TypeType } from './typer';
+
+export interface IAlias {
+  type: Type.Alias;
+  name: string;
+  generics: IGenerics[];
+}
+
+export interface IGenerics {
+  name: string;
+  defaults?: string;
+}
 
 interface Interface {
   name: string;
@@ -24,16 +37,18 @@ interface IPropertyAlias {
   name: string;
   generics: IGenerics[];
   alias: IAlias;
+  obsolete: boolean;
 }
 
 interface IPropertyType {
   name: string;
   type: DeclarableType;
+  obsolete: boolean;
 }
 
 type PropertyType = IPropertyAlias | IPropertyType;
 
-export type MixedType = TypeType<IDataType | IAlias>;
+export type MixedType = TypeType<IDataType<Type.DataType> | IAlias>;
 export type DeclarableType = TypeType<IAlias>;
 
 export interface IDeclaration {
@@ -43,10 +58,45 @@ export interface IDeclaration {
   generics: IGenerics[];
 }
 
-export const lengthGeneric: IGenerics = {
-  name: 'TLength',
-  defaults: 'string | 0',
+export const declarations: Map<MixedType[], IDeclaration> = new Map();
+
+const atRuleDeclaration: IDeclaration = {
+  name: 'AtRules',
+  export: true,
+  types: declarable(atRuleList),
+  generics: [],
 };
+
+declarations.set(atRuleList, atRuleDeclaration);
+
+const advancedPseudosDeclaration: IDeclaration = {
+  name: 'AdvancedPseudos',
+  export: true,
+  types: declarable(advancedPseudos),
+  generics: [],
+};
+
+declarations.set(advancedPseudos, advancedPseudosDeclaration);
+
+const simplePseudosDeclaration: IDeclaration = {
+  name: 'SimplePseudos',
+  export: true,
+  types: declarable(simplePseudos),
+  generics: [],
+};
+
+declarations.set(simplePseudos, simplePseudosDeclaration);
+
+const pseudos = [aliasOf(advancedPseudosDeclaration), aliasOf(simplePseudosDeclaration)];
+
+const pseudosDeclaration: IDeclaration = {
+  name: 'Pseudos',
+  export: true,
+  types: pseudos,
+  generics: [],
+};
+
+declarations.set(pseudos, pseudosDeclaration);
 
 const globalsDeclaration: IDeclaration = {
   name: 'Globals',
@@ -55,46 +105,33 @@ const globalsDeclaration: IDeclaration = {
   generics: [],
 };
 
+declarations.set(globals, globalsDeclaration);
+
+const globalsAndString: DeclarableType[] = [aliasOf(globalsDeclaration), { type: Type.String }];
+
 const globalsAndStringDeclaration: IDeclaration = {
   name: 'GlobalsString',
   export: false,
-  types: declarable([aliasOf(globalsDeclaration), { type: Type.String }]),
+  types: globalsAndString,
   generics: [],
 };
+
+declarations.set(globalsAndString, globalsAndStringDeclaration);
+
+const declarableGlobalsAndNumber: DeclarableType[] = [aliasOf(globalsDeclaration), { type: Type.Number }];
 
 const globalsAndNumberDeclaration: IDeclaration = {
   name: 'GlobalsNumber',
   export: false,
-  types: declarable([aliasOf(globalsDeclaration), { type: Type.Number }]),
+  types: declarableGlobalsAndNumber,
   generics: [],
 };
 
-const advancedPseudoDeclaration: IDeclaration = {
-  name: 'AdvancedPseudos',
-  export: true,
-  types: declarable(advancedPseudos),
-  generics: [],
-};
+declarations.set(declarableGlobalsAndNumber, globalsAndNumberDeclaration);
 
-const simplePseudoDeclaration: IDeclaration = {
-  name: 'SimplePseudos',
-  export: true,
-  types: declarable(simplePseudos),
-  generics: [],
-};
-
-const pseudoDeclaration: IDeclaration = {
-  name: 'Pseudos',
-  export: true,
-  types: [aliasOf(advancedPseudoDeclaration), aliasOf(simplePseudoDeclaration)],
-  generics: [],
-};
-
-const atRuleDeclaration: IDeclaration = {
-  name: 'AtRules',
-  export: true,
-  types: declarable(atRuleList),
-  generics: [],
+export const lengthGeneric: IGenerics = {
+  name: 'TLength',
+  defaults: 'string | 0',
 };
 
 const standardLonghandPropertiesDefinition: IPropertyAlias[] = [];
@@ -105,45 +142,46 @@ const vendorLonghandPropertiesDefinition: IPropertyAlias[] = [];
 const vendorShorthandPropertiesDefinition: IPropertyAlias[] = [];
 const vendorLonghandPropertiesHyphenDefinition: IPropertyAlias[] = [];
 const vendorShorthandPropertiesHyphenDefinition: IPropertyAlias[] = [];
+const obsoletePropertiesDefinition: IPropertyAlias[] = [];
+const obsoletePropertiesHyphenDefinition: IPropertyAlias[] = [];
 const svgPropertiesDefinition: IPropertyAlias[] = [];
 const svgPropertiesHyphenDefinition: IPropertyAlias[] = [];
 
 const PROPERTY = 'Property';
 
-export const declarations: IDeclaration[] = [
-  atRuleDeclaration,
-  advancedPseudoDeclaration,
-  simplePseudoDeclaration,
-  pseudoDeclaration,
-  globalsDeclaration,
-  globalsAndStringDeclaration,
-  globalsAndNumberDeclaration,
-];
+function toPropertyDeclarationName(name: string) {
+  return toPascalCase(name) + PROPERTY;
+}
 
 for (const properties of [
   standardLonghandProperties,
   standardShorthandProperties,
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
+  obsoleteProperties,
   svgProperties,
 ]) {
   let definitions: IPropertyAlias[];
   let hyphenDefinitions: IPropertyAlias[];
-  let isVendorProperties = false;
+  let isObsoleteProperties = false;
+
   switch (properties) {
     case svgProperties:
       definitions = svgPropertiesDefinition;
       hyphenDefinitions = svgPropertiesHyphenDefinition;
       break;
+    case obsoleteProperties:
+      definitions = obsoletePropertiesDefinition;
+      hyphenDefinitions = obsoletePropertiesHyphenDefinition;
+      isObsoleteProperties = true;
+      break;
     case vendorPrefixedShorthandProperties:
       definitions = vendorShorthandPropertiesDefinition;
       hyphenDefinitions = vendorShorthandPropertiesHyphenDefinition;
-      isVendorProperties = true;
       break;
     case vendorPrefixedLonghandProperties:
       definitions = vendorLonghandPropertiesDefinition;
       hyphenDefinitions = vendorLonghandPropertiesHyphenDefinition;
-      isVendorProperties = true;
       break;
     case standardShorthandProperties:
       definitions = standardShorthandPropertiesDefinition;
@@ -154,43 +192,61 @@ for (const properties of [
       hyphenDefinitions = standardLonghandPropertiesHyphenDefinition;
       break;
   }
-  for (const name in properties) {
-    const types = filterMissingDataTypes(properties[name]);
-    let declaration: IDeclaration;
-    const generics = lengthIn(types) ? [lengthGeneric] : [];
 
-    if (types.length === 0) {
-      declaration = globalsDeclaration;
-    } else if (onlyContainsString(types)) {
-      declaration = globalsAndStringDeclaration;
-    } else if (onlyContainsNumber(types)) {
-      declaration = globalsAndNumberDeclaration;
-    } else {
-      const declarationName = toPascalCase(name) + PROPERTY;
+  // Sort alphabetical, starting with standard properties
+  const propertyNames = ([] as string[]).concat(
+    Object.keys(properties)
+      .filter(name => name[0] !== '-')
+      .sort(),
+    Object.keys(properties)
+      .filter(name => name[0] === '-')
+      .sort(),
+  );
 
-      declaration = {
-        name: declarationName,
-        export: false,
-        types: [aliasOf(globalsDeclaration), ...declarable(types)],
-        generics,
-      };
+  for (const name of propertyNames) {
+    const property = properties[name];
+    const generics = lengthIn(property.types) ? [lengthGeneric] : [];
 
-      // Some SVG properties are shared with regular style properties
-      // and we assume here that they are identical
-      if (!declarationExists(declarationName)) {
-        declarations.push(declaration);
+    // Some properties are prefixed and share the same type so we
+    // make sure to reuse the same declaration of that type
+    let declaration = declarations.get(property.types);
+
+    if (!declaration) {
+      if (property.types.length === 0) {
+        declaration = globalsDeclaration;
+      } else if (onlyContainsString(property.types)) {
+        declaration = globalsAndStringDeclaration;
+      } else if (onlyContainsNumber(property.types)) {
+        declaration = globalsAndNumberDeclaration;
+      } else {
+        const declarationName = toPropertyDeclarationName(property.name);
+
+        declaration = {
+          name: declarationName,
+          export: false,
+          types: [aliasOf(globalsDeclaration), ...declarable(property.types)],
+          generics,
+        };
+
+        // Some SVG properties are shared with regular style properties
+        // and we assume here that they are identical
+        if (!declarationNameExists(declarationName)) {
+          declarations.set(property.types, declaration);
+        }
       }
     }
 
     definitions.push({
-      name: isVendorProperties ? toVendorPrefixCase(name) : toCamelCase(name),
+      name: isVendorProperty(name) ? toVendorPrefixCase(name) : toCamelCase(name),
       generics,
       alias: aliasOf(declaration),
+      obsolete: isObsoleteProperties,
     });
     hyphenDefinitions.push({
       name,
       generics,
       alias: aliasOf(declaration),
+      obsolete: isObsoleteProperties,
     });
   }
 }
@@ -203,7 +259,7 @@ for (const name in atRuleDescriptors) {
   atRuleHyphenDefinitions[name] = [];
 
   for (const property in atRuleDescriptors[name]) {
-    const types = filterMissingDataTypes(atRuleDescriptors[name][property]);
+    const types = atRuleDescriptors[name][property];
     const generics = lengthIn(types) ? [lengthGeneric] : [];
 
     if (onlyContainsString(types) || onlyContainsNumber(types)) {
@@ -214,39 +270,46 @@ for (const name in atRuleDescriptors) {
       atRuleDefinitions[name].push({
         name: toCamelCase(property),
         type,
+        obsolete: false,
       });
       atRuleHyphenDefinitions[name].push({
         name: property,
         type,
+        obsolete: false,
       });
     } else {
       const declaration: IDeclaration = {
-        name: toPascalCase(name.slice(1)) + toPascalCase(property) + PROPERTY,
+        name: toPascalCase(name.slice(1)) + toPropertyDeclarationName(property),
         export: false,
         types: declarable(types),
         generics,
       };
-      declarations.push(declaration);
+
+      declarations.set(types, declaration);
 
       atRuleDefinitions[name].push({
         name: toCamelCase(property),
         generics,
         alias: aliasOf(declaration),
+        obsolete: false,
       });
       atRuleHyphenDefinitions[name].push({
         name: property,
         generics,
         alias: aliasOf(declaration),
+        obsolete: false,
       });
     }
   }
 }
 
-for (const name in dataTypes) {
-  declarations.push({
+// Loop in alphabetical order
+for (const name of Object.keys(dataTypes).sort()) {
+  const declarableDataType = declarable(dataTypes[name]);
+  declarations.set(declarableDataType, {
     name: toPascalCase(name),
     export: false,
-    types: declarable(dataTypes[name]),
+    types: declarableDataType,
     generics: lengthIn(dataTypes[name]) ? [lengthGeneric] : [],
   });
 }
@@ -262,6 +325,8 @@ const VENDOR = 'Vendor';
 const INTERFACE_VENDOR_LONGHAND_PROPERTIES = VENDOR + LONGHAND + PROPERTIES;
 const INTERFACE_VENDOR_SHORTHAND_PROPERTIES = VENDOR + SHORTHAND + PROPERTIES;
 const INTERFACE_VENDOR_PROPERTIES = VENDOR + PROPERTIES;
+const OBSOLETE = 'Obsolete';
+const INTERFACE_OBSOLETE_PROPERTIES = OBSOLETE + PROPERTIES;
 const SVG = 'Svg';
 const INTERFACE_SVG_PROPERTIES = SVG + PROPERTIES;
 const INTERFACE_ALL_PROPERTIES = PROPERTIES;
@@ -272,6 +337,7 @@ const INTERFACE_STANDARD_PROPERTIES_HYPHEN = INTERFACE_STANDARD_PROPERTIES + HYP
 const INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN = INTERFACE_VENDOR_LONGHAND_PROPERTIES + HYPHEN;
 const INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN = INTERFACE_VENDOR_SHORTHAND_PROPERTIES + HYPHEN;
 const INTERFACE_VENDOR_PROPERTIES_HYPHEN = INTERFACE_VENDOR_PROPERTIES + HYPHEN;
+const INTERFACE_OBSOLETE_PROPERTIES_HYPHEN = INTERFACE_OBSOLETE_PROPERTIES + HYPHEN;
 const INTERFACE_SVG_PROPERTIES_HYPHEN = INTERFACE_SVG_PROPERTIES + HYPHEN;
 const INTERFACE_ALL_PROPERTIES_HYPHEN = INTERFACE_ALL_PROPERTIES + HYPHEN;
 const FALLBACK = 'Fallback';
@@ -281,6 +347,7 @@ const INTERFACE_STANDARD_PROPERTIES_FALLBACK = INTERFACE_STANDARD_PROPERTIES + F
 const INTERFACE_VENDOR_LONGHAND_PROPERTIES_FALLBACK = INTERFACE_VENDOR_LONGHAND_PROPERTIES + FALLBACK;
 const INTERFACE_VENDOR_SHORTHAND_PROPERTIES_FALLBACK = INTERFACE_VENDOR_SHORTHAND_PROPERTIES + FALLBACK;
 const INTERFACE_VENDOR_PROPERTIES_FALLBACK = INTERFACE_VENDOR_PROPERTIES + FALLBACK;
+const INTERFACE_OBSOLETE_PROPERTIES_FALLBACK = INTERFACE_OBSOLETE_PROPERTIES + FALLBACK;
 const INTERFACE_SVG_PROPERTIES_FALLBACK = INTERFACE_SVG_PROPERTIES + FALLBACK;
 const INTERFACE_ALL_PROPERTIES_FALLBACK = INTERFACE_ALL_PROPERTIES + FALLBACK;
 const INTERFACE_STANDARD_LONGHAND_PROPERTIES_HYPHEN_FALLBACK =
@@ -291,6 +358,7 @@ const INTERFACE_STANDARD_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_STANDARD_PROPERT
 const INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_LONGHAND_PROPERTIES + HYPHEN + FALLBACK;
 const INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_SHORTHAND_PROPERTIES + HYPHEN + FALLBACK;
 const INTERFACE_VENDOR_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_VENDOR_PROPERTIES + HYPHEN + FALLBACK;
+const INTERFACE_OBSOLETE_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_OBSOLETE_PROPERTIES + HYPHEN + FALLBACK;
 const INTERFACE_SVG_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_SVG_PROPERTIES + HYPHEN + FALLBACK;
 const INTERFACE_ALL_PROPERTIES_HYPHEN_FALLBACK = INTERFACE_ALL_PROPERTIES + HYPHEN + FALLBACK;
 
@@ -306,12 +374,14 @@ const vendorPropertiesGenerics = genericsOf([
   ...vendorLonghandPropertiesDefinition,
   ...vendorShorthandPropertiesDefinition,
 ]);
-const svgPropertiesGenerics = genericsOf([...svgPropertiesDefinition]);
+const obsoletePropertiesGenerics = genericsOf(obsoletePropertiesDefinition);
+const svgPropertiesGenerics = genericsOf(svgPropertiesDefinition);
 const allPropertiesGenerics = genericsOf([
   ...standardLonghandPropertiesDefinition,
   ...standardShorthandPropertiesDefinition,
   ...vendorLonghandPropertiesDefinition,
   ...vendorShorthandPropertiesDefinition,
+  ...obsoletePropertiesDefinition,
   ...svgPropertiesDefinition,
 ]);
 
@@ -363,6 +433,14 @@ const vendorPropertiesInterface: Interface = {
   properties: [],
 };
 
+const obsoletePropertiesInterface: Interface = {
+  name: INTERFACE_OBSOLETE_PROPERTIES,
+  generics: obsoletePropertiesGenerics,
+  extends: [],
+  fallback: false,
+  properties: obsoletePropertiesDefinition,
+};
+
 const svgPropertiesInterface: Interface = {
   name: INTERFACE_SVG_PROPERTIES,
   generics: svgPropertiesGenerics,
@@ -374,7 +452,12 @@ const svgPropertiesInterface: Interface = {
 const allPropertiesInterface: Interface = {
   name: INTERFACE_ALL_PROPERTIES,
   generics: allPropertiesGenerics,
-  extends: [standardPropertiesInterface, vendorPropertiesInterface, svgPropertiesInterface],
+  extends: [
+    standardPropertiesInterface,
+    vendorPropertiesInterface,
+    obsoletePropertiesInterface,
+    svgPropertiesInterface,
+  ],
   fallback: false,
   properties: [],
 };
@@ -427,6 +510,14 @@ const vendorPropertiesHyphenInterface: Interface = {
   properties: [],
 };
 
+const obsoletePropertiesHyphenInterface: Interface = {
+  name: INTERFACE_OBSOLETE_PROPERTIES_HYPHEN,
+  generics: obsoletePropertiesGenerics,
+  extends: [],
+  fallback: false,
+  properties: obsoletePropertiesHyphenDefinition,
+};
+
 const svgPropertiesHyphenInterface: Interface = {
   name: INTERFACE_SVG_PROPERTIES_HYPHEN,
   generics: svgPropertiesGenerics,
@@ -438,7 +529,12 @@ const svgPropertiesHyphenInterface: Interface = {
 const allPropertiesHyphenInterface: Interface = {
   name: INTERFACE_ALL_PROPERTIES_HYPHEN,
   generics: allPropertiesGenerics,
-  extends: [standardPropertiesHyphenInterface, vendorPropertiesHyphenInterface, svgPropertiesHyphenInterface],
+  extends: [
+    standardPropertiesHyphenInterface,
+    vendorPropertiesHyphenInterface,
+    obsoletePropertiesHyphenInterface,
+    svgPropertiesHyphenInterface,
+  ],
   fallback: false,
   properties: [],
 };
@@ -481,6 +577,12 @@ const vendorPropertiesFallbackInterface: Interface = {
   fallback: true,
 };
 
+const obsoletePropertiesFallbackInterface: Interface = {
+  ...obsoletePropertiesInterface,
+  name: INTERFACE_OBSOLETE_PROPERTIES_FALLBACK,
+  fallback: true,
+};
+
 const svgPropertiesFallbackInterface: Interface = {
   ...svgPropertiesInterface,
   name: INTERFACE_SVG_PROPERTIES_FALLBACK,
@@ -490,7 +592,12 @@ const svgPropertiesFallbackInterface: Interface = {
 const allPropertiesFallbackInterface: Interface = {
   ...allPropertiesInterface,
   name: INTERFACE_ALL_PROPERTIES_FALLBACK,
-  extends: [standardPropertiesFallbackInterface, vendorPropertiesFallbackInterface, svgPropertiesFallbackInterface],
+  extends: [
+    standardPropertiesFallbackInterface,
+    vendorPropertiesFallbackInterface,
+    obsoletePropertiesFallbackInterface,
+    svgPropertiesFallbackInterface,
+  ],
   fallback: true,
 };
 
@@ -532,6 +639,12 @@ const vendorPropertiesHyphenFallbackInterface: Interface = {
   fallback: true,
 };
 
+const obsoletePropertiesHyphenFallbackInterface: Interface = {
+  ...obsoletePropertiesHyphenInterface,
+  name: INTERFACE_OBSOLETE_PROPERTIES_HYPHEN_FALLBACK,
+  fallback: true,
+};
+
 const svgPropertiesHyphenFallbackInterface: Interface = {
   ...svgPropertiesHyphenInterface,
   name: INTERFACE_SVG_PROPERTIES_HYPHEN_FALLBACK,
@@ -544,6 +657,7 @@ const allPropertiesHyphenFallbackInterface: Interface = {
   extends: [
     standardPropertiesHyphenFallbackInterface,
     vendorPropertiesHyphenFallbackInterface,
+    obsoletePropertiesHyphenFallbackInterface,
     svgPropertiesHyphenFallbackInterface,
   ],
   fallback: true,
@@ -551,7 +665,8 @@ const allPropertiesHyphenFallbackInterface: Interface = {
 
 const atRuleInterfaces: Interface[] = [];
 
-for (const name in atRuleDefinitions) {
+// Loop in alphabetical order
+for (const name of Object.keys(atRuleDefinitions).sort()) {
   const pascalName = toPascalCase(name.slice(1));
   const generics = genericsOf(atRuleDefinitions[name].filter(isAliasProperty));
   atRuleInterfaces.push(
@@ -593,6 +708,7 @@ export const interfaces = [
   vendorLonghandPropertiesInterface,
   vendorShorthandPropertiesInterface,
   vendorPropertiesInterface,
+  obsoletePropertiesInterface,
   svgPropertiesInterface,
   allPropertiesInterface,
   standardLonghandPropertiesHyphenInterface,
@@ -601,6 +717,7 @@ export const interfaces = [
   vendorLonghandPropertiesHyphenInterface,
   vendorShorthandPropertiesHyphenInterface,
   vendorPropertiesHyphenInterface,
+  obsoletePropertiesHyphenInterface,
   svgPropertiesHyphenInterface,
   allPropertiesHyphenInterface,
   standardLongformPropertiesFallbackInterface,
@@ -609,6 +726,7 @@ export const interfaces = [
   vendorLonghandPropertiesFallbackInterface,
   vendorShorthandPropertiesFallbackInterface,
   vendorPropertiesFallbackInterface,
+  obsoletePropertiesFallbackInterface,
   svgPropertiesFallbackInterface,
   allPropertiesFallbackInterface,
   standardLongformPropertiesHyphenFallbackInterface,
@@ -617,22 +735,25 @@ export const interfaces = [
   vendorLonghandPropertiesHyphenFallbackInterface,
   vendorShorthandPropertiesHyphenFallbackInterface,
   vendorPropertiesHyphenFallbackInterface,
+  obsoletePropertiesHyphenFallbackInterface,
   svgPropertiesHyphenFallbackInterface,
   allPropertiesHyphenFallbackInterface,
   ...atRuleInterfaces,
 ];
 
+export function isAliasProperty(value: PropertyType): value is IPropertyAlias {
+  return 'alias' in value;
+}
+
 function declarable(types: MixedType[]): DeclarableType[] {
-  return types.sort(sorter).map<DeclarableType>(
-    type =>
-      type.type === Type.DataType
-        ? {
-            type: Type.Alias,
-            name: toPascalCase(type.name),
-            generics: type.name && type.name in dataTypes && lengthIn(dataTypes[type.name]) ? [lengthGeneric] : [],
-          }
-        : type,
-  );
+  return types.sort(sorter).map<DeclarableType>(type => {
+    switch (type.type) {
+      case Type.DataType:
+        return alias(toPascalCase(type.name), type.name in dataTypes ? dataTypes[type.name] : null);
+      default:
+        return type;
+    }
+  });
 }
 
 function sorter(a: MixedType, b: MixedType) {
@@ -649,40 +770,29 @@ function genericsOf(definitions: IPropertyAlias[]) {
   return Array.from(new Set(([] as IGenerics[]).concat(...definitions.map(definition => definition.generics))));
 }
 
-export function isAliasProperty(value: PropertyType): value is IPropertyAlias {
-  return 'alias' in value;
-}
-
-export function lengthIn(types: MixedType[]) {
+function lengthIn(types: MixedType[]): boolean {
   return !types.every(type => {
-    if (type.type === Type.Length) {
-      return false;
+    switch (type.type) {
+      case Type.Length:
+        return false;
+      case Type.DataType:
+        return !(type.name in dataTypes && lengthIn(dataTypes[type.name]));
+      default:
+        return true;
     }
-    if (type.type === Type.DataType && type.name && type.name in dataTypes && lengthIn(dataTypes[type.name])) {
-      return false;
-    }
-    return true;
   });
 }
 
-function aliasOf({ name, types }: IDeclaration): IAlias {
+function alias(name: string, types?: null | MixedType[]): IAlias {
   return {
     type: Type.Alias,
     name,
-    generics: lengthIn(types) ? [lengthGeneric] : [],
+    generics: types && lengthIn(types) ? [lengthGeneric] : [],
   };
 }
 
-function filterMissingDataTypes(types: MixedType[]) {
-  // Exclude type aliases that's not of interest
-  const filtered = types.filter(type => type.type !== Type.DataType || (!!type.name && type.name in dataTypes));
-
-  // Those excluded type aliases need to resolve to string
-  if (filtered.length < types.length && filtered.every(type => type.type !== Type.String)) {
-    filtered.push({ type: Type.String });
-  }
-
-  return filtered;
+function aliasOf({ name, types }: IDeclaration): IAlias {
+  return alias(name, types);
 }
 
 function onlyContainsString(types: MixedType[]) {
@@ -693,6 +803,12 @@ function onlyContainsNumber(types: MixedType[]) {
   return types.every(type => type.type === Type.Number);
 }
 
-function declarationExists(name: string) {
-  return !declarations.every(declaration => declaration.name !== name);
+function declarationNameExists(name: string) {
+  for (const declaration of declarations.values()) {
+    if (declaration.name === name) {
+      return true;
+    }
+  }
+
+  return false;
 }

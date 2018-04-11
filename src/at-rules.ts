@@ -1,9 +1,10 @@
 import * as atRules from 'mdn-data/css/at-rules.json';
+import { resolveDataTypes } from './data-types';
 import parse from './parser';
-import typing, { IStringLiteral, Type, TypeType } from './typer';
+import typing, { IStringLiteral, ResolvedType, Type } from './typer';
 
 export interface IAtRuleDescriptors {
-  [descriptor: string]: TypeType[];
+  [descriptor: string]: ResolvedType[];
 }
 
 export const atRuleList: IStringLiteral[] = [];
@@ -21,7 +22,7 @@ for (const name in atRules) {
     const descriptors: IAtRuleDescriptors = {};
 
     for (const descriptor in atRule.descriptors) {
-      descriptors[descriptor] = typing(parse(atRule.descriptors[descriptor].syntax));
+      descriptors[descriptor] = resolveDataTypes(typing(parse(atRule.descriptors[descriptor].syntax)));
     }
 
     atRuleDescriptors[name] = descriptors;
