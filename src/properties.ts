@@ -1,6 +1,6 @@
 import * as properties from 'mdn-data/css/properties.json';
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
-import { compatPropertyNames, compatPropertySyntax, isDeprecated } from './compat';
+import { compatNames, compatSyntax, getCompat, getPropertyData, isDeprecated } from './compat';
 import { resolveDataTypes } from './data-types';
 import { properties as rawSvgProperties, syntaxes as svgSyntaxes } from './data/svg';
 import parse from './parser';
@@ -42,77 +42,90 @@ for (const originalName in properties) {
     continue;
   }
 
-  const property: IProperty = {
-    name: originalName,
-    types: resolveDataTypes(
-      typing(compatPropertySyntax(originalName, parse(properties[originalName].syntax))),
-      createDataTypeResolver(originalName),
-    ),
-  };
+  // Default values
+  let entities = parse(properties[originalName].syntax);
+  let currentNames: string[] = [originalName];
+  let obsoleteNames: string[] = [];
 
-  if (!isDeprecated(originalName)) {
-    const currentPropertyNames = [originalName, ...filterMissingProperties(compatPropertyNames(originalName))];
+  const compatibilityData = getPropertyData(originalName);
 
-    for (const name of currentPropertyNames) {
-      const isShorthand = Array.isArray(properties[originalName].computed);
+  if (compatibilityData) {
+    const compat = getCompat(compatibilityData);
+    entities = compatSyntax(compatibilityData, entities);
+    currentNames = currentNames.concat(filterMissingProperties(compatNames(compat, originalName)));
+    obsoleteNames = obsoleteNames.concat(filterMissingProperties(compatNames(compat, originalName, true)));
 
-      if (isVendorProperty(name)) {
-        if (isShorthand) {
-          vendorPrefixedShorthandProperties[name] = property;
-        } else {
-          vendorPrefixedLonghandProperties[name] = property;
-        }
-      } else {
-        if (isShorthand) {
-          standardShorthandProperties[name] = property;
-        } else {
-          standardLonghandProperties[name] = property;
-        }
-      }
+    if (isDeprecated(compat)) {
+      // Move all property names to obsolete
+      obsoleteNames = obsoleteNames.concat(currentNames);
+      currentNames = [];
     }
-  } else {
-    obsoleteProperties[originalName] = property;
   }
 
-  const obsoletePropertyNames = filterMissingProperties(compatPropertyNames(originalName, true));
+  const property: IProperty = {
+    name: originalName,
+    types: resolveDataTypes(typing(entities), createDataTypeResolver(compatibilityData)),
+  };
 
-  for (const name of obsoletePropertyNames) {
+  for (const name of currentNames) {
+    const isShorthand = Array.isArray(properties[originalName].computed);
+
+    if (isVendorProperty(name)) {
+      if (isShorthand) {
+        vendorPrefixedShorthandProperties[name] = property;
+      } else {
+        vendorPrefixedLonghandProperties[name] = property;
+      }
+    } else {
+      if (isShorthand) {
+        standardShorthandProperties[name] = property;
+      } else {
+        standardLonghandProperties[name] = property;
+      }
+    }
+  }
+
+  for (const name of obsoleteNames) {
     obsoleteProperties[name] = property;
   }
 }
 
 for (const name in rawSvgProperties) {
+  const compatibilityData = getPropertyData(name);
   const syntax = rawSvgProperties[name].syntax;
   if (syntax) {
     svgProperties[name] = {
       name,
-      types: resolveDataTypes(typing(parse(syntax)), createSvgDataTypeResolver(name)),
+      types: resolveDataTypes(typing(parse(syntax)), createSvgDataTypeResolver(compatibilityData)),
     };
   }
-}
-
-export function createDataTypeResolver(propertyName: string) {
-  const resolver: (dataTypeName: string) => ResolvedType[] = dataTypeName => {
-    const data = syntaxes[dataTypeName] || properties[dataTypeName];
-    return data
-      ? resolveDataTypes(typing(compatPropertySyntax(propertyName, parse(data.syntax))), resolver)
-      : [{ type: Type.String }];
-  };
-
-  return resolver;
 }
 
 export function isVendorProperty(name: string) {
   return REGEX_VENDOR_PROPERTY.test(name);
 }
 
-export function filterMissingProperties(propertyNames: string[]) {
+export function filterMissingProperties(names: string[]) {
   // Filter only those which isn't defined in MDN data
-  return propertyNames.filter(name => !(name in properties));
+  return names.filter(name => !(name in properties));
 }
 
-function createSvgDataTypeResolver(propertyName: string) {
-  const resolver = createDataTypeResolver(propertyName);
+export function createDataTypeResolver(data: MDN.CompatData | null) {
+  const resolver: (dataTypeName: string) => ResolvedType[] = dataTypeName => {
+    const syntax = syntaxes[dataTypeName] || properties[dataTypeName];
+    return syntax
+      ? resolveDataTypes(
+          data ? typing(compatSyntax(data, parse(syntax.syntax))) : typing(parse(syntax.syntax)),
+          resolver,
+        )
+      : [{ type: Type.String }];
+  };
+
+  return resolver;
+}
+
+function createSvgDataTypeResolver(data: MDN.CompatData | null) {
+  const resolver = createDataTypeResolver(data);
   const svgResolver: (dataTypeName: string) => ResolvedType[] = (dataTypeName: string) =>
     dataTypeName in svgSyntaxes
       ? resolveDataTypes(typing(parse(svgSyntaxes[dataTypeName].syntax)), svgResolver)

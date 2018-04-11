@@ -38,18 +38,57 @@ declare namespace MDN {
     };
   }
 
-  type PropertyCompat = { __compat: MDN.Compat } & { [value: string]: { __compat: MDN.Compat } };
+  type CompatData = { __compat: MDN.Compat } & { [value: string]: { __compat: MDN.Compat } };
+
+  interface AtRulesCompat {
+    css: {
+      'at-rules': {
+        [rule: string]: CompatData;
+      };
+    };
+  }
 
   interface PropertiesCompat {
     css: {
       properties: {
-        [property: string]: PropertyCompat;
+        [property: string]: CompatData;
+      };
+    };
+  }
+
+  interface SelectorsCompat {
+    css: {
+      selectors: {
+        [selector: string]: CompatData;
+      };
+    };
+  }
+
+  interface TypesCompat {
+    css: {
+      types: {
+        [type: string]: CompatData;
       };
     };
   }
 }
 
+declare module 'browser-compat-data/css/at-rules/*.json' {
+  var atRules: MDN.AtRulesCompat;
+  export = atRules;
+}
+
 declare module 'browser-compat-data/css/properties/*.json' {
   var properties: MDN.PropertiesCompat;
   export = properties;
+}
+
+declare module 'browser-compat-data/css/selectors/*.json' {
+  var selectors: MDN.SelectorsCompat;
+  export = selectors;
+}
+
+declare module 'browser-compat-data/css/types/*.json' {
+  var types: MDN.TypesCompat;
+  export = types;
 }
