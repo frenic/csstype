@@ -58,29 +58,6 @@ export function compatNames(compat: MDN.Compat, name: string, onlyRemoved = fals
   return properties;
 }
 
-export function isDeprecated(compat: MDN.Compat) {
-  // Assume not deprecated if is status i missing
-  return !!compat.status && compat.status.deprecated;
-}
-
-export function isAddedBySome(compat: MDN.Compat): boolean {
-  let browser: MDN.Browsers;
-  for (browser in compat.support) {
-    const support = compat.support[browser];
-
-    for (const version of getSupport(support)) {
-      // Assume that the version has the property implemented if `null`
-      const isAdded = !!version.version_added || version.version_added === null;
-
-      if (isAdded) {
-        return true;
-      }
-    }
-  }
-
-  return false;
-}
-
 export function compatSyntax(data: MDN.CompatData, entities: EntityType[]): EntityType[] {
   const compatEntities: EntityType[] = [];
 
@@ -88,6 +65,12 @@ export function compatSyntax(data: MDN.CompatData, entities: EntityType[]): Enti
     if (entity.entity === Entity.Component) {
       switch (entity.component) {
         case Component.Keyword: {
+          if (entity.value in data && !isAddedBySome(getCompat(data[entity.value]))) {
+            // The keyword needs to be added by some browsers so we remove previous
+            // combinator and skip this keyword
+            compatEntities.pop();
+            continue;
+          }
           const alternatives = alternativeKeywords(data, entity.value);
 
           if (alternatives.length > 0) {
@@ -145,4 +128,24 @@ function alternativeKeywords(data: MDN.CompatData, value: string): string[] {
   }
 
   return alternatives;
+}
+export function isDeprecated(compat: MDN.Compat) {
+  // Assume not deprecated if is status i missing
+  return !!compat.status && compat.status.deprecated;
+}
+
+export function isAddedBySome(compat: MDN.Compat): boolean {
+  let browser: MDN.Browsers;
+  for (browser in compat.support) {
+    const support = compat.support[browser];
+
+    for (const version of getSupport(support)) {
+      // Assume that the version has the property implemented if `null`
+      if (!!version.version_added || version.version_added === null) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
