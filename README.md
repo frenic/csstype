@@ -33,6 +33,7 @@ $ yarn add csstype
   * [`@viewport`](#viewport)
 * [Pseudo types](#pseudo-types)
 * [Usage](#usage)
+* [What should I to do when I get type errors?](#what-should-i-to-do-when-i-get-type-errors)
 * [Version 2.0](#version-20)
 
 ## Style types
@@ -204,6 +205,62 @@ const style: Style = {
   backgroundColor: 'white',
 };
 ```
+
+## What should I to do when I get type errors?
+
+The goal is to have as perfect types as possible and we're trying to do our best. But with CSS Custom Properties, the CSS specification changing frequently and vendors implementing their own specifications with new releases sometimes causes type errors even if it should work. Here's some steps you could take to get it fixed:
+
+_If you're using CSS Custom Properties you can step directly to step 3._
+
+1.  **First of all, make sure you're doing it right.** A type error could also indicate that you're not :wink:
+2.  **Have a look in [issues](https://github.com/frenic/csstype/issues) to see if an issue already has been filed. If not, create a new one.** To help us out, please refer to any information you have found.
+3.  Fix the issue locally with **TypeScript** (Flow further down):
+
+    * The recommended way is to use **module augmentation**. Here's a few examples:
+
+      ```ts
+      // My css.d.ts file
+      import * as CSS from 'csstype';
+
+      declare module 'csstype' {
+        interface Properties {
+          // Add a missing property
+          WebkitRocketLauncher?: string;
+
+          // Add a CSS Custom Property
+          '--theme-color'?: 'black' | 'white';
+
+          // ...or allow any other property
+          [index: string]: any;
+        }
+      }
+      ```
+
+    * The alternative is also to use **type assertion**. Here's a few examples:
+
+      ```ts
+      const style: CSS.Properties = {
+        // Add a missing property
+        ['WebkitRocketLauncher' as any]: 'launching',
+
+        // Add a CSS Custom Property
+        ['--theme-color' as any]: 'black',
+      };
+      ```
+
+    Fix the issue locally with **Flow**:
+
+    * Use **type assertion**. Here's a few examples:
+
+      ```js
+      const style: $Exact<CSS.Properties<*>> = {
+        // Add a missing property
+        [('WebkitRocketLauncher': any)]: 'launching',
+
+        // Add a CSS Custom Property
+        [('--theme-color': any)]: 'black',
+      };
+      ```
 
 ## Version 2.0
 
