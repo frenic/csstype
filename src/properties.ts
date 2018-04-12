@@ -1,6 +1,6 @@
 import * as properties from 'mdn-data/css/properties.json';
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
-import { compatNames, compatSyntax, getCompat, getPropertyData, isDeprecated } from './compat';
+import { compatNames, compatSyntax, getCompat, getPropertyData, isAddedBySome, isDeprecated } from './compat';
 import { resolveDataTypes } from './data-types';
 import { properties as rawSvgProperties, syntaxes as svgSyntaxes } from './data/svg';
 import parse from './parser';
@@ -51,6 +51,12 @@ for (const originalName in properties) {
 
   if (compatibilityData) {
     const compat = getCompat(compatibilityData);
+
+    if (!isAddedBySome(compat)) {
+      // The property needs to be added by some browsers
+      continue;
+    }
+
     entities = compatSyntax(compatibilityData, entities);
     currentNames = currentNames.concat(filterMissingProperties(compatNames(compat, originalName)));
     obsoleteNames = obsoleteNames.concat(filterMissingProperties(compatNames(compat, originalName, true)));

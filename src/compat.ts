@@ -6,6 +6,10 @@ export function getCompat(data: { __compat: MDN.Compat }): MDN.Compat {
   return data.__compat;
 }
 
+function getSupport(support: MDN.Support | MDN.Support[]): MDN.Support[] {
+  return Array.isArray(support) ? support : [support];
+}
+
 export function getPropertyData(name: string): MDN.CompatData | null {
   const data = getData('properties/' + name);
 
@@ -35,7 +39,7 @@ export function compatNames(compat: MDN.Compat, name: string, onlyRemoved = fals
   for (browser in compat.support) {
     const support = compat.support[browser];
 
-    for (const version of Array.isArray(support) ? support : [support]) {
+    for (const version of getSupport(support)) {
       // Assume that the version has the property implemented if `null`
       const isAdded = !!version.version_added || version.version_added === null;
       const isRemoved = !!version.version_removed;
@@ -57,6 +61,24 @@ export function compatNames(compat: MDN.Compat, name: string, onlyRemoved = fals
 export function isDeprecated(compat: MDN.Compat) {
   // Assume not deprecated if is status i missing
   return !!compat.status && compat.status.deprecated;
+}
+
+export function isAddedBySome(compat: MDN.Compat): boolean {
+  let browser: MDN.Browsers;
+  for (browser in compat.support) {
+    const support = compat.support[browser];
+
+    for (const version of getSupport(support)) {
+      // Assume that the version has the property implemented if `null`
+      const isAdded = !!version.version_added || version.version_added === null;
+
+      if (isAdded) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
 
 export function compatSyntax(data: MDN.CompatData, entities: EntityType[]): EntityType[] {
