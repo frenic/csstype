@@ -33,7 +33,7 @@ $ yarn add csstype
   * [`@viewport`](#viewport)
 * [Pseudo types](#pseudo-types)
 * [Usage](#usage)
-* [What should I to do when I get type errors?](#what-should-i-to-do-when-i-get-type-errors)
+* [What should I do when I get type errors?](#what-should-i-do-when-i-get-type-errors)
 * [Version 2.0](#version-20)
 
 ## Style types
@@ -206,7 +206,7 @@ const style: Style = {
 };
 ```
 
-## What should I to do when I get type errors?
+## What should I do when I get type errors?
 
 The goal is to have as perfect types as possible and we're trying to do our best. But with CSS Custom Properties, the CSS specification changing frequently and vendors implementing their own specifications with new releases sometimes causes type errors even if it should work. Here's some steps you could take to get it fixed:
 
