@@ -11,7 +11,7 @@ import {
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
 } from './properties';
-import { advancedPseudos, simplePseudos } from './pseudos';
+import { advancedPseudos, simplePseudos } from './selectors';
 import { IDataType, Type, TypeType } from './typer';
 
 export interface IAlias {

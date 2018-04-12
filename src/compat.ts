@@ -6,8 +6,18 @@ export function getCompat(data: { __compat: MDN.Compat }): MDN.Compat {
   return data.__compat;
 }
 
-function getSupport(support: MDN.Support | MDN.Support[]): MDN.Support[] {
+export function getSupport(support: MDN.Support | MDN.Support[]): MDN.Support[] {
   return Array.isArray(support) ? support : [support];
+}
+
+export function getAtRuleData(name: string): MDN.CompatData | null {
+  const data = getData('at-rules/' + name);
+
+  if (data) {
+    return data.css['at-rules'][name];
+  }
+
+  return null;
 }
 
 export function getPropertyData(name: string): MDN.CompatData | null {
@@ -20,21 +30,21 @@ export function getPropertyData(name: string): MDN.CompatData | null {
   return null;
 }
 
-export function getTypesData(name: string): MDN.CompatData | null {
-  const data = getData('types/' + name);
+export function getSelectorsData(name: string): MDN.CompatData | null {
+  const data = getData('selectors/' + name);
 
   if (data) {
-    return data.css.types[name];
+    return data.css.selectors[name];
   }
 
   return null;
 }
 
-export function getAtRuleData(name: string): MDN.CompatData | null {
-  const data = getData('at-rules/' + name);
+export function getTypesData(name: string): MDN.CompatData | null {
+  const data = getData('types/' + name);
 
   if (data) {
-    return data.css['at-rules'][name];
+    return data.css.types[name];
   }
 
   return null;
@@ -168,4 +178,40 @@ export function isAddedBySome(compat: MDN.Compat): boolean {
   }
 
   return false;
+}
+
+export function alternativeSelectors(selector: string): string[] {
+  const alternatives: string[] = [];
+
+  // Pseudo without ':'
+  const colons = ':'.repeat(selector.lastIndexOf(':') + 1);
+  const name = selector.slice(colons.length);
+  const compatibilityData = getSelectorsData(name);
+
+  if (compatibilityData) {
+    const compat = getCompat(compatibilityData);
+
+    let browser: MDN.Browsers;
+    for (browser in compat.support) {
+      const support = compat.support[browser];
+
+      for (const version of getSupport(support)) {
+        // Assume that the version has the property implemented if `null`
+        const isAdded = !!version.version_added || version.version_added === null;
+
+        if (isAdded) {
+          if (version.prefix) {
+            alternatives.push(colons + version.prefix + name);
+          }
+          if (version.alternative_name) {
+            alternatives.push(version.alternative_name);
+          }
+        }
+      }
+    }
+
+    return alternatives;
+  }
+
+  return alternatives;
 }
