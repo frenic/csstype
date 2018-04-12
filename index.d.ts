@@ -3384,7 +3384,7 @@ export type SimplePseudos =
 
 export type Pseudos = AdvancedPseudos | SimplePseudos;
 
-type Globals = "inherit" | "initial" | "revert" | "unset";
+type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset";
 
 type GlobalsString = Globals | string;
 

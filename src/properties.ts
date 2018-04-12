@@ -1,6 +1,14 @@
 import * as properties from 'mdn-data/css/properties.json';
 import * as syntaxes from 'mdn-data/css/syntaxes.json';
-import { compatNames, compatSyntax, getCompat, getPropertyData, isAddedBySome, isDeprecated } from './compat';
+import {
+  compatNames,
+  compatSyntax,
+  getCompat,
+  getPropertyData,
+  getTypesData,
+  isAddedBySome,
+  isDeprecated,
+} from './compat';
 import { resolveDataTypes } from './data-types';
 import { properties as rawSvgProperties, syntaxes as svgSyntaxes } from './data/svg';
 import parse from './parser';
@@ -20,9 +28,16 @@ interface IProperty {
   types: ResolvedType[];
 }
 
+const globalCompatibilityData = getTypesData('global_keywords');
+if (!globalCompatibilityData) {
+  throw new Error('Compatibility data for CSS-wide keywords is missing or may have been moved');
+}
+
 // The CSS-wide keywords are identical to the `all` property
 // https://www.w3.org/TR/2016/CR-css-cascade-4-20160114/#all-shorthand
-export const globals: ResolvedType[] = resolveDataTypes(typing(parse(properties.all.syntax)));
+export const globals: ResolvedType[] = resolveDataTypes(
+  typing(compatSyntax(globalCompatibilityData, parse(properties.all.syntax))),
+);
 
 export const standardLonghandProperties: { [name: string]: IProperty } = {};
 export const standardShorthandProperties: { [name: string]: IProperty } = {

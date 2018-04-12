@@ -20,7 +20,17 @@ export function getPropertyData(name: string): MDN.CompatData | null {
   return null;
 }
 
-function getData(cssPath: string): MDN.PropertiesCompat | null {
+export function getTypesData(name: string): MDN.CompatData | null {
+  const data = getData('types/' + name);
+
+  if (data) {
+    return data.css.types[name];
+  }
+
+  return null;
+}
+
+function getData(cssPath: string): any {
   if (cssPath in importsCache) {
     return importsCache[cssPath];
   }
@@ -71,6 +81,7 @@ export function compatSyntax(data: MDN.CompatData, entities: EntityType[]): Enti
             compatEntities.pop();
             continue;
           }
+
           const alternatives = alternativeKeywords(data, entity.value);
 
           if (alternatives.length > 0) {
@@ -127,6 +138,7 @@ function alternativeKeywords(data: MDN.CompatData, value: string): string[] {
 
   return alternatives;
 }
+
 export function isDeprecated(compat: MDN.Compat) {
   // Assume not deprecated if is status i missing
   return !!compat.status && compat.status.deprecated;
