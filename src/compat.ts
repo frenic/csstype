@@ -111,9 +111,7 @@ function alternativeKeywords(data: MDN.CompatData, value: string): string[] {
       for (const version of Array.isArray(support) ? support : [support]) {
         const isCurrent =
           // Assume that the version has the value implemented if `null`
-          (!!version.version_added || version.version_added === null) &&
-          // Assume that the version hasn't removed value if `null`
-          !version.version_removed;
+          !!version.version_added || version.version_added === null;
 
         if (isCurrent) {
           if (version.prefix && !alternatives.includes(version.prefix + value)) {

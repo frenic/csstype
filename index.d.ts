@@ -4044,7 +4044,18 @@ type TransitionTimingFunctionProperty = Globals | SingleTimingFunction | string;
 
 type TranslateProperty<TLength> = Globals | TLength | "none" | string;
 
-type UnicodeBidiProperty = Globals | "-webkit-isolate" | "bidi-override" | "embed" | "isolate" | "isolate-override" | "normal" | "plaintext";
+type UnicodeBidiProperty =
+  | Globals
+  | "-moz-isolate"
+  | "-moz-isolate-override"
+  | "-moz-plaintext"
+  | "-webkit-isolate"
+  | "bidi-override"
+  | "embed"
+  | "isolate"
+  | "isolate-override"
+  | "normal"
+  | "plaintext";
 
 type UserSelectProperty = Globals | "-webkit-contain" | "all" | "auto" | "contain" | "element" | "none" | "text";
 
