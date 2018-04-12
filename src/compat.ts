@@ -30,6 +30,16 @@ export function getTypesData(name: string): MDN.CompatData | null {
   return null;
 }
 
+export function getAtRuleData(name: string): MDN.CompatData | null {
+  const data = getData('at-rules/' + name);
+
+  if (data) {
+    return data.css['at-rules'][name];
+  }
+
+  return null;
+}
+
 function getData(cssPath: string): any {
   if (cssPath in importsCache) {
     return importsCache[cssPath];

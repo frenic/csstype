@@ -3161,53 +3161,57 @@ export interface CounterStyleHyphenFallback {
 }
 
 export interface FontFace {
+  MozFontFeatureSettings?: FontFaceFontFeatureSettingsProperty;
   fontDisplay?: FontFaceFontDisplayProperty;
   fontFamily?: string;
   fontFeatureSettings?: FontFaceFontFeatureSettingsProperty;
-  fontVariationSettings?: FontFaceFontVariationSettingsProperty;
   fontStretch?: FontFaceFontStretchProperty;
   fontStyle?: FontFaceFontStyleProperty;
-  fontWeight?: FontFaceFontWeightProperty;
   fontVariant?: FontFaceFontVariantProperty;
+  fontVariationSettings?: FontFaceFontVariationSettingsProperty;
+  fontWeight?: FontFaceFontWeightProperty;
   src?: string;
   unicodeRange?: string;
 }
 
 export interface FontFaceHyphen {
+  "-moz-font-feature-settings"?: FontFaceFontFeatureSettingsProperty;
   "font-display"?: FontFaceFontDisplayProperty;
   "font-family"?: string;
   "font-feature-settings"?: FontFaceFontFeatureSettingsProperty;
-  "font-variation-settings"?: FontFaceFontVariationSettingsProperty;
   "font-stretch"?: FontFaceFontStretchProperty;
   "font-style"?: FontFaceFontStyleProperty;
-  "font-weight"?: FontFaceFontWeightProperty;
   "font-variant"?: FontFaceFontVariantProperty;
+  "font-variation-settings"?: FontFaceFontVariationSettingsProperty;
+  "font-weight"?: FontFaceFontWeightProperty;
   src?: string;
   "unicode-range"?: string;
 }
 
 export interface FontFaceFallback {
+  MozFontFeatureSettings?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[];
   fontDisplay?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[];
   fontFamily?: string | string[];
   fontFeatureSettings?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[];
-  fontVariationSettings?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[];
   fontStretch?: FontFaceFontStretchProperty | FontFaceFontStretchProperty[];
   fontStyle?: FontFaceFontStyleProperty | FontFaceFontStyleProperty[];
-  fontWeight?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[];
   fontVariant?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[];
+  fontVariationSettings?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[];
+  fontWeight?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[];
   src?: string | string[];
   unicodeRange?: string | string[];
 }
 
 export interface FontFaceHyphenFallback {
+  "-moz-font-feature-settings"?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[];
   "font-display"?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[];
   "font-family"?: string | string[];
   "font-feature-settings"?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[];
-  "font-variation-settings"?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[];
   "font-stretch"?: FontFaceFontStretchProperty | FontFaceFontStretchProperty[];
   "font-style"?: FontFaceFontStyleProperty | FontFaceFontStyleProperty[];
-  "font-weight"?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[];
   "font-variant"?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[];
+  "font-variation-settings"?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[];
+  "font-weight"?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[];
   src?: string | string[];
   "unicode-range"?: string | string[];
 }
@@ -3233,6 +3237,15 @@ export interface PageHyphenFallback<TLength = string | 0> {
 }
 
 export interface Viewport<TLength = string | 0> {
+  msHeight?: ViewportHeightProperty<TLength>;
+  msMaxHeight?: ViewportMaxHeightProperty<TLength>;
+  msMaxWidth?: ViewportMaxWidthProperty<TLength>;
+  msMinHeight?: ViewportMinHeightProperty<TLength>;
+  msMinWidth?: ViewportMinWidthProperty<TLength>;
+  msOrientation?: ViewportOrientationProperty;
+  msWidth?: ViewportWidthProperty<TLength>;
+  msZoom?: ViewportZoomProperty;
+  OOrientation?: ViewportOrientationProperty;
   height?: ViewportHeightProperty<TLength>;
   maxHeight?: ViewportMaxHeightProperty<TLength>;
   maxWidth?: ViewportMaxWidthProperty<TLength>;
@@ -3247,6 +3260,15 @@ export interface Viewport<TLength = string | 0> {
 }
 
 export interface ViewportHyphen<TLength = string | 0> {
+  "-ms-height"?: ViewportHeightProperty<TLength>;
+  "-ms-max-height"?: ViewportMaxHeightProperty<TLength>;
+  "-ms-max-width"?: ViewportMaxWidthProperty<TLength>;
+  "-ms-min-height"?: ViewportMinHeightProperty<TLength>;
+  "-ms-min-width"?: ViewportMinWidthProperty<TLength>;
+  "-ms-orientation"?: ViewportOrientationProperty;
+  "-ms-width"?: ViewportWidthProperty<TLength>;
+  "-ms-zoom"?: ViewportZoomProperty;
+  "-o-orientation"?: ViewportOrientationProperty;
   height?: ViewportHeightProperty<TLength>;
   "max-height"?: ViewportMaxHeightProperty<TLength>;
   "max-width"?: ViewportMaxWidthProperty<TLength>;
@@ -3261,6 +3283,15 @@ export interface ViewportHyphen<TLength = string | 0> {
 }
 
 export interface ViewportFallback<TLength = string | 0> {
+  msHeight?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[];
+  msMaxHeight?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[];
+  msMaxWidth?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[];
+  msMinHeight?: ViewportMinHeightProperty<TLength> | ViewportMinHeightProperty<TLength>[];
+  msMinWidth?: ViewportMinWidthProperty<TLength> | ViewportMinWidthProperty<TLength>[];
+  msOrientation?: ViewportOrientationProperty | ViewportOrientationProperty[];
+  msWidth?: ViewportWidthProperty<TLength> | ViewportWidthProperty<TLength>[];
+  msZoom?: ViewportZoomProperty | ViewportZoomProperty[];
+  OOrientation?: ViewportOrientationProperty | ViewportOrientationProperty[];
   height?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[];
   maxHeight?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[];
   maxWidth?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[];
@@ -3275,6 +3306,15 @@ export interface ViewportFallback<TLength = string | 0> {
 }
 
 export interface ViewportHyphenFallback<TLength = string | 0> {
+  "-ms-height"?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[];
+  "-ms-max-height"?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[];
+  "-ms-max-width"?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[];
+  "-ms-min-height"?: ViewportMinHeightProperty<TLength> | ViewportMinHeightProperty<TLength>[];
+  "-ms-min-width"?: ViewportMinWidthProperty<TLength> | ViewportMinWidthProperty<TLength>[];
+  "-ms-orientation"?: ViewportOrientationProperty | ViewportOrientationProperty[];
+  "-ms-width"?: ViewportWidthProperty<TLength> | ViewportWidthProperty<TLength>[];
+  "-ms-zoom"?: ViewportZoomProperty | ViewportZoomProperty[];
+  "-o-orientation"?: ViewportOrientationProperty | ViewportOrientationProperty[];
   height?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[];
   "max-height"?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[];
   "max-width"?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[];
@@ -4545,11 +4585,9 @@ type CounterStyleSpeakAsProperty = "auto" | "bullets" | "numbers" | "spell-out" 
 
 type CounterStyleSystemProperty = "additive" | "alphabetic" | "cyclic" | "fixed" | "numeric" | "symbolic" | string;
 
-type FontFaceFontDisplayProperty = "auto" | "block" | "fallback" | "optional" | "swap";
-
 type FontFaceFontFeatureSettingsProperty = "normal" | string;
 
-type FontFaceFontVariationSettingsProperty = "normal";
+type FontFaceFontDisplayProperty = "auto" | "block" | "fallback" | "optional" | "swap";
 
 type FontFaceFontStretchProperty =
   | "condensed"
@@ -4563,8 +4601,6 @@ type FontFaceFontStretchProperty =
   | "ultra-expanded";
 
 type FontFaceFontStyleProperty = "italic" | "normal" | "oblique";
-
-type FontFaceFontWeightProperty = "bold" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
 type FontFaceFontVariantProperty =
   | EastAsianVariantValues
@@ -4598,6 +4634,10 @@ type FontFaceFontVariantProperty =
   | "unicase"
   | string;
 
+type FontFaceFontVariationSettingsProperty = "normal";
+
+type FontFaceFontWeightProperty = "bold" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+
 type PageBleedProperty<TLength> = TLength | "auto";
 
 type PageMarksProperty = "crop" | "cross" | "none" | string;
@@ -4608,21 +4648,21 @@ type ViewportMaxHeightProperty<TLength> = ViewportLength<TLength>;
 
 type ViewportMaxWidthProperty<TLength> = ViewportLength<TLength>;
 
-type ViewportMaxZoomProperty = "auto" | string | number;
-
 type ViewportMinHeightProperty<TLength> = ViewportLength<TLength>;
 
 type ViewportMinWidthProperty<TLength> = ViewportLength<TLength>;
 
-type ViewportMinZoomProperty = "auto" | string | number;
-
 type ViewportOrientationProperty = "auto" | "landscape" | "portrait";
-
-type ViewportUserZoomProperty = "fixed" | "zoom";
 
 type ViewportWidthProperty<TLength> = ViewportLength<TLength> | string;
 
 type ViewportZoomProperty = "auto" | string | number;
+
+type ViewportMaxZoomProperty = "auto" | string | number;
+
+type ViewportMinZoomProperty = "auto" | string | number;
+
+type ViewportUserZoomProperty = "fixed" | "zoom";
 
 type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small";
 

@@ -254,12 +254,13 @@ for (const properties of [
 const atRuleDefinitions: { [name: string]: PropertyType[] } = {};
 const atRuleHyphenDefinitions: { [name: string]: PropertyType[] } = {};
 
-for (const name in atRuleDescriptors) {
+for (const name of Object.keys(atRuleDescriptors).sort()) {
   atRuleDefinitions[name] = [];
   atRuleHyphenDefinitions[name] = [];
 
-  for (const property in atRuleDescriptors[name]) {
-    const types = atRuleDescriptors[name][property];
+  for (const property of Object.keys(atRuleDescriptors[name]).sort()) {
+    const descriptor = atRuleDescriptors[name][property];
+    const types = descriptor.types;
     const generics = lengthIn(types) ? [lengthGeneric] : [];
 
     if (onlyContainsString(types) || onlyContainsNumber(types)) {
@@ -268,7 +269,7 @@ for (const name in atRuleDescriptors) {
       };
 
       atRuleDefinitions[name].push({
-        name: toCamelCase(property),
+        name: isVendorProperty(property) ? toVendorPrefixCase(property) : toCamelCase(property),
         type,
         obsolete: false,
       });
@@ -278,17 +279,23 @@ for (const name in atRuleDescriptors) {
         obsolete: false,
       });
     } else {
-      const declaration: IDeclaration = {
-        name: toPascalCase(name.slice(1)) + toPropertyDeclarationName(property),
-        export: false,
-        types: declarable(types),
-        generics,
-      };
+      // Some properties are prefixed and share the same type so we
+      // make sure to reuse the same declaration of that type
+      let declaration = declarations.get(types);
 
-      declarations.set(types, declaration);
+      if (!declaration) {
+        declaration = {
+          name: toPascalCase(name) + toPropertyDeclarationName(descriptor.name),
+          export: false,
+          types: declarable(types),
+          generics,
+        };
+
+        declarations.set(types, declaration);
+      }
 
       atRuleDefinitions[name].push({
-        name: toCamelCase(property),
+        name: isVendorProperty(property) ? toVendorPrefixCase(property) : toCamelCase(property),
         generics,
         alias: aliasOf(declaration),
         obsolete: false,
@@ -667,7 +674,7 @@ const atRuleInterfaces: Interface[] = [];
 
 // Loop in alphabetical order
 for (const name of Object.keys(atRuleDefinitions).sort()) {
-  const pascalName = toPascalCase(name.slice(1));
+  const pascalName = toPascalCase(name);
   const generics = genericsOf(atRuleDefinitions[name].filter(isAliasProperty));
   atRuleInterfaces.push(
     {

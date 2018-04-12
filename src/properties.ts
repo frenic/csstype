@@ -126,7 +126,7 @@ export function isVendorProperty(name: string) {
   return REGEX_VENDOR_PROPERTY.test(name);
 }
 
-export function filterMissingProperties(names: string[]) {
+function filterMissingProperties(names: string[]) {
   // Filter only those which isn't defined in MDN data
   return names.filter(name => !(name in properties));
 }
