@@ -38,7 +38,7 @@ $ yarn add csstype
 
 ## Style types
 
-All properties are categorized in different uses and in several technical variations to provide the type that suits as many as possible.
+All properties are categorized in different uses and in several technical variations to provide typings that suits as many as possible.
 
 Categories:
 
@@ -49,11 +49,11 @@ Categories:
 
 Variations:
 
-* _Default variation_ - JavaScript default (camel) cased property names
-* `Hyphen` - CSS default (kebab) cased property names
-* `Fallback` - Accepts array of values e.g. `string | string[]`
+* _Default variation_ - JavaScript (camel) cased property names
+* `Hyphen` - CSS (kebab) cased property names
+* `Fallback` - Also accepts array of values e.g. `string | string[]`
 
-All interfaces has one optional generic argument to define length. It defaults to `string | 0` because `0` is the [only unitless length](https://www.w3.org/TR/REC-CSS2/syndata.html#length-units) by default. You can specify this, e.g. `string | number`, for platforms and libraries that accepts any numeric value with a specific unit.
+All interfaces has one optional generic argument to define length. It defaults to `string | 0` because `0` is the [only unitless length](https://www.w3.org/TR/REC-CSS2/syndata.html#length-units). You can specify this, e.g. `string | number`, for platforms and libraries that accepts any numeric value as length with a specific unit.
 
 ### `Properties`
 
@@ -152,8 +152,16 @@ At-rule interfaces with descriptors.
 String literals of pseudo classes and pseudo elements
 
 * `Pseudos`
-  * `AdvancedPseudos` Function-like pseudos like `:not(...)`
+
+  Extends:
+
+  * `AdvancedPseudos`
+
+    Function-like pseudos e.g. `:not(:first-child)`. The string literal contains the value excluding the parenthesis: `:not`. These are separated because they require an argument that results in infinite number of variations.
+
   * `SimplePseudos`
+
+    Plain pseudos e.g. `:hover` that can only be **one** variation.
 
 ## Usage
 
@@ -213,6 +221,10 @@ The goal is to have as perfect types as possible and we're trying to do our best
 _If you're using CSS Custom Properties you can step directly to step 3._
 
 1.  **First of all, make sure you're doing it right.** A type error could also indicate that you're not :wink:
+
+    * Some properties that are implemented was officially rejected or haven't yet received any official acceptance and are therefor not included
+    * If you're using TypeScript, [type widening](https://blog.mariusschulz.com/2017/02/04/typescript-2-1-literal-type-widening) could be the reason you get `Type 'string' is not assignable to...` errors
+
 2.  **Have a look in [issues](https://github.com/frenic/csstype/issues) to see if an issue already has been filed. If not, create a new one.** To help us out, please refer to any information you have found.
 3.  Fix the issue locally with **TypeScript** (Flow further down):
 
@@ -236,7 +248,7 @@ _If you're using CSS Custom Properties you can step directly to step 3._
       }
       ```
 
-    * The alternative is also to use **type assertion**. Here's a few examples:
+    * The alternative way is to use **type assertion**. Here's a few examples:
 
       ```ts
       const style: CSS.Properties = {
