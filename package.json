@@ -15,8 +15,8 @@
     "chokidar": "^2.0.0",
     "flow-bin": "^0.69.0",
     "jest": "^22.2.1",
-    "mdn-browser-compat-data": "0.0.30",
-    "mdn-data": "1.1.1",
+    "mdn-browser-compat-data": "git+https://github.com/mdn/browser-compat-data.git#3ab7b502352239d2131571d7463e098d2317532d",
+    "mdn-data": "git+https://github.com/mdn/data.git#af0369d9445c7e6f44f818d2034ccac16f328da9",
     "prettier": "^1.10.2",
     "ts-node": "^5.0.1",
     "tslint": "^5.9.1",
@@ -32,7 +32,7 @@
     "test": "jest --no-cache",
     "typecheck": "tsc typecheck.ts --noEmit --pretty & flow check typecheck.js",
     "prepublish": "tsc && npm run test && npm run build && npm run typecheck",
-    "rebase-build": "git rebase -s recursive -X theirs --exec \"yarn build && git commit -a --amend --no-verify --no-edit --allow-empty\""
+    "rebase-build": "git rebase -s recursive -X theirs --exec \"yarn --ignore-scripts && yarn build && git commit -a --amend --no-verify --no-edit --allow-empty\""
   },
   "files": [
     "index.d.ts",

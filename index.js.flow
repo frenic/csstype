@@ -350,7 +350,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   MozAnimationTimingFunction?: AnimationTimingFunctionProperty,
   MozAppearance?: MozAppearanceProperty,
   MozBackfaceVisibility?: BackfaceVisibilityProperty,
-  MozBackgroundSize?: BackgroundSizeProperty<TLength>,
   MozBinding?: MozBindingProperty,
   MozBorderBottomColors?: MozBorderBottomColorsProperty,
   MozBorderEndColor?: BorderInlineEndColorProperty,
@@ -385,7 +384,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   MozPaddingStart?: PaddingInlineStartProperty<TLength>,
   MozPerspective?: PerspectiveProperty<TLength>,
   MozPerspectiveOrigin?: PerspectiveOriginProperty<TLength>,
-  MozResize?: ResizeProperty,
   MozStackSizing?: MozStackSizingProperty,
   MozTabSize?: TabSizeProperty<TLength>,
   MozTextBlink?: MozTextBlinkProperty,
@@ -609,6 +607,7 @@ export type ObsoleteProperties<TLength = string | 0> = {
   KhtmlBoxOrient?: BoxOrientProperty,
   KhtmlBoxPack?: BoxPackProperty,
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty,
+  MozBackgroundSize?: BackgroundSizeProperty<TLength>,
   MozBorderRadius?: BorderRadiusProperty<TLength>,
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>,
   MozBoxDirection?: BoxDirectionProperty,
@@ -621,6 +620,7 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozOutlineColor?: OutlineColorProperty,
   MozOutlineStyle?: OutlineStyleProperty,
   MozOutlineWidth?: OutlineWidthProperty<TLength>,
+  MozResize?: ResizeProperty,
   MozTextAlignLast?: TextAlignLastProperty,
   MozTextDecorationColor?: TextDecorationColorProperty,
   MozTextDecorationLine?: TextDecorationLineProperty,
@@ -1066,7 +1066,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-moz-animation-timing-function"?: AnimationTimingFunctionProperty,
   "-moz-appearance"?: MozAppearanceProperty,
   "-moz-backface-visibility"?: BackfaceVisibilityProperty,
-  "-moz-background-size"?: BackgroundSizeProperty<TLength>,
   "-moz-binding"?: MozBindingProperty,
   "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty,
   "-moz-border-end-color"?: BorderInlineEndColorProperty,
@@ -1101,7 +1100,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-moz-padding-start"?: PaddingInlineStartProperty<TLength>,
   "-moz-perspective"?: PerspectiveProperty<TLength>,
   "-moz-perspective-origin"?: PerspectiveOriginProperty<TLength>,
-  "-moz-resize"?: ResizeProperty,
   "-moz-stack-sizing"?: MozStackSizingProperty,
   "-moz-tab-size"?: TabSizeProperty<TLength>,
   "-moz-text-blink"?: MozTextBlinkProperty,
@@ -1325,6 +1323,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-khtml-box-orient"?: BoxOrientProperty,
   "-khtml-box-pack"?: BoxPackProperty,
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty,
+  "-moz-background-size"?: BackgroundSizeProperty<TLength>,
   "-moz-border-radius"?: BorderRadiusProperty<TLength>,
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength>,
   "-moz-box-direction"?: BoxDirectionProperty,
@@ -1337,6 +1336,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-outline-color"?: OutlineColorProperty,
   "-moz-outline-style"?: OutlineStyleProperty,
   "-moz-outline-width"?: OutlineWidthProperty<TLength>,
+  "-moz-resize"?: ResizeProperty,
   "-moz-text-align-last"?: TextAlignLastProperty,
   "-moz-text-decoration-color"?: TextDecorationColorProperty,
   "-moz-text-decoration-line"?: TextDecorationLineProperty,
@@ -1785,7 +1785,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   MozAnimationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[],
   MozAppearance?: MozAppearanceProperty | MozAppearanceProperty[],
   MozBackfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[],
-  MozBackgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
   MozBinding?: MozBindingProperty | MozBindingProperty[],
   MozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[],
   MozBorderEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[],
@@ -1820,7 +1819,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   MozPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[],
   MozPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[],
   MozPerspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[],
-  MozResize?: ResizeProperty | ResizeProperty[],
   MozStackSizing?: MozStackSizingProperty | MozStackSizingProperty[],
   MozTabSize?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[],
   MozTextBlink?: MozTextBlinkProperty | MozTextBlinkProperty[],
@@ -2044,6 +2042,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   KhtmlBoxOrient?: BoxOrientProperty | BoxOrientProperty[],
   KhtmlBoxPack?: BoxPackProperty | BoxPackProperty[],
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
+  MozBackgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
   MozBorderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[],
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[],
   MozBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
@@ -2056,6 +2055,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozOutlineColor?: OutlineColorProperty | OutlineColorProperty[],
   MozOutlineStyle?: OutlineStyleProperty | OutlineStyleProperty[],
   MozOutlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[],
+  MozResize?: ResizeProperty | ResizeProperty[],
   MozTextAlignLast?: TextAlignLastProperty | TextAlignLastProperty[],
   MozTextDecorationColor?: TextDecorationColorProperty | TextDecorationColorProperty[],
   MozTextDecorationLine?: TextDecorationLineProperty | TextDecorationLineProperty[],
@@ -2504,7 +2504,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[],
   "-moz-appearance"?: MozAppearanceProperty | MozAppearanceProperty[],
   "-moz-backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[],
-  "-moz-background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
   "-moz-binding"?: MozBindingProperty | MozBindingProperty[],
   "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[],
   "-moz-border-end-color"?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[],
@@ -2539,7 +2538,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[],
   "-moz-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[],
   "-moz-perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[],
-  "-moz-resize"?: ResizeProperty | ResizeProperty[],
   "-moz-stack-sizing"?: MozStackSizingProperty | MozStackSizingProperty[],
   "-moz-tab-size"?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[],
   "-moz-text-blink"?: MozTextBlinkProperty | MozTextBlinkProperty[],
@@ -2763,6 +2761,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-khtml-box-orient"?: BoxOrientProperty | BoxOrientProperty[],
   "-khtml-box-pack"?: BoxPackProperty | BoxPackProperty[],
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
+  "-moz-background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
   "-moz-border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[],
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[],
   "-moz-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
@@ -2775,6 +2774,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-outline-color"?: OutlineColorProperty | OutlineColorProperty[],
   "-moz-outline-style"?: OutlineStyleProperty | OutlineStyleProperty[],
   "-moz-outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[],
+  "-moz-resize"?: ResizeProperty | ResizeProperty[],
   "-moz-text-align-last"?: TextAlignLastProperty | TextAlignLastProperty[],
   "-moz-text-decoration-color"?: TextDecorationColorProperty | TextDecorationColorProperty[],
   "-moz-text-decoration-line"?: TextDecorationLineProperty | TextDecorationLineProperty[],
@@ -3120,14 +3120,14 @@ export type AdvancedPseudos =
   | ":nth-of-type";
 
 export type SimplePseudos =
-  | "-moz-full-screen"
-  | "-webkit-full-screen"
   | ":-moz-any-link"
+  | ":-moz-full-screen"
   | ":-moz-placeholder"
   | ":-moz-read-only"
   | ":-moz-read-write"
   | ":-ms-fullscreen"
   | ":-webkit-any-link"
+  | ":-webkit-full-screen"
   | "::-moz-placeholder"
   | "::-moz-progress-bar"
   | "::-moz-range-progress"
@@ -3722,15 +3722,15 @@ type OutlineStyleProperty = Globals | BrStyle | "auto";
 
 type OutlineWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-type OverflowProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+type OverflowProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
 type OverflowWrapProperty = Globals | "break-word" | "normal";
 
-type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+type OverflowXProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
-type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+type OverflowYProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none" | string;
 

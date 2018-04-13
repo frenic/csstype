@@ -349,7 +349,6 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   MozAnimationTimingFunction?: AnimationTimingFunctionProperty;
   MozAppearance?: MozAppearanceProperty;
   MozBackfaceVisibility?: BackfaceVisibilityProperty;
-  MozBackgroundSize?: BackgroundSizeProperty<TLength>;
   MozBinding?: MozBindingProperty;
   MozBorderBottomColors?: MozBorderBottomColorsProperty;
   MozBorderEndColor?: BorderInlineEndColorProperty;
@@ -384,7 +383,6 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   MozPaddingStart?: PaddingInlineStartProperty<TLength>;
   MozPerspective?: PerspectiveProperty<TLength>;
   MozPerspectiveOrigin?: PerspectiveOriginProperty<TLength>;
-  MozResize?: ResizeProperty;
   MozStackSizing?: MozStackSizingProperty;
   MozTabSize?: TabSizeProperty<TLength>;
   MozTextBlink?: MozTextBlinkProperty;
@@ -628,6 +626,8 @@ export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty;
   /** @deprecated */
+  MozBackgroundSize?: BackgroundSizeProperty<TLength>;
+  /** @deprecated */
   MozBorderRadius?: BorderRadiusProperty<TLength>;
   /** @deprecated */
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>;
@@ -651,6 +651,8 @@ export interface ObsoleteProperties<TLength = string | 0> {
   MozOutlineStyle?: OutlineStyleProperty;
   /** @deprecated */
   MozOutlineWidth?: OutlineWidthProperty<TLength>;
+  /** @deprecated */
+  MozResize?: ResizeProperty;
   /** @deprecated */
   MozTextAlignLast?: TextAlignLastProperty;
   /** @deprecated */
@@ -1123,7 +1125,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-moz-animation-timing-function"?: AnimationTimingFunctionProperty;
   "-moz-appearance"?: MozAppearanceProperty;
   "-moz-backface-visibility"?: BackfaceVisibilityProperty;
-  "-moz-background-size"?: BackgroundSizeProperty<TLength>;
   "-moz-binding"?: MozBindingProperty;
   "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty;
   "-moz-border-end-color"?: BorderInlineEndColorProperty;
@@ -1158,7 +1159,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-moz-padding-start"?: PaddingInlineStartProperty<TLength>;
   "-moz-perspective"?: PerspectiveProperty<TLength>;
   "-moz-perspective-origin"?: PerspectiveOriginProperty<TLength>;
-  "-moz-resize"?: ResizeProperty;
   "-moz-stack-sizing"?: MozStackSizingProperty;
   "-moz-tab-size"?: TabSizeProperty<TLength>;
   "-moz-text-blink"?: MozTextBlinkProperty;
@@ -1402,6 +1402,8 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /** @deprecated */
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty;
   /** @deprecated */
+  "-moz-background-size"?: BackgroundSizeProperty<TLength>;
+  /** @deprecated */
   "-moz-border-radius"?: BorderRadiusProperty<TLength>;
   /** @deprecated */
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength>;
@@ -1425,6 +1427,8 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   "-moz-outline-style"?: OutlineStyleProperty;
   /** @deprecated */
   "-moz-outline-width"?: OutlineWidthProperty<TLength>;
+  /** @deprecated */
+  "-moz-resize"?: ResizeProperty;
   /** @deprecated */
   "-moz-text-align-last"?: TextAlignLastProperty;
   /** @deprecated */
@@ -1901,7 +1905,6 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   MozAnimationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   MozAppearance?: MozAppearanceProperty | MozAppearanceProperty[];
   MozBackfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
-  MozBackgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
   MozBinding?: MozBindingProperty | MozBindingProperty[];
   MozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
   MozBorderEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
@@ -1936,7 +1939,6 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   MozPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   MozPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   MozPerspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
-  MozResize?: ResizeProperty | ResizeProperty[];
   MozStackSizing?: MozStackSizingProperty | MozStackSizingProperty[];
   MozTabSize?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
   MozTextBlink?: MozTextBlinkProperty | MozTextBlinkProperty[];
@@ -2180,6 +2182,8 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   /** @deprecated */
+  MozBackgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
+  /** @deprecated */
   MozBorderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /** @deprecated */
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
@@ -2203,6 +2207,8 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   MozOutlineStyle?: OutlineStyleProperty | OutlineStyleProperty[];
   /** @deprecated */
   MozOutlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
+  /** @deprecated */
+  MozResize?: ResizeProperty | ResizeProperty[];
   /** @deprecated */
   MozTextAlignLast?: TextAlignLastProperty | TextAlignLastProperty[];
   /** @deprecated */
@@ -2681,7 +2687,6 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-moz-animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   "-moz-appearance"?: MozAppearanceProperty | MozAppearanceProperty[];
   "-moz-backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
-  "-moz-background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
   "-moz-binding"?: MozBindingProperty | MozBindingProperty[];
   "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
   "-moz-border-end-color"?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
@@ -2716,7 +2721,6 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-moz-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   "-moz-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   "-moz-perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
-  "-moz-resize"?: ResizeProperty | ResizeProperty[];
   "-moz-stack-sizing"?: MozStackSizingProperty | MozStackSizingProperty[];
   "-moz-tab-size"?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
   "-moz-text-blink"?: MozTextBlinkProperty | MozTextBlinkProperty[];
@@ -2960,6 +2964,8 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /** @deprecated */
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   /** @deprecated */
+  "-moz-background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
+  /** @deprecated */
   "-moz-border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /** @deprecated */
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
@@ -2983,6 +2989,8 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   "-moz-outline-style"?: OutlineStyleProperty | OutlineStyleProperty[];
   /** @deprecated */
   "-moz-outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
+  /** @deprecated */
+  "-moz-resize"?: ResizeProperty | ResizeProperty[];
   /** @deprecated */
   "-moz-text-align-last"?: TextAlignLastProperty | TextAlignLastProperty[];
   /** @deprecated */
@@ -3356,14 +3364,14 @@ export type AdvancedPseudos =
   | ":nth-of-type";
 
 export type SimplePseudos =
-  | "-moz-full-screen"
-  | "-webkit-full-screen"
   | ":-moz-any-link"
+  | ":-moz-full-screen"
   | ":-moz-placeholder"
   | ":-moz-read-only"
   | ":-moz-read-write"
   | ":-ms-fullscreen"
   | ":-webkit-any-link"
+  | ":-webkit-full-screen"
   | "::-moz-placeholder"
   | "::-moz-progress-bar"
   | "::-moz-range-progress"
@@ -3958,15 +3966,15 @@ type OutlineStyleProperty = Globals | BrStyle | "auto";
 
 type OutlineWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-type OverflowProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+type OverflowProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
 type OverflowWrapProperty = Globals | "break-word" | "normal";
 
-type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+type OverflowXProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
-type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+type OverflowYProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none" | string;
 
