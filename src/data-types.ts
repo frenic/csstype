@@ -1,8 +1,7 @@
-import * as syntaxes from 'mdn-data/css/syntaxes.json';
+import { compatSyntax } from './compat';
+import { getPropertySyntax, getSyntax } from './data';
 import parse from './parser';
-import typing, { addType, DataType, hasType, ResolvedType, Type, TypeType } from './typer';
-
-const MIN_TYPES = 3;
+import typing, { addType, DataType, hasType, IDataType, ResolvedType, Type, TypeType } from './typer';
 
 const dataTypes: { [key: string]: ResolvedType[] } = {};
 
@@ -10,16 +9,17 @@ export default dataTypes;
 
 export function resolveDataTypes(
   types: TypeType[],
-  resolver: (name: string) => ResolvedType[] = dataTypeResolver,
+  resolver: (dataType: IDataType) => ResolvedType[] = simpleDataTypeResolver,
+  min = 3,
 ): ResolvedType[] {
   let resolvedDataTypes: ResolvedType[] = [];
 
   for (const type of types) {
     switch (type.type) {
       case Type.DataType: {
-        const resolvedDataType = resolver(type.name);
+        const resolvedDataType = resolver(type);
 
-        if (resolvedDataType.length >= MIN_TYPES) {
+        if (resolvedDataType.length >= min) {
           // Dissolve data type if it's too small
           resolvedDataTypes = addType(resolvedDataTypes, addDataType(type.name, resolvedDataType));
         } else {
@@ -30,7 +30,7 @@ export function resolveDataTypes(
         break;
       }
       case Type.PropertyReference: {
-        const resolvedProperty = resolver(type.name);
+        const resolvedProperty = resolver(type);
 
         // Dissolve property references completely
         for (const resolvedType of resolvedProperty) {
@@ -46,10 +46,20 @@ export function resolveDataTypes(
   return resolvedDataTypes;
 }
 
-function dataTypeResolver(name: string): ResolvedType[] {
-  return name in syntaxes
-    ? resolveDataTypes(typing(parse(syntaxes[name].syntax)), dataTypeResolver)
-    : [{ type: Type.String }];
+function simpleDataTypeResolver(dataType: IDataType): ResolvedType[] {
+  const syntax = getSyntax(dataType.name);
+  return syntax ? resolveDataTypes(typing(parse(syntax)), simpleDataTypeResolver) : [{ type: Type.String }];
+}
+
+export function createPropertyDataTypeResolver(data: MDN.CompatData | null, min?: number) {
+  const resolver: (dataType: IDataType) => ResolvedType[] = dataType => {
+    const syntax = dataType.type === Type.DataType ? getSyntax(dataType.name) : getPropertySyntax(dataType.name);
+    return syntax
+      ? resolveDataTypes(data ? typing(compatSyntax(data, parse(syntax))) : typing(parse(syntax)), resolver)
+      : [{ type: Type.String }];
+  };
+
+  return resolver;
 }
 
 function addDataType(name: string, types: ResolvedType[], index = 0): DataType {

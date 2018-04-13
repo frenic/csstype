@@ -12,6 +12,7 @@
     "@types/jest": "^22.1.1",
     "@types/node": "^9.4.2",
     "@types/prettier": "^1.10.0",
+    "chalk": "^2.3.2",
     "chokidar": "^2.0.0",
     "flow-bin": "^0.69.0",
     "jest": "^22.2.1",

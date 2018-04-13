@@ -1,5 +1,6 @@
-import * as syntaxes from 'mdn-data/css/syntaxes.json';
 import * as cssTypes from 'mdn-data/css/types.json';
+import { getSyntaxes } from './data';
+import { warn } from './logger';
 import {
   Combinator,
   Component,
@@ -48,30 +49,35 @@ export type TypeType<TDataType = IDataType> = IBasic | IStringLiteral | INumeric
 
 export type ResolvedType = TypeType<DataType>;
 
-const basicDataTypes = [...Object.keys(cssTypes), 'hex-color'].reduce<{
-  [name: string]: IBasic;
-}>((dataTypes, name) => {
-  switch (name) {
-    case 'number':
-    case 'integer':
-      dataTypes[name] = {
-        type: Type.Number,
-      };
-      break;
-    case 'length':
-      dataTypes[name] = {
-        type: Type.Length,
-      };
-      break;
-    default:
-      if (!(name in syntaxes)) {
+let getBasicDataTypes = () => {
+  const types = [...Object.keys(cssTypes), 'hex-color'].reduce<{ [name: string]: IBasic }>((dataTypes, name) => {
+    switch (name) {
+      case 'number':
+      case 'integer':
         dataTypes[name] = {
-          type: Type.String,
+          type: Type.Number,
         };
-      }
-  }
-  return dataTypes;
-}, {});
+        break;
+      case 'length':
+        dataTypes[name] = {
+          type: Type.Length,
+        };
+        break;
+      default:
+        if (!(name in getSyntaxes())) {
+          dataTypes[name] = {
+            type: Type.String,
+          };
+        }
+    }
+    return dataTypes;
+  }, {});
+
+  // Cache
+  getBasicDataTypes = () => types;
+
+  return types;
+};
 
 export default function typing(entities: EntityType[]): TypeType[] {
   let mandatoryCombinatorCount = 0;
@@ -124,14 +130,16 @@ export default function typing(entities: EntityType[]): TypeType[] {
           break;
         case Component.DataType: {
           const value = entity.value.slice(1, -1);
-          const property = /'([^']+)'/.exec(value);
-          if (property) {
-            const name = property[1];
-            types = addPropertyReference(types, name);
-          } else if (value in basicDataTypes) {
-            types = addType(types, basicDataTypes[value]);
-          } else {
+          if (value in getBasicDataTypes()) {
+            types = addType(types, getBasicDataTypes()[value]);
+          } else if (value in getSyntaxes()) {
+            // Need to check if data type exists because some property references are
+            // not quoted. Needs to fixed some how.
             types = addDataType(types, value);
+          } else {
+            const property = /'([^']+)'/.exec(value);
+            const name = property ? property[1] : (warn('Data type `%s` was missing or is malformatted', value), value);
+            types = addPropertyReference(types, name);
           }
           break;
         }

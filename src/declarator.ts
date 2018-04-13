@@ -1,4 +1,4 @@
-import { atRuleDescriptors, atRuleList } from './at-rules';
+import { getAtRules } from './at-rules';
 import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
 import dataTypes from './data-types';
 import {
@@ -11,7 +11,7 @@ import {
   vendorPrefixedLonghandProperties,
   vendorPrefixedShorthandProperties,
 } from './properties';
-import { advancedPseudos, simplePseudos } from './selectors';
+import { getPseudos } from './selectors';
 import { IDataType, Type, TypeType } from './typer';
 
 export interface IAlias {
@@ -58,45 +58,48 @@ export interface IDeclaration {
   generics: IGenerics[];
 }
 
+const atRules = getAtRules();
+const pseudos = getPseudos();
+
 export const declarations: Map<MixedType[], IDeclaration> = new Map();
 
 const atRuleDeclaration: IDeclaration = {
   name: 'AtRules',
   export: true,
-  types: declarable(atRuleList),
+  types: declarable(atRules.literals),
   generics: [],
 };
 
-declarations.set(atRuleList, atRuleDeclaration);
+declarations.set(atRules.literals, atRuleDeclaration);
 
 const advancedPseudosDeclaration: IDeclaration = {
   name: 'AdvancedPseudos',
   export: true,
-  types: declarable(advancedPseudos),
+  types: declarable(pseudos.advanced),
   generics: [],
 };
 
-declarations.set(advancedPseudos, advancedPseudosDeclaration);
+declarations.set(pseudos.advanced, advancedPseudosDeclaration);
 
 const simplePseudosDeclaration: IDeclaration = {
   name: 'SimplePseudos',
   export: true,
-  types: declarable(simplePseudos),
+  types: declarable(pseudos.simple),
   generics: [],
 };
 
-declarations.set(simplePseudos, simplePseudosDeclaration);
+declarations.set(pseudos.simple, simplePseudosDeclaration);
 
-const pseudos = [aliasOf(advancedPseudosDeclaration), aliasOf(simplePseudosDeclaration)];
+const pseudoAliases = [aliasOf(advancedPseudosDeclaration), aliasOf(simplePseudosDeclaration)];
 
 const pseudosDeclaration: IDeclaration = {
   name: 'Pseudos',
   export: true,
-  types: pseudos,
+  types: pseudoAliases,
   generics: [],
 };
 
-declarations.set(pseudos, pseudosDeclaration);
+declarations.set(pseudoAliases, pseudosDeclaration);
 
 const globalsDeclaration: IDeclaration = {
   name: 'Globals',
@@ -254,12 +257,12 @@ for (const properties of [
 const atRuleDefinitions: { [name: string]: PropertyType[] } = {};
 const atRuleHyphenDefinitions: { [name: string]: PropertyType[] } = {};
 
-for (const name of Object.keys(atRuleDescriptors).sort()) {
+for (const name of Object.keys(atRules.rules).sort()) {
   atRuleDefinitions[name] = [];
   atRuleHyphenDefinitions[name] = [];
 
-  for (const property of Object.keys(atRuleDescriptors[name]).sort()) {
-    const descriptor = atRuleDescriptors[name][property];
+  for (const property of Object.keys(atRules.rules[name]).sort()) {
+    const descriptor = atRules.rules[name][property];
     const types = descriptor.types;
     const generics = lengthIn(types) ? [lengthGeneric] : [];
 

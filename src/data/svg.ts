@@ -222,4 +222,7 @@ export const syntaxes: MDN.Syntaxes = {
   paint: {
     syntax: 'none | child | child(<integer>) | <color> | <url> [ none | <color> ]? | context-fill | context-stroke',
   },
+  dasharray: {
+    syntax: '[ <length> | <percentage> | <number> ]#',
+  },
 };

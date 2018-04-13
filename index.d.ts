@@ -25,6 +25,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   backgroundPositionY?: BackgroundPositionYProperty<TLength>;
   backgroundRepeat?: BackgroundRepeatProperty;
   backgroundSize?: BackgroundSizeProperty<TLength>;
+  blockOverflow?: BlockOverflowProperty;
   blockSize?: BlockSizeProperty<TLength>;
   borderBlockEndColor?: BorderBlockEndColorProperty;
   borderBlockEndStyle?: BorderBlockEndStyleProperty;
@@ -177,6 +178,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   maxBlockSize?: MaxBlockSizeProperty<TLength>;
   maxHeight?: MaxHeightProperty<TLength>;
   maxInlineSize?: MaxInlineSizeProperty<TLength>;
+  maxLines?: MaxLinesProperty;
   maxWidth?: MaxWidthProperty<TLength>;
   minBlockSize?: MinBlockSizeProperty<TLength>;
   minHeight?: MinHeightProperty<TLength>;
@@ -206,7 +208,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   outlineStyle?: OutlineStyleProperty;
   outlineWidth?: OutlineWidthProperty<TLength>;
   overflow?: OverflowProperty;
+  overflowAnchor?: OverflowAnchorProperty;
+  overflowBlock?: OverflowBlockProperty;
   overflowClipBox?: OverflowClipBoxProperty;
+  overflowInline?: OverflowInlineProperty;
   overflowWrap?: OverflowWrapProperty;
   overflowX?: OverflowXProperty;
   overflowY?: OverflowYProperty;
@@ -323,6 +328,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   gridGap?: GridGapProperty<TLength>;
   gridRow?: GridRowProperty;
   gridTemplate?: GridTemplateProperty;
+  lineClamp?: LineClampProperty;
   listStyle?: ListStyleProperty;
   margin?: MarginProperty<TLength>;
   mask?: MaskProperty<TLength>;
@@ -375,10 +381,10 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   MozHyphens?: HyphensProperty;
   MozImageRegion?: MozImageRegionProperty;
   MozOrient?: MozOrientProperty;
-  MozOutlineRadiusBottomleft?: GlobalsString;
-  MozOutlineRadiusBottomright?: GlobalsString;
-  MozOutlineRadiusTopleft?: GlobalsString;
-  MozOutlineRadiusTopright?: GlobalsString;
+  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength>;
+  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength>;
+  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength>;
+  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength>;
   MozPaddingEnd?: PaddingInlineEndProperty<TLength>;
   MozPaddingStart?: PaddingInlineStartProperty<TLength>;
   MozPerspective?: PerspectiveProperty<TLength>;
@@ -561,7 +567,7 @@ export interface VendorShorthandProperties<TLength = string | 0> {
   MozBorderImage?: BorderImageProperty;
   MozColumnRule?: ColumnRuleProperty<TLength>;
   MozColumns?: ColumnsProperty<TLength>;
-  MozOutlineRadius?: GlobalsString;
+  MozOutlineRadius?: MozOutlineRadiusProperty<TLength>;
   MozTransition?: TransitionProperty;
   msContentZoomLimit?: GlobalsString;
   msContentZoomSnap?: MsContentZoomSnapProperty;
@@ -578,6 +584,7 @@ export interface VendorShorthandProperties<TLength = string | 0> {
   WebkitColumns?: ColumnsProperty<TLength>;
   WebkitFlex?: FlexProperty<TLength>;
   WebkitFlexFlow?: FlexFlowProperty;
+  WebkitLineClamp?: WebkitLineClampProperty;
   WebkitMask?: WebkitMaskProperty;
   WebkitTextEmphasis?: TextEmphasisProperty;
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength>;
@@ -754,7 +761,7 @@ export interface SvgProperties<TLength = string | 0> {
   stopColor?: StopColorProperty;
   stopOpacity?: GlobalsNumber;
   stroke?: StrokeProperty;
-  strokeDasharray?: StrokeDasharrayProperty;
+  strokeDasharray?: StrokeDasharrayProperty<TLength>;
   strokeDashoffset?: StrokeDashoffsetProperty<TLength>;
   strokeLinecap?: StrokeLinecapProperty;
   strokeLinejoin?: StrokeLinejoinProperty;
@@ -801,6 +808,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "background-position-y"?: BackgroundPositionYProperty<TLength>;
   "background-repeat"?: BackgroundRepeatProperty;
   "background-size"?: BackgroundSizeProperty<TLength>;
+  "block-overflow"?: BlockOverflowProperty;
   "block-size"?: BlockSizeProperty<TLength>;
   "border-block-end-color"?: BorderBlockEndColorProperty;
   "border-block-end-style"?: BorderBlockEndStyleProperty;
@@ -953,6 +961,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "max-block-size"?: MaxBlockSizeProperty<TLength>;
   "max-height"?: MaxHeightProperty<TLength>;
   "max-inline-size"?: MaxInlineSizeProperty<TLength>;
+  "max-lines"?: MaxLinesProperty;
   "max-width"?: MaxWidthProperty<TLength>;
   "min-block-size"?: MinBlockSizeProperty<TLength>;
   "min-height"?: MinHeightProperty<TLength>;
@@ -982,7 +991,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "outline-style"?: OutlineStyleProperty;
   "outline-width"?: OutlineWidthProperty<TLength>;
   overflow?: OverflowProperty;
+  "overflow-anchor"?: OverflowAnchorProperty;
+  "overflow-block"?: OverflowBlockProperty;
   "overflow-clip-box"?: OverflowClipBoxProperty;
+  "overflow-inline"?: OverflowInlineProperty;
   "overflow-wrap"?: OverflowWrapProperty;
   "overflow-x"?: OverflowXProperty;
   "overflow-y"?: OverflowYProperty;
@@ -1099,6 +1111,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   "grid-gap"?: GridGapProperty<TLength>;
   "grid-row"?: GridRowProperty;
   "grid-template"?: GridTemplateProperty;
+  "line-clamp"?: LineClampProperty;
   "list-style"?: ListStyleProperty;
   margin?: MarginProperty<TLength>;
   mask?: MaskProperty<TLength>;
@@ -1151,10 +1164,10 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-moz-hyphens"?: HyphensProperty;
   "-moz-image-region"?: MozImageRegionProperty;
   "-moz-orient"?: MozOrientProperty;
-  "-moz-outline-radius-bottomleft"?: GlobalsString;
-  "-moz-outline-radius-bottomright"?: GlobalsString;
-  "-moz-outline-radius-topleft"?: GlobalsString;
-  "-moz-outline-radius-topright"?: GlobalsString;
+  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength>;
+  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength>;
+  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength>;
+  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength>;
   "-moz-padding-end"?: PaddingInlineEndProperty<TLength>;
   "-moz-padding-start"?: PaddingInlineStartProperty<TLength>;
   "-moz-perspective"?: PerspectiveProperty<TLength>;
@@ -1337,7 +1350,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
   "-moz-border-image"?: BorderImageProperty;
   "-moz-column-rule"?: ColumnRuleProperty<TLength>;
   "-moz-columns"?: ColumnsProperty<TLength>;
-  "-moz-outline-radius"?: GlobalsString;
+  "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength>;
   "-moz-transition"?: TransitionProperty;
   "-ms-content-zoom-limit"?: GlobalsString;
   "-ms-content-zoom-snap"?: MsContentZoomSnapProperty;
@@ -1354,6 +1367,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
   "-webkit-columns"?: ColumnsProperty<TLength>;
   "-webkit-flex"?: FlexProperty<TLength>;
   "-webkit-flex-flow"?: FlexFlowProperty;
+  "-webkit-line-clamp"?: WebkitLineClampProperty;
   "-webkit-mask"?: WebkitMaskProperty;
   "-webkit-text-emphasis"?: TextEmphasisProperty;
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>;
@@ -1530,7 +1544,7 @@ export interface SvgPropertiesHyphen<TLength = string | 0> {
   "stop-color"?: StopColorProperty;
   "stop-opacity"?: GlobalsNumber;
   stroke?: StrokeProperty;
-  "stroke-dasharray"?: StrokeDasharrayProperty;
+  "stroke-dasharray"?: StrokeDasharrayProperty<TLength>;
   "stroke-dashoffset"?: StrokeDashoffsetProperty<TLength>;
   "stroke-linecap"?: StrokeLinecapProperty;
   "stroke-linejoin"?: StrokeLinejoinProperty;
@@ -1581,6 +1595,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   backgroundPositionY?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
   backgroundRepeat?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
   backgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
+  blockOverflow?: BlockOverflowProperty | BlockOverflowProperty[];
   blockSize?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
   borderBlockEndColor?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
   borderBlockEndStyle?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
@@ -1733,6 +1748,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   maxBlockSize?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[];
   maxHeight?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
   maxInlineSize?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
+  maxLines?: MaxLinesProperty | MaxLinesProperty[];
   maxWidth?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
   minBlockSize?: MinBlockSizeProperty<TLength> | MinBlockSizeProperty<TLength>[];
   minHeight?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
@@ -1762,7 +1778,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   outlineStyle?: OutlineStyleProperty | OutlineStyleProperty[];
   outlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
   overflow?: OverflowProperty | OverflowProperty[];
+  overflowAnchor?: OverflowAnchorProperty | OverflowAnchorProperty[];
+  overflowBlock?: OverflowBlockProperty | OverflowBlockProperty[];
   overflowClipBox?: OverflowClipBoxProperty | OverflowClipBoxProperty[];
+  overflowInline?: OverflowInlineProperty | OverflowInlineProperty[];
   overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[];
   overflowX?: OverflowXProperty | OverflowXProperty[];
   overflowY?: OverflowYProperty | OverflowYProperty[];
@@ -1879,6 +1898,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   gridGap?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
   gridRow?: GridRowProperty | GridRowProperty[];
   gridTemplate?: GridTemplateProperty | GridTemplateProperty[];
+  lineClamp?: LineClampProperty | LineClampProperty[];
   listStyle?: ListStyleProperty | ListStyleProperty[];
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
@@ -1931,10 +1951,10 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   MozHyphens?: HyphensProperty | HyphensProperty[];
   MozImageRegion?: MozImageRegionProperty | MozImageRegionProperty[];
   MozOrient?: MozOrientProperty | MozOrientProperty[];
-  MozOutlineRadiusBottomleft?: GlobalsString | GlobalsString[];
-  MozOutlineRadiusBottomright?: GlobalsString | GlobalsString[];
-  MozOutlineRadiusTopleft?: GlobalsString | GlobalsString[];
-  MozOutlineRadiusTopright?: GlobalsString | GlobalsString[];
+  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[];
+  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[];
+  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[];
+  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
   MozPaddingEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   MozPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   MozPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
@@ -2117,7 +2137,7 @@ export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
   MozBorderImage?: BorderImageProperty | BorderImageProperty[];
   MozColumnRule?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
   MozColumns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
-  MozOutlineRadius?: GlobalsString | GlobalsString[];
+  MozOutlineRadius?: MozOutlineRadiusProperty<TLength> | MozOutlineRadiusProperty<TLength>[];
   MozTransition?: TransitionProperty | TransitionProperty[];
   msContentZoomLimit?: GlobalsString | GlobalsString[];
   msContentZoomSnap?: MsContentZoomSnapProperty | MsContentZoomSnapProperty[];
@@ -2134,6 +2154,7 @@ export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
   WebkitColumns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   WebkitFlex?: FlexProperty<TLength> | FlexProperty<TLength>[];
   WebkitFlexFlow?: FlexFlowProperty | FlexFlowProperty[];
+  WebkitLineClamp?: WebkitLineClampProperty | WebkitLineClampProperty[];
   WebkitMask?: WebkitMaskProperty | WebkitMaskProperty[];
   WebkitTextEmphasis?: TextEmphasisProperty | TextEmphasisProperty[];
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
@@ -2310,7 +2331,7 @@ export interface SvgPropertiesFallback<TLength = string | 0> {
   stopColor?: StopColorProperty | StopColorProperty[];
   stopOpacity?: GlobalsNumber | GlobalsNumber[];
   stroke?: StrokeProperty | StrokeProperty[];
-  strokeDasharray?: StrokeDasharrayProperty | StrokeDasharrayProperty[];
+  strokeDasharray?: StrokeDasharrayProperty<TLength> | StrokeDasharrayProperty<TLength>[];
   strokeDashoffset?: StrokeDashoffsetProperty<TLength> | StrokeDashoffsetProperty<TLength>[];
   strokeLinecap?: StrokeLinecapProperty | StrokeLinecapProperty[];
   strokeLinejoin?: StrokeLinejoinProperty | StrokeLinejoinProperty[];
@@ -2361,6 +2382,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "background-position-y"?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
   "background-repeat"?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
   "background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
+  "block-overflow"?: BlockOverflowProperty | BlockOverflowProperty[];
   "block-size"?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
   "border-block-end-color"?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
   "border-block-end-style"?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
@@ -2513,6 +2535,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "max-block-size"?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[];
   "max-height"?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
   "max-inline-size"?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
+  "max-lines"?: MaxLinesProperty | MaxLinesProperty[];
   "max-width"?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
   "min-block-size"?: MinBlockSizeProperty<TLength> | MinBlockSizeProperty<TLength>[];
   "min-height"?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
@@ -2542,7 +2565,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "outline-style"?: OutlineStyleProperty | OutlineStyleProperty[];
   "outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
   overflow?: OverflowProperty | OverflowProperty[];
+  "overflow-anchor"?: OverflowAnchorProperty | OverflowAnchorProperty[];
+  "overflow-block"?: OverflowBlockProperty | OverflowBlockProperty[];
   "overflow-clip-box"?: OverflowClipBoxProperty | OverflowClipBoxProperty[];
+  "overflow-inline"?: OverflowInlineProperty | OverflowInlineProperty[];
   "overflow-wrap"?: OverflowWrapProperty | OverflowWrapProperty[];
   "overflow-x"?: OverflowXProperty | OverflowXProperty[];
   "overflow-y"?: OverflowYProperty | OverflowYProperty[];
@@ -2659,6 +2685,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   "grid-gap"?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
   "grid-row"?: GridRowProperty | GridRowProperty[];
   "grid-template"?: GridTemplateProperty | GridTemplateProperty[];
+  "line-clamp"?: LineClampProperty | LineClampProperty[];
   "list-style"?: ListStyleProperty | ListStyleProperty[];
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
@@ -2713,10 +2740,10 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-moz-hyphens"?: HyphensProperty | HyphensProperty[];
   "-moz-image-region"?: MozImageRegionProperty | MozImageRegionProperty[];
   "-moz-orient"?: MozOrientProperty | MozOrientProperty[];
-  "-moz-outline-radius-bottomleft"?: GlobalsString | GlobalsString[];
-  "-moz-outline-radius-bottomright"?: GlobalsString | GlobalsString[];
-  "-moz-outline-radius-topleft"?: GlobalsString | GlobalsString[];
-  "-moz-outline-radius-topright"?: GlobalsString | GlobalsString[];
+  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[];
+  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[];
+  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[];
+  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
   "-moz-padding-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   "-moz-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   "-moz-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
@@ -2899,7 +2926,7 @@ export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
   "-moz-border-image"?: BorderImageProperty | BorderImageProperty[];
   "-moz-column-rule"?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
   "-moz-columns"?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
-  "-moz-outline-radius"?: GlobalsString | GlobalsString[];
+  "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength> | MozOutlineRadiusProperty<TLength>[];
   "-moz-transition"?: TransitionProperty | TransitionProperty[];
   "-ms-content-zoom-limit"?: GlobalsString | GlobalsString[];
   "-ms-content-zoom-snap"?: MsContentZoomSnapProperty | MsContentZoomSnapProperty[];
@@ -2916,6 +2943,7 @@ export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-columns"?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   "-webkit-flex"?: FlexProperty<TLength> | FlexProperty<TLength>[];
   "-webkit-flex-flow"?: FlexFlowProperty | FlexFlowProperty[];
+  "-webkit-line-clamp"?: WebkitLineClampProperty | WebkitLineClampProperty[];
   "-webkit-mask"?: WebkitMaskProperty | WebkitMaskProperty[];
   "-webkit-text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[];
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
@@ -3092,7 +3120,7 @@ export interface SvgPropertiesHyphenFallback<TLength = string | 0> {
   "stop-color"?: StopColorProperty | StopColorProperty[];
   "stop-opacity"?: GlobalsNumber | GlobalsNumber[];
   stroke?: StrokeProperty | StrokeProperty[];
-  "stroke-dasharray"?: StrokeDasharrayProperty | StrokeDasharrayProperty[];
+  "stroke-dasharray"?: StrokeDasharrayProperty<TLength> | StrokeDasharrayProperty<TLength>[];
   "stroke-dashoffset"?: StrokeDashoffsetProperty<TLength> | StrokeDashoffsetProperty<TLength>[];
   "stroke-linecap"?: StrokeLinecapProperty | StrokeLinecapProperty[];
   "stroke-linejoin"?: StrokeLinejoinProperty | StrokeLinejoinProperty[];
@@ -3524,15 +3552,17 @@ type BackgroundRepeatProperty = Globals | RepeatStyle | string;
 
 type BackgroundSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
+type BlockOverflowProperty = Globals | "clip" | "ellipsis" | string;
+
 type BlockSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
 
-type BorderBlockEndColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type BorderBlockEndColorProperty = Globals | Color;
 
 type BorderBlockEndStyleProperty = Globals | BrStyle | string;
 
 type BorderBlockEndWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
-type BorderBlockStartColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type BorderBlockStartColorProperty = Globals | Color;
 
 type BorderBlockStartStyleProperty = Globals | BrStyle | string;
 
@@ -3560,13 +3590,13 @@ type BorderImageSourceProperty = Globals | "none" | string;
 
 type BorderImageWidthProperty<TLength> = Globals | TLength | "auto" | string | number;
 
-type BorderInlineEndColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type BorderInlineEndColorProperty = Globals | Color;
 
 type BorderInlineEndStyleProperty = Globals | BrStyle | string;
 
 type BorderInlineEndWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
-type BorderInlineStartColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type BorderInlineStartColorProperty = Globals | Color;
 
 type BorderInlineStartStyleProperty = Globals | BrStyle | string;
 
@@ -3924,6 +3954,8 @@ type MaxHeightProperty<TLength> = Globals | TLength | "fill-available" | "fit-co
 
 type MaxInlineSizeProperty<TLength> = Globals | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
+type MaxLinesProperty = Globals | "none" | number;
+
 type MaxWidthProperty<TLength> = Globals | TLength | "fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
 type MinBlockSizeProperty<TLength> = Globals | TLength | "auto" | "fill-available" | "fit-content" | "max-content" | "min-content" | string;
@@ -3968,7 +4000,13 @@ type OutlineWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
 type OverflowProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
+type OverflowAnchorProperty = Globals | "auto" | "none";
+
+type OverflowBlockProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+
 type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
+
+type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 type OverflowWrapProperty = Globals | "break-word" | "normal";
 
@@ -4176,9 +4214,9 @@ type BackgroundProperty<TLength> = Globals | FinalBgLayer<TLength> | string;
 
 type BorderProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderBlockEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type BorderBlockEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderBlockStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type BorderBlockStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type BorderBottomProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
@@ -4186,9 +4224,9 @@ type BorderColorProperty = Globals | Color | string;
 
 type BorderImageProperty = Globals | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
-type BorderInlineEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type BorderInlineEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
-type BorderInlineStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type BorderInlineStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type BorderLeftProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
@@ -4225,6 +4263,8 @@ type GridGapProperty<TLength> = Globals | TLength | string;
 type GridRowProperty = Globals | GridLine | string;
 
 type GridTemplateProperty = Globals | "none" | string;
+
+type LineClampProperty = Globals | "none" | number;
 
 type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
 
@@ -4377,6 +4417,14 @@ type MozImageRegionProperty = Globals | "auto" | string;
 
 type MozOrientProperty = Globals | "block" | "horizontal" | "inline" | "vertical";
 
+type MozOutlineRadiusBottomleftProperty<TLength> = Globals | TLength | string;
+
+type MozOutlineRadiusBottomrightProperty<TLength> = Globals | TLength | string;
+
+type MozOutlineRadiusTopleftProperty<TLength> = Globals | TLength | string;
+
+type MozOutlineRadiusToprightProperty<TLength> = Globals | TLength | string;
+
 type MozStackSizingProperty = Globals | "ignore" | "stretch-to-fit";
 
 type MozTextBlinkProperty = Globals | "blink" | "none";
@@ -4461,7 +4509,7 @@ type MsWrapMarginProperty<TLength> = Globals | TLength;
 
 type MsWrapThroughProperty = Globals | "none" | "wrap";
 
-type WebkitBorderBeforeColorProperty = Globals | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type WebkitBorderBeforeColorProperty = Globals | Color;
 
 type WebkitBorderBeforeStyleProperty = Globals | BrStyle | string;
 
@@ -4503,9 +4551,13 @@ type WebkitTextStrokeWidthProperty<TLength> = Globals | TLength;
 
 type WebkitTouchCalloutProperty = Globals | "default" | "none";
 
+type MozOutlineRadiusProperty<TLength> = Globals | TLength | string;
+
 type MsContentZoomSnapProperty = Globals | "mandatory" | "none" | "proximity" | string;
 
-type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | NamedColor | DeprecatedSystemColor | "currentcolor" | string;
+type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
+type WebkitLineClampProperty = Globals | "none" | number;
 
 type WebkitMaskProperty = Globals | "none" | string;
 
@@ -4597,7 +4649,7 @@ type StopColorProperty = Globals | Color | "currentColor";
 
 type StrokeProperty = Globals | Paint;
 
-type StrokeDasharrayProperty = Globals | "none" | string;
+type StrokeDasharrayProperty<TLength> = Globals | Dasharray<TLength> | "none";
 
 type StrokeDashoffsetProperty<TLength> = Globals | TLength | string;
 
@@ -4754,6 +4806,8 @@ type ContentList = Quote | "contents" | string;
 type ContentPosition = "center" | "end" | "flex-end" | "flex-start" | "start";
 
 type CubicBezierTimingFunction = "ease" | "ease-in" | "ease-in-out" | "ease-out" | string;
+
+type Dasharray<TLength> = TLength | string | number;
 
 type DeprecatedSystemColor =
   | "ActiveBorder"
