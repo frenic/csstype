@@ -222,7 +222,7 @@ _If you're using CSS Custom Properties you can step directly to step 3._
 
 1.  **First of all, make sure you're doing it right.** A type error could also indicate that you're not :wink:
 
-    * Some properties that are implemented was officially rejected or haven't yet received any official acceptance and are therefor not included
+    * Some CSS specs that some vendors has implemented could have been officially rejected or haven't yet received any official acceptance and are therefor not included
     * If you're using TypeScript, [type widening](https://blog.mariusschulz.com/2017/02/04/typescript-2-1-literal-type-widening) could be the reason you get `Type 'string' is not assignable to...` errors
 
 2.  **Have a look in [issues](https://github.com/frenic/csstype/issues) to see if an issue already has been filed. If not, create a new one.** To help us out, please refer to any information you have found.
@@ -283,3 +283,14 @@ The casing of CSS vendor properties are changed matching the casing of prefixes 
 * `webkitOverflowScrolling` is now `WebkitOverflowScrolling`
 
 More info: https://www.andismith.com/blogs/2012/02/modernizr-prefixed/
+
+## Contributing
+
+It's important that you run `$ git config merge.ours.driver true` after you've forked and cloned. That setting prevents merge conflicts when doing rebase because **we want you to commit the generated files** (`index.d.ts` and `index.js.flow`). That's necessary to be able to easily follow the changes your code results in.
+
+### Commands
+
+* `yarn build` Generates typings and type checks them
+* `yarn watch` Runs build on each save
+* `yarn test` Runs the tests
+* `yarn lazy` Type check, lint and formats everything
