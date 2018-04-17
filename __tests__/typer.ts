@@ -1,12 +1,12 @@
 import parse from '../src/parser';
 import typing, { Type } from '../src/typer';
 
-describe('typings of CSS syntax', () => {
+describe('typing', () => {
   it('types combinators', () => {
     expect(typing(parse('something another-thing'))).toHaveLength(1);
     expect(typing(parse('something && another-thing'))).toHaveLength(1);
-    expect(typing(parse('something | another-thing'))).toHaveLength(2);
     expect(typing(parse('something || another-thing'))).toHaveLength(3);
+    expect(typing(parse('something | another-thing'))).toHaveLength(2);
   });
 
   it('types components', () => {

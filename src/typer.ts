@@ -3,14 +3,12 @@ import * as cssTypes from 'mdn-data/css/types.json';
 import {
   Combinator,
   Component,
-  ComponentType,
-  Entity,
   EntityType,
-  ICombinator,
-  IFunction,
-  IMultiplierCurlyBracet,
-  Multiplier,
-  MultiplierType,
+  isCombinator,
+  isComponent,
+  isMandatoryEntity,
+  isMandatoryMultiplied,
+  isOptionallyMultiplied,
 } from './parser';
 
 export enum Type {
@@ -76,89 +74,84 @@ const basicDataTypes = [...Object.keys(cssTypes), 'hex-color'].reduce<{
 }, {});
 
 export default function typing(entities: EntityType[]): TypeType[] {
+  let mandatoryCombinatorCount = 0;
+  let mandatoryNonCombinatorsCount = 0;
+  for (const entity of entities) {
+    if (isMandatoryEntity(entity)) {
+      if (isCombinator(entity)) {
+        mandatoryCombinatorCount++;
+      } else {
+        mandatoryNonCombinatorsCount++;
+      }
+    }
+  }
+
   let types: TypeType[] = [];
+
   for (const entity of entities) {
     if (isComponent(entity)) {
-      if (shouldIncludeComponent(entity)) {
-        if (mayBeMultiplied(entity.multiplier)) {
+      if (isMandatoryEntity(entity)) {
+        // In case of `something another-thing` we want to fall back to string until component combinations is solved
+        if (mandatoryCombinatorCount > 0 && mandatoryNonCombinatorsCount > 1) {
           types = addString(types);
+          continue;
         }
+      } else {
+        // In case of `something another-thing?` we want to add string until component combinations is solved
+        if (mandatoryCombinatorCount > 0 && mandatoryNonCombinatorsCount > 0) {
+          types = addString(types);
+          continue;
+        }
+      }
 
-        if (!isMultiplied(entity.multiplier)) {
-          switch (entity.component) {
-            case Component.Keyword:
-              if (String(Number(entity.value)) === entity.value) {
-                types = addNumericLiteral(types, Number(entity.value));
-              } else {
-                types = addStringLiteral(types, entity.value);
-              }
-              break;
-            case Component.DataType: {
-              const value = entity.value.slice(1, -1);
-              const property = /'([^']+)'/.exec(value);
-              if (property) {
-                const name = property[1];
-                types = addPropertyReference(types, name);
-              } else if (value in basicDataTypes) {
-                types = addType(types, basicDataTypes[value]);
-              } else {
-                types = addDataType(types, value);
-              }
-              break;
-            }
-            case Component.Group: {
-              for (const type of typing(entity.entities)) {
-                types = addType(types, type);
-              }
-            }
+      if (isMandatoryMultiplied(entity.multiplier)) {
+        // In case of `something{2,3}` we fallback to `string` and stop as it needs to be multiplied
+        types = addString(types);
+        continue;
+      } else if (isOptionallyMultiplied(entity.multiplier)) {
+        // In case of `something{1,2}` or `something+` we fallback to `string` but moves on
+        // as it doesn't necessary needs to be multiplied
+        types = addString(types);
+      }
+
+      switch (entity.component) {
+        case Component.Keyword:
+          if (String(Number(entity.value)) === entity.value) {
+            types = addNumericLiteral(types, Number(entity.value));
+          } else {
+            types = addStringLiteral(types, entity.value);
+          }
+          break;
+        case Component.DataType: {
+          const value = entity.value.slice(1, -1);
+          const property = /'([^']+)'/.exec(value);
+          if (property) {
+            const name = property[1];
+            types = addPropertyReference(types, name);
+          } else if (value in basicDataTypes) {
+            types = addType(types, basicDataTypes[value]);
+          } else {
+            types = addDataType(types, value);
+          }
+          break;
+        }
+        case Component.Group: {
+          for (const type of typing(entity.entities)) {
+            types = addType(types, type);
           }
         }
       }
     } else if (isCombinator(entity)) {
-      if (entity.combinator === Combinator.DoubleBar || isMandatoryCombinator(entity)) {
+      if (entity.combinator === Combinator.DoubleBar || isMandatoryEntity(entity)) {
         types = addString(types);
       }
-    } else if (isFunction(entity)) {
+    } else {
       types = addString(types);
     }
   }
 
-  function previousEntity(currentEntity: EntityType) {
-    return entities[entities.indexOf(currentEntity) - 1];
-  }
-
-  function nextEntity(currentEntity: EntityType) {
-    return entities[entities.indexOf(currentEntity) + 1];
-  }
-
-  function shouldIncludeComponent(component: ComponentType) {
-    for (let i = entities.indexOf(component) - 1; i >= 0; i--) {
-      const entity = entities[i];
-      if (entity && entity.entity === Entity.Combinator) {
-        if (isMandatoryCombinator(entity)) {
-          const previous = previousEntity(entity);
-          if (previous && !isOptionalEntity(previous)) {
-            return false;
-          }
-        } else {
-          break;
-        }
-      }
-    }
-    for (let i = entities.indexOf(component) + 1; i < entities.length; i++) {
-      const entity = entities[i];
-      if (entity && entity.entity === Entity.Combinator) {
-        if (isMandatoryCombinator(entity)) {
-          const next = nextEntity(entity);
-          if (next && !isOptionalEntity(next)) {
-            return false;
-          }
-        } else {
-          break;
-        }
-      }
-    }
-    return true;
+  if (mandatoryNonCombinatorsCount > 1 && mandatoryCombinatorCount > 1) {
+    return [{ type: Type.String }];
   }
 
   return types;
@@ -296,48 +289,4 @@ export function addType<TDataType extends IDataType>(
 export function hasType(originalTypes: TypeType[], type: TypeType): boolean {
   const testTypes = addType(originalTypes, type);
   return originalTypes === testTypes;
-}
-
-function isFunction(entity: EntityType): entity is IFunction {
-  return entity.entity === Entity.Function;
-}
-
-function isComponent(entity: EntityType): entity is ComponentType {
-  return entity.entity === Entity.Component;
-}
-
-function isCombinator(entity: EntityType): entity is ICombinator {
-  return entity.entity === Entity.Combinator;
-}
-
-function isCurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMultiplierCurlyBracet {
-  return multiplier.sign === Multiplier.CurlyBracet;
-}
-
-function isMultiplied(multiplier: MultiplierType | null) {
-  return multiplier !== null && (isCurlyBracetMultiplier(multiplier) && multiplier.min > 1);
-}
-
-function mayBeMultiplied(multiplier: MultiplierType | null) {
-  return (
-    multiplier !== null &&
-    ((isCurlyBracetMultiplier(multiplier) && multiplier.max > 1) ||
-      multiplier.sign === Multiplier.Asterisk ||
-      multiplier.sign === Multiplier.PlusSign ||
-      multiplier.sign === Multiplier.HashMark ||
-      multiplier.sign === Multiplier.ExclamationPoint)
-  );
-}
-
-function isMandatoryCombinator({ combinator }: ICombinator) {
-  return combinator === Combinator.DoubleAmpersand || combinator === Combinator.Juxtaposition;
-}
-
-function isOptionalEntity(entity: EntityType) {
-  return (
-    entity.multiplier &&
-    ((isCurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min < 2) ||
-      entity.multiplier.sign === Multiplier.Asterisk ||
-      entity.multiplier.sign === Multiplier.QuestionMark)
-  );
 }
