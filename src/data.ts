@@ -3,7 +3,7 @@ import * as rawSyntaxes from 'mdn-data/css/syntaxes.json';
 import { getPropertyData, getTypesData } from './compat';
 import { createPropertyDataTypeResolver, resolveDataTypes } from './data-types';
 import { IExtendedProperty, properties as patchedProperties, syntaxes as patchedSyntaxes } from './data/patches';
-import { syntaxes as rawSvgSyntaxes } from './data/svg';
+import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from './data/svg';
 import { error, warn } from './logger';
 import parse from './parser';
 import typing, { hasType } from './typer';
@@ -61,6 +61,16 @@ export let getSyntaxes = () => {
   return syntaxes;
 };
 
+export function isProperty(name: string) {
+  return (
+    name in rawProperties || name in rawSvgProperties || (name in patchedProperties && !!patchedProperties[name].syntax)
+  );
+}
+
+export function isSyntax(name: string) {
+  return name in rawSyntaxes || name in rawSvgSyntaxes || (name in patchedSyntaxes && !!patchedSyntaxes[name].syntax);
+}
+
 const validatedPropertySyntaxes: string[] = [];
 
 export function getPropertySyntax(name: string) {
@@ -88,7 +98,7 @@ export function getPropertySyntax(name: string) {
     warn('Syntax for property `%s` is missing', name);
   }
 
-  return rawProperties[name] && rawProperties[name].syntax;
+  return rawSyntax;
 }
 
 const validatedSyntaxes: string[] = [];
@@ -96,9 +106,8 @@ const validatedSyntaxes: string[] = [];
 export function getSyntax(name: string) {
   const patch = patchedSyntaxes[name];
 
-  const rawSyntax = rawSyntaxes[name]
-    ? rawSyntaxes[name].syntax
-    : rawSvgSyntaxes[name] ? rawSvgSyntaxes[name].syntax : null;
+  const rawSyntax =
+    name in rawSyntaxes ? rawSyntaxes[name].syntax : rawSvgSyntaxes[name] && rawSvgSyntaxes[name].syntax;
 
   if (patch && patch.syntax) {
     if (rawSyntax && !validatedSyntaxes.includes(name)) {
@@ -121,7 +130,7 @@ export function getSyntax(name: string) {
     warn('Syntax for `%s` is missing', name);
   }
 
-  return rawSyntaxes[name] && rawSyntaxes[name].syntax;
+  return rawSyntax;
 }
 
 function validatePatch(compat: MDN.CompatData | null, sourceSyntax: string, patchSyntax: string): boolean {

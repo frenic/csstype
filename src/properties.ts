@@ -9,9 +9,9 @@ import {
 } from './compat';
 import { getProperties, getPropertySyntax } from './data';
 import { createPropertyDataTypeResolver, resolveDataTypes } from './data-types';
-import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from './data/svg';
+import { properties as rawSvgProperties } from './data/svg';
 import parse from './parser';
-import typing, { IDataType, ResolvedType } from './typer';
+import typing, { ResolvedType } from './typer';
 
 const ALL = 'all';
 
@@ -120,7 +120,7 @@ for (const name in rawSvgProperties) {
   if (syntax) {
     svgProperties[name] = {
       name,
-      types: resolveDataTypes(typing(parse(syntax)), createSvgDataTypeResolver(compatibilityData)),
+      types: resolveDataTypes(typing(parse(syntax)), createPropertyDataTypeResolver(compatibilityData)),
     };
   }
 }
@@ -132,14 +132,4 @@ export function isVendorProperty(name: string) {
 function filterMissingProperties(names: string[]) {
   // Filter only those which isn't defined in MDN data
   return names.filter(name => !(name in properties));
-}
-
-function createSvgDataTypeResolver(data: MDN.CompatData | null) {
-  const resolver = createPropertyDataTypeResolver(data);
-  const svgResolver: (dataType: IDataType) => ResolvedType[] = (dataType: IDataType) =>
-    dataType.name in rawSvgSyntaxes
-      ? resolveDataTypes(typing(parse(rawSvgSyntaxes[dataType.name].syntax)), svgResolver)
-      : resolver(dataType);
-
-  return svgResolver;
 }

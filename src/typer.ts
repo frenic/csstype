@@ -1,5 +1,5 @@
 import * as cssTypes from 'mdn-data/css/types.json';
-import { getSyntaxes } from './data';
+import { isProperty, isSyntax } from './data';
 import { warn } from './logger';
 import {
   Combinator,
@@ -64,7 +64,7 @@ let getBasicDataTypes = () => {
         };
         break;
       default:
-        if (!(name in getSyntaxes())) {
+        if (!isSyntax(name)) {
           dataTypes[name] = {
             type: Type.String,
           };
@@ -132,14 +132,19 @@ export default function typing(entities: EntityType[]): TypeType[] {
           const value = entity.value.slice(1, -1);
           if (value in getBasicDataTypes()) {
             types = addType(types, getBasicDataTypes()[value]);
-          } else if (value in getSyntaxes()) {
-            // Need to check if data type exists because some property references are
-            // not quoted. Needs to fixed some how.
+          } else if (isSyntax(value)) {
             types = addDataType(types, value);
           } else {
             const property = /'([^']+)'/.exec(value);
-            const name = property ? property[1] : (warn('Data type `%s` was missing or is malformatted', value), value);
-            types = addPropertyReference(types, name);
+            if (property && isProperty(property[1])) {
+              types = addPropertyReference(types, property[1]);
+            } else if (isProperty(value)) {
+              warn('Property reference `%s` was malformed', value);
+              types = addPropertyReference(types, value);
+            } else {
+              warn('Data type `%s` was missing', value);
+              types = addString(types);
+            }
           }
           break;
         }
