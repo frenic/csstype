@@ -1,5 +1,3 @@
-import * as properties from 'mdn-data/css/properties.json';
-import * as syntaxes from 'mdn-data/css/syntaxes.json';
 import {
   compatNames,
   compatSyntax,
@@ -9,16 +7,19 @@ import {
   isAddedBySome,
   isDeprecated,
 } from './compat';
-import { resolveDataTypes } from './data-types';
-import { properties as rawSvgProperties, syntaxes as svgSyntaxes } from './data/svg';
+import { getProperties, getPropertySyntax } from './data';
+import { createPropertyDataTypeResolver, resolveDataTypes } from './data-types';
+import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from './data/svg';
 import parse from './parser';
-import typing, { ResolvedType, Type } from './typer';
+import typing, { IDataType, ResolvedType } from './typer';
+
+const ALL = 'all';
 
 const IGNORES = [
   // Custom properties
   '--*',
   // We define this manually
-  'all',
+  ALL,
 ];
 
 const REGEX_VENDOR_PROPERTY = /^-/;
@@ -36,7 +37,7 @@ if (!globalCompatibilityData) {
 // The CSS-wide keywords are identical to the `all` property
 // https://www.w3.org/TR/2016/CR-css-cascade-4-20160114/#all-shorthand
 export const globals: ResolvedType[] = resolveDataTypes(
-  typing(compatSyntax(globalCompatibilityData, parse(properties.all.syntax))),
+  typing(compatSyntax(globalCompatibilityData, parse(getPropertySyntax(ALL)))),
 );
 
 export const standardLonghandProperties: { [name: string]: IProperty } = {};
@@ -52,13 +53,15 @@ export const vendorPrefixedShorthandProperties: { [name: string]: IProperty } = 
 export const obsoleteProperties: { [name: string]: IProperty } = {};
 export const svgProperties: { [name: string]: IProperty } = {};
 
+const properties = getProperties();
+
 for (const originalName in properties) {
   if (IGNORES.includes(originalName)) {
     continue;
   }
 
   // Default values
-  let entities = parse(properties[originalName].syntax);
+  let entities = parse(getPropertySyntax(originalName));
   let currentNames: string[] = [originalName];
   let obsoleteNames: string[] = [];
 
@@ -85,11 +88,11 @@ for (const originalName in properties) {
 
   const property: IProperty = {
     name: originalName,
-    types: resolveDataTypes(typing(entities), createDataTypeResolver(compatibilityData)),
+    types: resolveDataTypes(typing(entities), createPropertyDataTypeResolver(compatibilityData)),
   };
 
   for (const name of currentNames) {
-    const isShorthand = Array.isArray(properties[originalName].computed);
+    const isShorthand = properties[originalName].shorthand;
 
     if (isVendorProperty(name)) {
       if (isShorthand) {
@@ -131,26 +134,12 @@ function filterMissingProperties(names: string[]) {
   return names.filter(name => !(name in properties));
 }
 
-export function createDataTypeResolver(data: MDN.CompatData | null) {
-  const resolver: (dataTypeName: string) => ResolvedType[] = dataTypeName => {
-    const syntax = syntaxes[dataTypeName] || properties[dataTypeName];
-    return syntax
-      ? resolveDataTypes(
-          data ? typing(compatSyntax(data, parse(syntax.syntax))) : typing(parse(syntax.syntax)),
-          resolver,
-        )
-      : [{ type: Type.String }];
-  };
-
-  return resolver;
-}
-
 function createSvgDataTypeResolver(data: MDN.CompatData | null) {
-  const resolver = createDataTypeResolver(data);
-  const svgResolver: (dataTypeName: string) => ResolvedType[] = (dataTypeName: string) =>
-    dataTypeName in svgSyntaxes
-      ? resolveDataTypes(typing(parse(svgSyntaxes[dataTypeName].syntax)), svgResolver)
-      : resolver(dataTypeName);
+  const resolver = createPropertyDataTypeResolver(data);
+  const svgResolver: (dataType: IDataType) => ResolvedType[] = (dataType: IDataType) =>
+    dataType.name in rawSvgSyntaxes
+      ? resolveDataTypes(typing(parse(rawSvgSyntaxes[dataType.name].syntax)), svgResolver)
+      : resolver(dataType);
 
   return svgResolver;
 }
