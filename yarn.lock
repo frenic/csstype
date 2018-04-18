@@ -2089,9 +2089,9 @@ map-visit@^1.0.0:
   dependencies:
     extend "3.0.1"
 
-"mdn-data@git+https://github.com/mdn/data.git#af0369d9445c7e6f44f818d2034ccac16f328da9":
+"mdn-data@git+https://github.com/mdn/data.git#c5fc95e780d14f4f949e9f26675bb6f0ae376ea0":
   version "1.1.1"
-  resolved "git+https://github.com/mdn/data.git#af0369d9445c7e6f44f818d2034ccac16f328da9"
+  resolved "git+https://github.com/mdn/data.git#c5fc95e780d14f4f949e9f26675bb6f0ae376ea0"
 
 mem@^1.1.0:
   version "1.1.0"

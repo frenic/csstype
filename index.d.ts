@@ -558,6 +558,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitTransitionDuration?: GlobalsString;
   WebkitTransitionProperty?: TransitionPropertyProperty;
   WebkitTransitionTimingFunction?: TransitionTimingFunctionProperty;
+  WebkitUserModify?: WebkitUserModifyProperty;
   WebkitUserSelect?: UserSelectProperty;
   WebkitWritingMode?: WritingModeProperty;
 }
@@ -1341,6 +1342,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-transition-duration"?: GlobalsString;
   "-webkit-transition-property"?: TransitionPropertyProperty;
   "-webkit-transition-timing-function"?: TransitionTimingFunctionProperty;
+  "-webkit-user-modify"?: WebkitUserModifyProperty;
   "-webkit-user-select"?: UserSelectProperty;
   "-webkit-writing-mode"?: WritingModeProperty;
 }
@@ -2128,6 +2130,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitTransitionDuration?: GlobalsString | GlobalsString[];
   WebkitTransitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[];
   WebkitTransitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
+  WebkitUserModify?: WebkitUserModifyProperty | WebkitUserModifyProperty[];
   WebkitUserSelect?: UserSelectProperty | UserSelectProperty[];
   WebkitWritingMode?: WritingModeProperty | WritingModeProperty[];
 }
@@ -2917,6 +2920,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-transition-duration"?: GlobalsString | GlobalsString[];
   "-webkit-transition-property"?: TransitionPropertyProperty | TransitionPropertyProperty[];
   "-webkit-transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
+  "-webkit-user-modify"?: WebkitUserModifyProperty | WebkitUserModifyProperty[];
   "-webkit-user-select"?: UserSelectProperty | UserSelectProperty[];
   "-webkit-writing-mode"?: WritingModeProperty | WritingModeProperty[];
 }
@@ -4036,9 +4040,9 @@ type PaddingRightProperty<TLength> = Globals | TLength | string;
 
 type PaddingTopProperty<TLength> = Globals | TLength | string;
 
-type PageBreakAfterProperty = Globals | "always" | "auto" | "avoid" | "left" | "right";
+type PageBreakAfterProperty = Globals | "always" | "auto" | "avoid" | "left" | "recto" | "right" | "verso";
 
-type PageBreakBeforeProperty = Globals | "always" | "auto" | "avoid" | "left" | "right";
+type PageBreakBeforeProperty = Globals | "always" | "auto" | "avoid" | "left" | "recto" | "right" | "verso";
 
 type PageBreakInsideProperty = Globals | "auto" | "avoid";
 
@@ -4550,6 +4554,8 @@ type WebkitTextStrokeColorProperty = Globals | Color;
 type WebkitTextStrokeWidthProperty<TLength> = Globals | TLength;
 
 type WebkitTouchCalloutProperty = Globals | "default" | "none";
+
+type WebkitUserModifyProperty = Globals | "read-only" | "read-write" | "read-write-plaintext-only";
 
 type MozOutlineRadiusProperty<TLength> = Globals | TLength | string;
 

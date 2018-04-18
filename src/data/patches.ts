@@ -36,14 +36,6 @@ export const properties: { [property: string]: IExtendedProperty } = {
     shorthand: false,
   },
   /**
-   * https://drafts.csswg.org/css-scroll-anchoring/#exclusion-api
-   * https://github.com/mdn/data/pull/206
-   */
-  'overflow-anchor': {
-    syntax: 'auto | none',
-    shorthand: false,
-  },
-  /**
    * https://drafts.csswg.org/css-overflow-3/#logical
    * https://github.com/mdn/data/pull/207
    */
@@ -61,12 +53,4 @@ export const properties: { [property: string]: IExtendedProperty } = {
   },
 };
 
-export const syntaxes: { [property: string]: MDN.Syntax } = {
-  /**
-   * https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-outline-radius
-   * https://github.com/mdn/data/pull/208
-   */
-  'outline-radius': {
-    syntax: '<length> | <percentage>',
-  },
-};
+export const syntaxes: { [property: string]: MDN.Syntax } = {};
