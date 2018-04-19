@@ -50,7 +50,7 @@ export type TypeType<TDataType = IDataType> = IBasic | IStringLiteral | INumeric
 export type ResolvedType = TypeType<DataType>;
 
 let getBasicDataTypes = () => {
-  const types = [...Object.keys(cssTypes), 'hex-color'].reduce<{ [name: string]: IBasic }>((dataTypes, name) => {
+  const types = Object.keys(cssTypes).reduce<{ [name: string]: IBasic }>((dataTypes, name) => {
     switch (name) {
       case 'number':
       case 'integer':

@@ -53,4 +53,13 @@ export const properties: { [property: string]: IExtendedProperty } = {
   },
 };
 
-export const syntaxes: { [property: string]: MDN.Syntax } = {};
+export const syntaxes: { [property: string]: MDN.Syntax } = {
+  // Undefined syntax
+  'hex-color': {
+    syntax: '<string>',
+  },
+  // Undefined syntax
+  'unicode-range': {
+    syntax: '<string>',
+  },
+};
