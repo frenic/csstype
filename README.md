@@ -22,130 +22,52 @@ $ yarn add csstype
 ## Table of content
 
 * [Style types](#style-types)
-  * [`Properties`](#properties)
-  * [`PropertiesHyphen`](#propertieshyphen)
-  * [`PropertiesFallback`](#propertiesfallback)
-  * [`PropertiesHyphenFallback`](#propertieshyphenfallback)
 * [At-rule types](#at-rule-types)
-  * [`@counter-style`](#counter-style)
-  * [`@font-face`](#font-face)
-  * [`@page`](#page)
-  * [`@viewport`](#viewport)
 * [Pseudo types](#pseudo-types)
 * [Usage](#usage)
 * [What should I do when I get type errors?](#what-should-i-do-when-i-get-type-errors)
 * [Version 2.0](#version-20)
+* [Contributing](#contributing)
+  * [Commands](#commands)
 
 ## Style types
 
-All properties are categorized in different uses and in several technical variations to provide typings that suits as many as possible.
-
-Categories:
-
-* `Standard` - Current properties
-* `Vendor` - Vendor prefixed properties
-* `Obsolete` - Removed or deprecated properties
-* `Svg` - SVG-specific properties
-
-Variations:
-
-* _Default variation_ - JavaScript (camel) cased property names
-* `Hyphen` - CSS (kebab) cased property names
-* `Fallback` - Also accepts array of values e.g. `string | string[]`
+Properties are categorized in different uses and in several technical variations to provide typings that suits as many as possible.
 
 All interfaces has one optional generic argument to define length. It defaults to `string | 0` because `0` is the [only unitless length](https://www.w3.org/TR/REC-CSS2/syndata.html#length-units). You can specify this, e.g. `string | number`, for platforms and libraries that accepts any numeric value as length with a specific unit.
 
-### `Properties`
+|                | _Default_            | `Hyphen`                   | `Fallback`                   | `HyphenFallback`                   |
+| -------------- | -------------------- | -------------------------- | ---------------------------- | ---------------------------------- |
+| **_All_**      | `Properties`         | `PropertiesHyphen`         | `PropertiesFallback`         | `PropertiesHyphenFallback`         |
+| **`Standard`** | `StandardProperties` | `StandardPropertiesHyphen` | `StandardPropertiesFallback` | `StandardPropertiesHyphenFallback` |
+| **`Vendor`**   | `VendorProperties`   | `VendorPropertiesHyphen`   | `VendorPropertiesFallback`   | `VendorPropertiesHyphenFallback`   |
+| **`Obsolete`** | `ObsoleteProperties` | `ObsoletePropertiesHyphen` | `ObsoletePropertiesFallback` | `ObsoletePropertiesHyphenFallback` |
+| **`Svg`**      | `SvgProperties`      | `SvgPropertiesHyphen`      | `SvgPropertiesFallback`      | `SvgPropertiesHyphenFallback`      |
 
-CSS properties interface with **camel** cased property names:
+Categories:
 
-Extends:
+* **_All_** - Includes `Standard`, `Vendor`, `Obsolete` and `Svg`
+* **`Standard`** - Current properties and extends subcategories `StandardLonghand` and `StandardShorthand` _(e.g. `StandardShorthandProperties`)_
+* **`Vendor`** - Vendor prefixed properties and extends subcategories `VendorLonghand` and `VendorShorthand` _(e.g. `VendorShorthandProperties`)_
+* **`Obsolete`** - Removed or deprecated properties
+* **`Svg`** - SVG-specific properties
 
-* `StandardProperties`
-  * `StandardLonghandProperties`
-  * `StandardShorthandProperties`
-* `VendorProperties`
-  * `VendorLonghandProperties`
-  * `VendorShorthandProperties`
-* `ObsoleteProperties`
-* `SvgProperties`
+Variations:
 
-### `PropertiesHyphen`
-
-CSS properties interface with **kebab** cased property names:
-
-Extends:
-
-* `StandardPropertiesHyphen`
-  * `StandardLonghandPropertiesHyphen`
-  * `StandardShorthandPropertiesHyphen`
-* `VendorPropertiesHyphen`
-  * `VendorLonghandPropertiesHyphen`
-  * `VendorShorthandPropertiesHyphen`
-* `ObsoletePropertiesHyphen`
-* `SvgPropertiesHyphen`
-
-### `PropertiesFallback`
-
-Equals to **`Properties`** but also allows array of values:
-
-Extends:
-
-* `StandardPropertiesFallback`
-  * `StandardLonghandPropertiesFallback`
-  * `StandardShorthandPropertiesFallback`
-* `VendorPropertiesFallback`
-  * `VendorLonghandPropertiesFallback`
-  * `VendorShorthandPropertiesFallback`
-* `ObsoletePropertiesFallback`
-* `SvgPropertiesFallback`
-
-### `PropertiesHyphenFallback`
-
-Equals to **`PropertiesHyphen`** but also allows array of values:
-
-Extends:
-
-* `StandardPropertiesHyphenFallback`
-  * `StandardLonghandPropertiesHyphenFallback`
-  * `StandardShorthandPropertiesHyphenFallback`
-* `VendorPropertiesHyphenFallback`
-  * `VendorLonghandPropertiesHyphenFallback`
-  * `VendorShorthandPropertiesHyphenFallback`
-* `ObsoletePropertiesHyphenFallback`
-* `SvgPropertiesHyphenFallback`
+* **_Default_** - JavaScript (camel) cased property names
+* **`Hyphen`** - CSS (kebab) cased property names
+* **`Fallback`** - Also accepts array of values e.g. `string | string[]`
 
 ## At-rule types
 
 At-rule interfaces with descriptors.
 
-### `@counter-style`
-
-* `CounterStyle`
-* `CounterStyleFallback`
-* `CounterStyleHyphen`
-* `CounterStyleHyphenFallback`
-
-### `@font-face`
-
-* `FontFace`
-* `FontFaceFallback`
-* `FontFaceHyphen`
-* `FontFaceHyphenFallback`
-
-### `@page`
-
-* `Page`
-* `PageFallback`
-* `PageHyphen`
-* `PageHyphenFallback`
-
-### `@viewport`
-
-* `Viewport`
-* `ViewportFallback`
-* `ViewportHyphen`
-* `ViewportHyphenFallback`
+|                      | _Default_      | `Hyphen`             | `Fallback`             | `HyphenFallback`             |
+| -------------------- | -------------- | -------------------- | ---------------------- | ---------------------------- |
+| **`@counter-style`** | `CounterStyle` | `CounterStyleHyphen` | `CounterStyleFallback` | `CounterStyleHyphenFallback` |
+| **`@font-face`**     | `FontFace`     | `FontFaceHyphen`     | `FontFaceFallback`     | `FontFaceHyphenFallback`     |
+| **`@page`**          | `Page`         | `PageHyphen`         | `PageFallback`         | `PageHyphenFallback`         |
+| **`@viewport`**      | `Viewport`     | `ViewportHyphen`     | `ViewportFallback`     | `ViewportHyphenFallback`     |
 
 ## Pseudo types
 
