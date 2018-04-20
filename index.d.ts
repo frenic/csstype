@@ -476,6 +476,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitAnimationName?: AnimationNameProperty;
   WebkitAnimationPlayState?: AnimationPlayStateProperty;
   WebkitAnimationTimingFunction?: AnimationTimingFunctionProperty;
+  WebkitAppearance?: AppearanceProperty;
   WebkitBackdropFilter?: BackdropFilterProperty;
   WebkitBackfaceVisibility?: BackfaceVisibilityProperty;
   WebkitBackgroundSize?: BackgroundSizeProperty<TLength>;
@@ -1262,6 +1263,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-animation-name"?: AnimationNameProperty;
   "-webkit-animation-play-state"?: AnimationPlayStateProperty;
   "-webkit-animation-timing-function"?: AnimationTimingFunctionProperty;
+  "-webkit-appearance"?: AppearanceProperty;
   "-webkit-backdrop-filter"?: BackdropFilterProperty;
   "-webkit-backface-visibility"?: BackfaceVisibilityProperty;
   "-webkit-background-size"?: BackgroundSizeProperty<TLength>;
@@ -2052,6 +2054,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitAnimationName?: AnimationNameProperty | AnimationNameProperty[];
   WebkitAnimationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   WebkitAnimationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
+  WebkitAppearance?: AppearanceProperty | AppearanceProperty[];
   WebkitBackdropFilter?: BackdropFilterProperty | BackdropFilterProperty[];
   WebkitBackfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   WebkitBackgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
@@ -2844,6 +2847,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-animation-name"?: AnimationNameProperty | AnimationNameProperty[];
   "-webkit-animation-play-state"?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   "-webkit-animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
+  "-webkit-appearance"?: AppearanceProperty | AppearanceProperty[];
   "-webkit-backdrop-filter"?: BackdropFilterProperty | BackdropFilterProperty[];
   "-webkit-backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   "-webkit-background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
@@ -3522,7 +3526,7 @@ type AnimationPlayStateProperty = Globals | "paused" | "running" | string;
 
 type AnimationTimingFunctionProperty = Globals | SingleTimingFunction | string;
 
-type AppearanceProperty = Globals | "auto" | "none";
+type AppearanceProperty = Globals | "none";
 
 type AzimuthProperty =
   | Globals
@@ -4092,15 +4096,15 @@ type OutlineStyleProperty = Globals | BrStyle | "auto";
 
 type OutlineWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
-type OverflowProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+type OverflowProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
 type OverflowAnchorProperty = Globals | "auto" | "none";
 
-type OverflowBlockProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+type OverflowBlockProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
 type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
-type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
 type OverflowWrapProperty = Globals | "break-word" | "normal";
 
@@ -4281,7 +4285,7 @@ type UnicodeBidiProperty =
   | "normal"
   | "plaintext";
 
-type UserSelectProperty = Globals | "-webkit-contain" | "all" | "auto" | "contain" | "element" | "none" | "text";
+type UserSelectProperty = Globals | "-moz-none" | "all" | "auto" | "contain" | "element" | "none" | "text";
 
 type VerticalAlignProperty<TLength> = Globals | TLength | "baseline" | "bottom" | "middle" | "sub" | "super" | "text-bottom" | "text-top" | "top" | string;
 

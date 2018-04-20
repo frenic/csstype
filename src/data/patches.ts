@@ -12,44 +12,10 @@ export const properties: { [property: string]: IExtendedProperty } = {
     shorthand: true,
   },
   /**
-   * https://drafts.csswg.org/css-overflow-3/#block-ellipsis
-   * https://github.com/mdn/data/pull/207
-   */
-  'block-overflow': {
-    syntax: 'clip | ellipsis | <string>',
-    shorthand: false,
-  },
-  /**
    * https://drafts.csswg.org/css-overflow-3/#line-clamp
-   * https://github.com/mdn/data/pull/207
    */
   'line-clamp': {
-    syntax: 'none | <integer>',
     shorthand: true,
-  },
-  /**
-   * https://drafts.csswg.org/css-overflow-3/#max-lines
-   * https://github.com/mdn/data/pull/207
-   */
-  'max-lines': {
-    syntax: 'none | <integer>',
-    shorthand: false,
-  },
-  /**
-   * https://drafts.csswg.org/css-overflow-3/#logical
-   * https://github.com/mdn/data/pull/207
-   */
-  'overflow-block': {
-    syntax: "<'overflow'>",
-    shorthand: false,
-  },
-  /**
-   * https://drafts.csswg.org/css-overflow-3/#logical
-   * https://github.com/mdn/data/pull/207
-   */
-  'overflow-inline': {
-    syntax: "<'overflow'>",
-    shorthand: false,
   },
 };
 
