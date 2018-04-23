@@ -4,6 +4,7 @@ declare namespace MDN {
     version_removed?: boolean | string | null;
     prefix?: string;
     alternative_name?: string;
+    flags?: any[];
   }
 
   type Browsers =

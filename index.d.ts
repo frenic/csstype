@@ -1,161 +1,1083 @@
 export interface StandardLonghandProperties<TLength = string | 0> {
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE     |
+   * | -------- | ------- | --------- | ------ | ------ |
+   * | **29**   | **28**  | **9**     | **12** | **11** |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-content
+   */
   alignContent?: AlignContentProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **21** | **20**  | **7** _-x-_ | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-items
+   */
   alignItems?: AlignItemsProperty;
+  /**
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **36**   | **20**  | No     | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-self
+   */
   alignSelf?: AlignSelfProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE     |
+   * | ------ | ------- | ------- | ------ | ------ |
+   * | **43** | **16**  | **9**   | **12** | **10** |
+   * |        | 5 _-x-_ | 4 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
+   */
   animationDelay?: GlobalsString;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-direction
+   */
   animationDirection?: AnimationDirectionProperty;
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **43**  | **16**  | **4** _-x-_ | **12** | **10** |
+   * | 3 _-x-_ | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
+   */
   animationDuration?: GlobalsString;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode
+   */
   animationFillMode?: AnimationFillModeProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count
+   */
   animationIterationCount?: AnimationIterationCountProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-name
+   */
   animationName?: AnimationNameProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **43** | **16**  | Yes    | **12** | **10** |
+   * |        | 5 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-play-state
+   */
   animationPlayState?: AnimationPlayStateProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-timing-function
+   */
   animationTimingFunction?: AnimationTimingFunctionProperty;
+  /**
+   * | Chrome      | Firefox     | Safari      | Edge         | IE  |
+   * | ----------- | ----------- | ----------- | ------------ | --- |
+   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/appearance
+   */
   appearance?: AppearanceProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE  |
+   * | ------ | ------- | ----------- | ------ | --- |
+   * | n/a    | No      | **9** _-x-_ | **17** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/backdrop-filter
+   */
   backdropFilter?: BackdropFilterProperty;
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE     |
+   * | ------------ | -------- | ------ | ------ | ------ |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | **10** |
+   * |              | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
+   */
   backfaceVisibility?: BackfaceVisibilityProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-attachment
+   */
   backgroundAttachment?: BackgroundAttachmentProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **35** | **30**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-blend-mode
+   */
   backgroundBlendMode?: BackgroundBlendModeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **4**   | **3**  | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
+   */
   backgroundClip?: BackgroundClipProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-color
+   */
   backgroundColor?: BackgroundColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-image
+   */
   backgroundImage?: BackgroundImageProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **4**   | **3**  | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-origin
+   */
   backgroundOrigin?: BackgroundOriginProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
+   */
   backgroundPosition?: BackgroundPositionProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **49**  | Yes    | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position-x
+   */
   backgroundPositionX?: BackgroundPositionXProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **49**  | Yes    | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position-y
+   */
   backgroundPositionY?: BackgroundPositionYProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-repeat
+   */
   backgroundRepeat?: BackgroundRepeatProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **3**   | **4**   | **4.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-size
+   */
   backgroundSize?: BackgroundSizeProperty<TLength>;
   blockOverflow?: BlockOverflowProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/block-size
+   */
   blockSize?: BlockSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-color
+   */
   borderBlockEndColor?: BorderBlockEndColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-style
+   */
   borderBlockEndStyle?: BorderBlockEndStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-width
+   */
   borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-color
+   */
   borderBlockStartColor?: BorderBlockStartColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-style
+   */
   borderBlockStartStyle?: BorderBlockStartStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-width
+   */
   borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-color
+   */
   borderBottomColor?: BorderBottomColorProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius
+   */
   borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength>;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius
+   */
   borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
+   */
   borderBottomStyle?: BorderBottomStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-width
+   */
   borderBottomWidth?: BorderBottomWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-collapse
+   */
   borderCollapse?: BorderCollapseProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-outset
+   */
   borderImageOutset?: BorderImageOutsetProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-repeat
+   */
   borderImageRepeat?: BorderImageRepeatProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-slice
+   */
   borderImageSlice?: BorderImageSliceProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-source
+   */
   borderImageSource?: BorderImageSourceProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **13**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-width
+   */
   borderImageWidth?: BorderImageWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color
+   */
   borderInlineEndColor?: BorderInlineEndColorProperty;
+  /**
+   * | Chrome | Firefox                      | Safari | Edge | IE  |
+   * | ------ | ---------------------------- | ------ | ---- | --- |
+   * | No     | **41**                       | No     | n/a  | No  |
+   * |        | 38 _(-moz-border-end-style)_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style
+   */
   borderInlineEndStyle?: BorderInlineEndStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width
+   */
   borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox                        | Safari | Edge | IE  |
+   * | ------ | ------------------------------ | ------ | ---- | --- |
+   * | No     | **41**                         | No     | n/a  | No  |
+   * |        | 38 _(-moz-border-start-color)_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color
+   */
   borderInlineStartColor?: BorderInlineStartColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style
+   */
   borderInlineStartStyle?: BorderInlineStartStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width
+   */
   borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-color
+   */
   borderLeftColor?: BorderLeftColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
+   */
   borderLeftStyle?: BorderLeftStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-width
+   */
   borderLeftWidth?: BorderLeftWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-color
+   */
   borderRightColor?: BorderRightColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
+   */
   borderRightStyle?: BorderRightStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-width
+   */
   borderRightWidth?: BorderRightWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-spacing
+   */
   borderSpacing?: BorderSpacingProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-color
+   */
   borderTopColor?: BorderTopColorProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius
+   */
   borderTopLeftRadius?: BorderTopLeftRadiusProperty<TLength>;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius
+   */
   borderTopRightRadius?: BorderTopRightRadiusProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
+   */
   borderTopStyle?: BorderTopStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
+   */
   borderTopWidth?: BorderTopWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/bottom
+   */
   bottom?: BottomProperty<TLength>;
   boxAlign?: BoxAlignProperty;
+  /**
+   * | Chrome       | Firefox | Safari  | Edge | IE  |
+   * | ------------ | ------- | ------- | ---- | --- |
+   * | **22** _-x-_ | **32**  | **6.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
+   */
   boxDecorationBreak?: BoxDecorationBreakProperty;
   boxFlexGroup?: GlobalsNumber;
   boxLines?: BoxLinesProperty;
   boxOrdinalGroup?: GlobalsNumber;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **10**  | **4**   | **5.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
+   */
   boxShadow?: BoxShadowProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **10**  | **29**  | **5.1** | **12** | **8** |
+   * | 1 _-x-_ | 1 _-x-_ |         |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-sizing
+   */
   boxSizing?: BoxSizingProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-after
+   */
   breakAfter?: BreakAfterProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-before
+   */
   breakBefore?: BreakBeforeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
+   */
   breakInside?: BreakInsideProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/caption-side
+   */
   captionSide?: CaptionSideProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **57** | **53**  | **11.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/caret-color
+   */
   caretColor?: CaretColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/clear
+   */
   clear?: ClearProperty;
+  /**
+   * | Chrome   | Firefox | Safari | Edge | IE  |
+   * | -------- | ------- | ------ | ---- | --- |
+   * | **55**   | **3.5** | No     | No   | No  |
+   * | 24 _-x-_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/clip-path
+   */
   clipPath?: ClipPathProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **1**  | **1**   | Yes    | **12** | Yes |
+   * @see https://developer.mozilla.org/docs/Web/CSS/color
+   */
   color?: ColorProperty;
   colorAdjust?: ColorAdjustProperty;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-count
+   */
   columnCount?: ColumnCountProperty;
+  /**
+   * | Chrome | Firefox  | Safari | Edge   | IE  |
+   * | ------ | -------- | ------ | ------ | --- |
+   * | Yes    | **52**   | n/a    | **12** | n/a |
+   * |        | 13 _-x-_ |        |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-fill
+   */
   columnFill?: ColumnFillProperty;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
+   */
   columnGap?: ColumnGapProperty<TLength>;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 3.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-color
+   */
   columnRuleColor?: ColumnRuleColorProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-style
+   */
   columnRuleStyle?: ColumnRuleStyleProperty;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge         | IE     |
+   * | ------ | --------- | ----------- | ------------ | ------ |
+   * | **50** | **50**    | **3** _-x-_ | **12** _-x-_ | **10** |
+   * |        | 3.5 _-x-_ |             |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-width
+   */
   columnRuleWidth?: ColumnRuleWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | Yes    | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-span
+   */
   columnSpan?: ColumnSpanProperty;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **50**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-width
+   */
   columnWidth?: ColumnWidthProperty<TLength>;
   contain?: ContainProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/content
+   */
   content?: ContentProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE    |
+   * | ------ | ------- | ------ | ---- | ----- |
+   * | **2**  | **1**   | **3**  | n/a  | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/counter-increment
+   */
   counterIncrement?: CounterIncrementProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **2**  | **1**   | **3.1** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/counter-reset
+   */
   counterReset?: CounterResetProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/cursor
+   */
   cursor?: CursorProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE      |
+   * | ------ | ------- | ------- | ------ | ------- |
+   * | **2**  | **1**   | **1.3** | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/direction
+   */
   direction?: DirectionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/display
+   */
   display?: DisplayProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/empty-cells
+   */
   emptyCells?: EmptyCellsProperty;
+  /**
+   * | Chrome   | Firefox | Safari      | Edge   | IE  |
+   * | -------- | ------- | ----------- | ------ | --- |
+   * | **53**   | **35**  | **6** _-x-_ | **12** | No  |
+   * | 18 _-x-_ |         |             |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/filter
+   */
   filter?: FilterProperty;
+  /**
+   * | Chrome       | Firefox | Safari  | Edge   | IE     |
+   * | ------------ | ------- | ------- | ------ | ------ |
+   * | **21** _-x-_ | **22**  | **9**   | **12** | **11** |
+   * |              |         | 7 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
+   */
   flexBasis?: FlexBasisProperty<TLength>;
+  /**
+   * | Chrome       | Firefox | Safari  | Edge   | IE       |
+   * | ------------ | ------- | ------- | ------ | -------- |
+   * | **21** _-x-_ | **20**  | **9**   | **12** | **11**   |
+   * |              |         | 7 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
+   */
   flexDirection?: FlexDirectionProperty;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge   | IE                           |
+   * | ------------ | ------- | ------------- | ------ | ---------------------------- |
+   * | **21** _-x-_ | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
+   */
   flexGrow?: GlobalsNumber;
+  /**
+   * | Chrome       | Firefox | Safari      | Edge   | IE     |
+   * | ------------ | ------- | ----------- | ------ | ------ |
+   * | **21** _-x-_ | **20**  | **8** _-x-_ | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
+   */
   flexShrink?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **29** | **28**  | **9**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
+   */
   flexWrap?: FlexWrapProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/float
+   */
   float?: FloatProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-family
+   */
   fontFamily?: FontFamilyProperty;
+  /**
+   * | Chrome   | Firefox  | Safari | Edge   | IE     |
+   * | -------- | -------- | ------ | ------ | ------ |
+   * | **48**   | **34**   | 4-6    | **15** | **10** |
+   * | 16 _-x-_ | 15 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-feature-settings
+   */
   fontFeatureSettings?: FontFeatureSettingsProperty;
+  /**
+   * | Chrome       | Firefox | Safari | Edge | IE  |
+   * | ------------ | ------- | ------ | ---- | --- |
+   * | **32** _-x-_ | **32**  | **7**  | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-kerning
+   */
   fontKerning?: FontKerningProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | No     | No   | No  |
+   * |        | 4 _-x-_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
+   */
   fontLanguageOverride?: FontLanguageOverrideProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-size
+   */
   fontSize?: FontSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **1**   | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
+   */
   fontSizeAdjust?: FontSizeAdjustProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **48** | **9**   | **11** | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-stretch
+   */
   fontStretch?: FontStretchProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-style
+   */
   fontStyle?: FontStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | **9**  | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-synthesis
+   */
   fontSynthesis?: FontSynthesisProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant
+   */
   fontVariant?: FontVariantProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **52** | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-caps
+   */
   fontVariantCaps?: FontVariantCapsProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
+   */
   fontVariantEastAsian?: FontVariantEastAsianProperty;
+  /**
+   * | Chrome   | Firefox | Safari  | Edge | IE  |
+   * | -------- | ------- | ------- | ---- | --- |
+   * | **34**   | **34**  | **9.1** | No   | No  |
+   * | 31 _-x-_ |         | 7 _-x-_ |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures
+   */
   fontVariantLigatures?: FontVariantLigaturesProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **52** | **34**  | **9.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric
+   */
   fontVariantNumeric?: FontVariantNumericProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-position
+   */
   fontVariantPosition?: FontVariantPositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **62** | n/a     | **11** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
+   */
   fontVariationSettings?: FontVariationSettingsProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **2**  | **1**   | **1.3** | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
+   */
   fontWeight?: FontWeightProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge                    | IE                          |
+   * | ------ | ------- | -------- | ----------------------- | --------------------------- |
+   * | **57** | **52**  | **10.1** | **16**                  | **10** _(-ms-grid-columns)_ |
+   * |        |         |          | 12 _(-ms-grid-columns)_ |                             |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns
+   */
   gridAutoColumns?: GridAutoColumnsProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow
+   */
   gridAutoFlow?: GridAutoFlowProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge                 | IE                       |
+   * | ------ | ------- | -------- | -------------------- | ------------------------ |
+   * | **57** | **52**  | **10.1** | **16**               | **10** _(-ms-grid-rows)_ |
+   * |        |         |          | 12 _(-ms-grid-rows)_ |                          |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows
+   */
   gridAutoRows?: GridAutoRowsProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-end
+   */
   gridColumnEnd?: GridColumnEndProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-start
+   */
   gridColumnStart?: GridColumnStartProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-end
+   */
   gridRowEnd?: GridRowEndProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-start
+   */
   gridRowStart?: GridRowStartProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-areas
+   */
   gridTemplateAreas?: GridTemplateAreasProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
+   */
   gridTemplateColumns?: GridTemplateColumnsProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
+   */
   gridTemplateRows?: GridTemplateRowsProperty<TLength>;
   hangingPunctuation?: HangingPunctuationProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
   height?: HeightProperty<TLength>;
+  /**
+   * | Chrome   | Firefox | Safari        | Edge | IE           |
+   * | -------- | ------- | ------------- | ---- | ------------ |
+   * | **55**   | **43**  | **5.1** _-x-_ | n/a  | **10** _-x-_ |
+   * | 13 _-x-_ | 6 _-x-_ |               |      |              |
+   * @see https://developer.mozilla.org/docs/Web/CSS/hyphens
+   */
   hyphens?: HyphensProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **26**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/image-orientation
+   */
   imageOrientation?: ImageOrientationProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **3.6** | Yes    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/image-rendering
+   */
   imageRendering?: ImageRenderingProperty;
   imageResolution?: ImageResolutionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | No      | **9**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
+   */
   initialLetter?: InitialLetterProperty;
   initialLetterAlign?: InitialLetterAlignProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
+   */
   inlineSize?: InlineSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **41** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/isolation
+   */
   isolation?: IsolationProperty;
+  /**
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **29**   | **20**  | **9**  | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
+   */
   justifyContent?: JustifyContentProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | n/a    | **45**  | n/a    | **16** | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-items
+   */
   justifyItems?: JustifyItemsProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | n/a    | **45**  | n/a    | **16** | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
+   */
   justifySelf?: JustifySelfProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/left
+   */
   left?: LeftProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/letter-spacing
+   */
   letterSpacing?: LetterSpacingProperty<TLength>;
+  /**
+   * | Chrome  | Firefox | Safari | Edge   | IE      |
+   * | ------- | ------- | ------ | ------ | ------- |
+   * | **58**  | No      | Yes    | **14** | **5.5** |
+   * | 1 _-x-_ |         |        |        |         |
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-break
+   */
   lineBreak?: LineBreakProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-height
+   */
   lineHeight?: LineHeightProperty<TLength>;
   lineHeightStep?: LineHeightStepProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-image
+   */
   listStyleImage?: ListStyleImageProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-position
+   */
   listStylePosition?: ListStylePositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-type
+   */
   listStyleType?: ListStyleTypeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-end
+   */
   marginBlockEnd?: MarginBlockEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-start
+   */
   marginBlockStart?: MarginBlockStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
+   */
   marginBottom?: MarginBottomProperty<TLength>;
+  /**
+   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
+   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
+   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
+   */
   marginInlineEnd?: MarginInlineEndProperty<TLength>;
+  /**
+   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
+   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | n/a  | No  |
+   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
+   */
   marginInlineStart?: MarginInlineStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-left
+   */
   marginLeft?: MarginLeftProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-right
+   */
   marginRight?: MarginRightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
+   */
   marginTop?: MarginTopProperty<TLength>;
   maskBorderMode?: MaskBorderModeProperty;
   maskBorderOutset?: MaskBorderOutsetProperty<TLength>;
@@ -163,178 +1085,1140 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   maskBorderSlice?: MaskBorderSliceProperty;
   maskBorderSource?: MaskBorderSourceProperty;
   maskBorderWidth?: MaskBorderWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **53**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-clip
+   */
   maskClip?: MaskClipProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **53**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-composite
+   */
   maskComposite?: MaskCompositeProperty;
+  /**
+   * | Chrome      | Firefox | Safari      | Edge   | IE  |
+   * | ----------- | ------- | ----------- | ------ | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
+   */
   maskImage?: MaskImageProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **53**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-mode
+   */
   maskMode?: MaskModeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **53**  | Yes    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-origin
+   */
   maskOrigin?: MaskOriginProperty;
+  /**
+   * | Chrome      | Firefox | Safari      | Edge | IE  |
+   * | ----------- | ------- | ----------- | ---- | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
+   */
   maskPosition?: MaskPositionProperty<TLength>;
+  /**
+   * | Chrome      | Firefox | Safari      | Edge | IE  |
+   * | ----------- | ------- | ----------- | ---- | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
+   */
   maskRepeat?: MaskRepeatProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **53**  | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
+   */
   maskSize?: MaskSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **24** | **35**  | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
+   */
   maskType?: MaskTypeProperty;
   maxBlockSize?: MaxBlockSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-height
+   */
   maxHeight?: MaxHeightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari         | Edge | IE  |
+   * | ------ | ------- | -------------- | ---- | --- |
+   * | Yes    | **41**  | **10.1** _-x-_ | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-inline-size
+   */
   maxInlineSize?: MaxInlineSizeProperty<TLength>;
   maxLines?: MaxLinesProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **2**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-width
+   */
   maxWidth?: MaxWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
+   */
   minBlockSize?: MinBlockSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **3**   | **1**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-height
+   */
   minHeight?: MinHeightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-inline-size
+   */
   minInlineSize?: MinInlineSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **2**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-width
+   */
   minWidth?: MinWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **41** | **32**  | **8**  | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
+   */
   mixBlendMode?: MixBlendModeProperty;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **55**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
   motionDistance?: OffsetDistanceProperty<TLength>;
+  /**
+   * | Chrome             | Firefox | Safari | Edge | IE  |
+   * | ------------------ | ------- | ------ | ---- | --- |
+   * | **55**             | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
   motionPath?: OffsetPathProperty;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   motionRotation?: OffsetRotateProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **31** | **36**  | Yes    | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/object-fit
+   */
   objectFit?: ObjectFitProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **31** | **36**  | **10** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/object-position
+   */
   objectPosition?: ObjectPositionProperty<TLength>;
   offsetAnchor?: OffsetAnchorProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-block-end
+   */
   offsetBlockEnd?: OffsetBlockEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-block-start
+   */
   offsetBlockStart?: OffsetBlockStartProperty<TLength>;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **55**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
   offsetDistance?: OffsetDistanceProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-inline-end
+   */
   offsetInlineEnd?: OffsetInlineEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-inline-start
+   */
   offsetInlineStart?: OffsetInlineStartProperty<TLength>;
+  /**
+   * | Chrome             | Firefox | Safari | Edge | IE  |
+   * | ------------------ | ------- | ------ | ---- | --- |
+   * | **55**             | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
   offsetPath?: OffsetPathProperty;
   offsetPosition?: OffsetPositionProperty<TLength>;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   offsetRotate?: OffsetRotateProperty;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   offsetRotation?: OffsetRotateProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/opacity
+   */
   opacity?: GlobalsNumber;
+  /**
+   * | Chrome   | Firefox | Safari  | Edge   | IE       |
+   * | -------- | ------- | ------- | ------ | -------- |
+   * | **29**   | **20**  | **9**   | **12** | **11**   |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/order
+   */
   order?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **25** | No      | No     | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/orphans
+   */
   orphans?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-color
+   */
   outlineColor?: OutlineColorProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **1**  | **1.5** | **1.2** | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-offset
+   */
   outlineOffset?: OutlineOffsetProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-style
+   */
   outlineStyle?: OutlineStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-width
+   */
   outlineWidth?: OutlineWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow
+   */
   overflow?: OverflowProperty;
   overflowAnchor?: OverflowAnchorProperty;
   overflowBlock?: OverflowBlockProperty;
   overflowClipBox?: OverflowClipBoxProperty;
   overflowInline?: OverflowInlineProperty;
+  /**
+   * | Chrome              | Firefox           | Safari              | Edge                 | IE                    |
+   * | ------------------- | ----------------- | ------------------- | -------------------- | --------------------- |
+   * | **1** _(word-wrap)_ | **49**            | **1** _(word-wrap)_ | **12** _(word-wrap)_ | **5.5** _(word-wrap)_ |
+   * |                     | 3.5 _(word-wrap)_ |                     |                      |                       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+   */
   overflowWrap?: OverflowWrapProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-x
+   */
   overflowX?: OverflowXProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
+   */
   overflowY?: OverflowYProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+   */
   overscrollBehavior?: OverscrollBehaviorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x
+   */
   overscrollBehaviorX?: OverscrollBehaviorXProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y
+   */
   overscrollBehaviorY?: OverscrollBehaviorYProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-end
+   */
   paddingBlockEnd?: PaddingBlockEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-start
+   */
   paddingBlockStart?: PaddingBlockStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
+   */
   paddingBottom?: PaddingBottomProperty<TLength>;
+  /**
+   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
+   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
+   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
+   */
   paddingInlineEnd?: PaddingInlineEndProperty<TLength>;
+  /**
+   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
+   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | No   | No  |
+   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
+   */
   paddingInlineStart?: PaddingInlineStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
+   */
   paddingLeft?: PaddingLeftProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
+   */
   paddingRight?: PaddingRightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
+   */
   paddingTop?: PaddingTopProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-after
+   */
   pageBreakAfter?: PageBreakAfterProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-before
+   */
   pageBreakBefore?: PageBreakBeforeProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **19**  | **1.3** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-inside
+   */
   pageBreakInside?: PageBreakInsideProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **60**  | Yes    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/paint-order
+   */
   paintOrder?: PaintOrderProperty;
+  /**
+   * | Chrome   | Firefox  | Safari | Edge   | IE     |
+   * | -------- | -------- | ------ | ------ | ------ |
+   * | **45**   | **16**   | Yes    | **12** | **10** |
+   * | 12 _-x-_ | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/perspective
+   */
   perspective?: PerspectiveProperty<TLength>;
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE     |
+   * | ------------ | -------- | ------ | ------ | ------ |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | **10** |
+   * |              | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/perspective-origin
+   */
   perspectiveOrigin?: PerspectiveOriginProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **59** | Yes     | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-content
+   */
   placeContent?: PlaceContentProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **1**  | **1.5** | **3**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/pointer-events
+   */
   pointerEvents?: PointerEventsProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/position
+   */
   position?: PositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **11** | **1.5** | **9**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/quotes
+   */
   quotes?: QuotesProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **1**  |         | **3**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/resize
+   */
   resize?: ResizeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/right
+   */
   right?: RightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/rotate
+   */
   rotate?: RotateProperty;
   rowGap?: RowGapProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **38**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/ruby-align
+   */
   rubyAlign?: RubyAlignProperty;
   rubyMerge?: RubyMergeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | No     | **38**  | No     | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
+   */
   rubyPosition?: RubyPositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scale
+   */
   scale?: ScaleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **36**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
+   */
   scrollBehavior?: ScrollBehaviorProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge         | IE           |
+   * | ------ | ------- | ----------- | ------------ | ------------ |
+   * | No     | **39**  | **9** _-x-_ | **12** _-x-_ | **10** _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
+   */
   scrollSnapType?: ScrollSnapTypeProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | **37** | n/a     | **7** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
+   */
   shapeImageThreshold?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | Yes    | No      | **7** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
+   */
   shapeMargin?: ShapeMarginProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | **37** | n/a     | **8** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
+   */
   shapeOutside?: ShapeOutsideProperty;
+  /**
+   * | Chrome | Firefox     | Safari  | Edge | IE  |
+   * | ------ | ----------- | ------- | ---- | --- |
+   * | **21** | **4** _-x-_ | **6.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/tab-size
+   */
   tabSize?: TabSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **14** | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/table-layout
+   */
   tableLayout?: TableLayoutProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-align
+   */
   textAlign?: TextAlignProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **47** | **49**  | No     | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-align-last
+   */
   textAlignLast?: TextAlignLastProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE                                     |
+   * | ------ | ------- | ------ | ------ | -------------------------------------- |
+   * | **48** | **48**  | Yes    | **15** | **11** _(-ms-text-combine-horizontal)_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
+   */
   textCombineUpright?: TextCombineUprightProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **57** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-color
+   */
   textDecorationColor?: TextDecorationColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-line
+   */
   textDecorationLine?: TextDecorationLineProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | 57-64  | No      | **8** _-x-_ | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip
+   */
   textDecorationSkip?: TextDecorationSkipProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **64** | No      | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
+   */
   textDecorationSkipInk?: TextDecorationSkipInkProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **57** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
+   */
   textDecorationStyle?: TextDecorationStyleProperty;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
+   */
   textEmphasisColor?: TextEmphasisColorProperty;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
+   */
   textEmphasisPosition?: GlobalsString;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
+   */
   textEmphasisStyle?: TextEmphasisStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-indent
+   */
   textIndent?: TextIndentProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | n/a    | **55**  | No     | **14** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-justify
+   */
   textJustify?: TextJustifyProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **48** | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
+   */
   textOrientation?: TextOrientationProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **7**   | **1.3** | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-overflow
+   */
   textOverflow?: TextOverflowProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **4**  | **3**   | **5**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-rendering
+   */
   textRendering?: TextRenderingProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE     |
+   * | ------ | ------- | ------- | ------ | ------ |
+   * | **2**  | **3.5** | **1.1** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-shadow
+   */
   textShadow?: TextShadowProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge         | IE  |
+   * | ------ | ------- | ------ | ------------ | --- |
+   * | **54** | No      | No     | **12** _-x-_ | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-size-adjust
+   */
   textSizeAdjust?: TextSizeAdjustProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-transform
+   */
   textTransform?: TextTransformProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **33** | No      | No     | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-underline-position
+   */
   textUnderlinePosition?: TextUnderlinePositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/top
+   */
   top?: TopProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE       |
+   * | ------ | ------- | ------ | ------ | -------- |
+   * | **36** | **52**  | No     | **12** | **11**   |
+   * |        |         |        |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/touch-action
+   */
   touchAction?: TouchActionProperty;
+  /**
+   * | Chrome | Firefox | Safari    | Edge         | IE      |
+   * | ------ | ------- | --------- | ------------ | ------- |
+   * | **36** | **16**  | **9**     | **12** _-x-_ | **10**  |
+   * |        |         | 3.1 _-x-_ |              | 9 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform
+   */
   transform?: TransformProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **64** | **55**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-box
+   */
   transformBox?: TransformBoxProperty;
+  /**
+   * | Chrome | Firefox   | Safari        | Edge   | IE      |
+   * | ------ | --------- | ------------- | ------ | ------- |
+   * | Yes    | **16**    | **3.1** _-x-_ | **12** | **10**  |
+   * |        | 3.5 _-x-_ |               |        | 9 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-origin
+   */
   transformOrigin?: TransformOriginProperty<TLength>;
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE  |
+   * | ------------ | -------- | ------ | ------ | --- |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | No  |
+   * |              | 10 _-x-_ |        |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-style
+   */
   transformStyle?: TransformStyleProperty;
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **26**  | **16**  | **3** _-x-_ | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
+   */
   transitionDelay?: GlobalsString;
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **26**  | **16**  | **3** _-x-_ | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
+   */
   transitionDuration?: GlobalsString;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **26** | **16**  | Yes    | **12** | **10** |
+   * |        | 4 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-property
+   */
   transitionProperty?: TransitionPropertyProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **26** | **16**  | Yes    | **12** | **10** |
+   * |        | 4 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-timing-function
+   */
   transitionTimingFunction?: TransitionTimingFunctionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/translate
+   */
   translate?: TranslateProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE      |
+   * | ------ | ------- | ------- | ------ | ------- |
+   * | **2**  | **1**   | **1.3** | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/unicode-bidi
+   */
   unicodeBidi?: UnicodeBidiProperty;
+  /**
+   * | Chrome  | Firefox      | Safari        | Edge         | IE     |
+   * | ------- | ------------ | ------------- | ------------ | ------ |
+   * | **54**  | **49** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
+   * | 6 _-x-_ |              |               |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/user-select
+   */
   userSelect?: UserSelectProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/vertical-align
+   */
   verticalAlign?: VerticalAlignProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/visibility
+   */
   visibility?: VisibilityProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/white-space
+   */
   whiteSpace?: WhiteSpaceProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **25** | No      | No     | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/widows
+   */
   widows?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   */
   width?: WidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **36** | **36**  | **9.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/will-change
+   */
   willChange?: WillChangeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **15**  | Yes    | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/word-break
+   */
   wordBreak?: WordBreakProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/word-spacing
+   */
   wordSpacing?: WordSpacingProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **3.5** | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+   */
   wordWrap?: WordWrapProperty;
+  /**
+   * | Chrome      | Firefox | Safari        | Edge   | IE          |
+   * | ----------- | ------- | ------------- | ------ | ----------- |
+   * | **8** _-x-_ | **41**  | **5.1** _-x-_ | **12** | **9** _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
+   */
   writingMode?: WritingModeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
+   */
   zIndex?: ZIndexProperty;
   zoom?: ZoomProperty;
 }
 
 export interface StandardShorthandProperties<TLength = string | 0> {
   all?: Globals;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation
+   */
   animation?: AnimationProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background
+   */
   background?: BackgroundProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border
+   */
   border?: BorderProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end
+   */
   borderBlockEnd?: BorderBlockEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start
+   */
   borderBlockStart?: BorderBlockStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom
+   */
   borderBottom?: BorderBottomProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-color
+   */
   borderColor?: BorderColorProperty;
+  /**
+   * | Chrome  | Firefox   | Safari  | Edge   | IE     |
+   * | ------- | --------- | ------- | ------ | ------ |
+   * | **16**  | **15**    | **6**   | **12** | **11** |
+   * | 7 _-x-_ | 3.5 _-x-_ | 3 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image
+   */
   borderImage?: BorderImageProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
+   */
   borderInlineEnd?: BorderInlineEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
+   */
   borderInlineStart?: BorderInlineStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left
+   */
   borderLeft?: BorderLeftProperty<TLength>;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
+   */
   borderRadius?: BorderRadiusProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right
+   */
   borderRight?: BorderRightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-style
+   */
   borderStyle?: BorderStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top
+   */
   borderTop?: BorderTopProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-width
+   */
   borderWidth?: BorderWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge         | IE     |
+   * | ------ | --------- | ----------- | ------------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** _-x-_ | **10** |
+   * |        | 3.5 _-x-_ |             |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule
+   */
   columnRule?: ColumnRuleProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
+   * |        | 9 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/columns
+   */
   columns?: ColumnsProperty<TLength>;
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE       |
+   * | -------- | ------- | --------- | ------ | -------- |
+   * | **29**   | **20**  | **9**     | **12** | **11**   |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex
+   */
   flex?: FlexProperty<TLength>;
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE     |
+   * | -------- | ------- | --------- | ------ | ------ |
+   * | **29**   | **28**  | **9**     | **12** | **11** |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-flow
+   */
   flexFlow?: FlexFlowProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font
+   */
   font?: FontProperty;
   gap?: GapProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid
+   */
   grid?: GridProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-area
+   */
   gridArea?: GridAreaProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column
+   */
   gridColumn?: GridColumnProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row
+   */
   gridRow?: GridRowProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template
+   */
   gridTemplate?: GridTemplateProperty;
   lineClamp?: LineClampProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style
+   */
   listStyle?: ListStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin
+   */
   margin?: MarginProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **1**  | Yes     | **4**  | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask
+   */
   mask?: MaskProperty<TLength>;
   maskBorder?: MaskBorderProperty;
+  /**
+   * | Chrome        | Firefox | Safari | Edge | IE  |
+   * | ------------- | ------- | ------ | ---- | --- |
+   * | **55**        | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
   motion?: OffsetProperty<TLength>;
+  /**
+   * | Chrome        | Firefox | Safari | Edge | IE  |
+   * | ------------- | ------- | ------ | ---- | --- |
+   * | **55**        | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
   offset?: OffsetProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline
+   */
   outline?: OutlineProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding
+   */
   padding?: PaddingProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration
+   */
   textDecoration?: TextDecorationProperty;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
+   */
   textEmphasis?: TextEmphasisProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE     |
+   * | ------- | ------- | ------- | ------ | ------ |
+   * | **26**  | **16**  | **6.1** | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ | 3 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition
+   */
   transition?: TransitionProperty;
 }
 
@@ -786,163 +2670,1085 @@ export interface SvgProperties<TLength = string | 0> {
 export interface Properties<TLength = string | 0> extends StandardProperties<TLength>, VendorProperties<TLength>, ObsoleteProperties<TLength>, SvgProperties<TLength> {}
 
 export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE     |
+   * | -------- | ------- | --------- | ------ | ------ |
+   * | **29**   | **28**  | **9**     | **12** | **11** |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-content
+   */
   "align-content"?: AlignContentProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **21** | **20**  | **7** _-x-_ | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-items
+   */
   "align-items"?: AlignItemsProperty;
+  /**
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **36**   | **20**  | No     | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-self
+   */
   "align-self"?: AlignSelfProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE     |
+   * | ------ | ------- | ------- | ------ | ------ |
+   * | **43** | **16**  | **9**   | **12** | **10** |
+   * |        | 5 _-x-_ | 4 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
+   */
   "animation-delay"?: GlobalsString;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-direction
+   */
   "animation-direction"?: AnimationDirectionProperty;
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **43**  | **16**  | **4** _-x-_ | **12** | **10** |
+   * | 3 _-x-_ | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
+   */
   "animation-duration"?: GlobalsString;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode
+   */
   "animation-fill-mode"?: AnimationFillModeProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count
+   */
   "animation-iteration-count"?: AnimationIterationCountProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-name
+   */
   "animation-name"?: AnimationNameProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **43** | **16**  | Yes    | **12** | **10** |
+   * |        | 5 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-play-state
+   */
   "animation-play-state"?: AnimationPlayStateProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-timing-function
+   */
   "animation-timing-function"?: AnimationTimingFunctionProperty;
+  /**
+   * | Chrome      | Firefox     | Safari      | Edge         | IE  |
+   * | ----------- | ----------- | ----------- | ------------ | --- |
+   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/appearance
+   */
   appearance?: AppearanceProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE  |
+   * | ------ | ------- | ----------- | ------ | --- |
+   * | n/a    | No      | **9** _-x-_ | **17** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/backdrop-filter
+   */
   "backdrop-filter"?: BackdropFilterProperty;
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE     |
+   * | ------------ | -------- | ------ | ------ | ------ |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | **10** |
+   * |              | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
+   */
   "backface-visibility"?: BackfaceVisibilityProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-attachment
+   */
   "background-attachment"?: BackgroundAttachmentProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **35** | **30**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-blend-mode
+   */
   "background-blend-mode"?: BackgroundBlendModeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **4**   | **3**  | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
+   */
   "background-clip"?: BackgroundClipProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-color
+   */
   "background-color"?: BackgroundColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-image
+   */
   "background-image"?: BackgroundImageProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **4**   | **3**  | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-origin
+   */
   "background-origin"?: BackgroundOriginProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
+   */
   "background-position"?: BackgroundPositionProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **49**  | Yes    | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position-x
+   */
   "background-position-x"?: BackgroundPositionXProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **49**  | Yes    | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position-y
+   */
   "background-position-y"?: BackgroundPositionYProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-repeat
+   */
   "background-repeat"?: BackgroundRepeatProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **3**   | **4**   | **4.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-size
+   */
   "background-size"?: BackgroundSizeProperty<TLength>;
   "block-overflow"?: BlockOverflowProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/block-size
+   */
   "block-size"?: BlockSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-color
+   */
   "border-block-end-color"?: BorderBlockEndColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-style
+   */
   "border-block-end-style"?: BorderBlockEndStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-width
+   */
   "border-block-end-width"?: BorderBlockEndWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-color
+   */
   "border-block-start-color"?: BorderBlockStartColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-style
+   */
   "border-block-start-style"?: BorderBlockStartStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-width
+   */
   "border-block-start-width"?: BorderBlockStartWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-color
+   */
   "border-bottom-color"?: BorderBottomColorProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius
+   */
   "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength>;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius
+   */
   "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
+   */
   "border-bottom-style"?: BorderBottomStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-width
+   */
   "border-bottom-width"?: BorderBottomWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-collapse
+   */
   "border-collapse"?: BorderCollapseProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-outset
+   */
   "border-image-outset"?: BorderImageOutsetProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-repeat
+   */
   "border-image-repeat"?: BorderImageRepeatProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-slice
+   */
   "border-image-slice"?: BorderImageSliceProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-source
+   */
   "border-image-source"?: BorderImageSourceProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **13**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-width
+   */
   "border-image-width"?: BorderImageWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color
+   */
   "border-inline-end-color"?: BorderInlineEndColorProperty;
+  /**
+   * | Chrome | Firefox                      | Safari | Edge | IE  |
+   * | ------ | ---------------------------- | ------ | ---- | --- |
+   * | No     | **41**                       | No     | n/a  | No  |
+   * |        | 38 _(-moz-border-end-style)_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style
+   */
   "border-inline-end-style"?: BorderInlineEndStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width
+   */
   "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox                        | Safari | Edge | IE  |
+   * | ------ | ------------------------------ | ------ | ---- | --- |
+   * | No     | **41**                         | No     | n/a  | No  |
+   * |        | 38 _(-moz-border-start-color)_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color
+   */
   "border-inline-start-color"?: BorderInlineStartColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style
+   */
   "border-inline-start-style"?: BorderInlineStartStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width
+   */
   "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-color
+   */
   "border-left-color"?: BorderLeftColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
+   */
   "border-left-style"?: BorderLeftStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-width
+   */
   "border-left-width"?: BorderLeftWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-color
+   */
   "border-right-color"?: BorderRightColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
+   */
   "border-right-style"?: BorderRightStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-width
+   */
   "border-right-width"?: BorderRightWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-spacing
+   */
   "border-spacing"?: BorderSpacingProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-color
+   */
   "border-top-color"?: BorderTopColorProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius
+   */
   "border-top-left-radius"?: BorderTopLeftRadiusProperty<TLength>;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius
+   */
   "border-top-right-radius"?: BorderTopRightRadiusProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
+   */
   "border-top-style"?: BorderTopStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
+   */
   "border-top-width"?: BorderTopWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/bottom
+   */
   bottom?: BottomProperty<TLength>;
   "box-align"?: BoxAlignProperty;
+  /**
+   * | Chrome       | Firefox | Safari  | Edge | IE  |
+   * | ------------ | ------- | ------- | ---- | --- |
+   * | **22** _-x-_ | **32**  | **6.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
+   */
   "box-decoration-break"?: BoxDecorationBreakProperty;
   "box-flex-group"?: GlobalsNumber;
   "box-lines"?: BoxLinesProperty;
   "box-ordinal-group"?: GlobalsNumber;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **10**  | **4**   | **5.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
+   */
   "box-shadow"?: BoxShadowProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **10**  | **29**  | **5.1** | **12** | **8** |
+   * | 1 _-x-_ | 1 _-x-_ |         |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-sizing
+   */
   "box-sizing"?: BoxSizingProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-after
+   */
   "break-after"?: BreakAfterProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-before
+   */
   "break-before"?: BreakBeforeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
+   */
   "break-inside"?: BreakInsideProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/caption-side
+   */
   "caption-side"?: CaptionSideProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **57** | **53**  | **11.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/caret-color
+   */
   "caret-color"?: CaretColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/clear
+   */
   clear?: ClearProperty;
+  /**
+   * | Chrome   | Firefox | Safari | Edge | IE  |
+   * | -------- | ------- | ------ | ---- | --- |
+   * | **55**   | **3.5** | No     | No   | No  |
+   * | 24 _-x-_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/clip-path
+   */
   "clip-path"?: ClipPathProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **1**  | **1**   | Yes    | **12** | Yes |
+   * @see https://developer.mozilla.org/docs/Web/CSS/color
+   */
   color?: ColorProperty;
   "color-adjust"?: ColorAdjustProperty;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-count
+   */
   "column-count"?: ColumnCountProperty;
+  /**
+   * | Chrome | Firefox  | Safari | Edge   | IE  |
+   * | ------ | -------- | ------ | ------ | --- |
+   * | Yes    | **52**   | n/a    | **12** | n/a |
+   * |        | 13 _-x-_ |        |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-fill
+   */
   "column-fill"?: ColumnFillProperty;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
+   */
   "column-gap"?: ColumnGapProperty<TLength>;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 3.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-color
+   */
   "column-rule-color"?: ColumnRuleColorProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-style
+   */
   "column-rule-style"?: ColumnRuleStyleProperty;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge         | IE     |
+   * | ------ | --------- | ----------- | ------------ | ------ |
+   * | **50** | **50**    | **3** _-x-_ | **12** _-x-_ | **10** |
+   * |        | 3.5 _-x-_ |             |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-width
+   */
   "column-rule-width"?: ColumnRuleWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | Yes    | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-span
+   */
   "column-span"?: ColumnSpanProperty;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **50**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-width
+   */
   "column-width"?: ColumnWidthProperty<TLength>;
   contain?: ContainProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/content
+   */
   content?: ContentProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE    |
+   * | ------ | ------- | ------ | ---- | ----- |
+   * | **2**  | **1**   | **3**  | n/a  | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/counter-increment
+   */
   "counter-increment"?: CounterIncrementProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **2**  | **1**   | **3.1** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/counter-reset
+   */
   "counter-reset"?: CounterResetProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/cursor
+   */
   cursor?: CursorProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE      |
+   * | ------ | ------- | ------- | ------ | ------- |
+   * | **2**  | **1**   | **1.3** | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/direction
+   */
   direction?: DirectionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/display
+   */
   display?: DisplayProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/empty-cells
+   */
   "empty-cells"?: EmptyCellsProperty;
+  /**
+   * | Chrome   | Firefox | Safari      | Edge   | IE  |
+   * | -------- | ------- | ----------- | ------ | --- |
+   * | **53**   | **35**  | **6** _-x-_ | **12** | No  |
+   * | 18 _-x-_ |         |             |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/filter
+   */
   filter?: FilterProperty;
+  /**
+   * | Chrome       | Firefox | Safari  | Edge   | IE     |
+   * | ------------ | ------- | ------- | ------ | ------ |
+   * | **21** _-x-_ | **22**  | **9**   | **12** | **11** |
+   * |              |         | 7 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
+   */
   "flex-basis"?: FlexBasisProperty<TLength>;
+  /**
+   * | Chrome       | Firefox | Safari  | Edge   | IE       |
+   * | ------------ | ------- | ------- | ------ | -------- |
+   * | **21** _-x-_ | **20**  | **9**   | **12** | **11**   |
+   * |              |         | 7 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
+   */
   "flex-direction"?: FlexDirectionProperty;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge   | IE                           |
+   * | ------------ | ------- | ------------- | ------ | ---------------------------- |
+   * | **21** _-x-_ | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
+   */
   "flex-grow"?: GlobalsNumber;
+  /**
+   * | Chrome       | Firefox | Safari      | Edge   | IE     |
+   * | ------------ | ------- | ----------- | ------ | ------ |
+   * | **21** _-x-_ | **20**  | **8** _-x-_ | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
+   */
   "flex-shrink"?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **29** | **28**  | **9**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
+   */
   "flex-wrap"?: FlexWrapProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/float
+   */
   float?: FloatProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-family
+   */
   "font-family"?: FontFamilyProperty;
+  /**
+   * | Chrome   | Firefox  | Safari | Edge   | IE     |
+   * | -------- | -------- | ------ | ------ | ------ |
+   * | **48**   | **34**   | 4-6    | **15** | **10** |
+   * | 16 _-x-_ | 15 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-feature-settings
+   */
   "font-feature-settings"?: FontFeatureSettingsProperty;
+  /**
+   * | Chrome       | Firefox | Safari | Edge | IE  |
+   * | ------------ | ------- | ------ | ---- | --- |
+   * | **32** _-x-_ | **32**  | **7**  | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-kerning
+   */
   "font-kerning"?: FontKerningProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | No     | No   | No  |
+   * |        | 4 _-x-_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
+   */
   "font-language-override"?: FontLanguageOverrideProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-size
+   */
   "font-size"?: FontSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **1**   | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
+   */
   "font-size-adjust"?: FontSizeAdjustProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **48** | **9**   | **11** | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-stretch
+   */
   "font-stretch"?: FontStretchProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-style
+   */
   "font-style"?: FontStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | **9**  | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-synthesis
+   */
   "font-synthesis"?: FontSynthesisProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant
+   */
   "font-variant"?: FontVariantProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **52** | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-caps
+   */
   "font-variant-caps"?: FontVariantCapsProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
+   */
   "font-variant-east-asian"?: FontVariantEastAsianProperty;
+  /**
+   * | Chrome   | Firefox | Safari  | Edge | IE  |
+   * | -------- | ------- | ------- | ---- | --- |
+   * | **34**   | **34**  | **9.1** | No   | No  |
+   * | 31 _-x-_ |         | 7 _-x-_ |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures
+   */
   "font-variant-ligatures"?: FontVariantLigaturesProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **52** | **34**  | **9.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric
+   */
   "font-variant-numeric"?: FontVariantNumericProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-position
+   */
   "font-variant-position"?: FontVariantPositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **62** | n/a     | **11** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
+   */
   "font-variation-settings"?: FontVariationSettingsProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **2**  | **1**   | **1.3** | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
+   */
   "font-weight"?: FontWeightProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge                    | IE                          |
+   * | ------ | ------- | -------- | ----------------------- | --------------------------- |
+   * | **57** | **52**  | **10.1** | **16**                  | **10** _(-ms-grid-columns)_ |
+   * |        |         |          | 12 _(-ms-grid-columns)_ |                             |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns
+   */
   "grid-auto-columns"?: GridAutoColumnsProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow
+   */
   "grid-auto-flow"?: GridAutoFlowProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge                 | IE                       |
+   * | ------ | ------- | -------- | -------------------- | ------------------------ |
+   * | **57** | **52**  | **10.1** | **16**               | **10** _(-ms-grid-rows)_ |
+   * |        |         |          | 12 _(-ms-grid-rows)_ |                          |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows
+   */
   "grid-auto-rows"?: GridAutoRowsProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-end
+   */
   "grid-column-end"?: GridColumnEndProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-start
+   */
   "grid-column-start"?: GridColumnStartProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-end
+   */
   "grid-row-end"?: GridRowEndProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-start
+   */
   "grid-row-start"?: GridRowStartProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-areas
+   */
   "grid-template-areas"?: GridTemplateAreasProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
+   */
   "grid-template-columns"?: GridTemplateColumnsProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
+   */
   "grid-template-rows"?: GridTemplateRowsProperty<TLength>;
   "hanging-punctuation"?: HangingPunctuationProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
   height?: HeightProperty<TLength>;
+  /**
+   * | Chrome   | Firefox | Safari        | Edge | IE           |
+   * | -------- | ------- | ------------- | ---- | ------------ |
+   * | **55**   | **43**  | **5.1** _-x-_ | n/a  | **10** _-x-_ |
+   * | 13 _-x-_ | 6 _-x-_ |               |      |              |
+   * @see https://developer.mozilla.org/docs/Web/CSS/hyphens
+   */
   hyphens?: HyphensProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **26**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/image-orientation
+   */
   "image-orientation"?: ImageOrientationProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **3.6** | Yes    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/image-rendering
+   */
   "image-rendering"?: ImageRenderingProperty;
   "image-resolution"?: ImageResolutionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | No      | **9**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
+   */
   "initial-letter"?: InitialLetterProperty;
   "initial-letter-align"?: InitialLetterAlignProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
+   */
   "inline-size"?: InlineSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **41** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/isolation
+   */
   isolation?: IsolationProperty;
+  /**
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **29**   | **20**  | **9**  | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
+   */
   "justify-content"?: JustifyContentProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | n/a    | **45**  | n/a    | **16** | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-items
+   */
   "justify-items"?: JustifyItemsProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | n/a    | **45**  | n/a    | **16** | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
+   */
   "justify-self"?: JustifySelfProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/left
+   */
   left?: LeftProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/letter-spacing
+   */
   "letter-spacing"?: LetterSpacingProperty<TLength>;
+  /**
+   * | Chrome  | Firefox | Safari | Edge   | IE      |
+   * | ------- | ------- | ------ | ------ | ------- |
+   * | **58**  | No      | Yes    | **14** | **5.5** |
+   * | 1 _-x-_ |         |        |        |         |
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-break
+   */
   "line-break"?: LineBreakProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-height
+   */
   "line-height"?: LineHeightProperty<TLength>;
   "line-height-step"?: LineHeightStepProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-image
+   */
   "list-style-image"?: ListStyleImageProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-position
+   */
   "list-style-position"?: ListStylePositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-type
+   */
   "list-style-type"?: ListStyleTypeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-end
+   */
   "margin-block-end"?: MarginBlockEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-start
+   */
   "margin-block-start"?: MarginBlockStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
+   */
   "margin-bottom"?: MarginBottomProperty<TLength>;
+  /**
+   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
+   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
+   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
+   */
   "margin-inline-end"?: MarginInlineEndProperty<TLength>;
+  /**
+   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
+   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | n/a  | No  |
+   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
+   */
   "margin-inline-start"?: MarginInlineStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-left
+   */
   "margin-left"?: MarginLeftProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-right
+   */
   "margin-right"?: MarginRightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
+   */
   "margin-top"?: MarginTopProperty<TLength>;
   "mask-border-mode"?: MaskBorderModeProperty;
   "mask-border-outset"?: MaskBorderOutsetProperty<TLength>;
@@ -950,178 +3756,1140 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "mask-border-slice"?: MaskBorderSliceProperty;
   "mask-border-source"?: MaskBorderSourceProperty;
   "mask-border-width"?: MaskBorderWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **53**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-clip
+   */
   "mask-clip"?: MaskClipProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **53**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-composite
+   */
   "mask-composite"?: MaskCompositeProperty;
+  /**
+   * | Chrome      | Firefox | Safari      | Edge   | IE  |
+   * | ----------- | ------- | ----------- | ------ | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
+   */
   "mask-image"?: MaskImageProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **53**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-mode
+   */
   "mask-mode"?: MaskModeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **53**  | Yes    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-origin
+   */
   "mask-origin"?: MaskOriginProperty;
+  /**
+   * | Chrome      | Firefox | Safari      | Edge | IE  |
+   * | ----------- | ------- | ----------- | ---- | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
+   */
   "mask-position"?: MaskPositionProperty<TLength>;
+  /**
+   * | Chrome      | Firefox | Safari      | Edge | IE  |
+   * | ----------- | ------- | ----------- | ---- | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
+   */
   "mask-repeat"?: MaskRepeatProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **53**  | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
+   */
   "mask-size"?: MaskSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **24** | **35**  | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
+   */
   "mask-type"?: MaskTypeProperty;
   "max-block-size"?: MaxBlockSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-height
+   */
   "max-height"?: MaxHeightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari         | Edge | IE  |
+   * | ------ | ------- | -------------- | ---- | --- |
+   * | Yes    | **41**  | **10.1** _-x-_ | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-inline-size
+   */
   "max-inline-size"?: MaxInlineSizeProperty<TLength>;
   "max-lines"?: MaxLinesProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **2**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-width
+   */
   "max-width"?: MaxWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
+   */
   "min-block-size"?: MinBlockSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **3**   | **1**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-height
+   */
   "min-height"?: MinHeightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-inline-size
+   */
   "min-inline-size"?: MinInlineSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **2**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-width
+   */
   "min-width"?: MinWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **41** | **32**  | **8**  | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
+   */
   "mix-blend-mode"?: MixBlendModeProperty;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **55**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
   "motion-distance"?: OffsetDistanceProperty<TLength>;
+  /**
+   * | Chrome             | Firefox | Safari | Edge | IE  |
+   * | ------------------ | ------- | ------ | ---- | --- |
+   * | **55**             | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
   "motion-path"?: OffsetPathProperty;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   "motion-rotation"?: OffsetRotateProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **31** | **36**  | Yes    | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/object-fit
+   */
   "object-fit"?: ObjectFitProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **31** | **36**  | **10** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/object-position
+   */
   "object-position"?: ObjectPositionProperty<TLength>;
   "offset-anchor"?: OffsetAnchorProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-block-end
+   */
   "offset-block-end"?: OffsetBlockEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-block-start
+   */
   "offset-block-start"?: OffsetBlockStartProperty<TLength>;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **55**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
   "offset-distance"?: OffsetDistanceProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-inline-end
+   */
   "offset-inline-end"?: OffsetInlineEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-inline-start
+   */
   "offset-inline-start"?: OffsetInlineStartProperty<TLength>;
+  /**
+   * | Chrome             | Firefox | Safari | Edge | IE  |
+   * | ------------------ | ------- | ------ | ---- | --- |
+   * | **55**             | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
   "offset-path"?: OffsetPathProperty;
   "offset-position"?: OffsetPositionProperty<TLength>;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   "offset-rotate"?: OffsetRotateProperty;
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   "offset-rotation"?: OffsetRotateProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/opacity
+   */
   opacity?: GlobalsNumber;
+  /**
+   * | Chrome   | Firefox | Safari  | Edge   | IE       |
+   * | -------- | ------- | ------- | ------ | -------- |
+   * | **29**   | **20**  | **9**   | **12** | **11**   |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/order
+   */
   order?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **25** | No      | No     | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/orphans
+   */
   orphans?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-color
+   */
   "outline-color"?: OutlineColorProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **1**  | **1.5** | **1.2** | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-offset
+   */
   "outline-offset"?: OutlineOffsetProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-style
+   */
   "outline-style"?: OutlineStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-width
+   */
   "outline-width"?: OutlineWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow
+   */
   overflow?: OverflowProperty;
   "overflow-anchor"?: OverflowAnchorProperty;
   "overflow-block"?: OverflowBlockProperty;
   "overflow-clip-box"?: OverflowClipBoxProperty;
   "overflow-inline"?: OverflowInlineProperty;
+  /**
+   * | Chrome              | Firefox           | Safari              | Edge                 | IE                    |
+   * | ------------------- | ----------------- | ------------------- | -------------------- | --------------------- |
+   * | **1** _(word-wrap)_ | **49**            | **1** _(word-wrap)_ | **12** _(word-wrap)_ | **5.5** _(word-wrap)_ |
+   * |                     | 3.5 _(word-wrap)_ |                     |                      |                       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+   */
   "overflow-wrap"?: OverflowWrapProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-x
+   */
   "overflow-x"?: OverflowXProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
+   */
   "overflow-y"?: OverflowYProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+   */
   "overscroll-behavior"?: OverscrollBehaviorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x
+   */
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y
+   */
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-end
+   */
   "padding-block-end"?: PaddingBlockEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-start
+   */
   "padding-block-start"?: PaddingBlockStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
+   */
   "padding-bottom"?: PaddingBottomProperty<TLength>;
+  /**
+   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
+   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
+   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
+   */
   "padding-inline-end"?: PaddingInlineEndProperty<TLength>;
+  /**
+   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
+   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | No   | No  |
+   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
+   */
   "padding-inline-start"?: PaddingInlineStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
+   */
   "padding-left"?: PaddingLeftProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
+   */
   "padding-right"?: PaddingRightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
+   */
   "padding-top"?: PaddingTopProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-after
+   */
   "page-break-after"?: PageBreakAfterProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-before
+   */
   "page-break-before"?: PageBreakBeforeProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **19**  | **1.3** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-inside
+   */
   "page-break-inside"?: PageBreakInsideProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **60**  | Yes    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/paint-order
+   */
   "paint-order"?: PaintOrderProperty;
+  /**
+   * | Chrome   | Firefox  | Safari | Edge   | IE     |
+   * | -------- | -------- | ------ | ------ | ------ |
+   * | **45**   | **16**   | Yes    | **12** | **10** |
+   * | 12 _-x-_ | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/perspective
+   */
   perspective?: PerspectiveProperty<TLength>;
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE     |
+   * | ------------ | -------- | ------ | ------ | ------ |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | **10** |
+   * |              | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/perspective-origin
+   */
   "perspective-origin"?: PerspectiveOriginProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **59** | Yes     | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-content
+   */
   "place-content"?: PlaceContentProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **1**  | **1.5** | **3**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/pointer-events
+   */
   "pointer-events"?: PointerEventsProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/position
+   */
   position?: PositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **11** | **1.5** | **9**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/quotes
+   */
   quotes?: QuotesProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **1**  |         | **3**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/resize
+   */
   resize?: ResizeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/right
+   */
   right?: RightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/rotate
+   */
   rotate?: RotateProperty;
   "row-gap"?: RowGapProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **38**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/ruby-align
+   */
   "ruby-align"?: RubyAlignProperty;
   "ruby-merge"?: RubyMergeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | No     | **38**  | No     | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
+   */
   "ruby-position"?: RubyPositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scale
+   */
   scale?: ScaleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **36**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
+   */
   "scroll-behavior"?: ScrollBehaviorProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge         | IE           |
+   * | ------ | ------- | ----------- | ------------ | ------------ |
+   * | No     | **39**  | **9** _-x-_ | **12** _-x-_ | **10** _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
+   */
   "scroll-snap-type"?: ScrollSnapTypeProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | **37** | n/a     | **7** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
+   */
   "shape-image-threshold"?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | Yes    | No      | **7** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
+   */
   "shape-margin"?: ShapeMarginProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | **37** | n/a     | **8** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
+   */
   "shape-outside"?: ShapeOutsideProperty;
+  /**
+   * | Chrome | Firefox     | Safari  | Edge | IE  |
+   * | ------ | ----------- | ------- | ---- | --- |
+   * | **21** | **4** _-x-_ | **6.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/tab-size
+   */
   "tab-size"?: TabSizeProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **14** | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/table-layout
+   */
   "table-layout"?: TableLayoutProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-align
+   */
   "text-align"?: TextAlignProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **47** | **49**  | No     | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-align-last
+   */
   "text-align-last"?: TextAlignLastProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE                                     |
+   * | ------ | ------- | ------ | ------ | -------------------------------------- |
+   * | **48** | **48**  | Yes    | **15** | **11** _(-ms-text-combine-horizontal)_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
+   */
   "text-combine-upright"?: TextCombineUprightProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **57** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-color
+   */
   "text-decoration-color"?: TextDecorationColorProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-line
+   */
   "text-decoration-line"?: TextDecorationLineProperty;
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | 57-64  | No      | **8** _-x-_ | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip
+   */
   "text-decoration-skip"?: TextDecorationSkipProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **64** | No      | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
+   */
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **57** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
+   */
   "text-decoration-style"?: TextDecorationStyleProperty;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
+   */
   "text-emphasis-color"?: TextEmphasisColorProperty;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
+   */
   "text-emphasis-position"?: GlobalsString;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
+   */
   "text-emphasis-style"?: TextEmphasisStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-indent
+   */
   "text-indent"?: TextIndentProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | n/a    | **55**  | No     | **14** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-justify
+   */
   "text-justify"?: TextJustifyProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **48** | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
+   */
   "text-orientation"?: TextOrientationProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **7**   | **1.3** | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-overflow
+   */
   "text-overflow"?: TextOverflowProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **4**  | **3**   | **5**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-rendering
+   */
   "text-rendering"?: TextRenderingProperty;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE     |
+   * | ------ | ------- | ------- | ------ | ------ |
+   * | **2**  | **3.5** | **1.1** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-shadow
+   */
   "text-shadow"?: TextShadowProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge         | IE  |
+   * | ------ | ------- | ------ | ------------ | --- |
+   * | **54** | No      | No     | **12** _-x-_ | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-size-adjust
+   */
   "text-size-adjust"?: TextSizeAdjustProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-transform
+   */
   "text-transform"?: TextTransformProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **33** | No      | No     | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-underline-position
+   */
   "text-underline-position"?: TextUnderlinePositionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/top
+   */
   top?: TopProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE       |
+   * | ------ | ------- | ------ | ------ | -------- |
+   * | **36** | **52**  | No     | **12** | **11**   |
+   * |        |         |        |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/touch-action
+   */
   "touch-action"?: TouchActionProperty;
+  /**
+   * | Chrome | Firefox | Safari    | Edge         | IE      |
+   * | ------ | ------- | --------- | ------------ | ------- |
+   * | **36** | **16**  | **9**     | **12** _-x-_ | **10**  |
+   * |        |         | 3.1 _-x-_ |              | 9 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform
+   */
   transform?: TransformProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **64** | **55**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-box
+   */
   "transform-box"?: TransformBoxProperty;
+  /**
+   * | Chrome | Firefox   | Safari        | Edge   | IE      |
+   * | ------ | --------- | ------------- | ------ | ------- |
+   * | Yes    | **16**    | **3.1** _-x-_ | **12** | **10**  |
+   * |        | 3.5 _-x-_ |               |        | 9 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-origin
+   */
   "transform-origin"?: TransformOriginProperty<TLength>;
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE  |
+   * | ------------ | -------- | ------ | ------ | --- |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | No  |
+   * |              | 10 _-x-_ |        |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-style
+   */
   "transform-style"?: TransformStyleProperty;
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **26**  | **16**  | **3** _-x-_ | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
+   */
   "transition-delay"?: GlobalsString;
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **26**  | **16**  | **3** _-x-_ | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
+   */
   "transition-duration"?: GlobalsString;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **26** | **16**  | Yes    | **12** | **10** |
+   * |        | 4 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-property
+   */
   "transition-property"?: TransitionPropertyProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **26** | **16**  | Yes    | **12** | **10** |
+   * |        | 4 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-timing-function
+   */
   "transition-timing-function"?: TransitionTimingFunctionProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/translate
+   */
   translate?: TranslateProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE      |
+   * | ------ | ------- | ------- | ------ | ------- |
+   * | **2**  | **1**   | **1.3** | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/unicode-bidi
+   */
   "unicode-bidi"?: UnicodeBidiProperty;
+  /**
+   * | Chrome  | Firefox      | Safari        | Edge         | IE     |
+   * | ------- | ------------ | ------------- | ------------ | ------ |
+   * | **54**  | **49** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
+   * | 6 _-x-_ |              |               |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/user-select
+   */
   "user-select"?: UserSelectProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/vertical-align
+   */
   "vertical-align"?: VerticalAlignProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/visibility
+   */
   visibility?: VisibilityProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/white-space
+   */
   "white-space"?: WhiteSpaceProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **25** | No      | No     | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/widows
+   */
   widows?: GlobalsNumber;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   */
   width?: WidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **36** | **36**  | **9.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/will-change
+   */
   "will-change"?: WillChangeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **15**  | Yes    | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/word-break
+   */
   "word-break"?: WordBreakProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/word-spacing
+   */
   "word-spacing"?: WordSpacingProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **3.5** | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+   */
   "word-wrap"?: WordWrapProperty;
+  /**
+   * | Chrome      | Firefox | Safari        | Edge   | IE          |
+   * | ----------- | ------- | ------------- | ------ | ----------- |
+   * | **8** _-x-_ | **41**  | **5.1** _-x-_ | **12** | **9** _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
+   */
   "writing-mode"?: WritingModeProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
+   */
   "z-index"?: ZIndexProperty;
   zoom?: ZoomProperty;
 }
 
 export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   all?: Globals;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation
+   */
   animation?: AnimationProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background
+   */
   background?: BackgroundProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border
+   */
   border?: BorderProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end
+   */
   "border-block-end"?: BorderBlockEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start
+   */
   "border-block-start"?: BorderBlockStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom
+   */
   "border-bottom"?: BorderBottomProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-color
+   */
   "border-color"?: BorderColorProperty;
+  /**
+   * | Chrome  | Firefox   | Safari  | Edge   | IE     |
+   * | ------- | --------- | ------- | ------ | ------ |
+   * | **16**  | **15**    | **6**   | **12** | **11** |
+   * | 7 _-x-_ | 3.5 _-x-_ | 3 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image
+   */
   "border-image"?: BorderImageProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
+   */
   "border-inline-end"?: BorderInlineEndProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
+   */
   "border-inline-start"?: BorderInlineStartProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left
+   */
   "border-left"?: BorderLeftProperty<TLength>;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
+   */
   "border-radius"?: BorderRadiusProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right
+   */
   "border-right"?: BorderRightProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-style
+   */
   "border-style"?: BorderStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top
+   */
   "border-top"?: BorderTopProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-width
+   */
   "border-width"?: BorderWidthProperty<TLength>;
+  /**
+   * | Chrome | Firefox   | Safari      | Edge         | IE     |
+   * | ------ | --------- | ----------- | ------------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** _-x-_ | **10** |
+   * |        | 3.5 _-x-_ |             |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule
+   */
   "column-rule"?: ColumnRuleProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
+   * |        | 9 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/columns
+   */
   columns?: ColumnsProperty<TLength>;
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE       |
+   * | -------- | ------- | --------- | ------ | -------- |
+   * | **29**   | **20**  | **9**     | **12** | **11**   |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex
+   */
   flex?: FlexProperty<TLength>;
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE     |
+   * | -------- | ------- | --------- | ------ | ------ |
+   * | **29**   | **28**  | **9**     | **12** | **11** |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-flow
+   */
   "flex-flow"?: FlexFlowProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font
+   */
   font?: FontProperty;
   gap?: GapProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid
+   */
   grid?: GridProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-area
+   */
   "grid-area"?: GridAreaProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column
+   */
   "grid-column"?: GridColumnProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row
+   */
   "grid-row"?: GridRowProperty;
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template
+   */
   "grid-template"?: GridTemplateProperty;
   "line-clamp"?: LineClampProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style
+   */
   "list-style"?: ListStyleProperty;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin
+   */
   margin?: MarginProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **1**  | Yes     | **4**  | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask
+   */
   mask?: MaskProperty<TLength>;
   "mask-border"?: MaskBorderProperty;
+  /**
+   * | Chrome        | Firefox | Safari | Edge | IE  |
+   * | ------------- | ------- | ------ | ---- | --- |
+   * | **55**        | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
   motion?: OffsetProperty<TLength>;
+  /**
+   * | Chrome        | Firefox | Safari | Edge | IE  |
+   * | ------------- | ------- | ------ | ---- | --- |
+   * | **55**        | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
   offset?: OffsetProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline
+   */
   outline?: OutlineProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding
+   */
   padding?: PaddingProperty<TLength>;
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration
+   */
   "text-decoration"?: TextDecorationProperty;
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
+   */
   "text-emphasis"?: TextEmphasisProperty;
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE     |
+   * | ------- | ------- | ------- | ------ | ------ |
+   * | **26**  | **16**  | **6.1** | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ | 3 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition
+   */
   transition?: TransitionProperty;
 }
 
@@ -1577,163 +5345,1085 @@ export interface PropertiesHyphen<TLength = string | 0>
     SvgPropertiesHyphen<TLength> {}
 
 export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE     |
+   * | -------- | ------- | --------- | ------ | ------ |
+   * | **29**   | **28**  | **9**     | **12** | **11** |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-content
+   */
   alignContent?: AlignContentProperty | AlignContentProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **21** | **20**  | **7** _-x-_ | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-items
+   */
   alignItems?: AlignItemsProperty | AlignItemsProperty[];
+  /**
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **36**   | **20**  | No     | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-self
+   */
   alignSelf?: AlignSelfProperty | AlignSelfProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE     |
+   * | ------ | ------- | ------- | ------ | ------ |
+   * | **43** | **16**  | **9**   | **12** | **10** |
+   * |        | 5 _-x-_ | 4 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
+   */
   animationDelay?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-direction
+   */
   animationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[];
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **43**  | **16**  | **4** _-x-_ | **12** | **10** |
+   * | 3 _-x-_ | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
+   */
   animationDuration?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode
+   */
   animationFillMode?: AnimationFillModeProperty | AnimationFillModeProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count
+   */
   animationIterationCount?: AnimationIterationCountProperty | AnimationIterationCountProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-name
+   */
   animationName?: AnimationNameProperty | AnimationNameProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **43** | **16**  | Yes    | **12** | **10** |
+   * |        | 5 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-play-state
+   */
   animationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-timing-function
+   */
   animationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
+  /**
+   * | Chrome      | Firefox     | Safari      | Edge         | IE  |
+   * | ----------- | ----------- | ----------- | ------------ | --- |
+   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/appearance
+   */
   appearance?: AppearanceProperty | AppearanceProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE  |
+   * | ------ | ------- | ----------- | ------ | --- |
+   * | n/a    | No      | **9** _-x-_ | **17** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/backdrop-filter
+   */
   backdropFilter?: BackdropFilterProperty | BackdropFilterProperty[];
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE     |
+   * | ------------ | -------- | ------ | ------ | ------ |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | **10** |
+   * |              | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
+   */
   backfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-attachment
+   */
   backgroundAttachment?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **35** | **30**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-blend-mode
+   */
   backgroundBlendMode?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **4**   | **3**  | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
+   */
   backgroundClip?: BackgroundClipProperty | BackgroundClipProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-color
+   */
   backgroundColor?: BackgroundColorProperty | BackgroundColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-image
+   */
   backgroundImage?: BackgroundImageProperty | BackgroundImageProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **4**   | **3**  | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-origin
+   */
   backgroundOrigin?: BackgroundOriginProperty | BackgroundOriginProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
+   */
   backgroundPosition?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **49**  | Yes    | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position-x
+   */
   backgroundPositionX?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **49**  | Yes    | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position-y
+   */
   backgroundPositionY?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-repeat
+   */
   backgroundRepeat?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **3**   | **4**   | **4.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-size
+   */
   backgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
   blockOverflow?: BlockOverflowProperty | BlockOverflowProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/block-size
+   */
   blockSize?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-color
+   */
   borderBlockEndColor?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-style
+   */
   borderBlockEndStyle?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-width
+   */
   borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-color
+   */
   borderBlockStartColor?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-style
+   */
   borderBlockStartStyle?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-width
+   */
   borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-color
+   */
   borderBottomColor?: BorderBottomColorProperty | BorderBottomColorProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius
+   */
   borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius
+   */
   borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
+   */
   borderBottomStyle?: BorderBottomStyleProperty | BorderBottomStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-width
+   */
   borderBottomWidth?: BorderBottomWidthProperty<TLength> | BorderBottomWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-collapse
+   */
   borderCollapse?: BorderCollapseProperty | BorderCollapseProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-outset
+   */
   borderImageOutset?: BorderImageOutsetProperty<TLength> | BorderImageOutsetProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-repeat
+   */
   borderImageRepeat?: BorderImageRepeatProperty | BorderImageRepeatProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-slice
+   */
   borderImageSlice?: BorderImageSliceProperty | BorderImageSliceProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-source
+   */
   borderImageSource?: BorderImageSourceProperty | BorderImageSourceProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **13**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-width
+   */
   borderImageWidth?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color
+   */
   borderInlineEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
+  /**
+   * | Chrome | Firefox                      | Safari | Edge | IE  |
+   * | ------ | ---------------------------- | ------ | ---- | --- |
+   * | No     | **41**                       | No     | n/a  | No  |
+   * |        | 38 _(-moz-border-end-style)_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style
+   */
   borderInlineEndStyle?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width
+   */
   borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox                        | Safari | Edge | IE  |
+   * | ------ | ------------------------------ | ------ | ---- | --- |
+   * | No     | **41**                         | No     | n/a  | No  |
+   * |        | 38 _(-moz-border-start-color)_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color
+   */
   borderInlineStartColor?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style
+   */
   borderInlineStartStyle?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width
+   */
   borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-color
+   */
   borderLeftColor?: BorderLeftColorProperty | BorderLeftColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
+   */
   borderLeftStyle?: BorderLeftStyleProperty | BorderLeftStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-width
+   */
   borderLeftWidth?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-color
+   */
   borderRightColor?: BorderRightColorProperty | BorderRightColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
+   */
   borderRightStyle?: BorderRightStyleProperty | BorderRightStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-width
+   */
   borderRightWidth?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-spacing
+   */
   borderSpacing?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-color
+   */
   borderTopColor?: BorderTopColorProperty | BorderTopColorProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius
+   */
   borderTopLeftRadius?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius
+   */
   borderTopRightRadius?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
+   */
   borderTopStyle?: BorderTopStyleProperty | BorderTopStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
+   */
   borderTopWidth?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/bottom
+   */
   bottom?: BottomProperty<TLength> | BottomProperty<TLength>[];
   boxAlign?: BoxAlignProperty | BoxAlignProperty[];
+  /**
+   * | Chrome       | Firefox | Safari  | Edge | IE  |
+   * | ------------ | ------- | ------- | ---- | --- |
+   * | **22** _-x-_ | **32**  | **6.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
+   */
   boxDecorationBreak?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   boxFlexGroup?: GlobalsNumber | GlobalsNumber[];
   boxLines?: BoxLinesProperty | BoxLinesProperty[];
   boxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **10**  | **4**   | **5.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
+   */
   boxShadow?: BoxShadowProperty | BoxShadowProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **10**  | **29**  | **5.1** | **12** | **8** |
+   * | 1 _-x-_ | 1 _-x-_ |         |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-sizing
+   */
   boxSizing?: BoxSizingProperty | BoxSizingProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-after
+   */
   breakAfter?: BreakAfterProperty | BreakAfterProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-before
+   */
   breakBefore?: BreakBeforeProperty | BreakBeforeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
+   */
   breakInside?: BreakInsideProperty | BreakInsideProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/caption-side
+   */
   captionSide?: CaptionSideProperty | CaptionSideProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **57** | **53**  | **11.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/caret-color
+   */
   caretColor?: CaretColorProperty | CaretColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/clear
+   */
   clear?: ClearProperty | ClearProperty[];
+  /**
+   * | Chrome   | Firefox | Safari | Edge | IE  |
+   * | -------- | ------- | ------ | ---- | --- |
+   * | **55**   | **3.5** | No     | No   | No  |
+   * | 24 _-x-_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/clip-path
+   */
   clipPath?: ClipPathProperty | ClipPathProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **1**  | **1**   | Yes    | **12** | Yes |
+   * @see https://developer.mozilla.org/docs/Web/CSS/color
+   */
   color?: ColorProperty | ColorProperty[];
   colorAdjust?: ColorAdjustProperty | ColorAdjustProperty[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-count
+   */
   columnCount?: ColumnCountProperty | ColumnCountProperty[];
+  /**
+   * | Chrome | Firefox  | Safari | Edge   | IE  |
+   * | ------ | -------- | ------ | ------ | --- |
+   * | Yes    | **52**   | n/a    | **12** | n/a |
+   * |        | 13 _-x-_ |        |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-fill
+   */
   columnFill?: ColumnFillProperty | ColumnFillProperty[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
+   */
   columnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 3.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-color
+   */
   columnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-style
+   */
   columnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge         | IE     |
+   * | ------ | --------- | ----------- | ------------ | ------ |
+   * | **50** | **50**    | **3** _-x-_ | **12** _-x-_ | **10** |
+   * |        | 3.5 _-x-_ |             |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-width
+   */
   columnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | Yes    | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-span
+   */
   columnSpan?: ColumnSpanProperty | ColumnSpanProperty[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **50**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-width
+   */
   columnWidth?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[];
   contain?: ContainProperty | ContainProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/content
+   */
   content?: ContentProperty | ContentProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE    |
+   * | ------ | ------- | ------ | ---- | ----- |
+   * | **2**  | **1**   | **3**  | n/a  | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/counter-increment
+   */
   counterIncrement?: CounterIncrementProperty | CounterIncrementProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **2**  | **1**   | **3.1** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/counter-reset
+   */
   counterReset?: CounterResetProperty | CounterResetProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/cursor
+   */
   cursor?: CursorProperty | CursorProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE      |
+   * | ------ | ------- | ------- | ------ | ------- |
+   * | **2**  | **1**   | **1.3** | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/direction
+   */
   direction?: DirectionProperty | DirectionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/display
+   */
   display?: DisplayProperty | DisplayProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/empty-cells
+   */
   emptyCells?: EmptyCellsProperty | EmptyCellsProperty[];
+  /**
+   * | Chrome   | Firefox | Safari      | Edge   | IE  |
+   * | -------- | ------- | ----------- | ------ | --- |
+   * | **53**   | **35**  | **6** _-x-_ | **12** | No  |
+   * | 18 _-x-_ |         |             |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/filter
+   */
   filter?: FilterProperty | FilterProperty[];
+  /**
+   * | Chrome       | Firefox | Safari  | Edge   | IE     |
+   * | ------------ | ------- | ------- | ------ | ------ |
+   * | **21** _-x-_ | **22**  | **9**   | **12** | **11** |
+   * |              |         | 7 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
+   */
   flexBasis?: FlexBasisProperty<TLength> | FlexBasisProperty<TLength>[];
+  /**
+   * | Chrome       | Firefox | Safari  | Edge   | IE       |
+   * | ------------ | ------- | ------- | ------ | -------- |
+   * | **21** _-x-_ | **20**  | **9**   | **12** | **11**   |
+   * |              |         | 7 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
+   */
   flexDirection?: FlexDirectionProperty | FlexDirectionProperty[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge   | IE                           |
+   * | ------------ | ------- | ------------- | ------ | ---------------------------- |
+   * | **21** _-x-_ | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
+   */
   flexGrow?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome       | Firefox | Safari      | Edge   | IE     |
+   * | ------------ | ------- | ----------- | ------ | ------ |
+   * | **21** _-x-_ | **20**  | **8** _-x-_ | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
+   */
   flexShrink?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **29** | **28**  | **9**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
+   */
   flexWrap?: FlexWrapProperty | FlexWrapProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/float
+   */
   float?: FloatProperty | FloatProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-family
+   */
   fontFamily?: FontFamilyProperty | FontFamilyProperty[];
+  /**
+   * | Chrome   | Firefox  | Safari | Edge   | IE     |
+   * | -------- | -------- | ------ | ------ | ------ |
+   * | **48**   | **34**   | 4-6    | **15** | **10** |
+   * | 16 _-x-_ | 15 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-feature-settings
+   */
   fontFeatureSettings?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[];
+  /**
+   * | Chrome       | Firefox | Safari | Edge | IE  |
+   * | ------------ | ------- | ------ | ---- | --- |
+   * | **32** _-x-_ | **32**  | **7**  | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-kerning
+   */
   fontKerning?: FontKerningProperty | FontKerningProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | No     | No   | No  |
+   * |        | 4 _-x-_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
+   */
   fontLanguageOverride?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-size
+   */
   fontSize?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **1**   | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
+   */
   fontSizeAdjust?: FontSizeAdjustProperty | FontSizeAdjustProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **48** | **9**   | **11** | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-stretch
+   */
   fontStretch?: FontStretchProperty | FontStretchProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-style
+   */
   fontStyle?: FontStyleProperty | FontStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | **9**  | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-synthesis
+   */
   fontSynthesis?: FontSynthesisProperty | FontSynthesisProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant
+   */
   fontVariant?: FontVariantProperty | FontVariantProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **52** | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-caps
+   */
   fontVariantCaps?: FontVariantCapsProperty | FontVariantCapsProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
+   */
   fontVariantEastAsian?: FontVariantEastAsianProperty | FontVariantEastAsianProperty[];
+  /**
+   * | Chrome   | Firefox | Safari  | Edge | IE  |
+   * | -------- | ------- | ------- | ---- | --- |
+   * | **34**   | **34**  | **9.1** | No   | No  |
+   * | 31 _-x-_ |         | 7 _-x-_ |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures
+   */
   fontVariantLigatures?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **52** | **34**  | **9.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric
+   */
   fontVariantNumeric?: FontVariantNumericProperty | FontVariantNumericProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-position
+   */
   fontVariantPosition?: FontVariantPositionProperty | FontVariantPositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **62** | n/a     | **11** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
+   */
   fontVariationSettings?: FontVariationSettingsProperty | FontVariationSettingsProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **2**  | **1**   | **1.3** | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
+   */
   fontWeight?: FontWeightProperty | FontWeightProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge                    | IE                          |
+   * | ------ | ------- | -------- | ----------------------- | --------------------------- |
+   * | **57** | **52**  | **10.1** | **16**                  | **10** _(-ms-grid-columns)_ |
+   * |        |         |          | 12 _(-ms-grid-columns)_ |                             |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns
+   */
   gridAutoColumns?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow
+   */
   gridAutoFlow?: GridAutoFlowProperty | GridAutoFlowProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge                 | IE                       |
+   * | ------ | ------- | -------- | -------------------- | ------------------------ |
+   * | **57** | **52**  | **10.1** | **16**               | **10** _(-ms-grid-rows)_ |
+   * |        |         |          | 12 _(-ms-grid-rows)_ |                          |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows
+   */
   gridAutoRows?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-end
+   */
   gridColumnEnd?: GridColumnEndProperty | GridColumnEndProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-start
+   */
   gridColumnStart?: GridColumnStartProperty | GridColumnStartProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-end
+   */
   gridRowEnd?: GridRowEndProperty | GridRowEndProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-start
+   */
   gridRowStart?: GridRowStartProperty | GridRowStartProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-areas
+   */
   gridTemplateAreas?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
+   */
   gridTemplateColumns?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
+   */
   gridTemplateRows?: GridTemplateRowsProperty<TLength> | GridTemplateRowsProperty<TLength>[];
   hangingPunctuation?: HangingPunctuationProperty | HangingPunctuationProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
   height?: HeightProperty<TLength> | HeightProperty<TLength>[];
+  /**
+   * | Chrome   | Firefox | Safari        | Edge | IE           |
+   * | -------- | ------- | ------------- | ---- | ------------ |
+   * | **55**   | **43**  | **5.1** _-x-_ | n/a  | **10** _-x-_ |
+   * | 13 _-x-_ | 6 _-x-_ |               |      |              |
+   * @see https://developer.mozilla.org/docs/Web/CSS/hyphens
+   */
   hyphens?: HyphensProperty | HyphensProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **26**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/image-orientation
+   */
   imageOrientation?: ImageOrientationProperty | ImageOrientationProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **3.6** | Yes    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/image-rendering
+   */
   imageRendering?: ImageRenderingProperty | ImageRenderingProperty[];
   imageResolution?: ImageResolutionProperty | ImageResolutionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | No      | **9**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
+   */
   initialLetter?: InitialLetterProperty | InitialLetterProperty[];
   initialLetterAlign?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
+   */
   inlineSize?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **41** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/isolation
+   */
   isolation?: IsolationProperty | IsolationProperty[];
+  /**
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **29**   | **20**  | **9**  | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
+   */
   justifyContent?: JustifyContentProperty | JustifyContentProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | n/a    | **45**  | n/a    | **16** | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-items
+   */
   justifyItems?: JustifyItemsProperty | JustifyItemsProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | n/a    | **45**  | n/a    | **16** | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
+   */
   justifySelf?: JustifySelfProperty | JustifySelfProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/left
+   */
   left?: LeftProperty<TLength> | LeftProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/letter-spacing
+   */
   letterSpacing?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[];
+  /**
+   * | Chrome  | Firefox | Safari | Edge   | IE      |
+   * | ------- | ------- | ------ | ------ | ------- |
+   * | **58**  | No      | Yes    | **14** | **5.5** |
+   * | 1 _-x-_ |         |        |        |         |
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-break
+   */
   lineBreak?: LineBreakProperty | LineBreakProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-height
+   */
   lineHeight?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[];
   lineHeightStep?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-image
+   */
   listStyleImage?: ListStyleImageProperty | ListStyleImageProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-position
+   */
   listStylePosition?: ListStylePositionProperty | ListStylePositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-type
+   */
   listStyleType?: ListStyleTypeProperty | ListStyleTypeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-end
+   */
   marginBlockEnd?: MarginBlockEndProperty<TLength> | MarginBlockEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-start
+   */
   marginBlockStart?: MarginBlockStartProperty<TLength> | MarginBlockStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
+   */
   marginBottom?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
+  /**
+   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
+   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
+   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
+   */
   marginInlineEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  /**
+   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
+   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | n/a  | No  |
+   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
+   */
   marginInlineStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-left
+   */
   marginLeft?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-right
+   */
   marginRight?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
+   */
   marginTop?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[];
   maskBorderMode?: MaskBorderModeProperty | MaskBorderModeProperty[];
   maskBorderOutset?: MaskBorderOutsetProperty<TLength> | MaskBorderOutsetProperty<TLength>[];
@@ -1741,178 +6431,1140 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   maskBorderSlice?: MaskBorderSliceProperty | MaskBorderSliceProperty[];
   maskBorderSource?: MaskBorderSourceProperty | MaskBorderSourceProperty[];
   maskBorderWidth?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **53**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-clip
+   */
   maskClip?: MaskClipProperty | MaskClipProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **53**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-composite
+   */
   maskComposite?: MaskCompositeProperty | MaskCompositeProperty[];
+  /**
+   * | Chrome      | Firefox | Safari      | Edge   | IE  |
+   * | ----------- | ------- | ----------- | ------ | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
+   */
   maskImage?: MaskImageProperty | MaskImageProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **53**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-mode
+   */
   maskMode?: MaskModeProperty | MaskModeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **53**  | Yes    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-origin
+   */
   maskOrigin?: MaskOriginProperty | MaskOriginProperty[];
+  /**
+   * | Chrome      | Firefox | Safari      | Edge | IE  |
+   * | ----------- | ------- | ----------- | ---- | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
+   */
   maskPosition?: MaskPositionProperty<TLength> | MaskPositionProperty<TLength>[];
+  /**
+   * | Chrome      | Firefox | Safari      | Edge | IE  |
+   * | ----------- | ------- | ----------- | ---- | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
+   */
   maskRepeat?: MaskRepeatProperty | MaskRepeatProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **53**  | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
+   */
   maskSize?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **24** | **35**  | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
+   */
   maskType?: MaskTypeProperty | MaskTypeProperty[];
   maxBlockSize?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-height
+   */
   maxHeight?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari         | Edge | IE  |
+   * | ------ | ------- | -------------- | ---- | --- |
+   * | Yes    | **41**  | **10.1** _-x-_ | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-inline-size
+   */
   maxInlineSize?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
   maxLines?: MaxLinesProperty | MaxLinesProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **2**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-width
+   */
   maxWidth?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
+   */
   minBlockSize?: MinBlockSizeProperty<TLength> | MinBlockSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **3**   | **1**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-height
+   */
   minHeight?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-inline-size
+   */
   minInlineSize?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **2**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-width
+   */
   minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **41** | **32**  | **8**  | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
+   */
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **55**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
   motionDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  /**
+   * | Chrome             | Firefox | Safari | Edge | IE  |
+   * | ------------------ | ------- | ------ | ---- | --- |
+   * | **55**             | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
   motionPath?: OffsetPathProperty | OffsetPathProperty[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   motionRotation?: OffsetRotateProperty | OffsetRotateProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **31** | **36**  | Yes    | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/object-fit
+   */
   objectFit?: ObjectFitProperty | ObjectFitProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **31** | **36**  | **10** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/object-position
+   */
   objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-block-end
+   */
   offsetBlockEnd?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-block-start
+   */
   offsetBlockStart?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **55**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
   offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-inline-end
+   */
   offsetInlineEnd?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-inline-start
+   */
   offsetInlineStart?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
+  /**
+   * | Chrome             | Firefox | Safari | Edge | IE  |
+   * | ------------------ | ------- | ------ | ---- | --- |
+   * | **55**             | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
   offsetPath?: OffsetPathProperty | OffsetPathProperty[];
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   offsetRotation?: OffsetRotateProperty | OffsetRotateProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/opacity
+   */
   opacity?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome   | Firefox | Safari  | Edge   | IE       |
+   * | -------- | ------- | ------- | ------ | -------- |
+   * | **29**   | **20**  | **9**   | **12** | **11**   |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/order
+   */
   order?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **25** | No      | No     | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/orphans
+   */
   orphans?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-color
+   */
   outlineColor?: OutlineColorProperty | OutlineColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **1**  | **1.5** | **1.2** | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-offset
+   */
   outlineOffset?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-style
+   */
   outlineStyle?: OutlineStyleProperty | OutlineStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-width
+   */
   outlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow
+   */
   overflow?: OverflowProperty | OverflowProperty[];
   overflowAnchor?: OverflowAnchorProperty | OverflowAnchorProperty[];
   overflowBlock?: OverflowBlockProperty | OverflowBlockProperty[];
   overflowClipBox?: OverflowClipBoxProperty | OverflowClipBoxProperty[];
   overflowInline?: OverflowInlineProperty | OverflowInlineProperty[];
+  /**
+   * | Chrome              | Firefox           | Safari              | Edge                 | IE                    |
+   * | ------------------- | ----------------- | ------------------- | -------------------- | --------------------- |
+   * | **1** _(word-wrap)_ | **49**            | **1** _(word-wrap)_ | **12** _(word-wrap)_ | **5.5** _(word-wrap)_ |
+   * |                     | 3.5 _(word-wrap)_ |                     |                      |                       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+   */
   overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-x
+   */
   overflowX?: OverflowXProperty | OverflowXProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
+   */
   overflowY?: OverflowYProperty | OverflowYProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+   */
   overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x
+   */
   overscrollBehaviorX?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y
+   */
   overscrollBehaviorY?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-end
+   */
   paddingBlockEnd?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-start
+   */
   paddingBlockStart?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
+   */
   paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
+  /**
+   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
+   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
+   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
+   */
   paddingInlineEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
+  /**
+   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
+   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | No   | No  |
+   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
+   */
   paddingInlineStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
+   */
   paddingLeft?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
+   */
   paddingRight?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
+   */
   paddingTop?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-after
+   */
   pageBreakAfter?: PageBreakAfterProperty | PageBreakAfterProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-before
+   */
   pageBreakBefore?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **19**  | **1.3** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-inside
+   */
   pageBreakInside?: PageBreakInsideProperty | PageBreakInsideProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **60**  | Yes    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/paint-order
+   */
   paintOrder?: PaintOrderProperty | PaintOrderProperty[];
+  /**
+   * | Chrome   | Firefox  | Safari | Edge   | IE     |
+   * | -------- | -------- | ------ | ------ | ------ |
+   * | **45**   | **16**   | Yes    | **12** | **10** |
+   * | 12 _-x-_ | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/perspective
+   */
   perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE     |
+   * | ------------ | -------- | ------ | ------ | ------ |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | **10** |
+   * |              | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/perspective-origin
+   */
   perspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **59** | Yes     | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-content
+   */
   placeContent?: PlaceContentProperty | PlaceContentProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **1**  | **1.5** | **3**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/pointer-events
+   */
   pointerEvents?: PointerEventsProperty | PointerEventsProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/position
+   */
   position?: PositionProperty | PositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **11** | **1.5** | **9**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/quotes
+   */
   quotes?: QuotesProperty | QuotesProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **1**  |         | **3**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/resize
+   */
   resize?: ResizeProperty | ResizeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/right
+   */
   right?: RightProperty<TLength> | RightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/rotate
+   */
   rotate?: RotateProperty | RotateProperty[];
   rowGap?: RowGapProperty<TLength> | RowGapProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **38**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/ruby-align
+   */
   rubyAlign?: RubyAlignProperty | RubyAlignProperty[];
   rubyMerge?: RubyMergeProperty | RubyMergeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | No     | **38**  | No     | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
+   */
   rubyPosition?: RubyPositionProperty | RubyPositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scale
+   */
   scale?: ScaleProperty | ScaleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **36**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
+   */
   scrollBehavior?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge         | IE           |
+   * | ------ | ------- | ----------- | ------------ | ------------ |
+   * | No     | **39**  | **9** _-x-_ | **12** _-x-_ | **10** _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
+   */
   scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | **37** | n/a     | **7** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
+   */
   shapeImageThreshold?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | Yes    | No      | **7** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
+   */
   shapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | **37** | n/a     | **8** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
+   */
   shapeOutside?: ShapeOutsideProperty | ShapeOutsideProperty[];
+  /**
+   * | Chrome | Firefox     | Safari  | Edge | IE  |
+   * | ------ | ----------- | ------- | ---- | --- |
+   * | **21** | **4** _-x-_ | **6.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/tab-size
+   */
   tabSize?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **14** | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/table-layout
+   */
   tableLayout?: TableLayoutProperty | TableLayoutProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-align
+   */
   textAlign?: TextAlignProperty | TextAlignProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **47** | **49**  | No     | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-align-last
+   */
   textAlignLast?: TextAlignLastProperty | TextAlignLastProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE                                     |
+   * | ------ | ------- | ------ | ------ | -------------------------------------- |
+   * | **48** | **48**  | Yes    | **15** | **11** _(-ms-text-combine-horizontal)_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
+   */
   textCombineUpright?: TextCombineUprightProperty | TextCombineUprightProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **57** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-color
+   */
   textDecorationColor?: TextDecorationColorProperty | TextDecorationColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-line
+   */
   textDecorationLine?: TextDecorationLineProperty | TextDecorationLineProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | 57-64  | No      | **8** _-x-_ | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip
+   */
   textDecorationSkip?: TextDecorationSkipProperty | TextDecorationSkipProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **64** | No      | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
+   */
   textDecorationSkipInk?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **57** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
+   */
   textDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
+   */
   textEmphasisColor?: TextEmphasisColorProperty | TextEmphasisColorProperty[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
+   */
   textEmphasisPosition?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
+   */
   textEmphasisStyle?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-indent
+   */
   textIndent?: TextIndentProperty<TLength> | TextIndentProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | n/a    | **55**  | No     | **14** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-justify
+   */
   textJustify?: TextJustifyProperty | TextJustifyProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **48** | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
+   */
   textOrientation?: TextOrientationProperty | TextOrientationProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **7**   | **1.3** | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-overflow
+   */
   textOverflow?: TextOverflowProperty | TextOverflowProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **4**  | **3**   | **5**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-rendering
+   */
   textRendering?: TextRenderingProperty | TextRenderingProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE     |
+   * | ------ | ------- | ------- | ------ | ------ |
+   * | **2**  | **3.5** | **1.1** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-shadow
+   */
   textShadow?: TextShadowProperty | TextShadowProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge         | IE  |
+   * | ------ | ------- | ------ | ------------ | --- |
+   * | **54** | No      | No     | **12** _-x-_ | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-size-adjust
+   */
   textSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-transform
+   */
   textTransform?: TextTransformProperty | TextTransformProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **33** | No      | No     | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-underline-position
+   */
   textUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/top
+   */
   top?: TopProperty<TLength> | TopProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE       |
+   * | ------ | ------- | ------ | ------ | -------- |
+   * | **36** | **52**  | No     | **12** | **11**   |
+   * |        |         |        |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/touch-action
+   */
   touchAction?: TouchActionProperty | TouchActionProperty[];
+  /**
+   * | Chrome | Firefox | Safari    | Edge         | IE      |
+   * | ------ | ------- | --------- | ------------ | ------- |
+   * | **36** | **16**  | **9**     | **12** _-x-_ | **10**  |
+   * |        |         | 3.1 _-x-_ |              | 9 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform
+   */
   transform?: TransformProperty | TransformProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **64** | **55**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-box
+   */
   transformBox?: TransformBoxProperty | TransformBoxProperty[];
+  /**
+   * | Chrome | Firefox   | Safari        | Edge   | IE      |
+   * | ------ | --------- | ------------- | ------ | ------- |
+   * | Yes    | **16**    | **3.1** _-x-_ | **12** | **10**  |
+   * |        | 3.5 _-x-_ |               |        | 9 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-origin
+   */
   transformOrigin?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[];
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE  |
+   * | ------------ | -------- | ------ | ------ | --- |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | No  |
+   * |              | 10 _-x-_ |        |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-style
+   */
   transformStyle?: TransformStyleProperty | TransformStyleProperty[];
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **26**  | **16**  | **3** _-x-_ | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
+   */
   transitionDelay?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **26**  | **16**  | **3** _-x-_ | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
+   */
   transitionDuration?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **26** | **16**  | Yes    | **12** | **10** |
+   * |        | 4 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-property
+   */
   transitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **26** | **16**  | Yes    | **12** | **10** |
+   * |        | 4 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-timing-function
+   */
   transitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/translate
+   */
   translate?: TranslateProperty<TLength> | TranslateProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE      |
+   * | ------ | ------- | ------- | ------ | ------- |
+   * | **2**  | **1**   | **1.3** | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/unicode-bidi
+   */
   unicodeBidi?: UnicodeBidiProperty | UnicodeBidiProperty[];
+  /**
+   * | Chrome  | Firefox      | Safari        | Edge         | IE     |
+   * | ------- | ------------ | ------------- | ------------ | ------ |
+   * | **54**  | **49** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
+   * | 6 _-x-_ |              |               |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/user-select
+   */
   userSelect?: UserSelectProperty | UserSelectProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/vertical-align
+   */
   verticalAlign?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/visibility
+   */
   visibility?: VisibilityProperty | VisibilityProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/white-space
+   */
   whiteSpace?: WhiteSpaceProperty | WhiteSpaceProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **25** | No      | No     | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/widows
+   */
   widows?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   */
   width?: WidthProperty<TLength> | WidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **36** | **36**  | **9.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/will-change
+   */
   willChange?: WillChangeProperty | WillChangeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **15**  | Yes    | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/word-break
+   */
   wordBreak?: WordBreakProperty | WordBreakProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/word-spacing
+   */
   wordSpacing?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **3.5** | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+   */
   wordWrap?: WordWrapProperty | WordWrapProperty[];
+  /**
+   * | Chrome      | Firefox | Safari        | Edge   | IE          |
+   * | ----------- | ------- | ------------- | ------ | ----------- |
+   * | **8** _-x-_ | **41**  | **5.1** _-x-_ | **12** | **9** _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
+   */
   writingMode?: WritingModeProperty | WritingModeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
+   */
   zIndex?: ZIndexProperty | ZIndexProperty[];
   zoom?: ZoomProperty | ZoomProperty[];
 }
 
 export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   all?: Globals | Globals[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation
+   */
   animation?: AnimationProperty | AnimationProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background
+   */
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border
+   */
   border?: BorderProperty<TLength> | BorderProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end
+   */
   borderBlockEnd?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start
+   */
   borderBlockStart?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom
+   */
   borderBottom?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-color
+   */
   borderColor?: BorderColorProperty | BorderColorProperty[];
+  /**
+   * | Chrome  | Firefox   | Safari  | Edge   | IE     |
+   * | ------- | --------- | ------- | ------ | ------ |
+   * | **16**  | **15**    | **6**   | **12** | **11** |
+   * | 7 _-x-_ | 3.5 _-x-_ | 3 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image
+   */
   borderImage?: BorderImageProperty | BorderImageProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
+   */
   borderInlineEnd?: BorderInlineEndProperty<TLength> | BorderInlineEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
+   */
   borderInlineStart?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left
+   */
   borderLeft?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
+   */
   borderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right
+   */
   borderRight?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-style
+   */
   borderStyle?: BorderStyleProperty | BorderStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top
+   */
   borderTop?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-width
+   */
   borderWidth?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge         | IE     |
+   * | ------ | --------- | ----------- | ------------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** _-x-_ | **10** |
+   * |        | 3.5 _-x-_ |             |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule
+   */
   columnRule?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
+   * |        | 9 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/columns
+   */
   columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE       |
+   * | -------- | ------- | --------- | ------ | -------- |
+   * | **29**   | **20**  | **9**     | **12** | **11**   |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex
+   */
   flex?: FlexProperty<TLength> | FlexProperty<TLength>[];
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE     |
+   * | -------- | ------- | --------- | ------ | ------ |
+   * | **29**   | **28**  | **9**     | **12** | **11** |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-flow
+   */
   flexFlow?: FlexFlowProperty | FlexFlowProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font
+   */
   font?: FontProperty | FontProperty[];
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid
+   */
   grid?: GridProperty | GridProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-area
+   */
   gridArea?: GridAreaProperty | GridAreaProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column
+   */
   gridColumn?: GridColumnProperty | GridColumnProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row
+   */
   gridRow?: GridRowProperty | GridRowProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template
+   */
   gridTemplate?: GridTemplateProperty | GridTemplateProperty[];
   lineClamp?: LineClampProperty | LineClampProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style
+   */
   listStyle?: ListStyleProperty | ListStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin
+   */
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **1**  | Yes     | **4**  | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask
+   */
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   maskBorder?: MaskBorderProperty | MaskBorderProperty[];
+  /**
+   * | Chrome        | Firefox | Safari | Edge | IE  |
+   * | ------------- | ------- | ------ | ---- | --- |
+   * | **55**        | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
+  /**
+   * | Chrome        | Firefox | Safari | Edge | IE  |
+   * | ------------- | ------- | ------ | ---- | --- |
+   * | **55**        | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline
+   */
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding
+   */
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration
+   */
   textDecoration?: TextDecorationProperty | TextDecorationProperty[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
+   */
   textEmphasis?: TextEmphasisProperty | TextEmphasisProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE     |
+   * | ------- | ------- | ------- | ------ | ------ |
+   * | **26**  | **16**  | **6.1** | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ | 3 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition
+   */
   transition?: TransitionProperty | TransitionProperty[];
 }
 
@@ -2368,163 +8020,1085 @@ export interface PropertiesFallback<TLength = string | 0>
     SvgPropertiesFallback<TLength> {}
 
 export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> {
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE     |
+   * | -------- | ------- | --------- | ------ | ------ |
+   * | **29**   | **28**  | **9**     | **12** | **11** |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-content
+   */
   "align-content"?: AlignContentProperty | AlignContentProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **21** | **20**  | **7** _-x-_ | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-items
+   */
   "align-items"?: AlignItemsProperty | AlignItemsProperty[];
+  /**
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **36**   | **20**  | No     | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/align-self
+   */
   "align-self"?: AlignSelfProperty | AlignSelfProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE     |
+   * | ------ | ------- | ------- | ------ | ------ |
+   * | **43** | **16**  | **9**   | **12** | **10** |
+   * |        | 5 _-x-_ | 4 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
+   */
   "animation-delay"?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-direction
+   */
   "animation-direction"?: AnimationDirectionProperty | AnimationDirectionProperty[];
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **43**  | **16**  | **4** _-x-_ | **12** | **10** |
+   * | 3 _-x-_ | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
+   */
   "animation-duration"?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode
+   */
   "animation-fill-mode"?: AnimationFillModeProperty | AnimationFillModeProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count
+   */
   "animation-iteration-count"?: AnimationIterationCountProperty | AnimationIterationCountProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-name
+   */
   "animation-name"?: AnimationNameProperty | AnimationNameProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **43** | **16**  | Yes    | **12** | **10** |
+   * |        | 5 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-play-state
+   */
   "animation-play-state"?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-timing-function
+   */
   "animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
+  /**
+   * | Chrome      | Firefox     | Safari      | Edge         | IE  |
+   * | ----------- | ----------- | ----------- | ------------ | --- |
+   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/appearance
+   */
   appearance?: AppearanceProperty | AppearanceProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE  |
+   * | ------ | ------- | ----------- | ------ | --- |
+   * | n/a    | No      | **9** _-x-_ | **17** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/backdrop-filter
+   */
   "backdrop-filter"?: BackdropFilterProperty | BackdropFilterProperty[];
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE     |
+   * | ------------ | -------- | ------ | ------ | ------ |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | **10** |
+   * |              | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
+   */
   "backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-attachment
+   */
   "background-attachment"?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **35** | **30**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-blend-mode
+   */
   "background-blend-mode"?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **4**   | **3**  | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
+   */
   "background-clip"?: BackgroundClipProperty | BackgroundClipProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-color
+   */
   "background-color"?: BackgroundColorProperty | BackgroundColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-image
+   */
   "background-image"?: BackgroundImageProperty | BackgroundImageProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **4**   | **3**  | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-origin
+   */
   "background-origin"?: BackgroundOriginProperty | BackgroundOriginProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
+   */
   "background-position"?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **49**  | Yes    | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position-x
+   */
   "background-position-x"?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **49**  | Yes    | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position-y
+   */
   "background-position-y"?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-repeat
+   */
   "background-repeat"?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **3**   | **4**   | **4.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-size
+   */
   "background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
   "block-overflow"?: BlockOverflowProperty | BlockOverflowProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/block-size
+   */
   "block-size"?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-color
+   */
   "border-block-end-color"?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-style
+   */
   "border-block-end-style"?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-width
+   */
   "border-block-end-width"?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-color
+   */
   "border-block-start-color"?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-style
+   */
   "border-block-start-style"?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-width
+   */
   "border-block-start-width"?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-color
+   */
   "border-bottom-color"?: BorderBottomColorProperty | BorderBottomColorProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-left-radius
+   */
   "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-right-radius
+   */
   "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
+   */
   "border-bottom-style"?: BorderBottomStyleProperty | BorderBottomStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-width
+   */
   "border-bottom-width"?: BorderBottomWidthProperty<TLength> | BorderBottomWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-collapse
+   */
   "border-collapse"?: BorderCollapseProperty | BorderCollapseProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-outset
+   */
   "border-image-outset"?: BorderImageOutsetProperty<TLength> | BorderImageOutsetProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-repeat
+   */
   "border-image-repeat"?: BorderImageRepeatProperty | BorderImageRepeatProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-slice
+   */
   "border-image-slice"?: BorderImageSliceProperty | BorderImageSliceProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **15**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-source
+   */
   "border-image-source"?: BorderImageSourceProperty | BorderImageSourceProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **15** | **13**  | **6**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image-width
+   */
   "border-image-width"?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-color
+   */
   "border-inline-end-color"?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
+  /**
+   * | Chrome | Firefox                      | Safari | Edge | IE  |
+   * | ------ | ---------------------------- | ------ | ---- | --- |
+   * | No     | **41**                       | No     | n/a  | No  |
+   * |        | 38 _(-moz-border-end-style)_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style
+   */
   "border-inline-end-style"?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-width
+   */
   "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox                        | Safari | Edge | IE  |
+   * | ------ | ------------------------------ | ------ | ---- | --- |
+   * | No     | **41**                         | No     | n/a  | No  |
+   * |        | 38 _(-moz-border-start-color)_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-color
+   */
   "border-inline-start-color"?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style
+   */
   "border-inline-start-style"?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width
+   */
   "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-color
+   */
   "border-left-color"?: BorderLeftColorProperty | BorderLeftColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
+   */
   "border-left-style"?: BorderLeftStyleProperty | BorderLeftStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left-width
+   */
   "border-left-width"?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-color
+   */
   "border-right-color"?: BorderRightColorProperty | BorderRightColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
+   */
   "border-right-style"?: BorderRightStyleProperty | BorderRightStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right-width
+   */
   "border-right-width"?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-spacing
+   */
   "border-spacing"?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-color
+   */
   "border-top-color"?: BorderTopColorProperty | BorderTopColorProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-left-radius
+   */
   "border-top-left-radius"?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-right-radius
+   */
   "border-top-right-radius"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
+   */
   "border-top-style"?: BorderTopStyleProperty | BorderTopStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top-width
+   */
   "border-top-width"?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/bottom
+   */
   bottom?: BottomProperty<TLength> | BottomProperty<TLength>[];
   "box-align"?: BoxAlignProperty | BoxAlignProperty[];
+  /**
+   * | Chrome       | Firefox | Safari  | Edge | IE  |
+   * | ------------ | ------- | ------- | ---- | --- |
+   * | **22** _-x-_ | **32**  | **6.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
+   */
   "box-decoration-break"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   "box-flex-group"?: GlobalsNumber | GlobalsNumber[];
   "box-lines"?: BoxLinesProperty | BoxLinesProperty[];
   "box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **10**  | **4**   | **5.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
+   */
   "box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **10**  | **29**  | **5.1** | **12** | **8** |
+   * | 1 _-x-_ | 1 _-x-_ |         |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/box-sizing
+   */
   "box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-after
+   */
   "break-after"?: BreakAfterProperty | BreakAfterProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-before
+   */
   "break-before"?: BreakBeforeProperty | BreakBeforeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | **10** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
+   */
   "break-inside"?: BreakInsideProperty | BreakInsideProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/caption-side
+   */
   "caption-side"?: CaptionSideProperty | CaptionSideProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **57** | **53**  | **11.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/caret-color
+   */
   "caret-color"?: CaretColorProperty | CaretColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/clear
+   */
   clear?: ClearProperty | ClearProperty[];
+  /**
+   * | Chrome   | Firefox | Safari | Edge | IE  |
+   * | -------- | ------- | ------ | ---- | --- |
+   * | **55**   | **3.5** | No     | No   | No  |
+   * | 24 _-x-_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/clip-path
+   */
   "clip-path"?: ClipPathProperty | ClipPathProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **1**  | **1**   | Yes    | **12** | Yes |
+   * @see https://developer.mozilla.org/docs/Web/CSS/color
+   */
   color?: ColorProperty | ColorProperty[];
   "color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-count
+   */
   "column-count"?: ColumnCountProperty | ColumnCountProperty[];
+  /**
+   * | Chrome | Firefox  | Safari | Edge   | IE  |
+   * | ------ | -------- | ------ | ------ | --- |
+   * | Yes    | **52**   | n/a    | **12** | n/a |
+   * |        | 13 _-x-_ |        |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-fill
+   */
   "column-fill"?: ColumnFillProperty | ColumnFillProperty[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
+   */
   "column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
+   * |        | 3.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-color
+   */
   "column-rule-color"?: ColumnRuleColorProperty | ColumnRuleColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-style
+   */
   "column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge         | IE     |
+   * | ------ | --------- | ----------- | ------------ | ------ |
+   * | **50** | **50**    | **3** _-x-_ | **12** _-x-_ | **10** |
+   * |        | 3.5 _-x-_ |             |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-width
+   */
   "column-rule-width"?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **50** | No      | Yes    | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-span
+   */
   "column-span"?: ColumnSpanProperty | ColumnSpanProperty[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge   | IE     |
+   * | ------ | --------- | ----------- | ------ | ------ |
+   * | **50** | **50**    | **3** _-x-_ | **12** | **10** |
+   * |        | 1.5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-width
+   */
   "column-width"?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[];
   contain?: ContainProperty | ContainProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/content
+   */
   content?: ContentProperty | ContentProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE    |
+   * | ------ | ------- | ------ | ---- | ----- |
+   * | **2**  | **1**   | **3**  | n/a  | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/counter-increment
+   */
   "counter-increment"?: CounterIncrementProperty | CounterIncrementProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **2**  | **1**   | **3.1** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/counter-reset
+   */
   "counter-reset"?: CounterResetProperty | CounterResetProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/cursor
+   */
   cursor?: CursorProperty | CursorProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE      |
+   * | ------ | ------- | ------- | ------ | ------- |
+   * | **2**  | **1**   | **1.3** | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/direction
+   */
   direction?: DirectionProperty | DirectionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/display
+   */
   display?: DisplayProperty | DisplayProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/empty-cells
+   */
   "empty-cells"?: EmptyCellsProperty | EmptyCellsProperty[];
+  /**
+   * | Chrome   | Firefox | Safari      | Edge   | IE  |
+   * | -------- | ------- | ----------- | ------ | --- |
+   * | **53**   | **35**  | **6** _-x-_ | **12** | No  |
+   * | 18 _-x-_ |         |             |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/filter
+   */
   filter?: FilterProperty | FilterProperty[];
+  /**
+   * | Chrome       | Firefox | Safari  | Edge   | IE     |
+   * | ------------ | ------- | ------- | ------ | ------ |
+   * | **21** _-x-_ | **22**  | **9**   | **12** | **11** |
+   * |              |         | 7 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
+   */
   "flex-basis"?: FlexBasisProperty<TLength> | FlexBasisProperty<TLength>[];
+  /**
+   * | Chrome       | Firefox | Safari  | Edge   | IE       |
+   * | ------------ | ------- | ------- | ------ | -------- |
+   * | **21** _-x-_ | **20**  | **9**   | **12** | **11**   |
+   * |              |         | 7 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
+   */
   "flex-direction"?: FlexDirectionProperty | FlexDirectionProperty[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge   | IE                           |
+   * | ------------ | ------- | ------------- | ------ | ---------------------------- |
+   * | **21** _-x-_ | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
+   */
   "flex-grow"?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome       | Firefox | Safari      | Edge   | IE     |
+   * | ------------ | ------- | ----------- | ------ | ------ |
+   * | **21** _-x-_ | **20**  | **8** _-x-_ | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
+   */
   "flex-shrink"?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **29** | **28**  | **9**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
+   */
   "flex-wrap"?: FlexWrapProperty | FlexWrapProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/float
+   */
   float?: FloatProperty | FloatProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-family
+   */
   "font-family"?: FontFamilyProperty | FontFamilyProperty[];
+  /**
+   * | Chrome   | Firefox  | Safari | Edge   | IE     |
+   * | -------- | -------- | ------ | ------ | ------ |
+   * | **48**   | **34**   | 4-6    | **15** | **10** |
+   * | 16 _-x-_ | 15 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-feature-settings
+   */
   "font-feature-settings"?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[];
+  /**
+   * | Chrome       | Firefox | Safari | Edge | IE  |
+   * | ------------ | ------- | ------ | ---- | --- |
+   * | **32** _-x-_ | **32**  | **7**  | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-kerning
+   */
   "font-kerning"?: FontKerningProperty | FontKerningProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | No     | No   | No  |
+   * |        | 4 _-x-_ |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
+   */
   "font-language-override"?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-size
+   */
   "font-size"?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **1**   | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
+   */
   "font-size-adjust"?: FontSizeAdjustProperty | FontSizeAdjustProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **48** | **9**   | **11** | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-stretch
+   */
   "font-stretch"?: FontStretchProperty | FontStretchProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-style
+   */
   "font-style"?: FontStyleProperty | FontStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | **9**  | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-synthesis
+   */
   "font-synthesis"?: FontSynthesisProperty | FontSynthesisProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant
+   */
   "font-variant"?: FontVariantProperty | FontVariantProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **52** | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-caps
+   */
   "font-variant-caps"?: FontVariantCapsProperty | FontVariantCapsProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
+   */
   "font-variant-east-asian"?: FontVariantEastAsianProperty | FontVariantEastAsianProperty[];
+  /**
+   * | Chrome   | Firefox | Safari  | Edge | IE  |
+   * | -------- | ------- | ------- | ---- | --- |
+   * | **34**   | **34**  | **9.1** | No   | No  |
+   * | 31 _-x-_ |         | 7 _-x-_ |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures
+   */
   "font-variant-ligatures"?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **52** | **34**  | **9.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric
+   */
   "font-variant-numeric"?: FontVariantNumericProperty | FontVariantNumericProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **34**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-position
+   */
   "font-variant-position"?: FontVariantPositionProperty | FontVariantPositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **62** | n/a     | **11** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
+   */
   "font-variation-settings"?: FontVariationSettingsProperty | FontVariationSettingsProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **2**  | **1**   | **1.3** | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
+   */
   "font-weight"?: FontWeightProperty | FontWeightProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge                    | IE                          |
+   * | ------ | ------- | -------- | ----------------------- | --------------------------- |
+   * | **57** | **52**  | **10.1** | **16**                  | **10** _(-ms-grid-columns)_ |
+   * |        |         |          | 12 _(-ms-grid-columns)_ |                             |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns
+   */
   "grid-auto-columns"?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow
+   */
   "grid-auto-flow"?: GridAutoFlowProperty | GridAutoFlowProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge                 | IE                       |
+   * | ------ | ------- | -------- | -------------------- | ------------------------ |
+   * | **57** | **52**  | **10.1** | **16**               | **10** _(-ms-grid-rows)_ |
+   * |        |         |          | 12 _(-ms-grid-rows)_ |                          |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows
+   */
   "grid-auto-rows"?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-end
+   */
   "grid-column-end"?: GridColumnEndProperty | GridColumnEndProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column-start
+   */
   "grid-column-start"?: GridColumnStartProperty | GridColumnStartProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-end
+   */
   "grid-row-end"?: GridRowEndProperty | GridRowEndProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row-start
+   */
   "grid-row-start"?: GridRowStartProperty | GridRowStartProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-areas
+   */
   "grid-template-areas"?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
+   */
   "grid-template-columns"?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
+   */
   "grid-template-rows"?: GridTemplateRowsProperty<TLength> | GridTemplateRowsProperty<TLength>[];
   "hanging-punctuation"?: HangingPunctuationProperty | HangingPunctuationProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/height
+   */
   height?: HeightProperty<TLength> | HeightProperty<TLength>[];
+  /**
+   * | Chrome   | Firefox | Safari        | Edge | IE           |
+   * | -------- | ------- | ------------- | ---- | ------------ |
+   * | **55**   | **43**  | **5.1** _-x-_ | n/a  | **10** _-x-_ |
+   * | 13 _-x-_ | 6 _-x-_ |               |      |              |
+   * @see https://developer.mozilla.org/docs/Web/CSS/hyphens
+   */
   hyphens?: HyphensProperty | HyphensProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **26**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/image-orientation
+   */
   "image-orientation"?: ImageOrientationProperty | ImageOrientationProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **3.6** | Yes    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/image-rendering
+   */
   "image-rendering"?: ImageRenderingProperty | ImageRenderingProperty[];
   "image-resolution"?: ImageResolutionProperty | ImageResolutionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | No      | **9**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
+   */
   "initial-letter"?: InitialLetterProperty | InitialLetterProperty[];
   "initial-letter-align"?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
+   */
   "inline-size"?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **41** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/isolation
+   */
   isolation?: IsolationProperty | IsolationProperty[];
+  /**
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **29**   | **20**  | **9**  | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
+   */
   "justify-content"?: JustifyContentProperty | JustifyContentProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | n/a    | **45**  | n/a    | **16** | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-items
+   */
   "justify-items"?: JustifyItemsProperty | JustifyItemsProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | n/a    | **45**  | n/a    | **16** | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
+   */
   "justify-self"?: JustifySelfProperty | JustifySelfProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/left
+   */
   left?: LeftProperty<TLength> | LeftProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/letter-spacing
+   */
   "letter-spacing"?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[];
+  /**
+   * | Chrome  | Firefox | Safari | Edge   | IE      |
+   * | ------- | ------- | ------ | ------ | ------- |
+   * | **58**  | No      | Yes    | **14** | **5.5** |
+   * | 1 _-x-_ |         |        |        |         |
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-break
+   */
   "line-break"?: LineBreakProperty | LineBreakProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-height
+   */
   "line-height"?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[];
   "line-height-step"?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-image
+   */
   "list-style-image"?: ListStyleImageProperty | ListStyleImageProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-position
+   */
   "list-style-position"?: ListStylePositionProperty | ListStylePositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style-type
+   */
   "list-style-type"?: ListStyleTypeProperty | ListStyleTypeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-end
+   */
   "margin-block-end"?: MarginBlockEndProperty<TLength> | MarginBlockEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-start
+   */
   "margin-block-start"?: MarginBlockStartProperty<TLength> | MarginBlockStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
+   */
   "margin-bottom"?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
+  /**
+   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
+   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
+   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
+   */
   "margin-inline-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  /**
+   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
+   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | n/a  | No  |
+   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
+   */
   "margin-inline-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-left
+   */
   "margin-left"?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-right
+   */
   "margin-right"?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
+   */
   "margin-top"?: MarginTopProperty<TLength> | MarginTopProperty<TLength>[];
   "mask-border-mode"?: MaskBorderModeProperty | MaskBorderModeProperty[];
   "mask-border-outset"?: MaskBorderOutsetProperty<TLength> | MaskBorderOutsetProperty<TLength>[];
@@ -2532,178 +9106,1140 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "mask-border-slice"?: MaskBorderSliceProperty | MaskBorderSliceProperty[];
   "mask-border-source"?: MaskBorderSourceProperty | MaskBorderSourceProperty[];
   "mask-border-width"?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **53**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-clip
+   */
   "mask-clip"?: MaskClipProperty | MaskClipProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **53**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-composite
+   */
   "mask-composite"?: MaskCompositeProperty | MaskCompositeProperty[];
+  /**
+   * | Chrome      | Firefox | Safari      | Edge   | IE  |
+   * | ----------- | ------- | ----------- | ------ | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
+   */
   "mask-image"?: MaskImageProperty | MaskImageProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **53**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-mode
+   */
   "mask-mode"?: MaskModeProperty | MaskModeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **53**  | Yes    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-origin
+   */
   "mask-origin"?: MaskOriginProperty | MaskOriginProperty[];
+  /**
+   * | Chrome      | Firefox | Safari      | Edge | IE  |
+   * | ----------- | ------- | ----------- | ---- | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
+   */
   "mask-position"?: MaskPositionProperty<TLength> | MaskPositionProperty<TLength>[];
+  /**
+   * | Chrome      | Firefox | Safari      | Edge | IE  |
+   * | ----------- | ------- | ----------- | ---- | --- |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
+   */
   "mask-repeat"?: MaskRepeatProperty | MaskRepeatProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **53**  | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
+   */
   "mask-size"?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **24** | **35**  | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
+   */
   "mask-type"?: MaskTypeProperty | MaskTypeProperty[];
   "max-block-size"?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-height
+   */
   "max-height"?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari         | Edge | IE  |
+   * | ------ | ------- | -------------- | ---- | --- |
+   * | Yes    | **41**  | **10.1** _-x-_ | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-inline-size
+   */
   "max-inline-size"?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
   "max-lines"?: MaxLinesProperty | MaxLinesProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **2**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/max-width
+   */
   "max-width"?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-block-size
+   */
   "min-block-size"?: MinBlockSizeProperty<TLength> | MinBlockSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **3**   | **1**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-height
+   */
   "min-height"?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-inline-size
+   */
   "min-inline-size"?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **2**  | **12** | **7** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/min-width
+   */
   "min-width"?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **41** | **32**  | **8**  | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
+   */
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **55**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
   "motion-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  /**
+   * | Chrome             | Firefox | Safari | Edge | IE  |
+   * | ------------------ | ------- | ------ | ---- | --- |
+   * | **55**             | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
   "motion-path"?: OffsetPathProperty | OffsetPathProperty[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   "motion-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **31** | **36**  | Yes    | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/object-fit
+   */
   "object-fit"?: ObjectFitProperty | ObjectFitProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **31** | **36**  | **10** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/object-position
+   */
   "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-block-end
+   */
   "offset-block-end"?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-block-start
+   */
   "offset-block-start"?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **55**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
   "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-inline-end
+   */
   "offset-inline-end"?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-inline-start
+   */
   "offset-inline-start"?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
+  /**
+   * | Chrome             | Firefox | Safari | Edge | IE  |
+   * | ------------------ | ------- | ------ | ---- | --- |
+   * | **55**             | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
   "offset-path"?: OffsetPathProperty | OffsetPathProperty[];
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[];
+  /**
+   * | Chrome                 | Firefox | Safari | Edge | IE  |
+   * | ---------------------- | ------- | ------ | ---- | --- |
+   * | **56**                 | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
   "offset-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **9** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/opacity
+   */
   opacity?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome   | Firefox | Safari  | Edge   | IE       |
+   * | -------- | ------- | ------- | ------ | -------- |
+   * | **29**   | **20**  | **9**   | **12** | **11**   |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/order
+   */
   order?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **25** | No      | No     | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/orphans
+   */
   orphans?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-color
+   */
   "outline-color"?: OutlineColorProperty | OutlineColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **1**  | **1.5** | **1.2** | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-offset
+   */
   "outline-offset"?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-style
+   */
   "outline-style"?: OutlineStyleProperty | OutlineStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline-width
+   */
   "outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow
+   */
   overflow?: OverflowProperty | OverflowProperty[];
   "overflow-anchor"?: OverflowAnchorProperty | OverflowAnchorProperty[];
   "overflow-block"?: OverflowBlockProperty | OverflowBlockProperty[];
   "overflow-clip-box"?: OverflowClipBoxProperty | OverflowClipBoxProperty[];
   "overflow-inline"?: OverflowInlineProperty | OverflowInlineProperty[];
+  /**
+   * | Chrome              | Firefox           | Safari              | Edge                 | IE                    |
+   * | ------------------- | ----------------- | ------------------- | -------------------- | --------------------- |
+   * | **1** _(word-wrap)_ | **49**            | **1** _(word-wrap)_ | **12** _(word-wrap)_ | **5.5** _(word-wrap)_ |
+   * |                     | 3.5 _(word-wrap)_ |                     |                      |                       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+   */
   "overflow-wrap"?: OverflowWrapProperty | OverflowWrapProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-x
+   */
   "overflow-x"?: OverflowXProperty | OverflowXProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
+   */
   "overflow-y"?: OverflowYProperty | OverflowYProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+   */
   "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x
+   */
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **63** | **59**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y
+   */
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-end
+   */
   "padding-block-end"?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-start
+   */
   "padding-block-start"?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
+   */
   "padding-bottom"?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
+  /**
+   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
+   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
+   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
+   */
   "padding-inline-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
+  /**
+   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
+   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
+   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | No   | No  |
+   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
+   */
   "padding-inline-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
+   */
   "padding-left"?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
+   */
   "padding-right"?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
+   */
   "padding-top"?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-after
+   */
   "page-break-after"?: PageBreakAfterProperty | PageBreakAfterProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1**   | **1.2** | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-before
+   */
   "page-break-before"?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **19**  | **1.3** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/page-break-inside
+   */
   "page-break-inside"?: PageBreakInsideProperty | PageBreakInsideProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **60**  | Yes    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/paint-order
+   */
   "paint-order"?: PaintOrderProperty | PaintOrderProperty[];
+  /**
+   * | Chrome   | Firefox  | Safari | Edge   | IE     |
+   * | -------- | -------- | ------ | ------ | ------ |
+   * | **45**   | **16**   | Yes    | **12** | **10** |
+   * | 12 _-x-_ | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/perspective
+   */
   perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE     |
+   * | ------------ | -------- | ------ | ------ | ------ |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | **10** |
+   * |              | 10 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/perspective-origin
+   */
   "perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **59** | Yes     | n/a    | n/a  | n/a |
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-content
+   */
   "place-content"?: PlaceContentProperty | PlaceContentProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **1**  | **1.5** | **3**  | **12** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/pointer-events
+   */
   "pointer-events"?: PointerEventsProperty | PointerEventsProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/position
+   */
   position?: PositionProperty | PositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **11** | **1.5** | **9**  | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/quotes
+   */
   quotes?: QuotesProperty | QuotesProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **1**  |         | **3**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/resize
+   */
   resize?: ResizeProperty | ResizeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/right
+   */
   right?: RightProperty<TLength> | RightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/rotate
+   */
   rotate?: RotateProperty | RotateProperty[];
   "row-gap"?: RowGapProperty<TLength> | RowGapProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **38**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/ruby-align
+   */
   "ruby-align"?: RubyAlignProperty | RubyAlignProperty[];
   "ruby-merge"?: RubyMergeProperty | RubyMergeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | No     | **38**  | No     | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
+   */
   "ruby-position"?: RubyPositionProperty | RubyPositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scale
+   */
   scale?: ScaleProperty | ScaleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **36**  | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
+   */
   "scroll-behavior"?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge         | IE           |
+   * | ------ | ------- | ----------- | ------------ | ------------ |
+   * | No     | **39**  | **9** _-x-_ | **12** _-x-_ | **10** _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
+   */
   "scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | **37** | n/a     | **7** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
+   */
   "shape-image-threshold"?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | Yes    | No      | **7** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
+   */
   "shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | **37** | n/a     | **8** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
+   */
   "shape-outside"?: ShapeOutsideProperty | ShapeOutsideProperty[];
+  /**
+   * | Chrome | Firefox     | Safari  | Edge | IE  |
+   * | ------ | ----------- | ------- | ---- | --- |
+   * | **21** | **4** _-x-_ | **6.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/tab-size
+   */
   "tab-size"?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **14** | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/table-layout
+   */
   "table-layout"?: TableLayoutProperty | TableLayoutProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-align
+   */
   "text-align"?: TextAlignProperty | TextAlignProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **47** | **49**  | No     | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-align-last
+   */
   "text-align-last"?: TextAlignLastProperty | TextAlignLastProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE                                     |
+   * | ------ | ------- | ------ | ------ | -------------------------------------- |
+   * | **48** | **48**  | Yes    | **15** | **11** _(-ms-text-combine-horizontal)_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
+   */
   "text-combine-upright"?: TextCombineUprightProperty | TextCombineUprightProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **57** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-color
+   */
   "text-decoration-color"?: TextDecorationColorProperty | TextDecorationColorProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-line
+   */
   "text-decoration-line"?: TextDecorationLineProperty | TextDecorationLineProperty[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge | IE  |
+   * | ------ | ------- | ----------- | ---- | --- |
+   * | 57-64  | No      | **8** _-x-_ | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip
+   */
   "text-decoration-skip"?: TextDecorationSkipProperty | TextDecorationSkipProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **64** | No      | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
+   */
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **57** | **36**  | Yes    | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
+   */
   "text-decoration-style"?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
+   */
   "text-emphasis-color"?: TextEmphasisColorProperty | TextEmphasisColorProperty[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
+   */
   "text-emphasis-position"?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
+   */
   "text-emphasis-style"?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-indent
+   */
   "text-indent"?: TextIndentProperty<TLength> | TextIndentProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | n/a    | **55**  | No     | **14** | **11** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-justify
+   */
   "text-justify"?: TextJustifyProperty | TextJustifyProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **48** | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
+   */
   "text-orientation"?: TextOrientationProperty | TextOrientationProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **7**   | **1.3** | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-overflow
+   */
   "text-overflow"?: TextOverflowProperty | TextOverflowProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **4**  | **3**   | **5**  | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-rendering
+   */
   "text-rendering"?: TextRenderingProperty | TextRenderingProperty[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE     |
+   * | ------ | ------- | ------- | ------ | ------ |
+   * | **2**  | **3.5** | **1.1** | **12** | **10** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-shadow
+   */
   "text-shadow"?: TextShadowProperty | TextShadowProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge         | IE  |
+   * | ------ | ------- | ------ | ------------ | --- |
+   * | **54** | No      | No     | **12** _-x-_ | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-size-adjust
+   */
   "text-size-adjust"?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-transform
+   */
   "text-transform"?: TextTransformProperty | TextTransformProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **33** | No      | No     | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-underline-position
+   */
   "text-underline-position"?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/top
+   */
   top?: TopProperty<TLength> | TopProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE       |
+   * | ------ | ------- | ------ | ------ | -------- |
+   * | **36** | **52**  | No     | **12** | **11**   |
+   * |        |         |        |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/touch-action
+   */
   "touch-action"?: TouchActionProperty | TouchActionProperty[];
+  /**
+   * | Chrome | Firefox | Safari    | Edge         | IE      |
+   * | ------ | ------- | --------- | ------------ | ------- |
+   * | **36** | **16**  | **9**     | **12** _-x-_ | **10**  |
+   * |        |         | 3.1 _-x-_ |              | 9 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform
+   */
   transform?: TransformProperty | TransformProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **64** | **55**  | n/a    | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-box
+   */
   "transform-box"?: TransformBoxProperty | TransformBoxProperty[];
+  /**
+   * | Chrome | Firefox   | Safari        | Edge   | IE      |
+   * | ------ | --------- | ------------- | ------ | ------- |
+   * | Yes    | **16**    | **3.1** _-x-_ | **12** | **10**  |
+   * |        | 3.5 _-x-_ |               |        | 9 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-origin
+   */
   "transform-origin"?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[];
+  /**
+   * | Chrome       | Firefox  | Safari | Edge   | IE  |
+   * | ------------ | -------- | ------ | ------ | --- |
+   * | **12** _-x-_ | **16**   | Yes    | **12** | No  |
+   * |              | 10 _-x-_ |        |        |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transform-style
+   */
   "transform-style"?: TransformStyleProperty | TransformStyleProperty[];
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **26**  | **16**  | **3** _-x-_ | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
+   */
   "transition-delay"?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome  | Firefox | Safari      | Edge   | IE     |
+   * | ------- | ------- | ----------- | ------ | ------ |
+   * | **26**  | **16**  | **3** _-x-_ | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
+   */
   "transition-duration"?: GlobalsString | GlobalsString[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **26** | **16**  | Yes    | **12** | **10** |
+   * |        | 4 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-property
+   */
   "transition-property"?: TransitionPropertyProperty | TransitionPropertyProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE     |
+   * | ------ | ------- | ------ | ------ | ------ |
+   * | **26** | **16**  | Yes    | **12** | **10** |
+   * |        | 4 _-x-_ |        |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition-timing-function
+   */
   "transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | Yes    | n/a     | No     | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/translate
+   */
   translate?: TranslateProperty<TLength> | TranslateProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE      |
+   * | ------ | ------- | ------- | ------ | ------- |
+   * | **2**  | **1**   | **1.3** | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/unicode-bidi
+   */
   "unicode-bidi"?: UnicodeBidiProperty | UnicodeBidiProperty[];
+  /**
+   * | Chrome  | Firefox      | Safari        | Edge         | IE     |
+   * | ------- | ------------ | ------------- | ------------ | ------ |
+   * | **54**  | **49** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
+   * | 6 _-x-_ |              |               |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/user-select
+   */
   "user-select"?: UserSelectProperty | UserSelectProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/vertical-align
+   */
   "vertical-align"?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/visibility
+   */
   visibility?: VisibilityProperty | VisibilityProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/white-space
+   */
   "white-space"?: WhiteSpaceProperty | WhiteSpaceProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **25** | No      | No     | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/widows
+   */
   widows?: GlobalsNumber | GlobalsNumber[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | Yes    | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/width
+   */
   width?: WidthProperty<TLength> | WidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | ------ | ------- | ------- | ---- | --- |
+   * | **36** | **36**  | **9.1** | No   | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/will-change
+   */
   "will-change"?: WillChangeProperty | WillChangeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **15**  | Yes    | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/word-break
+   */
   "word-break"?: WordBreakProperty | WordBreakProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **6** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/word-spacing
+   */
   "word-spacing"?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **3.5** | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+   */
   "word-wrap"?: WordWrapProperty | WordWrapProperty[];
+  /**
+   * | Chrome      | Firefox | Safari        | Edge   | IE          |
+   * | ----------- | ------- | ------------- | ------ | ----------- |
+   * | **8** _-x-_ | **41**  | **5.1** _-x-_ | **12** | **9** _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
+   */
   "writing-mode"?: WritingModeProperty | WritingModeProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/z-index
+   */
   "z-index"?: ZIndexProperty | ZIndexProperty[];
   zoom?: ZoomProperty | ZoomProperty[];
 }
 
 export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0> {
   all?: Globals | Globals[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
+   * |        | 5 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation
+   */
   animation?: AnimationProperty | AnimationProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/background
+   */
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border
+   */
   border?: BorderProperty<TLength> | BorderProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end
+   */
   "border-block-end"?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start
+   */
   "border-block-start"?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom
+   */
   "border-bottom"?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-color
+   */
   "border-color"?: BorderColorProperty | BorderColorProperty[];
+  /**
+   * | Chrome  | Firefox   | Safari  | Edge   | IE     |
+   * | ------- | --------- | ------- | ------ | ------ |
+   * | **16**  | **15**    | **6**   | **12** | **11** |
+   * | 7 _-x-_ | 3.5 _-x-_ | 3 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-image
+   */
   "border-image"?: BorderImageProperty | BorderImageProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
+   */
   "border-inline-end"?: BorderInlineEndProperty<TLength> | BorderInlineEndProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | No     | **41**  | No     | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
+   */
   "border-inline-start"?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-left
+   */
   "border-left"?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE    |
+   * | ------- | ------- | ------- | ------ | ----- |
+   * | **4**   | **4**   | **5**   | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
+   */
   "border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE      |
+   * | ------ | ------- | ------ | ------ | ------- |
+   * | **1**  | **1**   | **1**  | **12** | **5.5** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-right
+   */
   "border-right"?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-style
+   */
   "border-style"?: BorderStyleProperty | BorderStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-top
+   */
   "border-top"?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-width
+   */
   "border-width"?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
+  /**
+   * | Chrome | Firefox   | Safari      | Edge         | IE     |
+   * | ------ | --------- | ----------- | ------------ | ------ |
+   * | **50** | **52**    | **3** _-x-_ | **12** _-x-_ | **10** |
+   * |        | 3.5 _-x-_ |             |              |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/column-rule
+   */
   "column-rule"?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari      | Edge   | IE     |
+   * | ------ | ------- | ----------- | ------ | ------ |
+   * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
+   * |        | 9 _-x-_ |             |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/columns
+   */
   columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE       |
+   * | -------- | ------- | --------- | ------ | -------- |
+   * | **29**   | **20**  | **9**     | **12** | **11**   |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex
+   */
   flex?: FlexProperty<TLength> | FlexProperty<TLength>[];
+  /**
+   * | Chrome   | Firefox | Safari    | Edge   | IE     |
+   * | -------- | ------- | --------- | ------ | ------ |
+   * | **29**   | **28**  | **9**     | **12** | **11** |
+   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/flex-flow
+   */
   "flex-flow"?: FlexFlowProperty | FlexFlowProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/font
+   */
   font?: FontProperty | FontProperty[];
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid
+   */
   grid?: GridProperty | GridProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-area
+   */
   "grid-area"?: GridAreaProperty | GridAreaProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-column
+   */
   "grid-column"?: GridColumnProperty | GridColumnProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-row
+   */
   "grid-row"?: GridRowProperty | GridRowProperty[];
+  /**
+   * | Chrome | Firefox | Safari   | Edge   | IE  |
+   * | ------ | ------- | -------- | ------ | --- |
+   * | **57** | **52**  | **10.1** | **16** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/grid-template
+   */
   "grid-template"?: GridTemplateProperty | GridTemplateProperty[];
   "line-clamp"?: LineClampProperty | LineClampProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/list-style
+   */
   "list-style"?: ListStyleProperty | ListStyleProperty[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin
+   */
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE  |
+   * | ------ | ------- | ------ | ------ | --- |
+   * | **1**  | Yes     | **4**  | **12** | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask
+   */
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[];
+  /**
+   * | Chrome        | Firefox | Safari | Edge | IE  |
+   * | ------------- | ------- | ------ | ---- | --- |
+   * | **55**        | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
+  /**
+   * | Chrome        | Firefox | Safari | Edge | IE  |
+   * | ------------- | ------- | ------ | ---- | --- |
+   * | **55**        | n/a     | n/a    | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari  | Edge   | IE    |
+   * | ------ | ------- | ------- | ------ | ----- |
+   * | **1**  | **1.5** | **1.2** | **12** | **8** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/outline
+   */
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **4** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding
+   */
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[];
+  /**
+   * | Chrome | Firefox | Safari | Edge   | IE    |
+   * | ------ | ------- | ------ | ------ | ----- |
+   * | **1**  | **1**   | **1**  | **12** | **3** |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration
+   */
   "text-decoration"?: TextDecorationProperty | TextDecorationProperty[];
+  /**
+   * | Chrome       | Firefox | Safari        | Edge | IE  |
+   * | ------------ | ------- | ------------- | ---- | --- |
+   * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
+   * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
+   */
   "text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[];
+  /**
+   * | Chrome  | Firefox | Safari  | Edge   | IE     |
+   * | ------- | ------- | ------- | ------ | ------ |
+   * | **26**  | **16**  | **6.1** | **12** | **10** |
+   * | 1 _-x-_ | 4 _-x-_ | 3 _-x-_ |        |        |
+   * @see https://developer.mozilla.org/docs/Web/CSS/transition
+   */
   transition?: TransitionProperty | TransitionProperty[];
 }
 

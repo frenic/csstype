@@ -28,13 +28,13 @@ interface IPropertyAlias {
   name: string;
   generics: IGenerics[];
   alias: IAlias;
-  obsolete: boolean;
+  comment: string | null;
 }
 
 interface IPropertyType {
   name: string;
   type: DeclarableType;
-  obsolete: boolean;
+  comment: string | null;
 }
 
 type PropertyType = IPropertyAlias | IPropertyType;
@@ -222,13 +222,13 @@ for (const properties of [htmlProperties, svgProperties]) {
       name: property.vendor ? toVendorPrefixCase(name) : toCamelCase(name),
       generics,
       alias: aliasOf(declaration),
-      obsolete: property.obsolete,
+      comment: property.comment,
     });
     hyphenDefinitions.push({
       name,
       generics,
       alias: aliasOf(declaration),
-      obsolete: property.obsolete,
+      comment: property.comment,
     });
   }
 }
@@ -253,12 +253,12 @@ for (const name of Object.keys(atRules.rules).sort()) {
       atRuleDefinitions[name].push({
         name: isVendorProperty(property) ? toVendorPrefixCase(property) : toCamelCase(property),
         type,
-        obsolete: false,
+        comment: null,
       });
       atRuleHyphenDefinitions[name].push({
         name: property,
         type,
-        obsolete: false,
+        comment: null,
       });
     } else {
       // Some properties are prefixed and share the same type so we
@@ -280,13 +280,13 @@ for (const name of Object.keys(atRules.rules).sort()) {
         name: isVendorProperty(property) ? toVendorPrefixCase(property) : toCamelCase(property),
         generics,
         alias: aliasOf(declaration),
-        obsolete: false,
+        comment: null,
       });
       atRuleHyphenDefinitions[name].push({
         name: property,
         generics,
         alias: aliasOf(declaration),
-        obsolete: false,
+        comment: null,
       });
     }
   }
