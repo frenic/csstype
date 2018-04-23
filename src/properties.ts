@@ -10,6 +10,7 @@ import {
 import { getProperties, getPropertySyntax } from './data';
 import { createPropertyDataTypeResolver, resolveDataTypes } from './data-types';
 import { properties as rawSvgProperties } from './data/svg';
+import { warn } from './logger';
 import parse from './parser';
 import typing, { ResolvedType } from './typer';
 
@@ -26,6 +27,9 @@ const REGEX_VENDOR_PROPERTY = /^-/;
 
 interface IProperty {
   name: string;
+  vendor: boolean;
+  shorthand: boolean;
+  obsolete: boolean;
   types: ResolvedType[];
 }
 
@@ -40,22 +44,21 @@ export const globals: ResolvedType[] = resolveDataTypes(
   typing(compatSyntax(globalCompatibilityData, parse(getPropertySyntax(ALL)))),
 );
 
-export const standardLonghandProperties: { [name: string]: IProperty } = {};
-export const standardShorthandProperties: { [name: string]: IProperty } = {
+export const htmlProperties: { [name: string]: IProperty } = {
   // Empty so that it only receives CSS-wide keywords
   all: {
     name: 'all',
+    vendor: false,
+    shorthand: true,
+    obsolete: false,
     types: [],
   },
 };
-export const vendorPrefixedLonghandProperties: { [name: string]: IProperty } = {};
-export const vendorPrefixedShorthandProperties: { [name: string]: IProperty } = {};
-export const obsoleteProperties: { [name: string]: IProperty } = {};
 export const svgProperties: { [name: string]: IProperty } = {};
 
-const properties = getProperties();
+const propertiesData = getProperties();
 
-for (const originalName in properties) {
+for (const originalName in propertiesData) {
   if (IGNORES.includes(originalName)) {
     continue;
   }
@@ -86,31 +89,28 @@ for (const originalName in properties) {
     }
   }
 
-  const property: IProperty = {
-    name: originalName,
-    types: resolveDataTypes(typing(entities), createPropertyDataTypeResolver(compatibilityData)),
-  };
+  const types = resolveDataTypes(typing(entities), createPropertyDataTypeResolver(compatibilityData));
 
-  for (const name of currentNames) {
-    const isShorthand = properties[originalName].shorthand;
-
-    if (isVendorProperty(name)) {
-      if (isShorthand) {
-        vendorPrefixedShorthandProperties[name] = property;
-      } else {
-        vendorPrefixedLonghandProperties[name] = property;
-      }
-    } else {
-      if (isShorthand) {
-        standardShorthandProperties[name] = property;
-      } else {
-        standardLonghandProperties[name] = property;
-      }
-    }
+  // Remove duplicates
+  for (const name of new Set(currentNames)) {
+    htmlProperties[name] = mergeRecurrent(name, {
+      name: originalName,
+      vendor: isVendorProperty(name),
+      shorthand: propertiesData[originalName].shorthand,
+      obsolete: false,
+      types,
+    });
   }
 
-  for (const name of obsoleteNames) {
-    obsoleteProperties[name] = property;
+  // Remove duplicates
+  for (const name of new Set(obsoleteNames)) {
+    htmlProperties[name] = mergeRecurrent(name, {
+      name: originalName,
+      vendor: isVendorProperty(name),
+      shorthand: propertiesData[originalName].shorthand,
+      obsolete: true,
+      types,
+    });
   }
 }
 
@@ -120,6 +120,9 @@ for (const name in rawSvgProperties) {
   if (syntax) {
     svgProperties[name] = {
       name,
+      vendor: false,
+      shorthand: false,
+      obsolete: false,
       types: resolveDataTypes(typing(parse(syntax)), createPropertyDataTypeResolver(compatibilityData)),
     };
   }
@@ -131,5 +134,23 @@ export function isVendorProperty(name: string) {
 
 function filterMissingProperties(names: string[]) {
   // Filter only those which isn't defined in MDN data
-  return names.filter(name => !(name in properties));
+  return names.filter(name => !(name in propertiesData));
+}
+
+function mergeRecurrent(name: string, property: IProperty) {
+  if (name in htmlProperties) {
+    const current = htmlProperties[name];
+
+    if (current.name !== property.name) {
+      warn('Property `%s` resolved by `%s` was duplicated by `%s`', name, property.name, current.name);
+    }
+
+    return {
+      ...current,
+      // Only mark as obsolete if it's mutual
+      obsolete: current.obsolete && property.obsolete,
+    };
+  }
+
+  return property;
 }

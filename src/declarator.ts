@@ -1,16 +1,7 @@
 import { getAtRules } from './at-rules';
 import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
 import dataTypes from './data-types';
-import {
-  globals,
-  isVendorProperty,
-  obsoleteProperties,
-  standardLonghandProperties,
-  standardShorthandProperties,
-  svgProperties,
-  vendorPrefixedLonghandProperties,
-  vendorPrefixedShorthandProperties,
-} from './properties';
+import { globals, htmlProperties, isVendorProperty, svgProperties } from './properties';
 import { getPseudos } from './selectors';
 import { IDataType, Type, TypeType } from './typer';
 
@@ -156,46 +147,7 @@ function toPropertyDeclarationName(name: string) {
   return toPascalCase(name) + PROPERTY;
 }
 
-for (const properties of [
-  standardLonghandProperties,
-  standardShorthandProperties,
-  vendorPrefixedLonghandProperties,
-  vendorPrefixedShorthandProperties,
-  obsoleteProperties,
-  svgProperties,
-]) {
-  let definitions: IPropertyAlias[];
-  let hyphenDefinitions: IPropertyAlias[];
-  let isObsoleteProperties = false;
-
-  switch (properties) {
-    case svgProperties:
-      definitions = svgPropertiesDefinition;
-      hyphenDefinitions = svgPropertiesHyphenDefinition;
-      break;
-    case obsoleteProperties:
-      definitions = obsoletePropertiesDefinition;
-      hyphenDefinitions = obsoletePropertiesHyphenDefinition;
-      isObsoleteProperties = true;
-      break;
-    case vendorPrefixedShorthandProperties:
-      definitions = vendorShorthandPropertiesDefinition;
-      hyphenDefinitions = vendorShorthandPropertiesHyphenDefinition;
-      break;
-    case vendorPrefixedLonghandProperties:
-      definitions = vendorLonghandPropertiesDefinition;
-      hyphenDefinitions = vendorLonghandPropertiesHyphenDefinition;
-      break;
-    case standardShorthandProperties:
-      definitions = standardShorthandPropertiesDefinition;
-      hyphenDefinitions = standardShorthandPropertiesHyphenDefinition;
-      break;
-    default:
-      definitions = standardLonghandPropertiesDefinition;
-      hyphenDefinitions = standardLonghandPropertiesHyphenDefinition;
-      break;
-  }
-
+for (const properties of [htmlProperties, svgProperties]) {
   // Sort alphabetical, starting with standard properties
   const propertyNames = ([] as string[]).concat(
     Object.keys(properties)
@@ -208,6 +160,33 @@ for (const properties of [
 
   for (const name of propertyNames) {
     const property = properties[name];
+    let definitions: IPropertyAlias[];
+    let hyphenDefinitions: IPropertyAlias[];
+
+    if (properties === svgProperties) {
+      definitions = svgPropertiesDefinition;
+      hyphenDefinitions = svgPropertiesHyphenDefinition;
+    } else if (property.obsolete) {
+      definitions = obsoletePropertiesDefinition;
+      hyphenDefinitions = obsoletePropertiesHyphenDefinition;
+    } else if (property.vendor) {
+      if (property.shorthand) {
+        definitions = vendorShorthandPropertiesDefinition;
+        hyphenDefinitions = vendorShorthandPropertiesHyphenDefinition;
+      } else {
+        definitions = vendorLonghandPropertiesDefinition;
+        hyphenDefinitions = vendorLonghandPropertiesHyphenDefinition;
+      }
+    } else {
+      if (property.shorthand) {
+        definitions = standardShorthandPropertiesDefinition;
+        hyphenDefinitions = standardShorthandPropertiesHyphenDefinition;
+      } else {
+        definitions = standardLonghandPropertiesDefinition;
+        hyphenDefinitions = standardLonghandPropertiesHyphenDefinition;
+      }
+    }
+
     const generics = lengthIn(property.types) ? [lengthGeneric] : [];
 
     // Some properties are prefixed and share the same type so we
@@ -240,16 +219,16 @@ for (const properties of [
     }
 
     definitions.push({
-      name: isVendorProperty(name) ? toVendorPrefixCase(name) : toCamelCase(name),
+      name: property.vendor ? toVendorPrefixCase(name) : toCamelCase(name),
       generics,
       alias: aliasOf(declaration),
-      obsolete: isObsoleteProperties,
+      obsolete: property.obsolete,
     });
     hyphenDefinitions.push({
       name,
       generics,
       alias: aliasOf(declaration),
-      obsolete: isObsoleteProperties,
+      obsolete: property.obsolete,
     });
   }
 }
