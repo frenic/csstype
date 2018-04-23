@@ -385,8 +385,8 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength>;
   MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength>;
   MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength>;
-  MozPaddingEnd?: PaddingInlineEndProperty<TLength>;
-  MozPaddingStart?: PaddingInlineStartProperty<TLength>;
+  MozPaddingEnd?: MarginInlineEndProperty<TLength>;
+  MozPaddingStart?: MarginInlineStartProperty<TLength>;
   MozPerspective?: PerspectiveProperty<TLength>;
   MozPerspectiveOrigin?: PerspectiveOriginProperty<TLength>;
   MozStackSizing?: MozStackSizingProperty;
@@ -528,8 +528,8 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitMaxInlineSize?: MaxInlineSizeProperty<TLength>;
   WebkitOrder?: GlobalsNumber;
   WebkitOverflowScrolling?: WebkitOverflowScrollingProperty;
-  WebkitPaddingEnd?: PaddingInlineStartProperty<TLength>;
-  WebkitPaddingStart?: PaddingInlineStartProperty<TLength>;
+  WebkitPaddingEnd?: MarginInlineEndProperty<TLength>;
+  WebkitPaddingStart?: MarginInlineStartProperty<TLength>;
   WebkitPerspective?: PerspectiveProperty<TLength>;
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength>;
   WebkitScrollSnapType?: ScrollSnapTypeProperty;
@@ -638,7 +638,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
   MozBorderRadius?: BorderRadiusProperty<TLength>;
   /** @deprecated */
-  MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>;
+  MozBorderRadiusTopright?: BorderBottomLeftRadiusProperty<TLength>;
   /** @deprecated */
   MozBoxDirection?: BoxDirectionProperty;
   /** @deprecated */
@@ -709,8 +709,6 @@ export interface ObsoleteProperties<TLength = string | 0> {
   WebkitBoxOrient?: BoxOrientProperty;
   /** @deprecated */
   WebkitBoxPack?: BoxPackProperty;
-  /** @deprecated */
-  WebkitBoxSizing?: BoxSizingProperty;
   /** @deprecated */
   WebkitScrollSnapPointsX?: ScrollSnapPointsXProperty;
   /** @deprecated */
@@ -1169,8 +1167,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength>;
   "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength>;
   "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength>;
-  "-moz-padding-end"?: PaddingInlineEndProperty<TLength>;
-  "-moz-padding-start"?: PaddingInlineStartProperty<TLength>;
+  "-moz-padding-end"?: MarginInlineEndProperty<TLength>;
+  "-moz-padding-start"?: MarginInlineStartProperty<TLength>;
   "-moz-perspective"?: PerspectiveProperty<TLength>;
   "-moz-perspective-origin"?: PerspectiveOriginProperty<TLength>;
   "-moz-stack-sizing"?: MozStackSizingProperty;
@@ -1312,8 +1310,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-max-inline-size"?: MaxInlineSizeProperty<TLength>;
   "-webkit-order"?: GlobalsNumber;
   "-webkit-overflow-scrolling"?: WebkitOverflowScrollingProperty;
-  "-webkit-padding-end"?: PaddingInlineStartProperty<TLength>;
-  "-webkit-padding-start"?: PaddingInlineStartProperty<TLength>;
+  "-webkit-padding-end"?: MarginInlineEndProperty<TLength>;
+  "-webkit-padding-start"?: MarginInlineStartProperty<TLength>;
   "-webkit-perspective"?: PerspectiveProperty<TLength>;
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength>;
   "-webkit-scroll-snap-type"?: ScrollSnapTypeProperty;
@@ -1422,7 +1420,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /** @deprecated */
   "-moz-border-radius"?: BorderRadiusProperty<TLength>;
   /** @deprecated */
-  "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength>;
+  "-moz-border-radius-topright"?: BorderBottomLeftRadiusProperty<TLength>;
   /** @deprecated */
   "-moz-box-direction"?: BoxDirectionProperty;
   /** @deprecated */
@@ -1493,8 +1491,6 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   "-webkit-box-orient"?: BoxOrientProperty;
   /** @deprecated */
   "-webkit-box-pack"?: BoxPackProperty;
-  /** @deprecated */
-  "-webkit-box-sizing"?: BoxSizingProperty;
   /** @deprecated */
   "-webkit-scroll-snap-points-x"?: ScrollSnapPointsXProperty;
   /** @deprecated */
@@ -1957,8 +1953,8 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[];
   MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[];
   MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
-  MozPaddingEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
-  MozPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
+  MozPaddingEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  MozPaddingStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   MozPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   MozPerspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   MozStackSizing?: MozStackSizingProperty | MozStackSizingProperty[];
@@ -2100,8 +2096,8 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitMaxInlineSize?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
   WebkitOrder?: GlobalsNumber | GlobalsNumber[];
   WebkitOverflowScrolling?: WebkitOverflowScrollingProperty | WebkitOverflowScrollingProperty[];
-  WebkitPaddingEnd?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
-  WebkitPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
+  WebkitPaddingEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  WebkitPaddingStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   WebkitPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   WebkitScrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
@@ -2210,7 +2206,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
   MozBorderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /** @deprecated */
-  MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
+  MozBorderRadiusTopright?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
   /** @deprecated */
   MozBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
@@ -2281,8 +2277,6 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   WebkitBoxOrient?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
   WebkitBoxPack?: BoxPackProperty | BoxPackProperty[];
-  /** @deprecated */
-  WebkitBoxSizing?: BoxSizingProperty | BoxSizingProperty[];
   /** @deprecated */
   WebkitScrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
   /** @deprecated */
@@ -2747,8 +2741,8 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[];
   "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[];
   "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
-  "-moz-padding-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
-  "-moz-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
+  "-moz-padding-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  "-moz-padding-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   "-moz-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   "-moz-perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   "-moz-stack-sizing"?: MozStackSizingProperty | MozStackSizingProperty[];
@@ -2890,8 +2884,8 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-max-inline-size"?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
   "-webkit-order"?: GlobalsNumber | GlobalsNumber[];
   "-webkit-overflow-scrolling"?: WebkitOverflowScrollingProperty | WebkitOverflowScrollingProperty[];
-  "-webkit-padding-end"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
-  "-webkit-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
+  "-webkit-padding-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  "-webkit-padding-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   "-webkit-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   "-webkit-scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
@@ -3000,7 +2994,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /** @deprecated */
   "-moz-border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /** @deprecated */
-  "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
+  "-moz-border-radius-topright"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
   /** @deprecated */
   "-moz-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
@@ -3071,8 +3065,6 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-box-orient"?: BoxOrientProperty | BoxOrientProperty[];
   /** @deprecated */
   "-webkit-box-pack"?: BoxPackProperty | BoxPackProperty[];
-  /** @deprecated */
-  "-webkit-box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
   /** @deprecated */
   "-webkit-scroll-snap-points-x"?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[];
   /** @deprecated */
@@ -3500,6 +3492,8 @@ type AlignItemsProperty = Globals | SelfPosition | "baseline" | "normal" | "stre
 
 type AlignSelfProperty = Globals | SelfPosition | "auto" | "baseline" | "normal" | "stretch" | string;
 
+type AnimationProperty = Globals | SingleAnimation | string;
+
 type AnimationDirectionProperty = Globals | SingleAnimationDirection | string;
 
 type AnimationFillModeProperty = Globals | SingleAnimationFillMode | string;
@@ -3534,6 +3528,8 @@ type BackdropFilterProperty = Globals | "none" | string;
 
 type BackfaceVisibilityProperty = Globals | "hidden" | "visible";
 
+type BackgroundProperty<TLength> = Globals | FinalBgLayer<TLength> | string;
+
 type BackgroundAttachmentProperty = Globals | Attachment | string;
 
 type BackgroundBlendModeProperty = Globals | BlendMode | string;
@@ -3560,17 +3556,25 @@ type BlockOverflowProperty = Globals | "clip" | "ellipsis" | string;
 
 type BlockSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
 
+type BorderProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
+type BorderBlockEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
 type BorderBlockEndColorProperty = Globals | Color;
 
 type BorderBlockEndStyleProperty = Globals | BrStyle | string;
 
 type BorderBlockEndWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
+type BorderBlockStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
 type BorderBlockStartColorProperty = Globals | Color;
 
 type BorderBlockStartStyleProperty = Globals | BrStyle | string;
 
 type BorderBlockStartWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
+
+type BorderBottomProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type BorderBottomColorProperty = Globals | Color;
 
@@ -3584,6 +3588,10 @@ type BorderBottomWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
 type BorderCollapseProperty = Globals | "collapse" | "separate";
 
+type BorderColorProperty = Globals | Color | string;
+
+type BorderImageProperty = Globals | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
+
 type BorderImageOutsetProperty<TLength> = Globals | TLength | string | number;
 
 type BorderImageRepeatProperty = Globals | "repeat" | "round" | "space" | "stretch" | string;
@@ -3594,11 +3602,15 @@ type BorderImageSourceProperty = Globals | "none" | string;
 
 type BorderImageWidthProperty<TLength> = Globals | TLength | "auto" | string | number;
 
+type BorderInlineEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
 type BorderInlineEndColorProperty = Globals | Color;
 
 type BorderInlineEndStyleProperty = Globals | BrStyle | string;
 
 type BorderInlineEndWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
+
+type BorderInlineStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type BorderInlineStartColorProperty = Globals | Color;
 
@@ -3606,11 +3618,17 @@ type BorderInlineStartStyleProperty = Globals | BrStyle | string;
 
 type BorderInlineStartWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
+type BorderLeftProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
 type BorderLeftColorProperty = Globals | Color;
 
 type BorderLeftStyleProperty = Globals | BrStyle;
 
 type BorderLeftWidthProperty<TLength> = Globals | BrWidth<TLength>;
+
+type BorderRadiusProperty<TLength> = Globals | TLength | string;
+
+type BorderRightProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type BorderRightColorProperty = Globals | Color;
 
@@ -3619,6 +3637,10 @@ type BorderRightStyleProperty = Globals | BrStyle;
 type BorderRightWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
 type BorderSpacingProperty<TLength> = Globals | TLength | string;
+
+type BorderStyleProperty = Globals | BrStyle | string;
+
+type BorderTopProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type BorderTopColorProperty = Globals | Color;
 
@@ -3630,13 +3652,21 @@ type BorderTopStyleProperty = Globals | BrStyle;
 
 type BorderTopWidthProperty<TLength> = Globals | BrWidth<TLength>;
 
+type BorderWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
+
 type BottomProperty<TLength> = Globals | TLength | "auto" | string;
 
 type BoxAlignProperty = Globals | "baseline" | "center" | "end" | "start" | "stretch";
 
 type BoxDecorationBreakProperty = Globals | "clone" | "slice";
 
+type BoxDirectionProperty = Globals | "inherit" | "normal" | "reverse";
+
 type BoxLinesProperty = Globals | "multiple" | "single";
+
+type BoxOrientProperty = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
+
+type BoxPackProperty = Globals | "center" | "end" | "justify" | "start";
 
 type BoxShadowProperty = Globals | "none" | string;
 
@@ -3654,6 +3684,8 @@ type CaretColorProperty = Globals | Color | "auto";
 
 type ClearProperty = Globals | "both" | "inline-end" | "inline-start" | "left" | "none" | "right";
 
+type ClipProperty = Globals | "auto" | string;
+
 type ClipPathProperty = Globals | GeometryBox | "none" | string;
 
 type ColorProperty = Globals | Color;
@@ -3666,6 +3698,8 @@ type ColumnFillProperty = Globals | "auto" | "balance" | "balance-all";
 
 type ColumnGapProperty<TLength> = Globals | TLength | "normal" | string;
 
+type ColumnRuleProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
 type ColumnRuleColorProperty = Globals | Color;
 
 type ColumnRuleStyleProperty = Globals | BrStyle | string;
@@ -3675,6 +3709,8 @@ type ColumnRuleWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 type ColumnSpanProperty = Globals | "all" | "none";
 
 type ColumnWidthProperty<TLength> = Globals | TLength | "auto";
+
+type ColumnsProperty<TLength> = Globals | TLength | "auto" | string | number;
 
 type ContainProperty = Globals | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
 
@@ -3734,13 +3770,19 @@ type EmptyCellsProperty = Globals | "hide" | "show";
 
 type FilterProperty = Globals | "none" | string;
 
+type FlexProperty<TLength> = Globals | TLength | "auto" | "available" | "content" | "fit-content" | "max-content" | "min-content" | "none" | string | number;
+
 type FlexBasisProperty<TLength> = Globals | TLength | "-webkit-auto" | "auto" | "available" | "content" | "fit-content" | "max-content" | "min-content" | string;
 
 type FlexDirectionProperty = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
+type FlexFlowProperty = Globals | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | string;
+
 type FlexWrapProperty = Globals | "nowrap" | "wrap" | "wrap-reverse";
 
 type FloatProperty = Globals | "inline-end" | "inline-start" | "left" | "none" | "right";
+
+type FontProperty = Globals | "caption" | "icon" | "menu" | "message-box" | "small-caption" | "status-bar" | string;
 
 type FontFamilyProperty = Globals | GenericFamily | string;
 
@@ -3803,6 +3845,8 @@ type FontVariantProperty =
   | "unicase"
   | string;
 
+type FontVariantAlternatesProperty = Globals | "historical-forms" | "normal" | string;
+
 type FontVariantCapsProperty = Globals | "all-petite-caps" | "all-small-caps" | "normal" | "petite-caps" | "small-caps" | "titling-caps" | "unicase";
 
 type FontVariantEastAsianProperty = Globals | EastAsianVariantValues | "full-width" | "normal" | "proportional-width" | "ruby" | string;
@@ -3840,11 +3884,19 @@ type FontVariationSettingsProperty = Globals | "normal" | string;
 
 type FontWeightProperty = Globals | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
+type GapProperty<TLength> = Globals | TLength | "normal" | string;
+
+type GridProperty = Globals | "none" | string;
+
+type GridAreaProperty = Globals | GridLine | string;
+
 type GridAutoColumnsProperty<TLength> = Globals | TrackBreadth<TLength> | string;
 
 type GridAutoFlowProperty = Globals | "column" | "dense" | "row" | string;
 
 type GridAutoRowsProperty<TLength> = Globals | TrackBreadth<TLength> | string;
+
+type GridColumnProperty = Globals | GridLine | string;
 
 type GridColumnEndProperty = Globals | GridLine;
 
@@ -3852,11 +3904,17 @@ type GridColumnGapProperty<TLength> = Globals | TLength | string;
 
 type GridColumnStartProperty = Globals | GridLine;
 
+type GridGapProperty<TLength> = Globals | TLength | string;
+
+type GridRowProperty = Globals | GridLine | string;
+
 type GridRowEndProperty = Globals | GridLine;
 
 type GridRowGapProperty<TLength> = Globals | TLength | string;
 
 type GridRowStartProperty = Globals | GridLine;
+
+type GridTemplateProperty = Globals | "none" | string;
 
 type GridTemplateAreasProperty = Globals | "none" | string;
 
@@ -3875,6 +3933,8 @@ type ImageOrientationProperty = Globals | "flip" | "from-image" | string;
 type ImageRenderingProperty = Globals | "-moz-crisp-edges" | "-o-crisp-edges" | "-webkit-optimize-contrast" | "auto" | "crisp-edges" | "pixelated";
 
 type ImageResolutionProperty = Globals | "from-image" | string;
+
+type ImeModeProperty = Globals | "active" | "auto" | "disabled" | "inactive" | "normal";
 
 type InitialLetterProperty = Globals | "normal" | string | number;
 
@@ -3896,15 +3956,21 @@ type LetterSpacingProperty<TLength> = Globals | TLength | "normal";
 
 type LineBreakProperty = Globals | "auto" | "loose" | "normal" | "strict";
 
+type LineClampProperty = Globals | "none" | number;
+
 type LineHeightProperty<TLength> = Globals | TLength | "normal" | string | number;
 
 type LineHeightStepProperty<TLength> = Globals | TLength | "none";
+
+type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
 
 type ListStyleImageProperty = Globals | "none" | string;
 
 type ListStylePositionProperty = Globals | "inside" | "outside";
 
 type ListStyleTypeProperty = Globals | "none" | string;
+
+type MarginProperty<TLength> = Globals | TLength | "auto" | string;
 
 type MarginBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -3921,6 +3987,10 @@ type MarginLeftProperty<TLength> = Globals | TLength | "auto" | string;
 type MarginRightProperty<TLength> = Globals | TLength | "auto" | string;
 
 type MarginTopProperty<TLength> = Globals | TLength | "auto" | string;
+
+type MaskProperty<TLength> = Globals | MaskLayer<TLength> | string;
+
+type MaskBorderProperty = Globals | "alpha" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
 type MaskBorderModeProperty = Globals | "alpha" | "luminance";
 
@@ -3972,6 +4042,8 @@ type MinWidthProperty<TLength> = Globals | TLength | "-webkit-fill-available" | 
 
 type MixBlendModeProperty = Globals | BlendMode;
 
+type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
+
 type OffsetDistanceProperty<TLength> = Globals | TLength | string;
 
 type OffsetPathProperty = Globals | GeometryBox | "none" | string;
@@ -3993,6 +4065,8 @@ type OffsetInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
 type OffsetInlineStartProperty<TLength> = Globals | TLength | "auto" | string;
 
 type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
+
+type OutlineProperty<TLength> = Globals | Color | BrStyle | BrWidth<TLength> | "auto" | "invert" | string;
 
 type OutlineColorProperty = Globals | Color | "invert";
 
@@ -4023,6 +4097,8 @@ type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none" | string
 type OverscrollBehaviorXProperty = Globals | "auto" | "contain" | "none";
 
 type OverscrollBehaviorYProperty = Globals | "auto" | "contain" | "none";
+
+type PaddingProperty<TLength> = Globals | TLength | string;
 
 type PaddingBlockEndProperty<TLength> = Globals | TLength | string;
 
@@ -4078,7 +4154,19 @@ type ScaleProperty = Globals | "none" | string | number;
 
 type ScrollBehaviorProperty = Globals | "auto" | "smooth";
 
+type ScrollSnapCoordinateProperty<TLength> = Globals | Position<TLength> | "none" | string;
+
+type ScrollSnapDestinationProperty<TLength> = Globals | Position<TLength>;
+
+type ScrollSnapPointsXProperty = Globals | "none" | string;
+
+type ScrollSnapPointsYProperty = Globals | "none" | string;
+
 type ScrollSnapTypeProperty = Globals | "mandatory" | "none" | "proximity";
+
+type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximity";
+
+type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximity";
 
 type ShapeMarginProperty<TLength> = Globals | TLength | string;
 
@@ -4094,6 +4182,8 @@ type TextAlignLastProperty = Globals | "auto" | "center" | "end" | "justify" | "
 
 type TextCombineUprightProperty = Globals | "all" | "digits" | "none" | string;
 
+type TextDecorationProperty = Globals | Color | "blink" | "dashed" | "dotted" | "double" | "line-through" | "none" | "overline" | "solid" | "underline" | "wavy" | string;
+
 type TextDecorationColorProperty = Globals | Color;
 
 type TextDecorationLineProperty = Globals | "blink" | "line-through" | "none" | "overline" | "underline" | string;
@@ -4103,6 +4193,8 @@ type TextDecorationSkipProperty = Globals | "box-decoration" | "edges" | "leadin
 type TextDecorationSkipInkProperty = Globals | "auto" | "none";
 
 type TextDecorationStyleProperty = Globals | "dashed" | "dotted" | "double" | "solid" | "wavy";
+
+type TextEmphasisProperty = Globals | Color | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
 type TextEmphasisColorProperty = Globals | Color;
 
@@ -4151,6 +4243,8 @@ type TransformBoxProperty = Globals | "border-box" | "fill-box" | "view-box";
 type TransformOriginProperty<TLength> = Globals | TLength | "bottom" | "center" | "left" | "right" | "top" | string;
 
 type TransformStyleProperty = Globals | "flat" | "preserve-3d";
+
+type TransitionProperty = Globals | SingleTransition | string;
 
 type TransitionPropertyProperty = Globals | "all" | "none" | string;
 
@@ -4211,84 +4305,6 @@ type WritingModeProperty = Globals | "horizontal-tb" | "sideways-lr" | "sideways
 type ZIndexProperty = Globals | "auto" | number;
 
 type ZoomProperty = Globals | "normal" | "reset" | string | number;
-
-type AnimationProperty = Globals | SingleAnimation | string;
-
-type BackgroundProperty<TLength> = Globals | FinalBgLayer<TLength> | string;
-
-type BorderProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderBlockEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderBlockStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderBottomProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderColorProperty = Globals | Color | string;
-
-type BorderImageProperty = Globals | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
-
-type BorderInlineEndProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderInlineStartProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderLeftProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderRadiusProperty<TLength> = Globals | TLength | string;
-
-type BorderRightProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderStyleProperty = Globals | BrStyle | string;
-
-type BorderTopProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type BorderWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
-
-type ColumnRuleProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type ColumnsProperty<TLength> = Globals | TLength | "auto" | string | number;
-
-type FlexProperty<TLength> = Globals | TLength | "auto" | "available" | "content" | "fit-content" | "max-content" | "min-content" | "none" | string | number;
-
-type FlexFlowProperty = Globals | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | string;
-
-type FontProperty = Globals | "caption" | "icon" | "menu" | "message-box" | "small-caption" | "status-bar" | string;
-
-type GapProperty<TLength> = Globals | TLength | "normal" | string;
-
-type GridProperty = Globals | "none" | string;
-
-type GridAreaProperty = Globals | GridLine | string;
-
-type GridColumnProperty = Globals | GridLine | string;
-
-type GridGapProperty<TLength> = Globals | TLength | string;
-
-type GridRowProperty = Globals | GridLine | string;
-
-type GridTemplateProperty = Globals | "none" | string;
-
-type LineClampProperty = Globals | "none" | number;
-
-type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
-
-type MarginProperty<TLength> = Globals | TLength | "auto" | string;
-
-type MaskProperty<TLength> = Globals | MaskLayer<TLength> | string;
-
-type MaskBorderProperty = Globals | "alpha" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
-
-type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
-
-type OutlineProperty<TLength> = Globals | Color | BrStyle | BrWidth<TLength> | "auto" | "invert" | string;
-
-type PaddingProperty<TLength> = Globals | TLength | string;
-
-type TextDecorationProperty = Globals | Color | "blink" | "dashed" | "dotted" | "double" | "line-through" | "none" | "overline" | "solid" | "underline" | "wavy" | string;
-
-type TextEmphasisProperty = Globals | Color | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
-
-type TransitionProperty = Globals | SingleTransition | string;
 
 type MozAppearanceProperty =
   | Globals
@@ -4421,6 +4437,8 @@ type MozImageRegionProperty = Globals | "auto" | string;
 
 type MozOrientProperty = Globals | "block" | "horizontal" | "inline" | "vertical";
 
+type MozOutlineRadiusProperty<TLength> = Globals | TLength | string;
+
 type MozOutlineRadiusBottomleftProperty<TLength> = Globals | TLength | string;
 
 type MozOutlineRadiusBottomrightProperty<TLength> = Globals | TLength | string;
@@ -4448,6 +4466,8 @@ type MsAcceleratorProperty = Globals | "false" | "true";
 type MsBlockProgressionProperty = Globals | "bt" | "lr" | "rl" | "tb";
 
 type MsContentZoomChainingProperty = Globals | "chained" | "none";
+
+type MsContentZoomSnapProperty = Globals | "mandatory" | "none" | "proximity" | string;
 
 type MsContentZoomSnapTypeProperty = Globals | "mandatory" | "none" | "proximity";
 
@@ -4513,6 +4533,8 @@ type MsWrapMarginProperty<TLength> = Globals | TLength;
 
 type MsWrapThroughProperty = Globals | "none" | "wrap";
 
+type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
+
 type WebkitBorderBeforeColorProperty = Globals | Color;
 
 type WebkitBorderBeforeStyleProperty = Globals | BrStyle | string;
@@ -4520,6 +4542,10 @@ type WebkitBorderBeforeStyleProperty = Globals | BrStyle | string;
 type WebkitBorderBeforeWidthProperty<TLength> = Globals | BrWidth<TLength> | string;
 
 type WebkitBoxReflectProperty<TLength> = Globals | TLength | "above" | "below" | "left" | "right" | string;
+
+type WebkitLineClampProperty = Globals | "none" | number;
+
+type WebkitMaskProperty = Globals | "none" | string;
 
 type WebkitMaskAttachmentProperty = Globals | Attachment | string;
 
@@ -4549,6 +4575,8 @@ type WebkitTapHighlightColorProperty = Globals | Color;
 
 type WebkitTextFillColorProperty = Globals | Color;
 
+type WebkitTextStrokeProperty<TLength> = Globals | Color | TLength | string;
+
 type WebkitTextStrokeColorProperty = Globals | Color;
 
 type WebkitTextStrokeWidthProperty<TLength> = Globals | TLength;
@@ -4556,42 +4584,6 @@ type WebkitTextStrokeWidthProperty<TLength> = Globals | TLength;
 type WebkitTouchCalloutProperty = Globals | "default" | "none";
 
 type WebkitUserModifyProperty = Globals | "read-only" | "read-write" | "read-write-plaintext-only";
-
-type MozOutlineRadiusProperty<TLength> = Globals | TLength | string;
-
-type MsContentZoomSnapProperty = Globals | "mandatory" | "none" | "proximity" | string;
-
-type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
-
-type WebkitLineClampProperty = Globals | "none" | number;
-
-type WebkitMaskProperty = Globals | "none" | string;
-
-type WebkitTextStrokeProperty<TLength> = Globals | Color | TLength | string;
-
-type BoxDirectionProperty = Globals | "inherit" | "normal" | "reverse";
-
-type BoxOrientProperty = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
-
-type BoxPackProperty = Globals | "center" | "end" | "justify" | "start";
-
-type ClipProperty = Globals | "auto" | string;
-
-type FontVariantAlternatesProperty = Globals | "historical-forms" | "normal" | string;
-
-type ImeModeProperty = Globals | "active" | "auto" | "disabled" | "inactive" | "normal";
-
-type ScrollSnapCoordinateProperty<TLength> = Globals | Position<TLength> | "none" | string;
-
-type ScrollSnapDestinationProperty<TLength> = Globals | Position<TLength>;
-
-type ScrollSnapPointsXProperty = Globals | "none" | string;
-
-type ScrollSnapPointsYProperty = Globals | "none" | string;
-
-type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximity";
-
-type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximity";
 
 type AlignmentBaselineProperty =
   | Globals
