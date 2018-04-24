@@ -11,7 +11,6 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   animationPlayState?: AnimationPlayStateProperty;
   animationTimingFunction?: AnimationTimingFunctionProperty;
   appearance?: AppearanceProperty;
-  azimuth?: AzimuthProperty;
   backdropFilter?: BackdropFilterProperty;
   backfaceVisibility?: BackfaceVisibilityProperty;
   backgroundAttachment?: BackgroundAttachmentProperty;
@@ -123,10 +122,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   gridAutoFlow?: GridAutoFlowProperty;
   gridAutoRows?: GridAutoRowsProperty<TLength>;
   gridColumnEnd?: GridColumnEndProperty;
-  gridColumnGap?: GridColumnGapProperty<TLength>;
   gridColumnStart?: GridColumnStartProperty;
   gridRowEnd?: GridRowEndProperty;
-  gridRowGap?: GridRowGapProperty<TLength>;
   gridRowStart?: GridRowStartProperty;
   gridTemplateAreas?: GridTemplateAreasProperty;
   gridTemplateColumns?: GridTemplateColumnsProperty<TLength>;
@@ -325,7 +322,6 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   grid?: GridProperty;
   gridArea?: GridAreaProperty;
   gridColumn?: GridColumnProperty;
-  gridGap?: GridGapProperty<TLength>;
   gridRow?: GridRowProperty;
   gridTemplate?: GridTemplateProperty;
   lineClamp?: LineClampProperty;
@@ -596,6 +592,8 @@ export interface VendorProperties<TLength = string | 0> extends VendorLonghandPr
 
 export interface ObsoleteProperties<TLength = string | 0> {
   /** @deprecated */
+  azimuth?: AzimuthProperty;
+  /** @deprecated */
   boxDirection?: BoxDirectionProperty;
   /** @deprecated */
   boxFlex?: GlobalsNumber;
@@ -607,6 +605,12 @@ export interface ObsoleteProperties<TLength = string | 0> {
   clip?: ClipProperty;
   /** @deprecated */
   fontVariantAlternates?: FontVariantAlternatesProperty;
+  /** @deprecated */
+  gridColumnGap?: GridColumnGapProperty<TLength>;
+  /** @deprecated */
+  gridGap?: GridGapProperty<TLength>;
+  /** @deprecated */
+  gridRowGap?: GridRowGapProperty<TLength>;
   /** @deprecated */
   imeMode?: ImeModeProperty;
   /** @deprecated */
@@ -793,7 +797,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "animation-play-state"?: AnimationPlayStateProperty;
   "animation-timing-function"?: AnimationTimingFunctionProperty;
   appearance?: AppearanceProperty;
-  azimuth?: AzimuthProperty;
   "backdrop-filter"?: BackdropFilterProperty;
   "backface-visibility"?: BackfaceVisibilityProperty;
   "background-attachment"?: BackgroundAttachmentProperty;
@@ -905,10 +908,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   "grid-auto-flow"?: GridAutoFlowProperty;
   "grid-auto-rows"?: GridAutoRowsProperty<TLength>;
   "grid-column-end"?: GridColumnEndProperty;
-  "grid-column-gap"?: GridColumnGapProperty<TLength>;
   "grid-column-start"?: GridColumnStartProperty;
   "grid-row-end"?: GridRowEndProperty;
-  "grid-row-gap"?: GridRowGapProperty<TLength>;
   "grid-row-start"?: GridRowStartProperty;
   "grid-template-areas"?: GridTemplateAreasProperty;
   "grid-template-columns"?: GridTemplateColumnsProperty<TLength>;
@@ -1107,7 +1108,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   grid?: GridProperty;
   "grid-area"?: GridAreaProperty;
   "grid-column"?: GridColumnProperty;
-  "grid-gap"?: GridGapProperty<TLength>;
   "grid-row"?: GridRowProperty;
   "grid-template"?: GridTemplateProperty;
   "line-clamp"?: LineClampProperty;
@@ -1378,6 +1378,8 @@ export interface VendorPropertiesHyphen<TLength = string | 0> extends VendorLong
 
 export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /** @deprecated */
+  azimuth?: AzimuthProperty;
+  /** @deprecated */
   "box-direction"?: BoxDirectionProperty;
   /** @deprecated */
   "box-flex"?: GlobalsNumber;
@@ -1389,6 +1391,12 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   clip?: ClipProperty;
   /** @deprecated */
   "font-variant-alternates"?: FontVariantAlternatesProperty;
+  /** @deprecated */
+  "grid-column-gap"?: GridColumnGapProperty<TLength>;
+  /** @deprecated */
+  "grid-gap"?: GridGapProperty<TLength>;
+  /** @deprecated */
+  "grid-row-gap"?: GridRowGapProperty<TLength>;
   /** @deprecated */
   "ime-mode"?: ImeModeProperty;
   /** @deprecated */
@@ -1579,7 +1587,6 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   animationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   animationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   appearance?: AppearanceProperty | AppearanceProperty[];
-  azimuth?: AzimuthProperty | AzimuthProperty[];
   backdropFilter?: BackdropFilterProperty | BackdropFilterProperty[];
   backfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   backgroundAttachment?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
@@ -1691,10 +1698,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   gridAutoFlow?: GridAutoFlowProperty | GridAutoFlowProperty[];
   gridAutoRows?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
   gridColumnEnd?: GridColumnEndProperty | GridColumnEndProperty[];
-  gridColumnGap?: GridColumnGapProperty<TLength> | GridColumnGapProperty<TLength>[];
   gridColumnStart?: GridColumnStartProperty | GridColumnStartProperty[];
   gridRowEnd?: GridRowEndProperty | GridRowEndProperty[];
-  gridRowGap?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
   gridRowStart?: GridRowStartProperty | GridRowStartProperty[];
   gridTemplateAreas?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
   gridTemplateColumns?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
@@ -1893,7 +1898,6 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   grid?: GridProperty | GridProperty[];
   gridArea?: GridAreaProperty | GridAreaProperty[];
   gridColumn?: GridColumnProperty | GridColumnProperty[];
-  gridGap?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
   gridRow?: GridRowProperty | GridRowProperty[];
   gridTemplate?: GridTemplateProperty | GridTemplateProperty[];
   lineClamp?: LineClampProperty | LineClampProperty[];
@@ -2164,6 +2168,8 @@ export interface VendorPropertiesFallback<TLength = string | 0> extends VendorLo
 
 export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /** @deprecated */
+  azimuth?: AzimuthProperty | AzimuthProperty[];
+  /** @deprecated */
   boxDirection?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
   boxFlex?: GlobalsNumber | GlobalsNumber[];
@@ -2175,6 +2181,12 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   clip?: ClipProperty | ClipProperty[];
   /** @deprecated */
   fontVariantAlternates?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
+  /** @deprecated */
+  gridColumnGap?: GridColumnGapProperty<TLength> | GridColumnGapProperty<TLength>[];
+  /** @deprecated */
+  gridGap?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
+  /** @deprecated */
+  gridRowGap?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
   /** @deprecated */
   imeMode?: ImeModeProperty | ImeModeProperty[];
   /** @deprecated */
@@ -2365,7 +2377,6 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "animation-play-state"?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   "animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   appearance?: AppearanceProperty | AppearanceProperty[];
-  azimuth?: AzimuthProperty | AzimuthProperty[];
   "backdrop-filter"?: BackdropFilterProperty | BackdropFilterProperty[];
   "backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   "background-attachment"?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
@@ -2477,10 +2488,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   "grid-auto-flow"?: GridAutoFlowProperty | GridAutoFlowProperty[];
   "grid-auto-rows"?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
   "grid-column-end"?: GridColumnEndProperty | GridColumnEndProperty[];
-  "grid-column-gap"?: GridColumnGapProperty<TLength> | GridColumnGapProperty<TLength>[];
   "grid-column-start"?: GridColumnStartProperty | GridColumnStartProperty[];
   "grid-row-end"?: GridRowEndProperty | GridRowEndProperty[];
-  "grid-row-gap"?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
   "grid-row-start"?: GridRowStartProperty | GridRowStartProperty[];
   "grid-template-areas"?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
   "grid-template-columns"?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
@@ -2679,7 +2688,6 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   grid?: GridProperty | GridProperty[];
   "grid-area"?: GridAreaProperty | GridAreaProperty[];
   "grid-column"?: GridColumnProperty | GridColumnProperty[];
-  "grid-gap"?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
   "grid-row"?: GridRowProperty | GridRowProperty[];
   "grid-template"?: GridTemplateProperty | GridTemplateProperty[];
   "line-clamp"?: LineClampProperty | LineClampProperty[];
@@ -2952,6 +2960,8 @@ export interface VendorPropertiesHyphenFallback<TLength = string | 0> extends Ve
 
 export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /** @deprecated */
+  azimuth?: AzimuthProperty | AzimuthProperty[];
+  /** @deprecated */
   "box-direction"?: BoxDirectionProperty | BoxDirectionProperty[];
   /** @deprecated */
   "box-flex"?: GlobalsNumber | GlobalsNumber[];
@@ -2963,6 +2973,12 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   clip?: ClipProperty | ClipProperty[];
   /** @deprecated */
   "font-variant-alternates"?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
+  /** @deprecated */
+  "grid-column-gap"?: GridColumnGapProperty<TLength> | GridColumnGapProperty<TLength>[];
+  /** @deprecated */
+  "grid-gap"?: GridGapProperty<TLength> | GridGapProperty<TLength>[];
+  /** @deprecated */
+  "grid-row-gap"?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[];
   /** @deprecated */
   "ime-mode"?: ImeModeProperty | ImeModeProperty[];
   /** @deprecated */

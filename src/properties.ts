@@ -67,6 +67,7 @@ for (const originalName in propertiesData) {
   let entities = parse(getPropertySyntax(originalName));
   let currentNames: string[] = [originalName];
   let obsoleteNames: string[] = [];
+  let deprecated = isDeprecated(propertiesData[originalName]);
 
   const compatibilityData = getPropertyData(originalName);
 
@@ -81,12 +82,13 @@ for (const originalName in propertiesData) {
     entities = compatSyntax(compatibilityData, entities);
     currentNames = currentNames.concat(filterMissingProperties(compatNames(compat, originalName)));
     obsoleteNames = obsoleteNames.concat(filterMissingProperties(compatNames(compat, originalName, true)));
+    deprecated = isDeprecated(propertiesData[originalName], compat);
+  }
 
-    if (isDeprecated(compat)) {
-      // Move all property names to obsolete
-      obsoleteNames = obsoleteNames.concat(currentNames);
-      currentNames = [];
-    }
+  if (deprecated) {
+    // Move all property names to obsolete
+    obsoleteNames = obsoleteNames.concat(currentNames);
+    currentNames = [];
   }
 
   const types = resolveDataTypes(typing(entities), createPropertyDataTypeResolver(compatibilityData));

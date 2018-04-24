@@ -159,9 +159,9 @@ function alternativeKeywords(data: MDN.CompatData, value: string): string[] {
   return alternatives;
 }
 
-export function isDeprecated(compat: MDN.Compat) {
+export function isDeprecated(data: { status?: string }, compat?: MDN.Compat) {
   // Assume not deprecated if is status i missing
-  return !!compat.status && compat.status.deprecated;
+  return data.status === 'obsolete' || (!!compat && !!compat.status && compat.status.deprecated);
 }
 
 export function isAddedBySome(compat: MDN.Compat): boolean {
