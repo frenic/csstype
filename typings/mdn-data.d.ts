@@ -63,6 +63,12 @@ declare namespace MDN {
   interface AtRules {
     [name: string]: AtRule;
   }
+
+  interface L10N {
+    [key: string]: {
+      'en-US': string;
+    };
+  }
 }
 
 declare module 'mdn-data/css/properties.json' {
@@ -88,4 +94,9 @@ declare module 'mdn-data/css/types.json' {
 declare module 'mdn-data/css/at-rules.json' {
   var atRules: MDN.AtRules;
   export = atRules;
+}
+
+declare module 'mdn-data/l10n/css.json' {
+  var l10n: MDN.L10N;
+  export = l10n;
 }

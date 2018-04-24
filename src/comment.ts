@@ -1,6 +1,11 @@
+import * as l10n from 'mdn-data/l10n/css.json';
 import { format } from 'prettier';
 import { getCompat } from './compat';
 import { IExtendedProperty } from './data/patches';
+import { warn } from './logger';
+
+const BLANK_ROW = '';
+const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\}]+\}\})/;
 
 export function composeCommentBlock(
   compatibilityData: MDN.CompatData | null,
@@ -10,8 +15,14 @@ export function composeCommentBlock(
 ) {
   const rows: string[] = [];
 
-  if (obsolete) {
-    rows.push('@deprecated');
+  if (typeof data.initial === 'string') {
+    if (data.initial in l10n) {
+      if (typeof l10n[data.initial]['en-US'] === 'string') {
+        rows.push(`**Initial value**: ${formatL10n(l10n[data.initial]['en-US'])}`, BLANK_ROW);
+      }
+    } else {
+      rows.push(`**Initial value**: \`${data.initial}\``, BLANK_ROW);
+    }
   }
 
   // Skip compatibility table for obsolete and vendor properties
@@ -41,12 +52,22 @@ export function composeCommentBlock(
         )
           .trim()
           .split('\n'),
+        BLANK_ROW,
       );
 
       if (compat.mdn_url) {
-        rows.push('@see ' + compat.mdn_url);
+        rows.push('@see ' + compat.mdn_url, BLANK_ROW);
       }
     }
+  }
+
+  if (obsolete) {
+    rows.push('@deprecated', BLANK_ROW);
+  }
+
+  // Trim ending
+  if (rows[rows.length - 1] === BLANK_ROW) {
+    rows.pop();
   }
 
   return rows.length > 1
@@ -122,4 +143,32 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
   }
 
   return ['n/a'];
+}
+
+function formatL10n(phrase: string) {
+  return phrase
+    .split(L10N_TAGS_REGEX)
+    .map(chunk => {
+      if (chunk === '<code>' || chunk === '</code>') {
+        return '`';
+      }
+
+      if (chunk.startsWith('<') && chunk.endsWith('>')) {
+        return '';
+      }
+
+      // References to another property
+      const curlyBlock = chunk.match(/\{\{cssxref\("([^"]*)"\)\}\}/);
+      if (curlyBlock) {
+        return `_${curlyBlock[1]}_`;
+      }
+
+      if (chunk.startsWith('{{') && chunk.endsWith('}}')) {
+        warn('Unknown curly bracket block `%s` in i10n', chunk);
+        return chunk;
+      }
+
+      return chunk;
+    })
+    .join('');
 }
