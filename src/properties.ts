@@ -1,3 +1,4 @@
+import { composeCommentBlock } from './comment';
 import {
   compatNames,
   compatSyntax,
@@ -30,6 +31,7 @@ interface IProperty {
   vendor: boolean;
   shorthand: boolean;
   obsolete: boolean;
+  comment: string | null;
   types: ResolvedType[];
 }
 
@@ -51,6 +53,7 @@ export const htmlProperties: { [name: string]: IProperty } = {
     vendor: false,
     shorthand: true,
     obsolete: false,
+    comment: '',
     types: [],
   },
 };
@@ -63,11 +66,13 @@ for (const originalName in propertiesData) {
     continue;
   }
 
+  const data = propertiesData[originalName];
+
   // Default values
   let entities = parse(getPropertySyntax(originalName));
   let currentNames: string[] = [originalName];
   let obsoleteNames: string[] = [];
-  let deprecated = isDeprecated(propertiesData[originalName]);
+  let deprecated = isDeprecated(data);
 
   const compatibilityData = getPropertyData(originalName);
 
@@ -82,7 +87,7 @@ for (const originalName in propertiesData) {
     entities = compatSyntax(compatibilityData, entities);
     currentNames = currentNames.concat(filterMissingProperties(compatNames(compat, originalName)));
     obsoleteNames = obsoleteNames.concat(filterMissingProperties(compatNames(compat, originalName, true)));
-    deprecated = isDeprecated(propertiesData[originalName], compat);
+    deprecated = isDeprecated(data, compat);
   }
 
   if (deprecated) {
@@ -95,22 +100,28 @@ for (const originalName in propertiesData) {
 
   // Remove duplicates
   for (const name of new Set(currentNames)) {
+    const vendor = isVendorProperty(name);
+
     htmlProperties[name] = mergeRecurrent(name, {
       name: originalName,
-      vendor: isVendorProperty(name),
-      shorthand: propertiesData[originalName].shorthand,
+      vendor,
+      shorthand: data.shorthand,
       obsolete: false,
+      comment: composeCommentBlock(compatibilityData, data, vendor),
       types,
     });
   }
 
   // Remove duplicates
   for (const name of new Set(obsoleteNames)) {
+    const vendor = isVendorProperty(name);
+
     htmlProperties[name] = mergeRecurrent(name, {
       name: originalName,
-      vendor: isVendorProperty(name),
-      shorthand: propertiesData[originalName].shorthand,
+      vendor,
+      shorthand: data.shorthand,
       obsolete: true,
+      comment: composeCommentBlock(compatibilityData, data, vendor, true),
       types,
     });
   }
@@ -125,6 +136,7 @@ for (const name in rawSvgProperties) {
       vendor: false,
       shorthand: false,
       obsolete: false,
+      comment: null,
       types: resolveDataTypes(typing(parse(syntax)), createPropertyDataTypeResolver(compatibilityData)),
     };
   }

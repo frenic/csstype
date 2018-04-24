@@ -86,8 +86,8 @@ function typescript() {
     interfacesOutput += '{' + EOL;
 
     for (const property of item.properties) {
-      if (property.obsolete) {
-        interfacesOutput += '/** @deprecated */' + EOL;
+      if (property.comment) {
+        interfacesOutput += property.comment + EOL;
       }
 
       if (isAliasProperty(property)) {
