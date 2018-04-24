@@ -73,7 +73,7 @@ let getBasicDataTypes = () => {
     return dataTypes;
   }, {});
 
-  // Cache
+  // Memoize
   getBasicDataTypes = () => types;
 
   return types;

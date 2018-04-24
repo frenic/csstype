@@ -183,18 +183,18 @@ export function isCombinator(entity: EntityType): entity is ICombinator {
   return entity.entity === Entity.Combinator;
 }
 
-export function isCurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMultiplierCurlyBracet {
+export function isCurlyBracesMultiplier(multiplier: MultiplierType): multiplier is IMultiplierCurlyBracet {
   return multiplier.sign === Multiplier.CurlyBracet;
 }
 
 export function isMandatoryMultiplied(multiplier: MultiplierType | null) {
-  return multiplier !== null && (isCurlyBracetMultiplier(multiplier) && multiplier.min > 1);
+  return multiplier !== null && (isCurlyBracesMultiplier(multiplier) && multiplier.min > 1);
 }
 
 export function isOptionallyMultiplied(multiplier: MultiplierType | null) {
   return (
     multiplier !== null &&
-    ((isCurlyBracetMultiplier(multiplier) && multiplier.min < multiplier.max && multiplier.max > 1) ||
+    ((isCurlyBracesMultiplier(multiplier) && multiplier.min < multiplier.max && multiplier.max > 1) ||
       multiplier.sign === Multiplier.Asterisk ||
       multiplier.sign === Multiplier.PlusSign ||
       multiplier.sign === Multiplier.HashMark ||
@@ -209,7 +209,7 @@ export function isMandatoryEntity(entity: EntityType) {
 
   if (entity.multiplier) {
     return (
-      (isCurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
+      (isCurlyBracesMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
       entity.multiplier.sign === Multiplier.PlusSign ||
       entity.multiplier.sign === Multiplier.HashMark ||
       entity.multiplier.sign === Multiplier.ExclamationPoint
