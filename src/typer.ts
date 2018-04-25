@@ -11,6 +11,7 @@ import {
   isMandatoryMultiplied,
   isOptionallyMultiplied,
 } from './parser';
+import { isCombinedKeywordsCandidate } from './keywords';
 
 export enum Type {
   Alias,
@@ -80,6 +81,14 @@ let getBasicDataTypes = () => {
 };
 
 export default function typing(entities: EntityType[]): TypeType[] {
+  if (isCombinedKeywordsCandidate(entities)) {
+    return [
+      {
+        type: Type.String,
+      },
+    ];
+  }
+
   let mandatoryCombinatorCount = 0;
   let mandatoryNonCombinatorsCount = 0;
   for (const entity of entities) {
