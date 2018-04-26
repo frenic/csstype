@@ -72,7 +72,9 @@ export function composeCommentBlock(
 
   return rows.length > 1
     ? '/**\n * ' + rows.join('\n * ') + '\n */'
-    : rows.length === 1 ? '/** ' + rows[0] + ' */' : null;
+    : rows.length === 1
+      ? '/** ' + rows[0] + ' */'
+      : null;
 }
 
 function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): string[] {
@@ -125,7 +127,9 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
         (supportsStandard ? (supportsPrefixed.version_added as string) : `**${supportsPrefixed.version_added}**`) +
           (supportsPrefixed.prefix
             ? ` _-x-_`
-            : supportsPrefixed.alternative_name ? ` _(${supportsPrefixed.alternative_name})_` : ''),
+            : supportsPrefixed.alternative_name
+              ? ` _(${supportsPrefixed.alternative_name})_`
+              : ''),
       );
     }
 

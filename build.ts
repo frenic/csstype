@@ -1,8 +1,7 @@
-import { spawn } from 'child_process';
 import * as chokidar from 'chokidar';
-import { writeFile } from 'fs';
 import * as path from 'path';
 import * as prettier from 'prettier';
+import { spawnPromise, writeFilePromise } from './utils';
 
 const ROOT_DIR = __dirname;
 const TYPESCRIPT_FILENAME = 'index.d.ts';
@@ -84,28 +83,4 @@ function typecheck() {
       'check',
     ),
   ]);
-}
-
-function writeFilePromise(filename: string, content: string) {
-  return new Promise((resolve, reject) => {
-    writeFile(filename, content, 'utf-8', error => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve();
-      }
-    });
-  });
-}
-
-function spawnPromise(command: string, ...args: string[]) {
-  return new Promise((resolve, reject) => {
-    const cp = spawn(command, args, {
-      cwd: ROOT_DIR,
-    });
-    let out = '';
-    cp.stdout.on('data', data => (out += data));
-    cp.on('close', code => (code === 0 ? resolve() : reject(out)));
-    cp.on('error', reject);
-  });
 }

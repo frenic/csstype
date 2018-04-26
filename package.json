@@ -25,6 +25,7 @@
     "typescript": "^2.8.3"
   },
   "scripts": {
+    "update": "ts-node update.ts",
     "build": "ts-node build.ts",
     "watch": "ts-node build.ts --watch",
     "lint": "tslint --exclude node_modules/**/* --exclude **/*.d.ts --fix **/*.ts",
