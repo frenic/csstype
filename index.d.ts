@@ -1482,10 +1482,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
-   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
-   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
-   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * | Chrome                       | Firefox               | Safari                       | Edge | IE  |
+   * | ---------------------------- | --------------------- | ---------------------------- | ---- | --- |
+   * | **2** _(-webkit-margin-end)_ | **41**                | **3** _(-webkit-margin-end)_ | n/a  | No  |
+   * |                              | 3 _(-moz-margin-end)_ |                              |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
    */
@@ -1493,10 +1493,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
-   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
-   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | n/a  | No  |
-   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * | Chrome                         | Firefox                 | Safari                         | Edge | IE  |
+   * | ------------------------------ | ----------------------- | ------------------------------ | ---- | --- |
+   * | **2** _(-webkit-margin-start)_ | **41**                  | **3** _(-webkit-margin-start)_ | n/a  | No  |
+   * |                                | 3 _(-moz-margin-start)_ |                                |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -3158,6 +3158,10 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   MozHyphens?: HyphensProperty;
   /** **Initial value**: `auto` */
   MozImageRegion?: MozImageRegionProperty;
+  /** **Initial value**: `0` */
+  MozMarginEnd?: MarginInlineEndProperty<TLength>;
+  /** **Initial value**: `0` */
+  MozMarginStart?: MarginInlineStartProperty<TLength>;
   /** **Initial value**: `inline` */
   MozOrient?: MozOrientProperty;
   /** **Initial value**: `0` */
@@ -3169,9 +3173,9 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `0` */
   MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength>;
   /** **Initial value**: `0` */
-  MozPaddingEnd?: MarginInlineEndProperty<TLength>;
+  MozPaddingEnd?: PaddingInlineEndProperty<TLength>;
   /** **Initial value**: `0` */
-  MozPaddingStart?: MarginInlineStartProperty<TLength>;
+  MozPaddingStart?: PaddingInlineStartProperty<TLength>;
   /** **Initial value**: `none` */
   MozPerspective?: PerspectiveProperty<TLength>;
   /** **Initial value**: `50% 50%` */
@@ -3428,6 +3432,10 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitJustifyContent?: JustifyContentProperty;
   /** **Initial value**: `auto` */
   WebkitLineBreak?: LineBreakProperty;
+  /** **Initial value**: `0` */
+  WebkitMarginEnd?: MarginInlineEndProperty<TLength>;
+  /** **Initial value**: `0` */
+  WebkitMarginStart?: MarginInlineStartProperty<TLength>;
   /** **Initial value**: `scroll` */
   WebkitMaskAttachment?: WebkitMaskAttachmentProperty;
   /** **Initial value**: `border` */
@@ -3457,9 +3465,9 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   WebkitOverflowScrolling?: WebkitOverflowScrollingProperty;
   /** **Initial value**: `0` */
-  WebkitPaddingEnd?: MarginInlineEndProperty<TLength>;
+  WebkitPaddingEnd?: PaddingInlineEndProperty<TLength>;
   /** **Initial value**: `0` */
-  WebkitPaddingStart?: MarginInlineStartProperty<TLength>;
+  WebkitPaddingStart?: PaddingInlineStartProperty<TLength>;
   /** **Initial value**: `none` */
   WebkitPerspective?: PerspectiveProperty<TLength>;
   /** **Initial value**: `50% 50%` */
@@ -3703,7 +3711,25 @@ export interface ObsoleteProperties<TLength = string | 0> {
    *
    * @deprecated
    */
-  MozBorderRadiusTopright?: BorderBottomLeftRadiusProperty<TLength>;
+  MozBorderRadiusBottomleft?: BorderBottomLeftRadiusProperty<TLength>;
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozBorderRadiusBottomright?: BorderBottomRightRadiusProperty<TLength>;
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozBorderRadiusTopleft?: BorderTopLeftRadiusProperty<TLength>;
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>;
   /**
    * **Initial value**: `normal`
    *
@@ -5465,10 +5491,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
-   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
-   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
-   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * | Chrome                       | Firefox               | Safari                       | Edge | IE  |
+   * | ---------------------------- | --------------------- | ---------------------------- | ---- | --- |
+   * | **2** _(-webkit-margin-end)_ | **41**                | **3** _(-webkit-margin-end)_ | n/a  | No  |
+   * |                              | 3 _(-moz-margin-end)_ |                              |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
    */
@@ -5476,10 +5502,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
-   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
-   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | n/a  | No  |
-   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * | Chrome                         | Firefox                 | Safari                         | Edge | IE  |
+   * | ------------------------------ | ----------------------- | ------------------------------ | ---- | --- |
+   * | **2** _(-webkit-margin-start)_ | **41**                  | **3** _(-webkit-margin-start)_ | n/a  | No  |
+   * |                                | 3 _(-moz-margin-start)_ |                                |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -7141,6 +7167,10 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-moz-hyphens"?: HyphensProperty;
   /** **Initial value**: `auto` */
   "-moz-image-region"?: MozImageRegionProperty;
+  /** **Initial value**: `0` */
+  "-moz-margin-end"?: MarginInlineEndProperty<TLength>;
+  /** **Initial value**: `0` */
+  "-moz-margin-start"?: MarginInlineStartProperty<TLength>;
   /** **Initial value**: `inline` */
   "-moz-orient"?: MozOrientProperty;
   /** **Initial value**: `0` */
@@ -7152,9 +7182,9 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `0` */
   "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength>;
   /** **Initial value**: `0` */
-  "-moz-padding-end"?: MarginInlineEndProperty<TLength>;
+  "-moz-padding-end"?: PaddingInlineEndProperty<TLength>;
   /** **Initial value**: `0` */
-  "-moz-padding-start"?: MarginInlineStartProperty<TLength>;
+  "-moz-padding-start"?: PaddingInlineStartProperty<TLength>;
   /** **Initial value**: `none` */
   "-moz-perspective"?: PerspectiveProperty<TLength>;
   /** **Initial value**: `50% 50%` */
@@ -7411,6 +7441,10 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-justify-content"?: JustifyContentProperty;
   /** **Initial value**: `auto` */
   "-webkit-line-break"?: LineBreakProperty;
+  /** **Initial value**: `0` */
+  "-webkit-margin-end"?: MarginInlineEndProperty<TLength>;
+  /** **Initial value**: `0` */
+  "-webkit-margin-start"?: MarginInlineStartProperty<TLength>;
   /** **Initial value**: `scroll` */
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty;
   /** **Initial value**: `border` */
@@ -7440,9 +7474,9 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "-webkit-overflow-scrolling"?: WebkitOverflowScrollingProperty;
   /** **Initial value**: `0` */
-  "-webkit-padding-end"?: MarginInlineEndProperty<TLength>;
+  "-webkit-padding-end"?: PaddingInlineEndProperty<TLength>;
   /** **Initial value**: `0` */
-  "-webkit-padding-start"?: MarginInlineStartProperty<TLength>;
+  "-webkit-padding-start"?: PaddingInlineStartProperty<TLength>;
   /** **Initial value**: `none` */
   "-webkit-perspective"?: PerspectiveProperty<TLength>;
   /** **Initial value**: `50% 50%` */
@@ -7686,7 +7720,25 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    *
    * @deprecated
    */
-  "-moz-border-radius-topright"?: BorderBottomLeftRadiusProperty<TLength>;
+  "-moz-border-radius-bottomleft"?: BorderBottomLeftRadiusProperty<TLength>;
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-border-radius-bottomright"?: BorderBottomRightRadiusProperty<TLength>;
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-border-radius-topleft"?: BorderTopLeftRadiusProperty<TLength>;
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength>;
   /**
    * **Initial value**: `normal`
    *
@@ -9452,10 +9504,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
-   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
-   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
-   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * | Chrome                       | Firefox               | Safari                       | Edge | IE  |
+   * | ---------------------------- | --------------------- | ---------------------------- | ---- | --- |
+   * | **2** _(-webkit-margin-end)_ | **41**                | **3** _(-webkit-margin-end)_ | n/a  | No  |
+   * |                              | 3 _(-moz-margin-end)_ |                              |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
    */
@@ -9463,10 +9515,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
-   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
-   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | n/a  | No  |
-   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * | Chrome                         | Firefox                 | Safari                         | Edge | IE  |
+   * | ------------------------------ | ----------------------- | ------------------------------ | ---- | --- |
+   * | **2** _(-webkit-margin-start)_ | **41**                  | **3** _(-webkit-margin-start)_ | n/a  | No  |
+   * |                                | 3 _(-moz-margin-start)_ |                                |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -11128,6 +11180,10 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   MozHyphens?: HyphensProperty | HyphensProperty[];
   /** **Initial value**: `auto` */
   MozImageRegion?: MozImageRegionProperty | MozImageRegionProperty[];
+  /** **Initial value**: `0` */
+  MozMarginEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  /** **Initial value**: `0` */
+  MozMarginStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   /** **Initial value**: `inline` */
   MozOrient?: MozOrientProperty | MozOrientProperty[];
   /** **Initial value**: `0` */
@@ -11139,9 +11195,9 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `0` */
   MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
   /** **Initial value**: `0` */
-  MozPaddingEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  MozPaddingEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   /** **Initial value**: `0` */
-  MozPaddingStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
+  MozPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   /** **Initial value**: `none` */
   MozPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   /** **Initial value**: `50% 50%` */
@@ -11398,6 +11454,10 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitJustifyContent?: JustifyContentProperty | JustifyContentProperty[];
   /** **Initial value**: `auto` */
   WebkitLineBreak?: LineBreakProperty | LineBreakProperty[];
+  /** **Initial value**: `0` */
+  WebkitMarginEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  /** **Initial value**: `0` */
+  WebkitMarginStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   /** **Initial value**: `scroll` */
   WebkitMaskAttachment?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   /** **Initial value**: `border` */
@@ -11427,9 +11487,9 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   WebkitOverflowScrolling?: WebkitOverflowScrollingProperty | WebkitOverflowScrollingProperty[];
   /** **Initial value**: `0` */
-  WebkitPaddingEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  WebkitPaddingEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   /** **Initial value**: `0` */
-  WebkitPaddingStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
+  WebkitPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   /** **Initial value**: `none` */
   WebkitPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   /** **Initial value**: `50% 50%` */
@@ -11673,7 +11733,25 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    *
    * @deprecated
    */
-  MozBorderRadiusTopright?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
+  MozBorderRadiusBottomleft?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozBorderRadiusBottomright?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozBorderRadiusTopleft?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[];
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   /**
    * **Initial value**: `normal`
    *
@@ -13439,10 +13517,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `0`
    *
-   * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
-   * | ----------------------------- | ---------------------- | ----------------------------- | ---- | --- |
-   * | **2** _(-webkit-padding-end)_ | **41**                 | **3** _(-webkit-padding-end)_ | n/a  | No  |
-   * |                               | 3 _(-moz-padding-end)_ |                               |      |     |
+   * | Chrome                       | Firefox               | Safari                       | Edge | IE  |
+   * | ---------------------------- | --------------------- | ---------------------------- | ---- | --- |
+   * | **2** _(-webkit-margin-end)_ | **41**                | **3** _(-webkit-margin-end)_ | n/a  | No  |
+   * |                              | 3 _(-moz-margin-end)_ |                              |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
    */
@@ -13450,10 +13528,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `0`
    *
-   * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
-   * | ------------------------------- | ------------------------ | ------------------------------- | ---- | --- |
-   * | **2** _(-webkit-padding-start)_ | **41**                   | **3** _(-webkit-padding-start)_ | n/a  | No  |
-   * |                                 | 3 _(-moz-padding-start)_ |                                 |      |     |
+   * | Chrome                         | Firefox                 | Safari                         | Edge | IE  |
+   * | ------------------------------ | ----------------------- | ------------------------------ | ---- | --- |
+   * | **2** _(-webkit-margin-start)_ | **41**                  | **3** _(-webkit-margin-start)_ | n/a  | No  |
+   * |                                | 3 _(-moz-margin-start)_ |                                |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -15117,6 +15195,10 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-moz-hyphens"?: HyphensProperty | HyphensProperty[];
   /** **Initial value**: `auto` */
   "-moz-image-region"?: MozImageRegionProperty | MozImageRegionProperty[];
+  /** **Initial value**: `0` */
+  "-moz-margin-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  /** **Initial value**: `0` */
+  "-moz-margin-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   /** **Initial value**: `inline` */
   "-moz-orient"?: MozOrientProperty | MozOrientProperty[];
   /** **Initial value**: `0` */
@@ -15128,9 +15210,9 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   /** **Initial value**: `0` */
   "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
   /** **Initial value**: `0` */
-  "-moz-padding-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  "-moz-padding-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   /** **Initial value**: `0` */
-  "-moz-padding-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
+  "-moz-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   /** **Initial value**: `none` */
   "-moz-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   /** **Initial value**: `50% 50%` */
@@ -15387,6 +15469,10 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-justify-content"?: JustifyContentProperty | JustifyContentProperty[];
   /** **Initial value**: `auto` */
   "-webkit-line-break"?: LineBreakProperty | LineBreakProperty[];
+  /** **Initial value**: `0` */
+  "-webkit-margin-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  /** **Initial value**: `0` */
+  "-webkit-margin-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   /** **Initial value**: `scroll` */
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   /** **Initial value**: `border` */
@@ -15416,9 +15502,9 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "-webkit-overflow-scrolling"?: WebkitOverflowScrollingProperty | WebkitOverflowScrollingProperty[];
   /** **Initial value**: `0` */
-  "-webkit-padding-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
+  "-webkit-padding-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   /** **Initial value**: `0` */
-  "-webkit-padding-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
+  "-webkit-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   /** **Initial value**: `none` */
   "-webkit-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   /** **Initial value**: `50% 50%` */
@@ -15662,7 +15748,25 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    *
    * @deprecated
    */
-  "-moz-border-radius-topright"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
+  "-moz-border-radius-bottomleft"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-border-radius-bottomright"?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-border-radius-topleft"?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[];
+  /**
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   /**
    * **Initial value**: `normal`
    *
