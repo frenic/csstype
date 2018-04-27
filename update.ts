@@ -1,14 +1,15 @@
+import build from './build';
 // @ts-ignore
 import * as packageJson from './package.json';
-import { getJson, spawnPromise, writeFilePromise } from './utils';
+import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
 
 (async () => {
-  if ((await spawnPromise('git', 'status', '--porcelain')) !== '') {
+  if ((await spawnAsync('git', 'status', '--porcelain')) !== '') {
     console.error('Your working directory needs to be clean!');
     process.exit(1);
   }
 
-  console.info('Checks for updates...');
+  console.info('Check for updates...');
 
   const MDN_DATA = 'mdn-data';
   const MDN_COMPAT = 'mdn-browser-compat-data';
@@ -17,12 +18,12 @@ import { getJson, spawnPromise, writeFilePromise } from './utils';
   const [mdnCompatRepo, currentMdnCompatCommit] = packageJson.devDependencies[MDN_COMPAT].split('#');
 
   const [mdnDataMaster, mdnCompatMaster] = [
-    await getJson({
+    await getJsonAsync({
       hostname: 'api.github.com',
       path: '/repos/mdn/data/branches/master',
       headers: { 'User-Agent': 'NodeJS' },
     }),
-    await getJson({
+    await getJsonAsync({
       hostname: 'api.github.com',
       path: '/repos/mdn/browser-compat-data/branches/master',
       headers: { 'User-Agent': 'NodeJS' },
@@ -33,44 +34,93 @@ import { getJson, spawnPromise, writeFilePromise } from './utils';
   const latestMdnCompatCommit = mdnCompatMaster.commit.sha;
 
   if (latestMdnDataCommit !== currentMdnDataCommit || latestMdnCompatCommit !== currentMdnCompatCommit) {
-    console.info('Update found, upgrading and building...');
+    console.info('Update found!');
+    console.info('Upgrading...');
 
     packageJson.devDependencies[MDN_DATA] = `${mdnDataRepo}#${latestMdnDataCommit}`;
     packageJson.devDependencies[MDN_COMPAT] = `${mdnCompatRepo}#${latestMdnCompatCommit}`;
 
-    await writeFilePromise('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
+    await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
+    await upgrade();
 
     try {
-      await spawnPromise('yarn.cmd', '--silent', '--no-progress');
+      await build();
     } catch (e) {
-      console.error(e);
-      process.exit(1);
+      throw new Error(e);
     }
 
     const [indexDtsDiff, indexFlowDiff] = [
-      await spawnPromise('git', '--no-pager', 'diff', 'index.d.ts'),
-      await spawnPromise('git', '--no-pager', 'diff', 'index.js.flow'),
+      await spawnAsync('git', '--no-pager', 'diff', '--color', TYPESCRIPT_FILENAME),
+      await spawnAsync('git', '--no-pager', 'diff', '--color', FLOW_FILENAME),
     ];
 
     if (indexDtsDiff !== '' || indexFlowDiff !== '') {
-      await spawnPromise('git', 'commit', '-am', 'Bump MDN');
+      console.info("Changes detected! Here's the diff:");
+      console.info(indexDtsDiff);
+      console.info(indexFlowDiff);
 
-      const [major, minor, patch] = packageJson.version.split('.');
-      const version = `${major}.${minor}.${Number(patch) + 1}`;
+      const doPrepare = await questionAsync('Do you want to prepare a release for this? (y/n) ');
 
-      packageJson.version = version;
-      await writeFilePromise('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
-      await spawnPromise('git', 'commit', '-am', `v${version}`);
-      await spawnPromise('git', 'tag', `v${version}`);
+      if (doPrepare === 'y') {
+        await spawnAsync('git', 'commit', '-am', 'Bump MDN');
 
-      console.info('Changes detected! The changes are committed and tagged. You just need to:');
-      console.info('- `git push origin HEAD --tags`');
-      console.info('- `npm publish`');
+        const [major, minor, patch] = packageJson.version.split('.');
+        const version = `${major}.${minor}.${Number(patch) + 1}`;
+
+        const tag = `v${version}`;
+
+        packageJson.version = version;
+        await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
+        await spawnAsync('git', 'commit', '-am', tag);
+        await spawnAsync('git', 'tag', tag);
+
+        console.info(`The changes are committed and tagged with: ${tag}`);
+
+        const doPush = await questionAsync('Do you want to push now? (y/n) ');
+
+        if (doPush === 'y') {
+          console.info('Pushing...');
+          await spawnAsync('git', 'push', 'origin', 'HEAD', '--tags');
+        }
+      } else {
+        console.info('Maybe next time!');
+        console.info('Resetting...');
+        await reset();
+        console.info('Downgrading...');
+        await upgrade();
+      }
     } else {
-      console.info('No changes detected, resetting...');
-      await spawnPromise('git', 'reset', '--hard');
+      console.info('No changes detected!');
+      console.info('Resetting...');
+      await reset();
+      console.info('Downgrading...');
+      await upgrade();
     }
+
+    process.exit(0);
   } else {
     console.info('Nothing to update!');
   }
 })();
+
+async function reset() {
+  try {
+    await spawnAsync('git', 'reset', '--hard');
+  } catch (e) {
+    throw new Error(e);
+  }
+}
+
+async function upgrade() {
+  try {
+    await spawnAsync(
+      process.platform === 'win32' ? 'yarn.cmd' : 'yarn',
+      { stdio: 'inherit' },
+      '--silent',
+      '--no-progress',
+      '--ignore-scripts',
+    );
+  } catch (e) {
+    throw new Error(e);
+  }
+}

@@ -26,7 +26,7 @@
   },
   "scripts": {
     "update": "ts-node update.ts",
-    "build": "ts-node build.ts",
+    "build": "ts-node build.ts --start",
     "watch": "ts-node build.ts --watch",
     "lint": "tslint --exclude node_modules/**/* --exclude **/*.d.ts --fix **/*.ts",
     "pretty": "prettier --write build.ts **/*.{ts,js,json}",
