@@ -7,29 +7,30 @@ import parse, {
   isComponent,
   isCurlyBracesMultiplier,
 } from './parser';
+import { TypeType } from './typer';
 
 const CURLY_BRACES_MULTIPLIER_MAXIMUM = 3;
 
-export function isCombinedKeywordsCandidate(entities: EntityType[]) {
+export function combineKeywords(entities: EntityType[]) {
+  const types: TypeType[] = [];
+  const combinator = precedenceCombinator(entities);
+
   for (const entity of entities) {
-    if (isCombinator(entity)) {
-      continue;
-    }
     if (isComponent(entity)) {
       switch (entity.component) {
         case Component.DataType: {
-          if (isSyntax(entity.value) && !isCombinedKeywordsCandidate(parse(getSyntax(entity.value)))) {
-            return false;
+          if (isSyntax(entity.value)) {
+            const keywords = combineKeywords(parse(getSyntax(entity.value)));
           }
-          if (isProperty(entity.value) && !isCombinedKeywordsCandidate(parse(getPropertySyntax(entity.value)))) {
-            return false;
+          if (isProperty(entity.value) && !combineKeywords(parse(getPropertySyntax(entity.value)))) {
+            return null;
           }
 
           // Missing or basic data type
           return false;
         }
         case Component.Group: {
-          if (!isCombinedKeywordsCandidate(entity.entities)) {
+          if (!combineKeywords(entity.entities)) {
             return false;
           }
           break;
@@ -41,14 +42,11 @@ export function isCombinedKeywordsCandidate(entities: EntityType[]) {
         // We can work with a small amount. But too many isn't worth it.
         !(isCurlyBracesMultiplier(entity.multiplier) && entity.multiplier.max < CURLY_BRACES_MULTIPLIER_MAXIMUM)
       ) {
-        return false;
+        return null;
       }
 
       continue;
     }
-
-    // This means we have something unknown or too complicated
-    return false;
   }
 
   return true;
