@@ -263,6 +263,24 @@ function multiplierData(raw: string[]): MultiplierType | null {
   }
 }
 
+export function precedenceCombinator(entities: EntityType[]) {
+  let combinator: ICombinator | null = null;
+
+  for (const entity of entities) {
+    if (isCombinator(entity)) {
+      if (!combinator) {
+        combinator = entity;
+      }
+      if (combinator !== entity) {
+        // This should never happen if grouping works as it should. So we just wnt to make sure.
+        throw new Error('Combinators must be grouped by precedence');
+      }
+    }
+  }
+
+  return combinator;
+}
+
 function groupByPrecedence(entities: EntityType[], precedence: number = Combinator.SingleBar): EntityType[] {
   if (precedence < 0) {
     // We've reached the lowest precedence possible
