@@ -13,9 +13,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari      | Edge   | IE     |
-   * | ------ | ------- | ----------- | ------ | ------ |
-   * | **21** | **20**  | **7** _-x-_ | **12** | **11** |
+   * | Chrome   | Firefox | Safari      | Edge   | IE     |
+   * | -------- | ------- | ----------- | ------ | ------ |
+   * | **29**   | **20**  | **7** _-x-_ | **12** | **11** |
+   * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
@@ -25,7 +26,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **36**   | **20**  | No     | **12** | **11** |
+   * | **29**   | **20**  | No     | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
@@ -934,10 +935,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `auto`
    *
-   * | Chrome       | Firefox | Safari  | Edge   | IE     |
-   * | ------------ | ------- | ------- | ------ | ------ |
-   * | **21** _-x-_ | **22**  | **9**   | **12** | **11** |
-   * |              |         | 7 _-x-_ |        |        |
+   * | Chrome   | Firefox | Safari  | Edge   | IE     |
+   * | -------- | ------- | ------- | ------ | ------ |
+   * | **29**   | **22**  | **9**   | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
    */
@@ -945,10 +946,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `row`
    *
-   * | Chrome       | Firefox | Safari  | Edge   | IE       |
-   * | ------------ | ------- | ------- | ------ | -------- |
-   * | **21** _-x-_ | **20**  | **9**   | **12** | **11**   |
-   * |              |         | 7 _-x-_ |        | 10 _-x-_ |
+   * | Chrome   | Firefox | Safari  | Edge   | IE       |
+   * | -------- | ------- | ------- | ------ | -------- |
+   * | **29**   | **20**  | **9**   | **12** | **11**   |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
@@ -956,9 +957,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome       | Firefox | Safari        | Edge   | IE                           |
-   * | ------------ | ------- | ------------- | ------ | ---------------------------- |
-   * | **21** _-x-_ | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * | Chrome   | Firefox | Safari        | Edge   | IE                           |
+   * | -------- | ------- | ------------- | ------ | ---------------------------- |
+   * | **29**   | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * | 21 _-x-_ |         |               |        |                              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
@@ -966,9 +968,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `1`
    *
-   * | Chrome       | Firefox | Safari      | Edge   | IE     |
-   * | ------------ | ------- | ----------- | ------ | ------ |
-   * | **21** _-x-_ | **20**  | **8** _-x-_ | **12** | **10** |
+   * | Chrome   | Firefox | Safari      | Edge   | IE     |
+   * | -------- | ------- | ----------- | ------ | ------ |
+   * | **29**   | **20**  | **8** _-x-_ | **12** | **10** |
+   * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
    */
@@ -976,9 +979,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `nowrap`
    *
-   * | Chrome | Firefox | Safari | Edge   | IE     |
-   * | ------ | ------- | ------ | ------ | ------ |
-   * | **29** | **28**  | **9**  | **12** | **11** |
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **29**   | **28**  | **9**  | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
@@ -2279,9 +2283,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `0.0`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | **37** | n/a     | **7** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **37** | n/a     | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
    */
@@ -2289,9 +2293,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | Yes    | No      | **7** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari         | Edge | IE  |
+   * | ------ | ------- | -------------- | ---- | --- |
+   * | **37** | n/a     | **10.1** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -2299,9 +2303,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | **37** | n/a     | **8** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **37** | n/a     | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -3420,6 +3424,8 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitFlexGrow?: GlobalsNumber;
   /** **Initial value**: `1` */
   WebkitFlexShrink?: GlobalsNumber;
+  /** **Initial value**: `nowrap` */
+  WebkitFlexWrap?: FlexWrapProperty;
   /** **Initial value**: `normal` */
   WebkitFontFeatureSettings?: FontFeatureSettingsProperty;
   /** **Initial value**: `auto` */
@@ -3474,12 +3480,8 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength>;
   /** **Initial value**: `none` */
   WebkitScrollSnapType?: ScrollSnapTypeProperty;
-  /** **Initial value**: `0.0` */
-  WebkitShapeImageThreshold?: GlobalsNumber;
   /** **Initial value**: `0` */
   WebkitShapeMargin?: ShapeMarginProperty<TLength>;
-  /** **Initial value**: `none` */
-  WebkitShapeOutside?: ShapeOutsideProperty;
   /** **Initial value**: `black` */
   WebkitTapHighlightColor?: WebkitTapHighlightColorProperty;
   /** **Initial value**: `none` */
@@ -4022,9 +4024,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari      | Edge   | IE     |
-   * | ------ | ------- | ----------- | ------ | ------ |
-   * | **21** | **20**  | **7** _-x-_ | **12** | **11** |
+   * | Chrome   | Firefox | Safari      | Edge   | IE     |
+   * | -------- | ------- | ----------- | ------ | ------ |
+   * | **29**   | **20**  | **7** _-x-_ | **12** | **11** |
+   * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
@@ -4034,7 +4037,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **36**   | **20**  | No     | **12** | **11** |
+   * | **29**   | **20**  | No     | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
@@ -4943,10 +4946,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `auto`
    *
-   * | Chrome       | Firefox | Safari  | Edge   | IE     |
-   * | ------------ | ------- | ------- | ------ | ------ |
-   * | **21** _-x-_ | **22**  | **9**   | **12** | **11** |
-   * |              |         | 7 _-x-_ |        |        |
+   * | Chrome   | Firefox | Safari  | Edge   | IE     |
+   * | -------- | ------- | ------- | ------ | ------ |
+   * | **29**   | **22**  | **9**   | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
    */
@@ -4954,10 +4957,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `row`
    *
-   * | Chrome       | Firefox | Safari  | Edge   | IE       |
-   * | ------------ | ------- | ------- | ------ | -------- |
-   * | **21** _-x-_ | **20**  | **9**   | **12** | **11**   |
-   * |              |         | 7 _-x-_ |        | 10 _-x-_ |
+   * | Chrome   | Firefox | Safari  | Edge   | IE       |
+   * | -------- | ------- | ------- | ------ | -------- |
+   * | **29**   | **20**  | **9**   | **12** | **11**   |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
@@ -4965,9 +4968,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome       | Firefox | Safari        | Edge   | IE                           |
-   * | ------------ | ------- | ------------- | ------ | ---------------------------- |
-   * | **21** _-x-_ | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * | Chrome   | Firefox | Safari        | Edge   | IE                           |
+   * | -------- | ------- | ------------- | ------ | ---------------------------- |
+   * | **29**   | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * | 21 _-x-_ |         |               |        |                              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
@@ -4975,9 +4979,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `1`
    *
-   * | Chrome       | Firefox | Safari      | Edge   | IE     |
-   * | ------------ | ------- | ----------- | ------ | ------ |
-   * | **21** _-x-_ | **20**  | **8** _-x-_ | **12** | **10** |
+   * | Chrome   | Firefox | Safari      | Edge   | IE     |
+   * | -------- | ------- | ----------- | ------ | ------ |
+   * | **29**   | **20**  | **8** _-x-_ | **12** | **10** |
+   * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
    */
@@ -4985,9 +4990,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `nowrap`
    *
-   * | Chrome | Firefox | Safari | Edge   | IE     |
-   * | ------ | ------- | ------ | ------ | ------ |
-   * | **29** | **28**  | **9**  | **12** | **11** |
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **29**   | **28**  | **9**  | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
@@ -6288,9 +6294,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `0.0`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | **37** | n/a     | **7** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **37** | n/a     | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
    */
@@ -6298,9 +6304,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | Yes    | No      | **7** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari         | Edge | IE  |
+   * | ------ | ------- | -------------- | ---- | --- |
+   * | **37** | n/a     | **10.1** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -6308,9 +6314,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | **37** | n/a     | **8** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **37** | n/a     | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -7429,6 +7435,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-flex-grow"?: GlobalsNumber;
   /** **Initial value**: `1` */
   "-webkit-flex-shrink"?: GlobalsNumber;
+  /** **Initial value**: `nowrap` */
+  "-webkit-flex-wrap"?: FlexWrapProperty;
   /** **Initial value**: `normal` */
   "-webkit-font-feature-settings"?: FontFeatureSettingsProperty;
   /** **Initial value**: `auto` */
@@ -7483,12 +7491,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength>;
   /** **Initial value**: `none` */
   "-webkit-scroll-snap-type"?: ScrollSnapTypeProperty;
-  /** **Initial value**: `0.0` */
-  "-webkit-shape-image-threshold"?: GlobalsNumber;
   /** **Initial value**: `0` */
   "-webkit-shape-margin"?: ShapeMarginProperty<TLength>;
-  /** **Initial value**: `none` */
-  "-webkit-shape-outside"?: ShapeOutsideProperty;
   /** **Initial value**: `black` */
   "-webkit-tap-highlight-color"?: WebkitTapHighlightColorProperty;
   /** **Initial value**: `none` */
@@ -8035,9 +8039,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari      | Edge   | IE     |
-   * | ------ | ------- | ----------- | ------ | ------ |
-   * | **21** | **20**  | **7** _-x-_ | **12** | **11** |
+   * | Chrome   | Firefox | Safari      | Edge   | IE     |
+   * | -------- | ------- | ----------- | ------ | ------ |
+   * | **29**   | **20**  | **7** _-x-_ | **12** | **11** |
+   * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
@@ -8047,7 +8052,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **36**   | **20**  | No     | **12** | **11** |
+   * | **29**   | **20**  | No     | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
@@ -8956,10 +8961,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `auto`
    *
-   * | Chrome       | Firefox | Safari  | Edge   | IE     |
-   * | ------------ | ------- | ------- | ------ | ------ |
-   * | **21** _-x-_ | **22**  | **9**   | **12** | **11** |
-   * |              |         | 7 _-x-_ |        |        |
+   * | Chrome   | Firefox | Safari  | Edge   | IE     |
+   * | -------- | ------- | ------- | ------ | ------ |
+   * | **29**   | **22**  | **9**   | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
    */
@@ -8967,10 +8972,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `row`
    *
-   * | Chrome       | Firefox | Safari  | Edge   | IE       |
-   * | ------------ | ------- | ------- | ------ | -------- |
-   * | **21** _-x-_ | **20**  | **9**   | **12** | **11**   |
-   * |              |         | 7 _-x-_ |        | 10 _-x-_ |
+   * | Chrome   | Firefox | Safari  | Edge   | IE       |
+   * | -------- | ------- | ------- | ------ | -------- |
+   * | **29**   | **20**  | **9**   | **12** | **11**   |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
@@ -8978,9 +8983,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome       | Firefox | Safari        | Edge   | IE                           |
-   * | ------------ | ------- | ------------- | ------ | ---------------------------- |
-   * | **21** _-x-_ | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * | Chrome   | Firefox | Safari        | Edge   | IE                           |
+   * | -------- | ------- | ------------- | ------ | ---------------------------- |
+   * | **29**   | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * | 21 _-x-_ |         |               |        |                              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
@@ -8988,9 +8994,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `1`
    *
-   * | Chrome       | Firefox | Safari      | Edge   | IE     |
-   * | ------------ | ------- | ----------- | ------ | ------ |
-   * | **21** _-x-_ | **20**  | **8** _-x-_ | **12** | **10** |
+   * | Chrome   | Firefox | Safari      | Edge   | IE     |
+   * | -------- | ------- | ----------- | ------ | ------ |
+   * | **29**   | **20**  | **8** _-x-_ | **12** | **10** |
+   * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
    */
@@ -8998,9 +9005,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `nowrap`
    *
-   * | Chrome | Firefox | Safari | Edge   | IE     |
-   * | ------ | ------- | ------ | ------ | ------ |
-   * | **29** | **28**  | **9**  | **12** | **11** |
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **29**   | **28**  | **9**  | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
@@ -10301,9 +10309,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `0.0`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | **37** | n/a     | **7** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **37** | n/a     | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
    */
@@ -10311,9 +10319,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | Yes    | No      | **7** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari         | Edge | IE  |
+   * | ------ | ------- | -------------- | ---- | --- |
+   * | **37** | n/a     | **10.1** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -10321,9 +10329,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | **37** | n/a     | **8** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **37** | n/a     | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -11442,6 +11450,8 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitFlexGrow?: GlobalsNumber | GlobalsNumber[];
   /** **Initial value**: `1` */
   WebkitFlexShrink?: GlobalsNumber | GlobalsNumber[];
+  /** **Initial value**: `nowrap` */
+  WebkitFlexWrap?: FlexWrapProperty | FlexWrapProperty[];
   /** **Initial value**: `normal` */
   WebkitFontFeatureSettings?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[];
   /** **Initial value**: `auto` */
@@ -11496,12 +11506,8 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   /** **Initial value**: `none` */
   WebkitScrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
-  /** **Initial value**: `0.0` */
-  WebkitShapeImageThreshold?: GlobalsNumber | GlobalsNumber[];
   /** **Initial value**: `0` */
   WebkitShapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[];
-  /** **Initial value**: `none` */
-  WebkitShapeOutside?: ShapeOutsideProperty | ShapeOutsideProperty[];
   /** **Initial value**: `black` */
   WebkitTapHighlightColor?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[];
   /** **Initial value**: `none` */
@@ -12048,9 +12054,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari      | Edge   | IE     |
-   * | ------ | ------- | ----------- | ------ | ------ |
-   * | **21** | **20**  | **7** _-x-_ | **12** | **11** |
+   * | Chrome   | Firefox | Safari      | Edge   | IE     |
+   * | -------- | ------- | ----------- | ------ | ------ |
+   * | **29**   | **20**  | **7** _-x-_ | **12** | **11** |
+   * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
@@ -12060,7 +12067,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **36**   | **20**  | No     | **12** | **11** |
+   * | **29**   | **20**  | No     | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
@@ -12969,10 +12976,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `auto`
    *
-   * | Chrome       | Firefox | Safari  | Edge   | IE     |
-   * | ------------ | ------- | ------- | ------ | ------ |
-   * | **21** _-x-_ | **22**  | **9**   | **12** | **11** |
-   * |              |         | 7 _-x-_ |        |        |
+   * | Chrome   | Firefox | Safari  | Edge   | IE     |
+   * | -------- | ------- | ------- | ------ | ------ |
+   * | **29**   | **22**  | **9**   | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-basis
    */
@@ -12980,10 +12987,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `row`
    *
-   * | Chrome       | Firefox | Safari  | Edge   | IE       |
-   * | ------------ | ------- | ------- | ------ | -------- |
-   * | **21** _-x-_ | **20**  | **9**   | **12** | **11**   |
-   * |              |         | 7 _-x-_ |        | 10 _-x-_ |
+   * | Chrome   | Firefox | Safari  | Edge   | IE       |
+   * | -------- | ------- | ------- | ------ | -------- |
+   * | **29**   | **20**  | **9**   | **12** | **11**   |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
@@ -12991,9 +12998,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `0`
    *
-   * | Chrome       | Firefox | Safari        | Edge   | IE                           |
-   * | ------------ | ------- | ------------- | ------ | ---------------------------- |
-   * | **21** _-x-_ | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * | Chrome   | Firefox | Safari        | Edge   | IE                           |
+   * | -------- | ------- | ------------- | ------ | ---------------------------- |
+   * | **29**   | **20**  | **6.1** _-x-_ | **12** | **11** _(-ms-flex-positive)_ |
+   * | 21 _-x-_ |         |               |        |                              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
@@ -13001,9 +13009,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `1`
    *
-   * | Chrome       | Firefox | Safari      | Edge   | IE     |
-   * | ------------ | ------- | ----------- | ------ | ------ |
-   * | **21** _-x-_ | **20**  | **8** _-x-_ | **12** | **10** |
+   * | Chrome   | Firefox | Safari      | Edge   | IE     |
+   * | -------- | ------- | ----------- | ------ | ------ |
+   * | **29**   | **20**  | **8** _-x-_ | **12** | **10** |
+   * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
    */
@@ -13011,9 +13020,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `nowrap`
    *
-   * | Chrome | Firefox | Safari | Edge   | IE     |
-   * | ------ | ------- | ------ | ------ | ------ |
-   * | **29** | **28**  | **9**  | **12** | **11** |
+   * | Chrome   | Firefox | Safari | Edge   | IE     |
+   * | -------- | ------- | ------ | ------ | ------ |
+   * | **29**   | **28**  | **9**  | **12** | **11** |
+   * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
@@ -14314,9 +14324,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `0.0`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | **37** | n/a     | **7** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **37** | n/a     | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
    */
@@ -14324,9 +14334,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | Yes    | No      | **7** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari         | Edge | IE  |
+   * | ------ | ------- | -------------- | ---- | --- |
+   * | **37** | n/a     | **10.1** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -14334,9 +14344,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari      | Edge | IE  |
-   * | ------ | ------- | ----------- | ---- | --- |
-   * | **37** | n/a     | **8** _-x-_ | n/a  | No  |
+   * | Chrome | Firefox | Safari   | Edge | IE  |
+   * | ------ | ------- | -------- | ---- | --- |
+   * | **37** | n/a     | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -15457,6 +15467,8 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-flex-grow"?: GlobalsNumber | GlobalsNumber[];
   /** **Initial value**: `1` */
   "-webkit-flex-shrink"?: GlobalsNumber | GlobalsNumber[];
+  /** **Initial value**: `nowrap` */
+  "-webkit-flex-wrap"?: FlexWrapProperty | FlexWrapProperty[];
   /** **Initial value**: `normal` */
   "-webkit-font-feature-settings"?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[];
   /** **Initial value**: `auto` */
@@ -15511,12 +15523,8 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   /** **Initial value**: `none` */
   "-webkit-scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
-  /** **Initial value**: `0.0` */
-  "-webkit-shape-image-threshold"?: GlobalsNumber | GlobalsNumber[];
   /** **Initial value**: `0` */
   "-webkit-shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[];
-  /** **Initial value**: `none` */
-  "-webkit-shape-outside"?: ShapeOutsideProperty | ShapeOutsideProperty[];
   /** **Initial value**: `black` */
   "-webkit-tap-highlight-color"?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[];
   /** **Initial value**: `none` */
