@@ -15,7 +15,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
    * | -------- | ------- | ----------- | ------ | ------ |
-   * | **29**   | **20**  | **7** _-x-_ | **12** | **11** |
+   * | **52**   | **20**  | **7** _-x-_ | **12** | **11** |
    * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
@@ -26,7 +26,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **29**   | **20**  | No     | **12** | **11** |
+   * | **36**   | **20**  | No     | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
@@ -1010,10 +1010,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * **Initial value**: `normal`
    *
-   * | Chrome   | Firefox  | Safari | Edge   | IE     |
-   * | -------- | -------- | ------ | ------ | ------ |
-   * | **48**   | **34**   | 4-6    | **15** | **10** |
-   * | 16 _-x-_ | 15 _-x-_ |        |        |        |
+   * | Chrome   | Firefox  | Safari  | Edge   | IE     |
+   * | -------- | -------- | ------- | ------ | ------ |
+   * | **48**   | **34**   | **9.1** | **15** | **10** |
+   * | 16 _-x-_ | 15 _-x-_ |         |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-feature-settings
    */
@@ -1354,7 +1354,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **29**   | **20**  | **9**  | **12** | **11** |
+   * | **52**   | **20**  | **9**  | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
@@ -4026,7 +4026,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
    * | -------- | ------- | ----------- | ------ | ------ |
-   * | **29**   | **20**  | **7** _-x-_ | **12** | **11** |
+   * | **52**   | **20**  | **7** _-x-_ | **12** | **11** |
    * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
@@ -4037,7 +4037,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **29**   | **20**  | No     | **12** | **11** |
+   * | **36**   | **20**  | No     | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
@@ -5021,10 +5021,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * **Initial value**: `normal`
    *
-   * | Chrome   | Firefox  | Safari | Edge   | IE     |
-   * | -------- | -------- | ------ | ------ | ------ |
-   * | **48**   | **34**   | 4-6    | **15** | **10** |
-   * | 16 _-x-_ | 15 _-x-_ |        |        |        |
+   * | Chrome   | Firefox  | Safari  | Edge   | IE     |
+   * | -------- | -------- | ------- | ------ | ------ |
+   * | **48**   | **34**   | **9.1** | **15** | **10** |
+   * | 16 _-x-_ | 15 _-x-_ |         |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-feature-settings
    */
@@ -5365,7 +5365,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **29**   | **20**  | **9**  | **12** | **11** |
+   * | **52**   | **20**  | **9**  | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
@@ -8041,7 +8041,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
    * | -------- | ------- | ----------- | ------ | ------ |
-   * | **29**   | **20**  | **7** _-x-_ | **12** | **11** |
+   * | **52**   | **20**  | **7** _-x-_ | **12** | **11** |
    * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
@@ -8052,7 +8052,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **29**   | **20**  | No     | **12** | **11** |
+   * | **36**   | **20**  | No     | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
@@ -9036,10 +9036,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * **Initial value**: `normal`
    *
-   * | Chrome   | Firefox  | Safari | Edge   | IE     |
-   * | -------- | -------- | ------ | ------ | ------ |
-   * | **48**   | **34**   | 4-6    | **15** | **10** |
-   * | 16 _-x-_ | 15 _-x-_ |        |        |        |
+   * | Chrome   | Firefox  | Safari  | Edge   | IE     |
+   * | -------- | -------- | ------- | ------ | ------ |
+   * | **48**   | **34**   | **9.1** | **15** | **10** |
+   * | 16 _-x-_ | 15 _-x-_ |         |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-feature-settings
    */
@@ -9380,7 +9380,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **29**   | **20**  | **9**  | **12** | **11** |
+   * | **52**   | **20**  | **9**  | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
@@ -12056,7 +12056,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
    * | -------- | ------- | ----------- | ------ | ------ |
-   * | **29**   | **20**  | **7** _-x-_ | **12** | **11** |
+   * | **52**   | **20**  | **7** _-x-_ | **12** | **11** |
    * | 21 _-x-_ |         |             |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
@@ -12067,7 +12067,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **29**   | **20**  | No     | **12** | **11** |
+   * | **36**   | **20**  | No     | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
@@ -13051,10 +13051,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * **Initial value**: `normal`
    *
-   * | Chrome   | Firefox  | Safari | Edge   | IE     |
-   * | -------- | -------- | ------ | ------ | ------ |
-   * | **48**   | **34**   | 4-6    | **15** | **10** |
-   * | 16 _-x-_ | 15 _-x-_ |        |        |        |
+   * | Chrome   | Firefox  | Safari  | Edge   | IE     |
+   * | -------- | -------- | ------- | ------ | ------ |
+   * | **48**   | **34**   | **9.1** | **15** | **10** |
+   * | 16 _-x-_ | 15 _-x-_ |         |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-feature-settings
    */
@@ -13395,7 +13395,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
    * | -------- | ------- | ------ | ------ | ------ |
-   * | **29**   | **20**  | **9**  | **12** | **11** |
+   * | **52**   | **20**  | **9**  | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-content

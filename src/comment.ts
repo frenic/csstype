@@ -94,7 +94,7 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
           // Find Lowest version
           Number(previous.version_added) > Number(current.version_added) ||
           // Prioritize version of full implementation
-          (previous.partial_implementation && current.partial_implementation)
+          (previous.partial_implementation && !current.partial_implementation)
         ) {
           return current;
         }
