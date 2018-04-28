@@ -4,6 +4,8 @@ declare namespace MDN {
     version_removed?: boolean | string | null;
     prefix?: string;
     alternative_name?: string;
+    partial_implementation: boolean;
+    notes: string | string[];
     flags?: any[];
   }
 

@@ -66,13 +66,17 @@ import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILE
 
         const [major, minor, patch] = packageJson.version.split('.');
         const version = `${major}.${minor}.${Number(patch) + 1}`;
-
         const tag = `v${version}`;
 
         packageJson.version = version;
-        await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
-        await spawnAsync('git', 'commit', '-am', tag);
-        await spawnAsync('git', 'tag', tag);
+
+        try {
+          await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
+          await spawnAsync('git', 'commit', '-am', tag);
+          await spawnAsync('git', 'tag', tag);
+        } catch (e) {
+          throw new Error(e);
+        }
 
         console.info(`The changes are committed and tagged with: ${tag}`);
 

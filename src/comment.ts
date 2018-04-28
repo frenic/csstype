@@ -89,7 +89,13 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
     // Find lowest version of standard implementation
     const supportsStandard = supportsVersions.reduce<MDN.Support | null>((previous, current) => {
       if (!current.prefix && !current.alternative_name) {
-        if (!previous || Number(previous.version_added) > Number(current.version_added)) {
+        if (
+          !previous ||
+          // Find Lowest version
+          Number(previous.version_added) > Number(current.version_added) ||
+          // Prioritize version of full implementation
+          (previous.partial_implementation && current.partial_implementation)
+        ) {
           return current;
         }
       }
@@ -101,10 +107,18 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
     const supportsPrefixed = supportsVersions.reduce<MDN.Support | null>((previous, current) => {
       if (
         (current.prefix || current.alternative_name) &&
+        // Ignore removed versions
         !current.version_removed &&
+        // Only display prefixed or alternative if this version is lower than standard implementation
         (!supportsStandard || Number(supportsStandard.version_added) > Number(current.version_added))
       ) {
-        if (!previous || Number(previous.version_added) > Number(current.version_added)) {
+        if (
+          !previous ||
+          // Find Lowest version
+          Number(previous.version_added) > Number(current.version_added) ||
+          // Prioritize version of full implementation
+          (previous.partial_implementation && !current.partial_implementation)
+        ) {
           return current;
         }
       }

@@ -7,10 +7,14 @@ const ROOT_DIR = __dirname;
 const TEST_FILENAME = 'typecheck.ts';
 
 if (process.argv.includes('--start')) {
-  trigger().catch(e => {
-    console.error(e);
-    process.exit(1);
-  });
+  trigger()
+    .then(() => {
+      process.exit(0);
+    })
+    .catch(e => {
+      console.error(e);
+      process.exit(1);
+    });
 } else if (process.argv.includes('--watch')) {
   trigger()
     .catch(e => {
