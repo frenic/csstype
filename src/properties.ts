@@ -35,6 +35,8 @@ interface IProperty {
   types: ResolvedType[];
 }
 
+const propertiesData = getProperties();
+
 const globalCompatibilityData = getTypesData('global_keywords');
 if (!globalCompatibilityData) {
   throw new Error('Compatibility data for CSS-wide keywords is missing or may have been moved');
@@ -53,13 +55,11 @@ export const htmlProperties: { [name: string]: IProperty } = {
     vendor: false,
     shorthand: true,
     obsolete: false,
-    comment: '',
+    comment: composeCommentBlock(getPropertyData(ALL), propertiesData[ALL]),
     types: [],
   },
 };
 export const svgProperties: { [name: string]: IProperty } = {};
-
-const propertiesData = getProperties();
 
 for (const originalName in propertiesData) {
   if (IGNORES.includes(originalName)) {

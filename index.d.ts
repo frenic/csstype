@@ -2784,6 +2784,15 @@ export interface StandardLonghandProperties<TLength = string | 0> {
 }
 
 export interface StandardShorthandProperties<TLength = string | 0> {
+  /**
+   * **Initial value**: There is no practical initial value for it.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **37** | **27**  | No     | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/all
+   */
   all?: Globals;
   /**
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -6795,6 +6804,15 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
 }
 
 export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
+  /**
+   * **Initial value**: There is no practical initial value for it.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **37** | **27**  | No     | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/all
+   */
   all?: Globals;
   /**
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -10810,6 +10828,15 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
 }
 
 export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
+  /**
+   * **Initial value**: There is no practical initial value for it.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **37** | **27**  | No     | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/all
+   */
   all?: Globals | Globals[];
   /**
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -14825,6 +14852,15 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
 }
 
 export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0> {
+  /**
+   * **Initial value**: There is no practical initial value for it.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | **37** | **27**  | No     | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/all
+   */
   all?: Globals | Globals[];
   /**
    * | Chrome | Firefox | Safari      | Edge   | IE     |
