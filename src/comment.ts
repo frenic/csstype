@@ -91,8 +91,11 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
       if (!current.prefix && !current.alternative_name) {
         if (
           !previous ||
-          // Find Lowest version
-          Number(previous.version_added) > Number(current.version_added) ||
+          (previous.version_added !== true && current.version_added === true) ||
+          typeof previous.version_added !== 'string' ||
+          typeof current.version_added !== 'string' ||
+          // Lower version
+          versionDiff(previous.version_added, current.version_added) < 0 ||
           // Prioritize version of full implementation
           (previous.partial_implementation && !current.partial_implementation)
         ) {
@@ -110,12 +113,19 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
         // Ignore removed versions
         !current.version_removed &&
         // Only display prefixed or alternative if this version is lower than standard implementation
-        (!supportsStandard || Number(supportsStandard.version_added) > Number(current.version_added))
+        (!supportsStandard ||
+          (supportsStandard.version_added !== true && current.version_added === true) ||
+          typeof supportsStandard.version_added !== 'string' ||
+          typeof current.version_added !== 'string' ||
+          versionDiff(supportsStandard.version_added, current.version_added) < 0)
       ) {
         if (
           !previous ||
-          // Find Lowest version
-          Number(previous.version_added) > Number(current.version_added) ||
+          (previous.version_added !== true && current.version_added === true) ||
+          typeof previous.version_added !== 'string' ||
+          typeof current.version_added !== 'string' ||
+          // Lower version
+          versionDiff(previous.version_added, current.version_added) < 0 ||
           // Prioritize version of full implementation
           (previous.partial_implementation && !current.partial_implementation)
         ) {
@@ -161,6 +171,20 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
   }
 
   return ['n/a'];
+}
+
+function versionDiff(a: string, b: string) {
+  const aNumber = Number(a);
+  const bNumber = Number(b);
+
+  if (String(aNumber) !== a) {
+    warn('Version `%s` is not properly handled', a);
+  }
+  if (String(bNumber) !== b) {
+    warn('Version `%s` is not properly handled', b);
+  }
+
+  return bNumber - aNumber;
 }
 
 function formatL10n(phrase: string) {
