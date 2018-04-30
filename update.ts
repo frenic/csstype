@@ -100,11 +100,11 @@ import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILE
       console.info('Downgrading...');
       await upgrade();
     }
-
-    process.exit(0);
   } else {
     console.info('Nothing to update!');
   }
+
+  process.exit(0);
 })();
 
 async function reset() {
