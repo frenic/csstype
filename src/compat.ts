@@ -1,4 +1,5 @@
 import { Combinator, combinators, Component, componentData, componentGroupData, Entity, EntityType } from './parser';
+import { getSummary } from './urls';
 
 const importsCache: { [cssPath: string]: MDN.PropertiesCompat | null } = {};
 
@@ -11,52 +12,36 @@ export function getSupport(support: MDN.Support | MDN.Support[]): MDN.Support[] 
 }
 
 export function getAtRuleData(name: string): MDN.CompatData | null {
-  const data = getData('at-rules/' + name);
-
-  if (data) {
-    return data.css['at-rules'][name];
-  }
-
-  return null;
+  return getData('at-rules', name);
 }
 
 export function getPropertyData(name: string): MDN.CompatData | null {
-  const data = getData('properties/' + name);
-
-  if (data) {
-    return data.css.properties[name];
-  }
-
-  return null;
+  return getData('properties', name);
 }
 
 export function getSelectorsData(name: string): MDN.CompatData | null {
-  const data = getData('selectors/' + name);
-
-  if (data) {
-    return data.css.selectors[name];
-  }
-
-  return null;
+  return getData('selectors', name);
 }
 
 export function getTypesData(name: string): MDN.CompatData | null {
-  const data = getData('types/' + name);
-
-  if (data) {
-    return data.css.types[name];
-  }
-
-  return null;
+  return getData('types', name);
 }
 
-function getData(cssPath: string): any {
+function getData(type: string, name: string): any {
+  const cssPath = type + '/' + name;
   if (cssPath in importsCache) {
     return importsCache[cssPath];
   }
 
   try {
-    return (importsCache[cssPath] = require(`mdn-browser-compat-data/css/${cssPath}.json`));
+    let data = require(`mdn-browser-compat-data/css/${cssPath}.json`);
+    if (data) {
+      // de-nest the properties
+      data = data.css[type][name];
+      data.__compat.mdn_summary = getSummary(data.__compat.mdn_url);
+    }
+
+    return (importsCache[cssPath] = data);
   } catch {
     return (importsCache[cssPath] = null);
   }

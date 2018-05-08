@@ -33,6 +33,7 @@ declare namespace MDN {
   interface Compat {
     support: Supports;
     mdn_url?: string;
+    mdn_summary?: string;
     description?: string;
     status?: {
       experimental: boolean;

@@ -1,5 +1,7 @@
 export interface StandardLonghandProperties<TLength = string | 0> {
   /**
+   * The CSS **`align-content`** property defines how the browser distributes space between and around content items along the cross-axis of their container, which is serving as a flexbox container.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari    | Edge   | IE     |
@@ -11,6 +13,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   alignContent?: AlignContentProperty;
   /**
+   * The CSS **`align-items`** property defines how the browser distributes space between and around flex items along the cross-axis of their container. This means it works like `justify-content` but in the perpendicular direction.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
@@ -22,6 +26,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   alignItems?: AlignItemsProperty;
   /**
+   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -33,6 +39,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   alignSelf?: AlignSelfProperty;
   /**
+   * The **`animation-delay`** CSS property specifies when an animation should start. You can begin the animation at a future point in time, immediately and from its beginning, or immediately and partway through the animation cycle.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE     |
@@ -44,6 +52,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationDelay?: GlobalsString;
   /**
+   * The **`animation-direction`** CSS property specifies whether an animation should play forwards, backwards, or alternating back and forth.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -55,6 +65,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationDirection?: AnimationDirectionProperty;
   /**
+   * The **`animation-duration`** CSS property specifies the length of time that an animation should take to complete one cycle.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -66,6 +78,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationDuration?: GlobalsString;
   /**
+   * The **`animation-fill-mode`** CSS property specifies how a CSS animation should apply styles to its target before and after its execution.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -77,6 +91,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationFillMode?: AnimationFillModeProperty;
   /**
+   * The **`animation-iteration-count`** CSS property specifies  the number of times an animation cycle should be played before stopping. If multiple values are specified, each time the animation is played the next value in the list is used, cycling back to the first value after the last one is used.
+   *
    * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -88,6 +104,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationIterationCount?: AnimationIterationCountProperty;
   /**
+   * The **`animation-name`** CSS property specifies one or more animations that should be applied to an element. Each name indicates an `@keyframes` at-rule that defines the property values for the animation sequence.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -99,6 +117,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationName?: AnimationNameProperty;
   /**
+   * The **`animation-play-state`** CSS property specifies whether an **animation is running or paused**. In JavaScript, this can be queried to determine whether or not the animation is currently running. In addition, you can use JavaScript to set its value to pause or resume playback of an animation.
+   *
    * **Initial value**: `running`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -110,6 +130,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationPlayState?: AnimationPlayStateProperty;
   /**
+   * The `**animation-timing-function**` CSS property specifies how a CSS animation should progress over the duration of each cycle.
+   *
    * **Initial value**: `ease`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -121,6 +143,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationTimingFunction?: AnimationTimingFunctionProperty;
   /**
+   * (no description)
+   *
    * **Initial value**: `auto`
    *
    * | Chrome      | Firefox     | Safari      | Edge         | IE  |
@@ -131,6 +155,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   appearance?: AppearanceProperty;
   /**
+   * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE  |
@@ -141,6 +167,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backdropFilter?: BackdropFilterProperty;
   /**
+   * The **`backface-visibility`** CSS property determines whether the back face of an element is visible when turned towards the user.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE     |
@@ -152,6 +180,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backfaceVisibility?: BackfaceVisibilityProperty;
   /**
+   * If a `background-image` is specified, the **`background-attachment`** CSS property determines whether that image's position is fixed within the viewport, or scrolls along with its containing block.
+   *
    * **Initial value**: `scroll`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -162,6 +192,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundAttachment?: BackgroundAttachmentProperty;
   /**
+   * The **`background-blend-mode`** CSS property determines how an element's background images should blend with each other and with the element's background color.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -172,6 +204,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundBlendMode?: BackgroundBlendModeProperty;
   /**
+   * The **`background-clip`** CSS property specifies if an element's background, whether a `<color>` or an `<image>`, extends underneath its border.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -182,6 +216,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundClip?: BackgroundClipProperty;
   /**
+   * The **`background-color`** CSS property sets the background color of an element.
+   *
    * **Initial value**: `transparent`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -192,6 +228,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundColor?: BackgroundColorProperty;
   /**
+   * The **`background-image`** CSS property sets one or more background images on an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -202,6 +240,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundImage?: BackgroundImageProperty;
   /**
+   * The **`background-origin`** CSS property sets the _background positioning area_, i.e., the origin position of an image specified using the `background-image` property.
+   *
    * **Initial value**: `padding-box`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -212,6 +252,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundOrigin?: BackgroundOriginProperty;
   /**
+   * The **`background-position`** CSS property sets the initial position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `0% 0%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -222,6 +264,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundPosition?: BackgroundPositionProperty<TLength>;
   /**
+   * The **`background-position-x`** CSS property sets the initial horizontal position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `left`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -232,6 +276,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundPositionX?: BackgroundPositionXProperty<TLength>;
   /**
+   * The **`background-position-y`** CSS property sets the initial vertical position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `top`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -242,6 +288,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundPositionY?: BackgroundPositionYProperty<TLength>;
   /**
+   * The **`background-repeat`** CSS property defines how background images are repeated. A background image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+   *
    * **Initial value**: `repeat`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -252,6 +300,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundRepeat?: BackgroundRepeatProperty;
   /**
+   * The **`background-size`** CSS property specifies the size of the element's background image. The image can be left to its natural size, stretched to a new size, or constrained to fit the available space while preserving its intrinsic proportions.
+   *
    * **Initial value**: `auto auto`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -265,6 +315,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `clip` */
   blockOverflow?: BlockOverflowProperty;
   /**
+   * The **`block-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -275,6 +327,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   blockSize?: BlockSizeProperty<TLength>;
   /**
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -285,6 +339,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockEndColor?: BorderBlockEndColorProperty;
   /**
+   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -295,6 +351,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockEndStyle?: BorderBlockEndStyleProperty;
   /**
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -305,6 +363,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength>;
   /**
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -315,6 +375,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockStartColor?: BorderBlockStartColorProperty;
   /**
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -325,6 +387,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockStartStyle?: BorderBlockStartStyleProperty;
   /**
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -335,6 +399,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength>;
   /**
+   * The **`border-bottom-color`** CSS property sets the color of an element's bottom `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-bottom` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -345,6 +411,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBottomColor?: BorderBottomColorProperty;
   /**
+   * The **`border-bottom-left-radius`** CSS property sets the rounding of the bottom-left corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -356,6 +424,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength>;
   /**
+   * The **`border-bottom-right-radius`** CSS property sets the rounding of the bottom-right corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -367,6 +437,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength>;
   /**
+   * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -377,6 +449,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBottomStyle?: BorderBottomStyleProperty;
   /**
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -387,6 +461,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBottomWidth?: BorderBottomWidthProperty<TLength>;
   /**
+   * The **`border-collapse`** CSS property specifies whether cells inside a `<table>` have shared or separate borders.
+   *
    * **Initial value**: `separate`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -397,6 +473,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderCollapse?: BorderCollapseProperty;
   /**
+   * The **`border-image-outset`** CSS property specifies the distance by which an element's border image is set out from its border box.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -407,6 +485,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderImageOutset?: BorderImageOutsetProperty<TLength>;
   /**
+   * The **`border-image-repeat`** CSS property defines how the edge regions of a source image are adjusted to fit the dimensions of an element's border image.
+   *
    * **Initial value**: `stretch`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -417,6 +497,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderImageRepeat?: BorderImageRepeatProperty;
   /**
+   * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions are used to form the components of an element's border image.
+   *
    * **Initial value**: `100%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -427,6 +509,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderImageSlice?: BorderImageSliceProperty;
   /**
+   * The **`border-image-source`** CSS property specifies the source image used to create an element's border image.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -437,6 +521,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderImageSource?: BorderImageSourceProperty;
   /**
+   * The **`border-image-width`** CSS property specifies the width of an element's border image.
+   *
    * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -447,6 +533,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderImageWidth?: BorderImageWidthProperty<TLength>;
   /**
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -457,6 +545,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineEndColor?: BorderInlineEndColorProperty;
   /**
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox                      | Safari | Edge | IE  |
@@ -468,6 +558,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineEndStyle?: BorderInlineEndStyleProperty;
   /**
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -478,6 +570,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength>;
   /**
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox                        | Safari | Edge | IE  |
@@ -489,6 +583,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineStartColor?: BorderInlineStartColorProperty;
   /**
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -499,6 +595,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineStartStyle?: BorderInlineStartStyleProperty;
   /**
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -509,6 +607,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength>;
   /**
+   * The **`border-left-color`** CSS property sets the color of an element's left `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-left` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -519,6 +619,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderLeftColor?: BorderLeftColorProperty;
   /**
+   * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -529,6 +631,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderLeftStyle?: BorderLeftStyleProperty;
   /**
+   * The **`border-left-width`** CSS property sets the width of the left border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -539,6 +643,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderLeftWidth?: BorderLeftWidthProperty<TLength>;
   /**
+   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -549,6 +655,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderRightColor?: BorderRightColorProperty;
   /**
+   * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -559,6 +667,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderRightStyle?: BorderRightStyleProperty;
   /**
+   * The **`border-right-width`** CSS property sets the width of the right border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -569,6 +679,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderRightWidth?: BorderRightWidthProperty<TLength>;
   /**
+   * The **`border-spacing`** CSS property specifies the distance between the borders of adjacent `<table>` cells. This property applies only when `border-collapse` is `separate`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -579,6 +691,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderSpacing?: BorderSpacingProperty<TLength>;
   /**
+   * The **`border-top-color`** CSS property sets the color of an element's top `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-top` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -589,6 +703,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderTopColor?: BorderTopColorProperty;
   /**
+   * The **`border-top-left-radius`** CSS property sets the rounding of the top-left corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -600,6 +716,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderTopLeftRadius?: BorderTopLeftRadiusProperty<TLength>;
   /**
+   * The **`border-top-right-radius`** CSS property sets the rounding of the top-right corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -611,6 +729,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderTopRightRadius?: BorderTopRightRadiusProperty<TLength>;
   /**
+   * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -621,6 +741,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderTopStyle?: BorderTopStyleProperty;
   /**
+   * The **`border-top-width`** CSS property sets the width of the top border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -631,6 +753,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderTopWidth?: BorderTopWidthProperty<TLength>;
   /**
+   * The **`bottom`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -643,6 +767,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `stretch` */
   boxAlign?: BoxAlignProperty;
   /**
+   * The **`box-decoration-break`** CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
+   *
    * **Initial value**: `slice`
    *
    * | Chrome       | Firefox | Safari  | Edge | IE  |
@@ -659,6 +785,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `1` */
   boxOrdinalGroup?: GlobalsNumber;
   /**
+   * The **`box-shadow`** CSS property is used to add shadow effects around an element's frame. You can specify multiple effects separated by commas if you wish to do so. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   *
    * **Initial value**: `none`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -670,6 +798,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   boxShadow?: BoxShadowProperty;
   /**
+   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   *
    * **Initial value**: `content-box`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -681,6 +811,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   boxSizing?: BoxSizingProperty;
   /**
+   * The **`break-after`** CSS property defines how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -691,6 +823,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   breakAfter?: BreakAfterProperty;
   /**
+   * The **`break-before`** CSS property defines how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -701,6 +835,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   breakBefore?: BreakBeforeProperty;
   /**
+   * The **`break-inside`** CSS property defines how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -711,6 +847,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   breakInside?: BreakInsideProperty;
   /**
+   * The **`caption-side`** CSS property puts the content of a table's `<caption>` on the specified side. The values are relative to the `writing-mode` of the table.
+   *
    * **Initial value**: `top`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -721,6 +859,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   captionSide?: CaptionSideProperty;
   /**
+   * The **`caret-color`** CSS property sets the color of the insertion caret—the visible indicator of the point at which the next character typed by the user will be inserted—within an element such as `<input>` or one with the `contenteditable` attribute set. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -731,6 +871,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   caretColor?: CaretColorProperty;
   /**
+   * The **`clear`** CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them. The `clear` property applies to both floating and non-floating elements.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -741,6 +883,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   clear?: ClearProperty;
   /**
+   * The `**clip-path**` CSS property creates a clipping region that defines what part of an element should be displayed. More specifically, those portions that are inside the region are shown, while those outside are hidden.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox | Safari | Edge | IE  |
@@ -752,6 +896,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   clipPath?: ClipPathProperty;
   /**
+   * The **`color`** CSS property sets the foreground color value of an element's text content and text decorations. It also sets the `currentcolor` value, which may be used as an indirect value on _other_ properties, and is the default for other color properties, such as `border-color`.
+   *
    * **Initial value**: Varies from one browser to another
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -764,6 +910,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `economy` */
   colorAdjust?: ColorAdjustProperty;
   /**
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -775,6 +923,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnCount?: ColumnCountProperty;
   /**
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
+   *
    * **Initial value**: `balance`
    *
    * | Chrome | Firefox  | Safari | Edge   | IE  |
@@ -786,6 +936,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnFill?: ColumnFillProperty;
   /**
+   * The **`column-gap`** CSS property sets the size of the gap (spacing) between an element's columns.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -797,6 +949,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnGap?: ColumnGapProperty<TLength>;
   /**
+   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -808,6 +962,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnRuleColor?: ColumnRuleColorProperty;
   /**
+   * The **`column-rule-style`** CSS property sets the style of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -818,6 +974,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnRuleStyle?: ColumnRuleStyleProperty;
   /**
+   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox   | Safari      | Edge         | IE     |
@@ -829,6 +987,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnRuleWidth?: ColumnRuleWidthProperty<TLength>;
   /**
+   * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -839,6 +999,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnSpan?: ColumnSpanProperty;
   /**
+   * The **`column-width`** CSS property specifies the minimum column width. The number of columns will be the maximum number of columns that can fit without any column having a width less than the `column-width` value. The actual column width may be smaller than the value of `column-width` if the width of the container is smaller.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -852,6 +1014,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `none` */
   contain?: ContainProperty;
   /**
+   * The **`content`** CSS property is used with the `::before` and `::after` pseudo-elements to generate content in an element. Objects inserted using the `content` property are _anonymous replaced elements._
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -862,6 +1026,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   content?: ContentProperty;
   /**
+   * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE    |
@@ -872,6 +1038,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   counterIncrement?: CounterIncrementProperty;
   /**
+   * The **`counter-reset`** CSS property resets a CSS counter to a given value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -882,6 +1050,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   counterReset?: CounterResetProperty;
   /**
+   * The **`cursor`** CSS property specifies which mouse cursor to display when the mouse pointer is over an element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -892,6 +1062,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   cursor?: CursorProperty;
   /**
+   * The **`direction`** CSS property sets the direction of text, table columns, and horizontal overflow. Use `rtl` for languages written from right to left (like Hebrew or Arabic), and `ltr` for those written from left to right (like English and most other languages).
+   *
    * **Initial value**: `ltr`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE      |
@@ -902,6 +1074,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   direction?: DirectionProperty;
   /**
+   * The **`display`** CSS property specifies the type of rendering box used for an element. In HTML, default `display` property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is `inline`, including SVG elements.
+   *
    * **Initial value**: `inline`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -912,6 +1086,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   display?: DisplayProperty;
   /**
+   * The **`empty-cells`** CSS property specifies how the user agent should render borders and backgrounds around `<table>` cells that have no visible content.
+   *
    * **Initial value**: `show`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -922,6 +1098,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   emptyCells?: EmptyCellsProperty;
   /**
+   * The **`filter`** CSS property lets you apply graphical effects like blurring or color shifting to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE  |
@@ -933,6 +1111,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   filter?: FilterProperty;
   /**
+   * The **`flex-basis`** CSS property specifies the initial **main size** of a flex item. This property determines the size of the content-box unless specified otherwise using `box-sizing`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE     |
@@ -944,6 +1124,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   flexBasis?: FlexBasisProperty<TLength>;
   /**
+   * The **`flex-direction`** CSS property specifies how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
+   *
    * **Initial value**: `row`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE       |
@@ -955,6 +1137,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   flexDirection?: FlexDirectionProperty;
   /**
+   * The **`flex-grow`** CSS property specifies the flex grow factor of a flex item. It specifies what amount of space inside the flex container the item should take up. The flex grow factor of a flex item is relative to the size of the other children in the flex-container.
+   *
    * **Initial value**: `0`
    *
    * | Chrome   | Firefox | Safari        | Edge   | IE                           |
@@ -966,6 +1150,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   flexGrow?: GlobalsNumber;
   /**
+   * The **`flex-shrink`** CSS property specifies the flex shrink factor of a flex item. Flex items will shrink to fill the container according to the `flex-shrink` number, when the default size of flex items is larger than the flex container.
+   *
    * **Initial value**: `1`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
@@ -977,6 +1163,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   flexShrink?: GlobalsNumber;
   /**
+   * The CSS **`flex-wrap`** property specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked.
+   *
    * **Initial value**: `nowrap`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -988,6 +1176,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   flexWrap?: FlexWrapProperty;
   /**
+   * The **`float`** CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the web page, though still remaining a part of the flow (in contrast to absolute positioning).
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -998,6 +1188,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   float?: FloatProperty;
   /**
+   * The **`font-family`** CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
+   *
    * **Initial value**: depends on user agent
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1008,6 +1200,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontFamily?: FontFamilyProperty;
   /**
+   * The **`font-feature-settings`** CSS property gives you control over advanced typographic features in OpenType fonts.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox  | Safari  | Edge   | IE     |
@@ -1019,6 +1213,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontFeatureSettings?: FontFeatureSettingsProperty;
   /**
+   * The **`font-kerning`** CSS property controls the usage of the kerning information stored in a font.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome       | Firefox | Safari | Edge | IE  |
@@ -1029,6 +1225,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontKerning?: FontKerningProperty;
   /**
+   * The **`font-language-override`** CSS property controls the usage of language-specific glyphs in a typeface.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1040,6 +1238,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontLanguageOverride?: FontLanguageOverrideProperty;
   /**
+   * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -1050,6 +1250,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontSize?: FontSizeProperty<TLength>;
   /**
+   * The **`font-size-adjust`** CSS property specifies that the font size should be chosen based on the height of lowercase letters rather than the height of capital letters. This is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1060,6 +1262,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontSizeAdjust?: FontSizeAdjustProperty;
   /**
+   * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1070,6 +1274,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontStretch?: FontStretchProperty;
   /**
+   * The **`font-style`** CSS property specifies whether a font should be styled with a normal, italic, or oblique face from its `font-family`.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1080,6 +1286,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontStyle?: FontStyleProperty;
   /**
+   * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
+   *
    * **Initial value**: `weight style`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1090,6 +1298,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontSynthesis?: FontSynthesisProperty;
   /**
+   * The **font-variant** CSS property is a shorthand for the longhand properties `font-variant-caps`, `font-variant-numeric`, `font-variant-alternates`, `font-variant-ligatures`, and `font-variant-east-asian`. You can also set the CSS Level 2 (Revision 1) values of `font-variant`, (that is, `normal` or `small-caps`), by using the `font` shorthand.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1100,6 +1310,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontVariant?: FontVariantProperty;
   /**
+   * The **`font-variant-caps`** CSS property controls the usage of alternate glyphs for capital letters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1110,6 +1322,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontVariantCaps?: FontVariantCapsProperty;
   /**
+   * The **`font-variant-east-asian`** CSS property controls the usage of alternate glyphs for East Asian scripts, like Japanese and Chinese.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1120,6 +1334,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontVariantEastAsian?: FontVariantEastAsianProperty;
   /**
+   * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari  | Edge | IE  |
@@ -1131,6 +1347,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontVariantLigatures?: FontVariantLigaturesProperty;
   /**
+   * The **`font-variant-numeric`** CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -1141,6 +1359,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontVariantNumeric?: FontVariantNumericProperty;
   /**
+   * The **`font-variant-position`** CSS property controls the usage of alternate, smaller glyphs that are positioned as superscript or subscript relative to the baseline of the font (which remains unchanged). These glyphs are likely to be used in `<sub>` and `<sup>` elements.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1151,6 +1371,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontVariantPosition?: FontVariantPositionProperty;
   /**
+   * The **`font-variation-settings`** CSS property provides low-level control over OpenType or TrueType font variations, by specifying the four letter axis names of the features you want to vary, along with their variation values.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1161,6 +1383,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontVariationSettings?: FontVariationSettingsProperty;
   /**
+   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only available in `normal` and `bold`.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -1171,6 +1395,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontWeight?: FontWeightProperty;
   /**
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge                    | IE                          |
@@ -1182,6 +1408,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridAutoColumns?: GridAutoColumnsProperty<TLength>;
   /**
+   * The **`grid-auto-flow`** CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
+   *
    * **Initial value**: `row`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -1192,6 +1420,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridAutoFlow?: GridAutoFlowProperty;
   /**
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge                 | IE                       |
@@ -1203,6 +1433,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridAutoRows?: GridAutoRowsProperty<TLength>;
   /**
+   * The **`grid-column-end`** CSS property specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -1213,6 +1445,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridColumnEnd?: GridColumnEndProperty;
   /**
+   * The **`grid-column-start`** CSS property specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -1223,6 +1457,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridColumnStart?: GridColumnStartProperty;
   /**
+   * The **`grid-row-end`** CSS property specifies a grid item’s end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -1233,6 +1469,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridRowEnd?: GridRowEndProperty;
   /**
+   * The **`grid-row-start`** CSS property specifies a grid item’s start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -1243,6 +1481,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridRowStart?: GridRowStartProperty;
   /**
+   * The **`grid-template-areas`** CSS property specifies named grid areas.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -1253,6 +1493,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridTemplateAreas?: GridTemplateAreasProperty;
   /**
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -1263,6 +1505,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridTemplateColumns?: GridTemplateColumnsProperty<TLength>;
   /**
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -1275,6 +1519,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `none` */
   hangingPunctuation?: HangingPunctuationProperty;
   /**
+   * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1285,6 +1531,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   height?: HeightProperty<TLength>;
   /**
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   *
    * **Initial value**: `manual`
    *
    * | Chrome   | Firefox | Safari        | Edge | IE           |
@@ -1296,6 +1544,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   hyphens?: HyphensProperty;
   /**
+   * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image. It should _not_ be used for any other orientation adjustments; instead, the `transform` property should be used with the `rotate` `<transform-function>`.
+   *
    * **Initial value**: `0deg`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1306,6 +1556,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   imageOrientation?: ImageOrientationProperty;
   /**
+   * The **`image-rendering`** CSS property provides a hint to the browser about the algorithm it should use to scale images.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1318,6 +1570,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `1dppx` */
   imageResolution?: ImageResolutionProperty;
   /**
+   * The `initial-letter` CSS property specifies styling for dropped, raised, and sunken initial letters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1330,6 +1584,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   initialLetterAlign?: InitialLetterAlignProperty;
   /**
+   * The **`inline-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1340,6 +1596,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   inlineSize?: InlineSizeProperty<TLength>;
   /**
+   * The **`isolation`** CSS property determines whether an element must create a new stacking context.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1350,6 +1608,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   isolation?: IsolationProperty;
   /**
+   * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main axis of their container.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -1361,6 +1621,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   justifyContent?: JustifyContentProperty;
   /**
+   * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
+   *
    * **Initial value**: `legacy`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -1371,6 +1633,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   justifyItems?: JustifyItemsProperty;
   /**
+   * The CSS **`justify-self`** property defines the way of justifying a box inside its container along the appropriate axis.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -1381,6 +1645,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   justifySelf?: JustifySelfProperty;
   /**
+   * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -1391,6 +1657,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   left?: LeftProperty<TLength>;
   /**
+   * The **`letter-spacing`** CSS property specifies the spacing behavior between text characters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1401,6 +1669,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   letterSpacing?: LetterSpacingProperty<TLength>;
   /**
+   * The **`line-break`** CSS property is used to specify how (or if) to break lines when working with punctuation and symbols. This only affects text in Chinese, Japanese, or Korean (CJK).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome  | Firefox | Safari | Edge   | IE      |
@@ -1412,6 +1682,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   lineBreak?: LineBreakProperty;
   /**
+   * The **`line-height`** CSS property sets the amount of space used for lines, such as in text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1424,6 +1696,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `none` */
   lineHeightStep?: LineHeightStepProperty<TLength>;
   /**
+   * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1434,6 +1708,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   listStyleImage?: ListStyleImageProperty;
   /**
+   * The **`list-style-position`** CSS property specifies the position of the `::marker` relative to a list item.
+   *
    * **Initial value**: `outside`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1444,6 +1720,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   listStylePosition?: ListStylePositionProperty;
   /**
+   * The **`list-style-type`** CSS property specifies the appearance of a list item element.
+   *
    * **Initial value**: `disc`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1454,6 +1732,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   listStyleType?: ListStyleTypeProperty;
   /**
+   * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1464,6 +1744,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginBlockEnd?: MarginBlockEndProperty<TLength>;
   /**
+   * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1474,6 +1756,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginBlockStart?: MarginBlockStartProperty<TLength>;
   /**
+   * The **`margin-bottom`** CSS property sets the margin area on the bottom of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1484,6 +1768,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginBottom?: MarginBottomProperty<TLength>;
   /**
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                       | Firefox               | Safari                       | Edge | IE  |
@@ -1495,6 +1781,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginInlineEnd?: MarginInlineEndProperty<TLength>;
   /**
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                         | Firefox                 | Safari                         | Edge | IE  |
@@ -1506,6 +1794,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginInlineStart?: MarginInlineStartProperty<TLength>;
   /**
+   * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1516,6 +1806,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginLeft?: MarginLeftProperty<TLength>;
   /**
+   * The **`margin-right`** CSS property sets the margin area on the right side of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1526,6 +1818,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginRight?: MarginRightProperty<TLength>;
   /**
+   * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1548,6 +1842,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   maskBorderWidth?: MaskBorderWidthProperty<TLength>;
   /**
+   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1558,6 +1854,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskClip?: MaskClipProperty;
   /**
+   * The **`mask-composite`** CSS property represents a compositing operation used on the current mask layer with the mask layers below it.
+   *
    * **Initial value**: `add`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1568,6 +1866,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskComposite?: MaskCompositeProperty;
   /**
+   * The **`mask-image`** CSS property sets the image that is used as mask layer for an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome      | Firefox | Safari      | Edge   | IE  |
@@ -1578,6 +1878,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskImage?: MaskImageProperty;
   /**
+   * The **`mask-mode`** CSS property determines whether the mask reference defined by `mask-image` is treated as a luminance or alpha mask.
+   *
    * **Initial value**: `match-source`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1588,6 +1890,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskMode?: MaskModeProperty;
   /**
+   * The **`mask-origin`** CSS property determines the origin of a mask.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1598,6 +1902,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskOrigin?: MaskOriginProperty;
   /**
+   * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer defined by `mask-origin`, for each defined mask image.
+   *
    * **Initial value**: `center`
    *
    * | Chrome      | Firefox | Safari      | Edge | IE  |
@@ -1608,6 +1914,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskPosition?: MaskPositionProperty<TLength>;
   /**
+   * The **`mask-repeat`** CSS property defines how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+   *
    * **Initial value**: `no-repeat`
    *
    * | Chrome      | Firefox | Safari      | Edge | IE  |
@@ -1618,6 +1926,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskRepeat?: MaskRepeatProperty;
   /**
+   * The **`mask-size`** CSS property specifies the sizes of the mask images. The size of the image can be fully or partially constrained in order to preserve its intrinsic ratio.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1628,6 +1938,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskSize?: MaskSizeProperty<TLength>;
   /**
+   * The **`mask-type`** CSS property determines whether the mask defined by an SVG `<mask>` element is used as a _luminance_ or an _alpha_ mask. It applies to the `<mask>` element itself.
+   *
    * **Initial value**: `luminance`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1640,6 +1952,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `0` */
   maxBlockSize?: MaxBlockSizeProperty<TLength>;
   /**
+   * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1650,6 +1964,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maxHeight?: MaxHeightProperty<TLength>;
   /**
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block depending on its writing mode. It corresponds to the `max-width` or the `max-height` property depending on the value defined for `writing-mode`. If the writing mode is vertically oriented, the value of `max-inline-size` relates to the maximal height of the element, otherwise it relates to the maximal width of the element. It relates to `max-block-size`, which defines the other dimension of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari         | Edge | IE  |
@@ -1662,6 +1978,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `none` */
   maxLines?: MaxLinesProperty;
   /**
+   * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1672,6 +1990,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maxWidth?: MaxWidthProperty<TLength>;
   /**
+   * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1682,6 +2002,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   minBlockSize?: MinBlockSizeProperty<TLength>;
   /**
+   * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1692,6 +2014,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   minHeight?: MinHeightProperty<TLength>;
   /**
+   * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1702,6 +2026,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   minInlineSize?: MinInlineSizeProperty<TLength>;
   /**
+   * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1712,6 +2038,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   minWidth?: MinWidthProperty<TLength>;
   /**
+   * The **`mix-blend-mode`** CSS property describes how an element's content should blend with the content of the element's direct parent and the element's background.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1722,6 +2050,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   mixBlendMode?: MixBlendModeProperty;
   /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -1733,6 +2063,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   motionDistance?: OffsetDistanceProperty<TLength>;
   /**
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   *
    * **Initial value**: `none`
    *
    * | Chrome             | Firefox | Safari | Edge | IE  |
@@ -1744,6 +2076,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   motionPath?: OffsetPathProperty;
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -1755,6 +2089,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   motionRotation?: OffsetRotateProperty;
   /**
+   * The **`object-fit`** CSS property specifies how the contents of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
+   *
    * **Initial value**: `fill`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -1765,6 +2101,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   objectFit?: ObjectFitProperty;
   /**
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
+   *
    * **Initial value**: `50% 50%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -1777,6 +2115,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetAnchor?: OffsetAnchorProperty<TLength>;
   /**
+   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1787,6 +2127,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetBlockEnd?: OffsetBlockEndProperty<TLength>;
   /**
+   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1797,6 +2139,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetBlockStart?: OffsetBlockStartProperty<TLength>;
   /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -1808,6 +2152,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetDistance?: OffsetDistanceProperty<TLength>;
   /**
+   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1818,6 +2164,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetInlineEnd?: OffsetInlineEndProperty<TLength>;
   /**
+   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1828,6 +2176,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetInlineStart?: OffsetInlineStartProperty<TLength>;
   /**
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   *
    * **Initial value**: `none`
    *
    * | Chrome             | Firefox | Safari | Edge | IE  |
@@ -1841,6 +2191,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetPosition?: OffsetPositionProperty<TLength>;
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -1852,6 +2204,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetRotate?: OffsetRotateProperty;
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -1863,6 +2217,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetRotation?: OffsetRotateProperty;
   /**
+   * The **`opacity`** CSS property specifies the level of transparency of an element, that is, the degree to which the content behind the element is visible.
+   *
    * **Initial value**: `1.0`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -1873,6 +2229,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   opacity?: GlobalsNumber;
   /**
+   * The **`order`** CSS property specifies the order used to lay out a flex or grid item in its flex or grid container. Items within the same container are laid out in ascending order according to their `order` values. Elements with the same `order` value are laid out in the order in which they appear in the source code.
+   *
    * **Initial value**: `0`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE       |
@@ -1884,6 +2242,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   order?: GlobalsNumber;
   /**
+   * The **`orphans`** CSS property specifies the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column. This property is normally used to control how breaks occur.
+   *
    * **Initial value**: `2`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1894,6 +2254,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   orphans?: GlobalsNumber;
   /**
+   * The **`outline-color`** CSS property sets the color of an element's outline.
+   *
    * **Initial value**: `invert`, for browsers supporting it, `currentColor` for the other
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -1904,6 +2266,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   outlineColor?: OutlineColorProperty;
   /**
+   * The **`outline-offset`** CSS property sets the amount of space between an `outline` and the edge or border of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -1914,6 +2278,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   outlineOffset?: OutlineOffsetProperty<TLength>;
   /**
+   * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -1924,6 +2290,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   outlineStyle?: OutlineStyleProperty;
   /**
+   * The **`outline-width`** CSS property sets the width (thickness) of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -1934,6 +2302,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   outlineWidth?: OutlineWidthProperty<TLength>;
   /**
+   * The **`overflow`** CSS property specifies what to do when an element's content is too large to fit in its block formatting context. It is a shorthand for the `overflow-x` and `overflow-y` properties.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1952,6 +2322,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   overflowInline?: OverflowInlineProperty;
   /**
+   * The `**overflow-wrap**` CSS property specifies whether or not the browser should insert line breaks within words to prevent text from overflowing its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome              | Firefox           | Safari              | Edge                 | IE                    |
@@ -1963,6 +2335,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overflowWrap?: OverflowWrapProperty;
   /**
+   * The **`overflow-x`** CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the left and right edges.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1973,6 +2347,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overflowX?: OverflowXProperty;
   /**
+   * The **`overflow-y`** CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the top and bottom edges.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -1983,6 +2359,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overflowY?: OverflowYProperty;
   /**
+   * The **`overscroll-behavior`** CSS property is shorthand for the `overscroll-behavior-x` and `overscroll-behavior-y` properties, which allow you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -1993,6 +2371,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overscrollBehavior?: OverscrollBehaviorProperty;
   /**
+   * The **`overscroll-behavior-x`** CSS property is allows you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached — in the x axis direction.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2003,6 +2383,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overscrollBehaviorX?: OverscrollBehaviorXProperty;
   /**
+   * The **`overscroll-behavior-y`** CSS property is allows you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached — in the y axis direction.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2013,6 +2395,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overscrollBehaviorY?: OverscrollBehaviorYProperty;
   /**
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2023,6 +2407,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingBlockEnd?: PaddingBlockEndProperty<TLength>;
   /**
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2033,6 +2419,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingBlockStart?: PaddingBlockStartProperty<TLength>;
   /**
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2043,6 +2431,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingBottom?: PaddingBottomProperty<TLength>;
   /**
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
@@ -2054,6 +2444,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingInlineEnd?: PaddingInlineEndProperty<TLength>;
   /**
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
@@ -2065,6 +2457,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingInlineStart?: PaddingInlineStartProperty<TLength>;
   /**
+   * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2075,6 +2469,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingLeft?: PaddingLeftProperty<TLength>;
   /**
+   * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2085,6 +2481,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingRight?: PaddingRightProperty<TLength>;
   /**
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2095,6 +2493,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingTop?: PaddingTopProperty<TLength>;
   /**
+   * The **`page-break-after`** CSS property adjusts page breaks _after_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -2105,6 +2505,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   pageBreakAfter?: PageBreakAfterProperty;
   /**
+   * The **`page-break-before`** CSS property adjusts page breaks _before_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -2115,6 +2517,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   pageBreakBefore?: PageBreakBeforeProperty;
   /**
+   * The **`page-break-inside`** CSS property adjusts page breaks _inside_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -2125,6 +2529,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   pageBreakInside?: PageBreakInsideProperty;
   /**
+   * The **`paint-order`** CSS property lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2135,6 +2541,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paintOrder?: PaintOrderProperty;
   /**
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox  | Safari | Edge   | IE     |
@@ -2146,6 +2554,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   perspective?: PerspectiveProperty<TLength>;
   /**
+   * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
+   *
    * **Initial value**: `50% 50%`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE     |
@@ -2157,6 +2567,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   perspectiveOrigin?: PerspectiveOriginProperty<TLength>;
   /**
+   * The `**place-content**` CSS shorthand property sets both the `align-content` and `justify-content` properties.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2167,6 +2579,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   placeContent?: PlaceContentProperty;
   /**
+   * The **`pointer-events`** CSS property specifies under what circumstances (if any) a particular graphic element can become the target of mouse events.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -2177,6 +2591,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   pointerEvents?: PointerEventsProperty;
   /**
+   * The **`position`** CSS property specifies how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` properties determine the final location of positioned elements.
+   *
    * **Initial value**: `static`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2187,6 +2603,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   position?: PositionProperty;
   /**
+   * The `quotes` CSS property indicates how user agents should render quotation marks.
+   *
    * **Initial value**: depends on user agent
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2197,6 +2615,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   quotes?: QuotesProperty;
   /**
+   * The **`resize`** CSS sets whether an element is resizable, and if so, in which direction(s).
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2207,6 +2627,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   resize?: ResizeProperty;
   /**
+   * The **`right`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -2217,6 +2639,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   right?: RightProperty<TLength>;
   /**
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2229,6 +2653,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `normal` */
   rowGap?: RowGapProperty<TLength>;
   /**
+   * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
+   *
    * **Initial value**: `space-around`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2241,6 +2667,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `separate` */
   rubyMerge?: RubyMergeProperty;
   /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
    * **Initial value**: `over`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -2251,6 +2679,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   rubyPosition?: RubyPositionProperty;
   /**
+   * The **`scale`** CSS property allows you to specify scale transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2261,6 +2691,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   scale?: ScaleProperty;
   /**
+   * The **`scroll-behavior`** CSS property specifies the scrolling behavior for a scrolling box when scrolling is triggered by one of the navigation or CSSOM scrolling APIs.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2271,6 +2703,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   scrollBehavior?: ScrollBehaviorProperty;
   /**
+   * The **`scroll-snap-type`** CSS property defines how strictly snap points are enforced on the scroll container in case there is one.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge         | IE           |
@@ -2281,6 +2715,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   scrollSnapType?: ScrollSnapTypeProperty;
   /**
+   * The **`shape-image-threshold`** CSS property defines the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
+   *
    * **Initial value**: `0.0`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -2291,6 +2727,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   shapeImageThreshold?: GlobalsNumber;
   /**
+   * The **`shape-margin`** CSS property specifies a margin for a CSS shape created using `shape-outside`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari         | Edge | IE  |
@@ -2301,6 +2739,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   shapeMargin?: ShapeMarginProperty<TLength>;
   /**
+   * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -2311,6 +2751,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   shapeOutside?: ShapeOutsideProperty;
   /**
+   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   *
    * **Initial value**: `8`
    *
    * | Chrome | Firefox     | Safari  | Edge | IE  |
@@ -2321,6 +2763,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   tabSize?: TabSizeProperty<TLength>;
   /**
+   * The **`table-layout`** CSS property specifies the algorithm used to lay out `<table>` cells, rows, and columns.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2331,6 +2775,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   tableLayout?: TableLayoutProperty;
   /**
+   * The **`text-align`** CSS property describes how inline content like text is aligned in its parent block element. `text-align` does not control the alignment of block elements, only their inline content.
+   *
    * **Initial value**: `start`, or a nameless value that acts as `left` if _direction_ is `ltr`, `right` if _direction_ is `rtl` if `start` is not supported by the browser.
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2341,6 +2787,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textAlign?: TextAlignProperty;
   /**
+   * The **`text-align-last`** CSS property describes how the last line of a block or a line, right before a forced line break, is aligned.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -2351,6 +2799,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textAlignLast?: TextAlignLastProperty;
   /**
+   * The **`text-combine-upright`** CSS property specifies the combination of multiple characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE                                     |
@@ -2361,6 +2811,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textCombineUpright?: TextCombineUprightProperty;
   /**
+   * The **`text-decoration-color`** CSS property sets the color of the decorative additions to text that are specified by `text-decoration-line`; these include underlines and overlines, strikethroughs, and wavy lines like those typically used to indicate content is misspelled (for example). The specified color applies to all such decorative lines in the scope of the property's value.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2371,6 +2823,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textDecorationColor?: TextDecorationColorProperty;
   /**
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2381,6 +2835,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textDecorationLine?: TextDecorationLineProperty;
   /**
+   * The **`text-decoration-skip`** CSS property specifies what parts of an element’s content any text decoration affecting the element must skip over. It controls all text decoration lines drawn by the element and also any text decoration lines drawn by its ancestors.
+   *
    * **Initial value**: `objects`
    *
    * | Chrome | Firefox | Safari      | Edge | IE  |
@@ -2391,6 +2847,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textDecorationSkip?: TextDecorationSkipProperty;
   /**
+   * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2401,6 +2859,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textDecorationSkipInk?: TextDecorationSkipInkProperty;
   /**
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are specified; there is no way to define different styles for each of the lines defined by `text-decoration-line`.
+   *
    * **Initial value**: `solid`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2411,6 +2871,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textDecorationStyle?: TextDecorationStyleProperty;
   /**
+   * The **`text-emphasis-color`** CSS property defines the color used to draw emphasis marks on text being rendered in the HTML document. This value can also be set and reset using the `text-emphasis` shorthand.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -2421,6 +2883,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textEmphasisColor?: TextEmphasisColorProperty;
   /**
+   * The **`text-emphasis-position`** CSS property describes where emphasis marks are drawn at. The effect of emphasis marks on the line height is the same as for ruby text: if there isn't enough place, the line height is increased.
+   *
    * **Initial value**: `over right`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -2431,6 +2895,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textEmphasisPosition?: GlobalsString;
   /**
+   * The **`text-emphasis-style`** CSS property defines the type of emphasis used. It can also be set, and reset, using the `text-emphasis` shorthand.
+   *
    * **Initial value**: `none`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -2441,6 +2907,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textEmphasisStyle?: TextEmphasisStyleProperty;
   /**
+   * The **`text-indent`** CSS property specifies the amount of indentation (empty space) that is put before lines of text in a block. By default, this controls the indentation of only the first formatted line of the block, but the `hanging` and `each-line` keywords can be used to change this behavior.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2451,6 +2919,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textIndent?: TextIndentProperty<TLength>;
   /**
+   * The **`text-justify`** CSS property defines what type of justification should be applied to text when it is justified (i.e., when `text-align``: justify;` is set on it).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -2461,6 +2931,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textJustify?: TextJustifyProperty;
   /**
+   * The **`text-orientation`** CSS property defines the orientation of the text characters in a line. This property only has an effect in vertical mode, that is, when `writing-mode` is not `horizontal-tb`. It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
+   *
    * **Initial value**: `mixed`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2471,6 +2943,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textOrientation?: TextOrientationProperty;
   /**
+   * The **`text-overflow`** CSS property determines how overflowed content that is not displayed is signaled to users. It can be clipped, display an ellipsis ('`…`', `U+2026 Horizontal Ellipsis`), or display a custom string.
+   *
    * **Initial value**: `clip`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -2481,6 +2955,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textOverflow?: TextOverflowProperty;
   /**
+   * The **`text-rendering`** CSS property provides information to the rendering engine about what to optimize for when rendering text.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2491,6 +2967,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textRendering?: TextRenderingProperty;
   /**
+   * The **`text-shadow`** CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its `decorations`. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE     |
@@ -2501,6 +2979,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textShadow?: TextShadowProperty;
   /**
+   * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
+   *
    * **Initial value**: `auto` for smartphone browsers supporting inflation, `none` in other cases (and then not modifiable).
    *
    * | Chrome | Firefox | Safari | Edge         | IE  |
@@ -2511,6 +2991,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textSizeAdjust?: TextSizeAdjustProperty;
   /**
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2521,6 +3003,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textTransform?: TextTransformProperty;
   /**
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2531,6 +3015,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   textUnderlinePosition?: TextUnderlinePositionProperty;
   /**
+   * The **`top`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2541,6 +3027,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   top?: TopProperty<TLength>;
   /**
+   * The **`touch-action`** CSS property specifies whether, and in what ways, a given region can be manipulated by the user via a touchscreen (for instance, by panning or zooming features built into the browser).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE       |
@@ -2552,6 +3040,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   touchAction?: TouchActionProperty;
   /**
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate a given element. This is achieved by modifying the coordinate space of the CSS visual formatting model.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari    | Edge         | IE      |
@@ -2563,6 +3053,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transform?: TransformProperty;
   /**
+   * The **`transform-box`** CSS property defines the layout box to which the `transform` and `transform-origin` properties relate.
+   *
    * **Initial value**: `border-box `
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2573,6 +3065,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transformBox?: TransformBoxProperty;
   /**
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
+   *
    * **Initial value**: `50% 50% 0`
    *
    * | Chrome | Firefox   | Safari        | Edge   | IE      |
@@ -2584,6 +3078,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transformOrigin?: TransformOriginProperty<TLength>;
   /**
+   * The **`transform-style`** CSS property determines if the children of an element are positioned in the 3D-space or are flattened in the plane of the element.
+   *
    * **Initial value**: `flat`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE  |
@@ -2595,6 +3091,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transformStyle?: TransformStyleProperty;
   /**
+   * The **`transition-delay`** CSS property specifies the amount of time to wait before starting a property's transition effect when its value changes.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -2606,6 +3104,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transitionDelay?: GlobalsString;
   /**
+   * The **`transition-duration`** CSS property specifies the number of seconds or milliseconds a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -2617,6 +3117,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transitionDuration?: GlobalsString;
   /**
+   * The **`transition-property`** CSS property specifies the CSS properties to which a transition effect should be applied.
+   *
    * **Initial value**: all
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -2628,6 +3130,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transitionProperty?: TransitionPropertyProperty;
   /**
+   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
+   *
    * **Initial value**: `ease`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -2639,6 +3143,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transitionTimingFunction?: TransitionTimingFunctionProperty;
   /**
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2649,6 +3155,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   translate?: TranslateProperty<TLength>;
   /**
+   * The **`unicode-bidi`** CSS property, together with the `direction` property, determines how bidirectional text in a document is handled. For example, if a block of content contains both left-to-right and right-to-left text, the user-agent uses a complex Unicode algorithm to decide how to display the text. The `unicode-bidi` property overrides this algorithm and allows the developer to control the text embedding.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE      |
@@ -2659,6 +3167,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   unicodeBidi?: UnicodeBidiProperty;
   /**
+   * The `**user-select**` CSS property controls whether the user can select text. This doesn't have any effect on content loaded as chrome, except in textboxes.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome  | Firefox      | Safari        | Edge         | IE     |
@@ -2670,6 +3180,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   userSelect?: UserSelectProperty;
   /**
+   * The **`vertical-align`** CSS property specifies the vertical alignment of an inline or table-cell box.
+   *
    * **Initial value**: `baseline`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2680,6 +3192,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   verticalAlign?: VerticalAlignProperty<TLength>;
   /**
+   * The **`visibility`** CSS property can show or hide an element without affecting the layout of a document (i.e., space is created for elements regardless of whether they are visible or not). The property can also hide rows or columns in a `<table>`.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2690,6 +3204,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   visibility?: VisibilityProperty;
   /**
+   * The **`white-space`** CSS property determines how whitespace inside an element is handled.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -2700,6 +3216,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   whiteSpace?: WhiteSpaceProperty;
   /**
+   * The **`widows`** CSS property specifies the minimum number of lines in a block container that must be shown at the _top_ of a page, region, or column. This property is normally used to control how breaks occur.
+   *
    * **Initial value**: `2`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2710,6 +3228,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   widows?: GlobalsNumber;
   /**
+   * The **`width`** CSS property specifies the width of an element. By default, the property defines the width of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the width of the border area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2720,6 +3240,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   width?: WidthProperty<TLength>;
   /**
+   * The **`will-change`** CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -2730,6 +3252,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   willChange?: WillChangeProperty;
   /**
+   * The **`word-break`** CSS property specifies whether or not the browser should insert line breaks wherever the text would otherwise overflow its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -2740,6 +3264,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   wordBreak?: WordBreakProperty;
   /**
+   * The **`word-spacing`** CSS property specifies the spacing behavior between tags and words.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2750,6 +3276,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   wordSpacing?: WordSpacingProperty<TLength>;
   /**
+   * The `**overflow-wrap**` CSS property specifies whether or not the browser should insert line breaks within words to prevent text from overflowing its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -2760,6 +3288,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   wordWrap?: WordWrapProperty;
   /**
+   * The **`writing-mode`** CSS property defines whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   *
    * **Initial value**: `horizontal-tb`
    *
    * | Chrome      | Firefox | Safari        | Edge   | IE          |
@@ -2770,6 +3300,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   writingMode?: WritingModeProperty;
   /**
+   * The **`z-index`** CSS property specifies the z-order of a positioned element and its descendants. When elements overlap, z-order determines which one covers the other. An element with a larger z-index generally covers an element with a lower one.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -2785,6 +3317,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
 
 export interface StandardShorthandProperties<TLength = string | 0> {
   /**
+   * The `**all**` CSS shorthand property sets all of an element's properties (other than `unicode-bidi` and `direction`) to their initial or inherited values, or to the values specified in another stylesheet origin.
+   *
    * **Initial value**: There is no practical initial value for it.
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -2795,6 +3329,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   all?: Globals;
   /**
+   * The **`animation`** CSS property is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
    * | ------ | ------- | ----------- | ------ | ------ |
    * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
@@ -2804,6 +3340,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   animation?: AnimationProperty;
   /**
+   * The **`background`** CSS property is a short way to declare all background style options at once, including color, image, origin and size, repeat method, and other features.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -2812,6 +3350,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength>;
   /**
+   * The **`border`** CSS property is a shorthand for setting all individual border property values in a single declaration: `border-width`, `border-style`, and `border-color`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -2820,6 +3360,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   border?: BorderProperty<TLength>;
   /**
+   * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -2828,6 +3370,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderBlockEnd?: BorderBlockEndProperty<TLength>;
   /**
+   * The **`border-block-start`** CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -2836,6 +3380,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderBlockStart?: BorderBlockStartProperty<TLength>;
   /**
+   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-color`, `border-bottom-style`, and `border-bottom-width`. These properties describe an element's bottom `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -2844,6 +3390,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderBottom?: BorderBottomProperty<TLength>;
   /**
+   * The **`border-color`** CSS property is a shorthand property for setting the colors on all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -2852,6 +3400,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderColor?: BorderColorProperty;
   /**
+   * The **`border-image`** CSS property lets you draw an image in place of an element's `border-style`.
+   *
    * | Chrome  | Firefox   | Safari  | Edge   | IE     |
    * | ------- | --------- | ------- | ------ | ------ |
    * | **16**  | **15**    | **6**   | **12** | **11** |
@@ -2861,6 +3411,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderImage?: BorderImageProperty;
   /**
+   * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -2869,6 +3421,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderInlineEnd?: BorderInlineEndProperty<TLength>;
   /**
+   * The **`border-inline-start`** CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -2877,6 +3431,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderInlineStart?: BorderInlineStartProperty<TLength>;
   /**
+   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-color`, `border-left-style`, and `border-left-width`. These properties describe an element's left `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -2885,6 +3441,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderLeft?: BorderLeftProperty<TLength>;
   /**
+   * The **`border-radius`** CSS property lets you round the corners of an element's outer border edge. You can specify a single radius to make circular corners, or two radii to make elliptical corners.
+   *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
    * | ------- | ------- | ------- | ------ | ----- |
    * | **4**   | **4**   | **5**   | **12** | **9** |
@@ -2894,6 +3452,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderRadius?: BorderRadiusProperty<TLength>;
   /**
+   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-color`, `border-right-style`, and `border-right-width`. These properties describe an element's right `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE      |
    * | ------ | ------- | ------ | ------ | ------- |
    * | **1**  | **1**   | **1**  | **12** | **5.5** |
@@ -2902,6 +3462,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderRight?: BorderRightProperty<TLength>;
   /**
+   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -2910,6 +3472,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderStyle?: BorderStyleProperty;
   /**
+   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-color`, `border-top-style`, and `border-top-width`. These properties describe an element's top `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -2918,6 +3482,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderTop?: BorderTopProperty<TLength>;
   /**
+   * The **`border-width`** CSS property is a shorthand property for setting the widths on all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -2926,6 +3492,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderWidth?: BorderWidthProperty<TLength>;
   /**
+   * The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+   *
    * | Chrome | Firefox   | Safari      | Edge         | IE     |
    * | ------ | --------- | ----------- | ------------ | ------ |
    * | **50** | **52**    | **3** _-x-_ | **12** _-x-_ | **10** |
@@ -2935,6 +3503,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   columnRule?: ColumnRuleProperty<TLength>;
   /**
+   * The **`columns`** CSS property sets the column width and column count of an element.
+   *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
    * | ------ | ------- | ----------- | ------ | ------ |
    * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
@@ -2944,6 +3514,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength>;
   /**
+   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
+   *
    * | Chrome   | Firefox | Safari    | Edge   | IE       |
    * | -------- | ------- | --------- | ------ | -------- |
    * | **29**   | **20**  | **9**     | **12** | **11**   |
@@ -2953,6 +3525,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   flex?: FlexProperty<TLength>;
   /**
+   * The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` individual properties.
+   *
    * | Chrome   | Firefox | Safari    | Edge   | IE     |
    * | -------- | ------- | --------- | ------ | ------ |
    * | **29**   | **28**  | **9**     | **12** | **11** |
@@ -2962,6 +3536,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   flexFlow?: FlexFlowProperty;
   /**
+   * The **`font`** CSS property is either a shorthand property for setting `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`; or a way to set the element's font to a system font, using specific keywords.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -2971,6 +3547,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   font?: FontProperty;
   gap?: GapProperty<TLength>;
   /**
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -2979,6 +3557,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   grid?: GridProperty;
   /**
+   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -2987,6 +3567,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   gridArea?: GridAreaProperty;
   /**
+   * The **`grid-column`** CSS property is a shorthand property for `grid-column-start` and `grid-column-end` specifying a grid item's size and location within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -2995,6 +3577,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   gridColumn?: GridColumnProperty;
   /**
+   * The **`grid-row`** CSS property is a shorthand property for `grid-row-start` and `grid-row-end` specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -3003,6 +3587,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   gridRow?: GridRowProperty;
   /**
+   * The **`grid-template`** CSS property is a shorthand property for defining grid columns, rows, and areas.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -3013,6 +3599,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   /** **Initial value**: `none` */
   lineClamp?: LineClampProperty;
   /**
+   * The **`list-style`** CSS property is a shorthand for setting the individual values that define how a list is displayed: `list-style-type`, `list-style-image`, and `list-style-position`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -3021,6 +3609,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   listStyle?: ListStyleProperty;
   /**
+   * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for setting all individual margins at once: `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -3029,6 +3619,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   margin?: MarginProperty<TLength>;
   /**
+   * The **`mask`** CSS property alters the visibility of an element by either partially or fully hiding it. This is accomplished by either masking or clipping the image at specific points.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE  |
    * | ------ | ------- | ------ | ------ | --- |
    * | **1**  | Yes     | **4**  | **12** | No  |
@@ -3038,6 +3630,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   mask?: MaskProperty<TLength>;
   maskBorder?: MaskBorderProperty;
   /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
    * | Chrome        | Firefox | Safari | Edge | IE  |
    * | ------------- | ------- | ------ | ---- | --- |
    * | **55**        | n/a     | n/a    | n/a  | n/a |
@@ -3047,6 +3641,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength>;
   /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
    * | Chrome        | Firefox | Safari | Edge | IE  |
    * | ------------- | ------- | ------ | ---- | --- |
    * | **55**        | n/a     | n/a    | n/a  | n/a |
@@ -3056,6 +3652,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   offset?: OffsetProperty<TLength>;
   /**
+   * The **`outline`** CSS property is a shorthand for setting various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+   *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
    * | ------ | ------- | ------- | ------ | ----- |
    * | **1**  | **1.5** | **1.2** | **12** | **8** |
@@ -3064,6 +3662,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   outline?: OutlineProperty<TLength>;
   /**
+   * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for setting all individual paddings at once: `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -3072,6 +3672,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   padding?: PaddingProperty<TLength>;
   /**
+   * The **`text-decoration`** CSS property specifies the appearance of decorative lines used on text. It is a shorthand for setting one or more individual text-decoration values in a single declaration, which include `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -3080,6 +3682,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   textDecoration?: TextDecorationProperty;
   /**
+   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
+   *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
    * | ------------ | ------- | ------------- | ---- | --- |
    * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
@@ -3088,6 +3692,8 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   textEmphasis?: TextEmphasisProperty;
   /**
+   * The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
+   *
    * | Chrome  | Firefox | Safari  | Edge   | IE     |
    * | ------- | ------- | ------- | ------ | ------ |
    * | **26**  | **16**  | **6.1** | **12** | **10** |
@@ -4020,6 +4626,8 @@ export interface Properties<TLength = string | 0> extends StandardProperties<TLe
 
 export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
+   * The CSS **`align-content`** property defines how the browser distributes space between and around content items along the cross-axis of their container, which is serving as a flexbox container.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari    | Edge   | IE     |
@@ -4031,6 +4639,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "align-content"?: AlignContentProperty;
   /**
+   * The CSS **`align-items`** property defines how the browser distributes space between and around flex items along the cross-axis of their container. This means it works like `justify-content` but in the perpendicular direction.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
@@ -4042,6 +4652,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "align-items"?: AlignItemsProperty;
   /**
+   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -4053,6 +4665,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "align-self"?: AlignSelfProperty;
   /**
+   * The **`animation-delay`** CSS property specifies when an animation should start. You can begin the animation at a future point in time, immediately and from its beginning, or immediately and partway through the animation cycle.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE     |
@@ -4064,6 +4678,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-delay"?: GlobalsString;
   /**
+   * The **`animation-direction`** CSS property specifies whether an animation should play forwards, backwards, or alternating back and forth.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -4075,6 +4691,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-direction"?: AnimationDirectionProperty;
   /**
+   * The **`animation-duration`** CSS property specifies the length of time that an animation should take to complete one cycle.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -4086,6 +4704,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-duration"?: GlobalsString;
   /**
+   * The **`animation-fill-mode`** CSS property specifies how a CSS animation should apply styles to its target before and after its execution.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -4097,6 +4717,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-fill-mode"?: AnimationFillModeProperty;
   /**
+   * The **`animation-iteration-count`** CSS property specifies  the number of times an animation cycle should be played before stopping. If multiple values are specified, each time the animation is played the next value in the list is used, cycling back to the first value after the last one is used.
+   *
    * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -4108,6 +4730,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-iteration-count"?: AnimationIterationCountProperty;
   /**
+   * The **`animation-name`** CSS property specifies one or more animations that should be applied to an element. Each name indicates an `@keyframes` at-rule that defines the property values for the animation sequence.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -4119,6 +4743,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-name"?: AnimationNameProperty;
   /**
+   * The **`animation-play-state`** CSS property specifies whether an **animation is running or paused**. In JavaScript, this can be queried to determine whether or not the animation is currently running. In addition, you can use JavaScript to set its value to pause or resume playback of an animation.
+   *
    * **Initial value**: `running`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4130,6 +4756,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-play-state"?: AnimationPlayStateProperty;
   /**
+   * The `**animation-timing-function**` CSS property specifies how a CSS animation should progress over the duration of each cycle.
+   *
    * **Initial value**: `ease`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -4141,6 +4769,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-timing-function"?: AnimationTimingFunctionProperty;
   /**
+   * (no description)
+   *
    * **Initial value**: `auto`
    *
    * | Chrome      | Firefox     | Safari      | Edge         | IE  |
@@ -4151,6 +4781,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   appearance?: AppearanceProperty;
   /**
+   * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE  |
@@ -4161,6 +4793,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "backdrop-filter"?: BackdropFilterProperty;
   /**
+   * The **`backface-visibility`** CSS property determines whether the back face of an element is visible when turned towards the user.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE     |
@@ -4172,6 +4806,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "backface-visibility"?: BackfaceVisibilityProperty;
   /**
+   * If a `background-image` is specified, the **`background-attachment`** CSS property determines whether that image's position is fixed within the viewport, or scrolls along with its containing block.
+   *
    * **Initial value**: `scroll`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4182,6 +4818,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-attachment"?: BackgroundAttachmentProperty;
   /**
+   * The **`background-blend-mode`** CSS property determines how an element's background images should blend with each other and with the element's background color.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4192,6 +4830,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-blend-mode"?: BackgroundBlendModeProperty;
   /**
+   * The **`background-clip`** CSS property specifies if an element's background, whether a `<color>` or an `<image>`, extends underneath its border.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4202,6 +4842,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-clip"?: BackgroundClipProperty;
   /**
+   * The **`background-color`** CSS property sets the background color of an element.
+   *
    * **Initial value**: `transparent`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4212,6 +4854,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-color"?: BackgroundColorProperty;
   /**
+   * The **`background-image`** CSS property sets one or more background images on an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4222,6 +4866,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-image"?: BackgroundImageProperty;
   /**
+   * The **`background-origin`** CSS property sets the _background positioning area_, i.e., the origin position of an image specified using the `background-image` property.
+   *
    * **Initial value**: `padding-box`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4232,6 +4878,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-origin"?: BackgroundOriginProperty;
   /**
+   * The **`background-position`** CSS property sets the initial position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `0% 0%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4242,6 +4890,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-position"?: BackgroundPositionProperty<TLength>;
   /**
+   * The **`background-position-x`** CSS property sets the initial horizontal position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `left`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4252,6 +4902,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-position-x"?: BackgroundPositionXProperty<TLength>;
   /**
+   * The **`background-position-y`** CSS property sets the initial vertical position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `top`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4262,6 +4914,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-position-y"?: BackgroundPositionYProperty<TLength>;
   /**
+   * The **`background-repeat`** CSS property defines how background images are repeated. A background image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+   *
    * **Initial value**: `repeat`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4272,6 +4926,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-repeat"?: BackgroundRepeatProperty;
   /**
+   * The **`background-size`** CSS property specifies the size of the element's background image. The image can be left to its natural size, stretched to a new size, or constrained to fit the available space while preserving its intrinsic proportions.
+   *
    * **Initial value**: `auto auto`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -4285,6 +4941,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `clip` */
   "block-overflow"?: BlockOverflowProperty;
   /**
+   * The **`block-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4295,6 +4953,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "block-size"?: BlockSizeProperty<TLength>;
   /**
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4305,6 +4965,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-end-color"?: BorderBlockEndColorProperty;
   /**
+   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4315,6 +4977,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-end-style"?: BorderBlockEndStyleProperty;
   /**
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4325,6 +4989,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-end-width"?: BorderBlockEndWidthProperty<TLength>;
   /**
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4335,6 +5001,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-start-color"?: BorderBlockStartColorProperty;
   /**
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4345,6 +5013,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-start-style"?: BorderBlockStartStyleProperty;
   /**
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4355,6 +5025,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-start-width"?: BorderBlockStartWidthProperty<TLength>;
   /**
+   * The **`border-bottom-color`** CSS property sets the color of an element's bottom `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-bottom` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4365,6 +5037,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-bottom-color"?: BorderBottomColorProperty;
   /**
+   * The **`border-bottom-left-radius`** CSS property sets the rounding of the bottom-left corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -4376,6 +5050,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength>;
   /**
+   * The **`border-bottom-right-radius`** CSS property sets the rounding of the bottom-right corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -4387,6 +5063,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength>;
   /**
+   * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -4397,6 +5075,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-bottom-style"?: BorderBottomStyleProperty;
   /**
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4407,6 +5087,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-bottom-width"?: BorderBottomWidthProperty<TLength>;
   /**
+   * The **`border-collapse`** CSS property specifies whether cells inside a `<table>` have shared or separate borders.
+   *
    * **Initial value**: `separate`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -4417,6 +5099,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-collapse"?: BorderCollapseProperty;
   /**
+   * The **`border-image-outset`** CSS property specifies the distance by which an element's border image is set out from its border box.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4427,6 +5111,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-image-outset"?: BorderImageOutsetProperty<TLength>;
   /**
+   * The **`border-image-repeat`** CSS property defines how the edge regions of a source image are adjusted to fit the dimensions of an element's border image.
+   *
    * **Initial value**: `stretch`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4437,6 +5123,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-image-repeat"?: BorderImageRepeatProperty;
   /**
+   * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions are used to form the components of an element's border image.
+   *
    * **Initial value**: `100%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4447,6 +5135,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-image-slice"?: BorderImageSliceProperty;
   /**
+   * The **`border-image-source`** CSS property specifies the source image used to create an element's border image.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4457,6 +5147,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-image-source"?: BorderImageSourceProperty;
   /**
+   * The **`border-image-width`** CSS property specifies the width of an element's border image.
+   *
    * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4467,6 +5159,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-image-width"?: BorderImageWidthProperty<TLength>;
   /**
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4477,6 +5171,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-end-color"?: BorderInlineEndColorProperty;
   /**
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox                      | Safari | Edge | IE  |
@@ -4488,6 +5184,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-end-style"?: BorderInlineEndStyleProperty;
   /**
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4498,6 +5196,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength>;
   /**
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox                        | Safari | Edge | IE  |
@@ -4509,6 +5209,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-start-color"?: BorderInlineStartColorProperty;
   /**
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4519,6 +5221,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-start-style"?: BorderInlineStartStyleProperty;
   /**
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -4529,6 +5233,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength>;
   /**
+   * The **`border-left-color`** CSS property sets the color of an element's left `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-left` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4539,6 +5245,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-left-color"?: BorderLeftColorProperty;
   /**
+   * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -4549,6 +5257,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-left-style"?: BorderLeftStyleProperty;
   /**
+   * The **`border-left-width`** CSS property sets the width of the left border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4559,6 +5269,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-left-width"?: BorderLeftWidthProperty<TLength>;
   /**
+   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4569,6 +5281,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-right-color"?: BorderRightColorProperty;
   /**
+   * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -4579,6 +5293,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-right-style"?: BorderRightStyleProperty;
   /**
+   * The **`border-right-width`** CSS property sets the width of the right border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4589,6 +5305,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-right-width"?: BorderRightWidthProperty<TLength>;
   /**
+   * The **`border-spacing`** CSS property specifies the distance between the borders of adjacent `<table>` cells. This property applies only when `border-collapse` is `separate`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4599,6 +5317,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-spacing"?: BorderSpacingProperty<TLength>;
   /**
+   * The **`border-top-color`** CSS property sets the color of an element's top `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-top` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4609,6 +5329,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-top-color"?: BorderTopColorProperty;
   /**
+   * The **`border-top-left-radius`** CSS property sets the rounding of the top-left corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -4620,6 +5342,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-top-left-radius"?: BorderTopLeftRadiusProperty<TLength>;
   /**
+   * The **`border-top-right-radius`** CSS property sets the rounding of the top-right corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -4631,6 +5355,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-top-right-radius"?: BorderTopRightRadiusProperty<TLength>;
   /**
+   * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -4641,6 +5367,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-top-style"?: BorderTopStyleProperty;
   /**
+   * The **`border-top-width`** CSS property sets the width of the top border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4651,6 +5379,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-top-width"?: BorderTopWidthProperty<TLength>;
   /**
+   * The **`bottom`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4663,6 +5393,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `stretch` */
   "box-align"?: BoxAlignProperty;
   /**
+   * The **`box-decoration-break`** CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
+   *
    * **Initial value**: `slice`
    *
    * | Chrome       | Firefox | Safari  | Edge | IE  |
@@ -4679,6 +5411,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `1` */
   "box-ordinal-group"?: GlobalsNumber;
   /**
+   * The **`box-shadow`** CSS property is used to add shadow effects around an element's frame. You can specify multiple effects separated by commas if you wish to do so. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   *
    * **Initial value**: `none`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -4690,6 +5424,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "box-shadow"?: BoxShadowProperty;
   /**
+   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   *
    * **Initial value**: `content-box`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -4701,6 +5437,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "box-sizing"?: BoxSizingProperty;
   /**
+   * The **`break-after`** CSS property defines how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4711,6 +5449,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "break-after"?: BreakAfterProperty;
   /**
+   * The **`break-before`** CSS property defines how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4721,6 +5461,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "break-before"?: BreakBeforeProperty;
   /**
+   * The **`break-inside`** CSS property defines how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4731,6 +5473,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "break-inside"?: BreakInsideProperty;
   /**
+   * The **`caption-side`** CSS property puts the content of a table's `<caption>` on the specified side. The values are relative to the `writing-mode` of the table.
+   *
    * **Initial value**: `top`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4741,6 +5485,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "caption-side"?: CaptionSideProperty;
   /**
+   * The **`caret-color`** CSS property sets the color of the insertion caret—the visible indicator of the point at which the next character typed by the user will be inserted—within an element such as `<input>` or one with the `contenteditable` attribute set. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -4751,6 +5497,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "caret-color"?: CaretColorProperty;
   /**
+   * The **`clear`** CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them. The `clear` property applies to both floating and non-floating elements.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4761,6 +5509,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   clear?: ClearProperty;
   /**
+   * The `**clip-path**` CSS property creates a clipping region that defines what part of an element should be displayed. More specifically, those portions that are inside the region are shown, while those outside are hidden.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox | Safari | Edge | IE  |
@@ -4772,6 +5522,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "clip-path"?: ClipPathProperty;
   /**
+   * The **`color`** CSS property sets the foreground color value of an element's text content and text decorations. It also sets the `currentcolor` value, which may be used as an indirect value on _other_ properties, and is the default for other color properties, such as `border-color`.
+   *
    * **Initial value**: Varies from one browser to another
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -4784,6 +5536,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `economy` */
   "color-adjust"?: ColorAdjustProperty;
   /**
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -4795,6 +5549,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-count"?: ColumnCountProperty;
   /**
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
+   *
    * **Initial value**: `balance`
    *
    * | Chrome | Firefox  | Safari | Edge   | IE  |
@@ -4806,6 +5562,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-fill"?: ColumnFillProperty;
   /**
+   * The **`column-gap`** CSS property sets the size of the gap (spacing) between an element's columns.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -4817,6 +5575,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-gap"?: ColumnGapProperty<TLength>;
   /**
+   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -4828,6 +5588,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-rule-color"?: ColumnRuleColorProperty;
   /**
+   * The **`column-rule-style`** CSS property sets the style of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -4838,6 +5600,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-rule-style"?: ColumnRuleStyleProperty;
   /**
+   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox   | Safari      | Edge         | IE     |
@@ -4849,6 +5613,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-rule-width"?: ColumnRuleWidthProperty<TLength>;
   /**
+   * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -4859,6 +5625,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-span"?: ColumnSpanProperty;
   /**
+   * The **`column-width`** CSS property specifies the minimum column width. The number of columns will be the maximum number of columns that can fit without any column having a width less than the `column-width` value. The actual column width may be smaller than the value of `column-width` if the width of the container is smaller.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -4872,6 +5640,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `none` */
   contain?: ContainProperty;
   /**
+   * The **`content`** CSS property is used with the `::before` and `::after` pseudo-elements to generate content in an element. Objects inserted using the `content` property are _anonymous replaced elements._
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4882,6 +5652,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   content?: ContentProperty;
   /**
+   * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE    |
@@ -4892,6 +5664,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "counter-increment"?: CounterIncrementProperty;
   /**
+   * The **`counter-reset`** CSS property resets a CSS counter to a given value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -4902,6 +5676,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "counter-reset"?: CounterResetProperty;
   /**
+   * The **`cursor`** CSS property specifies which mouse cursor to display when the mouse pointer is over an element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -4912,6 +5688,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   cursor?: CursorProperty;
   /**
+   * The **`direction`** CSS property sets the direction of text, table columns, and horizontal overflow. Use `rtl` for languages written from right to left (like Hebrew or Arabic), and `ltr` for those written from left to right (like English and most other languages).
+   *
    * **Initial value**: `ltr`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE      |
@@ -4922,6 +5700,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   direction?: DirectionProperty;
   /**
+   * The **`display`** CSS property specifies the type of rendering box used for an element. In HTML, default `display` property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is `inline`, including SVG elements.
+   *
    * **Initial value**: `inline`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -4932,6 +5712,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   display?: DisplayProperty;
   /**
+   * The **`empty-cells`** CSS property specifies how the user agent should render borders and backgrounds around `<table>` cells that have no visible content.
+   *
    * **Initial value**: `show`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -4942,6 +5724,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "empty-cells"?: EmptyCellsProperty;
   /**
+   * The **`filter`** CSS property lets you apply graphical effects like blurring or color shifting to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE  |
@@ -4953,6 +5737,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   filter?: FilterProperty;
   /**
+   * The **`flex-basis`** CSS property specifies the initial **main size** of a flex item. This property determines the size of the content-box unless specified otherwise using `box-sizing`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE     |
@@ -4964,6 +5750,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-basis"?: FlexBasisProperty<TLength>;
   /**
+   * The **`flex-direction`** CSS property specifies how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
+   *
    * **Initial value**: `row`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE       |
@@ -4975,6 +5763,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-direction"?: FlexDirectionProperty;
   /**
+   * The **`flex-grow`** CSS property specifies the flex grow factor of a flex item. It specifies what amount of space inside the flex container the item should take up. The flex grow factor of a flex item is relative to the size of the other children in the flex-container.
+   *
    * **Initial value**: `0`
    *
    * | Chrome   | Firefox | Safari        | Edge   | IE                           |
@@ -4986,6 +5776,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-grow"?: GlobalsNumber;
   /**
+   * The **`flex-shrink`** CSS property specifies the flex shrink factor of a flex item. Flex items will shrink to fill the container according to the `flex-shrink` number, when the default size of flex items is larger than the flex container.
+   *
    * **Initial value**: `1`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
@@ -4997,6 +5789,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-shrink"?: GlobalsNumber;
   /**
+   * The CSS **`flex-wrap`** property specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked.
+   *
    * **Initial value**: `nowrap`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -5008,6 +5802,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-wrap"?: FlexWrapProperty;
   /**
+   * The **`float`** CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the web page, though still remaining a part of the flow (in contrast to absolute positioning).
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5018,6 +5814,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   float?: FloatProperty;
   /**
+   * The **`font-family`** CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
+   *
    * **Initial value**: depends on user agent
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5028,6 +5826,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-family"?: FontFamilyProperty;
   /**
+   * The **`font-feature-settings`** CSS property gives you control over advanced typographic features in OpenType fonts.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox  | Safari  | Edge   | IE     |
@@ -5039,6 +5839,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-feature-settings"?: FontFeatureSettingsProperty;
   /**
+   * The **`font-kerning`** CSS property controls the usage of the kerning information stored in a font.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome       | Firefox | Safari | Edge | IE  |
@@ -5049,6 +5851,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-kerning"?: FontKerningProperty;
   /**
+   * The **`font-language-override`** CSS property controls the usage of language-specific glyphs in a typeface.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5060,6 +5864,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-language-override"?: FontLanguageOverrideProperty;
   /**
+   * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -5070,6 +5876,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-size"?: FontSizeProperty<TLength>;
   /**
+   * The **`font-size-adjust`** CSS property specifies that the font size should be chosen based on the height of lowercase letters rather than the height of capital letters. This is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5080,6 +5888,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-size-adjust"?: FontSizeAdjustProperty;
   /**
+   * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5090,6 +5900,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-stretch"?: FontStretchProperty;
   /**
+   * The **`font-style`** CSS property specifies whether a font should be styled with a normal, italic, or oblique face from its `font-family`.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5100,6 +5912,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-style"?: FontStyleProperty;
   /**
+   * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
+   *
    * **Initial value**: `weight style`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5110,6 +5924,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-synthesis"?: FontSynthesisProperty;
   /**
+   * The **font-variant** CSS property is a shorthand for the longhand properties `font-variant-caps`, `font-variant-numeric`, `font-variant-alternates`, `font-variant-ligatures`, and `font-variant-east-asian`. You can also set the CSS Level 2 (Revision 1) values of `font-variant`, (that is, `normal` or `small-caps`), by using the `font` shorthand.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5120,6 +5936,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-variant"?: FontVariantProperty;
   /**
+   * The **`font-variant-caps`** CSS property controls the usage of alternate glyphs for capital letters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5130,6 +5948,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-variant-caps"?: FontVariantCapsProperty;
   /**
+   * The **`font-variant-east-asian`** CSS property controls the usage of alternate glyphs for East Asian scripts, like Japanese and Chinese.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5140,6 +5960,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-variant-east-asian"?: FontVariantEastAsianProperty;
   /**
+   * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari  | Edge | IE  |
@@ -5151,6 +5973,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-variant-ligatures"?: FontVariantLigaturesProperty;
   /**
+   * The **`font-variant-numeric`** CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -5161,6 +5985,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-variant-numeric"?: FontVariantNumericProperty;
   /**
+   * The **`font-variant-position`** CSS property controls the usage of alternate, smaller glyphs that are positioned as superscript or subscript relative to the baseline of the font (which remains unchanged). These glyphs are likely to be used in `<sub>` and `<sup>` elements.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5171,6 +5997,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-variant-position"?: FontVariantPositionProperty;
   /**
+   * The **`font-variation-settings`** CSS property provides low-level control over OpenType or TrueType font variations, by specifying the four letter axis names of the features you want to vary, along with their variation values.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5181,6 +6009,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-variation-settings"?: FontVariationSettingsProperty;
   /**
+   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only available in `normal` and `bold`.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -5191,6 +6021,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-weight"?: FontWeightProperty;
   /**
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge                    | IE                          |
@@ -5202,6 +6034,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-auto-columns"?: GridAutoColumnsProperty<TLength>;
   /**
+   * The **`grid-auto-flow`** CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
+   *
    * **Initial value**: `row`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -5212,6 +6046,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-auto-flow"?: GridAutoFlowProperty;
   /**
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge                 | IE                       |
@@ -5223,6 +6059,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-auto-rows"?: GridAutoRowsProperty<TLength>;
   /**
+   * The **`grid-column-end`** CSS property specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -5233,6 +6071,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-column-end"?: GridColumnEndProperty;
   /**
+   * The **`grid-column-start`** CSS property specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -5243,6 +6083,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-column-start"?: GridColumnStartProperty;
   /**
+   * The **`grid-row-end`** CSS property specifies a grid item’s end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -5253,6 +6095,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-row-end"?: GridRowEndProperty;
   /**
+   * The **`grid-row-start`** CSS property specifies a grid item’s start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -5263,6 +6107,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-row-start"?: GridRowStartProperty;
   /**
+   * The **`grid-template-areas`** CSS property specifies named grid areas.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -5273,6 +6119,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-template-areas"?: GridTemplateAreasProperty;
   /**
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -5283,6 +6131,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-template-columns"?: GridTemplateColumnsProperty<TLength>;
   /**
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -5295,6 +6145,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `none` */
   "hanging-punctuation"?: HangingPunctuationProperty;
   /**
+   * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5305,6 +6157,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   height?: HeightProperty<TLength>;
   /**
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   *
    * **Initial value**: `manual`
    *
    * | Chrome   | Firefox | Safari        | Edge | IE           |
@@ -5316,6 +6170,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   hyphens?: HyphensProperty;
   /**
+   * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image. It should _not_ be used for any other orientation adjustments; instead, the `transform` property should be used with the `rotate` `<transform-function>`.
+   *
    * **Initial value**: `0deg`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5326,6 +6182,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "image-orientation"?: ImageOrientationProperty;
   /**
+   * The **`image-rendering`** CSS property provides a hint to the browser about the algorithm it should use to scale images.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5338,6 +6196,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `1dppx` */
   "image-resolution"?: ImageResolutionProperty;
   /**
+   * The `initial-letter` CSS property specifies styling for dropped, raised, and sunken initial letters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5350,6 +6210,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "initial-letter-align"?: InitialLetterAlignProperty;
   /**
+   * The **`inline-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5360,6 +6222,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "inline-size"?: InlineSizeProperty<TLength>;
   /**
+   * The **`isolation`** CSS property determines whether an element must create a new stacking context.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5370,6 +6234,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   isolation?: IsolationProperty;
   /**
+   * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main axis of their container.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -5381,6 +6247,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "justify-content"?: JustifyContentProperty;
   /**
+   * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
+   *
    * **Initial value**: `legacy`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -5391,6 +6259,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "justify-items"?: JustifyItemsProperty;
   /**
+   * The CSS **`justify-self`** property defines the way of justifying a box inside its container along the appropriate axis.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -5401,6 +6271,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "justify-self"?: JustifySelfProperty;
   /**
+   * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -5411,6 +6283,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   left?: LeftProperty<TLength>;
   /**
+   * The **`letter-spacing`** CSS property specifies the spacing behavior between text characters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5421,6 +6295,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "letter-spacing"?: LetterSpacingProperty<TLength>;
   /**
+   * The **`line-break`** CSS property is used to specify how (or if) to break lines when working with punctuation and symbols. This only affects text in Chinese, Japanese, or Korean (CJK).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome  | Firefox | Safari | Edge   | IE      |
@@ -5432,6 +6308,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "line-break"?: LineBreakProperty;
   /**
+   * The **`line-height`** CSS property sets the amount of space used for lines, such as in text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5444,6 +6322,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `none` */
   "line-height-step"?: LineHeightStepProperty<TLength>;
   /**
+   * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5454,6 +6334,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "list-style-image"?: ListStyleImageProperty;
   /**
+   * The **`list-style-position`** CSS property specifies the position of the `::marker` relative to a list item.
+   *
    * **Initial value**: `outside`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5464,6 +6346,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "list-style-position"?: ListStylePositionProperty;
   /**
+   * The **`list-style-type`** CSS property specifies the appearance of a list item element.
+   *
    * **Initial value**: `disc`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5474,6 +6358,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "list-style-type"?: ListStyleTypeProperty;
   /**
+   * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5484,6 +6370,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-block-end"?: MarginBlockEndProperty<TLength>;
   /**
+   * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5494,6 +6382,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-block-start"?: MarginBlockStartProperty<TLength>;
   /**
+   * The **`margin-bottom`** CSS property sets the margin area on the bottom of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5504,6 +6394,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-bottom"?: MarginBottomProperty<TLength>;
   /**
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                       | Firefox               | Safari                       | Edge | IE  |
@@ -5515,6 +6407,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-inline-end"?: MarginInlineEndProperty<TLength>;
   /**
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                         | Firefox                 | Safari                         | Edge | IE  |
@@ -5526,6 +6420,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-inline-start"?: MarginInlineStartProperty<TLength>;
   /**
+   * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5536,6 +6432,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-left"?: MarginLeftProperty<TLength>;
   /**
+   * The **`margin-right`** CSS property sets the margin area on the right side of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5546,6 +6444,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-right"?: MarginRightProperty<TLength>;
   /**
+   * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5568,6 +6468,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "mask-border-width"?: MaskBorderWidthProperty<TLength>;
   /**
+   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5578,6 +6480,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-clip"?: MaskClipProperty;
   /**
+   * The **`mask-composite`** CSS property represents a compositing operation used on the current mask layer with the mask layers below it.
+   *
    * **Initial value**: `add`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5588,6 +6492,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-composite"?: MaskCompositeProperty;
   /**
+   * The **`mask-image`** CSS property sets the image that is used as mask layer for an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome      | Firefox | Safari      | Edge   | IE  |
@@ -5598,6 +6504,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-image"?: MaskImageProperty;
   /**
+   * The **`mask-mode`** CSS property determines whether the mask reference defined by `mask-image` is treated as a luminance or alpha mask.
+   *
    * **Initial value**: `match-source`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5608,6 +6516,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-mode"?: MaskModeProperty;
   /**
+   * The **`mask-origin`** CSS property determines the origin of a mask.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5618,6 +6528,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-origin"?: MaskOriginProperty;
   /**
+   * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer defined by `mask-origin`, for each defined mask image.
+   *
    * **Initial value**: `center`
    *
    * | Chrome      | Firefox | Safari      | Edge | IE  |
@@ -5628,6 +6540,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-position"?: MaskPositionProperty<TLength>;
   /**
+   * The **`mask-repeat`** CSS property defines how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+   *
    * **Initial value**: `no-repeat`
    *
    * | Chrome      | Firefox | Safari      | Edge | IE  |
@@ -5638,6 +6552,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-repeat"?: MaskRepeatProperty;
   /**
+   * The **`mask-size`** CSS property specifies the sizes of the mask images. The size of the image can be fully or partially constrained in order to preserve its intrinsic ratio.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5648,6 +6564,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-size"?: MaskSizeProperty<TLength>;
   /**
+   * The **`mask-type`** CSS property determines whether the mask defined by an SVG `<mask>` element is used as a _luminance_ or an _alpha_ mask. It applies to the `<mask>` element itself.
+   *
    * **Initial value**: `luminance`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5660,6 +6578,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `0` */
   "max-block-size"?: MaxBlockSizeProperty<TLength>;
   /**
+   * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5670,6 +6590,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "max-height"?: MaxHeightProperty<TLength>;
   /**
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block depending on its writing mode. It corresponds to the `max-width` or the `max-height` property depending on the value defined for `writing-mode`. If the writing mode is vertically oriented, the value of `max-inline-size` relates to the maximal height of the element, otherwise it relates to the maximal width of the element. It relates to `max-block-size`, which defines the other dimension of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari         | Edge | IE  |
@@ -5682,6 +6604,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `none` */
   "max-lines"?: MaxLinesProperty;
   /**
+   * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5692,6 +6616,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "max-width"?: MaxWidthProperty<TLength>;
   /**
+   * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5702,6 +6628,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "min-block-size"?: MinBlockSizeProperty<TLength>;
   /**
+   * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5712,6 +6640,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "min-height"?: MinHeightProperty<TLength>;
   /**
+   * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5722,6 +6652,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "min-inline-size"?: MinInlineSizeProperty<TLength>;
   /**
+   * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5732,6 +6664,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "min-width"?: MinWidthProperty<TLength>;
   /**
+   * The **`mix-blend-mode`** CSS property describes how an element's content should blend with the content of the element's direct parent and the element's background.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5742,6 +6676,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mix-blend-mode"?: MixBlendModeProperty;
   /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -5753,6 +6689,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "motion-distance"?: OffsetDistanceProperty<TLength>;
   /**
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   *
    * **Initial value**: `none`
    *
    * | Chrome             | Firefox | Safari | Edge | IE  |
@@ -5764,6 +6702,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "motion-path"?: OffsetPathProperty;
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -5775,6 +6715,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "motion-rotation"?: OffsetRotateProperty;
   /**
+   * The **`object-fit`** CSS property specifies how the contents of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
+   *
    * **Initial value**: `fill`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -5785,6 +6727,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "object-fit"?: ObjectFitProperty;
   /**
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
+   *
    * **Initial value**: `50% 50%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -5797,6 +6741,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "offset-anchor"?: OffsetAnchorProperty<TLength>;
   /**
+   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5807,6 +6753,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-block-end"?: OffsetBlockEndProperty<TLength>;
   /**
+   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5817,6 +6765,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-block-start"?: OffsetBlockStartProperty<TLength>;
   /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -5828,6 +6778,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-distance"?: OffsetDistanceProperty<TLength>;
   /**
+   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5838,6 +6790,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-inline-end"?: OffsetInlineEndProperty<TLength>;
   /**
+   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -5848,6 +6802,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-inline-start"?: OffsetInlineStartProperty<TLength>;
   /**
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   *
    * **Initial value**: `none`
    *
    * | Chrome             | Firefox | Safari | Edge | IE  |
@@ -5861,6 +6817,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "offset-position"?: OffsetPositionProperty<TLength>;
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -5872,6 +6830,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-rotate"?: OffsetRotateProperty;
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -5883,6 +6843,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-rotation"?: OffsetRotateProperty;
   /**
+   * The **`opacity`** CSS property specifies the level of transparency of an element, that is, the degree to which the content behind the element is visible.
+   *
    * **Initial value**: `1.0`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -5893,6 +6855,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   opacity?: GlobalsNumber;
   /**
+   * The **`order`** CSS property specifies the order used to lay out a flex or grid item in its flex or grid container. Items within the same container are laid out in ascending order according to their `order` values. Elements with the same `order` value are laid out in the order in which they appear in the source code.
+   *
    * **Initial value**: `0`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE       |
@@ -5904,6 +6868,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   order?: GlobalsNumber;
   /**
+   * The **`orphans`** CSS property specifies the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column. This property is normally used to control how breaks occur.
+   *
    * **Initial value**: `2`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5914,6 +6880,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   orphans?: GlobalsNumber;
   /**
+   * The **`outline-color`** CSS property sets the color of an element's outline.
+   *
    * **Initial value**: `invert`, for browsers supporting it, `currentColor` for the other
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -5924,6 +6892,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "outline-color"?: OutlineColorProperty;
   /**
+   * The **`outline-offset`** CSS property sets the amount of space between an `outline` and the edge or border of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -5934,6 +6904,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "outline-offset"?: OutlineOffsetProperty<TLength>;
   /**
+   * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -5944,6 +6916,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "outline-style"?: OutlineStyleProperty;
   /**
+   * The **`outline-width`** CSS property sets the width (thickness) of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -5954,6 +6928,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "outline-width"?: OutlineWidthProperty<TLength>;
   /**
+   * The **`overflow`** CSS property specifies what to do when an element's content is too large to fit in its block formatting context. It is a shorthand for the `overflow-x` and `overflow-y` properties.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5972,6 +6948,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "overflow-inline"?: OverflowInlineProperty;
   /**
+   * The `**overflow-wrap**` CSS property specifies whether or not the browser should insert line breaks within words to prevent text from overflowing its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome              | Firefox           | Safari              | Edge                 | IE                    |
@@ -5983,6 +6961,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overflow-wrap"?: OverflowWrapProperty;
   /**
+   * The **`overflow-x`** CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the left and right edges.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -5993,6 +6973,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overflow-x"?: OverflowXProperty;
   /**
+   * The **`overflow-y`** CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the top and bottom edges.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6003,6 +6985,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overflow-y"?: OverflowYProperty;
   /**
+   * The **`overscroll-behavior`** CSS property is shorthand for the `overscroll-behavior-x` and `overscroll-behavior-y` properties, which allow you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6013,6 +6997,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overscroll-behavior"?: OverscrollBehaviorProperty;
   /**
+   * The **`overscroll-behavior-x`** CSS property is allows you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached — in the x axis direction.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6023,6 +7009,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty;
   /**
+   * The **`overscroll-behavior-y`** CSS property is allows you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached — in the y axis direction.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6033,6 +7021,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty;
   /**
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6043,6 +7033,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-block-end"?: PaddingBlockEndProperty<TLength>;
   /**
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6053,6 +7045,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-block-start"?: PaddingBlockStartProperty<TLength>;
   /**
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6063,6 +7057,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-bottom"?: PaddingBottomProperty<TLength>;
   /**
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
@@ -6074,6 +7070,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-inline-end"?: PaddingInlineEndProperty<TLength>;
   /**
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
@@ -6085,6 +7083,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-inline-start"?: PaddingInlineStartProperty<TLength>;
   /**
+   * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6095,6 +7095,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-left"?: PaddingLeftProperty<TLength>;
   /**
+   * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6105,6 +7107,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-right"?: PaddingRightProperty<TLength>;
   /**
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6115,6 +7119,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-top"?: PaddingTopProperty<TLength>;
   /**
+   * The **`page-break-after`** CSS property adjusts page breaks _after_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -6125,6 +7131,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "page-break-after"?: PageBreakAfterProperty;
   /**
+   * The **`page-break-before`** CSS property adjusts page breaks _before_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -6135,6 +7143,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "page-break-before"?: PageBreakBeforeProperty;
   /**
+   * The **`page-break-inside`** CSS property adjusts page breaks _inside_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -6145,6 +7155,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "page-break-inside"?: PageBreakInsideProperty;
   /**
+   * The **`paint-order`** CSS property lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6155,6 +7167,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "paint-order"?: PaintOrderProperty;
   /**
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox  | Safari | Edge   | IE     |
@@ -6166,6 +7180,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   perspective?: PerspectiveProperty<TLength>;
   /**
+   * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
+   *
    * **Initial value**: `50% 50%`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE     |
@@ -6177,6 +7193,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "perspective-origin"?: PerspectiveOriginProperty<TLength>;
   /**
+   * The `**place-content**` CSS shorthand property sets both the `align-content` and `justify-content` properties.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6187,6 +7205,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "place-content"?: PlaceContentProperty;
   /**
+   * The **`pointer-events`** CSS property specifies under what circumstances (if any) a particular graphic element can become the target of mouse events.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -6197,6 +7217,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "pointer-events"?: PointerEventsProperty;
   /**
+   * The **`position`** CSS property specifies how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` properties determine the final location of positioned elements.
+   *
    * **Initial value**: `static`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6207,6 +7229,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   position?: PositionProperty;
   /**
+   * The `quotes` CSS property indicates how user agents should render quotation marks.
+   *
    * **Initial value**: depends on user agent
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6217,6 +7241,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   quotes?: QuotesProperty;
   /**
+   * The **`resize`** CSS sets whether an element is resizable, and if so, in which direction(s).
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6227,6 +7253,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   resize?: ResizeProperty;
   /**
+   * The **`right`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -6237,6 +7265,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   right?: RightProperty<TLength>;
   /**
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6249,6 +7279,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `normal` */
   "row-gap"?: RowGapProperty<TLength>;
   /**
+   * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
+   *
    * **Initial value**: `space-around`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6261,6 +7293,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `separate` */
   "ruby-merge"?: RubyMergeProperty;
   /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
    * **Initial value**: `over`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -6271,6 +7305,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "ruby-position"?: RubyPositionProperty;
   /**
+   * The **`scale`** CSS property allows you to specify scale transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6281,6 +7317,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   scale?: ScaleProperty;
   /**
+   * The **`scroll-behavior`** CSS property specifies the scrolling behavior for a scrolling box when scrolling is triggered by one of the navigation or CSSOM scrolling APIs.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6291,6 +7329,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "scroll-behavior"?: ScrollBehaviorProperty;
   /**
+   * The **`scroll-snap-type`** CSS property defines how strictly snap points are enforced on the scroll container in case there is one.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge         | IE           |
@@ -6301,6 +7341,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "scroll-snap-type"?: ScrollSnapTypeProperty;
   /**
+   * The **`shape-image-threshold`** CSS property defines the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
+   *
    * **Initial value**: `0.0`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -6311,6 +7353,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "shape-image-threshold"?: GlobalsNumber;
   /**
+   * The **`shape-margin`** CSS property specifies a margin for a CSS shape created using `shape-outside`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari         | Edge | IE  |
@@ -6321,6 +7365,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "shape-margin"?: ShapeMarginProperty<TLength>;
   /**
+   * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -6331,6 +7377,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "shape-outside"?: ShapeOutsideProperty;
   /**
+   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   *
    * **Initial value**: `8`
    *
    * | Chrome | Firefox     | Safari  | Edge | IE  |
@@ -6341,6 +7389,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "tab-size"?: TabSizeProperty<TLength>;
   /**
+   * The **`table-layout`** CSS property specifies the algorithm used to lay out `<table>` cells, rows, and columns.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6351,6 +7401,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "table-layout"?: TableLayoutProperty;
   /**
+   * The **`text-align`** CSS property describes how inline content like text is aligned in its parent block element. `text-align` does not control the alignment of block elements, only their inline content.
+   *
    * **Initial value**: `start`, or a nameless value that acts as `left` if _direction_ is `ltr`, `right` if _direction_ is `rtl` if `start` is not supported by the browser.
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6361,6 +7413,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-align"?: TextAlignProperty;
   /**
+   * The **`text-align-last`** CSS property describes how the last line of a block or a line, right before a forced line break, is aligned.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -6371,6 +7425,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-align-last"?: TextAlignLastProperty;
   /**
+   * The **`text-combine-upright`** CSS property specifies the combination of multiple characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE                                     |
@@ -6381,6 +7437,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-combine-upright"?: TextCombineUprightProperty;
   /**
+   * The **`text-decoration-color`** CSS property sets the color of the decorative additions to text that are specified by `text-decoration-line`; these include underlines and overlines, strikethroughs, and wavy lines like those typically used to indicate content is misspelled (for example). The specified color applies to all such decorative lines in the scope of the property's value.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6391,6 +7449,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-decoration-color"?: TextDecorationColorProperty;
   /**
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6401,6 +7461,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-decoration-line"?: TextDecorationLineProperty;
   /**
+   * The **`text-decoration-skip`** CSS property specifies what parts of an element’s content any text decoration affecting the element must skip over. It controls all text decoration lines drawn by the element and also any text decoration lines drawn by its ancestors.
+   *
    * **Initial value**: `objects`
    *
    * | Chrome | Firefox | Safari      | Edge | IE  |
@@ -6411,6 +7473,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-decoration-skip"?: TextDecorationSkipProperty;
   /**
+   * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6421,6 +7485,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty;
   /**
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are specified; there is no way to define different styles for each of the lines defined by `text-decoration-line`.
+   *
    * **Initial value**: `solid`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6431,6 +7497,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-decoration-style"?: TextDecorationStyleProperty;
   /**
+   * The **`text-emphasis-color`** CSS property defines the color used to draw emphasis marks on text being rendered in the HTML document. This value can also be set and reset using the `text-emphasis` shorthand.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -6441,6 +7509,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-emphasis-color"?: TextEmphasisColorProperty;
   /**
+   * The **`text-emphasis-position`** CSS property describes where emphasis marks are drawn at. The effect of emphasis marks on the line height is the same as for ruby text: if there isn't enough place, the line height is increased.
+   *
    * **Initial value**: `over right`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -6451,6 +7521,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-emphasis-position"?: GlobalsString;
   /**
+   * The **`text-emphasis-style`** CSS property defines the type of emphasis used. It can also be set, and reset, using the `text-emphasis` shorthand.
+   *
    * **Initial value**: `none`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -6461,6 +7533,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-emphasis-style"?: TextEmphasisStyleProperty;
   /**
+   * The **`text-indent`** CSS property specifies the amount of indentation (empty space) that is put before lines of text in a block. By default, this controls the indentation of only the first formatted line of the block, but the `hanging` and `each-line` keywords can be used to change this behavior.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6471,6 +7545,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-indent"?: TextIndentProperty<TLength>;
   /**
+   * The **`text-justify`** CSS property defines what type of justification should be applied to text when it is justified (i.e., when `text-align``: justify;` is set on it).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -6481,6 +7557,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-justify"?: TextJustifyProperty;
   /**
+   * The **`text-orientation`** CSS property defines the orientation of the text characters in a line. This property only has an effect in vertical mode, that is, when `writing-mode` is not `horizontal-tb`. It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
+   *
    * **Initial value**: `mixed`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6491,6 +7569,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-orientation"?: TextOrientationProperty;
   /**
+   * The **`text-overflow`** CSS property determines how overflowed content that is not displayed is signaled to users. It can be clipped, display an ellipsis ('`…`', `U+2026 Horizontal Ellipsis`), or display a custom string.
+   *
    * **Initial value**: `clip`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -6501,6 +7581,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-overflow"?: TextOverflowProperty;
   /**
+   * The **`text-rendering`** CSS property provides information to the rendering engine about what to optimize for when rendering text.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6511,6 +7593,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-rendering"?: TextRenderingProperty;
   /**
+   * The **`text-shadow`** CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its `decorations`. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE     |
@@ -6521,6 +7605,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-shadow"?: TextShadowProperty;
   /**
+   * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
+   *
    * **Initial value**: `auto` for smartphone browsers supporting inflation, `none` in other cases (and then not modifiable).
    *
    * | Chrome | Firefox | Safari | Edge         | IE  |
@@ -6531,6 +7617,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-size-adjust"?: TextSizeAdjustProperty;
   /**
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6541,6 +7629,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-transform"?: TextTransformProperty;
   /**
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6551,6 +7641,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "text-underline-position"?: TextUnderlinePositionProperty;
   /**
+   * The **`top`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6561,6 +7653,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   top?: TopProperty<TLength>;
   /**
+   * The **`touch-action`** CSS property specifies whether, and in what ways, a given region can be manipulated by the user via a touchscreen (for instance, by panning or zooming features built into the browser).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE       |
@@ -6572,6 +7666,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "touch-action"?: TouchActionProperty;
   /**
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate a given element. This is achieved by modifying the coordinate space of the CSS visual formatting model.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari    | Edge         | IE      |
@@ -6583,6 +7679,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   transform?: TransformProperty;
   /**
+   * The **`transform-box`** CSS property defines the layout box to which the `transform` and `transform-origin` properties relate.
+   *
    * **Initial value**: `border-box `
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6593,6 +7691,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "transform-box"?: TransformBoxProperty;
   /**
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
+   *
    * **Initial value**: `50% 50% 0`
    *
    * | Chrome | Firefox   | Safari        | Edge   | IE      |
@@ -6604,6 +7704,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "transform-origin"?: TransformOriginProperty<TLength>;
   /**
+   * The **`transform-style`** CSS property determines if the children of an element are positioned in the 3D-space or are flattened in the plane of the element.
+   *
    * **Initial value**: `flat`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE  |
@@ -6615,6 +7717,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "transform-style"?: TransformStyleProperty;
   /**
+   * The **`transition-delay`** CSS property specifies the amount of time to wait before starting a property's transition effect when its value changes.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -6626,6 +7730,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "transition-delay"?: GlobalsString;
   /**
+   * The **`transition-duration`** CSS property specifies the number of seconds or milliseconds a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -6637,6 +7743,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "transition-duration"?: GlobalsString;
   /**
+   * The **`transition-property`** CSS property specifies the CSS properties to which a transition effect should be applied.
+   *
    * **Initial value**: all
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -6648,6 +7756,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "transition-property"?: TransitionPropertyProperty;
   /**
+   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
+   *
    * **Initial value**: `ease`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -6659,6 +7769,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "transition-timing-function"?: TransitionTimingFunctionProperty;
   /**
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6669,6 +7781,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   translate?: TranslateProperty<TLength>;
   /**
+   * The **`unicode-bidi`** CSS property, together with the `direction` property, determines how bidirectional text in a document is handled. For example, if a block of content contains both left-to-right and right-to-left text, the user-agent uses a complex Unicode algorithm to decide how to display the text. The `unicode-bidi` property overrides this algorithm and allows the developer to control the text embedding.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE      |
@@ -6679,6 +7793,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "unicode-bidi"?: UnicodeBidiProperty;
   /**
+   * The `**user-select**` CSS property controls whether the user can select text. This doesn't have any effect on content loaded as chrome, except in textboxes.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome  | Firefox      | Safari        | Edge         | IE     |
@@ -6690,6 +7806,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "user-select"?: UserSelectProperty;
   /**
+   * The **`vertical-align`** CSS property specifies the vertical alignment of an inline or table-cell box.
+   *
    * **Initial value**: `baseline`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6700,6 +7818,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "vertical-align"?: VerticalAlignProperty<TLength>;
   /**
+   * The **`visibility`** CSS property can show or hide an element without affecting the layout of a document (i.e., space is created for elements regardless of whether they are visible or not). The property can also hide rows or columns in a `<table>`.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6710,6 +7830,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   visibility?: VisibilityProperty;
   /**
+   * The **`white-space`** CSS property determines how whitespace inside an element is handled.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -6720,6 +7842,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "white-space"?: WhiteSpaceProperty;
   /**
+   * The **`widows`** CSS property specifies the minimum number of lines in a block container that must be shown at the _top_ of a page, region, or column. This property is normally used to control how breaks occur.
+   *
    * **Initial value**: `2`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6730,6 +7854,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   widows?: GlobalsNumber;
   /**
+   * The **`width`** CSS property specifies the width of an element. By default, the property defines the width of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the width of the border area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6740,6 +7866,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   width?: WidthProperty<TLength>;
   /**
+   * The **`will-change`** CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -6750,6 +7878,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "will-change"?: WillChangeProperty;
   /**
+   * The **`word-break`** CSS property specifies whether or not the browser should insert line breaks wherever the text would otherwise overflow its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -6760,6 +7890,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "word-break"?: WordBreakProperty;
   /**
+   * The **`word-spacing`** CSS property specifies the spacing behavior between tags and words.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6770,6 +7902,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "word-spacing"?: WordSpacingProperty<TLength>;
   /**
+   * The `**overflow-wrap**` CSS property specifies whether or not the browser should insert line breaks within words to prevent text from overflowing its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -6780,6 +7914,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "word-wrap"?: WordWrapProperty;
   /**
+   * The **`writing-mode`** CSS property defines whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   *
    * **Initial value**: `horizontal-tb`
    *
    * | Chrome      | Firefox | Safari        | Edge   | IE          |
@@ -6790,6 +7926,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "writing-mode"?: WritingModeProperty;
   /**
+   * The **`z-index`** CSS property specifies the z-order of a positioned element and its descendants. When elements overlap, z-order determines which one covers the other. An element with a larger z-index generally covers an element with a lower one.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -6805,6 +7943,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
 
 export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   /**
+   * The `**all**` CSS shorthand property sets all of an element's properties (other than `unicode-bidi` and `direction`) to their initial or inherited values, or to the values specified in another stylesheet origin.
+   *
    * **Initial value**: There is no practical initial value for it.
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -6815,6 +7955,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   all?: Globals;
   /**
+   * The **`animation`** CSS property is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
    * | ------ | ------- | ----------- | ------ | ------ |
    * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
@@ -6824,6 +7966,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   animation?: AnimationProperty;
   /**
+   * The **`background`** CSS property is a short way to declare all background style options at once, including color, image, origin and size, repeat method, and other features.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -6832,6 +7976,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength>;
   /**
+   * The **`border`** CSS property is a shorthand for setting all individual border property values in a single declaration: `border-width`, `border-style`, and `border-color`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -6840,6 +7986,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   border?: BorderProperty<TLength>;
   /**
+   * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -6848,6 +7996,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-end"?: BorderBlockEndProperty<TLength>;
   /**
+   * The **`border-block-start`** CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -6856,6 +8006,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-start"?: BorderBlockStartProperty<TLength>;
   /**
+   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-color`, `border-bottom-style`, and `border-bottom-width`. These properties describe an element's bottom `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -6864,6 +8016,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-bottom"?: BorderBottomProperty<TLength>;
   /**
+   * The **`border-color`** CSS property is a shorthand property for setting the colors on all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -6872,6 +8026,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-color"?: BorderColorProperty;
   /**
+   * The **`border-image`** CSS property lets you draw an image in place of an element's `border-style`.
+   *
    * | Chrome  | Firefox   | Safari  | Edge   | IE     |
    * | ------- | --------- | ------- | ------ | ------ |
    * | **16**  | **15**    | **6**   | **12** | **11** |
@@ -6881,6 +8037,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-image"?: BorderImageProperty;
   /**
+   * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -6889,6 +8047,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-end"?: BorderInlineEndProperty<TLength>;
   /**
+   * The **`border-inline-start`** CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -6897,6 +8057,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-start"?: BorderInlineStartProperty<TLength>;
   /**
+   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-color`, `border-left-style`, and `border-left-width`. These properties describe an element's left `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -6905,6 +8067,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-left"?: BorderLeftProperty<TLength>;
   /**
+   * The **`border-radius`** CSS property lets you round the corners of an element's outer border edge. You can specify a single radius to make circular corners, or two radii to make elliptical corners.
+   *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
    * | ------- | ------- | ------- | ------ | ----- |
    * | **4**   | **4**   | **5**   | **12** | **9** |
@@ -6914,6 +8078,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-radius"?: BorderRadiusProperty<TLength>;
   /**
+   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-color`, `border-right-style`, and `border-right-width`. These properties describe an element's right `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE      |
    * | ------ | ------- | ------ | ------ | ------- |
    * | **1**  | **1**   | **1**  | **12** | **5.5** |
@@ -6922,6 +8088,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-right"?: BorderRightProperty<TLength>;
   /**
+   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -6930,6 +8098,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-style"?: BorderStyleProperty;
   /**
+   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-color`, `border-top-style`, and `border-top-width`. These properties describe an element's top `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -6938,6 +8108,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-top"?: BorderTopProperty<TLength>;
   /**
+   * The **`border-width`** CSS property is a shorthand property for setting the widths on all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -6946,6 +8118,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-width"?: BorderWidthProperty<TLength>;
   /**
+   * The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+   *
    * | Chrome | Firefox   | Safari      | Edge         | IE     |
    * | ------ | --------- | ----------- | ------------ | ------ |
    * | **50** | **52**    | **3** _-x-_ | **12** _-x-_ | **10** |
@@ -6955,6 +8129,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "column-rule"?: ColumnRuleProperty<TLength>;
   /**
+   * The **`columns`** CSS property sets the column width and column count of an element.
+   *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
    * | ------ | ------- | ----------- | ------ | ------ |
    * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
@@ -6964,6 +8140,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength>;
   /**
+   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
+   *
    * | Chrome   | Firefox | Safari    | Edge   | IE       |
    * | -------- | ------- | --------- | ------ | -------- |
    * | **29**   | **20**  | **9**     | **12** | **11**   |
@@ -6973,6 +8151,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   flex?: FlexProperty<TLength>;
   /**
+   * The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` individual properties.
+   *
    * | Chrome   | Firefox | Safari    | Edge   | IE     |
    * | -------- | ------- | --------- | ------ | ------ |
    * | **29**   | **28**  | **9**     | **12** | **11** |
@@ -6982,6 +8162,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-flow"?: FlexFlowProperty;
   /**
+   * The **`font`** CSS property is either a shorthand property for setting `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`; or a way to set the element's font to a system font, using specific keywords.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -6991,6 +8173,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   font?: FontProperty;
   gap?: GapProperty<TLength>;
   /**
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -6999,6 +8183,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   grid?: GridProperty;
   /**
+   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -7007,6 +8193,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-area"?: GridAreaProperty;
   /**
+   * The **`grid-column`** CSS property is a shorthand property for `grid-column-start` and `grid-column-end` specifying a grid item's size and location within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -7015,6 +8203,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-column"?: GridColumnProperty;
   /**
+   * The **`grid-row`** CSS property is a shorthand property for `grid-row-start` and `grid-row-end` specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -7023,6 +8213,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-row"?: GridRowProperty;
   /**
+   * The **`grid-template`** CSS property is a shorthand property for defining grid columns, rows, and areas.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -7033,6 +8225,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `none` */
   "line-clamp"?: LineClampProperty;
   /**
+   * The **`list-style`** CSS property is a shorthand for setting the individual values that define how a list is displayed: `list-style-type`, `list-style-image`, and `list-style-position`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -7041,6 +8235,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "list-style"?: ListStyleProperty;
   /**
+   * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for setting all individual margins at once: `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -7049,6 +8245,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   margin?: MarginProperty<TLength>;
   /**
+   * The **`mask`** CSS property alters the visibility of an element by either partially or fully hiding it. This is accomplished by either masking or clipping the image at specific points.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE  |
    * | ------ | ------- | ------ | ------ | --- |
    * | **1**  | Yes     | **4**  | **12** | No  |
@@ -7058,6 +8256,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   mask?: MaskProperty<TLength>;
   "mask-border"?: MaskBorderProperty;
   /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
    * | Chrome        | Firefox | Safari | Edge | IE  |
    * | ------------- | ------- | ------ | ---- | --- |
    * | **55**        | n/a     | n/a    | n/a  | n/a |
@@ -7067,6 +8267,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength>;
   /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
    * | Chrome        | Firefox | Safari | Edge | IE  |
    * | ------------- | ------- | ------ | ---- | --- |
    * | **55**        | n/a     | n/a    | n/a  | n/a |
@@ -7076,6 +8278,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   offset?: OffsetProperty<TLength>;
   /**
+   * The **`outline`** CSS property is a shorthand for setting various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+   *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
    * | ------ | ------- | ------- | ------ | ----- |
    * | **1**  | **1.5** | **1.2** | **12** | **8** |
@@ -7084,6 +8288,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   outline?: OutlineProperty<TLength>;
   /**
+   * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for setting all individual paddings at once: `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -7092,6 +8298,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   padding?: PaddingProperty<TLength>;
   /**
+   * The **`text-decoration`** CSS property specifies the appearance of decorative lines used on text. It is a shorthand for setting one or more individual text-decoration values in a single declaration, which include `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -7100,6 +8308,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "text-decoration"?: TextDecorationProperty;
   /**
+   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
+   *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
    * | ------------ | ------- | ------------- | ---- | --- |
    * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
@@ -7108,6 +8318,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "text-emphasis"?: TextEmphasisProperty;
   /**
+   * The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
+   *
    * | Chrome  | Firefox | Safari  | Edge   | IE     |
    * | ------- | ------- | ------- | ------ | ------ |
    * | **26**  | **16**  | **6.1** | **12** | **10** |
@@ -8044,6 +9256,8 @@ export interface PropertiesHyphen<TLength = string | 0>
 
 export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
+   * The CSS **`align-content`** property defines how the browser distributes space between and around content items along the cross-axis of their container, which is serving as a flexbox container.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari    | Edge   | IE     |
@@ -8055,6 +9269,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   alignContent?: AlignContentProperty | AlignContentProperty[];
   /**
+   * The CSS **`align-items`** property defines how the browser distributes space between and around flex items along the cross-axis of their container. This means it works like `justify-content` but in the perpendicular direction.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
@@ -8066,6 +9282,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   alignItems?: AlignItemsProperty | AlignItemsProperty[];
   /**
+   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -8077,6 +9295,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   alignSelf?: AlignSelfProperty | AlignSelfProperty[];
   /**
+   * The **`animation-delay`** CSS property specifies when an animation should start. You can begin the animation at a future point in time, immediately and from its beginning, or immediately and partway through the animation cycle.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE     |
@@ -8088,6 +9308,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationDelay?: GlobalsString | GlobalsString[];
   /**
+   * The **`animation-direction`** CSS property specifies whether an animation should play forwards, backwards, or alternating back and forth.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -8099,6 +9321,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[];
   /**
+   * The **`animation-duration`** CSS property specifies the length of time that an animation should take to complete one cycle.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -8110,6 +9334,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationDuration?: GlobalsString | GlobalsString[];
   /**
+   * The **`animation-fill-mode`** CSS property specifies how a CSS animation should apply styles to its target before and after its execution.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -8121,6 +9347,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationFillMode?: AnimationFillModeProperty | AnimationFillModeProperty[];
   /**
+   * The **`animation-iteration-count`** CSS property specifies  the number of times an animation cycle should be played before stopping. If multiple values are specified, each time the animation is played the next value in the list is used, cycling back to the first value after the last one is used.
+   *
    * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -8132,6 +9360,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationIterationCount?: AnimationIterationCountProperty | AnimationIterationCountProperty[];
   /**
+   * The **`animation-name`** CSS property specifies one or more animations that should be applied to an element. Each name indicates an `@keyframes` at-rule that defines the property values for the animation sequence.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -8143,6 +9373,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationName?: AnimationNameProperty | AnimationNameProperty[];
   /**
+   * The **`animation-play-state`** CSS property specifies whether an **animation is running or paused**. In JavaScript, this can be queried to determine whether or not the animation is currently running. In addition, you can use JavaScript to set its value to pause or resume playback of an animation.
+   *
    * **Initial value**: `running`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8154,6 +9386,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   /**
+   * The `**animation-timing-function**` CSS property specifies how a CSS animation should progress over the duration of each cycle.
+   *
    * **Initial value**: `ease`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -8165,6 +9399,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   /**
+   * (no description)
+   *
    * **Initial value**: `auto`
    *
    * | Chrome      | Firefox     | Safari      | Edge         | IE  |
@@ -8175,6 +9411,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   appearance?: AppearanceProperty | AppearanceProperty[];
   /**
+   * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE  |
@@ -8185,6 +9423,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backdropFilter?: BackdropFilterProperty | BackdropFilterProperty[];
   /**
+   * The **`backface-visibility`** CSS property determines whether the back face of an element is visible when turned towards the user.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE     |
@@ -8196,6 +9436,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   /**
+   * If a `background-image` is specified, the **`background-attachment`** CSS property determines whether that image's position is fixed within the viewport, or scrolls along with its containing block.
+   *
    * **Initial value**: `scroll`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8206,6 +9448,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundAttachment?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
   /**
+   * The **`background-blend-mode`** CSS property determines how an element's background images should blend with each other and with the element's background color.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8216,6 +9460,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundBlendMode?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
   /**
+   * The **`background-clip`** CSS property specifies if an element's background, whether a `<color>` or an `<image>`, extends underneath its border.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8226,6 +9472,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundClip?: BackgroundClipProperty | BackgroundClipProperty[];
   /**
+   * The **`background-color`** CSS property sets the background color of an element.
+   *
    * **Initial value**: `transparent`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8236,6 +9484,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundColor?: BackgroundColorProperty | BackgroundColorProperty[];
   /**
+   * The **`background-image`** CSS property sets one or more background images on an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8246,6 +9496,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundImage?: BackgroundImageProperty | BackgroundImageProperty[];
   /**
+   * The **`background-origin`** CSS property sets the _background positioning area_, i.e., the origin position of an image specified using the `background-image` property.
+   *
    * **Initial value**: `padding-box`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8256,6 +9508,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundOrigin?: BackgroundOriginProperty | BackgroundOriginProperty[];
   /**
+   * The **`background-position`** CSS property sets the initial position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `0% 0%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8266,6 +9520,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundPosition?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
   /**
+   * The **`background-position-x`** CSS property sets the initial horizontal position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `left`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8276,6 +9532,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundPositionX?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[];
   /**
+   * The **`background-position-y`** CSS property sets the initial vertical position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `top`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8286,6 +9544,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundPositionY?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
   /**
+   * The **`background-repeat`** CSS property defines how background images are repeated. A background image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+   *
    * **Initial value**: `repeat`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8296,6 +9556,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundRepeat?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
   /**
+   * The **`background-size`** CSS property specifies the size of the element's background image. The image can be left to its natural size, stretched to a new size, or constrained to fit the available space while preserving its intrinsic proportions.
+   *
    * **Initial value**: `auto auto`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -8309,6 +9571,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `clip` */
   blockOverflow?: BlockOverflowProperty | BlockOverflowProperty[];
   /**
+   * The **`block-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8319,6 +9583,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   blockSize?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
   /**
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8329,6 +9595,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockEndColor?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
   /**
+   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8339,6 +9607,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockEndStyle?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
   /**
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8349,6 +9619,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[];
   /**
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8359,6 +9631,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockStartColor?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
   /**
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8369,6 +9643,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockStartStyle?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
   /**
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8379,6 +9655,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[];
   /**
+   * The **`border-bottom-color`** CSS property sets the color of an element's bottom `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-bottom` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8389,6 +9667,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBottomColor?: BorderBottomColorProperty | BorderBottomColorProperty[];
   /**
+   * The **`border-bottom-left-radius`** CSS property sets the rounding of the bottom-left corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -8400,6 +9680,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
   /**
+   * The **`border-bottom-right-radius`** CSS property sets the rounding of the bottom-right corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -8411,6 +9693,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
   /**
+   * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -8421,6 +9705,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBottomStyle?: BorderBottomStyleProperty | BorderBottomStyleProperty[];
   /**
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8431,6 +9717,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBottomWidth?: BorderBottomWidthProperty<TLength> | BorderBottomWidthProperty<TLength>[];
   /**
+   * The **`border-collapse`** CSS property specifies whether cells inside a `<table>` have shared or separate borders.
+   *
    * **Initial value**: `separate`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -8441,6 +9729,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderCollapse?: BorderCollapseProperty | BorderCollapseProperty[];
   /**
+   * The **`border-image-outset`** CSS property specifies the distance by which an element's border image is set out from its border box.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8451,6 +9741,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderImageOutset?: BorderImageOutsetProperty<TLength> | BorderImageOutsetProperty<TLength>[];
   /**
+   * The **`border-image-repeat`** CSS property defines how the edge regions of a source image are adjusted to fit the dimensions of an element's border image.
+   *
    * **Initial value**: `stretch`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8461,6 +9753,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderImageRepeat?: BorderImageRepeatProperty | BorderImageRepeatProperty[];
   /**
+   * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions are used to form the components of an element's border image.
+   *
    * **Initial value**: `100%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8471,6 +9765,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderImageSlice?: BorderImageSliceProperty | BorderImageSliceProperty[];
   /**
+   * The **`border-image-source`** CSS property specifies the source image used to create an element's border image.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8481,6 +9777,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderImageSource?: BorderImageSourceProperty | BorderImageSourceProperty[];
   /**
+   * The **`border-image-width`** CSS property specifies the width of an element's border image.
+   *
    * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8491,6 +9789,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderImageWidth?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
   /**
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8501,6 +9801,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
   /**
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox                      | Safari | Edge | IE  |
@@ -8512,6 +9814,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineEndStyle?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
   /**
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8522,6 +9826,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
   /**
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox                        | Safari | Edge | IE  |
@@ -8533,6 +9839,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineStartColor?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
   /**
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8543,6 +9851,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineStartStyle?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
   /**
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -8553,6 +9863,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[];
   /**
+   * The **`border-left-color`** CSS property sets the color of an element's left `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-left` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8563,6 +9875,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderLeftColor?: BorderLeftColorProperty | BorderLeftColorProperty[];
   /**
+   * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -8573,6 +9887,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderLeftStyle?: BorderLeftStyleProperty | BorderLeftStyleProperty[];
   /**
+   * The **`border-left-width`** CSS property sets the width of the left border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8583,6 +9899,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderLeftWidth?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
   /**
+   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8593,6 +9911,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderRightColor?: BorderRightColorProperty | BorderRightColorProperty[];
   /**
+   * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -8603,6 +9923,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderRightStyle?: BorderRightStyleProperty | BorderRightStyleProperty[];
   /**
+   * The **`border-right-width`** CSS property sets the width of the right border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8613,6 +9935,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderRightWidth?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[];
   /**
+   * The **`border-spacing`** CSS property specifies the distance between the borders of adjacent `<table>` cells. This property applies only when `border-collapse` is `separate`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8623,6 +9947,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderSpacing?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[];
   /**
+   * The **`border-top-color`** CSS property sets the color of an element's top `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-top` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8633,6 +9959,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderTopColor?: BorderTopColorProperty | BorderTopColorProperty[];
   /**
+   * The **`border-top-left-radius`** CSS property sets the rounding of the top-left corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -8644,6 +9972,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderTopLeftRadius?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[];
   /**
+   * The **`border-top-right-radius`** CSS property sets the rounding of the top-right corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -8655,6 +9985,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderTopRightRadius?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   /**
+   * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -8665,6 +9997,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderTopStyle?: BorderTopStyleProperty | BorderTopStyleProperty[];
   /**
+   * The **`border-top-width`** CSS property sets the width of the top border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8675,6 +10009,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderTopWidth?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[];
   /**
+   * The **`bottom`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8687,6 +10023,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `stretch` */
   boxAlign?: BoxAlignProperty | BoxAlignProperty[];
   /**
+   * The **`box-decoration-break`** CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
+   *
    * **Initial value**: `slice`
    *
    * | Chrome       | Firefox | Safari  | Edge | IE  |
@@ -8703,6 +10041,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `1` */
   boxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`box-shadow`** CSS property is used to add shadow effects around an element's frame. You can specify multiple effects separated by commas if you wish to do so. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   *
    * **Initial value**: `none`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -8714,6 +10054,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   boxShadow?: BoxShadowProperty | BoxShadowProperty[];
   /**
+   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   *
    * **Initial value**: `content-box`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -8725,6 +10067,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   boxSizing?: BoxSizingProperty | BoxSizingProperty[];
   /**
+   * The **`break-after`** CSS property defines how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8735,6 +10079,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   breakAfter?: BreakAfterProperty | BreakAfterProperty[];
   /**
+   * The **`break-before`** CSS property defines how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8745,6 +10091,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   breakBefore?: BreakBeforeProperty | BreakBeforeProperty[];
   /**
+   * The **`break-inside`** CSS property defines how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8755,6 +10103,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   breakInside?: BreakInsideProperty | BreakInsideProperty[];
   /**
+   * The **`caption-side`** CSS property puts the content of a table's `<caption>` on the specified side. The values are relative to the `writing-mode` of the table.
+   *
    * **Initial value**: `top`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8765,6 +10115,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   captionSide?: CaptionSideProperty | CaptionSideProperty[];
   /**
+   * The **`caret-color`** CSS property sets the color of the insertion caret—the visible indicator of the point at which the next character typed by the user will be inserted—within an element such as `<input>` or one with the `contenteditable` attribute set. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -8775,6 +10127,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   caretColor?: CaretColorProperty | CaretColorProperty[];
   /**
+   * The **`clear`** CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them. The `clear` property applies to both floating and non-floating elements.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8785,6 +10139,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   clear?: ClearProperty | ClearProperty[];
   /**
+   * The `**clip-path**` CSS property creates a clipping region that defines what part of an element should be displayed. More specifically, those portions that are inside the region are shown, while those outside are hidden.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox | Safari | Edge | IE  |
@@ -8796,6 +10152,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   clipPath?: ClipPathProperty | ClipPathProperty[];
   /**
+   * The **`color`** CSS property sets the foreground color value of an element's text content and text decorations. It also sets the `currentcolor` value, which may be used as an indirect value on _other_ properties, and is the default for other color properties, such as `border-color`.
+   *
    * **Initial value**: Varies from one browser to another
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -8808,6 +10166,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `economy` */
   colorAdjust?: ColorAdjustProperty | ColorAdjustProperty[];
   /**
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -8819,6 +10179,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnCount?: ColumnCountProperty | ColumnCountProperty[];
   /**
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
+   *
    * **Initial value**: `balance`
    *
    * | Chrome | Firefox  | Safari | Edge   | IE  |
@@ -8830,6 +10192,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnFill?: ColumnFillProperty | ColumnFillProperty[];
   /**
+   * The **`column-gap`** CSS property sets the size of the gap (spacing) between an element's columns.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -8841,6 +10205,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   /**
+   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -8852,6 +10218,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[];
   /**
+   * The **`column-rule-style`** CSS property sets the style of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -8862,6 +10230,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
   /**
+   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox   | Safari      | Edge         | IE     |
@@ -8873,6 +10243,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
   /**
+   * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -8883,6 +10255,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnSpan?: ColumnSpanProperty | ColumnSpanProperty[];
   /**
+   * The **`column-width`** CSS property specifies the minimum column width. The number of columns will be the maximum number of columns that can fit without any column having a width less than the `column-width` value. The actual column width may be smaller than the value of `column-width` if the width of the container is smaller.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -8896,6 +10270,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `none` */
   contain?: ContainProperty | ContainProperty[];
   /**
+   * The **`content`** CSS property is used with the `::before` and `::after` pseudo-elements to generate content in an element. Objects inserted using the `content` property are _anonymous replaced elements._
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8906,6 +10282,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   content?: ContentProperty | ContentProperty[];
   /**
+   * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE    |
@@ -8916,6 +10294,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   counterIncrement?: CounterIncrementProperty | CounterIncrementProperty[];
   /**
+   * The **`counter-reset`** CSS property resets a CSS counter to a given value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -8926,6 +10306,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   counterReset?: CounterResetProperty | CounterResetProperty[];
   /**
+   * The **`cursor`** CSS property specifies which mouse cursor to display when the mouse pointer is over an element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -8936,6 +10318,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   cursor?: CursorProperty | CursorProperty[];
   /**
+   * The **`direction`** CSS property sets the direction of text, table columns, and horizontal overflow. Use `rtl` for languages written from right to left (like Hebrew or Arabic), and `ltr` for those written from left to right (like English and most other languages).
+   *
    * **Initial value**: `ltr`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE      |
@@ -8946,6 +10330,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   direction?: DirectionProperty | DirectionProperty[];
   /**
+   * The **`display`** CSS property specifies the type of rendering box used for an element. In HTML, default `display` property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is `inline`, including SVG elements.
+   *
    * **Initial value**: `inline`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -8956,6 +10342,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   display?: DisplayProperty | DisplayProperty[];
   /**
+   * The **`empty-cells`** CSS property specifies how the user agent should render borders and backgrounds around `<table>` cells that have no visible content.
+   *
    * **Initial value**: `show`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -8966,6 +10354,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   emptyCells?: EmptyCellsProperty | EmptyCellsProperty[];
   /**
+   * The **`filter`** CSS property lets you apply graphical effects like blurring or color shifting to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE  |
@@ -8977,6 +10367,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   filter?: FilterProperty | FilterProperty[];
   /**
+   * The **`flex-basis`** CSS property specifies the initial **main size** of a flex item. This property determines the size of the content-box unless specified otherwise using `box-sizing`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE     |
@@ -8988,6 +10380,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   flexBasis?: FlexBasisProperty<TLength> | FlexBasisProperty<TLength>[];
   /**
+   * The **`flex-direction`** CSS property specifies how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
+   *
    * **Initial value**: `row`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE       |
@@ -8999,6 +10393,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   flexDirection?: FlexDirectionProperty | FlexDirectionProperty[];
   /**
+   * The **`flex-grow`** CSS property specifies the flex grow factor of a flex item. It specifies what amount of space inside the flex container the item should take up. The flex grow factor of a flex item is relative to the size of the other children in the flex-container.
+   *
    * **Initial value**: `0`
    *
    * | Chrome   | Firefox | Safari        | Edge   | IE                           |
@@ -9010,6 +10406,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   flexGrow?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`flex-shrink`** CSS property specifies the flex shrink factor of a flex item. Flex items will shrink to fill the container according to the `flex-shrink` number, when the default size of flex items is larger than the flex container.
+   *
    * **Initial value**: `1`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
@@ -9021,6 +10419,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   flexShrink?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The CSS **`flex-wrap`** property specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked.
+   *
    * **Initial value**: `nowrap`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -9032,6 +10432,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   flexWrap?: FlexWrapProperty | FlexWrapProperty[];
   /**
+   * The **`float`** CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the web page, though still remaining a part of the flow (in contrast to absolute positioning).
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9042,6 +10444,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   float?: FloatProperty | FloatProperty[];
   /**
+   * The **`font-family`** CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
+   *
    * **Initial value**: depends on user agent
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9052,6 +10456,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontFamily?: FontFamilyProperty | FontFamilyProperty[];
   /**
+   * The **`font-feature-settings`** CSS property gives you control over advanced typographic features in OpenType fonts.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox  | Safari  | Edge   | IE     |
@@ -9063,6 +10469,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontFeatureSettings?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[];
   /**
+   * The **`font-kerning`** CSS property controls the usage of the kerning information stored in a font.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome       | Firefox | Safari | Edge | IE  |
@@ -9073,6 +10481,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontKerning?: FontKerningProperty | FontKerningProperty[];
   /**
+   * The **`font-language-override`** CSS property controls the usage of language-specific glyphs in a typeface.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9084,6 +10494,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontLanguageOverride?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
   /**
+   * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -9094,6 +10506,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontSize?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[];
   /**
+   * The **`font-size-adjust`** CSS property specifies that the font size should be chosen based on the height of lowercase letters rather than the height of capital letters. This is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9104,6 +10518,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontSizeAdjust?: FontSizeAdjustProperty | FontSizeAdjustProperty[];
   /**
+   * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9114,6 +10530,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontStretch?: FontStretchProperty | FontStretchProperty[];
   /**
+   * The **`font-style`** CSS property specifies whether a font should be styled with a normal, italic, or oblique face from its `font-family`.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9124,6 +10542,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontStyle?: FontStyleProperty | FontStyleProperty[];
   /**
+   * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
+   *
    * **Initial value**: `weight style`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9134,6 +10554,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontSynthesis?: FontSynthesisProperty | FontSynthesisProperty[];
   /**
+   * The **font-variant** CSS property is a shorthand for the longhand properties `font-variant-caps`, `font-variant-numeric`, `font-variant-alternates`, `font-variant-ligatures`, and `font-variant-east-asian`. You can also set the CSS Level 2 (Revision 1) values of `font-variant`, (that is, `normal` or `small-caps`), by using the `font` shorthand.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9144,6 +10566,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontVariant?: FontVariantProperty | FontVariantProperty[];
   /**
+   * The **`font-variant-caps`** CSS property controls the usage of alternate glyphs for capital letters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9154,6 +10578,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontVariantCaps?: FontVariantCapsProperty | FontVariantCapsProperty[];
   /**
+   * The **`font-variant-east-asian`** CSS property controls the usage of alternate glyphs for East Asian scripts, like Japanese and Chinese.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9164,6 +10590,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontVariantEastAsian?: FontVariantEastAsianProperty | FontVariantEastAsianProperty[];
   /**
+   * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari  | Edge | IE  |
@@ -9175,6 +10603,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontVariantLigatures?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[];
   /**
+   * The **`font-variant-numeric`** CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -9185,6 +10615,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontVariantNumeric?: FontVariantNumericProperty | FontVariantNumericProperty[];
   /**
+   * The **`font-variant-position`** CSS property controls the usage of alternate, smaller glyphs that are positioned as superscript or subscript relative to the baseline of the font (which remains unchanged). These glyphs are likely to be used in `<sub>` and `<sup>` elements.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9195,6 +10627,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontVariantPosition?: FontVariantPositionProperty | FontVariantPositionProperty[];
   /**
+   * The **`font-variation-settings`** CSS property provides low-level control over OpenType or TrueType font variations, by specifying the four letter axis names of the features you want to vary, along with their variation values.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9205,6 +10639,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontVariationSettings?: FontVariationSettingsProperty | FontVariationSettingsProperty[];
   /**
+   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only available in `normal` and `bold`.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -9215,6 +10651,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontWeight?: FontWeightProperty | FontWeightProperty[];
   /**
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge                    | IE                          |
@@ -9226,6 +10664,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridAutoColumns?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
   /**
+   * The **`grid-auto-flow`** CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
+   *
    * **Initial value**: `row`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -9236,6 +10676,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridAutoFlow?: GridAutoFlowProperty | GridAutoFlowProperty[];
   /**
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge                 | IE                       |
@@ -9247,6 +10689,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridAutoRows?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
   /**
+   * The **`grid-column-end`** CSS property specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -9257,6 +10701,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridColumnEnd?: GridColumnEndProperty | GridColumnEndProperty[];
   /**
+   * The **`grid-column-start`** CSS property specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -9267,6 +10713,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridColumnStart?: GridColumnStartProperty | GridColumnStartProperty[];
   /**
+   * The **`grid-row-end`** CSS property specifies a grid item’s end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -9277,6 +10725,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridRowEnd?: GridRowEndProperty | GridRowEndProperty[];
   /**
+   * The **`grid-row-start`** CSS property specifies a grid item’s start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -9287,6 +10737,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridRowStart?: GridRowStartProperty | GridRowStartProperty[];
   /**
+   * The **`grid-template-areas`** CSS property specifies named grid areas.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -9297,6 +10749,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridTemplateAreas?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
   /**
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -9307,6 +10761,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridTemplateColumns?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
   /**
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -9319,6 +10775,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `none` */
   hangingPunctuation?: HangingPunctuationProperty | HangingPunctuationProperty[];
   /**
+   * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9329,6 +10787,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   height?: HeightProperty<TLength> | HeightProperty<TLength>[];
   /**
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   *
    * **Initial value**: `manual`
    *
    * | Chrome   | Firefox | Safari        | Edge | IE           |
@@ -9340,6 +10800,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   hyphens?: HyphensProperty | HyphensProperty[];
   /**
+   * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image. It should _not_ be used for any other orientation adjustments; instead, the `transform` property should be used with the `rotate` `<transform-function>`.
+   *
    * **Initial value**: `0deg`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9350,6 +10812,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   imageOrientation?: ImageOrientationProperty | ImageOrientationProperty[];
   /**
+   * The **`image-rendering`** CSS property provides a hint to the browser about the algorithm it should use to scale images.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9362,6 +10826,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `1dppx` */
   imageResolution?: ImageResolutionProperty | ImageResolutionProperty[];
   /**
+   * The `initial-letter` CSS property specifies styling for dropped, raised, and sunken initial letters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9374,6 +10840,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   initialLetterAlign?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
   /**
+   * The **`inline-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9384,6 +10852,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   inlineSize?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
   /**
+   * The **`isolation`** CSS property determines whether an element must create a new stacking context.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9394,6 +10864,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   isolation?: IsolationProperty | IsolationProperty[];
   /**
+   * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main axis of their container.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -9405,6 +10877,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   justifyContent?: JustifyContentProperty | JustifyContentProperty[];
   /**
+   * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
+   *
    * **Initial value**: `legacy`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -9415,6 +10889,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   justifyItems?: JustifyItemsProperty | JustifyItemsProperty[];
   /**
+   * The CSS **`justify-self`** property defines the way of justifying a box inside its container along the appropriate axis.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -9425,6 +10901,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   justifySelf?: JustifySelfProperty | JustifySelfProperty[];
   /**
+   * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -9435,6 +10913,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   left?: LeftProperty<TLength> | LeftProperty<TLength>[];
   /**
+   * The **`letter-spacing`** CSS property specifies the spacing behavior between text characters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9445,6 +10925,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   letterSpacing?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[];
   /**
+   * The **`line-break`** CSS property is used to specify how (or if) to break lines when working with punctuation and symbols. This only affects text in Chinese, Japanese, or Korean (CJK).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome  | Firefox | Safari | Edge   | IE      |
@@ -9456,6 +10938,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   lineBreak?: LineBreakProperty | LineBreakProperty[];
   /**
+   * The **`line-height`** CSS property sets the amount of space used for lines, such as in text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9468,6 +10952,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `none` */
   lineHeightStep?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
   /**
+   * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9478,6 +10964,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   listStyleImage?: ListStyleImageProperty | ListStyleImageProperty[];
   /**
+   * The **`list-style-position`** CSS property specifies the position of the `::marker` relative to a list item.
+   *
    * **Initial value**: `outside`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9488,6 +10976,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   listStylePosition?: ListStylePositionProperty | ListStylePositionProperty[];
   /**
+   * The **`list-style-type`** CSS property specifies the appearance of a list item element.
+   *
    * **Initial value**: `disc`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9498,6 +10988,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   listStyleType?: ListStyleTypeProperty | ListStyleTypeProperty[];
   /**
+   * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9508,6 +11000,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginBlockEnd?: MarginBlockEndProperty<TLength> | MarginBlockEndProperty<TLength>[];
   /**
+   * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9518,6 +11012,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginBlockStart?: MarginBlockStartProperty<TLength> | MarginBlockStartProperty<TLength>[];
   /**
+   * The **`margin-bottom`** CSS property sets the margin area on the bottom of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9528,6 +11024,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginBottom?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
   /**
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                       | Firefox               | Safari                       | Edge | IE  |
@@ -9539,6 +11037,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginInlineEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
   /**
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                         | Firefox                 | Safari                         | Edge | IE  |
@@ -9550,6 +11050,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginInlineStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   /**
+   * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9560,6 +11062,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginLeft?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
   /**
+   * The **`margin-right`** CSS property sets the margin area on the right side of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9570,6 +11074,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginRight?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
   /**
+   * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9592,6 +11098,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   maskBorderWidth?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
   /**
+   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9602,6 +11110,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskClip?: MaskClipProperty | MaskClipProperty[];
   /**
+   * The **`mask-composite`** CSS property represents a compositing operation used on the current mask layer with the mask layers below it.
+   *
    * **Initial value**: `add`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9612,6 +11122,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskComposite?: MaskCompositeProperty | MaskCompositeProperty[];
   /**
+   * The **`mask-image`** CSS property sets the image that is used as mask layer for an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome      | Firefox | Safari      | Edge   | IE  |
@@ -9622,6 +11134,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskImage?: MaskImageProperty | MaskImageProperty[];
   /**
+   * The **`mask-mode`** CSS property determines whether the mask reference defined by `mask-image` is treated as a luminance or alpha mask.
+   *
    * **Initial value**: `match-source`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9632,6 +11146,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskMode?: MaskModeProperty | MaskModeProperty[];
   /**
+   * The **`mask-origin`** CSS property determines the origin of a mask.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9642,6 +11158,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskOrigin?: MaskOriginProperty | MaskOriginProperty[];
   /**
+   * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer defined by `mask-origin`, for each defined mask image.
+   *
    * **Initial value**: `center`
    *
    * | Chrome      | Firefox | Safari      | Edge | IE  |
@@ -9652,6 +11170,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskPosition?: MaskPositionProperty<TLength> | MaskPositionProperty<TLength>[];
   /**
+   * The **`mask-repeat`** CSS property defines how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+   *
    * **Initial value**: `no-repeat`
    *
    * | Chrome      | Firefox | Safari      | Edge | IE  |
@@ -9662,6 +11182,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskRepeat?: MaskRepeatProperty | MaskRepeatProperty[];
   /**
+   * The **`mask-size`** CSS property specifies the sizes of the mask images. The size of the image can be fully or partially constrained in order to preserve its intrinsic ratio.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9672,6 +11194,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskSize?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[];
   /**
+   * The **`mask-type`** CSS property determines whether the mask defined by an SVG `<mask>` element is used as a _luminance_ or an _alpha_ mask. It applies to the `<mask>` element itself.
+   *
    * **Initial value**: `luminance`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9684,6 +11208,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `0` */
   maxBlockSize?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[];
   /**
+   * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9694,6 +11220,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maxHeight?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
   /**
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block depending on its writing mode. It corresponds to the `max-width` or the `max-height` property depending on the value defined for `writing-mode`. If the writing mode is vertically oriented, the value of `max-inline-size` relates to the maximal height of the element, otherwise it relates to the maximal width of the element. It relates to `max-block-size`, which defines the other dimension of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari         | Edge | IE  |
@@ -9706,6 +11234,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `none` */
   maxLines?: MaxLinesProperty | MaxLinesProperty[];
   /**
+   * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9716,6 +11246,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maxWidth?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
   /**
+   * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9726,6 +11258,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   minBlockSize?: MinBlockSizeProperty<TLength> | MinBlockSizeProperty<TLength>[];
   /**
+   * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9736,6 +11270,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   minHeight?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
   /**
+   * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9746,6 +11282,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   minInlineSize?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[];
   /**
+   * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9756,6 +11294,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
   /**
+   * The **`mix-blend-mode`** CSS property describes how an element's content should blend with the content of the element's direct parent and the element's background.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9766,6 +11306,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
   /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -9777,6 +11319,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   motionDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /**
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   *
    * **Initial value**: `none`
    *
    * | Chrome             | Firefox | Safari | Edge | IE  |
@@ -9788,6 +11332,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   motionPath?: OffsetPathProperty | OffsetPathProperty[];
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -9799,6 +11345,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   motionRotation?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
+   * The **`object-fit`** CSS property specifies how the contents of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
+   *
    * **Initial value**: `fill`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -9809,6 +11357,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   objectFit?: ObjectFitProperty | ObjectFitProperty[];
   /**
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
+   *
    * **Initial value**: `50% 50%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -9821,6 +11371,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   /**
+   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9831,6 +11383,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetBlockEnd?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
   /**
+   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9841,6 +11395,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetBlockStart?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
   /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -9852,6 +11408,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /**
+   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9862,6 +11420,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetInlineEnd?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
   /**
+   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -9872,6 +11432,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetInlineStart?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
   /**
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   *
    * **Initial value**: `none`
    *
    * | Chrome             | Firefox | Safari | Edge | IE  |
@@ -9885,6 +11447,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -9896,6 +11460,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -9907,6 +11473,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetRotation?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
+   * The **`opacity`** CSS property specifies the level of transparency of an element, that is, the degree to which the content behind the element is visible.
+   *
    * **Initial value**: `1.0`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -9917,6 +11485,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   opacity?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`order`** CSS property specifies the order used to lay out a flex or grid item in its flex or grid container. Items within the same container are laid out in ascending order according to their `order` values. Elements with the same `order` value are laid out in the order in which they appear in the source code.
+   *
    * **Initial value**: `0`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE       |
@@ -9928,6 +11498,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   order?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`orphans`** CSS property specifies the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column. This property is normally used to control how breaks occur.
+   *
    * **Initial value**: `2`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9938,6 +11510,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   orphans?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`outline-color`** CSS property sets the color of an element's outline.
+   *
    * **Initial value**: `invert`, for browsers supporting it, `currentColor` for the other
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -9948,6 +11522,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   outlineColor?: OutlineColorProperty | OutlineColorProperty[];
   /**
+   * The **`outline-offset`** CSS property sets the amount of space between an `outline` and the edge or border of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -9958,6 +11534,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   outlineOffset?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[];
   /**
+   * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -9968,6 +11546,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   outlineStyle?: OutlineStyleProperty | OutlineStyleProperty[];
   /**
+   * The **`outline-width`** CSS property sets the width (thickness) of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -9978,6 +11558,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   outlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
   /**
+   * The **`overflow`** CSS property specifies what to do when an element's content is too large to fit in its block formatting context. It is a shorthand for the `overflow-x` and `overflow-y` properties.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -9996,6 +11578,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   overflowInline?: OverflowInlineProperty | OverflowInlineProperty[];
   /**
+   * The `**overflow-wrap**` CSS property specifies whether or not the browser should insert line breaks within words to prevent text from overflowing its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome              | Firefox           | Safari              | Edge                 | IE                    |
@@ -10007,6 +11591,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[];
   /**
+   * The **`overflow-x`** CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the left and right edges.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10017,6 +11603,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overflowX?: OverflowXProperty | OverflowXProperty[];
   /**
+   * The **`overflow-y`** CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the top and bottom edges.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10027,6 +11615,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overflowY?: OverflowYProperty | OverflowYProperty[];
   /**
+   * The **`overscroll-behavior`** CSS property is shorthand for the `overscroll-behavior-x` and `overscroll-behavior-y` properties, which allow you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10037,6 +11627,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
   /**
+   * The **`overscroll-behavior-x`** CSS property is allows you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached — in the x axis direction.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10047,6 +11639,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overscrollBehaviorX?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[];
   /**
+   * The **`overscroll-behavior-y`** CSS property is allows you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached — in the y axis direction.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10057,6 +11651,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overscrollBehaviorY?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
   /**
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10067,6 +11663,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingBlockEnd?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
   /**
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10077,6 +11675,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingBlockStart?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   /**
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10087,6 +11687,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
   /**
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
@@ -10098,6 +11700,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingInlineEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   /**
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
@@ -10109,6 +11713,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingInlineStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   /**
+   * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10119,6 +11725,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingLeft?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
   /**
+   * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10129,6 +11737,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingRight?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
   /**
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10139,6 +11749,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingTop?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[];
   /**
+   * The **`page-break-after`** CSS property adjusts page breaks _after_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -10149,6 +11761,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   pageBreakAfter?: PageBreakAfterProperty | PageBreakAfterProperty[];
   /**
+   * The **`page-break-before`** CSS property adjusts page breaks _before_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -10159,6 +11773,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   pageBreakBefore?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
   /**
+   * The **`page-break-inside`** CSS property adjusts page breaks _inside_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -10169,6 +11785,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   pageBreakInside?: PageBreakInsideProperty | PageBreakInsideProperty[];
   /**
+   * The **`paint-order`** CSS property lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10179,6 +11797,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paintOrder?: PaintOrderProperty | PaintOrderProperty[];
   /**
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox  | Safari | Edge   | IE     |
@@ -10190,6 +11810,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   /**
+   * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
+   *
    * **Initial value**: `50% 50%`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE     |
@@ -10201,6 +11823,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   perspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   /**
+   * The `**place-content**` CSS shorthand property sets both the `align-content` and `justify-content` properties.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10211,6 +11835,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   placeContent?: PlaceContentProperty | PlaceContentProperty[];
   /**
+   * The **`pointer-events`** CSS property specifies under what circumstances (if any) a particular graphic element can become the target of mouse events.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -10221,6 +11847,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   pointerEvents?: PointerEventsProperty | PointerEventsProperty[];
   /**
+   * The **`position`** CSS property specifies how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` properties determine the final location of positioned elements.
+   *
    * **Initial value**: `static`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10231,6 +11859,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   position?: PositionProperty | PositionProperty[];
   /**
+   * The `quotes` CSS property indicates how user agents should render quotation marks.
+   *
    * **Initial value**: depends on user agent
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10241,6 +11871,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   quotes?: QuotesProperty | QuotesProperty[];
   /**
+   * The **`resize`** CSS sets whether an element is resizable, and if so, in which direction(s).
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10251,6 +11883,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   resize?: ResizeProperty | ResizeProperty[];
   /**
+   * The **`right`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -10261,6 +11895,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   right?: RightProperty<TLength> | RightProperty<TLength>[];
   /**
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10273,6 +11909,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `normal` */
   rowGap?: RowGapProperty<TLength> | RowGapProperty<TLength>[];
   /**
+   * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
+   *
    * **Initial value**: `space-around`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10285,6 +11923,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `separate` */
   rubyMerge?: RubyMergeProperty | RubyMergeProperty[];
   /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
    * **Initial value**: `over`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -10295,6 +11935,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   rubyPosition?: RubyPositionProperty | RubyPositionProperty[];
   /**
+   * The **`scale`** CSS property allows you to specify scale transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10305,6 +11947,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   scale?: ScaleProperty | ScaleProperty[];
   /**
+   * The **`scroll-behavior`** CSS property specifies the scrolling behavior for a scrolling box when scrolling is triggered by one of the navigation or CSSOM scrolling APIs.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10315,6 +11959,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   scrollBehavior?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
   /**
+   * The **`scroll-snap-type`** CSS property defines how strictly snap points are enforced on the scroll container in case there is one.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge         | IE           |
@@ -10325,6 +11971,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
   /**
+   * The **`shape-image-threshold`** CSS property defines the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
+   *
    * **Initial value**: `0.0`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -10335,6 +11983,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   shapeImageThreshold?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`shape-margin`** CSS property specifies a margin for a CSS shape created using `shape-outside`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari         | Edge | IE  |
@@ -10345,6 +11995,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   shapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[];
   /**
+   * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -10355,6 +12007,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   shapeOutside?: ShapeOutsideProperty | ShapeOutsideProperty[];
   /**
+   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   *
    * **Initial value**: `8`
    *
    * | Chrome | Firefox     | Safari  | Edge | IE  |
@@ -10365,6 +12019,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   tabSize?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
   /**
+   * The **`table-layout`** CSS property specifies the algorithm used to lay out `<table>` cells, rows, and columns.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10375,6 +12031,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   tableLayout?: TableLayoutProperty | TableLayoutProperty[];
   /**
+   * The **`text-align`** CSS property describes how inline content like text is aligned in its parent block element. `text-align` does not control the alignment of block elements, only their inline content.
+   *
    * **Initial value**: `start`, or a nameless value that acts as `left` if _direction_ is `ltr`, `right` if _direction_ is `rtl` if `start` is not supported by the browser.
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10385,6 +12043,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textAlign?: TextAlignProperty | TextAlignProperty[];
   /**
+   * The **`text-align-last`** CSS property describes how the last line of a block or a line, right before a forced line break, is aligned.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -10395,6 +12055,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textAlignLast?: TextAlignLastProperty | TextAlignLastProperty[];
   /**
+   * The **`text-combine-upright`** CSS property specifies the combination of multiple characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE                                     |
@@ -10405,6 +12067,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textCombineUpright?: TextCombineUprightProperty | TextCombineUprightProperty[];
   /**
+   * The **`text-decoration-color`** CSS property sets the color of the decorative additions to text that are specified by `text-decoration-line`; these include underlines and overlines, strikethroughs, and wavy lines like those typically used to indicate content is misspelled (for example). The specified color applies to all such decorative lines in the scope of the property's value.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10415,6 +12079,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textDecorationColor?: TextDecorationColorProperty | TextDecorationColorProperty[];
   /**
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10425,6 +12091,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textDecorationLine?: TextDecorationLineProperty | TextDecorationLineProperty[];
   /**
+   * The **`text-decoration-skip`** CSS property specifies what parts of an element’s content any text decoration affecting the element must skip over. It controls all text decoration lines drawn by the element and also any text decoration lines drawn by its ancestors.
+   *
    * **Initial value**: `objects`
    *
    * | Chrome | Firefox | Safari      | Edge | IE  |
@@ -10435,6 +12103,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textDecorationSkip?: TextDecorationSkipProperty | TextDecorationSkipProperty[];
   /**
+   * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10445,6 +12115,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textDecorationSkipInk?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[];
   /**
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are specified; there is no way to define different styles for each of the lines defined by `text-decoration-line`.
+   *
    * **Initial value**: `solid`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10455,6 +12127,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
   /**
+   * The **`text-emphasis-color`** CSS property defines the color used to draw emphasis marks on text being rendered in the HTML document. This value can also be set and reset using the `text-emphasis` shorthand.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -10465,6 +12139,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textEmphasisColor?: TextEmphasisColorProperty | TextEmphasisColorProperty[];
   /**
+   * The **`text-emphasis-position`** CSS property describes where emphasis marks are drawn at. The effect of emphasis marks on the line height is the same as for ruby text: if there isn't enough place, the line height is increased.
+   *
    * **Initial value**: `over right`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -10475,6 +12151,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textEmphasisPosition?: GlobalsString | GlobalsString[];
   /**
+   * The **`text-emphasis-style`** CSS property defines the type of emphasis used. It can also be set, and reset, using the `text-emphasis` shorthand.
+   *
    * **Initial value**: `none`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -10485,6 +12163,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textEmphasisStyle?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[];
   /**
+   * The **`text-indent`** CSS property specifies the amount of indentation (empty space) that is put before lines of text in a block. By default, this controls the indentation of only the first formatted line of the block, but the `hanging` and `each-line` keywords can be used to change this behavior.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10495,6 +12175,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textIndent?: TextIndentProperty<TLength> | TextIndentProperty<TLength>[];
   /**
+   * The **`text-justify`** CSS property defines what type of justification should be applied to text when it is justified (i.e., when `text-align``: justify;` is set on it).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -10505,6 +12187,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textJustify?: TextJustifyProperty | TextJustifyProperty[];
   /**
+   * The **`text-orientation`** CSS property defines the orientation of the text characters in a line. This property only has an effect in vertical mode, that is, when `writing-mode` is not `horizontal-tb`. It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
+   *
    * **Initial value**: `mixed`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10515,6 +12199,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textOrientation?: TextOrientationProperty | TextOrientationProperty[];
   /**
+   * The **`text-overflow`** CSS property determines how overflowed content that is not displayed is signaled to users. It can be clipped, display an ellipsis ('`…`', `U+2026 Horizontal Ellipsis`), or display a custom string.
+   *
    * **Initial value**: `clip`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -10525,6 +12211,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textOverflow?: TextOverflowProperty | TextOverflowProperty[];
   /**
+   * The **`text-rendering`** CSS property provides information to the rendering engine about what to optimize for when rendering text.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10535,6 +12223,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textRendering?: TextRenderingProperty | TextRenderingProperty[];
   /**
+   * The **`text-shadow`** CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its `decorations`. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE     |
@@ -10545,6 +12235,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textShadow?: TextShadowProperty | TextShadowProperty[];
   /**
+   * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
+   *
    * **Initial value**: `auto` for smartphone browsers supporting inflation, `none` in other cases (and then not modifiable).
    *
    * | Chrome | Firefox | Safari | Edge         | IE  |
@@ -10555,6 +12247,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
   /**
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10565,6 +12259,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textTransform?: TextTransformProperty | TextTransformProperty[];
   /**
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10575,6 +12271,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   textUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
   /**
+   * The **`top`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10585,6 +12283,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   top?: TopProperty<TLength> | TopProperty<TLength>[];
   /**
+   * The **`touch-action`** CSS property specifies whether, and in what ways, a given region can be manipulated by the user via a touchscreen (for instance, by panning or zooming features built into the browser).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE       |
@@ -10596,6 +12296,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   touchAction?: TouchActionProperty | TouchActionProperty[];
   /**
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate a given element. This is achieved by modifying the coordinate space of the CSS visual formatting model.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari    | Edge         | IE      |
@@ -10607,6 +12309,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transform?: TransformProperty | TransformProperty[];
   /**
+   * The **`transform-box`** CSS property defines the layout box to which the `transform` and `transform-origin` properties relate.
+   *
    * **Initial value**: `border-box `
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10617,6 +12321,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transformBox?: TransformBoxProperty | TransformBoxProperty[];
   /**
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
+   *
    * **Initial value**: `50% 50% 0`
    *
    * | Chrome | Firefox   | Safari        | Edge   | IE      |
@@ -10628,6 +12334,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transformOrigin?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[];
   /**
+   * The **`transform-style`** CSS property determines if the children of an element are positioned in the 3D-space or are flattened in the plane of the element.
+   *
    * **Initial value**: `flat`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE  |
@@ -10639,6 +12347,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transformStyle?: TransformStyleProperty | TransformStyleProperty[];
   /**
+   * The **`transition-delay`** CSS property specifies the amount of time to wait before starting a property's transition effect when its value changes.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -10650,6 +12360,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transitionDelay?: GlobalsString | GlobalsString[];
   /**
+   * The **`transition-duration`** CSS property specifies the number of seconds or milliseconds a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -10661,6 +12373,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transitionDuration?: GlobalsString | GlobalsString[];
   /**
+   * The **`transition-property`** CSS property specifies the CSS properties to which a transition effect should be applied.
+   *
    * **Initial value**: all
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -10672,6 +12386,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[];
   /**
+   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
+   *
    * **Initial value**: `ease`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -10683,6 +12399,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
   /**
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10693,6 +12411,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   translate?: TranslateProperty<TLength> | TranslateProperty<TLength>[];
   /**
+   * The **`unicode-bidi`** CSS property, together with the `direction` property, determines how bidirectional text in a document is handled. For example, if a block of content contains both left-to-right and right-to-left text, the user-agent uses a complex Unicode algorithm to decide how to display the text. The `unicode-bidi` property overrides this algorithm and allows the developer to control the text embedding.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE      |
@@ -10703,6 +12423,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   unicodeBidi?: UnicodeBidiProperty | UnicodeBidiProperty[];
   /**
+   * The `**user-select**` CSS property controls whether the user can select text. This doesn't have any effect on content loaded as chrome, except in textboxes.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome  | Firefox      | Safari        | Edge         | IE     |
@@ -10714,6 +12436,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   userSelect?: UserSelectProperty | UserSelectProperty[];
   /**
+   * The **`vertical-align`** CSS property specifies the vertical alignment of an inline or table-cell box.
+   *
    * **Initial value**: `baseline`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10724,6 +12448,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   verticalAlign?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[];
   /**
+   * The **`visibility`** CSS property can show or hide an element without affecting the layout of a document (i.e., space is created for elements regardless of whether they are visible or not). The property can also hide rows or columns in a `<table>`.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10734,6 +12460,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   visibility?: VisibilityProperty | VisibilityProperty[];
   /**
+   * The **`white-space`** CSS property determines how whitespace inside an element is handled.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -10744,6 +12472,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   whiteSpace?: WhiteSpaceProperty | WhiteSpaceProperty[];
   /**
+   * The **`widows`** CSS property specifies the minimum number of lines in a block container that must be shown at the _top_ of a page, region, or column. This property is normally used to control how breaks occur.
+   *
    * **Initial value**: `2`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10754,6 +12484,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   widows?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`width`** CSS property specifies the width of an element. By default, the property defines the width of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the width of the border area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10764,6 +12496,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   width?: WidthProperty<TLength> | WidthProperty<TLength>[];
   /**
+   * The **`will-change`** CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -10774,6 +12508,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   willChange?: WillChangeProperty | WillChangeProperty[];
   /**
+   * The **`word-break`** CSS property specifies whether or not the browser should insert line breaks wherever the text would otherwise overflow its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -10784,6 +12520,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   wordBreak?: WordBreakProperty | WordBreakProperty[];
   /**
+   * The **`word-spacing`** CSS property specifies the spacing behavior between tags and words.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10794,6 +12532,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   wordSpacing?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
   /**
+   * The `**overflow-wrap**` CSS property specifies whether or not the browser should insert line breaks within words to prevent text from overflowing its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -10804,6 +12544,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   wordWrap?: WordWrapProperty | WordWrapProperty[];
   /**
+   * The **`writing-mode`** CSS property defines whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   *
    * **Initial value**: `horizontal-tb`
    *
    * | Chrome      | Firefox | Safari        | Edge   | IE          |
@@ -10814,6 +12556,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   writingMode?: WritingModeProperty | WritingModeProperty[];
   /**
+   * The **`z-index`** CSS property specifies the z-order of a positioned element and its descendants. When elements overlap, z-order determines which one covers the other. An element with a larger z-index generally covers an element with a lower one.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -10829,6 +12573,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
 
 export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   /**
+   * The `**all**` CSS shorthand property sets all of an element's properties (other than `unicode-bidi` and `direction`) to their initial or inherited values, or to the values specified in another stylesheet origin.
+   *
    * **Initial value**: There is no practical initial value for it.
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10839,6 +12585,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   all?: Globals | Globals[];
   /**
+   * The **`animation`** CSS property is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
    * | ------ | ------- | ----------- | ------ | ------ |
    * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
@@ -10848,6 +12596,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   animation?: AnimationProperty | AnimationProperty[];
   /**
+   * The **`background`** CSS property is a short way to declare all background style options at once, including color, image, origin and size, repeat method, and other features.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -10856,6 +12606,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   /**
+   * The **`border`** CSS property is a shorthand for setting all individual border property values in a single declaration: `border-width`, `border-style`, and `border-color`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -10864,6 +12616,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   border?: BorderProperty<TLength> | BorderProperty<TLength>[];
   /**
+   * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -10872,6 +12626,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockEnd?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[];
   /**
+   * The **`border-block-start`** CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -10880,6 +12636,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockStart?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[];
   /**
+   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-color`, `border-bottom-style`, and `border-bottom-width`. These properties describe an element's bottom `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -10888,6 +12646,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderBottom?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
   /**
+   * The **`border-color`** CSS property is a shorthand property for setting the colors on all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -10896,6 +12656,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderColor?: BorderColorProperty | BorderColorProperty[];
   /**
+   * The **`border-image`** CSS property lets you draw an image in place of an element's `border-style`.
+   *
    * | Chrome  | Firefox   | Safari  | Edge   | IE     |
    * | ------- | --------- | ------- | ------ | ------ |
    * | **16**  | **15**    | **6**   | **12** | **11** |
@@ -10905,6 +12667,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderImage?: BorderImageProperty | BorderImageProperty[];
   /**
+   * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -10913,6 +12677,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineEnd?: BorderInlineEndProperty<TLength> | BorderInlineEndProperty<TLength>[];
   /**
+   * The **`border-inline-start`** CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -10921,6 +12687,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineStart?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[];
   /**
+   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-color`, `border-left-style`, and `border-left-width`. These properties describe an element's left `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -10929,6 +12697,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderLeft?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[];
   /**
+   * The **`border-radius`** CSS property lets you round the corners of an element's outer border edge. You can specify a single radius to make circular corners, or two radii to make elliptical corners.
+   *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
    * | ------- | ------- | ------- | ------ | ----- |
    * | **4**   | **4**   | **5**   | **12** | **9** |
@@ -10938,6 +12708,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /**
+   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-color`, `border-right-style`, and `border-right-width`. These properties describe an element's right `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE      |
    * | ------ | ------- | ------ | ------ | ------- |
    * | **1**  | **1**   | **1**  | **12** | **5.5** |
@@ -10946,6 +12718,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderRight?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
   /**
+   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -10954,6 +12728,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderStyle?: BorderStyleProperty | BorderStyleProperty[];
   /**
+   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-color`, `border-top-style`, and `border-top-width`. These properties describe an element's top `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -10962,6 +12738,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderTop?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
   /**
+   * The **`border-width`** CSS property is a shorthand property for setting the widths on all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -10970,6 +12748,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderWidth?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
   /**
+   * The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+   *
    * | Chrome | Firefox   | Safari      | Edge         | IE     |
    * | ------ | --------- | ----------- | ------------ | ------ |
    * | **50** | **52**    | **3** _-x-_ | **12** _-x-_ | **10** |
@@ -10979,6 +12759,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   columnRule?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
   /**
+   * The **`columns`** CSS property sets the column width and column count of an element.
+   *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
    * | ------ | ------- | ----------- | ------ | ------ |
    * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
@@ -10988,6 +12770,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   /**
+   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
+   *
    * | Chrome   | Firefox | Safari    | Edge   | IE       |
    * | -------- | ------- | --------- | ------ | -------- |
    * | **29**   | **20**  | **9**     | **12** | **11**   |
@@ -10997,6 +12781,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   flex?: FlexProperty<TLength> | FlexProperty<TLength>[];
   /**
+   * The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` individual properties.
+   *
    * | Chrome   | Firefox | Safari    | Edge   | IE     |
    * | -------- | ------- | --------- | ------ | ------ |
    * | **29**   | **28**  | **9**     | **12** | **11** |
@@ -11006,6 +12792,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   flexFlow?: FlexFlowProperty | FlexFlowProperty[];
   /**
+   * The **`font`** CSS property is either a shorthand property for setting `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`; or a way to set the element's font to a system font, using specific keywords.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -11015,6 +12803,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   font?: FontProperty | FontProperty[];
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
   /**
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -11023,6 +12813,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   grid?: GridProperty | GridProperty[];
   /**
+   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -11031,6 +12823,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   gridArea?: GridAreaProperty | GridAreaProperty[];
   /**
+   * The **`grid-column`** CSS property is a shorthand property for `grid-column-start` and `grid-column-end` specifying a grid item's size and location within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -11039,6 +12833,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   gridColumn?: GridColumnProperty | GridColumnProperty[];
   /**
+   * The **`grid-row`** CSS property is a shorthand property for `grid-row-start` and `grid-row-end` specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -11047,6 +12843,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   gridRow?: GridRowProperty | GridRowProperty[];
   /**
+   * The **`grid-template`** CSS property is a shorthand property for defining grid columns, rows, and areas.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -11057,6 +12855,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `none` */
   lineClamp?: LineClampProperty | LineClampProperty[];
   /**
+   * The **`list-style`** CSS property is a shorthand for setting the individual values that define how a list is displayed: `list-style-type`, `list-style-image`, and `list-style-position`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -11065,6 +12865,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   listStyle?: ListStyleProperty | ListStyleProperty[];
   /**
+   * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for setting all individual margins at once: `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -11073,6 +12875,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
   /**
+   * The **`mask`** CSS property alters the visibility of an element by either partially or fully hiding it. This is accomplished by either masking or clipping the image at specific points.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE  |
    * | ------ | ------- | ------ | ------ | --- |
    * | **1**  | Yes     | **4**  | **12** | No  |
@@ -11082,6 +12886,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   maskBorder?: MaskBorderProperty | MaskBorderProperty[];
   /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
    * | Chrome        | Firefox | Safari | Edge | IE  |
    * | ------------- | ------- | ------ | ---- | --- |
    * | **55**        | n/a     | n/a    | n/a  | n/a |
@@ -11091,6 +12897,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
    * | Chrome        | Firefox | Safari | Edge | IE  |
    * | ------------- | ------- | ------ | ---- | --- |
    * | **55**        | n/a     | n/a    | n/a  | n/a |
@@ -11100,6 +12908,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
+   * The **`outline`** CSS property is a shorthand for setting various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+   *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
    * | ------ | ------- | ------- | ------ | ----- |
    * | **1**  | **1.5** | **1.2** | **12** | **8** |
@@ -11108,6 +12918,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
   /**
+   * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for setting all individual paddings at once: `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -11116,6 +12928,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[];
   /**
+   * The **`text-decoration`** CSS property specifies the appearance of decorative lines used on text. It is a shorthand for setting one or more individual text-decoration values in a single declaration, which include `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -11124,6 +12938,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   textDecoration?: TextDecorationProperty | TextDecorationProperty[];
   /**
+   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
+   *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
    * | ------------ | ------- | ------------- | ---- | --- |
    * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
@@ -11132,6 +12948,8 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   textEmphasis?: TextEmphasisProperty | TextEmphasisProperty[];
   /**
+   * The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
+   *
    * | Chrome  | Firefox | Safari  | Edge   | IE     |
    * | ------- | ------- | ------- | ------ | ------ |
    * | **26**  | **16**  | **6.1** | **12** | **10** |
@@ -12068,6 +13886,8 @@ export interface PropertiesFallback<TLength = string | 0>
 
 export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> {
   /**
+   * The CSS **`align-content`** property defines how the browser distributes space between and around content items along the cross-axis of their container, which is serving as a flexbox container.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari    | Edge   | IE     |
@@ -12079,6 +13899,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "align-content"?: AlignContentProperty | AlignContentProperty[];
   /**
+   * The CSS **`align-items`** property defines how the browser distributes space between and around flex items along the cross-axis of their container. This means it works like `justify-content` but in the perpendicular direction.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
@@ -12090,6 +13912,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "align-items"?: AlignItemsProperty | AlignItemsProperty[];
   /**
+   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -12101,6 +13925,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "align-self"?: AlignSelfProperty | AlignSelfProperty[];
   /**
+   * The **`animation-delay`** CSS property specifies when an animation should start. You can begin the animation at a future point in time, immediately and from its beginning, or immediately and partway through the animation cycle.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE     |
@@ -12112,6 +13938,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-delay"?: GlobalsString | GlobalsString[];
   /**
+   * The **`animation-direction`** CSS property specifies whether an animation should play forwards, backwards, or alternating back and forth.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -12123,6 +13951,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-direction"?: AnimationDirectionProperty | AnimationDirectionProperty[];
   /**
+   * The **`animation-duration`** CSS property specifies the length of time that an animation should take to complete one cycle.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -12134,6 +13964,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-duration"?: GlobalsString | GlobalsString[];
   /**
+   * The **`animation-fill-mode`** CSS property specifies how a CSS animation should apply styles to its target before and after its execution.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -12145,6 +13977,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-fill-mode"?: AnimationFillModeProperty | AnimationFillModeProperty[];
   /**
+   * The **`animation-iteration-count`** CSS property specifies  the number of times an animation cycle should be played before stopping. If multiple values are specified, each time the animation is played the next value in the list is used, cycling back to the first value after the last one is used.
+   *
    * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -12156,6 +13990,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-iteration-count"?: AnimationIterationCountProperty | AnimationIterationCountProperty[];
   /**
+   * The **`animation-name`** CSS property specifies one or more animations that should be applied to an element. Each name indicates an `@keyframes` at-rule that defines the property values for the animation sequence.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -12167,6 +14003,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-name"?: AnimationNameProperty | AnimationNameProperty[];
   /**
+   * The **`animation-play-state`** CSS property specifies whether an **animation is running or paused**. In JavaScript, this can be queried to determine whether or not the animation is currently running. In addition, you can use JavaScript to set its value to pause or resume playback of an animation.
+   *
    * **Initial value**: `running`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12178,6 +14016,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-play-state"?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   /**
+   * The `**animation-timing-function**` CSS property specifies how a CSS animation should progress over the duration of each cycle.
+   *
    * **Initial value**: `ease`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -12189,6 +14029,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   /**
+   * (no description)
+   *
    * **Initial value**: `auto`
    *
    * | Chrome      | Firefox     | Safari      | Edge         | IE  |
@@ -12199,6 +14041,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   appearance?: AppearanceProperty | AppearanceProperty[];
   /**
+   * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE  |
@@ -12209,6 +14053,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "backdrop-filter"?: BackdropFilterProperty | BackdropFilterProperty[];
   /**
+   * The **`backface-visibility`** CSS property determines whether the back face of an element is visible when turned towards the user.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE     |
@@ -12220,6 +14066,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   /**
+   * If a `background-image` is specified, the **`background-attachment`** CSS property determines whether that image's position is fixed within the viewport, or scrolls along with its containing block.
+   *
    * **Initial value**: `scroll`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12230,6 +14078,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-attachment"?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[];
   /**
+   * The **`background-blend-mode`** CSS property determines how an element's background images should blend with each other and with the element's background color.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12240,6 +14090,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-blend-mode"?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
   /**
+   * The **`background-clip`** CSS property specifies if an element's background, whether a `<color>` or an `<image>`, extends underneath its border.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12250,6 +14102,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-clip"?: BackgroundClipProperty | BackgroundClipProperty[];
   /**
+   * The **`background-color`** CSS property sets the background color of an element.
+   *
    * **Initial value**: `transparent`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12260,6 +14114,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-color"?: BackgroundColorProperty | BackgroundColorProperty[];
   /**
+   * The **`background-image`** CSS property sets one or more background images on an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12270,6 +14126,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-image"?: BackgroundImageProperty | BackgroundImageProperty[];
   /**
+   * The **`background-origin`** CSS property sets the _background positioning area_, i.e., the origin position of an image specified using the `background-image` property.
+   *
    * **Initial value**: `padding-box`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12280,6 +14138,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-origin"?: BackgroundOriginProperty | BackgroundOriginProperty[];
   /**
+   * The **`background-position`** CSS property sets the initial position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `0% 0%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12290,6 +14150,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-position"?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
   /**
+   * The **`background-position-x`** CSS property sets the initial horizontal position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `left`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12300,6 +14162,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-position-x"?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[];
   /**
+   * The **`background-position-y`** CSS property sets the initial vertical position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   *
    * **Initial value**: `top`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12310,6 +14174,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-position-y"?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[];
   /**
+   * The **`background-repeat`** CSS property defines how background images are repeated. A background image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+   *
    * **Initial value**: `repeat`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12320,6 +14186,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-repeat"?: BackgroundRepeatProperty | BackgroundRepeatProperty[];
   /**
+   * The **`background-size`** CSS property specifies the size of the element's background image. The image can be left to its natural size, stretched to a new size, or constrained to fit the available space while preserving its intrinsic proportions.
+   *
    * **Initial value**: `auto auto`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -12333,6 +14201,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `clip` */
   "block-overflow"?: BlockOverflowProperty | BlockOverflowProperty[];
   /**
+   * The **`block-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12343,6 +14213,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "block-size"?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
   /**
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12353,6 +14225,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-end-color"?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
   /**
+   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12363,6 +14237,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-end-style"?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
   /**
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12373,6 +14249,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-end-width"?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[];
   /**
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12383,6 +14261,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-start-color"?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
   /**
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12393,6 +14273,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-start-style"?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
   /**
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12403,6 +14285,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-start-width"?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[];
   /**
+   * The **`border-bottom-color`** CSS property sets the color of an element's bottom `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-bottom` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12413,6 +14297,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-bottom-color"?: BorderBottomColorProperty | BorderBottomColorProperty[];
   /**
+   * The **`border-bottom-left-radius`** CSS property sets the rounding of the bottom-left corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -12424,6 +14310,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[];
   /**
+   * The **`border-bottom-right-radius`** CSS property sets the rounding of the bottom-right corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -12435,6 +14323,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[];
   /**
+   * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -12445,6 +14335,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-bottom-style"?: BorderBottomStyleProperty | BorderBottomStyleProperty[];
   /**
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12455,6 +14347,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-bottom-width"?: BorderBottomWidthProperty<TLength> | BorderBottomWidthProperty<TLength>[];
   /**
+   * The **`border-collapse`** CSS property specifies whether cells inside a `<table>` have shared or separate borders.
+   *
    * **Initial value**: `separate`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -12465,6 +14359,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-collapse"?: BorderCollapseProperty | BorderCollapseProperty[];
   /**
+   * The **`border-image-outset`** CSS property specifies the distance by which an element's border image is set out from its border box.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12475,6 +14371,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-image-outset"?: BorderImageOutsetProperty<TLength> | BorderImageOutsetProperty<TLength>[];
   /**
+   * The **`border-image-repeat`** CSS property defines how the edge regions of a source image are adjusted to fit the dimensions of an element's border image.
+   *
    * **Initial value**: `stretch`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12485,6 +14383,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-image-repeat"?: BorderImageRepeatProperty | BorderImageRepeatProperty[];
   /**
+   * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions are used to form the components of an element's border image.
+   *
    * **Initial value**: `100%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12495,6 +14395,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-image-slice"?: BorderImageSliceProperty | BorderImageSliceProperty[];
   /**
+   * The **`border-image-source`** CSS property specifies the source image used to create an element's border image.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12505,6 +14407,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-image-source"?: BorderImageSourceProperty | BorderImageSourceProperty[];
   /**
+   * The **`border-image-width`** CSS property specifies the width of an element's border image.
+   *
    * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12515,6 +14419,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-image-width"?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
   /**
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12525,6 +14431,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-end-color"?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
   /**
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox                      | Safari | Edge | IE  |
@@ -12536,6 +14444,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-end-style"?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
   /**
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12546,6 +14456,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
   /**
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox                        | Safari | Edge | IE  |
@@ -12557,6 +14469,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-start-color"?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
   /**
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12567,6 +14481,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-start-style"?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
   /**
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -12577,6 +14493,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[];
   /**
+   * The **`border-left-color`** CSS property sets the color of an element's left `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-left` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12587,6 +14505,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-left-color"?: BorderLeftColorProperty | BorderLeftColorProperty[];
   /**
+   * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -12597,6 +14517,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-left-style"?: BorderLeftStyleProperty | BorderLeftStyleProperty[];
   /**
+   * The **`border-left-width`** CSS property sets the width of the left border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12607,6 +14529,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-left-width"?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
   /**
+   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12617,6 +14541,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-right-color"?: BorderRightColorProperty | BorderRightColorProperty[];
   /**
+   * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -12627,6 +14553,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-right-style"?: BorderRightStyleProperty | BorderRightStyleProperty[];
   /**
+   * The **`border-right-width`** CSS property sets the width of the right border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12637,6 +14565,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-right-width"?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[];
   /**
+   * The **`border-spacing`** CSS property specifies the distance between the borders of adjacent `<table>` cells. This property applies only when `border-collapse` is `separate`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12647,6 +14577,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-spacing"?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[];
   /**
+   * The **`border-top-color`** CSS property sets the color of an element's top `border`. Note that in many cases the shorthand CSS properties `border-color` or `border-top` are more convenient and preferable.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12657,6 +14589,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-top-color"?: BorderTopColorProperty | BorderTopColorProperty[];
   /**
+   * The **`border-top-left-radius`** CSS property sets the rounding of the top-left corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -12668,6 +14602,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-top-left-radius"?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[];
   /**
+   * The **`border-top-right-radius`** CSS property sets the rounding of the top-right corner of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -12679,6 +14615,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-top-right-radius"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
   /**
+   * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -12689,6 +14627,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-top-style"?: BorderTopStyleProperty | BorderTopStyleProperty[];
   /**
+   * The **`border-top-width`** CSS property sets the width of the top border of a box.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12699,6 +14639,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-top-width"?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[];
   /**
+   * The **`bottom`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12711,6 +14653,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `stretch` */
   "box-align"?: BoxAlignProperty | BoxAlignProperty[];
   /**
+   * The **`box-decoration-break`** CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
+   *
    * **Initial value**: `slice`
    *
    * | Chrome       | Firefox | Safari  | Edge | IE  |
@@ -12727,6 +14671,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `1` */
   "box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`box-shadow`** CSS property is used to add shadow effects around an element's frame. You can specify multiple effects separated by commas if you wish to do so. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   *
    * **Initial value**: `none`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -12738,6 +14684,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
   /**
+   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   *
    * **Initial value**: `content-box`
    *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
@@ -12749,6 +14697,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
   /**
+   * The **`break-after`** CSS property defines how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12759,6 +14709,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "break-after"?: BreakAfterProperty | BreakAfterProperty[];
   /**
+   * The **`break-before`** CSS property defines how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12769,6 +14721,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "break-before"?: BreakBeforeProperty | BreakBeforeProperty[];
   /**
+   * The **`break-inside`** CSS property defines how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12779,6 +14733,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "break-inside"?: BreakInsideProperty | BreakInsideProperty[];
   /**
+   * The **`caption-side`** CSS property puts the content of a table's `<caption>` on the specified side. The values are relative to the `writing-mode` of the table.
+   *
    * **Initial value**: `top`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12789,6 +14745,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "caption-side"?: CaptionSideProperty | CaptionSideProperty[];
   /**
+   * The **`caret-color`** CSS property sets the color of the insertion caret—the visible indicator of the point at which the next character typed by the user will be inserted—within an element such as `<input>` or one with the `contenteditable` attribute set. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -12799,6 +14757,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "caret-color"?: CaretColorProperty | CaretColorProperty[];
   /**
+   * The **`clear`** CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them. The `clear` property applies to both floating and non-floating elements.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12809,6 +14769,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   clear?: ClearProperty | ClearProperty[];
   /**
+   * The `**clip-path**` CSS property creates a clipping region that defines what part of an element should be displayed. More specifically, those portions that are inside the region are shown, while those outside are hidden.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox | Safari | Edge | IE  |
@@ -12820,6 +14782,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "clip-path"?: ClipPathProperty | ClipPathProperty[];
   /**
+   * The **`color`** CSS property sets the foreground color value of an element's text content and text decorations. It also sets the `currentcolor` value, which may be used as an indirect value on _other_ properties, and is the default for other color properties, such as `border-color`.
+   *
    * **Initial value**: Varies from one browser to another
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -12832,6 +14796,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `economy` */
   "color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[];
   /**
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -12843,6 +14809,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-count"?: ColumnCountProperty | ColumnCountProperty[];
   /**
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
+   *
    * **Initial value**: `balance`
    *
    * | Chrome | Firefox  | Safari | Edge   | IE  |
@@ -12854,6 +14822,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-fill"?: ColumnFillProperty | ColumnFillProperty[];
   /**
+   * The **`column-gap`** CSS property sets the size of the gap (spacing) between an element's columns.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -12865,6 +14835,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   /**
+   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -12876,6 +14848,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-rule-color"?: ColumnRuleColorProperty | ColumnRuleColorProperty[];
   /**
+   * The **`column-rule-style`** CSS property sets the style of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
@@ -12886,6 +14860,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
   /**
+   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox   | Safari      | Edge         | IE     |
@@ -12897,6 +14873,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-rule-width"?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
   /**
+   * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -12907,6 +14885,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-span"?: ColumnSpanProperty | ColumnSpanProperty[];
   /**
+   * The **`column-width`** CSS property specifies the minimum column width. The number of columns will be the maximum number of columns that can fit without any column having a width less than the `column-width` value. The actual column width may be smaller than the value of `column-width` if the width of the container is smaller.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox   | Safari      | Edge   | IE     |
@@ -12920,6 +14900,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `none` */
   contain?: ContainProperty | ContainProperty[];
   /**
+   * The **`content`** CSS property is used with the `::before` and `::after` pseudo-elements to generate content in an element. Objects inserted using the `content` property are _anonymous replaced elements._
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12930,6 +14912,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   content?: ContentProperty | ContentProperty[];
   /**
+   * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE    |
@@ -12940,6 +14924,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "counter-increment"?: CounterIncrementProperty | CounterIncrementProperty[];
   /**
+   * The **`counter-reset`** CSS property resets a CSS counter to a given value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -12950,6 +14936,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "counter-reset"?: CounterResetProperty | CounterResetProperty[];
   /**
+   * The **`cursor`** CSS property specifies which mouse cursor to display when the mouse pointer is over an element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -12960,6 +14948,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   cursor?: CursorProperty | CursorProperty[];
   /**
+   * The **`direction`** CSS property sets the direction of text, table columns, and horizontal overflow. Use `rtl` for languages written from right to left (like Hebrew or Arabic), and `ltr` for those written from left to right (like English and most other languages).
+   *
    * **Initial value**: `ltr`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE      |
@@ -12970,6 +14960,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   direction?: DirectionProperty | DirectionProperty[];
   /**
+   * The **`display`** CSS property specifies the type of rendering box used for an element. In HTML, default `display` property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is `inline`, including SVG elements.
+   *
    * **Initial value**: `inline`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -12980,6 +14972,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   display?: DisplayProperty | DisplayProperty[];
   /**
+   * The **`empty-cells`** CSS property specifies how the user agent should render borders and backgrounds around `<table>` cells that have no visible content.
+   *
    * **Initial value**: `show`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -12990,6 +14984,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "empty-cells"?: EmptyCellsProperty | EmptyCellsProperty[];
   /**
+   * The **`filter`** CSS property lets you apply graphical effects like blurring or color shifting to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE  |
@@ -13001,6 +14997,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   filter?: FilterProperty | FilterProperty[];
   /**
+   * The **`flex-basis`** CSS property specifies the initial **main size** of a flex item. This property determines the size of the content-box unless specified otherwise using `box-sizing`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE     |
@@ -13012,6 +15010,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "flex-basis"?: FlexBasisProperty<TLength> | FlexBasisProperty<TLength>[];
   /**
+   * The **`flex-direction`** CSS property specifies how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
+   *
    * **Initial value**: `row`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE       |
@@ -13023,6 +15023,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "flex-direction"?: FlexDirectionProperty | FlexDirectionProperty[];
   /**
+   * The **`flex-grow`** CSS property specifies the flex grow factor of a flex item. It specifies what amount of space inside the flex container the item should take up. The flex grow factor of a flex item is relative to the size of the other children in the flex-container.
+   *
    * **Initial value**: `0`
    *
    * | Chrome   | Firefox | Safari        | Edge   | IE                           |
@@ -13034,6 +15036,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "flex-grow"?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`flex-shrink`** CSS property specifies the flex shrink factor of a flex item. Flex items will shrink to fill the container according to the `flex-shrink` number, when the default size of flex items is larger than the flex container.
+   *
    * **Initial value**: `1`
    *
    * | Chrome   | Firefox | Safari      | Edge   | IE     |
@@ -13045,6 +15049,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "flex-shrink"?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The CSS **`flex-wrap`** property specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked.
+   *
    * **Initial value**: `nowrap`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -13056,6 +15062,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "flex-wrap"?: FlexWrapProperty | FlexWrapProperty[];
   /**
+   * The **`float`** CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the web page, though still remaining a part of the flow (in contrast to absolute positioning).
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13066,6 +15074,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   float?: FloatProperty | FloatProperty[];
   /**
+   * The **`font-family`** CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
+   *
    * **Initial value**: depends on user agent
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13076,6 +15086,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-family"?: FontFamilyProperty | FontFamilyProperty[];
   /**
+   * The **`font-feature-settings`** CSS property gives you control over advanced typographic features in OpenType fonts.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox  | Safari  | Edge   | IE     |
@@ -13087,6 +15099,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-feature-settings"?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[];
   /**
+   * The **`font-kerning`** CSS property controls the usage of the kerning information stored in a font.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome       | Firefox | Safari | Edge | IE  |
@@ -13097,6 +15111,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-kerning"?: FontKerningProperty | FontKerningProperty[];
   /**
+   * The **`font-language-override`** CSS property controls the usage of language-specific glyphs in a typeface.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13108,6 +15124,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-language-override"?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
   /**
+   * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -13118,6 +15136,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-size"?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[];
   /**
+   * The **`font-size-adjust`** CSS property specifies that the font size should be chosen based on the height of lowercase letters rather than the height of capital letters. This is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13128,6 +15148,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-size-adjust"?: FontSizeAdjustProperty | FontSizeAdjustProperty[];
   /**
+   * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13138,6 +15160,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-stretch"?: FontStretchProperty | FontStretchProperty[];
   /**
+   * The **`font-style`** CSS property specifies whether a font should be styled with a normal, italic, or oblique face from its `font-family`.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13148,6 +15172,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-style"?: FontStyleProperty | FontStyleProperty[];
   /**
+   * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
+   *
    * **Initial value**: `weight style`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13158,6 +15184,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-synthesis"?: FontSynthesisProperty | FontSynthesisProperty[];
   /**
+   * The **font-variant** CSS property is a shorthand for the longhand properties `font-variant-caps`, `font-variant-numeric`, `font-variant-alternates`, `font-variant-ligatures`, and `font-variant-east-asian`. You can also set the CSS Level 2 (Revision 1) values of `font-variant`, (that is, `normal` or `small-caps`), by using the `font` shorthand.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13168,6 +15196,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-variant"?: FontVariantProperty | FontVariantProperty[];
   /**
+   * The **`font-variant-caps`** CSS property controls the usage of alternate glyphs for capital letters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13178,6 +15208,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-variant-caps"?: FontVariantCapsProperty | FontVariantCapsProperty[];
   /**
+   * The **`font-variant-east-asian`** CSS property controls the usage of alternate glyphs for East Asian scripts, like Japanese and Chinese.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13188,6 +15220,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-variant-east-asian"?: FontVariantEastAsianProperty | FontVariantEastAsianProperty[];
   /**
+   * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari  | Edge | IE  |
@@ -13199,6 +15233,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-variant-ligatures"?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[];
   /**
+   * The **`font-variant-numeric`** CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -13209,6 +15245,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-variant-numeric"?: FontVariantNumericProperty | FontVariantNumericProperty[];
   /**
+   * The **`font-variant-position`** CSS property controls the usage of alternate, smaller glyphs that are positioned as superscript or subscript relative to the baseline of the font (which remains unchanged). These glyphs are likely to be used in `<sub>` and `<sup>` elements.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13219,6 +15257,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-variant-position"?: FontVariantPositionProperty | FontVariantPositionProperty[];
   /**
+   * The **`font-variation-settings`** CSS property provides low-level control over OpenType or TrueType font variations, by specifying the four letter axis names of the features you want to vary, along with their variation values.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13229,6 +15269,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-variation-settings"?: FontVariationSettingsProperty | FontVariationSettingsProperty[];
   /**
+   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only available in `normal` and `bold`.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -13239,6 +15281,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-weight"?: FontWeightProperty | FontWeightProperty[];
   /**
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge                    | IE                          |
@@ -13250,6 +15294,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-auto-columns"?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
   /**
+   * The **`grid-auto-flow`** CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
+   *
    * **Initial value**: `row`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -13260,6 +15306,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-auto-flow"?: GridAutoFlowProperty | GridAutoFlowProperty[];
   /**
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge                 | IE                       |
@@ -13271,6 +15319,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-auto-rows"?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
   /**
+   * The **`grid-column-end`** CSS property specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -13281,6 +15331,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-column-end"?: GridColumnEndProperty | GridColumnEndProperty[];
   /**
+   * The **`grid-column-start`** CSS property specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -13291,6 +15343,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-column-start"?: GridColumnStartProperty | GridColumnStartProperty[];
   /**
+   * The **`grid-row-end`** CSS property specifies a grid item’s end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -13301,6 +15355,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-row-end"?: GridRowEndProperty | GridRowEndProperty[];
   /**
+   * The **`grid-row-start`** CSS property specifies a grid item’s start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -13311,6 +15367,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-row-start"?: GridRowStartProperty | GridRowStartProperty[];
   /**
+   * The **`grid-template-areas`** CSS property specifies named grid areas.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -13321,6 +15379,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-template-areas"?: GridTemplateAreasProperty | GridTemplateAreasProperty[];
   /**
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -13331,6 +15391,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-template-columns"?: GridTemplateColumnsProperty<TLength> | GridTemplateColumnsProperty<TLength>[];
   /**
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
@@ -13343,6 +15405,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `none` */
   "hanging-punctuation"?: HangingPunctuationProperty | HangingPunctuationProperty[];
   /**
+   * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13353,6 +15417,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   height?: HeightProperty<TLength> | HeightProperty<TLength>[];
   /**
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   *
    * **Initial value**: `manual`
    *
    * | Chrome   | Firefox | Safari        | Edge | IE           |
@@ -13364,6 +15430,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   hyphens?: HyphensProperty | HyphensProperty[];
   /**
+   * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image. It should _not_ be used for any other orientation adjustments; instead, the `transform` property should be used with the `rotate` `<transform-function>`.
+   *
    * **Initial value**: `0deg`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13374,6 +15442,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "image-orientation"?: ImageOrientationProperty | ImageOrientationProperty[];
   /**
+   * The **`image-rendering`** CSS property provides a hint to the browser about the algorithm it should use to scale images.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13386,6 +15456,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `1dppx` */
   "image-resolution"?: ImageResolutionProperty | ImageResolutionProperty[];
   /**
+   * The `initial-letter` CSS property specifies styling for dropped, raised, and sunken initial letters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13398,6 +15470,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `auto` */
   "initial-letter-align"?: InitialLetterAlignProperty | InitialLetterAlignProperty[];
   /**
+   * The **`inline-size`** CSS property defines the horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `width` or the `height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13408,6 +15482,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "inline-size"?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
   /**
+   * The **`isolation`** CSS property determines whether an element must create a new stacking context.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13418,6 +15494,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   isolation?: IsolationProperty | IsolationProperty[];
   /**
+   * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main axis of their container.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome   | Firefox | Safari | Edge   | IE     |
@@ -13429,6 +15507,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "justify-content"?: JustifyContentProperty | JustifyContentProperty[];
   /**
+   * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
+   *
    * **Initial value**: `legacy`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -13439,6 +15519,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "justify-items"?: JustifyItemsProperty | JustifyItemsProperty[];
   /**
+   * The CSS **`justify-self`** property defines the way of justifying a box inside its container along the appropriate axis.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -13449,6 +15531,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "justify-self"?: JustifySelfProperty | JustifySelfProperty[];
   /**
+   * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -13459,6 +15543,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   left?: LeftProperty<TLength> | LeftProperty<TLength>[];
   /**
+   * The **`letter-spacing`** CSS property specifies the spacing behavior between text characters.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13469,6 +15555,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "letter-spacing"?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[];
   /**
+   * The **`line-break`** CSS property is used to specify how (or if) to break lines when working with punctuation and symbols. This only affects text in Chinese, Japanese, or Korean (CJK).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome  | Firefox | Safari | Edge   | IE      |
@@ -13480,6 +15568,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "line-break"?: LineBreakProperty | LineBreakProperty[];
   /**
+   * The **`line-height`** CSS property sets the amount of space used for lines, such as in text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13492,6 +15582,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `none` */
   "line-height-step"?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
   /**
+   * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13502,6 +15594,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "list-style-image"?: ListStyleImageProperty | ListStyleImageProperty[];
   /**
+   * The **`list-style-position`** CSS property specifies the position of the `::marker` relative to a list item.
+   *
    * **Initial value**: `outside`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13512,6 +15606,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "list-style-position"?: ListStylePositionProperty | ListStylePositionProperty[];
   /**
+   * The **`list-style-type`** CSS property specifies the appearance of a list item element.
+   *
    * **Initial value**: `disc`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13522,6 +15618,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "list-style-type"?: ListStyleTypeProperty | ListStyleTypeProperty[];
   /**
+   * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13532,6 +15630,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-block-end"?: MarginBlockEndProperty<TLength> | MarginBlockEndProperty<TLength>[];
   /**
+   * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13542,6 +15642,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-block-start"?: MarginBlockStartProperty<TLength> | MarginBlockStartProperty<TLength>[];
   /**
+   * The **`margin-bottom`** CSS property sets the margin area on the bottom of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13552,6 +15654,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-bottom"?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
   /**
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                       | Firefox               | Safari                       | Edge | IE  |
@@ -13563,6 +15667,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-inline-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
   /**
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                         | Firefox                 | Safari                         | Edge | IE  |
@@ -13574,6 +15680,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-inline-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[];
   /**
+   * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13584,6 +15692,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-left"?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[];
   /**
+   * The **`margin-right`** CSS property sets the margin area on the right side of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13594,6 +15704,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-right"?: MarginRightProperty<TLength> | MarginRightProperty<TLength>[];
   /**
+   * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value will place it farther than normal from its neighbors, while a negative value will place it closer.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13616,6 +15728,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `auto` */
   "mask-border-width"?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
   /**
+   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13626,6 +15740,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-clip"?: MaskClipProperty | MaskClipProperty[];
   /**
+   * The **`mask-composite`** CSS property represents a compositing operation used on the current mask layer with the mask layers below it.
+   *
    * **Initial value**: `add`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13636,6 +15752,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-composite"?: MaskCompositeProperty | MaskCompositeProperty[];
   /**
+   * The **`mask-image`** CSS property sets the image that is used as mask layer for an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome      | Firefox | Safari      | Edge   | IE  |
@@ -13646,6 +15764,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-image"?: MaskImageProperty | MaskImageProperty[];
   /**
+   * The **`mask-mode`** CSS property determines whether the mask reference defined by `mask-image` is treated as a luminance or alpha mask.
+   *
    * **Initial value**: `match-source`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13656,6 +15776,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-mode"?: MaskModeProperty | MaskModeProperty[];
   /**
+   * The **`mask-origin`** CSS property determines the origin of a mask.
+   *
    * **Initial value**: `border-box`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13666,6 +15788,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-origin"?: MaskOriginProperty | MaskOriginProperty[];
   /**
+   * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer defined by `mask-origin`, for each defined mask image.
+   *
    * **Initial value**: `center`
    *
    * | Chrome      | Firefox | Safari      | Edge | IE  |
@@ -13676,6 +15800,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-position"?: MaskPositionProperty<TLength> | MaskPositionProperty<TLength>[];
   /**
+   * The **`mask-repeat`** CSS property defines how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+   *
    * **Initial value**: `no-repeat`
    *
    * | Chrome      | Firefox | Safari      | Edge | IE  |
@@ -13686,6 +15812,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-repeat"?: MaskRepeatProperty | MaskRepeatProperty[];
   /**
+   * The **`mask-size`** CSS property specifies the sizes of the mask images. The size of the image can be fully or partially constrained in order to preserve its intrinsic ratio.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13696,6 +15824,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-size"?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[];
   /**
+   * The **`mask-type`** CSS property determines whether the mask defined by an SVG `<mask>` element is used as a _luminance_ or an _alpha_ mask. It applies to the `<mask>` element itself.
+   *
    * **Initial value**: `luminance`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13708,6 +15838,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `0` */
   "max-block-size"?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[];
   /**
+   * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13718,6 +15850,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "max-height"?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[];
   /**
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block depending on its writing mode. It corresponds to the `max-width` or the `max-height` property depending on the value defined for `writing-mode`. If the writing mode is vertically oriented, the value of `max-inline-size` relates to the maximal height of the element, otherwise it relates to the maximal width of the element. It relates to `max-block-size`, which defines the other dimension of the element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari         | Edge | IE  |
@@ -13730,6 +15864,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `none` */
   "max-lines"?: MaxLinesProperty | MaxLinesProperty[];
   /**
+   * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13740,6 +15876,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "max-width"?: MaxWidthProperty<TLength> | MaxWidthProperty<TLength>[];
   /**
+   * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13750,6 +15888,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "min-block-size"?: MinBlockSizeProperty<TLength> | MinBlockSizeProperty<TLength>[];
   /**
+   * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13760,6 +15900,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "min-height"?: MinHeightProperty<TLength> | MinHeightProperty<TLength>[];
   /**
+   * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13770,6 +15912,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "min-inline-size"?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[];
   /**
+   * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13780,6 +15924,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "min-width"?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[];
   /**
+   * The **`mix-blend-mode`** CSS property describes how an element's content should blend with the content of the element's direct parent and the element's background.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13790,6 +15936,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[];
   /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -13801,6 +15949,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "motion-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /**
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   *
    * **Initial value**: `none`
    *
    * | Chrome             | Firefox | Safari | Edge | IE  |
@@ -13812,6 +15962,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "motion-path"?: OffsetPathProperty | OffsetPathProperty[];
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -13823,6 +15975,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "motion-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
+   * The **`object-fit`** CSS property specifies how the contents of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
+   *
    * **Initial value**: `fill`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -13833,6 +15987,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "object-fit"?: ObjectFitProperty | ObjectFitProperty[];
   /**
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
+   *
    * **Initial value**: `50% 50%`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -13845,6 +16001,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `auto` */
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   /**
+   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13855,6 +16013,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-block-end"?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
   /**
+   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13865,6 +16025,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-block-start"?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
   /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -13876,6 +16038,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /**
+   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13886,6 +16050,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-inline-end"?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
   /**
+   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -13896,6 +16062,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-inline-start"?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
   /**
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   *
    * **Initial value**: `none`
    *
    * | Chrome             | Firefox | Safari | Edge | IE  |
@@ -13909,6 +16077,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `auto` */
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -13920,6 +16090,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome                 | Firefox | Safari | Edge | IE  |
@@ -13931,6 +16103,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
+   * The **`opacity`** CSS property specifies the level of transparency of an element, that is, the degree to which the content behind the element is visible.
+   *
    * **Initial value**: `1.0`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -13941,6 +16115,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   opacity?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`order`** CSS property specifies the order used to lay out a flex or grid item in its flex or grid container. Items within the same container are laid out in ascending order according to their `order` values. Elements with the same `order` value are laid out in the order in which they appear in the source code.
+   *
    * **Initial value**: `0`
    *
    * | Chrome   | Firefox | Safari  | Edge   | IE       |
@@ -13952,6 +16128,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   order?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`orphans`** CSS property specifies the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column. This property is normally used to control how breaks occur.
+   *
    * **Initial value**: `2`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -13962,6 +16140,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   orphans?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`outline-color`** CSS property sets the color of an element's outline.
+   *
    * **Initial value**: `invert`, for browsers supporting it, `currentColor` for the other
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -13972,6 +16152,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "outline-color"?: OutlineColorProperty | OutlineColorProperty[];
   /**
+   * The **`outline-offset`** CSS property sets the amount of space between an `outline` and the edge or border of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -13982,6 +16164,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "outline-offset"?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[];
   /**
+   * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -13992,6 +16176,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "outline-style"?: OutlineStyleProperty | OutlineStyleProperty[];
   /**
+   * The **`outline-width`** CSS property sets the width (thickness) of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   *
    * **Initial value**: `medium`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -14002,6 +16188,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
   /**
+   * The **`overflow`** CSS property specifies what to do when an element's content is too large to fit in its block formatting context. It is a shorthand for the `overflow-x` and `overflow-y` properties.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14020,6 +16208,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `auto` */
   "overflow-inline"?: OverflowInlineProperty | OverflowInlineProperty[];
   /**
+   * The `**overflow-wrap**` CSS property specifies whether or not the browser should insert line breaks within words to prevent text from overflowing its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome              | Firefox           | Safari              | Edge                 | IE                    |
@@ -14031,6 +16221,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overflow-wrap"?: OverflowWrapProperty | OverflowWrapProperty[];
   /**
+   * The **`overflow-x`** CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the left and right edges.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14041,6 +16233,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overflow-x"?: OverflowXProperty | OverflowXProperty[];
   /**
+   * The **`overflow-y`** CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the top and bottom edges.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14051,6 +16245,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overflow-y"?: OverflowYProperty | OverflowYProperty[];
   /**
+   * The **`overscroll-behavior`** CSS property is shorthand for the `overscroll-behavior-x` and `overscroll-behavior-y` properties, which allow you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14061,6 +16257,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
   /**
+   * The **`overscroll-behavior-x`** CSS property is allows you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached — in the x axis direction.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14071,6 +16269,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[];
   /**
+   * The **`overscroll-behavior-y`** CSS property is allows you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached — in the y axis direction.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14081,6 +16281,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
   /**
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14091,6 +16293,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-block-end"?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
   /**
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14101,6 +16305,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-block-start"?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   /**
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14111,6 +16317,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-bottom"?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
   /**
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                        | Firefox                | Safari                        | Edge | IE  |
@@ -14122,6 +16330,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-inline-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   /**
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome                          | Firefox                  | Safari                          | Edge | IE  |
@@ -14133,6 +16343,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-inline-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   /**
+   * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14143,6 +16355,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-left"?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
   /**
+   * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14153,6 +16367,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-right"?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
   /**
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14163,6 +16379,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-top"?: PaddingTopProperty<TLength> | PaddingTopProperty<TLength>[];
   /**
+   * The **`page-break-after`** CSS property adjusts page breaks _after_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -14173,6 +16391,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "page-break-after"?: PageBreakAfterProperty | PageBreakAfterProperty[];
   /**
+   * The **`page-break-before`** CSS property adjusts page breaks _before_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -14183,6 +16403,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "page-break-before"?: PageBreakBeforeProperty | PageBreakBeforeProperty[];
   /**
+   * The **`page-break-inside`** CSS property adjusts page breaks _inside_ the current element.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -14193,6 +16415,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "page-break-inside"?: PageBreakInsideProperty | PageBreakInsideProperty[];
   /**
+   * The **`paint-order`** CSS property lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14203,6 +16427,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "paint-order"?: PaintOrderProperty | PaintOrderProperty[];
   /**
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   *
    * **Initial value**: `none`
    *
    * | Chrome   | Firefox  | Safari | Edge   | IE     |
@@ -14214,6 +16440,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   perspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[];
   /**
+   * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
+   *
    * **Initial value**: `50% 50%`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE     |
@@ -14225,6 +16453,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   /**
+   * The `**place-content**` CSS shorthand property sets both the `align-content` and `justify-content` properties.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14235,6 +16465,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "place-content"?: PlaceContentProperty | PlaceContentProperty[];
   /**
+   * The **`pointer-events`** CSS property specifies under what circumstances (if any) a particular graphic element can become the target of mouse events.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -14245,6 +16477,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "pointer-events"?: PointerEventsProperty | PointerEventsProperty[];
   /**
+   * The **`position`** CSS property specifies how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` properties determine the final location of positioned elements.
+   *
    * **Initial value**: `static`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14255,6 +16489,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   position?: PositionProperty | PositionProperty[];
   /**
+   * The `quotes` CSS property indicates how user agents should render quotation marks.
+   *
    * **Initial value**: depends on user agent
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14265,6 +16501,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   quotes?: QuotesProperty | QuotesProperty[];
   /**
+   * The **`resize`** CSS sets whether an element is resizable, and if so, in which direction(s).
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14275,6 +16513,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   resize?: ResizeProperty | ResizeProperty[];
   /**
+   * The **`right`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -14285,6 +16525,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   right?: RightProperty<TLength> | RightProperty<TLength>[];
   /**
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14297,6 +16539,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `normal` */
   "row-gap"?: RowGapProperty<TLength> | RowGapProperty<TLength>[];
   /**
+   * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
+   *
    * **Initial value**: `space-around`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14309,6 +16553,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `separate` */
   "ruby-merge"?: RubyMergeProperty | RubyMergeProperty[];
   /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
    * **Initial value**: `over`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -14319,6 +16565,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "ruby-position"?: RubyPositionProperty | RubyPositionProperty[];
   /**
+   * The **`scale`** CSS property allows you to specify scale transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14329,6 +16577,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   scale?: ScaleProperty | ScaleProperty[];
   /**
+   * The **`scroll-behavior`** CSS property specifies the scrolling behavior for a scrolling box when scrolling is triggered by one of the navigation or CSSOM scrolling APIs.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14339,6 +16589,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "scroll-behavior"?: ScrollBehaviorProperty | ScrollBehaviorProperty[];
   /**
+   * The **`scroll-snap-type`** CSS property defines how strictly snap points are enforced on the scroll container in case there is one.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari      | Edge         | IE           |
@@ -14349,6 +16601,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[];
   /**
+   * The **`shape-image-threshold`** CSS property defines the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
+   *
    * **Initial value**: `0.0`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -14359,6 +16613,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "shape-image-threshold"?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`shape-margin`** CSS property specifies a margin for a CSS shape created using `shape-outside`.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari         | Edge | IE  |
@@ -14369,6 +16625,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[];
   /**
+   * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari   | Edge | IE  |
@@ -14379,6 +16637,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "shape-outside"?: ShapeOutsideProperty | ShapeOutsideProperty[];
   /**
+   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   *
    * **Initial value**: `8`
    *
    * | Chrome | Firefox     | Safari  | Edge | IE  |
@@ -14389,6 +16649,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "tab-size"?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
   /**
+   * The **`table-layout`** CSS property specifies the algorithm used to lay out `<table>` cells, rows, and columns.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14399,6 +16661,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "table-layout"?: TableLayoutProperty | TableLayoutProperty[];
   /**
+   * The **`text-align`** CSS property describes how inline content like text is aligned in its parent block element. `text-align` does not control the alignment of block elements, only their inline content.
+   *
    * **Initial value**: `start`, or a nameless value that acts as `left` if _direction_ is `ltr`, `right` if _direction_ is `rtl` if `start` is not supported by the browser.
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14409,6 +16673,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-align"?: TextAlignProperty | TextAlignProperty[];
   /**
+   * The **`text-align-last`** CSS property describes how the last line of a block or a line, right before a forced line break, is aligned.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE  |
@@ -14419,6 +16685,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-align-last"?: TextAlignLastProperty | TextAlignLastProperty[];
   /**
+   * The **`text-combine-upright`** CSS property specifies the combination of multiple characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE                                     |
@@ -14429,6 +16697,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-combine-upright"?: TextCombineUprightProperty | TextCombineUprightProperty[];
   /**
+   * The **`text-decoration-color`** CSS property sets the color of the decorative additions to text that are specified by `text-decoration-line`; these include underlines and overlines, strikethroughs, and wavy lines like those typically used to indicate content is misspelled (for example). The specified color applies to all such decorative lines in the scope of the property's value.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14439,6 +16709,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-decoration-color"?: TextDecorationColorProperty | TextDecorationColorProperty[];
   /**
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14449,6 +16721,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-decoration-line"?: TextDecorationLineProperty | TextDecorationLineProperty[];
   /**
+   * The **`text-decoration-skip`** CSS property specifies what parts of an element’s content any text decoration affecting the element must skip over. It controls all text decoration lines drawn by the element and also any text decoration lines drawn by its ancestors.
+   *
    * **Initial value**: `objects`
    *
    * | Chrome | Firefox | Safari      | Edge | IE  |
@@ -14459,6 +16733,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-decoration-skip"?: TextDecorationSkipProperty | TextDecorationSkipProperty[];
   /**
+   * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14469,6 +16745,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[];
   /**
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are specified; there is no way to define different styles for each of the lines defined by `text-decoration-line`.
+   *
    * **Initial value**: `solid`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14479,6 +16757,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-decoration-style"?: TextDecorationStyleProperty | TextDecorationStyleProperty[];
   /**
+   * The **`text-emphasis-color`** CSS property defines the color used to draw emphasis marks on text being rendered in the HTML document. This value can also be set and reset using the `text-emphasis` shorthand.
+   *
    * **Initial value**: `currentcolor`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -14489,6 +16769,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-emphasis-color"?: TextEmphasisColorProperty | TextEmphasisColorProperty[];
   /**
+   * The **`text-emphasis-position`** CSS property describes where emphasis marks are drawn at. The effect of emphasis marks on the line height is the same as for ruby text: if there isn't enough place, the line height is increased.
+   *
    * **Initial value**: `over right`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -14499,6 +16781,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-emphasis-position"?: GlobalsString | GlobalsString[];
   /**
+   * The **`text-emphasis-style`** CSS property defines the type of emphasis used. It can also be set, and reset, using the `text-emphasis` shorthand.
+   *
    * **Initial value**: `none`
    *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
@@ -14509,6 +16793,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-emphasis-style"?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[];
   /**
+   * The **`text-indent`** CSS property specifies the amount of indentation (empty space) that is put before lines of text in a block. By default, this controls the indentation of only the first formatted line of the block, but the `hanging` and `each-line` keywords can be used to change this behavior.
+   *
    * **Initial value**: `0`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14519,6 +16805,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-indent"?: TextIndentProperty<TLength> | TextIndentProperty<TLength>[];
   /**
+   * The **`text-justify`** CSS property defines what type of justification should be applied to text when it is justified (i.e., when `text-align``: justify;` is set on it).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -14529,6 +16817,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-justify"?: TextJustifyProperty | TextJustifyProperty[];
   /**
+   * The **`text-orientation`** CSS property defines the orientation of the text characters in a line. This property only has an effect in vertical mode, that is, when `writing-mode` is not `horizontal-tb`. It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
+   *
    * **Initial value**: `mixed`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14539,6 +16829,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-orientation"?: TextOrientationProperty | TextOrientationProperty[];
   /**
+   * The **`text-overflow`** CSS property determines how overflowed content that is not displayed is signaled to users. It can be clipped, display an ellipsis ('`…`', `U+2026 Horizontal Ellipsis`), or display a custom string.
+   *
    * **Initial value**: `clip`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
@@ -14549,6 +16841,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-overflow"?: TextOverflowProperty | TextOverflowProperty[];
   /**
+   * The **`text-rendering`** CSS property provides information to the rendering engine about what to optimize for when rendering text.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14559,6 +16853,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-rendering"?: TextRenderingProperty | TextRenderingProperty[];
   /**
+   * The **`text-shadow`** CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its `decorations`. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE     |
@@ -14569,6 +16865,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-shadow"?: TextShadowProperty | TextShadowProperty[];
   /**
+   * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
+   *
    * **Initial value**: `auto` for smartphone browsers supporting inflation, `none` in other cases (and then not modifiable).
    *
    * | Chrome | Firefox | Safari | Edge         | IE  |
@@ -14579,6 +16877,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-size-adjust"?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
   /**
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14589,6 +16889,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-transform"?: TextTransformProperty | TextTransformProperty[];
   /**
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14599,6 +16901,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "text-underline-position"?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[];
   /**
+   * The **`top`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14609,6 +16913,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   top?: TopProperty<TLength> | TopProperty<TLength>[];
   /**
+   * The **`touch-action`** CSS property specifies whether, and in what ways, a given region can be manipulated by the user via a touchscreen (for instance, by panning or zooming features built into the browser).
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE       |
@@ -14620,6 +16926,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "touch-action"?: TouchActionProperty | TouchActionProperty[];
   /**
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate a given element. This is achieved by modifying the coordinate space of the CSS visual formatting model.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari    | Edge         | IE      |
@@ -14631,6 +16939,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   transform?: TransformProperty | TransformProperty[];
   /**
+   * The **`transform-box`** CSS property defines the layout box to which the `transform` and `transform-origin` properties relate.
+   *
    * **Initial value**: `border-box `
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14641,6 +16951,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "transform-box"?: TransformBoxProperty | TransformBoxProperty[];
   /**
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
+   *
    * **Initial value**: `50% 50% 0`
    *
    * | Chrome | Firefox   | Safari        | Edge   | IE      |
@@ -14652,6 +16964,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "transform-origin"?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[];
   /**
+   * The **`transform-style`** CSS property determines if the children of an element are positioned in the 3D-space or are flattened in the plane of the element.
+   *
    * **Initial value**: `flat`
    *
    * | Chrome       | Firefox  | Safari | Edge   | IE  |
@@ -14663,6 +16977,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "transform-style"?: TransformStyleProperty | TransformStyleProperty[];
   /**
+   * The **`transition-delay`** CSS property specifies the amount of time to wait before starting a property's transition effect when its value changes.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -14674,6 +16990,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "transition-delay"?: GlobalsString | GlobalsString[];
   /**
+   * The **`transition-duration`** CSS property specifies the number of seconds or milliseconds a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
+   *
    * **Initial value**: `0s`
    *
    * | Chrome  | Firefox | Safari      | Edge   | IE     |
@@ -14685,6 +17003,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "transition-duration"?: GlobalsString | GlobalsString[];
   /**
+   * The **`transition-property`** CSS property specifies the CSS properties to which a transition effect should be applied.
+   *
    * **Initial value**: all
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -14696,6 +17016,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "transition-property"?: TransitionPropertyProperty | TransitionPropertyProperty[];
   /**
+   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
+   *
    * **Initial value**: `ease`
    *
    * | Chrome | Firefox | Safari | Edge   | IE     |
@@ -14707,6 +17029,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
   /**
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   *
    * **Initial value**: `none`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14717,6 +17041,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   translate?: TranslateProperty<TLength> | TranslateProperty<TLength>[];
   /**
+   * The **`unicode-bidi`** CSS property, together with the `direction` property, determines how bidirectional text in a document is handled. For example, if a block of content contains both left-to-right and right-to-left text, the user-agent uses a complex Unicode algorithm to decide how to display the text. The `unicode-bidi` property overrides this algorithm and allows the developer to control the text embedding.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari  | Edge   | IE      |
@@ -14727,6 +17053,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "unicode-bidi"?: UnicodeBidiProperty | UnicodeBidiProperty[];
   /**
+   * The `**user-select**` CSS property controls whether the user can select text. This doesn't have any effect on content loaded as chrome, except in textboxes.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome  | Firefox      | Safari        | Edge         | IE     |
@@ -14738,6 +17066,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "user-select"?: UserSelectProperty | UserSelectProperty[];
   /**
+   * The **`vertical-align`** CSS property specifies the vertical alignment of an inline or table-cell box.
+   *
    * **Initial value**: `baseline`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14748,6 +17078,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "vertical-align"?: VerticalAlignProperty<TLength> | VerticalAlignProperty<TLength>[];
   /**
+   * The **`visibility`** CSS property can show or hide an element without affecting the layout of a document (i.e., space is created for elements regardless of whether they are visible or not). The property can also hide rows or columns in a `<table>`.
+   *
    * **Initial value**: `visible`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14758,6 +17090,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   visibility?: VisibilityProperty | VisibilityProperty[];
   /**
+   * The **`white-space`** CSS property determines how whitespace inside an element is handled.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -14768,6 +17102,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "white-space"?: WhiteSpaceProperty | WhiteSpaceProperty[];
   /**
+   * The **`widows`** CSS property specifies the minimum number of lines in a block container that must be shown at the _top_ of a page, region, or column. This property is normally used to control how breaks occur.
+   *
    * **Initial value**: `2`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14778,6 +17114,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   widows?: GlobalsNumber | GlobalsNumber[];
   /**
+   * The **`width`** CSS property specifies the width of an element. By default, the property defines the width of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the width of the border area.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14788,6 +17126,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   width?: WidthProperty<TLength> | WidthProperty<TLength>[];
   /**
+   * The **`will-change`** CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari  | Edge | IE  |
@@ -14798,6 +17138,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "will-change"?: WillChangeProperty | WillChangeProperty[];
   /**
+   * The **`word-break`** CSS property specifies whether or not the browser should insert line breaks wherever the text would otherwise overflow its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -14808,6 +17150,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "word-break"?: WordBreakProperty | WordBreakProperty[];
   /**
+   * The **`word-spacing`** CSS property specifies the spacing behavior between tags and words.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14818,6 +17162,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "word-spacing"?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
   /**
+   * The `**overflow-wrap**` CSS property specifies whether or not the browser should insert line breaks within words to prevent text from overflowing its content box.
+   *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari | Edge   | IE      |
@@ -14828,6 +17174,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "word-wrap"?: WordWrapProperty | WordWrapProperty[];
   /**
+   * The **`writing-mode`** CSS property defines whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   *
    * **Initial value**: `horizontal-tb`
    *
    * | Chrome      | Firefox | Safari        | Edge   | IE          |
@@ -14838,6 +17186,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "writing-mode"?: WritingModeProperty | WritingModeProperty[];
   /**
+   * The **`z-index`** CSS property specifies the z-order of a positioned element and its descendants. When elements overlap, z-order determines which one covers the other. An element with a larger z-index generally covers an element with a lower one.
+   *
    * **Initial value**: `auto`
    *
    * | Chrome | Firefox | Safari | Edge   | IE    |
@@ -14853,6 +17203,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
 
 export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0> {
   /**
+   * The `**all**` CSS shorthand property sets all of an element's properties (other than `unicode-bidi` and `direction`) to their initial or inherited values, or to the values specified in another stylesheet origin.
+   *
    * **Initial value**: There is no practical initial value for it.
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -14863,6 +17215,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   all?: Globals | Globals[];
   /**
+   * The **`animation`** CSS property is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
    * | ------ | ------- | ----------- | ------ | ------ |
    * | **43** | **16**  | **4** _-x-_ | **12** | **10** |
@@ -14872,6 +17226,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   animation?: AnimationProperty | AnimationProperty[];
   /**
+   * The **`background`** CSS property is a short way to declare all background style options at once, including color, image, origin and size, repeat method, and other features.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -14880,6 +17236,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   /**
+   * The **`border`** CSS property is a shorthand for setting all individual border property values in a single declaration: `border-width`, `border-style`, and `border-color`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -14888,6 +17246,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   border?: BorderProperty<TLength> | BorderProperty<TLength>[];
   /**
+   * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -14896,6 +17256,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-block-end"?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[];
   /**
+   * The **`border-block-start`** CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -14904,6 +17266,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-block-start"?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[];
   /**
+   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-color`, `border-bottom-style`, and `border-bottom-width`. These properties describe an element's bottom `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -14912,6 +17276,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-bottom"?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
   /**
+   * The **`border-color`** CSS property is a shorthand property for setting the colors on all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -14920,6 +17286,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-color"?: BorderColorProperty | BorderColorProperty[];
   /**
+   * The **`border-image`** CSS property lets you draw an image in place of an element's `border-style`.
+   *
    * | Chrome  | Firefox   | Safari  | Edge   | IE     |
    * | ------- | --------- | ------- | ------ | ------ |
    * | **16**  | **15**    | **6**   | **12** | **11** |
@@ -14929,6 +17297,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-image"?: BorderImageProperty | BorderImageProperty[];
   /**
+   * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -14937,6 +17307,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-inline-end"?: BorderInlineEndProperty<TLength> | BorderInlineEndProperty<TLength>[];
   /**
+   * The **`border-inline-start`** CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
+   *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
    * | No     | **41**  | No     | n/a  | No  |
@@ -14945,6 +17317,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-inline-start"?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[];
   /**
+   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-color`, `border-left-style`, and `border-left-width`. These properties describe an element's left `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -14953,6 +17327,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-left"?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[];
   /**
+   * The **`border-radius`** CSS property lets you round the corners of an element's outer border edge. You can specify a single radius to make circular corners, or two radii to make elliptical corners.
+   *
    * | Chrome  | Firefox | Safari  | Edge   | IE    |
    * | ------- | ------- | ------- | ------ | ----- |
    * | **4**   | **4**   | **5**   | **12** | **9** |
@@ -14962,6 +17338,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /**
+   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-color`, `border-right-style`, and `border-right-width`. These properties describe an element's right `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE      |
    * | ------ | ------- | ------ | ------ | ------- |
    * | **1**  | **1**   | **1**  | **12** | **5.5** |
@@ -14970,6 +17348,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-right"?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
   /**
+   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -14978,6 +17358,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-style"?: BorderStyleProperty | BorderStyleProperty[];
   /**
+   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-color`, `border-top-style`, and `border-top-width`. These properties describe an element's top `border`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -14986,6 +17368,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-top"?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
   /**
+   * The **`border-width`** CSS property is a shorthand property for setting the widths on all four sides of an element's border.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -14994,6 +17378,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-width"?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
   /**
+   * The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+   *
    * | Chrome | Firefox   | Safari      | Edge         | IE     |
    * | ------ | --------- | ----------- | ------------ | ------ |
    * | **50** | **52**    | **3** _-x-_ | **12** _-x-_ | **10** |
@@ -15003,6 +17389,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "column-rule"?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
   /**
+   * The **`columns`** CSS property sets the column width and column count of an element.
+   *
    * | Chrome | Firefox | Safari      | Edge   | IE     |
    * | ------ | ------- | ----------- | ------ | ------ |
    * | **50** | **52**  | **3** _-x-_ | **12** | **10** |
@@ -15012,6 +17400,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   /**
+   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
+   *
    * | Chrome   | Firefox | Safari    | Edge   | IE       |
    * | -------- | ------- | --------- | ------ | -------- |
    * | **29**   | **20**  | **9**     | **12** | **11**   |
@@ -15021,6 +17411,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   flex?: FlexProperty<TLength> | FlexProperty<TLength>[];
   /**
+   * The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` individual properties.
+   *
    * | Chrome   | Firefox | Safari    | Edge   | IE     |
    * | -------- | ------- | --------- | ------ | ------ |
    * | **29**   | **28**  | **9**     | **12** | **11** |
@@ -15030,6 +17422,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "flex-flow"?: FlexFlowProperty | FlexFlowProperty[];
   /**
+   * The **`font`** CSS property is either a shorthand property for setting `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`; or a way to set the element's font to a system font, using specific keywords.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -15039,6 +17433,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   font?: FontProperty | FontProperty[];
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
   /**
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -15047,6 +17443,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   grid?: GridProperty | GridProperty[];
   /**
+   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -15055,6 +17453,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "grid-area"?: GridAreaProperty | GridAreaProperty[];
   /**
+   * The **`grid-column`** CSS property is a shorthand property for `grid-column-start` and `grid-column-end` specifying a grid item's size and location within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -15063,6 +17463,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "grid-column"?: GridColumnProperty | GridColumnProperty[];
   /**
+   * The **`grid-row`** CSS property is a shorthand property for `grid-row-start` and `grid-row-end` specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -15071,6 +17473,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "grid-row"?: GridRowProperty | GridRowProperty[];
   /**
+   * The **`grid-template`** CSS property is a shorthand property for defining grid columns, rows, and areas.
+   *
    * | Chrome | Firefox | Safari   | Edge   | IE  |
    * | ------ | ------- | -------- | ------ | --- |
    * | **57** | **52**  | **10.1** | **16** | No  |
@@ -15081,6 +17485,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   /** **Initial value**: `none` */
   "line-clamp"?: LineClampProperty | LineClampProperty[];
   /**
+   * The **`list-style`** CSS property is a shorthand for setting the individual values that define how a list is displayed: `list-style-type`, `list-style-image`, and `list-style-position`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -15089,6 +17495,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "list-style"?: ListStyleProperty | ListStyleProperty[];
   /**
+   * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for setting all individual margins at once: `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -15097,6 +17505,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[];
   /**
+   * The **`mask`** CSS property alters the visibility of an element by either partially or fully hiding it. This is accomplished by either masking or clipping the image at specific points.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE  |
    * | ------ | ------- | ------ | ------ | --- |
    * | **1**  | Yes     | **4**  | **12** | No  |
@@ -15106,6 +17516,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[];
   /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
    * | Chrome        | Firefox | Safari | Edge | IE  |
    * | ------------- | ------- | ------ | ---- | --- |
    * | **55**        | n/a     | n/a    | n/a  | n/a |
@@ -15115,6 +17527,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
    * | Chrome        | Firefox | Safari | Edge | IE  |
    * | ------------- | ------- | ------ | ---- | --- |
    * | **55**        | n/a     | n/a    | n/a  | n/a |
@@ -15124,6 +17538,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
+   * The **`outline`** CSS property is a shorthand for setting various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+   *
    * | Chrome | Firefox | Safari  | Edge   | IE    |
    * | ------ | ------- | ------- | ------ | ----- |
    * | **1**  | **1.5** | **1.2** | **12** | **8** |
@@ -15132,6 +17548,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[];
   /**
+   * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for setting all individual paddings at once: `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **4** |
@@ -15140,6 +17558,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[];
   /**
+   * The **`text-decoration`** CSS property specifies the appearance of decorative lines used on text. It is a shorthand for setting one or more individual text-decoration values in a single declaration, which include `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
+   *
    * | Chrome | Firefox | Safari | Edge   | IE    |
    * | ------ | ------- | ------ | ------ | ----- |
    * | **1**  | **1**   | **1**  | **12** | **3** |
@@ -15148,6 +17568,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "text-decoration"?: TextDecorationProperty | TextDecorationProperty[];
   /**
+   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
+   *
    * | Chrome       | Firefox | Safari        | Edge | IE  |
    * | ------------ | ------- | ------------- | ---- | --- |
    * | **25** _-x-_ | **46**  | **6.1** _-x-_ | n/a  | No  |
@@ -15156,6 +17578,8 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[];
   /**
+   * The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
+   *
    * | Chrome  | Firefox | Safari  | Edge   | IE     |
    * | ------- | ------- | ------- | ------ | ------ |
    * | **26**  | **16**  | **6.1** | **12** | **10** |
