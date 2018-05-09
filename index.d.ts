@@ -143,8 +143,6 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationTimingFunction?: AnimationTimingFunctionProperty;
   /**
-   * (no description)
-   *
    * **Initial value**: `auto`
    *
    * | Chrome      | Firefox     | Safari      | Edge         | IE  |
@@ -4769,8 +4767,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-timing-function"?: AnimationTimingFunctionProperty;
   /**
-   * (no description)
-   *
    * **Initial value**: `auto`
    *
    * | Chrome      | Firefox     | Safari      | Edge         | IE  |
@@ -9399,8 +9395,6 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   /**
-   * (no description)
-   *
    * **Initial value**: `auto`
    *
    * | Chrome      | Firefox     | Safari      | Edge         | IE  |
@@ -14029,8 +14023,6 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
   /**
-   * (no description)
-   *
    * **Initial value**: `auto`
    *
    * | Chrome      | Firefox     | Safari      | Edge         | IE  |

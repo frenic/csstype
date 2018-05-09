@@ -29,11 +29,12 @@ function scrapeSummary(url: string): string {
     }
     return '';
   } catch (ex) {
-    return '(Description not available)';
+    console.warn(`Could not fetch summary for '${url}'`);
+    return '';
   }
 }
 
-function saveToFile() {
+function saveToFile(): void {
   try {
     const fileContents = JSON.stringify(urlData, undefined, 2);
     fs.writeFileSync(pathToCache, fileContents, { encoding: 'utf-8' });
@@ -43,13 +44,12 @@ function saveToFile() {
   }
 }
 
-export function getSummary(url: string) {
+export function getSummary(url: string): string {
   let summaryData = urlData[url];
 
   if (url && !summaryData) {
     console.log('fetching summary for ' + url);
     urlData[url] = summaryData = scrapeSummary(url) || '';
-    // todo: consider moving this to another part of the process
     saveToFile();
   }
 

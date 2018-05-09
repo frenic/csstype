@@ -33,7 +33,6 @@ declare namespace MDN {
   interface Compat {
     support: Supports;
     mdn_url?: string;
-    mdn_summary?: string;
     description?: string;
     status?: {
       experimental: boolean;
@@ -42,7 +41,11 @@ declare namespace MDN {
     };
   }
 
-  type CompatData = { __compat: MDN.Compat } & { [value: string]: { __compat: MDN.Compat } };
+  type CompatDataInner = {
+    __compat: MDN.Compat;
+  };
+
+  type CompatData = CompatDataInner & { summary_from_mdn_site?: string } & Record<string, CompatDataInner>;
 
   interface AtRulesCompat {
     css: {

@@ -52,9 +52,8 @@ export function composeCommentBlock(
 }
 
 function getCompatSummary(compatibilityData: MDN.CompatData) {
-  const compat = getCompat(compatibilityData);
-  if (compat && compat.mdn_summary) {
-    return [compat.mdn_summary, BLANK_ROW];
+  if (compatibilityData.summary_from_mdn_site) {
+    return [compatibilityData.summary_from_mdn_site, BLANK_ROW];
   }
   return [];
 }
