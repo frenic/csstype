@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
-    "lib": ["es7", "es2015.iterable"],
+    "lib": ["es7", "es2015.iterable", "dom"],
     "sourceMap": false,
     "noEmit": true,
     "strict": true,

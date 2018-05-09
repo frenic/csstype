@@ -10,18 +10,22 @@
   "devDependencies": {
     "@types/chokidar": "^1.7.5",
     "@types/jest": "^22.2.3",
+    "@types/jsdom": "^11.0.4",
     "@types/node": "^9.6.6",
     "@types/prettier": "^1.12.0",
     "chalk": "^2.4.0",
     "chokidar": "^2.0.3",
     "flow-bin": "^0.70.0",
     "jest": "^22.4.3",
+    "jsdom": "^11.10.0",
     "mdn-browser-compat-data": "git+https://github.com/mdn/browser-compat-data.git#b8c6f75d6e80af946a4416e04cc1decb6eb9a6e9",
     "mdn-data": "git+https://github.com/mdn/data.git#33482ae3cba9a1a16a1e18f79921b97b4d8ec6e1",
     "prettier": "^1.12.1",
+    "sync-request": "^6.0.0",
     "ts-node": "^6.0.0",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.12.0",
+    "turndown": "^4.0.2",
     "typescript": "^2.8.3"
   },
   "scripts": {

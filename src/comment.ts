@@ -14,6 +14,11 @@ export function composeCommentBlock(
   obsolete = false,
 ) {
   const rows: string[] = [];
+  const includeCompatibility = !vendor && !obsolete && compatibilityData;
+
+  if (includeCompatibility) {
+    rows.push.apply(rows, getCompatSummary(compatibilityData!));
+  }
 
   if (typeof data.initial === 'string') {
     if (data.initial in l10n) {
@@ -26,39 +31,8 @@ export function composeCommentBlock(
   }
 
   // Skip compatibility table for obsolete and vendor properties
-  if (!vendor && !obsolete) {
-    const compat = compatibilityData ? getCompat(compatibilityData) : null;
-
-    if (compat) {
-      const chrome = supportVersion(compat.support.chrome);
-      const firefox = supportVersion(compat.support.firefox);
-      const safari = supportVersion(compat.support.safari);
-      const edge = supportVersion(compat.support.edge);
-      const ie = supportVersion(compat.support.ie);
-
-      const versions = [chrome, firefox, safari, edge, ie];
-
-      rows.push(
-        ...format(
-          [
-            '| Chrome | Firefox | Safari | Edge | IE |',
-            '| --- | --- | --- | --- | --- |',
-            '| ' + versions.map(version => version[0] || '').join(' | ') + ' |',
-            versions.some(version => !!version[1])
-              ? '| ' + versions.map(version => version[1] || '').join(' | ') + ' |'
-              : '',
-          ].join('\n'),
-          { parser: 'markdown' },
-        )
-          .trim()
-          .split('\n'),
-        BLANK_ROW,
-      );
-
-      if (compat.mdn_url) {
-        rows.push('@see ' + compat.mdn_url, BLANK_ROW);
-      }
-    }
+  if (includeCompatibility) {
+    rows.push.apply(rows, getCompatRows(compatibilityData!));
   }
 
   if (obsolete) {
@@ -75,6 +49,52 @@ export function composeCommentBlock(
     : rows.length === 1
       ? '/** ' + rows[0] + ' */'
       : null;
+}
+
+function getCompatSummary(compatibilityData: MDN.CompatData) {
+  if (compatibilityData.summary_from_mdn_site) {
+    return [compatibilityData.summary_from_mdn_site, BLANK_ROW];
+  }
+  return [];
+}
+
+function getCompatRows(compatibilityData: MDN.CompatData) {
+  const compat = getCompat(compatibilityData);
+
+  if (!compat) {
+    return [];
+  }
+
+  const chrome = supportVersion(compat.support.chrome);
+  const firefox = supportVersion(compat.support.firefox);
+  const safari = supportVersion(compat.support.safari);
+  const edge = supportVersion(compat.support.edge);
+  const ie = supportVersion(compat.support.ie);
+
+  const versions = [chrome, firefox, safari, edge, ie];
+  const rows: string[] = [];
+  rows.push(
+    ...format(
+      [
+        '| Chrome | Firefox | Safari | Edge | IE |',
+        '| --- | --- | --- | --- | --- |',
+        '| ' + versions.map(version => version[0] || '').join(' | ') + ' |',
+        versions.some(version => !!version[1])
+          ? '| ' + versions.map(version => version[1] || '').join(' | ') + ' |'
+          : '',
+      ].join('\n'),
+      { parser: 'markdown' },
+    )
+      .trim()
+      .split('\n'),
+    BLANK_ROW,
+  );
+
+  if (compat.mdn_url) {
+    rows.push('@see ' + compat.mdn_url, BLANK_ROW);
+  }
+
+  return rows;
 }
 
 function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): string[] {
