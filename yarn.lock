@@ -2099,15 +2099,15 @@ math-random@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/math-random/-/math-random-1.0.1.tgz#8b3aac588b8a66e4975e3cdea67f7bb329601fac"
 
-"mdn-browser-compat-data@git+https://github.com/mdn/browser-compat-data.git#b8c6f75d6e80af946a4416e04cc1decb6eb9a6e9":
-  version "0.0.33"
-  resolved "git+https://github.com/mdn/browser-compat-data.git#b8c6f75d6e80af946a4416e04cc1decb6eb9a6e9"
+"mdn-browser-compat-data@git+https://github.com/mdn/browser-compat-data.git#785bcec91fda2fe1a794d01142cbb45601da8e23":
+  version "0.0.34"
+  resolved "git+https://github.com/mdn/browser-compat-data.git#785bcec91fda2fe1a794d01142cbb45601da8e23"
   dependencies:
     extend "3.0.1"
 
-"mdn-data@git+https://github.com/mdn/data.git#33482ae3cba9a1a16a1e18f79921b97b4d8ec6e1":
+"mdn-data@git+https://github.com/mdn/data.git#8f876a5637d488668555a366b277f8f09ba762f4":
   version "1.1.2"
-  resolved "git+https://github.com/mdn/data.git#33482ae3cba9a1a16a1e18f79921b97b4d8ec6e1"
+  resolved "git+https://github.com/mdn/data.git#8f876a5637d488668555a366b277f8f09ba762f4"
 
 mem@^1.1.0:
   version "1.1.0"

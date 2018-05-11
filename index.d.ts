@@ -1235,6 +1235,8 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
    */
   fontLanguageOverride?: FontLanguageOverrideProperty;
+  /** **Initial value**: `auto` */
+  fontOpticalSizing?: FontOpticalSizingProperty;
   /**
    * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
    *
@@ -1691,7 +1693,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/line-height
    */
   lineHeight?: LineHeightProperty<TLength>;
-  /** **Initial value**: `none` */
+  /** **Initial value**: `0` */
   lineHeightStep?: LineHeightStepProperty<TLength>;
   /**
    * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
@@ -3903,19 +3905,19 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   msScrollTranslation?: MsScrollTranslationProperty;
   /** **Initial value**: depends on user agent */
   msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ButtonText` */
   msScrollbarArrowColor?: MsScrollbarArrowColorProperty;
   /** **Initial value**: depends on user agent */
   msScrollbarBaseColor?: MsScrollbarBaseColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDDarkShadow` */
   msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDFace` */
   msScrollbarFaceColor?: MsScrollbarFaceColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDHighlight` */
   msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDDarkShadow` */
   msScrollbarShadowColor?: MsScrollbarShadowColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `Scrollbar` */
   msScrollbarTrackColor?: MsScrollbarTrackColorProperty;
   /** **Initial value**: `none` */
   msTextAutospace?: MsTextAutospaceProperty;
@@ -3979,8 +3981,8 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitAnimationPlayState?: AnimationPlayStateProperty;
   /** **Initial value**: `ease` */
   WebkitAnimationTimingFunction?: AnimationTimingFunctionProperty;
-  /** **Initial value**: `auto` */
-  WebkitAppearance?: AppearanceProperty;
+  /** **Initial value**: `none` (but this value is overridden in the user agent CSS) */
+  WebkitAppearance?: WebkitAppearanceProperty;
   /** **Initial value**: `none` */
   WebkitBackdropFilter?: BackdropFilterProperty;
   /** **Initial value**: `visible` */
@@ -4077,6 +4079,8 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitMaskRepeatX?: WebkitMaskRepeatXProperty;
   /** **Initial value**: `repeat` */
   WebkitMaskRepeatY?: WebkitMaskRepeatYProperty;
+  /** **Initial value**: `auto auto` */
+  WebkitMaskSize?: WebkitMaskSizeProperty<TLength>;
   /** **Initial value**: `0` */
   WebkitMaxInlineSize?: MaxInlineSizeProperty<TLength>;
   /** **Initial value**: `0` */
@@ -4170,7 +4174,7 @@ export interface VendorShorthandProperties<TLength = string | 0> {
   WebkitFlex?: FlexProperty<TLength>;
   WebkitFlexFlow?: FlexFlowProperty;
   WebkitLineClamp?: WebkitLineClampProperty;
-  WebkitMask?: WebkitMaskProperty;
+  WebkitMask?: WebkitMaskProperty<TLength>;
   WebkitTextEmphasis?: TextEmphasisProperty;
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength>;
   WebkitTransition?: TransitionProperty;
@@ -5859,6 +5863,8 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
    */
   "font-language-override"?: FontLanguageOverrideProperty;
+  /** **Initial value**: `auto` */
+  "font-optical-sizing"?: FontOpticalSizingProperty;
   /**
    * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
    *
@@ -6315,7 +6321,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/line-height
    */
   "line-height"?: LineHeightProperty<TLength>;
-  /** **Initial value**: `none` */
+  /** **Initial value**: `0` */
   "line-height-step"?: LineHeightStepProperty<TLength>;
   /**
    * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
@@ -8527,19 +8533,19 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-ms-scroll-translation"?: MsScrollTranslationProperty;
   /** **Initial value**: depends on user agent */
   "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ButtonText` */
   "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty;
   /** **Initial value**: depends on user agent */
   "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDDarkShadow` */
   "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDFace` */
   "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDHighlight` */
   "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDDarkShadow` */
   "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty;
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `Scrollbar` */
   "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty;
   /** **Initial value**: `none` */
   "-ms-text-autospace"?: MsTextAutospaceProperty;
@@ -8603,8 +8609,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-animation-play-state"?: AnimationPlayStateProperty;
   /** **Initial value**: `ease` */
   "-webkit-animation-timing-function"?: AnimationTimingFunctionProperty;
-  /** **Initial value**: `auto` */
-  "-webkit-appearance"?: AppearanceProperty;
+  /** **Initial value**: `none` (but this value is overridden in the user agent CSS) */
+  "-webkit-appearance"?: WebkitAppearanceProperty;
   /** **Initial value**: `none` */
   "-webkit-backdrop-filter"?: BackdropFilterProperty;
   /** **Initial value**: `visible` */
@@ -8701,6 +8707,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-mask-repeat-x"?: WebkitMaskRepeatXProperty;
   /** **Initial value**: `repeat` */
   "-webkit-mask-repeat-y"?: WebkitMaskRepeatYProperty;
+  /** **Initial value**: `auto auto` */
+  "-webkit-mask-size"?: WebkitMaskSizeProperty<TLength>;
   /** **Initial value**: `0` */
   "-webkit-max-inline-size"?: MaxInlineSizeProperty<TLength>;
   /** **Initial value**: `0` */
@@ -8794,7 +8802,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
   "-webkit-flex"?: FlexProperty<TLength>;
   "-webkit-flex-flow"?: FlexFlowProperty;
   "-webkit-line-clamp"?: WebkitLineClampProperty;
-  "-webkit-mask"?: WebkitMaskProperty;
+  "-webkit-mask"?: WebkitMaskProperty<TLength>;
   "-webkit-text-emphasis"?: TextEmphasisProperty;
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>;
   "-webkit-transition"?: TransitionProperty;
@@ -10487,6 +10495,8 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
    */
   fontLanguageOverride?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
+  /** **Initial value**: `auto` */
+  fontOpticalSizing?: FontOpticalSizingProperty | FontOpticalSizingProperty[];
   /**
    * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
    *
@@ -10943,7 +10953,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/line-height
    */
   lineHeight?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[];
-  /** **Initial value**: `none` */
+  /** **Initial value**: `0` */
   lineHeightStep?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
   /**
    * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
@@ -13155,19 +13165,19 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   msScrollTranslation?: MsScrollTranslationProperty | MsScrollTranslationProperty[];
   /** **Initial value**: depends on user agent */
   msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ButtonText` */
   msScrollbarArrowColor?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[];
   /** **Initial value**: depends on user agent */
   msScrollbarBaseColor?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDDarkShadow` */
   msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDFace` */
   msScrollbarFaceColor?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDHighlight` */
   msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDDarkShadow` */
   msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `Scrollbar` */
   msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[];
   /** **Initial value**: `none` */
   msTextAutospace?: MsTextAutospaceProperty | MsTextAutospaceProperty[];
@@ -13231,8 +13241,8 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitAnimationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   /** **Initial value**: `ease` */
   WebkitAnimationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
-  /** **Initial value**: `auto` */
-  WebkitAppearance?: AppearanceProperty | AppearanceProperty[];
+  /** **Initial value**: `none` (but this value is overridden in the user agent CSS) */
+  WebkitAppearance?: WebkitAppearanceProperty | WebkitAppearanceProperty[];
   /** **Initial value**: `none` */
   WebkitBackdropFilter?: BackdropFilterProperty | BackdropFilterProperty[];
   /** **Initial value**: `visible` */
@@ -13329,6 +13339,8 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitMaskRepeatX?: WebkitMaskRepeatXProperty | WebkitMaskRepeatXProperty[];
   /** **Initial value**: `repeat` */
   WebkitMaskRepeatY?: WebkitMaskRepeatYProperty | WebkitMaskRepeatYProperty[];
+  /** **Initial value**: `auto auto` */
+  WebkitMaskSize?: WebkitMaskSizeProperty<TLength> | WebkitMaskSizeProperty<TLength>[];
   /** **Initial value**: `0` */
   WebkitMaxInlineSize?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
   /** **Initial value**: `0` */
@@ -13422,7 +13434,7 @@ export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
   WebkitFlex?: FlexProperty<TLength> | FlexProperty<TLength>[];
   WebkitFlexFlow?: FlexFlowProperty | FlexFlowProperty[];
   WebkitLineClamp?: WebkitLineClampProperty | WebkitLineClampProperty[];
-  WebkitMask?: WebkitMaskProperty | WebkitMaskProperty[];
+  WebkitMask?: WebkitMaskProperty<TLength> | WebkitMaskProperty<TLength>[];
   WebkitTextEmphasis?: TextEmphasisProperty | TextEmphasisProperty[];
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
   WebkitTransition?: TransitionProperty | TransitionProperty[];
@@ -15115,6 +15127,8 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
    */
   "font-language-override"?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
+  /** **Initial value**: `auto` */
+  "font-optical-sizing"?: FontOpticalSizingProperty | FontOpticalSizingProperty[];
   /**
    * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
    *
@@ -15571,7 +15585,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/line-height
    */
   "line-height"?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[];
-  /** **Initial value**: `none` */
+  /** **Initial value**: `0` */
   "line-height-step"?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
   /**
    * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
@@ -17785,19 +17799,19 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-ms-scroll-translation"?: MsScrollTranslationProperty | MsScrollTranslationProperty[];
   /** **Initial value**: depends on user agent */
   "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ButtonText` */
   "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[];
   /** **Initial value**: depends on user agent */
   "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDDarkShadow` */
   "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDFace` */
   "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDHighlight` */
   "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `ThreeDDarkShadow` */
   "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[];
-  /** **Initial value**: depends on user agent */
+  /** **Initial value**: `Scrollbar` */
   "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[];
   /** **Initial value**: `none` */
   "-ms-text-autospace"?: MsTextAutospaceProperty | MsTextAutospaceProperty[];
@@ -17861,8 +17875,8 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-animation-play-state"?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   /** **Initial value**: `ease` */
   "-webkit-animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[];
-  /** **Initial value**: `auto` */
-  "-webkit-appearance"?: AppearanceProperty | AppearanceProperty[];
+  /** **Initial value**: `none` (but this value is overridden in the user agent CSS) */
+  "-webkit-appearance"?: WebkitAppearanceProperty | WebkitAppearanceProperty[];
   /** **Initial value**: `none` */
   "-webkit-backdrop-filter"?: BackdropFilterProperty | BackdropFilterProperty[];
   /** **Initial value**: `visible` */
@@ -17959,6 +17973,8 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-mask-repeat-x"?: WebkitMaskRepeatXProperty | WebkitMaskRepeatXProperty[];
   /** **Initial value**: `repeat` */
   "-webkit-mask-repeat-y"?: WebkitMaskRepeatYProperty | WebkitMaskRepeatYProperty[];
+  /** **Initial value**: `auto auto` */
+  "-webkit-mask-size"?: WebkitMaskSizeProperty<TLength> | WebkitMaskSizeProperty<TLength>[];
   /** **Initial value**: `0` */
   "-webkit-max-inline-size"?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[];
   /** **Initial value**: `0` */
@@ -18052,7 +18068,7 @@ export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-flex"?: FlexProperty<TLength> | FlexProperty<TLength>[];
   "-webkit-flex-flow"?: FlexFlowProperty | FlexFlowProperty[];
   "-webkit-line-clamp"?: WebkitLineClampProperty | WebkitLineClampProperty[];
-  "-webkit-mask"?: WebkitMaskProperty | WebkitMaskProperty[];
+  "-webkit-mask"?: WebkitMaskProperty<TLength> | WebkitMaskProperty<TLength>[];
   "-webkit-text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[];
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[];
   "-webkit-transition"?: TransitionProperty | TransitionProperty[];
@@ -19160,6 +19176,8 @@ type FontKerningProperty = Globals | "auto" | "none" | "normal";
 
 type FontLanguageOverrideProperty = Globals | "normal" | string;
 
+type FontOpticalSizingProperty = Globals | "auto" | "none";
+
 type FontSizeProperty<TLength> = Globals | AbsoluteSize | TLength | "larger" | "smaller" | string;
 
 type FontSizeAdjustProperty = Globals | "none" | number;
@@ -19328,7 +19346,7 @@ type LineClampProperty = Globals | "none" | number;
 
 type LineHeightProperty<TLength> = Globals | TLength | "normal" | string | number;
 
-type LineHeightStepProperty<TLength> = Globals | TLength | "none";
+type LineHeightStepProperty<TLength> = Globals | TLength;
 
 type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
 
@@ -19901,6 +19919,57 @@ type MsWrapMarginProperty<TLength> = Globals | TLength;
 
 type MsWrapThroughProperty = Globals | "none" | "wrap";
 
+type WebkitAppearanceProperty =
+  | Globals
+  | "button"
+  | "button-bevel"
+  | "caret"
+  | "checkbox"
+  | "default-button"
+  | "inner-spin-button"
+  | "listbox"
+  | "listitem"
+  | "media-controls-background"
+  | "media-controls-fullscreen-background"
+  | "media-current-time-display"
+  | "media-enter-fullscreen-button"
+  | "media-exit-fullscreen-button"
+  | "media-fullscreen-button"
+  | "media-mute-button"
+  | "media-overlay-play-button"
+  | "media-play-button"
+  | "media-seek-back-button"
+  | "media-seek-forward-button"
+  | "media-slider"
+  | "media-sliderthumb"
+  | "media-time-remaining-display"
+  | "media-toggle-closed-captions-button"
+  | "media-volume-slider"
+  | "media-volume-slider-container"
+  | "media-volume-sliderthumb"
+  | "menulist"
+  | "menulist-button"
+  | "menulist-text"
+  | "menulist-textfield"
+  | "meter"
+  | "none"
+  | "progress-bar"
+  | "progress-bar-value"
+  | "push-button"
+  | "radio"
+  | "searchfield"
+  | "searchfield-cancel-button"
+  | "searchfield-decoration"
+  | "searchfield-results-button"
+  | "searchfield-results-decoration"
+  | "slider-horizontal"
+  | "slider-vertical"
+  | "sliderthumb-horizontal"
+  | "sliderthumb-vertical"
+  | "square-button"
+  | "textarea"
+  | "textfield";
+
 type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type WebkitBorderBeforeColorProperty = Globals | Color;
@@ -19913,19 +19982,19 @@ type WebkitBoxReflectProperty<TLength> = Globals | TLength | "above" | "below" |
 
 type WebkitLineClampProperty = Globals | "none" | number;
 
-type WebkitMaskProperty = Globals | "none" | string;
+type WebkitMaskProperty<TLength> = Globals | Position<TLength> | RepeatStyle | Box | "border" | "content" | "none" | "padding" | "text" | string;
 
 type WebkitMaskAttachmentProperty = Globals | Attachment | string;
 
-type WebkitMaskClipProperty = Globals | "border" | "border-box" | "content" | "content-box" | "padding" | "padding-box" | "text" | string;
+type WebkitMaskClipProperty = Globals | Box | "border" | "content" | "padding" | "text" | string;
 
 type WebkitMaskCompositeProperty = Globals | CompositeStyle | string;
 
 type WebkitMaskImageProperty = Globals | "none" | string;
 
-type WebkitMaskOriginProperty = Globals | "border" | "content" | "padding" | string;
+type WebkitMaskOriginProperty = Globals | Box | "border" | "content" | "padding" | string;
 
-type WebkitMaskPositionProperty<TLength> = Globals | MaskPosition<TLength> | string;
+type WebkitMaskPositionProperty<TLength> = Globals | Position<TLength> | string;
 
 type WebkitMaskPositionXProperty<TLength> = Globals | TLength | "center" | "left" | "right" | string;
 
@@ -19936,6 +20005,8 @@ type WebkitMaskRepeatProperty = Globals | RepeatStyle | string;
 type WebkitMaskRepeatXProperty = Globals | "no-repeat" | "repeat" | "round" | "space";
 
 type WebkitMaskRepeatYProperty = Globals | "no-repeat" | "repeat" | "round" | "space";
+
+type WebkitMaskSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
 type WebkitOverflowScrollingProperty = Globals | "auto" | "touch";
 
@@ -20236,8 +20307,6 @@ type GeometryBox = Box | "fill-box" | "margin-box" | "stroke-box" | "view-box";
 type GridLine = "auto" | string | number;
 
 type MaskLayer<TLength> = Position<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | "none" | string;
-
-type MaskPosition<TLength> = TLength | "center" | "left" | "right" | string;
 
 type MaskingMode = "alpha" | "luminance" | "match-source";
 

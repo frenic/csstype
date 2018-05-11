@@ -106,6 +106,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   fontFeatureSettings?: FontFeatureSettingsProperty,
   fontKerning?: FontKerningProperty,
   fontLanguageOverride?: FontLanguageOverrideProperty,
+  fontOpticalSizing?: FontOpticalSizingProperty,
   fontSize?: FontSizeProperty<TLength>,
   fontSizeAdjust?: FontSizeAdjustProperty,
   fontStretch?: FontStretchProperty,
@@ -479,7 +480,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitAnimationName?: AnimationNameProperty,
   WebkitAnimationPlayState?: AnimationPlayStateProperty,
   WebkitAnimationTimingFunction?: AnimationTimingFunctionProperty,
-  WebkitAppearance?: AppearanceProperty,
+  WebkitAppearance?: WebkitAppearanceProperty,
   WebkitBackdropFilter?: BackdropFilterProperty,
   WebkitBackfaceVisibility?: BackfaceVisibilityProperty,
   WebkitBackgroundSize?: BackgroundSizeProperty<TLength>,
@@ -528,6 +529,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitMaskRepeat?: WebkitMaskRepeatProperty,
   WebkitMaskRepeatX?: WebkitMaskRepeatXProperty,
   WebkitMaskRepeatY?: WebkitMaskRepeatYProperty,
+  WebkitMaskSize?: WebkitMaskSizeProperty<TLength>,
   WebkitMaxInlineSize?: MaxInlineSizeProperty<TLength>,
   WebkitOrder?: GlobalsNumber,
   WebkitOverflowScrolling?: WebkitOverflowScrollingProperty,
@@ -587,7 +589,7 @@ export type VendorShorthandProperties<TLength = string | 0> = {
   WebkitFlex?: FlexProperty<TLength>,
   WebkitFlexFlow?: FlexFlowProperty,
   WebkitLineClamp?: WebkitLineClampProperty,
-  WebkitMask?: WebkitMaskProperty,
+  WebkitMask?: WebkitMaskProperty<TLength>,
   WebkitTextEmphasis?: TextEmphasisProperty,
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength>,
   WebkitTransition?: TransitionProperty,
@@ -836,6 +838,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "font-feature-settings"?: FontFeatureSettingsProperty,
   "font-kerning"?: FontKerningProperty,
   "font-language-override"?: FontLanguageOverrideProperty,
+  "font-optical-sizing"?: FontOpticalSizingProperty,
   "font-size"?: FontSizeProperty<TLength>,
   "font-size-adjust"?: FontSizeAdjustProperty,
   "font-stretch"?: FontStretchProperty,
@@ -1209,7 +1212,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-animation-name"?: AnimationNameProperty,
   "-webkit-animation-play-state"?: AnimationPlayStateProperty,
   "-webkit-animation-timing-function"?: AnimationTimingFunctionProperty,
-  "-webkit-appearance"?: AppearanceProperty,
+  "-webkit-appearance"?: WebkitAppearanceProperty,
   "-webkit-backdrop-filter"?: BackdropFilterProperty,
   "-webkit-backface-visibility"?: BackfaceVisibilityProperty,
   "-webkit-background-size"?: BackgroundSizeProperty<TLength>,
@@ -1258,6 +1261,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-mask-repeat"?: WebkitMaskRepeatProperty,
   "-webkit-mask-repeat-x"?: WebkitMaskRepeatXProperty,
   "-webkit-mask-repeat-y"?: WebkitMaskRepeatYProperty,
+  "-webkit-mask-size"?: WebkitMaskSizeProperty<TLength>,
   "-webkit-max-inline-size"?: MaxInlineSizeProperty<TLength>,
   "-webkit-order"?: GlobalsNumber,
   "-webkit-overflow-scrolling"?: WebkitOverflowScrollingProperty,
@@ -1317,7 +1321,7 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-flex"?: FlexProperty<TLength>,
   "-webkit-flex-flow"?: FlexFlowProperty,
   "-webkit-line-clamp"?: WebkitLineClampProperty,
-  "-webkit-mask"?: WebkitMaskProperty,
+  "-webkit-mask"?: WebkitMaskProperty<TLength>,
   "-webkit-text-emphasis"?: TextEmphasisProperty,
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>,
   "-webkit-transition"?: TransitionProperty,
@@ -1569,6 +1573,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   fontFeatureSettings?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[],
   fontKerning?: FontKerningProperty | FontKerningProperty[],
   fontLanguageOverride?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[],
+  fontOpticalSizing?: FontOpticalSizingProperty | FontOpticalSizingProperty[],
   fontSize?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[],
   fontSizeAdjust?: FontSizeAdjustProperty | FontSizeAdjustProperty[],
   fontStretch?: FontStretchProperty | FontStretchProperty[],
@@ -1942,7 +1947,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitAnimationName?: AnimationNameProperty | AnimationNameProperty[],
   WebkitAnimationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[],
   WebkitAnimationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[],
-  WebkitAppearance?: AppearanceProperty | AppearanceProperty[],
+  WebkitAppearance?: WebkitAppearanceProperty | WebkitAppearanceProperty[],
   WebkitBackdropFilter?: BackdropFilterProperty | BackdropFilterProperty[],
   WebkitBackfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[],
   WebkitBackgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
@@ -1991,6 +1996,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitMaskRepeat?: WebkitMaskRepeatProperty | WebkitMaskRepeatProperty[],
   WebkitMaskRepeatX?: WebkitMaskRepeatXProperty | WebkitMaskRepeatXProperty[],
   WebkitMaskRepeatY?: WebkitMaskRepeatYProperty | WebkitMaskRepeatYProperty[],
+  WebkitMaskSize?: WebkitMaskSizeProperty<TLength> | WebkitMaskSizeProperty<TLength>[],
   WebkitMaxInlineSize?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[],
   WebkitOrder?: GlobalsNumber | GlobalsNumber[],
   WebkitOverflowScrolling?: WebkitOverflowScrollingProperty | WebkitOverflowScrollingProperty[],
@@ -2050,7 +2056,7 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
   WebkitFlex?: FlexProperty<TLength> | FlexProperty<TLength>[],
   WebkitFlexFlow?: FlexFlowProperty | FlexFlowProperty[],
   WebkitLineClamp?: WebkitLineClampProperty | WebkitLineClampProperty[],
-  WebkitMask?: WebkitMaskProperty | WebkitMaskProperty[],
+  WebkitMask?: WebkitMaskProperty<TLength> | WebkitMaskProperty<TLength>[],
   WebkitTextEmphasis?: TextEmphasisProperty | TextEmphasisProperty[],
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[],
   WebkitTransition?: TransitionProperty | TransitionProperty[],
@@ -2302,6 +2308,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "font-feature-settings"?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[],
   "font-kerning"?: FontKerningProperty | FontKerningProperty[],
   "font-language-override"?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[],
+  "font-optical-sizing"?: FontOpticalSizingProperty | FontOpticalSizingProperty[],
   "font-size"?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[],
   "font-size-adjust"?: FontSizeAdjustProperty | FontSizeAdjustProperty[],
   "font-stretch"?: FontStretchProperty | FontStretchProperty[],
@@ -2675,7 +2682,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-animation-name"?: AnimationNameProperty | AnimationNameProperty[],
   "-webkit-animation-play-state"?: AnimationPlayStateProperty | AnimationPlayStateProperty[],
   "-webkit-animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[],
-  "-webkit-appearance"?: AppearanceProperty | AppearanceProperty[],
+  "-webkit-appearance"?: WebkitAppearanceProperty | WebkitAppearanceProperty[],
   "-webkit-backdrop-filter"?: BackdropFilterProperty | BackdropFilterProperty[],
   "-webkit-backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[],
   "-webkit-background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
@@ -2724,6 +2731,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-mask-repeat"?: WebkitMaskRepeatProperty | WebkitMaskRepeatProperty[],
   "-webkit-mask-repeat-x"?: WebkitMaskRepeatXProperty | WebkitMaskRepeatXProperty[],
   "-webkit-mask-repeat-y"?: WebkitMaskRepeatYProperty | WebkitMaskRepeatYProperty[],
+  "-webkit-mask-size"?: WebkitMaskSizeProperty<TLength> | WebkitMaskSizeProperty<TLength>[],
   "-webkit-max-inline-size"?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[],
   "-webkit-order"?: GlobalsNumber | GlobalsNumber[],
   "-webkit-overflow-scrolling"?: WebkitOverflowScrollingProperty | WebkitOverflowScrollingProperty[],
@@ -2783,7 +2791,7 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-flex"?: FlexProperty<TLength> | FlexProperty<TLength>[],
   "-webkit-flex-flow"?: FlexFlowProperty | FlexFlowProperty[],
   "-webkit-line-clamp"?: WebkitLineClampProperty | WebkitLineClampProperty[],
-  "-webkit-mask"?: WebkitMaskProperty | WebkitMaskProperty[],
+  "-webkit-mask"?: WebkitMaskProperty<TLength> | WebkitMaskProperty<TLength>[],
   "-webkit-text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[],
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength> | WebkitTextStrokeProperty<TLength>[],
   "-webkit-transition"?: TransitionProperty | TransitionProperty[],
@@ -3580,6 +3588,8 @@ type FontKerningProperty = Globals | "auto" | "none" | "normal";
 
 type FontLanguageOverrideProperty = Globals | "normal" | string;
 
+type FontOpticalSizingProperty = Globals | "auto" | "none";
+
 type FontSizeProperty<TLength> = Globals | AbsoluteSize | TLength | "larger" | "smaller" | string;
 
 type FontSizeAdjustProperty = Globals | "none" | number;
@@ -3748,7 +3758,7 @@ type LineClampProperty = Globals | "none" | number;
 
 type LineHeightProperty<TLength> = Globals | TLength | "normal" | string | number;
 
-type LineHeightStepProperty<TLength> = Globals | TLength | "none";
+type LineHeightStepProperty<TLength> = Globals | TLength;
 
 type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
 
@@ -4321,6 +4331,57 @@ type MsWrapMarginProperty<TLength> = Globals | TLength;
 
 type MsWrapThroughProperty = Globals | "none" | "wrap";
 
+type WebkitAppearanceProperty =
+  | Globals
+  | "button"
+  | "button-bevel"
+  | "caret"
+  | "checkbox"
+  | "default-button"
+  | "inner-spin-button"
+  | "listbox"
+  | "listitem"
+  | "media-controls-background"
+  | "media-controls-fullscreen-background"
+  | "media-current-time-display"
+  | "media-enter-fullscreen-button"
+  | "media-exit-fullscreen-button"
+  | "media-fullscreen-button"
+  | "media-mute-button"
+  | "media-overlay-play-button"
+  | "media-play-button"
+  | "media-seek-back-button"
+  | "media-seek-forward-button"
+  | "media-slider"
+  | "media-sliderthumb"
+  | "media-time-remaining-display"
+  | "media-toggle-closed-captions-button"
+  | "media-volume-slider"
+  | "media-volume-slider-container"
+  | "media-volume-sliderthumb"
+  | "menulist"
+  | "menulist-button"
+  | "menulist-text"
+  | "menulist-textfield"
+  | "meter"
+  | "none"
+  | "progress-bar"
+  | "progress-bar-value"
+  | "push-button"
+  | "radio"
+  | "searchfield"
+  | "searchfield-cancel-button"
+  | "searchfield-decoration"
+  | "searchfield-results-button"
+  | "searchfield-results-decoration"
+  | "slider-horizontal"
+  | "slider-vertical"
+  | "sliderthumb-horizontal"
+  | "sliderthumb-vertical"
+  | "square-button"
+  | "textarea"
+  | "textfield";
+
 type WebkitBorderBeforeProperty<TLength> = Globals | BrWidth<TLength> | BrStyle | Color | string;
 
 type WebkitBorderBeforeColorProperty = Globals | Color;
@@ -4333,19 +4394,19 @@ type WebkitBoxReflectProperty<TLength> = Globals | TLength | "above" | "below" |
 
 type WebkitLineClampProperty = Globals | "none" | number;
 
-type WebkitMaskProperty = Globals | "none" | string;
+type WebkitMaskProperty<TLength> = Globals | Position<TLength> | RepeatStyle | Box | "border" | "content" | "none" | "padding" | "text" | string;
 
 type WebkitMaskAttachmentProperty = Globals | Attachment | string;
 
-type WebkitMaskClipProperty = Globals | "border" | "border-box" | "content" | "content-box" | "padding" | "padding-box" | "text" | string;
+type WebkitMaskClipProperty = Globals | Box | "border" | "content" | "padding" | "text" | string;
 
 type WebkitMaskCompositeProperty = Globals | CompositeStyle | string;
 
 type WebkitMaskImageProperty = Globals | "none" | string;
 
-type WebkitMaskOriginProperty = Globals | "border" | "content" | "padding" | string;
+type WebkitMaskOriginProperty = Globals | Box | "border" | "content" | "padding" | string;
 
-type WebkitMaskPositionProperty<TLength> = Globals | MaskPosition<TLength> | string;
+type WebkitMaskPositionProperty<TLength> = Globals | Position<TLength> | string;
 
 type WebkitMaskPositionXProperty<TLength> = Globals | TLength | "center" | "left" | "right" | string;
 
@@ -4356,6 +4417,8 @@ type WebkitMaskRepeatProperty = Globals | RepeatStyle | string;
 type WebkitMaskRepeatXProperty = Globals | "no-repeat" | "repeat" | "round" | "space";
 
 type WebkitMaskRepeatYProperty = Globals | "no-repeat" | "repeat" | "round" | "space";
+
+type WebkitMaskSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
 type WebkitOverflowScrollingProperty = Globals | "auto" | "touch";
 
@@ -4656,8 +4719,6 @@ type GeometryBox = Box | "fill-box" | "margin-box" | "stroke-box" | "view-box";
 type GridLine = "auto" | string | number;
 
 type MaskLayer<TLength> = Position<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | "none" | string;
-
-type MaskPosition<TLength> = TLength | "center" | "left" | "right" | string;
 
 type MaskingMode = "alpha" | "luminance" | "match-source";
 
