@@ -53,7 +53,7 @@ const atRuleFontFace: CSS.FontFace = {
   fontWeight: 'normal',
 };
 
-type X =
+export type X =
   | CSS.Globals
   | CSS.BorderColorProperty
   | CSS.BorderStyleProperty

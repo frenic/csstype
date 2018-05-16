@@ -1,4 +1,5 @@
 index.js.flow
 index.d.ts
 package.json
+package-lock.json
 src/data/urls.json
