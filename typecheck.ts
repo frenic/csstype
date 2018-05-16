@@ -53,6 +53,22 @@ const atRuleFontFace: CSS.FontFace = {
   fontWeight: 'normal',
 };
 
+type X =
+  | CSS.Globals
+  | CSS.BorderColorProperty
+  | CSS.BorderStyleProperty
+  | CSS.BorderWidthProperty<string>
+  | CSS.BorderBlockStartStyleProperty
+  | CSS.BackgroundImageProperty
+  | CSS.BackgroundPositionProperty<string>
+  | CSS.BackgroundSizeProperty<string>
+  | CSS.BackgroundRepeatProperty
+  | CSS.BackgroundOriginProperty
+  | CSS.BackgroundClipProperty
+  | CSS.BackgroundAttachmentProperty
+  | CSS.ColorProperty
+  | CSS.WidthProperty<string>;
+
 css;
 cssWithFallbackValues;
 cssWithHyphenProperties;

@@ -94,7 +94,7 @@ declarations.set(pseudoAliases, pseudosDeclaration);
 
 const globalsDeclaration: IDeclaration = {
   name: 'Globals',
-  export: false,
+  export: true,
   types: declarable(globals),
   generics: [],
 };
@@ -205,7 +205,7 @@ for (const properties of [htmlProperties, svgProperties]) {
 
         declaration = {
           name: declarationName,
-          export: false,
+          export: true,
           types: [aliasOf(globalsDeclaration), ...declarable(property.types)],
           generics,
         };
