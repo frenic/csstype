@@ -1235,7 +1235,17 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
    */
   fontLanguageOverride?: FontLanguageOverrideProperty;
-  /** **Initial value**: `auto` */
+  /**
+   * The **`font-optical-sizing`** CSS property allows developers to control whether browsers render text with slightly differing visual representations to optimize viewing at different sizes, or not. This only works for fonts that have an optical size variation axis.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **62**  | n/a    | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
+   */
   fontOpticalSizing?: FontOpticalSizingProperty;
   /**
    * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
@@ -2865,7 +2875,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | **57** | **36**  | Yes    | n/a  | No  |
+   * | **57** | **36**  | Yes    | No   | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
    */
@@ -5863,7 +5873,17 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
    */
   "font-language-override"?: FontLanguageOverrideProperty;
-  /** **Initial value**: `auto` */
+  /**
+   * The **`font-optical-sizing`** CSS property allows developers to control whether browsers render text with slightly differing visual representations to optimize viewing at different sizes, or not. This only works for fonts that have an optical size variation axis.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **62**  | n/a    | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
+   */
   "font-optical-sizing"?: FontOpticalSizingProperty;
   /**
    * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
@@ -7493,7 +7513,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | **57** | **36**  | Yes    | n/a  | No  |
+   * | **57** | **36**  | Yes    | No   | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
    */
@@ -10495,7 +10515,17 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
    */
   fontLanguageOverride?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
-  /** **Initial value**: `auto` */
+  /**
+   * The **`font-optical-sizing`** CSS property allows developers to control whether browsers render text with slightly differing visual representations to optimize viewing at different sizes, or not. This only works for fonts that have an optical size variation axis.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **62**  | n/a    | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
+   */
   fontOpticalSizing?: FontOpticalSizingProperty | FontOpticalSizingProperty[];
   /**
    * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
@@ -12125,7 +12155,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | **57** | **36**  | Yes    | n/a  | No  |
+   * | **57** | **36**  | Yes    | No   | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
    */
@@ -15127,7 +15157,17 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/font-language-override
    */
   "font-language-override"?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
-  /** **Initial value**: `auto` */
+  /**
+   * The **`font-optical-sizing`** CSS property allows developers to control whether browsers render text with slightly differing visual representations to optimize viewing at different sizes, or not. This only works for fonts that have an optical size variation axis.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | ------ | ------- | ------ | ---- | --- |
+   * | n/a    | **62**  | n/a    | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
+   */
   "font-optical-sizing"?: FontOpticalSizingProperty | FontOpticalSizingProperty[];
   /**
    * The **`font-size`** CSS property specifies the size of the font. Setting this property may change the size of other items, too, since it is used to compute the value of `em`, `ex`, and various other relative `<length>` units.
@@ -16757,7 +16797,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | **57** | **36**  | Yes    | n/a  | No  |
+   * | **57** | **36**  | Yes    | No   | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
    */

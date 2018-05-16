@@ -387,5 +387,6 @@
   "https://developer.mozilla.org/docs/Web/CSS/::placeholder": "The **`::placeholder`** CSS pseudo-element represents the placeholder text of a form element.",
   "https://developer.mozilla.org/docs/Web/CSS/::selection": "The **`::selection`** CSS pseudo-element applies styles to the portion of a document that has been highlighted by the user (such as with the mouse).",
   "https://developer.mozilla.org/docs/Web/CSS/::spelling-error": "The **`::spelling-error`** CSS pseudo-element represents a text segment which the user agent has flagged as incorrectly spelled.",
-  "https://developer.mozilla.org/docs/Web/CSS/-webkit-appearance": "The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme."
+  "https://developer.mozilla.org/docs/Web/CSS/-webkit-appearance": "The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.",
+  "https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing": "The **`font-optical-sizing`** CSS property allows developers to control whether browsers render text with slightly differing visual representations to optimize viewing at different sizes, or not. This only works for fonts that have an optical size variation axis."
 }
