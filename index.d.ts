@@ -938,10 +938,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox   | Safari      | Edge   | IE     |
-   * | ------ | --------- | ----------- | ------ | ------ |
-   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
-   * |        | 1.5 _-x-_ |             |        |        |
+   * | Chrome | Firefox   | Safari  | Edge   | IE     |
+   * | ------ | --------- | ------- | ------ | ------ |
+   * | **50** | **52**    | **10**  | **12** | **10** |
+   * |        | 1.5 _-x-_ | 3 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
@@ -1242,7 +1242,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | n/a    | **62**  | n/a    | n/a  | No  |
+   * | n/a    | **61**  | n/a    | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -1387,7 +1387,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | **62** | n/a     | **11** | No   | No  |
+   * | **62** | **61**  | **11** | No   | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
    */
@@ -2660,7 +2660,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/rotate
    */
   rotate?: RotateProperty;
-  /** **Initial value**: `normal` */
+  /**
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome              | Firefox             | Safari                    | Edge   | IE  |
+   * | ------------------- | ------------------- | ------------------------- | ------ | --- |
+   * | **66**              | **61**              | **10.1** _(grid-row-gap)_ | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/row-gap
+   */
   rowGap?: RowGapProperty<TLength>;
   /**
    * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
@@ -3528,7 +3539,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari    | Edge   | IE       |
    * | -------- | ------- | --------- | ------ | -------- |
-   * | **29**   | **20**  | **9**     | **12** | **11**   |
+   * | **29**   | 20-61   | **9**     | **12** | **11**   |
    * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex
@@ -3555,6 +3566,16 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font
    */
   font?: FontProperty;
+  /**
+   * The **`gap`** CSS property specifies the gaps (gutters) between rows and columns. It is a shorthand for `row-gap` and `column-gap`.
+   *
+   * | Chrome          | Firefox         | Safari                | Edge   | IE  |
+   * | --------------- | --------------- | --------------------- | ------ | --- |
+   * | **66**          | **61**          | **10.1** _(grid-gap)_ | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/gap
+   */
   gap?: GapProperty<TLength>;
   /**
    * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
@@ -5576,10 +5597,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox   | Safari      | Edge   | IE     |
-   * | ------ | --------- | ----------- | ------ | ------ |
-   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
-   * |        | 1.5 _-x-_ |             |        |        |
+   * | Chrome | Firefox   | Safari  | Edge   | IE     |
+   * | ------ | --------- | ------- | ------ | ------ |
+   * | **50** | **52**    | **10**  | **12** | **10** |
+   * |        | 1.5 _-x-_ | 3 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
@@ -5880,7 +5901,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | n/a    | **62**  | n/a    | n/a  | No  |
+   * | n/a    | **61**  | n/a    | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -6025,7 +6046,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | **62** | n/a     | **11** | No   | No  |
+   * | **62** | **61**  | **11** | No   | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
    */
@@ -7298,7 +7319,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/rotate
    */
   rotate?: RotateProperty;
-  /** **Initial value**: `normal` */
+  /**
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome              | Firefox             | Safari                    | Edge   | IE  |
+   * | ------------------- | ------------------- | ------------------------- | ------ | --- |
+   * | **66**              | **61**              | **10.1** _(grid-row-gap)_ | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/row-gap
+   */
   "row-gap"?: RowGapProperty<TLength>;
   /**
    * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
@@ -8166,7 +8198,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari    | Edge   | IE       |
    * | -------- | ------- | --------- | ------ | -------- |
-   * | **29**   | **20**  | **9**     | **12** | **11**   |
+   * | **29**   | 20-61   | **9**     | **12** | **11**   |
    * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex
@@ -8193,6 +8225,16 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font
    */
   font?: FontProperty;
+  /**
+   * The **`gap`** CSS property specifies the gaps (gutters) between rows and columns. It is a shorthand for `row-gap` and `column-gap`.
+   *
+   * | Chrome          | Firefox         | Safari                | Edge   | IE  |
+   * | --------------- | --------------- | --------------------- | ------ | --- |
+   * | **66**          | **61**          | **10.1** _(grid-gap)_ | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/gap
+   */
   gap?: GapProperty<TLength>;
   /**
    * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
@@ -10218,10 +10260,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox   | Safari      | Edge   | IE     |
-   * | ------ | --------- | ----------- | ------ | ------ |
-   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
-   * |        | 1.5 _-x-_ |             |        |        |
+   * | Chrome | Firefox   | Safari  | Edge   | IE     |
+   * | ------ | --------- | ------- | ------ | ------ |
+   * | **50** | **52**    | **10**  | **12** | **10** |
+   * |        | 1.5 _-x-_ | 3 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
@@ -10522,7 +10564,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | n/a    | **62**  | n/a    | n/a  | No  |
+   * | n/a    | **61**  | n/a    | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -10667,7 +10709,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | **62** | n/a     | **11** | No   | No  |
+   * | **62** | **61**  | **11** | No   | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
    */
@@ -11940,7 +11982,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/rotate
    */
   rotate?: RotateProperty | RotateProperty[];
-  /** **Initial value**: `normal` */
+  /**
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome              | Firefox             | Safari                    | Edge   | IE  |
+   * | ------------------- | ------------------- | ------------------------- | ------ | --- |
+   * | **66**              | **61**              | **10.1** _(grid-row-gap)_ | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/row-gap
+   */
   rowGap?: RowGapProperty<TLength> | RowGapProperty<TLength>[];
   /**
    * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
@@ -12808,7 +12861,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome   | Firefox | Safari    | Edge   | IE       |
    * | -------- | ------- | --------- | ------ | -------- |
-   * | **29**   | **20**  | **9**     | **12** | **11**   |
+   * | **29**   | 20-61   | **9**     | **12** | **11**   |
    * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex
@@ -12835,6 +12888,16 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font
    */
   font?: FontProperty | FontProperty[];
+  /**
+   * The **`gap`** CSS property specifies the gaps (gutters) between rows and columns. It is a shorthand for `row-gap` and `column-gap`.
+   *
+   * | Chrome          | Firefox         | Safari                | Edge   | IE  |
+   * | --------------- | --------------- | --------------------- | ------ | --- |
+   * | **66**          | **61**          | **10.1** _(grid-gap)_ | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/gap
+   */
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
   /**
    * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
@@ -14860,10 +14923,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox   | Safari      | Edge   | IE     |
-   * | ------ | --------- | ----------- | ------ | ------ |
-   * | **50** | **52**    | **3** _-x-_ | **12** | **10** |
-   * |        | 1.5 _-x-_ |             |        |        |
+   * | Chrome | Firefox   | Safari  | Edge   | IE     |
+   * | ------ | --------- | ------- | ------ | ------ |
+   * | **50** | **52**    | **10**  | **12** | **10** |
+   * |        | 1.5 _-x-_ | 3 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
@@ -15164,7 +15227,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | n/a    | **62**  | n/a    | n/a  | No  |
+   * | n/a    | **61**  | n/a    | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -15309,7 +15372,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | ------ | ------- | ------ | ---- | --- |
-   * | **62** | n/a     | **11** | No   | No  |
+   * | **62** | **61**  | **11** | No   | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
    */
@@ -16582,7 +16645,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/rotate
    */
   rotate?: RotateProperty | RotateProperty[];
-  /** **Initial value**: `normal` */
+  /**
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome              | Firefox             | Safari                    | Edge   | IE  |
+   * | ------------------- | ------------------- | ------------------------- | ------ | --- |
+   * | **66**              | **61**              | **10.1** _(grid-row-gap)_ | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/row-gap
+   */
   "row-gap"?: RowGapProperty<TLength> | RowGapProperty<TLength>[];
   /**
    * The `**ruby-align**` CSS property defines the distribution of the different ruby elements over the base.
@@ -17450,7 +17524,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * | Chrome   | Firefox | Safari    | Edge   | IE       |
    * | -------- | ------- | --------- | ------ | -------- |
-   * | **29**   | **20**  | **9**     | **12** | **11**   |
+   * | **29**   | 20-61   | **9**     | **12** | **11**   |
    * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex
@@ -17477,6 +17551,16 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    * @see https://developer.mozilla.org/docs/Web/CSS/font
    */
   font?: FontProperty | FontProperty[];
+  /**
+   * The **`gap`** CSS property specifies the gaps (gutters) between rows and columns. It is a shorthand for `row-gap` and `column-gap`.
+   *
+   * | Chrome          | Firefox         | Safari                | Edge   | IE  |
+   * | --------------- | --------------- | --------------------- | ------ | --- |
+   * | **66**          | **61**          | **10.1** _(grid-gap)_ | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/gap
+   */
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
   /**
    * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
@@ -19234,7 +19318,7 @@ export type FontStretchProperty =
   | "ultra-condensed"
   | "ultra-expanded";
 
-export type FontStyleProperty = Globals | "italic" | "normal" | "oblique";
+export type FontStyleProperty = Globals | "italic" | "normal" | "oblique" | string;
 
 export type FontSynthesisProperty = Globals | "none" | "style" | "weight" | string;
 
@@ -20195,7 +20279,7 @@ type FontFaceFontVariantProperty =
   | "unicase"
   | string;
 
-type FontFaceFontVariationSettingsProperty = "normal";
+type FontFaceFontVariationSettingsProperty = "normal" | string;
 
 type FontFaceFontWeightProperty = "bold" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 

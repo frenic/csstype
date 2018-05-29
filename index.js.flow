@@ -3606,7 +3606,7 @@ export type FontStretchProperty =
   | "ultra-condensed"
   | "ultra-expanded";
 
-export type FontStyleProperty = Globals | "italic" | "normal" | "oblique";
+export type FontStyleProperty = Globals | "italic" | "normal" | "oblique" | string;
 
 export type FontSynthesisProperty = Globals | "none" | "style" | "weight" | string;
 
@@ -4567,7 +4567,7 @@ type FontFaceFontVariantProperty =
   | "unicase"
   | string;
 
-type FontFaceFontVariationSettingsProperty = "normal";
+type FontFaceFontVariationSettingsProperty = "normal" | string;
 
 type FontFaceFontWeightProperty = "bold" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
