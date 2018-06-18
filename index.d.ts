@@ -17,10 +17,24 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox |   Safari    |  Edge  |   IE   |
    * | :------: | :-----: | :---------: | :----: | :----: |
    * |  **52**  | **20**  | **7** _-x-_ | **12** | **11** |
    * | 21 _-x-_ |         |             |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
@@ -938,10 +952,33 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **66** | **61**  |   No   | **16** | No  |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
+   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
+   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome |  Firefox  | Safari  |  Edge  |   IE   |
    * | :----: | :-------: | :-----: | :----: | :----: |
    * | **50** |  **52**   | **10**  | **12** | **10** |
    * |        | 1.5 _-x-_ | 3 _-x-_ |        |        |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
@@ -4676,10 +4713,24 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox |   Safari    |  Edge  |   IE   |
    * | :------: | :-----: | :---------: | :----: | :----: |
    * |  **52**  | **20**  | **7** _-x-_ | **12** | **11** |
    * | 21 _-x-_ |         |             |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
@@ -5597,10 +5648,33 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **66** | **61**  |   No   | **16** | No  |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
+   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
+   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome |  Firefox  | Safari  |  Edge  |   IE   |
    * | :----: | :-------: | :-----: | :----: | :----: |
    * | **50** |  **52**   | **10**  | **12** | **10** |
    * |        | 1.5 _-x-_ | 3 _-x-_ |        |        |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
@@ -9339,10 +9413,24 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox |   Safari    |  Edge  |   IE   |
    * | :------: | :-----: | :---------: | :----: | :----: |
    * |  **52**  | **20**  | **7** _-x-_ | **12** | **11** |
    * | 21 _-x-_ |         |             |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
@@ -10260,10 +10348,33 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **66** | **61**  |   No   | **16** | No  |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
+   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
+   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome |  Firefox  | Safari  |  Edge  |   IE   |
    * | :----: | :-------: | :-----: | :----: | :----: |
    * | **50** |  **52**   | **10**  | **12** | **10** |
    * |        | 1.5 _-x-_ | 3 _-x-_ |        |        |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
@@ -14002,10 +14113,24 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox |   Safari    |  Edge  |   IE   |
    * | :------: | :-----: | :---------: | :----: | :----: |
    * |  **52**  | **20**  | **7** _-x-_ | **12** | **11** |
    * | 21 _-x-_ |         |             |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
@@ -14923,10 +15048,33 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **66** | **61**  |   No   | **16** | No  |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
+   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
+   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome |  Firefox  | Safari  |  Edge  |   IE   |
    * | :----: | :-------: | :-----: | :----: | :----: |
    * | **50** |  **52**   | **10**  | **12** | **10** |
    * |        | 1.5 _-x-_ | 3 _-x-_ |        |        |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-gap
    */
@@ -18780,9 +18928,12 @@ export interface Viewport<TLength = string | 0> {
   msHeight?: ViewportHeightProperty<TLength>;
   msMaxHeight?: ViewportMaxHeightProperty<TLength>;
   msMaxWidth?: ViewportMaxWidthProperty<TLength>;
+  msMaxZoom?: ViewportMaxZoomProperty;
   msMinHeight?: ViewportMinHeightProperty<TLength>;
   msMinWidth?: ViewportMinWidthProperty<TLength>;
+  msMinZoom?: ViewportMinZoomProperty;
   msOrientation?: ViewportOrientationProperty;
+  msUserZoom?: ViewportUserZoomProperty;
   msWidth?: ViewportWidthProperty<TLength>;
   msZoom?: ViewportZoomProperty;
   OOrientation?: ViewportOrientationProperty;
@@ -18803,9 +18954,12 @@ export interface ViewportHyphen<TLength = string | 0> {
   "-ms-height"?: ViewportHeightProperty<TLength>;
   "-ms-max-height"?: ViewportMaxHeightProperty<TLength>;
   "-ms-max-width"?: ViewportMaxWidthProperty<TLength>;
+  "-ms-max-zoom"?: ViewportMaxZoomProperty;
   "-ms-min-height"?: ViewportMinHeightProperty<TLength>;
   "-ms-min-width"?: ViewportMinWidthProperty<TLength>;
+  "-ms-min-zoom"?: ViewportMinZoomProperty;
   "-ms-orientation"?: ViewportOrientationProperty;
+  "-ms-user-zoom"?: ViewportUserZoomProperty;
   "-ms-width"?: ViewportWidthProperty<TLength>;
   "-ms-zoom"?: ViewportZoomProperty;
   "-o-orientation"?: ViewportOrientationProperty;
@@ -18826,9 +18980,12 @@ export interface ViewportFallback<TLength = string | 0> {
   msHeight?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[];
   msMaxHeight?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[];
   msMaxWidth?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[];
+  msMaxZoom?: ViewportMaxZoomProperty | ViewportMaxZoomProperty[];
   msMinHeight?: ViewportMinHeightProperty<TLength> | ViewportMinHeightProperty<TLength>[];
   msMinWidth?: ViewportMinWidthProperty<TLength> | ViewportMinWidthProperty<TLength>[];
+  msMinZoom?: ViewportMinZoomProperty | ViewportMinZoomProperty[];
   msOrientation?: ViewportOrientationProperty | ViewportOrientationProperty[];
+  msUserZoom?: ViewportUserZoomProperty | ViewportUserZoomProperty[];
   msWidth?: ViewportWidthProperty<TLength> | ViewportWidthProperty<TLength>[];
   msZoom?: ViewportZoomProperty | ViewportZoomProperty[];
   OOrientation?: ViewportOrientationProperty | ViewportOrientationProperty[];
@@ -18849,9 +19006,12 @@ export interface ViewportHyphenFallback<TLength = string | 0> {
   "-ms-height"?: ViewportHeightProperty<TLength> | ViewportHeightProperty<TLength>[];
   "-ms-max-height"?: ViewportMaxHeightProperty<TLength> | ViewportMaxHeightProperty<TLength>[];
   "-ms-max-width"?: ViewportMaxWidthProperty<TLength> | ViewportMaxWidthProperty<TLength>[];
+  "-ms-max-zoom"?: ViewportMaxZoomProperty | ViewportMaxZoomProperty[];
   "-ms-min-height"?: ViewportMinHeightProperty<TLength> | ViewportMinHeightProperty<TLength>[];
   "-ms-min-width"?: ViewportMinWidthProperty<TLength> | ViewportMinWidthProperty<TLength>[];
+  "-ms-min-zoom"?: ViewportMinZoomProperty | ViewportMinZoomProperty[];
   "-ms-orientation"?: ViewportOrientationProperty | ViewportOrientationProperty[];
+  "-ms-user-zoom"?: ViewportUserZoomProperty | ViewportUserZoomProperty[];
   "-ms-width"?: ViewportWidthProperty<TLength> | ViewportWidthProperty<TLength>[];
   "-ms-zoom"?: ViewportZoomProperty | ViewportZoomProperty[];
   "-o-orientation"?: ViewportOrientationProperty | ViewportOrientationProperty[];
@@ -18887,7 +19047,10 @@ export type AdvancedPseudos =
   | ":-moz-dir"
   | ":-webkit-any"
   | "::cue"
+  | "::slotted"
   | ":dir"
+  | ":host"
+  | ":host-context"
   | ":lang"
   | ":not"
   | ":nth-child"
@@ -19306,17 +19469,7 @@ export type FontSizeProperty<TLength> = Globals | AbsoluteSize | TLength | "larg
 
 export type FontSizeAdjustProperty = Globals | "none" | number;
 
-export type FontStretchProperty =
-  | Globals
-  | "condensed"
-  | "expanded"
-  | "extra-condensed"
-  | "extra-expanded"
-  | "normal"
-  | "semi-condensed"
-  | "semi-expanded"
-  | "ultra-condensed"
-  | "ultra-expanded";
+export type FontStretchProperty = Globals | FontStretchAbsolute;
 
 export type FontStyleProperty = Globals | "italic" | "normal" | "oblique" | string;
 
@@ -19392,7 +19545,7 @@ export type FontVariantPositionProperty = Globals | "normal" | "sub" | "super";
 
 export type FontVariationSettingsProperty = Globals | "normal" | string;
 
-export type FontWeightProperty = Globals | "bold" | "bolder" | "lighter" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+export type FontWeightProperty = Globals | FontWeightAbsolute | "bolder" | "lighter";
 
 export type GapProperty<TLength> = Globals | TLength | "normal" | string;
 
@@ -20293,21 +20446,21 @@ type ViewportMaxHeightProperty<TLength> = ViewportLength<TLength>;
 
 type ViewportMaxWidthProperty<TLength> = ViewportLength<TLength>;
 
+type ViewportMaxZoomProperty = "auto" | string | number;
+
 type ViewportMinHeightProperty<TLength> = ViewportLength<TLength>;
 
 type ViewportMinWidthProperty<TLength> = ViewportLength<TLength>;
 
+type ViewportMinZoomProperty = "auto" | string | number;
+
 type ViewportOrientationProperty = "auto" | "landscape" | "portrait";
+
+type ViewportUserZoomProperty = "-ms-zoom" | "fixed" | "zoom";
 
 type ViewportWidthProperty<TLength> = ViewportLength<TLength> | string;
 
 type ViewportZoomProperty = "auto" | string | number;
-
-type ViewportMaxZoomProperty = "auto" | string | number;
-
-type ViewportMinZoomProperty = "auto" | string | number;
-
-type ViewportUserZoomProperty = "fixed" | "zoom";
 
 type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small";
 
@@ -20423,6 +20576,20 @@ type DisplayOutside = "block" | "inline" | "run-in";
 type EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
 
 type FinalBgLayer<TLength> = Color | BgPosition<TLength> | RepeatStyle | Attachment | Box | "none" | string;
+
+type FontStretchAbsolute =
+  | "condensed"
+  | "expanded"
+  | "extra-condensed"
+  | "extra-expanded"
+  | "normal"
+  | "semi-condensed"
+  | "semi-expanded"
+  | "ultra-condensed"
+  | "ultra-expanded"
+  | string;
+
+type FontWeightAbsolute = "bold" | "normal" | number;
 
 type GenericFamily = "cursive" | "fantasy" | "monospace" | "sans-serif" | "serif";
 
