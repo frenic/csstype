@@ -92,7 +92,7 @@ function getCompatRows(compatibilityData: MDN.CompatData) {
       ...format(
         [
           '| Chrome | Firefox | Safari | Edge | IE |',
-          '| --- | --- | --- | --- | --- |',
+          '| :---: | :---: | :---: | :---: | :---: |',
           '| ' + versions.map(version => version[0] || '').join(' | ') + ' |',
           versions.some(version => !!version[1])
             ? '| ' + versions.map(version => version[1] || '').join(' | ') + ' |'
