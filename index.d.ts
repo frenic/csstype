@@ -226,7 +226,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundColor?: BackgroundColorProperty;
   /**
-   * The **`background-image`** CSS property sets one or more background images on an element.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Initial value**: `none`
    *
@@ -325,7 +325,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   blockSize?: BlockSizeProperty<TLength>;
   /**
-   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -337,7 +337,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockEndColor?: BorderBlockEndColorProperty;
   /**
-   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -349,7 +349,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockEndStyle?: BorderBlockEndStyleProperty;
   /**
-   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -361,7 +361,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength>;
   /**
-   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -373,7 +373,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockStartColor?: BorderBlockStartColorProperty;
   /**
-   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -385,7 +385,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBlockStartStyle?: BorderBlockStartStyleProperty;
   /**
-   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -531,7 +531,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderImageWidth?: BorderImageWidthProperty<TLength>;
   /**
-   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -543,7 +543,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineEndColor?: BorderInlineEndColorProperty;
   /**
-   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -556,7 +556,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineEndStyle?: BorderInlineEndStyleProperty;
   /**
-   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -568,7 +568,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength>;
   /**
-   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -581,7 +581,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineStartColor?: BorderInlineStartColorProperty;
   /**
-   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -593,7 +593,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderInlineStartStyle?: BorderInlineStartStyleProperty;
   /**
-   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -641,7 +641,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderLeftWidth?: BorderLeftWidthProperty<TLength>;
   /**
-   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
+   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
    *
    * **Initial value**: `currentcolor`
    *
@@ -934,7 +934,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnFill?: ColumnFillProperty;
   /**
-   * The **`column-gap`** CSS property sets the size of the gap (spacing) between an element's columns.
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
    * **Initial value**: `normal`
    *
@@ -997,7 +997,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnSpan?: ColumnSpanProperty;
   /**
-   * The **`column-width`** CSS property specifies the minimum column width. The number of columns will be the maximum number of columns that can fit without any column having a width less than the `column-width` value. The actual column width may be smaller than the value of `column-width` if the width of the container is smaller.
+   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. If the width of the container is narrower than the specified value, the actual column width may be smaller. The container will have as many columns as can fit without any of them having a width less than the `column-width` value.
    *
    * **Initial value**: `auto`
    *
@@ -1566,7 +1566,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   imageOrientation?: ImageOrientationProperty;
   /**
-   * The **`image-rendering`** CSS property provides a hint to the browser about the algorithm it should use to scale images.
+   * The **`image-rendering`** CSS property indicates the algorithm to use when scaling images. When applied to an element, the property applies to the element itself, to any images supplied in its other properties, and to its descendant elements.
    *
    * **Initial value**: `auto`
    *
@@ -1778,7 +1778,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginBottom?: MarginBottomProperty<TLength>;
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -1791,7 +1791,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   marginInlineEnd?: MarginInlineEndProperty<TLength>;
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -2060,7 +2060,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   mixBlendMode?: MixBlendModeProperty;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
    *
    * **Initial value**: `0`
    *
@@ -2073,7 +2073,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   motionDistance?: OffsetDistanceProperty<TLength>;
   /**
-   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
    *
    * **Initial value**: `none`
    *
@@ -2086,7 +2086,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   motionPath?: OffsetPathProperty;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -2125,7 +2125,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetAnchor?: OffsetAnchorProperty<TLength>;
   /**
-   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -2137,7 +2137,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetBlockEnd?: OffsetBlockEndProperty<TLength>;
   /**
-   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -2149,7 +2149,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetBlockStart?: OffsetBlockStartProperty<TLength>;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
    *
    * **Initial value**: `0`
    *
@@ -2162,7 +2162,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetDistance?: OffsetDistanceProperty<TLength>;
   /**
-   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -2174,7 +2174,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetInlineEnd?: OffsetInlineEndProperty<TLength>;
   /**
-   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -2186,7 +2186,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetInlineStart?: OffsetInlineStartProperty<TLength>;
   /**
-   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
    *
    * **Initial value**: `none`
    *
@@ -2201,7 +2201,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetPosition?: OffsetPositionProperty<TLength>;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -2214,7 +2214,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetRotate?: OffsetRotateProperty;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -2405,7 +2405,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overscrollBehaviorY?: OverscrollBehaviorYProperty;
   /**
-   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -2417,7 +2417,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingBlockEnd?: PaddingBlockEndProperty<TLength>;
   /**
-   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -2429,7 +2429,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingBlockStart?: PaddingBlockStartProperty<TLength>;
   /**
-   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Initial value**: `0`
    *
@@ -2441,7 +2441,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingBottom?: PaddingBottomProperty<TLength>;
   /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -2454,7 +2454,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingInlineEnd?: PaddingInlineEndProperty<TLength>;
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -2613,7 +2613,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   position?: PositionProperty;
   /**
-   * The `quotes` CSS property indicates how user agents should render quotation marks.
+   * The **`quotes`** CSS property indicates how user agents should render quotation marks.
    *
    * **Initial value**: depends on user agent
    *
@@ -2625,7 +2625,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   quotes?: QuotesProperty;
   /**
-   * The **`resize`** CSS sets whether an element is resizable, and if so, in which direction(s).
+   * The **`resize`** CSS property sets whether an element is resizable, and if so, in which direction(s).
    *
    * **Initial value**: `none`
    *
@@ -3151,7 +3151,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   transitionProperty?: TransitionPropertyProperty;
   /**
-   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
+   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
    *
    * **Initial value**: `ease`
    *
@@ -3483,7 +3483,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderRight?: BorderRightProperty<TLength>;
   /**
-   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -3535,7 +3535,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength>;
   /**
-   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
    *
    * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
    * | :------: | :-----: | :-------: | :----: | :------: |
@@ -3578,7 +3578,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   gap?: GapProperty<TLength>;
   /**
-   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -3661,7 +3661,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   mask?: MaskProperty<TLength>;
   maskBorder?: MaskBorderProperty;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -3672,7 +3672,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength>;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -3713,7 +3713,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   textDecoration?: TextDecorationProperty;
   /**
-   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
+   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
    *
    * |    Chrome    | Firefox |    Safari     | Edge | IE  |
    * | :----------: | :-----: | :-----------: | :--: | :-: |
@@ -4885,7 +4885,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-color"?: BackgroundColorProperty;
   /**
-   * The **`background-image`** CSS property sets one or more background images on an element.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Initial value**: `none`
    *
@@ -4984,7 +4984,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "block-size"?: BlockSizeProperty<TLength>;
   /**
-   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -4996,7 +4996,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-end-color"?: BorderBlockEndColorProperty;
   /**
-   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -5008,7 +5008,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-end-style"?: BorderBlockEndStyleProperty;
   /**
-   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -5020,7 +5020,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-end-width"?: BorderBlockEndWidthProperty<TLength>;
   /**
-   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -5032,7 +5032,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-start-color"?: BorderBlockStartColorProperty;
   /**
-   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -5044,7 +5044,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-start-style"?: BorderBlockStartStyleProperty;
   /**
-   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -5190,7 +5190,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-image-width"?: BorderImageWidthProperty<TLength>;
   /**
-   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -5202,7 +5202,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-end-color"?: BorderInlineEndColorProperty;
   /**
-   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -5215,7 +5215,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-end-style"?: BorderInlineEndStyleProperty;
   /**
-   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -5227,7 +5227,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength>;
   /**
-   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -5240,7 +5240,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-start-color"?: BorderInlineStartColorProperty;
   /**
-   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -5252,7 +5252,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-start-style"?: BorderInlineStartStyleProperty;
   /**
-   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -5300,7 +5300,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-left-width"?: BorderLeftWidthProperty<TLength>;
   /**
-   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
+   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
    *
    * **Initial value**: `currentcolor`
    *
@@ -5593,7 +5593,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-fill"?: ColumnFillProperty;
   /**
-   * The **`column-gap`** CSS property sets the size of the gap (spacing) between an element's columns.
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
    * **Initial value**: `normal`
    *
@@ -5656,7 +5656,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-span"?: ColumnSpanProperty;
   /**
-   * The **`column-width`** CSS property specifies the minimum column width. The number of columns will be the maximum number of columns that can fit without any column having a width less than the `column-width` value. The actual column width may be smaller than the value of `column-width` if the width of the container is smaller.
+   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. If the width of the container is narrower than the specified value, the actual column width may be smaller. The container will have as many columns as can fit without any of them having a width less than the `column-width` value.
    *
    * **Initial value**: `auto`
    *
@@ -6225,7 +6225,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "image-orientation"?: ImageOrientationProperty;
   /**
-   * The **`image-rendering`** CSS property provides a hint to the browser about the algorithm it should use to scale images.
+   * The **`image-rendering`** CSS property indicates the algorithm to use when scaling images. When applied to an element, the property applies to the element itself, to any images supplied in its other properties, and to its descendant elements.
    *
    * **Initial value**: `auto`
    *
@@ -6437,7 +6437,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-bottom"?: MarginBottomProperty<TLength>;
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -6450,7 +6450,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "margin-inline-end"?: MarginInlineEndProperty<TLength>;
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -6719,7 +6719,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mix-blend-mode"?: MixBlendModeProperty;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
    *
    * **Initial value**: `0`
    *
@@ -6732,7 +6732,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "motion-distance"?: OffsetDistanceProperty<TLength>;
   /**
-   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
    *
    * **Initial value**: `none`
    *
@@ -6745,7 +6745,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "motion-path"?: OffsetPathProperty;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -6784,7 +6784,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "offset-anchor"?: OffsetAnchorProperty<TLength>;
   /**
-   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -6796,7 +6796,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-block-end"?: OffsetBlockEndProperty<TLength>;
   /**
-   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -6808,7 +6808,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-block-start"?: OffsetBlockStartProperty<TLength>;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
    *
    * **Initial value**: `0`
    *
@@ -6821,7 +6821,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-distance"?: OffsetDistanceProperty<TLength>;
   /**
-   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -6833,7 +6833,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-inline-end"?: OffsetInlineEndProperty<TLength>;
   /**
-   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -6845,7 +6845,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-inline-start"?: OffsetInlineStartProperty<TLength>;
   /**
-   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
    *
    * **Initial value**: `none`
    *
@@ -6860,7 +6860,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "offset-position"?: OffsetPositionProperty<TLength>;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -6873,7 +6873,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-rotate"?: OffsetRotateProperty;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -7064,7 +7064,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty;
   /**
-   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -7076,7 +7076,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-block-end"?: PaddingBlockEndProperty<TLength>;
   /**
-   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -7088,7 +7088,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-block-start"?: PaddingBlockStartProperty<TLength>;
   /**
-   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Initial value**: `0`
    *
@@ -7100,7 +7100,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-bottom"?: PaddingBottomProperty<TLength>;
   /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -7113,7 +7113,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-inline-end"?: PaddingInlineEndProperty<TLength>;
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -7272,7 +7272,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   position?: PositionProperty;
   /**
-   * The `quotes` CSS property indicates how user agents should render quotation marks.
+   * The **`quotes`** CSS property indicates how user agents should render quotation marks.
    *
    * **Initial value**: depends on user agent
    *
@@ -7284,7 +7284,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   quotes?: QuotesProperty;
   /**
-   * The **`resize`** CSS sets whether an element is resizable, and if so, in which direction(s).
+   * The **`resize`** CSS property sets whether an element is resizable, and if so, in which direction(s).
    *
    * **Initial value**: `none`
    *
@@ -7810,7 +7810,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "transition-property"?: TransitionPropertyProperty;
   /**
-   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
+   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
    *
    * **Initial value**: `ease`
    *
@@ -8142,7 +8142,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-right"?: BorderRightProperty<TLength>;
   /**
-   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -8194,7 +8194,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength>;
   /**
-   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
    *
    * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
    * | :------: | :-----: | :-------: | :----: | :------: |
@@ -8237,7 +8237,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   gap?: GapProperty<TLength>;
   /**
-   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -8320,7 +8320,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   mask?: MaskProperty<TLength>;
   "mask-border"?: MaskBorderProperty;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -8331,7 +8331,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength>;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -8372,7 +8372,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "text-decoration"?: TextDecorationProperty;
   /**
-   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
+   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
    *
    * |    Chrome    | Firefox |    Safari     | Edge | IE  |
    * | :----------: | :-----: | :-----------: | :--: | :-: |
@@ -9548,7 +9548,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundColor?: BackgroundColorProperty | BackgroundColorProperty[];
   /**
-   * The **`background-image`** CSS property sets one or more background images on an element.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Initial value**: `none`
    *
@@ -9647,7 +9647,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   blockSize?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
   /**
-   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -9659,7 +9659,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockEndColor?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
   /**
-   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -9671,7 +9671,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockEndStyle?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
   /**
-   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -9683,7 +9683,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[];
   /**
-   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -9695,7 +9695,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockStartColor?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
   /**
-   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -9707,7 +9707,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockStartStyle?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
   /**
-   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -9853,7 +9853,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderImageWidth?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
   /**
-   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -9865,7 +9865,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
   /**
-   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -9878,7 +9878,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineEndStyle?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
   /**
-   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -9890,7 +9890,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
   /**
-   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -9903,7 +9903,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineStartColor?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
   /**
-   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -9915,7 +9915,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineStartStyle?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
   /**
-   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -9963,7 +9963,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderLeftWidth?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
   /**
-   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
+   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
    *
    * **Initial value**: `currentcolor`
    *
@@ -10256,7 +10256,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnFill?: ColumnFillProperty | ColumnFillProperty[];
   /**
-   * The **`column-gap`** CSS property sets the size of the gap (spacing) between an element's columns.
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
    * **Initial value**: `normal`
    *
@@ -10319,7 +10319,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnSpan?: ColumnSpanProperty | ColumnSpanProperty[];
   /**
-   * The **`column-width`** CSS property specifies the minimum column width. The number of columns will be the maximum number of columns that can fit without any column having a width less than the `column-width` value. The actual column width may be smaller than the value of `column-width` if the width of the container is smaller.
+   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. If the width of the container is narrower than the specified value, the actual column width may be smaller. The container will have as many columns as can fit without any of them having a width less than the `column-width` value.
    *
    * **Initial value**: `auto`
    *
@@ -10888,7 +10888,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   imageOrientation?: ImageOrientationProperty | ImageOrientationProperty[];
   /**
-   * The **`image-rendering`** CSS property provides a hint to the browser about the algorithm it should use to scale images.
+   * The **`image-rendering`** CSS property indicates the algorithm to use when scaling images. When applied to an element, the property applies to the element itself, to any images supplied in its other properties, and to its descendant elements.
    *
    * **Initial value**: `auto`
    *
@@ -11100,7 +11100,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginBottom?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -11113,7 +11113,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   marginInlineEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -11382,7 +11382,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
    *
    * **Initial value**: `0`
    *
@@ -11395,7 +11395,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   motionDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /**
-   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
    *
    * **Initial value**: `none`
    *
@@ -11408,7 +11408,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   motionPath?: OffsetPathProperty | OffsetPathProperty[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -11447,7 +11447,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   /**
-   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -11459,7 +11459,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetBlockEnd?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
   /**
-   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -11471,7 +11471,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetBlockStart?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
    *
    * **Initial value**: `0`
    *
@@ -11484,7 +11484,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /**
-   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -11496,7 +11496,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetInlineEnd?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
   /**
-   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -11508,7 +11508,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetInlineStart?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
   /**
-   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
    *
    * **Initial value**: `none`
    *
@@ -11523,7 +11523,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -11536,7 +11536,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -11727,7 +11727,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overscrollBehaviorY?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
   /**
-   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -11739,7 +11739,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingBlockEnd?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
   /**
-   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -11751,7 +11751,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingBlockStart?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   /**
-   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Initial value**: `0`
    *
@@ -11763,7 +11763,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
   /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -11776,7 +11776,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingInlineEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -11935,7 +11935,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   position?: PositionProperty | PositionProperty[];
   /**
-   * The `quotes` CSS property indicates how user agents should render quotation marks.
+   * The **`quotes`** CSS property indicates how user agents should render quotation marks.
    *
    * **Initial value**: depends on user agent
    *
@@ -11947,7 +11947,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   quotes?: QuotesProperty | QuotesProperty[];
   /**
-   * The **`resize`** CSS sets whether an element is resizable, and if so, in which direction(s).
+   * The **`resize`** CSS property sets whether an element is resizable, and if so, in which direction(s).
    *
    * **Initial value**: `none`
    *
@@ -12473,7 +12473,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   transitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[];
   /**
-   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
+   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
    *
    * **Initial value**: `ease`
    *
@@ -12805,7 +12805,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderRight?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
   /**
-   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -12857,7 +12857,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   /**
-   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
    *
    * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
    * | :------: | :-----: | :-------: | :----: | :------: |
@@ -12900,7 +12900,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
   /**
-   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -12983,7 +12983,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   maskBorder?: MaskBorderProperty | MaskBorderProperty[];
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -12994,7 +12994,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -13035,7 +13035,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   textDecoration?: TextDecorationProperty | TextDecorationProperty[];
   /**
-   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
+   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
    *
    * |    Chrome    | Firefox |    Safari     | Edge | IE  |
    * | :----------: | :-----: | :-----------: | :--: | :-: |
@@ -14211,7 +14211,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-color"?: BackgroundColorProperty | BackgroundColorProperty[];
   /**
-   * The **`background-image`** CSS property sets one or more background images on an element.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Initial value**: `none`
    *
@@ -14310,7 +14310,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "block-size"?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
   /**
-   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -14322,7 +14322,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-end-color"?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[];
   /**
-   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -14334,7 +14334,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-end-style"?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[];
   /**
-   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -14346,7 +14346,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-end-width"?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[];
   /**
-   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -14358,7 +14358,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-start-color"?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[];
   /**
-   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -14370,7 +14370,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-block-start-style"?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[];
   /**
-   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -14516,7 +14516,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-image-width"?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
   /**
-   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -14528,7 +14528,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-end-color"?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[];
   /**
-   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -14541,7 +14541,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-end-style"?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[];
   /**
-   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -14553,7 +14553,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
   /**
-   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
    *
@@ -14566,7 +14566,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-start-color"?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[];
   /**
-   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `none`
    *
@@ -14578,7 +14578,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-inline-start-style"?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
   /**
-   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `medium`
    *
@@ -14626,7 +14626,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-left-width"?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[];
   /**
-   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
+   * The **`border-right-color`** CSS property sets the color of an element's right `border`. Note that in many cases the shorthand CSS properties  `border-color` or `border-right` are more convenient and preferable.
    *
    * **Initial value**: `currentcolor`
    *
@@ -14919,7 +14919,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-fill"?: ColumnFillProperty | ColumnFillProperty[];
   /**
-   * The **`column-gap`** CSS property sets the size of the gap (spacing) between an element's columns.
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
    * **Initial value**: `normal`
    *
@@ -14982,7 +14982,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-span"?: ColumnSpanProperty | ColumnSpanProperty[];
   /**
-   * The **`column-width`** CSS property specifies the minimum column width. The number of columns will be the maximum number of columns that can fit without any column having a width less than the `column-width` value. The actual column width may be smaller than the value of `column-width` if the width of the container is smaller.
+   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. If the width of the container is narrower than the specified value, the actual column width may be smaller. The container will have as many columns as can fit without any of them having a width less than the `column-width` value.
    *
    * **Initial value**: `auto`
    *
@@ -15551,7 +15551,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "image-orientation"?: ImageOrientationProperty | ImageOrientationProperty[];
   /**
-   * The **`image-rendering`** CSS property provides a hint to the browser about the algorithm it should use to scale images.
+   * The **`image-rendering`** CSS property indicates the algorithm to use when scaling images. When applied to an element, the property applies to the element itself, to any images supplied in its other properties, and to its descendant elements.
    *
    * **Initial value**: `auto`
    *
@@ -15763,7 +15763,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-bottom"?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -15776,7 +15776,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "margin-inline-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[];
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -16045,7 +16045,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[];
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
    *
    * **Initial value**: `0`
    *
@@ -16058,7 +16058,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "motion-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /**
-   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
    *
    * **Initial value**: `none`
    *
@@ -16071,7 +16071,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "motion-path"?: OffsetPathProperty | OffsetPathProperty[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -16110,7 +16110,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `auto` */
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   /**
-   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -16122,7 +16122,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-block-end"?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[];
   /**
-   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -16134,7 +16134,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-block-start"?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[];
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
    *
    * **Initial value**: `0`
    *
@@ -16147,7 +16147,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /**
-   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-inline-end`** CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -16159,7 +16159,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-inline-end"?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[];
   /**
-   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`offset-inline-start`** CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `auto`
    *
@@ -16171,7 +16171,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-inline-start"?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[];
   /**
-   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
+   * The **`offset-path`** CSS property specifies the offset path where the element gets positioned. The exact element’s position on the offset path is determined by the `offset-distance` property. An offset path is either a specified path with one or multiple sub-paths or the geometry of a not-styled basic shape. Each shape or path must define an initial position for the computed value of "0" for `offset-distance` and an initial direction which specifies the rotation of the object to the initial position.
    *
    * **Initial value**: `none`
    *
@@ -16186,7 +16186,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `auto` */
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -16199,7 +16199,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
    *
    * **Initial value**: `auto`
    *
@@ -16390,7 +16390,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
   /**
-   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -16402,7 +16402,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-block-end"?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[];
   /**
-   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -16414,7 +16414,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-block-start"?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   /**
-   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Initial value**: `0`
    *
@@ -16426,7 +16426,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-bottom"?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
   /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -16439,7 +16439,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-inline-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[];
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
    *
@@ -16598,7 +16598,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   position?: PositionProperty | PositionProperty[];
   /**
-   * The `quotes` CSS property indicates how user agents should render quotation marks.
+   * The **`quotes`** CSS property indicates how user agents should render quotation marks.
    *
    * **Initial value**: depends on user agent
    *
@@ -16610,7 +16610,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   quotes?: QuotesProperty | QuotesProperty[];
   /**
-   * The **`resize`** CSS sets whether an element is resizable, and if so, in which direction(s).
+   * The **`resize`** CSS property sets whether an element is resizable, and if so, in which direction(s).
    *
    * **Initial value**: `none`
    *
@@ -17136,7 +17136,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "transition-property"?: TransitionPropertyProperty | TransitionPropertyProperty[];
   /**
-   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
+   * The **`transition-timing-function`** CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.
    *
    * **Initial value**: `ease`
    *
@@ -17468,7 +17468,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-right"?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
   /**
-   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -17520,7 +17520,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   /**
-   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets `flex-grow`, `flex-shrink`, and `flex-basis`.
    *
    * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
    * | :------: | :-----: | :-------: | :----: | :------: |
@@ -17563,7 +17563,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   gap?: GapProperty<TLength> | GapProperty<TLength>[];
   /**
-   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -17646,7 +17646,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[];
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -17657,7 +17657,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -17698,7 +17698,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "text-decoration"?: TextDecorationProperty | TextDecorationProperty[];
   /**
-   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
+   * The **`text-emphasis`** CSS property is a shorthand property for setting `text-emphasis-style` and `text-emphasis-color` in one declaration. This property will apply the specified emphasis mark to each character of the element's text, except separator characters, like spaces,  and control characters.
    *
    * |    Chrome    | Firefox |    Safari     | Edge | IE  |
    * | :----------: | :-----: | :-----------: | :--: | :-: |
