@@ -2,7 +2,7 @@ import { composeCommentBlock } from './comment';
 import {
   compatNames,
   compatSyntax,
-  getCompat,
+  getCompats,
   getPropertyData,
   getTypesData,
   isAddedBySome,
@@ -77,17 +77,21 @@ for (const originalName in propertiesData) {
   const compatibilityData = getPropertyData(originalName);
 
   if (compatibilityData) {
-    const compat = getCompat(compatibilityData);
+    const compats = getCompats(compatibilityData);
 
-    if (!isAddedBySome(compat)) {
+    if (compats.every(compat => !isAddedBySome(compat))) {
       // The property needs to be added by some browsers
       continue;
     }
 
     entities = compatSyntax(compatibilityData, entities);
-    currentNames = currentNames.concat(filterMissingProperties(compatNames(compat, originalName)));
-    obsoleteNames = obsoleteNames.concat(filterMissingProperties(compatNames(compat, originalName, true)));
-    deprecated = isDeprecated(data, compat);
+    currentNames = currentNames.concat(
+      ...compats.map(compat => filterMissingProperties(compatNames(compat, originalName))),
+    );
+    obsoleteNames = obsoleteNames.concat(
+      ...compats.map(compat => filterMissingProperties(compatNames(compat, originalName, true))),
+    );
+    deprecated = compats.every(compat => isDeprecated(data, compat));
   }
 
   if (deprecated) {

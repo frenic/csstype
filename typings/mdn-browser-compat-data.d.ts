@@ -45,7 +45,7 @@ declare namespace MDN {
     __compat: MDN.Compat;
   };
 
-  type CompatData = CompatDataInner & { summary_from_mdn_site?: string } & Record<string, CompatDataInner>;
+  type CompatData = CompatDataInner & Record<string, CompatDataInner>;
 
   interface AtRulesCompat {
     css: {

@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as jsdom from 'jsdom';
 import * as path from 'path';
 import syncRequest = require('sync-request');
+import { error, warn } from './logger';
 
 // tslint:disable-next-line:no-var-requires
 const TurndownService = require('turndown');
@@ -29,7 +30,7 @@ function scrapeSummary(url: string): string {
     }
     return '';
   } catch (ex) {
-    console.warn(`Could not fetch summary for '${url}'`);
+    warn(`Could not fetch summary for '${url}'`);
     return '';
   }
 }
@@ -39,8 +40,7 @@ function saveToFile(): void {
     const fileContents = JSON.stringify(urlData, undefined, 2);
     fs.writeFileSync(pathToCache, fileContents, { encoding: 'utf-8' });
   } catch (ex) {
-    console.error(ex.toString());
-    process.exit(1);
+    error(ex.toString());
   }
 }
 
@@ -48,7 +48,7 @@ export function getSummary(url: string): string {
   let summaryData = urlData[url];
 
   if (url && !summaryData) {
-    console.log('fetching summary for ' + url);
+    console.log('Fetching summary for ' + url);
     urlData[url] = summaryData = scrapeSummary(url) || '';
     saveToFile();
   }

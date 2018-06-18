@@ -1,10 +1,19 @@
 import { Combinator, combinators, Component, componentData, componentGroupData, Entity, EntityType } from './parser';
-import { getSummary } from './urls';
 
 const importsCache: { [cssPath: string]: MDN.CompatData | null } = {};
 
-export function getCompat(data: { __compat: MDN.Compat }): MDN.Compat {
-  return data.__compat;
+interface IRegularCompat {
+  __compat: MDN.Compat;
+}
+
+interface IContextCompat {
+  [context: string]: IRegularCompat;
+}
+
+export function getCompats(data: IRegularCompat | IContextCompat): MDN.Compat[] {
+  return '__compat' in data
+    ? [(data as IRegularCompat).__compat]
+    : Object.keys(data).map(context => (data as IContextCompat)[context].__compat);
 }
 
 export function getSupport(support: MDN.Support | MDN.Support[]): MDN.Support[] {
@@ -35,17 +44,13 @@ function getData(type: string, name: string): MDN.CompatData | null {
 
   try {
     const data = require(`mdn-browser-compat-data/css/${cssPath}.json`);
+
     if (!data) {
       return (importsCache[cssPath] = null);
     }
-    // de-nest the properties
-    const cssData = data.css[type][name];
-    const propertyData = {
-      ...cssData,
-      summary_from_mdn_site: getSummary(cssData.__compat.mdn_url),
-    };
 
-    return (importsCache[cssPath] = propertyData);
+    const cssData = data.css[type][name];
+    return (importsCache[cssPath] = cssData);
   } catch {
     return (importsCache[cssPath] = null);
   }
@@ -84,11 +89,14 @@ export function compatSyntax(data: MDN.CompatData, entities: EntityType[]): Enti
     if (entity.entity === Entity.Component) {
       switch (entity.component) {
         case Component.Keyword: {
-          if (entity.value in data && !isAddedBySome(getCompat(data[entity.value]))) {
-            // The keyword needs to be added by some browsers so we remove previous
-            // combinator and skip this keyword
-            compatEntities.pop();
-            continue;
+          if (entity.value in data) {
+            const compats = getCompats(data[entity.value]);
+            if (compats.every(compat => !isAddedBySome(compat))) {
+              // The keyword needs to be added by some browsers so we remove previous
+              // combinator and skip this keyword
+              compatEntities.pop();
+              continue;
+            }
           }
 
           const alternatives = alternativeKeywords(data, entity.value);
@@ -122,23 +130,25 @@ function alternativeKeywords(data: MDN.CompatData, value: string): string[] {
   const alternatives: string[] = [];
 
   if (value in data) {
-    const compat = getCompat(data[value]);
+    const compats = getCompats(data[value]);
 
-    let browser: MDN.Browsers;
-    for (browser in compat.support) {
-      const support = compat.support[browser];
+    for (const compat of compats) {
+      let browser: MDN.Browsers;
+      for (browser in compat.support) {
+        const support = compat.support[browser];
 
-      for (const version of Array.isArray(support) ? support : [support]) {
-        const isCurrent =
-          // Assume that the version has the value implemented if `null`
-          !!version.version_added || version.version_added === null;
+        for (const version of Array.isArray(support) ? support : [support]) {
+          const isCurrent =
+            // Assume that the version has the value implemented if `null`
+            !!version.version_added || version.version_added === null;
 
-        if (isCurrent) {
-          if (version.prefix && !alternatives.includes(version.prefix + value)) {
-            alternatives.push(version.prefix + value);
-          }
-          if (version.alternative_name && !alternatives.includes(version.alternative_name)) {
-            alternatives.push(version.alternative_name);
+          if (isCurrent) {
+            if (version.prefix && !alternatives.includes(version.prefix + value)) {
+              alternatives.push(version.prefix + value);
+            }
+            if (version.alternative_name && !alternatives.includes(version.alternative_name)) {
+              alternatives.push(version.alternative_name);
+            }
           }
         }
       }
@@ -178,22 +188,24 @@ export function alternativeSelectors(selector: string): string[] {
   const compatibilityData = getSelectorsData(name);
 
   if (compatibilityData) {
-    const compat = getCompat(compatibilityData);
+    const compats = getCompats(compatibilityData);
 
-    let browser: MDN.Browsers;
-    for (browser in compat.support) {
-      const support = compat.support[browser];
+    for (const compat of compats) {
+      let browser: MDN.Browsers;
+      for (browser in compat.support) {
+        const support = compat.support[browser];
 
-      for (const version of getSupport(support)) {
-        // Assume that the version has the property implemented if `null`
-        const isAdded = !!version.version_added || version.version_added === null;
+        for (const version of getSupport(support)) {
+          // Assume that the version has the property implemented if `null`
+          const isAdded = !!version.version_added || version.version_added === null;
 
-        if (isAdded) {
-          if (version.prefix) {
-            alternatives.push(colons + version.prefix + name);
-          }
-          if (version.alternative_name) {
-            alternatives.push(version.alternative_name);
+          if (isAdded) {
+            if (version.prefix) {
+              alternatives.push(colons + version.prefix + name);
+            }
+            if (version.alternative_name) {
+              alternatives.push(version.alternative_name);
+            }
           }
         }
       }

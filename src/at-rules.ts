@@ -1,5 +1,5 @@
 import * as atRules from 'mdn-data/css/at-rules.json';
-import { compatNames, compatSyntax, getAtRuleData, getCompat, isAddedBySome } from './compat';
+import { compatNames, compatSyntax, getAtRuleData, getCompats, isAddedBySome } from './compat';
 import { resolveDataTypes } from './data-types';
 import parse from './parser';
 import typing, { IStringLiteral, ResolvedType, Type } from './typer';
@@ -37,19 +37,21 @@ export let getAtRules = () => {
         let properties = [descriptor];
 
         if (compatibilityData && descriptor in compatibilityData) {
-          const compat = getCompat(compatibilityData[descriptor]);
+          const compats = getCompats(compatibilityData[descriptor]);
 
-          if (!isAddedBySome(compat)) {
+          if (compats.every(compat => !isAddedBySome(compat))) {
             // The property needs to be added by some browsers
             continue;
           }
 
           entities = compatSyntax(compatibilityData, entities);
           properties = properties.concat(
-            // We mix current and obsolete for now
-            compatNames(compat, descriptor)
-              .concat(compatNames(compat, descriptor, true))
-              .filter(property => !(property in atRule.descriptors)),
+            ...compats.map(compat =>
+              // We mix current and obsolete for now
+              compatNames(compat, descriptor)
+                .concat(compatNames(compat, descriptor, true))
+                .filter(property => !(property in atRule.descriptors)),
+            ),
           );
         }
 

@@ -1,8 +1,9 @@
 import * as l10n from 'mdn-data/l10n/css.json';
 import { format } from 'prettier';
-import { getCompat } from './compat';
+import { getCompats } from './compat';
 import { IExtendedProperty } from './data/patches';
 import { warn } from './logger';
+import { getSummary } from './urls';
 
 const BLANK_ROW = '';
 const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\}]+\}\})/;
@@ -17,7 +18,7 @@ export function composeCommentBlock(
   const includeCompatibility = !vendor && !obsolete && compatibilityData;
 
   if (includeCompatibility) {
-    rows.push.apply(rows, getCompatSummary(compatibilityData!));
+    rows.push(...getCompatSummary(compatibilityData!));
   }
 
   if (typeof data.initial === 'string') {
@@ -32,7 +33,7 @@ export function composeCommentBlock(
 
   // Skip compatibility table for obsolete and vendor properties
   if (includeCompatibility) {
-    rows.push.apply(rows, getCompatRows(compatibilityData!));
+    rows.push(...getCompatRows(compatibilityData!));
   }
 
   if (obsolete) {
@@ -52,46 +53,70 @@ export function composeCommentBlock(
 }
 
 function getCompatSummary(compatibilityData: MDN.CompatData) {
-  if (compatibilityData.summary_from_mdn_site) {
-    return [compatibilityData.summary_from_mdn_site, BLANK_ROW];
+  const compats = getCompats(compatibilityData);
+  const summaries: string[] = [];
+
+  for (const compat of compats) {
+    if (compat.mdn_url) {
+      const summary = getSummary(compat.mdn_url);
+      if (summary && !summaries.includes(summary)) {
+        summaries.push(summary, BLANK_ROW);
+      }
+    }
   }
-  return [];
+  return summaries;
 }
 
 function getCompatRows(compatibilityData: MDN.CompatData) {
-  const compat = getCompat(compatibilityData);
+  const compats = getCompats(compatibilityData);
+  const rows: string[] = [];
 
-  if (!compat) {
-    return [];
+  if (compats.length > 1) {
+    rows.push('---', BLANK_ROW);
   }
 
-  const chrome = supportVersion(compat.support.chrome);
-  const firefox = supportVersion(compat.support.firefox);
-  const safari = supportVersion(compat.support.safari);
-  const edge = supportVersion(compat.support.edge);
-  const ie = supportVersion(compat.support.ie);
+  for (const compat of compats) {
+    if (compats.length > 1 && compat.description) {
+      rows.push(`_${compat.description}_`, BLANK_ROW);
+    }
 
-  const versions = [chrome, firefox, safari, edge, ie];
-  const rows: string[] = [];
-  rows.push(
-    ...format(
-      [
-        '| Chrome | Firefox | Safari | Edge | IE |',
-        '| --- | --- | --- | --- | --- |',
-        '| ' + versions.map(version => version[0] || '').join(' | ') + ' |',
-        versions.some(version => !!version[1])
-          ? '| ' + versions.map(version => version[1] || '').join(' | ') + ' |'
-          : '',
-      ].join('\n'),
-      { parser: 'markdown' },
-    )
-      .trim()
-      .split('\n'),
-    BLANK_ROW,
+    const chrome = supportVersion(compat.support.chrome);
+    const firefox = supportVersion(compat.support.firefox);
+    const safari = supportVersion(compat.support.safari);
+    const edge = supportVersion(compat.support.edge);
+    const ie = supportVersion(compat.support.ie);
+
+    const versions = [chrome, firefox, safari, edge, ie];
+
+    rows.push(
+      ...format(
+        [
+          '| Chrome | Firefox | Safari | Edge | IE |',
+          '| --- | --- | --- | --- | --- |',
+          '| ' + versions.map(version => version[0] || '').join(' | ') + ' |',
+          versions.some(version => !!version[1])
+            ? '| ' + versions.map(version => version[1] || '').join(' | ') + ' |'
+            : '',
+        ].join('\n'),
+        { parser: 'markdown' },
+      )
+        .trim()
+        .split('\n'),
+      BLANK_ROW,
+    );
+
+    if (compats.length > 1) {
+      rows.push('---', BLANK_ROW);
+    }
+  }
+
+  const urls = compats.reduce<string[]>(
+    (list, { mdn_url }) => (mdn_url && !list.includes(mdn_url) ? [...list, mdn_url] : list),
+    [],
   );
 
-  if (compat.mdn_url) {
-    rows.push('@see ' + compat.mdn_url, BLANK_ROW);
+  if (urls.length > 0) {
+    rows.push(...urls.map(url => '@see ' + url), BLANK_ROW);
   }
 
   return rows;
