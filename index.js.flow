@@ -4527,18 +4527,9 @@ type FontFaceFontFeatureSettingsProperty = "normal" | string;
 
 type FontFaceFontDisplayProperty = "auto" | "block" | "fallback" | "optional" | "swap";
 
-type FontFaceFontStretchProperty =
-  | "condensed"
-  | "expanded"
-  | "extra-condensed"
-  | "extra-expanded"
-  | "normal"
-  | "semi-condensed"
-  | "semi-expanded"
-  | "ultra-condensed"
-  | "ultra-expanded";
+type FontFaceFontStretchProperty = FontStretchAbsolute | string;
 
-type FontFaceFontStyleProperty = "italic" | "normal" | "oblique";
+type FontFaceFontStyleProperty = "italic" | "normal" | "oblique" | string;
 
 type FontFaceFontVariantProperty =
   | EastAsianVariantValues
@@ -4574,7 +4565,7 @@ type FontFaceFontVariantProperty =
 
 type FontFaceFontVariationSettingsProperty = "normal" | string;
 
-type FontFaceFontWeightProperty = "bold" | "normal" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+type FontFaceFontWeightProperty = FontWeightAbsolute | string;
 
 type PageBleedProperty<TLength> = TLength | "auto";
 
