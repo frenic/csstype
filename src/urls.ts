@@ -23,11 +23,15 @@ turndownService.addRule('anchor', {
 function scrapeSummary(url: string): string {
   try {
     const htmlContents = syncRequest.default('GET', url).getBody() as string;
-    const result = new jsdom.JSDOM(htmlContents);
-    const summaryElement = result.window.document.querySelector('#wikiArticle > p:not(:empty)');
+
+    const { window } = new jsdom.JSDOM(htmlContents);
+    const summaryElement = window.document.querySelector('#wikiArticle > p:not(:empty)');
+    window.close();
+
     if (summaryElement) {
       return turndownService.turndown(summaryElement.innerHTML);
     }
+
     return '';
   } catch (ex) {
     warn(`Could not fetch summary for '${url}'`);
