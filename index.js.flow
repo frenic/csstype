@@ -406,6 +406,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   MozWindowDragging?: MozWindowDraggingProperty,
   MozWindowShadow?: MozWindowShadowProperty,
   msAccelerator?: MsAcceleratorProperty,
+  msAlignSelf?: AlignSelfProperty,
   msBlockProgression?: MsBlockProgressionProperty,
   msContentZoomChaining?: MsContentZoomChainingProperty,
   msContentZoomLimitMax?: GlobalsString,
@@ -441,14 +442,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   msScrollSnapPointsY?: GlobalsString,
   msScrollSnapType?: MsScrollSnapTypeProperty,
   msScrollTranslation?: MsScrollTranslationProperty,
-  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty,
-  msScrollbarArrowColor?: MsScrollbarArrowColorProperty,
-  msScrollbarBaseColor?: MsScrollbarBaseColorProperty,
-  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty,
-  msScrollbarFaceColor?: MsScrollbarFaceColorProperty,
-  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty,
-  msScrollbarShadowColor?: MsScrollbarShadowColorProperty,
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   msTextAutospace?: MsTextAutospaceProperty,
   msTextCombineHorizontal?: TextCombineUprightProperty,
   msTextOverflow?: TextOverflowProperty,
@@ -497,6 +490,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitBoxShadow?: BoxShadowProperty,
   WebkitBoxSizing?: BoxSizingProperty,
   WebkitClipPath?: ClipPathProperty,
+  WebkitColorAdjust?: ColorAdjustProperty,
   WebkitColumnCount?: ColumnCountProperty,
   WebkitColumnGap?: ColumnGapProperty<TLength>,
   WebkitColumnRuleColor?: ColumnRuleColorProperty,
@@ -643,6 +637,14 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozTextDecorationLine?: TextDecorationLineProperty,
   MozTextDecorationStyle?: TextDecorationStyleProperty,
   msImeMode?: ImeModeProperty,
+  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty,
+  msScrollbarArrowColor?: MsScrollbarArrowColorProperty,
+  msScrollbarBaseColor?: MsScrollbarBaseColorProperty,
+  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty,
+  msScrollbarFaceColor?: MsScrollbarFaceColorProperty,
+  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty,
+  msScrollbarShadowColor?: MsScrollbarShadowColorProperty,
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   OAnimation?: AnimationProperty,
   OAnimationDelay?: GlobalsString,
   OAnimationDirection?: AnimationDirectionProperty,
@@ -1138,6 +1140,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-moz-window-dragging"?: MozWindowDraggingProperty,
   "-moz-window-shadow"?: MozWindowShadowProperty,
   "-ms-accelerator"?: MsAcceleratorProperty,
+  "-ms-align-self"?: AlignSelfProperty,
   "-ms-block-progression"?: MsBlockProgressionProperty,
   "-ms-content-zoom-chaining"?: MsContentZoomChainingProperty,
   "-ms-content-zoom-limit-max"?: GlobalsString,
@@ -1173,14 +1176,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-scroll-snap-points-y"?: GlobalsString,
   "-ms-scroll-snap-type"?: MsScrollSnapTypeProperty,
   "-ms-scroll-translation"?: MsScrollTranslationProperty,
-  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty,
-  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty,
-  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty,
-  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty,
-  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty,
-  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty,
-  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty,
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-ms-text-autospace"?: MsTextAutospaceProperty,
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty,
   "-ms-text-overflow"?: TextOverflowProperty,
@@ -1229,6 +1224,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-box-shadow"?: BoxShadowProperty,
   "-webkit-box-sizing"?: BoxSizingProperty,
   "-webkit-clip-path"?: ClipPathProperty,
+  "-webkit-color-adjust"?: ColorAdjustProperty,
   "-webkit-column-count"?: ColumnCountProperty,
   "-webkit-column-gap"?: ColumnGapProperty<TLength>,
   "-webkit-column-rule-color"?: ColumnRuleColorProperty,
@@ -1375,6 +1371,14 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-text-decoration-line"?: TextDecorationLineProperty,
   "-moz-text-decoration-style"?: TextDecorationStyleProperty,
   "-ms-ime-mode"?: ImeModeProperty,
+  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty,
+  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty,
+  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty,
+  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty,
+  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty,
+  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty,
+  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty,
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-o-animation"?: AnimationProperty,
   "-o-animation-delay"?: GlobalsString,
   "-o-animation-direction"?: AnimationDirectionProperty,
@@ -1873,6 +1877,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   MozWindowDragging?: MozWindowDraggingProperty | MozWindowDraggingProperty[],
   MozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[],
   msAccelerator?: MsAcceleratorProperty | MsAcceleratorProperty[],
+  msAlignSelf?: AlignSelfProperty | AlignSelfProperty[],
   msBlockProgression?: MsBlockProgressionProperty | MsBlockProgressionProperty[],
   msContentZoomChaining?: MsContentZoomChainingProperty | MsContentZoomChainingProperty[],
   msContentZoomLimitMax?: GlobalsString | GlobalsString[],
@@ -1908,14 +1913,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msScrollSnapPointsY?: GlobalsString | GlobalsString[],
   msScrollSnapType?: MsScrollSnapTypeProperty | MsScrollSnapTypeProperty[],
   msScrollTranslation?: MsScrollTranslationProperty | MsScrollTranslationProperty[],
-  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[],
-  msScrollbarArrowColor?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[],
-  msScrollbarBaseColor?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[],
-  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[],
-  msScrollbarFaceColor?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
-  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
-  msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   msTextAutospace?: MsTextAutospaceProperty | MsTextAutospaceProperty[],
   msTextCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[],
   msTextOverflow?: TextOverflowProperty | TextOverflowProperty[],
@@ -1964,6 +1961,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitBoxShadow?: BoxShadowProperty | BoxShadowProperty[],
   WebkitBoxSizing?: BoxSizingProperty | BoxSizingProperty[],
   WebkitClipPath?: ClipPathProperty | ClipPathProperty[],
+  WebkitColorAdjust?: ColorAdjustProperty | ColorAdjustProperty[],
   WebkitColumnCount?: ColumnCountProperty | ColumnCountProperty[],
   WebkitColumnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
   WebkitColumnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
@@ -2110,6 +2108,14 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozTextDecorationLine?: TextDecorationLineProperty | TextDecorationLineProperty[],
   MozTextDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
   msImeMode?: ImeModeProperty | ImeModeProperty[],
+  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[],
+  msScrollbarArrowColor?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[],
+  msScrollbarBaseColor?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[],
+  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[],
+  msScrollbarFaceColor?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
+  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
+  msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   OAnimation?: AnimationProperty | AnimationProperty[],
   OAnimationDelay?: GlobalsString | GlobalsString[],
   OAnimationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[],
@@ -2608,6 +2614,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-window-dragging"?: MozWindowDraggingProperty | MozWindowDraggingProperty[],
   "-moz-window-shadow"?: MozWindowShadowProperty | MozWindowShadowProperty[],
   "-ms-accelerator"?: MsAcceleratorProperty | MsAcceleratorProperty[],
+  "-ms-align-self"?: AlignSelfProperty | AlignSelfProperty[],
   "-ms-block-progression"?: MsBlockProgressionProperty | MsBlockProgressionProperty[],
   "-ms-content-zoom-chaining"?: MsContentZoomChainingProperty | MsContentZoomChainingProperty[],
   "-ms-content-zoom-limit-max"?: GlobalsString | GlobalsString[],
@@ -2643,14 +2650,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-scroll-snap-points-y"?: GlobalsString | GlobalsString[],
   "-ms-scroll-snap-type"?: MsScrollSnapTypeProperty | MsScrollSnapTypeProperty[],
   "-ms-scroll-translation"?: MsScrollTranslationProperty | MsScrollTranslationProperty[],
-  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[],
-  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[],
-  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[],
-  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[],
-  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
-  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
-  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "-ms-text-autospace"?: MsTextAutospaceProperty | MsTextAutospaceProperty[],
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[],
   "-ms-text-overflow"?: TextOverflowProperty | TextOverflowProperty[],
@@ -2699,6 +2698,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-box-shadow"?: BoxShadowProperty | BoxShadowProperty[],
   "-webkit-box-sizing"?: BoxSizingProperty | BoxSizingProperty[],
   "-webkit-clip-path"?: ClipPathProperty | ClipPathProperty[],
+  "-webkit-color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[],
   "-webkit-column-count"?: ColumnCountProperty | ColumnCountProperty[],
   "-webkit-column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
   "-webkit-column-rule-color"?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
@@ -2845,6 +2845,14 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-text-decoration-line"?: TextDecorationLineProperty | TextDecorationLineProperty[],
   "-moz-text-decoration-style"?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
   "-ms-ime-mode"?: ImeModeProperty | ImeModeProperty[],
+  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[],
+  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[],
+  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[],
+  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[],
+  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
+  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
+  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "-o-animation"?: AnimationProperty | AnimationProperty[],
   "-o-animation-delay"?: GlobalsString | GlobalsString[],
   "-o-animation-direction"?: AnimationDirectionProperty | AnimationDirectionProperty[],
@@ -3205,6 +3213,7 @@ export type SimplePseudos =
   | ":-moz-read-only"
   | ":-moz-read-write"
   | ":-ms-fullscreen"
+  | ":-ms-input-placeholder"
   | ":-webkit-any-link"
   | ":-webkit-full-screen"
   | "::-moz-placeholder"
@@ -3220,7 +3229,6 @@ export type SimplePseudos =
   | "::-ms-fill"
   | "::-ms-fill-lower"
   | "::-ms-fill-upper"
-  | "::-ms-placeholder"
   | "::-ms-reveal"
   | "::-ms-thumb"
   | "::-ms-ticks-after"
@@ -3229,7 +3237,7 @@ export type SimplePseudos =
   | "::-ms-track"
   | "::-ms-value"
   | "::-webkit-backdrop"
-  | "::-webkit-placeholder"
+  | "::-webkit-input-placeholder"
   | "::-webkit-progress-bar"
   | "::-webkit-progress-inner-value"
   | "::-webkit-progress-value"

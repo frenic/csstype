@@ -4,10 +4,24 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
    * | :------: | :-----: | :-------: | :----: | :----: |
    * |  **29**  | **28**  |   **9**   | **12** | **11** |
    * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-content
    */
@@ -44,10 +58,24 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox | Safari |  Edge  |   IE   |
    * | :------: | :-----: | :----: | :----: | :----: |
    * |  **36**  | **20**  |   No   | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _-x-_ |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
    */
@@ -210,7 +238,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **35** | **30**  |  Yes   | n/a  | No  |
+   * | **35** | **30**  |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-blend-mode
    */
@@ -919,7 +947,17 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/color
    */
   color?: ColorProperty;
-  /** **Initial value**: `economy` */
+  /**
+   * The **`color-adjust`** CSS property gives the web author control over what if anything the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Initial value**: `economy`
+   *
+   * |    Chrome    | Firefox |   Safari    | Edge | IE  |
+   * | :----------: | :-----: | :---------: | :--: | :-: |
+   * | **49** _-x-_ | **48**  | **6** _-x-_ |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
+   */
   colorAdjust?: ColorAdjustProperty;
   /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
@@ -956,9 +994,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **66** | **61**  |   No   | **16** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **63**  |   No   | n/a  | No  |
    *
    * ---
    *
@@ -1279,7 +1317,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   | **61**  |  n/a   | n/a  | No  |
+   * |  n/a   | **62**  |  n/a   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -1424,7 +1462,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **62** | **61**  | **11** |  No  | No  |
+   * | **62** | **62**  | **11** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
    */
@@ -1649,7 +1687,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **41** | **36**  |  Yes   | n/a  | No  |
+   * | **41** | **36**  |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/isolation
    */
@@ -1659,10 +1697,24 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox | Safari |  Edge  |   IE   |
    * | :------: | :-----: | :----: | :----: | :----: |
    * |  **52**  | **20**  | **9**  | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
    */
@@ -2091,7 +2143,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **41** | **32**  | **8**  | n/a  | n/a |
+   * | **41** | **32**  | **8**  |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
@@ -2412,7 +2464,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
    */
@@ -2424,7 +2476,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x
    */
@@ -2436,7 +2488,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y
    */
@@ -2620,7 +2672,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **59** |   Yes   |  n/a   | n/a  | n/a |
+   * | **59** |   Yes   |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-content
    */
@@ -2779,7 +2831,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
    */
@@ -2791,7 +2843,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox |     Safari     | Edge | IE  |
    * | :----: | :-----: | :------------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** _-x-_ | n/a  | No  |
+   * | **37** | **62**  | **10.1** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -2803,7 +2855,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -3369,7 +3421,17 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
   zIndex?: ZIndexProperty;
-  /** **Initial value**: `normal` */
+  /**
+   * The non-standard **`zoom`** CSS property can be used to control the magnification level of an element. `transform: scale()` should be used instead of this property, if possible. However, unlike CSS Transforms, `zoom` affects the layout size of the element.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * |  Yes   |   No    | **4**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/zoom
+   */
   zoom?: ZoomProperty;
 }
 
@@ -3901,6 +3963,8 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   MozWindowShadow?: MozWindowShadowProperty;
   /** **Initial value**: `false` */
   msAccelerator?: MsAcceleratorProperty;
+  /** **Initial value**: `auto` */
+  msAlignSelf?: AlignSelfProperty;
   /** **Initial value**: `tb` */
   msBlockProgression?: MsBlockProgressionProperty;
   /** **Initial value**: `none` */
@@ -3971,22 +4035,6 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   msScrollSnapType?: MsScrollSnapTypeProperty;
   /** **Initial value**: `none` */
   msScrollTranslation?: MsScrollTranslationProperty;
-  /** **Initial value**: depends on user agent */
-  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty;
-  /** **Initial value**: `ButtonText` */
-  msScrollbarArrowColor?: MsScrollbarArrowColorProperty;
-  /** **Initial value**: depends on user agent */
-  msScrollbarBaseColor?: MsScrollbarBaseColorProperty;
-  /** **Initial value**: `ThreeDDarkShadow` */
-  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty;
-  /** **Initial value**: `ThreeDFace` */
-  msScrollbarFaceColor?: MsScrollbarFaceColorProperty;
-  /** **Initial value**: `ThreeDHighlight` */
-  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty;
-  /** **Initial value**: `ThreeDDarkShadow` */
-  msScrollbarShadowColor?: MsScrollbarShadowColorProperty;
-  /** **Initial value**: `Scrollbar` */
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty;
   /** **Initial value**: `none` */
   msTextAutospace?: MsTextAutospaceProperty;
   /** **Initial value**: `none` */
@@ -4083,6 +4131,8 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   WebkitBoxSizing?: BoxSizingProperty;
   /** **Initial value**: `none` */
   WebkitClipPath?: ClipPathProperty;
+  /** **Initial value**: `economy` */
+  WebkitColorAdjust?: ColorAdjustProperty;
   /** **Initial value**: `auto` */
   WebkitColumnCount?: ColumnCountProperty;
   /** **Initial value**: `normal` */
@@ -4509,6 +4559,54 @@ export interface ObsoleteProperties<TLength = string | 0> {
    * @deprecated
    */
   msImeMode?: ImeModeProperty;
+  /**
+   * **Initial value**: depends on user agent
+   *
+   * @deprecated
+   */
+  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty;
+  /**
+   * **Initial value**: `ButtonText`
+   *
+   * @deprecated
+   */
+  msScrollbarArrowColor?: MsScrollbarArrowColorProperty;
+  /**
+   * **Initial value**: depends on user agent
+   *
+   * @deprecated
+   */
+  msScrollbarBaseColor?: MsScrollbarBaseColorProperty;
+  /**
+   * **Initial value**: `ThreeDDarkShadow`
+   *
+   * @deprecated
+   */
+  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty;
+  /**
+   * **Initial value**: `ThreeDFace`
+   *
+   * @deprecated
+   */
+  msScrollbarFaceColor?: MsScrollbarFaceColorProperty;
+  /**
+   * **Initial value**: `ThreeDHighlight`
+   *
+   * @deprecated
+   */
+  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty;
+  /**
+   * **Initial value**: `ThreeDDarkShadow`
+   *
+   * @deprecated
+   */
+  msScrollbarShadowColor?: MsScrollbarShadowColorProperty;
+  /**
+   * **Initial value**: `Scrollbar`
+   *
+   * @deprecated
+   */
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty;
   /** @deprecated */
   OAnimation?: AnimationProperty;
   /**
@@ -4700,10 +4798,24 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
    * | :------: | :-----: | :-------: | :----: | :----: |
    * |  **29**  | **28**  |   **9**   | **12** | **11** |
    * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-content
    */
@@ -4740,10 +4852,24 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox | Safari |  Edge  |   IE   |
    * | :------: | :-----: | :----: | :----: | :----: |
    * |  **36**  | **20**  |   No   | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _-x-_ |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
    */
@@ -4906,7 +5032,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **35** | **30**  |  Yes   | n/a  | No  |
+   * | **35** | **30**  |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-blend-mode
    */
@@ -5615,7 +5741,17 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/color
    */
   color?: ColorProperty;
-  /** **Initial value**: `economy` */
+  /**
+   * The **`color-adjust`** CSS property gives the web author control over what if anything the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Initial value**: `economy`
+   *
+   * |    Chrome    | Firefox |   Safari    | Edge | IE  |
+   * | :----------: | :-----: | :---------: | :--: | :-: |
+   * | **49** _-x-_ | **48**  | **6** _-x-_ |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
+   */
   "color-adjust"?: ColorAdjustProperty;
   /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
@@ -5652,9 +5788,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **66** | **61**  |   No   | **16** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **63**  |   No   | n/a  | No  |
    *
    * ---
    *
@@ -5975,7 +6111,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   | **61**  |  n/a   | n/a  | No  |
+   * |  n/a   | **62**  |  n/a   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -6120,7 +6256,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **62** | **61**  | **11** |  No  | No  |
+   * | **62** | **62**  | **11** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
    */
@@ -6345,7 +6481,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **41** | **36**  |  Yes   | n/a  | No  |
+   * | **41** | **36**  |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/isolation
    */
@@ -6355,10 +6491,24 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox | Safari |  Edge  |   IE   |
    * | :------: | :-----: | :----: | :----: | :----: |
    * |  **52**  | **20**  | **9**  | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
    */
@@ -6787,7 +6937,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **41** | **32**  | **8**  | n/a  | n/a |
+   * | **41** | **32**  | **8**  |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
@@ -7108,7 +7258,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
    */
@@ -7120,7 +7270,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x
    */
@@ -7132,7 +7282,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y
    */
@@ -7316,7 +7466,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **59** |   Yes   |  n/a   | n/a  | n/a |
+   * | **59** |   Yes   |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-content
    */
@@ -7475,7 +7625,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
    */
@@ -7487,7 +7637,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox |     Safari     | Edge | IE  |
    * | :----: | :-----: | :------------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** _-x-_ | n/a  | No  |
+   * | **37** | **62**  | **10.1** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -7499,7 +7649,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -8065,7 +8215,17 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
   "z-index"?: ZIndexProperty;
-  /** **Initial value**: `normal` */
+  /**
+   * The non-standard **`zoom`** CSS property can be used to control the magnification level of an element. `transform: scale()` should be used instead of this property, if possible. However, unlike CSS Transforms, `zoom` affects the layout size of the element.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * |  Yes   |   No    | **4**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/zoom
+   */
   zoom?: ZoomProperty;
 }
 
@@ -8597,6 +8757,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-moz-window-shadow"?: MozWindowShadowProperty;
   /** **Initial value**: `false` */
   "-ms-accelerator"?: MsAcceleratorProperty;
+  /** **Initial value**: `auto` */
+  "-ms-align-self"?: AlignSelfProperty;
   /** **Initial value**: `tb` */
   "-ms-block-progression"?: MsBlockProgressionProperty;
   /** **Initial value**: `none` */
@@ -8667,22 +8829,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-ms-scroll-snap-type"?: MsScrollSnapTypeProperty;
   /** **Initial value**: `none` */
   "-ms-scroll-translation"?: MsScrollTranslationProperty;
-  /** **Initial value**: depends on user agent */
-  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty;
-  /** **Initial value**: `ButtonText` */
-  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty;
-  /** **Initial value**: depends on user agent */
-  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty;
-  /** **Initial value**: `ThreeDDarkShadow` */
-  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty;
-  /** **Initial value**: `ThreeDFace` */
-  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty;
-  /** **Initial value**: `ThreeDHighlight` */
-  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty;
-  /** **Initial value**: `ThreeDDarkShadow` */
-  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty;
-  /** **Initial value**: `Scrollbar` */
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty;
   /** **Initial value**: `none` */
   "-ms-text-autospace"?: MsTextAutospaceProperty;
   /** **Initial value**: `none` */
@@ -8779,6 +8925,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   "-webkit-box-sizing"?: BoxSizingProperty;
   /** **Initial value**: `none` */
   "-webkit-clip-path"?: ClipPathProperty;
+  /** **Initial value**: `economy` */
+  "-webkit-color-adjust"?: ColorAdjustProperty;
   /** **Initial value**: `auto` */
   "-webkit-column-count"?: ColumnCountProperty;
   /** **Initial value**: `normal` */
@@ -9205,6 +9353,54 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    * @deprecated
    */
   "-ms-ime-mode"?: ImeModeProperty;
+  /**
+   * **Initial value**: depends on user agent
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty;
+  /**
+   * **Initial value**: `ButtonText`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty;
+  /**
+   * **Initial value**: depends on user agent
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty;
+  /**
+   * **Initial value**: `ThreeDDarkShadow`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty;
+  /**
+   * **Initial value**: `ThreeDFace`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty;
+  /**
+   * **Initial value**: `ThreeDHighlight`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty;
+  /**
+   * **Initial value**: `ThreeDDarkShadow`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty;
+  /**
+   * **Initial value**: `Scrollbar`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty;
   /** @deprecated */
   "-o-animation"?: AnimationProperty;
   /**
@@ -9400,10 +9596,24 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
    * | :------: | :-----: | :-------: | :----: | :----: |
    * |  **29**  | **28**  |   **9**   | **12** | **11** |
    * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-content
    */
@@ -9440,10 +9650,24 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox | Safari |  Edge  |   IE   |
    * | :------: | :-----: | :----: | :----: | :----: |
    * |  **36**  | **20**  |   No   | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _-x-_ |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
    */
@@ -9606,7 +9830,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **35** | **30**  |  Yes   | n/a  | No  |
+   * | **35** | **30**  |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-blend-mode
    */
@@ -10315,7 +10539,17 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/color
    */
   color?: ColorProperty | ColorProperty[];
-  /** **Initial value**: `economy` */
+  /**
+   * The **`color-adjust`** CSS property gives the web author control over what if anything the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Initial value**: `economy`
+   *
+   * |    Chrome    | Firefox |   Safari    | Edge | IE  |
+   * | :----------: | :-----: | :---------: | :--: | :-: |
+   * | **49** _-x-_ | **48**  | **6** _-x-_ |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
+   */
   colorAdjust?: ColorAdjustProperty | ColorAdjustProperty[];
   /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
@@ -10352,9 +10586,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **66** | **61**  |   No   | **16** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **63**  |   No   | n/a  | No  |
    *
    * ---
    *
@@ -10675,7 +10909,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   | **61**  |  n/a   | n/a  | No  |
+   * |  n/a   | **62**  |  n/a   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -10820,7 +11054,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **62** | **61**  | **11** |  No  | No  |
+   * | **62** | **62**  | **11** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
    */
@@ -11045,7 +11279,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **41** | **36**  |  Yes   | n/a  | No  |
+   * | **41** | **36**  |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/isolation
    */
@@ -11055,10 +11289,24 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox | Safari |  Edge  |   IE   |
    * | :------: | :-----: | :----: | :----: | :----: |
    * |  **52**  | **20**  | **9**  | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
    */
@@ -11487,7 +11735,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **41** | **32**  | **8**  | n/a  | n/a |
+   * | **41** | **32**  | **8**  |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
@@ -11808,7 +12056,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
    */
@@ -11820,7 +12068,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x
    */
@@ -11832,7 +12080,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y
    */
@@ -12016,7 +12264,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **59** |   Yes   |  n/a   | n/a  | n/a |
+   * | **59** |   Yes   |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-content
    */
@@ -12175,7 +12423,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
    */
@@ -12187,7 +12435,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox |     Safari     | Edge | IE  |
    * | :----: | :-----: | :------------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** _-x-_ | n/a  | No  |
+   * | **37** | **62**  | **10.1** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -12199,7 +12447,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -12765,7 +13013,17 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
   zIndex?: ZIndexProperty | ZIndexProperty[];
-  /** **Initial value**: `normal` */
+  /**
+   * The non-standard **`zoom`** CSS property can be used to control the magnification level of an element. `transform: scale()` should be used instead of this property, if possible. However, unlike CSS Transforms, `zoom` affects the layout size of the element.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * |  Yes   |   No    | **4**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/zoom
+   */
   zoom?: ZoomProperty | ZoomProperty[];
 }
 
@@ -13297,6 +13555,8 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   MozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[];
   /** **Initial value**: `false` */
   msAccelerator?: MsAcceleratorProperty | MsAcceleratorProperty[];
+  /** **Initial value**: `auto` */
+  msAlignSelf?: AlignSelfProperty | AlignSelfProperty[];
   /** **Initial value**: `tb` */
   msBlockProgression?: MsBlockProgressionProperty | MsBlockProgressionProperty[];
   /** **Initial value**: `none` */
@@ -13367,22 +13627,6 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   msScrollSnapType?: MsScrollSnapTypeProperty | MsScrollSnapTypeProperty[];
   /** **Initial value**: `none` */
   msScrollTranslation?: MsScrollTranslationProperty | MsScrollTranslationProperty[];
-  /** **Initial value**: depends on user agent */
-  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[];
-  /** **Initial value**: `ButtonText` */
-  msScrollbarArrowColor?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[];
-  /** **Initial value**: depends on user agent */
-  msScrollbarBaseColor?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[];
-  /** **Initial value**: `ThreeDDarkShadow` */
-  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[];
-  /** **Initial value**: `ThreeDFace` */
-  msScrollbarFaceColor?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[];
-  /** **Initial value**: `ThreeDHighlight` */
-  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[];
-  /** **Initial value**: `ThreeDDarkShadow` */
-  msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[];
-  /** **Initial value**: `Scrollbar` */
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[];
   /** **Initial value**: `none` */
   msTextAutospace?: MsTextAutospaceProperty | MsTextAutospaceProperty[];
   /** **Initial value**: `none` */
@@ -13479,6 +13723,8 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   WebkitBoxSizing?: BoxSizingProperty | BoxSizingProperty[];
   /** **Initial value**: `none` */
   WebkitClipPath?: ClipPathProperty | ClipPathProperty[];
+  /** **Initial value**: `economy` */
+  WebkitColorAdjust?: ColorAdjustProperty | ColorAdjustProperty[];
   /** **Initial value**: `auto` */
   WebkitColumnCount?: ColumnCountProperty | ColumnCountProperty[];
   /** **Initial value**: `normal` */
@@ -13905,6 +14151,54 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    * @deprecated
    */
   msImeMode?: ImeModeProperty | ImeModeProperty[];
+  /**
+   * **Initial value**: depends on user agent
+   *
+   * @deprecated
+   */
+  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[];
+  /**
+   * **Initial value**: `ButtonText`
+   *
+   * @deprecated
+   */
+  msScrollbarArrowColor?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[];
+  /**
+   * **Initial value**: depends on user agent
+   *
+   * @deprecated
+   */
+  msScrollbarBaseColor?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[];
+  /**
+   * **Initial value**: `ThreeDDarkShadow`
+   *
+   * @deprecated
+   */
+  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[];
+  /**
+   * **Initial value**: `ThreeDFace`
+   *
+   * @deprecated
+   */
+  msScrollbarFaceColor?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[];
+  /**
+   * **Initial value**: `ThreeDHighlight`
+   *
+   * @deprecated
+   */
+  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[];
+  /**
+   * **Initial value**: `ThreeDDarkShadow`
+   *
+   * @deprecated
+   */
+  msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[];
+  /**
+   * **Initial value**: `Scrollbar`
+   *
+   * @deprecated
+   */
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[];
   /** @deprecated */
   OAnimation?: AnimationProperty | AnimationProperty[];
   /**
@@ -14100,10 +14394,24 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
    * | :------: | :-----: | :-------: | :----: | :----: |
    * |  **29**  | **28**  |   **9**   | **12** | **11** |
    * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-content
    */
@@ -14140,10 +14448,24 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox | Safari |  Edge  |   IE   |
    * | :------: | :-----: | :----: | :----: | :----: |
    * |  **36**  | **20**  |   No   | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _-x-_ |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
    */
@@ -14306,7 +14628,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **35** | **30**  |  Yes   | n/a  | No  |
+   * | **35** | **30**  |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-blend-mode
    */
@@ -15015,7 +15337,17 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/color
    */
   color?: ColorProperty | ColorProperty[];
-  /** **Initial value**: `economy` */
+  /**
+   * The **`color-adjust`** CSS property gives the web author control over what if anything the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Initial value**: `economy`
+   *
+   * |    Chrome    | Firefox |   Safari    | Edge | IE  |
+   * | :----------: | :-----: | :---------: | :--: | :-: |
+   * | **49** _-x-_ | **48**  | **6** _-x-_ |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
+   */
   "color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[];
   /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
@@ -15052,9 +15384,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **66** | **61**  |   No   | **16** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **63**  |   No   | n/a  | No  |
    *
    * ---
    *
@@ -15375,7 +15707,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   | **61**  |  n/a   | n/a  | No  |
+   * |  n/a   | **62**  |  n/a   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -15520,7 +15852,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **62** | **61**  | **11** |  No  | No  |
+   * | **62** | **62**  | **11** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variation-settings
    */
@@ -15745,7 +16077,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **41** | **36**  |  Yes   | n/a  | No  |
+   * | **41** | **36**  |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/isolation
    */
@@ -15755,10 +16087,24 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
    * |  Chrome  | Firefox | Safari |  Edge  |   IE   |
    * | :------: | :-----: | :----: | :----: | :----: |
    * |  **52**  | **20**  | **9**  | **12** | **11** |
    * | 21 _-x-_ |         |        |        |        |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **57** | **52**  | **10.1** | **16** | n/a |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-content
    */
@@ -16187,7 +16533,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **41** | **32**  | **8**  | n/a  | n/a |
+   * | **41** | **32**  | **8**  |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
@@ -16508,7 +16854,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
    */
@@ -16520,7 +16866,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x
    */
@@ -16532,7 +16878,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **63** | **59**  |  n/a   |  No  | No  |
+   * | **63** | **59**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-y
    */
@@ -16716,7 +17062,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **59** |   Yes   |  n/a   | n/a  | n/a |
+   * | **59** |   Yes   |  Yes   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-content
    */
@@ -16875,7 +17221,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-image-threshold
    */
@@ -16887,7 +17233,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox |     Safari     | Edge | IE  |
    * | :----: | :-----: | :------------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** _-x-_ | n/a  | No  |
+   * | **37** | **62**  | **10.1** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -16899,7 +17245,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** |   n/a   | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -17465,7 +17811,17 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
   "z-index"?: ZIndexProperty | ZIndexProperty[];
-  /** **Initial value**: `normal` */
+  /**
+   * The non-standard **`zoom`** CSS property can be used to control the magnification level of an element. `transform: scale()` should be used instead of this property, if possible. However, unlike CSS Transforms, `zoom` affects the layout size of the element.
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE    |
+   * | :----: | :-----: | :----: | :----: | :-----: |
+   * |  Yes   |   No    | **4**  | **12** | **5.5** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/zoom
+   */
   zoom?: ZoomProperty | ZoomProperty[];
 }
 
@@ -17999,6 +18355,8 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-moz-window-shadow"?: MozWindowShadowProperty | MozWindowShadowProperty[];
   /** **Initial value**: `false` */
   "-ms-accelerator"?: MsAcceleratorProperty | MsAcceleratorProperty[];
+  /** **Initial value**: `auto` */
+  "-ms-align-self"?: AlignSelfProperty | AlignSelfProperty[];
   /** **Initial value**: `tb` */
   "-ms-block-progression"?: MsBlockProgressionProperty | MsBlockProgressionProperty[];
   /** **Initial value**: `none` */
@@ -18069,22 +18427,6 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-ms-scroll-snap-type"?: MsScrollSnapTypeProperty | MsScrollSnapTypeProperty[];
   /** **Initial value**: `none` */
   "-ms-scroll-translation"?: MsScrollTranslationProperty | MsScrollTranslationProperty[];
-  /** **Initial value**: depends on user agent */
-  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[];
-  /** **Initial value**: `ButtonText` */
-  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[];
-  /** **Initial value**: depends on user agent */
-  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[];
-  /** **Initial value**: `ThreeDDarkShadow` */
-  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[];
-  /** **Initial value**: `ThreeDFace` */
-  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[];
-  /** **Initial value**: `ThreeDHighlight` */
-  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[];
-  /** **Initial value**: `ThreeDDarkShadow` */
-  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[];
-  /** **Initial value**: `Scrollbar` */
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[];
   /** **Initial value**: `none` */
   "-ms-text-autospace"?: MsTextAutospaceProperty | MsTextAutospaceProperty[];
   /** **Initial value**: `none` */
@@ -18181,6 +18523,8 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   "-webkit-box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
   /** **Initial value**: `none` */
   "-webkit-clip-path"?: ClipPathProperty | ClipPathProperty[];
+  /** **Initial value**: `economy` */
+  "-webkit-color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[];
   /** **Initial value**: `auto` */
   "-webkit-column-count"?: ColumnCountProperty | ColumnCountProperty[];
   /** **Initial value**: `normal` */
@@ -18607,6 +18951,54 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    * @deprecated
    */
   "-ms-ime-mode"?: ImeModeProperty | ImeModeProperty[];
+  /**
+   * **Initial value**: depends on user agent
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty | MsScrollbar3dlightColorProperty[];
+  /**
+   * **Initial value**: `ButtonText`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty | MsScrollbarArrowColorProperty[];
+  /**
+   * **Initial value**: depends on user agent
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty | MsScrollbarBaseColorProperty[];
+  /**
+   * **Initial value**: `ThreeDDarkShadow`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty | MsScrollbarDarkshadowColorProperty[];
+  /**
+   * **Initial value**: `ThreeDFace`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[];
+  /**
+   * **Initial value**: `ThreeDHighlight`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[];
+  /**
+   * **Initial value**: `ThreeDDarkShadow`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[];
+  /**
+   * **Initial value**: `Scrollbar`
+   *
+   * @deprecated
+   */
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[];
   /** @deprecated */
   "-o-animation"?: AnimationProperty | AnimationProperty[];
   /**
@@ -19065,6 +19457,7 @@ export type SimplePseudos =
   | ":-moz-read-only"
   | ":-moz-read-write"
   | ":-ms-fullscreen"
+  | ":-ms-input-placeholder"
   | ":-webkit-any-link"
   | ":-webkit-full-screen"
   | "::-moz-placeholder"
@@ -19080,7 +19473,6 @@ export type SimplePseudos =
   | "::-ms-fill"
   | "::-ms-fill-lower"
   | "::-ms-fill-upper"
-  | "::-ms-placeholder"
   | "::-ms-reveal"
   | "::-ms-thumb"
   | "::-ms-ticks-after"
@@ -19089,7 +19481,7 @@ export type SimplePseudos =
   | "::-ms-track"
   | "::-ms-value"
   | "::-webkit-backdrop"
-  | "::-webkit-placeholder"
+  | "::-webkit-input-placeholder"
   | "::-webkit-progress-bar"
   | "::-webkit-progress-inner-value"
   | "::-webkit-progress-value"
