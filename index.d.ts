@@ -20143,9 +20143,9 @@ export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scr
 
 export type OverflowWrapProperty = Globals | "break-word" | "normal";
 
-export type OverflowXProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+export type OverflowXProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
-export type OverflowYProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+export type OverflowYProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
 export type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none" | string;
 
