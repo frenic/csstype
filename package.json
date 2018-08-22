@@ -33,7 +33,7 @@
     "build": "ts-node --files build.ts --start",
     "watch": "ts-node --files build.ts --watch",
     "lint": "tslint --exclude node_modules/**/* --exclude **/*.d.ts --fix **/*.ts",
-    "pretty": "prettier --write build.ts **/*.{ts,js,json}",
+    "pretty": "prettier --write build.ts **/*.{ts,js,json,md}",
     "lazy": "tsc && npm run lint && npm run pretty",
     "test": "jest --no-cache",
     "typecheck": "tsc typecheck.ts --noEmit --pretty & flow check typecheck.js",

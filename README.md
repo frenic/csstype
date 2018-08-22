@@ -23,14 +23,14 @@ $ yarn add csstype
 
 ## Table of content
 
-* [Style types](#style-types)
-* [At-rule types](#at-rule-types)
-* [Pseudo types](#pseudo-types)
-* [Usage](#usage)
-* [What should I do when I get type errors?](#what-should-i-do-when-i-get-type-errors)
-* [Version 2.0](#version-20)
-* [Contributing](#contributing)
-  * [Commands](#commands)
+- [Style types](#style-types)
+- [At-rule types](#at-rule-types)
+- [Pseudo types](#pseudo-types)
+- [Usage](#usage)
+- [What should I do when I get type errors?](#what-should-i-do-when-i-get-type-errors)
+- [Version 2.0](#version-20)
+- [Contributing](#contributing)
+  - [Commands](#commands)
 
 ## Style types
 
@@ -48,17 +48,17 @@ All interfaces has one optional generic argument to define length. It defaults t
 
 Categories:
 
-* **All** - Includes `Standard`, `Vendor`, `Obsolete` and `Svg`
-* **`Standard`** - Current properties and extends subcategories `StandardLonghand` and `StandardShorthand` _(e.g. `StandardShorthandProperties`)_
-* **`Vendor`** - Vendor prefixed properties and extends subcategories `VendorLonghand` and `VendorShorthand` _(e.g. `VendorShorthandProperties`)_
-* **`Obsolete`** - Removed or deprecated properties
-* **`Svg`** - SVG-specific properties
+- **All** - Includes `Standard`, `Vendor`, `Obsolete` and `Svg`
+- **`Standard`** - Current properties and extends subcategories `StandardLonghand` and `StandardShorthand` _(e.g. `StandardShorthandProperties`)_
+- **`Vendor`** - Vendor prefixed properties and extends subcategories `VendorLonghand` and `VendorShorthand` _(e.g. `VendorShorthandProperties`)_
+- **`Obsolete`** - Removed or deprecated properties
+- **`Svg`** - SVG-specific properties
 
 Variations:
 
-* **Default** - JavaScript (camel) cased property names
-* **`Hyphen`** - CSS (kebab) cased property names
-* **`Fallback`** - Also accepts array of values e.g. `string | string[]`
+- **Default** - JavaScript (camel) cased property names
+- **`Hyphen`** - CSS (kebab) cased property names
+- **`Fallback`** - Also accepts array of values e.g. `string | string[]`
 
 ## At-rule types
 
@@ -75,15 +75,15 @@ At-rule interfaces with descriptors.
 
 String literals of pseudo classes and pseudo elements
 
-* `Pseudos`
+- `Pseudos`
 
   Extends:
 
-  * `AdvancedPseudos`
+  - `AdvancedPseudos`
 
     Function-like pseudos e.g. `:not(:first-child)`. The string literal contains the value excluding the parenthesis: `:not`. These are separated because they require an argument that results in infinite number of variations.
 
-  * `SimplePseudos`
+  - `SimplePseudos`
 
     Plain pseudos e.g. `:hover` that can only be **one** variation.
 
@@ -146,13 +146,13 @@ _If you're using CSS Custom Properties you can step directly to step 3._
 
 1.  **First of all, make sure you're doing it right.** A type error could also indicate that you're not :wink:
 
-    * Some CSS specs that some vendors has implemented could have been officially rejected or haven't yet received any official acceptance and are therefor not included
-    * If you're using TypeScript, [type widening](https://blog.mariusschulz.com/2017/02/04/typescript-2-1-literal-type-widening) could be the reason you get `Type 'string' is not assignable to...` errors
+    - Some CSS specs that some vendors has implemented could have been officially rejected or haven't yet received any official acceptance and are therefor not included
+    - If you're using TypeScript, [type widening](https://blog.mariusschulz.com/2017/02/04/typescript-2-1-literal-type-widening) could be the reason you get `Type 'string' is not assignable to...` errors
 
 2.  **Have a look in [issues](https://github.com/frenic/csstype/issues) to see if an issue already has been filed. If not, create a new one.** To help us out, please refer to any information you have found.
 3.  Fix the issue locally with **TypeScript** (Flow further down):
 
-    * The recommended way is to use **module augmentation**. Here's a few examples:
+    - The recommended way is to use **module augmentation**. Here's a few examples:
 
       ```ts
       // My css.d.ts file
@@ -172,7 +172,7 @@ _If you're using CSS Custom Properties you can step directly to step 3._
       }
       ```
 
-    * The alternative way is to use **type assertion**. Here's a few examples:
+    - The alternative way is to use **type assertion**. Here's a few examples:
 
       ```ts
       const style: CSS.Properties = {
@@ -186,7 +186,7 @@ _If you're using CSS Custom Properties you can step directly to step 3._
 
     Fix the issue locally with **Flow**:
 
-    * Use **type assertion**. Here's a few examples:
+    - Use **type assertion**. Here's a few examples:
 
       ```js
       const style: $Exact<CSS.Properties<*>> = {
@@ -202,19 +202,19 @@ _If you're using CSS Custom Properties you can step directly to step 3._
 
 The casing of CSS vendor properties are changed matching the casing of prefixes in Javascript. So all of them are capitalized except for `ms`.
 
-* `msOverflowStyle` is still `msOverflowStyle`
-* `mozAppearance` is now `MozAppearance`
-* `webkitOverflowScrolling` is now `WebkitOverflowScrolling`
+- `msOverflowStyle` is still `msOverflowStyle`
+- `mozAppearance` is now `MozAppearance`
+- `webkitOverflowScrolling` is now `WebkitOverflowScrolling`
 
 More info: https://www.andismith.com/blogs/2012/02/modernizr-prefixed/
 
 ## Contributing
 
-It's important that you run `$ git config merge.ours.driver true` after you've forked and cloned. That setting prevents merge conflicts when doing rebase because **we want you to commit the generated files** (`index.d.ts` and `index.js.flow`). That's necessary to be able to easily follow the changes your code results in.
+**Never modify `index.d.ts` and `index.js.flow` directly. They are generated automatically and committed so that we can easily follow any change it results in.** Therefor it's important that you run `$ git config merge.ours.driver true` after you've forked and cloned. That setting prevents merge conflicts when doing rebase.
 
 ### Commands
 
-* `yarn build` Generates typings and type checks them
-* `yarn watch` Runs build on each save
-* `yarn test` Runs the tests
-* `yarn lazy` Type check, lint and formats everything
+- `yarn build` Generates typings and type checks them
+- `yarn watch` Runs build on each save
+- `yarn test` Runs the tests
+- `yarn lazy` Type checks, lints and formats everything
