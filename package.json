@@ -29,7 +29,7 @@
     "typescript": "^3.0.1"
   },
   "scripts": {
-    "update": "ts-node update.ts",
+    "update": "ts-node --files update.ts",
     "build": "ts-node --files build.ts --start",
     "watch": "ts-node --files build.ts --watch",
     "lint": "tslint --exclude node_modules/**/* --exclude **/*.d.ts --fix **/*.ts",
