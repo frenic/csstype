@@ -63,11 +63,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   borderTopStyle?: BorderTopStyleProperty,
   borderTopWidth?: BorderTopWidthProperty<TLength>,
   bottom?: BottomProperty<TLength>,
-  boxAlign?: BoxAlignProperty,
   boxDecorationBreak?: BoxDecorationBreakProperty,
-  boxFlexGroup?: GlobalsNumber,
-  boxLines?: BoxLinesProperty,
-  boxOrdinalGroup?: GlobalsNumber,
   boxShadow?: BoxShadowProperty,
   boxSizing?: BoxSizingProperty,
   breakAfter?: BreakAfterProperty,
@@ -137,8 +133,11 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   imageRendering?: ImageRenderingProperty,
   imageResolution?: ImageResolutionProperty,
   initialLetter?: InitialLetterProperty,
-  initialLetterAlign?: InitialLetterAlignProperty,
   inlineSize?: InlineSizeProperty<TLength>,
+  insetBlockEnd?: InsetBlockEndProperty<TLength>,
+  insetBlockStart?: InsetBlockStartProperty<TLength>,
+  insetInlineEnd?: InsetInlineEndProperty<TLength>,
+  insetInlineStart?: InsetInlineStartProperty<TLength>,
   isolation?: IsolationProperty,
   justifyContent?: JustifyContentProperty,
   justifyItems?: JustifyItemsProperty,
@@ -190,11 +189,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   objectFit?: ObjectFitProperty,
   objectPosition?: ObjectPositionProperty<TLength>,
   offsetAnchor?: OffsetAnchorProperty<TLength>,
-  offsetBlockEnd?: OffsetBlockEndProperty<TLength>,
-  offsetBlockStart?: OffsetBlockStartProperty<TLength>,
   offsetDistance?: OffsetDistanceProperty<TLength>,
-  offsetInlineEnd?: OffsetInlineEndProperty<TLength>,
-  offsetInlineStart?: OffsetInlineStartProperty<TLength>,
   offsetPath?: OffsetPathProperty,
   offsetPosition?: OffsetPositionProperty<TLength>,
   offsetRotate?: OffsetRotateProperty,
@@ -335,6 +330,7 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
   padding?: PaddingProperty<TLength>,
+  placeItems?: PlaceItemsProperty,
   textDecoration?: TextDecorationProperty,
   textEmphasis?: TextEmphasisProperty,
   transition?: TransitionProperty,
@@ -593,8 +589,12 @@ export type VendorProperties<TLength = string | 0> = VendorLonghandProperties<TL
 
 export type ObsoleteProperties<TLength = string | 0> = {
   azimuth?: AzimuthProperty,
+  boxAlign?: BoxAlignProperty,
   boxDirection?: BoxDirectionProperty,
   boxFlex?: GlobalsNumber,
+  boxFlexGroup?: GlobalsNumber,
+  boxLines?: BoxLinesProperty,
+  boxOrdinalGroup?: GlobalsNumber,
   boxOrient?: BoxOrientProperty,
   boxPack?: BoxPackProperty,
   clip?: ClipProperty,
@@ -603,6 +603,10 @@ export type ObsoleteProperties<TLength = string | 0> = {
   gridGap?: GridGapProperty<TLength>,
   gridRowGap?: GridRowGapProperty<TLength>,
   imeMode?: ImeModeProperty,
+  offsetBlockEnd?: InsetBlockEndProperty<TLength>,
+  offsetBlockStart?: InsetBlockStartProperty<TLength>,
+  offsetInlineEnd?: InsetInlineEndProperty<TLength>,
+  offsetInlineStart?: InsetInlineStartProperty<TLength>,
   scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength>,
   scrollSnapDestination?: ScrollSnapDestinationProperty<TLength>,
   scrollSnapPointsX?: ScrollSnapPointsXProperty,
@@ -610,8 +614,12 @@ export type ObsoleteProperties<TLength = string | 0> = {
   scrollSnapTypeX?: ScrollSnapTypeXProperty,
   scrollSnapTypeY?: ScrollSnapTypeYProperty,
   textCombineHorizontal?: TextCombineUprightProperty,
+  KhtmlBoxAlign?: BoxAlignProperty,
   KhtmlBoxDirection?: BoxDirectionProperty,
   KhtmlBoxFlex?: GlobalsNumber,
+  KhtmlBoxFlexGroup?: GlobalsNumber,
+  KhtmlBoxLines?: BoxLinesProperty,
+  KhtmlBoxOrdinalGroup?: GlobalsNumber,
   KhtmlBoxOrient?: BoxOrientProperty,
   KhtmlBoxPack?: BoxPackProperty,
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty,
@@ -621,8 +629,10 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozBorderRadiusBottomright?: BorderBottomRightRadiusProperty<TLength>,
   MozBorderRadiusTopleft?: BorderTopLeftRadiusProperty<TLength>,
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>,
+  MozBoxAlign?: BoxAlignProperty,
   MozBoxDirection?: BoxDirectionProperty,
   MozBoxFlex?: GlobalsNumber,
+  MozBoxOrdinalGroup?: GlobalsNumber,
   MozBoxOrient?: BoxOrientProperty,
   MozBoxPack?: BoxPackProperty,
   MozBoxShadow?: BoxShadowProperty,
@@ -660,8 +670,12 @@ export type ObsoleteProperties<TLength = string | 0> = {
   OTransitionDuration?: GlobalsString,
   OTransitionProperty?: TransitionPropertyProperty,
   OTransitionTimingFunction?: TransitionTimingFunctionProperty,
+  WebkitBoxAlign?: BoxAlignProperty,
   WebkitBoxDirection?: BoxDirectionProperty,
   WebkitBoxFlex?: GlobalsNumber,
+  WebkitBoxFlexGroup?: GlobalsNumber,
+  WebkitBoxLines?: BoxLinesProperty,
+  WebkitBoxOrdinalGroup?: GlobalsNumber,
   WebkitBoxOrient?: BoxOrientProperty,
   WebkitBoxPack?: BoxPackProperty,
   WebkitScrollSnapPointsX?: ScrollSnapPointsXProperty,
@@ -797,11 +811,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "border-top-style"?: BorderTopStyleProperty,
   "border-top-width"?: BorderTopWidthProperty<TLength>,
   bottom?: BottomProperty<TLength>,
-  "box-align"?: BoxAlignProperty,
   "box-decoration-break"?: BoxDecorationBreakProperty,
-  "box-flex-group"?: GlobalsNumber,
-  "box-lines"?: BoxLinesProperty,
-  "box-ordinal-group"?: GlobalsNumber,
   "box-shadow"?: BoxShadowProperty,
   "box-sizing"?: BoxSizingProperty,
   "break-after"?: BreakAfterProperty,
@@ -871,8 +881,11 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "image-rendering"?: ImageRenderingProperty,
   "image-resolution"?: ImageResolutionProperty,
   "initial-letter"?: InitialLetterProperty,
-  "initial-letter-align"?: InitialLetterAlignProperty,
   "inline-size"?: InlineSizeProperty<TLength>,
+  "inset-block-end"?: InsetBlockEndProperty<TLength>,
+  "inset-block-start"?: InsetBlockStartProperty<TLength>,
+  "inset-inline-end"?: InsetInlineEndProperty<TLength>,
+  "inset-inline-start"?: InsetInlineStartProperty<TLength>,
   isolation?: IsolationProperty,
   "justify-content"?: JustifyContentProperty,
   "justify-items"?: JustifyItemsProperty,
@@ -924,11 +937,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "object-fit"?: ObjectFitProperty,
   "object-position"?: ObjectPositionProperty<TLength>,
   "offset-anchor"?: OffsetAnchorProperty<TLength>,
-  "offset-block-end"?: OffsetBlockEndProperty<TLength>,
-  "offset-block-start"?: OffsetBlockStartProperty<TLength>,
   "offset-distance"?: OffsetDistanceProperty<TLength>,
-  "offset-inline-end"?: OffsetInlineEndProperty<TLength>,
-  "offset-inline-start"?: OffsetInlineStartProperty<TLength>,
   "offset-path"?: OffsetPathProperty,
   "offset-position"?: OffsetPositionProperty<TLength>,
   "offset-rotate"?: OffsetRotateProperty,
@@ -1069,6 +1078,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
   padding?: PaddingProperty<TLength>,
+  "place-items"?: PlaceItemsProperty,
   "text-decoration"?: TextDecorationProperty,
   "text-emphasis"?: TextEmphasisProperty,
   transition?: TransitionProperty,
@@ -1327,8 +1337,12 @@ export type VendorPropertiesHyphen<TLength = string | 0> = VendorLonghandPropert
 
 export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   azimuth?: AzimuthProperty,
+  "box-align"?: BoxAlignProperty,
   "box-direction"?: BoxDirectionProperty,
   "box-flex"?: GlobalsNumber,
+  "box-flex-group"?: GlobalsNumber,
+  "box-lines"?: BoxLinesProperty,
+  "box-ordinal-group"?: GlobalsNumber,
   "box-orient"?: BoxOrientProperty,
   "box-pack"?: BoxPackProperty,
   clip?: ClipProperty,
@@ -1337,6 +1351,10 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "grid-gap"?: GridGapProperty<TLength>,
   "grid-row-gap"?: GridRowGapProperty<TLength>,
   "ime-mode"?: ImeModeProperty,
+  "offset-block-end"?: InsetBlockEndProperty<TLength>,
+  "offset-block-start"?: InsetBlockStartProperty<TLength>,
+  "offset-inline-end"?: InsetInlineEndProperty<TLength>,
+  "offset-inline-start"?: InsetInlineStartProperty<TLength>,
   "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength>,
   "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength>,
   "scroll-snap-points-x"?: ScrollSnapPointsXProperty,
@@ -1344,8 +1362,12 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "scroll-snap-type-x"?: ScrollSnapTypeXProperty,
   "scroll-snap-type-y"?: ScrollSnapTypeYProperty,
   "text-combine-horizontal"?: TextCombineUprightProperty,
+  "-khtml-box-align"?: BoxAlignProperty,
   "-khtml-box-direction"?: BoxDirectionProperty,
   "-khtml-box-flex"?: GlobalsNumber,
+  "-khtml-box-flex-group"?: GlobalsNumber,
+  "-khtml-box-lines"?: BoxLinesProperty,
+  "-khtml-box-ordinal-group"?: GlobalsNumber,
   "-khtml-box-orient"?: BoxOrientProperty,
   "-khtml-box-pack"?: BoxPackProperty,
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty,
@@ -1355,8 +1377,10 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-border-radius-bottomright"?: BorderBottomRightRadiusProperty<TLength>,
   "-moz-border-radius-topleft"?: BorderTopLeftRadiusProperty<TLength>,
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength>,
+  "-moz-box-align"?: BoxAlignProperty,
   "-moz-box-direction"?: BoxDirectionProperty,
   "-moz-box-flex"?: GlobalsNumber,
+  "-moz-box-ordinal-group"?: GlobalsNumber,
   "-moz-box-orient"?: BoxOrientProperty,
   "-moz-box-pack"?: BoxPackProperty,
   "-moz-box-shadow"?: BoxShadowProperty,
@@ -1394,8 +1418,12 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-o-transition-duration"?: GlobalsString,
   "-o-transition-property"?: TransitionPropertyProperty,
   "-o-transition-timing-function"?: TransitionTimingFunctionProperty,
+  "-webkit-box-align"?: BoxAlignProperty,
   "-webkit-box-direction"?: BoxDirectionProperty,
   "-webkit-box-flex"?: GlobalsNumber,
+  "-webkit-box-flex-group"?: GlobalsNumber,
+  "-webkit-box-lines"?: BoxLinesProperty,
+  "-webkit-box-ordinal-group"?: GlobalsNumber,
   "-webkit-box-orient"?: BoxOrientProperty,
   "-webkit-box-pack"?: BoxPackProperty,
   "-webkit-scroll-snap-points-x"?: ScrollSnapPointsXProperty,
@@ -1534,11 +1562,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   borderTopStyle?: BorderTopStyleProperty | BorderTopStyleProperty[],
   borderTopWidth?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[],
   bottom?: BottomProperty<TLength> | BottomProperty<TLength>[],
-  boxAlign?: BoxAlignProperty | BoxAlignProperty[],
   boxDecorationBreak?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
-  boxFlexGroup?: GlobalsNumber | GlobalsNumber[],
-  boxLines?: BoxLinesProperty | BoxLinesProperty[],
-  boxOrdinalGroup?: GlobalsNumber | GlobalsNumber[],
   boxShadow?: BoxShadowProperty | BoxShadowProperty[],
   boxSizing?: BoxSizingProperty | BoxSizingProperty[],
   breakAfter?: BreakAfterProperty | BreakAfterProperty[],
@@ -1608,8 +1632,11 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   imageRendering?: ImageRenderingProperty | ImageRenderingProperty[],
   imageResolution?: ImageResolutionProperty | ImageResolutionProperty[],
   initialLetter?: InitialLetterProperty | InitialLetterProperty[],
-  initialLetterAlign?: InitialLetterAlignProperty | InitialLetterAlignProperty[],
   inlineSize?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[],
+  insetBlockEnd?: InsetBlockEndProperty<TLength> | InsetBlockEndProperty<TLength>[],
+  insetBlockStart?: InsetBlockStartProperty<TLength> | InsetBlockStartProperty<TLength>[],
+  insetInlineEnd?: InsetInlineEndProperty<TLength> | InsetInlineEndProperty<TLength>[],
+  insetInlineStart?: InsetInlineStartProperty<TLength> | InsetInlineStartProperty<TLength>[],
   isolation?: IsolationProperty | IsolationProperty[],
   justifyContent?: JustifyContentProperty | JustifyContentProperty[],
   justifyItems?: JustifyItemsProperty | JustifyItemsProperty[],
@@ -1661,11 +1688,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   objectFit?: ObjectFitProperty | ObjectFitProperty[],
   objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[],
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
-  offsetBlockEnd?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[],
-  offsetBlockStart?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[],
   offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
-  offsetInlineEnd?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[],
-  offsetInlineStart?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[],
   offsetPath?: OffsetPathProperty | OffsetPathProperty[],
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
   offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[],
@@ -1806,6 +1829,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
+  placeItems?: PlaceItemsProperty | PlaceItemsProperty[],
   textDecoration?: TextDecorationProperty | TextDecorationProperty[],
   textEmphasis?: TextEmphasisProperty | TextEmphasisProperty[],
   transition?: TransitionProperty | TransitionProperty[],
@@ -2064,8 +2088,12 @@ export type VendorPropertiesFallback<TLength = string | 0> = VendorLonghandPrope
 
 export type ObsoletePropertiesFallback<TLength = string | 0> = {
   azimuth?: AzimuthProperty | AzimuthProperty[],
+  boxAlign?: BoxAlignProperty | BoxAlignProperty[],
   boxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
   boxFlex?: GlobalsNumber | GlobalsNumber[],
+  boxFlexGroup?: GlobalsNumber | GlobalsNumber[],
+  boxLines?: BoxLinesProperty | BoxLinesProperty[],
+  boxOrdinalGroup?: GlobalsNumber | GlobalsNumber[],
   boxOrient?: BoxOrientProperty | BoxOrientProperty[],
   boxPack?: BoxPackProperty | BoxPackProperty[],
   clip?: ClipProperty | ClipProperty[],
@@ -2074,6 +2102,10 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   gridGap?: GridGapProperty<TLength> | GridGapProperty<TLength>[],
   gridRowGap?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[],
   imeMode?: ImeModeProperty | ImeModeProperty[],
+  offsetBlockEnd?: InsetBlockEndProperty<TLength> | InsetBlockEndProperty<TLength>[],
+  offsetBlockStart?: InsetBlockStartProperty<TLength> | InsetBlockStartProperty<TLength>[],
+  offsetInlineEnd?: InsetInlineEndProperty<TLength> | InsetInlineEndProperty<TLength>[],
+  offsetInlineStart?: InsetInlineStartProperty<TLength> | InsetInlineStartProperty<TLength>[],
   scrollSnapCoordinate?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[],
   scrollSnapDestination?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[],
   scrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[],
@@ -2081,8 +2113,12 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   scrollSnapTypeX?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
   scrollSnapTypeY?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
   textCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[],
+  KhtmlBoxAlign?: BoxAlignProperty | BoxAlignProperty[],
   KhtmlBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
   KhtmlBoxFlex?: GlobalsNumber | GlobalsNumber[],
+  KhtmlBoxFlexGroup?: GlobalsNumber | GlobalsNumber[],
+  KhtmlBoxLines?: BoxLinesProperty | BoxLinesProperty[],
+  KhtmlBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[],
   KhtmlBoxOrient?: BoxOrientProperty | BoxOrientProperty[],
   KhtmlBoxPack?: BoxPackProperty | BoxPackProperty[],
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
@@ -2092,8 +2128,10 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozBorderRadiusBottomright?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[],
   MozBorderRadiusTopleft?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[],
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[],
+  MozBoxAlign?: BoxAlignProperty | BoxAlignProperty[],
   MozBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
   MozBoxFlex?: GlobalsNumber | GlobalsNumber[],
+  MozBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[],
   MozBoxOrient?: BoxOrientProperty | BoxOrientProperty[],
   MozBoxPack?: BoxPackProperty | BoxPackProperty[],
   MozBoxShadow?: BoxShadowProperty | BoxShadowProperty[],
@@ -2131,8 +2169,12 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   OTransitionDuration?: GlobalsString | GlobalsString[],
   OTransitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[],
   OTransitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[],
+  WebkitBoxAlign?: BoxAlignProperty | BoxAlignProperty[],
   WebkitBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
   WebkitBoxFlex?: GlobalsNumber | GlobalsNumber[],
+  WebkitBoxFlexGroup?: GlobalsNumber | GlobalsNumber[],
+  WebkitBoxLines?: BoxLinesProperty | BoxLinesProperty[],
+  WebkitBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[],
   WebkitBoxOrient?: BoxOrientProperty | BoxOrientProperty[],
   WebkitBoxPack?: BoxPackProperty | BoxPackProperty[],
   WebkitScrollSnapPointsX?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[],
@@ -2271,11 +2313,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "border-top-style"?: BorderTopStyleProperty | BorderTopStyleProperty[],
   "border-top-width"?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[],
   bottom?: BottomProperty<TLength> | BottomProperty<TLength>[],
-  "box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "box-decoration-break"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
-  "box-flex-group"?: GlobalsNumber | GlobalsNumber[],
-  "box-lines"?: BoxLinesProperty | BoxLinesProperty[],
-  "box-ordinal-group"?: GlobalsNumber | GlobalsNumber[],
   "box-shadow"?: BoxShadowProperty | BoxShadowProperty[],
   "box-sizing"?: BoxSizingProperty | BoxSizingProperty[],
   "break-after"?: BreakAfterProperty | BreakAfterProperty[],
@@ -2345,8 +2383,11 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "image-rendering"?: ImageRenderingProperty | ImageRenderingProperty[],
   "image-resolution"?: ImageResolutionProperty | ImageResolutionProperty[],
   "initial-letter"?: InitialLetterProperty | InitialLetterProperty[],
-  "initial-letter-align"?: InitialLetterAlignProperty | InitialLetterAlignProperty[],
   "inline-size"?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[],
+  "inset-block-end"?: InsetBlockEndProperty<TLength> | InsetBlockEndProperty<TLength>[],
+  "inset-block-start"?: InsetBlockStartProperty<TLength> | InsetBlockStartProperty<TLength>[],
+  "inset-inline-end"?: InsetInlineEndProperty<TLength> | InsetInlineEndProperty<TLength>[],
+  "inset-inline-start"?: InsetInlineStartProperty<TLength> | InsetInlineStartProperty<TLength>[],
   isolation?: IsolationProperty | IsolationProperty[],
   "justify-content"?: JustifyContentProperty | JustifyContentProperty[],
   "justify-items"?: JustifyItemsProperty | JustifyItemsProperty[],
@@ -2398,11 +2439,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "object-fit"?: ObjectFitProperty | ObjectFitProperty[],
   "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[],
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
-  "offset-block-end"?: OffsetBlockEndProperty<TLength> | OffsetBlockEndProperty<TLength>[],
-  "offset-block-start"?: OffsetBlockStartProperty<TLength> | OffsetBlockStartProperty<TLength>[],
   "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
-  "offset-inline-end"?: OffsetInlineEndProperty<TLength> | OffsetInlineEndProperty<TLength>[],
-  "offset-inline-start"?: OffsetInlineStartProperty<TLength> | OffsetInlineStartProperty<TLength>[],
   "offset-path"?: OffsetPathProperty | OffsetPathProperty[],
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
   "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[],
@@ -2543,6 +2580,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
+  "place-items"?: PlaceItemsProperty | PlaceItemsProperty[],
   "text-decoration"?: TextDecorationProperty | TextDecorationProperty[],
   "text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[],
   transition?: TransitionProperty | TransitionProperty[],
@@ -2801,8 +2839,12 @@ export type VendorPropertiesHyphenFallback<TLength = string | 0> = VendorLonghan
 
 export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   azimuth?: AzimuthProperty | AzimuthProperty[],
+  "box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
   "box-flex"?: GlobalsNumber | GlobalsNumber[],
+  "box-flex-group"?: GlobalsNumber | GlobalsNumber[],
+  "box-lines"?: BoxLinesProperty | BoxLinesProperty[],
+  "box-ordinal-group"?: GlobalsNumber | GlobalsNumber[],
   "box-orient"?: BoxOrientProperty | BoxOrientProperty[],
   "box-pack"?: BoxPackProperty | BoxPackProperty[],
   clip?: ClipProperty | ClipProperty[],
@@ -2811,6 +2853,10 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "grid-gap"?: GridGapProperty<TLength> | GridGapProperty<TLength>[],
   "grid-row-gap"?: GridRowGapProperty<TLength> | GridRowGapProperty<TLength>[],
   "ime-mode"?: ImeModeProperty | ImeModeProperty[],
+  "offset-block-end"?: InsetBlockEndProperty<TLength> | InsetBlockEndProperty<TLength>[],
+  "offset-block-start"?: InsetBlockStartProperty<TLength> | InsetBlockStartProperty<TLength>[],
+  "offset-inline-end"?: InsetInlineEndProperty<TLength> | InsetInlineEndProperty<TLength>[],
+  "offset-inline-start"?: InsetInlineStartProperty<TLength> | InsetInlineStartProperty<TLength>[],
   "scroll-snap-coordinate"?: ScrollSnapCoordinateProperty<TLength> | ScrollSnapCoordinateProperty<TLength>[],
   "scroll-snap-destination"?: ScrollSnapDestinationProperty<TLength> | ScrollSnapDestinationProperty<TLength>[],
   "scroll-snap-points-x"?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[],
@@ -2818,8 +2864,12 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "scroll-snap-type-x"?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
   "scroll-snap-type-y"?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
   "text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[],
+  "-khtml-box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "-khtml-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
   "-khtml-box-flex"?: GlobalsNumber | GlobalsNumber[],
+  "-khtml-box-flex-group"?: GlobalsNumber | GlobalsNumber[],
+  "-khtml-box-lines"?: BoxLinesProperty | BoxLinesProperty[],
+  "-khtml-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[],
   "-khtml-box-orient"?: BoxOrientProperty | BoxOrientProperty[],
   "-khtml-box-pack"?: BoxPackProperty | BoxPackProperty[],
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
@@ -2829,8 +2879,10 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-border-radius-bottomright"?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[],
   "-moz-border-radius-topleft"?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[],
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[],
+  "-moz-box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "-moz-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
   "-moz-box-flex"?: GlobalsNumber | GlobalsNumber[],
+  "-moz-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[],
   "-moz-box-orient"?: BoxOrientProperty | BoxOrientProperty[],
   "-moz-box-pack"?: BoxPackProperty | BoxPackProperty[],
   "-moz-box-shadow"?: BoxShadowProperty | BoxShadowProperty[],
@@ -2868,8 +2920,12 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-o-transition-duration"?: GlobalsString | GlobalsString[],
   "-o-transition-property"?: TransitionPropertyProperty | TransitionPropertyProperty[],
   "-o-transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[],
+  "-webkit-box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "-webkit-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
   "-webkit-box-flex"?: GlobalsNumber | GlobalsNumber[],
+  "-webkit-box-flex-group"?: GlobalsNumber | GlobalsNumber[],
+  "-webkit-box-lines"?: BoxLinesProperty | BoxLinesProperty[],
+  "-webkit-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[],
   "-webkit-box-orient"?: BoxOrientProperty | BoxOrientProperty[],
   "-webkit-box-pack"?: BoxPackProperty | BoxPackProperty[],
   "-webkit-scroll-snap-points-x"?: ScrollSnapPointsXProperty | ScrollSnapPointsXProperty[],
@@ -3193,13 +3249,16 @@ export type AtRules =
 export type AdvancedPseudos =
   | ":-moz-any"
   | ":-moz-dir"
+  | ":-ms-matches"
   | ":-webkit-any"
   | "::cue"
   | "::slotted"
   | ":dir"
+  | ":has"
   | ":host"
   | ":host-context"
   | ":lang"
+  | ":matches"
   | ":not"
   | ":nth-child"
   | ":nth-last-child"
@@ -3749,9 +3808,15 @@ export type ImeModeProperty = Globals | "active" | "auto" | "disabled" | "inacti
 
 export type InitialLetterProperty = Globals | "normal" | string | number;
 
-export type InitialLetterAlignProperty = Globals | "alphabetic" | "auto" | "hanging" | "ideographic";
-
 export type InlineSizeProperty<TLength> = Globals | TLength | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+
+export type InsetBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
+
+export type InsetBlockStartProperty<TLength> = Globals | TLength | "auto" | string;
+
+export type InsetInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
+
+export type InsetInlineStartProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type IsolationProperty = Globals | "auto" | "isolate";
 
@@ -3867,14 +3932,6 @@ export type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 
 export type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
 
-export type OffsetBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
-
-export type OffsetBlockStartProperty<TLength> = Globals | TLength | "auto" | string;
-
-export type OffsetInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
-
-export type OffsetInlineStartProperty<TLength> = Globals | TLength | "auto" | string;
-
 export type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
 
 export type OutlineProperty<TLength> = Globals | Color | BrStyle | BrWidth<TLength> | "auto" | "invert" | string;
@@ -3941,13 +3998,15 @@ export type PerspectiveOriginProperty<TLength> = Globals | Position<TLength>;
 
 export type PlaceContentProperty = Globals | ContentDistribution | ContentPosition | "baseline" | "normal" | string;
 
+export type PlaceItemsProperty = Globals | SelfPosition | "baseline" | "normal" | "stretch" | string;
+
 export type PointerEventsProperty = Globals | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
 
 export type PositionProperty = Globals | "-webkit-sticky" | "absolute" | "fixed" | "relative" | "static" | "sticky";
 
 export type QuotesProperty = Globals | "none" | string;
 
-export type ResizeProperty = Globals | "both" | "horizontal" | "none" | "vertical";
+export type ResizeProperty = Globals | "block" | "both" | "horizontal" | "inline" | "none" | "vertical";
 
 export type RightProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -4692,7 +4751,7 @@ type DeprecatedSystemColor =
   | "WindowFrame"
   | "WindowText";
 
-type DisplayInside = "-ms-flexbox" | "-ms-grid" | "-webkit-flex" | "flex" | "flow" | "flow-root" | "grid" | "ruby" | "subgrid" | "table";
+type DisplayInside = "-ms-flexbox" | "-ms-grid" | "-webkit-flex" | "flex" | "flow" | "flow-root" | "grid" | "ruby" | "table";
 
 type DisplayInternal =
   | "ruby-base"

@@ -17,8 +17,11 @@ export function composeCommentBlock(
   const rows: string[] = [];
   const includeCompatibility = !vendor && !obsolete && compatibilityData;
 
-  if (includeCompatibility) {
-    rows.push(...getCompatSummary(compatibilityData!));
+  if (data.mdn_url) {
+    const summary = getSummary(data.mdn_url);
+    if (summary) {
+      rows.push(summary, BLANK_ROW);
+    }
   }
 
   if (typeof data.initial === 'string') {
@@ -50,21 +53,6 @@ export function composeCommentBlock(
     : rows.length === 1
       ? '/** ' + rows[0] + ' */'
       : null;
-}
-
-function getCompatSummary(compatibilityData: MDN.CompatData) {
-  const compats = getCompats(compatibilityData);
-  const summaries: string[] = [];
-
-  for (const compat of compats) {
-    if (compat.mdn_url) {
-      const summary = getSummary(compat.mdn_url);
-      if (summary && !summaries.includes(summary)) {
-        summaries.push(summary, BLANK_ROW);
-      }
-    }
-  }
-  return summaries;
 }
 
 function getCompatRows(compatibilityData: MDN.CompatData) {

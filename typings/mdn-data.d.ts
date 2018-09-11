@@ -11,6 +11,7 @@ declare namespace MDN {
     computed: string | string[];
     order: string;
     status: string;
+    mdn_url?: string;
   }
 
   interface Properties {
