@@ -1976,10 +1976,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * |          Chrome          |         Firefox         |             Safari             | Edge | IE  |
-   * | :----------------------: | :---------------------: | :----------------------------: | :--: | :-: |
-   * |          **69**          |         **41**          | **3** _(-webkit-margin-start)_ | n/a  | No  |
-   * | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-start)_ |                                |      |     |
+   * |           Chrome           |         Firefox         |             Safari             | Edge | IE  |
+   * | :------------------------: | :---------------------: | :----------------------------: | :--: | :-: |
+   * |           **69**           |         **41**          | **3** _(-webkit-margin-start)_ | n/a  | No  |
+   * | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ |                                |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -8100,10 +8100,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * |          Chrome          |         Firefox         |             Safari             | Edge | IE  |
-   * | :----------------------: | :---------------------: | :----------------------------: | :--: | :-: |
-   * |          **69**          |         **41**          | **3** _(-webkit-margin-start)_ | n/a  | No  |
-   * | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-start)_ |                                |      |     |
+   * |           Chrome           |         Firefox         |             Safari             | Edge | IE  |
+   * | :------------------------: | :---------------------: | :----------------------------: | :--: | :-: |
+   * |           **69**           |         **41**          | **3** _(-webkit-margin-start)_ | n/a  | No  |
+   * | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ |                                |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -14228,10 +14228,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * |          Chrome          |         Firefox         |             Safari             | Edge | IE  |
-   * | :----------------------: | :---------------------: | :----------------------------: | :--: | :-: |
-   * |          **69**          |         **41**          | **3** _(-webkit-margin-start)_ | n/a  | No  |
-   * | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-start)_ |                                |      |     |
+   * |           Chrome           |         Firefox         |             Safari             | Edge | IE  |
+   * | :------------------------: | :---------------------: | :----------------------------: | :--: | :-: |
+   * |           **69**           |         **41**          | **3** _(-webkit-margin-start)_ | n/a  | No  |
+   * | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ |                                |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -20356,10 +20356,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * |          Chrome          |         Firefox         |             Safari             | Edge | IE  |
-   * | :----------------------: | :---------------------: | :----------------------------: | :--: | :-: |
-   * |          **69**          |         **41**          | **3** _(-webkit-margin-start)_ | n/a  | No  |
-   * | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-start)_ |                                |      |     |
+   * |           Chrome           |         Firefox         |             Safari             | Edge | IE  |
+   * | :------------------------: | :---------------------: | :----------------------------: | :--: | :-: |
+   * |           **69**           |         **41**          | **3** _(-webkit-margin-start)_ | n/a  | No  |
+   * | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ |                                |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
