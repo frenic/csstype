@@ -9,7 +9,7 @@ import * as CSS from 'csstype';
 
 const style: CSS.Properties = {
   colour: 'white', // Type error on property
-  overflow: 'hide', // Type error on value
+  textAlign: 'middle', // Type error on value
 };
 ```
 
