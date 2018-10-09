@@ -3,7 +3,7 @@ import build from './build';
 import * as packageJson from './package.json';
 import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
 
-(async () => {
+async function update() {
   if ((await spawnAsync('git', 'status', '--porcelain')) !== '') {
     console.error('Your working directory needs to be clean!');
     process.exit(1);
@@ -41,7 +41,7 @@ import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILE
     packageJson.devDependencies[MDN_COMPAT] = `${mdnCompatRepo}#${latestMdnCompatCommit}`;
 
     await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
-    await upgrade();
+    await install();
 
     try {
       await build();
@@ -91,40 +91,39 @@ import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILE
         console.info('Resetting...');
         await reset();
         console.info('Downgrading...');
-        await upgrade();
+        await install();
       }
     } else {
       console.info('No changes detected!');
       console.info('Resetting...');
       await reset();
       console.info('Downgrading...');
-      await upgrade();
+      await install(true);
     }
   } else {
     console.info('Nothing to update!');
   }
 
   process.exit(0);
-})();
-
-async function reset() {
-  try {
-    await spawnAsync('git', 'reset', '--hard');
-  } catch (e) {
-    throw new Error(e);
-  }
 }
 
-async function upgrade() {
-  try {
-    await spawnAsync(
-      process.platform === 'win32' ? 'yarn.cmd' : 'yarn',
-      { stdio: 'inherit' },
-      '--silent',
-      '--no-progress',
-      '--ignore-scripts',
-    );
-  } catch (e) {
-    throw new Error(e);
-  }
+try {
+  update();
+} catch (e) {
+  throw new Error(e);
+}
+
+function reset() {
+  return spawnAsync('git', 'reset', '--hard');
+}
+
+function install(pure = false) {
+  return spawnAsync(
+    process.platform === 'win32' ? 'yarn.cmd' : 'yarn',
+    { stdio: 'inherit' },
+    '--silent',
+    '--no-progress',
+    '--ignore-scripts',
+    pure ? '--pure-lockfile' : '',
+  );
 }
