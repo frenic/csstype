@@ -122,3 +122,18 @@ declare module 'mdn-browser-compat-data/html/global_attributes.json' {
   var types: MDN.GlobalAttributesCompat;
   export = types;
 }
+
+declare module 'mdn-browser-compat-data/html/elements/*.json' {
+  var types: MDN.AttributesCompat;
+  export = types;
+}
+
+declare module 'mdn-browser-compat-data/svg/attributes/*.json' {
+  var types: MDN.AttributesCompat;
+  export = types;
+}
+
+declare module 'mdn-browser-compat-data/svg/elements/*.json' {
+  var types: MDN.AttributesCompat;
+  export = types;
+}
