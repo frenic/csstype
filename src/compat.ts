@@ -216,3 +216,30 @@ export function alternativeSelectors(selector: string): string[] {
 
   return alternatives;
 }
+
+export function alternativeAttributes(name: string, compat: MDN.CompatData): string[] {
+  const alternatives: string[] = [];
+  const compats = getCompats(compat);
+
+  for (const compat of compats) {
+    for (let browser in compat.support) {
+      const support = (compat.support as any)[browser];
+
+      for (const version of getSupport(support)) {
+        // Assume that the version has the property implemented if `null`
+        const isAdded = !!version.version_added || version.version_added === null;
+
+        if (isAdded) {
+          if (version.prefix) {
+            alternatives.push(version.prefix + name);
+          }
+          if (version.alternative_name) {
+            alternatives.push(version.alternative_name);
+          }
+        }
+      }
+    }
+  }
+
+  return alternatives;
+}

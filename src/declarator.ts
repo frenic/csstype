@@ -3,6 +3,7 @@ import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
 import dataTypes from './data-types';
 import { globals, htmlProperties, isVendorProperty, svgProperties } from './properties';
 import { getPseudos } from './selectors';
+import { getHtmlAttributes, getSvgAttributes } from './attributes';
 import { IDataType, Type, TypeType } from './typer';
 
 export interface IAlias {
@@ -51,6 +52,8 @@ export interface IDeclaration {
 
 const atRules = getAtRules();
 const pseudos = getPseudos();
+const htmlAttributes = getHtmlAttributes();
+const svgAttributes = getSvgAttributes();
 
 export const declarations: Map<MixedType[], IDeclaration> = new Map();
 
@@ -91,6 +94,24 @@ const pseudosDeclaration: IDeclaration = {
 };
 
 declarations.set(pseudoAliases, pseudosDeclaration);
+
+const htmlAttributesDeclaration: IDeclaration = {
+  name: 'HtmlAttributes',
+  export: true,
+  types: declarable(htmlAttributes),
+  generics: [],
+};
+
+declarations.set(htmlAttributes, htmlAttributesDeclaration);
+
+const svgAttributesDeclaration: IDeclaration = {
+  name: 'SvgAttributes',
+  export: true,
+  types: declarable(svgAttributes),
+  generics: [],
+};
+
+declarations.set(svgAttributes, svgAttributesDeclaration);
 
 const globalsDeclaration: IDeclaration = {
   name: 'Globals',
