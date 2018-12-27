@@ -55,8 +55,6 @@ export let getHtmlAttributes = () => {
   attributes = gatherAttributes(attributes, rawGlobalAttributes.html.global_attributes);
   attributes = loadCompatFiles(attributes, 'html', 'elements');
 
-  // TODO aria attributes
-
   // Cache
   getHtmlAttributes = () => attributes;
 
