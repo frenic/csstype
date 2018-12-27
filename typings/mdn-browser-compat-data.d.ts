@@ -78,6 +78,24 @@ declare namespace MDN {
       };
     };
   }
+
+  interface GlobalAttributesCompat {
+    html: {
+      global_attributes: {
+        [attribute: string]: CompatData;
+      };
+    };
+  }
+
+  interface AttributesCompat {
+    [htmlOrSvg: string]: {
+      [attributesOrElements: string]: {
+        [categoryOrElement: string]: {
+          [attribute: string]: CompatData;
+        };
+      };
+    };
+  }
 }
 
 declare module 'browser-compat-data/css/at-rules/*.json' {
@@ -97,5 +115,25 @@ declare module 'browser-compat-data/css/selectors/*.json' {
 
 declare module 'browser-compat-data/css/types/*.json' {
   var types: MDN.TypesCompat;
+  export = types;
+}
+
+declare module 'mdn-browser-compat-data/html/global_attributes.json' {
+  var types: MDN.GlobalAttributesCompat;
+  export = types;
+}
+
+declare module 'mdn-browser-compat-data/html/elements/*.json' {
+  var types: MDN.AttributesCompat;
+  export = types;
+}
+
+declare module 'mdn-browser-compat-data/svg/attributes/*.json' {
+  var types: MDN.AttributesCompat;
+  export = types;
+}
+
+declare module 'mdn-browser-compat-data/svg/elements/*.json' {
+  var types: MDN.AttributesCompat;
   export = types;
 }

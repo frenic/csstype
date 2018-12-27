@@ -15,6 +15,7 @@
     "@types/prettier": "^1.13.2",
     "chalk": "^2.4.1",
     "chokidar": "^2.0.4",
+    "fast-glob": "^2.2.4",
     "flow-bin": "^0.83.0",
     "jest": "^23.6.0",
     "jsdom": "^12.2.0",
