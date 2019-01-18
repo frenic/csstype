@@ -146,6 +146,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   letterSpacing?: LetterSpacingProperty<TLength>,
   lineBreak?: LineBreakProperty,
   lineHeight?: LineHeightProperty<TLength>,
+  lineHeightStep?: LineHeightStepProperty<TLength>,
   listStyleImage?: ListStyleImageProperty,
   listStylePosition?: ListStylePositionProperty,
   listStyleType?: ListStyleTypeProperty,
@@ -915,6 +916,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "letter-spacing"?: LetterSpacingProperty<TLength>,
   "line-break"?: LineBreakProperty,
   "line-height"?: LineHeightProperty<TLength>,
+  "line-height-step"?: LineHeightStepProperty<TLength>,
   "list-style-image"?: ListStyleImageProperty,
   "list-style-position"?: ListStylePositionProperty,
   "list-style-type"?: ListStyleTypeProperty,
@@ -1687,6 +1689,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   letterSpacing?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[],
   lineBreak?: LineBreakProperty | LineBreakProperty[],
   lineHeight?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[],
+  lineHeightStep?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[],
   listStyleImage?: ListStyleImageProperty | ListStyleImageProperty[],
   listStylePosition?: ListStylePositionProperty | ListStylePositionProperty[],
   listStyleType?: ListStyleTypeProperty | ListStyleTypeProperty[],
@@ -2459,6 +2462,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "letter-spacing"?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[],
   "line-break"?: LineBreakProperty | LineBreakProperty[],
   "line-height"?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[],
+  "line-height-step"?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[],
   "list-style-image"?: ListStyleImageProperty | ListStyleImageProperty[],
   "list-style-position"?: ListStylePositionProperty | ListStylePositionProperty[],
   "list-style-type"?: ListStyleTypeProperty | ListStyleTypeProperty[],
@@ -4368,6 +4372,8 @@ export type LineBreakProperty = Globals | "auto" | "loose" | "normal" | "strict"
 export type LineClampProperty = Globals | "none" | number;
 
 export type LineHeightProperty<TLength> = Globals | TLength | "normal" | string | number;
+
+export type LineHeightStepProperty<TLength> = Globals | TLength;
 
 export type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
 

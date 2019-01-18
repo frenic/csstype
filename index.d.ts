@@ -1881,6 +1881,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   lineHeight?: LineHeightProperty<TLength>;
   /**
+   * The **`line-height-step`** CSS property defines the step units for line box heights. When the step unit is positive, line box heights are rounded up to the closest multiple of the unit. Negative values are invalid.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |  n/a   | n/a  | n/a |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-height-step
+   */
+  lineHeightStep?: LineHeightStepProperty<TLength>;
+  /**
    * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
    *
    * **Initial value**: `none`
@@ -8249,6 +8261,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/line-height
    */
   "line-height"?: LineHeightProperty<TLength>;
+  /**
+   * The **`line-height-step`** CSS property defines the step units for line box heights. When the step unit is positive, line box heights are rounded up to the closest multiple of the unit. Negative values are invalid.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |  n/a   | n/a  | n/a |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-height-step
+   */
+  "line-height-step"?: LineHeightStepProperty<TLength>;
   /**
    * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
    *
@@ -14623,6 +14647,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   lineHeight?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[];
   /**
+   * The **`line-height-step`** CSS property defines the step units for line box heights. When the step unit is positive, line box heights are rounded up to the closest multiple of the unit. Negative values are invalid.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |  n/a   | n/a  | n/a |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-height-step
+   */
+  lineHeightStep?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
+  /**
    * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
    *
    * **Initial value**: `none`
@@ -20996,6 +21032,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "line-height"?: LineHeightProperty<TLength> | LineHeightProperty<TLength>[];
   /**
+   * The **`line-height-step`** CSS property defines the step units for line box heights. When the step unit is positive, line box heights are rounded up to the closest multiple of the unit. Negative values are invalid.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |  n/a   | n/a  | n/a |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/line-height-step
+   */
+  "line-height-step"?: LineHeightStepProperty<TLength> | LineHeightStepProperty<TLength>[];
+  /**
    * The **`list-style-image`** CSS property specifies an image to be used as the list item marker. It is often more convenient to use the shorthand `list-style`.
    *
    * **Initial value**: `none`
@@ -26772,6 +26820,8 @@ export type LineBreakProperty = Globals | "auto" | "loose" | "normal" | "strict"
 export type LineClampProperty = Globals | "none" | number;
 
 export type LineHeightProperty<TLength> = Globals | TLength | "normal" | string | number;
+
+export type LineHeightStepProperty<TLength> = Globals | TLength;
 
 export type ListStyleProperty = Globals | "inside" | "none" | "outside" | string;
 

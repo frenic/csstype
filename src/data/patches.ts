@@ -1,5 +1,5 @@
 export interface IExtendedProperty extends Partial<MDN.Property> {
-  shorthand: boolean;
+  shorthand?: boolean;
 }
 
 export const properties: { [property: string]: IExtendedProperty } = {
@@ -16,6 +16,23 @@ export const properties: { [property: string]: IExtendedProperty } = {
    */
   'line-clamp': {
     shorthand: true,
+  },
+  /**
+   * Waiting for https://github.com/mdn/data/pull/313 to be merged
+   */
+  'line-height-step': {
+    syntax: '<length>',
+    media: 'visual',
+    inherited: true,
+    animationType: 'discrete',
+    percentages: 'no',
+    groups: ['CSS Fonts'],
+    initial: '0',
+    appliesto: 'blockContainers',
+    computed: 'absoluteLength',
+    order: 'perGrammar',
+    status: 'experimental',
+    mdn_url: 'https://developer.mozilla.org/docs/Web/CSS/line-height-step',
   },
 };
 
