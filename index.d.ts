@@ -2280,6 +2280,19 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
   mixBlendMode?: MixBlendModeProperty;
+  /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
+   * **Initial value**: `0`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **55**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
+  motionDistance?: OffsetDistanceProperty<TLength>;
   /** **Initial value**: `<code>0</code>` */
   motionOffset?: GlobalsString;
   /** **Initial value**: `<code>none</code>` */
@@ -2311,7 +2324,61 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   objectPosition?: ObjectPositionProperty<TLength>;
   /** **Initial value**: `auto` */
+  offsetAnchor?: OffsetAnchorProperty<TLength>;
+  /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
+   * **Initial value**: `0`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **55**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
+  offsetDistance?: OffsetDistanceProperty<TLength>;
+  /**
+   * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
+   *
+   * **Initial value**: `none`
+   *
+   * |       Chrome       | Firefox | Safari | Edge | IE  |
+   * | :----------------: | :-----: | :----: | :--: | :-: |
+   * |       **55**       |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
+  offsetPath?: OffsetPathProperty;
+  /** **Initial value**: `auto` */
   offsetPosition?: OffsetPositionProperty<TLength>;
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  offsetRotate?: OffsetRotateProperty;
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  offsetRotation?: OffsetRotateProperty;
   /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
@@ -2440,10 +2507,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * |       Chrome        |      Firefox      |       Safari        |       Edge       |          IE           |
-   * | :-----------------: | :---------------: | :-----------------: | :--------------: | :-------------------: |
-   * | **1** _(word-wrap)_ |      **49**       | **1** _(word-wrap)_ |      **18**      | **5.5** _(word-wrap)_ |
-   * |                     | 3.5 _(word-wrap)_ |                     | 12 _(word-wrap)_ |                       |
+   * |     Chrome      |      Firefox      |     Safari      |       Edge       |          IE           |
+   * | :-------------: | :---------------: | :-------------: | :--------------: | :-------------------: |
+   * |     **23**      |      **49**       |     **6.1**     |      **18**      | **5.5** _(word-wrap)_ |
+   * | 1 _(word-wrap)_ | 3.5 _(word-wrap)_ | 1 _(word-wrap)_ | 12 _(word-wrap)_ |                       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
    */
@@ -2858,7 +2925,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   | **36**  |   No   |  No  | No  |
+   * | **61** | **36**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -3134,18 +3201,6 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   scrollSnapAlign?: ScrollSnapAlignProperty;
   /**
-   * The **`scroll-snap-stop`** CSS property defines whether the scroll container is allowed to "pass over" possible snap positions.
-   *
-   * **Initial value**: `normal`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **69** |   No    |   No   |  No  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
-   */
-  scrollSnapStop?: ScrollSnapStopProperty;
-  /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
    * **Initial value**: `none`
@@ -3181,7 +3236,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-width
    */
-  scrollbarWidth?: ScrollbarWidthProperty<TLength>;
+  scrollbarWidth?: ScrollbarWidthProperty;
   /**
    * The **`shape-image-threshold`** CSS property sets the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
    *
@@ -3213,7 +3268,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** | **62**  | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -4141,6 +4196,17 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   maskBorder?: MaskBorderProperty;
   motion?: GlobalsString;
+  /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
+   * |    Chrome     | Firefox | Safari | Edge | IE  |
+   * | :-----------: | :-----: | :----: | :--: | :-: |
+   * |    **55**     |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
+  offset?: OffsetProperty<TLength>;
   /**
    * The **`outline`** CSS property is a shorthand to set various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
    *
@@ -8661,6 +8727,19 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
   "mix-blend-mode"?: MixBlendModeProperty;
+  /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
+   * **Initial value**: `0`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **55**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
+  "motion-distance"?: OffsetDistanceProperty<TLength>;
   /** **Initial value**: `<code>0</code>` */
   "motion-offset"?: GlobalsString;
   /** **Initial value**: `<code>none</code>` */
@@ -8692,7 +8771,61 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "object-position"?: ObjectPositionProperty<TLength>;
   /** **Initial value**: `auto` */
+  "offset-anchor"?: OffsetAnchorProperty<TLength>;
+  /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
+   * **Initial value**: `0`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **55**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
+  "offset-distance"?: OffsetDistanceProperty<TLength>;
+  /**
+   * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
+   *
+   * **Initial value**: `none`
+   *
+   * |       Chrome       | Firefox | Safari | Edge | IE  |
+   * | :----------------: | :-----: | :----: | :--: | :-: |
+   * |       **55**       |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
+  "offset-path"?: OffsetPathProperty;
+  /** **Initial value**: `auto` */
   "offset-position"?: OffsetPositionProperty<TLength>;
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  "offset-rotate"?: OffsetRotateProperty;
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  "offset-rotation"?: OffsetRotateProperty;
   /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
@@ -8821,10 +8954,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * |       Chrome        |      Firefox      |       Safari        |       Edge       |          IE           |
-   * | :-----------------: | :---------------: | :-----------------: | :--------------: | :-------------------: |
-   * | **1** _(word-wrap)_ |      **49**       | **1** _(word-wrap)_ |      **18**      | **5.5** _(word-wrap)_ |
-   * |                     | 3.5 _(word-wrap)_ |                     | 12 _(word-wrap)_ |                       |
+   * |     Chrome      |      Firefox      |     Safari      |       Edge       |          IE           |
+   * | :-------------: | :---------------: | :-------------: | :--------------: | :-------------------: |
+   * |     **23**      |      **49**       |     **6.1**     |      **18**      | **5.5** _(word-wrap)_ |
+   * | 1 _(word-wrap)_ | 3.5 _(word-wrap)_ | 1 _(word-wrap)_ | 12 _(word-wrap)_ |                       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
    */
@@ -9239,7 +9372,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   | **36**  |   No   |  No  | No  |
+   * | **61** | **36**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -9515,18 +9648,6 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "scroll-snap-align"?: ScrollSnapAlignProperty;
   /**
-   * The **`scroll-snap-stop`** CSS property defines whether the scroll container is allowed to "pass over" possible snap positions.
-   *
-   * **Initial value**: `normal`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **69** |   No    |   No   |  No  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
-   */
-  "scroll-snap-stop"?: ScrollSnapStopProperty;
-  /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
    * **Initial value**: `none`
@@ -9562,7 +9683,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-width
    */
-  "scrollbar-width"?: ScrollbarWidthProperty<TLength>;
+  "scrollbar-width"?: ScrollbarWidthProperty;
   /**
    * The **`shape-image-threshold`** CSS property sets the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
    *
@@ -9594,7 +9715,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** | **62**  | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -10522,6 +10643,17 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   "mask-border"?: MaskBorderProperty;
   motion?: GlobalsString;
+  /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
+   * |    Chrome     | Firefox | Safari | Edge | IE  |
+   * | :-----------: | :-----: | :----: | :--: | :-: |
+   * |    **55**     |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
+  offset?: OffsetProperty<TLength>;
   /**
    * The **`outline`** CSS property is a shorthand to set various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
    *
@@ -15046,6 +15178,19 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
+  /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
+   * **Initial value**: `0`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **55**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
+  motionDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /** **Initial value**: `<code>0</code>` */
   motionOffset?: GlobalsString | GlobalsString[];
   /** **Initial value**: `<code>none</code>` */
@@ -15077,7 +15222,61 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   /** **Initial value**: `auto` */
+  offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
+  /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
+   * **Initial value**: `0`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **55**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
+  offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  /**
+   * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
+   *
+   * **Initial value**: `none`
+   *
+   * |       Chrome       | Firefox | Safari | Edge | IE  |
+   * | :----------------: | :-----: | :----: | :--: | :-: |
+   * |       **55**       |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
+  offsetPath?: OffsetPathProperty | OffsetPathProperty[];
+  /** **Initial value**: `auto` */
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[];
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  offsetRotation?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
@@ -15206,10 +15405,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * |       Chrome        |      Firefox      |       Safari        |       Edge       |          IE           |
-   * | :-----------------: | :---------------: | :-----------------: | :--------------: | :-------------------: |
-   * | **1** _(word-wrap)_ |      **49**       | **1** _(word-wrap)_ |      **18**      | **5.5** _(word-wrap)_ |
-   * |                     | 3.5 _(word-wrap)_ |                     | 12 _(word-wrap)_ |                       |
+   * |     Chrome      |      Firefox      |     Safari      |       Edge       |          IE           |
+   * | :-------------: | :---------------: | :-------------: | :--------------: | :-------------------: |
+   * |     **23**      |      **49**       |     **6.1**     |      **18**      | **5.5** _(word-wrap)_ |
+   * | 1 _(word-wrap)_ | 3.5 _(word-wrap)_ | 1 _(word-wrap)_ | 12 _(word-wrap)_ |                       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
    */
@@ -15624,7 +15823,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   | **36**  |   No   |  No  | No  |
+   * | **61** | **36**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -15900,18 +16099,6 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   scrollSnapAlign?: ScrollSnapAlignProperty | ScrollSnapAlignProperty[];
   /**
-   * The **`scroll-snap-stop`** CSS property defines whether the scroll container is allowed to "pass over" possible snap positions.
-   *
-   * **Initial value**: `normal`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **69** |   No    |   No   |  No  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
-   */
-  scrollSnapStop?: ScrollSnapStopProperty | ScrollSnapStopProperty[];
-  /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
    * **Initial value**: `none`
@@ -15947,7 +16134,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-width
    */
-  scrollbarWidth?: ScrollbarWidthProperty<TLength> | ScrollbarWidthProperty<TLength>[];
+  scrollbarWidth?: ScrollbarWidthProperty | ScrollbarWidthProperty[];
   /**
    * The **`shape-image-threshold`** CSS property sets the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
    *
@@ -15979,7 +16166,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** | **62**  | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -16907,6 +17094,17 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   maskBorder?: MaskBorderProperty | MaskBorderProperty[];
   motion?: GlobalsString | GlobalsString[];
+  /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
+   * |    Chrome     | Firefox | Safari | Edge | IE  |
+   * | :-----------: | :-----: | :----: | :--: | :-: |
+   * |    **55**     |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
+  offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
    * The **`outline`** CSS property is a shorthand to set various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
    *
@@ -21431,6 +21629,19 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[];
+  /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
+   * **Initial value**: `0`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **55**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
+  "motion-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
   /** **Initial value**: `<code>0</code>` */
   "motion-offset"?: GlobalsString | GlobalsString[];
   /** **Initial value**: `<code>none</code>` */
@@ -21462,7 +21673,61 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[];
   /** **Initial value**: `auto` */
+  "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
+  /**
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   *
+   * **Initial value**: `0`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **55**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-distance)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
+   */
+  "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
+  /**
+   * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
+   *
+   * **Initial value**: `none`
+   *
+   * |       Chrome       | Firefox | Safari | Edge | IE  |
+   * | :----------------: | :-----: | :----: | :--: | :-: |
+   * |       **55**       |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
+  "offset-path"?: OffsetPathProperty | OffsetPathProperty[];
+  /** **Initial value**: `auto` */
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[];
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  "offset-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
@@ -21591,10 +21856,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
-   * |       Chrome        |      Firefox      |       Safari        |       Edge       |          IE           |
-   * | :-----------------: | :---------------: | :-----------------: | :--------------: | :-------------------: |
-   * | **1** _(word-wrap)_ |      **49**       | **1** _(word-wrap)_ |      **18**      | **5.5** _(word-wrap)_ |
-   * |                     | 3.5 _(word-wrap)_ |                     | 12 _(word-wrap)_ |                       |
+   * |     Chrome      |      Firefox      |     Safari      |       Edge       |          IE           |
+   * | :-------------: | :---------------: | :-------------: | :--------------: | :-------------------: |
+   * |     **23**      |      **49**       |     **6.1**     |      **18**      | **5.5** _(word-wrap)_ |
+   * | 1 _(word-wrap)_ | 3.5 _(word-wrap)_ | 1 _(word-wrap)_ | 12 _(word-wrap)_ |                       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
    */
@@ -22009,7 +22274,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   | **36**  |   No   |  No  | No  |
+   * | **61** | **36**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -22285,18 +22550,6 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "scroll-snap-align"?: ScrollSnapAlignProperty | ScrollSnapAlignProperty[];
   /**
-   * The **`scroll-snap-stop`** CSS property defines whether the scroll container is allowed to "pass over" possible snap positions.
-   *
-   * **Initial value**: `normal`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **69** |   No    |   No   |  No  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
-   */
-  "scroll-snap-stop"?: ScrollSnapStopProperty | ScrollSnapStopProperty[];
-  /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
    * **Initial value**: `none`
@@ -22332,7 +22585,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-width
    */
-  "scrollbar-width"?: ScrollbarWidthProperty<TLength> | ScrollbarWidthProperty<TLength>[];
+  "scrollbar-width"?: ScrollbarWidthProperty | ScrollbarWidthProperty[];
   /**
    * The **`shape-image-threshold`** CSS property sets the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
    *
@@ -22364,7 +22617,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
-   * | **37** | **62**  | **10.1** | n/a  | No  |
+   * | **37** | **62**  | **10.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-outside
    */
@@ -23292,6 +23545,17 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[];
   motion?: GlobalsString | GlobalsString[];
+  /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
+   * |    Chrome     | Firefox | Safari | Edge | IE  |
+   * | :-----------: | :-----: | :----: | :--: | :-: |
+   * |    **55**     |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
+  offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
    * The **`outline`** CSS property is a shorthand to set various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
    *
@@ -25802,7 +26066,6 @@ export type AdvancedPseudos =
 export type SimplePseudos =
   | ":-moz-any-link"
   | ":-moz-full-screen"
-  | ":-moz-only-whitespace"
   | ":-moz-placeholder"
   | ":-moz-read-only"
   | ":-moz-read-write"
@@ -26053,6 +26316,7 @@ export type HtmlAttributes =
   | "[prompt]"
   | "[radiogroup]"
   | "[readonly]"
+  | "[referrerPolicy]"
   | "[referrerpolicy]"
   | "[rel]"
   | "[required]"
@@ -26425,17 +26689,17 @@ export type BorderBlockEndProperty<TLength> = Globals | LineWidth<TLength> | Lin
 
 export type BorderBlockEndColorProperty = Globals | Color;
 
-export type BorderBlockEndStyleProperty = Globals | LineStyle | string;
+export type BorderBlockEndStyleProperty = Globals | LineStyle;
 
-export type BorderBlockEndWidthProperty<TLength> = Globals | LineWidth<TLength> | string;
+export type BorderBlockEndWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderBlockStartProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
 export type BorderBlockStartColorProperty = Globals | Color;
 
-export type BorderBlockStartStyleProperty = Globals | LineStyle | string;
+export type BorderBlockStartStyleProperty = Globals | LineStyle;
 
-export type BorderBlockStartWidthProperty<TLength> = Globals | LineWidth<TLength> | string;
+export type BorderBlockStartWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderBottomProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -26469,17 +26733,17 @@ export type BorderInlineEndProperty<TLength> = Globals | LineWidth<TLength> | Li
 
 export type BorderInlineEndColorProperty = Globals | Color;
 
-export type BorderInlineEndStyleProperty = Globals | LineStyle | string;
+export type BorderInlineEndStyleProperty = Globals | LineStyle;
 
-export type BorderInlineEndWidthProperty<TLength> = Globals | LineWidth<TLength> | string;
+export type BorderInlineEndWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderInlineStartProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
 export type BorderInlineStartColorProperty = Globals | Color;
 
-export type BorderInlineStartStyleProperty = Globals | LineStyle | string;
+export type BorderInlineStartStyleProperty = Globals | LineStyle;
 
-export type BorderInlineStartWidthProperty<TLength> = Globals | LineWidth<TLength> | string;
+export type BorderInlineStartWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderLeftProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -26903,13 +27167,23 @@ export type MinWidthProperty<TLength> = Globals | TLength | "auto" | "fill-avail
 
 export type MixBlendModeProperty = Globals | BlendMode;
 
+export type OffsetDistanceProperty<TLength> = Globals | TLength | string;
+
 export type MotionPathProperty = Globals | "none" | string;
 
 export type ObjectFitProperty = Globals | "contain" | "cover" | "fill" | "none" | "scale-down";
 
 export type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 
+export type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
+
+export type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
+
+export type OffsetPathProperty = Globals | GeometryBox | "none" | string;
+
 export type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
+
+export type OffsetRotateProperty = Globals | "auto" | "reverse" | string;
 
 export type OutlineProperty<TLength> = Globals | Color | LineStyle | LineWidth<TLength> | "auto" | "invert" | string;
 
@@ -26931,7 +27205,7 @@ export type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
 export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
-export type OverflowWrapProperty = Globals | "break-word" | "normal";
+export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
 
 export type OverflowXProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
@@ -27053,8 +27327,6 @@ export type ScrollSnapPointsXProperty = Globals | "none" | string;
 
 export type ScrollSnapPointsYProperty = Globals | "none" | string;
 
-export type ScrollSnapStopProperty = Globals | "always" | "normal";
-
 export type ScrollSnapTypeProperty = Globals | "none" | string;
 
 export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximity";
@@ -27063,7 +27335,7 @@ export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximit
 
 export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light";
 
-export type ScrollbarWidthProperty<TLength> = Globals | TLength | "auto" | "none" | "thin";
+export type ScrollbarWidthProperty = Globals | "auto" | "none" | "thin";
 
 export type ShapeMarginProperty<TLength> = Globals | TLength | string;
 

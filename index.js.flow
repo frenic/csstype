@@ -183,12 +183,18 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   minInlineSize?: MinInlineSizeProperty<TLength>,
   minWidth?: MinWidthProperty<TLength>,
   mixBlendMode?: MixBlendModeProperty,
+  motionDistance?: OffsetDistanceProperty<TLength>,
   motionOffset?: GlobalsString,
   motionPath?: MotionPathProperty,
   motionRotation?: GlobalsString,
   objectFit?: ObjectFitProperty,
   objectPosition?: ObjectPositionProperty<TLength>,
+  offsetAnchor?: OffsetAnchorProperty<TLength>,
+  offsetDistance?: OffsetDistanceProperty<TLength>,
+  offsetPath?: OffsetPathProperty,
   offsetPosition?: OffsetPositionProperty<TLength>,
+  offsetRotate?: OffsetRotateProperty,
+  offsetRotation?: OffsetRotateProperty,
   opacity?: GlobalsNumber,
   order?: GlobalsNumber,
   orphans?: GlobalsNumber,
@@ -256,10 +262,9 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   scrollPaddingRight?: ScrollPaddingRightProperty<TLength>,
   scrollPaddingTop?: ScrollPaddingTopProperty<TLength>,
   scrollSnapAlign?: ScrollSnapAlignProperty,
-  scrollSnapStop?: ScrollSnapStopProperty,
   scrollSnapType?: ScrollSnapTypeProperty,
   scrollbarColor?: ScrollbarColorProperty,
-  scrollbarWidth?: ScrollbarWidthProperty<TLength>,
+  scrollbarWidth?: ScrollbarWidthProperty,
   shapeImageThreshold?: GlobalsNumber,
   shapeMargin?: ShapeMarginProperty<TLength>,
   shapeOutside?: ShapeOutsideProperty,
@@ -347,6 +352,7 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   mask?: MaskProperty<TLength>,
   maskBorder?: MaskBorderProperty,
   motion?: GlobalsString,
+  offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
   padding?: PaddingProperty<TLength>,
   placeItems?: PlaceItemsProperty,
@@ -953,12 +959,18 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "min-inline-size"?: MinInlineSizeProperty<TLength>,
   "min-width"?: MinWidthProperty<TLength>,
   "mix-blend-mode"?: MixBlendModeProperty,
+  "motion-distance"?: OffsetDistanceProperty<TLength>,
   "motion-offset"?: GlobalsString,
   "motion-path"?: MotionPathProperty,
   "motion-rotation"?: GlobalsString,
   "object-fit"?: ObjectFitProperty,
   "object-position"?: ObjectPositionProperty<TLength>,
+  "offset-anchor"?: OffsetAnchorProperty<TLength>,
+  "offset-distance"?: OffsetDistanceProperty<TLength>,
+  "offset-path"?: OffsetPathProperty,
   "offset-position"?: OffsetPositionProperty<TLength>,
+  "offset-rotate"?: OffsetRotateProperty,
+  "offset-rotation"?: OffsetRotateProperty,
   opacity?: GlobalsNumber,
   order?: GlobalsNumber,
   orphans?: GlobalsNumber,
@@ -1026,10 +1038,9 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "scroll-padding-right"?: ScrollPaddingRightProperty<TLength>,
   "scroll-padding-top"?: ScrollPaddingTopProperty<TLength>,
   "scroll-snap-align"?: ScrollSnapAlignProperty,
-  "scroll-snap-stop"?: ScrollSnapStopProperty,
   "scroll-snap-type"?: ScrollSnapTypeProperty,
   "scrollbar-color"?: ScrollbarColorProperty,
-  "scrollbar-width"?: ScrollbarWidthProperty<TLength>,
+  "scrollbar-width"?: ScrollbarWidthProperty,
   "shape-image-threshold"?: GlobalsNumber,
   "shape-margin"?: ShapeMarginProperty<TLength>,
   "shape-outside"?: ShapeOutsideProperty,
@@ -1117,6 +1128,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   mask?: MaskProperty<TLength>,
   "mask-border"?: MaskBorderProperty,
   motion?: GlobalsString,
+  offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
   padding?: PaddingProperty<TLength>,
   "place-items"?: PlaceItemsProperty,
@@ -1726,12 +1738,18 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   minInlineSize?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[],
   minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[],
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[],
+  motionDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
   motionOffset?: GlobalsString | GlobalsString[],
   motionPath?: MotionPathProperty | MotionPathProperty[],
   motionRotation?: GlobalsString | GlobalsString[],
   objectFit?: ObjectFitProperty | ObjectFitProperty[],
   objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[],
+  offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
+  offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
+  offsetPath?: OffsetPathProperty | OffsetPathProperty[],
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
+  offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[],
+  offsetRotation?: OffsetRotateProperty | OffsetRotateProperty[],
   opacity?: GlobalsNumber | GlobalsNumber[],
   order?: GlobalsNumber | GlobalsNumber[],
   orphans?: GlobalsNumber | GlobalsNumber[],
@@ -1799,10 +1817,9 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   scrollPaddingRight?: ScrollPaddingRightProperty<TLength> | ScrollPaddingRightProperty<TLength>[],
   scrollPaddingTop?: ScrollPaddingTopProperty<TLength> | ScrollPaddingTopProperty<TLength>[],
   scrollSnapAlign?: ScrollSnapAlignProperty | ScrollSnapAlignProperty[],
-  scrollSnapStop?: ScrollSnapStopProperty | ScrollSnapStopProperty[],
   scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   scrollbarColor?: ScrollbarColorProperty | ScrollbarColorProperty[],
-  scrollbarWidth?: ScrollbarWidthProperty<TLength> | ScrollbarWidthProperty<TLength>[],
+  scrollbarWidth?: ScrollbarWidthProperty | ScrollbarWidthProperty[],
   shapeImageThreshold?: GlobalsNumber | GlobalsNumber[],
   shapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
   shapeOutside?: ShapeOutsideProperty | ShapeOutsideProperty[],
@@ -1890,6 +1907,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
   maskBorder?: MaskBorderProperty | MaskBorderProperty[],
   motion?: GlobalsString | GlobalsString[],
+  offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   placeItems?: PlaceItemsProperty | PlaceItemsProperty[],
@@ -2499,12 +2517,18 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "min-inline-size"?: MinInlineSizeProperty<TLength> | MinInlineSizeProperty<TLength>[],
   "min-width"?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[],
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[],
+  "motion-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
   "motion-offset"?: GlobalsString | GlobalsString[],
   "motion-path"?: MotionPathProperty | MotionPathProperty[],
   "motion-rotation"?: GlobalsString | GlobalsString[],
   "object-fit"?: ObjectFitProperty | ObjectFitProperty[],
   "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[],
+  "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
+  "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
+  "offset-path"?: OffsetPathProperty | OffsetPathProperty[],
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
+  "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[],
+  "offset-rotation"?: OffsetRotateProperty | OffsetRotateProperty[],
   opacity?: GlobalsNumber | GlobalsNumber[],
   order?: GlobalsNumber | GlobalsNumber[],
   orphans?: GlobalsNumber | GlobalsNumber[],
@@ -2572,10 +2596,9 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "scroll-padding-right"?: ScrollPaddingRightProperty<TLength> | ScrollPaddingRightProperty<TLength>[],
   "scroll-padding-top"?: ScrollPaddingTopProperty<TLength> | ScrollPaddingTopProperty<TLength>[],
   "scroll-snap-align"?: ScrollSnapAlignProperty | ScrollSnapAlignProperty[],
-  "scroll-snap-stop"?: ScrollSnapStopProperty | ScrollSnapStopProperty[],
   "scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   "scrollbar-color"?: ScrollbarColorProperty | ScrollbarColorProperty[],
-  "scrollbar-width"?: ScrollbarWidthProperty<TLength> | ScrollbarWidthProperty<TLength>[],
+  "scrollbar-width"?: ScrollbarWidthProperty | ScrollbarWidthProperty[],
   "shape-image-threshold"?: GlobalsNumber | GlobalsNumber[],
   "shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
   "shape-outside"?: ShapeOutsideProperty | ShapeOutsideProperty[],
@@ -2663,6 +2686,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[],
   motion?: GlobalsString | GlobalsString[],
+  offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   "place-items"?: PlaceItemsProperty | PlaceItemsProperty[],
@@ -3354,7 +3378,6 @@ export type AdvancedPseudos =
 export type SimplePseudos =
   | ":-moz-any-link"
   | ":-moz-full-screen"
-  | ":-moz-only-whitespace"
   | ":-moz-placeholder"
   | ":-moz-read-only"
   | ":-moz-read-write"
@@ -3605,6 +3628,7 @@ export type HtmlAttributes =
   | "[prompt]"
   | "[radiogroup]"
   | "[readonly]"
+  | "[referrerPolicy]"
   | "[referrerpolicy]"
   | "[rel]"
   | "[required]"
@@ -3977,17 +4001,17 @@ export type BorderBlockEndProperty<TLength> = Globals | LineWidth<TLength> | Lin
 
 export type BorderBlockEndColorProperty = Globals | Color;
 
-export type BorderBlockEndStyleProperty = Globals | LineStyle | string;
+export type BorderBlockEndStyleProperty = Globals | LineStyle;
 
-export type BorderBlockEndWidthProperty<TLength> = Globals | LineWidth<TLength> | string;
+export type BorderBlockEndWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderBlockStartProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
 export type BorderBlockStartColorProperty = Globals | Color;
 
-export type BorderBlockStartStyleProperty = Globals | LineStyle | string;
+export type BorderBlockStartStyleProperty = Globals | LineStyle;
 
-export type BorderBlockStartWidthProperty<TLength> = Globals | LineWidth<TLength> | string;
+export type BorderBlockStartWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderBottomProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -4021,17 +4045,17 @@ export type BorderInlineEndProperty<TLength> = Globals | LineWidth<TLength> | Li
 
 export type BorderInlineEndColorProperty = Globals | Color;
 
-export type BorderInlineEndStyleProperty = Globals | LineStyle | string;
+export type BorderInlineEndStyleProperty = Globals | LineStyle;
 
-export type BorderInlineEndWidthProperty<TLength> = Globals | LineWidth<TLength> | string;
+export type BorderInlineEndWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderInlineStartProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
 export type BorderInlineStartColorProperty = Globals | Color;
 
-export type BorderInlineStartStyleProperty = Globals | LineStyle | string;
+export type BorderInlineStartStyleProperty = Globals | LineStyle;
 
-export type BorderInlineStartWidthProperty<TLength> = Globals | LineWidth<TLength> | string;
+export type BorderInlineStartWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderLeftProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -4455,13 +4479,23 @@ export type MinWidthProperty<TLength> = Globals | TLength | "auto" | "fill-avail
 
 export type MixBlendModeProperty = Globals | BlendMode;
 
+export type OffsetDistanceProperty<TLength> = Globals | TLength | string;
+
 export type MotionPathProperty = Globals | "none" | string;
 
 export type ObjectFitProperty = Globals | "contain" | "cover" | "fill" | "none" | "scale-down";
 
 export type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 
+export type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
+
+export type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
+
+export type OffsetPathProperty = Globals | GeometryBox | "none" | string;
+
 export type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
+
+export type OffsetRotateProperty = Globals | "auto" | "reverse" | string;
 
 export type OutlineProperty<TLength> = Globals | Color | LineStyle | LineWidth<TLength> | "auto" | "invert" | string;
 
@@ -4483,7 +4517,7 @@ export type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
 export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
-export type OverflowWrapProperty = Globals | "break-word" | "normal";
+export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
 
 export type OverflowXProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
@@ -4605,8 +4639,6 @@ export type ScrollSnapPointsXProperty = Globals | "none" | string;
 
 export type ScrollSnapPointsYProperty = Globals | "none" | string;
 
-export type ScrollSnapStopProperty = Globals | "always" | "normal";
-
 export type ScrollSnapTypeProperty = Globals | "none" | string;
 
 export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximity";
@@ -4615,7 +4647,7 @@ export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximit
 
 export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light";
 
-export type ScrollbarWidthProperty<TLength> = Globals | TLength | "auto" | "none" | "thin";
+export type ScrollbarWidthProperty = Globals | "auto" | "none" | "thin";
 
 export type ShapeMarginProperty<TLength> = Globals | TLength | string;
 
