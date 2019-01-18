@@ -29,7 +29,7 @@ const REGEX_VENDOR_PROPERTY = /^-/;
 interface IProperty {
   name: string;
   vendor: boolean;
-  shorthand: boolean;
+  shorthand?: boolean;
   obsolete: boolean;
   comment: string | null;
   types: ResolvedType[];

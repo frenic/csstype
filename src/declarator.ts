@@ -1,9 +1,9 @@
 import { getAtRules } from './at-rules';
+import { getHtmlAttributes, getSvgAttributes } from './attributes';
 import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
 import dataTypes from './data-types';
 import { globals, htmlProperties, isVendorProperty, svgProperties } from './properties';
 import { getPseudos } from './selectors';
-import { getHtmlAttributes, getSvgAttributes } from './attributes';
 import { IDataType, Type, TypeType } from './typer';
 
 export interface IAlias {

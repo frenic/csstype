@@ -217,12 +217,12 @@ export function alternativeSelectors(selector: string): string[] {
   return alternatives;
 }
 
-export function alternativeAttributes(name: string, compat: MDN.CompatData): string[] {
+export function alternativeAttributes(name: string, data: MDN.CompatData): string[] {
   const alternatives: string[] = [];
-  const compats = getCompats(compat);
+  const compats = getCompats(data);
 
   for (const compat of compats) {
-    for (let browser in compat.support) {
+    for (const browser in compat.support) {
       const support = (compat.support as any)[browser];
 
       for (const version of getSupport(support)) {

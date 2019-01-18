@@ -1,5 +1,5 @@
-import * as rawGlobalAttributes from 'mdn-browser-compat-data/html/global_attributes.json';
 import * as glob from 'fast-glob';
+import * as rawGlobalAttributes from 'mdn-browser-compat-data/html/global_attributes.json';
 import { alternativeAttributes } from './compat';
 import { addType, ResolvedType, Type } from './typer';
 
