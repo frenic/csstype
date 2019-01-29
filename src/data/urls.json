@@ -438,5 +438,6 @@
   "https://developer.mozilla.org/docs/Web/CSS/z-index": "The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.",
   "https://developer.mozilla.org/docs/Web/CSS/zoom": "The non-standard **`zoom`** CSS property can be used to control the magnification level of an element. `transform: scale()` should be used instead of this property, if possible. However, unlike CSS Transforms, `zoom` affects the layout size of the element.",
   "https://developer.mozilla.org/docs/Web/CSS/line-height-step": "The **`line-height-step`** CSS property sets the step unit for line box heights. When the property is set, line box heights are rounded up to the closest multiple of the unit.",
-  "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop": "The **`scroll-snap-stop`** CSS property defines whether the scroll container is allowed to \"pass over\" possible snap positions."
+  "https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop": "The **`scroll-snap-stop`** CSS property defines whether the scroll container is allowed to \"pass over\" possible snap positions.",
+  "https://developer.mozilla.org/docs/Web/CSS/place-self": "The **`place-self`** CSS property is a shorthand property sets both the `align-self` and `justify-self` properties. The first value is the `align-self` property value, the second the `justify-self` one. If the second value is not present, the first value is also used for it."
 }

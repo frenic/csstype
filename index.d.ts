@@ -861,9 +861,31 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
@@ -873,9 +895,23 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
    */
@@ -2293,12 +2329,32 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
    */
   motionDistance?: OffsetDistanceProperty<TLength>;
-  /** **Initial value**: `<code>0</code>` */
-  motionOffset?: GlobalsString;
-  /** **Initial value**: `<code>none</code>` */
-  motionPath?: MotionPathProperty;
-  /** **Initial value**: `<code>auto</code>` */
-  motionRotation?: GlobalsString;
+  /**
+   * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
+   *
+   * **Initial value**: `none`
+   *
+   * |       Chrome       | Firefox | Safari | Edge | IE  |
+   * | :----------------: | :-----: | :----: | :--: | :-: |
+   * |       **55**       |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
+  motionPath?: OffsetPathProperty;
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  motionRotation?: OffsetRotateProperty;
   /**
    * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
@@ -4195,7 +4251,17 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   mask?: MaskProperty<TLength>;
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   maskBorder?: MaskBorderProperty;
-  motion?: GlobalsString;
+  /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
+   * |    Chrome     | Firefox | Safari | Edge | IE  |
+   * | :-----------: | :-----: | :----: | :--: | :-: |
+   * |    **55**     |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
+  motion?: OffsetProperty<TLength>;
   /**
    * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
@@ -4251,6 +4317,30 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/place-items
    */
   placeItems?: PlaceItemsProperty;
+  /**
+   * The **`place-self`** CSS property is a shorthand property sets both the `align-self` and `justify-self` properties. The first value is the `align-self` property value, the second the `justify-self` one. If the second value is not present, the first value is also used for it.
+   *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  |   No   | n/a  | n/a |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  |   No   | n/a  | n/a |
+   *
+   * ---
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-self
+   */
+  placeSelf?: PlaceSelfProperty;
   /**
    * The **`text-decoration`** CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
    *
@@ -7308,9 +7398,31 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
@@ -7320,9 +7432,23 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
    */
@@ -8740,12 +8866,32 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
    */
   "motion-distance"?: OffsetDistanceProperty<TLength>;
-  /** **Initial value**: `<code>0</code>` */
-  "motion-offset"?: GlobalsString;
-  /** **Initial value**: `<code>none</code>` */
-  "motion-path"?: MotionPathProperty;
-  /** **Initial value**: `<code>auto</code>` */
-  "motion-rotation"?: GlobalsString;
+  /**
+   * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
+   *
+   * **Initial value**: `none`
+   *
+   * |       Chrome       | Firefox | Safari | Edge | IE  |
+   * | :----------------: | :-----: | :----: | :--: | :-: |
+   * |       **55**       |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
+  "motion-path"?: OffsetPathProperty;
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  "motion-rotation"?: OffsetRotateProperty;
   /**
    * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
@@ -10642,7 +10788,17 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   mask?: MaskProperty<TLength>;
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   "mask-border"?: MaskBorderProperty;
-  motion?: GlobalsString;
+  /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
+   * |    Chrome     | Firefox | Safari | Edge | IE  |
+   * | :-----------: | :-----: | :----: | :--: | :-: |
+   * |    **55**     |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
+  motion?: OffsetProperty<TLength>;
   /**
    * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
@@ -10698,6 +10854,30 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/place-items
    */
   "place-items"?: PlaceItemsProperty;
+  /**
+   * The **`place-self`** CSS property is a shorthand property sets both the `align-self` and `justify-self` properties. The first value is the `align-self` property value, the second the `justify-self` one. If the second value is not present, the first value is also used for it.
+   *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  |   No   | n/a  | n/a |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  |   No   | n/a  | n/a |
+   *
+   * ---
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-self
+   */
+  "place-self"?: PlaceSelfProperty;
   /**
    * The **`text-decoration`** CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
    *
@@ -13759,9 +13939,31 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
@@ -13771,9 +13973,23 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
    */
@@ -15191,12 +15407,32 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
    */
   motionDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
-  /** **Initial value**: `<code>0</code>` */
-  motionOffset?: GlobalsString | GlobalsString[];
-  /** **Initial value**: `<code>none</code>` */
-  motionPath?: MotionPathProperty | MotionPathProperty[];
-  /** **Initial value**: `<code>auto</code>` */
-  motionRotation?: GlobalsString | GlobalsString[];
+  /**
+   * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
+   *
+   * **Initial value**: `none`
+   *
+   * |       Chrome       | Firefox | Safari | Edge | IE  |
+   * | :----------------: | :-----: | :----: | :--: | :-: |
+   * |       **55**       |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
+  motionPath?: OffsetPathProperty | OffsetPathProperty[];
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  motionRotation?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
    * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
@@ -17093,7 +17329,17 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   maskBorder?: MaskBorderProperty | MaskBorderProperty[];
-  motion?: GlobalsString | GlobalsString[];
+  /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
+   * |    Chrome     | Firefox | Safari | Edge | IE  |
+   * | :-----------: | :-----: | :----: | :--: | :-: |
+   * |    **55**     |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
+  motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
    * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
@@ -17149,6 +17395,30 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/place-items
    */
   placeItems?: PlaceItemsProperty | PlaceItemsProperty[];
+  /**
+   * The **`place-self`** CSS property is a shorthand property sets both the `align-self` and `justify-self` properties. The first value is the `align-self` property value, the second the `justify-self` one. If the second value is not present, the first value is also used for it.
+   *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  |   No   | n/a  | n/a |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  |   No   | n/a  | n/a |
+   *
+   * ---
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-self
+   */
+  placeSelf?: PlaceSelfProperty | PlaceSelfProperty[];
   /**
    * The **`text-decoration`** CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
    *
@@ -20210,9 +20480,31 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
@@ -20222,9 +20514,23 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
    */
@@ -21642,12 +21948,32 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/offset-distance
    */
   "motion-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[];
-  /** **Initial value**: `<code>0</code>` */
-  "motion-offset"?: GlobalsString | GlobalsString[];
-  /** **Initial value**: `<code>none</code>` */
-  "motion-path"?: MotionPathProperty | MotionPathProperty[];
-  /** **Initial value**: `<code>auto</code>` */
-  "motion-rotation"?: GlobalsString | GlobalsString[];
+  /**
+   * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
+   *
+   * **Initial value**: `none`
+   *
+   * |       Chrome       | Firefox | Safari | Edge | IE  |
+   * | :----------------: | :-----: | :----: | :--: | :-: |
+   * |       **55**       |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-path)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-path
+   */
+  "motion-path"?: OffsetPathProperty | OffsetPathProperty[];
+  /**
+   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   *
+   * **Initial value**: `auto`
+   *
+   * |         Chrome         | Firefox | Safari | Edge | IE  |
+   * | :--------------------: | :-----: | :----: | :--: | :-: |
+   * |         **56**         |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion-rotation)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset-rotate
+   */
+  "motion-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
    * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
@@ -23544,7 +23870,17 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[];
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[];
-  motion?: GlobalsString | GlobalsString[];
+  /**
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   *
+   * |    Chrome     | Firefox | Safari | Edge | IE  |
+   * | :-----------: | :-----: | :----: | :--: | :-: |
+   * |    **55**     |   n/a   |  n/a   | n/a  | n/a |
+   * | 46 _(motion)_ |         |        |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/offset
+   */
+  motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
    * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
    *
@@ -23600,6 +23936,30 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    * @see https://developer.mozilla.org/docs/Web/CSS/place-items
    */
   "place-items"?: PlaceItemsProperty | PlaceItemsProperty[];
+  /**
+   * The **`place-self`** CSS property is a shorthand property sets both the `align-self` and `justify-self` properties. The first value is the `align-self` property value, the second the `justify-self` one. If the second value is not present, the first value is also used for it.
+   *
+   * ---
+   *
+   * _Supported in Flex Layout_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  |   No   | n/a  | n/a |
+   *
+   * ---
+   *
+   * _Supported in Grid Layout_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  |   No   | n/a  | n/a |
+   *
+   * ---
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-self
+   */
+  "place-self"?: PlaceSelfProperty | PlaceSelfProperty[];
   /**
    * The **`text-decoration`** CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
    *
@@ -27167,23 +27527,21 @@ export type MinWidthProperty<TLength> = Globals | TLength | "auto" | "fill-avail
 
 export type MixBlendModeProperty = Globals | BlendMode;
 
+export type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
+
 export type OffsetDistanceProperty<TLength> = Globals | TLength | string;
 
-export type MotionPathProperty = Globals | "none" | string;
+export type OffsetPathProperty = Globals | GeometryBox | "none" | string;
+
+export type OffsetRotateProperty = Globals | "auto" | "reverse" | string;
 
 export type ObjectFitProperty = Globals | "contain" | "cover" | "fill" | "none" | "scale-down";
 
 export type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 
-export type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
-
 export type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
 
-export type OffsetPathProperty = Globals | GeometryBox | "none" | string;
-
 export type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
-
-export type OffsetRotateProperty = Globals | "auto" | "reverse" | string;
 
 export type OutlineProperty<TLength> = Globals | Color | LineStyle | LineWidth<TLength> | "auto" | "invert" | string;
 
@@ -27250,6 +27608,8 @@ export type PerspectiveOriginProperty<TLength> = Globals | Position<TLength>;
 export type PlaceContentProperty = Globals | ContentDistribution | ContentPosition | "baseline" | "normal" | string;
 
 export type PlaceItemsProperty = Globals | SelfPosition | "baseline" | "normal" | "stretch" | string;
+
+export type PlaceSelfProperty = Globals | SelfPosition | "auto" | "baseline" | "normal" | "stretch" | string;
 
 export type PointerEventsProperty = Globals | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
 

@@ -184,9 +184,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   minWidth?: MinWidthProperty<TLength>,
   mixBlendMode?: MixBlendModeProperty,
   motionDistance?: OffsetDistanceProperty<TLength>,
-  motionOffset?: GlobalsString,
-  motionPath?: MotionPathProperty,
-  motionRotation?: GlobalsString,
+  motionPath?: OffsetPathProperty,
+  motionRotation?: OffsetRotateProperty,
   objectFit?: ObjectFitProperty,
   objectPosition?: ObjectPositionProperty<TLength>,
   offsetAnchor?: OffsetAnchorProperty<TLength>,
@@ -351,11 +350,12 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   margin?: MarginProperty<TLength>,
   mask?: MaskProperty<TLength>,
   maskBorder?: MaskBorderProperty,
-  motion?: GlobalsString,
+  motion?: OffsetProperty<TLength>,
   offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
   padding?: PaddingProperty<TLength>,
   placeItems?: PlaceItemsProperty,
+  placeSelf?: PlaceSelfProperty,
   textDecoration?: TextDecorationProperty,
   textEmphasis?: TextEmphasisProperty,
   transition?: TransitionProperty,
@@ -960,9 +960,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "min-width"?: MinWidthProperty<TLength>,
   "mix-blend-mode"?: MixBlendModeProperty,
   "motion-distance"?: OffsetDistanceProperty<TLength>,
-  "motion-offset"?: GlobalsString,
-  "motion-path"?: MotionPathProperty,
-  "motion-rotation"?: GlobalsString,
+  "motion-path"?: OffsetPathProperty,
+  "motion-rotation"?: OffsetRotateProperty,
   "object-fit"?: ObjectFitProperty,
   "object-position"?: ObjectPositionProperty<TLength>,
   "offset-anchor"?: OffsetAnchorProperty<TLength>,
@@ -1127,11 +1126,12 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   margin?: MarginProperty<TLength>,
   mask?: MaskProperty<TLength>,
   "mask-border"?: MaskBorderProperty,
-  motion?: GlobalsString,
+  motion?: OffsetProperty<TLength>,
   offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
   padding?: PaddingProperty<TLength>,
   "place-items"?: PlaceItemsProperty,
+  "place-self"?: PlaceSelfProperty,
   "text-decoration"?: TextDecorationProperty,
   "text-emphasis"?: TextEmphasisProperty,
   transition?: TransitionProperty,
@@ -1739,9 +1739,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   minWidth?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[],
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[],
   motionDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
-  motionOffset?: GlobalsString | GlobalsString[],
-  motionPath?: MotionPathProperty | MotionPathProperty[],
-  motionRotation?: GlobalsString | GlobalsString[],
+  motionPath?: OffsetPathProperty | OffsetPathProperty[],
+  motionRotation?: OffsetRotateProperty | OffsetRotateProperty[],
   objectFit?: ObjectFitProperty | ObjectFitProperty[],
   objectPosition?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[],
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
@@ -1906,11 +1905,12 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[],
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
   maskBorder?: MaskBorderProperty | MaskBorderProperty[],
-  motion?: GlobalsString | GlobalsString[],
+  motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   placeItems?: PlaceItemsProperty | PlaceItemsProperty[],
+  placeSelf?: PlaceSelfProperty | PlaceSelfProperty[],
   textDecoration?: TextDecorationProperty | TextDecorationProperty[],
   textEmphasis?: TextEmphasisProperty | TextEmphasisProperty[],
   transition?: TransitionProperty | TransitionProperty[],
@@ -2518,9 +2518,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "min-width"?: MinWidthProperty<TLength> | MinWidthProperty<TLength>[],
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[],
   "motion-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
-  "motion-offset"?: GlobalsString | GlobalsString[],
-  "motion-path"?: MotionPathProperty | MotionPathProperty[],
-  "motion-rotation"?: GlobalsString | GlobalsString[],
+  "motion-path"?: OffsetPathProperty | OffsetPathProperty[],
+  "motion-rotation"?: OffsetRotateProperty | OffsetRotateProperty[],
   "object-fit"?: ObjectFitProperty | ObjectFitProperty[],
   "object-position"?: ObjectPositionProperty<TLength> | ObjectPositionProperty<TLength>[],
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
@@ -2685,11 +2684,12 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   margin?: MarginProperty<TLength> | MarginProperty<TLength>[],
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[],
-  motion?: GlobalsString | GlobalsString[],
+  motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   "place-items"?: PlaceItemsProperty | PlaceItemsProperty[],
+  "place-self"?: PlaceSelfProperty | PlaceSelfProperty[],
   "text-decoration"?: TextDecorationProperty | TextDecorationProperty[],
   "text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[],
   transition?: TransitionProperty | TransitionProperty[],
@@ -4479,23 +4479,21 @@ export type MinWidthProperty<TLength> = Globals | TLength | "auto" | "fill-avail
 
 export type MixBlendModeProperty = Globals | BlendMode;
 
+export type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
+
 export type OffsetDistanceProperty<TLength> = Globals | TLength | string;
 
-export type MotionPathProperty = Globals | "none" | string;
+export type OffsetPathProperty = Globals | GeometryBox | "none" | string;
+
+export type OffsetRotateProperty = Globals | "auto" | "reverse" | string;
 
 export type ObjectFitProperty = Globals | "contain" | "cover" | "fill" | "none" | "scale-down";
 
 export type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 
-export type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
-
 export type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
 
-export type OffsetPathProperty = Globals | GeometryBox | "none" | string;
-
 export type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
-
-export type OffsetRotateProperty = Globals | "auto" | "reverse" | string;
 
 export type OutlineProperty<TLength> = Globals | Color | LineStyle | LineWidth<TLength> | "auto" | "invert" | string;
 
@@ -4562,6 +4560,8 @@ export type PerspectiveOriginProperty<TLength> = Globals | Position<TLength>;
 export type PlaceContentProperty = Globals | ContentDistribution | ContentPosition | "baseline" | "normal" | string;
 
 export type PlaceItemsProperty = Globals | SelfPosition | "baseline" | "normal" | "stretch" | string;
+
+export type PlaceSelfProperty = Globals | SelfPosition | "auto" | "baseline" | "normal" | "stretch" | string;
 
 export type PointerEventsProperty = Globals | "all" | "auto" | "fill" | "inherit" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
 
