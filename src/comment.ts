@@ -51,8 +51,8 @@ export function composeCommentBlock(
   return rows.length > 1
     ? '/**\n * ' + rows.join('\n * ') + '\n */'
     : rows.length === 1
-      ? '/** ' + rows[0] + ' */'
-      : null;
+    ? '/** ' + rows[0] + ' */'
+    : null;
 }
 
 function getCompatRows(compatibilityData: MDN.CompatData) {
@@ -185,8 +185,8 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
           (supportsPrefixed.prefix
             ? ` _-x-_`
             : supportsPrefixed.alternative_name
-              ? ` _(${supportsPrefixed.alternative_name})_`
-              : ''),
+            ? ` _(${supportsPrefixed.alternative_name})_`
+            : ''),
       );
     }
 
