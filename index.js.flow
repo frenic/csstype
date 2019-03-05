@@ -27,29 +27,37 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   backgroundSize?: BackgroundSizeProperty<TLength>,
   blockOverflow?: BlockOverflowProperty,
   blockSize?: BlockSizeProperty<TLength>,
+  borderBlockColor?: BorderBlockColorProperty,
   borderBlockEndColor?: BorderBlockEndColorProperty,
   borderBlockEndStyle?: BorderBlockEndStyleProperty,
   borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength>,
   borderBlockStartColor?: BorderBlockStartColorProperty,
   borderBlockStartStyle?: BorderBlockStartStyleProperty,
   borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength>,
+  borderBlockStyle?: BorderBlockStyleProperty,
+  borderBlockWidth?: BorderBlockWidthProperty<TLength>,
   borderBottomColor?: BorderBottomColorProperty,
   borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength>,
   borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength>,
   borderBottomStyle?: BorderBottomStyleProperty,
   borderBottomWidth?: BorderBottomWidthProperty<TLength>,
   borderCollapse?: BorderCollapseProperty,
+  borderEndEndRadius?: BorderEndEndRadiusProperty<TLength>,
+  borderEndStartRadius?: BorderEndStartRadiusProperty<TLength>,
   borderImageOutset?: BorderImageOutsetProperty<TLength>,
   borderImageRepeat?: BorderImageRepeatProperty,
   borderImageSlice?: BorderImageSliceProperty,
   borderImageSource?: BorderImageSourceProperty,
   borderImageWidth?: BorderImageWidthProperty<TLength>,
+  borderInlineColor?: BorderInlineColorProperty,
   borderInlineEndColor?: BorderInlineEndColorProperty,
   borderInlineEndStyle?: BorderInlineEndStyleProperty,
   borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength>,
   borderInlineStartColor?: BorderInlineStartColorProperty,
   borderInlineStartStyle?: BorderInlineStartStyleProperty,
   borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength>,
+  borderInlineStyle?: BorderInlineStyleProperty,
+  borderInlineWidth?: BorderInlineWidthProperty<TLength>,
   borderLeftColor?: BorderLeftColorProperty,
   borderLeftStyle?: BorderLeftStyleProperty,
   borderLeftWidth?: BorderLeftWidthProperty<TLength>,
@@ -57,6 +65,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   borderRightStyle?: BorderRightStyleProperty,
   borderRightWidth?: BorderRightWidthProperty<TLength>,
   borderSpacing?: BorderSpacingProperty<TLength>,
+  borderStartEndRadius?: BorderStartEndRadiusProperty<TLength>,
+  borderStartStartRadius?: BorderStartStartRadiusProperty<TLength>,
   borderTopColor?: BorderTopColorProperty,
   borderTopLeftRadius?: BorderTopLeftRadiusProperty<TLength>,
   borderTopRightRadius?: BorderTopRightRadiusProperty<TLength>,
@@ -150,9 +160,11 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   listStyleImage?: ListStyleImageProperty,
   listStylePosition?: ListStylePositionProperty,
   listStyleType?: ListStyleTypeProperty,
+  marginBlock?: MarginBlockProperty<TLength>,
   marginBlockEnd?: MarginBlockEndProperty<TLength>,
   marginBlockStart?: MarginBlockStartProperty<TLength>,
   marginBottom?: MarginBottomProperty<TLength>,
+  marginInline?: MarginInlineProperty<TLength>,
   marginInlineEnd?: MarginInlineEndProperty<TLength>,
   marginInlineStart?: MarginInlineStartProperty<TLength>,
   marginLeft?: MarginLeftProperty<TLength>,
@@ -212,9 +224,11 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   overscrollBehavior?: OverscrollBehaviorProperty,
   overscrollBehaviorX?: OverscrollBehaviorXProperty,
   overscrollBehaviorY?: OverscrollBehaviorYProperty,
+  paddingBlock?: PaddingBlockProperty<TLength>,
   paddingBlockEnd?: PaddingBlockEndProperty<TLength>,
   paddingBlockStart?: PaddingBlockStartProperty<TLength>,
   paddingBottom?: PaddingBottomProperty<TLength>,
+  paddingInline?: PaddingInlineProperty<TLength>,
   paddingInlineEnd?: PaddingInlineEndProperty<TLength>,
   paddingInlineStart?: PaddingInlineStartProperty<TLength>,
   paddingLeft?: PaddingLeftProperty<TLength>,
@@ -321,11 +335,13 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   animation?: AnimationProperty,
   background?: BackgroundProperty<TLength>,
   border?: BorderProperty<TLength>,
+  borderBlock?: BorderBlockProperty<TLength>,
   borderBlockEnd?: BorderBlockEndProperty<TLength>,
   borderBlockStart?: BorderBlockStartProperty<TLength>,
   borderBottom?: BorderBottomProperty<TLength>,
   borderColor?: BorderColorProperty,
   borderImage?: BorderImageProperty,
+  borderInline?: BorderInlineProperty<TLength>,
   borderInlineEnd?: BorderInlineEndProperty<TLength>,
   borderInlineStart?: BorderInlineStartProperty<TLength>,
   borderLeft?: BorderLeftProperty<TLength>,
@@ -803,29 +819,37 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "background-size"?: BackgroundSizeProperty<TLength>,
   "block-overflow"?: BlockOverflowProperty,
   "block-size"?: BlockSizeProperty<TLength>,
+  "border-block-color"?: BorderBlockColorProperty,
   "border-block-end-color"?: BorderBlockEndColorProperty,
   "border-block-end-style"?: BorderBlockEndStyleProperty,
   "border-block-end-width"?: BorderBlockEndWidthProperty<TLength>,
   "border-block-start-color"?: BorderBlockStartColorProperty,
   "border-block-start-style"?: BorderBlockStartStyleProperty,
   "border-block-start-width"?: BorderBlockStartWidthProperty<TLength>,
+  "border-block-style"?: BorderBlockStyleProperty,
+  "border-block-width"?: BorderBlockWidthProperty<TLength>,
   "border-bottom-color"?: BorderBottomColorProperty,
   "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength>,
   "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength>,
   "border-bottom-style"?: BorderBottomStyleProperty,
   "border-bottom-width"?: BorderBottomWidthProperty<TLength>,
   "border-collapse"?: BorderCollapseProperty,
+  "border-end-end-radius"?: BorderEndEndRadiusProperty<TLength>,
+  "border-end-start-radius"?: BorderEndStartRadiusProperty<TLength>,
   "border-image-outset"?: BorderImageOutsetProperty<TLength>,
   "border-image-repeat"?: BorderImageRepeatProperty,
   "border-image-slice"?: BorderImageSliceProperty,
   "border-image-source"?: BorderImageSourceProperty,
   "border-image-width"?: BorderImageWidthProperty<TLength>,
+  "border-inline-color"?: BorderInlineColorProperty,
   "border-inline-end-color"?: BorderInlineEndColorProperty,
   "border-inline-end-style"?: BorderInlineEndStyleProperty,
   "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength>,
   "border-inline-start-color"?: BorderInlineStartColorProperty,
   "border-inline-start-style"?: BorderInlineStartStyleProperty,
   "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength>,
+  "border-inline-style"?: BorderInlineStyleProperty,
+  "border-inline-width"?: BorderInlineWidthProperty<TLength>,
   "border-left-color"?: BorderLeftColorProperty,
   "border-left-style"?: BorderLeftStyleProperty,
   "border-left-width"?: BorderLeftWidthProperty<TLength>,
@@ -833,6 +857,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "border-right-style"?: BorderRightStyleProperty,
   "border-right-width"?: BorderRightWidthProperty<TLength>,
   "border-spacing"?: BorderSpacingProperty<TLength>,
+  "border-start-end-radius"?: BorderStartEndRadiusProperty<TLength>,
+  "border-start-start-radius"?: BorderStartStartRadiusProperty<TLength>,
   "border-top-color"?: BorderTopColorProperty,
   "border-top-left-radius"?: BorderTopLeftRadiusProperty<TLength>,
   "border-top-right-radius"?: BorderTopRightRadiusProperty<TLength>,
@@ -926,9 +952,11 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "list-style-image"?: ListStyleImageProperty,
   "list-style-position"?: ListStylePositionProperty,
   "list-style-type"?: ListStyleTypeProperty,
+  "margin-block"?: MarginBlockProperty<TLength>,
   "margin-block-end"?: MarginBlockEndProperty<TLength>,
   "margin-block-start"?: MarginBlockStartProperty<TLength>,
   "margin-bottom"?: MarginBottomProperty<TLength>,
+  "margin-inline"?: MarginInlineProperty<TLength>,
   "margin-inline-end"?: MarginInlineEndProperty<TLength>,
   "margin-inline-start"?: MarginInlineStartProperty<TLength>,
   "margin-left"?: MarginLeftProperty<TLength>,
@@ -988,9 +1016,11 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "overscroll-behavior"?: OverscrollBehaviorProperty,
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty,
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty,
+  "padding-block"?: PaddingBlockProperty<TLength>,
   "padding-block-end"?: PaddingBlockEndProperty<TLength>,
   "padding-block-start"?: PaddingBlockStartProperty<TLength>,
   "padding-bottom"?: PaddingBottomProperty<TLength>,
+  "padding-inline"?: PaddingInlineProperty<TLength>,
   "padding-inline-end"?: PaddingInlineEndProperty<TLength>,
   "padding-inline-start"?: PaddingInlineStartProperty<TLength>,
   "padding-left"?: PaddingLeftProperty<TLength>,
@@ -1097,11 +1127,13 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   animation?: AnimationProperty,
   background?: BackgroundProperty<TLength>,
   border?: BorderProperty<TLength>,
+  "border-block"?: BorderBlockProperty<TLength>,
   "border-block-end"?: BorderBlockEndProperty<TLength>,
   "border-block-start"?: BorderBlockStartProperty<TLength>,
   "border-bottom"?: BorderBottomProperty<TLength>,
   "border-color"?: BorderColorProperty,
   "border-image"?: BorderImageProperty,
+  "border-inline"?: BorderInlineProperty<TLength>,
   "border-inline-end"?: BorderInlineEndProperty<TLength>,
   "border-inline-start"?: BorderInlineStartProperty<TLength>,
   "border-left"?: BorderLeftProperty<TLength>,
@@ -1582,29 +1614,37 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   backgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
   blockOverflow?: BlockOverflowProperty | BlockOverflowProperty[],
   blockSize?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[],
+  borderBlockColor?: BorderBlockColorProperty | BorderBlockColorProperty[],
   borderBlockEndColor?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[],
   borderBlockEndStyle?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[],
   borderBlockEndWidth?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[],
   borderBlockStartColor?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[],
   borderBlockStartStyle?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[],
   borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[],
+  borderBlockStyle?: BorderBlockStyleProperty | BorderBlockStyleProperty[],
+  borderBlockWidth?: BorderBlockWidthProperty<TLength> | BorderBlockWidthProperty<TLength>[],
   borderBottomColor?: BorderBottomColorProperty | BorderBottomColorProperty[],
   borderBottomLeftRadius?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[],
   borderBottomRightRadius?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[],
   borderBottomStyle?: BorderBottomStyleProperty | BorderBottomStyleProperty[],
   borderBottomWidth?: BorderBottomWidthProperty<TLength> | BorderBottomWidthProperty<TLength>[],
   borderCollapse?: BorderCollapseProperty | BorderCollapseProperty[],
+  borderEndEndRadius?: BorderEndEndRadiusProperty<TLength> | BorderEndEndRadiusProperty<TLength>[],
+  borderEndStartRadius?: BorderEndStartRadiusProperty<TLength> | BorderEndStartRadiusProperty<TLength>[],
   borderImageOutset?: BorderImageOutsetProperty<TLength> | BorderImageOutsetProperty<TLength>[],
   borderImageRepeat?: BorderImageRepeatProperty | BorderImageRepeatProperty[],
   borderImageSlice?: BorderImageSliceProperty | BorderImageSliceProperty[],
   borderImageSource?: BorderImageSourceProperty | BorderImageSourceProperty[],
   borderImageWidth?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[],
+  borderInlineColor?: BorderInlineColorProperty | BorderInlineColorProperty[],
   borderInlineEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[],
   borderInlineEndStyle?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[],
   borderInlineEndWidth?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[],
   borderInlineStartColor?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[],
   borderInlineStartStyle?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[],
   borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[],
+  borderInlineStyle?: BorderInlineStyleProperty | BorderInlineStyleProperty[],
+  borderInlineWidth?: BorderInlineWidthProperty<TLength> | BorderInlineWidthProperty<TLength>[],
   borderLeftColor?: BorderLeftColorProperty | BorderLeftColorProperty[],
   borderLeftStyle?: BorderLeftStyleProperty | BorderLeftStyleProperty[],
   borderLeftWidth?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[],
@@ -1612,6 +1652,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   borderRightStyle?: BorderRightStyleProperty | BorderRightStyleProperty[],
   borderRightWidth?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[],
   borderSpacing?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[],
+  borderStartEndRadius?: BorderStartEndRadiusProperty<TLength> | BorderStartEndRadiusProperty<TLength>[],
+  borderStartStartRadius?: BorderStartStartRadiusProperty<TLength> | BorderStartStartRadiusProperty<TLength>[],
   borderTopColor?: BorderTopColorProperty | BorderTopColorProperty[],
   borderTopLeftRadius?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[],
   borderTopRightRadius?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[],
@@ -1705,9 +1747,11 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   listStyleImage?: ListStyleImageProperty | ListStyleImageProperty[],
   listStylePosition?: ListStylePositionProperty | ListStylePositionProperty[],
   listStyleType?: ListStyleTypeProperty | ListStyleTypeProperty[],
+  marginBlock?: MarginBlockProperty<TLength> | MarginBlockProperty<TLength>[],
   marginBlockEnd?: MarginBlockEndProperty<TLength> | MarginBlockEndProperty<TLength>[],
   marginBlockStart?: MarginBlockStartProperty<TLength> | MarginBlockStartProperty<TLength>[],
   marginBottom?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[],
+  marginInline?: MarginInlineProperty<TLength> | MarginInlineProperty<TLength>[],
   marginInlineEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[],
   marginInlineStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[],
   marginLeft?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[],
@@ -1767,9 +1811,11 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[],
   overscrollBehaviorX?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[],
   overscrollBehaviorY?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[],
+  paddingBlock?: PaddingBlockProperty<TLength> | PaddingBlockProperty<TLength>[],
   paddingBlockEnd?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[],
   paddingBlockStart?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[],
   paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[],
+  paddingInline?: PaddingInlineProperty<TLength> | PaddingInlineProperty<TLength>[],
   paddingInlineEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[],
   paddingInlineStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[],
   paddingLeft?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[],
@@ -1876,11 +1922,13 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   animation?: AnimationProperty | AnimationProperty[],
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
   border?: BorderProperty<TLength> | BorderProperty<TLength>[],
+  borderBlock?: BorderBlockProperty<TLength> | BorderBlockProperty<TLength>[],
   borderBlockEnd?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[],
   borderBlockStart?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[],
   borderBottom?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[],
   borderColor?: BorderColorProperty | BorderColorProperty[],
   borderImage?: BorderImageProperty | BorderImageProperty[],
+  borderInline?: BorderInlineProperty<TLength> | BorderInlineProperty<TLength>[],
   borderInlineEnd?: BorderInlineEndProperty<TLength> | BorderInlineEndProperty<TLength>[],
   borderInlineStart?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[],
   borderLeft?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[],
@@ -2361,29 +2409,37 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
   "block-overflow"?: BlockOverflowProperty | BlockOverflowProperty[],
   "block-size"?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[],
+  "border-block-color"?: BorderBlockColorProperty | BorderBlockColorProperty[],
   "border-block-end-color"?: BorderBlockEndColorProperty | BorderBlockEndColorProperty[],
   "border-block-end-style"?: BorderBlockEndStyleProperty | BorderBlockEndStyleProperty[],
   "border-block-end-width"?: BorderBlockEndWidthProperty<TLength> | BorderBlockEndWidthProperty<TLength>[],
   "border-block-start-color"?: BorderBlockStartColorProperty | BorderBlockStartColorProperty[],
   "border-block-start-style"?: BorderBlockStartStyleProperty | BorderBlockStartStyleProperty[],
   "border-block-start-width"?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[],
+  "border-block-style"?: BorderBlockStyleProperty | BorderBlockStyleProperty[],
+  "border-block-width"?: BorderBlockWidthProperty<TLength> | BorderBlockWidthProperty<TLength>[],
   "border-bottom-color"?: BorderBottomColorProperty | BorderBottomColorProperty[],
   "border-bottom-left-radius"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[],
   "border-bottom-right-radius"?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[],
   "border-bottom-style"?: BorderBottomStyleProperty | BorderBottomStyleProperty[],
   "border-bottom-width"?: BorderBottomWidthProperty<TLength> | BorderBottomWidthProperty<TLength>[],
   "border-collapse"?: BorderCollapseProperty | BorderCollapseProperty[],
+  "border-end-end-radius"?: BorderEndEndRadiusProperty<TLength> | BorderEndEndRadiusProperty<TLength>[],
+  "border-end-start-radius"?: BorderEndStartRadiusProperty<TLength> | BorderEndStartRadiusProperty<TLength>[],
   "border-image-outset"?: BorderImageOutsetProperty<TLength> | BorderImageOutsetProperty<TLength>[],
   "border-image-repeat"?: BorderImageRepeatProperty | BorderImageRepeatProperty[],
   "border-image-slice"?: BorderImageSliceProperty | BorderImageSliceProperty[],
   "border-image-source"?: BorderImageSourceProperty | BorderImageSourceProperty[],
   "border-image-width"?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[],
+  "border-inline-color"?: BorderInlineColorProperty | BorderInlineColorProperty[],
   "border-inline-end-color"?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[],
   "border-inline-end-style"?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[],
   "border-inline-end-width"?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[],
   "border-inline-start-color"?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[],
   "border-inline-start-style"?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[],
   "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[],
+  "border-inline-style"?: BorderInlineStyleProperty | BorderInlineStyleProperty[],
+  "border-inline-width"?: BorderInlineWidthProperty<TLength> | BorderInlineWidthProperty<TLength>[],
   "border-left-color"?: BorderLeftColorProperty | BorderLeftColorProperty[],
   "border-left-style"?: BorderLeftStyleProperty | BorderLeftStyleProperty[],
   "border-left-width"?: BorderLeftWidthProperty<TLength> | BorderLeftWidthProperty<TLength>[],
@@ -2391,6 +2447,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "border-right-style"?: BorderRightStyleProperty | BorderRightStyleProperty[],
   "border-right-width"?: BorderRightWidthProperty<TLength> | BorderRightWidthProperty<TLength>[],
   "border-spacing"?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[],
+  "border-start-end-radius"?: BorderStartEndRadiusProperty<TLength> | BorderStartEndRadiusProperty<TLength>[],
+  "border-start-start-radius"?: BorderStartStartRadiusProperty<TLength> | BorderStartStartRadiusProperty<TLength>[],
   "border-top-color"?: BorderTopColorProperty | BorderTopColorProperty[],
   "border-top-left-radius"?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[],
   "border-top-right-radius"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[],
@@ -2484,9 +2542,11 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "list-style-image"?: ListStyleImageProperty | ListStyleImageProperty[],
   "list-style-position"?: ListStylePositionProperty | ListStylePositionProperty[],
   "list-style-type"?: ListStyleTypeProperty | ListStyleTypeProperty[],
+  "margin-block"?: MarginBlockProperty<TLength> | MarginBlockProperty<TLength>[],
   "margin-block-end"?: MarginBlockEndProperty<TLength> | MarginBlockEndProperty<TLength>[],
   "margin-block-start"?: MarginBlockStartProperty<TLength> | MarginBlockStartProperty<TLength>[],
   "margin-bottom"?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[],
+  "margin-inline"?: MarginInlineProperty<TLength> | MarginInlineProperty<TLength>[],
   "margin-inline-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[],
   "margin-inline-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[],
   "margin-left"?: MarginLeftProperty<TLength> | MarginLeftProperty<TLength>[],
@@ -2546,9 +2606,11 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[],
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[],
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[],
+  "padding-block"?: PaddingBlockProperty<TLength> | PaddingBlockProperty<TLength>[],
   "padding-block-end"?: PaddingBlockEndProperty<TLength> | PaddingBlockEndProperty<TLength>[],
   "padding-block-start"?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[],
   "padding-bottom"?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[],
+  "padding-inline"?: PaddingInlineProperty<TLength> | PaddingInlineProperty<TLength>[],
   "padding-inline-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[],
   "padding-inline-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[],
   "padding-left"?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[],
@@ -2655,11 +2717,13 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   animation?: AnimationProperty | AnimationProperty[],
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
   border?: BorderProperty<TLength> | BorderProperty<TLength>[],
+  "border-block"?: BorderBlockProperty<TLength> | BorderBlockProperty<TLength>[],
   "border-block-end"?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[],
   "border-block-start"?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[],
   "border-bottom"?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[],
   "border-color"?: BorderColorProperty | BorderColorProperty[],
   "border-image"?: BorderImageProperty | BorderImageProperty[],
+  "border-inline"?: BorderInlineProperty<TLength> | BorderInlineProperty<TLength>[],
   "border-inline-end"?: BorderInlineEndProperty<TLength> | BorderInlineEndProperty<TLength>[],
   "border-inline-start"?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[],
   "border-left"?: BorderLeftProperty<TLength> | BorderLeftProperty<TLength>[],
@@ -3359,7 +3423,9 @@ export type AtRules =
   | "@viewport";
 
 export type AdvancedPseudos =
+  | ":-moz-any()"
   | ":-moz-dir"
+  | ":-webkit-any()"
   | "::cue"
   | "::slotted"
   | ":dir"
@@ -3368,6 +3434,7 @@ export type AdvancedPseudos =
   | ":host-context"
   | ":is"
   | ":lang"
+  | ":matches()"
   | ":not"
   | ":nth-child"
   | ":nth-last-child"
@@ -3439,6 +3506,7 @@ export type SimplePseudos =
   | ":first-line"
   | ":first-of-type"
   | ":focus"
+  | ":focus-visible"
   | ":focus-within"
   | ":fullscreen"
   | ":hover"
@@ -3997,6 +4065,10 @@ export type BlockSizeProperty<TLength> = Globals | TLength | "auto" | "available
 
 export type BorderProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
+export type BorderBlockProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
+
+export type BorderBlockColorProperty = Globals | Color | string;
+
 export type BorderBlockEndProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
 export type BorderBlockEndColorProperty = Globals | Color;
@@ -4012,6 +4084,10 @@ export type BorderBlockStartColorProperty = Globals | Color;
 export type BorderBlockStartStyleProperty = Globals | LineStyle;
 
 export type BorderBlockStartWidthProperty<TLength> = Globals | LineWidth<TLength>;
+
+export type BorderBlockStyleProperty = Globals | LineStyle;
+
+export type BorderBlockWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderBottomProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -4029,6 +4105,10 @@ export type BorderCollapseProperty = Globals | "collapse" | "separate";
 
 export type BorderColorProperty = Globals | Color | string;
 
+export type BorderEndEndRadiusProperty<TLength> = Globals | TLength | string;
+
+export type BorderEndStartRadiusProperty<TLength> = Globals | TLength | string;
+
 export type BorderImageProperty = Globals | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
 export type BorderImageOutsetProperty<TLength> = Globals | TLength | string | number;
@@ -4040,6 +4120,10 @@ export type BorderImageSliceProperty = Globals | string | number;
 export type BorderImageSourceProperty = Globals | "none" | string;
 
 export type BorderImageWidthProperty<TLength> = Globals | TLength | "auto" | string | number;
+
+export type BorderInlineProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
+
+export type BorderInlineColorProperty = Globals | Color | string;
 
 export type BorderInlineEndProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -4056,6 +4140,10 @@ export type BorderInlineStartColorProperty = Globals | Color;
 export type BorderInlineStartStyleProperty = Globals | LineStyle;
 
 export type BorderInlineStartWidthProperty<TLength> = Globals | LineWidth<TLength>;
+
+export type BorderInlineStyleProperty = Globals | LineStyle;
+
+export type BorderInlineWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderLeftProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -4076,6 +4164,10 @@ export type BorderRightStyleProperty = Globals | LineStyle;
 export type BorderRightWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderSpacingProperty<TLength> = Globals | TLength | string;
+
+export type BorderStartEndRadiusProperty<TLength> = Globals | TLength | string;
+
+export type BorderStartStartRadiusProperty<TLength> = Globals | TLength | string;
 
 export type BorderStyleProperty = Globals | LineStyle | string;
 
@@ -4409,11 +4501,15 @@ export type ListStyleTypeProperty = Globals | "none" | string;
 
 export type MarginProperty<TLength> = Globals | TLength | "auto" | string;
 
+export type MarginBlockProperty<TLength> = Globals | TLength | "auto" | string;
+
 export type MarginBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type MarginBlockStartProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type MarginBottomProperty<TLength> = Globals | TLength | "auto" | string;
+
+export type MarginInlineProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type MarginInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -4529,11 +4625,15 @@ export type OverscrollBehaviorYProperty = Globals | "auto" | "contain" | "none";
 
 export type PaddingProperty<TLength> = Globals | TLength | string;
 
+export type PaddingBlockProperty<TLength> = Globals | TLength | string;
+
 export type PaddingBlockEndProperty<TLength> = Globals | TLength | string;
 
 export type PaddingBlockStartProperty<TLength> = Globals | TLength | string;
 
 export type PaddingBottomProperty<TLength> = Globals | TLength | string;
+
+export type PaddingInlineProperty<TLength> = Globals | TLength | string;
 
 export type PaddingInlineEndProperty<TLength> = Globals | TLength | string;
 

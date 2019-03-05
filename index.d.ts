@@ -369,6 +369,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   blockSize?: BlockSizeProperty<TLength>;
   /**
+   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-color
+   */
+  borderBlockColor?: BorderBlockColorProperty;
+  /**
    * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -440,6 +452,30 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-width
    */
   borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength>;
+  /**
+   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
+   */
+  borderBlockStyle?: BorderBlockStyleProperty;
+  /**
+   * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-width
+   */
+  borderBlockWidth?: BorderBlockWidthProperty<TLength>;
   /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -515,6 +551,30 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderCollapse?: BorderCollapseProperty;
   /**
+   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
+   */
+  borderEndEndRadius?: BorderEndEndRadiusProperty<TLength>;
+  /**
+   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
+   */
+  borderEndStartRadius?: BorderEndStartRadiusProperty<TLength>;
+  /**
    * The **`border-image-outset`** CSS property sets the distance by which an element's border image is set out from its border box.
    *
    * **Initial value**: `0`
@@ -574,6 +634,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-image-width
    */
   borderImageWidth?: BorderImageWidthProperty<TLength>;
+  /**
+   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-color
+   */
+  borderInlineColor?: BorderInlineColorProperty;
   /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -648,6 +720,30 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width
    */
   borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength>;
+  /**
+   * The **`border-inline-style`** CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
+   */
+  borderInlineStyle?: BorderInlineStyleProperty;
+  /**
+   * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-width
+   */
+  borderInlineWidth?: BorderInlineWidthProperty<TLength>;
   /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
@@ -732,6 +828,30 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-spacing
    */
   borderSpacing?: BorderSpacingProperty<TLength>;
+  /**
+   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
+   */
+  borderStartEndRadius?: BorderStartEndRadiusProperty<TLength>;
+  /**
+   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
+   */
+  borderStartStartRadius?: BorderStartStartRadiusProperty<TLength>;
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -849,9 +969,31 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** |   No    |   No   | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-after
    */
@@ -867,7 +1009,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** | **65**  | **10** | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -910,6 +1052,14 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -1965,6 +2115,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   listStyleType?: ListStyleTypeProperty;
   /**
+   * The **`margin-block`** CSS property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
+   */
+  marginBlock?: MarginBlockProperty<TLength>;
+  /**
    * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Initial value**: `0`
@@ -2000,6 +2162,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
    */
   marginBottom?: MarginBottomProperty<TLength>;
+  /**
+   * The **`margin-inline`** CSS property defines the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
+   */
+  marginInline?: MarginInlineProperty<TLength>;
   /**
    * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -2632,6 +2806,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overscrollBehaviorY?: OverscrollBehaviorYProperty;
   /**
+   * The **`padding-block`** CSS property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
+   */
+  paddingBlock?: PaddingBlockProperty<TLength>;
+  /**
    * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
@@ -2667,6 +2853,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   paddingBottom?: PaddingBottomProperty<TLength>;
+  /**
+   * The **`padding-inline`** CSS property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
+   */
+  paddingInline?: PaddingInlineProperty<TLength>;
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3540,7 +3738,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **4**  |  **3**  | **5**  | n/a  | No  |
+   * | **4**  |  **1**  | **5**  | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-rendering
    */
@@ -3750,10 +3948,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  |   Firefox    |    Safari     |     Edge     |   IE   |
-   * | :-----: | :----------: | :-----------: | :----------: | :----: |
-   * | **54**  | **49** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
-   * | 6 _-x-_ |              |               |              |        |
+   * | Chrome  |   Firefox   |    Safari     |     Edge     |   IE   |
+   * | :-----: | :---------: | :-----------: | :----------: | :----: |
+   * | **54**  | **1** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
+   * | 6 _-x-_ |             |               |              |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
@@ -3949,6 +4147,16 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   border?: BorderProperty<TLength>;
   /**
+   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block
+   */
+  borderBlock?: BorderBlockProperty<TLength>;
+  /**
    * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -3999,6 +4207,16 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-image
    */
   borderImage?: BorderImageProperty;
+  /**
+   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
+   */
+  borderInline?: BorderInlineProperty<TLength>;
   /**
    * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
    *
@@ -4244,7 +4462,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **1**  |   Yes   | **4**  | **12** | No  |
+   * | **1**  |  **2**  | **4**  | **12** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask
    */
@@ -6906,6 +7124,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "block-size"?: BlockSizeProperty<TLength>;
   /**
+   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-color
+   */
+  "border-block-color"?: BorderBlockColorProperty;
+  /**
    * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -6977,6 +7207,30 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-width
    */
   "border-block-start-width"?: BorderBlockStartWidthProperty<TLength>;
+  /**
+   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
+   */
+  "border-block-style"?: BorderBlockStyleProperty;
+  /**
+   * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-width
+   */
+  "border-block-width"?: BorderBlockWidthProperty<TLength>;
   /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -7052,6 +7306,30 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-collapse"?: BorderCollapseProperty;
   /**
+   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
+   */
+  "border-end-end-radius"?: BorderEndEndRadiusProperty<TLength>;
+  /**
+   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
+   */
+  "border-end-start-radius"?: BorderEndStartRadiusProperty<TLength>;
+  /**
    * The **`border-image-outset`** CSS property sets the distance by which an element's border image is set out from its border box.
    *
    * **Initial value**: `0`
@@ -7111,6 +7389,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-image-width
    */
   "border-image-width"?: BorderImageWidthProperty<TLength>;
+  /**
+   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-color
+   */
+  "border-inline-color"?: BorderInlineColorProperty;
   /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7185,6 +7475,30 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width
    */
   "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength>;
+  /**
+   * The **`border-inline-style`** CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
+   */
+  "border-inline-style"?: BorderInlineStyleProperty;
+  /**
+   * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-width
+   */
+  "border-inline-width"?: BorderInlineWidthProperty<TLength>;
   /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
@@ -7269,6 +7583,30 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-spacing
    */
   "border-spacing"?: BorderSpacingProperty<TLength>;
+  /**
+   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
+   */
+  "border-start-end-radius"?: BorderStartEndRadiusProperty<TLength>;
+  /**
+   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
+   */
+  "border-start-start-radius"?: BorderStartStartRadiusProperty<TLength>;
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -7386,9 +7724,31 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** |   No    |   No   | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-after
    */
@@ -7404,7 +7764,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** | **65**  | **10** | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -7447,6 +7807,14 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -8502,6 +8870,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "list-style-type"?: ListStyleTypeProperty;
   /**
+   * The **`margin-block`** CSS property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
+   */
+  "margin-block"?: MarginBlockProperty<TLength>;
+  /**
    * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Initial value**: `0`
@@ -8537,6 +8917,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
    */
   "margin-bottom"?: MarginBottomProperty<TLength>;
+  /**
+   * The **`margin-inline`** CSS property defines the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
+   */
+  "margin-inline"?: MarginInlineProperty<TLength>;
   /**
    * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -9169,6 +9561,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty;
   /**
+   * The **`padding-block`** CSS property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
+   */
+  "padding-block"?: PaddingBlockProperty<TLength>;
+  /**
    * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
@@ -9204,6 +9608,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   "padding-bottom"?: PaddingBottomProperty<TLength>;
+  /**
+   * The **`padding-inline`** CSS property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
+   */
+  "padding-inline"?: PaddingInlineProperty<TLength>;
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -10077,7 +10493,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **4**  |  **3**  | **5**  | n/a  | No  |
+   * | **4**  |  **1**  | **5**  | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-rendering
    */
@@ -10287,10 +10703,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  |   Firefox    |    Safari     |     Edge     |   IE   |
-   * | :-----: | :----------: | :-----------: | :----------: | :----: |
-   * | **54**  | **49** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
-   * | 6 _-x-_ |              |               |              |        |
+   * | Chrome  |   Firefox   |    Safari     |     Edge     |   IE   |
+   * | :-----: | :---------: | :-----------: | :----------: | :----: |
+   * | **54**  | **1** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
+   * | 6 _-x-_ |             |               |              |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
@@ -10486,6 +10902,16 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   border?: BorderProperty<TLength>;
   /**
+   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block
+   */
+  "border-block"?: BorderBlockProperty<TLength>;
+  /**
    * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -10536,6 +10962,16 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-image
    */
   "border-image"?: BorderImageProperty;
+  /**
+   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
+   */
+  "border-inline"?: BorderInlineProperty<TLength>;
   /**
    * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
    *
@@ -10781,7 +11217,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **1**  |   Yes   | **4**  | **12** | No  |
+   * | **1**  |  **2**  | **4**  | **12** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask
    */
@@ -13447,6 +13883,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   blockSize?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
   /**
+   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-color
+   */
+  borderBlockColor?: BorderBlockColorProperty | BorderBlockColorProperty[];
+  /**
    * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -13518,6 +13966,30 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-width
    */
   borderBlockStartWidth?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[];
+  /**
+   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
+   */
+  borderBlockStyle?: BorderBlockStyleProperty | BorderBlockStyleProperty[];
+  /**
+   * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-width
+   */
+  borderBlockWidth?: BorderBlockWidthProperty<TLength> | BorderBlockWidthProperty<TLength>[];
   /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -13593,6 +14065,30 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderCollapse?: BorderCollapseProperty | BorderCollapseProperty[];
   /**
+   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
+   */
+  borderEndEndRadius?: BorderEndEndRadiusProperty<TLength> | BorderEndEndRadiusProperty<TLength>[];
+  /**
+   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
+   */
+  borderEndStartRadius?: BorderEndStartRadiusProperty<TLength> | BorderEndStartRadiusProperty<TLength>[];
+  /**
    * The **`border-image-outset`** CSS property sets the distance by which an element's border image is set out from its border box.
    *
    * **Initial value**: `0`
@@ -13652,6 +14148,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-image-width
    */
   borderImageWidth?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
+  /**
+   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-color
+   */
+  borderInlineColor?: BorderInlineColorProperty | BorderInlineColorProperty[];
   /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -13726,6 +14234,30 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width
    */
   borderInlineStartWidth?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[];
+  /**
+   * The **`border-inline-style`** CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
+   */
+  borderInlineStyle?: BorderInlineStyleProperty | BorderInlineStyleProperty[];
+  /**
+   * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-width
+   */
+  borderInlineWidth?: BorderInlineWidthProperty<TLength> | BorderInlineWidthProperty<TLength>[];
   /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
@@ -13810,6 +14342,30 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-spacing
    */
   borderSpacing?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[];
+  /**
+   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
+   */
+  borderStartEndRadius?: BorderStartEndRadiusProperty<TLength> | BorderStartEndRadiusProperty<TLength>[];
+  /**
+   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
+   */
+  borderStartStartRadius?: BorderStartStartRadiusProperty<TLength> | BorderStartStartRadiusProperty<TLength>[];
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -13927,9 +14483,31 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** |   No    |   No   | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-after
    */
@@ -13945,7 +14523,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** | **65**  | **10** | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -13988,6 +14566,14 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -15043,6 +15629,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   listStyleType?: ListStyleTypeProperty | ListStyleTypeProperty[];
   /**
+   * The **`margin-block`** CSS property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
+   */
+  marginBlock?: MarginBlockProperty<TLength> | MarginBlockProperty<TLength>[];
+  /**
    * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Initial value**: `0`
@@ -15078,6 +15676,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
    */
   marginBottom?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
+  /**
+   * The **`margin-inline`** CSS property defines the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
+   */
+  marginInline?: MarginInlineProperty<TLength> | MarginInlineProperty<TLength>[];
   /**
    * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -15710,6 +16320,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overscrollBehaviorY?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
   /**
+   * The **`padding-block`** CSS property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
+   */
+  paddingBlock?: PaddingBlockProperty<TLength> | PaddingBlockProperty<TLength>[];
+  /**
    * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
@@ -15745,6 +16367,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   paddingBottom?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
+  /**
+   * The **`padding-inline`** CSS property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
+   */
+  paddingInline?: PaddingInlineProperty<TLength> | PaddingInlineProperty<TLength>[];
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -16618,7 +17252,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **4**  |  **3**  | **5**  | n/a  | No  |
+   * | **4**  |  **1**  | **5**  | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-rendering
    */
@@ -16828,10 +17462,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  |   Firefox    |    Safari     |     Edge     |   IE   |
-   * | :-----: | :----------: | :-----------: | :----------: | :----: |
-   * | **54**  | **49** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
-   * | 6 _-x-_ |              |               |              |        |
+   * | Chrome  |   Firefox   |    Safari     |     Edge     |   IE   |
+   * | :-----: | :---------: | :-----------: | :----------: | :----: |
+   * | **54**  | **1** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
+   * | 6 _-x-_ |             |               |              |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
@@ -17027,6 +17661,16 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   border?: BorderProperty<TLength> | BorderProperty<TLength>[];
   /**
+   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block
+   */
+  borderBlock?: BorderBlockProperty<TLength> | BorderBlockProperty<TLength>[];
+  /**
    * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -17077,6 +17721,16 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/border-image
    */
   borderImage?: BorderImageProperty | BorderImageProperty[];
+  /**
+   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
+   */
+  borderInline?: BorderInlineProperty<TLength> | BorderInlineProperty<TLength>[];
   /**
    * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
    *
@@ -17322,7 +17976,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **1**  |   Yes   | **4**  | **12** | No  |
+   * | **1**  |  **2**  | **4**  | **12** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask
    */
@@ -19988,6 +20642,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "block-size"?: BlockSizeProperty<TLength> | BlockSizeProperty<TLength>[];
   /**
+   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-color
+   */
+  "border-block-color"?: BorderBlockColorProperty | BorderBlockColorProperty[];
+  /**
    * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -20059,6 +20725,30 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-width
    */
   "border-block-start-width"?: BorderBlockStartWidthProperty<TLength> | BorderBlockStartWidthProperty<TLength>[];
+  /**
+   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
+   */
+  "border-block-style"?: BorderBlockStyleProperty | BorderBlockStyleProperty[];
+  /**
+   * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block-width
+   */
+  "border-block-width"?: BorderBlockWidthProperty<TLength> | BorderBlockWidthProperty<TLength>[];
   /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -20134,6 +20824,30 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-collapse"?: BorderCollapseProperty | BorderCollapseProperty[];
   /**
+   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
+   */
+  "border-end-end-radius"?: BorderEndEndRadiusProperty<TLength> | BorderEndEndRadiusProperty<TLength>[];
+  /**
+   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
+   */
+  "border-end-start-radius"?: BorderEndStartRadiusProperty<TLength> | BorderEndStartRadiusProperty<TLength>[];
+  /**
    * The **`border-image-outset`** CSS property sets the distance by which an element's border image is set out from its border box.
    *
    * **Initial value**: `0`
@@ -20193,6 +20907,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/border-image-width
    */
   "border-image-width"?: BorderImageWidthProperty<TLength> | BorderImageWidthProperty<TLength>[];
+  /**
+   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-color
+   */
+  "border-inline-color"?: BorderInlineColorProperty | BorderInlineColorProperty[];
   /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -20267,6 +20993,30 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-width
    */
   "border-inline-start-width"?: BorderInlineStartWidthProperty<TLength> | BorderInlineStartWidthProperty<TLength>[];
+  /**
+   * The **`border-inline-style`** CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
+   */
+  "border-inline-style"?: BorderInlineStyleProperty | BorderInlineStyleProperty[];
+  /**
+   * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-width
+   */
+  "border-inline-width"?: BorderInlineWidthProperty<TLength> | BorderInlineWidthProperty<TLength>[];
   /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
@@ -20351,6 +21101,30 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/border-spacing
    */
   "border-spacing"?: BorderSpacingProperty<TLength> | BorderSpacingProperty<TLength>[];
+  /**
+   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
+   */
+  "border-start-end-radius"?: BorderStartEndRadiusProperty<TLength> | BorderStartEndRadiusProperty<TLength>[];
+  /**
+   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
+   */
+  "border-start-start-radius"?: BorderStartStartRadiusProperty<TLength> | BorderStartStartRadiusProperty<TLength>[];
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -20468,9 +21242,31 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
+   * ---
+   *
+   * _Supported in Multi-column Layout_
+   *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    | **10** | **12** | **10** |
+   * | **50** |   No    |   No   | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in Paged Media_
+   *
+   * | Chrome | Firefox | Safari |  Edge  |   IE   |
+   * | :----: | :-----: | :----: | :----: | :----: |
+   * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
+   *
+   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-after
    */
@@ -20486,7 +21282,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** | **65**  | **10** | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -20529,6 +21325,14 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
+   *
+   * ---
+   *
+   * _Supported in CSS Regions_
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -21584,6 +22388,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "list-style-type"?: ListStyleTypeProperty | ListStyleTypeProperty[];
   /**
+   * The **`margin-block`** CSS property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
+   */
+  "margin-block"?: MarginBlockProperty<TLength> | MarginBlockProperty<TLength>[];
+  /**
    * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Initial value**: `0`
@@ -21619,6 +22435,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
    */
   "margin-bottom"?: MarginBottomProperty<TLength> | MarginBottomProperty<TLength>[];
+  /**
+   * The **`margin-inline`** CSS property defines the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
+   */
+  "margin-inline"?: MarginInlineProperty<TLength> | MarginInlineProperty<TLength>[];
   /**
    * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -22251,6 +23079,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[];
   /**
+   * The **`padding-block`** CSS property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
+   */
+  "padding-block"?: PaddingBlockProperty<TLength> | PaddingBlockProperty<TLength>[];
+  /**
    * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `0`
@@ -22286,6 +23126,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   "padding-bottom"?: PaddingBottomProperty<TLength> | PaddingBottomProperty<TLength>[];
+  /**
+   * The **`padding-inline`** CSS property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Initial value**: `0`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
+   */
+  "padding-inline"?: PaddingInlineProperty<TLength> | PaddingInlineProperty<TLength>[];
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -23159,7 +24011,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **4**  |  **3**  | **5**  | n/a  | No  |
+   * | **4**  |  **1**  | **5**  | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-rendering
    */
@@ -23369,10 +24221,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  |   Firefox    |    Safari     |     Edge     |   IE   |
-   * | :-----: | :----------: | :-----------: | :----------: | :----: |
-   * | **54**  | **49** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
-   * | 6 _-x-_ |              |               |              |        |
+   * | Chrome  |   Firefox   |    Safari     |     Edge     |   IE   |
+   * | :-----: | :---------: | :-----------: | :----------: | :----: |
+   * | **54**  | **1** _-x-_ | **3.1** _-x-_ | **12** _-x-_ | **10** |
+   * | 6 _-x-_ |             |               |              |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
@@ -23568,6 +24420,16 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   border?: BorderProperty<TLength> | BorderProperty<TLength>[];
   /**
+   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-block
+   */
+  "border-block"?: BorderBlockProperty<TLength> | BorderBlockProperty<TLength>[];
+  /**
    * The **`border-block-end`** CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
@@ -23618,6 +24480,16 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    * @see https://developer.mozilla.org/docs/Web/CSS/border-image
    */
   "border-image"?: BorderImageProperty | BorderImageProperty[];
+  /**
+   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
+   */
+  "border-inline"?: BorderInlineProperty<TLength> | BorderInlineProperty<TLength>[];
   /**
    * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
    *
@@ -23863,7 +24735,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **1**  |   Yes   | **4**  | **12** | No  |
+   * | **1**  |  **2**  | **4**  | **12** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask
    */
@@ -26407,7 +27279,9 @@ export type AtRules =
   | "@viewport";
 
 export type AdvancedPseudos =
+  | ":-moz-any()"
   | ":-moz-dir"
+  | ":-webkit-any()"
   | "::cue"
   | "::slotted"
   | ":dir"
@@ -26416,6 +27290,7 @@ export type AdvancedPseudos =
   | ":host-context"
   | ":is"
   | ":lang"
+  | ":matches()"
   | ":not"
   | ":nth-child"
   | ":nth-last-child"
@@ -26487,6 +27362,7 @@ export type SimplePseudos =
   | ":first-line"
   | ":first-of-type"
   | ":focus"
+  | ":focus-visible"
   | ":focus-within"
   | ":fullscreen"
   | ":hover"
@@ -27045,6 +27921,10 @@ export type BlockSizeProperty<TLength> = Globals | TLength | "auto" | "available
 
 export type BorderProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
+export type BorderBlockProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
+
+export type BorderBlockColorProperty = Globals | Color | string;
+
 export type BorderBlockEndProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
 export type BorderBlockEndColorProperty = Globals | Color;
@@ -27060,6 +27940,10 @@ export type BorderBlockStartColorProperty = Globals | Color;
 export type BorderBlockStartStyleProperty = Globals | LineStyle;
 
 export type BorderBlockStartWidthProperty<TLength> = Globals | LineWidth<TLength>;
+
+export type BorderBlockStyleProperty = Globals | LineStyle;
+
+export type BorderBlockWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderBottomProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -27077,6 +27961,10 @@ export type BorderCollapseProperty = Globals | "collapse" | "separate";
 
 export type BorderColorProperty = Globals | Color | string;
 
+export type BorderEndEndRadiusProperty<TLength> = Globals | TLength | string;
+
+export type BorderEndStartRadiusProperty<TLength> = Globals | TLength | string;
+
 export type BorderImageProperty = Globals | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
 
 export type BorderImageOutsetProperty<TLength> = Globals | TLength | string | number;
@@ -27088,6 +27976,10 @@ export type BorderImageSliceProperty = Globals | string | number;
 export type BorderImageSourceProperty = Globals | "none" | string;
 
 export type BorderImageWidthProperty<TLength> = Globals | TLength | "auto" | string | number;
+
+export type BorderInlineProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
+
+export type BorderInlineColorProperty = Globals | Color | string;
 
 export type BorderInlineEndProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -27104,6 +27996,10 @@ export type BorderInlineStartColorProperty = Globals | Color;
 export type BorderInlineStartStyleProperty = Globals | LineStyle;
 
 export type BorderInlineStartWidthProperty<TLength> = Globals | LineWidth<TLength>;
+
+export type BorderInlineStyleProperty = Globals | LineStyle;
+
+export type BorderInlineWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderLeftProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -27124,6 +28020,10 @@ export type BorderRightStyleProperty = Globals | LineStyle;
 export type BorderRightWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
 export type BorderSpacingProperty<TLength> = Globals | TLength | string;
+
+export type BorderStartEndRadiusProperty<TLength> = Globals | TLength | string;
+
+export type BorderStartStartRadiusProperty<TLength> = Globals | TLength | string;
 
 export type BorderStyleProperty = Globals | LineStyle | string;
 
@@ -27457,11 +28357,15 @@ export type ListStyleTypeProperty = Globals | "none" | string;
 
 export type MarginProperty<TLength> = Globals | TLength | "auto" | string;
 
+export type MarginBlockProperty<TLength> = Globals | TLength | "auto" | string;
+
 export type MarginBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type MarginBlockStartProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type MarginBottomProperty<TLength> = Globals | TLength | "auto" | string;
+
+export type MarginInlineProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type MarginInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -27577,11 +28481,15 @@ export type OverscrollBehaviorYProperty = Globals | "auto" | "contain" | "none";
 
 export type PaddingProperty<TLength> = Globals | TLength | string;
 
+export type PaddingBlockProperty<TLength> = Globals | TLength | string;
+
 export type PaddingBlockEndProperty<TLength> = Globals | TLength | string;
 
 export type PaddingBlockStartProperty<TLength> = Globals | TLength | string;
 
 export type PaddingBottomProperty<TLength> = Globals | TLength | string;
+
+export type PaddingInlineProperty<TLength> = Globals | TLength | string;
 
 export type PaddingInlineEndProperty<TLength> = Globals | TLength | string;
 
