@@ -1,11 +1,7 @@
-// @flow
-
+// @flow strict
 import * as CSS from './';
 
-// Fallback due to https://github.com/frenic/csstype/issues/17
-type Exact<T> = T & $Shape<T>;
-
-const css: Exact<CSS.Properties<*>> = {
+const css: CSS.Properties<*> = {
   flexGrow: 1,
   flexShrink: 1,
   flexBasis: '1px',
@@ -19,7 +15,7 @@ const css: Exact<CSS.Properties<*>> = {
   msOverflowStyle: 'scrollbar',
 };
 
-const cssWithFallbackValues: Exact<CSS.PropertiesFallback<*>> = {
+const cssWithFallbackValues: CSS.PropertiesFallback<*> = {
   flexGrow: [1],
   flexShrink: [1],
   flexBasis: ['1px'],
@@ -33,7 +29,7 @@ const cssWithFallbackValues: Exact<CSS.PropertiesFallback<*>> = {
   msOverflowStyle: ['scrollbar'],
 };
 
-const cssWithHyphenProperties: Exact<CSS.PropertiesHyphen<*>> = {
+const cssWithHyphenProperties: CSS.PropertiesHyphen<*> = {
   'flex-grow': 1,
   'flex-shrink': 0,
   'flex-basis': '1px',
@@ -47,11 +43,14 @@ const cssWithHyphenProperties: Exact<CSS.PropertiesHyphen<*>> = {
   '-ms-overflow-style': 'scrollbar',
 };
 
-const cssWithBothCamelAndHyphenProperties: $Exact<CSS.Properties<*>> & $Exact<CSS.PropertiesHyphen<*>> = {
+const cssWithBothCamelAndHyphenProperties: {|
+  ...CSS.Properties<*>,
+  ...CSS.PropertiesHyphen<*>,
+|} = {
   animation: '',
 };
 
-const atRuleFontFace: $Exact<CSS.FontFace> = {
+const atRuleFontFace: CSS.FontFace = {
   fontFamily: '',
   fontWeight: 'normal',
 };
