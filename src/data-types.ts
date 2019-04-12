@@ -10,7 +10,7 @@ export default dataTypes;
 export function resolveDataTypes(
   types: TypeType[],
   resolver: (dataType: IDataType) => ResolvedType[] = simpleDataTypeResolver,
-  min = 3,
+  min = Infinity,
 ): ResolvedType[] {
   let resolvedDataTypes: ResolvedType[] = [];
 
@@ -41,6 +41,11 @@ export function resolveDataTypes(
       default:
         resolvedDataTypes = addType(resolvedDataTypes, type);
     }
+  }
+
+  if (hasType(resolvedDataTypes, { type: Type.String })) {
+    // Filter out string literals if it contains string
+    resolvedDataTypes = resolvedDataTypes.filter(type => type.type !== Type.StringLiteral);
   }
 
   return resolvedDataTypes;
