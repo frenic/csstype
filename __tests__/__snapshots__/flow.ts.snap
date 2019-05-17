@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it detects errors 1`] = `
+"Error ------------------------------------------------------------------------- __fixtures__/flow-errors-fixture.js:4:32
+
+Cannot assign object literal to \`css\` because:
+ - property \`unknownProperty\` is missing in \`Properties\` [1] but exists in object literal [2].
+ - in property \`flexGrow\`:
+    - Either string [3] is incompatible with enum [4].
+    - Or string [3] is incompatible with number [5].
+
+   __fixtures__/flow-errors-fixture.js:4:32
+                                        v
+      4| const css: CSS.Properties<*> = {
+      5|   flexGrow: 'invalid',
+      6|   unknownProperty: 'here',
+      7| };
+         ^ [2]
+
+References:
+   __fixtures__/flow-errors-fixture.js:4:12
+      4| const css: CSS.Properties<*> = {
+                    ^^^^^^^^^^^^^^^^^ [1]
+   __fixtures__/flow-errors-fixture.js:5:13
+      5|   flexGrow: 'invalid',
+                     ^^^^^^^^^ [3]
+   index.js.flow:4555:22
+   4555| type GlobalsNumber = Globals | number;
+                              ^^^^^^^ [4]
+   index.js.flow:4555:32
+   4555| type GlobalsNumber = Globals | number;
+                                        ^^^^^^ [5]
+
+
+Error ------------------------------------------------------------------------- __fixtures__/flow-errors-fixture.js:9:58
+
+Cannot assign object literal to \`cssWithFallbackValues\` because:
+ - property \`colour\` is missing in \`PropertiesFallback\` [1] but exists in object literal [2].
+ - in array element of property \`flexGrow\`:
+    - Either boolean [3] is incompatible with enum [4].
+    - Or boolean [3] is incompatible with number [5].
+ - string [6] is incompatible with enum [7] in array element of property \`flexDirection\`.
+
+   __fixtures__/flow-errors-fixture.js:9:58
+                                                                  v
+      9| const cssWithFallbackValues: CSS.PropertiesFallback<*> = {
+     10|   flexGrow: [true],
+     11|   flexDirection: ['123'],
+     12|   colour: 'typo',
+     13| };
+         ^ [2]
+
+References:
+   __fixtures__/flow-errors-fixture.js:9:30
+      9| const cssWithFallbackValues: CSS.PropertiesFallback<*> = {
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   __fixtures__/flow-errors-fixture.js:10:14
+     10|   flexGrow: [true],
+                      ^^^^ [3]
+   index.js.flow:4555:22
+   4555| type GlobalsNumber = Globals | number;
+                              ^^^^^^^ [4]
+   index.js.flow:4555:32
+   4555| type GlobalsNumber = Globals | number;
+                                        ^^^^^^ [5]
+   __fixtures__/flow-errors-fixture.js:11:19
+     11|   flexDirection: ['123'],
+                           ^^^^^ [6]
+   index.js.flow:106:72
+    106| type FallbackableFlexDirectionProperty = FlexDirectionProperty | Array<FlexDirectionProperty>;
+                                                                                ^^^^^^^^^^^^^^^^^^^^^ [7]
+
+
+
+Found 5 errors
+"
+`;

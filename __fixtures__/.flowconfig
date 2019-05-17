@@ -1,8 +1,7 @@
 [ignore]
-.*/node_modules
-.*/__fixtures__/.*
 
 [include]
+../index.js.flow
 
 [libs]
 

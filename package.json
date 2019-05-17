@@ -16,7 +16,7 @@
     "chalk": "^2.4.2",
     "chokidar": "^2.1.2",
     "fast-glob": "^2.2.6",
-    "flow-bin": "^0.94.0",
+    "flow-bin": "^0.98.0",
     "jest": "^24.1.0",
     "jsdom": "^13.2.0",
     "mdn-browser-compat-data": "git+https://github.com/mdn/browser-compat-data.git#cca8064adf09a9e95a8ff0d2abe233798912b5d0",
