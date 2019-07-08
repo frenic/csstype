@@ -97,6 +97,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   content?: ContentProperty,
   counterIncrement?: CounterIncrementProperty,
   counterReset?: CounterResetProperty,
+  counterSet?: CounterSetProperty,
   cursor?: CursorProperty,
   direction?: DirectionProperty,
   display?: DisplayProperty,
@@ -218,7 +219,9 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   outlineWidth?: OutlineWidthProperty<TLength>,
   overflow?: OverflowProperty,
   overflowAnchor?: OverflowAnchorProperty,
+  overflowBlock?: OverflowBlockProperty,
   overflowClipBox?: OverflowClipBoxProperty,
+  overflowInline?: OverflowInlineProperty,
   overflowWrap?: OverflowWrapProperty,
   overflowX?: OverflowXProperty,
   overflowY?: OverflowYProperty,
@@ -489,11 +492,14 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   msTextAutospace?: MsTextAutospaceProperty,
   msTextCombineHorizontal?: TextCombineUprightProperty,
   msTextOverflow?: TextOverflowProperty,
-  msTextSizeAdjust?: TextSizeAdjustProperty,
   msTouchAction?: TouchActionProperty,
   msTouchSelect?: MsTouchSelectProperty,
   msTransform?: TransformProperty,
   msTransformOrigin?: TransformOriginProperty<TLength>,
+  msTransitionDelay?: GlobalsString,
+  msTransitionDuration?: GlobalsString,
+  msTransitionProperty?: TransitionPropertyProperty,
+  msTransitionTimingFunction?: TransitionTimingFunctionProperty,
   msUserSelect?: MsUserSelectProperty,
   msWordBreak?: WordBreakProperty,
   msWrapFlow?: MsWrapFlowProperty,
@@ -537,6 +543,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitClipPath?: ClipPathProperty,
   WebkitColorAdjust?: ColorAdjustProperty,
   WebkitColumnCount?: ColumnCountProperty,
+  WebkitColumnFill?: ColumnFillProperty,
   WebkitColumnGap?: ColumnGapProperty<TLength>,
   WebkitColumnRuleColor?: ColumnRuleColorProperty,
   WebkitColumnRuleStyle?: ColumnRuleStyleProperty,
@@ -604,7 +611,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitUserModify?: WebkitUserModifyProperty,
   WebkitUserSelect?: UserSelectProperty,
   WebkitWritingMode?: WritingModeProperty,
-  WebkitmaskSize?: MaskSizeProperty<TLength>,
 };
 
 export type VendorShorthandProperties<TLength = string | 0> = {
@@ -619,6 +625,7 @@ export type VendorShorthandProperties<TLength = string | 0> = {
   msScrollLimit?: GlobalsString,
   msScrollSnapX?: GlobalsString,
   msScrollSnapY?: GlobalsString,
+  msTransition?: TransitionProperty,
   WebkitAnimation?: AnimationProperty,
   WebkitBorderBefore?: WebkitBorderBeforeProperty<TLength>,
   WebkitBorderImage?: BorderImageProperty,
@@ -897,6 +904,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   content?: ContentProperty,
   "counter-increment"?: CounterIncrementProperty,
   "counter-reset"?: CounterResetProperty,
+  "counter-set"?: CounterSetProperty,
   cursor?: CursorProperty,
   direction?: DirectionProperty,
   display?: DisplayProperty,
@@ -1018,7 +1026,9 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "outline-width"?: OutlineWidthProperty<TLength>,
   overflow?: OverflowProperty,
   "overflow-anchor"?: OverflowAnchorProperty,
+  "overflow-block"?: OverflowBlockProperty,
   "overflow-clip-box"?: OverflowClipBoxProperty,
+  "overflow-inline"?: OverflowInlineProperty,
   "overflow-wrap"?: OverflowWrapProperty,
   "overflow-x"?: OverflowXProperty,
   "overflow-y"?: OverflowYProperty,
@@ -1289,11 +1299,14 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-text-autospace"?: MsTextAutospaceProperty,
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty,
   "-ms-text-overflow"?: TextOverflowProperty,
-  "-ms-text-size-adjust"?: TextSizeAdjustProperty,
   "-ms-touch-action"?: TouchActionProperty,
   "-ms-touch-select"?: MsTouchSelectProperty,
   "-ms-transform"?: TransformProperty,
   "-ms-transform-origin"?: TransformOriginProperty<TLength>,
+  "-ms-transition-delay"?: GlobalsString,
+  "-ms-transition-duration"?: GlobalsString,
+  "-ms-transition-property"?: TransitionPropertyProperty,
+  "-ms-transition-timing-function"?: TransitionTimingFunctionProperty,
   "-ms-user-select"?: MsUserSelectProperty,
   "-ms-word-break"?: WordBreakProperty,
   "-ms-wrap-flow"?: MsWrapFlowProperty,
@@ -1337,6 +1350,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-clip-path"?: ClipPathProperty,
   "-webkit-color-adjust"?: ColorAdjustProperty,
   "-webkit-column-count"?: ColumnCountProperty,
+  "-webkit-column-fill"?: ColumnFillProperty,
   "-webkit-column-gap"?: ColumnGapProperty<TLength>,
   "-webkit-column-rule-color"?: ColumnRuleColorProperty,
   "-webkit-column-rule-style"?: ColumnRuleStyleProperty,
@@ -1404,7 +1418,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-user-modify"?: WebkitUserModifyProperty,
   "-webkit-user-select"?: UserSelectProperty,
   "-webkit-writing-mode"?: WritingModeProperty,
-  "-webkitmask-size"?: MaskSizeProperty<TLength>,
 };
 
 export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
@@ -1419,6 +1432,7 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
   "-ms-scroll-limit"?: GlobalsString,
   "-ms-scroll-snap-x"?: GlobalsString,
   "-ms-scroll-snap-y"?: GlobalsString,
+  "-ms-transition"?: TransitionProperty,
   "-webkit-animation"?: AnimationProperty,
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength>,
   "-webkit-border-image"?: BorderImageProperty,
@@ -1700,6 +1714,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   content?: ContentProperty | ContentProperty[],
   counterIncrement?: CounterIncrementProperty | CounterIncrementProperty[],
   counterReset?: CounterResetProperty | CounterResetProperty[],
+  counterSet?: CounterSetProperty | CounterSetProperty[],
   cursor?: CursorProperty | CursorProperty[],
   direction?: DirectionProperty | DirectionProperty[],
   display?: DisplayProperty | DisplayProperty[],
@@ -1821,7 +1836,9 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   outlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[],
   overflow?: OverflowProperty | OverflowProperty[],
   overflowAnchor?: OverflowAnchorProperty | OverflowAnchorProperty[],
+  overflowBlock?: OverflowBlockProperty | OverflowBlockProperty[],
   overflowClipBox?: OverflowClipBoxProperty | OverflowClipBoxProperty[],
+  overflowInline?: OverflowInlineProperty | OverflowInlineProperty[],
   overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[],
   overflowX?: OverflowXProperty | OverflowXProperty[],
   overflowY?: OverflowYProperty | OverflowYProperty[],
@@ -2092,11 +2109,14 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msTextAutospace?: MsTextAutospaceProperty | MsTextAutospaceProperty[],
   msTextCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[],
   msTextOverflow?: TextOverflowProperty | TextOverflowProperty[],
-  msTextSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[],
   msTouchAction?: TouchActionProperty | TouchActionProperty[],
   msTouchSelect?: MsTouchSelectProperty | MsTouchSelectProperty[],
   msTransform?: TransformProperty | TransformProperty[],
   msTransformOrigin?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[],
+  msTransitionDelay?: GlobalsString | GlobalsString[],
+  msTransitionDuration?: GlobalsString | GlobalsString[],
+  msTransitionProperty?: TransitionPropertyProperty | TransitionPropertyProperty[],
+  msTransitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[],
   msUserSelect?: MsUserSelectProperty | MsUserSelectProperty[],
   msWordBreak?: WordBreakProperty | WordBreakProperty[],
   msWrapFlow?: MsWrapFlowProperty | MsWrapFlowProperty[],
@@ -2140,6 +2160,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitClipPath?: ClipPathProperty | ClipPathProperty[],
   WebkitColorAdjust?: ColorAdjustProperty | ColorAdjustProperty[],
   WebkitColumnCount?: ColumnCountProperty | ColumnCountProperty[],
+  WebkitColumnFill?: ColumnFillProperty | ColumnFillProperty[],
   WebkitColumnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
   WebkitColumnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
   WebkitColumnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[],
@@ -2207,7 +2228,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitUserModify?: WebkitUserModifyProperty | WebkitUserModifyProperty[],
   WebkitUserSelect?: UserSelectProperty | UserSelectProperty[],
   WebkitWritingMode?: WritingModeProperty | WritingModeProperty[],
-  WebkitmaskSize?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[],
 };
 
 export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
@@ -2222,6 +2242,7 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
   msScrollLimit?: GlobalsString | GlobalsString[],
   msScrollSnapX?: GlobalsString | GlobalsString[],
   msScrollSnapY?: GlobalsString | GlobalsString[],
+  msTransition?: TransitionProperty | TransitionProperty[],
   WebkitAnimation?: AnimationProperty | AnimationProperty[],
   WebkitBorderBefore?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[],
   WebkitBorderImage?: BorderImageProperty | BorderImageProperty[],
@@ -2503,6 +2524,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   content?: ContentProperty | ContentProperty[],
   "counter-increment"?: CounterIncrementProperty | CounterIncrementProperty[],
   "counter-reset"?: CounterResetProperty | CounterResetProperty[],
+  "counter-set"?: CounterSetProperty | CounterSetProperty[],
   cursor?: CursorProperty | CursorProperty[],
   direction?: DirectionProperty | DirectionProperty[],
   display?: DisplayProperty | DisplayProperty[],
@@ -2624,7 +2646,9 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[],
   overflow?: OverflowProperty | OverflowProperty[],
   "overflow-anchor"?: OverflowAnchorProperty | OverflowAnchorProperty[],
+  "overflow-block"?: OverflowBlockProperty | OverflowBlockProperty[],
   "overflow-clip-box"?: OverflowClipBoxProperty | OverflowClipBoxProperty[],
+  "overflow-inline"?: OverflowInlineProperty | OverflowInlineProperty[],
   "overflow-wrap"?: OverflowWrapProperty | OverflowWrapProperty[],
   "overflow-x"?: OverflowXProperty | OverflowXProperty[],
   "overflow-y"?: OverflowYProperty | OverflowYProperty[],
@@ -2895,11 +2919,14 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-text-autospace"?: MsTextAutospaceProperty | MsTextAutospaceProperty[],
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[],
   "-ms-text-overflow"?: TextOverflowProperty | TextOverflowProperty[],
-  "-ms-text-size-adjust"?: TextSizeAdjustProperty | TextSizeAdjustProperty[],
   "-ms-touch-action"?: TouchActionProperty | TouchActionProperty[],
   "-ms-touch-select"?: MsTouchSelectProperty | MsTouchSelectProperty[],
   "-ms-transform"?: TransformProperty | TransformProperty[],
   "-ms-transform-origin"?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[],
+  "-ms-transition-delay"?: GlobalsString | GlobalsString[],
+  "-ms-transition-duration"?: GlobalsString | GlobalsString[],
+  "-ms-transition-property"?: TransitionPropertyProperty | TransitionPropertyProperty[],
+  "-ms-transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[],
   "-ms-user-select"?: MsUserSelectProperty | MsUserSelectProperty[],
   "-ms-word-break"?: WordBreakProperty | WordBreakProperty[],
   "-ms-wrap-flow"?: MsWrapFlowProperty | MsWrapFlowProperty[],
@@ -2943,6 +2970,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-clip-path"?: ClipPathProperty | ClipPathProperty[],
   "-webkit-color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[],
   "-webkit-column-count"?: ColumnCountProperty | ColumnCountProperty[],
+  "-webkit-column-fill"?: ColumnFillProperty | ColumnFillProperty[],
   "-webkit-column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
   "-webkit-column-rule-color"?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
   "-webkit-column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[],
@@ -3010,7 +3038,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-user-modify"?: WebkitUserModifyProperty | WebkitUserModifyProperty[],
   "-webkit-user-select"?: UserSelectProperty | UserSelectProperty[],
   "-webkit-writing-mode"?: WritingModeProperty | WritingModeProperty[],
-  "-webkitmask-size"?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[],
 };
 
 export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
@@ -3025,6 +3052,7 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-scroll-limit"?: GlobalsString | GlobalsString[],
   "-ms-scroll-snap-x"?: GlobalsString | GlobalsString[],
   "-ms-scroll-snap-y"?: GlobalsString | GlobalsString[],
+  "-ms-transition"?: TransitionProperty | TransitionProperty[],
   "-webkit-animation"?: AnimationProperty | AnimationProperty[],
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[],
   "-webkit-border-image"?: BorderImageProperty | BorderImageProperty[],
@@ -3477,6 +3505,7 @@ export type AdvancedPseudos =
 
 export type SimplePseudos =
   | ":-moz-any-link"
+  | ":-moz-focusring"
   | ":-moz-full-screen"
   | ":-moz-placeholder"
   | ":-moz-read-only"
@@ -3520,6 +3549,7 @@ export type SimplePseudos =
   | "::first-letter"
   | "::first-line"
   | "::grammar-error"
+  | "::marker"
   | "::placeholder"
   | "::selection"
   | "::spelling-error"
@@ -3635,6 +3665,7 @@ export type HtmlAttributes =
   | "[draggable]"
   | "[dropzone]"
   | "[enctype]"
+  | "[exportparts]"
   | "[face]"
   | "[for]"
   | "[form]"
@@ -3720,6 +3751,7 @@ export type HtmlAttributes =
   | "[onunload]"
   | "[open]"
   | "[optimum]"
+  | "[part]"
   | "[ping]"
   | "[placeholder]"
   | "[played]"
@@ -4327,6 +4359,8 @@ export type CounterIncrementProperty = Globals | "none" | string;
 
 export type CounterResetProperty = Globals | "none" | string;
 
+export type CounterSetProperty = Globals | "none" | string;
+
 export type CursorProperty =
   | Globals
   | "-moz-grab"
@@ -4817,7 +4851,11 @@ export type OverflowProperty = Globals | "auto" | "clip" | "hidden" | "scroll" |
 
 export type OverflowAnchorProperty = Globals | "auto" | "none";
 
+export type OverflowBlockProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+
 export type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
+
+export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
 
@@ -4889,37 +4927,37 @@ export type RubyAlignProperty = Globals | "center" | "space-around" | "space-bet
 
 export type RubyMergeProperty = Globals | "auto" | "collapse" | "separate";
 
-export type RubyPositionProperty = Globals | "inter-character" | "over" | "under";
+export type RubyPositionProperty = Globals | "over" | "under";
 
 export type ScaleProperty = Globals | "none" | string | number;
 
 export type ScrollBehaviorProperty = Globals | "auto" | "smooth";
 
-export type ScrollMarginProperty<TLength> = Globals | TLength | "auto" | string;
+export type ScrollMarginProperty<TLength> = Globals | TLength | string;
 
-export type ScrollMarginBlockProperty<TLength> = Globals | TLength | "auto" | string;
+export type ScrollMarginBlockProperty<TLength> = Globals | TLength | string;
 
-export type ScrollMarginBlockEndProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginBlockEndProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginBlockStartProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginBlockStartProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginBottomProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginBottomProperty<TLength> = Globals | TLength;
 
 export type ScrollMarginInlineProperty<TLength> = Globals | TLength | string;
 
-export type ScrollMarginInlineEndProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginInlineEndProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginInlineStartProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginInlineStartProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginLeftProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginLeftProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginRightProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginRightProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginTopProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginTopProperty<TLength> = Globals | TLength;
 
 export type ScrollPaddingProperty<TLength> = Globals | TLength | "auto" | string;
 
-export type ScrollPaddingBlockProperty<TLength> = Globals | TLength | string;
+export type ScrollPaddingBlockProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type ScrollPaddingBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -4927,7 +4965,7 @@ export type ScrollPaddingBlockStartProperty<TLength> = Globals | TLength | "auto
 
 export type ScrollPaddingBottomProperty<TLength> = Globals | TLength | "auto" | string;
 
-export type ScrollPaddingInlineProperty<TLength> = Globals | TLength | string;
+export type ScrollPaddingInlineProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type ScrollPaddingInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -4951,7 +4989,7 @@ export type ScrollSnapPointsYProperty = Globals | "none" | string;
 
 export type ScrollSnapStopProperty = Globals | "always" | "normal";
 
-export type ScrollSnapTypeProperty = Globals | "none" | string;
+export type ScrollSnapTypeProperty = Globals | "block" | "both" | "inline" | "none" | "x" | "y" | string;
 
 export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximity";
 
@@ -5016,6 +5054,7 @@ export type TopProperty<TLength> = Globals | TLength | "auto" | string;
 export type TouchActionProperty =
   | Globals
   | "-ms-manipulation"
+  | "-ms-none"
   | "-ms-pinch-zoom"
   | "auto"
   | "manipulation"
