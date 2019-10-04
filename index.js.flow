@@ -210,7 +210,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   offsetPosition?: OffsetPositionProperty<TLength>,
   offsetRotate?: OffsetRotateProperty,
   offsetRotation?: OffsetRotateProperty,
-  opacity?: GlobalsNumber,
+  opacity?: OpacityProperty,
   order?: GlobalsNumber,
   orphans?: GlobalsNumber,
   outlineColor?: OutlineColorProperty,
@@ -284,7 +284,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   scrollSnapType?: ScrollSnapTypeProperty,
   scrollbarColor?: ScrollbarColorProperty,
   scrollbarWidth?: ScrollbarWidthProperty,
-  shapeImageThreshold?: GlobalsNumber,
+  shapeImageThreshold?: ShapeImageThresholdProperty,
   shapeMargin?: ShapeMarginProperty<TLength>,
   shapeOutside?: ShapeOutsideProperty,
   tabSize?: TabSizeProperty<TLength>,
@@ -297,6 +297,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   textDecorationSkip?: TextDecorationSkipProperty,
   textDecorationSkipInk?: TextDecorationSkipInkProperty,
   textDecorationStyle?: TextDecorationStyleProperty,
+  textDecorationThickness?: TextDecorationThicknessProperty<TLength>,
+  textDecorationWidth?: TextDecorationThicknessProperty<TLength>,
   textEmphasisColor?: TextEmphasisColorProperty,
   textEmphasisPosition?: GlobalsString,
   textEmphasisStyle?: TextEmphasisStyleProperty,
@@ -308,6 +310,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   textShadow?: TextShadowProperty,
   textSizeAdjust?: TextSizeAdjustProperty,
   textTransform?: TextTransformProperty,
+  textUnderlineOffset?: TextUnderlineOffsetProperty<TLength>,
   textUnderlinePosition?: TextUnderlinePositionProperty,
   top?: TopProperty<TLength>,
   touchAction?: TouchActionProperty,
@@ -378,7 +381,7 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   padding?: PaddingProperty<TLength>,
   placeItems?: PlaceItemsProperty,
   placeSelf?: PlaceSelfProperty,
-  textDecoration?: TextDecorationProperty,
+  textDecoration?: TextDecorationProperty<TLength>,
   textEmphasis?: TextEmphasisProperty,
   transition?: TransitionProperty,
 };
@@ -679,7 +682,7 @@ export type ObsoleteProperties<TLength = string | 0> = {
   KhtmlBoxOrient?: BoxOrientProperty,
   KhtmlBoxPack?: BoxPackProperty,
   KhtmlLineBreak?: LineBreakProperty,
-  KhtmlOpacity?: GlobalsNumber,
+  KhtmlOpacity?: OpacityProperty,
   KhtmlUserSelect?: UserSelectProperty,
   MozBackgroundClip?: BackgroundClipProperty,
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty,
@@ -698,7 +701,7 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozBoxOrient?: BoxOrientProperty,
   MozBoxPack?: BoxPackProperty,
   MozBoxShadow?: BoxShadowProperty,
-  MozOpacity?: GlobalsNumber,
+  MozOpacity?: OpacityProperty,
   MozOutline?: OutlineProperty<TLength>,
   MozOutlineColor?: OutlineColorProperty,
   MozOutlineRadius?: MozOutlineRadiusProperty<TLength>,
@@ -778,7 +781,7 @@ export type SvgProperties<TLength = string | 0> = {
   markerMid?: MarkerMidProperty,
   markerStart?: MarkerStartProperty,
   mask?: MaskProperty<TLength>,
-  opacity?: GlobalsNumber,
+  opacity?: OpacityProperty,
   overflow?: OverflowProperty,
   paintOrder?: PaintOrderProperty,
   pointerEvents?: PointerEventsProperty,
@@ -794,7 +797,7 @@ export type SvgProperties<TLength = string | 0> = {
   strokeOpacity?: GlobalsNumber,
   strokeWidth?: StrokeWidthProperty<TLength>,
   textAnchor?: TextAnchorProperty,
-  textDecoration?: TextDecorationProperty,
+  textDecoration?: TextDecorationProperty<TLength>,
   textRendering?: TextRenderingProperty,
   unicodeBidi?: UnicodeBidiProperty,
   vectorEffect?: VectorEffectProperty,
@@ -1017,7 +1020,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "offset-position"?: OffsetPositionProperty<TLength>,
   "offset-rotate"?: OffsetRotateProperty,
   "offset-rotation"?: OffsetRotateProperty,
-  opacity?: GlobalsNumber,
+  opacity?: OpacityProperty,
   order?: GlobalsNumber,
   orphans?: GlobalsNumber,
   "outline-color"?: OutlineColorProperty,
@@ -1091,7 +1094,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "scroll-snap-type"?: ScrollSnapTypeProperty,
   "scrollbar-color"?: ScrollbarColorProperty,
   "scrollbar-width"?: ScrollbarWidthProperty,
-  "shape-image-threshold"?: GlobalsNumber,
+  "shape-image-threshold"?: ShapeImageThresholdProperty,
   "shape-margin"?: ShapeMarginProperty<TLength>,
   "shape-outside"?: ShapeOutsideProperty,
   "tab-size"?: TabSizeProperty<TLength>,
@@ -1104,6 +1107,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "text-decoration-skip"?: TextDecorationSkipProperty,
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty,
   "text-decoration-style"?: TextDecorationStyleProperty,
+  "text-decoration-thickness"?: TextDecorationThicknessProperty<TLength>,
+  "text-decoration-width"?: TextDecorationThicknessProperty<TLength>,
   "text-emphasis-color"?: TextEmphasisColorProperty,
   "text-emphasis-position"?: GlobalsString,
   "text-emphasis-style"?: TextEmphasisStyleProperty,
@@ -1115,6 +1120,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "text-shadow"?: TextShadowProperty,
   "text-size-adjust"?: TextSizeAdjustProperty,
   "text-transform"?: TextTransformProperty,
+  "text-underline-offset"?: TextUnderlineOffsetProperty<TLength>,
   "text-underline-position"?: TextUnderlinePositionProperty,
   top?: TopProperty<TLength>,
   "touch-action"?: TouchActionProperty,
@@ -1185,7 +1191,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   padding?: PaddingProperty<TLength>,
   "place-items"?: PlaceItemsProperty,
   "place-self"?: PlaceSelfProperty,
-  "text-decoration"?: TextDecorationProperty,
+  "text-decoration"?: TextDecorationProperty<TLength>,
   "text-emphasis"?: TextEmphasisProperty,
   transition?: TransitionProperty,
 };
@@ -1486,7 +1492,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-khtml-box-orient"?: BoxOrientProperty,
   "-khtml-box-pack"?: BoxPackProperty,
   "-khtml-line-break"?: LineBreakProperty,
-  "-khtml-opacity"?: GlobalsNumber,
+  "-khtml-opacity"?: OpacityProperty,
   "-khtml-user-select"?: UserSelectProperty,
   "-moz-background-clip"?: BackgroundClipProperty,
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty,
@@ -1505,7 +1511,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-box-orient"?: BoxOrientProperty,
   "-moz-box-pack"?: BoxPackProperty,
   "-moz-box-shadow"?: BoxShadowProperty,
-  "-moz-opacity"?: GlobalsNumber,
+  "-moz-opacity"?: OpacityProperty,
   "-moz-outline"?: OutlineProperty<TLength>,
   "-moz-outline-color"?: OutlineColorProperty,
   "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength>,
@@ -1585,7 +1591,7 @@ export type SvgPropertiesHyphen<TLength = string | 0> = {
   "marker-mid"?: MarkerMidProperty,
   "marker-start"?: MarkerStartProperty,
   mask?: MaskProperty<TLength>,
-  opacity?: GlobalsNumber,
+  opacity?: OpacityProperty,
   overflow?: OverflowProperty,
   "paint-order"?: PaintOrderProperty,
   "pointer-events"?: PointerEventsProperty,
@@ -1601,7 +1607,7 @@ export type SvgPropertiesHyphen<TLength = string | 0> = {
   "stroke-opacity"?: GlobalsNumber,
   "stroke-width"?: StrokeWidthProperty<TLength>,
   "text-anchor"?: TextAnchorProperty,
-  "text-decoration"?: TextDecorationProperty,
+  "text-decoration"?: TextDecorationProperty<TLength>,
   "text-rendering"?: TextRenderingProperty,
   "unicode-bidi"?: UnicodeBidiProperty,
   "vector-effect"?: VectorEffectProperty,
@@ -1827,7 +1833,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
   offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[],
   offsetRotation?: OffsetRotateProperty | OffsetRotateProperty[],
-  opacity?: GlobalsNumber | GlobalsNumber[],
+  opacity?: OpacityProperty | OpacityProperty[],
   order?: GlobalsNumber | GlobalsNumber[],
   orphans?: GlobalsNumber | GlobalsNumber[],
   outlineColor?: OutlineColorProperty | OutlineColorProperty[],
@@ -1901,7 +1907,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   scrollbarColor?: ScrollbarColorProperty | ScrollbarColorProperty[],
   scrollbarWidth?: ScrollbarWidthProperty | ScrollbarWidthProperty[],
-  shapeImageThreshold?: GlobalsNumber | GlobalsNumber[],
+  shapeImageThreshold?: ShapeImageThresholdProperty | ShapeImageThresholdProperty[],
   shapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
   shapeOutside?: ShapeOutsideProperty | ShapeOutsideProperty[],
   tabSize?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[],
@@ -1914,6 +1920,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   textDecorationSkip?: TextDecorationSkipProperty | TextDecorationSkipProperty[],
   textDecorationSkipInk?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[],
   textDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
+  textDecorationThickness?: TextDecorationThicknessProperty<TLength> | TextDecorationThicknessProperty<TLength>[],
+  textDecorationWidth?: TextDecorationThicknessProperty<TLength> | TextDecorationThicknessProperty<TLength>[],
   textEmphasisColor?: TextEmphasisColorProperty | TextEmphasisColorProperty[],
   textEmphasisPosition?: GlobalsString | GlobalsString[],
   textEmphasisStyle?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[],
@@ -1925,6 +1933,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   textShadow?: TextShadowProperty | TextShadowProperty[],
   textSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[],
   textTransform?: TextTransformProperty | TextTransformProperty[],
+  textUnderlineOffset?: TextUnderlineOffsetProperty<TLength> | TextUnderlineOffsetProperty<TLength>[],
   textUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[],
   top?: TopProperty<TLength> | TopProperty<TLength>[],
   touchAction?: TouchActionProperty | TouchActionProperty[],
@@ -1995,7 +2004,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   placeItems?: PlaceItemsProperty | PlaceItemsProperty[],
   placeSelf?: PlaceSelfProperty | PlaceSelfProperty[],
-  textDecoration?: TextDecorationProperty | TextDecorationProperty[],
+  textDecoration?: TextDecorationProperty<TLength> | TextDecorationProperty<TLength>[],
   textEmphasis?: TextEmphasisProperty | TextEmphasisProperty[],
   transition?: TransitionProperty | TransitionProperty[],
 };
@@ -2296,7 +2305,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   KhtmlBoxOrient?: BoxOrientProperty | BoxOrientProperty[],
   KhtmlBoxPack?: BoxPackProperty | BoxPackProperty[],
   KhtmlLineBreak?: LineBreakProperty | LineBreakProperty[],
-  KhtmlOpacity?: GlobalsNumber | GlobalsNumber[],
+  KhtmlOpacity?: OpacityProperty | OpacityProperty[],
   KhtmlUserSelect?: UserSelectProperty | UserSelectProperty[],
   MozBackgroundClip?: BackgroundClipProperty | BackgroundClipProperty[],
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
@@ -2315,7 +2324,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozBoxOrient?: BoxOrientProperty | BoxOrientProperty[],
   MozBoxPack?: BoxPackProperty | BoxPackProperty[],
   MozBoxShadow?: BoxShadowProperty | BoxShadowProperty[],
-  MozOpacity?: GlobalsNumber | GlobalsNumber[],
+  MozOpacity?: OpacityProperty | OpacityProperty[],
   MozOutline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   MozOutlineColor?: OutlineColorProperty | OutlineColorProperty[],
   MozOutlineRadius?: MozOutlineRadiusProperty<TLength> | MozOutlineRadiusProperty<TLength>[],
@@ -2395,7 +2404,7 @@ export type SvgPropertiesFallback<TLength = string | 0> = {
   markerMid?: MarkerMidProperty | MarkerMidProperty[],
   markerStart?: MarkerStartProperty | MarkerStartProperty[],
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
-  opacity?: GlobalsNumber | GlobalsNumber[],
+  opacity?: OpacityProperty | OpacityProperty[],
   overflow?: OverflowProperty | OverflowProperty[],
   paintOrder?: PaintOrderProperty | PaintOrderProperty[],
   pointerEvents?: PointerEventsProperty | PointerEventsProperty[],
@@ -2411,7 +2420,7 @@ export type SvgPropertiesFallback<TLength = string | 0> = {
   strokeOpacity?: GlobalsNumber | GlobalsNumber[],
   strokeWidth?: StrokeWidthProperty<TLength> | StrokeWidthProperty<TLength>[],
   textAnchor?: TextAnchorProperty | TextAnchorProperty[],
-  textDecoration?: TextDecorationProperty | TextDecorationProperty[],
+  textDecoration?: TextDecorationProperty<TLength> | TextDecorationProperty<TLength>[],
   textRendering?: TextRenderingProperty | TextRenderingProperty[],
   unicodeBidi?: UnicodeBidiProperty | UnicodeBidiProperty[],
   vectorEffect?: VectorEffectProperty | VectorEffectProperty[],
@@ -2637,7 +2646,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
   "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[],
   "offset-rotation"?: OffsetRotateProperty | OffsetRotateProperty[],
-  opacity?: GlobalsNumber | GlobalsNumber[],
+  opacity?: OpacityProperty | OpacityProperty[],
   order?: GlobalsNumber | GlobalsNumber[],
   orphans?: GlobalsNumber | GlobalsNumber[],
   "outline-color"?: OutlineColorProperty | OutlineColorProperty[],
@@ -2711,7 +2720,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   "scrollbar-color"?: ScrollbarColorProperty | ScrollbarColorProperty[],
   "scrollbar-width"?: ScrollbarWidthProperty | ScrollbarWidthProperty[],
-  "shape-image-threshold"?: GlobalsNumber | GlobalsNumber[],
+  "shape-image-threshold"?: ShapeImageThresholdProperty | ShapeImageThresholdProperty[],
   "shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
   "shape-outside"?: ShapeOutsideProperty | ShapeOutsideProperty[],
   "tab-size"?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[],
@@ -2724,6 +2733,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "text-decoration-skip"?: TextDecorationSkipProperty | TextDecorationSkipProperty[],
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[],
   "text-decoration-style"?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
+  "text-decoration-thickness"?: TextDecorationThicknessProperty<TLength> | TextDecorationThicknessProperty<TLength>[],
+  "text-decoration-width"?: TextDecorationThicknessProperty<TLength> | TextDecorationThicknessProperty<TLength>[],
   "text-emphasis-color"?: TextEmphasisColorProperty | TextEmphasisColorProperty[],
   "text-emphasis-position"?: GlobalsString | GlobalsString[],
   "text-emphasis-style"?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[],
@@ -2735,6 +2746,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "text-shadow"?: TextShadowProperty | TextShadowProperty[],
   "text-size-adjust"?: TextSizeAdjustProperty | TextSizeAdjustProperty[],
   "text-transform"?: TextTransformProperty | TextTransformProperty[],
+  "text-underline-offset"?: TextUnderlineOffsetProperty<TLength> | TextUnderlineOffsetProperty<TLength>[],
   "text-underline-position"?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[],
   top?: TopProperty<TLength> | TopProperty<TLength>[],
   "touch-action"?: TouchActionProperty | TouchActionProperty[],
@@ -2805,7 +2817,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   "place-items"?: PlaceItemsProperty | PlaceItemsProperty[],
   "place-self"?: PlaceSelfProperty | PlaceSelfProperty[],
-  "text-decoration"?: TextDecorationProperty | TextDecorationProperty[],
+  "text-decoration"?: TextDecorationProperty<TLength> | TextDecorationProperty<TLength>[],
   "text-emphasis"?: TextEmphasisProperty | TextEmphasisProperty[],
   transition?: TransitionProperty | TransitionProperty[],
 };
@@ -3106,7 +3118,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-khtml-box-orient"?: BoxOrientProperty | BoxOrientProperty[],
   "-khtml-box-pack"?: BoxPackProperty | BoxPackProperty[],
   "-khtml-line-break"?: LineBreakProperty | LineBreakProperty[],
-  "-khtml-opacity"?: GlobalsNumber | GlobalsNumber[],
+  "-khtml-opacity"?: OpacityProperty | OpacityProperty[],
   "-khtml-user-select"?: UserSelectProperty | UserSelectProperty[],
   "-moz-background-clip"?: BackgroundClipProperty | BackgroundClipProperty[],
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[],
@@ -3125,7 +3137,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-box-orient"?: BoxOrientProperty | BoxOrientProperty[],
   "-moz-box-pack"?: BoxPackProperty | BoxPackProperty[],
   "-moz-box-shadow"?: BoxShadowProperty | BoxShadowProperty[],
-  "-moz-opacity"?: GlobalsNumber | GlobalsNumber[],
+  "-moz-opacity"?: OpacityProperty | OpacityProperty[],
   "-moz-outline"?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   "-moz-outline-color"?: OutlineColorProperty | OutlineColorProperty[],
   "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength> | MozOutlineRadiusProperty<TLength>[],
@@ -3205,7 +3217,7 @@ export type SvgPropertiesHyphenFallback<TLength = string | 0> = {
   "marker-mid"?: MarkerMidProperty | MarkerMidProperty[],
   "marker-start"?: MarkerStartProperty | MarkerStartProperty[],
   mask?: MaskProperty<TLength> | MaskProperty<TLength>[],
-  opacity?: GlobalsNumber | GlobalsNumber[],
+  opacity?: OpacityProperty | OpacityProperty[],
   overflow?: OverflowProperty | OverflowProperty[],
   "paint-order"?: PaintOrderProperty | PaintOrderProperty[],
   "pointer-events"?: PointerEventsProperty | PointerEventsProperty[],
@@ -3221,7 +3233,7 @@ export type SvgPropertiesHyphenFallback<TLength = string | 0> = {
   "stroke-opacity"?: GlobalsNumber | GlobalsNumber[],
   "stroke-width"?: StrokeWidthProperty<TLength> | StrokeWidthProperty<TLength>[],
   "text-anchor"?: TextAnchorProperty | TextAnchorProperty[],
-  "text-decoration"?: TextDecorationProperty | TextDecorationProperty[],
+  "text-decoration"?: TextDecorationProperty<TLength> | TextDecorationProperty<TLength>[],
   "text-rendering"?: TextRenderingProperty | TextRenderingProperty[],
   "unicode-bidi"?: UnicodeBidiProperty | UnicodeBidiProperty[],
   "vector-effect"?: VectorEffectProperty | VectorEffectProperty[],
@@ -3342,26 +3354,6 @@ export type FontFaceHyphenFallback = {
   "font-weight"?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[],
   src?: string | string[],
   "unicode-range"?: string | string[],
-};
-
-export type Page<TLength = string | 0> = {
-  bleed?: PageBleedProperty<TLength>,
-  marks?: PageMarksProperty,
-};
-
-export type PageHyphen<TLength = string | 0> = {
-  bleed?: PageBleedProperty<TLength>,
-  marks?: PageMarksProperty,
-};
-
-export type PageFallback<TLength = string | 0> = {
-  bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[],
-  marks?: PageMarksProperty | PageMarksProperty[],
-};
-
-export type PageHyphenFallback<TLength = string | 0> = {
-  bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[],
-  marks?: PageMarksProperty | PageMarksProperty[],
 };
 
 export type Viewport<TLength = string | 0> = {
@@ -3504,6 +3496,7 @@ export type AdvancedPseudos =
   | ":where";
 
 export type SimplePseudos =
+  | ":-khtml-any-link"
   | ":-moz-any-link"
   | ":-moz-focusring"
   | ":-moz-full-screen"
@@ -4563,13 +4556,24 @@ export type GridTemplateProperty = Globals | "none" | string;
 
 export type GridTemplateAreasProperty = Globals | "none" | string;
 
-export type GridTemplateColumnsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | string;
+export type GridTemplateColumnsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | "subgrid" | string;
 
-export type GridTemplateRowsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | string;
+export type GridTemplateRowsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | "subgrid" | string;
 
 export type HangingPunctuationProperty = Globals | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
-export type HeightProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+export type HeightProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "auto"
+  | "available"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type HyphensProperty = Globals | "auto" | "manual" | "none";
 
@@ -4623,7 +4627,7 @@ export type LeftProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type LetterSpacingProperty<TLength> = Globals | TLength | "normal";
 
-export type LineBreakProperty = Globals | "auto" | "loose" | "normal" | "strict";
+export type LineBreakProperty = Globals | "anywhere" | "auto" | "loose" | "normal" | "strict";
 
 export type LineClampProperty = Globals | "none" | number;
 
@@ -4685,7 +4689,7 @@ export type MaskImageProperty = Globals | "none" | string;
 
 export type MaskModeProperty = Globals | MaskingMode | string;
 
-export type MaskOriginProperty = Globals | GeometryBox | string;
+export type MaskOriginProperty = Globals | Box | "margin-box" | string;
 
 export type MaskPositionProperty<TLength> = Globals | Position<TLength> | string;
 
@@ -4715,6 +4719,8 @@ export type MaxHeightProperty<TLength> =
   | "-moz-max-content"
   | "-moz-min-content"
   | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
   | "fill-available"
   | "fit-content"
   | "intrinsic"
@@ -4776,6 +4782,8 @@ export type MinHeightProperty<TLength> =
   | "-moz-max-content"
   | "-moz-min-content"
   | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
   | "auto"
   | "fill-available"
   | "fit-content"
@@ -4791,8 +4799,6 @@ export type MinInlineSizeProperty<TLength> =
   | "-moz-max-content"
   | "-moz-min-content"
   | "-webkit-fill-available"
-  | "-webkit-max-content"
-  | "-webkit-min-content"
   | "auto"
   | "fill-available"
   | "fit-content"
@@ -4836,6 +4842,8 @@ export type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 export type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
 
 export type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
+
+export type OpacityProperty = Globals | string | number;
 
 export type OutlineProperty<TLength> = Globals | Color | LineStyle | LineWidth<TLength> | "auto" | "invert" | string;
 
@@ -4913,7 +4921,7 @@ export type PointerEventsProperty = Globals | "all" | "auto" | "fill" | "inherit
 
 export type PositionProperty = Globals | "-webkit-sticky" | "absolute" | "fixed" | "relative" | "static" | "sticky";
 
-export type QuotesProperty = Globals | "none" | string;
+export type QuotesProperty = Globals | "auto" | "none" | string;
 
 export type ResizeProperty = Globals | "block" | "both" | "horizontal" | "inline" | "none" | "vertical";
 
@@ -4999,6 +5007,8 @@ export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light"
 
 export type ScrollbarWidthProperty = Globals | "auto" | "none" | "thin";
 
+export type ShapeImageThresholdProperty = Globals | string | number;
+
 export type ShapeMarginProperty<TLength> = Globals | TLength | string;
 
 export type ShapeOutsideProperty = Globals | Box | "margin-box" | "none" | string;
@@ -5013,17 +5023,37 @@ export type TextAlignLastProperty = Globals | "auto" | "center" | "end" | "justi
 
 export type TextCombineUprightProperty = Globals | "all" | "digits" | "none" | string;
 
-export type TextDecorationProperty = Globals | Color | "blink" | "dashed" | "dotted" | "double" | "line-through" | "none" | "overline" | "solid" | "underline" | "wavy" | string;
+export type TextDecorationProperty<TLength> =
+  | Globals
+  | Color
+  | TLength
+  | "auto"
+  | "blink"
+  | "dashed"
+  | "dotted"
+  | "double"
+  | "from-font"
+  | "grammar-error"
+  | "line-through"
+  | "none"
+  | "overline"
+  | "solid"
+  | "spelling-error"
+  | "underline"
+  | "wavy"
+  | string;
 
 export type TextDecorationColorProperty = Globals | Color;
 
-export type TextDecorationLineProperty = Globals | "blink" | "line-through" | "none" | "overline" | "underline" | string;
+export type TextDecorationLineProperty = Globals | "blink" | "grammar-error" | "line-through" | "none" | "overline" | "spelling-error" | "underline" | string;
 
 export type TextDecorationSkipProperty = Globals | "box-decoration" | "edges" | "leading-spaces" | "none" | "objects" | "spaces" | "trailing-spaces" | string;
 
 export type TextDecorationSkipInkProperty = Globals | "auto" | "none";
 
 export type TextDecorationStyleProperty = Globals | "dashed" | "dotted" | "double" | "solid" | "wavy";
+
+export type TextDecorationThicknessProperty<TLength> = Globals | TLength | "auto" | "from-font";
 
 export type TextEmphasisProperty = Globals | Color | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
@@ -5046,6 +5076,8 @@ export type TextShadowProperty = Globals | "none" | string;
 export type TextSizeAdjustProperty = Globals | "auto" | "none" | string;
 
 export type TextTransformProperty = Globals | "capitalize" | "full-size-kana" | "full-width" | "lowercase" | "none" | "uppercase";
+
+export type TextUnderlineOffsetProperty<TLength> = Globals | TLength | "auto" | "from-font";
 
 export type TextUnderlinePositionProperty = Globals | "auto" | "left" | "right" | "under" | string;
 
@@ -5103,7 +5135,7 @@ export type VerticalAlignProperty<TLength> = Globals | TLength | "baseline" | "b
 
 export type VisibilityProperty = Globals | "collapse" | "hidden" | "visible";
 
-export type WhiteSpaceProperty = Globals | "-moz-pre-wrap" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+export type WhiteSpaceProperty = Globals | "-moz-pre-wrap" | "break-spaces" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 
 export type WidthProperty<TLength> =
   | Globals
@@ -5594,10 +5626,6 @@ type FontFaceFontVariantProperty =
 type FontFaceFontVariationSettingsProperty = "normal" | string;
 
 type FontFaceFontWeightProperty = FontWeightAbsolute | string;
-
-type PageBleedProperty<TLength> = TLength | "auto";
-
-type PageMarksProperty = "crop" | "cross" | "none" | string;
 
 type ViewportHeightProperty<TLength> = ViewportLength<TLength> | string;
 
