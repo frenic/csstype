@@ -97,6 +97,7 @@ type FallbackableContainProperty = ContainProperty | Array<ContainProperty>;
 type FallbackableContentProperty = ContentProperty | Array<ContentProperty>;
 type FallbackableCounterIncrementProperty = CounterIncrementProperty | Array<CounterIncrementProperty>;
 type FallbackableCounterResetProperty = CounterResetProperty | Array<CounterResetProperty>;
+type FallbackableCounterSetProperty = CounterSetProperty | Array<CounterSetProperty>;
 type FallbackableCursorProperty = CursorProperty | Array<CursorProperty>;
 type FallbackableDirectionProperty = DirectionProperty | Array<DirectionProperty>;
 type FallbackableDisplayProperty = DisplayProperty | Array<DisplayProperty>;
@@ -204,6 +205,7 @@ type FallbackableObjectFitProperty = ObjectFitProperty | Array<ObjectFitProperty
 type FallbackableObjectPositionProperty<TLength> = ObjectPositionProperty<TLength> | Array<ObjectPositionProperty<TLength>>;
 type FallbackableOffsetAnchorProperty<TLength> = OffsetAnchorProperty<TLength> | Array<OffsetAnchorProperty<TLength>>;
 type FallbackableOffsetPositionProperty<TLength> = OffsetPositionProperty<TLength> | Array<OffsetPositionProperty<TLength>>;
+type FallbackableOpacityProperty = OpacityProperty | Array<OpacityProperty>;
 type FallbackableOutlineColorProperty = OutlineColorProperty | Array<OutlineColorProperty>;
 type FallbackableOutlineOffsetProperty<TLength> = OutlineOffsetProperty<TLength> | Array<OutlineOffsetProperty<TLength>>;
 type FallbackableOutlineStyleProperty = OutlineStyleProperty | Array<OutlineStyleProperty>;
@@ -253,6 +255,7 @@ type FallbackableScrollMarginBlockProperty<TLength> = ScrollMarginBlockProperty<
 type FallbackableScrollMarginBlockEndProperty<TLength> = ScrollMarginBlockEndProperty<TLength> | Array<ScrollMarginBlockEndProperty<TLength>>;
 type FallbackableScrollMarginBlockStartProperty<TLength> = ScrollMarginBlockStartProperty<TLength> | Array<ScrollMarginBlockStartProperty<TLength>>;
 type FallbackableScrollMarginBottomProperty<TLength> = ScrollMarginBottomProperty<TLength> | Array<ScrollMarginBottomProperty<TLength>>;
+type FallbackableScrollMarginInlineProperty<TLength> = ScrollMarginInlineProperty<TLength> | Array<ScrollMarginInlineProperty<TLength>>;
 type FallbackableScrollMarginInlineEndProperty<TLength> = ScrollMarginInlineEndProperty<TLength> | Array<ScrollMarginInlineEndProperty<TLength>>;
 type FallbackableScrollMarginInlineStartProperty<TLength> = ScrollMarginInlineStartProperty<TLength> | Array<ScrollMarginInlineStartProperty<TLength>>;
 type FallbackableScrollMarginLeftProperty<TLength> = ScrollMarginLeftProperty<TLength> | Array<ScrollMarginLeftProperty<TLength>>;
@@ -270,9 +273,11 @@ type FallbackableScrollPaddingLeftProperty<TLength> = ScrollPaddingLeftProperty<
 type FallbackableScrollPaddingRightProperty<TLength> = ScrollPaddingRightProperty<TLength> | Array<ScrollPaddingRightProperty<TLength>>;
 type FallbackableScrollPaddingTopProperty<TLength> = ScrollPaddingTopProperty<TLength> | Array<ScrollPaddingTopProperty<TLength>>;
 type FallbackableScrollSnapAlignProperty = ScrollSnapAlignProperty | Array<ScrollSnapAlignProperty>;
+type FallbackableScrollSnapStopProperty = ScrollSnapStopProperty | Array<ScrollSnapStopProperty>;
 type FallbackableScrollSnapTypeProperty = ScrollSnapTypeProperty | Array<ScrollSnapTypeProperty>;
 type FallbackableScrollbarColorProperty = ScrollbarColorProperty | Array<ScrollbarColorProperty>;
 type FallbackableScrollbarWidthProperty = ScrollbarWidthProperty | Array<ScrollbarWidthProperty>;
+type FallbackableShapeImageThresholdProperty = ShapeImageThresholdProperty | Array<ShapeImageThresholdProperty>;
 type FallbackableShapeMarginProperty<TLength> = ShapeMarginProperty<TLength> | Array<ShapeMarginProperty<TLength>>;
 type FallbackableShapeOutsideProperty = ShapeOutsideProperty | Array<ShapeOutsideProperty>;
 type FallbackableTabSizeProperty<TLength> = TabSizeProperty<TLength> | Array<TabSizeProperty<TLength>>;
@@ -285,6 +290,7 @@ type FallbackableTextDecorationLineProperty = TextDecorationLineProperty | Array
 type FallbackableTextDecorationSkipProperty = TextDecorationSkipProperty | Array<TextDecorationSkipProperty>;
 type FallbackableTextDecorationSkipInkProperty = TextDecorationSkipInkProperty | Array<TextDecorationSkipInkProperty>;
 type FallbackableTextDecorationStyleProperty = TextDecorationStyleProperty | Array<TextDecorationStyleProperty>;
+type FallbackableTextDecorationThicknessProperty<TLength> = TextDecorationThicknessProperty<TLength> | Array<TextDecorationThicknessProperty<TLength>>;
 type FallbackableTextEmphasisColorProperty = TextEmphasisColorProperty | Array<TextEmphasisColorProperty>;
 type FallbackableTextEmphasisStyleProperty = TextEmphasisStyleProperty | Array<TextEmphasisStyleProperty>;
 type FallbackableTextIndentProperty<TLength> = TextIndentProperty<TLength> | Array<TextIndentProperty<TLength>>;
@@ -295,6 +301,7 @@ type FallbackableTextRenderingProperty = TextRenderingProperty | Array<TextRende
 type FallbackableTextShadowProperty = TextShadowProperty | Array<TextShadowProperty>;
 type FallbackableTextSizeAdjustProperty = TextSizeAdjustProperty | Array<TextSizeAdjustProperty>;
 type FallbackableTextTransformProperty = TextTransformProperty | Array<TextTransformProperty>;
+type FallbackableTextUnderlineOffsetProperty<TLength> = TextUnderlineOffsetProperty<TLength> | Array<TextUnderlineOffsetProperty<TLength>>;
 type FallbackableTextUnderlinePositionProperty = TextUnderlinePositionProperty | Array<TextUnderlinePositionProperty>;
 type FallbackableTopProperty<TLength> = TopProperty<TLength> | Array<TopProperty<TLength>>;
 type FallbackableTouchActionProperty = TouchActionProperty | Array<TouchActionProperty>;
@@ -358,7 +365,7 @@ type FallbackableOutlineProperty<TLength> = OutlineProperty<TLength> | Array<Out
 type FallbackablePaddingProperty<TLength> = PaddingProperty<TLength> | Array<PaddingProperty<TLength>>;
 type FallbackablePlaceItemsProperty = PlaceItemsProperty | Array<PlaceItemsProperty>;
 type FallbackablePlaceSelfProperty = PlaceSelfProperty | Array<PlaceSelfProperty>;
-type FallbackableTextDecorationProperty = TextDecorationProperty | Array<TextDecorationProperty>;
+type FallbackableTextDecorationProperty<TLength> = TextDecorationProperty<TLength> | Array<TextDecorationProperty<TLength>>;
 type FallbackableTextEmphasisProperty = TextEmphasisProperty | Array<TextEmphasisProperty>;
 type FallbackableTransitionProperty = TransitionProperty | Array<TransitionProperty>;
 type FallbackableMozAppearanceProperty = MozAppearanceProperty | Array<MozAppearanceProperty>;
@@ -378,7 +385,6 @@ type FallbackableMozStackSizingProperty = MozStackSizingProperty | Array<MozStac
 type FallbackableMozUserFocusProperty = MozUserFocusProperty | Array<MozUserFocusProperty>;
 type FallbackableMozUserModifyProperty = MozUserModifyProperty | Array<MozUserModifyProperty>;
 type FallbackableMozWindowDraggingProperty = MozWindowDraggingProperty | Array<MozWindowDraggingProperty>;
-type FallbackableMozWindowShadowProperty = MozWindowShadowProperty | Array<MozWindowShadowProperty>;
 type FallbackableMsAcceleratorProperty = MsAcceleratorProperty | Array<MsAcceleratorProperty>;
 type FallbackableMsBlockProgressionProperty = MsBlockProgressionProperty | Array<MsBlockProgressionProperty>;
 type FallbackableMsContentZoomChainingProperty = MsContentZoomChainingProperty | Array<MsContentZoomChainingProperty>;
@@ -400,6 +406,14 @@ type FallbackableMsScrollLimitYMinProperty<TLength> = MsScrollLimitYMinProperty<
 type FallbackableMsScrollRailsProperty = MsScrollRailsProperty | Array<MsScrollRailsProperty>;
 type FallbackableMsScrollSnapTypeProperty = MsScrollSnapTypeProperty | Array<MsScrollSnapTypeProperty>;
 type FallbackableMsScrollTranslationProperty = MsScrollTranslationProperty | Array<MsScrollTranslationProperty>;
+type FallbackableMsScrollbar3dlightColorProperty = MsScrollbar3dlightColorProperty | Array<MsScrollbar3dlightColorProperty>;
+type FallbackableMsScrollbarArrowColorProperty = MsScrollbarArrowColorProperty | Array<MsScrollbarArrowColorProperty>;
+type FallbackableMsScrollbarBaseColorProperty = MsScrollbarBaseColorProperty | Array<MsScrollbarBaseColorProperty>;
+type FallbackableMsScrollbarDarkshadowColorProperty = MsScrollbarDarkshadowColorProperty | Array<MsScrollbarDarkshadowColorProperty>;
+type FallbackableMsScrollbarFaceColorProperty = MsScrollbarFaceColorProperty | Array<MsScrollbarFaceColorProperty>;
+type FallbackableMsScrollbarHighlightColorProperty = MsScrollbarHighlightColorProperty | Array<MsScrollbarHighlightColorProperty>;
+type FallbackableMsScrollbarShadowColorProperty = MsScrollbarShadowColorProperty | Array<MsScrollbarShadowColorProperty>;
+type FallbackableMsScrollbarTrackColorProperty = MsScrollbarTrackColorProperty | Array<MsScrollbarTrackColorProperty>;
 type FallbackableMsTextAutospaceProperty = MsTextAutospaceProperty | Array<MsTextAutospaceProperty>;
 type FallbackableMsTouchSelectProperty = MsTouchSelectProperty | Array<MsTouchSelectProperty>;
 type FallbackableMsUserSelectProperty = MsUserSelectProperty | Array<MsUserSelectProperty>;
@@ -411,6 +425,7 @@ type FallbackableWebkitBorderBeforeColorProperty = WebkitBorderBeforeColorProper
 type FallbackableWebkitBorderBeforeStyleProperty = WebkitBorderBeforeStyleProperty | Array<WebkitBorderBeforeStyleProperty>;
 type FallbackableWebkitBorderBeforeWidthProperty<TLength> = WebkitBorderBeforeWidthProperty<TLength> | Array<WebkitBorderBeforeWidthProperty<TLength>>;
 type FallbackableWebkitBoxReflectProperty<TLength> = WebkitBoxReflectProperty<TLength> | Array<WebkitBoxReflectProperty<TLength>>;
+type FallbackableWebkitLineClampProperty = WebkitLineClampProperty | Array<WebkitLineClampProperty>;
 type FallbackableWebkitMaskAttachmentProperty = WebkitMaskAttachmentProperty | Array<WebkitMaskAttachmentProperty>;
 type FallbackableWebkitMaskClipProperty = WebkitMaskClipProperty | Array<WebkitMaskClipProperty>;
 type FallbackableWebkitMaskCompositeProperty = WebkitMaskCompositeProperty | Array<WebkitMaskCompositeProperty>;
@@ -432,7 +447,6 @@ type FallbackableWebkitTouchCalloutProperty = WebkitTouchCalloutProperty | Array
 type FallbackableWebkitUserModifyProperty = WebkitUserModifyProperty | Array<WebkitUserModifyProperty>;
 type FallbackableMsContentZoomSnapProperty = MsContentZoomSnapProperty | Array<MsContentZoomSnapProperty>;
 type FallbackableWebkitBorderBeforeProperty<TLength> = WebkitBorderBeforeProperty<TLength> | Array<WebkitBorderBeforeProperty<TLength>>;
-type FallbackableWebkitLineClampProperty = WebkitLineClampProperty | Array<WebkitLineClampProperty>;
 type FallbackableWebkitMaskProperty<TLength> = WebkitMaskProperty<TLength> | Array<WebkitMaskProperty<TLength>>;
 type FallbackableWebkitTextStrokeProperty<TLength> = WebkitTextStrokeProperty<TLength> | Array<WebkitTextStrokeProperty<TLength>>;
 type FallbackableBoxAlignProperty = BoxAlignProperty | Array<BoxAlignProperty>;
@@ -456,14 +470,7 @@ type FallbackableMozBindingProperty = MozBindingProperty | Array<MozBindingPrope
 type FallbackableMozOutlineRadiusProperty<TLength> = MozOutlineRadiusProperty<TLength> | Array<MozOutlineRadiusProperty<TLength>>;
 type FallbackableMozTextBlinkProperty = MozTextBlinkProperty | Array<MozTextBlinkProperty>;
 type FallbackableMozUserInputProperty = MozUserInputProperty | Array<MozUserInputProperty>;
-type FallbackableMsScrollbar3dlightColorProperty = MsScrollbar3dlightColorProperty | Array<MsScrollbar3dlightColorProperty>;
-type FallbackableMsScrollbarArrowColorProperty = MsScrollbarArrowColorProperty | Array<MsScrollbarArrowColorProperty>;
-type FallbackableMsScrollbarBaseColorProperty = MsScrollbarBaseColorProperty | Array<MsScrollbarBaseColorProperty>;
-type FallbackableMsScrollbarDarkshadowColorProperty = MsScrollbarDarkshadowColorProperty | Array<MsScrollbarDarkshadowColorProperty>;
-type FallbackableMsScrollbarFaceColorProperty = MsScrollbarFaceColorProperty | Array<MsScrollbarFaceColorProperty>;
-type FallbackableMsScrollbarHighlightColorProperty = MsScrollbarHighlightColorProperty | Array<MsScrollbarHighlightColorProperty>;
-type FallbackableMsScrollbarShadowColorProperty = MsScrollbarShadowColorProperty | Array<MsScrollbarShadowColorProperty>;
-type FallbackableMsScrollbarTrackColorProperty = MsScrollbarTrackColorProperty | Array<MsScrollbarTrackColorProperty>;
+type FallbackableMozWindowShadowProperty = MozWindowShadowProperty | Array<MozWindowShadowProperty>;
 type FallbackableAlignmentBaselineProperty = AlignmentBaselineProperty | Array<AlignmentBaselineProperty>;
 type FallbackableBaselineShiftProperty<TLength> = BaselineShiftProperty<TLength> | Array<BaselineShiftProperty<TLength>>;
 type FallbackableClipRuleProperty = ClipRuleProperty | Array<ClipRuleProperty>;
@@ -500,8 +507,6 @@ type FallbackableFontFaceFontStyleProperty = FontFaceFontStyleProperty | Array<F
 type FallbackableFontFaceFontVariantProperty = FontFaceFontVariantProperty | Array<FontFaceFontVariantProperty>;
 type FallbackableFontFaceFontVariationSettingsProperty = FontFaceFontVariationSettingsProperty | Array<FontFaceFontVariationSettingsProperty>;
 type FallbackableFontFaceFontWeightProperty = FontFaceFontWeightProperty | Array<FontFaceFontWeightProperty>;
-type FallbackablePageBleedProperty<TLength> = PageBleedProperty<TLength> | Array<PageBleedProperty<TLength>>;
-type FallbackablePageMarksProperty = PageMarksProperty | Array<PageMarksProperty>;
 type FallbackableViewportHeightProperty<TLength> = ViewportHeightProperty<TLength> | Array<ViewportHeightProperty<TLength>>;
 type FallbackableViewportMaxHeightProperty<TLength> = ViewportMaxHeightProperty<TLength> | Array<ViewportMaxHeightProperty<TLength>>;
 type FallbackableViewportMaxWidthProperty<TLength> = ViewportMaxWidthProperty<TLength> | Array<ViewportMaxWidthProperty<TLength>>;
@@ -612,6 +617,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   content?: ContentProperty,
   counterIncrement?: CounterIncrementProperty,
   counterReset?: CounterResetProperty,
+  counterSet?: CounterSetProperty,
   cursor?: CursorProperty,
   direction?: DirectionProperty,
   display?: DisplayProperty,
@@ -724,7 +730,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   offsetPosition?: OffsetPositionProperty<TLength>,
   offsetRotate?: OffsetRotateProperty,
   offsetRotation?: OffsetRotateProperty,
-  opacity?: GlobalsNumber,
+  opacity?: OpacityProperty,
   order?: GlobalsNumber,
   orphans?: GlobalsNumber,
   outlineColor?: OutlineColorProperty,
@@ -776,6 +782,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   scrollMarginBlockEnd?: ScrollMarginBlockEndProperty<TLength>,
   scrollMarginBlockStart?: ScrollMarginBlockStartProperty<TLength>,
   scrollMarginBottom?: ScrollMarginBottomProperty<TLength>,
+  scrollMarginInline?: ScrollMarginInlineProperty<TLength>,
   scrollMarginInlineEnd?: ScrollMarginInlineEndProperty<TLength>,
   scrollMarginInlineStart?: ScrollMarginInlineStartProperty<TLength>,
   scrollMarginLeft?: ScrollMarginLeftProperty<TLength>,
@@ -793,10 +800,11 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   scrollPaddingRight?: ScrollPaddingRightProperty<TLength>,
   scrollPaddingTop?: ScrollPaddingTopProperty<TLength>,
   scrollSnapAlign?: ScrollSnapAlignProperty,
+  scrollSnapStop?: ScrollSnapStopProperty,
   scrollSnapType?: ScrollSnapTypeProperty,
   scrollbarColor?: ScrollbarColorProperty,
   scrollbarWidth?: ScrollbarWidthProperty,
-  shapeImageThreshold?: GlobalsNumber,
+  shapeImageThreshold?: ShapeImageThresholdProperty,
   shapeMargin?: ShapeMarginProperty<TLength>,
   shapeOutside?: ShapeOutsideProperty,
   tabSize?: TabSizeProperty<TLength>,
@@ -809,6 +817,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   textDecorationSkip?: TextDecorationSkipProperty,
   textDecorationSkipInk?: TextDecorationSkipInkProperty,
   textDecorationStyle?: TextDecorationStyleProperty,
+  textDecorationThickness?: TextDecorationThicknessProperty<TLength>,
+  textDecorationWidth?: TextDecorationThicknessProperty<TLength>,
   textEmphasisColor?: TextEmphasisColorProperty,
   textEmphasisPosition?: GlobalsString,
   textEmphasisStyle?: TextEmphasisStyleProperty,
@@ -820,6 +830,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   textShadow?: TextShadowProperty,
   textSizeAdjust?: TextSizeAdjustProperty,
   textTransform?: TextTransformProperty,
+  textUnderlineOffset?: TextUnderlineOffsetProperty<TLength>,
   textUnderlinePosition?: TextUnderlinePositionProperty,
   top?: TopProperty<TLength>,
   touchAction?: TouchActionProperty,
@@ -890,7 +901,7 @@ export type StandardShorthandProperties<TLength = string | 0> = {|
   padding?: PaddingProperty<TLength>,
   placeItems?: PlaceItemsProperty,
   placeSelf?: PlaceSelfProperty,
-  textDecoration?: TextDecorationProperty,
+  textDecoration?: TextDecorationProperty<TLength>,
   textEmphasis?: TextEmphasisProperty,
   transition?: TransitionProperty,
 |};
@@ -956,7 +967,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   MozUserModify?: MozUserModifyProperty,
   MozUserSelect?: UserSelectProperty,
   MozWindowDragging?: MozWindowDraggingProperty,
-  MozWindowShadow?: MozWindowShadowProperty,
   msAccelerator?: MsAcceleratorProperty,
   msAlignSelf?: AlignSelfProperty,
   msBlockProgression?: MsBlockProgressionProperty,
@@ -994,14 +1004,25 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   msScrollSnapPointsY?: GlobalsString,
   msScrollSnapType?: MsScrollSnapTypeProperty,
   msScrollTranslation?: MsScrollTranslationProperty,
+  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty,
+  msScrollbarArrowColor?: MsScrollbarArrowColorProperty,
+  msScrollbarBaseColor?: MsScrollbarBaseColorProperty,
+  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty,
+  msScrollbarFaceColor?: MsScrollbarFaceColorProperty,
+  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty,
+  msScrollbarShadowColor?: MsScrollbarShadowColorProperty,
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   msTextAutospace?: MsTextAutospaceProperty,
   msTextCombineHorizontal?: TextCombineUprightProperty,
   msTextOverflow?: TextOverflowProperty,
-  msTextSizeAdjust?: TextSizeAdjustProperty,
   msTouchAction?: TouchActionProperty,
   msTouchSelect?: MsTouchSelectProperty,
   msTransform?: TransformProperty,
   msTransformOrigin?: TransformOriginProperty<TLength>,
+  msTransitionDelay?: GlobalsString,
+  msTransitionDuration?: GlobalsString,
+  msTransitionProperty?: TransitionPropertyProperty,
+  msTransitionTimingFunction?: TransitionTimingFunctionProperty,
   msUserSelect?: MsUserSelectProperty,
   msWordBreak?: WordBreakProperty,
   msWrapFlow?: MsWrapFlowProperty,
@@ -1045,6 +1066,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitClipPath?: ClipPathProperty,
   WebkitColorAdjust?: ColorAdjustProperty,
   WebkitColumnCount?: ColumnCountProperty,
+  WebkitColumnFill?: ColumnFillProperty,
   WebkitColumnGap?: ColumnGapProperty<TLength>,
   WebkitColumnRuleColor?: ColumnRuleColorProperty,
   WebkitColumnRuleStyle?: ColumnRuleStyleProperty,
@@ -1063,6 +1085,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitHyphens?: HyphensProperty,
   WebkitJustifyContent?: JustifyContentProperty,
   WebkitLineBreak?: LineBreakProperty,
+  WebkitLineClamp?: WebkitLineClampProperty,
   WebkitMarginEnd?: MarginInlineEndProperty<TLength>,
   WebkitMarginStart?: MarginInlineStartProperty<TLength>,
   WebkitMaskAttachment?: WebkitMaskAttachmentProperty,
@@ -1125,6 +1148,7 @@ export type VendorShorthandProperties<TLength = string | 0> = {|
   msScrollLimit?: GlobalsString,
   msScrollSnapX?: GlobalsString,
   msScrollSnapY?: GlobalsString,
+  msTransition?: TransitionProperty,
   WebkitAnimation?: AnimationProperty,
   WebkitBorderBefore?: WebkitBorderBeforeProperty<TLength>,
   WebkitBorderImage?: BorderImageProperty,
@@ -1133,7 +1157,6 @@ export type VendorShorthandProperties<TLength = string | 0> = {|
   WebkitColumns?: ColumnsProperty<TLength>,
   WebkitFlex?: FlexProperty<TLength>,
   WebkitFlexFlow?: FlexFlowProperty,
-  WebkitLineClamp?: WebkitLineClampProperty,
   WebkitMask?: WebkitMaskProperty<TLength>,
   WebkitTextEmphasis?: TextEmphasisProperty,
   WebkitTextStroke?: WebkitTextStrokeProperty<TLength>,
@@ -1178,6 +1201,9 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   KhtmlBoxOrdinalGroup?: GlobalsNumber,
   KhtmlBoxOrient?: BoxOrientProperty,
   KhtmlBoxPack?: BoxPackProperty,
+  KhtmlLineBreak?: LineBreakProperty,
+  KhtmlOpacity?: OpacityProperty,
+  KhtmlUserSelect?: UserSelectProperty,
   MozBackgroundClip?: BackgroundClipProperty,
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty,
   MozBackgroundOrigin?: BackgroundOriginProperty,
@@ -1195,28 +1221,20 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   MozBoxOrient?: BoxOrientProperty,
   MozBoxPack?: BoxPackProperty,
   MozBoxShadow?: BoxShadowProperty,
-  MozOpacity?: GlobalsNumber,
+  MozOpacity?: OpacityProperty,
   MozOutline?: OutlineProperty<TLength>,
   MozOutlineColor?: OutlineColorProperty,
   MozOutlineRadius?: MozOutlineRadiusProperty<TLength>,
   MozOutlineStyle?: OutlineStyleProperty,
   MozOutlineWidth?: OutlineWidthProperty<TLength>,
-  MozResize?: ResizeProperty,
   MozTextAlignLast?: TextAlignLastProperty,
   MozTextBlink?: MozTextBlinkProperty,
   MozTextDecorationColor?: TextDecorationColorProperty,
   MozTextDecorationLine?: TextDecorationLineProperty,
   MozTextDecorationStyle?: TextDecorationStyleProperty,
   MozUserInput?: MozUserInputProperty,
+  MozWindowShadow?: MozWindowShadowProperty,
   msImeMode?: ImeModeProperty,
-  msScrollbar3dlightColor?: MsScrollbar3dlightColorProperty,
-  msScrollbarArrowColor?: MsScrollbarArrowColorProperty,
-  msScrollbarBaseColor?: MsScrollbarBaseColorProperty,
-  msScrollbarDarkshadowColor?: MsScrollbarDarkshadowColorProperty,
-  msScrollbarFaceColor?: MsScrollbarFaceColorProperty,
-  msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty,
-  msScrollbarShadowColor?: MsScrollbarShadowColorProperty,
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   OAnimation?: AnimationProperty,
   OAnimationDelay?: GlobalsString,
   OAnimationDirection?: AnimationDirectionProperty,
@@ -1283,7 +1301,7 @@ export type SvgProperties<TLength = string | 0> = {|
   markerMid?: MarkerMidProperty,
   markerStart?: MarkerStartProperty,
   mask?: MaskProperty<TLength>,
-  opacity?: GlobalsNumber,
+  opacity?: OpacityProperty,
   overflow?: OverflowProperty,
   paintOrder?: PaintOrderProperty,
   pointerEvents?: PointerEventsProperty,
@@ -1299,7 +1317,7 @@ export type SvgProperties<TLength = string | 0> = {|
   strokeOpacity?: GlobalsNumber,
   strokeWidth?: StrokeWidthProperty<TLength>,
   textAnchor?: TextAnchorProperty,
-  textDecoration?: TextDecorationProperty,
+  textDecoration?: TextDecorationProperty<TLength>,
   textRendering?: TextRenderingProperty,
   unicodeBidi?: UnicodeBidiProperty,
   vectorEffect?: VectorEffectProperty,
@@ -1409,6 +1427,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   content?: ContentProperty,
   "counter-increment"?: CounterIncrementProperty,
   "counter-reset"?: CounterResetProperty,
+  "counter-set"?: CounterSetProperty,
   cursor?: CursorProperty,
   direction?: DirectionProperty,
   display?: DisplayProperty,
@@ -1521,7 +1540,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "offset-position"?: OffsetPositionProperty<TLength>,
   "offset-rotate"?: OffsetRotateProperty,
   "offset-rotation"?: OffsetRotateProperty,
-  opacity?: GlobalsNumber,
+  opacity?: OpacityProperty,
   order?: GlobalsNumber,
   orphans?: GlobalsNumber,
   "outline-color"?: OutlineColorProperty,
@@ -1573,6 +1592,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "scroll-margin-block-end"?: ScrollMarginBlockEndProperty<TLength>,
   "scroll-margin-block-start"?: ScrollMarginBlockStartProperty<TLength>,
   "scroll-margin-bottom"?: ScrollMarginBottomProperty<TLength>,
+  "scroll-margin-inline"?: ScrollMarginInlineProperty<TLength>,
   "scroll-margin-inline-end"?: ScrollMarginInlineEndProperty<TLength>,
   "scroll-margin-inline-start"?: ScrollMarginInlineStartProperty<TLength>,
   "scroll-margin-left"?: ScrollMarginLeftProperty<TLength>,
@@ -1590,10 +1610,11 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "scroll-padding-right"?: ScrollPaddingRightProperty<TLength>,
   "scroll-padding-top"?: ScrollPaddingTopProperty<TLength>,
   "scroll-snap-align"?: ScrollSnapAlignProperty,
+  "scroll-snap-stop"?: ScrollSnapStopProperty,
   "scroll-snap-type"?: ScrollSnapTypeProperty,
   "scrollbar-color"?: ScrollbarColorProperty,
   "scrollbar-width"?: ScrollbarWidthProperty,
-  "shape-image-threshold"?: GlobalsNumber,
+  "shape-image-threshold"?: ShapeImageThresholdProperty,
   "shape-margin"?: ShapeMarginProperty<TLength>,
   "shape-outside"?: ShapeOutsideProperty,
   "tab-size"?: TabSizeProperty<TLength>,
@@ -1606,6 +1627,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "text-decoration-skip"?: TextDecorationSkipProperty,
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty,
   "text-decoration-style"?: TextDecorationStyleProperty,
+  "text-decoration-thickness"?: TextDecorationThicknessProperty<TLength>,
+  "text-decoration-width"?: TextDecorationThicknessProperty<TLength>,
   "text-emphasis-color"?: TextEmphasisColorProperty,
   "text-emphasis-position"?: GlobalsString,
   "text-emphasis-style"?: TextEmphasisStyleProperty,
@@ -1617,6 +1640,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "text-shadow"?: TextShadowProperty,
   "text-size-adjust"?: TextSizeAdjustProperty,
   "text-transform"?: TextTransformProperty,
+  "text-underline-offset"?: TextUnderlineOffsetProperty<TLength>,
   "text-underline-position"?: TextUnderlinePositionProperty,
   top?: TopProperty<TLength>,
   "touch-action"?: TouchActionProperty,
@@ -1687,7 +1711,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {|
   padding?: PaddingProperty<TLength>,
   "place-items"?: PlaceItemsProperty,
   "place-self"?: PlaceSelfProperty,
-  "text-decoration"?: TextDecorationProperty,
+  "text-decoration"?: TextDecorationProperty<TLength>,
   "text-emphasis"?: TextEmphasisProperty,
   transition?: TransitionProperty,
 |};
@@ -1753,7 +1777,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-moz-user-modify"?: MozUserModifyProperty,
   "-moz-user-select"?: UserSelectProperty,
   "-moz-window-dragging"?: MozWindowDraggingProperty,
-  "-moz-window-shadow"?: MozWindowShadowProperty,
   "-ms-accelerator"?: MsAcceleratorProperty,
   "-ms-align-self"?: AlignSelfProperty,
   "-ms-block-progression"?: MsBlockProgressionProperty,
@@ -1791,14 +1814,25 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-ms-scroll-snap-points-y"?: GlobalsString,
   "-ms-scroll-snap-type"?: MsScrollSnapTypeProperty,
   "-ms-scroll-translation"?: MsScrollTranslationProperty,
+  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty,
+  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty,
+  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty,
+  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty,
+  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty,
+  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty,
+  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty,
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-ms-text-autospace"?: MsTextAutospaceProperty,
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty,
   "-ms-text-overflow"?: TextOverflowProperty,
-  "-ms-text-size-adjust"?: TextSizeAdjustProperty,
   "-ms-touch-action"?: TouchActionProperty,
   "-ms-touch-select"?: MsTouchSelectProperty,
   "-ms-transform"?: TransformProperty,
   "-ms-transform-origin"?: TransformOriginProperty<TLength>,
+  "-ms-transition-delay"?: GlobalsString,
+  "-ms-transition-duration"?: GlobalsString,
+  "-ms-transition-property"?: TransitionPropertyProperty,
+  "-ms-transition-timing-function"?: TransitionTimingFunctionProperty,
   "-ms-user-select"?: MsUserSelectProperty,
   "-ms-word-break"?: WordBreakProperty,
   "-ms-wrap-flow"?: MsWrapFlowProperty,
@@ -1842,6 +1876,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-clip-path"?: ClipPathProperty,
   "-webkit-color-adjust"?: ColorAdjustProperty,
   "-webkit-column-count"?: ColumnCountProperty,
+  "-webkit-column-fill"?: ColumnFillProperty,
   "-webkit-column-gap"?: ColumnGapProperty<TLength>,
   "-webkit-column-rule-color"?: ColumnRuleColorProperty,
   "-webkit-column-rule-style"?: ColumnRuleStyleProperty,
@@ -1860,6 +1895,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-hyphens"?: HyphensProperty,
   "-webkit-justify-content"?: JustifyContentProperty,
   "-webkit-line-break"?: LineBreakProperty,
+  "-webkit-line-clamp"?: WebkitLineClampProperty,
   "-webkit-margin-end"?: MarginInlineEndProperty<TLength>,
   "-webkit-margin-start"?: MarginInlineStartProperty<TLength>,
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty,
@@ -1922,6 +1958,7 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {|
   "-ms-scroll-limit"?: GlobalsString,
   "-ms-scroll-snap-x"?: GlobalsString,
   "-ms-scroll-snap-y"?: GlobalsString,
+  "-ms-transition"?: TransitionProperty,
   "-webkit-animation"?: AnimationProperty,
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength>,
   "-webkit-border-image"?: BorderImageProperty,
@@ -1930,7 +1967,6 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-columns"?: ColumnsProperty<TLength>,
   "-webkit-flex"?: FlexProperty<TLength>,
   "-webkit-flex-flow"?: FlexFlowProperty,
-  "-webkit-line-clamp"?: WebkitLineClampProperty,
   "-webkit-mask"?: WebkitMaskProperty<TLength>,
   "-webkit-text-emphasis"?: TextEmphasisProperty,
   "-webkit-text-stroke"?: WebkitTextStrokeProperty<TLength>,
@@ -1975,6 +2011,9 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-khtml-box-ordinal-group"?: GlobalsNumber,
   "-khtml-box-orient"?: BoxOrientProperty,
   "-khtml-box-pack"?: BoxPackProperty,
+  "-khtml-line-break"?: LineBreakProperty,
+  "-khtml-opacity"?: OpacityProperty,
+  "-khtml-user-select"?: UserSelectProperty,
   "-moz-background-clip"?: BackgroundClipProperty,
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty,
   "-moz-background-origin"?: BackgroundOriginProperty,
@@ -1992,28 +2031,20 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-moz-box-orient"?: BoxOrientProperty,
   "-moz-box-pack"?: BoxPackProperty,
   "-moz-box-shadow"?: BoxShadowProperty,
-  "-moz-opacity"?: GlobalsNumber,
+  "-moz-opacity"?: OpacityProperty,
   "-moz-outline"?: OutlineProperty<TLength>,
   "-moz-outline-color"?: OutlineColorProperty,
   "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength>,
   "-moz-outline-style"?: OutlineStyleProperty,
   "-moz-outline-width"?: OutlineWidthProperty<TLength>,
-  "-moz-resize"?: ResizeProperty,
   "-moz-text-align-last"?: TextAlignLastProperty,
   "-moz-text-blink"?: MozTextBlinkProperty,
   "-moz-text-decoration-color"?: TextDecorationColorProperty,
   "-moz-text-decoration-line"?: TextDecorationLineProperty,
   "-moz-text-decoration-style"?: TextDecorationStyleProperty,
   "-moz-user-input"?: MozUserInputProperty,
+  "-moz-window-shadow"?: MozWindowShadowProperty,
   "-ms-ime-mode"?: ImeModeProperty,
-  "-ms-scrollbar-3dlight-color"?: MsScrollbar3dlightColorProperty,
-  "-ms-scrollbar-arrow-color"?: MsScrollbarArrowColorProperty,
-  "-ms-scrollbar-base-color"?: MsScrollbarBaseColorProperty,
-  "-ms-scrollbar-darkshadow-color"?: MsScrollbarDarkshadowColorProperty,
-  "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty,
-  "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty,
-  "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty,
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-o-animation"?: AnimationProperty,
   "-o-animation-delay"?: GlobalsString,
   "-o-animation-direction"?: AnimationDirectionProperty,
@@ -2080,7 +2111,7 @@ export type SvgPropertiesHyphen<TLength = string | 0> = {|
   "marker-mid"?: MarkerMidProperty,
   "marker-start"?: MarkerStartProperty,
   mask?: MaskProperty<TLength>,
-  opacity?: GlobalsNumber,
+  opacity?: OpacityProperty,
   overflow?: OverflowProperty,
   "paint-order"?: PaintOrderProperty,
   "pointer-events"?: PointerEventsProperty,
@@ -2096,7 +2127,7 @@ export type SvgPropertiesHyphen<TLength = string | 0> = {|
   "stroke-opacity"?: GlobalsNumber,
   "stroke-width"?: StrokeWidthProperty<TLength>,
   "text-anchor"?: TextAnchorProperty,
-  "text-decoration"?: TextDecorationProperty,
+  "text-decoration"?: TextDecorationProperty<TLength>,
   "text-rendering"?: TextRenderingProperty,
   "unicode-bidi"?: UnicodeBidiProperty,
   "vector-effect"?: VectorEffectProperty,
@@ -2211,6 +2242,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   content?: FallbackableContentProperty,
   counterIncrement?: FallbackableCounterIncrementProperty,
   counterReset?: FallbackableCounterResetProperty,
+  counterSet?: FallbackableCounterSetProperty,
   cursor?: FallbackableCursorProperty,
   direction?: FallbackableDirectionProperty,
   display?: FallbackableDisplayProperty,
@@ -2323,7 +2355,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   offsetPosition?: FallbackableOffsetPositionProperty<TLength>,
   offsetRotate?: FallbackableOffsetRotateProperty,
   offsetRotation?: FallbackableOffsetRotateProperty,
-  opacity?: FallbackableGlobalsNumber,
+  opacity?: FallbackableOpacityProperty,
   order?: FallbackableGlobalsNumber,
   orphans?: FallbackableGlobalsNumber,
   outlineColor?: FallbackableOutlineColorProperty,
@@ -2375,6 +2407,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   scrollMarginBlockEnd?: FallbackableScrollMarginBlockEndProperty<TLength>,
   scrollMarginBlockStart?: FallbackableScrollMarginBlockStartProperty<TLength>,
   scrollMarginBottom?: FallbackableScrollMarginBottomProperty<TLength>,
+  scrollMarginInline?: FallbackableScrollMarginInlineProperty<TLength>,
   scrollMarginInlineEnd?: FallbackableScrollMarginInlineEndProperty<TLength>,
   scrollMarginInlineStart?: FallbackableScrollMarginInlineStartProperty<TLength>,
   scrollMarginLeft?: FallbackableScrollMarginLeftProperty<TLength>,
@@ -2392,10 +2425,11 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   scrollPaddingRight?: FallbackableScrollPaddingRightProperty<TLength>,
   scrollPaddingTop?: FallbackableScrollPaddingTopProperty<TLength>,
   scrollSnapAlign?: FallbackableScrollSnapAlignProperty,
+  scrollSnapStop?: FallbackableScrollSnapStopProperty,
   scrollSnapType?: FallbackableScrollSnapTypeProperty,
   scrollbarColor?: FallbackableScrollbarColorProperty,
   scrollbarWidth?: FallbackableScrollbarWidthProperty,
-  shapeImageThreshold?: FallbackableGlobalsNumber,
+  shapeImageThreshold?: FallbackableShapeImageThresholdProperty,
   shapeMargin?: FallbackableShapeMarginProperty<TLength>,
   shapeOutside?: FallbackableShapeOutsideProperty,
   tabSize?: FallbackableTabSizeProperty<TLength>,
@@ -2408,6 +2442,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   textDecorationSkip?: FallbackableTextDecorationSkipProperty,
   textDecorationSkipInk?: FallbackableTextDecorationSkipInkProperty,
   textDecorationStyle?: FallbackableTextDecorationStyleProperty,
+  textDecorationThickness?: FallbackableTextDecorationThicknessProperty<TLength>,
+  textDecorationWidth?: FallbackableTextDecorationThicknessProperty<TLength>,
   textEmphasisColor?: FallbackableTextEmphasisColorProperty,
   textEmphasisPosition?: FallbackableGlobalsString,
   textEmphasisStyle?: FallbackableTextEmphasisStyleProperty,
@@ -2419,6 +2455,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   textShadow?: FallbackableTextShadowProperty,
   textSizeAdjust?: FallbackableTextSizeAdjustProperty,
   textTransform?: FallbackableTextTransformProperty,
+  textUnderlineOffset?: FallbackableTextUnderlineOffsetProperty<TLength>,
   textUnderlinePosition?: FallbackableTextUnderlinePositionProperty,
   top?: FallbackableTopProperty<TLength>,
   touchAction?: FallbackableTouchActionProperty,
@@ -2489,7 +2526,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {|
   padding?: FallbackablePaddingProperty<TLength>,
   placeItems?: FallbackablePlaceItemsProperty,
   placeSelf?: FallbackablePlaceSelfProperty,
-  textDecoration?: FallbackableTextDecorationProperty,
+  textDecoration?: FallbackableTextDecorationProperty<TLength>,
   textEmphasis?: FallbackableTextEmphasisProperty,
   transition?: FallbackableTransitionProperty,
 |};
@@ -2555,7 +2592,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   MozUserModify?: FallbackableMozUserModifyProperty,
   MozUserSelect?: FallbackableUserSelectProperty,
   MozWindowDragging?: FallbackableMozWindowDraggingProperty,
-  MozWindowShadow?: FallbackableMozWindowShadowProperty,
   msAccelerator?: FallbackableMsAcceleratorProperty,
   msAlignSelf?: FallbackableAlignSelfProperty,
   msBlockProgression?: FallbackableMsBlockProgressionProperty,
@@ -2593,14 +2629,25 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   msScrollSnapPointsY?: FallbackableGlobalsString,
   msScrollSnapType?: FallbackableMsScrollSnapTypeProperty,
   msScrollTranslation?: FallbackableMsScrollTranslationProperty,
+  msScrollbar3dlightColor?: FallbackableMsScrollbar3dlightColorProperty,
+  msScrollbarArrowColor?: FallbackableMsScrollbarArrowColorProperty,
+  msScrollbarBaseColor?: FallbackableMsScrollbarBaseColorProperty,
+  msScrollbarDarkshadowColor?: FallbackableMsScrollbarDarkshadowColorProperty,
+  msScrollbarFaceColor?: FallbackableMsScrollbarFaceColorProperty,
+  msScrollbarHighlightColor?: FallbackableMsScrollbarHighlightColorProperty,
+  msScrollbarShadowColor?: FallbackableMsScrollbarShadowColorProperty,
+  msScrollbarTrackColor?: FallbackableMsScrollbarTrackColorProperty,
   msTextAutospace?: FallbackableMsTextAutospaceProperty,
   msTextCombineHorizontal?: FallbackableTextCombineUprightProperty,
   msTextOverflow?: FallbackableTextOverflowProperty,
-  msTextSizeAdjust?: FallbackableTextSizeAdjustProperty,
   msTouchAction?: FallbackableTouchActionProperty,
   msTouchSelect?: FallbackableMsTouchSelectProperty,
   msTransform?: FallbackableTransformProperty,
   msTransformOrigin?: FallbackableTransformOriginProperty<TLength>,
+  msTransitionDelay?: FallbackableGlobalsString,
+  msTransitionDuration?: FallbackableGlobalsString,
+  msTransitionProperty?: FallbackableTransitionPropertyProperty,
+  msTransitionTimingFunction?: FallbackableTransitionTimingFunctionProperty,
   msUserSelect?: FallbackableMsUserSelectProperty,
   msWordBreak?: FallbackableWordBreakProperty,
   msWrapFlow?: FallbackableMsWrapFlowProperty,
@@ -2644,6 +2691,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitClipPath?: FallbackableClipPathProperty,
   WebkitColorAdjust?: FallbackableColorAdjustProperty,
   WebkitColumnCount?: FallbackableColumnCountProperty,
+  WebkitColumnFill?: FallbackableColumnFillProperty,
   WebkitColumnGap?: FallbackableColumnGapProperty<TLength>,
   WebkitColumnRuleColor?: FallbackableColumnRuleColorProperty,
   WebkitColumnRuleStyle?: FallbackableColumnRuleStyleProperty,
@@ -2662,6 +2710,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitHyphens?: FallbackableHyphensProperty,
   WebkitJustifyContent?: FallbackableJustifyContentProperty,
   WebkitLineBreak?: FallbackableLineBreakProperty,
+  WebkitLineClamp?: FallbackableWebkitLineClampProperty,
   WebkitMarginEnd?: FallbackableMarginInlineEndProperty<TLength>,
   WebkitMarginStart?: FallbackableMarginInlineStartProperty<TLength>,
   WebkitMaskAttachment?: FallbackableWebkitMaskAttachmentProperty,
@@ -2724,6 +2773,7 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {|
   msScrollLimit?: FallbackableGlobalsString,
   msScrollSnapX?: FallbackableGlobalsString,
   msScrollSnapY?: FallbackableGlobalsString,
+  msTransition?: FallbackableTransitionProperty,
   WebkitAnimation?: FallbackableAnimationProperty,
   WebkitBorderBefore?: FallbackableWebkitBorderBeforeProperty<TLength>,
   WebkitBorderImage?: FallbackableBorderImageProperty,
@@ -2732,7 +2782,6 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {|
   WebkitColumns?: FallbackableColumnsProperty<TLength>,
   WebkitFlex?: FallbackableFlexProperty<TLength>,
   WebkitFlexFlow?: FallbackableFlexFlowProperty,
-  WebkitLineClamp?: FallbackableWebkitLineClampProperty,
   WebkitMask?: FallbackableWebkitMaskProperty<TLength>,
   WebkitTextEmphasis?: FallbackableTextEmphasisProperty,
   WebkitTextStroke?: FallbackableWebkitTextStrokeProperty<TLength>,
@@ -2777,6 +2826,9 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   KhtmlBoxOrdinalGroup?: FallbackableGlobalsNumber,
   KhtmlBoxOrient?: FallbackableBoxOrientProperty,
   KhtmlBoxPack?: FallbackableBoxPackProperty,
+  KhtmlLineBreak?: FallbackableLineBreakProperty,
+  KhtmlOpacity?: FallbackableOpacityProperty,
+  KhtmlUserSelect?: FallbackableUserSelectProperty,
   MozBackgroundClip?: FallbackableBackgroundClipProperty,
   MozBackgroundInlinePolicy?: FallbackableBoxDecorationBreakProperty,
   MozBackgroundOrigin?: FallbackableBackgroundOriginProperty,
@@ -2794,28 +2846,20 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   MozBoxOrient?: FallbackableBoxOrientProperty,
   MozBoxPack?: FallbackableBoxPackProperty,
   MozBoxShadow?: FallbackableBoxShadowProperty,
-  MozOpacity?: FallbackableGlobalsNumber,
+  MozOpacity?: FallbackableOpacityProperty,
   MozOutline?: FallbackableOutlineProperty<TLength>,
   MozOutlineColor?: FallbackableOutlineColorProperty,
   MozOutlineRadius?: FallbackableMozOutlineRadiusProperty<TLength>,
   MozOutlineStyle?: FallbackableOutlineStyleProperty,
   MozOutlineWidth?: FallbackableOutlineWidthProperty<TLength>,
-  MozResize?: FallbackableResizeProperty,
   MozTextAlignLast?: FallbackableTextAlignLastProperty,
   MozTextBlink?: FallbackableMozTextBlinkProperty,
   MozTextDecorationColor?: FallbackableTextDecorationColorProperty,
   MozTextDecorationLine?: FallbackableTextDecorationLineProperty,
   MozTextDecorationStyle?: FallbackableTextDecorationStyleProperty,
   MozUserInput?: FallbackableMozUserInputProperty,
+  MozWindowShadow?: FallbackableMozWindowShadowProperty,
   msImeMode?: FallbackableImeModeProperty,
-  msScrollbar3dlightColor?: FallbackableMsScrollbar3dlightColorProperty,
-  msScrollbarArrowColor?: FallbackableMsScrollbarArrowColorProperty,
-  msScrollbarBaseColor?: FallbackableMsScrollbarBaseColorProperty,
-  msScrollbarDarkshadowColor?: FallbackableMsScrollbarDarkshadowColorProperty,
-  msScrollbarFaceColor?: FallbackableMsScrollbarFaceColorProperty,
-  msScrollbarHighlightColor?: FallbackableMsScrollbarHighlightColorProperty,
-  msScrollbarShadowColor?: FallbackableMsScrollbarShadowColorProperty,
-  msScrollbarTrackColor?: FallbackableMsScrollbarTrackColorProperty,
   OAnimation?: FallbackableAnimationProperty,
   OAnimationDelay?: FallbackableGlobalsString,
   OAnimationDirection?: FallbackableAnimationDirectionProperty,
@@ -2882,7 +2926,7 @@ export type SvgPropertiesFallback<TLength = string | 0> = {|
   markerMid?: FallbackableMarkerMidProperty,
   markerStart?: FallbackableMarkerStartProperty,
   mask?: FallbackableMaskProperty<TLength>,
-  opacity?: FallbackableGlobalsNumber,
+  opacity?: FallbackableOpacityProperty,
   overflow?: FallbackableOverflowProperty,
   paintOrder?: FallbackablePaintOrderProperty,
   pointerEvents?: FallbackablePointerEventsProperty,
@@ -2898,7 +2942,7 @@ export type SvgPropertiesFallback<TLength = string | 0> = {|
   strokeOpacity?: FallbackableGlobalsNumber,
   strokeWidth?: FallbackableStrokeWidthProperty<TLength>,
   textAnchor?: FallbackableTextAnchorProperty,
-  textDecoration?: FallbackableTextDecorationProperty,
+  textDecoration?: FallbackableTextDecorationProperty<TLength>,
   textRendering?: FallbackableTextRenderingProperty,
   unicodeBidi?: FallbackableUnicodeBidiProperty,
   vectorEffect?: FallbackableVectorEffectProperty,
@@ -3013,6 +3057,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   content?: FallbackableContentProperty,
   "counter-increment"?: FallbackableCounterIncrementProperty,
   "counter-reset"?: FallbackableCounterResetProperty,
+  "counter-set"?: FallbackableCounterSetProperty,
   cursor?: FallbackableCursorProperty,
   direction?: FallbackableDirectionProperty,
   display?: FallbackableDisplayProperty,
@@ -3125,7 +3170,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "offset-position"?: FallbackableOffsetPositionProperty<TLength>,
   "offset-rotate"?: FallbackableOffsetRotateProperty,
   "offset-rotation"?: FallbackableOffsetRotateProperty,
-  opacity?: FallbackableGlobalsNumber,
+  opacity?: FallbackableOpacityProperty,
   order?: FallbackableGlobalsNumber,
   orphans?: FallbackableGlobalsNumber,
   "outline-color"?: FallbackableOutlineColorProperty,
@@ -3177,6 +3222,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "scroll-margin-block-end"?: FallbackableScrollMarginBlockEndProperty<TLength>,
   "scroll-margin-block-start"?: FallbackableScrollMarginBlockStartProperty<TLength>,
   "scroll-margin-bottom"?: FallbackableScrollMarginBottomProperty<TLength>,
+  "scroll-margin-inline"?: FallbackableScrollMarginInlineProperty<TLength>,
   "scroll-margin-inline-end"?: FallbackableScrollMarginInlineEndProperty<TLength>,
   "scroll-margin-inline-start"?: FallbackableScrollMarginInlineStartProperty<TLength>,
   "scroll-margin-left"?: FallbackableScrollMarginLeftProperty<TLength>,
@@ -3194,10 +3240,11 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "scroll-padding-right"?: FallbackableScrollPaddingRightProperty<TLength>,
   "scroll-padding-top"?: FallbackableScrollPaddingTopProperty<TLength>,
   "scroll-snap-align"?: FallbackableScrollSnapAlignProperty,
+  "scroll-snap-stop"?: FallbackableScrollSnapStopProperty,
   "scroll-snap-type"?: FallbackableScrollSnapTypeProperty,
   "scrollbar-color"?: FallbackableScrollbarColorProperty,
   "scrollbar-width"?: FallbackableScrollbarWidthProperty,
-  "shape-image-threshold"?: FallbackableGlobalsNumber,
+  "shape-image-threshold"?: FallbackableShapeImageThresholdProperty,
   "shape-margin"?: FallbackableShapeMarginProperty<TLength>,
   "shape-outside"?: FallbackableShapeOutsideProperty,
   "tab-size"?: FallbackableTabSizeProperty<TLength>,
@@ -3210,6 +3257,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "text-decoration-skip"?: FallbackableTextDecorationSkipProperty,
   "text-decoration-skip-ink"?: FallbackableTextDecorationSkipInkProperty,
   "text-decoration-style"?: FallbackableTextDecorationStyleProperty,
+  "text-decoration-thickness"?: FallbackableTextDecorationThicknessProperty<TLength>,
+  "text-decoration-width"?: FallbackableTextDecorationThicknessProperty<TLength>,
   "text-emphasis-color"?: FallbackableTextEmphasisColorProperty,
   "text-emphasis-position"?: FallbackableGlobalsString,
   "text-emphasis-style"?: FallbackableTextEmphasisStyleProperty,
@@ -3221,6 +3270,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "text-shadow"?: FallbackableTextShadowProperty,
   "text-size-adjust"?: FallbackableTextSizeAdjustProperty,
   "text-transform"?: FallbackableTextTransformProperty,
+  "text-underline-offset"?: FallbackableTextUnderlineOffsetProperty<TLength>,
   "text-underline-position"?: FallbackableTextUnderlinePositionProperty,
   top?: FallbackableTopProperty<TLength>,
   "touch-action"?: FallbackableTouchActionProperty,
@@ -3291,7 +3341,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
   padding?: FallbackablePaddingProperty<TLength>,
   "place-items"?: FallbackablePlaceItemsProperty,
   "place-self"?: FallbackablePlaceSelfProperty,
-  "text-decoration"?: FallbackableTextDecorationProperty,
+  "text-decoration"?: FallbackableTextDecorationProperty<TLength>,
   "text-emphasis"?: FallbackableTextEmphasisProperty,
   transition?: FallbackableTransitionProperty,
 |};
@@ -3360,7 +3410,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-user-modify"?: FallbackableMozUserModifyProperty,
   "-moz-user-select"?: FallbackableUserSelectProperty,
   "-moz-window-dragging"?: FallbackableMozWindowDraggingProperty,
-  "-moz-window-shadow"?: FallbackableMozWindowShadowProperty,
   "-ms-accelerator"?: FallbackableMsAcceleratorProperty,
   "-ms-align-self"?: FallbackableAlignSelfProperty,
   "-ms-block-progression"?: FallbackableMsBlockProgressionProperty,
@@ -3398,14 +3447,25 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-ms-scroll-snap-points-y"?: FallbackableGlobalsString,
   "-ms-scroll-snap-type"?: FallbackableMsScrollSnapTypeProperty,
   "-ms-scroll-translation"?: FallbackableMsScrollTranslationProperty,
+  "-ms-scrollbar-3dlight-color"?: FallbackableMsScrollbar3dlightColorProperty,
+  "-ms-scrollbar-arrow-color"?: FallbackableMsScrollbarArrowColorProperty,
+  "-ms-scrollbar-base-color"?: FallbackableMsScrollbarBaseColorProperty,
+  "-ms-scrollbar-darkshadow-color"?: FallbackableMsScrollbarDarkshadowColorProperty,
+  "-ms-scrollbar-face-color"?: FallbackableMsScrollbarFaceColorProperty,
+  "-ms-scrollbar-highlight-color"?: FallbackableMsScrollbarHighlightColorProperty,
+  "-ms-scrollbar-shadow-color"?: FallbackableMsScrollbarShadowColorProperty,
+  "-ms-scrollbar-track-color"?: FallbackableMsScrollbarTrackColorProperty,
   "-ms-text-autospace"?: FallbackableMsTextAutospaceProperty,
   "-ms-text-combine-horizontal"?: FallbackableTextCombineUprightProperty,
   "-ms-text-overflow"?: FallbackableTextOverflowProperty,
-  "-ms-text-size-adjust"?: FallbackableTextSizeAdjustProperty,
   "-ms-touch-action"?: FallbackableTouchActionProperty,
   "-ms-touch-select"?: FallbackableMsTouchSelectProperty,
   "-ms-transform"?: FallbackableTransformProperty,
   "-ms-transform-origin"?: FallbackableTransformOriginProperty<TLength>,
+  "-ms-transition-delay"?: FallbackableGlobalsString,
+  "-ms-transition-duration"?: FallbackableGlobalsString,
+  "-ms-transition-property"?: FallbackableTransitionPropertyProperty,
+  "-ms-transition-timing-function"?: FallbackableTransitionTimingFunctionProperty,
   "-ms-user-select"?: FallbackableMsUserSelectProperty,
   "-ms-word-break"?: FallbackableWordBreakProperty,
   "-ms-wrap-flow"?: FallbackableMsWrapFlowProperty,
@@ -3449,6 +3509,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-clip-path"?: FallbackableClipPathProperty,
   "-webkit-color-adjust"?: FallbackableColorAdjustProperty,
   "-webkit-column-count"?: FallbackableColumnCountProperty,
+  "-webkit-column-fill"?: FallbackableColumnFillProperty,
   "-webkit-column-gap"?: FallbackableColumnGapProperty<TLength>,
   "-webkit-column-rule-color"?: FallbackableColumnRuleColorProperty,
   "-webkit-column-rule-style"?: FallbackableColumnRuleStyleProperty,
@@ -3467,6 +3528,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-hyphens"?: FallbackableHyphensProperty,
   "-webkit-justify-content"?: FallbackableJustifyContentProperty,
   "-webkit-line-break"?: FallbackableLineBreakProperty,
+  "-webkit-line-clamp"?: FallbackableWebkitLineClampProperty,
   "-webkit-margin-end"?: FallbackableMarginInlineEndProperty<TLength>,
   "-webkit-margin-start"?: FallbackableMarginInlineStartProperty<TLength>,
   "-webkit-mask-attachment"?: FallbackableWebkitMaskAttachmentProperty,
@@ -3529,6 +3591,7 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-ms-scroll-limit"?: FallbackableGlobalsString,
   "-ms-scroll-snap-x"?: FallbackableGlobalsString,
   "-ms-scroll-snap-y"?: FallbackableGlobalsString,
+  "-ms-transition"?: FallbackableTransitionProperty,
   "-webkit-animation"?: FallbackableAnimationProperty,
   "-webkit-border-before"?: FallbackableWebkitBorderBeforeProperty<TLength>,
   "-webkit-border-image"?: FallbackableBorderImageProperty,
@@ -3537,7 +3600,6 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-columns"?: FallbackableColumnsProperty<TLength>,
   "-webkit-flex"?: FallbackableFlexProperty<TLength>,
   "-webkit-flex-flow"?: FallbackableFlexFlowProperty,
-  "-webkit-line-clamp"?: FallbackableWebkitLineClampProperty,
   "-webkit-mask"?: FallbackableWebkitMaskProperty<TLength>,
   "-webkit-text-emphasis"?: FallbackableTextEmphasisProperty,
   "-webkit-text-stroke"?: FallbackableWebkitTextStrokeProperty<TLength>,
@@ -3582,6 +3644,9 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-khtml-box-ordinal-group"?: FallbackableGlobalsNumber,
   "-khtml-box-orient"?: FallbackableBoxOrientProperty,
   "-khtml-box-pack"?: FallbackableBoxPackProperty,
+  "-khtml-line-break"?: FallbackableLineBreakProperty,
+  "-khtml-opacity"?: FallbackableOpacityProperty,
+  "-khtml-user-select"?: FallbackableUserSelectProperty,
   "-moz-background-clip"?: FallbackableBackgroundClipProperty,
   "-moz-background-inline-policy"?: FallbackableBoxDecorationBreakProperty,
   "-moz-background-origin"?: FallbackableBackgroundOriginProperty,
@@ -3599,28 +3664,20 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-box-orient"?: FallbackableBoxOrientProperty,
   "-moz-box-pack"?: FallbackableBoxPackProperty,
   "-moz-box-shadow"?: FallbackableBoxShadowProperty,
-  "-moz-opacity"?: FallbackableGlobalsNumber,
+  "-moz-opacity"?: FallbackableOpacityProperty,
   "-moz-outline"?: FallbackableOutlineProperty<TLength>,
   "-moz-outline-color"?: FallbackableOutlineColorProperty,
   "-moz-outline-radius"?: FallbackableMozOutlineRadiusProperty<TLength>,
   "-moz-outline-style"?: FallbackableOutlineStyleProperty,
   "-moz-outline-width"?: FallbackableOutlineWidthProperty<TLength>,
-  "-moz-resize"?: FallbackableResizeProperty,
   "-moz-text-align-last"?: FallbackableTextAlignLastProperty,
   "-moz-text-blink"?: FallbackableMozTextBlinkProperty,
   "-moz-text-decoration-color"?: FallbackableTextDecorationColorProperty,
   "-moz-text-decoration-line"?: FallbackableTextDecorationLineProperty,
   "-moz-text-decoration-style"?: FallbackableTextDecorationStyleProperty,
   "-moz-user-input"?: FallbackableMozUserInputProperty,
+  "-moz-window-shadow"?: FallbackableMozWindowShadowProperty,
   "-ms-ime-mode"?: FallbackableImeModeProperty,
-  "-ms-scrollbar-3dlight-color"?: FallbackableMsScrollbar3dlightColorProperty,
-  "-ms-scrollbar-arrow-color"?: FallbackableMsScrollbarArrowColorProperty,
-  "-ms-scrollbar-base-color"?: FallbackableMsScrollbarBaseColorProperty,
-  "-ms-scrollbar-darkshadow-color"?: FallbackableMsScrollbarDarkshadowColorProperty,
-  "-ms-scrollbar-face-color"?: FallbackableMsScrollbarFaceColorProperty,
-  "-ms-scrollbar-highlight-color"?: FallbackableMsScrollbarHighlightColorProperty,
-  "-ms-scrollbar-shadow-color"?: FallbackableMsScrollbarShadowColorProperty,
-  "-ms-scrollbar-track-color"?: FallbackableMsScrollbarTrackColorProperty,
   "-o-animation"?: FallbackableAnimationProperty,
   "-o-animation-delay"?: FallbackableGlobalsString,
   "-o-animation-direction"?: FallbackableAnimationDirectionProperty,
@@ -3687,7 +3744,7 @@ export type SvgPropertiesHyphenFallback<TLength = string | 0> = {|
   "marker-mid"?: FallbackableMarkerMidProperty,
   "marker-start"?: FallbackableMarkerStartProperty,
   mask?: FallbackableMaskProperty<TLength>,
-  opacity?: FallbackableGlobalsNumber,
+  opacity?: FallbackableOpacityProperty,
   overflow?: FallbackableOverflowProperty,
   "paint-order"?: FallbackablePaintOrderProperty,
   "pointer-events"?: FallbackablePointerEventsProperty,
@@ -3703,7 +3760,7 @@ export type SvgPropertiesHyphenFallback<TLength = string | 0> = {|
   "stroke-opacity"?: FallbackableGlobalsNumber,
   "stroke-width"?: FallbackableStrokeWidthProperty<TLength>,
   "text-anchor"?: FallbackableTextAnchorProperty,
-  "text-decoration"?: FallbackableTextDecorationProperty,
+  "text-decoration"?: FallbackableTextDecorationProperty<TLength>,
   "text-rendering"?: FallbackableTextRenderingProperty,
   "unicode-bidi"?: FallbackableUnicodeBidiProperty,
   "vector-effect"?: FallbackableVectorEffectProperty,
@@ -3826,26 +3883,6 @@ export type FontFaceHyphenFallback = {|
   "font-weight"?: FallbackableFontFaceFontWeightProperty,
   src?: FallbackableString,
   "unicode-range"?: FallbackableString,
-|};
-
-export type Page<TLength = string | 0> = {|
-  bleed?: PageBleedProperty<TLength>,
-  marks?: PageMarksProperty,
-|};
-
-export type PageHyphen<TLength = string | 0> = {|
-  bleed?: PageBleedProperty<TLength>,
-  marks?: PageMarksProperty,
-|};
-
-export type PageFallback<TLength = string | 0> = {|
-  bleed?: FallbackablePageBleedProperty<TLength>,
-  marks?: FallbackablePageMarksProperty,
-|};
-
-export type PageHyphenFallback<TLength = string | 0> = {|
-  bleed?: FallbackablePageBleedProperty<TLength>,
-  marks?: FallbackablePageMarksProperty,
 |};
 
 export type Viewport<TLength = string | 0> = {|
@@ -3971,6 +4008,7 @@ export type AdvancedPseudos =
   | ":-moz-dir"
   | ":-webkit-any()"
   | "::cue"
+  | "::part"
   | "::slotted"
   | ":dir"
   | ":has"
@@ -3987,7 +4025,9 @@ export type AdvancedPseudos =
   | ":where";
 
 export type SimplePseudos =
+  | ":-khtml-any-link"
   | ":-moz-any-link"
+  | ":-moz-focusring"
   | ":-moz-full-screen"
   | ":-moz-placeholder"
   | ":-moz-read-only"
@@ -4031,6 +4071,7 @@ export type SimplePseudos =
   | "::first-letter"
   | "::first-line"
   | "::grammar-error"
+  | "::marker"
   | "::placeholder"
   | "::selection"
   | "::spelling-error"
@@ -4146,6 +4187,7 @@ export type HtmlAttributes =
   | "[draggable]"
   | "[dropzone]"
   | "[enctype]"
+  | "[exportparts]"
   | "[face]"
   | "[for]"
   | "[form]"
@@ -4231,6 +4273,7 @@ export type HtmlAttributes =
   | "[onunload]"
   | "[open]"
   | "[optimum]"
+  | "[part]"
   | "[ping]"
   | "[placeholder]"
   | "[played]"
@@ -4838,6 +4881,8 @@ export type CounterIncrementProperty = Globals | "none" | string;
 
 export type CounterResetProperty = Globals | "none" | string;
 
+export type CounterSetProperty = Globals | "none" | string;
+
 export type CursorProperty =
   | Globals
   | "-moz-grab"
@@ -5040,13 +5085,24 @@ export type GridTemplateProperty = Globals | "none" | string;
 
 export type GridTemplateAreasProperty = Globals | "none" | string;
 
-export type GridTemplateColumnsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | string;
+export type GridTemplateColumnsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | "subgrid" | string;
 
-export type GridTemplateRowsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | string;
+export type GridTemplateRowsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | "subgrid" | string;
 
 export type HangingPunctuationProperty = Globals | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
-export type HeightProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "available" | "fit-content" | "max-content" | "min-content" | string;
+export type HeightProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "auto"
+  | "available"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type HyphensProperty = Globals | "auto" | "manual" | "none";
 
@@ -5100,7 +5156,7 @@ export type LeftProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type LetterSpacingProperty<TLength> = Globals | TLength | "normal";
 
-export type LineBreakProperty = Globals | "auto" | "loose" | "normal" | "strict";
+export type LineBreakProperty = Globals | "anywhere" | "auto" | "loose" | "normal" | "strict";
 
 export type LineClampProperty = Globals | "none" | number;
 
@@ -5162,7 +5218,7 @@ export type MaskImageProperty = Globals | "none" | string;
 
 export type MaskModeProperty = Globals | MaskingMode | string;
 
-export type MaskOriginProperty = Globals | GeometryBox | string;
+export type MaskOriginProperty = Globals | Box | "margin-box" | string;
 
 export type MaskPositionProperty<TLength> = Globals | Position<TLength> | string;
 
@@ -5188,10 +5244,15 @@ export type MaxBlockSizeProperty<TLength> =
 export type MaxHeightProperty<TLength> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
   | "fill-available"
   | "fit-content"
+  | "intrinsic"
   | "max-content"
   | "min-content"
   | "none"
@@ -5216,8 +5277,10 @@ export type MaxLinesProperty = Globals | "none" | number;
 export type MaxWidthProperty<TLength> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
+  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
   | "fill-available"
@@ -5248,6 +5311,8 @@ export type MinHeightProperty<TLength> =
   | "-moz-max-content"
   | "-moz-min-content"
   | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
   | "auto"
   | "fill-available"
   | "fit-content"
@@ -5263,8 +5328,6 @@ export type MinInlineSizeProperty<TLength> =
   | "-moz-max-content"
   | "-moz-min-content"
   | "-webkit-fill-available"
-  | "-webkit-max-content"
-  | "-webkit-min-content"
   | "auto"
   | "fill-available"
   | "fit-content"
@@ -5309,6 +5372,8 @@ export type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto"
 
 export type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
 
+export type OpacityProperty = Globals | string | number;
+
 export type OutlineProperty<TLength> = Globals | Color | LineStyle | LineWidth<TLength> | "auto" | "invert" | string;
 
 export type OutlineColorProperty = Globals | Color | "invert";
@@ -5323,11 +5388,11 @@ export type OverflowProperty = Globals | "auto" | "clip" | "hidden" | "scroll" |
 
 export type OverflowAnchorProperty = Globals | "auto" | "none";
 
-export type OverflowBlockProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
+export type OverflowBlockProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
-export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
+export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
 
@@ -5385,7 +5450,7 @@ export type PointerEventsProperty = Globals | "all" | "auto" | "fill" | "inherit
 
 export type PositionProperty = Globals | "-webkit-sticky" | "absolute" | "fixed" | "relative" | "static" | "sticky";
 
-export type QuotesProperty = Globals | "none" | string;
+export type QuotesProperty = Globals | "auto" | "none" | string;
 
 export type ResizeProperty = Globals | "block" | "both" | "horizontal" | "inline" | "none" | "vertical";
 
@@ -5399,35 +5464,37 @@ export type RubyAlignProperty = Globals | "center" | "space-around" | "space-bet
 
 export type RubyMergeProperty = Globals | "auto" | "collapse" | "separate";
 
-export type RubyPositionProperty = Globals | "inter-character" | "over" | "under";
+export type RubyPositionProperty = Globals | "over" | "under";
 
 export type ScaleProperty = Globals | "none" | string | number;
 
 export type ScrollBehaviorProperty = Globals | "auto" | "smooth";
 
-export type ScrollMarginProperty<TLength> = Globals | TLength | "auto" | string;
+export type ScrollMarginProperty<TLength> = Globals | TLength | string;
 
-export type ScrollMarginBlockProperty<TLength> = Globals | TLength | "auto" | string;
+export type ScrollMarginBlockProperty<TLength> = Globals | TLength | string;
 
-export type ScrollMarginBlockEndProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginBlockEndProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginBlockStartProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginBlockStartProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginBottomProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginBottomProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginInlineEndProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginInlineProperty<TLength> = Globals | TLength | string;
 
-export type ScrollMarginInlineStartProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginInlineEndProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginLeftProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginInlineStartProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginRightProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginLeftProperty<TLength> = Globals | TLength;
 
-export type ScrollMarginTopProperty<TLength> = Globals | TLength | "auto";
+export type ScrollMarginRightProperty<TLength> = Globals | TLength;
+
+export type ScrollMarginTopProperty<TLength> = Globals | TLength;
 
 export type ScrollPaddingProperty<TLength> = Globals | TLength | "auto" | string;
 
-export type ScrollPaddingBlockProperty<TLength> = Globals | TLength | string;
+export type ScrollPaddingBlockProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type ScrollPaddingBlockEndProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -5435,7 +5502,7 @@ export type ScrollPaddingBlockStartProperty<TLength> = Globals | TLength | "auto
 
 export type ScrollPaddingBottomProperty<TLength> = Globals | TLength | "auto" | string;
 
-export type ScrollPaddingInlineProperty<TLength> = Globals | TLength | string;
+export type ScrollPaddingInlineProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type ScrollPaddingInlineEndProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -5457,7 +5524,9 @@ export type ScrollSnapPointsXProperty = Globals | "none" | string;
 
 export type ScrollSnapPointsYProperty = Globals | "none" | string;
 
-export type ScrollSnapTypeProperty = Globals | "none" | string;
+export type ScrollSnapStopProperty = Globals | "always" | "normal";
+
+export type ScrollSnapTypeProperty = Globals | "block" | "both" | "inline" | "none" | "x" | "y" | string;
 
 export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximity";
 
@@ -5466,6 +5535,8 @@ export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximit
 export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light";
 
 export type ScrollbarWidthProperty = Globals | "auto" | "none" | "thin";
+
+export type ShapeImageThresholdProperty = Globals | string | number;
 
 export type ShapeMarginProperty<TLength> = Globals | TLength | string;
 
@@ -5481,17 +5552,37 @@ export type TextAlignLastProperty = Globals | "auto" | "center" | "end" | "justi
 
 export type TextCombineUprightProperty = Globals | "all" | "digits" | "none" | string;
 
-export type TextDecorationProperty = Globals | Color | "blink" | "dashed" | "dotted" | "double" | "line-through" | "none" | "overline" | "solid" | "underline" | "wavy" | string;
+export type TextDecorationProperty<TLength> =
+  | Globals
+  | Color
+  | TLength
+  | "auto"
+  | "blink"
+  | "dashed"
+  | "dotted"
+  | "double"
+  | "from-font"
+  | "grammar-error"
+  | "line-through"
+  | "none"
+  | "overline"
+  | "solid"
+  | "spelling-error"
+  | "underline"
+  | "wavy"
+  | string;
 
 export type TextDecorationColorProperty = Globals | Color;
 
-export type TextDecorationLineProperty = Globals | "blink" | "line-through" | "none" | "overline" | "underline" | string;
+export type TextDecorationLineProperty = Globals | "blink" | "grammar-error" | "line-through" | "none" | "overline" | "spelling-error" | "underline" | string;
 
 export type TextDecorationSkipProperty = Globals | "box-decoration" | "edges" | "leading-spaces" | "none" | "objects" | "spaces" | "trailing-spaces" | string;
 
 export type TextDecorationSkipInkProperty = Globals | "auto" | "none";
 
 export type TextDecorationStyleProperty = Globals | "dashed" | "dotted" | "double" | "solid" | "wavy";
+
+export type TextDecorationThicknessProperty<TLength> = Globals | TLength | "auto" | "from-font";
 
 export type TextEmphasisProperty = Globals | Color | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
@@ -5515,6 +5606,8 @@ export type TextSizeAdjustProperty = Globals | "auto" | "none" | string;
 
 export type TextTransformProperty = Globals | "capitalize" | "full-size-kana" | "full-width" | "lowercase" | "none" | "uppercase";
 
+export type TextUnderlineOffsetProperty<TLength> = Globals | TLength | "auto" | "from-font";
+
 export type TextUnderlinePositionProperty = Globals | "auto" | "left" | "right" | "under" | string;
 
 export type TopProperty<TLength> = Globals | TLength | "auto" | string;
@@ -5522,6 +5615,7 @@ export type TopProperty<TLength> = Globals | TLength | "auto" | string;
 export type TouchActionProperty =
   | Globals
   | "-ms-manipulation"
+  | "-ms-none"
   | "-ms-pinch-zoom"
   | "auto"
   | "manipulation"
@@ -5570,7 +5664,7 @@ export type VerticalAlignProperty<TLength> = Globals | TLength | "baseline" | "b
 
 export type VisibilityProperty = Globals | "collapse" | "hidden" | "visible";
 
-export type WhiteSpaceProperty = Globals | "-moz-pre-wrap" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+export type WhiteSpaceProperty = Globals | "-moz-pre-wrap" | "break-spaces" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 
 export type WidthProperty<TLength> =
   | Globals
@@ -6061,10 +6155,6 @@ type FontFaceFontVariantProperty =
 type FontFaceFontVariationSettingsProperty = "normal" | string;
 
 type FontFaceFontWeightProperty = FontWeightAbsolute | string;
-
-type PageBleedProperty<TLength> = TLength | "auto";
-
-type PageMarksProperty = "crop" | "cross" | "none" | string;
 
 type ViewportHeightProperty<TLength> = ViewportLength<TLength> | string;
 

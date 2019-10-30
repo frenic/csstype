@@ -31,6 +31,7 @@ export let getAtRules = () => {
     if ('descriptors' in atRule) {
       const descriptors: IAtRuleDescriptors = {};
       const compatibilityData = getAtRuleData(name);
+      let hasSupportedProperties = false;
 
       for (const descriptor in atRule.descriptors) {
         let entities = parse(atRule.descriptors[descriptor].syntax);
@@ -58,6 +59,7 @@ export let getAtRules = () => {
         const types = resolveDataTypes(typing(entities));
 
         for (const property of properties) {
+          hasSupportedProperties = true;
           descriptors[property] = {
             name: descriptor,
             types,
@@ -65,7 +67,9 @@ export let getAtRules = () => {
         }
       }
 
-      rules[name] = descriptors;
+      if (hasSupportedProperties) {
+        rules[name] = descriptors;
+      }
     }
   }
 
