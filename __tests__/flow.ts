@@ -1,22 +1,76 @@
 import { spawnSync } from 'child_process';
 import * as path from 'path';
 
+// tslint:disable-next-line no-var-requires
+const flow: string = require('flow-bin');
+
 test('it detects errors', () => {
-  const flowBin = path.resolve(
-    __dirname,
-    '../node_modules',
-    '.bin',
-    process.platform === 'win32' ? 'flow.cmd' : 'flow',
+  const { stdout: output } = spawnSync(
+    flow,
+    ['check', path.resolve(__dirname, '../__fixtures__/typecheck.js'), '--json'],
+    {
+      stdio: 'pipe',
+      encoding: 'utf8',
+    },
   );
 
-  const fixturesDir = path.resolve(__dirname, '../__fixtures__');
+  const { errors }: IFlowOutput = JSON.parse(output);
 
-  const args = ['check', fixturesDir];
-
-  const result = spawnSync(flowBin, args, {
-    stdio: 'pipe',
-    encoding: 'utf8',
-  });
-
-  expect(result.stdout).toMatchSnapshot();
+  expect(errors).toHaveLength(1);
+  expect(message(errors[0])).toMatchSnapshot();
 });
+
+function message(error: IError) {
+  const {
+    loc: {
+      start: { line, column },
+    },
+    descr,
+  } = error.message[0];
+
+  return `${line}:${column} - ${descr}`;
+}
+
+interface IExtra {
+  message: IMessage[];
+}
+
+interface IPosition {
+  line: number;
+  column: number;
+  offset: number;
+}
+
+interface ILocation {
+  source: string;
+  type: string;
+  start: IPosition;
+  end: IPosition;
+}
+
+interface IMessage {
+  context: string;
+  descr: string;
+  type: string;
+  loc: ILocation;
+  path: string;
+  line: number;
+  endline: number;
+  start: number;
+  end: number;
+}
+
+interface IError {
+  kind: string;
+  level: string;
+  suppressions: any[];
+  extra: IExtra[];
+  message: IMessage[];
+}
+
+interface IFlowOutput {
+  flowVersion: string;
+  jsonVersion: string;
+  errors: IError[];
+  passed: boolean;
+}
