@@ -24,11 +24,11 @@ References:
    __fixtures__/flow-errors-fixture.js:5:13
       5|   flexGrow: 'invalid',
                      ^^^^^^^^^ [3]
-   index.js.flow:4555:22
-   4555| type GlobalsNumber = Globals | number;
+   index.js.flow:4598:22
+   4598| type GlobalsNumber = Globals | number;
                               ^^^^^^^ [4]
-   index.js.flow:4555:32
-   4555| type GlobalsNumber = Globals | number;
+   index.js.flow:4598:32
+   4598| type GlobalsNumber = Globals | number;
                                         ^^^^^^ [5]
 
 
@@ -57,17 +57,17 @@ References:
    __fixtures__/flow-errors-fixture.js:10:14
      10|   flexGrow: [true],
                       ^^^^ [3]
-   index.js.flow:4555:22
-   4555| type GlobalsNumber = Globals | number;
+   index.js.flow:4598:22
+   4598| type GlobalsNumber = Globals | number;
                               ^^^^^^^ [4]
-   index.js.flow:4555:32
-   4555| type GlobalsNumber = Globals | number;
+   index.js.flow:4598:32
+   4598| type GlobalsNumber = Globals | number;
                                         ^^^^^^ [5]
    __fixtures__/flow-errors-fixture.js:11:19
      11|   flexDirection: ['123'],
                            ^^^^^ [6]
-   index.js.flow:106:72
-    106| type FallbackableFlexDirectionProperty = FlexDirectionProperty | Array<FlexDirectionProperty>;
+   index.js.flow:107:72
+    107| type FallbackableFlexDirectionProperty = FlexDirectionProperty | Array<FlexDirectionProperty>;
                                                                                 ^^^^^^^^^^^^^^^^^^^^^ [7]
 
 
