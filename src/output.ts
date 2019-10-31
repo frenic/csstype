@@ -5,45 +5,36 @@ export const EOL = '\n';
 
 export const generatingDeclarations = declarator(3);
 
-export function stringifyTypes(
-  types: DeclarableType | DeclarableType[],
-  currentNamespace: INamespace | undefined,
-  noNamespaceSupport = false,
-) {
-  if (!Array.isArray(types)) {
-    types = [types];
-  }
-  return types
-    .map(type => {
-      switch (type.type) {
-        case Type.String:
-          return 'string';
-        case Type.Number:
-          return 'number';
-        case Type.StringLiteral:
-          return JSON.stringify(type.literal);
-        case Type.NumericLiteral:
-          return type.literal;
-        case Type.Alias: {
-          let namespace = '';
+export function createStringifyType(currentNamespace: INamespace | undefined, noNamespaceSupport = false) {
+  return (type: DeclarableType) => {
+    switch (type.type) {
+      case Type.String:
+        return 'string';
+      case Type.Number:
+        return 'number';
+      case Type.StringLiteral:
+        return JSON.stringify(type.literal);
+      case Type.NumericLiteral:
+        return type.literal;
+      case Type.Alias: {
+        let namespace = '';
 
-          if (type.namespace) {
-            if (noNamespaceSupport) {
-              namespace = type.namespace.name;
-            } else if (type.namespace !== currentNamespace) {
-              namespace = `${type.namespace.name}.`;
-            } else {
-              // The type is in its own namespace so keep it empty
-            }
+        if (type.namespace) {
+          if (noNamespaceSupport) {
+            namespace = type.namespace.name;
+          } else if (type.namespace !== currentNamespace) {
+            namespace = `${type.namespace.name}.`;
+          } else {
+            // The type is in its own namespace so keep it empty
           }
-
-          return namespace + type.name + stringifyGenerics(type.generics, true);
         }
-        case Type.Length:
-          return 'TLength';
+
+        return namespace + type.name + stringifyGenerics(type.generics, true);
       }
-    })
-    .join(' | ');
+      case Type.Length:
+        return 'TLength';
+    }
+  };
 }
 
 export function stringifyGenerics(items: IGenerics[] | undefined, ignoreDefault = false) {

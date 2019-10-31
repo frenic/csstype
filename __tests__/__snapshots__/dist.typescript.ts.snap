@@ -6,6 +6,7 @@ exports[`it detects errors 1`] = `
 `;
 
 exports[`it detects errors 2`] = `
-"36:2 - Type 'string[]' is not assignable to type 'string | 0 | undefined'.
-  Type 'string[]' is not assignable to type 'string'."
+"36:2 - Type 'string[]' is not assignable to type 'string | 0 | (string & {}) | undefined'.
+  Type 'string[]' is not assignable to type 'string & {}'.
+    Type 'string[]' is not assignable to type 'string'."
 `;
