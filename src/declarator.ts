@@ -17,10 +17,10 @@ export interface IGenerics {
   defaults?: string;
 }
 
-interface Interface {
+interface IInterface {
   name: string;
   generics: IGenerics[];
-  extends: Interface[];
+  extends: IInterface[];
   fallback: boolean;
   properties: PropertyType[];
 }
@@ -395,7 +395,7 @@ const allPropertiesGenerics = genericsOf([
   ...svgPropertiesDefinition,
 ]);
 
-const standardLonghandPropertiesInterface: Interface = {
+const standardLonghandPropertiesInterface: IInterface = {
   name: INTERFACE_STANDARD_LONGHAND_PROPERTIES,
   generics: standardLonghandPropertiesGenerics,
   extends: [],
@@ -403,7 +403,7 @@ const standardLonghandPropertiesInterface: Interface = {
   properties: standardLonghandPropertiesDefinition,
 };
 
-const standardShorthandPropertiesInterface: Interface = {
+const standardShorthandPropertiesInterface: IInterface = {
   name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES,
   generics: standardShorthandPropertiesGenerics,
   extends: [],
@@ -411,7 +411,7 @@ const standardShorthandPropertiesInterface: Interface = {
   properties: standardShorthandPropertiesDefinition,
 };
 
-const standardPropertiesInterface: Interface = {
+const standardPropertiesInterface: IInterface = {
   name: INTERFACE_STANDARD_PROPERTIES,
   generics: standardPropertiesGenerics,
   extends: [standardLonghandPropertiesInterface, standardShorthandPropertiesInterface],
@@ -419,7 +419,7 @@ const standardPropertiesInterface: Interface = {
   properties: [],
 };
 
-const vendorLonghandPropertiesInterface: Interface = {
+const vendorLonghandPropertiesInterface: IInterface = {
   name: INTERFACE_VENDOR_LONGHAND_PROPERTIES,
   generics: vendorLonghandPropertiesGenerics,
   extends: [],
@@ -427,7 +427,7 @@ const vendorLonghandPropertiesInterface: Interface = {
   properties: vendorLonghandPropertiesDefinition,
 };
 
-const vendorShorthandPropertiesInterface: Interface = {
+const vendorShorthandPropertiesInterface: IInterface = {
   name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES,
   generics: vendorShorthandPropertiesGenerics,
   extends: [],
@@ -435,7 +435,7 @@ const vendorShorthandPropertiesInterface: Interface = {
   properties: vendorShorthandPropertiesDefinition,
 };
 
-const vendorPropertiesInterface: Interface = {
+const vendorPropertiesInterface: IInterface = {
   name: INTERFACE_VENDOR_PROPERTIES,
   generics: vendorPropertiesGenerics,
   extends: [vendorLonghandPropertiesInterface, vendorShorthandPropertiesInterface],
@@ -443,7 +443,7 @@ const vendorPropertiesInterface: Interface = {
   properties: [],
 };
 
-const obsoletePropertiesInterface: Interface = {
+const obsoletePropertiesInterface: IInterface = {
   name: INTERFACE_OBSOLETE_PROPERTIES,
   generics: obsoletePropertiesGenerics,
   extends: [],
@@ -451,7 +451,7 @@ const obsoletePropertiesInterface: Interface = {
   properties: obsoletePropertiesDefinition,
 };
 
-const svgPropertiesInterface: Interface = {
+const svgPropertiesInterface: IInterface = {
   name: INTERFACE_SVG_PROPERTIES,
   generics: svgPropertiesGenerics,
   extends: [],
@@ -459,7 +459,7 @@ const svgPropertiesInterface: Interface = {
   properties: svgPropertiesDefinition,
 };
 
-const allPropertiesInterface: Interface = {
+const allPropertiesInterface: IInterface = {
   name: INTERFACE_ALL_PROPERTIES,
   generics: allPropertiesGenerics,
   extends: [
@@ -472,7 +472,7 @@ const allPropertiesInterface: Interface = {
   properties: [],
 };
 
-const standardLonghandPropertiesHyphenInterface: Interface = {
+const standardLonghandPropertiesHyphenInterface: IInterface = {
   name: INTERFACE_STANDARD_LONGHAND_PROPERTIES_HYPHEN,
   generics: standardLonghandPropertiesGenerics,
   extends: [],
@@ -480,7 +480,7 @@ const standardLonghandPropertiesHyphenInterface: Interface = {
   properties: standardLonghandPropertiesHyphenDefinition,
 };
 
-const standardShorthandPropertiesHyphenInterface: Interface = {
+const standardShorthandPropertiesHyphenInterface: IInterface = {
   name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES_HYPHEN,
   generics: standardShorthandPropertiesGenerics,
   extends: [],
@@ -488,7 +488,7 @@ const standardShorthandPropertiesHyphenInterface: Interface = {
   properties: standardShorthandPropertiesHyphenDefinition,
 };
 
-const standardPropertiesHyphenInterface: Interface = {
+const standardPropertiesHyphenInterface: IInterface = {
   name: INTERFACE_STANDARD_PROPERTIES_HYPHEN,
   generics: standardPropertiesGenerics,
   extends: [standardLonghandPropertiesHyphenInterface, standardShorthandPropertiesHyphenInterface],
@@ -496,7 +496,7 @@ const standardPropertiesHyphenInterface: Interface = {
   properties: [],
 };
 
-const vendorLonghandPropertiesHyphenInterface: Interface = {
+const vendorLonghandPropertiesHyphenInterface: IInterface = {
   name: INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN,
   generics: vendorLonghandPropertiesGenerics,
   extends: [],
@@ -504,7 +504,7 @@ const vendorLonghandPropertiesHyphenInterface: Interface = {
   properties: vendorLonghandPropertiesHyphenDefinition,
 };
 
-const vendorShorthandPropertiesHyphenInterface: Interface = {
+const vendorShorthandPropertiesHyphenInterface: IInterface = {
   name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN,
   generics: vendorShorthandPropertiesGenerics,
   extends: [],
@@ -512,7 +512,7 @@ const vendorShorthandPropertiesHyphenInterface: Interface = {
   properties: vendorShorthandPropertiesHyphenDefinition,
 };
 
-const vendorPropertiesHyphenInterface: Interface = {
+const vendorPropertiesHyphenInterface: IInterface = {
   name: INTERFACE_VENDOR_PROPERTIES_HYPHEN,
   generics: vendorPropertiesGenerics,
   extends: [vendorLonghandPropertiesHyphenInterface, vendorShorthandPropertiesHyphenInterface],
@@ -520,7 +520,7 @@ const vendorPropertiesHyphenInterface: Interface = {
   properties: [],
 };
 
-const obsoletePropertiesHyphenInterface: Interface = {
+const obsoletePropertiesHyphenInterface: IInterface = {
   name: INTERFACE_OBSOLETE_PROPERTIES_HYPHEN,
   generics: obsoletePropertiesGenerics,
   extends: [],
@@ -528,7 +528,7 @@ const obsoletePropertiesHyphenInterface: Interface = {
   properties: obsoletePropertiesHyphenDefinition,
 };
 
-const svgPropertiesHyphenInterface: Interface = {
+const svgPropertiesHyphenInterface: IInterface = {
   name: INTERFACE_SVG_PROPERTIES_HYPHEN,
   generics: svgPropertiesGenerics,
   extends: [],
@@ -536,7 +536,7 @@ const svgPropertiesHyphenInterface: Interface = {
   properties: svgPropertiesHyphenDefinition,
 };
 
-const allPropertiesHyphenInterface: Interface = {
+const allPropertiesHyphenInterface: IInterface = {
   name: INTERFACE_ALL_PROPERTIES_HYPHEN,
   generics: allPropertiesGenerics,
   extends: [
@@ -549,57 +549,57 @@ const allPropertiesHyphenInterface: Interface = {
   properties: [],
 };
 
-const standardLongformPropertiesFallbackInterface: Interface = {
+const standardLongformPropertiesFallbackInterface: IInterface = {
   ...standardLonghandPropertiesInterface,
   name: INTERFACE_STANDARD_LONGHAND_PROPERTIES_FALLBACK,
   fallback: true,
 };
 
-const standardShorthandPropertiesFallbackInterface: Interface = {
+const standardShorthandPropertiesFallbackInterface: IInterface = {
   ...standardShorthandPropertiesInterface,
   name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES_FALLBACK,
   fallback: true,
 };
 
-const standardPropertiesFallbackInterface: Interface = {
+const standardPropertiesFallbackInterface: IInterface = {
   ...standardPropertiesInterface,
   name: INTERFACE_STANDARD_PROPERTIES_FALLBACK,
   extends: [standardLongformPropertiesFallbackInterface, standardShorthandPropertiesFallbackInterface],
   fallback: true,
 };
 
-const vendorLonghandPropertiesFallbackInterface: Interface = {
+const vendorLonghandPropertiesFallbackInterface: IInterface = {
   ...vendorLonghandPropertiesInterface,
   name: INTERFACE_VENDOR_LONGHAND_PROPERTIES_FALLBACK,
   fallback: true,
 };
 
-const vendorShorthandPropertiesFallbackInterface: Interface = {
+const vendorShorthandPropertiesFallbackInterface: IInterface = {
   ...vendorShorthandPropertiesInterface,
   name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES_FALLBACK,
   fallback: true,
 };
 
-const vendorPropertiesFallbackInterface: Interface = {
+const vendorPropertiesFallbackInterface: IInterface = {
   ...vendorPropertiesInterface,
   name: INTERFACE_VENDOR_PROPERTIES_FALLBACK,
   extends: [vendorLonghandPropertiesFallbackInterface, vendorShorthandPropertiesFallbackInterface],
   fallback: true,
 };
 
-const obsoletePropertiesFallbackInterface: Interface = {
+const obsoletePropertiesFallbackInterface: IInterface = {
   ...obsoletePropertiesInterface,
   name: INTERFACE_OBSOLETE_PROPERTIES_FALLBACK,
   fallback: true,
 };
 
-const svgPropertiesFallbackInterface: Interface = {
+const svgPropertiesFallbackInterface: IInterface = {
   ...svgPropertiesInterface,
   name: INTERFACE_SVG_PROPERTIES_FALLBACK,
   fallback: true,
 };
 
-const allPropertiesFallbackInterface: Interface = {
+const allPropertiesFallbackInterface: IInterface = {
   ...allPropertiesInterface,
   name: INTERFACE_ALL_PROPERTIES_FALLBACK,
   extends: [
@@ -611,57 +611,57 @@ const allPropertiesFallbackInterface: Interface = {
   fallback: true,
 };
 
-const standardLongformPropertiesHyphenFallbackInterface: Interface = {
+const standardLongformPropertiesHyphenFallbackInterface: IInterface = {
   ...standardLonghandPropertiesHyphenInterface,
   name: INTERFACE_STANDARD_LONGHAND_PROPERTIES_HYPHEN_FALLBACK,
   fallback: true,
 };
 
-const standardShorthandPropertiesHyphenFallbackInterface: Interface = {
+const standardShorthandPropertiesHyphenFallbackInterface: IInterface = {
   ...standardShorthandPropertiesHyphenInterface,
   name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES_HYPHEN_FALLBACK,
   fallback: true,
 };
 
-const standardPropertiesHyphenFallbackInterface: Interface = {
+const standardPropertiesHyphenFallbackInterface: IInterface = {
   ...standardPropertiesHyphenInterface,
   name: INTERFACE_STANDARD_PROPERTIES_HYPHEN_FALLBACK,
   extends: [standardLongformPropertiesHyphenFallbackInterface, standardShorthandPropertiesHyphenFallbackInterface],
   fallback: true,
 };
 
-const vendorLonghandPropertiesHyphenFallbackInterface: Interface = {
+const vendorLonghandPropertiesHyphenFallbackInterface: IInterface = {
   ...vendorLonghandPropertiesHyphenInterface,
   name: INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN_FALLBACK,
   fallback: true,
 };
 
-const vendorShorthandPropertiesHyphenFallbackInterface: Interface = {
+const vendorShorthandPropertiesHyphenFallbackInterface: IInterface = {
   ...vendorShorthandPropertiesHyphenInterface,
   name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN_FALLBACK,
   fallback: true,
 };
 
-const vendorPropertiesHyphenFallbackInterface: Interface = {
+const vendorPropertiesHyphenFallbackInterface: IInterface = {
   ...vendorPropertiesHyphenInterface,
   name: INTERFACE_VENDOR_PROPERTIES_HYPHEN_FALLBACK,
   extends: [vendorLonghandPropertiesHyphenFallbackInterface, vendorShorthandPropertiesHyphenFallbackInterface],
   fallback: true,
 };
 
-const obsoletePropertiesHyphenFallbackInterface: Interface = {
+const obsoletePropertiesHyphenFallbackInterface: IInterface = {
   ...obsoletePropertiesHyphenInterface,
   name: INTERFACE_OBSOLETE_PROPERTIES_HYPHEN_FALLBACK,
   fallback: true,
 };
 
-const svgPropertiesHyphenFallbackInterface: Interface = {
+const svgPropertiesHyphenFallbackInterface: IInterface = {
   ...svgPropertiesHyphenInterface,
   name: INTERFACE_SVG_PROPERTIES_HYPHEN_FALLBACK,
   fallback: true,
 };
 
-const allPropertiesHyphenFallbackInterface: Interface = {
+const allPropertiesHyphenFallbackInterface: IInterface = {
   ...allPropertiesHyphenInterface,
   name: INTERFACE_ALL_PROPERTIES_HYPHEN_FALLBACK,
   extends: [
@@ -673,7 +673,7 @@ const allPropertiesHyphenFallbackInterface: Interface = {
   fallback: true,
 };
 
-const atRuleInterfaces: Interface[] = [];
+const atRuleInterfaces: IInterface[] = [];
 
 // Loop in alphabetical order
 for (const name of Object.keys(atRuleDefinitions).sort()) {

@@ -1,5 +1,5 @@
-import * as path from 'path';
 import { spawnSync } from 'child_process';
+import * as path from 'path';
 
 test('it detects errors', () => {
   const flowBin = path.resolve(
