@@ -3,7 +3,7 @@ import * as rawGlobalAttributes from 'mdn-browser-compat-data/html/global_attrib
 import { alternativeAttributes } from './compat';
 import { addType, ResolvedType, Type } from './typer';
 
-function gatherAttributes(baseAttrs: ResolvedType[], dataset: { [key: string]: MDN.CompatData }): ResolvedType[] {
+function assembleAttributes(baseAttrs: ResolvedType[], dataset: { [key: string]: MDN.CompatData }): ResolvedType[] {
   let attributes: ResolvedType[] = baseAttrs;
 
   for (const name in dataset) {
@@ -25,50 +25,52 @@ function gatherAttributes(baseAttrs: ResolvedType[], dataset: { [key: string]: M
   return attributes;
 }
 
-function loadCompatFiles(
+async function fetchAttributes(
   baseAttrs: ResolvedType[],
   lang: 'html' | 'svg',
   type: 'attributes' | 'elements',
-): ResolvedType[] {
+): Promise<ResolvedType[]> {
   let attributes: ResolvedType[] = baseAttrs;
 
-  glob
-    .sync(`node_modules/mdn-browser-compat-data/${lang}/${type}/*.json`, {
-      absolute: true,
-    })
-    .forEach(file => {
-      const data = require(String(file));
+  const files = glob.sync(`node_modules/mdn-browser-compat-data/${lang}/${type}/*.json`, {
+    absolute: true,
+  });
+
+  await Promise.all(
+    files.map(async file => {
+      const data: MDN.AttributesCompat = await import(String(file));
 
       if (data && data[lang] && data[lang][type]) {
         Object.keys(data[lang][type]).forEach(element => {
-          attributes = gatherAttributes(attributes, data[lang][type][element]);
+          attributes = assembleAttributes(attributes, data[lang][type][element]);
         });
       }
-    });
+    }),
+  );
 
   return attributes;
 }
 
-export let getHtmlAttributes = () => {
+export let getHtmlAttributes = async () => {
   let attributes: ResolvedType[] = [];
 
-  attributes = gatherAttributes(attributes, rawGlobalAttributes.html.global_attributes);
-  attributes = loadCompatFiles(attributes, 'html', 'elements');
+  attributes = assembleAttributes(attributes, rawGlobalAttributes.html.global_attributes);
+  attributes = await fetchAttributes(attributes, 'html', 'elements');
 
   // Cache
-  getHtmlAttributes = () => attributes;
+  getHtmlAttributes = () => Promise.resolve(attributes);
 
   return attributes;
 };
 
-export let getSvgAttributes = () => {
+export let getSvgAttributes = async () => {
   let attributes: ResolvedType[] = [];
 
-  attributes = loadCompatFiles(attributes, 'svg', 'attributes');
-  attributes = loadCompatFiles(attributes, 'svg', 'elements');
+  attributes = await fetchAttributes(attributes, 'svg', 'attributes');
+  attributes = await fetchAttributes(attributes, 'svg', 'elements');
 
   // Cache
-  getSvgAttributes = () => attributes;
+  getSvgAttributes = () => Promise.resolve(attributes);
 
   return attributes;
 };

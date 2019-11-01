@@ -59,8 +59,7 @@ const lengthGeneric: IGenerics = {
 export async function declarator() {
   const atRules = getAtRules();
   const pseudos = getPseudos();
-  const htmlAttributes = getHtmlAttributes();
-  const svgAttributes = getSvgAttributes();
+  const [htmlAttributes, svgAttributes] = await Promise.all([getHtmlAttributes(), getSvgAttributes()]);
 
   const declarations: Map<MixedType[], IDeclaration> = new Map();
 
