@@ -20,8 +20,9 @@ export default async function typescript() {
     interfacesOutput += '{' + EOL;
 
     for (const property of item.properties) {
-      if (property.comment) {
-        interfacesOutput += property.comment + EOL;
+      const comment = property.comment();
+      if (comment) {
+        interfacesOutput += comment + EOL;
       }
 
       if (isAliasProperty(property)) {

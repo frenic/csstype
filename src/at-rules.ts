@@ -13,7 +13,7 @@ export interface IAtRuleDescriptors {
   [descriptor: string]: IDescriptor;
 }
 
-export let getAtRules = () => {
+export let getAtRules = async () => {
   const literals: IStringLiteral[] = [];
   const rules: { [name: string]: IAtRuleDescriptors } = {};
 
@@ -30,7 +30,7 @@ export let getAtRules = () => {
 
     if ('descriptors' in atRule) {
       const descriptors: IAtRuleDescriptors = {};
-      const compatibilityData = getAtRuleData(name);
+      const compatibilityData = await getAtRuleData(name);
       let hasSupportedProperties = false;
 
       for (const descriptor in atRule.descriptors) {
@@ -56,7 +56,7 @@ export let getAtRules = () => {
           );
         }
 
-        const types = resolveDataTypes(typing(entities));
+        const types = await resolveDataTypes(typing(entities));
 
         for (const property of properties) {
           hasSupportedProperties = true;
@@ -74,10 +74,11 @@ export let getAtRules = () => {
   }
 
   // Cache
-  getAtRules = () => ({
-    literals,
-    rules,
-  });
+  getAtRules = () =>
+    Promise.resolve({
+      literals,
+      rules,
+    });
 
   return {
     literals,

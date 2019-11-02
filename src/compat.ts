@@ -1,6 +1,6 @@
 import { Combinator, combinators, Component, componentData, componentGroupData, Entity, EntityType } from './parser';
 
-const importsCache: { [cssPath: string]: MDN.CompatData | null } = {};
+const importsCache: { [cssPath: string]: MDN.CompatData | undefined } = {};
 
 interface IRegularCompat {
   __compat: MDN.Compat;
@@ -20,39 +20,42 @@ export function getSupport(support: MDN.Support | MDN.Support[]): MDN.Support[] 
   return Array.isArray(support) ? support : [support];
 }
 
-export function getAtRuleData(name: string): MDN.CompatData | null {
+export function getAtRuleData(name: string) {
   return getData('at-rules', name);
 }
 
-export function getPropertyData(name: string): MDN.CompatData | null {
+export function getPropertyData(name: string) {
   return getData('properties', name);
 }
 
-export function getSelectorsData(name: string): MDN.CompatData | null {
+export function getSelectorsData(name: string) {
   return getData('selectors', name);
 }
 
-export function getTypesData(name: string): MDN.CompatData | null {
+export function getTypesData(name: string) {
   return getData('types', name);
 }
 
-function getData(type: string, name: string): MDN.CompatData | null {
+async function getData(
+  type: 'at-rules' | 'properties' | 'selectors' | 'types',
+  name: string,
+): Promise<MDN.CompatData | undefined> {
   const cssPath = type + '/' + name;
   if (cssPath in importsCache) {
     return importsCache[cssPath];
   }
 
   try {
-    const data = require(`mdn-browser-compat-data/css/${cssPath}.json`);
+    const data = await import(`mdn-browser-compat-data/css/${cssPath}.json`);
 
     if (!data) {
-      return (importsCache[cssPath] = null);
+      return (importsCache[cssPath] = undefined);
     }
 
     const cssData = data.css[type][name];
     return (importsCache[cssPath] = cssData);
   } catch {
-    return (importsCache[cssPath] = null);
+    return (importsCache[cssPath] = undefined);
   }
 }
 
@@ -179,13 +182,13 @@ export function isAddedBySome(compat: MDN.Compat): boolean {
   return false;
 }
 
-export function alternativeSelectors(selector: string): string[] {
+export async function alternativeSelectors(selector: string): Promise<string[]> {
   const alternatives: string[] = [];
 
   // Pseudo without ':'
   const colons = ':'.repeat(selector.lastIndexOf(':') + 1);
   const name = selector.slice(colons.length);
-  const compatibilityData = getSelectorsData(name);
+  const compatibilityData = await getSelectorsData(name);
 
   if (compatibilityData) {
     const compats = getCompats(compatibilityData);

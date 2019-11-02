@@ -1,8 +1,8 @@
 import { getAtRules } from './at-rules';
 import { getHtmlAttributes, getSvgAttributes } from './attributes';
 import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
-import dataTypes from './data-types';
-import { globals, htmlProperties, isVendorProperty, svgProperties } from './properties';
+import { getCurrentDataTypes } from './data-types';
+import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } from './properties';
 import { getPseudos } from './selectors';
 import { IDataType, Type, TypeType } from './typer';
 
@@ -30,13 +30,13 @@ interface IPropertyAlias {
   name: string;
   generics: IGenerics[];
   alias: IAlias;
-  comment: string | null;
+  comment: () => string | undefined;
 }
 
 interface IPropertyType {
   name: string;
   type: DeclarableType;
-  comment: string | null;
+  comment: () => string | undefined;
 }
 
 type PropertyType = IPropertyAlias | IPropertyType;
@@ -57,9 +57,53 @@ const lengthGeneric: IGenerics = {
 };
 
 export async function declarator() {
-  const atRules = getAtRules();
-  const pseudos = getPseudos();
-  const [htmlAttributes, svgAttributes] = await Promise.all([getHtmlAttributes(), getSvgAttributes()]);
+  const [htmlProperties, svgProperties, atRules, pseudos, globals, htmlAttributes, svgAttributes] = await Promise.all([
+    getHtmlProperties(),
+    getSvgProperties(),
+    getAtRules(),
+    getPseudos(),
+    getGlobals(),
+    getHtmlAttributes(),
+    getSvgAttributes(),
+  ]);
+
+  const dataTypes = getCurrentDataTypes();
+
+  function lengthIn(types: MixedType[]): boolean {
+    return !types.every(type => {
+      switch (type.type) {
+        case Type.Length:
+          return false;
+        case Type.DataType:
+          return !(type.name in dataTypes && lengthIn(dataTypes[type.name]));
+        default:
+          return true;
+      }
+    });
+  }
+
+  function alias(name: string, types?: null | MixedType[]): IAlias {
+    return {
+      type: Type.Alias,
+      name,
+      generics: types && lengthIn(types) ? [lengthGeneric] : [],
+    };
+  }
+
+  function aliasOf({ name, types }: IDeclaration): IAlias {
+    return alias(name, types);
+  }
+
+  function declarable(types: MixedType[]): DeclarableType[] {
+    return types.sort(sorter).map<DeclarableType>(type => {
+      switch (type.type) {
+        case Type.DataType:
+          return alias(toPascalCase(type.name), type.name in dataTypes ? dataTypes[type.name] : null);
+        default:
+          return type;
+      }
+    });
+  }
 
   const declarations: Map<MixedType[], IDeclaration> = new Map();
 
@@ -285,12 +329,12 @@ export async function declarator() {
         atRuleDefinitions[name].push({
           name: isVendorProperty(property) ? toVendorPrefixCase(property) : toCamelCase(property),
           type,
-          comment: null,
+          comment: () => undefined,
         });
         atRuleHyphenDefinitions[name].push({
           name: property,
           type,
-          comment: null,
+          comment: () => undefined,
         });
       } else {
         // Some properties are prefixed and share the same type so we
@@ -312,13 +356,13 @@ export async function declarator() {
           name: isVendorProperty(property) ? toVendorPrefixCase(property) : toCamelCase(property),
           generics,
           alias: aliasOf(declaration),
-          comment: null,
+          comment: () => undefined,
         });
         atRuleHyphenDefinitions[name].push({
           name: property,
           generics,
           alias: aliasOf(declaration),
-          comment: null,
+          comment: () => undefined,
         });
       }
     }
@@ -770,17 +814,6 @@ export function isAliasProperty(value: PropertyType): value is IPropertyAlias {
   return 'alias' in value;
 }
 
-function declarable(types: MixedType[]): DeclarableType[] {
-  return types.sort(sorter).map<DeclarableType>(type => {
-    switch (type.type) {
-      case Type.DataType:
-        return alias(toPascalCase(type.name), type.name in dataTypes ? dataTypes[type.name] : null);
-      default:
-        return type;
-    }
-  });
-}
-
 function sorter(a: MixedType, b: MixedType) {
   if (a.type === Type.StringLiteral && b.type === Type.StringLiteral) {
     return a.literal < b.literal ? -1 : a.literal > b.literal ? 1 : 0;
@@ -793,31 +826,6 @@ function sorter(a: MixedType, b: MixedType) {
 
 function genericsOf(definitions: IPropertyAlias[]) {
   return Array.from(new Set(([] as IGenerics[]).concat(...definitions.map(definition => definition.generics))));
-}
-
-function lengthIn(types: MixedType[]): boolean {
-  return !types.every(type => {
-    switch (type.type) {
-      case Type.Length:
-        return false;
-      case Type.DataType:
-        return !(type.name in dataTypes && lengthIn(dataTypes[type.name]));
-      default:
-        return true;
-    }
-  });
-}
-
-function alias(name: string, types?: null | MixedType[]): IAlias {
-  return {
-    type: Type.Alias,
-    name,
-    generics: types && lengthIn(types) ? [lengthGeneric] : [],
-  };
-}
-
-function aliasOf({ name, types }: IDeclaration): IAlias {
-  return alias(name, types);
 }
 
 function onlyContainsString(types: MixedType[]) {

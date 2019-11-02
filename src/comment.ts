@@ -9,7 +9,7 @@ const BLANK_ROW = '';
 const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\}]+\}\})/;
 
 export function composeCommentBlock(
-  compatibilityData: MDN.CompatData | null,
+  compatibilityData: MDN.CompatData | undefined,
   data: IExtendedProperty,
   vendor = false,
   obsolete = false,
@@ -48,11 +48,13 @@ export function composeCommentBlock(
     rows.pop();
   }
 
-  return rows.length > 1
-    ? '/**\n * ' + rows.join('\n * ') + '\n */'
-    : rows.length === 1
-    ? '/** ' + rows[0] + ' */'
-    : null;
+  if (rows.length === 1) {
+    return '/** ' + rows[0] + ' */';
+  }
+
+  if (rows.length > 1) {
+    return '/**\n * ' + rows.join('\n * ') + '\n */';
+  }
 }
 
 function getCompatRows(compatibilityData: MDN.CompatData) {
