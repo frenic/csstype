@@ -8,7 +8,7 @@ import { getSummary } from './urls';
 const BLANK_ROW = '';
 const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\}]+\}\})/;
 
-export function composeCommentBlock(
+export async function composeCommentBlock(
   compatibilityData: MDN.CompatData | undefined,
   data: IExtendedProperty,
   vendor = false,
@@ -18,7 +18,7 @@ export function composeCommentBlock(
   const includeCompatibility = !vendor && !obsolete && compatibilityData;
 
   if (data.mdn_url) {
-    const summary = getSummary(data.mdn_url);
+    const summary = await getSummary(data.mdn_url);
     if (summary) {
       rows.push(summary, BLANK_ROW);
     }

@@ -31,7 +31,7 @@ interface IProperty {
   vendor: boolean;
   shorthand?: boolean;
   obsolete: boolean;
-  comment: () => string | undefined;
+  comment: () => Promise<string | undefined>;
   types: ResolvedType[];
 }
 
@@ -68,9 +68,9 @@ export let getHtmlProperties = async () => {
   const propertiesMap = await propertiesData;
   const allPropertyData = await getPropertyData(ALL);
 
-  let getAllComment = () => {
-    const comment = composeCommentBlock(allPropertyData, propertiesMap[ALL]);
-    getAllComment = () => comment;
+  let getAllComment = async () => {
+    const comment = await composeCommentBlock(allPropertyData, propertiesMap[ALL]);
+    getAllComment = () => Promise.resolve(comment);
     return comment;
   };
 
@@ -185,7 +185,7 @@ export let getSvgProperties = async () => {
         vendor: false,
         shorthand: false,
         obsolete: false,
-        comment: () => undefined,
+        comment: () => Promise.resolve(undefined),
         types: await resolveDataTypes(typing(parse(syntax)), createPropertyDataTypeResolver(compatibilityData)),
       };
     }

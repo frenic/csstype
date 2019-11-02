@@ -30,13 +30,13 @@ interface IPropertyAlias {
   name: string;
   generics: IGenerics[];
   alias: IAlias;
-  comment: () => string | undefined;
+  comment: () => Promise<string | undefined>;
 }
 
 interface IPropertyType {
   name: string;
   type: DeclarableType;
-  comment: () => string | undefined;
+  comment: () => Promise<string | undefined>;
 }
 
 type PropertyType = IPropertyAlias | IPropertyType;
@@ -329,12 +329,12 @@ export async function declarator() {
         atRuleDefinitions[name].push({
           name: isVendorProperty(property) ? toVendorPrefixCase(property) : toCamelCase(property),
           type,
-          comment: () => undefined,
+          comment: () => Promise.resolve(undefined),
         });
         atRuleHyphenDefinitions[name].push({
           name: property,
           type,
-          comment: () => undefined,
+          comment: () => Promise.resolve(undefined),
         });
       } else {
         // Some properties are prefixed and share the same type so we
@@ -356,13 +356,13 @@ export async function declarator() {
           name: isVendorProperty(property) ? toVendorPrefixCase(property) : toCamelCase(property),
           generics,
           alias: aliasOf(declaration),
-          comment: () => undefined,
+          comment: () => Promise.resolve(undefined),
         });
         atRuleHyphenDefinitions[name].push({
           name: property,
           generics,
           alias: aliasOf(declaration),
-          comment: () => undefined,
+          comment: () => Promise.resolve(undefined),
         });
       }
     }

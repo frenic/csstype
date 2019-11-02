@@ -1,6 +1,6 @@
 export interface StandardLonghandProperties<TLength = string | 0> {
   /**
-   * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Initial value**: `normal`
    *
@@ -27,7 +27,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   alignContent?: AlignContentProperty;
   /**
-   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. The align-self property sets the alignment of an item within its containing block. In Flexbox it controls the alignment of items on the Cross Axis, in Grid Layout it controls the alignment of items on the Block Axis within their grid area.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
    * **Initial value**: `normal`
    *
@@ -54,7 +54,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   alignItems?: AlignItemsProperty;
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    *
@@ -246,7 +246,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundBlendMode?: BackgroundBlendModeProperty;
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    *
@@ -270,7 +270,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundColor?: BackgroundColorProperty;
   /**
-   * The **`background-image`** CSS property sets one or more background images on an element.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Initial value**: `none`
    *
@@ -282,7 +282,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundImage?: BackgroundImageProperty;
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    *
@@ -318,7 +318,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundPositionX?: BackgroundPositionXProperty<TLength>;
   /**
-   * The **`background-position-y`** CSS property sets the initial vertical position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   * The **`background-position-y`** CSS property sets the initial vertical position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Initial value**: `top`
    *
@@ -527,7 +527,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderBottomStyle?: BorderBottomStyleProperty;
   /**
-   * The **`border-bottom-width`** CSS property sets the width of the bottom border of a box.
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of an element.
    *
    * **Initial value**: `medium`
    *
@@ -918,7 +918,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   borderTopWidth?: BorderTopWidthProperty<TLength>;
   /**
-   * The **`bottom`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`bottom`** CSS property participates in setting the vertical position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Initial value**: `auto`
    *
@@ -955,7 +955,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   boxShadow?: BoxShadowProperty;
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    *
@@ -968,7 +968,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   boxSizing?: BoxSizingProperty;
   /**
-   * The **`break-after`** CSS property defines how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
+   * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
    * **Initial value**: `auto`
    *
@@ -1036,7 +1036,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   breakBefore?: BreakBeforeProperty;
   /**
-   * The **`break-inside`** CSS property defines how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
+   * The **`break-inside`** CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
    *
    * **Initial value**: `auto`
    *
@@ -1205,7 +1205,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnGap?: ColumnGapProperty<TLength>;
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    *
@@ -1231,7 +1231,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnRuleStyle?: ColumnRuleStyleProperty;
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    *
@@ -1257,7 +1257,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnSpan?: ColumnSpanProperty;
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    *
@@ -1270,7 +1270,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   columnWidth?: ColumnWidthProperty<TLength>;
   /**
-   * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page.
+   * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page, leading to obvious performance benefits.
    *
    * **Initial value**: `none`
    *
@@ -1330,7 +1330,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   counterSet?: CounterSetProperty;
   /**
-   * The **`cursor`** CSS property sets mouse cursor to display when the mouse pointer is over an element.
+   * The **`cursor`** CSS property sets the type of cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Initial value**: `auto`
    *
@@ -1354,7 +1354,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   direction?: DirectionProperty;
   /**
-   * The **`display`** CSS property defines the _display type_ of an element, which consists of the two basic qualities of how an element generates boxes — the **outer display type** defining how the box participates in flow layout, and the **inner display type** defining how the children of the box are laid out.
+   * The **`display`** CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
    *
    * **Initial value**: `inline`
    *
@@ -1417,7 +1417,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   flexDirection?: FlexDirectionProperty;
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    *
@@ -1430,7 +1430,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   flexGrow?: GlobalsNumber;
   /**
-   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    *
@@ -1675,7 +1675,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontVariationSettings?: FontVariationSettingsProperty;
   /**
-   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only available in `normal` and `bold`.
+   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` you are using.
    *
    * **Initial value**: `normal`
    *
@@ -1687,7 +1687,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   fontWeight?: FontWeightProperty;
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Initial value**: `auto`
    *
@@ -1712,7 +1712,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   gridAutoFlow?: GridAutoFlowProperty;
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Initial value**: `auto`
    *
@@ -1896,7 +1896,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   inlineSize?: InlineSizeProperty<TLength>;
   /**
-   * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset`** CSS property, though part of the logical specification, doesn't define logical block or inline offsets, and instead defines physical offsets, regardless of the element's writing mode, directionality, and text orientation. It has the same multi-value syntax of the `margin` shorthand. It is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties.
    *
    * **Initial value**: `auto`
    *
@@ -2045,7 +2045,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   justifyItems?: JustifyItemsProperty;
   /**
-   * The CSS **`justify-self`** property set the way a box is justified inside its alignment container along the appropriate axis.
+   * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
    *
    * **Initial value**: `auto`
    *
@@ -2108,7 +2108,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   lineBreak?: LineBreakProperty;
   /**
-   * The **`line-height`** CSS property sets the amount of space used for lines, such as in text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
+   * The **`line-height`** CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
    *
    * **Initial value**: `normal`
    *
@@ -2326,7 +2326,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskBorderWidth?: MaskBorderWidthProperty<TLength>;
   /**
-   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Initial value**: `border-box`
    *
@@ -2545,7 +2545,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   mixBlendMode?: MixBlendModeProperty;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Initial value**: `0`
    *
@@ -2571,7 +2571,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   motionPath?: OffsetPathProperty;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -2618,7 +2618,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetAnchor?: OffsetAnchorProperty<TLength>;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Initial value**: `0`
    *
@@ -2646,7 +2646,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetPosition?: OffsetPositionProperty<TLength>;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -2659,7 +2659,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetRotate?: OffsetRotateProperty;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -2672,7 +2672,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   offsetRotation?: OffsetRotateProperty;
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -2757,7 +2757,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   outlineWidth?: OutlineWidthProperty<TLength>;
   /**
-   * The **`overflow`** CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
+   * The **`overflow`** shorthand CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
    *
    * **Initial value**: `visible`
    *
@@ -2811,7 +2811,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overflowInline?: OverflowInlineProperty;
   /**
-   * The `**overflow-wrap**` CSS property sets whether the browser should insert line breaks within words to prevent text from overflowing its content box.
+   * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Initial value**: `normal`
    *
@@ -2920,7 +2920,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingBlockStart?: PaddingBlockStartProperty<TLength>;
   /**
-   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Initial value**: `0`
    *
@@ -2970,7 +2970,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingInlineStart?: PaddingInlineStartProperty<TLength>;
   /**
-   * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
+   * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
    *
    * **Initial value**: `0`
    *
@@ -2982,7 +2982,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingLeft?: PaddingLeftProperty<TLength>;
   /**
-   * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
+   * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
    *
    * **Initial value**: `0`
    *
@@ -2994,7 +2994,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   paddingRight?: PaddingRightProperty<TLength>;
   /**
-   * The **`padding-top`** padding area on the top of an element.
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
    *
    * **Initial value**: `0`
    *
@@ -3106,7 +3106,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   placeContent?: PlaceContentProperty;
   /**
-   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of mouse events.
+   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
    *
    * **Initial value**: `auto`
    *
@@ -3166,7 +3166,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   right?: RightProperty<TLength>;
   /**
-   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` property.
    *
    * **Initial value**: `none`
    *
@@ -3387,32 +3387,28 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   scrollMarginTop?: ScrollMarginTopProperty<TLength>;
   /**
- * The scroll-padding property is a shorthand property which sets all of the scroll-padding longhands, assigning values much like the padding property does for the padding-\* longhands.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  | **11** |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
- */
+   * The **`scroll-padding`** property is a shorthand property that sets all of the `scroll-padding-*` longhands. It assigns values much like the `padding` property does for the `padding-*` longhands.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  | **11** |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
+   */
   scrollPadding?: ScrollPaddingProperty<TLength>;
   /**
- * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  |   No   |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
- */
+   * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
+   */
   scrollPaddingBlock?: ScrollPaddingBlockProperty<TLength>;
   /**
    * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -3451,18 +3447,16 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   scrollPaddingBottom?: ScrollPaddingBottomProperty<TLength>;
   /**
- * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  |   No   |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
- */
+   * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
+   */
   scrollPaddingInline?: ScrollPaddingInlineProperty<TLength>;
   /**
    * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -3574,7 +3568,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   scrollbarColor?: ScrollbarColorProperty;
   /**
-   * The `scrollbar-width` property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
+   * The **`scrollbar-width`** property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
    * **Initial value**: `auto`
    *
@@ -3646,7 +3640,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   tableLayout?: TableLayoutProperty;
   /**
-   * The **`text-align`** CSS property sets the horizontal alignment of an inline or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
+   * The **`text-align`** CSS property sets the horizontal alignment of a block element or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
    *
    * **Initial value**: `start`, or a nameless value that acts as `left` if _direction_ is `ltr`, `right` if _direction_ is `rtl` if `start` is not supported by the browser.
    *
@@ -3892,7 +3886,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   textSizeAdjust?: TextSizeAdjustProperty;
   /**
-   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.
    *
    * **Initial value**: `none`
    *
@@ -3940,7 +3934,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   top?: TopProperty<TLength>;
   /**
-   * The **`touch-action`** CSS property sets how a region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Initial value**: `auto`
    *
@@ -4056,7 +4050,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   transitionTimingFunction?: TransitionTimingFunctionProperty;
   /**
-   * The **`translate`** CSS property allows you to specify translation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Initial value**: `none`
    *
@@ -4141,7 +4135,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   widows?: GlobalsNumber;
   /**
-   * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
+   * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
    * **Initial value**: `auto`
    *
@@ -4189,7 +4183,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   wordSpacing?: WordSpacingProperty<TLength>;
   /**
-   * The `**overflow-wrap**` CSS property sets whether the browser should insert line breaks within words to prevent text from overflowing its content box.
+   * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Initial value**: `normal`
    *
@@ -4201,7 +4195,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   wordWrap?: WordWrapProperty;
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    *
@@ -4241,7 +4235,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
 
 export interface StandardShorthandProperties<TLength = string | 0> {
   /**
-   * The `**all**` CSS shorthand property sets all of an element's properties (other than `unicode-bidi` and `direction`) to their initial or inherited values, or to the values specified in another stylesheet origin.
+   * The `**all**` shorthand CSS property resets all of an element's properties (except `unicode-bidi` and `direction`). It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
    * **Initial value**: There is no practical initial value for it.
    *
@@ -4253,7 +4247,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   all?: Globals;
   /**
-   * The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
    * | Chrome  | Firefox | Safari  |  Edge  |   IE   |
    * | :-----: | :-----: | :-----: | :----: | :----: |
@@ -4274,7 +4268,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength>;
   /**
-   * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
+   * The **`border`** shorthand CSS property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4314,7 +4308,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderBlockStart?: BorderBlockStartProperty<TLength>;
   /**
-   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`. These properties set an element's bottom border.
+   * The **`border-bottom`** shorthand CSS property sets an element's bottom border. It sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4324,7 +4318,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderBottom?: BorderBottomProperty<TLength>;
   /**
-   * The **`border-color`** shorthand CSS property sets the color of all sides of an element's border.
+   * The **`border-color`** shorthand CSS property sets the color of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4334,7 +4328,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderColor?: BorderColorProperty;
   /**
-   * The **`border-image`** CSS property draws an image in place of an element's `border-style`.
+   * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
    * | Chrome  |  Firefox  | Safari  |  Edge  |   IE   |
    * | :-----: | :-------: | :-----: | :----: | :----: |
@@ -4375,7 +4369,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderInlineStart?: BorderInlineStartProperty<TLength>;
   /**
-   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-width`, `border-left-style` and `border-left-color`. These properties set an element's left border.
+   * The **`border-left`** shorthand CSS property set an element's left border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4396,7 +4390,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderRadius?: BorderRadiusProperty<TLength>;
   /**
-   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-width`, `border-right-style` and `border-right-color`. These properties set an element's right border.
+   * The **`border-right`** shorthand CSS property sets an element's right border. It sets the values of `border-right-width`, `border-right-style` and `border-right-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE    |
    * | :----: | :-----: | :----: | :----: | :-----: |
@@ -4406,7 +4400,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderRight?: BorderRightProperty<TLength>;
   /**
-   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   * The **`border-style`** shorthand CSS property sets the line style for all four sides of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4416,7 +4410,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderStyle?: BorderStyleProperty;
   /**
-   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-width`, `border-top-style` and `border-top-color`. These properties set an element's top border.
+   * The **`border-top`** shorthand CSS property set an element's top border. It sets the values of `border-top-width`, `border-top-style` and `border-top-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4426,7 +4420,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderTop?: BorderTopProperty<TLength>;
   /**
-   * The **`border-width`** shorthand CSS property sets the widths of all four sides of an element's border.
+   * The **`border-width`** shorthand CSS property sets the width of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4436,7 +4430,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   borderWidth?: BorderWidthProperty<TLength>;
   /**
-   * The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
    *
    * | Chrome  |  Firefox  | Safari  |  Edge  |   IE   |
    * | :-----: | :-------: | :-----: | :----: | :----: |
@@ -4458,7 +4452,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength>;
   /**
-   * The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
    *
    * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
    * | :------: | :-----: | :-------: | :----: | :------: |
@@ -4480,7 +4474,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   flexFlow?: FlexFlowProperty;
   /**
-   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
+   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-stretch`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4533,7 +4527,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   grid?: GridProperty;
   /**
-   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -4607,7 +4601,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   maskBorder?: MaskBorderProperty;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -4618,7 +4612,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength>;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -4697,7 +4691,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   placeSelf?: PlaceSelfProperty;
   /**
-   * The **`text-decoration`** CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
+   * The **`text-decoration`** shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -4847,7 +4841,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   MozBorderTopColors?: MozBorderTopColorsProperty;
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    */
@@ -4871,7 +4865,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   MozColumnGap?: ColumnGapProperty<TLength>;
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    */
@@ -4883,13 +4877,13 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   MozColumnRuleStyle?: ColumnRuleStyleProperty;
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    */
   MozColumnRuleWidth?: ColumnRuleWidthProperty<TLength>;
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    */
@@ -5087,7 +5081,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   msAccelerator?: MsAcceleratorProperty;
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    */
@@ -5147,7 +5141,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   msFlexDirection?: FlexDirectionProperty;
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    */
@@ -5165,13 +5159,13 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   msFlowInto?: MsFlowIntoProperty;
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Initial value**: `auto`
    */
   msGridColumns?: GridAutoColumnsProperty<TLength>;
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Initial value**: `auto`
    */
@@ -5369,7 +5363,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   msTextOverflow?: TextOverflowProperty;
   /**
-   * The **`touch-action`** CSS property sets how a region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Initial value**: `auto`
    */
@@ -5447,7 +5441,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   msWrapThrough?: MsWrapThroughProperty;
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    */
@@ -5483,19 +5477,19 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   OTransformOrigin?: TransformOriginProperty<TLength>;
   /**
-   * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Initial value**: `normal`
    */
   WebkitAlignContent?: AlignContentProperty;
   /**
-   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. The align-self property sets the alignment of an item within its containing block. In Flexbox it controls the alignment of items on the Cross Axis, in Grid Layout it controls the alignment of items on the Block Axis within their grid area.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
    * **Initial value**: `normal`
    */
   WebkitAlignItems?: AlignItemsProperty;
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    */
@@ -5567,13 +5561,13 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitBackfaceVisibility?: BackfaceVisibilityProperty;
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    */
   WebkitBackgroundClip?: BackgroundClipProperty;
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    */
@@ -5639,7 +5633,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitBoxShadow?: BoxShadowProperty;
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    */
@@ -5675,7 +5669,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitColumnGap?: ColumnGapProperty<TLength>;
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    */
@@ -5687,7 +5681,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitColumnRuleStyle?: ColumnRuleStyleProperty;
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    */
@@ -5699,7 +5693,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitColumnSpan?: ColumnSpanProperty;
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    */
@@ -5723,13 +5717,13 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitFlexDirection?: FlexDirectionProperty;
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    */
   WebkitFlexGrow?: GlobalsNumber;
   /**
-   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    */
@@ -5801,7 +5795,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitMaskAttachment?: WebkitMaskAttachmentProperty;
   /**
-   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Initial value**: `border`
    */
@@ -6061,7 +6055,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitUserSelect?: UserSelectProperty;
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    */
@@ -6069,11 +6063,11 @@ export interface VendorLonghandProperties<TLength = string | 0> {
 }
 
 export interface VendorShorthandProperties<TLength = string | 0> {
-  /** The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
+  /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
   MozAnimation?: AnimationProperty;
-  /** The **`border-image`** CSS property draws an image in place of an element's `border-style`. */
+  /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   MozBorderImage?: BorderImageProperty;
-  /** The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout. */
+  /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
   MozColumnRule?: ColumnRuleProperty<TLength>;
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   MozColumns?: ColumnsProperty<TLength>;
@@ -6083,7 +6077,7 @@ export interface VendorShorthandProperties<TLength = string | 0> {
   msContentZoomLimit?: GlobalsString;
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
   msContentZoomSnap?: MsContentZoomSnapProperty;
-  /** The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
+  /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   msFlex?: FlexProperty<TLength>;
   /** The **\-ms-scroll-limit** CSS property is a Microsoft extension that specifies values for the `-ms-scroll-limit-x-min`, `-ms-scroll-limit-y-min`, `-ms-scroll-limit-x-max`, and `-ms-scroll-limit-y-max` properties. */
   msScrollLimit?: GlobalsString;
@@ -6093,19 +6087,19 @@ export interface VendorShorthandProperties<TLength = string | 0> {
   msScrollSnapY?: GlobalsString;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   msTransition?: TransitionProperty;
-  /** The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
+  /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
   WebkitAnimation?: AnimationProperty;
   /** The **`-webkit-border-before`** CSS property is a shorthand property for setting the individual logical block start border property values in a single place in the style sheet. */
   WebkitBorderBefore?: WebkitBorderBeforeProperty<TLength>;
-  /** The **`border-image`** CSS property draws an image in place of an element's `border-style`. */
+  /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   WebkitBorderImage?: BorderImageProperty;
   /** The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners. */
   WebkitBorderRadius?: BorderRadiusProperty<TLength>;
-  /** The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout. */
+  /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
   WebkitColumnRule?: ColumnRuleProperty<TLength>;
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   WebkitColumns?: ColumnsProperty<TLength>;
-  /** The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
+  /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   WebkitFlex?: FlexProperty<TLength>;
   /** The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` properties. */
   WebkitFlexFlow?: FlexFlowProperty;
@@ -6171,7 +6165,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   boxOrdinalGroup?: GlobalsNumber;
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -6385,7 +6379,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   KhtmlBoxOrdinalGroup?: GlobalsNumber;
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -6409,7 +6403,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   KhtmlLineBreak?: LineBreakProperty;
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -6425,7 +6419,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   KhtmlUserSelect?: UserSelectProperty;
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    *
@@ -6441,7 +6435,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty;
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    *
@@ -6535,7 +6529,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   MozBoxOrdinalGroup?: GlobalsNumber;
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -6559,7 +6553,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   MozBoxShadow?: BoxShadowProperty;
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -6667,7 +6661,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   msImeMode?: ImeModeProperty;
   /**
-   * The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
    * @deprecated
    */
@@ -6745,7 +6739,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   OBackgroundSize?: BackgroundSizeProperty<TLength>;
   /**
-   * The **`border-image`** CSS property draws an image in place of an element's `border-style`.
+   * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
    * @deprecated
    */
@@ -6845,7 +6839,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   WebkitBoxOrdinalGroup?: GlobalsNumber;
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -6945,7 +6939,7 @@ export interface Properties<TLength = string | 0> extends StandardProperties<TLe
 
 export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
-   * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Initial value**: `normal`
    *
@@ -6972,7 +6966,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "align-content"?: AlignContentProperty;
   /**
-   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. The align-self property sets the alignment of an item within its containing block. In Flexbox it controls the alignment of items on the Cross Axis, in Grid Layout it controls the alignment of items on the Block Axis within their grid area.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
    * **Initial value**: `normal`
    *
@@ -6999,7 +6993,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "align-items"?: AlignItemsProperty;
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    *
@@ -7191,7 +7185,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-blend-mode"?: BackgroundBlendModeProperty;
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    *
@@ -7215,7 +7209,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-color"?: BackgroundColorProperty;
   /**
-   * The **`background-image`** CSS property sets one or more background images on an element.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Initial value**: `none`
    *
@@ -7227,7 +7221,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-image"?: BackgroundImageProperty;
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    *
@@ -7263,7 +7257,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-position-x"?: BackgroundPositionXProperty<TLength>;
   /**
-   * The **`background-position-y`** CSS property sets the initial vertical position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   * The **`background-position-y`** CSS property sets the initial vertical position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Initial value**: `top`
    *
@@ -7472,7 +7466,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-bottom-style"?: BorderBottomStyleProperty;
   /**
-   * The **`border-bottom-width`** CSS property sets the width of the bottom border of a box.
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of an element.
    *
    * **Initial value**: `medium`
    *
@@ -7863,7 +7857,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "border-top-width"?: BorderTopWidthProperty<TLength>;
   /**
-   * The **`bottom`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`bottom`** CSS property participates in setting the vertical position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Initial value**: `auto`
    *
@@ -7900,7 +7894,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "box-shadow"?: BoxShadowProperty;
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    *
@@ -7913,7 +7907,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "box-sizing"?: BoxSizingProperty;
   /**
-   * The **`break-after`** CSS property defines how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
+   * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
    * **Initial value**: `auto`
    *
@@ -7981,7 +7975,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "break-before"?: BreakBeforeProperty;
   /**
-   * The **`break-inside`** CSS property defines how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
+   * The **`break-inside`** CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
    *
    * **Initial value**: `auto`
    *
@@ -8150,7 +8144,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-gap"?: ColumnGapProperty<TLength>;
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    *
@@ -8176,7 +8170,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-rule-style"?: ColumnRuleStyleProperty;
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    *
@@ -8202,7 +8196,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-span"?: ColumnSpanProperty;
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    *
@@ -8215,7 +8209,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "column-width"?: ColumnWidthProperty<TLength>;
   /**
-   * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page.
+   * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page, leading to obvious performance benefits.
    *
    * **Initial value**: `none`
    *
@@ -8275,7 +8269,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "counter-set"?: CounterSetProperty;
   /**
-   * The **`cursor`** CSS property sets mouse cursor to display when the mouse pointer is over an element.
+   * The **`cursor`** CSS property sets the type of cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Initial value**: `auto`
    *
@@ -8299,7 +8293,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   direction?: DirectionProperty;
   /**
-   * The **`display`** CSS property defines the _display type_ of an element, which consists of the two basic qualities of how an element generates boxes — the **outer display type** defining how the box participates in flow layout, and the **inner display type** defining how the children of the box are laid out.
+   * The **`display`** CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
    *
    * **Initial value**: `inline`
    *
@@ -8362,7 +8356,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-direction"?: FlexDirectionProperty;
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    *
@@ -8375,7 +8369,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-grow"?: GlobalsNumber;
   /**
-   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    *
@@ -8620,7 +8614,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-variation-settings"?: FontVariationSettingsProperty;
   /**
-   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only available in `normal` and `bold`.
+   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` you are using.
    *
    * **Initial value**: `normal`
    *
@@ -8632,7 +8626,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "font-weight"?: FontWeightProperty;
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Initial value**: `auto`
    *
@@ -8657,7 +8651,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "grid-auto-flow"?: GridAutoFlowProperty;
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Initial value**: `auto`
    *
@@ -8841,7 +8835,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "inline-size"?: InlineSizeProperty<TLength>;
   /**
-   * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset`** CSS property, though part of the logical specification, doesn't define logical block or inline offsets, and instead defines physical offsets, regardless of the element's writing mode, directionality, and text orientation. It has the same multi-value syntax of the `margin` shorthand. It is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties.
    *
    * **Initial value**: `auto`
    *
@@ -8990,7 +8984,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "justify-items"?: JustifyItemsProperty;
   /**
-   * The CSS **`justify-self`** property set the way a box is justified inside its alignment container along the appropriate axis.
+   * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
    *
    * **Initial value**: `auto`
    *
@@ -9053,7 +9047,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "line-break"?: LineBreakProperty;
   /**
-   * The **`line-height`** CSS property sets the amount of space used for lines, such as in text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
+   * The **`line-height`** CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
    *
    * **Initial value**: `normal`
    *
@@ -9271,7 +9265,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-border-width"?: MaskBorderWidthProperty<TLength>;
   /**
-   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Initial value**: `border-box`
    *
@@ -9490,7 +9484,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mix-blend-mode"?: MixBlendModeProperty;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Initial value**: `0`
    *
@@ -9516,7 +9510,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "motion-path"?: OffsetPathProperty;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -9563,7 +9557,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-anchor"?: OffsetAnchorProperty<TLength>;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Initial value**: `0`
    *
@@ -9591,7 +9585,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /** **Initial value**: `auto` */
   "offset-position"?: OffsetPositionProperty<TLength>;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -9604,7 +9598,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-rotate"?: OffsetRotateProperty;
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -9617,7 +9611,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "offset-rotation"?: OffsetRotateProperty;
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -9702,7 +9696,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "outline-width"?: OutlineWidthProperty<TLength>;
   /**
-   * The **`overflow`** CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
+   * The **`overflow`** shorthand CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
    *
    * **Initial value**: `visible`
    *
@@ -9756,7 +9750,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overflow-inline"?: OverflowInlineProperty;
   /**
-   * The `**overflow-wrap**` CSS property sets whether the browser should insert line breaks within words to prevent text from overflowing its content box.
+   * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Initial value**: `normal`
    *
@@ -9865,7 +9859,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-block-start"?: PaddingBlockStartProperty<TLength>;
   /**
-   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Initial value**: `0`
    *
@@ -9915,7 +9909,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-inline-start"?: PaddingInlineStartProperty<TLength>;
   /**
-   * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
+   * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
    *
    * **Initial value**: `0`
    *
@@ -9927,7 +9921,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-left"?: PaddingLeftProperty<TLength>;
   /**
-   * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
+   * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
    *
    * **Initial value**: `0`
    *
@@ -9939,7 +9933,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "padding-right"?: PaddingRightProperty<TLength>;
   /**
-   * The **`padding-top`** padding area on the top of an element.
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
    *
    * **Initial value**: `0`
    *
@@ -10051,7 +10045,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "place-content"?: PlaceContentProperty;
   /**
-   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of mouse events.
+   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
    *
    * **Initial value**: `auto`
    *
@@ -10111,7 +10105,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   right?: RightProperty<TLength>;
   /**
-   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` property.
    *
    * **Initial value**: `none`
    *
@@ -10332,32 +10326,28 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "scroll-margin-top"?: ScrollMarginTopProperty<TLength>;
   /**
- * The scroll-padding property is a shorthand property which sets all of the scroll-padding longhands, assigning values much like the padding property does for the padding-\* longhands.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  | **11** |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
- */
+   * The **`scroll-padding`** property is a shorthand property that sets all of the `scroll-padding-*` longhands. It assigns values much like the `padding` property does for the `padding-*` longhands.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  | **11** |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
+   */
   "scroll-padding"?: ScrollPaddingProperty<TLength>;
   /**
- * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  |   No   |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
- */
+   * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
+   */
   "scroll-padding-block"?: ScrollPaddingBlockProperty<TLength>;
   /**
    * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -10396,18 +10386,16 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "scroll-padding-bottom"?: ScrollPaddingBottomProperty<TLength>;
   /**
- * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  |   No   |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
- */
+   * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
+   */
   "scroll-padding-inline"?: ScrollPaddingInlineProperty<TLength>;
   /**
    * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -10519,7 +10507,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "scrollbar-color"?: ScrollbarColorProperty;
   /**
-   * The `scrollbar-width` property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
+   * The **`scrollbar-width`** property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
    * **Initial value**: `auto`
    *
@@ -10591,7 +10579,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "table-layout"?: TableLayoutProperty;
   /**
-   * The **`text-align`** CSS property sets the horizontal alignment of an inline or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
+   * The **`text-align`** CSS property sets the horizontal alignment of a block element or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
    *
    * **Initial value**: `start`, or a nameless value that acts as `left` if _direction_ is `ltr`, `right` if _direction_ is `rtl` if `start` is not supported by the browser.
    *
@@ -10837,7 +10825,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "text-size-adjust"?: TextSizeAdjustProperty;
   /**
-   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.
    *
    * **Initial value**: `none`
    *
@@ -10885,7 +10873,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   top?: TopProperty<TLength>;
   /**
-   * The **`touch-action`** CSS property sets how a region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Initial value**: `auto`
    *
@@ -11001,7 +10989,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "transition-timing-function"?: TransitionTimingFunctionProperty;
   /**
-   * The **`translate`** CSS property allows you to specify translation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Initial value**: `none`
    *
@@ -11086,7 +11074,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   widows?: GlobalsNumber;
   /**
-   * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
+   * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
    * **Initial value**: `auto`
    *
@@ -11134,7 +11122,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "word-spacing"?: WordSpacingProperty<TLength>;
   /**
-   * The `**overflow-wrap**` CSS property sets whether the browser should insert line breaks within words to prevent text from overflowing its content box.
+   * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Initial value**: `normal`
    *
@@ -11146,7 +11134,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "word-wrap"?: WordWrapProperty;
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    *
@@ -11186,7 +11174,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
 
 export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   /**
-   * The `**all**` CSS shorthand property sets all of an element's properties (other than `unicode-bidi` and `direction`) to their initial or inherited values, or to the values specified in another stylesheet origin.
+   * The `**all**` shorthand CSS property resets all of an element's properties (except `unicode-bidi` and `direction`). It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
    * **Initial value**: There is no practical initial value for it.
    *
@@ -11198,7 +11186,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   all?: Globals;
   /**
-   * The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
    * | Chrome  | Firefox | Safari  |  Edge  |   IE   |
    * | :-----: | :-----: | :-----: | :----: | :----: |
@@ -11219,7 +11207,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength>;
   /**
-   * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
+   * The **`border`** shorthand CSS property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11259,7 +11247,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-block-start"?: BorderBlockStartProperty<TLength>;
   /**
-   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`. These properties set an element's bottom border.
+   * The **`border-bottom`** shorthand CSS property sets an element's bottom border. It sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11269,7 +11257,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-bottom"?: BorderBottomProperty<TLength>;
   /**
-   * The **`border-color`** shorthand CSS property sets the color of all sides of an element's border.
+   * The **`border-color`** shorthand CSS property sets the color of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11279,7 +11267,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-color"?: BorderColorProperty;
   /**
-   * The **`border-image`** CSS property draws an image in place of an element's `border-style`.
+   * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
    * | Chrome  |  Firefox  | Safari  |  Edge  |   IE   |
    * | :-----: | :-------: | :-----: | :----: | :----: |
@@ -11320,7 +11308,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-inline-start"?: BorderInlineStartProperty<TLength>;
   /**
-   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-width`, `border-left-style` and `border-left-color`. These properties set an element's left border.
+   * The **`border-left`** shorthand CSS property set an element's left border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11341,7 +11329,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-radius"?: BorderRadiusProperty<TLength>;
   /**
-   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-width`, `border-right-style` and `border-right-color`. These properties set an element's right border.
+   * The **`border-right`** shorthand CSS property sets an element's right border. It sets the values of `border-right-width`, `border-right-style` and `border-right-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE    |
    * | :----: | :-----: | :----: | :----: | :-----: |
@@ -11351,7 +11339,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-right"?: BorderRightProperty<TLength>;
   /**
-   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   * The **`border-style`** shorthand CSS property sets the line style for all four sides of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11361,7 +11349,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-style"?: BorderStyleProperty;
   /**
-   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-width`, `border-top-style` and `border-top-color`. These properties set an element's top border.
+   * The **`border-top`** shorthand CSS property set an element's top border. It sets the values of `border-top-width`, `border-top-style` and `border-top-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11371,7 +11359,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-top"?: BorderTopProperty<TLength>;
   /**
-   * The **`border-width`** shorthand CSS property sets the widths of all four sides of an element's border.
+   * The **`border-width`** shorthand CSS property sets the width of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11381,7 +11369,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "border-width"?: BorderWidthProperty<TLength>;
   /**
-   * The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
    *
    * | Chrome  |  Firefox  | Safari  |  Edge  |   IE   |
    * | :-----: | :-------: | :-----: | :----: | :----: |
@@ -11403,7 +11391,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength>;
   /**
-   * The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
    *
    * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
    * | :------: | :-----: | :-------: | :----: | :------: |
@@ -11425,7 +11413,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "flex-flow"?: FlexFlowProperty;
   /**
-   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
+   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-stretch`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11478,7 +11466,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   grid?: GridProperty;
   /**
-   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -11552,7 +11540,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   "mask-border"?: MaskBorderProperty;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -11563,7 +11551,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength>;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -11642,7 +11630,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   "place-self"?: PlaceSelfProperty;
   /**
-   * The **`text-decoration`** CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
+   * The **`text-decoration`** shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -11792,7 +11780,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-moz-border-top-colors"?: MozBorderTopColorsProperty;
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    */
@@ -11816,7 +11804,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-moz-column-gap"?: ColumnGapProperty<TLength>;
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    */
@@ -11828,13 +11816,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-moz-column-rule-style"?: ColumnRuleStyleProperty;
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    */
   "-moz-column-rule-width"?: ColumnRuleWidthProperty<TLength>;
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    */
@@ -12032,7 +12020,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-ms-accelerator"?: MsAcceleratorProperty;
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    */
@@ -12092,7 +12080,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-ms-flex-direction"?: FlexDirectionProperty;
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    */
@@ -12110,13 +12098,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-ms-flow-into"?: MsFlowIntoProperty;
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Initial value**: `auto`
    */
   "-ms-grid-columns"?: GridAutoColumnsProperty<TLength>;
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Initial value**: `auto`
    */
@@ -12314,7 +12302,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-ms-text-overflow"?: TextOverflowProperty;
   /**
-   * The **`touch-action`** CSS property sets how a region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Initial value**: `auto`
    */
@@ -12392,7 +12380,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-ms-wrap-through"?: MsWrapThroughProperty;
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    */
@@ -12428,19 +12416,19 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-o-transform-origin"?: TransformOriginProperty<TLength>;
   /**
-   * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Initial value**: `normal`
    */
   "-webkit-align-content"?: AlignContentProperty;
   /**
-   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. The align-self property sets the alignment of an item within its containing block. In Flexbox it controls the alignment of items on the Cross Axis, in Grid Layout it controls the alignment of items on the Block Axis within their grid area.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
    * **Initial value**: `normal`
    */
   "-webkit-align-items"?: AlignItemsProperty;
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    */
@@ -12512,13 +12500,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-backface-visibility"?: BackfaceVisibilityProperty;
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    */
   "-webkit-background-clip"?: BackgroundClipProperty;
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    */
@@ -12584,7 +12572,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-box-shadow"?: BoxShadowProperty;
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    */
@@ -12620,7 +12608,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-column-gap"?: ColumnGapProperty<TLength>;
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    */
@@ -12632,7 +12620,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-column-rule-style"?: ColumnRuleStyleProperty;
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    */
@@ -12644,7 +12632,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-column-span"?: ColumnSpanProperty;
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    */
@@ -12668,13 +12656,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-flex-direction"?: FlexDirectionProperty;
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    */
   "-webkit-flex-grow"?: GlobalsNumber;
   /**
-   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    */
@@ -12746,7 +12734,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty;
   /**
-   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Initial value**: `border`
    */
@@ -13006,7 +12994,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-user-select"?: UserSelectProperty;
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    */
@@ -13014,11 +13002,11 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
 }
 
 export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
-  /** The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
+  /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
   "-moz-animation"?: AnimationProperty;
-  /** The **`border-image`** CSS property draws an image in place of an element's `border-style`. */
+  /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   "-moz-border-image"?: BorderImageProperty;
-  /** The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout. */
+  /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
   "-moz-column-rule"?: ColumnRuleProperty<TLength>;
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   "-moz-columns"?: ColumnsProperty<TLength>;
@@ -13028,7 +13016,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
   "-ms-content-zoom-limit"?: GlobalsString;
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
   "-ms-content-zoom-snap"?: MsContentZoomSnapProperty;
-  /** The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
+  /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   "-ms-flex"?: FlexProperty<TLength>;
   /** The **\-ms-scroll-limit** CSS property is a Microsoft extension that specifies values for the `-ms-scroll-limit-x-min`, `-ms-scroll-limit-y-min`, `-ms-scroll-limit-x-max`, and `-ms-scroll-limit-y-max` properties. */
   "-ms-scroll-limit"?: GlobalsString;
@@ -13038,19 +13026,19 @@ export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
   "-ms-scroll-snap-y"?: GlobalsString;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   "-ms-transition"?: TransitionProperty;
-  /** The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
+  /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
   "-webkit-animation"?: AnimationProperty;
   /** The **`-webkit-border-before`** CSS property is a shorthand property for setting the individual logical block start border property values in a single place in the style sheet. */
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength>;
-  /** The **`border-image`** CSS property draws an image in place of an element's `border-style`. */
+  /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   "-webkit-border-image"?: BorderImageProperty;
   /** The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners. */
   "-webkit-border-radius"?: BorderRadiusProperty<TLength>;
-  /** The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout. */
+  /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
   "-webkit-column-rule"?: ColumnRuleProperty<TLength>;
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   "-webkit-columns"?: ColumnsProperty<TLength>;
-  /** The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
+  /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   "-webkit-flex"?: FlexProperty<TLength>;
   /** The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` properties. */
   "-webkit-flex-flow"?: FlexFlowProperty;
@@ -13116,7 +13104,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "box-ordinal-group"?: GlobalsNumber;
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -13330,7 +13318,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-khtml-box-ordinal-group"?: GlobalsNumber;
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -13354,7 +13342,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-khtml-line-break"?: LineBreakProperty;
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -13370,7 +13358,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-khtml-user-select"?: UserSelectProperty;
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    *
@@ -13386,7 +13374,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty;
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    *
@@ -13480,7 +13468,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-moz-box-ordinal-group"?: GlobalsNumber;
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -13504,7 +13492,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-moz-box-shadow"?: BoxShadowProperty;
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -13612,7 +13600,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-ms-ime-mode"?: ImeModeProperty;
   /**
-   * The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
    * @deprecated
    */
@@ -13690,7 +13678,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-o-background-size"?: BackgroundSizeProperty<TLength>;
   /**
-   * The **`border-image`** CSS property draws an image in place of an element's `border-style`.
+   * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
    * @deprecated
    */
@@ -13790,7 +13778,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-box-ordinal-group"?: GlobalsNumber;
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -13894,7 +13882,7 @@ export interface PropertiesHyphen<TLength = string | 0>
 
 export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
-   * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Initial value**: `normal`
    *
@@ -13921,7 +13909,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   alignContent?: AlignContentProperty | AlignContentProperty[];
   /**
-   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. The align-self property sets the alignment of an item within its containing block. In Flexbox it controls the alignment of items on the Cross Axis, in Grid Layout it controls the alignment of items on the Block Axis within their grid area.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
    * **Initial value**: `normal`
    *
@@ -13948,7 +13936,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   alignItems?: AlignItemsProperty | AlignItemsProperty[];
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    *
@@ -14140,7 +14128,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundBlendMode?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    *
@@ -14164,7 +14152,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundColor?: BackgroundColorProperty | BackgroundColorProperty[];
   /**
-   * The **`background-image`** CSS property sets one or more background images on an element.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Initial value**: `none`
    *
@@ -14176,7 +14164,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundImage?: BackgroundImageProperty | BackgroundImageProperty[];
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    *
@@ -14212,7 +14200,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundPositionX?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[];
   /**
-   * The **`background-position-y`** CSS property sets the initial vertical position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   * The **`background-position-y`** CSS property sets the initial vertical position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Initial value**: `top`
    *
@@ -14421,7 +14409,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderBottomStyle?: BorderBottomStyleProperty | BorderBottomStyleProperty[];
   /**
-   * The **`border-bottom-width`** CSS property sets the width of the bottom border of a box.
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of an element.
    *
    * **Initial value**: `medium`
    *
@@ -14812,7 +14800,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   borderTopWidth?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[];
   /**
-   * The **`bottom`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`bottom`** CSS property participates in setting the vertical position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Initial value**: `auto`
    *
@@ -14849,7 +14837,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   boxShadow?: BoxShadowProperty | BoxShadowProperty[];
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    *
@@ -14862,7 +14850,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   boxSizing?: BoxSizingProperty | BoxSizingProperty[];
   /**
-   * The **`break-after`** CSS property defines how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
+   * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
    * **Initial value**: `auto`
    *
@@ -14930,7 +14918,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   breakBefore?: BreakBeforeProperty | BreakBeforeProperty[];
   /**
-   * The **`break-inside`** CSS property defines how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
+   * The **`break-inside`** CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
    *
    * **Initial value**: `auto`
    *
@@ -15099,7 +15087,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    *
@@ -15125,7 +15113,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    *
@@ -15151,7 +15139,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnSpan?: ColumnSpanProperty | ColumnSpanProperty[];
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    *
@@ -15164,7 +15152,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   columnWidth?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[];
   /**
-   * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page.
+   * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page, leading to obvious performance benefits.
    *
    * **Initial value**: `none`
    *
@@ -15224,7 +15212,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   counterSet?: CounterSetProperty | CounterSetProperty[];
   /**
-   * The **`cursor`** CSS property sets mouse cursor to display when the mouse pointer is over an element.
+   * The **`cursor`** CSS property sets the type of cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Initial value**: `auto`
    *
@@ -15248,7 +15236,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   direction?: DirectionProperty | DirectionProperty[];
   /**
-   * The **`display`** CSS property defines the _display type_ of an element, which consists of the two basic qualities of how an element generates boxes — the **outer display type** defining how the box participates in flow layout, and the **inner display type** defining how the children of the box are laid out.
+   * The **`display`** CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
    *
    * **Initial value**: `inline`
    *
@@ -15311,7 +15299,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   flexDirection?: FlexDirectionProperty | FlexDirectionProperty[];
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    *
@@ -15324,7 +15312,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   flexGrow?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    *
@@ -15569,7 +15557,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontVariationSettings?: FontVariationSettingsProperty | FontVariationSettingsProperty[];
   /**
-   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only available in `normal` and `bold`.
+   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` you are using.
    *
    * **Initial value**: `normal`
    *
@@ -15581,7 +15569,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   fontWeight?: FontWeightProperty | FontWeightProperty[];
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Initial value**: `auto`
    *
@@ -15606,7 +15594,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   gridAutoFlow?: GridAutoFlowProperty | GridAutoFlowProperty[];
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Initial value**: `auto`
    *
@@ -15790,7 +15778,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   inlineSize?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
   /**
-   * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset`** CSS property, though part of the logical specification, doesn't define logical block or inline offsets, and instead defines physical offsets, regardless of the element's writing mode, directionality, and text orientation. It has the same multi-value syntax of the `margin` shorthand. It is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties.
    *
    * **Initial value**: `auto`
    *
@@ -15939,7 +15927,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   justifyItems?: JustifyItemsProperty | JustifyItemsProperty[];
   /**
-   * The CSS **`justify-self`** property set the way a box is justified inside its alignment container along the appropriate axis.
+   * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
    *
    * **Initial value**: `auto`
    *
@@ -16002,7 +15990,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   lineBreak?: LineBreakProperty | LineBreakProperty[];
   /**
-   * The **`line-height`** CSS property sets the amount of space used for lines, such as in text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
+   * The **`line-height`** CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
    *
    * **Initial value**: `normal`
    *
@@ -16220,7 +16208,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskBorderWidth?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
   /**
-   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Initial value**: `border-box`
    *
@@ -16439,7 +16427,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   mixBlendMode?: MixBlendModeProperty | MixBlendModeProperty[];
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Initial value**: `0`
    *
@@ -16465,7 +16453,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   motionPath?: OffsetPathProperty | OffsetPathProperty[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -16512,7 +16500,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Initial value**: `0`
    *
@@ -16540,7 +16528,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /** **Initial value**: `auto` */
   offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -16553,7 +16541,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -16566,7 +16554,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   offsetRotation?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -16651,7 +16639,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   outlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
   /**
-   * The **`overflow`** CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
+   * The **`overflow`** shorthand CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
    *
    * **Initial value**: `visible`
    *
@@ -16705,7 +16693,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overflowInline?: OverflowInlineProperty | OverflowInlineProperty[];
   /**
-   * The `**overflow-wrap**` CSS property sets whether the browser should insert line breaks within words to prevent text from overflowing its content box.
+   * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Initial value**: `normal`
    *
@@ -16814,7 +16802,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingBlockStart?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   /**
-   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Initial value**: `0`
    *
@@ -16864,7 +16852,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingInlineStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   /**
-   * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
+   * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
    *
    * **Initial value**: `0`
    *
@@ -16876,7 +16864,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingLeft?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
   /**
-   * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
+   * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
    *
    * **Initial value**: `0`
    *
@@ -16888,7 +16876,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   paddingRight?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
   /**
-   * The **`padding-top`** padding area on the top of an element.
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
    *
    * **Initial value**: `0`
    *
@@ -17000,7 +16988,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   placeContent?: PlaceContentProperty | PlaceContentProperty[];
   /**
-   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of mouse events.
+   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
    *
    * **Initial value**: `auto`
    *
@@ -17060,7 +17048,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   right?: RightProperty<TLength> | RightProperty<TLength>[];
   /**
-   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` property.
    *
    * **Initial value**: `none`
    *
@@ -17281,32 +17269,28 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   scrollMarginTop?: ScrollMarginTopProperty<TLength> | ScrollMarginTopProperty<TLength>[];
   /**
- * The scroll-padding property is a shorthand property which sets all of the scroll-padding longhands, assigning values much like the padding property does for the padding-\* longhands.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  | **11** |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
- */
+   * The **`scroll-padding`** property is a shorthand property that sets all of the `scroll-padding-*` longhands. It assigns values much like the `padding` property does for the `padding-*` longhands.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  | **11** |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
+   */
   scrollPadding?: ScrollPaddingProperty<TLength> | ScrollPaddingProperty<TLength>[];
   /**
- * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  |   No   |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
- */
+   * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
+   */
   scrollPaddingBlock?: ScrollPaddingBlockProperty<TLength> | ScrollPaddingBlockProperty<TLength>[];
   /**
    * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -17345,18 +17329,16 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   scrollPaddingBottom?: ScrollPaddingBottomProperty<TLength> | ScrollPaddingBottomProperty<TLength>[];
   /**
- * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  |   No   |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
- */
+   * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
+   */
   scrollPaddingInline?: ScrollPaddingInlineProperty<TLength> | ScrollPaddingInlineProperty<TLength>[];
   /**
    * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -17468,7 +17450,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   scrollbarColor?: ScrollbarColorProperty | ScrollbarColorProperty[];
   /**
-   * The `scrollbar-width` property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
+   * The **`scrollbar-width`** property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
    * **Initial value**: `auto`
    *
@@ -17540,7 +17522,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   tableLayout?: TableLayoutProperty | TableLayoutProperty[];
   /**
-   * The **`text-align`** CSS property sets the horizontal alignment of an inline or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
+   * The **`text-align`** CSS property sets the horizontal alignment of a block element or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
    *
    * **Initial value**: `start`, or a nameless value that acts as `left` if _direction_ is `ltr`, `right` if _direction_ is `rtl` if `start` is not supported by the browser.
    *
@@ -17786,7 +17768,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   textSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
   /**
-   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.
    *
    * **Initial value**: `none`
    *
@@ -17834,7 +17816,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   top?: TopProperty<TLength> | TopProperty<TLength>[];
   /**
-   * The **`touch-action`** CSS property sets how a region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Initial value**: `auto`
    *
@@ -17950,7 +17932,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   transitionTimingFunction?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
   /**
-   * The **`translate`** CSS property allows you to specify translation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Initial value**: `none`
    *
@@ -18035,7 +18017,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   widows?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
+   * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
    * **Initial value**: `auto`
    *
@@ -18083,7 +18065,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   wordSpacing?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
   /**
-   * The `**overflow-wrap**` CSS property sets whether the browser should insert line breaks within words to prevent text from overflowing its content box.
+   * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Initial value**: `normal`
    *
@@ -18095,7 +18077,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   wordWrap?: WordWrapProperty | WordWrapProperty[];
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    *
@@ -18135,7 +18117,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
 
 export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   /**
-   * The `**all**` CSS shorthand property sets all of an element's properties (other than `unicode-bidi` and `direction`) to their initial or inherited values, or to the values specified in another stylesheet origin.
+   * The `**all**` shorthand CSS property resets all of an element's properties (except `unicode-bidi` and `direction`). It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
    * **Initial value**: There is no practical initial value for it.
    *
@@ -18147,7 +18129,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   all?: Globals | Globals[];
   /**
-   * The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
    * | Chrome  | Firefox | Safari  |  Edge  |   IE   |
    * | :-----: | :-----: | :-----: | :----: | :----: |
@@ -18168,7 +18150,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   /**
-   * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
+   * The **`border`** shorthand CSS property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18208,7 +18190,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderBlockStart?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[];
   /**
-   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`. These properties set an element's bottom border.
+   * The **`border-bottom`** shorthand CSS property sets an element's bottom border. It sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18218,7 +18200,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderBottom?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
   /**
-   * The **`border-color`** shorthand CSS property sets the color of all sides of an element's border.
+   * The **`border-color`** shorthand CSS property sets the color of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18228,7 +18210,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderColor?: BorderColorProperty | BorderColorProperty[];
   /**
-   * The **`border-image`** CSS property draws an image in place of an element's `border-style`.
+   * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
    * | Chrome  |  Firefox  | Safari  |  Edge  |   IE   |
    * | :-----: | :-------: | :-----: | :----: | :----: |
@@ -18269,7 +18251,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderInlineStart?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[];
   /**
-   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-width`, `border-left-style` and `border-left-color`. These properties set an element's left border.
+   * The **`border-left`** shorthand CSS property set an element's left border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18290,7 +18272,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /**
-   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-width`, `border-right-style` and `border-right-color`. These properties set an element's right border.
+   * The **`border-right`** shorthand CSS property sets an element's right border. It sets the values of `border-right-width`, `border-right-style` and `border-right-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE    |
    * | :----: | :-----: | :----: | :----: | :-----: |
@@ -18300,7 +18282,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderRight?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
   /**
-   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   * The **`border-style`** shorthand CSS property sets the line style for all four sides of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18310,7 +18292,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderStyle?: BorderStyleProperty | BorderStyleProperty[];
   /**
-   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-width`, `border-top-style` and `border-top-color`. These properties set an element's top border.
+   * The **`border-top`** shorthand CSS property set an element's top border. It sets the values of `border-top-width`, `border-top-style` and `border-top-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18320,7 +18302,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderTop?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
   /**
-   * The **`border-width`** shorthand CSS property sets the widths of all four sides of an element's border.
+   * The **`border-width`** shorthand CSS property sets the width of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18330,7 +18312,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   borderWidth?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
   /**
-   * The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
    *
    * | Chrome  |  Firefox  | Safari  |  Edge  |   IE   |
    * | :-----: | :-------: | :-----: | :----: | :----: |
@@ -18352,7 +18334,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   /**
-   * The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
    *
    * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
    * | :------: | :-----: | :-------: | :----: | :------: |
@@ -18374,7 +18356,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   flexFlow?: FlexFlowProperty | FlexFlowProperty[];
   /**
-   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
+   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-stretch`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18427,7 +18409,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   grid?: GridProperty | GridProperty[];
   /**
-   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -18501,7 +18483,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   maskBorder?: MaskBorderProperty | MaskBorderProperty[];
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -18512,7 +18494,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -18591,7 +18573,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   placeSelf?: PlaceSelfProperty | PlaceSelfProperty[];
   /**
-   * The **`text-decoration`** CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
+   * The **`text-decoration`** shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18741,7 +18723,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   MozBorderTopColors?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    */
@@ -18765,7 +18747,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   MozColumnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    */
@@ -18777,13 +18759,13 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   MozColumnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    */
   MozColumnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    */
@@ -18981,7 +18963,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   msAccelerator?: MsAcceleratorProperty | MsAcceleratorProperty[];
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    */
@@ -19041,7 +19023,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   msFlexDirection?: FlexDirectionProperty | FlexDirectionProperty[];
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    */
@@ -19059,13 +19041,13 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   msFlowInto?: MsFlowIntoProperty | MsFlowIntoProperty[];
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Initial value**: `auto`
    */
   msGridColumns?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Initial value**: `auto`
    */
@@ -19263,7 +19245,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   msTextOverflow?: TextOverflowProperty | TextOverflowProperty[];
   /**
-   * The **`touch-action`** CSS property sets how a region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Initial value**: `auto`
    */
@@ -19341,7 +19323,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   msWrapThrough?: MsWrapThroughProperty | MsWrapThroughProperty[];
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    */
@@ -19377,19 +19359,19 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   OTransformOrigin?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[];
   /**
-   * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Initial value**: `normal`
    */
   WebkitAlignContent?: AlignContentProperty | AlignContentProperty[];
   /**
-   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. The align-self property sets the alignment of an item within its containing block. In Flexbox it controls the alignment of items on the Cross Axis, in Grid Layout it controls the alignment of items on the Block Axis within their grid area.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
    * **Initial value**: `normal`
    */
   WebkitAlignItems?: AlignItemsProperty | AlignItemsProperty[];
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    */
@@ -19461,13 +19443,13 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitBackfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    */
   WebkitBackgroundClip?: BackgroundClipProperty | BackgroundClipProperty[];
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    */
@@ -19533,7 +19515,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitBoxShadow?: BoxShadowProperty | BoxShadowProperty[];
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    */
@@ -19569,7 +19551,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitColumnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    */
@@ -19581,7 +19563,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitColumnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    */
@@ -19593,7 +19575,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitColumnSpan?: ColumnSpanProperty | ColumnSpanProperty[];
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    */
@@ -19617,13 +19599,13 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitFlexDirection?: FlexDirectionProperty | FlexDirectionProperty[];
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    */
   WebkitFlexGrow?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    */
@@ -19695,7 +19677,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitMaskAttachment?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   /**
-   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Initial value**: `border`
    */
@@ -19955,7 +19937,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitUserSelect?: UserSelectProperty | UserSelectProperty[];
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    */
@@ -19963,11 +19945,11 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
 }
 
 export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
-  /** The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
+  /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
   MozAnimation?: AnimationProperty | AnimationProperty[];
-  /** The **`border-image`** CSS property draws an image in place of an element's `border-style`. */
+  /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   MozBorderImage?: BorderImageProperty | BorderImageProperty[];
-  /** The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout. */
+  /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
   MozColumnRule?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   MozColumns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
@@ -19977,7 +19959,7 @@ export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
   msContentZoomLimit?: GlobalsString | GlobalsString[];
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
   msContentZoomSnap?: MsContentZoomSnapProperty | MsContentZoomSnapProperty[];
-  /** The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
+  /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   msFlex?: FlexProperty<TLength> | FlexProperty<TLength>[];
   /** The **\-ms-scroll-limit** CSS property is a Microsoft extension that specifies values for the `-ms-scroll-limit-x-min`, `-ms-scroll-limit-y-min`, `-ms-scroll-limit-x-max`, and `-ms-scroll-limit-y-max` properties. */
   msScrollLimit?: GlobalsString | GlobalsString[];
@@ -19987,19 +19969,19 @@ export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
   msScrollSnapY?: GlobalsString | GlobalsString[];
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   msTransition?: TransitionProperty | TransitionProperty[];
-  /** The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
+  /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
   WebkitAnimation?: AnimationProperty | AnimationProperty[];
   /** The **`-webkit-border-before`** CSS property is a shorthand property for setting the individual logical block start border property values in a single place in the style sheet. */
   WebkitBorderBefore?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[];
-  /** The **`border-image`** CSS property draws an image in place of an element's `border-style`. */
+  /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   WebkitBorderImage?: BorderImageProperty | BorderImageProperty[];
   /** The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners. */
   WebkitBorderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
-  /** The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout. */
+  /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
   WebkitColumnRule?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   WebkitColumns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
-  /** The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
+  /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   WebkitFlex?: FlexProperty<TLength> | FlexProperty<TLength>[];
   /** The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` properties. */
   WebkitFlexFlow?: FlexFlowProperty | FlexFlowProperty[];
@@ -20065,7 +20047,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   boxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -20279,7 +20261,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   KhtmlBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -20303,7 +20285,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   KhtmlLineBreak?: LineBreakProperty | LineBreakProperty[];
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -20319,7 +20301,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   KhtmlUserSelect?: UserSelectProperty | UserSelectProperty[];
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    *
@@ -20335,7 +20317,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   MozBackgroundInlinePolicy?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    *
@@ -20429,7 +20411,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   MozBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -20453,7 +20435,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   MozBoxShadow?: BoxShadowProperty | BoxShadowProperty[];
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -20561,7 +20543,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   msImeMode?: ImeModeProperty | ImeModeProperty[];
   /**
-   * The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
    * @deprecated
    */
@@ -20639,7 +20621,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   OBackgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
   /**
-   * The **`border-image`** CSS property draws an image in place of an element's `border-style`.
+   * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
    * @deprecated
    */
@@ -20739,7 +20721,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   WebkitBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -20843,7 +20825,7 @@ export interface PropertiesFallback<TLength = string | 0>
 
 export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> {
   /**
-   * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Initial value**: `normal`
    *
@@ -20870,7 +20852,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "align-content"?: AlignContentProperty | AlignContentProperty[];
   /**
-   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. The align-self property sets the alignment of an item within its containing block. In Flexbox it controls the alignment of items on the Cross Axis, in Grid Layout it controls the alignment of items on the Block Axis within their grid area.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
    * **Initial value**: `normal`
    *
@@ -20897,7 +20879,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "align-items"?: AlignItemsProperty | AlignItemsProperty[];
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    *
@@ -21089,7 +21071,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-blend-mode"?: BackgroundBlendModeProperty | BackgroundBlendModeProperty[];
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    *
@@ -21113,7 +21095,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-color"?: BackgroundColorProperty | BackgroundColorProperty[];
   /**
-   * The **`background-image`** CSS property sets one or more background images on an element.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Initial value**: `none`
    *
@@ -21125,7 +21107,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-image"?: BackgroundImageProperty | BackgroundImageProperty[];
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    *
@@ -21161,7 +21143,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-position-x"?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[];
   /**
-   * The **`background-position-y`** CSS property sets the initial vertical position, relative to the background position layer defined by `background-origin`, for each defined background image.
+   * The **`background-position-y`** CSS property sets the initial vertical position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Initial value**: `top`
    *
@@ -21370,7 +21352,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-bottom-style"?: BorderBottomStyleProperty | BorderBottomStyleProperty[];
   /**
-   * The **`border-bottom-width`** CSS property sets the width of the bottom border of a box.
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of an element.
    *
    * **Initial value**: `medium`
    *
@@ -21761,7 +21743,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "border-top-width"?: BorderTopWidthProperty<TLength> | BorderTopWidthProperty<TLength>[];
   /**
-   * The **`bottom`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`bottom`** CSS property participates in setting the vertical position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Initial value**: `auto`
    *
@@ -21798,7 +21780,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    *
@@ -21811,7 +21793,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "box-sizing"?: BoxSizingProperty | BoxSizingProperty[];
   /**
-   * The **`break-after`** CSS property defines how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
+   * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
    * **Initial value**: `auto`
    *
@@ -21879,7 +21861,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "break-before"?: BreakBeforeProperty | BreakBeforeProperty[];
   /**
-   * The **`break-inside`** CSS property defines how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
+   * The **`break-inside`** CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
    *
    * **Initial value**: `auto`
    *
@@ -22048,7 +22030,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    *
@@ -22074,7 +22056,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    *
@@ -22100,7 +22082,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-span"?: ColumnSpanProperty | ColumnSpanProperty[];
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    *
@@ -22113,7 +22095,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "column-width"?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[];
   /**
-   * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page.
+   * The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, _independent_ of the rest of the document tree. This allows the browser to recalculate layout, style, paint, size, or any combination of them for a limited area of the DOM and not the entire page, leading to obvious performance benefits.
    *
    * **Initial value**: `none`
    *
@@ -22173,7 +22155,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "counter-set"?: CounterSetProperty | CounterSetProperty[];
   /**
-   * The **`cursor`** CSS property sets mouse cursor to display when the mouse pointer is over an element.
+   * The **`cursor`** CSS property sets the type of cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Initial value**: `auto`
    *
@@ -22197,7 +22179,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   direction?: DirectionProperty | DirectionProperty[];
   /**
-   * The **`display`** CSS property defines the _display type_ of an element, which consists of the two basic qualities of how an element generates boxes — the **outer display type** defining how the box participates in flow layout, and the **inner display type** defining how the children of the box are laid out.
+   * The **`display`** CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
    *
    * **Initial value**: `inline`
    *
@@ -22260,7 +22242,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "flex-direction"?: FlexDirectionProperty | FlexDirectionProperty[];
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    *
@@ -22273,7 +22255,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "flex-grow"?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    *
@@ -22518,7 +22500,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-variation-settings"?: FontVariationSettingsProperty | FontVariationSettingsProperty[];
   /**
-   * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only available in `normal` and `bold`.
+   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` you are using.
    *
    * **Initial value**: `normal`
    *
@@ -22530,7 +22512,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "font-weight"?: FontWeightProperty | FontWeightProperty[];
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Initial value**: `auto`
    *
@@ -22555,7 +22537,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "grid-auto-flow"?: GridAutoFlowProperty | GridAutoFlowProperty[];
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Initial value**: `auto`
    *
@@ -22739,7 +22721,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "inline-size"?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
   /**
-   * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset`** CSS property, though part of the logical specification, doesn't define logical block or inline offsets, and instead defines physical offsets, regardless of the element's writing mode, directionality, and text orientation. It has the same multi-value syntax of the `margin` shorthand. It is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties.
    *
    * **Initial value**: `auto`
    *
@@ -22888,7 +22870,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "justify-items"?: JustifyItemsProperty | JustifyItemsProperty[];
   /**
-   * The CSS **`justify-self`** property set the way a box is justified inside its alignment container along the appropriate axis.
+   * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
    *
    * **Initial value**: `auto`
    *
@@ -22951,7 +22933,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "line-break"?: LineBreakProperty | LineBreakProperty[];
   /**
-   * The **`line-height`** CSS property sets the amount of space used for lines, such as in text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
+   * The **`line-height`** CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. On block-level elements, it specifies the minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height.
    *
    * **Initial value**: `normal`
    *
@@ -23169,7 +23151,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-border-width"?: MaskBorderWidthProperty<TLength> | MaskBorderWidthProperty<TLength>[];
   /**
-   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Initial value**: `border-box`
    *
@@ -23388,7 +23370,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mix-blend-mode"?: MixBlendModeProperty | MixBlendModeProperty[];
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Initial value**: `0`
    *
@@ -23414,7 +23396,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "motion-path"?: OffsetPathProperty | OffsetPathProperty[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -23461,7 +23443,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[];
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path`.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Initial value**: `0`
    *
@@ -23489,7 +23471,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /** **Initial value**: `auto` */
   "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -23502,7 +23484,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
-   * The **`offset-rotate`** CSS property defines the direction of the element while positioning along the offset path.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Initial value**: `auto`
    *
@@ -23515,7 +23497,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "offset-rotation"?: OffsetRotateProperty | OffsetRotateProperty[];
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -23600,7 +23582,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[];
   /**
-   * The **`overflow`** CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
+   * The **`overflow`** shorthand CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
    *
    * **Initial value**: `visible`
    *
@@ -23654,7 +23636,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overflow-inline"?: OverflowInlineProperty | OverflowInlineProperty[];
   /**
-   * The `**overflow-wrap**` CSS property sets whether the browser should insert line breaks within words to prevent text from overflowing its content box.
+   * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Initial value**: `normal`
    *
@@ -23763,7 +23745,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-block-start"?: PaddingBlockStartProperty<TLength> | PaddingBlockStartProperty<TLength>[];
   /**
-   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Initial value**: `0`
    *
@@ -23813,7 +23795,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-inline-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[];
   /**
-   * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
+   * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
    *
    * **Initial value**: `0`
    *
@@ -23825,7 +23807,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-left"?: PaddingLeftProperty<TLength> | PaddingLeftProperty<TLength>[];
   /**
-   * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
+   * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
    *
    * **Initial value**: `0`
    *
@@ -23837,7 +23819,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "padding-right"?: PaddingRightProperty<TLength> | PaddingRightProperty<TLength>[];
   /**
-   * The **`padding-top`** padding area on the top of an element.
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
    *
    * **Initial value**: `0`
    *
@@ -23949,7 +23931,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "place-content"?: PlaceContentProperty | PlaceContentProperty[];
   /**
-   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of mouse events.
+   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
    *
    * **Initial value**: `auto`
    *
@@ -24009,7 +23991,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   right?: RightProperty<TLength> | RightProperty<TLength>[];
   /**
-   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` property.
    *
    * **Initial value**: `none`
    *
@@ -24230,32 +24212,28 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "scroll-margin-top"?: ScrollMarginTopProperty<TLength> | ScrollMarginTopProperty<TLength>[];
   /**
- * The scroll-padding property is a shorthand property which sets all of the scroll-padding longhands, assigning values much like the padding property does for the padding-\* longhands.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  | **11** |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
- */
+   * The **`scroll-padding`** property is a shorthand property that sets all of the `scroll-padding-*` longhands. It assigns values much like the `padding` property does for the `padding-*` longhands.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  | **11** |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
+   */
   "scroll-padding"?: ScrollPaddingProperty<TLength> | ScrollPaddingProperty<TLength>[];
   /**
- * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  |   No   |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
- */
+   * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
+   */
   "scroll-padding-block"?: ScrollPaddingBlockProperty<TLength> | ScrollPaddingBlockProperty<TLength>[];
   /**
    * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -24294,18 +24272,16 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "scroll-padding-bottom"?: ScrollPaddingBottomProperty<TLength> | ScrollPaddingBottomProperty<TLength>[];
   /**
- * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.  
-  
-The scroll-padding properties define offsets for the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
- * 
- * **Initial value**: `auto`
- * 
- * | Chrome | Firefox | Safari | Edge | IE  |
- * | :----: | :-----: | :----: | :--: | :-: |
- * | **69** | **68**  |   No   |  No  | No  |
- * 
- * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
- */
+   * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
+   */
   "scroll-padding-inline"?: ScrollPaddingInlineProperty<TLength> | ScrollPaddingInlineProperty<TLength>[];
   /**
    * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
@@ -24417,7 +24393,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "scrollbar-color"?: ScrollbarColorProperty | ScrollbarColorProperty[];
   /**
-   * The `scrollbar-width` property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
+   * The **`scrollbar-width`** property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
    * **Initial value**: `auto`
    *
@@ -24489,7 +24465,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "table-layout"?: TableLayoutProperty | TableLayoutProperty[];
   /**
-   * The **`text-align`** CSS property sets the horizontal alignment of an inline or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
+   * The **`text-align`** CSS property sets the horizontal alignment of a block element or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
    *
    * **Initial value**: `start`, or a nameless value that acts as `left` if _direction_ is `ltr`, `right` if _direction_ is `rtl` if `start` is not supported by the browser.
    *
@@ -24735,7 +24711,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "text-size-adjust"?: TextSizeAdjustProperty | TextSizeAdjustProperty[];
   /**
-   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.
    *
    * **Initial value**: `none`
    *
@@ -24783,7 +24759,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   top?: TopProperty<TLength> | TopProperty<TLength>[];
   /**
-   * The **`touch-action`** CSS property sets how a region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Initial value**: `auto`
    *
@@ -24899,7 +24875,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "transition-timing-function"?: TransitionTimingFunctionProperty | TransitionTimingFunctionProperty[];
   /**
-   * The **`translate`** CSS property allows you to specify translation transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Initial value**: `none`
    *
@@ -24984,7 +24960,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   widows?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
+   * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
    * **Initial value**: `auto`
    *
@@ -25032,7 +25008,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "word-spacing"?: WordSpacingProperty<TLength> | WordSpacingProperty<TLength>[];
   /**
-   * The `**overflow-wrap**` CSS property sets whether the browser should insert line breaks within words to prevent text from overflowing its content box.
+   * The `**overflow-wrap**` CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Initial value**: `normal`
    *
@@ -25044,7 +25020,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "word-wrap"?: WordWrapProperty | WordWrapProperty[];
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    *
@@ -25084,7 +25060,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
 
 export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0> {
   /**
-   * The `**all**` CSS shorthand property sets all of an element's properties (other than `unicode-bidi` and `direction`) to their initial or inherited values, or to the values specified in another stylesheet origin.
+   * The `**all**` shorthand CSS property resets all of an element's properties (except `unicode-bidi` and `direction`). It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
    * **Initial value**: There is no practical initial value for it.
    *
@@ -25096,7 +25072,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   all?: Globals | Globals[];
   /**
-   * The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
    * | Chrome  | Firefox | Safari  |  Edge  |   IE   |
    * | :-----: | :-----: | :-----: | :----: | :----: |
@@ -25117,7 +25093,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   /**
-   * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
+   * The **`border`** shorthand CSS property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25157,7 +25133,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-block-start"?: BorderBlockStartProperty<TLength> | BorderBlockStartProperty<TLength>[];
   /**
-   * The **`border-bottom`** CSS property is a shorthand that sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`. These properties set an element's bottom border.
+   * The **`border-bottom`** shorthand CSS property sets an element's bottom border. It sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25167,7 +25143,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-bottom"?: BorderBottomProperty<TLength> | BorderBottomProperty<TLength>[];
   /**
-   * The **`border-color`** shorthand CSS property sets the color of all sides of an element's border.
+   * The **`border-color`** shorthand CSS property sets the color of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25177,7 +25153,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-color"?: BorderColorProperty | BorderColorProperty[];
   /**
-   * The **`border-image`** CSS property draws an image in place of an element's `border-style`.
+   * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
    * | Chrome  |  Firefox  | Safari  |  Edge  |   IE   |
    * | :-----: | :-------: | :-----: | :----: | :----: |
@@ -25218,7 +25194,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-inline-start"?: BorderInlineStartProperty<TLength> | BorderInlineStartProperty<TLength>[];
   /**
-   * The **`border-left`** CSS property is a shorthand that sets the values of `border-left-width`, `border-left-style` and `border-left-color`. These properties set an element's left border.
+   * The **`border-left`** shorthand CSS property set an element's left border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25239,7 +25215,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
   /**
-   * The **`border-right`** CSS property is a shorthand that sets the values of `border-right-width`, `border-right-style` and `border-right-color`. These properties set an element's right border.
+   * The **`border-right`** shorthand CSS property sets an element's right border. It sets the values of `border-right-width`, `border-right-style` and `border-right-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE    |
    * | :----: | :-----: | :----: | :----: | :-----: |
@@ -25249,7 +25225,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-right"?: BorderRightProperty<TLength> | BorderRightProperty<TLength>[];
   /**
-   * The **`border-style`** CSS property is a shorthand property that sets the line style for all four sides of an element's border.
+   * The **`border-style`** shorthand CSS property sets the line style for all four sides of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25259,7 +25235,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-style"?: BorderStyleProperty | BorderStyleProperty[];
   /**
-   * The **`border-top`** CSS property is a shorthand that sets the values of `border-top-width`, `border-top-style` and `border-top-color`. These properties set an element's top border.
+   * The **`border-top`** shorthand CSS property set an element's top border. It sets the values of `border-top-width`, `border-top-style` and `border-top-color`.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25269,7 +25245,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-top"?: BorderTopProperty<TLength> | BorderTopProperty<TLength>[];
   /**
-   * The **`border-width`** shorthand CSS property sets the widths of all four sides of an element's border.
+   * The **`border-width`** shorthand CSS property sets the width of an element's border.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25279,7 +25255,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "border-width"?: BorderWidthProperty<TLength> | BorderWidthProperty<TLength>[];
   /**
-   * The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
    *
    * | Chrome  |  Firefox  | Safari  |  Edge  |   IE   |
    * | :-----: | :-------: | :-----: | :----: | :----: |
@@ -25301,7 +25277,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   columns?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
   /**
-   * The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
    *
    * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
    * | :------: | :-----: | :-------: | :----: | :------: |
@@ -25323,7 +25299,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "flex-flow"?: FlexFlowProperty | FlexFlowProperty[];
   /**
-   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
+   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-stretch`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25376,7 +25352,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   grid?: GridProperty | GridProperty[];
   /**
-   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -25450,7 +25426,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
   /** The **`mask-border`** CSS property lets you create a mask along the edge of an element's border. */
   "mask-border"?: MaskBorderProperty | MaskBorderProperty[];
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -25461,7 +25437,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[];
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path.
+   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
@@ -25540,7 +25516,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   "place-self"?: PlaceSelfProperty | PlaceSelfProperty[];
   /**
-   * The **`text-decoration`** CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, and `text-decoration-style`.
+   * The **`text-decoration`** shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -25692,7 +25668,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-border-top-colors"?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    */
@@ -25716,7 +25692,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    */
@@ -25728,13 +25704,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    */
   "-moz-column-rule-width"?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[];
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    */
@@ -25932,7 +25908,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-ms-accelerator"?: MsAcceleratorProperty | MsAcceleratorProperty[];
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    */
@@ -25992,7 +25968,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-ms-flex-direction"?: FlexDirectionProperty | FlexDirectionProperty[];
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    */
@@ -26010,13 +25986,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-ms-flow-into"?: MsFlowIntoProperty | MsFlowIntoProperty[];
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Initial value**: `auto`
    */
   "-ms-grid-columns"?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Initial value**: `auto`
    */
@@ -26214,7 +26190,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-ms-text-overflow"?: TextOverflowProperty | TextOverflowProperty[];
   /**
-   * The **`touch-action`** CSS property sets how a region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Initial value**: `auto`
    */
@@ -26292,7 +26268,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-ms-wrap-through"?: MsWrapThroughProperty | MsWrapThroughProperty[];
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    */
@@ -26328,19 +26304,19 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-o-transform-origin"?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[];
   /**
-   * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Initial value**: `normal`
    */
   "-webkit-align-content"?: AlignContentProperty | AlignContentProperty[];
   /**
-   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. The align-self property sets the alignment of an item within its containing block. In Flexbox it controls the alignment of items on the Cross Axis, in Grid Layout it controls the alignment of items on the Block Axis within their grid area.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
    * **Initial value**: `normal`
    */
   "-webkit-align-items"?: AlignItemsProperty | AlignItemsProperty[];
   /**
-   * The **`align-self`** CSS property aligns flex items of the current flex line overriding the `align-items` value. If any of the item's cross-axis margin is set to `auto`, then `align-self` is ignored. In Grid layout `align-self` aligns the item inside the grid area.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
    * **Initial value**: `auto`
    */
@@ -26412,13 +26388,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    */
   "-webkit-background-clip"?: BackgroundClipProperty | BackgroundClipProperty[];
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    */
@@ -26484,7 +26460,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
   /**
-   * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Initial value**: `content-box`
    */
@@ -26520,7 +26496,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[];
   /**
-   * The **`column-rule-color`** CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-color`** CSS property sets the color of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `currentcolor`
    */
@@ -26532,7 +26508,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[];
   /**
-   * The **`column-rule-width`** CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+   * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
    * **Initial value**: `medium`
    */
@@ -26544,7 +26520,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-column-span"?: ColumnSpanProperty | ColumnSpanProperty[];
   /**
-   * The **`column-width`** CSS property specifies the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
    *
    * **Initial value**: `auto`
    */
@@ -26568,13 +26544,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-flex-direction"?: FlexDirectionProperty | FlexDirectionProperty[];
   /**
-   * The **`flex-grow`** CSS property sets how much of the available space in the flex container should be assigned to that item (the flex grow factor). If all sibling items have the same flex grow factor, then all items will receive the same share of available space, otherwise it is distributed according to the ratio defined by the different flex grow factors.
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
    *
    * **Initial value**: `0`
    */
   "-webkit-flex-grow"?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    */
@@ -26646,7 +26622,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-mask-attachment"?: WebkitMaskAttachmentProperty | WebkitMaskAttachmentProperty[];
   /**
-   * The **`mask-clip`** CSS property determines the area, which is affected by a mask. The painted content of an element must be restricted to this area.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Initial value**: `border`
    */
@@ -26906,7 +26882,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-user-select"?: UserSelectProperty | UserSelectProperty[];
   /**
-   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (`html` element for HTML documents).
    *
    * **Initial value**: `horizontal-tb`
    */
@@ -26914,11 +26890,11 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
 }
 
 export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
-  /** The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
+  /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
   "-moz-animation"?: AnimationProperty | AnimationProperty[];
-  /** The **`border-image`** CSS property draws an image in place of an element's `border-style`. */
+  /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   "-moz-border-image"?: BorderImageProperty | BorderImageProperty[];
-  /** The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout. */
+  /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
   "-moz-column-rule"?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   "-moz-columns"?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
@@ -26928,7 +26904,7 @@ export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
   "-ms-content-zoom-limit"?: GlobalsString | GlobalsString[];
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
   "-ms-content-zoom-snap"?: MsContentZoomSnapProperty | MsContentZoomSnapProperty[];
-  /** The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
+  /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   "-ms-flex"?: FlexProperty<TLength> | FlexProperty<TLength>[];
   /** The **\-ms-scroll-limit** CSS property is a Microsoft extension that specifies values for the `-ms-scroll-limit-x-min`, `-ms-scroll-limit-y-min`, `-ms-scroll-limit-x-max`, and `-ms-scroll-limit-y-max` properties. */
   "-ms-scroll-limit"?: GlobalsString | GlobalsString[];
@@ -26938,19 +26914,19 @@ export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
   "-ms-scroll-snap-y"?: GlobalsString | GlobalsString[];
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   "-ms-transition"?: TransitionProperty | TransitionProperty[];
-  /** The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
+  /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
   "-webkit-animation"?: AnimationProperty | AnimationProperty[];
   /** The **`-webkit-border-before`** CSS property is a shorthand property for setting the individual logical block start border property values in a single place in the style sheet. */
   "-webkit-border-before"?: WebkitBorderBeforeProperty<TLength> | WebkitBorderBeforeProperty<TLength>[];
-  /** The **`border-image`** CSS property draws an image in place of an element's `border-style`. */
+  /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   "-webkit-border-image"?: BorderImageProperty | BorderImageProperty[];
   /** The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners. */
   "-webkit-border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[];
-  /** The **`column-rule`** CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout. */
+  /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
   "-webkit-column-rule"?: ColumnRuleProperty<TLength> | ColumnRuleProperty<TLength>[];
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   "-webkit-columns"?: ColumnsProperty<TLength> | ColumnsProperty<TLength>[];
-  /** The **`flex`** CSS property sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
+  /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   "-webkit-flex"?: FlexProperty<TLength> | FlexProperty<TLength>[];
   /** The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` properties. */
   "-webkit-flex-flow"?: FlexFlowProperty | FlexFlowProperty[];
@@ -27016,7 +26992,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -27230,7 +27206,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-khtml-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -27254,7 +27230,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-khtml-line-break"?: LineBreakProperty | LineBreakProperty[];
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -27270,7 +27246,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-khtml-user-select"?: UserSelectProperty | UserSelectProperty[];
   /**
-   * The **`background-clip`** CSS property sets whether an element's background `<color>` or `<image>` extends underneath its border.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Initial value**: `border-box`
    *
@@ -27286,7 +27262,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-background-inline-policy"?: BoxDecorationBreakProperty | BoxDecorationBreakProperty[];
   /**
-   * The **`background-origin`** CSS property sets the _background positioning area_. In other words, it sets the origin position of an image set with the `background-image` property.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Initial value**: `padding-box`
    *
@@ -27380,7 +27356,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
@@ -27404,7 +27380,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
   /**
-   * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Initial value**: `1.0`
    *
@@ -27512,7 +27488,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-ms-ime-mode"?: ImeModeProperty | ImeModeProperty[];
   /**
-   * The **`animation`** shorthand CSS property sets an animated transition between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
+   * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
    * @deprecated
    */
@@ -27590,7 +27566,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-o-background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[];
   /**
-   * The **`border-image`** CSS property draws an image in place of an element's `border-style`.
+   * The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border.
    *
    * @deprecated
    */
@@ -27690,7 +27666,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
   /**
-   * The **`box-orient`** CSS property specifies whether an element lays out its contents horizontally or vertically.
+   * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
    * **Initial value**: `inline-axis` (`horizontal` in XUL)
    *
