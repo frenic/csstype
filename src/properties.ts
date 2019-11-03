@@ -9,7 +9,7 @@ import {
   isDeprecated,
 } from './compat';
 import { getProperties, getPropertySyntax } from './data';
-import { createPropertyDataTypeResolver, resolveDataTypes } from './data-types';
+import { createPropertyDataTypeResolver, IDataTypeDictionary, resolveDataTypes } from './data-types';
 import { properties as rawSvgProperties } from './data/svg';
 import { warn } from './logger';
 import parse from './parser';
@@ -35,8 +35,6 @@ interface IProperty {
   types: ResolvedType[];
 }
 
-const propertiesData = getProperties();
-
 const getGlobalCompatibilityData = async () => {
   const data = await getTypesData('global_keywords');
 
@@ -49,23 +47,21 @@ const getGlobalCompatibilityData = async () => {
 
 // The CSS-wide keywords are identical to the `all` property
 // https://www.w3.org/TR/2016/CR-css-cascade-4-20160114/#all-shorthand
-export let getGlobals = async (): Promise<ResolvedType[]> => {
+export async function getGlobals(dataTypeDictionary: IDataTypeDictionary): Promise<ResolvedType[]> {
   const dataTypes = await resolveDataTypes(
+    dataTypeDictionary,
     typing(compatSyntax(await getGlobalCompatibilityData(), parse(await getPropertySyntax(ALL)))),
   );
 
-  // Cache
-  getGlobals = () => Promise.all(dataTypes);
-
   return dataTypes;
-};
+}
 
 const htmlPropertiesMap: { [name: string]: IProperty } = {};
 
 const svgPropertiesMap: { [name: string]: IProperty } = {};
 
-export let getHtmlProperties = async () => {
-  const propertiesMap = await propertiesData;
+export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary) {
+  const propertiesMap = await getProperties();
   const allPropertyData = await getPropertyData(ALL);
 
   let getAllComment = async () => {
@@ -127,7 +123,11 @@ export let getHtmlProperties = async () => {
       currentNames = [];
     }
 
-    const types = await resolveDataTypes(typing(entities), createPropertyDataTypeResolver(compatibilityData));
+    const types = await resolveDataTypes(
+      dataTypeDictionary,
+      typing(entities),
+      createPropertyDataTypeResolver(compatibilityData),
+    );
 
     // Remove duplicates
     for (const name of new Set(currentNames)) {
@@ -170,12 +170,10 @@ export let getHtmlProperties = async () => {
     }
   }
 
-  getHtmlProperties = () => Promise.resolve(htmlPropertiesMap);
-
   return htmlPropertiesMap;
-};
+}
 
-export let getSvgProperties = async () => {
+export async function getSvgProperties(dataTypeDictionary: IDataTypeDictionary) {
   for (const name in rawSvgProperties) {
     const compatibilityData = await getPropertyData(name);
     const syntax = rawSvgProperties[name].syntax;
@@ -186,16 +184,17 @@ export let getSvgProperties = async () => {
         shorthand: false,
         obsolete: false,
         comment: () => Promise.resolve(undefined),
-        types: await resolveDataTypes(typing(parse(syntax)), createPropertyDataTypeResolver(compatibilityData)),
+        types: await resolveDataTypes(
+          dataTypeDictionary,
+          typing(parse(syntax)),
+          createPropertyDataTypeResolver(compatibilityData),
+        ),
       };
     }
   }
 
-  // Cache
-  getSvgProperties = () => Promise.resolve(svgPropertiesMap);
-
   return svgPropertiesMap;
-};
+}
 
 export function isVendorProperty(name: string) {
   return REGEX_VENDOR_PROPERTY.test(name);

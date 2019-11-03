@@ -1,7 +1,9 @@
-import { DeclarableType, IGenerics } from './declarator';
+import { DeclarableType, declarator, IGenerics } from './declarator';
 import { Type } from './typer';
 
 export const EOL = '\n';
+
+export const generatingDeclarations = declarator();
 
 export function stringifyTypes(types: DeclarableType | DeclarableType[]) {
   if (!Array.isArray(types)) {

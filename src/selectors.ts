@@ -5,7 +5,7 @@ import { addType, ResolvedType, Type } from './typer';
 const REGEX_SIMPLE_PSEUDO_SELECTOR = /(?!:?:[\w-]+\()(:?:[\w-]+)/g;
 const REGEX_ADVANCED_PSEUDO_SELECTOR = /(:?:[\w-]+)\(/g;
 
-export let getPseudos = async () => {
+export async function getPseudos() {
   let simple: ResolvedType[] = [];
   let advanced: ResolvedType[] = [];
 
@@ -26,15 +26,9 @@ export let getPseudos = async () => {
       }
     }
   }
-  // Cache
-  getPseudos = () =>
-    Promise.resolve({
-      simple,
-      advanced,
-    });
 
   return {
     simple,
     advanced,
   };
-};
+}

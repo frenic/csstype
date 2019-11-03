@@ -51,26 +51,20 @@ async function fetchAttributes(
   return attributes;
 }
 
-export let getHtmlAttributes = async () => {
+export async function getHtmlAttributes() {
   let attributes: ResolvedType[] = [];
 
   attributes = assembleAttributes(attributes, rawGlobalAttributes.html.global_attributes);
   attributes = await fetchAttributes(attributes, 'html', 'elements');
 
-  // Cache
-  getHtmlAttributes = () => Promise.resolve(attributes);
-
   return attributes;
-};
+}
 
-export let getSvgAttributes = async () => {
+export async function getSvgAttributes() {
   let attributes: ResolvedType[] = [];
 
   attributes = await fetchAttributes(attributes, 'svg', 'attributes');
   attributes = await fetchAttributes(attributes, 'svg', 'elements');
 
-  // Cache
-  getSvgAttributes = () => Promise.resolve(attributes);
-
   return attributes;
-};
+}

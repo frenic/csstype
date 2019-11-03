@@ -1,8 +1,8 @@
-import { declarator, isAliasProperty } from './declarator';
-import { EOL, stringifyGenerics, stringifyTypes } from './output';
+import { isAliasProperty } from './declarator';
+import { EOL, generatingDeclarations, stringifyGenerics, stringifyTypes } from './output';
 
 export default async function typescript() {
-  const { declarations, interfaces } = await declarator();
+  const { declarations, interfaces } = await generatingDeclarations;
 
   let interfacesOutput = '';
   for (const item of interfaces) {

@@ -8,7 +8,7 @@ import { error, warn } from './logger';
 import parse from './parser';
 import typing, { hasType } from './typer';
 
-export let getProperties = async () => {
+export async function getProperties() {
   const properties: { [property: string]: IExtendedProperty } = {};
 
   for (const name in rawProperties) {
@@ -28,38 +28,31 @@ export let getProperties = async () => {
     }
   }
 
-  // Cache
-  getProperties = () => Promise.resolve(properties);
-
   return properties;
-};
+}
 
-export let getSyntaxes = async () => {
-  const syntaxes: { [property: string]: MDN.Syntax } = {};
+// export async function getSyntaxes(dataTypeDictionary: IDataTypeDictionary) {
+//   const syntaxes: { [property: string]: MDN.Syntax } = {};
+//   for (const name in rawSvgSyntaxes) {
+//     syntaxes[name] = {
+//       syntax: await getSyntax(dataTypeDictionary, name),
+//     };
+//   }
 
-  for (const name in rawSvgSyntaxes) {
-    syntaxes[name] = {
-      syntax: await getSyntax(name),
-    };
-  }
+//   for (const name in rawSyntaxes) {
+//     syntaxes[name] = {
+//       syntax: await getSyntax(dataTypeDictionary, name),
+//     };
+//   }
 
-  for (const name in rawSyntaxes) {
-    syntaxes[name] = {
-      syntax: await getSyntax(name),
-    };
-  }
+//   for (const name in patchedSyntaxes) {
+//     if (!(name in rawSyntaxes || name in rawSvgSyntaxes)) {
+//       syntaxes[name] = patchedSyntaxes[name];
+//     }
+//   }
 
-  for (const name in patchedSyntaxes) {
-    if (!(name in rawSyntaxes || name in rawSvgSyntaxes)) {
-      syntaxes[name] = patchedSyntaxes[name];
-    }
-  }
-
-  // Cache
-  getSyntaxes = () => Promise.resolve(syntaxes);
-
-  return syntaxes;
-};
+//   return syntaxes;
+// }
 
 export function isProperty(name: string) {
   return (
@@ -136,13 +129,15 @@ export async function getSyntax(name: string) {
 async function validatePatch(compat: MDN.CompatData, sourceSyntax: string, patchSyntax: string): Promise<boolean> {
   // Dissolve all data types to check whether it already exists or not
   const dissolvedSourceTypes = await resolveDataTypes(
+    {},
     typing(parse(sourceSyntax)),
-    createPropertyDataTypeResolver(compat, Infinity),
+    createPropertyDataTypeResolver(compat),
     Infinity,
   );
   const dissolvedPatchTypes = await resolveDataTypes(
+    {},
     typing(parse(patchSyntax)),
-    createPropertyDataTypeResolver(compat, Infinity),
+    createPropertyDataTypeResolver(compat),
     Infinity,
   );
 

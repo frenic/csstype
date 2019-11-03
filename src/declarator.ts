@@ -1,7 +1,7 @@
 import { getAtRules } from './at-rules';
 import { getHtmlAttributes, getSvgAttributes } from './attributes';
 import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
-import { getCurrentDataTypes } from './data-types';
+import { getDataTypesOf } from './data-types';
 import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } from './properties';
 import { getPseudos } from './selectors';
 import { IDataType, Type, TypeType } from './typer';
@@ -57,17 +57,20 @@ const lengthGeneric: IGenerics = {
 };
 
 export async function declarator() {
-  const [htmlProperties, svgProperties, atRules, pseudos, globals, htmlAttributes, svgAttributes] = await Promise.all([
-    getHtmlProperties(),
-    getSvgProperties(),
-    getAtRules(),
-    getPseudos(),
-    getGlobals(),
-    getHtmlAttributes(),
-    getSvgAttributes(),
-  ]);
-
-  const dataTypes = getCurrentDataTypes();
+  const [
+    dataTypes,
+    [htmlProperties, svgProperties, atRules, globals, pseudos, htmlAttributes, svgAttributes],
+  ] = await getDataTypesOf(dictionary =>
+    Promise.all([
+      getHtmlProperties(dictionary),
+      getSvgProperties(dictionary),
+      getAtRules(dictionary),
+      getGlobals(dictionary),
+      getPseudos(),
+      getHtmlAttributes(),
+      getSvgAttributes(),
+    ]),
+  );
 
   function lengthIn(types: MixedType[]): boolean {
     return !types.every(type => {

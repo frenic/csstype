@@ -1,6 +1,6 @@
 import * as atRules from 'mdn-data/css/at-rules.json';
 import { compatNames, compatSyntax, getAtRuleData, getCompats, isAddedBySome } from './compat';
-import { resolveDataTypes } from './data-types';
+import { IDataTypeDictionary, resolveDataTypes } from './data-types';
 import parse from './parser';
 import typing, { IStringLiteral, ResolvedType, Type } from './typer';
 
@@ -13,7 +13,7 @@ export interface IAtRuleDescriptors {
   [descriptor: string]: IDescriptor;
 }
 
-export let getAtRules = async () => {
+export async function getAtRules(dataTypeDictionary: IDataTypeDictionary) {
   const literals: IStringLiteral[] = [];
   const rules: { [name: string]: IAtRuleDescriptors } = {};
 
@@ -56,7 +56,7 @@ export let getAtRules = async () => {
           );
         }
 
-        const types = await resolveDataTypes(typing(entities));
+        const types = await resolveDataTypes(dataTypeDictionary, typing(entities));
 
         for (const property of properties) {
           hasSupportedProperties = true;
@@ -73,15 +73,8 @@ export let getAtRules = async () => {
     }
   }
 
-  // Cache
-  getAtRules = () =>
-    Promise.resolve({
-      literals,
-      rules,
-    });
-
   return {
     literals,
     rules,
   };
-};
+}
