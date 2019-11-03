@@ -1,10 +1,9 @@
 import * as chokidar from 'chokidar';
 import * as path from 'path';
 import * as prettier from 'prettier';
-import { FLOW_FILENAME, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
+import { FLOW_FILENAME, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
 
-const ROOT_DIR = __dirname;
-const TEST_FILENAME = 'typecheck.ts';
+import { runCLI } from 'jest';
 
 if (process.argv.includes('--start')) {
   trigger()
@@ -24,7 +23,7 @@ if (process.argv.includes('--start')) {
       console.info('Done! Watching...');
       let debounce: NodeJS.Timer;
       chokidar
-        .watch(path.join(ROOT_DIR, 'src'), { ignored: '*.json', ignoreInitial: true })
+        .watch(path.join(__dirname, 'src'), { ignored: '*.json', ignoreInitial: true })
         .on('all', (event: string) => {
           clearTimeout(debounce);
           debounce = setTimeout(
@@ -61,7 +60,7 @@ async function create() {
 }
 
 async function format(output: string, parser: prettier.BuiltInParserName) {
-  const options = await prettier.resolveConfig(path.join(ROOT_DIR, '.prettierrc'));
+  const options = await prettier.resolveConfig(path.join(__dirname, '.prettierrc'));
   try {
     return prettier.format(output, {
       ...options,
@@ -75,13 +74,5 @@ async function format(output: string, parser: prettier.BuiltInParserName) {
 }
 
 function typecheck() {
-  return Promise.all([
-    spawnAsync(
-      path.join(ROOT_DIR, `node_modules/.bin/${process.platform === 'win32' ? 'tsc.cmd' : 'tsc'}`),
-      path.join(ROOT_DIR, TYPESCRIPT_FILENAME),
-      path.join(ROOT_DIR, TEST_FILENAME),
-      '--noEmit',
-    ),
-    spawnAsync(path.join(ROOT_DIR, `node_modules/.bin/${process.platform === 'win32' ? 'flow.cmd' : 'flow'}`), 'check'),
-  ]);
+  return runCLI({ testMatch: ['**/__tests__/dist.*.ts'] } as any, [__dirname]);
 }

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it detects errors 1`] = `
+"32:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<string | 0>'.
+  Object literal may only specify known properties, and 'unknownProperty' does not exist in type 'Properties<string | 0>'."
+`;
+
+exports[`it detects errors 2`] = `
+"36:2 - Type 'string[]' is not assignable to type 'string | 0 | undefined'.
+  Type 'string[]' is not assignable to type 'string'."
+`;

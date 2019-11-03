@@ -6,6 +6,8 @@
     "sourceMap": false,
     "noEmit": true,
     "strict": true,
-    "noUnusedLocals": true
-  }
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["__fixtures__"]
 }
