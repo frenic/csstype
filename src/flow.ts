@@ -90,7 +90,7 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
   let output = '';
 
   const extendList = combineFlowExactTypes(
-    entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)),
+    entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)),
   );
 
   if (entry.export) {
@@ -98,7 +98,7 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
   }
 
   output += 'type ';
-  output += namespace + entry.name + stringifyGenerics(entry.generics);
+  output += namespace + entry.name + stringifyGenerics(entry.generics, true, stringifyTypes);
   output += ' = ' + extendList;
 
   if (entry.properties.length > 0) {
@@ -111,7 +111,7 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
 
     for (const property of entry.properties) {
       if (isAliasProperty(property)) {
-        const generics = stringifyGenerics(property.generics, true);
+        const generics = stringifyGenerics(property.generics);
         const key = JSON.stringify(property.name);
         let type = (property.namespace ? property.namespace.name : '') + property.alias.name + generics;
         if (entry.fallback) {
@@ -148,7 +148,7 @@ function outputDeclaration(entry: IDeclaration, namespace = '') {
     output += 'export ';
   }
 
-  output += `type ${namespace + entry.name + stringifyGenerics(entry.generics, true)} = ${stringifyTypes(entry.types)}`;
+  output += `type ${namespace + entry.name + stringifyGenerics(entry.generics)} = ${stringifyTypes(entry.types)}`;
 
   return output;
 }

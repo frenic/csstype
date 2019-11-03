@@ -1,12 +1,18 @@
-import { DeclarableType, declarator, IGenerics, INamespace } from './declarator';
+import { DeclarableType, declarator, IGenerics, INamespace, SimpleType } from './declarator';
 import { Type } from './typer';
 
 export const EOL = '\n';
 
 export const generatingDeclarations = declarator(3);
+export function createStringifyType(): (type: SimpleType) => string;
 
-export function createStringifyType(currentNamespace: INamespace | undefined, noNamespaceSupport = false) {
-  return (type: DeclarableType) => {
+export function createStringifyType(
+  currentNamespace: INamespace | undefined,
+  noNamespaceSupport?: boolean,
+): (type: DeclarableType) => string;
+
+export function createStringifyType(currentNamespace?: INamespace | undefined, noNamespaceSupport = false) {
+  return ((type: DeclarableType) => {
     switch (type.type) {
       case Type.String:
         return 'string';
@@ -29,15 +35,26 @@ export function createStringifyType(currentNamespace: INamespace | undefined, no
           }
         }
 
-        return namespace + type.name + stringifyGenerics(type.generics, true);
+        return namespace + type.name + stringifyGenerics(type.generics);
       }
       case Type.Length:
         return 'TLength';
     }
-  };
+  }) as (type: SimpleType) => string;
 }
 
-export function stringifyGenerics(items: IGenerics[] | undefined, ignoreDefault = false) {
+export function stringifyGenerics(items: IGenerics[] | undefined): string;
+export function stringifyGenerics(
+  items: IGenerics[] | undefined,
+  applyDefault: true,
+  stringifyTypes: (types: SimpleType[]) => string,
+): string;
+
+export function stringifyGenerics(
+  items: IGenerics[] | undefined,
+  applyDefault = false,
+  stringifyTypes?: (types: SimpleType[]) => string,
+) {
   if (!items || items.length === 0) {
     return '';
   }
@@ -50,8 +67,12 @@ export function stringifyGenerics(items: IGenerics[] | undefined, ignoreDefault 
         generic += ` extends ${extend}`;
       }
 
-      if (defaults && !ignoreDefault) {
-        generic += ` = ${defaults}`;
+      if (applyDefault && defaults) {
+        if (typeof stringifyTypes !== 'function') {
+          throw new Error('Type stringifier needed');
+        }
+
+        generic += ` = ${stringifyTypes(defaults)}`;
       }
 
       return generic;

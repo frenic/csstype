@@ -63,8 +63,11 @@ async function outputInterface(entry: IInterface, currentNamespace: INamespace |
     output += 'export ';
   }
 
-  const extendList = entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)).join(', ');
-  output += 'interface ' + entry.name + stringifyGenerics(entry.generics);
+  const extendList = entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)).join(', ');
+  output +=
+    'interface ' +
+    entry.name +
+    stringifyGenerics(entry.generics, true, defaults => stringifyTypes(defaults, undefined, true));
 
   if (extendList) {
     output += ` extends ${extendList}`;
@@ -83,12 +86,12 @@ async function outputInterface(entry: IInterface, currentNamespace: INamespace |
         property.namespace && property.namespace !== currentNamespace
           ? `${property.namespace.name}.${property.alias.name}`
           : property.alias.name;
-      const generics = stringifyGenerics(property.generics, true);
+      const generics = stringifyGenerics(property.generics);
       output += `${JSON.stringify(property.name)}?: ${
         entry.fallback ? `${name + generics} | ${name + generics}[];` : `${name + generics};`
       }`;
     } else {
-      const value = stringifyTypes(property.type, currentNamespace, false);
+      const value = stringifyTypes([property.type], currentNamespace, false);
       output += `${JSON.stringify(property.name)}?: ${entry.fallback ? `${value} | ${value}[];` : `${value};`}`;
     }
 
@@ -106,7 +109,7 @@ function outputDeclaration(entry: IDeclaration, currentNamespace: INamespace | u
     output += 'export ';
   }
 
-  output += `type ${entry.name + stringifyGenerics(entry.generics, true)} = ${stringifyTypes(
+  output += `type ${entry.name + stringifyGenerics(entry.generics)} = ${stringifyTypes(
     entry.types,
     currentNamespace,
     true,
@@ -116,14 +119,10 @@ function outputDeclaration(entry: IDeclaration, currentNamespace: INamespace | u
 }
 
 function stringifyTypes(
-  types: DeclarableType | DeclarableType[],
+  types: DeclarableType[],
   currentNamespace: INamespace | undefined,
   applyAutocompleteHack: boolean,
 ) {
-  if (!Array.isArray(types)) {
-    types = [types];
-  }
-
   const stringifyType = createStringifyType(currentNamespace);
 
   return types
