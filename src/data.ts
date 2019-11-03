@@ -131,14 +131,14 @@ async function validatePatch(compat: MDN.CompatData, sourceSyntax: string, patch
   const dissolvedSourceTypes = await resolveDataTypes(
     {},
     typing(parse(sourceSyntax)),
-    createPropertyDataTypeResolver(compat),
     Infinity,
+    createPropertyDataTypeResolver(compat),
   );
   const dissolvedPatchTypes = await resolveDataTypes(
     {},
     typing(parse(patchSyntax)),
-    createPropertyDataTypeResolver(compat),
     Infinity,
+    createPropertyDataTypeResolver(compat),
   );
 
   for (const type of dissolvedSourceTypes) {

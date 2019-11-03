@@ -56,16 +56,16 @@ const lengthGeneric: IGenerics = {
   defaults: 'string | 0',
 };
 
-export async function declarator() {
+export async function declarator(minTypesInDataTypes: number) {
   const [
     dataTypes,
     [htmlProperties, svgProperties, atRules, globals, pseudos, htmlAttributes, svgAttributes],
   ] = await getDataTypesOf(dictionary =>
     Promise.all([
-      getHtmlProperties(dictionary),
-      getSvgProperties(dictionary),
-      getAtRules(dictionary),
-      getGlobals(dictionary),
+      getHtmlProperties(dictionary, minTypesInDataTypes),
+      getSvgProperties(dictionary, minTypesInDataTypes),
+      getAtRules(dictionary, minTypesInDataTypes),
+      getGlobals(dictionary, minTypesInDataTypes),
       getPseudos(),
       getHtmlAttributes(),
       getSvgAttributes(),

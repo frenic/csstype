@@ -13,7 +13,7 @@ export interface IAtRuleDescriptors {
   [descriptor: string]: IDescriptor;
 }
 
-export async function getAtRules(dataTypeDictionary: IDataTypeDictionary) {
+export async function getAtRules(dataTypeDictionary: IDataTypeDictionary, minTypesInDataTypes: number) {
   const literals: IStringLiteral[] = [];
   const rules: { [name: string]: IAtRuleDescriptors } = {};
 
@@ -56,7 +56,7 @@ export async function getAtRules(dataTypeDictionary: IDataTypeDictionary) {
           );
         }
 
-        const types = await resolveDataTypes(dataTypeDictionary, typing(entities));
+        const types = await resolveDataTypes(dataTypeDictionary, typing(entities), minTypesInDataTypes);
 
         for (const property of properties) {
           hasSupportedProperties = true;

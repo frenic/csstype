@@ -47,10 +47,14 @@ const getGlobalCompatibilityData = async () => {
 
 // The CSS-wide keywords are identical to the `all` property
 // https://www.w3.org/TR/2016/CR-css-cascade-4-20160114/#all-shorthand
-export async function getGlobals(dataTypeDictionary: IDataTypeDictionary): Promise<ResolvedType[]> {
+export async function getGlobals(
+  dataTypeDictionary: IDataTypeDictionary,
+  minTypesInDataTypes: number,
+): Promise<ResolvedType[]> {
   const dataTypes = await resolveDataTypes(
     dataTypeDictionary,
     typing(compatSyntax(await getGlobalCompatibilityData(), parse(await getPropertySyntax(ALL)))),
+    minTypesInDataTypes,
   );
 
   return dataTypes;
@@ -60,7 +64,7 @@ const htmlPropertiesMap: { [name: string]: IProperty } = {};
 
 const svgPropertiesMap: { [name: string]: IProperty } = {};
 
-export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary) {
+export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary, minTypesInDataTypes: number) {
   const propertiesMap = await getProperties();
   const allPropertyData = await getPropertyData(ALL);
 
@@ -126,6 +130,7 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary)
     const types = await resolveDataTypes(
       dataTypeDictionary,
       typing(entities),
+      minTypesInDataTypes,
       createPropertyDataTypeResolver(compatibilityData),
     );
 
@@ -173,7 +178,7 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary)
   return htmlPropertiesMap;
 }
 
-export async function getSvgProperties(dataTypeDictionary: IDataTypeDictionary) {
+export async function getSvgProperties(dataTypeDictionary: IDataTypeDictionary, minTypesInDataTypes: number) {
   for (const name in rawSvgProperties) {
     const compatibilityData = await getPropertyData(name);
     const syntax = rawSvgProperties[name].syntax;
@@ -187,6 +192,7 @@ export async function getSvgProperties(dataTypeDictionary: IDataTypeDictionary) 
         types: await resolveDataTypes(
           dataTypeDictionary,
           typing(parse(syntax)),
+          minTypesInDataTypes,
           createPropertyDataTypeResolver(compatibilityData),
         ),
       };

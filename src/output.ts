@@ -3,7 +3,7 @@ import { Type } from './typer';
 
 export const EOL = '\n';
 
-export const generatingDeclarations = declarator();
+export const generatingDeclarations = declarator(3);
 
 export function stringifyTypes(types: DeclarableType | DeclarableType[]) {
   if (!Array.isArray(types)) {
