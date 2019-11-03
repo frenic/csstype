@@ -1,11 +1,15 @@
-import { DeclarableType, declarator, IGenerics } from './declarator';
+import { DeclarableType, declarator, IGenerics, INamespace } from './declarator';
 import { Type } from './typer';
 
 export const EOL = '\n';
 
 export const generatingDeclarations = declarator(3);
 
-export function stringifyTypes(types: DeclarableType | DeclarableType[]) {
+export function stringifyTypes(
+  types: DeclarableType | DeclarableType[],
+  currentNamespace: INamespace | undefined,
+  noNamespaceSupport = false,
+) {
   if (!Array.isArray(types)) {
     types = [types];
   }
@@ -20,8 +24,21 @@ export function stringifyTypes(types: DeclarableType | DeclarableType[]) {
           return JSON.stringify(type.literal);
         case Type.NumericLiteral:
           return type.literal;
-        case Type.Alias:
-          return type.name + stringifyGenerics(type.generics, true);
+        case Type.Alias: {
+          let namespace = '';
+
+          if (type.namespace) {
+            if (noNamespaceSupport) {
+              namespace = type.namespace.name;
+            } else if (type.namespace !== currentNamespace) {
+              namespace = `${type.namespace.name}.`;
+            } else {
+              // The type is in its own namespace so keep it empty
+            }
+          }
+
+          return namespace + type.name + stringifyGenerics(type.generics, true);
+        }
         case Type.Length:
           return 'TLength';
       }

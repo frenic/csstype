@@ -6,10 +6,11 @@ import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } fro
 import { getPseudos } from './selectors';
 import { IDataType, Type, TypeType } from './typer';
 
-export interface IAlias {
+interface IAlias {
   type: Type.Alias;
   name: string;
   generics: IGenerics[];
+  namespace: INamespace | undefined;
 }
 
 export interface IGenerics {
@@ -18,10 +19,11 @@ export interface IGenerics {
   extend?: string;
 }
 
-interface IInterface {
+export interface IInterface {
   name: string;
   generics: IGenerics[];
   extends: IInterface[];
+  export: boolean;
   fallback: boolean;
   properties: PropertyType[];
 }
@@ -31,6 +33,7 @@ interface IPropertyAlias {
   generics: IGenerics[];
   alias: IAlias;
   comment: () => Promise<string | undefined>;
+  namespace: INamespace | undefined;
 }
 
 interface IPropertyType {
@@ -41,14 +44,21 @@ interface IPropertyType {
 
 type PropertyType = IPropertyAlias | IPropertyType;
 
-export type MixedType = TypeType<IDataType<Type.DataType> | IAlias>;
+type MixedType = TypeType<IDataType<Type.DataType> | IAlias>;
 export type DeclarableType = TypeType<IAlias>;
+
+export interface INamespace {
+  name: string;
+  export: boolean;
+  body: () => Array<IInterface | IDeclaration>;
+}
 
 export interface IDeclaration {
   name: string;
   export: boolean;
   types: DeclarableType[];
   generics: IGenerics[];
+  namespace: INamespace | undefined;
 }
 
 const lengthGeneric: IGenerics = {
@@ -85,33 +95,39 @@ export async function declarator(minTypesInDataTypes: number) {
     });
   }
 
-  function alias(name: string, types?: null | MixedType[]): IAlias {
+  function alias(name: string, types?: MixedType[], namespace?: INamespace): IAlias {
     return {
       type: Type.Alias,
       name,
       generics: types && lengthIn(types) ? [lengthGeneric] : [],
+      namespace,
     };
   }
 
-  function aliasOf({ name, types }: IDeclaration): IAlias {
-    return alias(name, types);
+  function aliasOf({ name, types, namespace }: IDeclaration): IAlias {
+    return alias(name, types, namespace);
   }
 
   function declarable(types: MixedType[]): DeclarableType[] {
     return types.sort(sorter).map<DeclarableType>(type => {
       switch (type.type) {
         case Type.DataType:
-          return alias(toPascalCase(type.name), type.name in dataTypes ? dataTypes[type.name] : null);
+          return type.name in dataTypes
+            ? alias(toPascalCase(type.name), dataTypes[type.name], dataTypeNamespace)
+            : alias(toPascalCase(type.name));
         default:
           return type;
       }
     });
   }
 
-  const declarations: Map<MixedType[], IDeclaration> = new Map();
+  const globalDeclarations: Map<MixedType[], IDeclaration> = new Map();
 
-  function declarationNameExists(name: string) {
-    for (const declaration of declarations.values()) {
+  function declarationNameExists(
+    map: Map<Array<TypeType<IDataType<Type.DataType> | IAlias>>, IDeclaration>,
+    name: string,
+  ) {
+    for (const declaration of map.values()) {
       if (declaration.name === name) {
         return true;
       }
@@ -125,27 +141,30 @@ export async function declarator(minTypesInDataTypes: number) {
     export: true,
     types: declarable(atRules.literals),
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(atRules.literals, atRuleDeclaration);
+  globalDeclarations.set(atRules.literals, atRuleDeclaration);
 
   const advancedPseudosDeclaration: IDeclaration = {
     name: 'AdvancedPseudos',
     export: true,
     types: declarable(pseudos.advanced),
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(pseudos.advanced, advancedPseudosDeclaration);
+  globalDeclarations.set(pseudos.advanced, advancedPseudosDeclaration);
 
   const simplePseudosDeclaration: IDeclaration = {
     name: 'SimplePseudos',
     export: true,
     types: declarable(pseudos.simple),
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(pseudos.simple, simplePseudosDeclaration);
+  globalDeclarations.set(pseudos.simple, simplePseudosDeclaration);
 
   const pseudoAliases = [aliasOf(advancedPseudosDeclaration), aliasOf(simplePseudosDeclaration)];
 
@@ -154,36 +173,40 @@ export async function declarator(minTypesInDataTypes: number) {
     export: true,
     types: pseudoAliases,
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(pseudoAliases, pseudosDeclaration);
+  globalDeclarations.set(pseudoAliases, pseudosDeclaration);
 
   const htmlAttributesDeclaration: IDeclaration = {
     name: 'HtmlAttributes',
     export: true,
     types: declarable(htmlAttributes),
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(htmlAttributes, htmlAttributesDeclaration);
+  globalDeclarations.set(htmlAttributes, htmlAttributesDeclaration);
 
   const svgAttributesDeclaration: IDeclaration = {
     name: 'SvgAttributes',
     export: true,
     types: declarable(svgAttributes),
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(svgAttributes, svgAttributesDeclaration);
+  globalDeclarations.set(svgAttributes, svgAttributesDeclaration);
 
   const globalsDeclaration: IDeclaration = {
     name: 'Globals',
     export: true,
     types: declarable(globals),
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(globals, globalsDeclaration);
+  globalDeclarations.set(globals, globalsDeclaration);
 
   const globalsAndString: DeclarableType[] = [aliasOf(globalsDeclaration), { type: Type.String }];
 
@@ -192,9 +215,10 @@ export async function declarator(minTypesInDataTypes: number) {
     export: false,
     types: globalsAndString,
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(globalsAndString, globalsAndStringDeclaration);
+  globalDeclarations.set(globalsAndString, globalsAndStringDeclaration);
 
   const declarableGlobalsAndNumber: DeclarableType[] = [aliasOf(globalsDeclaration), { type: Type.Number }];
 
@@ -203,9 +227,10 @@ export async function declarator(minTypesInDataTypes: number) {
     export: false,
     types: declarableGlobalsAndNumber,
     generics: [],
+    namespace: undefined,
   };
 
-  declarations.set(declarableGlobalsAndNumber, globalsAndNumberDeclaration);
+  globalDeclarations.set(declarableGlobalsAndNumber, globalsAndNumberDeclaration);
 
   const standardLonghandPropertiesDefinition: IPropertyAlias[] = [];
   const standardShorthandPropertiesDefinition: IPropertyAlias[] = [];
@@ -220,10 +245,22 @@ export async function declarator(minTypesInDataTypes: number) {
   const svgPropertiesDefinition: IPropertyAlias[] = [];
   const svgPropertiesHyphenDefinition: IPropertyAlias[] = [];
 
-  const PROPERTY = 'Property';
+  const propertyDeclarations: Map<MixedType[], IDeclaration> = new Map();
+  const dataTypeDeclarations: Map<MixedType[], IDeclaration> = new Map();
+
+  const propertyNamespace: INamespace = {
+    name: 'Property',
+    export: true,
+    body: () => Array.from(propertyDeclarations.values()),
+  };
+  const dataTypeNamespace: INamespace = {
+    name: 'DataType',
+    export: false,
+    body: () => Array.from(dataTypeDeclarations.values()),
+  };
 
   function toPropertyDeclarationName(name: string) {
-    return toPascalCase(name) + PROPERTY;
+    return toPascalCase(name);
   }
 
   for (const properties of [htmlProperties, svgProperties]) {
@@ -270,7 +307,7 @@ export async function declarator(minTypesInDataTypes: number) {
 
       // Some properties are prefixed and share the same type so we
       // make sure to reuse the same declaration of that type
-      let declaration = declarations.get(property.types);
+      let declaration = propertyDeclarations.get(property.types);
 
       if (!declaration) {
         if (property.types.length === 0) {
@@ -287,12 +324,13 @@ export async function declarator(minTypesInDataTypes: number) {
             export: true,
             types: [aliasOf(globalsDeclaration), ...declarable(property.types)],
             generics,
+            namespace: propertyNamespace,
           };
 
           // Some SVG properties are shared with regular style properties
           // and we assume here that they are identical
-          if (!declarationNameExists(declarationName)) {
-            declarations.set(property.types, declaration);
+          if (!declarationNameExists(propertyDeclarations, declarationName)) {
+            propertyDeclarations.set(property.types, declaration);
           }
         }
       }
@@ -302,18 +340,27 @@ export async function declarator(minTypesInDataTypes: number) {
         generics,
         alias: aliasOf(declaration),
         comment: property.comment,
+        namespace: declaration.namespace,
       });
       hyphenDefinitions.push({
         name,
         generics,
         alias: aliasOf(declaration),
         comment: property.comment,
+        namespace: declaration.namespace,
       });
     }
   }
 
   const atRuleDefinitions: { [name: string]: PropertyType[] } = {};
   const atRuleHyphenDefinitions: { [name: string]: PropertyType[] } = {};
+  const atRuleDeclarations: Map<MixedType[], IDeclaration> = new Map();
+  const atRuleInterfaces: IInterface[] = [];
+  const atRuleNamespace: INamespace = {
+    name: 'AtRule',
+    export: true,
+    body: () => [...atRuleInterfaces, ...Array.from(atRuleDeclarations.values())],
+  };
 
   for (const name of Object.keys(atRules.rules).sort()) {
     atRuleDefinitions[name] = [];
@@ -342,17 +389,18 @@ export async function declarator(minTypesInDataTypes: number) {
       } else {
         // Some properties are prefixed and share the same type so we
         // make sure to reuse the same declaration of that type
-        let declaration = declarations.get(types);
+        let declaration = atRuleDeclarations.get(types);
 
         if (!declaration) {
           declaration = {
-            name: toPascalCase(name) + toPropertyDeclarationName(descriptor.name),
+            name: toPropertyDeclarationName(descriptor.name),
             export: false,
             types: declarable(types),
             generics,
+            namespace: atRuleNamespace,
           };
 
-          declarations.set(types, declaration);
+          atRuleDeclarations.set(types, declaration);
         }
 
         atRuleDefinitions[name].push({
@@ -360,12 +408,14 @@ export async function declarator(minTypesInDataTypes: number) {
           generics,
           alias: aliasOf(declaration),
           comment: () => Promise.resolve(undefined),
+          namespace: atRuleNamespace,
         });
         atRuleHyphenDefinitions[name].push({
           name: property,
           generics,
           alias: aliasOf(declaration),
           comment: () => Promise.resolve(undefined),
+          namespace: atRuleNamespace,
         });
       }
     }
@@ -374,11 +424,12 @@ export async function declarator(minTypesInDataTypes: number) {
   // Loop in alphabetical order
   for (const name of Object.keys(dataTypes).sort()) {
     const declarableDataType = declarable(dataTypes[name]);
-    declarations.set(declarableDataType, {
+    dataTypeDeclarations.set(declarableDataType, {
       name: toPascalCase(name),
       export: false,
       types: declarableDataType,
       generics: lengthIn(dataTypes[name]) ? [lengthGeneric] : [],
+      namespace: dataTypeNamespace,
     });
   }
 
@@ -458,6 +509,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_STANDARD_LONGHAND_PROPERTIES,
     generics: standardLonghandPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: standardLonghandPropertiesDefinition,
   };
@@ -466,6 +518,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES,
     generics: standardShorthandPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: standardShorthandPropertiesDefinition,
   };
@@ -474,6 +527,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_STANDARD_PROPERTIES,
     generics: standardPropertiesGenerics,
     extends: [standardLonghandPropertiesInterface, standardShorthandPropertiesInterface],
+    export: true,
     fallback: false,
     properties: [],
   };
@@ -482,6 +536,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_VENDOR_LONGHAND_PROPERTIES,
     generics: vendorLonghandPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: vendorLonghandPropertiesDefinition,
   };
@@ -490,6 +545,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES,
     generics: vendorShorthandPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: vendorShorthandPropertiesDefinition,
   };
@@ -498,6 +554,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_VENDOR_PROPERTIES,
     generics: vendorPropertiesGenerics,
     extends: [vendorLonghandPropertiesInterface, vendorShorthandPropertiesInterface],
+    export: true,
     fallback: false,
     properties: [],
   };
@@ -506,6 +563,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_OBSOLETE_PROPERTIES,
     generics: obsoletePropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: obsoletePropertiesDefinition,
   };
@@ -514,6 +572,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_SVG_PROPERTIES,
     generics: svgPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: svgPropertiesDefinition,
   };
@@ -527,6 +586,7 @@ export async function declarator(minTypesInDataTypes: number) {
       obsoletePropertiesInterface,
       svgPropertiesInterface,
     ],
+    export: true,
     fallback: false,
     properties: [],
   };
@@ -535,6 +595,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_STANDARD_LONGHAND_PROPERTIES_HYPHEN,
     generics: standardLonghandPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: standardLonghandPropertiesHyphenDefinition,
   };
@@ -543,6 +604,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES_HYPHEN,
     generics: standardShorthandPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: standardShorthandPropertiesHyphenDefinition,
   };
@@ -551,6 +613,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_STANDARD_PROPERTIES_HYPHEN,
     generics: standardPropertiesGenerics,
     extends: [standardLonghandPropertiesHyphenInterface, standardShorthandPropertiesHyphenInterface],
+    export: true,
     fallback: false,
     properties: [],
   };
@@ -559,6 +622,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN,
     generics: vendorLonghandPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: vendorLonghandPropertiesHyphenDefinition,
   };
@@ -567,6 +631,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN,
     generics: vendorShorthandPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: vendorShorthandPropertiesHyphenDefinition,
   };
@@ -575,6 +640,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_VENDOR_PROPERTIES_HYPHEN,
     generics: vendorPropertiesGenerics,
     extends: [vendorLonghandPropertiesHyphenInterface, vendorShorthandPropertiesHyphenInterface],
+    export: true,
     fallback: false,
     properties: [],
   };
@@ -583,6 +649,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_OBSOLETE_PROPERTIES_HYPHEN,
     generics: obsoletePropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: obsoletePropertiesHyphenDefinition,
   };
@@ -591,6 +658,7 @@ export async function declarator(minTypesInDataTypes: number) {
     name: INTERFACE_SVG_PROPERTIES_HYPHEN,
     generics: svgPropertiesGenerics,
     extends: [],
+    export: true,
     fallback: false,
     properties: svgPropertiesHyphenDefinition,
   };
@@ -604,6 +672,7 @@ export async function declarator(minTypesInDataTypes: number) {
       obsoletePropertiesHyphenInterface,
       svgPropertiesHyphenInterface,
     ],
+    export: true,
     fallback: false,
     properties: [],
   };
@@ -611,12 +680,14 @@ export async function declarator(minTypesInDataTypes: number) {
   const standardLongformPropertiesFallbackInterface: IInterface = {
     ...standardLonghandPropertiesInterface,
     name: INTERFACE_STANDARD_LONGHAND_PROPERTIES_FALLBACK,
+    export: true,
     fallback: true,
   };
 
   const standardShorthandPropertiesFallbackInterface: IInterface = {
     ...standardShorthandPropertiesInterface,
     name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES_FALLBACK,
+    export: true,
     fallback: true,
   };
 
@@ -624,18 +695,21 @@ export async function declarator(minTypesInDataTypes: number) {
     ...standardPropertiesInterface,
     name: INTERFACE_STANDARD_PROPERTIES_FALLBACK,
     extends: [standardLongformPropertiesFallbackInterface, standardShorthandPropertiesFallbackInterface],
+    export: true,
     fallback: true,
   };
 
   const vendorLonghandPropertiesFallbackInterface: IInterface = {
     ...vendorLonghandPropertiesInterface,
     name: INTERFACE_VENDOR_LONGHAND_PROPERTIES_FALLBACK,
+    export: true,
     fallback: true,
   };
 
   const vendorShorthandPropertiesFallbackInterface: IInterface = {
     ...vendorShorthandPropertiesInterface,
     name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES_FALLBACK,
+    export: true,
     fallback: true,
   };
 
@@ -643,18 +717,21 @@ export async function declarator(minTypesInDataTypes: number) {
     ...vendorPropertiesInterface,
     name: INTERFACE_VENDOR_PROPERTIES_FALLBACK,
     extends: [vendorLonghandPropertiesFallbackInterface, vendorShorthandPropertiesFallbackInterface],
+    export: true,
     fallback: true,
   };
 
   const obsoletePropertiesFallbackInterface: IInterface = {
     ...obsoletePropertiesInterface,
     name: INTERFACE_OBSOLETE_PROPERTIES_FALLBACK,
+    export: true,
     fallback: true,
   };
 
   const svgPropertiesFallbackInterface: IInterface = {
     ...svgPropertiesInterface,
     name: INTERFACE_SVG_PROPERTIES_FALLBACK,
+    export: true,
     fallback: true,
   };
 
@@ -667,18 +744,21 @@ export async function declarator(minTypesInDataTypes: number) {
       obsoletePropertiesFallbackInterface,
       svgPropertiesFallbackInterface,
     ],
+    export: true,
     fallback: true,
   };
 
   const standardLongformPropertiesHyphenFallbackInterface: IInterface = {
     ...standardLonghandPropertiesHyphenInterface,
     name: INTERFACE_STANDARD_LONGHAND_PROPERTIES_HYPHEN_FALLBACK,
+    export: true,
     fallback: true,
   };
 
   const standardShorthandPropertiesHyphenFallbackInterface: IInterface = {
     ...standardShorthandPropertiesHyphenInterface,
     name: INTERFACE_STANDARD_SHORTHAND_PROPERTIES_HYPHEN_FALLBACK,
+    export: true,
     fallback: true,
   };
 
@@ -686,18 +766,21 @@ export async function declarator(minTypesInDataTypes: number) {
     ...standardPropertiesHyphenInterface,
     name: INTERFACE_STANDARD_PROPERTIES_HYPHEN_FALLBACK,
     extends: [standardLongformPropertiesHyphenFallbackInterface, standardShorthandPropertiesHyphenFallbackInterface],
+    export: true,
     fallback: true,
   };
 
   const vendorLonghandPropertiesHyphenFallbackInterface: IInterface = {
     ...vendorLonghandPropertiesHyphenInterface,
     name: INTERFACE_VENDOR_LONGHAND_PROPERTIES_HYPHEN_FALLBACK,
+    export: true,
     fallback: true,
   };
 
   const vendorShorthandPropertiesHyphenFallbackInterface: IInterface = {
     ...vendorShorthandPropertiesHyphenInterface,
     name: INTERFACE_VENDOR_SHORTHAND_PROPERTIES_HYPHEN_FALLBACK,
+    export: true,
     fallback: true,
   };
 
@@ -705,18 +788,21 @@ export async function declarator(minTypesInDataTypes: number) {
     ...vendorPropertiesHyphenInterface,
     name: INTERFACE_VENDOR_PROPERTIES_HYPHEN_FALLBACK,
     extends: [vendorLonghandPropertiesHyphenFallbackInterface, vendorShorthandPropertiesHyphenFallbackInterface],
+    export: true,
     fallback: true,
   };
 
   const obsoletePropertiesHyphenFallbackInterface: IInterface = {
     ...obsoletePropertiesHyphenInterface,
     name: INTERFACE_OBSOLETE_PROPERTIES_HYPHEN_FALLBACK,
+    export: true,
     fallback: true,
   };
 
   const svgPropertiesHyphenFallbackInterface: IInterface = {
     ...svgPropertiesHyphenInterface,
     name: INTERFACE_SVG_PROPERTIES_HYPHEN_FALLBACK,
+    export: true,
     fallback: true,
   };
 
@@ -729,10 +815,9 @@ export async function declarator(minTypesInDataTypes: number) {
       obsoletePropertiesHyphenFallbackInterface,
       svgPropertiesHyphenFallbackInterface,
     ],
+    export: true,
     fallback: true,
   };
-
-  const atRuleInterfaces: IInterface[] = [];
 
   // Loop in alphabetical order
   for (const name of Object.keys(atRuleDefinitions).sort()) {
@@ -744,6 +829,7 @@ export async function declarator(minTypesInDataTypes: number) {
         generics,
         extends: [],
         fallback: false,
+        export: true,
         properties: atRuleDefinitions[name],
       },
       {
@@ -751,6 +837,7 @@ export async function declarator(minTypesInDataTypes: number) {
         generics,
         extends: [],
         fallback: false,
+        export: true,
         properties: atRuleHyphenDefinitions[name],
       },
       {
@@ -758,6 +845,7 @@ export async function declarator(minTypesInDataTypes: number) {
         generics,
         extends: [],
         fallback: true,
+        export: true,
         properties: atRuleDefinitions[name],
       },
       {
@@ -765,6 +853,7 @@ export async function declarator(minTypesInDataTypes: number) {
         generics,
         extends: [],
         fallback: true,
+        export: true,
         properties: atRuleHyphenDefinitions[name],
       },
     );
@@ -807,10 +896,11 @@ export async function declarator(minTypesInDataTypes: number) {
     obsoletePropertiesHyphenFallbackInterface,
     svgPropertiesHyphenFallbackInterface,
     allPropertiesHyphenFallbackInterface,
-    ...atRuleInterfaces,
   ];
 
-  return { declarations, interfaces };
+  const namespaces: INamespace[] = [propertyNamespace, atRuleNamespace, dataTypeNamespace];
+
+  return { declarations: Array.from(globalDeclarations.values()), interfaces, namespaces };
 }
 
 export function isAliasProperty(value: PropertyType): value is IPropertyAlias {

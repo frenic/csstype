@@ -1,64 +1,114 @@
-import { isAliasProperty } from './declarator';
+import { IDeclaration, IInterface, INamespace, isAliasProperty } from './declarator';
 import { EOL, generatingDeclarations, stringifyGenerics, stringifyTypes } from './output';
 
 export default async function typescript() {
-  const { declarations, interfaces } = await generatingDeclarations;
+  const { namespaces, interfaces, declarations } = await generatingDeclarations;
 
   let interfacesOutput = '';
-  for (const item of interfaces) {
+  for (const entry of interfaces) {
     if (interfacesOutput) {
-      interfacesOutput += EOL + EOL;
-    }
-
-    const extendList = item.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)).join(', ');
-    interfacesOutput += 'export interface ' + item.name + stringifyGenerics(item.generics);
-
-    if (extendList) {
-      interfacesOutput += ` extends ${extendList}`;
-    }
-
-    interfacesOutput += '{' + EOL;
-
-    for (const property of item.properties) {
-      const comment = await property.comment();
-      if (comment) {
-        interfacesOutput += comment + EOL;
-      }
-
-      if (isAliasProperty(property)) {
-        const generics = stringifyGenerics(property.generics, true);
-        interfacesOutput += `${JSON.stringify(property.name)}?: ${
-          item.fallback
-            ? `${property.alias.name + generics} | ${property.alias.name + generics}[];`
-            : `${property.alias.name + generics};`
-        }`;
-      } else {
-        const value = stringifyTypes(property.type);
-        interfacesOutput += `${JSON.stringify(property.name)}?: ${
-          item.fallback ? `${value} | ${value}[];` : `${value};`
-        }`;
-      }
-
       interfacesOutput += EOL;
     }
 
-    interfacesOutput += '}';
+    interfacesOutput += (await outputInterface(entry, undefined)) + EOL;
   }
 
   let declarationsOutput = '';
-  for (const declaration of declarations.values()) {
+  for (const entry of declarations) {
     if (declarationsOutput) {
-      declarationsOutput += EOL + EOL;
+      declarationsOutput += EOL;
     }
 
-    if (declaration.export) {
-      declarationsOutput += 'export ';
-    }
-
-    declarationsOutput += `type ${declaration.name + stringifyGenerics(declaration.generics, true)} = ${stringifyTypes(
-      declaration.types,
-    ) + EOL}`;
+    declarationsOutput += outputDeclaration(entry, undefined) + EOL;
   }
 
-  return interfacesOutput + EOL + EOL + declarationsOutput;
+  let namespaceOutput = '';
+  for (const namespace of namespaces) {
+    if (namespaceOutput) {
+      namespaceOutput += EOL;
+    }
+
+    if (namespace.export) {
+      namespaceOutput += 'export ';
+    } else {
+      namespaceOutput += 'declare ';
+    }
+
+    namespaceOutput += `namespace ${namespace.name} {${EOL}`;
+
+    const body = namespace.body();
+
+    for (const entry of body) {
+      if (namespaceOutput) {
+        namespaceOutput += EOL;
+      }
+
+      if ('extends' in entry) {
+        namespaceOutput += (await outputInterface(entry, namespace)) + EOL;
+      } else {
+        namespaceOutput += outputDeclaration(entry, namespace) + EOL;
+      }
+    }
+
+    namespaceOutput += `}${EOL}`;
+  }
+
+  return interfacesOutput + EOL + declarationsOutput + EOL + namespaceOutput;
+}
+
+async function outputInterface(entry: IInterface, currentNamespace: INamespace | undefined) {
+  let output = '';
+  if (entry.export) {
+    output += 'export ';
+  }
+
+  const extendList = entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)).join(', ');
+  output += 'interface ' + entry.name + stringifyGenerics(entry.generics);
+
+  if (extendList) {
+    output += ` extends ${extendList}`;
+  }
+
+  output += '{' + EOL;
+
+  for (const property of entry.properties) {
+    const comment = await property.comment();
+    if (comment) {
+      output += comment + EOL;
+    }
+
+    if (isAliasProperty(property)) {
+      const name =
+        property.namespace && property.namespace !== currentNamespace
+          ? `${property.namespace.name}.${property.alias.name}`
+          : property.alias.name;
+      const generics = stringifyGenerics(property.generics, true);
+      output += `${JSON.stringify(property.name)}?: ${
+        entry.fallback ? `${name + generics} | ${name + generics}[];` : `${name + generics};`
+      }`;
+    } else {
+      const value = stringifyTypes(property.type, currentNamespace);
+      output += `${JSON.stringify(property.name)}?: ${entry.fallback ? `${value} | ${value}[];` : `${value};`}`;
+    }
+
+    output += EOL;
+  }
+
+  output += '}';
+
+  return output;
+}
+
+function outputDeclaration(entry: IDeclaration, currentNamespace: INamespace | undefined) {
+  let output = '';
+  if (entry.export) {
+    output += 'export ';
+  }
+
+  output += `type ${entry.name + stringifyGenerics(entry.generics, true)} = ${stringifyTypes(
+    entry.types,
+    currentNamespace,
+  )}`;
+
+  return output;
 }

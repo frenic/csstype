@@ -1,83 +1,53 @@
-import { isAliasProperty } from './declarator';
+import { IDeclaration, IInterface, isAliasProperty } from './declarator';
 import { EOL, generatingDeclarations, stringifyGenerics, stringifyTypes } from './output';
 
 export default async function flow() {
-  const { declarations, interfaces } = await generatingDeclarations;
+  const { namespaces, interfaces, declarations } = await generatingDeclarations;
   let interfacesOutput = '';
 
   const fallbackSet: Set<string> = new Set();
 
-  for (const item of interfaces) {
+  for (const entry of interfaces) {
     if (interfacesOutput) {
-      interfacesOutput += EOL + EOL;
+      interfacesOutput += EOL;
     }
 
-    const extendList = combineFlowExactTypes(
-      item.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)),
-    );
-
-    interfacesOutput += 'export type ';
-    interfacesOutput += item.name + stringifyGenerics(item.generics);
-    interfacesOutput += ' = ' + extendList;
-
-    if (item.properties.length > 0) {
-      if (extendList) {
-        // TODO: remove this branch since it's not getting hit
-        interfacesOutput += ' & ';
-      }
-
-      interfacesOutput += '{|' + EOL;
-
-      for (const property of item.properties) {
-        if (isAliasProperty(property)) {
-          const generics = stringifyGenerics(property.generics, true);
-          const key = JSON.stringify(property.name);
-          let type = property.alias.name + generics;
-          if (item.fallback) {
-            fallbackSet.add(type);
-            type = getNameForFallbackable(type);
-          }
-
-          interfacesOutput += `${key}?: ${type},`;
-        } else {
-          const value = stringifyTypes(property.type);
-          const key = JSON.stringify(property.name);
-          let type = value;
-          if (item.fallback) {
-            fallbackSet.add(type);
-            type = getNameForFallbackable(type);
-          }
-
-          interfacesOutput += `${key}?: ${type},`;
-        }
-
-        interfacesOutput += EOL;
-      }
-
-      interfacesOutput += '|}';
-    }
+    interfacesOutput += outputInterface(entry, fallbackSet) + EOL;
   }
 
   let declarationsOutput = '';
-  for (const declaration of declarations.values()) {
+  for (const entry of declarations) {
     if (declarationsOutput) {
-      declarationsOutput += EOL + EOL;
+      declarationsOutput += EOL;
     }
 
-    declarationsOutput += ' ';
+    declarationsOutput += outputDeclaration(entry) + EOL;
+  }
 
-    if (declaration.export) {
-      declarationsOutput += 'export ';
+  let namespaceOutput = '';
+  for (const namespace of namespaces) {
+    if (namespaceOutput) {
+      namespaceOutput += EOL;
     }
 
-    declarationsOutput += `type ${declaration.name + stringifyGenerics(declaration.generics, true)} = ${stringifyTypes(
-      declaration.types,
-    ) + EOL}`;
+    const body = namespace.body();
+
+    for (const entry of body) {
+      if (namespaceOutput) {
+        namespaceOutput += EOL;
+      }
+
+      if ('extends' in entry) {
+        namespaceOutput += outputInterface(entry, fallbackSet, namespace.name) + EOL;
+      } else {
+        namespaceOutput += outputDeclaration(entry, namespace.name) + EOL;
+      }
+    }
   }
 
   const fallbacksOutput = [...fallbackSet]
     .map(name => {
-      return `type ${getNameForFallbackable(name)} = ${name} | Array<${name}>;`;
+      return `type ${name} = ${name} | Array<${name}>;`;
     })
     .join(EOL);
 
@@ -87,11 +57,11 @@ export default async function flow() {
     EOL +
     fallbacksOutput +
     EOL +
-    EOL +
     interfacesOutput +
     EOL +
-    EOL +
     declarationsOutput +
+    EOL +
+    namespaceOutput +
     EOL}`;
 }
 
@@ -106,5 +76,76 @@ function combineFlowExactTypes(input: string[]): string {
 }
 
 function getNameForFallbackable(name: string): string {
-  return 'Fallbackable' + name[0].toUpperCase() + name.slice(1);
+  return 'Fallbackable' + name;
+}
+
+function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace = '') {
+  let output = '';
+
+  const extendList = combineFlowExactTypes(
+    entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)),
+  );
+
+  if (entry.export) {
+    output += 'export ';
+  }
+
+  output += 'type ';
+  output += namespace + entry.name + stringifyGenerics(entry.generics);
+  output += ' = ' + extendList;
+
+  if (entry.properties.length > 0) {
+    if (extendList) {
+      // TODO: remove this branch since it's not getting hit
+      output += ' & ';
+    }
+
+    output += '{|' + EOL;
+
+    for (const property of entry.properties) {
+      if (isAliasProperty(property)) {
+        const generics = stringifyGenerics(property.generics, true);
+        const key = JSON.stringify(property.name);
+        let type = (property.namespace ? property.namespace.name : '') + property.alias.name + generics;
+        if (entry.fallback) {
+          type = getNameForFallbackable(type);
+          fallbackSet.add(type);
+        }
+
+        output += `${key}?: ${type},`;
+      } else {
+        const value = stringifyTypes(property.type, undefined, true);
+        const key = JSON.stringify(property.name);
+        let type = value;
+        if (entry.fallback) {
+          type = getNameForFallbackable(type);
+          fallbackSet.add(type);
+        }
+
+        output += `${key}?: ${type},`;
+      }
+
+      output += EOL;
+    }
+
+    output += '|}';
+  }
+
+  return output;
+}
+
+function outputDeclaration(entry: IDeclaration, namespace = '') {
+  let output = '';
+
+  if (entry.export) {
+    output += 'export ';
+  }
+
+  output += `type ${namespace + entry.name + stringifyGenerics(entry.generics, true)} = ${stringifyTypes(
+    entry.types,
+    undefined,
+    true,
+  )}`;
+
+  return output;
 }
