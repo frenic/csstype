@@ -1,4 +1,4 @@
-import { DeclarableType, IDeclaration, IInterface, INamespace, isAliasProperty } from './declarator';
+import { DeclarableType, IDeclaration, IInterface, INamespace, isAliasProperty, SimpleType } from './declarator';
 import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './output';
 import { Type } from './typer';
 
@@ -64,10 +64,7 @@ async function outputInterface(entry: IInterface, currentNamespace: INamespace |
   }
 
   const extendList = entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)).join(', ');
-  output +=
-    'interface ' +
-    entry.name +
-    stringifyGenerics(entry.generics, true, defaults => stringifyTypes(defaults, undefined, true));
+  output += 'interface ' + entry.name + stringifyGenerics(entry.generics, true, stringifySimpleTypes);
 
   if (extendList) {
     output += ` extends ${extendList}`;
@@ -109,7 +106,8 @@ function outputDeclaration(entry: IDeclaration, currentNamespace: INamespace | u
     output += 'export ';
   }
 
-  output += `type ${entry.name + stringifyGenerics(entry.generics)} = ${stringifyTypes(
+  output += `type ${entry.name +
+    stringifyGenerics(entry.generics, !entry.export, stringifySimpleTypes)} = ${stringifyTypes(
     entry.types,
     currentNamespace,
     true,
@@ -139,4 +137,8 @@ function stringifyTypes(
       }
     })
     .join(' | ');
+}
+
+function stringifySimpleTypes(types: SimpleType[]) {
+  return stringifyTypes(types, undefined, true);
 }

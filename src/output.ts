@@ -46,7 +46,7 @@ export function createStringifyType(currentNamespace?: INamespace | undefined, n
 export function stringifyGenerics(items: IGenerics[] | undefined): string;
 export function stringifyGenerics(
   items: IGenerics[] | undefined,
-  applyDefault: true,
+  applyDefault: boolean,
   stringifyTypes: (types: SimpleType[]) => string,
 ): string;
 

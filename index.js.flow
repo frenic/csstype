@@ -6251,17 +6251,17 @@ type AtRuleFontVariationSettings = "normal" | string;
 
 type AtRuleFontWeight = DataTypeFontWeightAbsolute | string;
 
-type AtRuleHeight<TLength> = DataTypeViewportLength<TLength> | string;
+type AtRuleHeight<TLength = string | 0> = DataTypeViewportLength<TLength> | string;
 
-type AtRuleMaxHeight<TLength> = DataTypeViewportLength<TLength>;
+type AtRuleMaxHeight<TLength = string | 0> = DataTypeViewportLength<TLength>;
 
-type AtRuleMaxWidth<TLength> = DataTypeViewportLength<TLength>;
+type AtRuleMaxWidth<TLength = string | 0> = DataTypeViewportLength<TLength>;
 
 type AtRuleMaxZoom = "auto" | string | number;
 
-type AtRuleMinHeight<TLength> = DataTypeViewportLength<TLength>;
+type AtRuleMinHeight<TLength = string | 0> = DataTypeViewportLength<TLength>;
 
-type AtRuleMinWidth<TLength> = DataTypeViewportLength<TLength>;
+type AtRuleMinWidth<TLength = string | 0> = DataTypeViewportLength<TLength>;
 
 type AtRuleMinZoom = "auto" | string | number;
 
@@ -6269,7 +6269,7 @@ type AtRuleOrientation = "auto" | "landscape" | "portrait";
 
 type AtRuleUserZoom = "-ms-zoom" | "fixed" | "zoom";
 
-type AtRuleWidth<TLength> = DataTypeViewportLength<TLength> | string;
+type AtRuleWidth<TLength = string | 0> = DataTypeViewportLength<TLength> | string;
 
 type AtRuleZoom = "auto" | string | number;
 
@@ -6279,9 +6279,9 @@ type DataTypeAnimateableFeature = "contents" | "scroll-position" | string;
 
 type DataTypeAttachment = "fixed" | "local" | "scroll";
 
-type DataTypeBgPosition<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
+type DataTypeBgPosition<TLength = string | 0> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
 
-type DataTypeBgSize<TLength> = TLength | "auto" | "contain" | "cover" | string;
+type DataTypeBgSize<TLength = string | 0> = TLength | "auto" | "contain" | "cover" | string;
 
 type DataTypeBlendMode =
   | "color"
@@ -6343,7 +6343,7 @@ type DataTypeContentPosition = "center" | "end" | "flex-end" | "flex-start" | "s
 
 type DataTypeCubicBezierTimingFunction = "ease" | "ease-in" | "ease-in-out" | "ease-out" | string;
 
-type DataTypeDasharray<TLength> = TLength | string | number;
+type DataTypeDasharray<TLength = string | 0> = TLength | string | number;
 
 type DataTypeDeprecatedSystemColor =
   | "ActiveBorder"
@@ -6405,7 +6405,7 @@ type DataTypeDisplayOutside = "block" | "inline" | "run-in";
 
 type DataTypeEastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
 
-type DataTypeFinalBgLayer<TLength> = DataTypeColor | DataTypeBgPosition<TLength> | DataTypeRepeatStyle | DataTypeAttachment | DataTypeBox | "none" | string;
+type DataTypeFinalBgLayer<TLength = string | 0> = DataTypeColor | DataTypeBgPosition<TLength> | DataTypeRepeatStyle | DataTypeAttachment | DataTypeBox | "none" | string;
 
 type DataTypeFontStretchAbsolute =
   | "condensed"
@@ -6429,9 +6429,9 @@ type DataTypeGridLine = "auto" | string | number;
 
 type DataTypeLineStyle = "dashed" | "dotted" | "double" | "groove" | "hidden" | "inset" | "none" | "outset" | "ridge" | "solid";
 
-type DataTypeLineWidth<TLength> = TLength | "medium" | "thick" | "thin";
+type DataTypeLineWidth<TLength = string | 0> = TLength | "medium" | "thick" | "thin";
 
-type DataTypeMaskLayer<TLength> =
+type DataTypeMaskLayer<TLength = string | 0> =
   | DataTypePosition<TLength>
   | DataTypeRepeatStyle
   | DataTypeGeometryBox
@@ -6596,7 +6596,7 @@ type DataTypeNamedColor =
 
 type DataTypePaint = DataTypeColor | "child" | "context-fill" | "context-stroke" | "none" | string;
 
-type DataTypePosition<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
+type DataTypePosition<TLength = string | 0> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
 
 type DataTypeQuote = "close-quote" | "no-close-quote" | "no-open-quote" | "open-quote";
 
@@ -6625,6 +6625,6 @@ type DataTypeStepTimingFunction = "step-end" | "step-start" | string;
 
 type DataTypeTimingFunction = DataTypeCubicBezierTimingFunction | DataTypeStepTimingFunction | "linear";
 
-type DataTypeTrackBreadth<TLength> = TLength | "auto" | "max-content" | "min-content" | string;
+type DataTypeTrackBreadth<TLength = string | 0> = TLength | "auto" | "max-content" | "min-content" | string;
 
-type DataTypeViewportLength<TLength> = TLength | "auto" | string;
+type DataTypeViewportLength<TLength = string | 0> = TLength | "auto" | string;

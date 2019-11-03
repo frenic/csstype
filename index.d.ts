@@ -92,7 +92,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
    */
-  animationDelay?: GlobalsString;
+  animationDelay?: Property.AnimationDelay;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -118,7 +118,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
    */
-  animationDuration?: GlobalsString;
+  animationDuration?: Property.AnimationDuration;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -1428,7 +1428,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
-  flexGrow?: GlobalsNumber;
+  flexGrow?: Property.FlexGrow;
   /**
    * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
@@ -1441,7 +1441,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
    */
-  flexShrink?: GlobalsNumber;
+  flexShrink?: Property.FlexShrink;
   /**
    * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
@@ -2695,7 +2695,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/order
    */
-  order?: GlobalsNumber;
+  order?: Property.Order;
   /**
    * The **`orphans`** CSS property sets the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column.
    *
@@ -2707,7 +2707,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/orphans
    */
-  orphans?: GlobalsNumber;
+  orphans?: Property.Orphans;
   /**
    * The **`outline-color`** CSS property sets the color of an element's outline.
    *
@@ -3787,7 +3787,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
-  textEmphasisPosition?: GlobalsString;
+  textEmphasisPosition?: Property.TextEmphasisPosition;
   /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
@@ -4009,7 +4009,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
    */
-  transitionDelay?: GlobalsString;
+  transitionDelay?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -4022,7 +4022,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
    */
-  transitionDuration?: GlobalsString;
+  transitionDuration?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -4133,7 +4133,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/widows
    */
-  widows?: GlobalsNumber;
+  widows?: Property.Widows;
   /**
    * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
@@ -4245,7 +4245,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/all
    */
-  all?: Globals;
+  all?: Property.All;
   /**
    * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
@@ -4731,7 +4731,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  MozAnimationDelay?: GlobalsString;
+  MozAnimationDelay?: Property.AnimationDelay;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -4743,7 +4743,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  MozAnimationDuration?: GlobalsString;
+  MozAnimationDuration?: Property.AnimationDuration;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -4917,7 +4917,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  MozForceBrokenImageIcon?: GlobalsNumber;
+  MozForceBrokenImageIcon?: Property.MozForceBrokenImageIcon;
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
@@ -5031,13 +5031,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  MozTransitionDelay?: GlobalsString;
+  MozTransitionDelay?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  MozTransitionDuration?: GlobalsString;
+  MozTransitionDuration?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -5103,19 +5103,19 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `400%`
    */
-  msContentZoomLimitMax?: GlobalsString;
+  msContentZoomLimitMax?: Property.MsContentZoomLimitMax;
   /**
    * The **`-ms-content-zoom-limit-min`** CSS property is a Microsoft extension that specifies the minimum zoom factor.
    *
    * **Initial value**: `100%`
    */
-  msContentZoomLimitMin?: GlobalsString;
+  msContentZoomLimitMin?: Property.MsContentZoomLimitMin;
   /**
    * The **`-ms-content-zoom-snap-points`** CSS property is a Microsoft extension that specifies where zoom snap-points are located.
    *
    * **Initial value**: `snapInterval(0%, 100%)`
    */
-  msContentZoomSnapPoints?: GlobalsString;
+  msContentZoomSnapPoints?: Property.MsContentZoomSnapPoints;
   /**
    * The **`-ms-content-zoom-snap-type`** CSS property is a Microsoft extension that specifies how zooming is affected by defined snap-points.
    *
@@ -5133,7 +5133,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: "" (the empty string)
    */
-  msFilter?: GlobalsString;
+  msFilter?: Property.MsFilter;
   /**
    * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
@@ -5145,7 +5145,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  msFlexPositive?: GlobalsNumber;
+  msFlexPositive?: Property.FlexGrow;
   /**
    * The **`-ms-flow-from`** CSS property is a Microsoft extension that gets or sets a value identifying a region container in the document that accepts the content flow from the data source.
    *
@@ -5217,7 +5217,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  msOrder?: GlobalsNumber;
+  msOrder?: Property.Order;
   /**
    * The **`-ms-overflow-style`** CSS property is a Microsoft extension controlling the behavior of scrollbars when the content of an element overflows.
    *
@@ -5277,13 +5277,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `snapInterval(0px, 100%)`
    */
-  msScrollSnapPointsX?: GlobalsString;
+  msScrollSnapPointsX?: Property.MsScrollSnapPointsX;
   /**
    * The **`-ms-scroll-snap-points-y`** CSS property is a Microsoft extension that specifies where snap-points will be located along the y-axis.
    *
    * **Initial value**: `snapInterval(0px, 100%)`
    */
-  msScrollSnapPointsY?: GlobalsString;
+  msScrollSnapPointsY?: Property.MsScrollSnapPointsY;
   /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
@@ -5391,13 +5391,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  msTransitionDelay?: GlobalsString;
+  msTransitionDelay?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  msTransitionDuration?: GlobalsString;
+  msTransitionDuration?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -5499,7 +5499,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitAnimationDelay?: GlobalsString;
+  WebkitAnimationDelay?: Property.AnimationDelay;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -5511,7 +5511,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitAnimationDuration?: GlobalsString;
+  WebkitAnimationDuration?: Property.AnimationDuration;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -5721,13 +5721,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  WebkitFlexGrow?: GlobalsNumber;
+  WebkitFlexGrow?: Property.FlexGrow;
   /**
    * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    */
-  WebkitFlexShrink?: GlobalsNumber;
+  WebkitFlexShrink?: Property.FlexShrink;
   /**
    * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
@@ -5871,7 +5871,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  WebkitOrder?: GlobalsNumber;
+  WebkitOrder?: Property.Order;
   /**
    * The `-webkit-overflow-scrolling` CSS property controls whether or not touch devices use momentum-based scrolling for a given element.
    *
@@ -5961,7 +5961,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `over right`
    */
-  WebkitTextEmphasisPosition?: GlobalsString;
+  WebkitTextEmphasisPosition?: Property.TextEmphasisPosition;
   /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
@@ -6027,13 +6027,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitTransitionDelay?: GlobalsString;
+  WebkitTransitionDelay?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  WebkitTransitionDuration?: GlobalsString;
+  WebkitTransitionDuration?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -6074,17 +6074,17 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0> {
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   MozTransition?: Property.Transition;
   /** The **`-ms-content-zoom-limit`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-limit-min` and `-ms-content-zoom-limit-max` properties. */
-  msContentZoomLimit?: GlobalsString;
+  msContentZoomLimit?: Property.MsContentZoomLimit;
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
   msContentZoomSnap?: Property.MsContentZoomSnap;
   /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   msFlex?: Property.Flex<TLength>;
   /** The **\-ms-scroll-limit** CSS property is a Microsoft extension that specifies values for the `-ms-scroll-limit-x-min`, `-ms-scroll-limit-y-min`, `-ms-scroll-limit-x-max`, and `-ms-scroll-limit-y-max` properties. */
-  msScrollLimit?: GlobalsString;
+  msScrollLimit?: Property.MsScrollLimit;
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-x` properties. */
-  msScrollSnapX?: GlobalsString;
+  msScrollSnapX?: Property.MsScrollSnapX;
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-y` properties. */
-  msScrollSnapY?: GlobalsString;
+  msScrollSnapY?: Property.MsScrollSnapY;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   msTransition?: Property.Transition;
   /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
@@ -6139,7 +6139,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  boxFlex?: GlobalsNumber;
+  boxFlex?: Property.BoxFlex;
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -6147,7 +6147,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  boxFlexGroup?: GlobalsNumber;
+  boxFlexGroup?: Property.BoxFlexGroup;
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -6163,7 +6163,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  boxOrdinalGroup?: GlobalsNumber;
+  boxOrdinalGroup?: Property.BoxOrdinalGroup;
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -6353,7 +6353,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  KhtmlBoxFlex?: GlobalsNumber;
+  KhtmlBoxFlex?: Property.BoxFlex;
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -6361,7 +6361,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  KhtmlBoxFlexGroup?: GlobalsNumber;
+  KhtmlBoxFlexGroup?: Property.BoxFlexGroup;
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -6377,7 +6377,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  KhtmlBoxOrdinalGroup?: GlobalsNumber;
+  KhtmlBoxOrdinalGroup?: Property.BoxOrdinalGroup;
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -6519,7 +6519,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  MozBoxFlex?: GlobalsNumber;
+  MozBoxFlex?: Property.BoxFlex;
   /**
    * The **`box-ordinal-group`** CSS property assigns the flexbox's child elements to an ordinal group.
    *
@@ -6527,7 +6527,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  MozBoxOrdinalGroup?: GlobalsNumber;
+  MozBoxOrdinalGroup?: Property.BoxOrdinalGroup;
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -6673,7 +6673,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OAnimationDelay?: GlobalsString;
+  OAnimationDelay?: Property.AnimationDelay;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -6689,7 +6689,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OAnimationDuration?: GlobalsString;
+  OAnimationDuration?: Property.AnimationDuration;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -6765,7 +6765,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OTransitionDelay?: GlobalsString;
+  OTransitionDelay?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -6773,7 +6773,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OTransitionDuration?: GlobalsString;
+  OTransitionDuration?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -6813,7 +6813,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  WebkitBoxFlex?: GlobalsNumber;
+  WebkitBoxFlex?: Property.BoxFlex;
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -6821,7 +6821,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  WebkitBoxFlexGroup?: GlobalsNumber;
+  WebkitBoxFlexGroup?: Property.BoxFlexGroup;
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -6837,7 +6837,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  WebkitBoxOrdinalGroup?: GlobalsNumber;
+  WebkitBoxOrdinalGroup?: Property.BoxOrdinalGroup;
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -6886,11 +6886,11 @@ export interface SvgProperties<TLength = (string & {}) | 0> {
   display?: Property.Display;
   dominantBaseline?: Property.DominantBaseline;
   fill?: Property.Fill;
-  fillOpacity?: GlobalsNumber;
+  fillOpacity?: Property.FillOpacity;
   fillRule?: Property.FillRule;
   filter?: Property.Filter;
   floodColor?: Property.FloodColor;
-  floodOpacity?: GlobalsNumber;
+  floodOpacity?: Property.FloodOpacity;
   font?: Property.Font;
   fontFamily?: Property.FontFamily;
   fontSize?: Property.FontSize<TLength>;
@@ -6915,14 +6915,14 @@ export interface SvgProperties<TLength = (string & {}) | 0> {
   pointerEvents?: Property.PointerEvents;
   shapeRendering?: Property.ShapeRendering;
   stopColor?: Property.StopColor;
-  stopOpacity?: GlobalsNumber;
+  stopOpacity?: Property.StopOpacity;
   stroke?: Property.Stroke;
   strokeDasharray?: Property.StrokeDasharray<TLength>;
   strokeDashoffset?: Property.StrokeDashoffset<TLength>;
   strokeLinecap?: Property.StrokeLinecap;
   strokeLinejoin?: Property.StrokeLinejoin;
-  strokeMiterlimit?: GlobalsNumber;
-  strokeOpacity?: GlobalsNumber;
+  strokeMiterlimit?: Property.StrokeMiterlimit;
+  strokeOpacity?: Property.StrokeOpacity;
   strokeWidth?: Property.StrokeWidth<TLength>;
   textAnchor?: Property.TextAnchor;
   textDecoration?: Property.TextDecoration<TLength>;
@@ -7031,7 +7031,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
    */
-  "animation-delay"?: GlobalsString;
+  "animation-delay"?: Property.AnimationDelay;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -7057,7 +7057,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
    */
-  "animation-duration"?: GlobalsString;
+  "animation-duration"?: Property.AnimationDuration;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -8367,7 +8367,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
-  "flex-grow"?: GlobalsNumber;
+  "flex-grow"?: Property.FlexGrow;
   /**
    * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
@@ -8380,7 +8380,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
    */
-  "flex-shrink"?: GlobalsNumber;
+  "flex-shrink"?: Property.FlexShrink;
   /**
    * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
@@ -9634,7 +9634,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/order
    */
-  order?: GlobalsNumber;
+  order?: Property.Order;
   /**
    * The **`orphans`** CSS property sets the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column.
    *
@@ -9646,7 +9646,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/orphans
    */
-  orphans?: GlobalsNumber;
+  orphans?: Property.Orphans;
   /**
    * The **`outline-color`** CSS property sets the color of an element's outline.
    *
@@ -10726,7 +10726,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
-  "text-emphasis-position"?: GlobalsString;
+  "text-emphasis-position"?: Property.TextEmphasisPosition;
   /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
@@ -10948,7 +10948,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
    */
-  "transition-delay"?: GlobalsString;
+  "transition-delay"?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -10961,7 +10961,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
    */
-  "transition-duration"?: GlobalsString;
+  "transition-duration"?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -11072,7 +11072,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/widows
    */
-  widows?: GlobalsNumber;
+  widows?: Property.Widows;
   /**
    * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
@@ -11184,7 +11184,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0> 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/all
    */
-  all?: Globals;
+  all?: Property.All;
   /**
    * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
@@ -11670,7 +11670,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-moz-animation-delay"?: GlobalsString;
+  "-moz-animation-delay"?: Property.AnimationDelay;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -11682,7 +11682,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-moz-animation-duration"?: GlobalsString;
+  "-moz-animation-duration"?: Property.AnimationDuration;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -11856,7 +11856,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  "-moz-force-broken-image-icon"?: GlobalsNumber;
+  "-moz-force-broken-image-icon"?: Property.MozForceBrokenImageIcon;
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
@@ -11970,13 +11970,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-moz-transition-delay"?: GlobalsString;
+  "-moz-transition-delay"?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-moz-transition-duration"?: GlobalsString;
+  "-moz-transition-duration"?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -12042,19 +12042,19 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `400%`
    */
-  "-ms-content-zoom-limit-max"?: GlobalsString;
+  "-ms-content-zoom-limit-max"?: Property.MsContentZoomLimitMax;
   /**
    * The **`-ms-content-zoom-limit-min`** CSS property is a Microsoft extension that specifies the minimum zoom factor.
    *
    * **Initial value**: `100%`
    */
-  "-ms-content-zoom-limit-min"?: GlobalsString;
+  "-ms-content-zoom-limit-min"?: Property.MsContentZoomLimitMin;
   /**
    * The **`-ms-content-zoom-snap-points`** CSS property is a Microsoft extension that specifies where zoom snap-points are located.
    *
    * **Initial value**: `snapInterval(0%, 100%)`
    */
-  "-ms-content-zoom-snap-points"?: GlobalsString;
+  "-ms-content-zoom-snap-points"?: Property.MsContentZoomSnapPoints;
   /**
    * The **`-ms-content-zoom-snap-type`** CSS property is a Microsoft extension that specifies how zooming is affected by defined snap-points.
    *
@@ -12072,7 +12072,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: "" (the empty string)
    */
-  "-ms-filter"?: GlobalsString;
+  "-ms-filter"?: Property.MsFilter;
   /**
    * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
@@ -12084,7 +12084,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  "-ms-flex-positive"?: GlobalsNumber;
+  "-ms-flex-positive"?: Property.FlexGrow;
   /**
    * The **`-ms-flow-from`** CSS property is a Microsoft extension that gets or sets a value identifying a region container in the document that accepts the content flow from the data source.
    *
@@ -12156,7 +12156,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  "-ms-order"?: GlobalsNumber;
+  "-ms-order"?: Property.Order;
   /**
    * The **`-ms-overflow-style`** CSS property is a Microsoft extension controlling the behavior of scrollbars when the content of an element overflows.
    *
@@ -12216,13 +12216,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `snapInterval(0px, 100%)`
    */
-  "-ms-scroll-snap-points-x"?: GlobalsString;
+  "-ms-scroll-snap-points-x"?: Property.MsScrollSnapPointsX;
   /**
    * The **`-ms-scroll-snap-points-y`** CSS property is a Microsoft extension that specifies where snap-points will be located along the y-axis.
    *
    * **Initial value**: `snapInterval(0px, 100%)`
    */
-  "-ms-scroll-snap-points-y"?: GlobalsString;
+  "-ms-scroll-snap-points-y"?: Property.MsScrollSnapPointsY;
   /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
@@ -12330,13 +12330,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-ms-transition-delay"?: GlobalsString;
+  "-ms-transition-delay"?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-ms-transition-duration"?: GlobalsString;
+  "-ms-transition-duration"?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -12438,7 +12438,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-webkit-animation-delay"?: GlobalsString;
+  "-webkit-animation-delay"?: Property.AnimationDelay;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -12450,7 +12450,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-webkit-animation-duration"?: GlobalsString;
+  "-webkit-animation-duration"?: Property.AnimationDuration;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -12660,13 +12660,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  "-webkit-flex-grow"?: GlobalsNumber;
+  "-webkit-flex-grow"?: Property.FlexGrow;
   /**
    * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    */
-  "-webkit-flex-shrink"?: GlobalsNumber;
+  "-webkit-flex-shrink"?: Property.FlexShrink;
   /**
    * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
@@ -12810,7 +12810,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  "-webkit-order"?: GlobalsNumber;
+  "-webkit-order"?: Property.Order;
   /**
    * The `-webkit-overflow-scrolling` CSS property controls whether or not touch devices use momentum-based scrolling for a given element.
    *
@@ -12900,7 +12900,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `over right`
    */
-  "-webkit-text-emphasis-position"?: GlobalsString;
+  "-webkit-text-emphasis-position"?: Property.TextEmphasisPosition;
   /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
@@ -12966,13 +12966,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-webkit-transition-delay"?: GlobalsString;
+  "-webkit-transition-delay"?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-webkit-transition-duration"?: GlobalsString;
+  "-webkit-transition-duration"?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -13013,17 +13013,17 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0> {
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   "-moz-transition"?: Property.Transition;
   /** The **`-ms-content-zoom-limit`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-limit-min` and `-ms-content-zoom-limit-max` properties. */
-  "-ms-content-zoom-limit"?: GlobalsString;
+  "-ms-content-zoom-limit"?: Property.MsContentZoomLimit;
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
   "-ms-content-zoom-snap"?: Property.MsContentZoomSnap;
   /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   "-ms-flex"?: Property.Flex<TLength>;
   /** The **\-ms-scroll-limit** CSS property is a Microsoft extension that specifies values for the `-ms-scroll-limit-x-min`, `-ms-scroll-limit-y-min`, `-ms-scroll-limit-x-max`, and `-ms-scroll-limit-y-max` properties. */
-  "-ms-scroll-limit"?: GlobalsString;
+  "-ms-scroll-limit"?: Property.MsScrollLimit;
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-x` properties. */
-  "-ms-scroll-snap-x"?: GlobalsString;
+  "-ms-scroll-snap-x"?: Property.MsScrollSnapX;
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-y` properties. */
-  "-ms-scroll-snap-y"?: GlobalsString;
+  "-ms-scroll-snap-y"?: Property.MsScrollSnapY;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   "-ms-transition"?: Property.Transition;
   /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
@@ -13078,7 +13078,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "box-flex"?: GlobalsNumber;
+  "box-flex"?: Property.BoxFlex;
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -13086,7 +13086,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "box-flex-group"?: GlobalsNumber;
+  "box-flex-group"?: Property.BoxFlexGroup;
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -13102,7 +13102,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "box-ordinal-group"?: GlobalsNumber;
+  "box-ordinal-group"?: Property.BoxOrdinalGroup;
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -13292,7 +13292,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-khtml-box-flex"?: GlobalsNumber;
+  "-khtml-box-flex"?: Property.BoxFlex;
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -13300,7 +13300,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-khtml-box-flex-group"?: GlobalsNumber;
+  "-khtml-box-flex-group"?: Property.BoxFlexGroup;
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -13316,7 +13316,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-khtml-box-ordinal-group"?: GlobalsNumber;
+  "-khtml-box-ordinal-group"?: Property.BoxOrdinalGroup;
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -13458,7 +13458,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-moz-box-flex"?: GlobalsNumber;
+  "-moz-box-flex"?: Property.BoxFlex;
   /**
    * The **`box-ordinal-group`** CSS property assigns the flexbox's child elements to an ordinal group.
    *
@@ -13466,7 +13466,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-moz-box-ordinal-group"?: GlobalsNumber;
+  "-moz-box-ordinal-group"?: Property.BoxOrdinalGroup;
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -13612,7 +13612,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-animation-delay"?: GlobalsString;
+  "-o-animation-delay"?: Property.AnimationDelay;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -13628,7 +13628,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-animation-duration"?: GlobalsString;
+  "-o-animation-duration"?: Property.AnimationDuration;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -13704,7 +13704,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-transition-delay"?: GlobalsString;
+  "-o-transition-delay"?: Property.TransitionDelay;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -13712,7 +13712,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-transition-duration"?: GlobalsString;
+  "-o-transition-duration"?: Property.TransitionDuration;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -13752,7 +13752,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-webkit-box-flex"?: GlobalsNumber;
+  "-webkit-box-flex"?: Property.BoxFlex;
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -13760,7 +13760,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-webkit-box-flex-group"?: GlobalsNumber;
+  "-webkit-box-flex-group"?: Property.BoxFlexGroup;
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -13776,7 +13776,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-webkit-box-ordinal-group"?: GlobalsNumber;
+  "-webkit-box-ordinal-group"?: Property.BoxOrdinalGroup;
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -13825,11 +13825,11 @@ export interface SvgPropertiesHyphen<TLength = (string & {}) | 0> {
   display?: Property.Display;
   "dominant-baseline"?: Property.DominantBaseline;
   fill?: Property.Fill;
-  "fill-opacity"?: GlobalsNumber;
+  "fill-opacity"?: Property.FillOpacity;
   "fill-rule"?: Property.FillRule;
   filter?: Property.Filter;
   "flood-color"?: Property.FloodColor;
-  "flood-opacity"?: GlobalsNumber;
+  "flood-opacity"?: Property.FloodOpacity;
   font?: Property.Font;
   "font-family"?: Property.FontFamily;
   "font-size"?: Property.FontSize<TLength>;
@@ -13854,14 +13854,14 @@ export interface SvgPropertiesHyphen<TLength = (string & {}) | 0> {
   "pointer-events"?: Property.PointerEvents;
   "shape-rendering"?: Property.ShapeRendering;
   "stop-color"?: Property.StopColor;
-  "stop-opacity"?: GlobalsNumber;
+  "stop-opacity"?: Property.StopOpacity;
   stroke?: Property.Stroke;
   "stroke-dasharray"?: Property.StrokeDasharray<TLength>;
   "stroke-dashoffset"?: Property.StrokeDashoffset<TLength>;
   "stroke-linecap"?: Property.StrokeLinecap;
   "stroke-linejoin"?: Property.StrokeLinejoin;
-  "stroke-miterlimit"?: GlobalsNumber;
-  "stroke-opacity"?: GlobalsNumber;
+  "stroke-miterlimit"?: Property.StrokeMiterlimit;
+  "stroke-opacity"?: Property.StrokeOpacity;
   "stroke-width"?: Property.StrokeWidth<TLength>;
   "text-anchor"?: Property.TextAnchor;
   "text-decoration"?: Property.TextDecoration<TLength>;
@@ -13974,7 +13974,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
    */
-  animationDelay?: GlobalsString | GlobalsString[];
+  animationDelay?: Property.AnimationDelay | Property.AnimationDelay[];
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -14000,7 +14000,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
    */
-  animationDuration?: GlobalsString | GlobalsString[];
+  animationDuration?: Property.AnimationDuration | Property.AnimationDuration[];
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -15310,7 +15310,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
-  flexGrow?: GlobalsNumber | GlobalsNumber[];
+  flexGrow?: Property.FlexGrow | Property.FlexGrow[];
   /**
    * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
@@ -15323,7 +15323,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
    */
-  flexShrink?: GlobalsNumber | GlobalsNumber[];
+  flexShrink?: Property.FlexShrink | Property.FlexShrink[];
   /**
    * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
@@ -16577,7 +16577,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/order
    */
-  order?: GlobalsNumber | GlobalsNumber[];
+  order?: Property.Order | Property.Order[];
   /**
    * The **`orphans`** CSS property sets the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column.
    *
@@ -16589,7 +16589,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/orphans
    */
-  orphans?: GlobalsNumber | GlobalsNumber[];
+  orphans?: Property.Orphans | Property.Orphans[];
   /**
    * The **`outline-color`** CSS property sets the color of an element's outline.
    *
@@ -17669,7 +17669,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
-  textEmphasisPosition?: GlobalsString | GlobalsString[];
+  textEmphasisPosition?: Property.TextEmphasisPosition | Property.TextEmphasisPosition[];
   /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
@@ -17891,7 +17891,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
    */
-  transitionDelay?: GlobalsString | GlobalsString[];
+  transitionDelay?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -17904,7 +17904,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
    */
-  transitionDuration?: GlobalsString | GlobalsString[];
+  transitionDuration?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -18015,7 +18015,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/widows
    */
-  widows?: GlobalsNumber | GlobalsNumber[];
+  widows?: Property.Widows | Property.Widows[];
   /**
    * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
@@ -18127,7 +18127,7 @@ export interface StandardShorthandPropertiesFallback<TLength = (string & {}) | 0
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/all
    */
-  all?: Globals | Globals[];
+  all?: Property.All | Property.All[];
   /**
    * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
@@ -18613,7 +18613,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  MozAnimationDelay?: GlobalsString | GlobalsString[];
+  MozAnimationDelay?: Property.AnimationDelay | Property.AnimationDelay[];
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -18625,7 +18625,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  MozAnimationDuration?: GlobalsString | GlobalsString[];
+  MozAnimationDuration?: Property.AnimationDuration | Property.AnimationDuration[];
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -18799,7 +18799,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  MozForceBrokenImageIcon?: GlobalsNumber | GlobalsNumber[];
+  MozForceBrokenImageIcon?: Property.MozForceBrokenImageIcon | Property.MozForceBrokenImageIcon[];
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
@@ -18913,13 +18913,13 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  MozTransitionDelay?: GlobalsString | GlobalsString[];
+  MozTransitionDelay?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  MozTransitionDuration?: GlobalsString | GlobalsString[];
+  MozTransitionDuration?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -18985,19 +18985,19 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `400%`
    */
-  msContentZoomLimitMax?: GlobalsString | GlobalsString[];
+  msContentZoomLimitMax?: Property.MsContentZoomLimitMax | Property.MsContentZoomLimitMax[];
   /**
    * The **`-ms-content-zoom-limit-min`** CSS property is a Microsoft extension that specifies the minimum zoom factor.
    *
    * **Initial value**: `100%`
    */
-  msContentZoomLimitMin?: GlobalsString | GlobalsString[];
+  msContentZoomLimitMin?: Property.MsContentZoomLimitMin | Property.MsContentZoomLimitMin[];
   /**
    * The **`-ms-content-zoom-snap-points`** CSS property is a Microsoft extension that specifies where zoom snap-points are located.
    *
    * **Initial value**: `snapInterval(0%, 100%)`
    */
-  msContentZoomSnapPoints?: GlobalsString | GlobalsString[];
+  msContentZoomSnapPoints?: Property.MsContentZoomSnapPoints | Property.MsContentZoomSnapPoints[];
   /**
    * The **`-ms-content-zoom-snap-type`** CSS property is a Microsoft extension that specifies how zooming is affected by defined snap-points.
    *
@@ -19015,7 +19015,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: "" (the empty string)
    */
-  msFilter?: GlobalsString | GlobalsString[];
+  msFilter?: Property.MsFilter | Property.MsFilter[];
   /**
    * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
@@ -19027,7 +19027,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  msFlexPositive?: GlobalsNumber | GlobalsNumber[];
+  msFlexPositive?: Property.FlexGrow | Property.FlexGrow[];
   /**
    * The **`-ms-flow-from`** CSS property is a Microsoft extension that gets or sets a value identifying a region container in the document that accepts the content flow from the data source.
    *
@@ -19099,7 +19099,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  msOrder?: GlobalsNumber | GlobalsNumber[];
+  msOrder?: Property.Order | Property.Order[];
   /**
    * The **`-ms-overflow-style`** CSS property is a Microsoft extension controlling the behavior of scrollbars when the content of an element overflows.
    *
@@ -19159,13 +19159,13 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `snapInterval(0px, 100%)`
    */
-  msScrollSnapPointsX?: GlobalsString | GlobalsString[];
+  msScrollSnapPointsX?: Property.MsScrollSnapPointsX | Property.MsScrollSnapPointsX[];
   /**
    * The **`-ms-scroll-snap-points-y`** CSS property is a Microsoft extension that specifies where snap-points will be located along the y-axis.
    *
    * **Initial value**: `snapInterval(0px, 100%)`
    */
-  msScrollSnapPointsY?: GlobalsString | GlobalsString[];
+  msScrollSnapPointsY?: Property.MsScrollSnapPointsY | Property.MsScrollSnapPointsY[];
   /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
@@ -19273,13 +19273,13 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  msTransitionDelay?: GlobalsString | GlobalsString[];
+  msTransitionDelay?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  msTransitionDuration?: GlobalsString | GlobalsString[];
+  msTransitionDuration?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -19381,7 +19381,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitAnimationDelay?: GlobalsString | GlobalsString[];
+  WebkitAnimationDelay?: Property.AnimationDelay | Property.AnimationDelay[];
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -19393,7 +19393,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitAnimationDuration?: GlobalsString | GlobalsString[];
+  WebkitAnimationDuration?: Property.AnimationDuration | Property.AnimationDuration[];
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -19603,13 +19603,13 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  WebkitFlexGrow?: GlobalsNumber | GlobalsNumber[];
+  WebkitFlexGrow?: Property.FlexGrow | Property.FlexGrow[];
   /**
    * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    */
-  WebkitFlexShrink?: GlobalsNumber | GlobalsNumber[];
+  WebkitFlexShrink?: Property.FlexShrink | Property.FlexShrink[];
   /**
    * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
@@ -19753,7 +19753,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0`
    */
-  WebkitOrder?: GlobalsNumber | GlobalsNumber[];
+  WebkitOrder?: Property.Order | Property.Order[];
   /**
    * The `-webkit-overflow-scrolling` CSS property controls whether or not touch devices use momentum-based scrolling for a given element.
    *
@@ -19843,7 +19843,7 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `over right`
    */
-  WebkitTextEmphasisPosition?: GlobalsString | GlobalsString[];
+  WebkitTextEmphasisPosition?: Property.TextEmphasisPosition | Property.TextEmphasisPosition[];
   /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
@@ -19909,13 +19909,13 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitTransitionDelay?: GlobalsString | GlobalsString[];
+  WebkitTransitionDelay?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  WebkitTransitionDuration?: GlobalsString | GlobalsString[];
+  WebkitTransitionDuration?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -19956,17 +19956,17 @@ export interface VendorShorthandPropertiesFallback<TLength = (string & {}) | 0> 
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   MozTransition?: Property.Transition | Property.Transition[];
   /** The **`-ms-content-zoom-limit`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-limit-min` and `-ms-content-zoom-limit-max` properties. */
-  msContentZoomLimit?: GlobalsString | GlobalsString[];
+  msContentZoomLimit?: Property.MsContentZoomLimit | Property.MsContentZoomLimit[];
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
   msContentZoomSnap?: Property.MsContentZoomSnap | Property.MsContentZoomSnap[];
   /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   msFlex?: Property.Flex<TLength> | Property.Flex<TLength>[];
   /** The **\-ms-scroll-limit** CSS property is a Microsoft extension that specifies values for the `-ms-scroll-limit-x-min`, `-ms-scroll-limit-y-min`, `-ms-scroll-limit-x-max`, and `-ms-scroll-limit-y-max` properties. */
-  msScrollLimit?: GlobalsString | GlobalsString[];
+  msScrollLimit?: Property.MsScrollLimit | Property.MsScrollLimit[];
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-x` properties. */
-  msScrollSnapX?: GlobalsString | GlobalsString[];
+  msScrollSnapX?: Property.MsScrollSnapX | Property.MsScrollSnapX[];
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-y` properties. */
-  msScrollSnapY?: GlobalsString | GlobalsString[];
+  msScrollSnapY?: Property.MsScrollSnapY | Property.MsScrollSnapY[];
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   msTransition?: Property.Transition | Property.Transition[];
   /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
@@ -20021,7 +20021,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  boxFlex?: GlobalsNumber | GlobalsNumber[];
+  boxFlex?: Property.BoxFlex | Property.BoxFlex[];
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -20029,7 +20029,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  boxFlexGroup?: GlobalsNumber | GlobalsNumber[];
+  boxFlexGroup?: Property.BoxFlexGroup | Property.BoxFlexGroup[];
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -20045,7 +20045,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  boxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
+  boxOrdinalGroup?: Property.BoxOrdinalGroup | Property.BoxOrdinalGroup[];
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -20235,7 +20235,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  KhtmlBoxFlex?: GlobalsNumber | GlobalsNumber[];
+  KhtmlBoxFlex?: Property.BoxFlex | Property.BoxFlex[];
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -20243,7 +20243,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  KhtmlBoxFlexGroup?: GlobalsNumber | GlobalsNumber[];
+  KhtmlBoxFlexGroup?: Property.BoxFlexGroup | Property.BoxFlexGroup[];
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -20259,7 +20259,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  KhtmlBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
+  KhtmlBoxOrdinalGroup?: Property.BoxOrdinalGroup | Property.BoxOrdinalGroup[];
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -20401,7 +20401,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  MozBoxFlex?: GlobalsNumber | GlobalsNumber[];
+  MozBoxFlex?: Property.BoxFlex | Property.BoxFlex[];
   /**
    * The **`box-ordinal-group`** CSS property assigns the flexbox's child elements to an ordinal group.
    *
@@ -20409,7 +20409,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  MozBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
+  MozBoxOrdinalGroup?: Property.BoxOrdinalGroup | Property.BoxOrdinalGroup[];
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -20555,7 +20555,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OAnimationDelay?: GlobalsString | GlobalsString[];
+  OAnimationDelay?: Property.AnimationDelay | Property.AnimationDelay[];
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -20571,7 +20571,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OAnimationDuration?: GlobalsString | GlobalsString[];
+  OAnimationDuration?: Property.AnimationDuration | Property.AnimationDuration[];
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -20647,7 +20647,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OTransitionDelay?: GlobalsString | GlobalsString[];
+  OTransitionDelay?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -20655,7 +20655,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OTransitionDuration?: GlobalsString | GlobalsString[];
+  OTransitionDuration?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -20695,7 +20695,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  WebkitBoxFlex?: GlobalsNumber | GlobalsNumber[];
+  WebkitBoxFlex?: Property.BoxFlex | Property.BoxFlex[];
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -20703,7 +20703,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  WebkitBoxFlexGroup?: GlobalsNumber | GlobalsNumber[];
+  WebkitBoxFlexGroup?: Property.BoxFlexGroup | Property.BoxFlexGroup[];
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -20719,7 +20719,7 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  WebkitBoxOrdinalGroup?: GlobalsNumber | GlobalsNumber[];
+  WebkitBoxOrdinalGroup?: Property.BoxOrdinalGroup | Property.BoxOrdinalGroup[];
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -20768,11 +20768,11 @@ export interface SvgPropertiesFallback<TLength = (string & {}) | 0> {
   display?: Property.Display | Property.Display[];
   dominantBaseline?: Property.DominantBaseline | Property.DominantBaseline[];
   fill?: Property.Fill | Property.Fill[];
-  fillOpacity?: GlobalsNumber | GlobalsNumber[];
+  fillOpacity?: Property.FillOpacity | Property.FillOpacity[];
   fillRule?: Property.FillRule | Property.FillRule[];
   filter?: Property.Filter | Property.Filter[];
   floodColor?: Property.FloodColor | Property.FloodColor[];
-  floodOpacity?: GlobalsNumber | GlobalsNumber[];
+  floodOpacity?: Property.FloodOpacity | Property.FloodOpacity[];
   font?: Property.Font | Property.Font[];
   fontFamily?: Property.FontFamily | Property.FontFamily[];
   fontSize?: Property.FontSize<TLength> | Property.FontSize<TLength>[];
@@ -20797,14 +20797,14 @@ export interface SvgPropertiesFallback<TLength = (string & {}) | 0> {
   pointerEvents?: Property.PointerEvents | Property.PointerEvents[];
   shapeRendering?: Property.ShapeRendering | Property.ShapeRendering[];
   stopColor?: Property.StopColor | Property.StopColor[];
-  stopOpacity?: GlobalsNumber | GlobalsNumber[];
+  stopOpacity?: Property.StopOpacity | Property.StopOpacity[];
   stroke?: Property.Stroke | Property.Stroke[];
   strokeDasharray?: Property.StrokeDasharray<TLength> | Property.StrokeDasharray<TLength>[];
   strokeDashoffset?: Property.StrokeDashoffset<TLength> | Property.StrokeDashoffset<TLength>[];
   strokeLinecap?: Property.StrokeLinecap | Property.StrokeLinecap[];
   strokeLinejoin?: Property.StrokeLinejoin | Property.StrokeLinejoin[];
-  strokeMiterlimit?: GlobalsNumber | GlobalsNumber[];
-  strokeOpacity?: GlobalsNumber | GlobalsNumber[];
+  strokeMiterlimit?: Property.StrokeMiterlimit | Property.StrokeMiterlimit[];
+  strokeOpacity?: Property.StrokeOpacity | Property.StrokeOpacity[];
   strokeWidth?: Property.StrokeWidth<TLength> | Property.StrokeWidth<TLength>[];
   textAnchor?: Property.TextAnchor | Property.TextAnchor[];
   textDecoration?: Property.TextDecoration<TLength> | Property.TextDecoration<TLength>[];
@@ -20917,7 +20917,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
    */
-  "animation-delay"?: GlobalsString | GlobalsString[];
+  "animation-delay"?: Property.AnimationDelay | Property.AnimationDelay[];
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -20943,7 +20943,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
    */
-  "animation-duration"?: GlobalsString | GlobalsString[];
+  "animation-duration"?: Property.AnimationDuration | Property.AnimationDuration[];
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -22253,7 +22253,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
-  "flex-grow"?: GlobalsNumber | GlobalsNumber[];
+  "flex-grow"?: Property.FlexGrow | Property.FlexGrow[];
   /**
    * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
@@ -22266,7 +22266,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-shrink
    */
-  "flex-shrink"?: GlobalsNumber | GlobalsNumber[];
+  "flex-shrink"?: Property.FlexShrink | Property.FlexShrink[];
   /**
    * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
@@ -23520,7 +23520,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/order
    */
-  order?: GlobalsNumber | GlobalsNumber[];
+  order?: Property.Order | Property.Order[];
   /**
    * The **`orphans`** CSS property sets the minimum number of lines in a block container that must be shown at the _bottom_ of a page, region, or column.
    *
@@ -23532,7 +23532,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/orphans
    */
-  orphans?: GlobalsNumber | GlobalsNumber[];
+  orphans?: Property.Orphans | Property.Orphans[];
   /**
    * The **`outline-color`** CSS property sets the color of an element's outline.
    *
@@ -24612,7 +24612,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
-  "text-emphasis-position"?: GlobalsString | GlobalsString[];
+  "text-emphasis-position"?: Property.TextEmphasisPosition | Property.TextEmphasisPosition[];
   /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
@@ -24834,7 +24834,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
    */
-  "transition-delay"?: GlobalsString | GlobalsString[];
+  "transition-delay"?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -24847,7 +24847,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
    */
-  "transition-duration"?: GlobalsString | GlobalsString[];
+  "transition-duration"?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -24958,7 +24958,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/widows
    */
-  widows?: GlobalsNumber | GlobalsNumber[];
+  widows?: Property.Widows | Property.Widows[];
   /**
    * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
@@ -25070,7 +25070,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = (string & {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/all
    */
-  all?: Globals | Globals[];
+  all?: Property.All | Property.All[];
   /**
    * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
@@ -25558,7 +25558,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0s`
    */
-  "-moz-animation-delay"?: GlobalsString | GlobalsString[];
+  "-moz-animation-delay"?: Property.AnimationDelay | Property.AnimationDelay[];
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -25570,7 +25570,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0s`
    */
-  "-moz-animation-duration"?: GlobalsString | GlobalsString[];
+  "-moz-animation-duration"?: Property.AnimationDuration | Property.AnimationDuration[];
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -25744,7 +25744,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0`
    */
-  "-moz-force-broken-image-icon"?: GlobalsNumber | GlobalsNumber[];
+  "-moz-force-broken-image-icon"?: Property.MozForceBrokenImageIcon | Property.MozForceBrokenImageIcon[];
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
@@ -25858,13 +25858,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0s`
    */
-  "-moz-transition-delay"?: GlobalsString | GlobalsString[];
+  "-moz-transition-delay"?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-moz-transition-duration"?: GlobalsString | GlobalsString[];
+  "-moz-transition-duration"?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -25930,19 +25930,19 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `400%`
    */
-  "-ms-content-zoom-limit-max"?: GlobalsString | GlobalsString[];
+  "-ms-content-zoom-limit-max"?: Property.MsContentZoomLimitMax | Property.MsContentZoomLimitMax[];
   /**
    * The **`-ms-content-zoom-limit-min`** CSS property is a Microsoft extension that specifies the minimum zoom factor.
    *
    * **Initial value**: `100%`
    */
-  "-ms-content-zoom-limit-min"?: GlobalsString | GlobalsString[];
+  "-ms-content-zoom-limit-min"?: Property.MsContentZoomLimitMin | Property.MsContentZoomLimitMin[];
   /**
    * The **`-ms-content-zoom-snap-points`** CSS property is a Microsoft extension that specifies where zoom snap-points are located.
    *
    * **Initial value**: `snapInterval(0%, 100%)`
    */
-  "-ms-content-zoom-snap-points"?: GlobalsString | GlobalsString[];
+  "-ms-content-zoom-snap-points"?: Property.MsContentZoomSnapPoints | Property.MsContentZoomSnapPoints[];
   /**
    * The **`-ms-content-zoom-snap-type`** CSS property is a Microsoft extension that specifies how zooming is affected by defined snap-points.
    *
@@ -25960,7 +25960,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: "" (the empty string)
    */
-  "-ms-filter"?: GlobalsString | GlobalsString[];
+  "-ms-filter"?: Property.MsFilter | Property.MsFilter[];
   /**
    * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
@@ -25972,7 +25972,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0`
    */
-  "-ms-flex-positive"?: GlobalsNumber | GlobalsNumber[];
+  "-ms-flex-positive"?: Property.FlexGrow | Property.FlexGrow[];
   /**
    * The **`-ms-flow-from`** CSS property is a Microsoft extension that gets or sets a value identifying a region container in the document that accepts the content flow from the data source.
    *
@@ -26044,7 +26044,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0`
    */
-  "-ms-order"?: GlobalsNumber | GlobalsNumber[];
+  "-ms-order"?: Property.Order | Property.Order[];
   /**
    * The **`-ms-overflow-style`** CSS property is a Microsoft extension controlling the behavior of scrollbars when the content of an element overflows.
    *
@@ -26104,13 +26104,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `snapInterval(0px, 100%)`
    */
-  "-ms-scroll-snap-points-x"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-snap-points-x"?: Property.MsScrollSnapPointsX | Property.MsScrollSnapPointsX[];
   /**
    * The **`-ms-scroll-snap-points-y`** CSS property is a Microsoft extension that specifies where snap-points will be located along the y-axis.
    *
    * **Initial value**: `snapInterval(0px, 100%)`
    */
-  "-ms-scroll-snap-points-y"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-snap-points-y"?: Property.MsScrollSnapPointsY | Property.MsScrollSnapPointsY[];
   /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
@@ -26218,13 +26218,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0s`
    */
-  "-ms-transition-delay"?: GlobalsString | GlobalsString[];
+  "-ms-transition-delay"?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-ms-transition-duration"?: GlobalsString | GlobalsString[];
+  "-ms-transition-duration"?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -26326,7 +26326,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0s`
    */
-  "-webkit-animation-delay"?: GlobalsString | GlobalsString[];
+  "-webkit-animation-delay"?: Property.AnimationDelay | Property.AnimationDelay[];
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -26338,7 +26338,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0s`
    */
-  "-webkit-animation-duration"?: GlobalsString | GlobalsString[];
+  "-webkit-animation-duration"?: Property.AnimationDuration | Property.AnimationDuration[];
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -26548,13 +26548,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0`
    */
-  "-webkit-flex-grow"?: GlobalsNumber | GlobalsNumber[];
+  "-webkit-flex-grow"?: Property.FlexGrow | Property.FlexGrow[];
   /**
    * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to `flex-shrink`.
    *
    * **Initial value**: `1`
    */
-  "-webkit-flex-shrink"?: GlobalsNumber | GlobalsNumber[];
+  "-webkit-flex-shrink"?: Property.FlexShrink | Property.FlexShrink[];
   /**
    * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
@@ -26698,7 +26698,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0`
    */
-  "-webkit-order"?: GlobalsNumber | GlobalsNumber[];
+  "-webkit-order"?: Property.Order | Property.Order[];
   /**
    * The `-webkit-overflow-scrolling` CSS property controls whether or not touch devices use momentum-based scrolling for a given element.
    *
@@ -26788,7 +26788,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `over right`
    */
-  "-webkit-text-emphasis-position"?: GlobalsString | GlobalsString[];
+  "-webkit-text-emphasis-position"?: Property.TextEmphasisPosition | Property.TextEmphasisPosition[];
   /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
@@ -26854,13 +26854,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    *
    * **Initial value**: `0s`
    */
-  "-webkit-transition-delay"?: GlobalsString | GlobalsString[];
+  "-webkit-transition-delay"?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-webkit-transition-duration"?: GlobalsString | GlobalsString[];
+  "-webkit-transition-duration"?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -26901,17 +26901,17 @@ export interface VendorShorthandPropertiesHyphenFallback<TLength = (string & {})
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   "-moz-transition"?: Property.Transition | Property.Transition[];
   /** The **`-ms-content-zoom-limit`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-limit-min` and `-ms-content-zoom-limit-max` properties. */
-  "-ms-content-zoom-limit"?: GlobalsString | GlobalsString[];
+  "-ms-content-zoom-limit"?: Property.MsContentZoomLimit | Property.MsContentZoomLimit[];
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
   "-ms-content-zoom-snap"?: Property.MsContentZoomSnap | Property.MsContentZoomSnap[];
   /** The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. */
   "-ms-flex"?: Property.Flex<TLength> | Property.Flex<TLength>[];
   /** The **\-ms-scroll-limit** CSS property is a Microsoft extension that specifies values for the `-ms-scroll-limit-x-min`, `-ms-scroll-limit-y-min`, `-ms-scroll-limit-x-max`, and `-ms-scroll-limit-y-max` properties. */
-  "-ms-scroll-limit"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-limit"?: Property.MsScrollLimit | Property.MsScrollLimit[];
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-x` properties. */
-  "-ms-scroll-snap-x"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-snap-x"?: Property.MsScrollSnapX | Property.MsScrollSnapX[];
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-y` properties. */
-  "-ms-scroll-snap-y"?: GlobalsString | GlobalsString[];
+  "-ms-scroll-snap-y"?: Property.MsScrollSnapY | Property.MsScrollSnapY[];
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
   "-ms-transition"?: Property.Transition | Property.Transition[];
   /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
@@ -26968,7 +26968,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "box-flex"?: GlobalsNumber | GlobalsNumber[];
+  "box-flex"?: Property.BoxFlex | Property.BoxFlex[];
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -26976,7 +26976,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "box-flex-group"?: GlobalsNumber | GlobalsNumber[];
+  "box-flex-group"?: Property.BoxFlexGroup | Property.BoxFlexGroup[];
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -26992,7 +26992,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
+  "box-ordinal-group"?: Property.BoxOrdinalGroup | Property.BoxOrdinalGroup[];
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -27182,7 +27182,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-khtml-box-flex"?: GlobalsNumber | GlobalsNumber[];
+  "-khtml-box-flex"?: Property.BoxFlex | Property.BoxFlex[];
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -27190,7 +27190,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-khtml-box-flex-group"?: GlobalsNumber | GlobalsNumber[];
+  "-khtml-box-flex-group"?: Property.BoxFlexGroup | Property.BoxFlexGroup[];
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -27206,7 +27206,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-khtml-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
+  "-khtml-box-ordinal-group"?: Property.BoxOrdinalGroup | Property.BoxOrdinalGroup[];
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -27348,7 +27348,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-moz-box-flex"?: GlobalsNumber | GlobalsNumber[];
+  "-moz-box-flex"?: Property.BoxFlex | Property.BoxFlex[];
   /**
    * The **`box-ordinal-group`** CSS property assigns the flexbox's child elements to an ordinal group.
    *
@@ -27356,7 +27356,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-moz-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
+  "-moz-box-ordinal-group"?: Property.BoxOrdinalGroup | Property.BoxOrdinalGroup[];
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -27502,7 +27502,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-animation-delay"?: GlobalsString | GlobalsString[];
+  "-o-animation-delay"?: Property.AnimationDelay | Property.AnimationDelay[];
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -27518,7 +27518,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-animation-duration"?: GlobalsString | GlobalsString[];
+  "-o-animation-duration"?: Property.AnimationDuration | Property.AnimationDuration[];
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -27594,7 +27594,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-transition-delay"?: GlobalsString | GlobalsString[];
+  "-o-transition-delay"?: Property.TransitionDelay | Property.TransitionDelay[];
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -27602,7 +27602,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-transition-duration"?: GlobalsString | GlobalsString[];
+  "-o-transition-duration"?: Property.TransitionDuration | Property.TransitionDuration[];
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -27642,7 +27642,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-webkit-box-flex"?: GlobalsNumber | GlobalsNumber[];
+  "-webkit-box-flex"?: Property.BoxFlex | Property.BoxFlex[];
   /**
    * The **`box-flex-group`** CSS property assigns the flexbox's child elements to a flex group.
    *
@@ -27650,7 +27650,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-webkit-box-flex-group"?: GlobalsNumber | GlobalsNumber[];
+  "-webkit-box-flex-group"?: Property.BoxFlexGroup | Property.BoxFlexGroup[];
   /**
    * The **`box-lines`** CSS property determines whether the box may have a single or multiple lines (rows for horizontally oriented boxes, columns for vertically oriented boxes).
    *
@@ -27666,7 +27666,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-webkit-box-ordinal-group"?: GlobalsNumber | GlobalsNumber[];
+  "-webkit-box-ordinal-group"?: Property.BoxOrdinalGroup | Property.BoxOrdinalGroup[];
   /**
    * The **`box-orient`** CSS property sets whether an element lays out its contents horizontally or vertically.
    *
@@ -27715,11 +27715,11 @@ export interface SvgPropertiesHyphenFallback<TLength = (string & {}) | 0> {
   display?: Property.Display | Property.Display[];
   "dominant-baseline"?: Property.DominantBaseline | Property.DominantBaseline[];
   fill?: Property.Fill | Property.Fill[];
-  "fill-opacity"?: GlobalsNumber | GlobalsNumber[];
+  "fill-opacity"?: Property.FillOpacity | Property.FillOpacity[];
   "fill-rule"?: Property.FillRule | Property.FillRule[];
   filter?: Property.Filter | Property.Filter[];
   "flood-color"?: Property.FloodColor | Property.FloodColor[];
-  "flood-opacity"?: GlobalsNumber | GlobalsNumber[];
+  "flood-opacity"?: Property.FloodOpacity | Property.FloodOpacity[];
   font?: Property.Font | Property.Font[];
   "font-family"?: Property.FontFamily | Property.FontFamily[];
   "font-size"?: Property.FontSize<TLength> | Property.FontSize<TLength>[];
@@ -27744,14 +27744,14 @@ export interface SvgPropertiesHyphenFallback<TLength = (string & {}) | 0> {
   "pointer-events"?: Property.PointerEvents | Property.PointerEvents[];
   "shape-rendering"?: Property.ShapeRendering | Property.ShapeRendering[];
   "stop-color"?: Property.StopColor | Property.StopColor[];
-  "stop-opacity"?: GlobalsNumber | GlobalsNumber[];
+  "stop-opacity"?: Property.StopOpacity | Property.StopOpacity[];
   stroke?: Property.Stroke | Property.Stroke[];
   "stroke-dasharray"?: Property.StrokeDasharray<TLength> | Property.StrokeDasharray<TLength>[];
   "stroke-dashoffset"?: Property.StrokeDashoffset<TLength> | Property.StrokeDashoffset<TLength>[];
   "stroke-linecap"?: Property.StrokeLinecap | Property.StrokeLinecap[];
   "stroke-linejoin"?: Property.StrokeLinejoin | Property.StrokeLinejoin[];
-  "stroke-miterlimit"?: GlobalsNumber | GlobalsNumber[];
-  "stroke-opacity"?: GlobalsNumber | GlobalsNumber[];
+  "stroke-miterlimit"?: Property.StrokeMiterlimit | Property.StrokeMiterlimit[];
+  "stroke-opacity"?: Property.StrokeOpacity | Property.StrokeOpacity[];
   "stroke-width"?: Property.StrokeWidth<TLength> | Property.StrokeWidth<TLength>[];
   "text-anchor"?: Property.TextAnchor | Property.TextAnchor[];
   "text-decoration"?: Property.TextDecoration<TLength> | Property.TextDecoration<TLength>[];
@@ -28374,10 +28374,6 @@ export type SvgAttributes =
 
 export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset";
 
-type GlobalsString = Globals | (string & {});
-
-type GlobalsNumber = Globals | (number & {});
-
 export namespace Property {
   export type AlignContent = Globals | DataType.ContentDistribution | DataType.ContentPosition | "baseline" | "normal" | (string & {});
 
@@ -28385,9 +28381,15 @@ export namespace Property {
 
   export type AlignSelf = Globals | DataType.SelfPosition | "auto" | "baseline" | "normal" | "stretch" | (string & {});
 
+  export type All = Globals;
+
   export type Animation = Globals | DataType.SingleAnimation | (string & {});
 
+  export type AnimationDelay = Globals | (string & {});
+
   export type AnimationDirection = Globals | DataType.SingleAnimationDirection | (string & {});
+
+  export type AnimationDuration = Globals | (string & {});
 
   export type AnimationFillMode = Globals | DataType.SingleAnimationFillMode | (string & {});
 
@@ -28575,7 +28577,13 @@ export namespace Property {
 
   export type BoxDirection = Globals | "inherit" | "normal" | "reverse";
 
+  export type BoxFlex = Globals | (number & {});
+
+  export type BoxFlexGroup = Globals | (number & {});
+
   export type BoxLines = Globals | "multiple" | "single";
+
+  export type BoxOrdinalGroup = Globals | (number & {});
 
   export type BoxOrient = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
 
@@ -28743,6 +28751,10 @@ export namespace Property {
   export type FlexDirection = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
   export type FlexFlow = Globals | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | (string & {});
+
+  export type FlexGrow = Globals | (number & {});
+
+  export type FlexShrink = Globals | (number & {});
 
   export type FlexWrap = Globals | "nowrap" | "wrap" | "wrap-reverse";
 
@@ -29165,6 +29177,10 @@ export namespace Property {
 
   export type Opacity = Globals | (string & {}) | (number & {});
 
+  export type Order = Globals | (number & {});
+
+  export type Orphans = Globals | (number & {});
+
   export type Outline<TLength> = Globals | DataType.Color | DataType.LineStyle | DataType.LineWidth<TLength> | "auto" | "invert" | (string & {});
 
   export type OutlineColor = Globals | DataType.Color | "invert";
@@ -29379,6 +29395,8 @@ export namespace Property {
 
   export type TextEmphasisColor = Globals | DataType.Color;
 
+  export type TextEmphasisPosition = Globals | (string & {});
+
   export type TextEmphasisStyle = Globals | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | (string & {});
 
   export type TextIndent<TLength> = Globals | TLength | (string & {});
@@ -29430,6 +29448,10 @@ export namespace Property {
 
   export type Transition = Globals | DataType.SingleTransition | (string & {});
 
+  export type TransitionDelay = Globals | (string & {});
+
+  export type TransitionDuration = Globals | (string & {});
+
   export type TransitionProperty = Globals | "all" | "none" | (string & {});
 
   export type TransitionTimingFunction = Globals | DataType.TimingFunction | (string & {});
@@ -29456,6 +29478,8 @@ export namespace Property {
   export type Visibility = Globals | "collapse" | "hidden" | "visible";
 
   export type WhiteSpace = Globals | "-moz-pre-wrap" | "break-spaces" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+
+  export type Widows = Globals | (number & {});
 
   export type Width<TLength> =
     | Globals
@@ -29616,6 +29640,8 @@ export namespace Property {
 
   export type MozFloatEdge = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
 
+  export type MozForceBrokenImageIcon = Globals | (number & {});
+
   export type MozImageRegion = Globals | "auto" | (string & {});
 
   export type MozOrient = Globals | "block" | "horizontal" | "inline" | "vertical";
@@ -29650,11 +29676,21 @@ export namespace Property {
 
   export type MsContentZoomChaining = Globals | "chained" | "none";
 
+  export type MsContentZoomLimit = Globals | (string & {});
+
+  export type MsContentZoomLimitMax = Globals | (string & {});
+
+  export type MsContentZoomLimitMin = Globals | (string & {});
+
   export type MsContentZoomSnap = Globals | "mandatory" | "none" | "proximity" | (string & {});
+
+  export type MsContentZoomSnapPoints = Globals | (string & {});
 
   export type MsContentZoomSnapType = Globals | "mandatory" | "none" | "proximity";
 
   export type MsContentZooming = Globals | "none" | "zoom";
+
+  export type MsFilter = Globals | (string & {});
 
   export type MsFlowFrom = Globals | "none" | (string & {});
 
@@ -29674,6 +29710,8 @@ export namespace Property {
 
   export type MsScrollChaining = Globals | "chained" | "none";
 
+  export type MsScrollLimit = Globals | (string & {});
+
   export type MsScrollLimitXMax<TLength> = Globals | TLength | "auto";
 
   export type MsScrollLimitXMin<TLength> = Globals | TLength;
@@ -29684,7 +29722,15 @@ export namespace Property {
 
   export type MsScrollRails = Globals | "none" | "railed";
 
+  export type MsScrollSnapPointsX = Globals | (string & {});
+
+  export type MsScrollSnapPointsY = Globals | (string & {});
+
   export type MsScrollSnapType = Globals | "mandatory" | "none" | "proximity";
+
+  export type MsScrollSnapX = Globals | (string & {});
+
+  export type MsScrollSnapY = Globals | (string & {});
 
   export type MsScrollTranslation = Globals | "none" | "vertical-to-horizontal";
 
@@ -29861,9 +29907,13 @@ export namespace Property {
 
   export type Fill = Globals | DataType.Paint;
 
+  export type FillOpacity = Globals | (number & {});
+
   export type FillRule = Globals | "evenodd" | "nonzero";
 
   export type FloodColor = Globals | DataType.Color | "currentColor";
+
+  export type FloodOpacity = Globals | (number & {});
 
   export type GlyphOrientationVertical = Globals | "auto" | (string & {}) | (number & {});
 
@@ -29881,6 +29931,8 @@ export namespace Property {
 
   export type StopColor = Globals | DataType.Color | "currentColor";
 
+  export type StopOpacity = Globals | (number & {});
+
   export type Stroke = Globals | DataType.Paint;
 
   export type StrokeDasharray<TLength> = Globals | DataType.Dasharray<TLength> | "none";
@@ -29890,6 +29942,10 @@ export namespace Property {
   export type StrokeLinecap = Globals | "butt" | "round" | "square";
 
   export type StrokeLinejoin = Globals | "bevel" | "miter" | "round";
+
+  export type StrokeMiterlimit = Globals | (number & {});
+
+  export type StrokeOpacity = Globals | (number & {});
 
   export type StrokeWidth<TLength> = Globals | TLength | (string & {});
 
@@ -30161,17 +30217,17 @@ export namespace AtRule {
 
   type FontWeight = DataType.FontWeightAbsolute | (string & {});
 
-  type Height<TLength> = DataType.ViewportLength<TLength> | (string & {});
+  type Height<TLength = (string & {}) | 0> = DataType.ViewportLength<TLength> | (string & {});
 
-  type MaxHeight<TLength> = DataType.ViewportLength<TLength>;
+  type MaxHeight<TLength = (string & {}) | 0> = DataType.ViewportLength<TLength>;
 
-  type MaxWidth<TLength> = DataType.ViewportLength<TLength>;
+  type MaxWidth<TLength = (string & {}) | 0> = DataType.ViewportLength<TLength>;
 
   type MaxZoom = "auto" | (string & {}) | (number & {});
 
-  type MinHeight<TLength> = DataType.ViewportLength<TLength>;
+  type MinHeight<TLength = (string & {}) | 0> = DataType.ViewportLength<TLength>;
 
-  type MinWidth<TLength> = DataType.ViewportLength<TLength>;
+  type MinWidth<TLength = (string & {}) | 0> = DataType.ViewportLength<TLength>;
 
   type MinZoom = "auto" | (string & {}) | (number & {});
 
@@ -30179,7 +30235,7 @@ export namespace AtRule {
 
   type UserZoom = "-ms-zoom" | "fixed" | "zoom";
 
-  type Width<TLength> = DataType.ViewportLength<TLength> | (string & {});
+  type Width<TLength = (string & {}) | 0> = DataType.ViewportLength<TLength> | (string & {});
 
   type Zoom = "auto" | (string & {}) | (number & {});
 }
@@ -30191,9 +30247,9 @@ declare namespace DataType {
 
   type Attachment = "fixed" | "local" | "scroll";
 
-  type BgPosition<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | (string & {});
+  type BgPosition<TLength = (string & {}) | 0> = TLength | "bottom" | "center" | "left" | "right" | "top" | (string & {});
 
-  type BgSize<TLength> = TLength | "auto" | "contain" | "cover" | (string & {});
+  type BgSize<TLength = (string & {}) | 0> = TLength | "auto" | "contain" | "cover" | (string & {});
 
   type BlendMode =
     | "color"
@@ -30255,7 +30311,7 @@ declare namespace DataType {
 
   type CubicBezierTimingFunction = "ease" | "ease-in" | "ease-in-out" | "ease-out" | (string & {});
 
-  type Dasharray<TLength> = TLength | (string & {}) | (number & {});
+  type Dasharray<TLength = (string & {}) | 0> = TLength | (string & {}) | (number & {});
 
   type DeprecatedSystemColor =
     | "ActiveBorder"
@@ -30309,7 +30365,7 @@ declare namespace DataType {
 
   type EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
 
-  type FinalBgLayer<TLength> = Color | BgPosition<TLength> | RepeatStyle | Attachment | Box | "none" | (string & {});
+  type FinalBgLayer<TLength = (string & {}) | 0> = Color | BgPosition<TLength> | RepeatStyle | Attachment | Box | "none" | (string & {});
 
   type FontStretchAbsolute =
     | "condensed"
@@ -30333,9 +30389,9 @@ declare namespace DataType {
 
   type LineStyle = "dashed" | "dotted" | "double" | "groove" | "hidden" | "inset" | "none" | "outset" | "ridge" | "solid";
 
-  type LineWidth<TLength> = TLength | "medium" | "thick" | "thin";
+  type LineWidth<TLength = (string & {}) | 0> = TLength | "medium" | "thick" | "thin";
 
-  type MaskLayer<TLength> = Position<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | "none" | (string & {});
+  type MaskLayer<TLength = (string & {}) | 0> = Position<TLength> | RepeatStyle | GeometryBox | CompositingOperator | MaskingMode | "no-clip" | "none" | (string & {});
 
   type MaskingMode = "alpha" | "luminance" | "match-source";
 
@@ -30492,7 +30548,7 @@ declare namespace DataType {
 
   type Paint = Color | "child" | "context-fill" | "context-stroke" | "none" | (string & {});
 
-  type Position<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | (string & {});
+  type Position<TLength = (string & {}) | 0> = TLength | "bottom" | "center" | "left" | "right" | "top" | (string & {});
 
   type Quote = "close-quote" | "no-close-quote" | "no-open-quote" | "open-quote";
 
@@ -30512,7 +30568,7 @@ declare namespace DataType {
 
   type TimingFunction = CubicBezierTimingFunction | StepTimingFunction | "linear";
 
-  type TrackBreadth<TLength> = TLength | "auto" | "max-content" | "min-content" | (string & {});
+  type TrackBreadth<TLength = (string & {}) | 0> = TLength | "auto" | "max-content" | "min-content" | (string & {});
 
-  type ViewportLength<TLength> = TLength | "auto" | (string & {});
+  type ViewportLength<TLength = (string & {}) | 0> = TLength | "auto" | (string & {});
 }
