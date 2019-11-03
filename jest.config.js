@@ -3,5 +3,5 @@ module.exports = {
   transform: {
     '^.+\\.ts$': '<rootDir>/preprocessor.js',
   },
-  testMatch: ['**/__tests__/src.*.ts'],
+  testMatch: ['**/__tests__/(src|dist).*.ts'],
 };

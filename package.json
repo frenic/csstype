@@ -37,7 +37,9 @@
     "pretty": "prettier --write build.ts **/*.{ts,js,json,md}",
     "lazy": "tsc && npm run lint && npm run pretty",
     "test": "jest --no-cache",
-    "prepublish": "tsc && npm run test && npm run build",
+    "test-src": "jest src.*.ts --no-cache",
+    "test-dist": "jest dist.*.ts --no-cache",
+    "prepublish": "tsc && npm run test-src && npm run build",
     "rebase-build": "git rebase --exec \"yarn --ignore-scripts && yarn build && git commit -a --amend --no-verify --no-edit --allow-empty\""
   },
   "files": [
