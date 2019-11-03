@@ -1,11 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`it detects errors 1`] = `
-"32:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {})>'.
+"42:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {})>'.
   Object literal may only specify known properties, and 'unknownProperty' does not exist in type 'Properties<0 | (string & {})>'."
 `;
 
 exports[`it detects errors 2`] = `
-"36:2 - Type 'string[]' is not assignable to type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | undefined'.
+"46:2 - Type 'string[]' is not assignable to type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | undefined'.
   Type 'string[]' is not assignable to type '\\"unset\\"'."
+`;
+
+exports[`it detects errors 3`] = `
+"51:6 - Type '{}' is not assignable to type 'string & {}'.
+  Type '{}' is not assignable to type 'string'."
 `;
