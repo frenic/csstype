@@ -209,30 +209,6 @@ export async function declarator(minTypesInDataTypes: number) {
 
   globalDeclarations.set(globals, globalsDeclaration);
 
-  const globalsAndString: DeclarableType[] = [aliasOf(globalsDeclaration), { type: Type.String }];
-
-  const globalsAndStringDeclaration: IDeclaration = {
-    name: 'GlobalsString',
-    export: false,
-    types: globalsAndString,
-    generics: [],
-    namespace: undefined,
-  };
-
-  globalDeclarations.set(globalsAndString, globalsAndStringDeclaration);
-
-  const declarableGlobalsAndNumber: DeclarableType[] = [aliasOf(globalsDeclaration), { type: Type.Number }];
-
-  const globalsAndNumberDeclaration: IDeclaration = {
-    name: 'GlobalsNumber',
-    export: false,
-    types: declarableGlobalsAndNumber,
-    generics: [],
-    namespace: undefined,
-  };
-
-  globalDeclarations.set(declarableGlobalsAndNumber, globalsAndNumberDeclaration);
-
   const standardLonghandPropertiesDefinition: IPropertyAlias[] = [];
   const standardShorthandPropertiesDefinition: IPropertyAlias[] = [];
   const standardLonghandPropertiesHyphenDefinition: IPropertyAlias[] = [];
@@ -311,28 +287,20 @@ export async function declarator(minTypesInDataTypes: number) {
       let declaration = propertyDeclarations.get(property.types);
 
       if (!declaration) {
-        if (property.types.length === 0) {
-          declaration = globalsDeclaration;
-        } else if (onlyContainsString(property.types)) {
-          declaration = globalsAndStringDeclaration;
-        } else if (onlyContainsNumber(property.types)) {
-          declaration = globalsAndNumberDeclaration;
-        } else {
-          const declarationName = toPropertyDeclarationName(property.name);
+        const declarationName = toPropertyDeclarationName(property.name);
 
-          declaration = {
-            name: declarationName,
-            export: true,
-            types: [aliasOf(globalsDeclaration), ...declarable(property.types)],
-            generics,
-            namespace: propertyNamespace,
-          };
+        declaration = {
+          name: declarationName,
+          export: true,
+          types: [aliasOf(globalsDeclaration), ...declarable(property.types)],
+          generics,
+          namespace: propertyNamespace,
+        };
 
-          // Some SVG properties are shared with regular style properties
-          // and we assume here that they are identical
-          if (!declarationNameExists(propertyDeclarations, declarationName)) {
-            propertyDeclarations.set(property.types, declaration);
-          }
+        // Some SVG properties are shared with regular style properties
+        // and we assume here that they are identical
+        if (!declarationNameExists(propertyDeclarations, declarationName)) {
+          propertyDeclarations.set(property.types, declaration);
         }
       }
 
