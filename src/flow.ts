@@ -1,5 +1,5 @@
-import { IDeclaration, IInterface, isAliasProperty } from './declarator';
-import { EOL, generatingDeclarations, stringifyGenerics, stringifyTypes } from './output';
+import { DeclarableType, IDeclaration, IInterface, isAliasProperty } from './declarator';
+import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './output';
 
 export default async function flow() {
   const { namespaces, interfaces, declarations } = await generatingDeclarations;
@@ -65,6 +65,13 @@ export default async function flow() {
     EOL}`;
 }
 
+function stringifyTypes(types: DeclarableType | DeclarableType[]) {
+  if (!Array.isArray(types)) {
+    types = [types];
+  }
+  return types.map(createStringifyType(undefined, true)).join(' | ');
+}
+
 function combineFlowExactTypes(input: string[]): string {
   if (input.length === 0) {
     return '';
@@ -83,7 +90,7 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
   let output = '';
 
   const extendList = combineFlowExactTypes(
-    entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)),
+    entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)),
   );
 
   if (entry.export) {
@@ -91,7 +98,7 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
   }
 
   output += 'type ';
-  output += namespace + entry.name + stringifyGenerics(entry.generics);
+  output += namespace + entry.name + stringifyGenerics(entry.generics, true, stringifyTypes);
   output += ' = ' + extendList;
 
   if (entry.properties.length > 0) {
@@ -104,7 +111,7 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
 
     for (const property of entry.properties) {
       if (isAliasProperty(property)) {
-        const generics = stringifyGenerics(property.generics, true);
+        const generics = stringifyGenerics(property.generics);
         const key = JSON.stringify(property.name);
         let type = (property.namespace ? property.namespace.name : '') + property.alias.name + generics;
         if (entry.fallback) {
@@ -114,7 +121,7 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
 
         output += `${key}?: ${type},`;
       } else {
-        const value = stringifyTypes(property.type, undefined, true);
+        const value = stringifyTypes(property.type);
         const key = JSON.stringify(property.name);
         let type = value;
         if (entry.fallback) {
@@ -141,11 +148,7 @@ function outputDeclaration(entry: IDeclaration, namespace = '') {
     output += 'export ';
   }
 
-  output += `type ${namespace + entry.name + stringifyGenerics(entry.generics, true)} = ${stringifyTypes(
-    entry.types,
-    undefined,
-    true,
-  )}`;
+  output += `type ${namespace + entry.name + stringifyGenerics(entry.generics)} = ${stringifyTypes(entry.types)}`;
 
   return output;
 }

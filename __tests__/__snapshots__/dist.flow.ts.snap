@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`it detects errors 1`] = `"31:44 - Cannot assign object literal to \`unknownProperty\` because property \`unknownProperty\` is missing in \`Properties\` [1] but exists in object literal [2]."`;
+exports[`it detects errors 1`] = `"41:44 - Cannot assign object literal to \`unknownProperty\` because property \`unknownProperty\` is missing in \`Properties\` [1] but exists in object literal [2]."`;

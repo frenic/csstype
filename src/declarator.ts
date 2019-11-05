@@ -6,7 +6,7 @@ import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } fro
 import { getPseudos } from './selectors';
 import { IDataType, Type, TypeType } from './typer';
 
-interface IAlias {
+export interface IAlias {
   type: Type.Alias;
   name: string;
   generics: IGenerics[];
@@ -15,7 +15,7 @@ interface IAlias {
 
 export interface IGenerics {
   name: string;
-  defaults?: string;
+  defaults?: SimpleType[];
   extend?: string;
 }
 
@@ -46,6 +46,7 @@ type PropertyType = IPropertyAlias | IPropertyType;
 
 type MixedType = TypeType<IDataType<Type.DataType> | IAlias>;
 export type DeclarableType = TypeType<IAlias>;
+export type SimpleType = Exclude<DeclarableType, IAlias>;
 
 export interface INamespace {
   name: string;
@@ -63,7 +64,7 @@ export interface IDeclaration {
 
 const lengthGeneric: IGenerics = {
   name: 'TLength',
-  defaults: 'string | 0',
+  defaults: [{ type: Type.String }, { type: Type.NumericLiteral, literal: 0 }],
 };
 
 export async function declarator(minTypesInDataTypes: number) {
