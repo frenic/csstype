@@ -5,7 +5,7 @@ import { addType, ResolvedType, Type } from './typer';
 const REGEX_SIMPLE_PSEUDO_SELECTOR = /(?!:?:[\w-]+\()(:?:[\w-]+)/g;
 const REGEX_ADVANCED_PSEUDO_SELECTOR = /(:?:[\w-]+)\(/g;
 
-export let getPseudos = () => {
+export async function getPseudos() {
   let simple: ResolvedType[] = [];
   let advanced: ResolvedType[] = [];
 
@@ -14,26 +14,21 @@ export let getPseudos = () => {
     while ((match = REGEX_SIMPLE_PSEUDO_SELECTOR.exec(selectors[selector].syntax))) {
       simple = addType(simple, { type: Type.StringLiteral, literal: match[1] });
 
-      for (const alternative of alternativeSelectors(match[1])) {
+      for (const alternative of await alternativeSelectors(match[1])) {
         simple = addType(simple, { type: Type.StringLiteral, literal: alternative });
       }
     }
     while ((match = REGEX_ADVANCED_PSEUDO_SELECTOR.exec(selectors[selector].syntax))) {
       advanced = addType(advanced, { type: Type.StringLiteral, literal: match[1] });
 
-      for (const alternative of alternativeSelectors(match[1])) {
+      for (const alternative of await alternativeSelectors(match[1])) {
         advanced = addType(advanced, { type: Type.StringLiteral, literal: alternative });
       }
     }
   }
-  // Cache
-  getPseudos = () => ({
-    simple,
-    advanced,
-  });
 
   return {
     simple,
     advanced,
   };
-};
+}

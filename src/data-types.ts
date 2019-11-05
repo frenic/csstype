@@ -3,25 +3,36 @@ import { getPropertySyntax, getSyntax } from './data';
 import parse from './parser';
 import typing, { addType, DataType, hasType, IDataType, ResolvedType, Type, TypeType } from './typer';
 
-const dataTypes: { [key: string]: ResolvedType[] } = {};
+export interface IDataTypeDictionary {
+  [key: string]: ResolvedType[];
+}
 
-export default dataTypes;
+export async function getDataTypesOf<TReturn>(dataTypeOf: (dataTypes: IDataTypeDictionary) => Promise<TReturn>) {
+  const dictionary: IDataTypeDictionary = {};
+  const result = await dataTypeOf(dictionary);
+  return [dictionary, result] as const;
+}
 
-export function resolveDataTypes(
+export async function resolveDataTypes(
+  dictionary: IDataTypeDictionary,
   types: TypeType[],
-  resolver: (dataType: IDataType) => ResolvedType[] = simpleDataTypeResolver,
-  min = 3,
-): ResolvedType[] {
+  minTypesInDataTypes: number,
+  resolver: (
+    dataTypes: IDataTypeDictionary,
+    dataType: IDataType,
+    min: number,
+  ) => Promise<ResolvedType[]> = simpleDataTypeResolver,
+): Promise<ResolvedType[]> {
   let resolvedDataTypes: ResolvedType[] = [];
 
   for (const type of types) {
     switch (type.type) {
       case Type.DataType: {
-        const resolvedDataType = resolver(type);
+        const resolvedDataType = await resolver(dictionary, type, minTypesInDataTypes);
 
-        if (resolvedDataType.length >= min) {
+        if (resolvedDataType.length >= minTypesInDataTypes) {
           // Dissolve data type if it's too small
-          resolvedDataTypes = addType(resolvedDataTypes, addDataType(type.name, resolvedDataType));
+          resolvedDataTypes = addType(resolvedDataTypes, addDataType(dictionary, type.name, resolvedDataType));
         } else {
           for (const resolvedType of resolvedDataType) {
             resolvedDataTypes = addType(resolvedDataTypes, resolvedType);
@@ -30,7 +41,7 @@ export function resolveDataTypes(
         break;
       }
       case Type.PropertyReference: {
-        const resolvedProperty = resolver(type);
+        const resolvedProperty = await resolver(dictionary, type, minTypesInDataTypes);
 
         // Dissolve property references completely
         for (const resolvedType of resolvedProperty) {
@@ -46,42 +57,58 @@ export function resolveDataTypes(
   return resolvedDataTypes;
 }
 
-function simpleDataTypeResolver(dataType: IDataType): ResolvedType[] {
-  const syntax = getSyntax(dataType.name);
-  return syntax ? resolveDataTypes(typing(parse(syntax)), simpleDataTypeResolver) : [{ type: Type.String }];
+async function simpleDataTypeResolver(
+  dictionary: IDataTypeDictionary,
+  dataType: IDataType,
+  minTypesInDataTypes: number,
+): Promise<ResolvedType[]> {
+  const syntax = await getSyntax(dataType.name);
+  return syntax
+    ? resolveDataTypes(dictionary, typing(parse(syntax)), minTypesInDataTypes, simpleDataTypeResolver)
+    : [{ type: Type.String }];
 }
 
-export function createPropertyDataTypeResolver(data: MDN.CompatData | null, min?: number) {
-  const resolver: (dataType: IDataType) => ResolvedType[] = dataType => {
-    const syntax = dataType.type === Type.DataType ? getSyntax(dataType.name) : getPropertySyntax(dataType.name);
+export function createPropertyDataTypeResolver(data: MDN.CompatData | undefined) {
+  const resolver: (
+    dictionary: IDataTypeDictionary,
+    dataType: IDataType,
+    min: number,
+  ) => Promise<ResolvedType[]> = async (dictionary, dataType, minTypesInDataTypes) => {
+    const syntax =
+      dataType.type === Type.DataType ? await getSyntax(dataType.name) : await getPropertySyntax(dataType.name);
     return syntax
-      ? resolveDataTypes(data ? typing(compatSyntax(data, parse(syntax))) : typing(parse(syntax)), resolver)
+      ? resolveDataTypes(
+          dictionary,
+          data ? typing(compatSyntax(data, parse(syntax))) : typing(parse(syntax)),
+          minTypesInDataTypes,
+          resolver,
+        )
       : [{ type: Type.String }];
   };
 
   return resolver;
 }
 
-function addDataType(name: string, types: ResolvedType[], index = 0): DataType {
+function addDataType(dictionary: IDataTypeDictionary, name: string, types: ResolvedType[], index = 0): DataType {
   const realName = name + (index > 0 ? index + 1 : '');
 
   // Rename in case of conflict
-  if (realName in dataTypes) {
-    const existingDataType = dataTypes[realName];
+  if (realName in dictionary) {
+    const existingDataType = dictionary[realName];
 
     for (const type of types) {
       if (!hasType(existingDataType, type)) {
-        return addDataType(name, types, index + 1);
+        return addDataType(dictionary, name, types, index + 1);
       }
     }
     for (const type of existingDataType) {
       if (!hasType(types, type)) {
-        return addDataType(name, types, index + 1);
+        return addDataType(dictionary, name, types, index + 1);
       }
     }
   }
 
-  dataTypes[realName] = types;
+  dictionary[realName] = types;
 
   return {
     type: Type.DataType,

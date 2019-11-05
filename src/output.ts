@@ -1,210 +1,81 @@
-import { DeclarableType, declarations, IGenerics, interfaces, isAliasProperty } from './declarator';
+import { DeclarableType, declarator, IGenerics, INamespace, SimpleType } from './declarator';
 import { Type } from './typer';
 
-const EOL = '\n';
+export const EOL = '\n';
 
-export default () => ({
-  flow: flow(),
-  typescript: typescript(),
-});
+export const generatingDeclarations = declarator(3);
+export function createStringifyType(): (type: SimpleType) => string;
 
-function combineFlowExactTypes(input: string[]): string {
-  if (input.length === 0) {
-    return '';
-  } else if (input.length === 1) {
-    return input[0];
-  } else {
-    return '{|' + input.map(type => `...${type}`).join(`,${EOL}`) + '|}';
-  }
-}
+export function createStringifyType(
+  currentNamespace: INamespace | undefined,
+  noNamespaceSupport?: boolean,
+): (type: DeclarableType) => string;
 
-function getNameForFallbackable(name: string): string {
-  return 'Fallbackable' + name[0].toUpperCase() + name.slice(1);
-}
+export function createStringifyType(currentNamespace?: INamespace | undefined, noNamespaceSupport = false) {
+  return ((type: DeclarableType) => {
+    switch (type.type) {
+      case Type.String:
+        return 'string';
+      case Type.Number:
+        return 'number';
+      case Type.StringLiteral:
+        return JSON.stringify(type.literal);
+      case Type.NumericLiteral:
+        return type.literal;
+      case Type.Alias: {
+        let namespace = '';
 
-function flow() {
-  let interfacesOutput = '';
-
-  const fallbackSet: Set<string> = new Set();
-
-  for (const item of interfaces) {
-    if (interfacesOutput) {
-      interfacesOutput += EOL + EOL;
-    }
-
-    const extendList = combineFlowExactTypes(
-      item.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)),
-    );
-
-    interfacesOutput += 'export type ';
-    interfacesOutput += item.name + stringifyGenerics(item.generics);
-    interfacesOutput += ' = ' + extendList;
-
-    if (item.properties.length > 0) {
-      if (extendList) {
-        // TODO: remove this branch since it's not getting hit
-        interfacesOutput += ' & ';
-      }
-
-      interfacesOutput += '{|' + EOL;
-
-      for (const property of item.properties) {
-        if (isAliasProperty(property)) {
-          const generics = stringifyGenerics(property.generics, true);
-          const key = JSON.stringify(property.name);
-          let type = property.alias.name + generics;
-          if (item.fallback) {
-            fallbackSet.add(type);
-            type = getNameForFallbackable(type);
+        if (type.namespace) {
+          if (noNamespaceSupport) {
+            namespace = type.namespace.name;
+          } else if (type.namespace !== currentNamespace) {
+            namespace = `${type.namespace.name}.`;
+          } else {
+            // The type is in its own namespace so keep it empty
           }
-
-          interfacesOutput += `${key}?: ${type},`;
-        } else {
-          const value = stringifyTypes(property.type);
-          const key = JSON.stringify(property.name);
-          let type = value;
-          if (item.fallback) {
-            fallbackSet.add(type);
-            type = getNameForFallbackable(type);
-          }
-
-          interfacesOutput += `${key}?: ${type},`;
         }
 
-        interfacesOutput += EOL;
+        return namespace + type.name + stringifyGenerics(type.generics);
       }
-
-      interfacesOutput += '|}';
+      case Type.Length:
+        return 'TLength';
     }
-  }
-
-  let declarationsOutput = '';
-  for (const declaration of declarations.values()) {
-    if (declarationsOutput) {
-      declarationsOutput += EOL + EOL;
-    }
-
-    declarationsOutput += ' ';
-
-    if (declaration.export) {
-      declarationsOutput += 'export ';
-    }
-
-    declarationsOutput += `type ${declaration.name + stringifyGenerics(declaration.generics, true)} = ${stringifyTypes(
-      declaration.types,
-    ) + EOL}`;
-  }
-
-  const fallbacksOutput = [...fallbackSet]
-    .map(name => {
-      return `type ${getNameForFallbackable(name)} = ${name} | Array<${name}>;`;
-    })
-    .join(EOL);
-
-  return `// @flow strict ${EOL +
-    EOL +
-    '// See https://github.com/frenic/csstype/pull/67 for why all "fallbackable" types (e.g. `string | Array<string>`) are lifted here' +
-    EOL +
-    fallbacksOutput +
-    EOL +
-    EOL +
-    interfacesOutput +
-    EOL +
-    EOL +
-    declarationsOutput +
-    EOL}`;
+  }) as (type: SimpleType) => string;
 }
 
-function typescript() {
-  let interfacesOutput = '';
-  for (const item of interfaces) {
-    if (interfacesOutput) {
-      interfacesOutput += EOL + EOL;
-    }
+export function stringifyGenerics(items: IGenerics[] | undefined): string;
+export function stringifyGenerics(
+  items: IGenerics[] | undefined,
+  applyDefault: true,
+  stringifyTypes: (types: SimpleType[]) => string,
+): string;
 
-    const extendList = item.extends.map(extend => extend.name + stringifyGenerics(extend.generics, true)).join(', ');
-    interfacesOutput += 'export interface ' + item.name + stringifyGenerics(item.generics);
-
-    if (extendList) {
-      interfacesOutput += ` extends ${extendList}`;
-    }
-
-    interfacesOutput += '{' + EOL;
-
-    for (const property of item.properties) {
-      if (property.comment) {
-        interfacesOutput += property.comment + EOL;
-      }
-
-      if (isAliasProperty(property)) {
-        const generics = stringifyGenerics(property.generics, true);
-        interfacesOutput += `${JSON.stringify(property.name)}?: ${
-          item.fallback
-            ? `${property.alias.name + generics} | ${property.alias.name + generics}[];`
-            : `${property.alias.name + generics};`
-        }`;
-      } else {
-        const value = stringifyTypes(property.type);
-        interfacesOutput += `${JSON.stringify(property.name)}?: ${
-          item.fallback ? `${value} | ${value}[];` : `${value};`
-        }`;
-      }
-
-      interfacesOutput += EOL;
-    }
-
-    interfacesOutput += '}';
-  }
-
-  let declarationsOutput = '';
-  for (const declaration of declarations.values()) {
-    if (declarationsOutput) {
-      declarationsOutput += EOL + EOL;
-    }
-
-    if (declaration.export) {
-      declarationsOutput += 'export ';
-    }
-
-    declarationsOutput += `type ${declaration.name + stringifyGenerics(declaration.generics, true)} = ${stringifyTypes(
-      declaration.types,
-    ) + EOL}`;
-  }
-
-  return interfacesOutput + EOL + EOL + declarationsOutput;
-}
-
-function stringifyTypes(types: DeclarableType | DeclarableType[]) {
-  if (!Array.isArray(types)) {
-    types = [types];
-  }
-
-  return types
-    .map(type => {
-      switch (type.type) {
-        case Type.String:
-          return 'string';
-        case Type.Number:
-          return 'number';
-        case Type.StringLiteral:
-          return JSON.stringify(type.literal);
-        case Type.NumericLiteral:
-          return type.literal;
-        case Type.Alias:
-          return type.name + stringifyGenerics(type.generics, true);
-        case Type.Length:
-          return 'TLength';
-      }
-    })
-    .join(' | ');
-}
-
-function stringifyGenerics(items: IGenerics[] | undefined, ignoreDefault = false) {
+export function stringifyGenerics(
+  items: IGenerics[] | undefined,
+  applyDefault = false,
+  stringifyTypes?: (types: SimpleType[]) => string,
+) {
   if (!items || items.length === 0) {
     return '';
   }
 
   return `<${items
-    .map(({ name, defaults }) => (defaults && !ignoreDefault ? `${name} = ${defaults}` : name))
+    .map(({ name, extend, defaults }) => {
+      let generic = name;
+
+      if (extend) {
+        generic += ` extends ${extend}`;
+      }
+
+      if (applyDefault && defaults) {
+        if (typeof stringifyTypes !== 'function') {
+          throw new Error('Type stringifier needed');
+        }
+
+        generic += ` = ${stringifyTypes(defaults)}`;
+      }
+
+      return generic;
+    })
     .join(', ')}>`;
 }

@@ -39,9 +39,12 @@ if (process.argv.includes('--start')) {
 
 export default async function trigger() {
   console.info('Generating...');
-  const output = await create();
+  const { unformattedFlow, unformattedTypescript } = await create();
   console.info('Formatting...');
-  const [flow, typescript] = await Promise.all([format(output.flow, 'flow'), format(output.typescript, 'typescript')]);
+  const [flow, typescript] = await Promise.all([
+    format(unformattedFlow, 'flow'),
+    format(unformattedTypescript, 'typescript'),
+  ]);
   console.info(`Writing files...`);
   await Promise.all([writeFileAsync(FLOW_FILENAME, flow), writeFileAsync(TYPESCRIPT_FILENAME, typescript)]);
   console.info('Type checking...');
@@ -55,8 +58,9 @@ async function create() {
       delete require.cache[key];
     }
   }
-  const { default: output } = await import('./src/output');
-  return output();
+  const { default: generateFlow } = await import('./src/flow');
+  const { default: generateTypescript } = await import('./src/typescript');
+  return { unformattedFlow: await generateFlow(), unformattedTypescript: await generateTypescript() };
 }
 
 async function format(output: string, parser: prettier.BuiltInParserName) {

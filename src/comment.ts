@@ -8,8 +8,8 @@ import { getSummary } from './urls';
 const BLANK_ROW = '';
 const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\}]+\}\})/;
 
-export function composeCommentBlock(
-  compatibilityData: MDN.CompatData | null,
+export async function composeCommentBlock(
+  compatibilityData: MDN.CompatData | undefined,
   data: IExtendedProperty,
   vendor = false,
   obsolete = false,
@@ -18,7 +18,7 @@ export function composeCommentBlock(
   const includeCompatibility = !vendor && !obsolete && compatibilityData;
 
   if (data.mdn_url) {
-    const summary = getSummary(data.mdn_url);
+    const summary = await getSummary(data.mdn_url);
     if (summary) {
       rows.push(summary, BLANK_ROW);
     }
@@ -48,11 +48,13 @@ export function composeCommentBlock(
     rows.pop();
   }
 
-  return rows.length > 1
-    ? '/**\n * ' + rows.join('\n * ') + '\n */'
-    : rows.length === 1
-    ? '/** ' + rows[0] + ' */'
-    : null;
+  if (rows.length === 1) {
+    return '/** ' + rows[0] + ' */';
+  }
+
+  if (rows.length > 1) {
+    return '/**\n * ' + rows.join('\n * ') + '\n */';
+  }
 }
 
 function getCompatRows(compatibilityData: MDN.CompatData) {

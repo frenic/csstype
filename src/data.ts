@@ -8,13 +8,13 @@ import { error, warn } from './logger';
 import parse from './parser';
 import typing, { hasType } from './typer';
 
-export let getProperties = () => {
+export async function getProperties() {
   const properties: { [property: string]: IExtendedProperty } = {};
 
   for (const name in rawProperties) {
     properties[name] = {
       ...rawProperties[name],
-      syntax: getPropertySyntax(name),
+      syntax: await getPropertySyntax(name),
       shorthand:
         name in patchedProperties && typeof patchedProperties[name].shorthand === 'boolean'
           ? patchedProperties[name].shorthand
@@ -28,38 +28,31 @@ export let getProperties = () => {
     }
   }
 
-  // Cache
-  getProperties = () => properties;
-
   return properties;
-};
+}
 
-export let getSyntaxes = () => {
-  const syntaxes: { [property: string]: MDN.Syntax } = {};
+// export async function getSyntaxes(dataTypeDictionary: IDataTypeDictionary) {
+//   const syntaxes: { [property: string]: MDN.Syntax } = {};
+//   for (const name in rawSvgSyntaxes) {
+//     syntaxes[name] = {
+//       syntax: await getSyntax(dataTypeDictionary, name),
+//     };
+//   }
 
-  for (const name in rawSvgSyntaxes) {
-    syntaxes[name] = {
-      syntax: getSyntax(name),
-    };
-  }
+//   for (const name in rawSyntaxes) {
+//     syntaxes[name] = {
+//       syntax: await getSyntax(dataTypeDictionary, name),
+//     };
+//   }
 
-  for (const name in rawSyntaxes) {
-    syntaxes[name] = {
-      syntax: getSyntax(name),
-    };
-  }
+//   for (const name in patchedSyntaxes) {
+//     if (!(name in rawSyntaxes || name in rawSvgSyntaxes)) {
+//       syntaxes[name] = patchedSyntaxes[name];
+//     }
+//   }
 
-  for (const name in patchedSyntaxes) {
-    if (!(name in rawSyntaxes || name in rawSvgSyntaxes)) {
-      syntaxes[name] = patchedSyntaxes[name];
-    }
-  }
-
-  // Cache
-  getSyntaxes = () => syntaxes;
-
-  return syntaxes;
-};
+//   return syntaxes;
+// }
 
 export function isProperty(name: string) {
   return (
@@ -73,15 +66,15 @@ export function isSyntax(name: string) {
 
 const validatedPropertySyntaxes: string[] = [];
 
-export function getPropertySyntax(name: string) {
+export async function getPropertySyntax(name: string) {
   const patch = patchedProperties[name];
   const rawSyntax = rawProperties[name] && rawProperties[name].syntax;
 
   if (patch && patch.syntax) {
     if (rawSyntax && !validatedPropertySyntaxes.includes(name)) {
-      const compatibilityData = getPropertyData(name);
+      const compatibilityData = await getPropertyData(name);
 
-      if (!validatePatch(compatibilityData, rawProperties[name].syntax, patch.syntax)) {
+      if (compatibilityData && !validatePatch(compatibilityData, rawProperties[name].syntax, patch.syntax)) {
         error(
           'The patched property `%s` did not patch the source with anything or was incomplete compared to source',
           name,
@@ -103,7 +96,7 @@ export function getPropertySyntax(name: string) {
 
 const validatedSyntaxes: string[] = [];
 
-export function getSyntax(name: string) {
+export async function getSyntax(name: string) {
   const patch = patchedSyntaxes[name];
 
   const rawSyntax =
@@ -111,9 +104,9 @@ export function getSyntax(name: string) {
 
   if (patch && patch.syntax) {
     if (rawSyntax && !validatedSyntaxes.includes(name)) {
-      const compatibilityData = getTypesData(name);
+      const compatibilityData = await getTypesData(name);
 
-      if (!validatePatch(compatibilityData, rawSyntaxes[name].syntax, patch.syntax)) {
+      if (compatibilityData && !validatePatch(compatibilityData, rawSyntaxes[name].syntax, patch.syntax)) {
         error(
           'The patched syntax `%s` did not patch the source with anything or was incomplete compared to source',
           name,
@@ -133,17 +126,19 @@ export function getSyntax(name: string) {
   return rawSyntax;
 }
 
-function validatePatch(compat: MDN.CompatData | null, sourceSyntax: string, patchSyntax: string): boolean {
+async function validatePatch(compat: MDN.CompatData, sourceSyntax: string, patchSyntax: string): Promise<boolean> {
   // Dissolve all data types to check whether it already exists or not
-  const dissolvedSourceTypes = resolveDataTypes(
+  const dissolvedSourceTypes = await resolveDataTypes(
+    {},
     typing(parse(sourceSyntax)),
-    createPropertyDataTypeResolver(compat, Infinity),
     Infinity,
+    createPropertyDataTypeResolver(compat),
   );
-  const dissolvedPatchTypes = resolveDataTypes(
+  const dissolvedPatchTypes = await resolveDataTypes(
+    {},
     typing(parse(patchSyntax)),
-    createPropertyDataTypeResolver(compat, Infinity),
     Infinity,
+    createPropertyDataTypeResolver(compat),
   );
 
   for (const type of dissolvedSourceTypes) {
