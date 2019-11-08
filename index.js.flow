@@ -4,8 +4,9 @@
 type FallbackablePropertyAlignContent = FallbackablePropertyAlignContent | Array<FallbackablePropertyAlignContent>;
 type FallbackablePropertyAlignItems = FallbackablePropertyAlignItems | Array<FallbackablePropertyAlignItems>;
 type FallbackablePropertyAlignSelf = FallbackablePropertyAlignSelf | Array<FallbackablePropertyAlignSelf>;
-type FallbackableGlobalsString = FallbackableGlobalsString | Array<FallbackableGlobalsString>;
+type FallbackablePropertyAnimationDelay = FallbackablePropertyAnimationDelay | Array<FallbackablePropertyAnimationDelay>;
 type FallbackablePropertyAnimationDirection = FallbackablePropertyAnimationDirection | Array<FallbackablePropertyAnimationDirection>;
+type FallbackablePropertyAnimationDuration = FallbackablePropertyAnimationDuration | Array<FallbackablePropertyAnimationDuration>;
 type FallbackablePropertyAnimationFillMode = FallbackablePropertyAnimationFillMode | Array<FallbackablePropertyAnimationFillMode>;
 type FallbackablePropertyAnimationIterationCount = FallbackablePropertyAnimationIterationCount | Array<FallbackablePropertyAnimationIterationCount>;
 type FallbackablePropertyAnimationName = FallbackablePropertyAnimationName | Array<FallbackablePropertyAnimationName>;
@@ -105,7 +106,8 @@ type FallbackablePropertyEmptyCells = FallbackablePropertyEmptyCells | Array<Fal
 type FallbackablePropertyFilter = FallbackablePropertyFilter | Array<FallbackablePropertyFilter>;
 type FallbackablePropertyFlexBasis<TLength> = FallbackablePropertyFlexBasis<TLength> | Array<FallbackablePropertyFlexBasis<TLength>>;
 type FallbackablePropertyFlexDirection = FallbackablePropertyFlexDirection | Array<FallbackablePropertyFlexDirection>;
-type FallbackableGlobalsNumber = FallbackableGlobalsNumber | Array<FallbackableGlobalsNumber>;
+type FallbackablePropertyFlexGrow = FallbackablePropertyFlexGrow | Array<FallbackablePropertyFlexGrow>;
+type FallbackablePropertyFlexShrink = FallbackablePropertyFlexShrink | Array<FallbackablePropertyFlexShrink>;
 type FallbackablePropertyFlexWrap = FallbackablePropertyFlexWrap | Array<FallbackablePropertyFlexWrap>;
 type FallbackablePropertyFloat = FallbackablePropertyFloat | Array<FallbackablePropertyFloat>;
 type FallbackablePropertyFontFamily = FallbackablePropertyFontFamily | Array<FallbackablePropertyFontFamily>;
@@ -206,6 +208,8 @@ type FallbackablePropertyObjectPosition<TLength> = FallbackablePropertyObjectPos
 type FallbackablePropertyOffsetAnchor<TLength> = FallbackablePropertyOffsetAnchor<TLength> | Array<FallbackablePropertyOffsetAnchor<TLength>>;
 type FallbackablePropertyOffsetPosition<TLength> = FallbackablePropertyOffsetPosition<TLength> | Array<FallbackablePropertyOffsetPosition<TLength>>;
 type FallbackablePropertyOpacity = FallbackablePropertyOpacity | Array<FallbackablePropertyOpacity>;
+type FallbackablePropertyOrder = FallbackablePropertyOrder | Array<FallbackablePropertyOrder>;
+type FallbackablePropertyOrphans = FallbackablePropertyOrphans | Array<FallbackablePropertyOrphans>;
 type FallbackablePropertyOutlineColor = FallbackablePropertyOutlineColor | Array<FallbackablePropertyOutlineColor>;
 type FallbackablePropertyOutlineOffset<TLength> = FallbackablePropertyOutlineOffset<TLength> | Array<FallbackablePropertyOutlineOffset<TLength>>;
 type FallbackablePropertyOutlineStyle = FallbackablePropertyOutlineStyle | Array<FallbackablePropertyOutlineStyle>;
@@ -292,6 +296,7 @@ type FallbackablePropertyTextDecorationSkipInk = FallbackablePropertyTextDecorat
 type FallbackablePropertyTextDecorationStyle = FallbackablePropertyTextDecorationStyle | Array<FallbackablePropertyTextDecorationStyle>;
 type FallbackablePropertyTextDecorationThickness<TLength> = FallbackablePropertyTextDecorationThickness<TLength> | Array<FallbackablePropertyTextDecorationThickness<TLength>>;
 type FallbackablePropertyTextEmphasisColor = FallbackablePropertyTextEmphasisColor | Array<FallbackablePropertyTextEmphasisColor>;
+type FallbackablePropertyTextEmphasisPosition = FallbackablePropertyTextEmphasisPosition | Array<FallbackablePropertyTextEmphasisPosition>;
 type FallbackablePropertyTextEmphasisStyle = FallbackablePropertyTextEmphasisStyle | Array<FallbackablePropertyTextEmphasisStyle>;
 type FallbackablePropertyTextIndent<TLength> = FallbackablePropertyTextIndent<TLength> | Array<FallbackablePropertyTextIndent<TLength>>;
 type FallbackablePropertyTextJustify = FallbackablePropertyTextJustify | Array<FallbackablePropertyTextJustify>;
@@ -309,6 +314,8 @@ type FallbackablePropertyTransform = FallbackablePropertyTransform | Array<Fallb
 type FallbackablePropertyTransformBox = FallbackablePropertyTransformBox | Array<FallbackablePropertyTransformBox>;
 type FallbackablePropertyTransformOrigin<TLength> = FallbackablePropertyTransformOrigin<TLength> | Array<FallbackablePropertyTransformOrigin<TLength>>;
 type FallbackablePropertyTransformStyle = FallbackablePropertyTransformStyle | Array<FallbackablePropertyTransformStyle>;
+type FallbackablePropertyTransitionDelay = FallbackablePropertyTransitionDelay | Array<FallbackablePropertyTransitionDelay>;
+type FallbackablePropertyTransitionDuration = FallbackablePropertyTransitionDuration | Array<FallbackablePropertyTransitionDuration>;
 type FallbackablePropertyTransitionProperty = FallbackablePropertyTransitionProperty | Array<FallbackablePropertyTransitionProperty>;
 type FallbackablePropertyTransitionTimingFunction = FallbackablePropertyTransitionTimingFunction | Array<FallbackablePropertyTransitionTimingFunction>;
 type FallbackablePropertyTranslate<TLength> = FallbackablePropertyTranslate<TLength> | Array<FallbackablePropertyTranslate<TLength>>;
@@ -317,6 +324,7 @@ type FallbackablePropertyUserSelect = FallbackablePropertyUserSelect | Array<Fal
 type FallbackablePropertyVerticalAlign<TLength> = FallbackablePropertyVerticalAlign<TLength> | Array<FallbackablePropertyVerticalAlign<TLength>>;
 type FallbackablePropertyVisibility = FallbackablePropertyVisibility | Array<FallbackablePropertyVisibility>;
 type FallbackablePropertyWhiteSpace = FallbackablePropertyWhiteSpace | Array<FallbackablePropertyWhiteSpace>;
+type FallbackablePropertyWidows = FallbackablePropertyWidows | Array<FallbackablePropertyWidows>;
 type FallbackablePropertyWidth<TLength> = FallbackablePropertyWidth<TLength> | Array<FallbackablePropertyWidth<TLength>>;
 type FallbackablePropertyWillChange = FallbackablePropertyWillChange | Array<FallbackablePropertyWillChange>;
 type FallbackablePropertyWordBreak = FallbackablePropertyWordBreak | Array<FallbackablePropertyWordBreak>;
@@ -325,7 +333,7 @@ type FallbackablePropertyWordWrap = FallbackablePropertyWordWrap | Array<Fallbac
 type FallbackablePropertyWritingMode = FallbackablePropertyWritingMode | Array<FallbackablePropertyWritingMode>;
 type FallbackablePropertyZIndex = FallbackablePropertyZIndex | Array<FallbackablePropertyZIndex>;
 type FallbackablePropertyZoom = FallbackablePropertyZoom | Array<FallbackablePropertyZoom>;
-type FallbackableGlobals = FallbackableGlobals | Array<FallbackableGlobals>;
+type FallbackablePropertyAll = FallbackablePropertyAll | Array<FallbackablePropertyAll>;
 type FallbackablePropertyAnimation = FallbackablePropertyAnimation | Array<FallbackablePropertyAnimation>;
 type FallbackablePropertyBackground<TLength> = FallbackablePropertyBackground<TLength> | Array<FallbackablePropertyBackground<TLength>>;
 type FallbackablePropertyBorder<TLength> = FallbackablePropertyBorder<TLength> | Array<FallbackablePropertyBorder<TLength>>;
@@ -375,6 +383,7 @@ type FallbackablePropertyMozBorderRightColors = FallbackablePropertyMozBorderRig
 type FallbackablePropertyMozBorderTopColors = FallbackablePropertyMozBorderTopColors | Array<FallbackablePropertyMozBorderTopColors>;
 type FallbackablePropertyMozContextProperties = FallbackablePropertyMozContextProperties | Array<FallbackablePropertyMozContextProperties>;
 type FallbackablePropertyMozFloatEdge = FallbackablePropertyMozFloatEdge | Array<FallbackablePropertyMozFloatEdge>;
+type FallbackablePropertyMozForceBrokenImageIcon = FallbackablePropertyMozForceBrokenImageIcon | Array<FallbackablePropertyMozForceBrokenImageIcon>;
 type FallbackablePropertyMozImageRegion = FallbackablePropertyMozImageRegion | Array<FallbackablePropertyMozImageRegion>;
 type FallbackablePropertyMozOrient = FallbackablePropertyMozOrient | Array<FallbackablePropertyMozOrient>;
 type FallbackablePropertyMozOutlineRadiusBottomleft<TLength> =
@@ -392,8 +401,12 @@ type FallbackablePropertyMozWindowDragging = FallbackablePropertyMozWindowDraggi
 type FallbackablePropertyMsAccelerator = FallbackablePropertyMsAccelerator | Array<FallbackablePropertyMsAccelerator>;
 type FallbackablePropertyMsBlockProgression = FallbackablePropertyMsBlockProgression | Array<FallbackablePropertyMsBlockProgression>;
 type FallbackablePropertyMsContentZoomChaining = FallbackablePropertyMsContentZoomChaining | Array<FallbackablePropertyMsContentZoomChaining>;
+type FallbackablePropertyMsContentZoomLimitMax = FallbackablePropertyMsContentZoomLimitMax | Array<FallbackablePropertyMsContentZoomLimitMax>;
+type FallbackablePropertyMsContentZoomLimitMin = FallbackablePropertyMsContentZoomLimitMin | Array<FallbackablePropertyMsContentZoomLimitMin>;
+type FallbackablePropertyMsContentZoomSnapPoints = FallbackablePropertyMsContentZoomSnapPoints | Array<FallbackablePropertyMsContentZoomSnapPoints>;
 type FallbackablePropertyMsContentZoomSnapType = FallbackablePropertyMsContentZoomSnapType | Array<FallbackablePropertyMsContentZoomSnapType>;
 type FallbackablePropertyMsContentZooming = FallbackablePropertyMsContentZooming | Array<FallbackablePropertyMsContentZooming>;
+type FallbackablePropertyMsFilter = FallbackablePropertyMsFilter | Array<FallbackablePropertyMsFilter>;
 type FallbackablePropertyMsFlowFrom = FallbackablePropertyMsFlowFrom | Array<FallbackablePropertyMsFlowFrom>;
 type FallbackablePropertyMsFlowInto = FallbackablePropertyMsFlowInto | Array<FallbackablePropertyMsFlowInto>;
 type FallbackablePropertyMsHighContrastAdjust = FallbackablePropertyMsHighContrastAdjust | Array<FallbackablePropertyMsHighContrastAdjust>;
@@ -408,6 +421,8 @@ type FallbackablePropertyMsScrollLimitXMin<TLength> = FallbackablePropertyMsScro
 type FallbackablePropertyMsScrollLimitYMax<TLength> = FallbackablePropertyMsScrollLimitYMax<TLength> | Array<FallbackablePropertyMsScrollLimitYMax<TLength>>;
 type FallbackablePropertyMsScrollLimitYMin<TLength> = FallbackablePropertyMsScrollLimitYMin<TLength> | Array<FallbackablePropertyMsScrollLimitYMin<TLength>>;
 type FallbackablePropertyMsScrollRails = FallbackablePropertyMsScrollRails | Array<FallbackablePropertyMsScrollRails>;
+type FallbackablePropertyMsScrollSnapPointsX = FallbackablePropertyMsScrollSnapPointsX | Array<FallbackablePropertyMsScrollSnapPointsX>;
+type FallbackablePropertyMsScrollSnapPointsY = FallbackablePropertyMsScrollSnapPointsY | Array<FallbackablePropertyMsScrollSnapPointsY>;
 type FallbackablePropertyMsScrollSnapType = FallbackablePropertyMsScrollSnapType | Array<FallbackablePropertyMsScrollSnapType>;
 type FallbackablePropertyMsScrollTranslation = FallbackablePropertyMsScrollTranslation | Array<FallbackablePropertyMsScrollTranslation>;
 type FallbackablePropertyMsScrollbar3dlightColor = FallbackablePropertyMsScrollbar3dlightColor | Array<FallbackablePropertyMsScrollbar3dlightColor>;
@@ -449,13 +464,20 @@ type FallbackablePropertyWebkitTextStrokeColor = FallbackablePropertyWebkitTextS
 type FallbackablePropertyWebkitTextStrokeWidth<TLength> = FallbackablePropertyWebkitTextStrokeWidth<TLength> | Array<FallbackablePropertyWebkitTextStrokeWidth<TLength>>;
 type FallbackablePropertyWebkitTouchCallout = FallbackablePropertyWebkitTouchCallout | Array<FallbackablePropertyWebkitTouchCallout>;
 type FallbackablePropertyWebkitUserModify = FallbackablePropertyWebkitUserModify | Array<FallbackablePropertyWebkitUserModify>;
+type FallbackablePropertyMsContentZoomLimit = FallbackablePropertyMsContentZoomLimit | Array<FallbackablePropertyMsContentZoomLimit>;
 type FallbackablePropertyMsContentZoomSnap = FallbackablePropertyMsContentZoomSnap | Array<FallbackablePropertyMsContentZoomSnap>;
+type FallbackablePropertyMsScrollLimit = FallbackablePropertyMsScrollLimit | Array<FallbackablePropertyMsScrollLimit>;
+type FallbackablePropertyMsScrollSnapX = FallbackablePropertyMsScrollSnapX | Array<FallbackablePropertyMsScrollSnapX>;
+type FallbackablePropertyMsScrollSnapY = FallbackablePropertyMsScrollSnapY | Array<FallbackablePropertyMsScrollSnapY>;
 type FallbackablePropertyWebkitBorderBefore<TLength> = FallbackablePropertyWebkitBorderBefore<TLength> | Array<FallbackablePropertyWebkitBorderBefore<TLength>>;
 type FallbackablePropertyWebkitMask<TLength> = FallbackablePropertyWebkitMask<TLength> | Array<FallbackablePropertyWebkitMask<TLength>>;
 type FallbackablePropertyWebkitTextStroke<TLength> = FallbackablePropertyWebkitTextStroke<TLength> | Array<FallbackablePropertyWebkitTextStroke<TLength>>;
 type FallbackablePropertyBoxAlign = FallbackablePropertyBoxAlign | Array<FallbackablePropertyBoxAlign>;
 type FallbackablePropertyBoxDirection = FallbackablePropertyBoxDirection | Array<FallbackablePropertyBoxDirection>;
+type FallbackablePropertyBoxFlex = FallbackablePropertyBoxFlex | Array<FallbackablePropertyBoxFlex>;
+type FallbackablePropertyBoxFlexGroup = FallbackablePropertyBoxFlexGroup | Array<FallbackablePropertyBoxFlexGroup>;
 type FallbackablePropertyBoxLines = FallbackablePropertyBoxLines | Array<FallbackablePropertyBoxLines>;
+type FallbackablePropertyBoxOrdinalGroup = FallbackablePropertyBoxOrdinalGroup | Array<FallbackablePropertyBoxOrdinalGroup>;
 type FallbackablePropertyBoxOrient = FallbackablePropertyBoxOrient | Array<FallbackablePropertyBoxOrient>;
 type FallbackablePropertyBoxPack = FallbackablePropertyBoxPack | Array<FallbackablePropertyBoxPack>;
 type FallbackablePropertyClip = FallbackablePropertyClip | Array<FallbackablePropertyClip>;
@@ -482,8 +504,10 @@ type FallbackablePropertyColorInterpolation = FallbackablePropertyColorInterpola
 type FallbackablePropertyColorRendering = FallbackablePropertyColorRendering | Array<FallbackablePropertyColorRendering>;
 type FallbackablePropertyDominantBaseline = FallbackablePropertyDominantBaseline | Array<FallbackablePropertyDominantBaseline>;
 type FallbackablePropertyFill = FallbackablePropertyFill | Array<FallbackablePropertyFill>;
+type FallbackablePropertyFillOpacity = FallbackablePropertyFillOpacity | Array<FallbackablePropertyFillOpacity>;
 type FallbackablePropertyFillRule = FallbackablePropertyFillRule | Array<FallbackablePropertyFillRule>;
 type FallbackablePropertyFloodColor = FallbackablePropertyFloodColor | Array<FallbackablePropertyFloodColor>;
+type FallbackablePropertyFloodOpacity = FallbackablePropertyFloodOpacity | Array<FallbackablePropertyFloodOpacity>;
 type FallbackablePropertyGlyphOrientationVertical = FallbackablePropertyGlyphOrientationVertical | Array<FallbackablePropertyGlyphOrientationVertical>;
 type FallbackablePropertyLightingColor = FallbackablePropertyLightingColor | Array<FallbackablePropertyLightingColor>;
 type FallbackablePropertyMarker = FallbackablePropertyMarker | Array<FallbackablePropertyMarker>;
@@ -492,11 +516,14 @@ type FallbackablePropertyMarkerMid = FallbackablePropertyMarkerMid | Array<Fallb
 type FallbackablePropertyMarkerStart = FallbackablePropertyMarkerStart | Array<FallbackablePropertyMarkerStart>;
 type FallbackablePropertyShapeRendering = FallbackablePropertyShapeRendering | Array<FallbackablePropertyShapeRendering>;
 type FallbackablePropertyStopColor = FallbackablePropertyStopColor | Array<FallbackablePropertyStopColor>;
+type FallbackablePropertyStopOpacity = FallbackablePropertyStopOpacity | Array<FallbackablePropertyStopOpacity>;
 type FallbackablePropertyStroke = FallbackablePropertyStroke | Array<FallbackablePropertyStroke>;
 type FallbackablePropertyStrokeDasharray<TLength> = FallbackablePropertyStrokeDasharray<TLength> | Array<FallbackablePropertyStrokeDasharray<TLength>>;
 type FallbackablePropertyStrokeDashoffset<TLength> = FallbackablePropertyStrokeDashoffset<TLength> | Array<FallbackablePropertyStrokeDashoffset<TLength>>;
 type FallbackablePropertyStrokeLinecap = FallbackablePropertyStrokeLinecap | Array<FallbackablePropertyStrokeLinecap>;
 type FallbackablePropertyStrokeLinejoin = FallbackablePropertyStrokeLinejoin | Array<FallbackablePropertyStrokeLinejoin>;
+type FallbackablePropertyStrokeMiterlimit = FallbackablePropertyStrokeMiterlimit | Array<FallbackablePropertyStrokeMiterlimit>;
+type FallbackablePropertyStrokeOpacity = FallbackablePropertyStrokeOpacity | Array<FallbackablePropertyStrokeOpacity>;
 type FallbackablePropertyStrokeWidth<TLength> = FallbackablePropertyStrokeWidth<TLength> | Array<FallbackablePropertyStrokeWidth<TLength>>;
 type FallbackablePropertyTextAnchor = FallbackablePropertyTextAnchor | Array<FallbackablePropertyTextAnchor>;
 type FallbackablePropertyVectorEffect = FallbackablePropertyVectorEffect | Array<FallbackablePropertyVectorEffect>;
@@ -526,9 +553,9 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   alignContent?: PropertyAlignContent,
   alignItems?: PropertyAlignItems,
   alignSelf?: PropertyAlignSelf,
-  animationDelay?: GlobalsString,
+  animationDelay?: PropertyAnimationDelay,
   animationDirection?: PropertyAnimationDirection,
-  animationDuration?: GlobalsString,
+  animationDuration?: PropertyAnimationDuration,
   animationFillMode?: PropertyAnimationFillMode,
   animationIterationCount?: PropertyAnimationIterationCount,
   animationName?: PropertyAnimationName,
@@ -628,8 +655,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   filter?: PropertyFilter,
   flexBasis?: PropertyFlexBasis<TLength>,
   flexDirection?: PropertyFlexDirection,
-  flexGrow?: GlobalsNumber,
-  flexShrink?: GlobalsNumber,
+  flexGrow?: PropertyFlexGrow,
+  flexShrink?: PropertyFlexShrink,
   flexWrap?: PropertyFlexWrap,
   float?: PropertyFloat,
   fontFamily?: PropertyFontFamily,
@@ -734,8 +761,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   offsetRotate?: PropertyOffsetRotate,
   offsetRotation?: PropertyOffsetRotate,
   opacity?: PropertyOpacity,
-  order?: GlobalsNumber,
-  orphans?: GlobalsNumber,
+  order?: PropertyOrder,
+  orphans?: PropertyOrphans,
   outlineColor?: PropertyOutlineColor,
   outlineOffset?: PropertyOutlineOffset<TLength>,
   outlineStyle?: PropertyOutlineStyle,
@@ -823,7 +850,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   textDecorationThickness?: PropertyTextDecorationThickness<TLength>,
   textDecorationWidth?: PropertyTextDecorationThickness<TLength>,
   textEmphasisColor?: PropertyTextEmphasisColor,
-  textEmphasisPosition?: GlobalsString,
+  textEmphasisPosition?: PropertyTextEmphasisPosition,
   textEmphasisStyle?: PropertyTextEmphasisStyle,
   textIndent?: PropertyTextIndent<TLength>,
   textJustify?: PropertyTextJustify,
@@ -841,8 +868,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   transformBox?: PropertyTransformBox,
   transformOrigin?: PropertyTransformOrigin<TLength>,
   transformStyle?: PropertyTransformStyle,
-  transitionDelay?: GlobalsString,
-  transitionDuration?: GlobalsString,
+  transitionDelay?: PropertyTransitionDelay,
+  transitionDuration?: PropertyTransitionDuration,
   transitionProperty?: PropertyTransitionProperty,
   transitionTimingFunction?: PropertyTransitionTimingFunction,
   translate?: PropertyTranslate<TLength>,
@@ -851,7 +878,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   verticalAlign?: PropertyVerticalAlign<TLength>,
   visibility?: PropertyVisibility,
   whiteSpace?: PropertyWhiteSpace,
-  widows?: GlobalsNumber,
+  widows?: PropertyWidows,
   width?: PropertyWidth<TLength>,
   willChange?: PropertyWillChange,
   wordBreak?: PropertyWordBreak,
@@ -863,7 +890,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
 |};
 
 export type StandardShorthandProperties<TLength = string | 0> = {|
-  all?: Globals,
+  all?: PropertyAll,
   animation?: PropertyAnimation,
   background?: PropertyBackground<TLength>,
   border?: PropertyBorder<TLength>,
@@ -912,9 +939,9 @@ export type StandardShorthandProperties<TLength = string | 0> = {|
 export type StandardProperties<TLength = string | 0> = {| ...StandardLonghandProperties<TLength>, ...StandardShorthandProperties<TLength> |};
 
 export type VendorLonghandProperties<TLength = string | 0> = {|
-  MozAnimationDelay?: GlobalsString,
+  MozAnimationDelay?: PropertyAnimationDelay,
   MozAnimationDirection?: PropertyAnimationDirection,
-  MozAnimationDuration?: GlobalsString,
+  MozAnimationDuration?: PropertyAnimationDuration,
   MozAnimationFillMode?: PropertyAnimationFillMode,
   MozAnimationIterationCount?: PropertyAnimationIterationCount,
   MozAnimationName?: PropertyAnimationName,
@@ -943,7 +970,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   MozFloatEdge?: PropertyMozFloatEdge,
   MozFontFeatureSettings?: PropertyFontFeatureSettings,
   MozFontLanguageOverride?: PropertyFontLanguageOverride,
-  MozForceBrokenImageIcon?: GlobalsNumber,
+  MozForceBrokenImageIcon?: PropertyMozForceBrokenImageIcon,
   MozHyphens?: PropertyHyphens,
   MozImageRegion?: PropertyMozImageRegion,
   MozMarginEnd?: PropertyMarginInlineEnd<TLength>,
@@ -962,8 +989,8 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   MozTextSizeAdjust?: PropertyTextSizeAdjust,
   MozTransformOrigin?: PropertyTransformOrigin<TLength>,
   MozTransformStyle?: PropertyTransformStyle,
-  MozTransitionDelay?: GlobalsString,
-  MozTransitionDuration?: GlobalsString,
+  MozTransitionDelay?: PropertyTransitionDelay,
+  MozTransitionDuration?: PropertyTransitionDuration,
   MozTransitionProperty?: PropertyTransitionProperty,
   MozTransitionTimingFunction?: PropertyTransitionTimingFunction,
   MozUserFocus?: PropertyMozUserFocus,
@@ -974,14 +1001,14 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   msAlignSelf?: PropertyAlignSelf,
   msBlockProgression?: PropertyMsBlockProgression,
   msContentZoomChaining?: PropertyMsContentZoomChaining,
-  msContentZoomLimitMax?: GlobalsString,
-  msContentZoomLimitMin?: GlobalsString,
-  msContentZoomSnapPoints?: GlobalsString,
+  msContentZoomLimitMax?: PropertyMsContentZoomLimitMax,
+  msContentZoomLimitMin?: PropertyMsContentZoomLimitMin,
+  msContentZoomSnapPoints?: PropertyMsContentZoomSnapPoints,
   msContentZoomSnapType?: PropertyMsContentZoomSnapType,
   msContentZooming?: PropertyMsContentZooming,
-  msFilter?: GlobalsString,
+  msFilter?: PropertyMsFilter,
   msFlexDirection?: PropertyFlexDirection,
-  msFlexPositive?: GlobalsNumber,
+  msFlexPositive?: PropertyFlexGrow,
   msFlowFrom?: PropertyMsFlowFrom,
   msFlowInto?: PropertyMsFlowInto,
   msGridColumns?: PropertyGridAutoColumns<TLength>,
@@ -993,7 +1020,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   msHyphens?: PropertyHyphens,
   msImeAlign?: PropertyMsImeAlign,
   msLineBreak?: PropertyLineBreak,
-  msOrder?: GlobalsNumber,
+  msOrder?: PropertyOrder,
   msOverflowStyle?: PropertyMsOverflowStyle,
   msOverflowX?: PropertyOverflowX,
   msOverflowY?: PropertyOverflowY,
@@ -1003,8 +1030,8 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   msScrollLimitYMax?: PropertyMsScrollLimitYMax<TLength>,
   msScrollLimitYMin?: PropertyMsScrollLimitYMin<TLength>,
   msScrollRails?: PropertyMsScrollRails,
-  msScrollSnapPointsX?: GlobalsString,
-  msScrollSnapPointsY?: GlobalsString,
+  msScrollSnapPointsX?: PropertyMsScrollSnapPointsX,
+  msScrollSnapPointsY?: PropertyMsScrollSnapPointsY,
   msScrollSnapType?: PropertyMsScrollSnapType,
   msScrollTranslation?: PropertyMsScrollTranslation,
   msScrollbar3dlightColor?: PropertyMsScrollbar3dlightColor,
@@ -1022,8 +1049,8 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   msTouchSelect?: PropertyMsTouchSelect,
   msTransform?: PropertyTransform,
   msTransformOrigin?: PropertyTransformOrigin<TLength>,
-  msTransitionDelay?: GlobalsString,
-  msTransitionDuration?: GlobalsString,
+  msTransitionDelay?: PropertyTransitionDelay,
+  msTransitionDuration?: PropertyTransitionDuration,
   msTransitionProperty?: PropertyTransitionProperty,
   msTransitionTimingFunction?: PropertyTransitionTimingFunction,
   msUserSelect?: PropertyMsUserSelect,
@@ -1040,9 +1067,9 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitAlignContent?: PropertyAlignContent,
   WebkitAlignItems?: PropertyAlignItems,
   WebkitAlignSelf?: PropertyAlignSelf,
-  WebkitAnimationDelay?: GlobalsString,
+  WebkitAnimationDelay?: PropertyAnimationDelay,
   WebkitAnimationDirection?: PropertyAnimationDirection,
-  WebkitAnimationDuration?: GlobalsString,
+  WebkitAnimationDuration?: PropertyAnimationDuration,
   WebkitAnimationFillMode?: PropertyAnimationFillMode,
   WebkitAnimationIterationCount?: PropertyAnimationIterationCount,
   WebkitAnimationName?: PropertyAnimationName,
@@ -1079,8 +1106,8 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitFilter?: PropertyFilter,
   WebkitFlexBasis?: PropertyFlexBasis<TLength>,
   WebkitFlexDirection?: PropertyFlexDirection,
-  WebkitFlexGrow?: GlobalsNumber,
-  WebkitFlexShrink?: GlobalsNumber,
+  WebkitFlexGrow?: PropertyFlexGrow,
+  WebkitFlexShrink?: PropertyFlexShrink,
   WebkitFlexWrap?: PropertyFlexWrap,
   WebkitFontFeatureSettings?: PropertyFontFeatureSettings,
   WebkitFontKerning?: PropertyFontKerning,
@@ -1104,7 +1131,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitMaskRepeatY?: PropertyWebkitMaskRepeatY,
   WebkitMaskSize?: PropertyWebkitMaskSize<TLength>,
   WebkitMaxInlineSize?: PropertyMaxInlineSize<TLength>,
-  WebkitOrder?: GlobalsNumber,
+  WebkitOrder?: PropertyOrder,
   WebkitOverflowScrolling?: PropertyWebkitOverflowScrolling,
   WebkitPaddingEnd?: PropertyPaddingInlineEnd<TLength>,
   WebkitPaddingStart?: PropertyPaddingInlineStart<TLength>,
@@ -1119,7 +1146,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitTextDecorationSkip?: PropertyTextDecorationSkip,
   WebkitTextDecorationStyle?: PropertyTextDecorationStyle,
   WebkitTextEmphasisColor?: PropertyTextEmphasisColor,
-  WebkitTextEmphasisPosition?: GlobalsString,
+  WebkitTextEmphasisPosition?: PropertyTextEmphasisPosition,
   WebkitTextEmphasisStyle?: PropertyTextEmphasisStyle,
   WebkitTextFillColor?: PropertyWebkitTextFillColor,
   WebkitTextOrientation?: PropertyTextOrientation,
@@ -1130,8 +1157,8 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitTransform?: PropertyTransform,
   WebkitTransformOrigin?: PropertyTransformOrigin<TLength>,
   WebkitTransformStyle?: PropertyTransformStyle,
-  WebkitTransitionDelay?: GlobalsString,
-  WebkitTransitionDuration?: GlobalsString,
+  WebkitTransitionDelay?: PropertyTransitionDelay,
+  WebkitTransitionDuration?: PropertyTransitionDuration,
   WebkitTransitionProperty?: PropertyTransitionProperty,
   WebkitTransitionTimingFunction?: PropertyTransitionTimingFunction,
   WebkitUserModify?: PropertyWebkitUserModify,
@@ -1145,12 +1172,12 @@ export type VendorShorthandProperties<TLength = string | 0> = {|
   MozColumnRule?: PropertyColumnRule<TLength>,
   MozColumns?: PropertyColumns<TLength>,
   MozTransition?: PropertyTransition,
-  msContentZoomLimit?: GlobalsString,
+  msContentZoomLimit?: PropertyMsContentZoomLimit,
   msContentZoomSnap?: PropertyMsContentZoomSnap,
   msFlex?: PropertyFlex<TLength>,
-  msScrollLimit?: GlobalsString,
-  msScrollSnapX?: GlobalsString,
-  msScrollSnapY?: GlobalsString,
+  msScrollLimit?: PropertyMsScrollLimit,
+  msScrollSnapX?: PropertyMsScrollSnapX,
+  msScrollSnapY?: PropertyMsScrollSnapY,
   msTransition?: PropertyTransition,
   WebkitAnimation?: PropertyAnimation,
   WebkitBorderBefore?: PropertyWebkitBorderBefore<TLength>,
@@ -1171,10 +1198,10 @@ export type VendorProperties<TLength = string | 0> = {| ...VendorLonghandPropert
 export type ObsoleteProperties<TLength = string | 0> = {|
   boxAlign?: PropertyBoxAlign,
   boxDirection?: PropertyBoxDirection,
-  boxFlex?: GlobalsNumber,
-  boxFlexGroup?: GlobalsNumber,
+  boxFlex?: PropertyBoxFlex,
+  boxFlexGroup?: PropertyBoxFlexGroup,
   boxLines?: PropertyBoxLines,
-  boxOrdinalGroup?: GlobalsNumber,
+  boxOrdinalGroup?: PropertyBoxOrdinalGroup,
   boxOrient?: PropertyBoxOrient,
   boxPack?: PropertyBoxPack,
   clip?: PropertyClip,
@@ -1198,10 +1225,10 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   textCombineHorizontal?: PropertyTextCombineUpright,
   KhtmlBoxAlign?: PropertyBoxAlign,
   KhtmlBoxDirection?: PropertyBoxDirection,
-  KhtmlBoxFlex?: GlobalsNumber,
-  KhtmlBoxFlexGroup?: GlobalsNumber,
+  KhtmlBoxFlex?: PropertyBoxFlex,
+  KhtmlBoxFlexGroup?: PropertyBoxFlexGroup,
   KhtmlBoxLines?: PropertyBoxLines,
-  KhtmlBoxOrdinalGroup?: GlobalsNumber,
+  KhtmlBoxOrdinalGroup?: PropertyBoxOrdinalGroup,
   KhtmlBoxOrient?: PropertyBoxOrient,
   KhtmlBoxPack?: PropertyBoxPack,
   KhtmlLineBreak?: PropertyLineBreak,
@@ -1219,8 +1246,8 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   MozBorderRadiusTopright?: PropertyBorderTopRightRadius<TLength>,
   MozBoxAlign?: PropertyBoxAlign,
   MozBoxDirection?: PropertyBoxDirection,
-  MozBoxFlex?: GlobalsNumber,
-  MozBoxOrdinalGroup?: GlobalsNumber,
+  MozBoxFlex?: PropertyBoxFlex,
+  MozBoxOrdinalGroup?: PropertyBoxOrdinalGroup,
   MozBoxOrient?: PropertyBoxOrient,
   MozBoxPack?: PropertyBoxPack,
   MozBoxShadow?: PropertyBoxShadow,
@@ -1239,9 +1266,9 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   MozWindowShadow?: PropertyMozWindowShadow,
   msImeMode?: PropertyImeMode,
   OAnimation?: PropertyAnimation,
-  OAnimationDelay?: GlobalsString,
+  OAnimationDelay?: PropertyAnimationDelay,
   OAnimationDirection?: PropertyAnimationDirection,
-  OAnimationDuration?: GlobalsString,
+  OAnimationDuration?: PropertyAnimationDuration,
   OAnimationFillMode?: PropertyAnimationFillMode,
   OAnimationIterationCount?: PropertyAnimationIterationCount,
   OAnimationName?: PropertyAnimationName,
@@ -1251,16 +1278,16 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   OBorderImage?: PropertyBorderImage,
   OTransform?: PropertyTransform,
   OTransition?: PropertyTransition,
-  OTransitionDelay?: GlobalsString,
-  OTransitionDuration?: GlobalsString,
+  OTransitionDelay?: PropertyTransitionDelay,
+  OTransitionDuration?: PropertyTransitionDuration,
   OTransitionProperty?: PropertyTransitionProperty,
   OTransitionTimingFunction?: PropertyTransitionTimingFunction,
   WebkitBoxAlign?: PropertyBoxAlign,
   WebkitBoxDirection?: PropertyBoxDirection,
-  WebkitBoxFlex?: GlobalsNumber,
-  WebkitBoxFlexGroup?: GlobalsNumber,
+  WebkitBoxFlex?: PropertyBoxFlex,
+  WebkitBoxFlexGroup?: PropertyBoxFlexGroup,
   WebkitBoxLines?: PropertyBoxLines,
-  WebkitBoxOrdinalGroup?: GlobalsNumber,
+  WebkitBoxOrdinalGroup?: PropertyBoxOrdinalGroup,
   WebkitBoxOrient?: PropertyBoxOrient,
   WebkitBoxPack?: PropertyBoxPack,
   WebkitScrollSnapPointsX?: PropertyScrollSnapPointsX,
@@ -1281,11 +1308,11 @@ export type SvgProperties<TLength = string | 0> = {|
   display?: PropertyDisplay,
   dominantBaseline?: PropertyDominantBaseline,
   fill?: PropertyFill,
-  fillOpacity?: GlobalsNumber,
+  fillOpacity?: PropertyFillOpacity,
   fillRule?: PropertyFillRule,
   filter?: PropertyFilter,
   floodColor?: PropertyFloodColor,
-  floodOpacity?: GlobalsNumber,
+  floodOpacity?: PropertyFloodOpacity,
   font?: PropertyFont,
   fontFamily?: PropertyFontFamily,
   fontSize?: PropertyFontSize<TLength>,
@@ -1310,14 +1337,14 @@ export type SvgProperties<TLength = string | 0> = {|
   pointerEvents?: PropertyPointerEvents,
   shapeRendering?: PropertyShapeRendering,
   stopColor?: PropertyStopColor,
-  stopOpacity?: GlobalsNumber,
+  stopOpacity?: PropertyStopOpacity,
   stroke?: PropertyStroke,
   strokeDasharray?: PropertyStrokeDasharray<TLength>,
   strokeDashoffset?: PropertyStrokeDashoffset<TLength>,
   strokeLinecap?: PropertyStrokeLinecap,
   strokeLinejoin?: PropertyStrokeLinejoin,
-  strokeMiterlimit?: GlobalsNumber,
-  strokeOpacity?: GlobalsNumber,
+  strokeMiterlimit?: PropertyStrokeMiterlimit,
+  strokeOpacity?: PropertyStrokeOpacity,
   strokeWidth?: PropertyStrokeWidth<TLength>,
   textAnchor?: PropertyTextAnchor,
   textDecoration?: PropertyTextDecoration<TLength>,
@@ -1336,9 +1363,9 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "align-content"?: PropertyAlignContent,
   "align-items"?: PropertyAlignItems,
   "align-self"?: PropertyAlignSelf,
-  "animation-delay"?: GlobalsString,
+  "animation-delay"?: PropertyAnimationDelay,
   "animation-direction"?: PropertyAnimationDirection,
-  "animation-duration"?: GlobalsString,
+  "animation-duration"?: PropertyAnimationDuration,
   "animation-fill-mode"?: PropertyAnimationFillMode,
   "animation-iteration-count"?: PropertyAnimationIterationCount,
   "animation-name"?: PropertyAnimationName,
@@ -1438,8 +1465,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   filter?: PropertyFilter,
   "flex-basis"?: PropertyFlexBasis<TLength>,
   "flex-direction"?: PropertyFlexDirection,
-  "flex-grow"?: GlobalsNumber,
-  "flex-shrink"?: GlobalsNumber,
+  "flex-grow"?: PropertyFlexGrow,
+  "flex-shrink"?: PropertyFlexShrink,
   "flex-wrap"?: PropertyFlexWrap,
   float?: PropertyFloat,
   "font-family"?: PropertyFontFamily,
@@ -1544,8 +1571,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "offset-rotate"?: PropertyOffsetRotate,
   "offset-rotation"?: PropertyOffsetRotate,
   opacity?: PropertyOpacity,
-  order?: GlobalsNumber,
-  orphans?: GlobalsNumber,
+  order?: PropertyOrder,
+  orphans?: PropertyOrphans,
   "outline-color"?: PropertyOutlineColor,
   "outline-offset"?: PropertyOutlineOffset<TLength>,
   "outline-style"?: PropertyOutlineStyle,
@@ -1633,7 +1660,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "text-decoration-thickness"?: PropertyTextDecorationThickness<TLength>,
   "text-decoration-width"?: PropertyTextDecorationThickness<TLength>,
   "text-emphasis-color"?: PropertyTextEmphasisColor,
-  "text-emphasis-position"?: GlobalsString,
+  "text-emphasis-position"?: PropertyTextEmphasisPosition,
   "text-emphasis-style"?: PropertyTextEmphasisStyle,
   "text-indent"?: PropertyTextIndent<TLength>,
   "text-justify"?: PropertyTextJustify,
@@ -1651,8 +1678,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "transform-box"?: PropertyTransformBox,
   "transform-origin"?: PropertyTransformOrigin<TLength>,
   "transform-style"?: PropertyTransformStyle,
-  "transition-delay"?: GlobalsString,
-  "transition-duration"?: GlobalsString,
+  "transition-delay"?: PropertyTransitionDelay,
+  "transition-duration"?: PropertyTransitionDuration,
   "transition-property"?: PropertyTransitionProperty,
   "transition-timing-function"?: PropertyTransitionTimingFunction,
   translate?: PropertyTranslate<TLength>,
@@ -1661,7 +1688,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "vertical-align"?: PropertyVerticalAlign<TLength>,
   visibility?: PropertyVisibility,
   "white-space"?: PropertyWhiteSpace,
-  widows?: GlobalsNumber,
+  widows?: PropertyWidows,
   width?: PropertyWidth<TLength>,
   "will-change"?: PropertyWillChange,
   "word-break"?: PropertyWordBreak,
@@ -1673,7 +1700,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
 |};
 
 export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {|
-  all?: Globals,
+  all?: PropertyAll,
   animation?: PropertyAnimation,
   background?: PropertyBackground<TLength>,
   border?: PropertyBorder<TLength>,
@@ -1722,9 +1749,9 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {|
 export type StandardPropertiesHyphen<TLength = string | 0> = {| ...StandardLonghandPropertiesHyphen<TLength>, ...StandardShorthandPropertiesHyphen<TLength> |};
 
 export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
-  "-moz-animation-delay"?: GlobalsString,
+  "-moz-animation-delay"?: PropertyAnimationDelay,
   "-moz-animation-direction"?: PropertyAnimationDirection,
-  "-moz-animation-duration"?: GlobalsString,
+  "-moz-animation-duration"?: PropertyAnimationDuration,
   "-moz-animation-fill-mode"?: PropertyAnimationFillMode,
   "-moz-animation-iteration-count"?: PropertyAnimationIterationCount,
   "-moz-animation-name"?: PropertyAnimationName,
@@ -1753,7 +1780,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-moz-float-edge"?: PropertyMozFloatEdge,
   "-moz-font-feature-settings"?: PropertyFontFeatureSettings,
   "-moz-font-language-override"?: PropertyFontLanguageOverride,
-  "-moz-force-broken-image-icon"?: GlobalsNumber,
+  "-moz-force-broken-image-icon"?: PropertyMozForceBrokenImageIcon,
   "-moz-hyphens"?: PropertyHyphens,
   "-moz-image-region"?: PropertyMozImageRegion,
   "-moz-margin-end"?: PropertyMarginInlineEnd<TLength>,
@@ -1772,8 +1799,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-moz-text-size-adjust"?: PropertyTextSizeAdjust,
   "-moz-transform-origin"?: PropertyTransformOrigin<TLength>,
   "-moz-transform-style"?: PropertyTransformStyle,
-  "-moz-transition-delay"?: GlobalsString,
-  "-moz-transition-duration"?: GlobalsString,
+  "-moz-transition-delay"?: PropertyTransitionDelay,
+  "-moz-transition-duration"?: PropertyTransitionDuration,
   "-moz-transition-property"?: PropertyTransitionProperty,
   "-moz-transition-timing-function"?: PropertyTransitionTimingFunction,
   "-moz-user-focus"?: PropertyMozUserFocus,
@@ -1784,14 +1811,14 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-ms-align-self"?: PropertyAlignSelf,
   "-ms-block-progression"?: PropertyMsBlockProgression,
   "-ms-content-zoom-chaining"?: PropertyMsContentZoomChaining,
-  "-ms-content-zoom-limit-max"?: GlobalsString,
-  "-ms-content-zoom-limit-min"?: GlobalsString,
-  "-ms-content-zoom-snap-points"?: GlobalsString,
+  "-ms-content-zoom-limit-max"?: PropertyMsContentZoomLimitMax,
+  "-ms-content-zoom-limit-min"?: PropertyMsContentZoomLimitMin,
+  "-ms-content-zoom-snap-points"?: PropertyMsContentZoomSnapPoints,
   "-ms-content-zoom-snap-type"?: PropertyMsContentZoomSnapType,
   "-ms-content-zooming"?: PropertyMsContentZooming,
-  "-ms-filter"?: GlobalsString,
+  "-ms-filter"?: PropertyMsFilter,
   "-ms-flex-direction"?: PropertyFlexDirection,
-  "-ms-flex-positive"?: GlobalsNumber,
+  "-ms-flex-positive"?: PropertyFlexGrow,
   "-ms-flow-from"?: PropertyMsFlowFrom,
   "-ms-flow-into"?: PropertyMsFlowInto,
   "-ms-grid-columns"?: PropertyGridAutoColumns<TLength>,
@@ -1803,7 +1830,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-ms-hyphens"?: PropertyHyphens,
   "-ms-ime-align"?: PropertyMsImeAlign,
   "-ms-line-break"?: PropertyLineBreak,
-  "-ms-order"?: GlobalsNumber,
+  "-ms-order"?: PropertyOrder,
   "-ms-overflow-style"?: PropertyMsOverflowStyle,
   "-ms-overflow-x"?: PropertyOverflowX,
   "-ms-overflow-y"?: PropertyOverflowY,
@@ -1813,8 +1840,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-ms-scroll-limit-y-max"?: PropertyMsScrollLimitYMax<TLength>,
   "-ms-scroll-limit-y-min"?: PropertyMsScrollLimitYMin<TLength>,
   "-ms-scroll-rails"?: PropertyMsScrollRails,
-  "-ms-scroll-snap-points-x"?: GlobalsString,
-  "-ms-scroll-snap-points-y"?: GlobalsString,
+  "-ms-scroll-snap-points-x"?: PropertyMsScrollSnapPointsX,
+  "-ms-scroll-snap-points-y"?: PropertyMsScrollSnapPointsY,
   "-ms-scroll-snap-type"?: PropertyMsScrollSnapType,
   "-ms-scroll-translation"?: PropertyMsScrollTranslation,
   "-ms-scrollbar-3dlight-color"?: PropertyMsScrollbar3dlightColor,
@@ -1832,8 +1859,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-ms-touch-select"?: PropertyMsTouchSelect,
   "-ms-transform"?: PropertyTransform,
   "-ms-transform-origin"?: PropertyTransformOrigin<TLength>,
-  "-ms-transition-delay"?: GlobalsString,
-  "-ms-transition-duration"?: GlobalsString,
+  "-ms-transition-delay"?: PropertyTransitionDelay,
+  "-ms-transition-duration"?: PropertyTransitionDuration,
   "-ms-transition-property"?: PropertyTransitionProperty,
   "-ms-transition-timing-function"?: PropertyTransitionTimingFunction,
   "-ms-user-select"?: PropertyMsUserSelect,
@@ -1850,9 +1877,9 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-align-content"?: PropertyAlignContent,
   "-webkit-align-items"?: PropertyAlignItems,
   "-webkit-align-self"?: PropertyAlignSelf,
-  "-webkit-animation-delay"?: GlobalsString,
+  "-webkit-animation-delay"?: PropertyAnimationDelay,
   "-webkit-animation-direction"?: PropertyAnimationDirection,
-  "-webkit-animation-duration"?: GlobalsString,
+  "-webkit-animation-duration"?: PropertyAnimationDuration,
   "-webkit-animation-fill-mode"?: PropertyAnimationFillMode,
   "-webkit-animation-iteration-count"?: PropertyAnimationIterationCount,
   "-webkit-animation-name"?: PropertyAnimationName,
@@ -1889,8 +1916,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-filter"?: PropertyFilter,
   "-webkit-flex-basis"?: PropertyFlexBasis<TLength>,
   "-webkit-flex-direction"?: PropertyFlexDirection,
-  "-webkit-flex-grow"?: GlobalsNumber,
-  "-webkit-flex-shrink"?: GlobalsNumber,
+  "-webkit-flex-grow"?: PropertyFlexGrow,
+  "-webkit-flex-shrink"?: PropertyFlexShrink,
   "-webkit-flex-wrap"?: PropertyFlexWrap,
   "-webkit-font-feature-settings"?: PropertyFontFeatureSettings,
   "-webkit-font-kerning"?: PropertyFontKerning,
@@ -1914,7 +1941,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-mask-repeat-y"?: PropertyWebkitMaskRepeatY,
   "-webkit-mask-size"?: PropertyWebkitMaskSize<TLength>,
   "-webkit-max-inline-size"?: PropertyMaxInlineSize<TLength>,
-  "-webkit-order"?: GlobalsNumber,
+  "-webkit-order"?: PropertyOrder,
   "-webkit-overflow-scrolling"?: PropertyWebkitOverflowScrolling,
   "-webkit-padding-end"?: PropertyPaddingInlineEnd<TLength>,
   "-webkit-padding-start"?: PropertyPaddingInlineStart<TLength>,
@@ -1929,7 +1956,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-text-decoration-skip"?: PropertyTextDecorationSkip,
   "-webkit-text-decoration-style"?: PropertyTextDecorationStyle,
   "-webkit-text-emphasis-color"?: PropertyTextEmphasisColor,
-  "-webkit-text-emphasis-position"?: GlobalsString,
+  "-webkit-text-emphasis-position"?: PropertyTextEmphasisPosition,
   "-webkit-text-emphasis-style"?: PropertyTextEmphasisStyle,
   "-webkit-text-fill-color"?: PropertyWebkitTextFillColor,
   "-webkit-text-orientation"?: PropertyTextOrientation,
@@ -1940,8 +1967,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-transform"?: PropertyTransform,
   "-webkit-transform-origin"?: PropertyTransformOrigin<TLength>,
   "-webkit-transform-style"?: PropertyTransformStyle,
-  "-webkit-transition-delay"?: GlobalsString,
-  "-webkit-transition-duration"?: GlobalsString,
+  "-webkit-transition-delay"?: PropertyTransitionDelay,
+  "-webkit-transition-duration"?: PropertyTransitionDuration,
   "-webkit-transition-property"?: PropertyTransitionProperty,
   "-webkit-transition-timing-function"?: PropertyTransitionTimingFunction,
   "-webkit-user-modify"?: PropertyWebkitUserModify,
@@ -1955,12 +1982,12 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {|
   "-moz-column-rule"?: PropertyColumnRule<TLength>,
   "-moz-columns"?: PropertyColumns<TLength>,
   "-moz-transition"?: PropertyTransition,
-  "-ms-content-zoom-limit"?: GlobalsString,
+  "-ms-content-zoom-limit"?: PropertyMsContentZoomLimit,
   "-ms-content-zoom-snap"?: PropertyMsContentZoomSnap,
   "-ms-flex"?: PropertyFlex<TLength>,
-  "-ms-scroll-limit"?: GlobalsString,
-  "-ms-scroll-snap-x"?: GlobalsString,
-  "-ms-scroll-snap-y"?: GlobalsString,
+  "-ms-scroll-limit"?: PropertyMsScrollLimit,
+  "-ms-scroll-snap-x"?: PropertyMsScrollSnapX,
+  "-ms-scroll-snap-y"?: PropertyMsScrollSnapY,
   "-ms-transition"?: PropertyTransition,
   "-webkit-animation"?: PropertyAnimation,
   "-webkit-border-before"?: PropertyWebkitBorderBefore<TLength>,
@@ -1981,10 +2008,10 @@ export type VendorPropertiesHyphen<TLength = string | 0> = {| ...VendorLonghandP
 export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "box-align"?: PropertyBoxAlign,
   "box-direction"?: PropertyBoxDirection,
-  "box-flex"?: GlobalsNumber,
-  "box-flex-group"?: GlobalsNumber,
+  "box-flex"?: PropertyBoxFlex,
+  "box-flex-group"?: PropertyBoxFlexGroup,
   "box-lines"?: PropertyBoxLines,
-  "box-ordinal-group"?: GlobalsNumber,
+  "box-ordinal-group"?: PropertyBoxOrdinalGroup,
   "box-orient"?: PropertyBoxOrient,
   "box-pack"?: PropertyBoxPack,
   clip?: PropertyClip,
@@ -2008,10 +2035,10 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "text-combine-horizontal"?: PropertyTextCombineUpright,
   "-khtml-box-align"?: PropertyBoxAlign,
   "-khtml-box-direction"?: PropertyBoxDirection,
-  "-khtml-box-flex"?: GlobalsNumber,
-  "-khtml-box-flex-group"?: GlobalsNumber,
+  "-khtml-box-flex"?: PropertyBoxFlex,
+  "-khtml-box-flex-group"?: PropertyBoxFlexGroup,
   "-khtml-box-lines"?: PropertyBoxLines,
-  "-khtml-box-ordinal-group"?: GlobalsNumber,
+  "-khtml-box-ordinal-group"?: PropertyBoxOrdinalGroup,
   "-khtml-box-orient"?: PropertyBoxOrient,
   "-khtml-box-pack"?: PropertyBoxPack,
   "-khtml-line-break"?: PropertyLineBreak,
@@ -2029,8 +2056,8 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-moz-border-radius-topright"?: PropertyBorderTopRightRadius<TLength>,
   "-moz-box-align"?: PropertyBoxAlign,
   "-moz-box-direction"?: PropertyBoxDirection,
-  "-moz-box-flex"?: GlobalsNumber,
-  "-moz-box-ordinal-group"?: GlobalsNumber,
+  "-moz-box-flex"?: PropertyBoxFlex,
+  "-moz-box-ordinal-group"?: PropertyBoxOrdinalGroup,
   "-moz-box-orient"?: PropertyBoxOrient,
   "-moz-box-pack"?: PropertyBoxPack,
   "-moz-box-shadow"?: PropertyBoxShadow,
@@ -2049,9 +2076,9 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-moz-window-shadow"?: PropertyMozWindowShadow,
   "-ms-ime-mode"?: PropertyImeMode,
   "-o-animation"?: PropertyAnimation,
-  "-o-animation-delay"?: GlobalsString,
+  "-o-animation-delay"?: PropertyAnimationDelay,
   "-o-animation-direction"?: PropertyAnimationDirection,
-  "-o-animation-duration"?: GlobalsString,
+  "-o-animation-duration"?: PropertyAnimationDuration,
   "-o-animation-fill-mode"?: PropertyAnimationFillMode,
   "-o-animation-iteration-count"?: PropertyAnimationIterationCount,
   "-o-animation-name"?: PropertyAnimationName,
@@ -2061,16 +2088,16 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-o-border-image"?: PropertyBorderImage,
   "-o-transform"?: PropertyTransform,
   "-o-transition"?: PropertyTransition,
-  "-o-transition-delay"?: GlobalsString,
-  "-o-transition-duration"?: GlobalsString,
+  "-o-transition-delay"?: PropertyTransitionDelay,
+  "-o-transition-duration"?: PropertyTransitionDuration,
   "-o-transition-property"?: PropertyTransitionProperty,
   "-o-transition-timing-function"?: PropertyTransitionTimingFunction,
   "-webkit-box-align"?: PropertyBoxAlign,
   "-webkit-box-direction"?: PropertyBoxDirection,
-  "-webkit-box-flex"?: GlobalsNumber,
-  "-webkit-box-flex-group"?: GlobalsNumber,
+  "-webkit-box-flex"?: PropertyBoxFlex,
+  "-webkit-box-flex-group"?: PropertyBoxFlexGroup,
   "-webkit-box-lines"?: PropertyBoxLines,
-  "-webkit-box-ordinal-group"?: GlobalsNumber,
+  "-webkit-box-ordinal-group"?: PropertyBoxOrdinalGroup,
   "-webkit-box-orient"?: PropertyBoxOrient,
   "-webkit-box-pack"?: PropertyBoxPack,
   "-webkit-scroll-snap-points-x"?: PropertyScrollSnapPointsX,
@@ -2091,11 +2118,11 @@ export type SvgPropertiesHyphen<TLength = string | 0> = {|
   display?: PropertyDisplay,
   "dominant-baseline"?: PropertyDominantBaseline,
   fill?: PropertyFill,
-  "fill-opacity"?: GlobalsNumber,
+  "fill-opacity"?: PropertyFillOpacity,
   "fill-rule"?: PropertyFillRule,
   filter?: PropertyFilter,
   "flood-color"?: PropertyFloodColor,
-  "flood-opacity"?: GlobalsNumber,
+  "flood-opacity"?: PropertyFloodOpacity,
   font?: PropertyFont,
   "font-family"?: PropertyFontFamily,
   "font-size"?: PropertyFontSize<TLength>,
@@ -2120,14 +2147,14 @@ export type SvgPropertiesHyphen<TLength = string | 0> = {|
   "pointer-events"?: PropertyPointerEvents,
   "shape-rendering"?: PropertyShapeRendering,
   "stop-color"?: PropertyStopColor,
-  "stop-opacity"?: GlobalsNumber,
+  "stop-opacity"?: PropertyStopOpacity,
   stroke?: PropertyStroke,
   "stroke-dasharray"?: PropertyStrokeDasharray<TLength>,
   "stroke-dashoffset"?: PropertyStrokeDashoffset<TLength>,
   "stroke-linecap"?: PropertyStrokeLinecap,
   "stroke-linejoin"?: PropertyStrokeLinejoin,
-  "stroke-miterlimit"?: GlobalsNumber,
-  "stroke-opacity"?: GlobalsNumber,
+  "stroke-miterlimit"?: PropertyStrokeMiterlimit,
+  "stroke-opacity"?: PropertyStrokeOpacity,
   "stroke-width"?: PropertyStrokeWidth<TLength>,
   "text-anchor"?: PropertyTextAnchor,
   "text-decoration"?: PropertyTextDecoration<TLength>,
@@ -2151,9 +2178,9 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   alignContent?: FallbackablePropertyAlignContent,
   alignItems?: FallbackablePropertyAlignItems,
   alignSelf?: FallbackablePropertyAlignSelf,
-  animationDelay?: FallbackableGlobalsString,
+  animationDelay?: FallbackablePropertyAnimationDelay,
   animationDirection?: FallbackablePropertyAnimationDirection,
-  animationDuration?: FallbackableGlobalsString,
+  animationDuration?: FallbackablePropertyAnimationDuration,
   animationFillMode?: FallbackablePropertyAnimationFillMode,
   animationIterationCount?: FallbackablePropertyAnimationIterationCount,
   animationName?: FallbackablePropertyAnimationName,
@@ -2253,8 +2280,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   filter?: FallbackablePropertyFilter,
   flexBasis?: FallbackablePropertyFlexBasis<TLength>,
   flexDirection?: FallbackablePropertyFlexDirection,
-  flexGrow?: FallbackableGlobalsNumber,
-  flexShrink?: FallbackableGlobalsNumber,
+  flexGrow?: FallbackablePropertyFlexGrow,
+  flexShrink?: FallbackablePropertyFlexShrink,
   flexWrap?: FallbackablePropertyFlexWrap,
   float?: FallbackablePropertyFloat,
   fontFamily?: FallbackablePropertyFontFamily,
@@ -2359,8 +2386,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   offsetRotate?: FallbackablePropertyOffsetRotate,
   offsetRotation?: FallbackablePropertyOffsetRotate,
   opacity?: FallbackablePropertyOpacity,
-  order?: FallbackableGlobalsNumber,
-  orphans?: FallbackableGlobalsNumber,
+  order?: FallbackablePropertyOrder,
+  orphans?: FallbackablePropertyOrphans,
   outlineColor?: FallbackablePropertyOutlineColor,
   outlineOffset?: FallbackablePropertyOutlineOffset<TLength>,
   outlineStyle?: FallbackablePropertyOutlineStyle,
@@ -2448,7 +2475,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   textDecorationThickness?: FallbackablePropertyTextDecorationThickness<TLength>,
   textDecorationWidth?: FallbackablePropertyTextDecorationThickness<TLength>,
   textEmphasisColor?: FallbackablePropertyTextEmphasisColor,
-  textEmphasisPosition?: FallbackableGlobalsString,
+  textEmphasisPosition?: FallbackablePropertyTextEmphasisPosition,
   textEmphasisStyle?: FallbackablePropertyTextEmphasisStyle,
   textIndent?: FallbackablePropertyTextIndent<TLength>,
   textJustify?: FallbackablePropertyTextJustify,
@@ -2466,8 +2493,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   transformBox?: FallbackablePropertyTransformBox,
   transformOrigin?: FallbackablePropertyTransformOrigin<TLength>,
   transformStyle?: FallbackablePropertyTransformStyle,
-  transitionDelay?: FallbackableGlobalsString,
-  transitionDuration?: FallbackableGlobalsString,
+  transitionDelay?: FallbackablePropertyTransitionDelay,
+  transitionDuration?: FallbackablePropertyTransitionDuration,
   transitionProperty?: FallbackablePropertyTransitionProperty,
   transitionTimingFunction?: FallbackablePropertyTransitionTimingFunction,
   translate?: FallbackablePropertyTranslate<TLength>,
@@ -2476,7 +2503,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   verticalAlign?: FallbackablePropertyVerticalAlign<TLength>,
   visibility?: FallbackablePropertyVisibility,
   whiteSpace?: FallbackablePropertyWhiteSpace,
-  widows?: FallbackableGlobalsNumber,
+  widows?: FallbackablePropertyWidows,
   width?: FallbackablePropertyWidth<TLength>,
   willChange?: FallbackablePropertyWillChange,
   wordBreak?: FallbackablePropertyWordBreak,
@@ -2488,7 +2515,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
 |};
 
 export type StandardShorthandPropertiesFallback<TLength = string | 0> = {|
-  all?: FallbackableGlobals,
+  all?: FallbackablePropertyAll,
   animation?: FallbackablePropertyAnimation,
   background?: FallbackablePropertyBackground<TLength>,
   border?: FallbackablePropertyBorder<TLength>,
@@ -2537,9 +2564,9 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {|
 export type StandardPropertiesFallback<TLength = string | 0> = {| ...StandardLonghandPropertiesFallback<TLength>, ...StandardShorthandPropertiesFallback<TLength> |};
 
 export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
-  MozAnimationDelay?: FallbackableGlobalsString,
+  MozAnimationDelay?: FallbackablePropertyAnimationDelay,
   MozAnimationDirection?: FallbackablePropertyAnimationDirection,
-  MozAnimationDuration?: FallbackableGlobalsString,
+  MozAnimationDuration?: FallbackablePropertyAnimationDuration,
   MozAnimationFillMode?: FallbackablePropertyAnimationFillMode,
   MozAnimationIterationCount?: FallbackablePropertyAnimationIterationCount,
   MozAnimationName?: FallbackablePropertyAnimationName,
@@ -2568,7 +2595,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   MozFloatEdge?: FallbackablePropertyMozFloatEdge,
   MozFontFeatureSettings?: FallbackablePropertyFontFeatureSettings,
   MozFontLanguageOverride?: FallbackablePropertyFontLanguageOverride,
-  MozForceBrokenImageIcon?: FallbackableGlobalsNumber,
+  MozForceBrokenImageIcon?: FallbackablePropertyMozForceBrokenImageIcon,
   MozHyphens?: FallbackablePropertyHyphens,
   MozImageRegion?: FallbackablePropertyMozImageRegion,
   MozMarginEnd?: FallbackablePropertyMarginInlineEnd<TLength>,
@@ -2587,8 +2614,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   MozTextSizeAdjust?: FallbackablePropertyTextSizeAdjust,
   MozTransformOrigin?: FallbackablePropertyTransformOrigin<TLength>,
   MozTransformStyle?: FallbackablePropertyTransformStyle,
-  MozTransitionDelay?: FallbackableGlobalsString,
-  MozTransitionDuration?: FallbackableGlobalsString,
+  MozTransitionDelay?: FallbackablePropertyTransitionDelay,
+  MozTransitionDuration?: FallbackablePropertyTransitionDuration,
   MozTransitionProperty?: FallbackablePropertyTransitionProperty,
   MozTransitionTimingFunction?: FallbackablePropertyTransitionTimingFunction,
   MozUserFocus?: FallbackablePropertyMozUserFocus,
@@ -2599,14 +2626,14 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   msAlignSelf?: FallbackablePropertyAlignSelf,
   msBlockProgression?: FallbackablePropertyMsBlockProgression,
   msContentZoomChaining?: FallbackablePropertyMsContentZoomChaining,
-  msContentZoomLimitMax?: FallbackableGlobalsString,
-  msContentZoomLimitMin?: FallbackableGlobalsString,
-  msContentZoomSnapPoints?: FallbackableGlobalsString,
+  msContentZoomLimitMax?: FallbackablePropertyMsContentZoomLimitMax,
+  msContentZoomLimitMin?: FallbackablePropertyMsContentZoomLimitMin,
+  msContentZoomSnapPoints?: FallbackablePropertyMsContentZoomSnapPoints,
   msContentZoomSnapType?: FallbackablePropertyMsContentZoomSnapType,
   msContentZooming?: FallbackablePropertyMsContentZooming,
-  msFilter?: FallbackableGlobalsString,
+  msFilter?: FallbackablePropertyMsFilter,
   msFlexDirection?: FallbackablePropertyFlexDirection,
-  msFlexPositive?: FallbackableGlobalsNumber,
+  msFlexPositive?: FallbackablePropertyFlexGrow,
   msFlowFrom?: FallbackablePropertyMsFlowFrom,
   msFlowInto?: FallbackablePropertyMsFlowInto,
   msGridColumns?: FallbackablePropertyGridAutoColumns<TLength>,
@@ -2618,7 +2645,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   msHyphens?: FallbackablePropertyHyphens,
   msImeAlign?: FallbackablePropertyMsImeAlign,
   msLineBreak?: FallbackablePropertyLineBreak,
-  msOrder?: FallbackableGlobalsNumber,
+  msOrder?: FallbackablePropertyOrder,
   msOverflowStyle?: FallbackablePropertyMsOverflowStyle,
   msOverflowX?: FallbackablePropertyOverflowX,
   msOverflowY?: FallbackablePropertyOverflowY,
@@ -2628,8 +2655,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   msScrollLimitYMax?: FallbackablePropertyMsScrollLimitYMax<TLength>,
   msScrollLimitYMin?: FallbackablePropertyMsScrollLimitYMin<TLength>,
   msScrollRails?: FallbackablePropertyMsScrollRails,
-  msScrollSnapPointsX?: FallbackableGlobalsString,
-  msScrollSnapPointsY?: FallbackableGlobalsString,
+  msScrollSnapPointsX?: FallbackablePropertyMsScrollSnapPointsX,
+  msScrollSnapPointsY?: FallbackablePropertyMsScrollSnapPointsY,
   msScrollSnapType?: FallbackablePropertyMsScrollSnapType,
   msScrollTranslation?: FallbackablePropertyMsScrollTranslation,
   msScrollbar3dlightColor?: FallbackablePropertyMsScrollbar3dlightColor,
@@ -2647,8 +2674,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   msTouchSelect?: FallbackablePropertyMsTouchSelect,
   msTransform?: FallbackablePropertyTransform,
   msTransformOrigin?: FallbackablePropertyTransformOrigin<TLength>,
-  msTransitionDelay?: FallbackableGlobalsString,
-  msTransitionDuration?: FallbackableGlobalsString,
+  msTransitionDelay?: FallbackablePropertyTransitionDelay,
+  msTransitionDuration?: FallbackablePropertyTransitionDuration,
   msTransitionProperty?: FallbackablePropertyTransitionProperty,
   msTransitionTimingFunction?: FallbackablePropertyTransitionTimingFunction,
   msUserSelect?: FallbackablePropertyMsUserSelect,
@@ -2665,9 +2692,9 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitAlignContent?: FallbackablePropertyAlignContent,
   WebkitAlignItems?: FallbackablePropertyAlignItems,
   WebkitAlignSelf?: FallbackablePropertyAlignSelf,
-  WebkitAnimationDelay?: FallbackableGlobalsString,
+  WebkitAnimationDelay?: FallbackablePropertyAnimationDelay,
   WebkitAnimationDirection?: FallbackablePropertyAnimationDirection,
-  WebkitAnimationDuration?: FallbackableGlobalsString,
+  WebkitAnimationDuration?: FallbackablePropertyAnimationDuration,
   WebkitAnimationFillMode?: FallbackablePropertyAnimationFillMode,
   WebkitAnimationIterationCount?: FallbackablePropertyAnimationIterationCount,
   WebkitAnimationName?: FallbackablePropertyAnimationName,
@@ -2704,8 +2731,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitFilter?: FallbackablePropertyFilter,
   WebkitFlexBasis?: FallbackablePropertyFlexBasis<TLength>,
   WebkitFlexDirection?: FallbackablePropertyFlexDirection,
-  WebkitFlexGrow?: FallbackableGlobalsNumber,
-  WebkitFlexShrink?: FallbackableGlobalsNumber,
+  WebkitFlexGrow?: FallbackablePropertyFlexGrow,
+  WebkitFlexShrink?: FallbackablePropertyFlexShrink,
   WebkitFlexWrap?: FallbackablePropertyFlexWrap,
   WebkitFontFeatureSettings?: FallbackablePropertyFontFeatureSettings,
   WebkitFontKerning?: FallbackablePropertyFontKerning,
@@ -2729,7 +2756,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitMaskRepeatY?: FallbackablePropertyWebkitMaskRepeatY,
   WebkitMaskSize?: FallbackablePropertyWebkitMaskSize<TLength>,
   WebkitMaxInlineSize?: FallbackablePropertyMaxInlineSize<TLength>,
-  WebkitOrder?: FallbackableGlobalsNumber,
+  WebkitOrder?: FallbackablePropertyOrder,
   WebkitOverflowScrolling?: FallbackablePropertyWebkitOverflowScrolling,
   WebkitPaddingEnd?: FallbackablePropertyPaddingInlineEnd<TLength>,
   WebkitPaddingStart?: FallbackablePropertyPaddingInlineStart<TLength>,
@@ -2744,7 +2771,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitTextDecorationSkip?: FallbackablePropertyTextDecorationSkip,
   WebkitTextDecorationStyle?: FallbackablePropertyTextDecorationStyle,
   WebkitTextEmphasisColor?: FallbackablePropertyTextEmphasisColor,
-  WebkitTextEmphasisPosition?: FallbackableGlobalsString,
+  WebkitTextEmphasisPosition?: FallbackablePropertyTextEmphasisPosition,
   WebkitTextEmphasisStyle?: FallbackablePropertyTextEmphasisStyle,
   WebkitTextFillColor?: FallbackablePropertyWebkitTextFillColor,
   WebkitTextOrientation?: FallbackablePropertyTextOrientation,
@@ -2755,8 +2782,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitTransform?: FallbackablePropertyTransform,
   WebkitTransformOrigin?: FallbackablePropertyTransformOrigin<TLength>,
   WebkitTransformStyle?: FallbackablePropertyTransformStyle,
-  WebkitTransitionDelay?: FallbackableGlobalsString,
-  WebkitTransitionDuration?: FallbackableGlobalsString,
+  WebkitTransitionDelay?: FallbackablePropertyTransitionDelay,
+  WebkitTransitionDuration?: FallbackablePropertyTransitionDuration,
   WebkitTransitionProperty?: FallbackablePropertyTransitionProperty,
   WebkitTransitionTimingFunction?: FallbackablePropertyTransitionTimingFunction,
   WebkitUserModify?: FallbackablePropertyWebkitUserModify,
@@ -2770,12 +2797,12 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {|
   MozColumnRule?: FallbackablePropertyColumnRule<TLength>,
   MozColumns?: FallbackablePropertyColumns<TLength>,
   MozTransition?: FallbackablePropertyTransition,
-  msContentZoomLimit?: FallbackableGlobalsString,
+  msContentZoomLimit?: FallbackablePropertyMsContentZoomLimit,
   msContentZoomSnap?: FallbackablePropertyMsContentZoomSnap,
   msFlex?: FallbackablePropertyFlex<TLength>,
-  msScrollLimit?: FallbackableGlobalsString,
-  msScrollSnapX?: FallbackableGlobalsString,
-  msScrollSnapY?: FallbackableGlobalsString,
+  msScrollLimit?: FallbackablePropertyMsScrollLimit,
+  msScrollSnapX?: FallbackablePropertyMsScrollSnapX,
+  msScrollSnapY?: FallbackablePropertyMsScrollSnapY,
   msTransition?: FallbackablePropertyTransition,
   WebkitAnimation?: FallbackablePropertyAnimation,
   WebkitBorderBefore?: FallbackablePropertyWebkitBorderBefore<TLength>,
@@ -2796,10 +2823,10 @@ export type VendorPropertiesFallback<TLength = string | 0> = {| ...VendorLonghan
 export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   boxAlign?: FallbackablePropertyBoxAlign,
   boxDirection?: FallbackablePropertyBoxDirection,
-  boxFlex?: FallbackableGlobalsNumber,
-  boxFlexGroup?: FallbackableGlobalsNumber,
+  boxFlex?: FallbackablePropertyBoxFlex,
+  boxFlexGroup?: FallbackablePropertyBoxFlexGroup,
   boxLines?: FallbackablePropertyBoxLines,
-  boxOrdinalGroup?: FallbackableGlobalsNumber,
+  boxOrdinalGroup?: FallbackablePropertyBoxOrdinalGroup,
   boxOrient?: FallbackablePropertyBoxOrient,
   boxPack?: FallbackablePropertyBoxPack,
   clip?: FallbackablePropertyClip,
@@ -2823,10 +2850,10 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   textCombineHorizontal?: FallbackablePropertyTextCombineUpright,
   KhtmlBoxAlign?: FallbackablePropertyBoxAlign,
   KhtmlBoxDirection?: FallbackablePropertyBoxDirection,
-  KhtmlBoxFlex?: FallbackableGlobalsNumber,
-  KhtmlBoxFlexGroup?: FallbackableGlobalsNumber,
+  KhtmlBoxFlex?: FallbackablePropertyBoxFlex,
+  KhtmlBoxFlexGroup?: FallbackablePropertyBoxFlexGroup,
   KhtmlBoxLines?: FallbackablePropertyBoxLines,
-  KhtmlBoxOrdinalGroup?: FallbackableGlobalsNumber,
+  KhtmlBoxOrdinalGroup?: FallbackablePropertyBoxOrdinalGroup,
   KhtmlBoxOrient?: FallbackablePropertyBoxOrient,
   KhtmlBoxPack?: FallbackablePropertyBoxPack,
   KhtmlLineBreak?: FallbackablePropertyLineBreak,
@@ -2844,8 +2871,8 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   MozBorderRadiusTopright?: FallbackablePropertyBorderTopRightRadius<TLength>,
   MozBoxAlign?: FallbackablePropertyBoxAlign,
   MozBoxDirection?: FallbackablePropertyBoxDirection,
-  MozBoxFlex?: FallbackableGlobalsNumber,
-  MozBoxOrdinalGroup?: FallbackableGlobalsNumber,
+  MozBoxFlex?: FallbackablePropertyBoxFlex,
+  MozBoxOrdinalGroup?: FallbackablePropertyBoxOrdinalGroup,
   MozBoxOrient?: FallbackablePropertyBoxOrient,
   MozBoxPack?: FallbackablePropertyBoxPack,
   MozBoxShadow?: FallbackablePropertyBoxShadow,
@@ -2864,9 +2891,9 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   MozWindowShadow?: FallbackablePropertyMozWindowShadow,
   msImeMode?: FallbackablePropertyImeMode,
   OAnimation?: FallbackablePropertyAnimation,
-  OAnimationDelay?: FallbackableGlobalsString,
+  OAnimationDelay?: FallbackablePropertyAnimationDelay,
   OAnimationDirection?: FallbackablePropertyAnimationDirection,
-  OAnimationDuration?: FallbackableGlobalsString,
+  OAnimationDuration?: FallbackablePropertyAnimationDuration,
   OAnimationFillMode?: FallbackablePropertyAnimationFillMode,
   OAnimationIterationCount?: FallbackablePropertyAnimationIterationCount,
   OAnimationName?: FallbackablePropertyAnimationName,
@@ -2876,16 +2903,16 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   OBorderImage?: FallbackablePropertyBorderImage,
   OTransform?: FallbackablePropertyTransform,
   OTransition?: FallbackablePropertyTransition,
-  OTransitionDelay?: FallbackableGlobalsString,
-  OTransitionDuration?: FallbackableGlobalsString,
+  OTransitionDelay?: FallbackablePropertyTransitionDelay,
+  OTransitionDuration?: FallbackablePropertyTransitionDuration,
   OTransitionProperty?: FallbackablePropertyTransitionProperty,
   OTransitionTimingFunction?: FallbackablePropertyTransitionTimingFunction,
   WebkitBoxAlign?: FallbackablePropertyBoxAlign,
   WebkitBoxDirection?: FallbackablePropertyBoxDirection,
-  WebkitBoxFlex?: FallbackableGlobalsNumber,
-  WebkitBoxFlexGroup?: FallbackableGlobalsNumber,
+  WebkitBoxFlex?: FallbackablePropertyBoxFlex,
+  WebkitBoxFlexGroup?: FallbackablePropertyBoxFlexGroup,
   WebkitBoxLines?: FallbackablePropertyBoxLines,
-  WebkitBoxOrdinalGroup?: FallbackableGlobalsNumber,
+  WebkitBoxOrdinalGroup?: FallbackablePropertyBoxOrdinalGroup,
   WebkitBoxOrient?: FallbackablePropertyBoxOrient,
   WebkitBoxPack?: FallbackablePropertyBoxPack,
   WebkitScrollSnapPointsX?: FallbackablePropertyScrollSnapPointsX,
@@ -2906,11 +2933,11 @@ export type SvgPropertiesFallback<TLength = string | 0> = {|
   display?: FallbackablePropertyDisplay,
   dominantBaseline?: FallbackablePropertyDominantBaseline,
   fill?: FallbackablePropertyFill,
-  fillOpacity?: FallbackableGlobalsNumber,
+  fillOpacity?: FallbackablePropertyFillOpacity,
   fillRule?: FallbackablePropertyFillRule,
   filter?: FallbackablePropertyFilter,
   floodColor?: FallbackablePropertyFloodColor,
-  floodOpacity?: FallbackableGlobalsNumber,
+  floodOpacity?: FallbackablePropertyFloodOpacity,
   font?: FallbackablePropertyFont,
   fontFamily?: FallbackablePropertyFontFamily,
   fontSize?: FallbackablePropertyFontSize<TLength>,
@@ -2935,14 +2962,14 @@ export type SvgPropertiesFallback<TLength = string | 0> = {|
   pointerEvents?: FallbackablePropertyPointerEvents,
   shapeRendering?: FallbackablePropertyShapeRendering,
   stopColor?: FallbackablePropertyStopColor,
-  stopOpacity?: FallbackableGlobalsNumber,
+  stopOpacity?: FallbackablePropertyStopOpacity,
   stroke?: FallbackablePropertyStroke,
   strokeDasharray?: FallbackablePropertyStrokeDasharray<TLength>,
   strokeDashoffset?: FallbackablePropertyStrokeDashoffset<TLength>,
   strokeLinecap?: FallbackablePropertyStrokeLinecap,
   strokeLinejoin?: FallbackablePropertyStrokeLinejoin,
-  strokeMiterlimit?: FallbackableGlobalsNumber,
-  strokeOpacity?: FallbackableGlobalsNumber,
+  strokeMiterlimit?: FallbackablePropertyStrokeMiterlimit,
+  strokeOpacity?: FallbackablePropertyStrokeOpacity,
   strokeWidth?: FallbackablePropertyStrokeWidth<TLength>,
   textAnchor?: FallbackablePropertyTextAnchor,
   textDecoration?: FallbackablePropertyTextDecoration<TLength>,
@@ -2966,9 +2993,9 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "align-content"?: FallbackablePropertyAlignContent,
   "align-items"?: FallbackablePropertyAlignItems,
   "align-self"?: FallbackablePropertyAlignSelf,
-  "animation-delay"?: FallbackableGlobalsString,
+  "animation-delay"?: FallbackablePropertyAnimationDelay,
   "animation-direction"?: FallbackablePropertyAnimationDirection,
-  "animation-duration"?: FallbackableGlobalsString,
+  "animation-duration"?: FallbackablePropertyAnimationDuration,
   "animation-fill-mode"?: FallbackablePropertyAnimationFillMode,
   "animation-iteration-count"?: FallbackablePropertyAnimationIterationCount,
   "animation-name"?: FallbackablePropertyAnimationName,
@@ -3068,8 +3095,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   filter?: FallbackablePropertyFilter,
   "flex-basis"?: FallbackablePropertyFlexBasis<TLength>,
   "flex-direction"?: FallbackablePropertyFlexDirection,
-  "flex-grow"?: FallbackableGlobalsNumber,
-  "flex-shrink"?: FallbackableGlobalsNumber,
+  "flex-grow"?: FallbackablePropertyFlexGrow,
+  "flex-shrink"?: FallbackablePropertyFlexShrink,
   "flex-wrap"?: FallbackablePropertyFlexWrap,
   float?: FallbackablePropertyFloat,
   "font-family"?: FallbackablePropertyFontFamily,
@@ -3174,8 +3201,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "offset-rotate"?: FallbackablePropertyOffsetRotate,
   "offset-rotation"?: FallbackablePropertyOffsetRotate,
   opacity?: FallbackablePropertyOpacity,
-  order?: FallbackableGlobalsNumber,
-  orphans?: FallbackableGlobalsNumber,
+  order?: FallbackablePropertyOrder,
+  orphans?: FallbackablePropertyOrphans,
   "outline-color"?: FallbackablePropertyOutlineColor,
   "outline-offset"?: FallbackablePropertyOutlineOffset<TLength>,
   "outline-style"?: FallbackablePropertyOutlineStyle,
@@ -3263,7 +3290,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "text-decoration-thickness"?: FallbackablePropertyTextDecorationThickness<TLength>,
   "text-decoration-width"?: FallbackablePropertyTextDecorationThickness<TLength>,
   "text-emphasis-color"?: FallbackablePropertyTextEmphasisColor,
-  "text-emphasis-position"?: FallbackableGlobalsString,
+  "text-emphasis-position"?: FallbackablePropertyTextEmphasisPosition,
   "text-emphasis-style"?: FallbackablePropertyTextEmphasisStyle,
   "text-indent"?: FallbackablePropertyTextIndent<TLength>,
   "text-justify"?: FallbackablePropertyTextJustify,
@@ -3281,8 +3308,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "transform-box"?: FallbackablePropertyTransformBox,
   "transform-origin"?: FallbackablePropertyTransformOrigin<TLength>,
   "transform-style"?: FallbackablePropertyTransformStyle,
-  "transition-delay"?: FallbackableGlobalsString,
-  "transition-duration"?: FallbackableGlobalsString,
+  "transition-delay"?: FallbackablePropertyTransitionDelay,
+  "transition-duration"?: FallbackablePropertyTransitionDuration,
   "transition-property"?: FallbackablePropertyTransitionProperty,
   "transition-timing-function"?: FallbackablePropertyTransitionTimingFunction,
   translate?: FallbackablePropertyTranslate<TLength>,
@@ -3291,7 +3318,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "vertical-align"?: FallbackablePropertyVerticalAlign<TLength>,
   visibility?: FallbackablePropertyVisibility,
   "white-space"?: FallbackablePropertyWhiteSpace,
-  widows?: FallbackableGlobalsNumber,
+  widows?: FallbackablePropertyWidows,
   width?: FallbackablePropertyWidth<TLength>,
   "will-change"?: FallbackablePropertyWillChange,
   "word-break"?: FallbackablePropertyWordBreak,
@@ -3303,7 +3330,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
 |};
 
 export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
-  all?: FallbackableGlobals,
+  all?: FallbackablePropertyAll,
   animation?: FallbackablePropertyAnimation,
   background?: FallbackablePropertyBackground<TLength>,
   border?: FallbackablePropertyBorder<TLength>,
@@ -3355,9 +3382,9 @@ export type StandardPropertiesHyphenFallback<TLength = string | 0> = {|
 |};
 
 export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
-  "-moz-animation-delay"?: FallbackableGlobalsString,
+  "-moz-animation-delay"?: FallbackablePropertyAnimationDelay,
   "-moz-animation-direction"?: FallbackablePropertyAnimationDirection,
-  "-moz-animation-duration"?: FallbackableGlobalsString,
+  "-moz-animation-duration"?: FallbackablePropertyAnimationDuration,
   "-moz-animation-fill-mode"?: FallbackablePropertyAnimationFillMode,
   "-moz-animation-iteration-count"?: FallbackablePropertyAnimationIterationCount,
   "-moz-animation-name"?: FallbackablePropertyAnimationName,
@@ -3386,7 +3413,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-float-edge"?: FallbackablePropertyMozFloatEdge,
   "-moz-font-feature-settings"?: FallbackablePropertyFontFeatureSettings,
   "-moz-font-language-override"?: FallbackablePropertyFontLanguageOverride,
-  "-moz-force-broken-image-icon"?: FallbackableGlobalsNumber,
+  "-moz-force-broken-image-icon"?: FallbackablePropertyMozForceBrokenImageIcon,
   "-moz-hyphens"?: FallbackablePropertyHyphens,
   "-moz-image-region"?: FallbackablePropertyMozImageRegion,
   "-moz-margin-end"?: FallbackablePropertyMarginInlineEnd<TLength>,
@@ -3405,8 +3432,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-text-size-adjust"?: FallbackablePropertyTextSizeAdjust,
   "-moz-transform-origin"?: FallbackablePropertyTransformOrigin<TLength>,
   "-moz-transform-style"?: FallbackablePropertyTransformStyle,
-  "-moz-transition-delay"?: FallbackableGlobalsString,
-  "-moz-transition-duration"?: FallbackableGlobalsString,
+  "-moz-transition-delay"?: FallbackablePropertyTransitionDelay,
+  "-moz-transition-duration"?: FallbackablePropertyTransitionDuration,
   "-moz-transition-property"?: FallbackablePropertyTransitionProperty,
   "-moz-transition-timing-function"?: FallbackablePropertyTransitionTimingFunction,
   "-moz-user-focus"?: FallbackablePropertyMozUserFocus,
@@ -3417,14 +3444,14 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-ms-align-self"?: FallbackablePropertyAlignSelf,
   "-ms-block-progression"?: FallbackablePropertyMsBlockProgression,
   "-ms-content-zoom-chaining"?: FallbackablePropertyMsContentZoomChaining,
-  "-ms-content-zoom-limit-max"?: FallbackableGlobalsString,
-  "-ms-content-zoom-limit-min"?: FallbackableGlobalsString,
-  "-ms-content-zoom-snap-points"?: FallbackableGlobalsString,
+  "-ms-content-zoom-limit-max"?: FallbackablePropertyMsContentZoomLimitMax,
+  "-ms-content-zoom-limit-min"?: FallbackablePropertyMsContentZoomLimitMin,
+  "-ms-content-zoom-snap-points"?: FallbackablePropertyMsContentZoomSnapPoints,
   "-ms-content-zoom-snap-type"?: FallbackablePropertyMsContentZoomSnapType,
   "-ms-content-zooming"?: FallbackablePropertyMsContentZooming,
-  "-ms-filter"?: FallbackableGlobalsString,
+  "-ms-filter"?: FallbackablePropertyMsFilter,
   "-ms-flex-direction"?: FallbackablePropertyFlexDirection,
-  "-ms-flex-positive"?: FallbackableGlobalsNumber,
+  "-ms-flex-positive"?: FallbackablePropertyFlexGrow,
   "-ms-flow-from"?: FallbackablePropertyMsFlowFrom,
   "-ms-flow-into"?: FallbackablePropertyMsFlowInto,
   "-ms-grid-columns"?: FallbackablePropertyGridAutoColumns<TLength>,
@@ -3436,7 +3463,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-ms-hyphens"?: FallbackablePropertyHyphens,
   "-ms-ime-align"?: FallbackablePropertyMsImeAlign,
   "-ms-line-break"?: FallbackablePropertyLineBreak,
-  "-ms-order"?: FallbackableGlobalsNumber,
+  "-ms-order"?: FallbackablePropertyOrder,
   "-ms-overflow-style"?: FallbackablePropertyMsOverflowStyle,
   "-ms-overflow-x"?: FallbackablePropertyOverflowX,
   "-ms-overflow-y"?: FallbackablePropertyOverflowY,
@@ -3446,8 +3473,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-ms-scroll-limit-y-max"?: FallbackablePropertyMsScrollLimitYMax<TLength>,
   "-ms-scroll-limit-y-min"?: FallbackablePropertyMsScrollLimitYMin<TLength>,
   "-ms-scroll-rails"?: FallbackablePropertyMsScrollRails,
-  "-ms-scroll-snap-points-x"?: FallbackableGlobalsString,
-  "-ms-scroll-snap-points-y"?: FallbackableGlobalsString,
+  "-ms-scroll-snap-points-x"?: FallbackablePropertyMsScrollSnapPointsX,
+  "-ms-scroll-snap-points-y"?: FallbackablePropertyMsScrollSnapPointsY,
   "-ms-scroll-snap-type"?: FallbackablePropertyMsScrollSnapType,
   "-ms-scroll-translation"?: FallbackablePropertyMsScrollTranslation,
   "-ms-scrollbar-3dlight-color"?: FallbackablePropertyMsScrollbar3dlightColor,
@@ -3465,8 +3492,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-ms-touch-select"?: FallbackablePropertyMsTouchSelect,
   "-ms-transform"?: FallbackablePropertyTransform,
   "-ms-transform-origin"?: FallbackablePropertyTransformOrigin<TLength>,
-  "-ms-transition-delay"?: FallbackableGlobalsString,
-  "-ms-transition-duration"?: FallbackableGlobalsString,
+  "-ms-transition-delay"?: FallbackablePropertyTransitionDelay,
+  "-ms-transition-duration"?: FallbackablePropertyTransitionDuration,
   "-ms-transition-property"?: FallbackablePropertyTransitionProperty,
   "-ms-transition-timing-function"?: FallbackablePropertyTransitionTimingFunction,
   "-ms-user-select"?: FallbackablePropertyMsUserSelect,
@@ -3483,9 +3510,9 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-align-content"?: FallbackablePropertyAlignContent,
   "-webkit-align-items"?: FallbackablePropertyAlignItems,
   "-webkit-align-self"?: FallbackablePropertyAlignSelf,
-  "-webkit-animation-delay"?: FallbackableGlobalsString,
+  "-webkit-animation-delay"?: FallbackablePropertyAnimationDelay,
   "-webkit-animation-direction"?: FallbackablePropertyAnimationDirection,
-  "-webkit-animation-duration"?: FallbackableGlobalsString,
+  "-webkit-animation-duration"?: FallbackablePropertyAnimationDuration,
   "-webkit-animation-fill-mode"?: FallbackablePropertyAnimationFillMode,
   "-webkit-animation-iteration-count"?: FallbackablePropertyAnimationIterationCount,
   "-webkit-animation-name"?: FallbackablePropertyAnimationName,
@@ -3522,8 +3549,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-filter"?: FallbackablePropertyFilter,
   "-webkit-flex-basis"?: FallbackablePropertyFlexBasis<TLength>,
   "-webkit-flex-direction"?: FallbackablePropertyFlexDirection,
-  "-webkit-flex-grow"?: FallbackableGlobalsNumber,
-  "-webkit-flex-shrink"?: FallbackableGlobalsNumber,
+  "-webkit-flex-grow"?: FallbackablePropertyFlexGrow,
+  "-webkit-flex-shrink"?: FallbackablePropertyFlexShrink,
   "-webkit-flex-wrap"?: FallbackablePropertyFlexWrap,
   "-webkit-font-feature-settings"?: FallbackablePropertyFontFeatureSettings,
   "-webkit-font-kerning"?: FallbackablePropertyFontKerning,
@@ -3547,7 +3574,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-mask-repeat-y"?: FallbackablePropertyWebkitMaskRepeatY,
   "-webkit-mask-size"?: FallbackablePropertyWebkitMaskSize<TLength>,
   "-webkit-max-inline-size"?: FallbackablePropertyMaxInlineSize<TLength>,
-  "-webkit-order"?: FallbackableGlobalsNumber,
+  "-webkit-order"?: FallbackablePropertyOrder,
   "-webkit-overflow-scrolling"?: FallbackablePropertyWebkitOverflowScrolling,
   "-webkit-padding-end"?: FallbackablePropertyPaddingInlineEnd<TLength>,
   "-webkit-padding-start"?: FallbackablePropertyPaddingInlineStart<TLength>,
@@ -3562,7 +3589,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-text-decoration-skip"?: FallbackablePropertyTextDecorationSkip,
   "-webkit-text-decoration-style"?: FallbackablePropertyTextDecorationStyle,
   "-webkit-text-emphasis-color"?: FallbackablePropertyTextEmphasisColor,
-  "-webkit-text-emphasis-position"?: FallbackableGlobalsString,
+  "-webkit-text-emphasis-position"?: FallbackablePropertyTextEmphasisPosition,
   "-webkit-text-emphasis-style"?: FallbackablePropertyTextEmphasisStyle,
   "-webkit-text-fill-color"?: FallbackablePropertyWebkitTextFillColor,
   "-webkit-text-orientation"?: FallbackablePropertyTextOrientation,
@@ -3573,8 +3600,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-transform"?: FallbackablePropertyTransform,
   "-webkit-transform-origin"?: FallbackablePropertyTransformOrigin<TLength>,
   "-webkit-transform-style"?: FallbackablePropertyTransformStyle,
-  "-webkit-transition-delay"?: FallbackableGlobalsString,
-  "-webkit-transition-duration"?: FallbackableGlobalsString,
+  "-webkit-transition-delay"?: FallbackablePropertyTransitionDelay,
+  "-webkit-transition-duration"?: FallbackablePropertyTransitionDuration,
   "-webkit-transition-property"?: FallbackablePropertyTransitionProperty,
   "-webkit-transition-timing-function"?: FallbackablePropertyTransitionTimingFunction,
   "-webkit-user-modify"?: FallbackablePropertyWebkitUserModify,
@@ -3588,12 +3615,12 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-column-rule"?: FallbackablePropertyColumnRule<TLength>,
   "-moz-columns"?: FallbackablePropertyColumns<TLength>,
   "-moz-transition"?: FallbackablePropertyTransition,
-  "-ms-content-zoom-limit"?: FallbackableGlobalsString,
+  "-ms-content-zoom-limit"?: FallbackablePropertyMsContentZoomLimit,
   "-ms-content-zoom-snap"?: FallbackablePropertyMsContentZoomSnap,
   "-ms-flex"?: FallbackablePropertyFlex<TLength>,
-  "-ms-scroll-limit"?: FallbackableGlobalsString,
-  "-ms-scroll-snap-x"?: FallbackableGlobalsString,
-  "-ms-scroll-snap-y"?: FallbackableGlobalsString,
+  "-ms-scroll-limit"?: FallbackablePropertyMsScrollLimit,
+  "-ms-scroll-snap-x"?: FallbackablePropertyMsScrollSnapX,
+  "-ms-scroll-snap-y"?: FallbackablePropertyMsScrollSnapY,
   "-ms-transition"?: FallbackablePropertyTransition,
   "-webkit-animation"?: FallbackablePropertyAnimation,
   "-webkit-border-before"?: FallbackablePropertyWebkitBorderBefore<TLength>,
@@ -3614,10 +3641,10 @@ export type VendorPropertiesHyphenFallback<TLength = string | 0> = {| ...VendorL
 export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "box-align"?: FallbackablePropertyBoxAlign,
   "box-direction"?: FallbackablePropertyBoxDirection,
-  "box-flex"?: FallbackableGlobalsNumber,
-  "box-flex-group"?: FallbackableGlobalsNumber,
+  "box-flex"?: FallbackablePropertyBoxFlex,
+  "box-flex-group"?: FallbackablePropertyBoxFlexGroup,
   "box-lines"?: FallbackablePropertyBoxLines,
-  "box-ordinal-group"?: FallbackableGlobalsNumber,
+  "box-ordinal-group"?: FallbackablePropertyBoxOrdinalGroup,
   "box-orient"?: FallbackablePropertyBoxOrient,
   "box-pack"?: FallbackablePropertyBoxPack,
   clip?: FallbackablePropertyClip,
@@ -3641,10 +3668,10 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "text-combine-horizontal"?: FallbackablePropertyTextCombineUpright,
   "-khtml-box-align"?: FallbackablePropertyBoxAlign,
   "-khtml-box-direction"?: FallbackablePropertyBoxDirection,
-  "-khtml-box-flex"?: FallbackableGlobalsNumber,
-  "-khtml-box-flex-group"?: FallbackableGlobalsNumber,
+  "-khtml-box-flex"?: FallbackablePropertyBoxFlex,
+  "-khtml-box-flex-group"?: FallbackablePropertyBoxFlexGroup,
   "-khtml-box-lines"?: FallbackablePropertyBoxLines,
-  "-khtml-box-ordinal-group"?: FallbackableGlobalsNumber,
+  "-khtml-box-ordinal-group"?: FallbackablePropertyBoxOrdinalGroup,
   "-khtml-box-orient"?: FallbackablePropertyBoxOrient,
   "-khtml-box-pack"?: FallbackablePropertyBoxPack,
   "-khtml-line-break"?: FallbackablePropertyLineBreak,
@@ -3662,8 +3689,8 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-border-radius-topright"?: FallbackablePropertyBorderTopRightRadius<TLength>,
   "-moz-box-align"?: FallbackablePropertyBoxAlign,
   "-moz-box-direction"?: FallbackablePropertyBoxDirection,
-  "-moz-box-flex"?: FallbackableGlobalsNumber,
-  "-moz-box-ordinal-group"?: FallbackableGlobalsNumber,
+  "-moz-box-flex"?: FallbackablePropertyBoxFlex,
+  "-moz-box-ordinal-group"?: FallbackablePropertyBoxOrdinalGroup,
   "-moz-box-orient"?: FallbackablePropertyBoxOrient,
   "-moz-box-pack"?: FallbackablePropertyBoxPack,
   "-moz-box-shadow"?: FallbackablePropertyBoxShadow,
@@ -3682,9 +3709,9 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-window-shadow"?: FallbackablePropertyMozWindowShadow,
   "-ms-ime-mode"?: FallbackablePropertyImeMode,
   "-o-animation"?: FallbackablePropertyAnimation,
-  "-o-animation-delay"?: FallbackableGlobalsString,
+  "-o-animation-delay"?: FallbackablePropertyAnimationDelay,
   "-o-animation-direction"?: FallbackablePropertyAnimationDirection,
-  "-o-animation-duration"?: FallbackableGlobalsString,
+  "-o-animation-duration"?: FallbackablePropertyAnimationDuration,
   "-o-animation-fill-mode"?: FallbackablePropertyAnimationFillMode,
   "-o-animation-iteration-count"?: FallbackablePropertyAnimationIterationCount,
   "-o-animation-name"?: FallbackablePropertyAnimationName,
@@ -3694,16 +3721,16 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-o-border-image"?: FallbackablePropertyBorderImage,
   "-o-transform"?: FallbackablePropertyTransform,
   "-o-transition"?: FallbackablePropertyTransition,
-  "-o-transition-delay"?: FallbackableGlobalsString,
-  "-o-transition-duration"?: FallbackableGlobalsString,
+  "-o-transition-delay"?: FallbackablePropertyTransitionDelay,
+  "-o-transition-duration"?: FallbackablePropertyTransitionDuration,
   "-o-transition-property"?: FallbackablePropertyTransitionProperty,
   "-o-transition-timing-function"?: FallbackablePropertyTransitionTimingFunction,
   "-webkit-box-align"?: FallbackablePropertyBoxAlign,
   "-webkit-box-direction"?: FallbackablePropertyBoxDirection,
-  "-webkit-box-flex"?: FallbackableGlobalsNumber,
-  "-webkit-box-flex-group"?: FallbackableGlobalsNumber,
+  "-webkit-box-flex"?: FallbackablePropertyBoxFlex,
+  "-webkit-box-flex-group"?: FallbackablePropertyBoxFlexGroup,
   "-webkit-box-lines"?: FallbackablePropertyBoxLines,
-  "-webkit-box-ordinal-group"?: FallbackableGlobalsNumber,
+  "-webkit-box-ordinal-group"?: FallbackablePropertyBoxOrdinalGroup,
   "-webkit-box-orient"?: FallbackablePropertyBoxOrient,
   "-webkit-box-pack"?: FallbackablePropertyBoxPack,
   "-webkit-scroll-snap-points-x"?: FallbackablePropertyScrollSnapPointsX,
@@ -3724,11 +3751,11 @@ export type SvgPropertiesHyphenFallback<TLength = string | 0> = {|
   display?: FallbackablePropertyDisplay,
   "dominant-baseline"?: FallbackablePropertyDominantBaseline,
   fill?: FallbackablePropertyFill,
-  "fill-opacity"?: FallbackableGlobalsNumber,
+  "fill-opacity"?: FallbackablePropertyFillOpacity,
   "fill-rule"?: FallbackablePropertyFillRule,
   filter?: FallbackablePropertyFilter,
   "flood-color"?: FallbackablePropertyFloodColor,
-  "flood-opacity"?: FallbackableGlobalsNumber,
+  "flood-opacity"?: FallbackablePropertyFloodOpacity,
   font?: FallbackablePropertyFont,
   "font-family"?: FallbackablePropertyFontFamily,
   "font-size"?: FallbackablePropertyFontSize<TLength>,
@@ -3753,14 +3780,14 @@ export type SvgPropertiesHyphenFallback<TLength = string | 0> = {|
   "pointer-events"?: FallbackablePropertyPointerEvents,
   "shape-rendering"?: FallbackablePropertyShapeRendering,
   "stop-color"?: FallbackablePropertyStopColor,
-  "stop-opacity"?: FallbackableGlobalsNumber,
+  "stop-opacity"?: FallbackablePropertyStopOpacity,
   stroke?: FallbackablePropertyStroke,
   "stroke-dasharray"?: FallbackablePropertyStrokeDasharray<TLength>,
   "stroke-dashoffset"?: FallbackablePropertyStrokeDashoffset<TLength>,
   "stroke-linecap"?: FallbackablePropertyStrokeLinecap,
   "stroke-linejoin"?: FallbackablePropertyStrokeLinejoin,
-  "stroke-miterlimit"?: FallbackableGlobalsNumber,
-  "stroke-opacity"?: FallbackableGlobalsNumber,
+  "stroke-miterlimit"?: FallbackablePropertyStrokeMiterlimit,
+  "stroke-opacity"?: FallbackablePropertyStrokeOpacity,
   "stroke-width"?: FallbackablePropertyStrokeWidth<TLength>,
   "text-anchor"?: FallbackablePropertyTextAnchor,
   "text-decoration"?: FallbackablePropertyTextDecoration<TLength>,
@@ -4384,19 +4411,21 @@ export type SvgAttributes =
 
 export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset";
 
-type GlobalsString = Globals | string;
-
-type GlobalsNumber = Globals | number;
-
 export type PropertyAlignContent = Globals | DataTypeContentDistribution | DataTypeContentPosition | "baseline" | "normal" | string;
 
 export type PropertyAlignItems = Globals | DataTypeSelfPosition | "baseline" | "normal" | "stretch" | string;
 
 export type PropertyAlignSelf = Globals | DataTypeSelfPosition | "auto" | "baseline" | "normal" | "stretch" | string;
 
+export type PropertyAll = Globals;
+
 export type PropertyAnimation = Globals | DataTypeSingleAnimation | string;
 
+export type PropertyAnimationDelay = Globals | string;
+
 export type PropertyAnimationDirection = Globals | DataTypeSingleAnimationDirection | string;
+
+export type PropertyAnimationDuration = Globals | string;
 
 export type PropertyAnimationFillMode = Globals | DataTypeSingleAnimationFillMode | string;
 
@@ -4584,7 +4613,13 @@ export type PropertyBoxDecorationBreak = Globals | "clone" | "slice";
 
 export type PropertyBoxDirection = Globals | "inherit" | "normal" | "reverse";
 
+export type PropertyBoxFlex = Globals | number;
+
+export type PropertyBoxFlexGroup = Globals | number;
+
 export type PropertyBoxLines = Globals | "multiple" | "single";
+
+export type PropertyBoxOrdinalGroup = Globals | number;
 
 export type PropertyBoxOrient = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
 
@@ -4752,6 +4787,10 @@ export type PropertyFlexBasis<TLength> =
 export type PropertyFlexDirection = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
 export type PropertyFlexFlow = Globals | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | string;
+
+export type PropertyFlexGrow = Globals | number;
+
+export type PropertyFlexShrink = Globals | number;
 
 export type PropertyFlexWrap = Globals | "nowrap" | "wrap" | "wrap-reverse";
 
@@ -5174,6 +5213,10 @@ export type PropertyOffsetPosition<TLength> = Globals | DataTypePosition<TLength
 
 export type PropertyOpacity = Globals | string | number;
 
+export type PropertyOrder = Globals | number;
+
+export type PropertyOrphans = Globals | number;
+
 export type PropertyOutline<TLength> = Globals | DataTypeColor | DataTypeLineStyle | DataTypeLineWidth<TLength> | "auto" | "invert" | string;
 
 export type PropertyOutlineColor = Globals | DataTypeColor | "invert";
@@ -5388,6 +5431,8 @@ export type PropertyTextEmphasis = Globals | DataTypeColor | "circle" | "dot" | 
 
 export type PropertyTextEmphasisColor = Globals | DataTypeColor;
 
+export type PropertyTextEmphasisPosition = Globals | string;
+
 export type PropertyTextEmphasisStyle = Globals | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
 export type PropertyTextIndent<TLength> = Globals | TLength | string;
@@ -5439,6 +5484,10 @@ export type PropertyTransformStyle = Globals | "flat" | "preserve-3d";
 
 export type PropertyTransition = Globals | DataTypeSingleTransition | string;
 
+export type PropertyTransitionDelay = Globals | string;
+
+export type PropertyTransitionDuration = Globals | string;
+
 export type PropertyTransitionProperty = Globals | "all" | "none" | string;
 
 export type PropertyTransitionTimingFunction = Globals | DataTypeTimingFunction | string;
@@ -5465,6 +5514,8 @@ export type PropertyVerticalAlign<TLength> = Globals | TLength | "baseline" | "b
 export type PropertyVisibility = Globals | "collapse" | "hidden" | "visible";
 
 export type PropertyWhiteSpace = Globals | "-moz-pre-wrap" | "break-spaces" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+
+export type PropertyWidows = Globals | number;
 
 export type PropertyWidth<TLength> =
   | Globals
@@ -5625,6 +5676,8 @@ export type PropertyMozContextProperties = Globals | "fill" | "fill-opacity" | "
 
 export type PropertyMozFloatEdge = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
 
+export type PropertyMozForceBrokenImageIcon = Globals | number;
+
 export type PropertyMozImageRegion = Globals | "auto" | string;
 
 export type PropertyMozOrient = Globals | "block" | "horizontal" | "inline" | "vertical";
@@ -5659,11 +5712,21 @@ export type PropertyMsBlockProgression = Globals | "bt" | "lr" | "rl" | "tb";
 
 export type PropertyMsContentZoomChaining = Globals | "chained" | "none";
 
+export type PropertyMsContentZoomLimit = Globals | string;
+
+export type PropertyMsContentZoomLimitMax = Globals | string;
+
+export type PropertyMsContentZoomLimitMin = Globals | string;
+
 export type PropertyMsContentZoomSnap = Globals | "mandatory" | "none" | "proximity" | string;
+
+export type PropertyMsContentZoomSnapPoints = Globals | string;
 
 export type PropertyMsContentZoomSnapType = Globals | "mandatory" | "none" | "proximity";
 
 export type PropertyMsContentZooming = Globals | "none" | "zoom";
+
+export type PropertyMsFilter = Globals | string;
 
 export type PropertyMsFlowFrom = Globals | "none" | string;
 
@@ -5683,6 +5746,8 @@ export type PropertyMsOverflowStyle = Globals | "-ms-autohiding-scrollbar" | "au
 
 export type PropertyMsScrollChaining = Globals | "chained" | "none";
 
+export type PropertyMsScrollLimit = Globals | string;
+
 export type PropertyMsScrollLimitXMax<TLength> = Globals | TLength | "auto";
 
 export type PropertyMsScrollLimitXMin<TLength> = Globals | TLength;
@@ -5693,7 +5758,15 @@ export type PropertyMsScrollLimitYMin<TLength> = Globals | TLength;
 
 export type PropertyMsScrollRails = Globals | "none" | "railed";
 
+export type PropertyMsScrollSnapPointsX = Globals | string;
+
+export type PropertyMsScrollSnapPointsY = Globals | string;
+
 export type PropertyMsScrollSnapType = Globals | "mandatory" | "none" | "proximity";
+
+export type PropertyMsScrollSnapX = Globals | string;
+
+export type PropertyMsScrollSnapY = Globals | string;
 
 export type PropertyMsScrollTranslation = Globals | "none" | "vertical-to-horizontal";
 
@@ -5870,9 +5943,13 @@ export type PropertyDominantBaseline =
 
 export type PropertyFill = Globals | DataTypePaint;
 
+export type PropertyFillOpacity = Globals | number;
+
 export type PropertyFillRule = Globals | "evenodd" | "nonzero";
 
 export type PropertyFloodColor = Globals | DataTypeColor | "currentColor";
+
+export type PropertyFloodOpacity = Globals | number;
 
 export type PropertyGlyphOrientationVertical = Globals | "auto" | string | number;
 
@@ -5890,6 +5967,8 @@ export type PropertyShapeRendering = Globals | "auto" | "crispEdges" | "geometri
 
 export type PropertyStopColor = Globals | DataTypeColor | "currentColor";
 
+export type PropertyStopOpacity = Globals | number;
+
 export type PropertyStroke = Globals | DataTypePaint;
 
 export type PropertyStrokeDasharray<TLength> = Globals | DataTypeDasharray<TLength> | "none";
@@ -5899,6 +5978,10 @@ export type PropertyStrokeDashoffset<TLength> = Globals | TLength | string;
 export type PropertyStrokeLinecap = Globals | "butt" | "round" | "square";
 
 export type PropertyStrokeLinejoin = Globals | "bevel" | "miter" | "round";
+
+export type PropertyStrokeMiterlimit = Globals | number;
+
+export type PropertyStrokeOpacity = Globals | number;
 
 export type PropertyStrokeWidth<TLength> = Globals | TLength | string;
 
@@ -6168,17 +6251,17 @@ type AtRuleFontVariationSettings = "normal" | string;
 
 type AtRuleFontWeight = DataTypeFontWeightAbsolute | string;
 
-type AtRuleHeight<TLength> = DataTypeViewportLength<TLength> | string;
+type AtRuleHeight<TLength = string | 0> = DataTypeViewportLength<TLength> | string;
 
-type AtRuleMaxHeight<TLength> = DataTypeViewportLength<TLength>;
+type AtRuleMaxHeight<TLength = string | 0> = DataTypeViewportLength<TLength>;
 
-type AtRuleMaxWidth<TLength> = DataTypeViewportLength<TLength>;
+type AtRuleMaxWidth<TLength = string | 0> = DataTypeViewportLength<TLength>;
 
 type AtRuleMaxZoom = "auto" | string | number;
 
-type AtRuleMinHeight<TLength> = DataTypeViewportLength<TLength>;
+type AtRuleMinHeight<TLength = string | 0> = DataTypeViewportLength<TLength>;
 
-type AtRuleMinWidth<TLength> = DataTypeViewportLength<TLength>;
+type AtRuleMinWidth<TLength = string | 0> = DataTypeViewportLength<TLength>;
 
 type AtRuleMinZoom = "auto" | string | number;
 
@@ -6186,7 +6269,7 @@ type AtRuleOrientation = "auto" | "landscape" | "portrait";
 
 type AtRuleUserZoom = "-ms-zoom" | "fixed" | "zoom";
 
-type AtRuleWidth<TLength> = DataTypeViewportLength<TLength> | string;
+type AtRuleWidth<TLength = string | 0> = DataTypeViewportLength<TLength> | string;
 
 type AtRuleZoom = "auto" | string | number;
 
@@ -6196,9 +6279,9 @@ type DataTypeAnimateableFeature = "contents" | "scroll-position" | string;
 
 type DataTypeAttachment = "fixed" | "local" | "scroll";
 
-type DataTypeBgPosition<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
+type DataTypeBgPosition<TLength = string | 0> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
 
-type DataTypeBgSize<TLength> = TLength | "auto" | "contain" | "cover" | string;
+type DataTypeBgSize<TLength = string | 0> = TLength | "auto" | "contain" | "cover" | string;
 
 type DataTypeBlendMode =
   | "color"
@@ -6260,7 +6343,7 @@ type DataTypeContentPosition = "center" | "end" | "flex-end" | "flex-start" | "s
 
 type DataTypeCubicBezierTimingFunction = "ease" | "ease-in" | "ease-in-out" | "ease-out" | string;
 
-type DataTypeDasharray<TLength> = TLength | string | number;
+type DataTypeDasharray<TLength = string | 0> = TLength | string | number;
 
 type DataTypeDeprecatedSystemColor =
   | "ActiveBorder"
@@ -6322,7 +6405,7 @@ type DataTypeDisplayOutside = "block" | "inline" | "run-in";
 
 type DataTypeEastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
 
-type DataTypeFinalBgLayer<TLength> = DataTypeColor | DataTypeBgPosition<TLength> | DataTypeRepeatStyle | DataTypeAttachment | DataTypeBox | "none" | string;
+type DataTypeFinalBgLayer<TLength = string | 0> = DataTypeColor | DataTypeBgPosition<TLength> | DataTypeRepeatStyle | DataTypeAttachment | DataTypeBox | "none" | string;
 
 type DataTypeFontStretchAbsolute =
   | "condensed"
@@ -6346,9 +6429,9 @@ type DataTypeGridLine = "auto" | string | number;
 
 type DataTypeLineStyle = "dashed" | "dotted" | "double" | "groove" | "hidden" | "inset" | "none" | "outset" | "ridge" | "solid";
 
-type DataTypeLineWidth<TLength> = TLength | "medium" | "thick" | "thin";
+type DataTypeLineWidth<TLength = string | 0> = TLength | "medium" | "thick" | "thin";
 
-type DataTypeMaskLayer<TLength> =
+type DataTypeMaskLayer<TLength = string | 0> =
   | DataTypePosition<TLength>
   | DataTypeRepeatStyle
   | DataTypeGeometryBox
@@ -6513,7 +6596,7 @@ type DataTypeNamedColor =
 
 type DataTypePaint = DataTypeColor | "child" | "context-fill" | "context-stroke" | "none" | string;
 
-type DataTypePosition<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
+type DataTypePosition<TLength = string | 0> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
 
 type DataTypeQuote = "close-quote" | "no-close-quote" | "no-open-quote" | "open-quote";
 
@@ -6542,6 +6625,6 @@ type DataTypeStepTimingFunction = "step-end" | "step-start" | string;
 
 type DataTypeTimingFunction = DataTypeCubicBezierTimingFunction | DataTypeStepTimingFunction | "linear";
 
-type DataTypeTrackBreadth<TLength> = TLength | "auto" | "max-content" | "min-content" | string;
+type DataTypeTrackBreadth<TLength = string | 0> = TLength | "auto" | "max-content" | "min-content" | string;
 
-type DataTypeViewportLength<TLength> = TLength | "auto" | string;
+type DataTypeViewportLength<TLength = string | 0> = TLength | "auto" | string;
