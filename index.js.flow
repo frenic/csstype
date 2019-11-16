@@ -13,6 +13,7 @@ type FallbackablePropertyAnimationName = FallbackablePropertyAnimationName | Arr
 type FallbackablePropertyAnimationPlayState = FallbackablePropertyAnimationPlayState | Array<FallbackablePropertyAnimationPlayState>;
 type FallbackablePropertyAnimationTimingFunction = FallbackablePropertyAnimationTimingFunction | Array<FallbackablePropertyAnimationTimingFunction>;
 type FallbackablePropertyAppearance = FallbackablePropertyAppearance | Array<FallbackablePropertyAppearance>;
+type FallbackablePropertyAspectRatio = FallbackablePropertyAspectRatio | Array<FallbackablePropertyAspectRatio>;
 type FallbackablePropertyBackdropFilter = FallbackablePropertyBackdropFilter | Array<FallbackablePropertyBackdropFilter>;
 type FallbackablePropertyBackfaceVisibility = FallbackablePropertyBackfaceVisibility | Array<FallbackablePropertyBackfaceVisibility>;
 type FallbackablePropertyBackgroundAttachment = FallbackablePropertyBackgroundAttachment | Array<FallbackablePropertyBackgroundAttachment>;
@@ -377,10 +378,6 @@ type FallbackablePropertyTextDecoration<TLength> = FallbackablePropertyTextDecor
 type FallbackablePropertyTextEmphasis = FallbackablePropertyTextEmphasis | Array<FallbackablePropertyTextEmphasis>;
 type FallbackablePropertyTransition = FallbackablePropertyTransition | Array<FallbackablePropertyTransition>;
 type FallbackablePropertyMozAppearance = FallbackablePropertyMozAppearance | Array<FallbackablePropertyMozAppearance>;
-type FallbackablePropertyMozBorderBottomColors = FallbackablePropertyMozBorderBottomColors | Array<FallbackablePropertyMozBorderBottomColors>;
-type FallbackablePropertyMozBorderLeftColors = FallbackablePropertyMozBorderLeftColors | Array<FallbackablePropertyMozBorderLeftColors>;
-type FallbackablePropertyMozBorderRightColors = FallbackablePropertyMozBorderRightColors | Array<FallbackablePropertyMozBorderRightColors>;
-type FallbackablePropertyMozBorderTopColors = FallbackablePropertyMozBorderTopColors | Array<FallbackablePropertyMozBorderTopColors>;
 type FallbackablePropertyMozContextProperties = FallbackablePropertyMozContextProperties | Array<FallbackablePropertyMozContextProperties>;
 type FallbackablePropertyMozFloatEdge = FallbackablePropertyMozFloatEdge | Array<FallbackablePropertyMozFloatEdge>;
 type FallbackablePropertyMozForceBrokenImageIcon = FallbackablePropertyMozForceBrokenImageIcon | Array<FallbackablePropertyMozForceBrokenImageIcon>;
@@ -493,6 +490,10 @@ type FallbackablePropertyScrollSnapPointsY = FallbackablePropertyScrollSnapPoint
 type FallbackablePropertyScrollSnapTypeX = FallbackablePropertyScrollSnapTypeX | Array<FallbackablePropertyScrollSnapTypeX>;
 type FallbackablePropertyScrollSnapTypeY = FallbackablePropertyScrollSnapTypeY | Array<FallbackablePropertyScrollSnapTypeY>;
 type FallbackablePropertyMozBinding = FallbackablePropertyMozBinding | Array<FallbackablePropertyMozBinding>;
+type FallbackablePropertyMozBorderBottomColors = FallbackablePropertyMozBorderBottomColors | Array<FallbackablePropertyMozBorderBottomColors>;
+type FallbackablePropertyMozBorderLeftColors = FallbackablePropertyMozBorderLeftColors | Array<FallbackablePropertyMozBorderLeftColors>;
+type FallbackablePropertyMozBorderRightColors = FallbackablePropertyMozBorderRightColors | Array<FallbackablePropertyMozBorderRightColors>;
+type FallbackablePropertyMozBorderTopColors = FallbackablePropertyMozBorderTopColors | Array<FallbackablePropertyMozBorderTopColors>;
 type FallbackablePropertyMozOutlineRadius<TLength> = FallbackablePropertyMozOutlineRadius<TLength> | Array<FallbackablePropertyMozOutlineRadius<TLength>>;
 type FallbackablePropertyMozTextBlink = FallbackablePropertyMozTextBlink | Array<FallbackablePropertyMozTextBlink>;
 type FallbackablePropertyMozUserInput = FallbackablePropertyMozUserInput | Array<FallbackablePropertyMozUserInput>;
@@ -562,6 +563,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   animationPlayState?: PropertyAnimationPlayState,
   animationTimingFunction?: PropertyAnimationTimingFunction,
   appearance?: PropertyAppearance,
+  aspectRatio?: PropertyAspectRatio,
   backdropFilter?: PropertyBackdropFilter,
   backfaceVisibility?: PropertyBackfaceVisibility,
   backgroundAttachment?: PropertyBackgroundAttachment,
@@ -949,15 +951,11 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   MozAnimationTimingFunction?: PropertyAnimationTimingFunction,
   MozAppearance?: PropertyMozAppearance,
   MozBackfaceVisibility?: PropertyBackfaceVisibility,
-  MozBorderBottomColors?: PropertyMozBorderBottomColors,
   MozBorderEndColor?: PropertyBorderInlineEndColor,
   MozBorderEndStyle?: PropertyBorderInlineEndStyle,
   MozBorderEndWidth?: PropertyBorderInlineEndWidth<TLength>,
-  MozBorderLeftColors?: PropertyMozBorderLeftColors,
-  MozBorderRightColors?: PropertyMozBorderRightColors,
   MozBorderStartColor?: PropertyBorderInlineStartColor,
   MozBorderStartStyle?: PropertyBorderInlineStartStyle,
-  MozBorderTopColors?: PropertyMozBorderTopColors,
   MozBoxSizing?: PropertyBoxSizing,
   MozColumnCount?: PropertyColumnCount,
   MozColumnFill?: PropertyColumnFill,
@@ -1239,11 +1237,15 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   MozBackgroundOrigin?: PropertyBackgroundOrigin,
   MozBackgroundSize?: PropertyBackgroundSize<TLength>,
   MozBinding?: PropertyMozBinding,
+  MozBorderBottomColors?: PropertyMozBorderBottomColors,
+  MozBorderLeftColors?: PropertyMozBorderLeftColors,
   MozBorderRadius?: PropertyBorderRadius<TLength>,
   MozBorderRadiusBottomleft?: PropertyBorderBottomLeftRadius<TLength>,
   MozBorderRadiusBottomright?: PropertyBorderBottomRightRadius<TLength>,
   MozBorderRadiusTopleft?: PropertyBorderTopLeftRadius<TLength>,
   MozBorderRadiusTopright?: PropertyBorderTopRightRadius<TLength>,
+  MozBorderRightColors?: PropertyMozBorderRightColors,
+  MozBorderTopColors?: PropertyMozBorderTopColors,
   MozBoxAlign?: PropertyBoxAlign,
   MozBoxDirection?: PropertyBoxDirection,
   MozBoxFlex?: PropertyBoxFlex,
@@ -1372,6 +1374,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "animation-play-state"?: PropertyAnimationPlayState,
   "animation-timing-function"?: PropertyAnimationTimingFunction,
   appearance?: PropertyAppearance,
+  "aspect-ratio"?: PropertyAspectRatio,
   "backdrop-filter"?: PropertyBackdropFilter,
   "backface-visibility"?: PropertyBackfaceVisibility,
   "background-attachment"?: PropertyBackgroundAttachment,
@@ -1759,15 +1762,11 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-moz-animation-timing-function"?: PropertyAnimationTimingFunction,
   "-moz-appearance"?: PropertyMozAppearance,
   "-moz-backface-visibility"?: PropertyBackfaceVisibility,
-  "-moz-border-bottom-colors"?: PropertyMozBorderBottomColors,
   "-moz-border-end-color"?: PropertyBorderInlineEndColor,
   "-moz-border-end-style"?: PropertyBorderInlineEndStyle,
   "-moz-border-end-width"?: PropertyBorderInlineEndWidth<TLength>,
-  "-moz-border-left-colors"?: PropertyMozBorderLeftColors,
-  "-moz-border-right-colors"?: PropertyMozBorderRightColors,
   "-moz-border-start-color"?: PropertyBorderInlineStartColor,
   "-moz-border-start-style"?: PropertyBorderInlineStartStyle,
-  "-moz-border-top-colors"?: PropertyMozBorderTopColors,
   "-moz-box-sizing"?: PropertyBoxSizing,
   "-moz-column-count"?: PropertyColumnCount,
   "-moz-column-fill"?: PropertyColumnFill,
@@ -2049,11 +2048,15 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-moz-background-origin"?: PropertyBackgroundOrigin,
   "-moz-background-size"?: PropertyBackgroundSize<TLength>,
   "-moz-binding"?: PropertyMozBinding,
+  "-moz-border-bottom-colors"?: PropertyMozBorderBottomColors,
+  "-moz-border-left-colors"?: PropertyMozBorderLeftColors,
   "-moz-border-radius"?: PropertyBorderRadius<TLength>,
   "-moz-border-radius-bottomleft"?: PropertyBorderBottomLeftRadius<TLength>,
   "-moz-border-radius-bottomright"?: PropertyBorderBottomRightRadius<TLength>,
   "-moz-border-radius-topleft"?: PropertyBorderTopLeftRadius<TLength>,
   "-moz-border-radius-topright"?: PropertyBorderTopRightRadius<TLength>,
+  "-moz-border-right-colors"?: PropertyMozBorderRightColors,
+  "-moz-border-top-colors"?: PropertyMozBorderTopColors,
   "-moz-box-align"?: PropertyBoxAlign,
   "-moz-box-direction"?: PropertyBoxDirection,
   "-moz-box-flex"?: PropertyBoxFlex,
@@ -2187,6 +2190,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   animationPlayState?: FallbackablePropertyAnimationPlayState,
   animationTimingFunction?: FallbackablePropertyAnimationTimingFunction,
   appearance?: FallbackablePropertyAppearance,
+  aspectRatio?: FallbackablePropertyAspectRatio,
   backdropFilter?: FallbackablePropertyBackdropFilter,
   backfaceVisibility?: FallbackablePropertyBackfaceVisibility,
   backgroundAttachment?: FallbackablePropertyBackgroundAttachment,
@@ -2574,15 +2578,11 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   MozAnimationTimingFunction?: FallbackablePropertyAnimationTimingFunction,
   MozAppearance?: FallbackablePropertyMozAppearance,
   MozBackfaceVisibility?: FallbackablePropertyBackfaceVisibility,
-  MozBorderBottomColors?: FallbackablePropertyMozBorderBottomColors,
   MozBorderEndColor?: FallbackablePropertyBorderInlineEndColor,
   MozBorderEndStyle?: FallbackablePropertyBorderInlineEndStyle,
   MozBorderEndWidth?: FallbackablePropertyBorderInlineEndWidth<TLength>,
-  MozBorderLeftColors?: FallbackablePropertyMozBorderLeftColors,
-  MozBorderRightColors?: FallbackablePropertyMozBorderRightColors,
   MozBorderStartColor?: FallbackablePropertyBorderInlineStartColor,
   MozBorderStartStyle?: FallbackablePropertyBorderInlineStartStyle,
-  MozBorderTopColors?: FallbackablePropertyMozBorderTopColors,
   MozBoxSizing?: FallbackablePropertyBoxSizing,
   MozColumnCount?: FallbackablePropertyColumnCount,
   MozColumnFill?: FallbackablePropertyColumnFill,
@@ -2864,11 +2864,15 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   MozBackgroundOrigin?: FallbackablePropertyBackgroundOrigin,
   MozBackgroundSize?: FallbackablePropertyBackgroundSize<TLength>,
   MozBinding?: FallbackablePropertyMozBinding,
+  MozBorderBottomColors?: FallbackablePropertyMozBorderBottomColors,
+  MozBorderLeftColors?: FallbackablePropertyMozBorderLeftColors,
   MozBorderRadius?: FallbackablePropertyBorderRadius<TLength>,
   MozBorderRadiusBottomleft?: FallbackablePropertyBorderBottomLeftRadius<TLength>,
   MozBorderRadiusBottomright?: FallbackablePropertyBorderBottomRightRadius<TLength>,
   MozBorderRadiusTopleft?: FallbackablePropertyBorderTopLeftRadius<TLength>,
   MozBorderRadiusTopright?: FallbackablePropertyBorderTopRightRadius<TLength>,
+  MozBorderRightColors?: FallbackablePropertyMozBorderRightColors,
+  MozBorderTopColors?: FallbackablePropertyMozBorderTopColors,
   MozBoxAlign?: FallbackablePropertyBoxAlign,
   MozBoxDirection?: FallbackablePropertyBoxDirection,
   MozBoxFlex?: FallbackablePropertyBoxFlex,
@@ -3002,6 +3006,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "animation-play-state"?: FallbackablePropertyAnimationPlayState,
   "animation-timing-function"?: FallbackablePropertyAnimationTimingFunction,
   appearance?: FallbackablePropertyAppearance,
+  "aspect-ratio"?: FallbackablePropertyAspectRatio,
   "backdrop-filter"?: FallbackablePropertyBackdropFilter,
   "backface-visibility"?: FallbackablePropertyBackfaceVisibility,
   "background-attachment"?: FallbackablePropertyBackgroundAttachment,
@@ -3392,15 +3397,11 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-animation-timing-function"?: FallbackablePropertyAnimationTimingFunction,
   "-moz-appearance"?: FallbackablePropertyMozAppearance,
   "-moz-backface-visibility"?: FallbackablePropertyBackfaceVisibility,
-  "-moz-border-bottom-colors"?: FallbackablePropertyMozBorderBottomColors,
   "-moz-border-end-color"?: FallbackablePropertyBorderInlineEndColor,
   "-moz-border-end-style"?: FallbackablePropertyBorderInlineEndStyle,
   "-moz-border-end-width"?: FallbackablePropertyBorderInlineEndWidth<TLength>,
-  "-moz-border-left-colors"?: FallbackablePropertyMozBorderLeftColors,
-  "-moz-border-right-colors"?: FallbackablePropertyMozBorderRightColors,
   "-moz-border-start-color"?: FallbackablePropertyBorderInlineStartColor,
   "-moz-border-start-style"?: FallbackablePropertyBorderInlineStartStyle,
-  "-moz-border-top-colors"?: FallbackablePropertyMozBorderTopColors,
   "-moz-box-sizing"?: FallbackablePropertyBoxSizing,
   "-moz-column-count"?: FallbackablePropertyColumnCount,
   "-moz-column-fill"?: FallbackablePropertyColumnFill,
@@ -3682,11 +3683,15 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-background-origin"?: FallbackablePropertyBackgroundOrigin,
   "-moz-background-size"?: FallbackablePropertyBackgroundSize<TLength>,
   "-moz-binding"?: FallbackablePropertyMozBinding,
+  "-moz-border-bottom-colors"?: FallbackablePropertyMozBorderBottomColors,
+  "-moz-border-left-colors"?: FallbackablePropertyMozBorderLeftColors,
   "-moz-border-radius"?: FallbackablePropertyBorderRadius<TLength>,
   "-moz-border-radius-bottomleft"?: FallbackablePropertyBorderBottomLeftRadius<TLength>,
   "-moz-border-radius-bottomright"?: FallbackablePropertyBorderBottomRightRadius<TLength>,
   "-moz-border-radius-topleft"?: FallbackablePropertyBorderTopLeftRadius<TLength>,
   "-moz-border-radius-topright"?: FallbackablePropertyBorderTopRightRadius<TLength>,
+  "-moz-border-right-colors"?: FallbackablePropertyMozBorderRightColors,
+  "-moz-border-top-colors"?: FallbackablePropertyMozBorderTopColors,
   "-moz-box-align"?: FallbackablePropertyBoxAlign,
   "-moz-box-direction"?: FallbackablePropertyBoxDirection,
   "-moz-box-flex"?: FallbackablePropertyBoxFlex,
@@ -4438,6 +4443,8 @@ export type PropertyAnimationPlayState = Globals | "paused" | "running" | string
 export type PropertyAnimationTimingFunction = Globals | DataTypeTimingFunction | string;
 
 export type PropertyAppearance = Globals | DataTypeCompat | "button" | "none" | "textfield";
+
+export type PropertyAspectRatio = Globals | "auto" | string;
 
 export type PropertyBackdropFilter = Globals | "none" | string;
 
@@ -6273,7 +6280,7 @@ type AtRuleWidth<TLength = string | 0> = DataTypeViewportLength<TLength> | strin
 
 type AtRuleZoom = "auto" | string | number;
 
-type DataTypeAbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small";
+type DataTypeAbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small" | "xxx-large";
 
 type DataTypeAnimateableFeature = "contents" | "scroll-position" | string;
 

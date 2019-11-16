@@ -197,6 +197,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    */
   appearance?: Property.Appearance;
   /**
+   * The **`aspect-ratio`**    CSS property sets a _**preferred aspect ratio**_ for the box, which will be used in the calculation of auto sizes and some other layout functions.
+   *
+   * **Initial value**: `auto`
+   */
+  aspectRatio?: Property.AspectRatio;
+  /**
    * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
    *
    * **Initial value**: `none`
@@ -1250,7 +1256,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * | Chrome  | Firefox |  Safari   |  Edge  |   IE   |
    * | :-----: | :-----: | :-------: | :----: | :----: |
-   * | **50**  |   n/a   |   **9**   | **12** | **10** |
+   * | **50**  | **71**  |   **9**   | **12** | **10** |
    * | 6 _-x-_ |         | 5.1 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-span
@@ -1524,7 +1530,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * |   No   | **62**  | **11** | **17** | No  |
+   * | **79** | **62**  | **11** | **17** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -4605,7 +4611,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0> {
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
-   * |    **55**     |   No    |   No   |  No  | No  |
+   * |    **55**     | **71**  |   No   |  No  | No  |
    * | 46 _(motion)_ |         |        |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -4616,7 +4622,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0> {
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
-   * |    **55**     |   No    |   No   |  No  | No  |
+   * |    **55**     | **71**  |   No   |  No  | No  |
    * | 46 _(motion)_ |         |        |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -4787,12 +4793,6 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    */
   MozBackfaceVisibility?: Property.BackfaceVisibility;
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
-   *
-   * **Initial value**: `none`
-   */
-  MozBorderBottomColors?: Property.MozBorderBottomColors;
-  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -4811,18 +4811,6 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    */
   MozBorderEndWidth?: Property.BorderInlineEndWidth<TLength>;
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
-   *
-   * **Initial value**: `none`
-   */
-  MozBorderLeftColors?: Property.MozBorderLeftColors;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
-   *
-   * **Initial value**: `none`
-   */
-  MozBorderRightColors?: Property.MozBorderRightColors;
-  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -4834,12 +4822,6 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    * **Initial value**: `none`
    */
   MozBorderStartStyle?: Property.BorderInlineStartStyle;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
-   *
-   * **Initial value**: `none`
-   */
-  MozBorderTopColors?: Property.MozBorderTopColors;
   /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
@@ -6459,6 +6441,22 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    */
   MozBinding?: Property.MozBinding;
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  MozBorderBottomColors?: Property.MozBorderBottomColors;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  MozBorderLeftColors?: Property.MozBorderLeftColors;
+  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * @deprecated
@@ -6496,6 +6494,22 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    * @deprecated
    */
   MozBorderRadiusTopright?: Property.BorderTopRightRadius<TLength>;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  MozBorderRightColors?: Property.MozBorderRightColors;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  MozBorderTopColors?: Property.MozBorderTopColors;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -7135,6 +7149,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
   appearance?: Property.Appearance;
+  /**
+   * The **`aspect-ratio`**    CSS property sets a _**preferred aspect ratio**_ for the box, which will be used in the calculation of auto sizes and some other layout functions.
+   *
+   * **Initial value**: `auto`
+   */
+  "aspect-ratio"?: Property.AspectRatio;
   /**
    * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
    *
@@ -8189,7 +8209,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * | Chrome  | Firefox |  Safari   |  Edge  |   IE   |
    * | :-----: | :-----: | :-------: | :----: | :----: |
-   * | **50**  |   n/a   |   **9**   | **12** | **10** |
+   * | **50**  | **71**  |   **9**   | **12** | **10** |
    * | 6 _-x-_ |         | 5.1 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-span
@@ -8463,7 +8483,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * |   No   | **62**  | **11** | **17** | No  |
+   * | **79** | **62**  | **11** | **17** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -11544,7 +11564,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0> 
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
-   * |    **55**     |   No    |   No   |  No  | No  |
+   * |    **55**     | **71**  |   No   |  No  | No  |
    * | 46 _(motion)_ |         |        |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -11555,7 +11575,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0> 
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
-   * |    **55**     |   No    |   No   |  No  | No  |
+   * |    **55**     | **71**  |   No   |  No  | No  |
    * | 46 _(motion)_ |         |        |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -11726,12 +11746,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    */
   "-moz-backface-visibility"?: Property.BackfaceVisibility;
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-border-bottom-colors"?: Property.MozBorderBottomColors;
-  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -11750,18 +11764,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    */
   "-moz-border-end-width"?: Property.BorderInlineEndWidth<TLength>;
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-border-left-colors"?: Property.MozBorderLeftColors;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-border-right-colors"?: Property.MozBorderRightColors;
-  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -11773,12 +11775,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    * **Initial value**: `none`
    */
   "-moz-border-start-style"?: Property.BorderInlineStartStyle;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-border-top-colors"?: Property.MozBorderTopColors;
   /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
@@ -13398,6 +13394,22 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    */
   "-moz-binding"?: Property.MozBinding;
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  "-moz-border-bottom-colors"?: Property.MozBorderBottomColors;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  "-moz-border-left-colors"?: Property.MozBorderLeftColors;
+  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * @deprecated
@@ -13435,6 +13447,22 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    * @deprecated
    */
   "-moz-border-radius-topright"?: Property.BorderTopRightRadius<TLength>;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  "-moz-border-right-colors"?: Property.MozBorderRightColors;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  "-moz-border-top-colors"?: Property.MozBorderTopColors;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -14078,6 +14106,12 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
   appearance?: Property.Appearance | Property.Appearance[];
+  /**
+   * The **`aspect-ratio`**    CSS property sets a _**preferred aspect ratio**_ for the box, which will be used in the calculation of auto sizes and some other layout functions.
+   *
+   * **Initial value**: `auto`
+   */
+  aspectRatio?: Property.AspectRatio | Property.AspectRatio[];
   /**
    * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
    *
@@ -15132,7 +15166,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * | Chrome  | Firefox |  Safari   |  Edge  |   IE   |
    * | :-----: | :-----: | :-------: | :----: | :----: |
-   * | **50**  |   n/a   |   **9**   | **12** | **10** |
+   * | **50**  | **71**  |   **9**   | **12** | **10** |
    * | 6 _-x-_ |         | 5.1 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-span
@@ -15406,7 +15440,7 @@ export interface StandardLonghandPropertiesFallback<TLength = (string & {}) | 0>
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * |   No   | **62**  | **11** | **17** | No  |
+   * | **79** | **62**  | **11** | **17** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -18487,7 +18521,7 @@ export interface StandardShorthandPropertiesFallback<TLength = (string & {}) | 0
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
-   * |    **55**     |   No    |   No   |  No  | No  |
+   * |    **55**     | **71**  |   No   |  No  | No  |
    * | 46 _(motion)_ |         |        |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -18498,7 +18532,7 @@ export interface StandardShorthandPropertiesFallback<TLength = (string & {}) | 0
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
-   * |    **55**     |   No    |   No   |  No  | No  |
+   * |    **55**     | **71**  |   No   |  No  | No  |
    * | 46 _(motion)_ |         |        |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -18669,12 +18703,6 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    */
   MozBackfaceVisibility?: Property.BackfaceVisibility | Property.BackfaceVisibility[];
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
-   *
-   * **Initial value**: `none`
-   */
-  MozBorderBottomColors?: Property.MozBorderBottomColors | Property.MozBorderBottomColors[];
-  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -18693,18 +18721,6 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    */
   MozBorderEndWidth?: Property.BorderInlineEndWidth<TLength> | Property.BorderInlineEndWidth<TLength>[];
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
-   *
-   * **Initial value**: `none`
-   */
-  MozBorderLeftColors?: Property.MozBorderLeftColors | Property.MozBorderLeftColors[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
-   *
-   * **Initial value**: `none`
-   */
-  MozBorderRightColors?: Property.MozBorderRightColors | Property.MozBorderRightColors[];
-  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -18716,12 +18732,6 @@ export interface VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> {
    * **Initial value**: `none`
    */
   MozBorderStartStyle?: Property.BorderInlineStartStyle | Property.BorderInlineStartStyle[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
-   *
-   * **Initial value**: `none`
-   */
-  MozBorderTopColors?: Property.MozBorderTopColors | Property.MozBorderTopColors[];
   /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
@@ -20341,6 +20351,22 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    */
   MozBinding?: Property.MozBinding | Property.MozBinding[];
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  MozBorderBottomColors?: Property.MozBorderBottomColors | Property.MozBorderBottomColors[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  MozBorderLeftColors?: Property.MozBorderLeftColors | Property.MozBorderLeftColors[];
+  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * @deprecated
@@ -20378,6 +20404,22 @@ export interface ObsoletePropertiesFallback<TLength = (string & {}) | 0> {
    * @deprecated
    */
   MozBorderRadiusTopright?: Property.BorderTopRightRadius<TLength> | Property.BorderTopRightRadius<TLength>[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  MozBorderRightColors?: Property.MozBorderRightColors | Property.MozBorderRightColors[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  MozBorderTopColors?: Property.MozBorderTopColors | Property.MozBorderTopColors[];
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -21021,6 +21063,12 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
   appearance?: Property.Appearance | Property.Appearance[];
+  /**
+   * The **`aspect-ratio`**    CSS property sets a _**preferred aspect ratio**_ for the box, which will be used in the calculation of auto sizes and some other layout functions.
+   *
+   * **Initial value**: `auto`
+   */
+  "aspect-ratio"?: Property.AspectRatio | Property.AspectRatio[];
   /**
    * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
    *
@@ -22075,7 +22123,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * | Chrome  | Firefox |  Safari   |  Edge  |   IE   |
    * | :-----: | :-----: | :-------: | :----: | :----: |
-   * | **50**  |   n/a   |   **9**   | **12** | **10** |
+   * | **50**  | **71**  |   **9**   | **12** | **10** |
    * | 6 _-x-_ |         | 5.1 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-span
@@ -22349,7 +22397,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = (string & {}
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * |   No   | **62**  | **11** | **17** | No  |
+   * | **79** | **62**  | **11** | **17** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-optical-sizing
    */
@@ -25430,7 +25478,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = (string & {
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
-   * |    **55**     |   No    |   No   |  No  | No  |
+   * |    **55**     | **71**  |   No   |  No  | No  |
    * | 46 _(motion)_ |         |        |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -25441,7 +25489,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = (string & {
    *
    * |    Chrome     | Firefox | Safari | Edge | IE  |
    * | :-----------: | :-----: | :----: | :--: | :-: |
-   * |    **55**     |   No    |   No   |  No  | No  |
+   * |    **55**     | **71**  |   No   |  No  | No  |
    * | 46 _(motion)_ |         |        |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset
@@ -25614,12 +25662,6 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    */
   "-moz-backface-visibility"?: Property.BackfaceVisibility | Property.BackfaceVisibility[];
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-border-bottom-colors"?: Property.MozBorderBottomColors | Property.MozBorderBottomColors[];
-  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -25638,18 +25680,6 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    */
   "-moz-border-end-width"?: Property.BorderInlineEndWidth<TLength> | Property.BorderInlineEndWidth<TLength>[];
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-border-left-colors"?: Property.MozBorderLeftColors | Property.MozBorderLeftColors[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-border-right-colors"?: Property.MozBorderRightColors | Property.MozBorderRightColors[];
-  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Initial value**: `currentcolor`
@@ -25661,12 +25691,6 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) 
    * **Initial value**: `none`
    */
   "-moz-border-start-style"?: Property.BorderInlineStartStyle | Property.BorderInlineStartStyle[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-border-top-colors"?: Property.MozBorderTopColors | Property.MozBorderTopColors[];
   /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
@@ -27288,6 +27312,22 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    */
   "-moz-binding"?: Property.MozBinding | Property.MozBinding[];
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  "-moz-border-bottom-colors"?: Property.MozBorderBottomColors | Property.MozBorderBottomColors[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  "-moz-border-left-colors"?: Property.MozBorderLeftColors | Property.MozBorderLeftColors[];
+  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * @deprecated
@@ -27325,6 +27365,22 @@ export interface ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> {
    * @deprecated
    */
   "-moz-border-radius-topright"?: Property.BorderTopRightRadius<TLength> | Property.BorderTopRightRadius<TLength>[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  "-moz-border-right-colors"?: Property.MozBorderRightColors | Property.MozBorderRightColors[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
+   *
+   * **Initial value**: `none`
+   *
+   * @deprecated
+   */
+  "-moz-border-top-colors"?: Property.MozBorderTopColors | Property.MozBorderTopColors[];
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -28402,6 +28458,8 @@ export namespace Property {
   export type AnimationTimingFunction = Globals | DataType.TimingFunction | (string & {});
 
   export type Appearance = Globals | DataType.Compat | "button" | "none" | "textfield";
+
+  export type AspectRatio = Globals | "auto" | (string & {});
 
   export type BackdropFilter = Globals | "none" | (string & {});
 
@@ -30241,7 +30299,7 @@ export namespace AtRule {
 }
 
 declare namespace DataType {
-  type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small";
+  type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small" | "xxx-large";
 
   type AnimateableFeature = "contents" | "scroll-position" | (string & {});
 
