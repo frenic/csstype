@@ -148,7 +148,9 @@ function outputDeclaration(entry: IDeclaration, namespace = '') {
     output += 'export ';
   }
 
-  output += `type ${namespace + entry.name + stringifyGenerics(entry.generics, !entry.export, stringifyTypes)} = ${stringifyTypes(entry.types)}`;
+  output += `type ${namespace +
+    entry.name +
+    stringifyGenerics(entry.generics, !entry.export, stringifyTypes)} = ${stringifyTypes(entry.types)}`;
 
   return output;
 }
