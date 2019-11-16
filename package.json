@@ -1,6 +1,6 @@
 {
   "name": "csstype",
-  "version": "2.6.7",
+  "version": "3.0.0-alpha.0",
   "main": "",
   "types": "index.d.ts",
   "description": "Strict TypeScript and Flow types for style based on MDN data",
