@@ -1,5 +1,5 @@
 import { DeclarableType, IDeclaration, IInterface, isAliasProperty } from './declarator';
-import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './output';
+import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './utils/output';
 
 export default async function flow() {
   const { namespaces, interfaces, declarations } = await generatingDeclarations;

@@ -188,7 +188,7 @@ export function isCurlyBracetMultiplier(multiplier: MultiplierType): multiplier 
 }
 
 export function isMandatoryMultiplied(multiplier: MultiplierType | null) {
-  return multiplier !== null && (isCurlyBracetMultiplier(multiplier) && multiplier.min > 1);
+  return multiplier !== null && isCurlyBracetMultiplier(multiplier) && multiplier.min > 1;
 }
 
 export function isOptionallyMultiplied(multiplier: MultiplierType | null) {

@@ -1,4 +1,4 @@
-import parse, { Combinator, Component } from '../src/parser';
+import parse, { Combinator, Component } from '../src/syntax/parser';
 
 describe('parsing', () => {
   it('parses combinators', () => {

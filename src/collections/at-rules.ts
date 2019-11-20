@@ -1,8 +1,8 @@
 import * as atRules from 'mdn-data/css/at-rules.json';
-import { compatNames, compatSyntax, getAtRuleData, getCompats, isAddedBySome } from './compat';
+import parse from '../syntax/parser';
+import typing, { IStringLiteral, ResolvedType, Type } from '../syntax/typer';
+import { compatNames, compatSyntax, getAtRuleData, getCompats, isAddedBySome } from '../utils/compat';
 import { IDataTypeDictionary, resolveDataTypes } from './data-types';
-import parse from './parser';
-import typing, { IStringLiteral, ResolvedType, Type } from './typer';
 
 interface IDescriptor {
   name: string;

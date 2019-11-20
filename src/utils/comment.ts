@@ -1,7 +1,7 @@
 import * as l10n from 'mdn-data/l10n/css.json';
 import { format } from 'prettier';
-import { getCompats } from './compat';
-import { IExtendedProperty } from './data/patches';
+import { IExtendedProperty } from '../data/patches';
+import { getCompats } from '../utils/compat';
 import { warn } from './logger';
 import { getSummary } from './urls';
 

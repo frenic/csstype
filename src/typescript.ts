@@ -1,6 +1,6 @@
 import { DeclarableType, IDeclaration, IInterface, INamespace, isAliasProperty, SimpleType } from './declarator';
-import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './output';
-import { Type } from './typer';
+import { Type } from './syntax/typer';
+import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './utils/output';
 
 export default async function typescript() {
   const { namespaces, interfaces, declarations } = await generatingDeclarations;

@@ -1,6 +1,6 @@
 import * as cssTypes from 'mdn-data/css/types.json';
-import { isProperty, isSyntax } from './data';
-import { warn } from './logger';
+import { isProperty, isSyntax } from '../collections/syntaxes';
+import { warn } from '../utils/logger';
 import {
   Combinator,
   Component,

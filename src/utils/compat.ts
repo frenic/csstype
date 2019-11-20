@@ -1,4 +1,12 @@
-import { Combinator, combinators, Component, componentData, componentGroupData, Entity, EntityType } from './parser';
+import {
+  Combinator,
+  combinators,
+  Component,
+  componentData,
+  componentGroupData,
+  Entity,
+  EntityType,
+} from '../syntax/parser';
 
 const importsCache: { [cssPath: string]: MDN.CompatData | undefined } = {};
 

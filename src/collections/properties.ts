@@ -1,4 +1,7 @@
-import { composeCommentBlock } from './comment';
+import { properties as rawSvgProperties } from '../data/svg';
+import parse from '../syntax/parser';
+import typing, { ResolvedType } from '../syntax/typer';
+import { composeCommentBlock } from '../utils/comment';
 import {
   compatNames,
   compatSyntax,
@@ -7,13 +10,10 @@ import {
   getTypesData,
   isAddedBySome,
   isDeprecated,
-} from './compat';
-import { getProperties, getPropertySyntax } from './data';
+} from '../utils/compat';
+import { warn } from '../utils/logger';
 import { createPropertyDataTypeResolver, IDataTypeDictionary, resolveDataTypes } from './data-types';
-import { properties as rawSvgProperties } from './data/svg';
-import { warn } from './logger';
-import parse from './parser';
-import typing, { ResolvedType } from './typer';
+import { getProperties, getPropertySyntax } from './syntaxes';
 
 const ALL = 'all';
 

@@ -1,5 +1,5 @@
-import { DeclarableType, declarator, IGenerics, INamespace, SimpleType } from './declarator';
-import { Type } from './typer';
+import { DeclarableType, declarator, IGenerics, INamespace, SimpleType } from '../declarator';
+import { Type } from '../syntax/typer';
 
 export const EOL = '\n';
 

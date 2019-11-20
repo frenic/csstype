@@ -1,6 +1,6 @@
 import * as selectors from 'mdn-data/css/selectors.json';
-import { alternativeSelectors } from './compat';
-import { addType, ResolvedType, Type } from './typer';
+import { addType, ResolvedType, Type } from '../syntax/typer';
+import { alternativeSelectors } from '../utils/compat';
 
 const REGEX_SIMPLE_PSEUDO_SELECTOR = /(?!:?:[\w-]+\()(:?:[\w-]+)/g;
 const REGEX_ADVANCED_PSEUDO_SELECTOR = /(:?:[\w-]+)\(/g;

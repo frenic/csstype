@@ -1,10 +1,10 @@
-import { getAtRules } from './at-rules';
-import { getHtmlAttributes, getSvgAttributes } from './attributes';
-import { toCamelCase, toPascalCase, toVendorPrefixCase } from './casing';
-import { getDataTypesOf } from './data-types';
-import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } from './properties';
-import { getPseudos } from './selectors';
-import { IDataType, Type, TypeType } from './typer';
+import { getAtRules } from './collections/at-rules';
+import { getHtmlAttributes, getSvgAttributes } from './collections/attributes';
+import { getDataTypesOf } from './collections/data-types';
+import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } from './collections/properties';
+import { getPseudos } from './collections/selectors';
+import { IDataType, Type, TypeType } from './syntax/typer';
+import { toCamelCase, toPascalCase, toVendorPrefixCase } from './utils/casing';
 
 export interface IAlias {
   type: Type.Alias;

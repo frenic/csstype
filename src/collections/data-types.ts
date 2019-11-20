@@ -1,7 +1,7 @@
-import { compatSyntax } from './compat';
-import { getPropertySyntax, getSyntax } from './data';
-import parse from './parser';
-import typing, { addType, DataType, hasType, IDataType, ResolvedType, Type, TypeType } from './typer';
+import parse from '../syntax/parser';
+import typing, { addType, DataType, hasType, IDataType, ResolvedType, Type, TypeType } from '../syntax/typer';
+import { compatSyntax } from '../utils/compat';
+import { getPropertySyntax, getSyntax } from './syntaxes';
 
 export interface IDataTypeDictionary {
   [key: string]: ResolvedType[];

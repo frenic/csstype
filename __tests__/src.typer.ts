@@ -1,5 +1,5 @@
-import parse from '../src/parser';
-import typing, { Type } from '../src/typer';
+import parse from '../src/syntax/parser';
+import typing, { Type } from '../src/syntax/typer';
 
 describe('typing', () => {
   it('types combinators', () => {

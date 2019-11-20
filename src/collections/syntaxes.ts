@@ -1,12 +1,12 @@
 import * as rawProperties from 'mdn-data/css/properties.json';
 import * as rawSyntaxes from 'mdn-data/css/syntaxes.json';
-import { getPropertyData, getTypesData } from './compat';
+import { IExtendedProperty, properties as patchedProperties, syntaxes as patchedSyntaxes } from '../data/patches';
+import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from '../data/svg';
+import parse from '../syntax/parser';
+import typing, { hasType } from '../syntax/typer';
+import { getPropertyData, getTypesData } from '../utils/compat';
+import { error, warn } from '../utils/logger';
 import { createPropertyDataTypeResolver, resolveDataTypes } from './data-types';
-import { IExtendedProperty, properties as patchedProperties, syntaxes as patchedSyntaxes } from './data/patches';
-import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from './data/svg';
-import { error, warn } from './logger';
-import parse from './parser';
-import typing, { hasType } from './typer';
 
 export async function getProperties() {
   const properties: { [property: string]: IExtendedProperty } = {};
@@ -30,29 +30,6 @@ export async function getProperties() {
 
   return properties;
 }
-
-// export async function getSyntaxes(dataTypeDictionary: IDataTypeDictionary) {
-//   const syntaxes: { [property: string]: MDN.Syntax } = {};
-//   for (const name in rawSvgSyntaxes) {
-//     syntaxes[name] = {
-//       syntax: await getSyntax(dataTypeDictionary, name),
-//     };
-//   }
-
-//   for (const name in rawSyntaxes) {
-//     syntaxes[name] = {
-//       syntax: await getSyntax(dataTypeDictionary, name),
-//     };
-//   }
-
-//   for (const name in patchedSyntaxes) {
-//     if (!(name in rawSyntaxes || name in rawSvgSyntaxes)) {
-//       syntaxes[name] = patchedSyntaxes[name];
-//     }
-//   }
-
-//   return syntaxes;
-// }
 
 export function isProperty(name: string) {
   return (
