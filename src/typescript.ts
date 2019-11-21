@@ -1,4 +1,13 @@
-import { DeclarableType, IDeclaration, IInterface, INamespace, isAliasProperty, SimpleType } from './declarator';
+import {
+  DeclarableType,
+  IDeclaration,
+  INamespace,
+  Interface,
+  isAliasProperty,
+  isInterface,
+  isInterfaceProperties,
+  SimpleType,
+} from './declarator';
 import { Type } from './syntax/typer';
 import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './utils/output';
 
@@ -44,7 +53,7 @@ export default async function typescript() {
         namespaceOutput += EOL;
       }
 
-      if ('extends' in entry) {
+      if (isInterface(entry)) {
         namespaceOutput += (await outputInterface(entry, namespace)) + EOL;
       } else {
         namespaceOutput += outputDeclaration(entry, namespace) + EOL;
@@ -57,45 +66,49 @@ export default async function typescript() {
   return interfacesOutput + EOL + declarationsOutput + EOL + namespaceOutput;
 }
 
-async function outputInterface(entry: IInterface, currentNamespace: INamespace | undefined) {
+async function outputInterface(entry: Interface, currentNamespace: INamespace | undefined) {
   let output = '';
   if (entry.export) {
     output += 'export ';
   }
 
-  const extendList = entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)).join(', ');
-  output += 'interface ' + entry.name + stringifyGenerics(entry.generics, true, stringifySimpleTypes);
+  if (isInterfaceProperties(entry)) {
+    const extendList = entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)).join(', ');
+    output += 'interface ' + entry.name + stringifyGenerics(entry.generics, true, stringifySimpleTypes);
 
-  if (extendList) {
-    output += ` extends ${extendList}`;
-  }
-
-  output += '{' + EOL;
-
-  for (const property of entry.properties) {
-    const comment = await property.comment();
-    if (comment) {
-      output += comment + EOL;
+    if (extendList) {
+      output += ` extends ${extendList}`;
     }
 
-    if (isAliasProperty(property)) {
-      const name =
-        property.namespace && property.namespace !== currentNamespace
-          ? `${property.namespace.name}.${property.alias.name}`
-          : property.alias.name;
-      const generics = stringifyGenerics(property.generics);
-      output += `${JSON.stringify(property.name)}?: ${
-        entry.fallback ? `${name + generics} | ${name + generics}[];` : `${name + generics};`
-      }`;
-    } else {
-      const value = stringifyTypes([property.type], currentNamespace, false);
-      output += `${JSON.stringify(property.name)}?: ${entry.fallback ? `${value} | ${value}[];` : `${value};`}`;
+    output += '{' + EOL;
+
+    for (const property of entry.properties) {
+      const comment = await property.comment();
+      if (comment) {
+        output += comment + EOL;
+      }
+
+      if (isAliasProperty(property)) {
+        const name =
+          property.namespace && property.namespace !== currentNamespace
+            ? `${property.namespace.name}.${property.alias.name}`
+            : property.alias.name;
+        const generics = stringifyGenerics(property.generics);
+        output += `${JSON.stringify(property.name)}?: ${name + generics};`;
+      } else {
+        const value = stringifyTypes([property.type], currentNamespace, false);
+        output += `${JSON.stringify(property.name)}?: ${value};`;
+      }
+
+      output += EOL;
     }
+    output += '}';
+  } else {
+    output += 'type ' + entry.name + stringifyGenerics(entry.generics, true, stringifySimpleTypes) + ' = {' + EOL;
 
-    output += EOL;
+    const name = entry.fallbacks.name + stringifyGenerics(entry.generics, false, stringifySimpleTypes);
+    output += '[P in keyof ' + name + ']: ' + name + '[P] | ' + name + '[P][];' + EOL + '}';
   }
-
-  output += '}';
 
   return output;
 }

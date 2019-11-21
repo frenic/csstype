@@ -1,4 +1,11 @@
-import { DeclarableType, IDeclaration, IInterface, isAliasProperty } from './declarator';
+import {
+  DeclarableType,
+  IDeclaration,
+  Interface,
+  isAliasProperty,
+  isInterface,
+  isInterfaceProperties,
+} from './declarator';
 import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './utils/output';
 
 export default async function flow() {
@@ -37,7 +44,7 @@ export default async function flow() {
         namespaceOutput += EOL;
       }
 
-      if ('extends' in entry) {
+      if (isInterface(entry)) {
         namespaceOutput += outputInterface(entry, fallbackSet, namespace.name) + EOL;
       } else {
         namespaceOutput += outputDeclaration(entry, namespace.name) + EOL;
@@ -86,12 +93,12 @@ function getNameForFallbackable(name: string): string {
   return 'Fallbackable' + name;
 }
 
-function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace = '') {
+function outputInterface(entry: Interface, fallbackSet: Set<string>, namespace = '') {
   let output = '';
 
-  const extendList = combineFlowExactTypes(
-    entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)),
-  );
+  const extendList = isInterfaceProperties(entry)
+    ? combineFlowExactTypes(entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)))
+    : '';
 
   if (entry.export) {
     output += 'export ';
@@ -101,7 +108,10 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
   output += namespace + entry.name + stringifyGenerics(entry.generics, true, stringifyTypes);
   output += ' = ' + extendList;
 
-  if (entry.properties.length > 0) {
+  const fallback = !isInterfaceProperties(entry);
+  const properties = isInterfaceProperties(entry) ? entry.properties : entry.fallbacks.properties;
+
+  if (properties.length > 0) {
     if (extendList) {
       // TODO: remove this branch since it's not getting hit
       output += ' & ';
@@ -109,12 +119,12 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
 
     output += '{|' + EOL;
 
-    for (const property of entry.properties) {
+    for (const property of properties) {
       if (isAliasProperty(property)) {
         const generics = stringifyGenerics(property.generics);
         const key = JSON.stringify(property.name);
         let type = (property.namespace ? property.namespace.name : '') + property.alias.name + generics;
-        if (entry.fallback) {
+        if (fallback) {
           type = getNameForFallbackable(type);
           fallbackSet.add(type);
         }
@@ -124,7 +134,7 @@ function outputInterface(entry: IInterface, fallbackSet: Set<string>, namespace 
         const value = stringifyTypes(property.type);
         const key = JSON.stringify(property.name);
         let type = value;
-        if (entry.fallback) {
+        if (fallback) {
           type = getNameForFallbackable(type);
           fallbackSet.add(type);
         }
