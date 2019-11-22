@@ -29,7 +29,8 @@
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "turndown": "^5.0.3",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "yarn": "^1.19.1"
   },
   "scripts": {
     "update": "ts-node --files update.ts",
@@ -38,11 +39,10 @@
     "lint": "tslint --exclude node_modules/**/* --exclude **/*.d.ts --fix **/*.ts",
     "pretty": "prettier --write build.ts **/*.{ts,js,json,md}",
     "lazy": "tsc && npm run lint && npm run pretty",
-    "test": "jest --no-cache",
-    "test-src": "jest src.*.ts --no-cache",
-    "test-dist": "jest dist.*.ts --no-cache",
-    "prepublish": "tsc && npm run test-src && npm run build",
-    "rebase-build": "git rebase --exec \"yarn --ignore-scripts && yarn build && git commit -a --amend --no-verify --no-edit --allow-empty\""
+    "test": "jest",
+    "test:src": "jest src.*.ts",
+    "test:dist": "jest dist.*.ts",
+    "prepublish": "tsc && npm run test:src && npm run build"
   },
   "files": [
     "index.d.ts",

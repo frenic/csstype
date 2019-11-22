@@ -47,8 +47,8 @@ export default async function trigger() {
   ]);
   console.info(`Writing files...`);
   await Promise.all([writeFileAsync(FLOW_FILENAME, flow), writeFileAsync(TYPESCRIPT_FILENAME, typescript)]);
-  console.info('Type checking...');
-  await typecheck();
+  console.info('Testing...');
+  await testing();
 }
 
 async function create() {
@@ -77,6 +77,6 @@ async function format(output: string, parser: prettier.BuiltInParserName) {
   }
 }
 
-function typecheck() {
+function testing() {
   return runCLI({ testMatch: ['**/__tests__/dist.*.ts'] } as any, [__dirname]);
 }

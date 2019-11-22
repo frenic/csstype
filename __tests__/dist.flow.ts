@@ -7,7 +7,7 @@ const flow: string = require('flow-bin');
 test('it detects errors', () => {
   const { stdout: output } = spawnSync(
     flow,
-    ['check', path.resolve(__dirname, '../__fixtures__/typecheck.js'), '--json'],
+    ['check', path.resolve(__dirname, '__fixtures__/typecheck.js'), '--json'],
     {
       stdio: 'pipe',
       encoding: 'utf8',
@@ -16,7 +16,7 @@ test('it detects errors', () => {
 
   const { errors }: IFlowOutput = JSON.parse(output);
 
-  expect(errors).toHaveLength(4);
+  expect(errors.length).toBe(4);
   for (const error of errors) {
     expect(message(error)).toMatchSnapshot();
   }

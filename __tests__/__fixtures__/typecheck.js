@@ -1,5 +1,5 @@
 // @flow strict
-import * as CSS from '../index.js.flow';
+import * as CSS from '../../index.js.flow';
 
 const css: CSS.Properties<> = {
   flexGrow: 1,

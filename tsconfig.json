@@ -9,5 +9,5 @@
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["__fixtures__"]
+  "exclude": ["__tests__/__fixtures__"]
 }

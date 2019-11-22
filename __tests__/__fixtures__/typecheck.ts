@@ -1,6 +1,9 @@
 // tslint:disable no-unused-expression
+import * as CSS from '../..';
 
-import * as CSS from '..';
+// Old CSSType import needs to be AFTER the current one
+// tslint:disable-next-line ordered-imports
+import * as OldCSS from 'csstype';
 
 const css: CSS.Properties = {
   flexGrow: 1,
@@ -103,6 +106,8 @@ propertyValueWithAutocompleteHack('auto'); // Should pass
 propertyValueWithAutocompleteHack(0); // Should pass
 propertyValueWithAutocompleteHack(1); // Should fail
 
+const differentMajorVersions: CSS.Properties = {} as OldCSS.Properties;
+
 css;
 cssWithFallbackValues;
 cssWithHyphenProperties;
@@ -115,3 +120,4 @@ autocompleteHackTypeGuardProblem;
 propertyValueShouldPass1;
 propertyValueShouldPass2;
 propertyValueShouldFail;
+differentMajorVersions;

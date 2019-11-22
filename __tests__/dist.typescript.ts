@@ -2,12 +2,12 @@ import * as path from 'path';
 import * as ts from 'typescript';
 
 test('it detects errors', () => {
-  const errors = typescriptDiagnostic([path.resolve(__dirname, '../__fixtures__/typecheck.ts')], {
+  const errors = typescriptDiagnostic([path.resolve(__dirname, '__fixtures__/typecheck.ts')], {
     noEmit: true,
     strict: true,
   });
 
-  expect(errors).toHaveLength(10);
+  expect(errors.length).toBe(10);
   for (const error of errors) {
     expect(error).toMatchSnapshot();
   }

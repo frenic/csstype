@@ -1,3 +1,4 @@
+import * as path from 'path';
 import build from './build';
 // @ts-ignore
 import * as packageJson from './package.json';
@@ -119,7 +120,7 @@ function reset() {
 
 function install(pure = false) {
   return spawnAsync(
-    process.platform === 'win32' ? 'yarn.cmd' : 'yarn',
+    path.resolve(__dirname, 'node_modules/.bin/', process.platform === 'win32' ? 'yarn.cmd' : 'yarn'),
     { stdio: 'inherit' },
     '--silent',
     '--no-progress',
