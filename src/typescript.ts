@@ -88,17 +88,9 @@ async function outputInterface(entry: Interface, currentNamespace: INamespace | 
         output += comment + EOL;
       }
 
-      if (isAliasProperty(property)) {
-        const name =
-          property.namespace && property.namespace !== currentNamespace
-            ? `${property.namespace.name}.${property.alias.name}`
-            : property.alias.name;
-        const generics = stringifyGenerics(property.generics);
-        output += `${JSON.stringify(property.name)}?: ${name + generics};`;
-      } else {
-        const value = stringifyTypes([property.type], currentNamespace, false);
-        output += `${JSON.stringify(property.name)}?: ${value};`;
-      }
+      const type = isAliasProperty(property) ? property.alias : property.type;
+      const value = stringifyTypes([type], currentNamespace, false);
+      output += `${JSON.stringify(property.name)}?: ${value};`;
 
       output += EOL;
     }

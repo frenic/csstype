@@ -44,7 +44,8 @@ const unknownProperty: CSS.Properties = {
 };
 
 const cssWithDisallowedFallbackValues: CSS.Properties = {
-  bottom: ['0px'],
+  bottom: [0],
+  order: [0],
 };
 
 // Tests autocomplete hack
@@ -57,3 +58,5 @@ cssWithHyphenProperties;
 cssWithDifferentLength;
 unknownProperty;
 cssWithDisallowedFallbackValues;
+autocompleteHackShouldPass;
+autocompleteHackShouldFail;

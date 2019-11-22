@@ -1,7 +1,7 @@
 // @flow strict
 import * as CSS from '../index.js.flow';
 
-const css: CSS.Properties<*> = {
+const css: CSS.Properties<> = {
   flexGrow: 1,
   flexShrink: 1,
   flexBasis: 'max-content',
@@ -16,7 +16,7 @@ const css: CSS.Properties<*> = {
   borderBottomWidth: 'calc(1px)',
 };
 
-const cssWithFallbackValues: CSS.PropertiesFallback<*> = {
+const cssWithFallbackValues: CSS.PropertiesFallback<> = {
   flexGrow: [1],
   flexShrink: [1],
   flexBasis: ['max-content'],
@@ -25,7 +25,7 @@ const cssWithFallbackValues: CSS.PropertiesFallback<*> = {
   msOverflowStyle: ['scrollbar'],
 };
 
-const cssWithHyphenProperties: CSS.PropertiesHyphen<*> = {
+const cssWithHyphenProperties: CSS.PropertiesHyphen<> = {
   'flex-grow': 1,
   'flex-shrink': 0,
   'flex-basis': 'max-content',
@@ -38,11 +38,17 @@ const cssWithDifferentLength: CSS.Properties<{ px: number }> = {
   width: { px: 1 },
 };
 
-const unknownProperty: CSS.Properties<*> = {
+const unknownProperty: CSS.Properties<> = {
   unknownProperty: 1,
 };
 
 // Should fail but doesn't
-const cssWithDisallowedFallbackValues: CSS.Properties<*> = {
-  bottom: ['0px'],
+const cssWithDisallowedValue: CSS.Properties<> = {
+  order: '0',
+};
+
+// Should fail but doesn't
+const cssWithDisallowedFallbackValues: CSS.Properties<> = {
+  bottom: [0],
+  order: [0],
 };

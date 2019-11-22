@@ -1,25 +1,26 @@
 import {
   DeclarableType,
   IDeclaration,
+  INamespace,
   Interface,
   isAliasProperty,
   isInterface,
   isInterfaceProperties,
 } from './declarator';
+import { Type } from './syntax/typer';
 import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './utils/output';
 
 export default async function flow() {
   const { namespaces, interfaces, declarations } = await generatingDeclarations;
-  let interfacesOutput = '';
 
-  const fallbackSet: Set<string> = new Set();
+  let interfacesOutput = '';
 
   for (const entry of interfaces) {
     if (interfacesOutput) {
       interfacesOutput += EOL;
     }
 
-    interfacesOutput += outputInterface(entry, fallbackSet) + EOL;
+    interfacesOutput += outputInterface(entry) + EOL;
   }
 
   let declarationsOutput = '';
@@ -37,32 +38,11 @@ export default async function flow() {
       namespaceOutput += EOL;
     }
 
-    const body = namespace.body();
-
-    for (const entry of body) {
-      if (namespaceOutput) {
-        namespaceOutput += EOL;
-      }
-
-      if (isInterface(entry)) {
-        namespaceOutput += outputInterface(entry, fallbackSet, namespace.name) + EOL;
-      } else {
-        namespaceOutput += outputDeclaration(entry, namespace.name) + EOL;
-      }
-    }
+    namespaceOutput += outputNamespace(namespace);
   }
-
-  const fallbacksOutput = [...fallbackSet]
-    .map(name => {
-      return `type ${name} = ${name} | Array<${name}>;`;
-    })
-    .join(EOL);
 
   return `// @flow strict ${EOL +
     EOL +
-    '// See https://github.com/frenic/csstype/pull/67 for why all "fallbackable" types (e.g. `string | Array<string>`) are lifted here' +
-    EOL +
-    fallbacksOutput +
     EOL +
     interfacesOutput +
     EOL +
@@ -72,10 +52,7 @@ export default async function flow() {
     EOL}`;
 }
 
-function stringifyTypes(types: DeclarableType | DeclarableType[]) {
-  if (!Array.isArray(types)) {
-    types = [types];
-  }
+function stringifyTypes(types: DeclarableType[]) {
   return types.map(createStringifyType(undefined, true)).join(' | ');
 }
 
@@ -89,11 +66,27 @@ function combineFlowExactTypes(input: string[]): string {
   }
 }
 
-function getNameForFallbackable(name: string): string {
-  return 'Fallbackable' + name;
+function outputNamespace(namespace: INamespace) {
+  let output = '';
+
+  const body = namespace.body();
+
+  for (const entry of body) {
+    if (output) {
+      output += EOL;
+    }
+
+    if (isInterface(entry)) {
+      output += outputInterface(entry, namespace.name) + EOL;
+    } else {
+      output += outputDeclaration(entry, namespace.name) + EOL;
+    }
+  }
+
+  return output;
 }
 
-function outputInterface(entry: Interface, fallbackSet: Set<string>, namespace = '') {
+function outputInterface(entry: Interface, namespace = '') {
   let output = '';
 
   const extendList = isInterfaceProperties(entry)
@@ -108,7 +101,6 @@ function outputInterface(entry: Interface, fallbackSet: Set<string>, namespace =
   output += namespace + entry.name + stringifyGenerics(entry.generics, true, stringifyTypes);
   output += ' = ' + extendList;
 
-  const fallback = !isInterfaceProperties(entry);
   const properties = isInterfaceProperties(entry) ? entry.properties : entry.fallbacks.properties;
 
   if (properties.length > 0) {
@@ -118,33 +110,15 @@ function outputInterface(entry: Interface, fallbackSet: Set<string>, namespace =
     }
 
     output += '{|' + EOL;
-
     for (const property of properties) {
-      if (isAliasProperty(property)) {
-        const generics = stringifyGenerics(property.generics);
-        const key = JSON.stringify(property.name);
-        let type = (property.namespace ? property.namespace.name : '') + property.alias.name + generics;
-        if (fallback) {
-          type = getNameForFallbackable(type);
-          fallbackSet.add(type);
-        }
-
-        output += `${key}?: ${type},`;
-      } else {
-        const value = stringifyTypes(property.type);
-        const key = JSON.stringify(property.name);
-        let type = value;
-        if (fallback) {
-          type = getNameForFallbackable(type);
-          fallbackSet.add(type);
-        }
-
-        output += `${key}?: ${type},`;
-      }
+      const type = isAliasProperty(property) ? property.alias : property.type;
+      const value = isInterfaceProperties(entry)
+        ? stringifyTypes([type])
+        : stringifyTypes([type, { type: Type.Array, of: type }]);
+      output += `${JSON.stringify(property.name)}?: ${value};`;
 
       output += EOL;
     }
-
     output += '|}';
   }
 

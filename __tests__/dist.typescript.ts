@@ -7,10 +7,10 @@ test('it detects errors', () => {
     strict: true,
   });
 
-  expect(errors).toHaveLength(3);
-  expect(errors[0]).toMatchSnapshot();
-  expect(errors[1]).toMatchSnapshot();
-  expect(errors[2]).toMatchSnapshot();
+  expect(errors).toHaveLength(4);
+  for (const error of errors) {
+    expect(error).toMatchSnapshot();
+  }
 });
 
 function typescriptDiagnostic(fileName: string[], options: ts.CompilerOptions) {

@@ -19,6 +19,7 @@ export enum Type {
   Length,
   StringLiteral,
   NumericLiteral,
+  Array,
   String,
   Number,
 }

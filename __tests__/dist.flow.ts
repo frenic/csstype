@@ -16,8 +16,10 @@ test('it detects errors', () => {
 
   const { errors }: IFlowOutput = JSON.parse(output);
 
-  expect(errors).toHaveLength(1);
-  expect(message(errors[0])).toMatchSnapshot();
+  expect(errors).toHaveLength(4);
+  for (const error of errors) {
+    expect(message(error)).toMatchSnapshot();
+  }
 });
 
 function message(error: IError) {

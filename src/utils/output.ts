@@ -12,7 +12,7 @@ export function createStringifyType(
 ): (type: DeclarableType) => string;
 
 export function createStringifyType(currentNamespace?: INamespace | undefined, noNamespaceSupport = false) {
-  return ((type: DeclarableType) => {
+  const stringifyType = ((type: DeclarableType) => {
     switch (type.type) {
       case Type.String:
         return 'string';
@@ -22,6 +22,8 @@ export function createStringifyType(currentNamespace?: INamespace | undefined, n
         return JSON.stringify(type.literal);
       case Type.NumericLiteral:
         return type.literal;
+      case Type.Array:
+        return `Array<${stringifyType(type.of)}>`;
       case Type.Alias: {
         let namespace = '';
 
@@ -40,7 +42,9 @@ export function createStringifyType(currentNamespace?: INamespace | undefined, n
       case Type.Length:
         return 'TLength';
     }
-  }) as (type: SimpleType) => string;
+  }) as (type: DeclarableType) => string;
+
+  return stringifyType;
 }
 
 export function stringifyGenerics(items: IGenerics[] | undefined): string;

@@ -6,6 +6,11 @@ import { getPseudos } from './collections/selectors';
 import { IDataType, Type, TypeType } from './syntax/typer';
 import { toCamelCase, toPascalCase, toVendorPrefixCase } from './utils/casing';
 
+export interface IArray {
+  type: Type.Array;
+  of: DeclarableType;
+}
+
 export interface IAlias {
   type: Type.Alias;
   name: string;
@@ -21,7 +26,7 @@ export interface IGenerics {
 
 export type Interface = IInterfaceProperties | IInterfaceFallback;
 
-interface IInterfaceProperties {
+export interface IInterfaceProperties {
   name: string;
   generics: IGenerics[];
   extends: Interface[];
@@ -52,16 +57,16 @@ interface IPropertyAlias {
   namespace: INamespace | undefined;
 }
 
-interface IPropertyType {
+export interface IPropertyType {
   name: string;
   type: DeclarableType;
   comment: () => Promise<string | undefined>;
 }
 
-type PropertyType = IPropertyAlias | IPropertyType;
+export type PropertyType = IPropertyAlias | IPropertyType;
 
-type MixedType = TypeType<IDataType<Type.DataType> | IAlias>;
-export type DeclarableType = TypeType<IAlias>;
+type MixedType = TypeType<IDataType<Type.DataType> | IAlias> | IArray;
+export type DeclarableType = TypeType<IAlias> | IArray;
 export type SimpleType = Exclude<DeclarableType, IAlias>;
 
 export interface INamespace {
@@ -112,38 +117,37 @@ export async function declarator(minTypesInDataTypes: number) {
     });
   }
 
-  function alias(name: string, types?: MixedType[], namespace?: INamespace): IAlias {
+  function alias(name: string, generics: IGenerics[] = [], namespace?: INamespace): IAlias {
     return {
       type: Type.Alias,
       name,
-      generics: types && lengthIn(types) ? [lengthGeneric] : [],
+      generics,
       namespace,
     };
   }
 
-  function aliasOf({ name, types, namespace }: IDeclaration): IAlias {
-    return alias(name, types, namespace);
+  function aliasOf({ name, generics, namespace }: IDeclaration): IAlias {
+    return alias(name, generics, namespace);
   }
 
   function declarable(types: MixedType[]): DeclarableType[] {
+    const dataTypeToAlias = (type: IDataType<Type.DataType>) =>
+      type.name in dataTypes
+        ? alias(toPascalCase(type.name), lengthIn(dataTypes[type.name]) ? [lengthGeneric] : [], dataTypeNamespace)
+        : alias(toPascalCase(type.name));
+
     return types.sort(sorter).map<DeclarableType>(type => {
-      switch (type.type) {
-        case Type.DataType:
-          return type.name in dataTypes
-            ? alias(toPascalCase(type.name), dataTypes[type.name], dataTypeNamespace)
-            : alias(toPascalCase(type.name));
-        default:
-          return type;
+      if (type.type === Type.DataType) {
+        return dataTypeToAlias(type);
       }
+
+      return type;
     });
   }
 
   const globalDeclarations: Map<MixedType[], IDeclaration> = new Map();
 
-  function declarationNameExists(
-    map: Map<Array<TypeType<IDataType<Type.DataType> | IAlias>>, IDeclaration>,
-    name: string,
-  ) {
+  function declarationNameExists(map: Map<MixedType[], IDeclaration>, name: string) {
     for (const declaration of map.values()) {
       if (declaration.name === name) {
         return true;
