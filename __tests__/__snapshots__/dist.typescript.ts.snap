@@ -19,3 +19,18 @@ exports[`it detects errors 4`] = `
 "52:6 - Type '{}' is not assignable to type 'string & {}'.
   Type '{}' is not assignable to type 'string'."
 `;
+
+exports[`it detects errors 5`] = `
+"57:10 - Type '\\"auto\\" | (string & {})' is not assignable to type '\\"auto\\"'.
+  Type 'string & {}' is not assignable to type '\\"auto\\"'."
+`;
+
+exports[`it detects errors 6`] = `"64:6 - Type '1' is not assignable to type 'string | 0'."`;
+
+exports[`it detects errors 7`] = `"76:23 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
+
+exports[`it detects errors 8`] = `"83:14 - Argument of type '1' is not assignable to parameter of type 'string | 0'."`;
+
+exports[`it detects errors 9`] = `"96:23 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
+
+exports[`it detects errors 10`] = `"103:34 - Argument of type '1' is not assignable to parameter of type 'Width<0 | (string & {})>'."`;

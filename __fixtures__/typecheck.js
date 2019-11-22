@@ -11,9 +11,9 @@ const css: CSS.Properties<> = {
 
   // Test custom string
   borderBottomWidth: 'calc(1px)',
-  // This property has `TLength` (but not `(string & {})` itself) so
+  // This property has `TLength` (but not `string` itself) so
   // if this fails it may have something to do with default generic values
-  borderBottomWidth: 'calc(1px)',
+  lineHeightStep: '2em',
 };
 
 const cssWithFallbackValues: CSS.PropertiesFallback<> = {
