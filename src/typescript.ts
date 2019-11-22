@@ -63,7 +63,13 @@ export default async function typescript() {
     namespaceOutput += `}${EOL}`;
   }
 
-  const propertyValue = 'type PropertyValue<TUnion> = TUnion extends (infer TValue & {}) ? TValue : TUnion;' + EOL;
+  const propertyValue =
+    'export type PropertyValue<TValue> = TValue extends Array<infer AValue> ? Array<' +
+    'AValue extends infer TUnpacked & {} ? TUnpacked : AValue' +
+    '> : ' +
+    'TValue extends infer TUnpacked & {} ? TUnpacked : TValue' +
+    ';' +
+    EOL;
 
   return propertyValue + EOL + interfacesOutput + EOL + declarationsOutput + EOL + namespaceOutput;
 }

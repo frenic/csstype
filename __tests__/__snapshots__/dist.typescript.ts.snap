@@ -27,10 +27,26 @@ exports[`it detects errors 5`] = `
 
 exports[`it detects errors 6`] = `"67:6 - Type '1' is not assignable to type 'string | 0'."`;
 
-exports[`it detects errors 7`] = `"79:23 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
+exports[`it detects errors 7`] = `"79:23 - This condition will always return 'false' since the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
 
-exports[`it detects errors 8`] = `"86:14 - Argument of type '1' is not assignable to parameter of type 'string | 0'."`;
+exports[`it detects errors 8`] = `"93:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
 
-exports[`it detects errors 9`] = `"99:23 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
+exports[`it detects errors 9`] = `"103:14 - Argument of type '1' is not assignable to parameter of type 'string | 0 | (string | 0)[]'."`;
 
-exports[`it detects errors 10`] = `"106:34 - Argument of type '1' is not assignable to parameter of type 'Width<0 | (string & {})>'."`;
+exports[`it detects errors 10`] = `
+"104:14 - Argument of type '1[]' is not assignable to parameter of type 'string | 0 | (string | 0)[]'.
+  Type '1[]' is not assignable to type '(string | 0)[]'.
+    Type '1' is not assignable to type 'string | 0'."
+`;
+
+exports[`it detects errors 11`] = `"117:23 - This condition will always return 'false' since the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
+
+exports[`it detects errors 12`] = `"131:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
+
+exports[`it detects errors 13`] = `"141:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"-webkit-fill-available\\" | ... 8 more ... | [...]'."`;
+
+exports[`it detects errors 14`] = `
+"142:34 - Argument of type '[1]' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"-webkit-fill-available\\" | ... 8 more ... | [...]'.
+  Type '[1]' is not assignable to type '[Width<0 | (string & {})>]'.
+    Type '1' is not assignable to type 'Width<0 | (string & {})>'."
+`;

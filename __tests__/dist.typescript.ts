@@ -7,7 +7,7 @@ test('it detects errors', () => {
     strict: true,
   });
 
-  expect(errors.length).toBe(10);
+  expect(errors.length).toBe(14);
   for (const error of errors) {
     expect(error).toMatchSnapshot();
   }

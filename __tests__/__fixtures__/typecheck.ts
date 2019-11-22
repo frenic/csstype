@@ -67,7 +67,7 @@ const propertyValueShouldPass1: CSS.PropertyValue<CSS.Property.Width> = 'auto';
 const propertyValueShouldPass2: CSS.PropertyValue<CSS.Property.Width> = 0;
 const propertyValueShouldFail: CSS.PropertyValue<CSS.Property.Width> = 1;
 
-function propertyValue(value: CSS.PropertyValue<CSS.Property.Width>) {
+function propertyValue(value: CSS.PropertyValue<CSS.Property.Width | [CSS.Property.Width]>) {
   if (value === 'auto') {
     const shouldPass: 'auto' = value;
     shouldPass;
@@ -80,13 +80,31 @@ function propertyValue(value: CSS.PropertyValue<CSS.Property.Width>) {
     const shouldFail = value === 1;
     shouldFail;
   }
+  if (Array.isArray(value)) {
+    const arrayValue = value[0];
+    if (arrayValue === 'auto') {
+      const shouldPass: 'auto' = arrayValue;
+      shouldPass;
+    }
+    if (typeof arrayValue === 'number') {
+      const shouldPass: 0 = arrayValue;
+      shouldPass;
+    }
+    {
+      const shouldFail = arrayValue === 1;
+      shouldFail;
+    }
+  }
 }
 
 propertyValue('auto'); // Should pass
+propertyValue(['auto']); // Should pass
 propertyValue(0); // Should pass
+propertyValue([0]); // Should pass
 propertyValue(1); // Should fail
+propertyValue([1]); // Should fail
 
-function propertyValueWithAutocompleteHack(arg: CSS.Property.Width) {
+function propertyValueWithAutocompleteHack(arg: CSS.Property.Width | [CSS.Property.Width]) {
   const value = arg as CSS.PropertyValue<typeof arg>;
   if (value === 'auto') {
     const shouldPass: 'auto' = value;
@@ -100,11 +118,29 @@ function propertyValueWithAutocompleteHack(arg: CSS.Property.Width) {
     const shouldFail = value === 1;
     shouldFail;
   }
+  if (Array.isArray(value)) {
+    const arrayValue = value[0];
+    if (arrayValue === 'auto') {
+      const shouldPass: 'auto' = arrayValue;
+      shouldPass;
+    }
+    if (typeof arrayValue === 'number') {
+      const shouldPass: 0 = arrayValue;
+      shouldPass;
+    }
+    {
+      const shouldFail = arrayValue === 1;
+      shouldFail;
+    }
+  }
 }
 
 propertyValueWithAutocompleteHack('auto'); // Should pass
+propertyValueWithAutocompleteHack(['auto']); // Should pass
 propertyValueWithAutocompleteHack(0); // Should pass
+propertyValueWithAutocompleteHack([0]); // Should pass
 propertyValueWithAutocompleteHack(1); // Should fail
+propertyValueWithAutocompleteHack([1]); // Should fail
 
 const differentMajorVersions: CSS.Properties = {} as OldCSS.Properties;
 

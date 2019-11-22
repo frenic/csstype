@@ -1,4 +1,8 @@
-type PropertyValue<TUnion> = TUnion extends infer TValue & {} ? TValue : TUnion;
+export type PropertyValue<TValue> = TValue extends Array<infer AValue>
+  ? Array<AValue extends infer TUnpacked & {} ? TUnpacked : AValue>
+  : TValue extends infer TUnpacked & {}
+  ? TUnpacked
+  : TValue;
 
 export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
   /**
