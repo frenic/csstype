@@ -17,6 +17,7 @@ export enum Type {
   DataType,
   PropertyReference,
   Length,
+  Time,
   StringLiteral,
   NumericLiteral,
   Array,
@@ -25,7 +26,7 @@ export enum Type {
 }
 
 interface IBasic {
-  type: Type.String | Type.Number | Type.Length;
+  type: Type.String | Type.Number | Type.Length | Type.Time;
 }
 
 export interface IDataType<TType = Type.DataType | Type.PropertyReference> {
@@ -62,6 +63,11 @@ let getBasicDataTypes = () => {
       case 'length':
         dataTypes[name] = {
           type: Type.Length,
+        };
+        break;
+      case 'time':
+        dataTypes[name] = {
+          type: Type.Time,
         };
         break;
       default:
@@ -184,6 +190,19 @@ function addLength<TDataType extends IDataType>(types: Array<TypeType<TDataType>
   return types;
 }
 
+function addTime<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
+  if (types.every(type => type.type !== Type.Time)) {
+    return [
+      ...types,
+      {
+        type: Type.Time,
+      },
+    ];
+  }
+
+  return types;
+}
+
 function addString<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
   if (types.every(type => type.type !== Type.String)) {
     return [
@@ -285,6 +304,8 @@ export function addType<TDataType extends IDataType>(
   switch (type.type) {
     case Type.Length:
       return addLength(types);
+    case Type.Time:
+      return addTime(types);
     case Type.String:
       return addString(types);
     case Type.Number:

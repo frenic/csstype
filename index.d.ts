@@ -4,7 +4,7 @@ export type PropertyValue<TValue> = TValue extends Array<infer AValue>
   ? TUnpacked
   : TValue;
 
-export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
+export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
@@ -98,7 +98,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
    */
-  animationDelay?: Property.AnimationDelay;
+  animationDelay?: Property.AnimationDelay<TTime>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -124,7 +124,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
    */
-  animationDuration?: Property.AnimationDuration;
+  animationDuration?: Property.AnimationDuration<TTime>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -4021,7 +4021,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
    */
-  transitionDelay?: Property.TransitionDelay;
+  transitionDelay?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -4034,7 +4034,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
    */
-  transitionDuration?: Property.TransitionDuration;
+  transitionDuration?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -4245,7 +4245,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0> {
   zoom?: Property.Zoom;
 }
 
-export interface StandardShorthandProperties<TLength = (string & {}) | 0> {
+export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The `**all**` shorthand CSS property resets all of an element's properties (except `unicode-bidi` and `direction`). It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
@@ -4268,7 +4268,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation
    */
-  animation?: Property.Animation;
+  animation?: Property.Animation<TTime>;
   /**
    * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method.
    *
@@ -4732,18 +4732,20 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition
    */
-  transition?: Property.Transition;
+  transition?: Property.Transition<TTime>;
 }
 
-export interface StandardProperties<TLength = (string & {}) | 0> extends StandardLonghandProperties<TLength>, StandardShorthandProperties<TLength> {}
+export interface StandardProperties<TLength = (string & {}) | 0, TTime = string & {}>
+  extends StandardLonghandProperties<TLength, TTime>,
+    StandardShorthandProperties<TLength, TTime> {}
 
-export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
+export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Initial value**: `0s`
    */
-  MozAnimationDelay?: Property.AnimationDelay;
+  MozAnimationDelay?: Property.AnimationDelay<TTime>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -4755,7 +4757,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  MozAnimationDuration?: Property.AnimationDuration;
+  MozAnimationDuration?: Property.AnimationDuration<TTime>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -5019,13 +5021,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  MozTransitionDelay?: Property.TransitionDelay;
+  MozTransitionDelay?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  MozTransitionDuration?: Property.TransitionDuration;
+  MozTransitionDuration?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -5379,13 +5381,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  msTransitionDelay?: Property.TransitionDelay;
+  msTransitionDelay?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  msTransitionDuration?: Property.TransitionDuration;
+  msTransitionDuration?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -5487,7 +5489,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitAnimationDelay?: Property.AnimationDelay;
+  WebkitAnimationDelay?: Property.AnimationDelay<TTime>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -5499,7 +5501,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitAnimationDuration?: Property.AnimationDuration;
+  WebkitAnimationDuration?: Property.AnimationDuration<TTime>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -6015,13 +6017,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  WebkitTransitionDelay?: Property.TransitionDelay;
+  WebkitTransitionDelay?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  WebkitTransitionDuration?: Property.TransitionDuration;
+  WebkitTransitionDuration?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -6050,9 +6052,9 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0> {
   WebkitWritingMode?: Property.WritingMode;
 }
 
-export interface VendorShorthandProperties<TLength = (string & {}) | 0> {
+export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
-  MozAnimation?: Property.Animation;
+  MozAnimation?: Property.Animation<TTime>;
   /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   MozBorderImage?: Property.BorderImage;
   /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
@@ -6060,7 +6062,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0> {
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   MozColumns?: Property.Columns<TLength>;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
-  MozTransition?: Property.Transition;
+  MozTransition?: Property.Transition<TTime>;
   /** The **`-ms-content-zoom-limit`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-limit-min` and `-ms-content-zoom-limit-max` properties. */
   msContentZoomLimit?: Property.MsContentZoomLimit;
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
@@ -6074,9 +6076,9 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0> {
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-y` properties. */
   msScrollSnapY?: Property.MsScrollSnapY;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
-  msTransition?: Property.Transition;
+  msTransition?: Property.Transition<TTime>;
   /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
-  WebkitAnimation?: Property.Animation;
+  WebkitAnimation?: Property.Animation<TTime>;
   /** The **`-webkit-border-before`** CSS property is a shorthand property for setting the individual logical block start border property values in a single place in the style sheet. */
   WebkitBorderBefore?: Property.WebkitBorderBefore<TLength>;
   /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
@@ -6098,12 +6100,12 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0> {
   /** The **`-webkit-text-stroke`** CSS property specifies the width and color of strokes for text characters. This is a shorthand property for the longhand properties `-webkit-text-stroke-width` and `-webkit-text-stroke-color`. */
   WebkitTextStroke?: Property.WebkitTextStroke<TLength>;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
-  WebkitTransition?: Property.Transition;
+  WebkitTransition?: Property.Transition<TTime>;
 }
 
-export interface VendorProperties<TLength = (string & {}) | 0> extends VendorLonghandProperties<TLength>, VendorShorthandProperties<TLength> {}
+export interface VendorProperties<TLength = (string & {}) | 0, TTime = string & {}> extends VendorLonghandProperties<TLength, TTime>, VendorShorthandProperties<TLength, TTime> {}
 
-export interface ObsoleteProperties<TLength = (string & {}) | 0> {
+export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -6685,7 +6687,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OAnimation?: Property.Animation;
+  OAnimation?: Property.Animation<TTime>;
   /**
    * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
@@ -6693,7 +6695,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OAnimationDelay?: Property.AnimationDelay;
+  OAnimationDelay?: Property.AnimationDelay<TTime>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -6709,7 +6711,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OAnimationDuration?: Property.AnimationDuration;
+  OAnimationDuration?: Property.AnimationDuration<TTime>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -6777,7 +6779,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OTransition?: Property.Transition;
+  OTransition?: Property.Transition<TTime>;
   /**
    * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
@@ -6785,7 +6787,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OTransitionDelay?: Property.TransitionDelay;
+  OTransitionDelay?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -6793,7 +6795,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  OTransitionDuration?: Property.TransitionDuration;
+  OTransitionDuration?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -6892,7 +6894,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0> {
   WebkitScrollSnapPointsY?: Property.ScrollSnapPointsY;
 }
 
-export interface SvgProperties<TLength = (string & {}) | 0> {
+export interface SvgProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   alignmentBaseline?: Property.AlignmentBaseline;
   baselineShift?: Property.BaselineShift<TLength>;
   clip?: Property.Clip;
@@ -6955,9 +6957,13 @@ export interface SvgProperties<TLength = (string & {}) | 0> {
   writingMode?: Property.WritingMode;
 }
 
-export interface Properties<TLength = (string & {}) | 0> extends StandardProperties<TLength>, VendorProperties<TLength>, ObsoleteProperties<TLength>, SvgProperties<TLength> {}
+export interface Properties<TLength = (string & {}) | 0, TTime = string & {}>
+  extends StandardProperties<TLength, TTime>,
+    VendorProperties<TLength, TTime>,
+    ObsoleteProperties<TLength, TTime>,
+    SvgProperties<TLength, TTime> {}
 
-export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
+export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
@@ -7051,7 +7057,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
    */
-  "animation-delay"?: Property.AnimationDelay;
+  "animation-delay"?: Property.AnimationDelay<TTime>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -7077,7 +7083,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
    */
-  "animation-duration"?: Property.AnimationDuration;
+  "animation-duration"?: Property.AnimationDuration<TTime>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -10974,7 +10980,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
    */
-  "transition-delay"?: Property.TransitionDelay;
+  "transition-delay"?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -10987,7 +10993,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
    */
-  "transition-duration"?: Property.TransitionDuration;
+  "transition-duration"?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -11198,7 +11204,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
   zoom?: Property.Zoom;
 }
 
-export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0> {
+export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The `**all**` shorthand CSS property resets all of an element's properties (except `unicode-bidi` and `direction`). It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
@@ -11221,7 +11227,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0> 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation
    */
-  animation?: Property.Animation;
+  animation?: Property.Animation<TTime>;
   /**
    * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method.
    *
@@ -11685,18 +11691,20 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0> 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition
    */
-  transition?: Property.Transition;
+  transition?: Property.Transition<TTime>;
 }
 
-export interface StandardPropertiesHyphen<TLength = (string & {}) | 0> extends StandardLonghandPropertiesHyphen<TLength>, StandardShorthandPropertiesHyphen<TLength> {}
+export interface StandardPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
+  extends StandardLonghandPropertiesHyphen<TLength, TTime>,
+    StandardShorthandPropertiesHyphen<TLength, TTime> {}
 
-export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
+export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Initial value**: `0s`
    */
-  "-moz-animation-delay"?: Property.AnimationDelay;
+  "-moz-animation-delay"?: Property.AnimationDelay<TTime>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -11708,7 +11716,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-moz-animation-duration"?: Property.AnimationDuration;
+  "-moz-animation-duration"?: Property.AnimationDuration<TTime>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -11972,13 +11980,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-moz-transition-delay"?: Property.TransitionDelay;
+  "-moz-transition-delay"?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-moz-transition-duration"?: Property.TransitionDuration;
+  "-moz-transition-duration"?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -12332,13 +12340,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-ms-transition-delay"?: Property.TransitionDelay;
+  "-ms-transition-delay"?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-ms-transition-duration"?: Property.TransitionDuration;
+  "-ms-transition-duration"?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -12440,7 +12448,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-webkit-animation-delay"?: Property.AnimationDelay;
+  "-webkit-animation-delay"?: Property.AnimationDelay<TTime>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -12452,7 +12460,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-webkit-animation-duration"?: Property.AnimationDuration;
+  "-webkit-animation-duration"?: Property.AnimationDuration<TTime>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -12968,13 +12976,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * **Initial value**: `0s`
    */
-  "-webkit-transition-delay"?: Property.TransitionDelay;
+  "-webkit-transition-delay"?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Initial value**: `0s`
    */
-  "-webkit-transition-duration"?: Property.TransitionDuration;
+  "-webkit-transition-duration"?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -13003,9 +13011,9 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0> {
   "-webkit-writing-mode"?: Property.WritingMode;
 }
 
-export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0> {
+export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
-  "-moz-animation"?: Property.Animation;
+  "-moz-animation"?: Property.Animation<TTime>;
   /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
   "-moz-border-image"?: Property.BorderImage;
   /** The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. */
@@ -13013,7 +13021,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0> {
   /** The **`columns`** CSS property sets the column width and column count of an element. */
   "-moz-columns"?: Property.Columns<TLength>;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
-  "-moz-transition"?: Property.Transition;
+  "-moz-transition"?: Property.Transition<TTime>;
   /** The **`-ms-content-zoom-limit`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-limit-min` and `-ms-content-zoom-limit-max` properties. */
   "-ms-content-zoom-limit"?: Property.MsContentZoomLimit;
   /** The **`-ms-content-zoom-snap`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-content-zoom-snap-type` and `-ms-content-zoom-snap-points` properties. */
@@ -13027,9 +13035,9 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0> {
   /** The **`-ms-scroll-snap-x`** CSS shorthand property is a Microsoft extension that specifies values for the `-ms-scroll-snap-type` and `-ms-scroll-snap-points-y` properties. */
   "-ms-scroll-snap-y"?: Property.MsScrollSnapY;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
-  "-ms-transition"?: Property.Transition;
+  "-ms-transition"?: Property.Transition<TTime>;
   /** The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`. */
-  "-webkit-animation"?: Property.Animation;
+  "-webkit-animation"?: Property.Animation<TTime>;
   /** The **`-webkit-border-before`** CSS property is a shorthand property for setting the individual logical block start border property values in a single place in the style sheet. */
   "-webkit-border-before"?: Property.WebkitBorderBefore<TLength>;
   /** The **`border-image`** CSS property draws an image around a given element. It replaces the element's regular border. */
@@ -13051,12 +13059,14 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0> {
   /** The **`-webkit-text-stroke`** CSS property specifies the width and color of strokes for text characters. This is a shorthand property for the longhand properties `-webkit-text-stroke-width` and `-webkit-text-stroke-color`. */
   "-webkit-text-stroke"?: Property.WebkitTextStroke<TLength>;
   /** The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. */
-  "-webkit-transition"?: Property.Transition;
+  "-webkit-transition"?: Property.Transition<TTime>;
 }
 
-export interface VendorPropertiesHyphen<TLength = (string & {}) | 0> extends VendorLonghandPropertiesHyphen<TLength>, VendorShorthandPropertiesHyphen<TLength> {}
+export interface VendorPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
+  extends VendorLonghandPropertiesHyphen<TLength, TTime>,
+    VendorShorthandPropertiesHyphen<TLength, TTime> {}
 
-export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
+export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -13638,7 +13648,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-animation"?: Property.Animation;
+  "-o-animation"?: Property.Animation<TTime>;
   /**
    * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
@@ -13646,7 +13656,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-animation-delay"?: Property.AnimationDelay;
+  "-o-animation-delay"?: Property.AnimationDelay<TTime>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
    *
@@ -13662,7 +13672,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-animation-duration"?: Property.AnimationDuration;
+  "-o-animation-duration"?: Property.AnimationDuration<TTime>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -13730,7 +13740,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-transition"?: Property.Transition;
+  "-o-transition"?: Property.Transition<TTime>;
   /**
    * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
@@ -13738,7 +13748,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-transition-delay"?: Property.TransitionDelay;
+  "-o-transition-delay"?: Property.TransitionDelay<TTime>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -13746,7 +13756,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
    *
    * @deprecated
    */
-  "-o-transition-duration"?: Property.TransitionDuration;
+  "-o-transition-duration"?: Property.TransitionDuration<TTime>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -13845,7 +13855,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0> {
   "-webkit-scroll-snap-points-y"?: Property.ScrollSnapPointsY;
 }
 
-export interface SvgPropertiesHyphen<TLength = (string & {}) | 0> {
+export interface SvgPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   "alignment-baseline"?: Property.AlignmentBaseline;
   "baseline-shift"?: Property.BaselineShift<TLength>;
   clip?: Property.Clip;
@@ -13908,83 +13918,87 @@ export interface SvgPropertiesHyphen<TLength = (string & {}) | 0> {
   "writing-mode"?: Property.WritingMode;
 }
 
-export interface PropertiesHyphen<TLength = (string & {}) | 0>
-  extends StandardPropertiesHyphen<TLength>,
-    VendorPropertiesHyphen<TLength>,
-    ObsoletePropertiesHyphen<TLength>,
-    SvgPropertiesHyphen<TLength> {}
+export interface PropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
+  extends StandardPropertiesHyphen<TLength, TTime>,
+    VendorPropertiesHyphen<TLength, TTime>,
+    ObsoletePropertiesHyphen<TLength, TTime>,
+    SvgPropertiesHyphen<TLength, TTime> {}
 
-export type StandardLonghandPropertiesFallback<TLength = (string & {}) | 0> = {
-  [P in keyof StandardLonghandProperties<TLength>]: StandardLonghandProperties<TLength>[P] | StandardLonghandProperties<TLength>[P][];
+export type StandardLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof StandardLonghandProperties<TLength, TTime>]: StandardLonghandProperties<TLength, TTime>[P] | StandardLonghandProperties<TLength, TTime>[P][];
 };
 
-export type StandardShorthandPropertiesFallback<TLength = (string & {}) | 0> = {
-  [P in keyof StandardShorthandProperties<TLength>]: StandardShorthandProperties<TLength>[P] | StandardShorthandProperties<TLength>[P][];
+export type StandardShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof StandardShorthandProperties<TLength, TTime>]: StandardShorthandProperties<TLength, TTime>[P] | StandardShorthandProperties<TLength, TTime>[P][];
 };
 
-export interface StandardPropertiesFallback<TLength = (string & {}) | 0> extends StandardLonghandPropertiesFallback<TLength>, StandardShorthandPropertiesFallback<TLength> {}
+export interface StandardPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
+  extends StandardLonghandPropertiesFallback<TLength, TTime>,
+    StandardShorthandPropertiesFallback<TLength, TTime> {}
 
-export type VendorLonghandPropertiesFallback<TLength = (string & {}) | 0> = {
-  [P in keyof VendorLonghandProperties<TLength>]: VendorLonghandProperties<TLength>[P] | VendorLonghandProperties<TLength>[P][];
+export type VendorLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof VendorLonghandProperties<TLength, TTime>]: VendorLonghandProperties<TLength, TTime>[P] | VendorLonghandProperties<TLength, TTime>[P][];
 };
 
-export type VendorShorthandPropertiesFallback<TLength = (string & {}) | 0> = {
-  [P in keyof VendorShorthandProperties<TLength>]: VendorShorthandProperties<TLength>[P] | VendorShorthandProperties<TLength>[P][];
+export type VendorShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof VendorShorthandProperties<TLength, TTime>]: VendorShorthandProperties<TLength, TTime>[P] | VendorShorthandProperties<TLength, TTime>[P][];
 };
 
-export interface VendorPropertiesFallback<TLength = (string & {}) | 0> extends VendorLonghandPropertiesFallback<TLength>, VendorShorthandPropertiesFallback<TLength> {}
+export interface VendorPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
+  extends VendorLonghandPropertiesFallback<TLength, TTime>,
+    VendorShorthandPropertiesFallback<TLength, TTime> {}
 
-export type ObsoletePropertiesFallback<TLength = (string & {}) | 0> = {
-  [P in keyof ObsoleteProperties<TLength>]: ObsoleteProperties<TLength>[P] | ObsoleteProperties<TLength>[P][];
+export type ObsoletePropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof ObsoleteProperties<TLength, TTime>]: ObsoleteProperties<TLength, TTime>[P] | ObsoleteProperties<TLength, TTime>[P][];
 };
 
-export type SvgPropertiesFallback<TLength = (string & {}) | 0> = {
-  [P in keyof SvgProperties<TLength>]: SvgProperties<TLength>[P] | SvgProperties<TLength>[P][];
+export type SvgPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof SvgProperties<TLength, TTime>]: SvgProperties<TLength, TTime>[P] | SvgProperties<TLength, TTime>[P][];
 };
 
-export interface PropertiesFallback<TLength = (string & {}) | 0>
-  extends StandardPropertiesFallback<TLength>,
-    VendorPropertiesFallback<TLength>,
-    ObsoletePropertiesFallback<TLength>,
-    SvgPropertiesFallback<TLength> {}
+export interface PropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
+  extends StandardPropertiesFallback<TLength, TTime>,
+    VendorPropertiesFallback<TLength, TTime>,
+    ObsoletePropertiesFallback<TLength, TTime>,
+    SvgPropertiesFallback<TLength, TTime> {}
 
-export type StandardLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0> = {
-  [P in keyof StandardLonghandPropertiesHyphen<TLength>]: StandardLonghandPropertiesHyphen<TLength>[P] | StandardLonghandPropertiesHyphen<TLength>[P][];
+export type StandardLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof StandardLonghandPropertiesHyphen<TLength, TTime>]: StandardLonghandPropertiesHyphen<TLength, TTime>[P] | StandardLonghandPropertiesHyphen<TLength, TTime>[P][];
 };
 
-export type StandardShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0> = {
-  [P in keyof StandardShorthandPropertiesHyphen<TLength>]: StandardShorthandPropertiesHyphen<TLength>[P] | StandardShorthandPropertiesHyphen<TLength>[P][];
+export type StandardShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof StandardShorthandPropertiesHyphen<TLength, TTime>]: StandardShorthandPropertiesHyphen<TLength, TTime>[P] | StandardShorthandPropertiesHyphen<TLength, TTime>[P][];
 };
 
-export interface StandardPropertiesHyphenFallback<TLength = (string & {}) | 0>
-  extends StandardLonghandPropertiesHyphenFallback<TLength>,
-    StandardShorthandPropertiesHyphenFallback<TLength> {}
+export interface StandardPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
+  extends StandardLonghandPropertiesHyphenFallback<TLength, TTime>,
+    StandardShorthandPropertiesHyphenFallback<TLength, TTime> {}
 
-export type VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0> = {
-  [P in keyof VendorLonghandPropertiesHyphen<TLength>]: VendorLonghandPropertiesHyphen<TLength>[P] | VendorLonghandPropertiesHyphen<TLength>[P][];
+export type VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof VendorLonghandPropertiesHyphen<TLength, TTime>]: VendorLonghandPropertiesHyphen<TLength, TTime>[P] | VendorLonghandPropertiesHyphen<TLength, TTime>[P][];
 };
 
-export type VendorShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0> = {
-  [P in keyof VendorShorthandPropertiesHyphen<TLength>]: VendorShorthandPropertiesHyphen<TLength>[P] | VendorShorthandPropertiesHyphen<TLength>[P][];
+export type VendorShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof VendorShorthandPropertiesHyphen<TLength, TTime>]: VendorShorthandPropertiesHyphen<TLength, TTime>[P] | VendorShorthandPropertiesHyphen<TLength, TTime>[P][];
 };
 
-export interface VendorPropertiesHyphenFallback<TLength = (string & {}) | 0>
-  extends VendorLonghandPropertiesHyphenFallback<TLength>,
-    VendorShorthandPropertiesHyphenFallback<TLength> {}
+export interface VendorPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
+  extends VendorLonghandPropertiesHyphenFallback<TLength, TTime>,
+    VendorShorthandPropertiesHyphenFallback<TLength, TTime> {}
 
-export type ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0> = {
-  [P in keyof ObsoletePropertiesHyphen<TLength>]: ObsoletePropertiesHyphen<TLength>[P] | ObsoletePropertiesHyphen<TLength>[P][];
+export type ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof ObsoletePropertiesHyphen<TLength, TTime>]: ObsoletePropertiesHyphen<TLength, TTime>[P] | ObsoletePropertiesHyphen<TLength, TTime>[P][];
 };
 
-export type SvgPropertiesHyphenFallback<TLength = (string & {}) | 0> = {
-  [P in keyof SvgPropertiesHyphen<TLength>]: SvgPropertiesHyphen<TLength>[P] | SvgPropertiesHyphen<TLength>[P][];
+export type SvgPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+  [P in keyof SvgPropertiesHyphen<TLength, TTime>]: SvgPropertiesHyphen<TLength, TTime>[P] | SvgPropertiesHyphen<TLength, TTime>[P][];
 };
 
-export interface PropertiesHyphenFallback<TLength = (string & {}) | 0>
-  extends StandardPropertiesHyphenFallback<TLength>,
-    VendorPropertiesHyphenFallback<TLength>,
-    ObsoletePropertiesHyphenFallback<TLength>,
-    SvgPropertiesHyphenFallback<TLength> {}
+export interface PropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
+  extends StandardPropertiesHyphenFallback<TLength, TTime>,
+    VendorPropertiesHyphenFallback<TLength, TTime>,
+    ObsoletePropertiesHyphenFallback<TLength, TTime>,
+    SvgPropertiesHyphenFallback<TLength, TTime> {}
 
 export type AtRules =
   | "@charset"
@@ -14599,13 +14613,13 @@ export namespace Property {
 
   export type All = Globals;
 
-  export type Animation = Globals | DataType.SingleAnimation | (string & {});
+  export type Animation<TTime = string & {}> = Globals | DataType.SingleAnimation<TTime> | (string & {});
 
-  export type AnimationDelay = Globals | (string & {});
+  export type AnimationDelay<TTime = string & {}> = Globals | TTime | (string & {});
 
   export type AnimationDirection = Globals | DataType.SingleAnimationDirection | (string & {});
 
-  export type AnimationDuration = Globals | (string & {});
+  export type AnimationDuration<TTime = string & {}> = Globals | TTime | (string & {});
 
   export type AnimationFillMode = Globals | DataType.SingleAnimationFillMode | (string & {});
 
@@ -15675,11 +15689,11 @@ export namespace Property {
 
   export type TransformStyle = Globals | "flat" | "preserve-3d";
 
-  export type Transition = Globals | DataType.SingleTransition | (string & {});
+  export type Transition<TTime = string & {}> = Globals | DataType.SingleTransition<TTime> | (string & {});
 
-  export type TransitionDelay = Globals | (string & {});
+  export type TransitionDelay<TTime = string & {}> = Globals | TTime | (string & {});
 
-  export type TransitionDuration = Globals | (string & {});
+  export type TransitionDuration<TTime = string & {}> = Globals | TTime | (string & {});
 
   export type TransitionProperty = Globals | "all" | "none" | (string & {});
 
@@ -16205,7 +16219,7 @@ export namespace Property {
 }
 
 export namespace AtRule {
-  export interface CounterStyle {
+  export interface CounterStyle<TLength = (string & {}) | 0, TTime = string & {}> {
     additiveSymbols?: string;
     fallback?: string;
     negative?: string;
@@ -16218,7 +16232,7 @@ export namespace AtRule {
     system?: System;
   }
 
-  export interface CounterStyleHyphen {
+  export interface CounterStyleHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
     "additive-symbols"?: string;
     fallback?: string;
     negative?: string;
@@ -16231,15 +16245,15 @@ export namespace AtRule {
     system?: System;
   }
 
-  export type CounterStyleFallback = {
-    [P in keyof CounterStyle]: CounterStyle[P] | CounterStyle[P][];
+  export type CounterStyleFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof CounterStyle<TLength, TTime>]: CounterStyle<TLength, TTime>[P] | CounterStyle<TLength, TTime>[P][];
   };
 
-  export type CounterStyleHyphenFallback = {
-    [P in keyof CounterStyleHyphen]: CounterStyleHyphen[P] | CounterStyleHyphen[P][];
+  export type CounterStyleHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof CounterStyleHyphen<TLength, TTime>]: CounterStyleHyphen<TLength, TTime>[P] | CounterStyleHyphen<TLength, TTime>[P][];
   };
 
-  export interface FontFace {
+  export interface FontFace<TLength = (string & {}) | 0, TTime = string & {}> {
     MozFontFeatureSettings?: FontFeatureSettings;
     fontDisplay?: FontDisplay;
     fontFamily?: string;
@@ -16253,7 +16267,7 @@ export namespace AtRule {
     unicodeRange?: string;
   }
 
-  export interface FontFaceHyphen {
+  export interface FontFaceHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
     "-moz-font-feature-settings"?: FontFeatureSettings;
     "font-display"?: FontDisplay;
     "font-family"?: string;
@@ -16267,15 +16281,15 @@ export namespace AtRule {
     "unicode-range"?: string;
   }
 
-  export type FontFaceFallback = {
-    [P in keyof FontFace]: FontFace[P] | FontFace[P][];
+  export type FontFaceFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof FontFace<TLength, TTime>]: FontFace<TLength, TTime>[P] | FontFace<TLength, TTime>[P][];
   };
 
-  export type FontFaceHyphenFallback = {
-    [P in keyof FontFaceHyphen]: FontFaceHyphen[P] | FontFaceHyphen[P][];
+  export type FontFaceHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof FontFaceHyphen<TLength, TTime>]: FontFaceHyphen<TLength, TTime>[P] | FontFaceHyphen<TLength, TTime>[P][];
   };
 
-  export interface Viewport<TLength = (string & {}) | 0> {
+  export interface Viewport<TLength = (string & {}) | 0, TTime = string & {}> {
     msHeight?: Height<TLength>;
     msMaxHeight?: MaxHeight<TLength>;
     msMaxWidth?: MaxWidth<TLength>;
@@ -16301,7 +16315,7 @@ export namespace AtRule {
     zoom?: Zoom;
   }
 
-  export interface ViewportHyphen<TLength = (string & {}) | 0> {
+  export interface ViewportHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
     "-ms-height"?: Height<TLength>;
     "-ms-max-height"?: MaxHeight<TLength>;
     "-ms-max-width"?: MaxWidth<TLength>;
@@ -16327,12 +16341,12 @@ export namespace AtRule {
     zoom?: Zoom;
   }
 
-  export type ViewportFallback<TLength = (string & {}) | 0> = {
-    [P in keyof Viewport<TLength>]: Viewport<TLength>[P] | Viewport<TLength>[P][];
+  export type ViewportFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof Viewport<TLength, TTime>]: Viewport<TLength, TTime>[P] | Viewport<TLength, TTime>[P][];
   };
 
-  export type ViewportHyphenFallback<TLength = (string & {}) | 0> = {
-    [P in keyof ViewportHyphen<TLength>]: ViewportHyphen<TLength>[P] | ViewportHyphen<TLength>[P][];
+  export type ViewportHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof ViewportHyphen<TLength, TTime>]: ViewportHyphen<TLength, TTime>[P] | ViewportHyphen<TLength, TTime>[P][];
   };
 
   type Range = "auto" | "infinite" | (string & {}) | (number & {});
@@ -16724,13 +16738,23 @@ declare namespace DataType {
 
   type SelfPosition = "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
 
-  type SingleAnimation = TimingFunction | SingleAnimationDirection | SingleAnimationFillMode | "infinite" | "none" | "paused" | "running" | (string & {}) | (number & {});
+  type SingleAnimation<TTime> =
+    | TimingFunction
+    | SingleAnimationDirection
+    | SingleAnimationFillMode
+    | TTime
+    | "infinite"
+    | "none"
+    | "paused"
+    | "running"
+    | (string & {})
+    | (number & {});
 
   type SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 
   type SingleAnimationFillMode = "backwards" | "both" | "forwards" | "none";
 
-  type SingleTransition = TimingFunction | "all" | "none" | (string & {});
+  type SingleTransition<TTime> = TimingFunction | TTime | "all" | "none" | (string & {});
 
   type StepTimingFunction = "step-end" | "step-start" | (string & {});
 

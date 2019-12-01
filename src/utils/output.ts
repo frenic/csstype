@@ -1,4 +1,12 @@
-import { DeclarableType, declarator, IGenerics, INamespace, SimpleType } from '../declarator';
+import {
+  DeclarableType,
+  declarator,
+  IGenerics,
+  INamespace,
+  lengthGeneric,
+  SimpleType,
+  timeGeneric,
+} from '../declarator';
 import { Type } from '../syntax/typer';
 
 export const EOL = '\n';
@@ -40,7 +48,9 @@ export function createStringifyType(currentNamespace?: INamespace | undefined, n
         return namespace + type.name + stringifyGenerics(type.generics);
       }
       case Type.Length:
-        return 'TLength';
+        return lengthGeneric.name;
+      case Type.Time:
+        return timeGeneric.name;
     }
   }) as (type: DeclarableType) => string;
 

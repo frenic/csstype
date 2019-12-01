@@ -1,12 +1,12 @@
 // @flow strict
 
-export type StandardLonghandProperties<TLength = string | 0> = {|
+export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {|
   alignContent?: PropertyAlignContent,
   alignItems?: PropertyAlignItems,
   alignSelf?: PropertyAlignSelf,
-  animationDelay?: PropertyAnimationDelay,
+  animationDelay?: PropertyAnimationDelay<TTime>,
   animationDirection?: PropertyAnimationDirection,
-  animationDuration?: PropertyAnimationDuration,
+  animationDuration?: PropertyAnimationDuration<TTime>,
   animationFillMode?: PropertyAnimationFillMode,
   animationIterationCount?: PropertyAnimationIterationCount,
   animationName?: PropertyAnimationName,
@@ -320,8 +320,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   transformBox?: PropertyTransformBox,
   transformOrigin?: PropertyTransformOrigin<TLength>,
   transformStyle?: PropertyTransformStyle,
-  transitionDelay?: PropertyTransitionDelay,
-  transitionDuration?: PropertyTransitionDuration,
+  transitionDelay?: PropertyTransitionDelay<TTime>,
+  transitionDuration?: PropertyTransitionDuration<TTime>,
   transitionProperty?: PropertyTransitionProperty,
   transitionTimingFunction?: PropertyTransitionTimingFunction,
   translate?: PropertyTranslate<TLength>,
@@ -341,9 +341,9 @@ export type StandardLonghandProperties<TLength = string | 0> = {|
   zoom?: PropertyZoom,
 |};
 
-export type StandardShorthandProperties<TLength = string | 0> = {|
+export type StandardShorthandProperties<TLength = string | 0, TTime = string> = {|
   all?: PropertyAll,
-  animation?: PropertyAnimation,
+  animation?: PropertyAnimation<TTime>,
   background?: PropertyBackground<TLength>,
   border?: PropertyBorder<TLength>,
   borderBlock?: PropertyBorderBlock<TLength>,
@@ -385,15 +385,15 @@ export type StandardShorthandProperties<TLength = string | 0> = {|
   placeSelf?: PropertyPlaceSelf,
   textDecoration?: PropertyTextDecoration<TLength>,
   textEmphasis?: PropertyTextEmphasis,
-  transition?: PropertyTransition,
+  transition?: PropertyTransition<TTime>,
 |};
 
-export type StandardProperties<TLength = string | 0> = {| ...StandardLonghandProperties<TLength>, ...StandardShorthandProperties<TLength> |};
+export type StandardProperties<TLength = string | 0, TTime = string> = {| ...StandardLonghandProperties<TLength, TTime>, ...StandardShorthandProperties<TLength, TTime> |};
 
-export type VendorLonghandProperties<TLength = string | 0> = {|
-  MozAnimationDelay?: PropertyAnimationDelay,
+export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
+  MozAnimationDelay?: PropertyAnimationDelay<TTime>,
   MozAnimationDirection?: PropertyAnimationDirection,
-  MozAnimationDuration?: PropertyAnimationDuration,
+  MozAnimationDuration?: PropertyAnimationDuration<TTime>,
   MozAnimationFillMode?: PropertyAnimationFillMode,
   MozAnimationIterationCount?: PropertyAnimationIterationCount,
   MozAnimationName?: PropertyAnimationName,
@@ -437,8 +437,8 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   MozTextSizeAdjust?: PropertyTextSizeAdjust,
   MozTransformOrigin?: PropertyTransformOrigin<TLength>,
   MozTransformStyle?: PropertyTransformStyle,
-  MozTransitionDelay?: PropertyTransitionDelay,
-  MozTransitionDuration?: PropertyTransitionDuration,
+  MozTransitionDelay?: PropertyTransitionDelay<TTime>,
+  MozTransitionDuration?: PropertyTransitionDuration<TTime>,
   MozTransitionProperty?: PropertyTransitionProperty,
   MozTransitionTimingFunction?: PropertyTransitionTimingFunction,
   MozUserFocus?: PropertyMozUserFocus,
@@ -497,8 +497,8 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   msTouchSelect?: PropertyMsTouchSelect,
   msTransform?: PropertyTransform,
   msTransformOrigin?: PropertyTransformOrigin<TLength>,
-  msTransitionDelay?: PropertyTransitionDelay,
-  msTransitionDuration?: PropertyTransitionDuration,
+  msTransitionDelay?: PropertyTransitionDelay<TTime>,
+  msTransitionDuration?: PropertyTransitionDuration<TTime>,
   msTransitionProperty?: PropertyTransitionProperty,
   msTransitionTimingFunction?: PropertyTransitionTimingFunction,
   msUserSelect?: PropertyMsUserSelect,
@@ -515,9 +515,9 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitAlignContent?: PropertyAlignContent,
   WebkitAlignItems?: PropertyAlignItems,
   WebkitAlignSelf?: PropertyAlignSelf,
-  WebkitAnimationDelay?: PropertyAnimationDelay,
+  WebkitAnimationDelay?: PropertyAnimationDelay<TTime>,
   WebkitAnimationDirection?: PropertyAnimationDirection,
-  WebkitAnimationDuration?: PropertyAnimationDuration,
+  WebkitAnimationDuration?: PropertyAnimationDuration<TTime>,
   WebkitAnimationFillMode?: PropertyAnimationFillMode,
   WebkitAnimationIterationCount?: PropertyAnimationIterationCount,
   WebkitAnimationName?: PropertyAnimationName,
@@ -605,8 +605,8 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitTransform?: PropertyTransform,
   WebkitTransformOrigin?: PropertyTransformOrigin<TLength>,
   WebkitTransformStyle?: PropertyTransformStyle,
-  WebkitTransitionDelay?: PropertyTransitionDelay,
-  WebkitTransitionDuration?: PropertyTransitionDuration,
+  WebkitTransitionDelay?: PropertyTransitionDelay<TTime>,
+  WebkitTransitionDuration?: PropertyTransitionDuration<TTime>,
   WebkitTransitionProperty?: PropertyTransitionProperty,
   WebkitTransitionTimingFunction?: PropertyTransitionTimingFunction,
   WebkitUserModify?: PropertyWebkitUserModify,
@@ -614,20 +614,20 @@ export type VendorLonghandProperties<TLength = string | 0> = {|
   WebkitWritingMode?: PropertyWritingMode,
 |};
 
-export type VendorShorthandProperties<TLength = string | 0> = {|
-  MozAnimation?: PropertyAnimation,
+export type VendorShorthandProperties<TLength = string | 0, TTime = string> = {|
+  MozAnimation?: PropertyAnimation<TTime>,
   MozBorderImage?: PropertyBorderImage,
   MozColumnRule?: PropertyColumnRule<TLength>,
   MozColumns?: PropertyColumns<TLength>,
-  MozTransition?: PropertyTransition,
+  MozTransition?: PropertyTransition<TTime>,
   msContentZoomLimit?: PropertyMsContentZoomLimit,
   msContentZoomSnap?: PropertyMsContentZoomSnap,
   msFlex?: PropertyFlex<TLength>,
   msScrollLimit?: PropertyMsScrollLimit,
   msScrollSnapX?: PropertyMsScrollSnapX,
   msScrollSnapY?: PropertyMsScrollSnapY,
-  msTransition?: PropertyTransition,
-  WebkitAnimation?: PropertyAnimation,
+  msTransition?: PropertyTransition<TTime>,
+  WebkitAnimation?: PropertyAnimation<TTime>,
   WebkitBorderBefore?: PropertyWebkitBorderBefore<TLength>,
   WebkitBorderImage?: PropertyBorderImage,
   WebkitBorderRadius?: PropertyBorderRadius<TLength>,
@@ -638,12 +638,12 @@ export type VendorShorthandProperties<TLength = string | 0> = {|
   WebkitMask?: PropertyWebkitMask<TLength>,
   WebkitTextEmphasis?: PropertyTextEmphasis,
   WebkitTextStroke?: PropertyWebkitTextStroke<TLength>,
-  WebkitTransition?: PropertyTransition,
+  WebkitTransition?: PropertyTransition<TTime>,
 |};
 
-export type VendorProperties<TLength = string | 0> = {| ...VendorLonghandProperties<TLength>, ...VendorShorthandProperties<TLength> |};
+export type VendorProperties<TLength = string | 0, TTime = string> = {| ...VendorLonghandProperties<TLength, TTime>, ...VendorShorthandProperties<TLength, TTime> |};
 
-export type ObsoleteProperties<TLength = string | 0> = {|
+export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   boxAlign?: PropertyBoxAlign,
   boxDirection?: PropertyBoxDirection,
   boxFlex?: PropertyBoxFlex,
@@ -717,10 +717,10 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   MozUserInput?: PropertyMozUserInput,
   MozWindowShadow?: PropertyMozWindowShadow,
   msImeMode?: PropertyImeMode,
-  OAnimation?: PropertyAnimation,
-  OAnimationDelay?: PropertyAnimationDelay,
+  OAnimation?: PropertyAnimation<TTime>,
+  OAnimationDelay?: PropertyAnimationDelay<TTime>,
   OAnimationDirection?: PropertyAnimationDirection,
-  OAnimationDuration?: PropertyAnimationDuration,
+  OAnimationDuration?: PropertyAnimationDuration<TTime>,
   OAnimationFillMode?: PropertyAnimationFillMode,
   OAnimationIterationCount?: PropertyAnimationIterationCount,
   OAnimationName?: PropertyAnimationName,
@@ -729,9 +729,9 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   OBackgroundSize?: PropertyBackgroundSize<TLength>,
   OBorderImage?: PropertyBorderImage,
   OTransform?: PropertyTransform,
-  OTransition?: PropertyTransition,
-  OTransitionDelay?: PropertyTransitionDelay,
-  OTransitionDuration?: PropertyTransitionDuration,
+  OTransition?: PropertyTransition<TTime>,
+  OTransitionDelay?: PropertyTransitionDelay<TTime>,
+  OTransitionDuration?: PropertyTransitionDuration<TTime>,
   OTransitionProperty?: PropertyTransitionProperty,
   OTransitionTimingFunction?: PropertyTransitionTimingFunction,
   WebkitBoxAlign?: PropertyBoxAlign,
@@ -746,7 +746,7 @@ export type ObsoleteProperties<TLength = string | 0> = {|
   WebkitScrollSnapPointsY?: PropertyScrollSnapPointsY,
 |};
 
-export type SvgProperties<TLength = string | 0> = {|
+export type SvgProperties<TLength = string | 0, TTime = string> = {|
   alignmentBaseline?: PropertyAlignmentBaseline,
   baselineShift?: PropertyBaselineShift<TLength>,
   clip?: PropertyClip,
@@ -809,15 +809,20 @@ export type SvgProperties<TLength = string | 0> = {|
   writingMode?: PropertyWritingMode,
 |};
 
-export type Properties<TLength = string | 0> = {| ...StandardProperties<TLength>, ...VendorProperties<TLength>, ...ObsoleteProperties<TLength>, ...SvgProperties<TLength> |};
+export type Properties<TLength = string | 0, TTime = string> = {|
+  ...StandardProperties<TLength, TTime>,
+  ...VendorProperties<TLength, TTime>,
+  ...ObsoleteProperties<TLength, TTime>,
+  ...SvgProperties<TLength, TTime>,
+|};
 
-export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
+export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "align-content"?: PropertyAlignContent,
   "align-items"?: PropertyAlignItems,
   "align-self"?: PropertyAlignSelf,
-  "animation-delay"?: PropertyAnimationDelay,
+  "animation-delay"?: PropertyAnimationDelay<TTime>,
   "animation-direction"?: PropertyAnimationDirection,
-  "animation-duration"?: PropertyAnimationDuration,
+  "animation-duration"?: PropertyAnimationDuration<TTime>,
   "animation-fill-mode"?: PropertyAnimationFillMode,
   "animation-iteration-count"?: PropertyAnimationIterationCount,
   "animation-name"?: PropertyAnimationName,
@@ -1131,8 +1136,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   "transform-box"?: PropertyTransformBox,
   "transform-origin"?: PropertyTransformOrigin<TLength>,
   "transform-style"?: PropertyTransformStyle,
-  "transition-delay"?: PropertyTransitionDelay,
-  "transition-duration"?: PropertyTransitionDuration,
+  "transition-delay"?: PropertyTransitionDelay<TTime>,
+  "transition-duration"?: PropertyTransitionDuration<TTime>,
   "transition-property"?: PropertyTransitionProperty,
   "transition-timing-function"?: PropertyTransitionTimingFunction,
   translate?: PropertyTranslate<TLength>,
@@ -1152,9 +1157,9 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {|
   zoom?: PropertyZoom,
 |};
 
-export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {|
+export type StandardShorthandPropertiesHyphen<TLength = string | 0, TTime = string> = {|
   all?: PropertyAll,
-  animation?: PropertyAnimation,
+  animation?: PropertyAnimation<TTime>,
   background?: PropertyBackground<TLength>,
   border?: PropertyBorder<TLength>,
   "border-block"?: PropertyBorderBlock<TLength>,
@@ -1196,15 +1201,18 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {|
   "place-self"?: PropertyPlaceSelf,
   "text-decoration"?: PropertyTextDecoration<TLength>,
   "text-emphasis"?: PropertyTextEmphasis,
-  transition?: PropertyTransition,
+  transition?: PropertyTransition<TTime>,
 |};
 
-export type StandardPropertiesHyphen<TLength = string | 0> = {| ...StandardLonghandPropertiesHyphen<TLength>, ...StandardShorthandPropertiesHyphen<TLength> |};
+export type StandardPropertiesHyphen<TLength = string | 0, TTime = string> = {|
+  ...StandardLonghandPropertiesHyphen<TLength, TTime>,
+  ...StandardShorthandPropertiesHyphen<TLength, TTime>,
+|};
 
-export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
-  "-moz-animation-delay"?: PropertyAnimationDelay,
+export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string> = {|
+  "-moz-animation-delay"?: PropertyAnimationDelay<TTime>,
   "-moz-animation-direction"?: PropertyAnimationDirection,
-  "-moz-animation-duration"?: PropertyAnimationDuration,
+  "-moz-animation-duration"?: PropertyAnimationDuration<TTime>,
   "-moz-animation-fill-mode"?: PropertyAnimationFillMode,
   "-moz-animation-iteration-count"?: PropertyAnimationIterationCount,
   "-moz-animation-name"?: PropertyAnimationName,
@@ -1248,8 +1256,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-moz-text-size-adjust"?: PropertyTextSizeAdjust,
   "-moz-transform-origin"?: PropertyTransformOrigin<TLength>,
   "-moz-transform-style"?: PropertyTransformStyle,
-  "-moz-transition-delay"?: PropertyTransitionDelay,
-  "-moz-transition-duration"?: PropertyTransitionDuration,
+  "-moz-transition-delay"?: PropertyTransitionDelay<TTime>,
+  "-moz-transition-duration"?: PropertyTransitionDuration<TTime>,
   "-moz-transition-property"?: PropertyTransitionProperty,
   "-moz-transition-timing-function"?: PropertyTransitionTimingFunction,
   "-moz-user-focus"?: PropertyMozUserFocus,
@@ -1308,8 +1316,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-ms-touch-select"?: PropertyMsTouchSelect,
   "-ms-transform"?: PropertyTransform,
   "-ms-transform-origin"?: PropertyTransformOrigin<TLength>,
-  "-ms-transition-delay"?: PropertyTransitionDelay,
-  "-ms-transition-duration"?: PropertyTransitionDuration,
+  "-ms-transition-delay"?: PropertyTransitionDelay<TTime>,
+  "-ms-transition-duration"?: PropertyTransitionDuration<TTime>,
   "-ms-transition-property"?: PropertyTransitionProperty,
   "-ms-transition-timing-function"?: PropertyTransitionTimingFunction,
   "-ms-user-select"?: PropertyMsUserSelect,
@@ -1326,9 +1334,9 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-align-content"?: PropertyAlignContent,
   "-webkit-align-items"?: PropertyAlignItems,
   "-webkit-align-self"?: PropertyAlignSelf,
-  "-webkit-animation-delay"?: PropertyAnimationDelay,
+  "-webkit-animation-delay"?: PropertyAnimationDelay<TTime>,
   "-webkit-animation-direction"?: PropertyAnimationDirection,
-  "-webkit-animation-duration"?: PropertyAnimationDuration,
+  "-webkit-animation-duration"?: PropertyAnimationDuration<TTime>,
   "-webkit-animation-fill-mode"?: PropertyAnimationFillMode,
   "-webkit-animation-iteration-count"?: PropertyAnimationIterationCount,
   "-webkit-animation-name"?: PropertyAnimationName,
@@ -1416,8 +1424,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-transform"?: PropertyTransform,
   "-webkit-transform-origin"?: PropertyTransformOrigin<TLength>,
   "-webkit-transform-style"?: PropertyTransformStyle,
-  "-webkit-transition-delay"?: PropertyTransitionDelay,
-  "-webkit-transition-duration"?: PropertyTransitionDuration,
+  "-webkit-transition-delay"?: PropertyTransitionDelay<TTime>,
+  "-webkit-transition-duration"?: PropertyTransitionDuration<TTime>,
   "-webkit-transition-property"?: PropertyTransitionProperty,
   "-webkit-transition-timing-function"?: PropertyTransitionTimingFunction,
   "-webkit-user-modify"?: PropertyWebkitUserModify,
@@ -1425,20 +1433,20 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-writing-mode"?: PropertyWritingMode,
 |};
 
-export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {|
-  "-moz-animation"?: PropertyAnimation,
+export type VendorShorthandPropertiesHyphen<TLength = string | 0, TTime = string> = {|
+  "-moz-animation"?: PropertyAnimation<TTime>,
   "-moz-border-image"?: PropertyBorderImage,
   "-moz-column-rule"?: PropertyColumnRule<TLength>,
   "-moz-columns"?: PropertyColumns<TLength>,
-  "-moz-transition"?: PropertyTransition,
+  "-moz-transition"?: PropertyTransition<TTime>,
   "-ms-content-zoom-limit"?: PropertyMsContentZoomLimit,
   "-ms-content-zoom-snap"?: PropertyMsContentZoomSnap,
   "-ms-flex"?: PropertyFlex<TLength>,
   "-ms-scroll-limit"?: PropertyMsScrollLimit,
   "-ms-scroll-snap-x"?: PropertyMsScrollSnapX,
   "-ms-scroll-snap-y"?: PropertyMsScrollSnapY,
-  "-ms-transition"?: PropertyTransition,
-  "-webkit-animation"?: PropertyAnimation,
+  "-ms-transition"?: PropertyTransition<TTime>,
+  "-webkit-animation"?: PropertyAnimation<TTime>,
   "-webkit-border-before"?: PropertyWebkitBorderBefore<TLength>,
   "-webkit-border-image"?: PropertyBorderImage,
   "-webkit-border-radius"?: PropertyBorderRadius<TLength>,
@@ -1449,12 +1457,15 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {|
   "-webkit-mask"?: PropertyWebkitMask<TLength>,
   "-webkit-text-emphasis"?: PropertyTextEmphasis,
   "-webkit-text-stroke"?: PropertyWebkitTextStroke<TLength>,
-  "-webkit-transition"?: PropertyTransition,
+  "-webkit-transition"?: PropertyTransition<TTime>,
 |};
 
-export type VendorPropertiesHyphen<TLength = string | 0> = {| ...VendorLonghandPropertiesHyphen<TLength>, ...VendorShorthandPropertiesHyphen<TLength> |};
+export type VendorPropertiesHyphen<TLength = string | 0, TTime = string> = {|
+  ...VendorLonghandPropertiesHyphen<TLength, TTime>,
+  ...VendorShorthandPropertiesHyphen<TLength, TTime>,
+|};
 
-export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
+export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "box-align"?: PropertyBoxAlign,
   "box-direction"?: PropertyBoxDirection,
   "box-flex"?: PropertyBoxFlex,
@@ -1528,10 +1539,10 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-moz-user-input"?: PropertyMozUserInput,
   "-moz-window-shadow"?: PropertyMozWindowShadow,
   "-ms-ime-mode"?: PropertyImeMode,
-  "-o-animation"?: PropertyAnimation,
-  "-o-animation-delay"?: PropertyAnimationDelay,
+  "-o-animation"?: PropertyAnimation<TTime>,
+  "-o-animation-delay"?: PropertyAnimationDelay<TTime>,
   "-o-animation-direction"?: PropertyAnimationDirection,
-  "-o-animation-duration"?: PropertyAnimationDuration,
+  "-o-animation-duration"?: PropertyAnimationDuration<TTime>,
   "-o-animation-fill-mode"?: PropertyAnimationFillMode,
   "-o-animation-iteration-count"?: PropertyAnimationIterationCount,
   "-o-animation-name"?: PropertyAnimationName,
@@ -1540,9 +1551,9 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-o-background-size"?: PropertyBackgroundSize<TLength>,
   "-o-border-image"?: PropertyBorderImage,
   "-o-transform"?: PropertyTransform,
-  "-o-transition"?: PropertyTransition,
-  "-o-transition-delay"?: PropertyTransitionDelay,
-  "-o-transition-duration"?: PropertyTransitionDuration,
+  "-o-transition"?: PropertyTransition<TTime>,
+  "-o-transition-delay"?: PropertyTransitionDelay<TTime>,
+  "-o-transition-duration"?: PropertyTransitionDuration<TTime>,
   "-o-transition-property"?: PropertyTransitionProperty,
   "-o-transition-timing-function"?: PropertyTransitionTimingFunction,
   "-webkit-box-align"?: PropertyBoxAlign,
@@ -1557,7 +1568,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {|
   "-webkit-scroll-snap-points-y"?: PropertyScrollSnapPointsY,
 |};
 
-export type SvgPropertiesHyphen<TLength = string | 0> = {|
+export type SvgPropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "alignment-baseline"?: PropertyAlignmentBaseline,
   "baseline-shift"?: PropertyBaselineShift<TLength>,
   clip?: PropertyClip,
@@ -1620,20 +1631,20 @@ export type SvgPropertiesHyphen<TLength = string | 0> = {|
   "writing-mode"?: PropertyWritingMode,
 |};
 
-export type PropertiesHyphen<TLength = string | 0> = {|
-  ...StandardPropertiesHyphen<TLength>,
-  ...VendorPropertiesHyphen<TLength>,
-  ...ObsoletePropertiesHyphen<TLength>,
-  ...SvgPropertiesHyphen<TLength>,
+export type PropertiesHyphen<TLength = string | 0, TTime = string> = {|
+  ...StandardPropertiesHyphen<TLength, TTime>,
+  ...VendorPropertiesHyphen<TLength, TTime>,
+  ...ObsoletePropertiesHyphen<TLength, TTime>,
+  ...SvgPropertiesHyphen<TLength, TTime>,
 |};
 
-export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
+export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = string> = {|
   alignContent?: PropertyAlignContent | Array<PropertyAlignContent>,
   alignItems?: PropertyAlignItems | Array<PropertyAlignItems>,
   alignSelf?: PropertyAlignSelf | Array<PropertyAlignSelf>,
-  animationDelay?: PropertyAnimationDelay | Array<PropertyAnimationDelay>,
+  animationDelay?: PropertyAnimationDelay<TTime> | Array<PropertyAnimationDelay<TTime>>,
   animationDirection?: PropertyAnimationDirection | Array<PropertyAnimationDirection>,
-  animationDuration?: PropertyAnimationDuration | Array<PropertyAnimationDuration>,
+  animationDuration?: PropertyAnimationDuration<TTime> | Array<PropertyAnimationDuration<TTime>>,
   animationFillMode?: PropertyAnimationFillMode | Array<PropertyAnimationFillMode>,
   animationIterationCount?: PropertyAnimationIterationCount | Array<PropertyAnimationIterationCount>,
   animationName?: PropertyAnimationName | Array<PropertyAnimationName>,
@@ -1947,8 +1958,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   transformBox?: PropertyTransformBox | Array<PropertyTransformBox>,
   transformOrigin?: PropertyTransformOrigin<TLength> | Array<PropertyTransformOrigin<TLength>>,
   transformStyle?: PropertyTransformStyle | Array<PropertyTransformStyle>,
-  transitionDelay?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  transitionDuration?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  transitionDelay?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  transitionDuration?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   transitionProperty?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   transitionTimingFunction?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   translate?: PropertyTranslate<TLength> | Array<PropertyTranslate<TLength>>,
@@ -1968,9 +1979,9 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {|
   zoom?: PropertyZoom | Array<PropertyZoom>,
 |};
 
-export type StandardShorthandPropertiesFallback<TLength = string | 0> = {|
+export type StandardShorthandPropertiesFallback<TLength = string | 0, TTime = string> = {|
   all?: PropertyAll | Array<PropertyAll>,
-  animation?: PropertyAnimation | Array<PropertyAnimation>,
+  animation?: PropertyAnimation<TTime> | Array<PropertyAnimation<TTime>>,
   background?: PropertyBackground<TLength> | Array<PropertyBackground<TLength>>,
   border?: PropertyBorder<TLength> | Array<PropertyBorder<TLength>>,
   borderBlock?: PropertyBorderBlock<TLength> | Array<PropertyBorderBlock<TLength>>,
@@ -2012,15 +2023,18 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {|
   placeSelf?: PropertyPlaceSelf | Array<PropertyPlaceSelf>,
   textDecoration?: PropertyTextDecoration<TLength> | Array<PropertyTextDecoration<TLength>>,
   textEmphasis?: PropertyTextEmphasis | Array<PropertyTextEmphasis>,
-  transition?: PropertyTransition | Array<PropertyTransition>,
+  transition?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
 |};
 
-export type StandardPropertiesFallback<TLength = string | 0> = {| ...StandardLonghandPropertiesFallback<TLength>, ...StandardShorthandPropertiesFallback<TLength> |};
+export type StandardPropertiesFallback<TLength = string | 0, TTime = string> = {|
+  ...StandardLonghandPropertiesFallback<TLength, TTime>,
+  ...StandardShorthandPropertiesFallback<TLength, TTime>,
+|};
 
-export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
-  MozAnimationDelay?: PropertyAnimationDelay | Array<PropertyAnimationDelay>,
+export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = string> = {|
+  MozAnimationDelay?: PropertyAnimationDelay<TTime> | Array<PropertyAnimationDelay<TTime>>,
   MozAnimationDirection?: PropertyAnimationDirection | Array<PropertyAnimationDirection>,
-  MozAnimationDuration?: PropertyAnimationDuration | Array<PropertyAnimationDuration>,
+  MozAnimationDuration?: PropertyAnimationDuration<TTime> | Array<PropertyAnimationDuration<TTime>>,
   MozAnimationFillMode?: PropertyAnimationFillMode | Array<PropertyAnimationFillMode>,
   MozAnimationIterationCount?: PropertyAnimationIterationCount | Array<PropertyAnimationIterationCount>,
   MozAnimationName?: PropertyAnimationName | Array<PropertyAnimationName>,
@@ -2064,8 +2078,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   MozTextSizeAdjust?: PropertyTextSizeAdjust | Array<PropertyTextSizeAdjust>,
   MozTransformOrigin?: PropertyTransformOrigin<TLength> | Array<PropertyTransformOrigin<TLength>>,
   MozTransformStyle?: PropertyTransformStyle | Array<PropertyTransformStyle>,
-  MozTransitionDelay?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  MozTransitionDuration?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  MozTransitionDelay?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  MozTransitionDuration?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   MozTransitionProperty?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   MozTransitionTimingFunction?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   MozUserFocus?: PropertyMozUserFocus | Array<PropertyMozUserFocus>,
@@ -2124,8 +2138,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   msTouchSelect?: PropertyMsTouchSelect | Array<PropertyMsTouchSelect>,
   msTransform?: PropertyTransform | Array<PropertyTransform>,
   msTransformOrigin?: PropertyTransformOrigin<TLength> | Array<PropertyTransformOrigin<TLength>>,
-  msTransitionDelay?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  msTransitionDuration?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  msTransitionDelay?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  msTransitionDuration?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   msTransitionProperty?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   msTransitionTimingFunction?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   msUserSelect?: PropertyMsUserSelect | Array<PropertyMsUserSelect>,
@@ -2142,9 +2156,9 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitAlignContent?: PropertyAlignContent | Array<PropertyAlignContent>,
   WebkitAlignItems?: PropertyAlignItems | Array<PropertyAlignItems>,
   WebkitAlignSelf?: PropertyAlignSelf | Array<PropertyAlignSelf>,
-  WebkitAnimationDelay?: PropertyAnimationDelay | Array<PropertyAnimationDelay>,
+  WebkitAnimationDelay?: PropertyAnimationDelay<TTime> | Array<PropertyAnimationDelay<TTime>>,
   WebkitAnimationDirection?: PropertyAnimationDirection | Array<PropertyAnimationDirection>,
-  WebkitAnimationDuration?: PropertyAnimationDuration | Array<PropertyAnimationDuration>,
+  WebkitAnimationDuration?: PropertyAnimationDuration<TTime> | Array<PropertyAnimationDuration<TTime>>,
   WebkitAnimationFillMode?: PropertyAnimationFillMode | Array<PropertyAnimationFillMode>,
   WebkitAnimationIterationCount?: PropertyAnimationIterationCount | Array<PropertyAnimationIterationCount>,
   WebkitAnimationName?: PropertyAnimationName | Array<PropertyAnimationName>,
@@ -2232,8 +2246,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitTransform?: PropertyTransform | Array<PropertyTransform>,
   WebkitTransformOrigin?: PropertyTransformOrigin<TLength> | Array<PropertyTransformOrigin<TLength>>,
   WebkitTransformStyle?: PropertyTransformStyle | Array<PropertyTransformStyle>,
-  WebkitTransitionDelay?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  WebkitTransitionDuration?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  WebkitTransitionDelay?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  WebkitTransitionDuration?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   WebkitTransitionProperty?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   WebkitTransitionTimingFunction?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   WebkitUserModify?: PropertyWebkitUserModify | Array<PropertyWebkitUserModify>,
@@ -2241,20 +2255,20 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {|
   WebkitWritingMode?: PropertyWritingMode | Array<PropertyWritingMode>,
 |};
 
-export type VendorShorthandPropertiesFallback<TLength = string | 0> = {|
-  MozAnimation?: PropertyAnimation | Array<PropertyAnimation>,
+export type VendorShorthandPropertiesFallback<TLength = string | 0, TTime = string> = {|
+  MozAnimation?: PropertyAnimation<TTime> | Array<PropertyAnimation<TTime>>,
   MozBorderImage?: PropertyBorderImage | Array<PropertyBorderImage>,
   MozColumnRule?: PropertyColumnRule<TLength> | Array<PropertyColumnRule<TLength>>,
   MozColumns?: PropertyColumns<TLength> | Array<PropertyColumns<TLength>>,
-  MozTransition?: PropertyTransition | Array<PropertyTransition>,
+  MozTransition?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
   msContentZoomLimit?: PropertyMsContentZoomLimit | Array<PropertyMsContentZoomLimit>,
   msContentZoomSnap?: PropertyMsContentZoomSnap | Array<PropertyMsContentZoomSnap>,
   msFlex?: PropertyFlex<TLength> | Array<PropertyFlex<TLength>>,
   msScrollLimit?: PropertyMsScrollLimit | Array<PropertyMsScrollLimit>,
   msScrollSnapX?: PropertyMsScrollSnapX | Array<PropertyMsScrollSnapX>,
   msScrollSnapY?: PropertyMsScrollSnapY | Array<PropertyMsScrollSnapY>,
-  msTransition?: PropertyTransition | Array<PropertyTransition>,
-  WebkitAnimation?: PropertyAnimation | Array<PropertyAnimation>,
+  msTransition?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
+  WebkitAnimation?: PropertyAnimation<TTime> | Array<PropertyAnimation<TTime>>,
   WebkitBorderBefore?: PropertyWebkitBorderBefore<TLength> | Array<PropertyWebkitBorderBefore<TLength>>,
   WebkitBorderImage?: PropertyBorderImage | Array<PropertyBorderImage>,
   WebkitBorderRadius?: PropertyBorderRadius<TLength> | Array<PropertyBorderRadius<TLength>>,
@@ -2265,12 +2279,15 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {|
   WebkitMask?: PropertyWebkitMask<TLength> | Array<PropertyWebkitMask<TLength>>,
   WebkitTextEmphasis?: PropertyTextEmphasis | Array<PropertyTextEmphasis>,
   WebkitTextStroke?: PropertyWebkitTextStroke<TLength> | Array<PropertyWebkitTextStroke<TLength>>,
-  WebkitTransition?: PropertyTransition | Array<PropertyTransition>,
+  WebkitTransition?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
 |};
 
-export type VendorPropertiesFallback<TLength = string | 0> = {| ...VendorLonghandPropertiesFallback<TLength>, ...VendorShorthandPropertiesFallback<TLength> |};
+export type VendorPropertiesFallback<TLength = string | 0, TTime = string> = {|
+  ...VendorLonghandPropertiesFallback<TLength, TTime>,
+  ...VendorShorthandPropertiesFallback<TLength, TTime>,
+|};
 
-export type ObsoletePropertiesFallback<TLength = string | 0> = {|
+export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {|
   boxAlign?: PropertyBoxAlign | Array<PropertyBoxAlign>,
   boxDirection?: PropertyBoxDirection | Array<PropertyBoxDirection>,
   boxFlex?: PropertyBoxFlex | Array<PropertyBoxFlex>,
@@ -2344,10 +2361,10 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   MozUserInput?: PropertyMozUserInput | Array<PropertyMozUserInput>,
   MozWindowShadow?: PropertyMozWindowShadow | Array<PropertyMozWindowShadow>,
   msImeMode?: PropertyImeMode | Array<PropertyImeMode>,
-  OAnimation?: PropertyAnimation | Array<PropertyAnimation>,
-  OAnimationDelay?: PropertyAnimationDelay | Array<PropertyAnimationDelay>,
+  OAnimation?: PropertyAnimation<TTime> | Array<PropertyAnimation<TTime>>,
+  OAnimationDelay?: PropertyAnimationDelay<TTime> | Array<PropertyAnimationDelay<TTime>>,
   OAnimationDirection?: PropertyAnimationDirection | Array<PropertyAnimationDirection>,
-  OAnimationDuration?: PropertyAnimationDuration | Array<PropertyAnimationDuration>,
+  OAnimationDuration?: PropertyAnimationDuration<TTime> | Array<PropertyAnimationDuration<TTime>>,
   OAnimationFillMode?: PropertyAnimationFillMode | Array<PropertyAnimationFillMode>,
   OAnimationIterationCount?: PropertyAnimationIterationCount | Array<PropertyAnimationIterationCount>,
   OAnimationName?: PropertyAnimationName | Array<PropertyAnimationName>,
@@ -2356,9 +2373,9 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   OBackgroundSize?: PropertyBackgroundSize<TLength> | Array<PropertyBackgroundSize<TLength>>,
   OBorderImage?: PropertyBorderImage | Array<PropertyBorderImage>,
   OTransform?: PropertyTransform | Array<PropertyTransform>,
-  OTransition?: PropertyTransition | Array<PropertyTransition>,
-  OTransitionDelay?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  OTransitionDuration?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  OTransition?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
+  OTransitionDelay?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  OTransitionDuration?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   OTransitionProperty?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   OTransitionTimingFunction?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   WebkitBoxAlign?: PropertyBoxAlign | Array<PropertyBoxAlign>,
@@ -2373,7 +2390,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {|
   WebkitScrollSnapPointsY?: PropertyScrollSnapPointsY | Array<PropertyScrollSnapPointsY>,
 |};
 
-export type SvgPropertiesFallback<TLength = string | 0> = {|
+export type SvgPropertiesFallback<TLength = string | 0, TTime = string> = {|
   alignmentBaseline?: PropertyAlignmentBaseline | Array<PropertyAlignmentBaseline>,
   baselineShift?: PropertyBaselineShift<TLength> | Array<PropertyBaselineShift<TLength>>,
   clip?: PropertyClip | Array<PropertyClip>,
@@ -2436,20 +2453,20 @@ export type SvgPropertiesFallback<TLength = string | 0> = {|
   writingMode?: PropertyWritingMode | Array<PropertyWritingMode>,
 |};
 
-export type PropertiesFallback<TLength = string | 0> = {|
-  ...StandardPropertiesFallback<TLength>,
-  ...VendorPropertiesFallback<TLength>,
-  ...ObsoletePropertiesFallback<TLength>,
-  ...SvgPropertiesFallback<TLength>,
+export type PropertiesFallback<TLength = string | 0, TTime = string> = {|
+  ...StandardPropertiesFallback<TLength, TTime>,
+  ...VendorPropertiesFallback<TLength, TTime>,
+  ...ObsoletePropertiesFallback<TLength, TTime>,
+  ...SvgPropertiesFallback<TLength, TTime>,
 |};
 
-export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
+export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
   "align-content"?: PropertyAlignContent | Array<PropertyAlignContent>,
   "align-items"?: PropertyAlignItems | Array<PropertyAlignItems>,
   "align-self"?: PropertyAlignSelf | Array<PropertyAlignSelf>,
-  "animation-delay"?: PropertyAnimationDelay | Array<PropertyAnimationDelay>,
+  "animation-delay"?: PropertyAnimationDelay<TTime> | Array<PropertyAnimationDelay<TTime>>,
   "animation-direction"?: PropertyAnimationDirection | Array<PropertyAnimationDirection>,
-  "animation-duration"?: PropertyAnimationDuration | Array<PropertyAnimationDuration>,
+  "animation-duration"?: PropertyAnimationDuration<TTime> | Array<PropertyAnimationDuration<TTime>>,
   "animation-fill-mode"?: PropertyAnimationFillMode | Array<PropertyAnimationFillMode>,
   "animation-iteration-count"?: PropertyAnimationIterationCount | Array<PropertyAnimationIterationCount>,
   "animation-name"?: PropertyAnimationName | Array<PropertyAnimationName>,
@@ -2763,8 +2780,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "transform-box"?: PropertyTransformBox | Array<PropertyTransformBox>,
   "transform-origin"?: PropertyTransformOrigin<TLength> | Array<PropertyTransformOrigin<TLength>>,
   "transform-style"?: PropertyTransformStyle | Array<PropertyTransformStyle>,
-  "transition-delay"?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  "transition-duration"?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  "transition-delay"?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  "transition-duration"?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   "transition-property"?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   "transition-timing-function"?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   translate?: PropertyTranslate<TLength> | Array<PropertyTranslate<TLength>>,
@@ -2784,9 +2801,9 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   zoom?: PropertyZoom | Array<PropertyZoom>,
 |};
 
-export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
+export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
   all?: PropertyAll | Array<PropertyAll>,
-  animation?: PropertyAnimation | Array<PropertyAnimation>,
+  animation?: PropertyAnimation<TTime> | Array<PropertyAnimation<TTime>>,
   background?: PropertyBackground<TLength> | Array<PropertyBackground<TLength>>,
   border?: PropertyBorder<TLength> | Array<PropertyBorder<TLength>>,
   "border-block"?: PropertyBorderBlock<TLength> | Array<PropertyBorderBlock<TLength>>,
@@ -2828,18 +2845,18 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
   "place-self"?: PropertyPlaceSelf | Array<PropertyPlaceSelf>,
   "text-decoration"?: PropertyTextDecoration<TLength> | Array<PropertyTextDecoration<TLength>>,
   "text-emphasis"?: PropertyTextEmphasis | Array<PropertyTextEmphasis>,
-  transition?: PropertyTransition | Array<PropertyTransition>,
+  transition?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
 |};
 
-export type StandardPropertiesHyphenFallback<TLength = string | 0> = {|
-  ...StandardLonghandPropertiesHyphenFallback<TLength>,
-  ...StandardShorthandPropertiesHyphenFallback<TLength>,
+export type StandardPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
+  ...StandardLonghandPropertiesHyphenFallback<TLength, TTime>,
+  ...StandardShorthandPropertiesHyphenFallback<TLength, TTime>,
 |};
 
-export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
-  "-moz-animation-delay"?: PropertyAnimationDelay | Array<PropertyAnimationDelay>,
+export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
+  "-moz-animation-delay"?: PropertyAnimationDelay<TTime> | Array<PropertyAnimationDelay<TTime>>,
   "-moz-animation-direction"?: PropertyAnimationDirection | Array<PropertyAnimationDirection>,
-  "-moz-animation-duration"?: PropertyAnimationDuration | Array<PropertyAnimationDuration>,
+  "-moz-animation-duration"?: PropertyAnimationDuration<TTime> | Array<PropertyAnimationDuration<TTime>>,
   "-moz-animation-fill-mode"?: PropertyAnimationFillMode | Array<PropertyAnimationFillMode>,
   "-moz-animation-iteration-count"?: PropertyAnimationIterationCount | Array<PropertyAnimationIterationCount>,
   "-moz-animation-name"?: PropertyAnimationName | Array<PropertyAnimationName>,
@@ -2883,8 +2900,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-text-size-adjust"?: PropertyTextSizeAdjust | Array<PropertyTextSizeAdjust>,
   "-moz-transform-origin"?: PropertyTransformOrigin<TLength> | Array<PropertyTransformOrigin<TLength>>,
   "-moz-transform-style"?: PropertyTransformStyle | Array<PropertyTransformStyle>,
-  "-moz-transition-delay"?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  "-moz-transition-duration"?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  "-moz-transition-delay"?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  "-moz-transition-duration"?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   "-moz-transition-property"?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   "-moz-transition-timing-function"?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   "-moz-user-focus"?: PropertyMozUserFocus | Array<PropertyMozUserFocus>,
@@ -2943,8 +2960,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-ms-touch-select"?: PropertyMsTouchSelect | Array<PropertyMsTouchSelect>,
   "-ms-transform"?: PropertyTransform | Array<PropertyTransform>,
   "-ms-transform-origin"?: PropertyTransformOrigin<TLength> | Array<PropertyTransformOrigin<TLength>>,
-  "-ms-transition-delay"?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  "-ms-transition-duration"?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  "-ms-transition-delay"?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  "-ms-transition-duration"?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   "-ms-transition-property"?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   "-ms-transition-timing-function"?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   "-ms-user-select"?: PropertyMsUserSelect | Array<PropertyMsUserSelect>,
@@ -2961,9 +2978,9 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-align-content"?: PropertyAlignContent | Array<PropertyAlignContent>,
   "-webkit-align-items"?: PropertyAlignItems | Array<PropertyAlignItems>,
   "-webkit-align-self"?: PropertyAlignSelf | Array<PropertyAlignSelf>,
-  "-webkit-animation-delay"?: PropertyAnimationDelay | Array<PropertyAnimationDelay>,
+  "-webkit-animation-delay"?: PropertyAnimationDelay<TTime> | Array<PropertyAnimationDelay<TTime>>,
   "-webkit-animation-direction"?: PropertyAnimationDirection | Array<PropertyAnimationDirection>,
-  "-webkit-animation-duration"?: PropertyAnimationDuration | Array<PropertyAnimationDuration>,
+  "-webkit-animation-duration"?: PropertyAnimationDuration<TTime> | Array<PropertyAnimationDuration<TTime>>,
   "-webkit-animation-fill-mode"?: PropertyAnimationFillMode | Array<PropertyAnimationFillMode>,
   "-webkit-animation-iteration-count"?: PropertyAnimationIterationCount | Array<PropertyAnimationIterationCount>,
   "-webkit-animation-name"?: PropertyAnimationName | Array<PropertyAnimationName>,
@@ -3051,8 +3068,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-transform"?: PropertyTransform | Array<PropertyTransform>,
   "-webkit-transform-origin"?: PropertyTransformOrigin<TLength> | Array<PropertyTransformOrigin<TLength>>,
   "-webkit-transform-style"?: PropertyTransformStyle | Array<PropertyTransformStyle>,
-  "-webkit-transition-delay"?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  "-webkit-transition-duration"?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  "-webkit-transition-delay"?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  "-webkit-transition-duration"?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   "-webkit-transition-property"?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   "-webkit-transition-timing-function"?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   "-webkit-user-modify"?: PropertyWebkitUserModify | Array<PropertyWebkitUserModify>,
@@ -3060,20 +3077,20 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-writing-mode"?: PropertyWritingMode | Array<PropertyWritingMode>,
 |};
 
-export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
-  "-moz-animation"?: PropertyAnimation | Array<PropertyAnimation>,
+export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
+  "-moz-animation"?: PropertyAnimation<TTime> | Array<PropertyAnimation<TTime>>,
   "-moz-border-image"?: PropertyBorderImage | Array<PropertyBorderImage>,
   "-moz-column-rule"?: PropertyColumnRule<TLength> | Array<PropertyColumnRule<TLength>>,
   "-moz-columns"?: PropertyColumns<TLength> | Array<PropertyColumns<TLength>>,
-  "-moz-transition"?: PropertyTransition | Array<PropertyTransition>,
+  "-moz-transition"?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
   "-ms-content-zoom-limit"?: PropertyMsContentZoomLimit | Array<PropertyMsContentZoomLimit>,
   "-ms-content-zoom-snap"?: PropertyMsContentZoomSnap | Array<PropertyMsContentZoomSnap>,
   "-ms-flex"?: PropertyFlex<TLength> | Array<PropertyFlex<TLength>>,
   "-ms-scroll-limit"?: PropertyMsScrollLimit | Array<PropertyMsScrollLimit>,
   "-ms-scroll-snap-x"?: PropertyMsScrollSnapX | Array<PropertyMsScrollSnapX>,
   "-ms-scroll-snap-y"?: PropertyMsScrollSnapY | Array<PropertyMsScrollSnapY>,
-  "-ms-transition"?: PropertyTransition | Array<PropertyTransition>,
-  "-webkit-animation"?: PropertyAnimation | Array<PropertyAnimation>,
+  "-ms-transition"?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
+  "-webkit-animation"?: PropertyAnimation<TTime> | Array<PropertyAnimation<TTime>>,
   "-webkit-border-before"?: PropertyWebkitBorderBefore<TLength> | Array<PropertyWebkitBorderBefore<TLength>>,
   "-webkit-border-image"?: PropertyBorderImage | Array<PropertyBorderImage>,
   "-webkit-border-radius"?: PropertyBorderRadius<TLength> | Array<PropertyBorderRadius<TLength>>,
@@ -3084,12 +3101,15 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-mask"?: PropertyWebkitMask<TLength> | Array<PropertyWebkitMask<TLength>>,
   "-webkit-text-emphasis"?: PropertyTextEmphasis | Array<PropertyTextEmphasis>,
   "-webkit-text-stroke"?: PropertyWebkitTextStroke<TLength> | Array<PropertyWebkitTextStroke<TLength>>,
-  "-webkit-transition"?: PropertyTransition | Array<PropertyTransition>,
+  "-webkit-transition"?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
 |};
 
-export type VendorPropertiesHyphenFallback<TLength = string | 0> = {| ...VendorLonghandPropertiesHyphenFallback<TLength>, ...VendorShorthandPropertiesHyphenFallback<TLength> |};
+export type VendorPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
+  ...VendorLonghandPropertiesHyphenFallback<TLength, TTime>,
+  ...VendorShorthandPropertiesHyphenFallback<TLength, TTime>,
+|};
 
-export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
+export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
   "box-align"?: PropertyBoxAlign | Array<PropertyBoxAlign>,
   "box-direction"?: PropertyBoxDirection | Array<PropertyBoxDirection>,
   "box-flex"?: PropertyBoxFlex | Array<PropertyBoxFlex>,
@@ -3163,10 +3183,10 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-moz-user-input"?: PropertyMozUserInput | Array<PropertyMozUserInput>,
   "-moz-window-shadow"?: PropertyMozWindowShadow | Array<PropertyMozWindowShadow>,
   "-ms-ime-mode"?: PropertyImeMode | Array<PropertyImeMode>,
-  "-o-animation"?: PropertyAnimation | Array<PropertyAnimation>,
-  "-o-animation-delay"?: PropertyAnimationDelay | Array<PropertyAnimationDelay>,
+  "-o-animation"?: PropertyAnimation<TTime> | Array<PropertyAnimation<TTime>>,
+  "-o-animation-delay"?: PropertyAnimationDelay<TTime> | Array<PropertyAnimationDelay<TTime>>,
   "-o-animation-direction"?: PropertyAnimationDirection | Array<PropertyAnimationDirection>,
-  "-o-animation-duration"?: PropertyAnimationDuration | Array<PropertyAnimationDuration>,
+  "-o-animation-duration"?: PropertyAnimationDuration<TTime> | Array<PropertyAnimationDuration<TTime>>,
   "-o-animation-fill-mode"?: PropertyAnimationFillMode | Array<PropertyAnimationFillMode>,
   "-o-animation-iteration-count"?: PropertyAnimationIterationCount | Array<PropertyAnimationIterationCount>,
   "-o-animation-name"?: PropertyAnimationName | Array<PropertyAnimationName>,
@@ -3175,9 +3195,9 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-o-background-size"?: PropertyBackgroundSize<TLength> | Array<PropertyBackgroundSize<TLength>>,
   "-o-border-image"?: PropertyBorderImage | Array<PropertyBorderImage>,
   "-o-transform"?: PropertyTransform | Array<PropertyTransform>,
-  "-o-transition"?: PropertyTransition | Array<PropertyTransition>,
-  "-o-transition-delay"?: PropertyTransitionDelay | Array<PropertyTransitionDelay>,
-  "-o-transition-duration"?: PropertyTransitionDuration | Array<PropertyTransitionDuration>,
+  "-o-transition"?: PropertyTransition<TTime> | Array<PropertyTransition<TTime>>,
+  "-o-transition-delay"?: PropertyTransitionDelay<TTime> | Array<PropertyTransitionDelay<TTime>>,
+  "-o-transition-duration"?: PropertyTransitionDuration<TTime> | Array<PropertyTransitionDuration<TTime>>,
   "-o-transition-property"?: PropertyTransitionProperty | Array<PropertyTransitionProperty>,
   "-o-transition-timing-function"?: PropertyTransitionTimingFunction | Array<PropertyTransitionTimingFunction>,
   "-webkit-box-align"?: PropertyBoxAlign | Array<PropertyBoxAlign>,
@@ -3192,7 +3212,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {|
   "-webkit-scroll-snap-points-y"?: PropertyScrollSnapPointsY | Array<PropertyScrollSnapPointsY>,
 |};
 
-export type SvgPropertiesHyphenFallback<TLength = string | 0> = {|
+export type SvgPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
   "alignment-baseline"?: PropertyAlignmentBaseline | Array<PropertyAlignmentBaseline>,
   "baseline-shift"?: PropertyBaselineShift<TLength> | Array<PropertyBaselineShift<TLength>>,
   clip?: PropertyClip | Array<PropertyClip>,
@@ -3255,11 +3275,11 @@ export type SvgPropertiesHyphenFallback<TLength = string | 0> = {|
   "writing-mode"?: PropertyWritingMode | Array<PropertyWritingMode>,
 |};
 
-export type PropertiesHyphenFallback<TLength = string | 0> = {|
-  ...StandardPropertiesHyphenFallback<TLength>,
-  ...VendorPropertiesHyphenFallback<TLength>,
-  ...ObsoletePropertiesHyphenFallback<TLength>,
-  ...SvgPropertiesHyphenFallback<TLength>,
+export type PropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
+  ...StandardPropertiesHyphenFallback<TLength, TTime>,
+  ...VendorPropertiesHyphenFallback<TLength, TTime>,
+  ...ObsoletePropertiesHyphenFallback<TLength, TTime>,
+  ...SvgPropertiesHyphenFallback<TLength, TTime>,
 |};
 
 export type AtRules =
@@ -3874,13 +3894,13 @@ export type PropertyAlignSelf = Globals | DataTypeSelfPosition | "auto" | "basel
 
 export type PropertyAll = Globals;
 
-export type PropertyAnimation = Globals | DataTypeSingleAnimation | string;
+export type PropertyAnimation<TTime = string> = Globals | DataTypeSingleAnimation<TTime> | string;
 
-export type PropertyAnimationDelay = Globals | string;
+export type PropertyAnimationDelay<TTime = string> = Globals | TTime | string;
 
 export type PropertyAnimationDirection = Globals | DataTypeSingleAnimationDirection | string;
 
-export type PropertyAnimationDuration = Globals | string;
+export type PropertyAnimationDuration<TTime = string> = Globals | TTime | string;
 
 export type PropertyAnimationFillMode = Globals | DataTypeSingleAnimationFillMode | string;
 
@@ -4939,11 +4959,11 @@ export type PropertyTransformOrigin<TLength = string | 0> = Globals | TLength | 
 
 export type PropertyTransformStyle = Globals | "flat" | "preserve-3d";
 
-export type PropertyTransition = Globals | DataTypeSingleTransition | string;
+export type PropertyTransition<TTime = string> = Globals | DataTypeSingleTransition<TTime> | string;
 
-export type PropertyTransitionDelay = Globals | string;
+export type PropertyTransitionDelay<TTime = string> = Globals | TTime | string;
 
-export type PropertyTransitionDuration = Globals | string;
+export type PropertyTransitionDuration<TTime = string> = Globals | TTime | string;
 
 export type PropertyTransitionProperty = Globals | "all" | "none" | string;
 
@@ -5456,7 +5476,7 @@ export type PropertyTextAnchor = Globals | "end" | "middle" | "start";
 
 export type PropertyVectorEffect = Globals | "non-scaling-stroke" | "none";
 
-export type AtRuleCounterStyle = {|
+export type AtRuleCounterStyle<TLength = string | 0, TTime = string> = {|
   additiveSymbols?: string,
   fallback?: string,
   negative?: string,
@@ -5469,7 +5489,7 @@ export type AtRuleCounterStyle = {|
   system?: AtRuleSystem,
 |};
 
-export type AtRuleCounterStyleHyphen = {|
+export type AtRuleCounterStyleHyphen<TLength = string | 0, TTime = string> = {|
   "additive-symbols"?: string,
   fallback?: string,
   negative?: string,
@@ -5482,7 +5502,7 @@ export type AtRuleCounterStyleHyphen = {|
   system?: AtRuleSystem,
 |};
 
-export type AtRuleCounterStyleFallback = {|
+export type AtRuleCounterStyleFallback<TLength = string | 0, TTime = string> = {|
   additiveSymbols?: string | Array<string>,
   fallback?: string | Array<string>,
   negative?: string | Array<string>,
@@ -5495,7 +5515,7 @@ export type AtRuleCounterStyleFallback = {|
   system?: AtRuleSystem | Array<AtRuleSystem>,
 |};
 
-export type AtRuleCounterStyleHyphenFallback = {|
+export type AtRuleCounterStyleHyphenFallback<TLength = string | 0, TTime = string> = {|
   "additive-symbols"?: string | Array<string>,
   fallback?: string | Array<string>,
   negative?: string | Array<string>,
@@ -5508,7 +5528,7 @@ export type AtRuleCounterStyleHyphenFallback = {|
   system?: AtRuleSystem | Array<AtRuleSystem>,
 |};
 
-export type AtRuleFontFace = {|
+export type AtRuleFontFace<TLength = string | 0, TTime = string> = {|
   MozFontFeatureSettings?: AtRuleFontFeatureSettings,
   fontDisplay?: AtRuleFontDisplay,
   fontFamily?: string,
@@ -5522,7 +5542,7 @@ export type AtRuleFontFace = {|
   unicodeRange?: string,
 |};
 
-export type AtRuleFontFaceHyphen = {|
+export type AtRuleFontFaceHyphen<TLength = string | 0, TTime = string> = {|
   "-moz-font-feature-settings"?: AtRuleFontFeatureSettings,
   "font-display"?: AtRuleFontDisplay,
   "font-family"?: string,
@@ -5536,7 +5556,7 @@ export type AtRuleFontFaceHyphen = {|
   "unicode-range"?: string,
 |};
 
-export type AtRuleFontFaceFallback = {|
+export type AtRuleFontFaceFallback<TLength = string | 0, TTime = string> = {|
   MozFontFeatureSettings?: AtRuleFontFeatureSettings | Array<AtRuleFontFeatureSettings>,
   fontDisplay?: AtRuleFontDisplay | Array<AtRuleFontDisplay>,
   fontFamily?: string | Array<string>,
@@ -5550,7 +5570,7 @@ export type AtRuleFontFaceFallback = {|
   unicodeRange?: string | Array<string>,
 |};
 
-export type AtRuleFontFaceHyphenFallback = {|
+export type AtRuleFontFaceHyphenFallback<TLength = string | 0, TTime = string> = {|
   "-moz-font-feature-settings"?: AtRuleFontFeatureSettings | Array<AtRuleFontFeatureSettings>,
   "font-display"?: AtRuleFontDisplay | Array<AtRuleFontDisplay>,
   "font-family"?: string | Array<string>,
@@ -5564,7 +5584,7 @@ export type AtRuleFontFaceHyphenFallback = {|
   "unicode-range"?: string | Array<string>,
 |};
 
-export type AtRuleViewport<TLength = string | 0> = {|
+export type AtRuleViewport<TLength = string | 0, TTime = string> = {|
   msHeight?: AtRuleHeight<TLength>,
   msMaxHeight?: AtRuleMaxHeight<TLength>,
   msMaxWidth?: AtRuleMaxWidth<TLength>,
@@ -5590,7 +5610,7 @@ export type AtRuleViewport<TLength = string | 0> = {|
   zoom?: AtRuleZoom,
 |};
 
-export type AtRuleViewportHyphen<TLength = string | 0> = {|
+export type AtRuleViewportHyphen<TLength = string | 0, TTime = string> = {|
   "-ms-height"?: AtRuleHeight<TLength>,
   "-ms-max-height"?: AtRuleMaxHeight<TLength>,
   "-ms-max-width"?: AtRuleMaxWidth<TLength>,
@@ -5616,7 +5636,7 @@ export type AtRuleViewportHyphen<TLength = string | 0> = {|
   zoom?: AtRuleZoom,
 |};
 
-export type AtRuleViewportFallback<TLength = string | 0> = {|
+export type AtRuleViewportFallback<TLength = string | 0, TTime = string> = {|
   msHeight?: AtRuleHeight<TLength> | Array<AtRuleHeight<TLength>>,
   msMaxHeight?: AtRuleMaxHeight<TLength> | Array<AtRuleMaxHeight<TLength>>,
   msMaxWidth?: AtRuleMaxWidth<TLength> | Array<AtRuleMaxWidth<TLength>>,
@@ -5642,7 +5662,7 @@ export type AtRuleViewportFallback<TLength = string | 0> = {|
   zoom?: AtRuleZoom | Array<AtRuleZoom>,
 |};
 
-export type AtRuleViewportHyphenFallback<TLength = string | 0> = {|
+export type AtRuleViewportHyphenFallback<TLength = string | 0, TTime = string> = {|
   "-ms-height"?: AtRuleHeight<TLength> | Array<AtRuleHeight<TLength>>,
   "-ms-max-height"?: AtRuleMaxHeight<TLength> | Array<AtRuleMaxHeight<TLength>>,
   "-ms-max-width"?: AtRuleMaxWidth<TLength> | Array<AtRuleMaxWidth<TLength>>,
@@ -6071,10 +6091,11 @@ type DataTypeRepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "r
 
 type DataTypeSelfPosition = "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
 
-type DataTypeSingleAnimation =
+type DataTypeSingleAnimation<TTime> =
   | DataTypeTimingFunction
   | DataTypeSingleAnimationDirection
   | DataTypeSingleAnimationFillMode
+  | TTime
   | "infinite"
   | "none"
   | "paused"
@@ -6086,7 +6107,7 @@ type DataTypeSingleAnimationDirection = "alternate" | "alternate-reverse" | "nor
 
 type DataTypeSingleAnimationFillMode = "backwards" | "both" | "forwards" | "none";
 
-type DataTypeSingleTransition = DataTypeTimingFunction | "all" | "none" | string;
+type DataTypeSingleTransition<TTime> = DataTypeTimingFunction | TTime | "all" | "none" | string;
 
 type DataTypeStepTimingFunction = "step-end" | "step-start" | string;
 
