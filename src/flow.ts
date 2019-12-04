@@ -52,8 +52,12 @@ export default async function flow() {
     EOL}`;
 }
 
+function typeAliasName(namespace: string | undefined, name: string) {
+  return namespace ? `${namespace}$${name}` : name;
+}
+
 function stringifyTypes(types: DeclarableType[]) {
-  return types.map(createStringifyType(undefined, true)).join(' | ');
+  return types.map(createStringifyType(type => typeAliasName(type.namespace?.name, type.name))).join(' | ');
 }
 
 function combineFlowExactTypes(input: string[]): string {
@@ -98,7 +102,7 @@ function outputInterface(entry: Interface, namespace = '') {
   }
 
   output += 'type ';
-  output += namespace + entry.name + stringifyGenerics(entry.generics, true, stringifyTypes);
+  output += typeAliasName(namespace, entry.name) + stringifyGenerics(entry.generics, true, stringifyTypes);
   output += ' = ' + extendList;
 
   const properties = isInterfaceProperties(entry) ? entry.properties : entry.fallbacks.properties;
@@ -132,8 +136,7 @@ function outputDeclaration(entry: IDeclaration, namespace = '') {
     output += 'export ';
   }
 
-  output += `type ${namespace +
-    entry.name +
+  output += `type ${typeAliasName(namespace, entry.name) +
     stringifyGenerics(entry.generics, entry.export, stringifyTypes)} = ${stringifyTypes(entry.types)}`;
 
   return output;

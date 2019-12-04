@@ -1,6 +1,7 @@
 import {
   DeclarableType,
   declarator,
+  IAlias,
   IGenerics,
   INamespace,
   lengthGeneric,
@@ -15,11 +16,14 @@ export const generatingDeclarations = declarator(3);
 export function createStringifyType(): (type: SimpleType) => string;
 
 export function createStringifyType(
-  currentNamespace: INamespace | undefined,
-  noNamespaceSupport?: boolean,
+  createTypeAliasName: (type: IAlias) => string,
+  currentNamespace?: INamespace,
 ): (type: DeclarableType) => string;
 
-export function createStringifyType(currentNamespace?: INamespace | undefined, noNamespaceSupport = false) {
+export function createStringifyType(
+  createTypeAliasName: (type: IAlias, currentNamespace: INamespace | undefined) => string = type => type.name,
+  currentNamespace?: INamespace,
+) {
   const stringifyType = ((type: DeclarableType) => {
     switch (type.type) {
       case Type.String:
@@ -33,19 +37,7 @@ export function createStringifyType(currentNamespace?: INamespace | undefined, n
       case Type.Array:
         return `Array<${stringifyType(type.of)}>`;
       case Type.Alias: {
-        let namespace = '';
-
-        if (type.namespace) {
-          if (noNamespaceSupport) {
-            namespace = type.namespace.name;
-          } else if (type.namespace !== currentNamespace) {
-            namespace = `${type.namespace.name}.`;
-          } else {
-            // The type is in its own namespace so keep it empty
-          }
-        }
-
-        return namespace + type.name + stringifyGenerics(type.generics);
+        return createTypeAliasName(type, currentNamespace) + stringifyGenerics(type.generics);
       }
       case Type.Length:
         return lengthGeneric.name;

@@ -134,7 +134,11 @@ function stringifyTypes(
   currentNamespace: INamespace | undefined,
   applyAutocompleteHack: boolean,
 ) {
-  const stringifyType = createStringifyType(currentNamespace);
+  const stringifyType = createStringifyType(type => {
+    // The type is in its own namespace so keep it empty
+    const namespace = type.namespace && type.namespace !== currentNamespace ? `${type.namespace.name}.` : '';
+    return namespace + type.name;
+  }, currentNamespace);
 
   return types
     .map(type => {
