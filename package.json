@@ -30,8 +30,6 @@
     "tslint-config-prettier": "^1.18.0",
     "turndown": "^5.0.3",
     "typescript": "~3.7.2",
-    "typescript3.5": "npm:typescript@3.5.3",
-    "typescript3.6": "npm:typescript@3.6.4",
     "yarn": "^1.19.1"
   },
   "scripts": {

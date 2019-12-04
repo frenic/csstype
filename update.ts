@@ -124,6 +124,7 @@ function install(pure = false) {
     { stdio: 'inherit' },
     '--silent',
     '--no-progress',
+    '--non-interactive',
     '--ignore-scripts',
     pure ? '--pure-lockfile' : '',
   );
