@@ -12,6 +12,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   animationPlayState?: AnimationPlayStateProperty,
   animationTimingFunction?: AnimationTimingFunctionProperty,
   appearance?: AppearanceProperty,
+  aspectRatio?: AspectRatioProperty,
   backdropFilter?: BackdropFilterProperty,
   backfaceVisibility?: BackfaceVisibilityProperty,
   backgroundAttachment?: BackgroundAttachmentProperty,
@@ -207,7 +208,6 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   offsetAnchor?: OffsetAnchorProperty<TLength>,
   offsetDistance?: OffsetDistanceProperty<TLength>,
   offsetPath?: OffsetPathProperty,
-  offsetPosition?: OffsetPositionProperty<TLength>,
   offsetRotate?: OffsetRotateProperty,
   offsetRotation?: OffsetRotateProperty,
   opacity?: OpacityProperty,
@@ -399,15 +399,11 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   MozAnimationTimingFunction?: AnimationTimingFunctionProperty,
   MozAppearance?: MozAppearanceProperty,
   MozBackfaceVisibility?: BackfaceVisibilityProperty,
-  MozBorderBottomColors?: MozBorderBottomColorsProperty,
   MozBorderEndColor?: BorderInlineEndColorProperty,
   MozBorderEndStyle?: BorderInlineEndStyleProperty,
   MozBorderEndWidth?: BorderInlineEndWidthProperty<TLength>,
-  MozBorderLeftColors?: MozBorderLeftColorsProperty,
-  MozBorderRightColors?: MozBorderRightColorsProperty,
   MozBorderStartColor?: BorderInlineStartColorProperty,
   MozBorderStartStyle?: BorderInlineStartStyleProperty,
-  MozBorderTopColors?: MozBorderTopColorsProperty,
   MozBoxSizing?: BoxSizingProperty,
   MozColumnCount?: ColumnCountProperty,
   MozColumnFill?: ColumnFillProperty,
@@ -689,11 +685,15 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozBackgroundOrigin?: BackgroundOriginProperty,
   MozBackgroundSize?: BackgroundSizeProperty<TLength>,
   MozBinding?: MozBindingProperty,
+  MozBorderBottomColors?: MozBorderBottomColorsProperty,
+  MozBorderLeftColors?: MozBorderLeftColorsProperty,
   MozBorderRadius?: BorderRadiusProperty<TLength>,
   MozBorderRadiusBottomleft?: BorderBottomLeftRadiusProperty<TLength>,
   MozBorderRadiusBottomright?: BorderBottomRightRadiusProperty<TLength>,
   MozBorderRadiusTopleft?: BorderTopLeftRadiusProperty<TLength>,
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>,
+  MozBorderRightColors?: MozBorderRightColorsProperty,
+  MozBorderTopColors?: MozBorderTopColorsProperty,
   MozBoxAlign?: BoxAlignProperty,
   MozBoxDirection?: BoxDirectionProperty,
   MozBoxFlex?: GlobalsNumber,
@@ -822,6 +822,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "animation-play-state"?: AnimationPlayStateProperty,
   "animation-timing-function"?: AnimationTimingFunctionProperty,
   appearance?: AppearanceProperty,
+  "aspect-ratio"?: AspectRatioProperty,
   "backdrop-filter"?: BackdropFilterProperty,
   "backface-visibility"?: BackfaceVisibilityProperty,
   "background-attachment"?: BackgroundAttachmentProperty,
@@ -1017,7 +1018,6 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "offset-anchor"?: OffsetAnchorProperty<TLength>,
   "offset-distance"?: OffsetDistanceProperty<TLength>,
   "offset-path"?: OffsetPathProperty,
-  "offset-position"?: OffsetPositionProperty<TLength>,
   "offset-rotate"?: OffsetRotateProperty,
   "offset-rotation"?: OffsetRotateProperty,
   opacity?: OpacityProperty,
@@ -1209,15 +1209,11 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-moz-animation-timing-function"?: AnimationTimingFunctionProperty,
   "-moz-appearance"?: MozAppearanceProperty,
   "-moz-backface-visibility"?: BackfaceVisibilityProperty,
-  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty,
   "-moz-border-end-color"?: BorderInlineEndColorProperty,
   "-moz-border-end-style"?: BorderInlineEndStyleProperty,
   "-moz-border-end-width"?: BorderInlineEndWidthProperty<TLength>,
-  "-moz-border-left-colors"?: MozBorderLeftColorsProperty,
-  "-moz-border-right-colors"?: MozBorderRightColorsProperty,
   "-moz-border-start-color"?: BorderInlineStartColorProperty,
   "-moz-border-start-style"?: BorderInlineStartStyleProperty,
-  "-moz-border-top-colors"?: MozBorderTopColorsProperty,
   "-moz-box-sizing"?: BoxSizingProperty,
   "-moz-column-count"?: ColumnCountProperty,
   "-moz-column-fill"?: ColumnFillProperty,
@@ -1499,11 +1495,15 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-background-origin"?: BackgroundOriginProperty,
   "-moz-background-size"?: BackgroundSizeProperty<TLength>,
   "-moz-binding"?: MozBindingProperty,
+  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty,
+  "-moz-border-left-colors"?: MozBorderLeftColorsProperty,
   "-moz-border-radius"?: BorderRadiusProperty<TLength>,
   "-moz-border-radius-bottomleft"?: BorderBottomLeftRadiusProperty<TLength>,
   "-moz-border-radius-bottomright"?: BorderBottomRightRadiusProperty<TLength>,
   "-moz-border-radius-topleft"?: BorderTopLeftRadiusProperty<TLength>,
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength>,
+  "-moz-border-right-colors"?: MozBorderRightColorsProperty,
+  "-moz-border-top-colors"?: MozBorderTopColorsProperty,
   "-moz-box-align"?: BoxAlignProperty,
   "-moz-box-direction"?: BoxDirectionProperty,
   "-moz-box-flex"?: GlobalsNumber,
@@ -1635,6 +1635,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   animationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[],
   animationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[],
   appearance?: AppearanceProperty | AppearanceProperty[],
+  aspectRatio?: AspectRatioProperty | AspectRatioProperty[],
   backdropFilter?: BackdropFilterProperty | BackdropFilterProperty[],
   backfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[],
   backgroundAttachment?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[],
@@ -1830,7 +1831,6 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   offsetAnchor?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
   offsetDistance?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
   offsetPath?: OffsetPathProperty | OffsetPathProperty[],
-  offsetPosition?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
   offsetRotate?: OffsetRotateProperty | OffsetRotateProperty[],
   offsetRotation?: OffsetRotateProperty | OffsetRotateProperty[],
   opacity?: OpacityProperty | OpacityProperty[],
@@ -2022,15 +2022,11 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   MozAnimationTimingFunction?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[],
   MozAppearance?: MozAppearanceProperty | MozAppearanceProperty[],
   MozBackfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[],
-  MozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[],
   MozBorderEndColor?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[],
   MozBorderEndStyle?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[],
   MozBorderEndWidth?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[],
-  MozBorderLeftColors?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[],
-  MozBorderRightColors?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[],
   MozBorderStartColor?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[],
   MozBorderStartStyle?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[],
-  MozBorderTopColors?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[],
   MozBoxSizing?: BoxSizingProperty | BoxSizingProperty[],
   MozColumnCount?: ColumnCountProperty | ColumnCountProperty[],
   MozColumnFill?: ColumnFillProperty | ColumnFillProperty[],
@@ -2312,11 +2308,15 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozBackgroundOrigin?: BackgroundOriginProperty | BackgroundOriginProperty[],
   MozBackgroundSize?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
   MozBinding?: MozBindingProperty | MozBindingProperty[],
+  MozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[],
+  MozBorderLeftColors?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[],
   MozBorderRadius?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[],
   MozBorderRadiusBottomleft?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[],
   MozBorderRadiusBottomright?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[],
   MozBorderRadiusTopleft?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[],
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[],
+  MozBorderRightColors?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[],
+  MozBorderTopColors?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[],
   MozBoxAlign?: BoxAlignProperty | BoxAlignProperty[],
   MozBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
   MozBoxFlex?: GlobalsNumber | GlobalsNumber[],
@@ -2448,6 +2448,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "animation-play-state"?: AnimationPlayStateProperty | AnimationPlayStateProperty[],
   "animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[],
   appearance?: AppearanceProperty | AppearanceProperty[],
+  "aspect-ratio"?: AspectRatioProperty | AspectRatioProperty[],
   "backdrop-filter"?: BackdropFilterProperty | BackdropFilterProperty[],
   "backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[],
   "background-attachment"?: BackgroundAttachmentProperty | BackgroundAttachmentProperty[],
@@ -2643,7 +2644,6 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "offset-anchor"?: OffsetAnchorProperty<TLength> | OffsetAnchorProperty<TLength>[],
   "offset-distance"?: OffsetDistanceProperty<TLength> | OffsetDistanceProperty<TLength>[],
   "offset-path"?: OffsetPathProperty | OffsetPathProperty[],
-  "offset-position"?: OffsetPositionProperty<TLength> | OffsetPositionProperty<TLength>[],
   "offset-rotate"?: OffsetRotateProperty | OffsetRotateProperty[],
   "offset-rotation"?: OffsetRotateProperty | OffsetRotateProperty[],
   opacity?: OpacityProperty | OpacityProperty[],
@@ -2835,15 +2835,11 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-animation-timing-function"?: AnimationTimingFunctionProperty | AnimationTimingFunctionProperty[],
   "-moz-appearance"?: MozAppearanceProperty | MozAppearanceProperty[],
   "-moz-backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[],
-  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[],
   "-moz-border-end-color"?: BorderInlineEndColorProperty | BorderInlineEndColorProperty[],
   "-moz-border-end-style"?: BorderInlineEndStyleProperty | BorderInlineEndStyleProperty[],
   "-moz-border-end-width"?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[],
-  "-moz-border-left-colors"?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[],
-  "-moz-border-right-colors"?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[],
   "-moz-border-start-color"?: BorderInlineStartColorProperty | BorderInlineStartColorProperty[],
   "-moz-border-start-style"?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[],
-  "-moz-border-top-colors"?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[],
   "-moz-box-sizing"?: BoxSizingProperty | BoxSizingProperty[],
   "-moz-column-count"?: ColumnCountProperty | ColumnCountProperty[],
   "-moz-column-fill"?: ColumnFillProperty | ColumnFillProperty[],
@@ -3125,11 +3121,15 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-background-origin"?: BackgroundOriginProperty | BackgroundOriginProperty[],
   "-moz-background-size"?: BackgroundSizeProperty<TLength> | BackgroundSizeProperty<TLength>[],
   "-moz-binding"?: MozBindingProperty | MozBindingProperty[],
+  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[],
+  "-moz-border-left-colors"?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[],
   "-moz-border-radius"?: BorderRadiusProperty<TLength> | BorderRadiusProperty<TLength>[],
   "-moz-border-radius-bottomleft"?: BorderBottomLeftRadiusProperty<TLength> | BorderBottomLeftRadiusProperty<TLength>[],
   "-moz-border-radius-bottomright"?: BorderBottomRightRadiusProperty<TLength> | BorderBottomRightRadiusProperty<TLength>[],
   "-moz-border-radius-topleft"?: BorderTopLeftRadiusProperty<TLength> | BorderTopLeftRadiusProperty<TLength>[],
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[],
+  "-moz-border-right-colors"?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[],
+  "-moz-border-top-colors"?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[],
   "-moz-box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "-moz-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
   "-moz-box-flex"?: GlobalsNumber | GlobalsNumber[],
@@ -4090,6 +4090,8 @@ export type AnimationTimingFunctionProperty = Globals | TimingFunction | string;
 
 export type AppearanceProperty = Globals | Compat | "button" | "none" | "textfield";
 
+export type AspectRatioProperty = Globals | "auto" | string;
+
 export type BackdropFilterProperty = Globals | "none" | string;
 
 export type BackfaceVisibilityProperty = Globals | "hidden" | "visible";
@@ -4840,8 +4842,6 @@ export type ObjectFitProperty = Globals | "contain" | "cover" | "fill" | "none" 
 export type ObjectPositionProperty<TLength> = Globals | Position<TLength>;
 
 export type OffsetAnchorProperty<TLength> = Globals | Position<TLength> | "auto";
-
-export type OffsetPositionProperty<TLength> = Globals | Position<TLength> | "auto";
 
 export type OpacityProperty = Globals | string | number;
 
@@ -5649,7 +5649,7 @@ type ViewportWidthProperty<TLength> = ViewportLength<TLength> | string;
 
 type ViewportZoomProperty = "auto" | string | number;
 
-type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small";
+type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small" | "xxx-large";
 
 type AnimateableFeature = "contents" | "scroll-position" | string;
 
