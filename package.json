@@ -33,6 +33,8 @@
     "yarn": "^1.19.1"
   },
   "scripts": {
+    "install": "yarn install --cwd __tests__",
+    "prepublishOnly": "tsc && npm run test:src && npm run build && ts-node --files prepublish.ts",
     "update": "ts-node --files update.ts",
     "build": "ts-node --files build.ts --start",
     "watch": "ts-node --files build.ts --watch",
@@ -41,8 +43,7 @@
     "lazy": "tsc && npm run lint && npm run pretty",
     "test": "jest",
     "test:src": "jest src.*.ts",
-    "test:dist": "jest dist.*.ts",
-    "prepublish": "tsc && npm run test:src && npm run build"
+    "test:dist": "jest dist.*.ts"
   },
   "files": [
     "index.d.ts",
