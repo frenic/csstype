@@ -226,6 +226,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   overflowX?: OverflowXProperty,
   overflowY?: OverflowYProperty,
   overscrollBehavior?: OverscrollBehaviorProperty,
+  overscrollBehaviorBlock?: OverscrollBehaviorBlockProperty,
+  overscrollBehaviorInline?: OverscrollBehaviorInlineProperty,
   overscrollBehaviorX?: OverscrollBehaviorXProperty,
   overscrollBehaviorY?: OverscrollBehaviorYProperty,
   paddingBlock?: PaddingBlockProperty<TLength>,
@@ -487,7 +489,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   msScrollbarFaceColor?: MsScrollbarFaceColorProperty,
   msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty,
   msScrollbarShadowColor?: MsScrollbarShadowColorProperty,
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   msTextAutospace?: MsTextAutospaceProperty,
   msTextCombineHorizontal?: TextCombineUprightProperty,
   msTextOverflow?: TextOverflowProperty,
@@ -668,6 +669,7 @@ export type ObsoleteProperties<TLength = string | 0> = {
   scrollSnapPointsY?: ScrollSnapPointsYProperty,
   scrollSnapTypeX?: ScrollSnapTypeXProperty,
   scrollSnapTypeY?: ScrollSnapTypeYProperty,
+  scrollbarTrackColor?: MsScrollbarTrackColorProperty,
   textCombineHorizontal?: TextCombineUprightProperty,
   KhtmlBoxAlign?: BoxAlignProperty,
   KhtmlBoxDirection?: BoxDirectionProperty,
@@ -715,6 +717,7 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozUserInput?: MozUserInputProperty,
   MozWindowShadow?: MozWindowShadowProperty,
   msImeMode?: ImeModeProperty,
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   OAnimation?: AnimationProperty,
   OAnimationDelay?: GlobalsString,
   OAnimationDirection?: AnimationDirectionProperty,
@@ -1036,6 +1039,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "overflow-x"?: OverflowXProperty,
   "overflow-y"?: OverflowYProperty,
   "overscroll-behavior"?: OverscrollBehaviorProperty,
+  "overscroll-behavior-block"?: OverscrollBehaviorBlockProperty,
+  "overscroll-behavior-inline"?: OverscrollBehaviorInlineProperty,
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty,
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty,
   "padding-block"?: PaddingBlockProperty<TLength>,
@@ -1297,7 +1302,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty,
   "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty,
   "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty,
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-ms-text-autospace"?: MsTextAutospaceProperty,
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty,
   "-ms-text-overflow"?: TextOverflowProperty,
@@ -1478,6 +1482,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "scroll-snap-points-y"?: ScrollSnapPointsYProperty,
   "scroll-snap-type-x"?: ScrollSnapTypeXProperty,
   "scroll-snap-type-y"?: ScrollSnapTypeYProperty,
+  "scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "text-combine-horizontal"?: TextCombineUprightProperty,
   "-khtml-box-align"?: BoxAlignProperty,
   "-khtml-box-direction"?: BoxDirectionProperty,
@@ -1525,6 +1530,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-user-input"?: MozUserInputProperty,
   "-moz-window-shadow"?: MozWindowShadowProperty,
   "-ms-ime-mode"?: ImeModeProperty,
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-o-animation"?: AnimationProperty,
   "-o-animation-delay"?: GlobalsString,
   "-o-animation-direction"?: AnimationDirectionProperty,
@@ -1849,6 +1855,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   overflowX?: OverflowXProperty | OverflowXProperty[],
   overflowY?: OverflowYProperty | OverflowYProperty[],
   overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[],
+  overscrollBehaviorBlock?: OverscrollBehaviorBlockProperty | OverscrollBehaviorBlockProperty[],
+  overscrollBehaviorInline?: OverscrollBehaviorInlineProperty | OverscrollBehaviorInlineProperty[],
   overscrollBehaviorX?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[],
   overscrollBehaviorY?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[],
   paddingBlock?: PaddingBlockProperty<TLength> | PaddingBlockProperty<TLength>[],
@@ -2110,7 +2118,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msScrollbarFaceColor?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
   msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
   msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   msTextAutospace?: MsTextAutospaceProperty | MsTextAutospaceProperty[],
   msTextCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[],
   msTextOverflow?: TextOverflowProperty | TextOverflowProperty[],
@@ -2291,6 +2298,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   scrollSnapPointsY?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[],
   scrollSnapTypeX?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
   scrollSnapTypeY?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
+  scrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   textCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[],
   KhtmlBoxAlign?: BoxAlignProperty | BoxAlignProperty[],
   KhtmlBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
@@ -2338,6 +2346,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozUserInput?: MozUserInputProperty | MozUserInputProperty[],
   MozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[],
   msImeMode?: ImeModeProperty | ImeModeProperty[],
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   OAnimation?: AnimationProperty | AnimationProperty[],
   OAnimationDelay?: GlobalsString | GlobalsString[],
   OAnimationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[],
@@ -2662,6 +2671,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "overflow-x"?: OverflowXProperty | OverflowXProperty[],
   "overflow-y"?: OverflowYProperty | OverflowYProperty[],
   "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[],
+  "overscroll-behavior-block"?: OverscrollBehaviorBlockProperty | OverscrollBehaviorBlockProperty[],
+  "overscroll-behavior-inline"?: OverscrollBehaviorInlineProperty | OverscrollBehaviorInlineProperty[],
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[],
   "overscroll-behavior-y"?: OverscrollBehaviorYProperty | OverscrollBehaviorYProperty[],
   "padding-block"?: PaddingBlockProperty<TLength> | PaddingBlockProperty<TLength>[],
@@ -2923,7 +2934,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
   "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
   "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "-ms-text-autospace"?: MsTextAutospaceProperty | MsTextAutospaceProperty[],
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[],
   "-ms-text-overflow"?: TextOverflowProperty | TextOverflowProperty[],
@@ -3104,6 +3114,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "scroll-snap-points-y"?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[],
   "scroll-snap-type-x"?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
   "scroll-snap-type-y"?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
+  "scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[],
   "-khtml-box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "-khtml-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
@@ -3151,6 +3162,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-user-input"?: MozUserInputProperty | MozUserInputProperty[],
   "-moz-window-shadow"?: MozWindowShadowProperty | MozWindowShadowProperty[],
   "-ms-ime-mode"?: ImeModeProperty | ImeModeProperty[],
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "-o-animation"?: AnimationProperty | AnimationProperty[],
   "-o-animation-delay"?: GlobalsString | GlobalsString[],
   "-o-animation-direction"?: AnimationDirectionProperty | AnimationDirectionProperty[],
@@ -3695,6 +3707,7 @@ export type HtmlAttributes =
   | "[language]"
   | "[leftmargin]"
   | "[link]"
+  | "[loading]"
   | "[longdesc]"
   | "[loop]"
   | "[low]"
@@ -4581,7 +4594,7 @@ export type HyphensProperty = Globals | "auto" | "manual" | "none";
 
 export type ImageOrientationProperty = Globals | "flip" | "from-image" | string;
 
-export type ImageRenderingProperty = Globals | "-moz-crisp-edges" | "-o-crisp-edges" | "-webkit-optimize-contrast" | "auto" | "crisp-edges" | "pixelated";
+export type ImageRenderingProperty = Globals | "-moz-crisp-edges" | "-webkit-optimize-contrast" | "auto" | "crisp-edges" | "pixelated";
 
 export type ImageResolutionProperty = Globals | "from-image" | string;
 
@@ -4855,7 +4868,7 @@ export type OutlineStyleProperty = Globals | LineStyle | "auto" | string;
 
 export type OutlineWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
-export type OverflowProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
+export type OverflowProperty = Globals | "auto" | "hidden" | "scroll" | "visible" | string;
 
 export type OverflowAnchorProperty = Globals | "auto" | "none";
 
@@ -4867,11 +4880,15 @@ export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scr
 
 export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
 
-export type OverflowXProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+export type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
-export type OverflowYProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
+export type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
 
 export type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none" | string;
+
+export type OverscrollBehaviorBlockProperty = Globals | "auto" | "contain" | "none";
+
+export type OverscrollBehaviorInlineProperty = Globals | "auto" | "contain" | "none";
 
 export type OverscrollBehaviorXProperty = Globals | "auto" | "contain" | "none";
 
@@ -5004,6 +5021,8 @@ export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximit
 export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximity";
 
 export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light";
+
+export type MsScrollbarTrackColorProperty = Globals | Color;
 
 export type ScrollbarWidthProperty = Globals | "auto" | "none" | "thin";
 
@@ -5381,8 +5400,6 @@ export type MsScrollbarFaceColorProperty = Globals | Color;
 export type MsScrollbarHighlightColorProperty = Globals | Color;
 
 export type MsScrollbarShadowColorProperty = Globals | Color;
-
-export type MsScrollbarTrackColorProperty = Globals | Color;
 
 export type MsTextAutospaceProperty = Globals | "ideograph-alpha" | "ideograph-numeric" | "ideograph-parenthesis" | "ideograph-space" | "none";
 

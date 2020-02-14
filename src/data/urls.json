@@ -464,5 +464,7 @@
   "https://developer.mozilla.org/docs/Web/CSS/counter-set": "The **`counter-set`** CSS property sets a CSS counter to a given value. It manipulates the value of existing counters, and will only create new counters if there isn't already a counter of the given name on the element.",
   "https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness": "The **`text-decoration-thickness`** CSS property sets the thickness, or width, of the decoration line that is used on text in an element, such as a line-through, underline, or overline.",
   "https://developer.mozilla.org/docs/Web/CSS/text-underline-offset": "The **`text-underline-offset`** CSS property sets the offset distance of an underline text decoration line (applied using `text-decoration`) from its original position.",
-  "https://developer.mozilla.org/docs/Web/CSS/aspect-ratio": "The **`aspect-ratio`**    CSS property sets a _**preferred aspect ratio**_ for the box, which will be used in the calculation of auto sizes and some other layout functions."
+  "https://developer.mozilla.org/docs/Web/CSS/aspect-ratio": "The **`aspect-ratio`**    CSS property sets a _**preferred aspect ratio**_ for the box, which will be used in the calculation of auto sizes and some other layout functions.",
+  "https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-block": "The **`overscroll-behavior-block`** CSS property sets the browser's behavior when the block direction boundary of a scrolling area is reached.",
+  "https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-inline": "The **`overscroll-behavior-inline`** CSS property sets the browser's behavior when the inline direction boundary of a scrolling area is reached."
 }
