@@ -24,6 +24,10 @@ export function composeCommentBlock(
     }
   }
 
+  if (data.syntax) {
+    rows.push(`**Syntax**: \`${data.syntax}\``, BLANK_ROW);
+  }
+
   if (typeof data.initial === 'string') {
     if (data.initial in l10n) {
       if (typeof l10n[data.initial]['en-US'] === 'string') {
