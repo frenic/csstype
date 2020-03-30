@@ -217,7 +217,6 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   outlineOffset?: OutlineOffsetProperty<TLength>,
   outlineStyle?: OutlineStyleProperty,
   outlineWidth?: OutlineWidthProperty<TLength>,
-  overflow?: OverflowProperty,
   overflowAnchor?: OverflowAnchorProperty,
   overflowBlock?: OverflowBlockProperty,
   overflowClipBox?: OverflowClipBoxProperty,
@@ -282,6 +281,11 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   scrollPaddingRight?: ScrollPaddingRightProperty<TLength>,
   scrollPaddingTop?: ScrollPaddingTopProperty<TLength>,
   scrollSnapAlign?: ScrollSnapAlignProperty,
+  scrollSnapMargin?: ScrollMarginProperty<TLength>,
+  scrollSnapMarginBottom?: ScrollMarginBottomProperty<TLength>,
+  scrollSnapMarginLeft?: ScrollMarginLeftProperty<TLength>,
+  scrollSnapMarginRight?: ScrollMarginRightProperty<TLength>,
+  scrollSnapMarginTop?: ScrollMarginTopProperty<TLength>,
   scrollSnapStop?: ScrollSnapStopProperty,
   scrollSnapType?: ScrollSnapTypeProperty,
   scrollbarColor?: ScrollbarColorProperty,
@@ -380,6 +384,7 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   motion?: OffsetProperty<TLength>,
   offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
+  overflow?: OverflowProperty,
   padding?: PaddingProperty<TLength>,
   placeItems?: PlaceItemsProperty,
   placeSelf?: PlaceSelfProperty,
@@ -611,6 +616,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitUserModify?: WebkitUserModifyProperty,
   WebkitUserSelect?: UserSelectProperty,
   WebkitWritingMode?: WritingModeProperty,
+  WebkittextUnderlinePosition?: TextUnderlinePositionProperty,
 };
 
 export type VendorShorthandProperties<TLength = string | 0> = {
@@ -1030,7 +1036,6 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "outline-offset"?: OutlineOffsetProperty<TLength>,
   "outline-style"?: OutlineStyleProperty,
   "outline-width"?: OutlineWidthProperty<TLength>,
-  overflow?: OverflowProperty,
   "overflow-anchor"?: OverflowAnchorProperty,
   "overflow-block"?: OverflowBlockProperty,
   "overflow-clip-box"?: OverflowClipBoxProperty,
@@ -1095,6 +1100,11 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "scroll-padding-right"?: ScrollPaddingRightProperty<TLength>,
   "scroll-padding-top"?: ScrollPaddingTopProperty<TLength>,
   "scroll-snap-align"?: ScrollSnapAlignProperty,
+  "scroll-snap-margin"?: ScrollMarginProperty<TLength>,
+  "scroll-snap-margin-bottom"?: ScrollMarginBottomProperty<TLength>,
+  "scroll-snap-margin-left"?: ScrollMarginLeftProperty<TLength>,
+  "scroll-snap-margin-right"?: ScrollMarginRightProperty<TLength>,
+  "scroll-snap-margin-top"?: ScrollMarginTopProperty<TLength>,
   "scroll-snap-stop"?: ScrollSnapStopProperty,
   "scroll-snap-type"?: ScrollSnapTypeProperty,
   "scrollbar-color"?: ScrollbarColorProperty,
@@ -1193,6 +1203,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   motion?: OffsetProperty<TLength>,
   offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
+  overflow?: OverflowProperty,
   padding?: PaddingProperty<TLength>,
   "place-items"?: PlaceItemsProperty,
   "place-self"?: PlaceSelfProperty,
@@ -1424,6 +1435,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-user-modify"?: WebkitUserModifyProperty,
   "-webkit-user-select"?: UserSelectProperty,
   "-webkit-writing-mode"?: WritingModeProperty,
+  "-webkittext-underline-position"?: TextUnderlinePositionProperty,
 };
 
 export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
@@ -1846,7 +1858,6 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   outlineOffset?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[],
   outlineStyle?: OutlineStyleProperty | OutlineStyleProperty[],
   outlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[],
-  overflow?: OverflowProperty | OverflowProperty[],
   overflowAnchor?: OverflowAnchorProperty | OverflowAnchorProperty[],
   overflowBlock?: OverflowBlockProperty | OverflowBlockProperty[],
   overflowClipBox?: OverflowClipBoxProperty | OverflowClipBoxProperty[],
@@ -1911,6 +1922,11 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   scrollPaddingRight?: ScrollPaddingRightProperty<TLength> | ScrollPaddingRightProperty<TLength>[],
   scrollPaddingTop?: ScrollPaddingTopProperty<TLength> | ScrollPaddingTopProperty<TLength>[],
   scrollSnapAlign?: ScrollSnapAlignProperty | ScrollSnapAlignProperty[],
+  scrollSnapMargin?: ScrollMarginProperty<TLength> | ScrollMarginProperty<TLength>[],
+  scrollSnapMarginBottom?: ScrollMarginBottomProperty<TLength> | ScrollMarginBottomProperty<TLength>[],
+  scrollSnapMarginLeft?: ScrollMarginLeftProperty<TLength> | ScrollMarginLeftProperty<TLength>[],
+  scrollSnapMarginRight?: ScrollMarginRightProperty<TLength> | ScrollMarginRightProperty<TLength>[],
+  scrollSnapMarginTop?: ScrollMarginTopProperty<TLength> | ScrollMarginTopProperty<TLength>[],
   scrollSnapStop?: ScrollSnapStopProperty | ScrollSnapStopProperty[],
   scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   scrollbarColor?: ScrollbarColorProperty | ScrollbarColorProperty[],
@@ -2009,6 +2025,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
+  overflow?: OverflowProperty | OverflowProperty[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   placeItems?: PlaceItemsProperty | PlaceItemsProperty[],
   placeSelf?: PlaceSelfProperty | PlaceSelfProperty[],
@@ -2240,6 +2257,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitUserModify?: WebkitUserModifyProperty | WebkitUserModifyProperty[],
   WebkitUserSelect?: UserSelectProperty | UserSelectProperty[],
   WebkitWritingMode?: WritingModeProperty | WritingModeProperty[],
+  WebkittextUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[],
 };
 
 export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
@@ -2662,7 +2680,6 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "outline-offset"?: OutlineOffsetProperty<TLength> | OutlineOffsetProperty<TLength>[],
   "outline-style"?: OutlineStyleProperty | OutlineStyleProperty[],
   "outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[],
-  overflow?: OverflowProperty | OverflowProperty[],
   "overflow-anchor"?: OverflowAnchorProperty | OverflowAnchorProperty[],
   "overflow-block"?: OverflowBlockProperty | OverflowBlockProperty[],
   "overflow-clip-box"?: OverflowClipBoxProperty | OverflowClipBoxProperty[],
@@ -2727,6 +2744,11 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "scroll-padding-right"?: ScrollPaddingRightProperty<TLength> | ScrollPaddingRightProperty<TLength>[],
   "scroll-padding-top"?: ScrollPaddingTopProperty<TLength> | ScrollPaddingTopProperty<TLength>[],
   "scroll-snap-align"?: ScrollSnapAlignProperty | ScrollSnapAlignProperty[],
+  "scroll-snap-margin"?: ScrollMarginProperty<TLength> | ScrollMarginProperty<TLength>[],
+  "scroll-snap-margin-bottom"?: ScrollMarginBottomProperty<TLength> | ScrollMarginBottomProperty<TLength>[],
+  "scroll-snap-margin-left"?: ScrollMarginLeftProperty<TLength> | ScrollMarginLeftProperty<TLength>[],
+  "scroll-snap-margin-right"?: ScrollMarginRightProperty<TLength> | ScrollMarginRightProperty<TLength>[],
+  "scroll-snap-margin-top"?: ScrollMarginTopProperty<TLength> | ScrollMarginTopProperty<TLength>[],
   "scroll-snap-stop"?: ScrollSnapStopProperty | ScrollSnapStopProperty[],
   "scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   "scrollbar-color"?: ScrollbarColorProperty | ScrollbarColorProperty[],
@@ -2825,6 +2847,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   motion?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
+  overflow?: OverflowProperty | OverflowProperty[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   "place-items"?: PlaceItemsProperty | PlaceItemsProperty[],
   "place-self"?: PlaceSelfProperty | PlaceSelfProperty[],
@@ -3056,6 +3079,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-user-modify"?: WebkitUserModifyProperty | WebkitUserModifyProperty[],
   "-webkit-user-select"?: UserSelectProperty | UserSelectProperty[],
   "-webkit-writing-mode"?: WritingModeProperty | WritingModeProperty[],
+  "-webkittext-underline-position"?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[],
 };
 
 export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
@@ -3491,6 +3515,7 @@ export type AdvancedPseudos =
   | ":-moz-dir"
   | ":-webkit-any()"
   | "::cue"
+  | "::cue-region"
   | "::part"
   | "::slotted"
   | ":dir"
@@ -3551,6 +3576,7 @@ export type SimplePseudos =
   | "::backdrop"
   | "::before"
   | "::cue"
+  | "::cue-region"
   | "::first-letter"
   | "::first-line"
   | "::grammar-error"
@@ -4135,19 +4161,7 @@ export type BackgroundSizeProperty<TLength> = Globals | BgSize<TLength> | string
 
 export type BlockOverflowProperty = Globals | "clip" | "ellipsis" | string;
 
-export type BlockSizeProperty<TLength> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "auto"
-  | "available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+export type BlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
 
 export type BorderProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -4419,21 +4433,9 @@ export type EmptyCellsProperty = Globals | "hide" | "show";
 
 export type FilterProperty = Globals | "none" | string;
 
-export type FlexProperty<TLength> = Globals | TLength | "auto" | "available" | "content" | "fit-content" | "max-content" | "min-content" | "none" | string | number;
+export type FlexProperty<TLength> = Globals | TLength | "auto" | "content" | "max-content" | "min-content" | "none" | string | number;
 
-export type FlexBasisProperty<TLength> =
-  | Globals
-  | TLength
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-auto"
-  | "auto"
-  | "available"
-  | "content"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+export type FlexBasisProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "-webkit-auto" | "auto" | "content" | "max-content" | "min-content" | string;
 
 export type FlexDirectionProperty = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
@@ -4577,18 +4579,7 @@ export type GridTemplateRowsProperty<TLength> = Globals | TrackBreadth<TLength> 
 
 export type HangingPunctuationProperty = Globals | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
-export type HeightProperty<TLength> =
-  | Globals
-  | TLength
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fit-content"
-  | "auto"
-  | "available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+export type HeightProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
 
 export type HyphensProperty = Globals | "auto" | "manual" | "none";
 
@@ -4602,19 +4593,7 @@ export type ImeModeProperty = Globals | "active" | "auto" | "disabled" | "inacti
 
 export type InitialLetterProperty = Globals | "normal" | string | number;
 
-export type InlineSizeProperty<TLength> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "auto"
-  | "available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+export type InlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
 
 export type InsetProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -4714,126 +4693,61 @@ export type MaskSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
 export type MaskTypeProperty = Globals | "alpha" | "luminance";
 
-export type MaxBlockSizeProperty<TLength> =
-  | Globals
-  | TLength
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "fill-available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | "none"
-  | string;
+export type MaxBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
 
 export type MaxHeightProperty<TLength> =
   | Globals
   | TLength
-  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
-  | "fill-available"
-  | "fit-content"
-  | "intrinsic"
+  | "auto"
   | "max-content"
   | "min-content"
-  | "none"
   | string;
 
-export type MaxInlineSizeProperty<TLength> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "fill-available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | "none"
-  | string;
+export type MaxInlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
 
 export type MaxLinesProperty = Globals | "none" | number;
 
 export type MaxWidthProperty<TLength> =
   | Globals
   | TLength
-  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
-  | "fill-available"
-  | "fit-content"
+  | "auto"
   | "intrinsic"
   | "max-content"
   | "min-content"
-  | "none"
   | string;
 
-export type MinBlockSizeProperty<TLength> =
-  | Globals
-  | TLength
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "auto"
-  | "fill-available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+export type MinBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
 
 export type MinHeightProperty<TLength> =
   | Globals
   | TLength
-  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
   | "auto"
-  | "fill-available"
-  | "fit-content"
-  | "intrinsic"
   | "max-content"
   | "min-content"
   | string;
 
-export type MinInlineSizeProperty<TLength> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "auto"
-  | "fill-available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+export type MinInlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
 
 export type MinWidthProperty<TLength> =
   | Globals
   | TLength
-  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
   | "auto"
-  | "fill-available"
-  | "fit-content"
   | "intrinsic"
   | "max-content"
   | "min-content"
@@ -5068,11 +4982,11 @@ export type TextDecorationLineProperty = Globals | "blink" | "grammar-error" | "
 
 export type TextDecorationSkipProperty = Globals | "box-decoration" | "edges" | "leading-spaces" | "none" | "objects" | "spaces" | "trailing-spaces" | string;
 
-export type TextDecorationSkipInkProperty = Globals | "auto" | "none";
+export type TextDecorationSkipInkProperty = Globals | "all" | "auto" | "none";
 
 export type TextDecorationStyleProperty = Globals | "dashed" | "dotted" | "double" | "solid" | "wavy";
 
-export type TextDecorationThicknessProperty<TLength> = Globals | TLength | "auto" | "from-font";
+export type TextDecorationThicknessProperty<TLength> = Globals | TLength | "auto" | "from-font" | string;
 
 export type TextEmphasisProperty = Globals | Color | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
 
@@ -5096,9 +5010,9 @@ export type TextSizeAdjustProperty = Globals | "auto" | "none" | string;
 
 export type TextTransformProperty = Globals | "capitalize" | "full-size-kana" | "full-width" | "lowercase" | "none" | "uppercase";
 
-export type TextUnderlineOffsetProperty<TLength> = Globals | TLength | "auto" | "from-font";
+export type TextUnderlineOffsetProperty<TLength> = Globals | TLength | "auto" | "from-font" | string;
 
-export type TextUnderlinePositionProperty = Globals | "auto" | "left" | "right" | "under" | string;
+export type TextUnderlinePositionProperty = Globals | "auto" | "from-font" | "left" | "right" | "under" | string;
 
 export type TopProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -5159,15 +5073,10 @@ export type WhiteSpaceProperty = Globals | "-moz-pre-wrap" | "break-spaces" | "n
 export type WidthProperty<TLength> =
   | Globals
   | TLength
-  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "auto"
-  | "available"
-  | "fit-content"
   | "intrinsic"
   | "max-content"
   | "min-content"
