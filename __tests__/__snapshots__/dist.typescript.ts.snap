@@ -43,10 +43,10 @@ exports[`Typescript 3.5 detects errors 11`] = `"117:23 - This condition will alw
 
 exports[`Typescript 3.5 detects errors 12`] = `"131:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 3.5 detects errors 13`] = `"141:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"-webkit-fill-available\\" | ... 8 more ... | [...]'."`;
+exports[`Typescript 3.5 detects errors 13`] = `"141:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"max-content\\" | \\"min-content\\" | \\"-webkit-max-content\\" | \\"intrinsic\\" | \\"min-intrinsic\\" | [...]'."`;
 
 exports[`Typescript 3.5 detects errors 14`] = `
-"142:34 - Argument of type '[1]' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"-webkit-fill-available\\" | ... 8 more ... | [...]'.
+"142:34 - Argument of type '[1]' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"max-content\\" | \\"min-content\\" | \\"-webkit-max-content\\" | \\"intrinsic\\" | \\"min-intrinsic\\" | [...]'.
   Type '[1]' is not assignable to type '[Width<0 | (string & {})>]'.
     Type '1' is not assignable to type 'Width<0 | (string & {})>'."
 `;
@@ -94,10 +94,10 @@ exports[`Typescript 3.6 detects errors 11`] = `"117:23 - This condition will alw
 
 exports[`Typescript 3.6 detects errors 12`] = `"131:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 3.6 detects errors 13`] = `"141:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"-webkit-fill-available\\" | ... 8 more ... | [...]'."`;
+exports[`Typescript 3.6 detects errors 13`] = `"141:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"max-content\\" | \\"min-content\\" | \\"-webkit-max-content\\" | \\"intrinsic\\" | \\"min-intrinsic\\" | [...]'."`;
 
 exports[`Typescript 3.6 detects errors 14`] = `
-"142:34 - Argument of type '[1]' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"-webkit-fill-available\\" | ... 8 more ... | [...]'.
+"142:34 - Argument of type '[1]' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"max-content\\" | \\"min-content\\" | \\"-webkit-max-content\\" | \\"intrinsic\\" | \\"min-intrinsic\\" | [...]'.
   Type '[1]' is not assignable to type '[Width<0 | (string & {})>]'.
     Type '1' is not assignable to type 'Width<0 | (string & {})>'."
 `;
@@ -145,10 +145,10 @@ exports[`Typescript 3.7 detects errors 11`] = `"117:23 - This condition will alw
 
 exports[`Typescript 3.7 detects errors 12`] = `"131:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 3.7 detects errors 13`] = `"141:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"-webkit-fill-available\\" | ... 8 more ... | [...]'."`;
+exports[`Typescript 3.7 detects errors 13`] = `"141:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"max-content\\" | \\"min-content\\" | \\"-webkit-max-content\\" | \\"intrinsic\\" | \\"min-intrinsic\\" | [...]'."`;
 
 exports[`Typescript 3.7 detects errors 14`] = `
-"142:34 - Argument of type '[1]' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"-webkit-fill-available\\" | ... 8 more ... | [...]'.
+"142:34 - Argument of type '[1]' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"max-content\\" | \\"min-content\\" | \\"-webkit-max-content\\" | \\"intrinsic\\" | \\"min-intrinsic\\" | [...]'.
   Type '[1]' is not assignable to type '[Width<0 | (string & {})>]'.
     Type '1' is not assignable to type 'Width<0 | (string & {})>'."
 `;
