@@ -33,7 +33,7 @@
     "yarn": "^1.19.1"
   },
   "scripts": {
-    "install": "yarn install --cwd __tests__",
+    "prepublish": "yarn install --cwd __tests__",
     "prepublishOnly": "tsc && npm run test:src && npm run build && ts-node --files prepublish.ts",
     "update": "ts-node --files update.ts",
     "build": "ts-node --files build.ts --start",
