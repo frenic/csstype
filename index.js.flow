@@ -546,7 +546,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitBoxShadow?: BoxShadowProperty,
   WebkitBoxSizing?: BoxSizingProperty,
   WebkitClipPath?: ClipPathProperty,
-  WebkitColorAdjust?: ColorAdjustProperty,
   WebkitColumnCount?: ColumnCountProperty,
   WebkitColumnFill?: ColumnFillProperty,
   WebkitColumnGap?: ColumnGapProperty<TLength>,
@@ -589,6 +588,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitPaddingStart?: PaddingInlineStartProperty<TLength>,
   WebkitPerspective?: PerspectiveProperty<TLength>,
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength>,
+  WebkitPrintColorAdjust?: ColorAdjustProperty,
   WebkitScrollSnapType?: ScrollSnapTypeProperty,
   WebkitShapeMargin?: ShapeMarginProperty<TLength>,
   WebkitTapHighlightColor?: WebkitTapHighlightColorProperty,
@@ -605,6 +605,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitTextSizeAdjust?: TextSizeAdjustProperty,
   WebkitTextStrokeColor?: WebkitTextStrokeColorProperty,
   WebkitTextStrokeWidth?: WebkitTextStrokeWidthProperty<TLength>,
+  WebkitTextUnderlinePosition?: TextUnderlinePositionProperty,
   WebkitTouchCallout?: WebkitTouchCalloutProperty,
   WebkitTransform?: TransformProperty,
   WebkitTransformOrigin?: TransformOriginProperty<TLength>,
@@ -616,7 +617,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitUserModify?: WebkitUserModifyProperty,
   WebkitUserSelect?: UserSelectProperty,
   WebkitWritingMode?: WritingModeProperty,
-  WebkittextUnderlinePosition?: TextUnderlinePositionProperty,
 };
 
 export type VendorShorthandProperties<TLength = string | 0> = {
@@ -1365,7 +1365,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-box-shadow"?: BoxShadowProperty,
   "-webkit-box-sizing"?: BoxSizingProperty,
   "-webkit-clip-path"?: ClipPathProperty,
-  "-webkit-color-adjust"?: ColorAdjustProperty,
   "-webkit-column-count"?: ColumnCountProperty,
   "-webkit-column-fill"?: ColumnFillProperty,
   "-webkit-column-gap"?: ColumnGapProperty<TLength>,
@@ -1408,6 +1407,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-padding-start"?: PaddingInlineStartProperty<TLength>,
   "-webkit-perspective"?: PerspectiveProperty<TLength>,
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength>,
+  "-webkit-print-color-adjust"?: ColorAdjustProperty,
   "-webkit-scroll-snap-type"?: ScrollSnapTypeProperty,
   "-webkit-shape-margin"?: ShapeMarginProperty<TLength>,
   "-webkit-tap-highlight-color"?: WebkitTapHighlightColorProperty,
@@ -1424,6 +1424,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-text-size-adjust"?: TextSizeAdjustProperty,
   "-webkit-text-stroke-color"?: WebkitTextStrokeColorProperty,
   "-webkit-text-stroke-width"?: WebkitTextStrokeWidthProperty<TLength>,
+  "-webkit-text-underline-position"?: TextUnderlinePositionProperty,
   "-webkit-touch-callout"?: WebkitTouchCalloutProperty,
   "-webkit-transform"?: TransformProperty,
   "-webkit-transform-origin"?: TransformOriginProperty<TLength>,
@@ -1435,7 +1436,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-user-modify"?: WebkitUserModifyProperty,
   "-webkit-user-select"?: UserSelectProperty,
   "-webkit-writing-mode"?: WritingModeProperty,
-  "-webkittext-underline-position"?: TextUnderlinePositionProperty,
 };
 
 export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
@@ -2187,7 +2187,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitBoxShadow?: BoxShadowProperty | BoxShadowProperty[],
   WebkitBoxSizing?: BoxSizingProperty | BoxSizingProperty[],
   WebkitClipPath?: ClipPathProperty | ClipPathProperty[],
-  WebkitColorAdjust?: ColorAdjustProperty | ColorAdjustProperty[],
   WebkitColumnCount?: ColumnCountProperty | ColumnCountProperty[],
   WebkitColumnFill?: ColumnFillProperty | ColumnFillProperty[],
   WebkitColumnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
@@ -2230,6 +2229,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[],
   WebkitPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[],
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[],
+  WebkitPrintColorAdjust?: ColorAdjustProperty | ColorAdjustProperty[],
   WebkitScrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   WebkitShapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
   WebkitTapHighlightColor?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[],
@@ -2246,6 +2246,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitTextSizeAdjust?: TextSizeAdjustProperty | TextSizeAdjustProperty[],
   WebkitTextStrokeColor?: WebkitTextStrokeColorProperty | WebkitTextStrokeColorProperty[],
   WebkitTextStrokeWidth?: WebkitTextStrokeWidthProperty<TLength> | WebkitTextStrokeWidthProperty<TLength>[],
+  WebkitTextUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[],
   WebkitTouchCallout?: WebkitTouchCalloutProperty | WebkitTouchCalloutProperty[],
   WebkitTransform?: TransformProperty | TransformProperty[],
   WebkitTransformOrigin?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[],
@@ -2257,7 +2258,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitUserModify?: WebkitUserModifyProperty | WebkitUserModifyProperty[],
   WebkitUserSelect?: UserSelectProperty | UserSelectProperty[],
   WebkitWritingMode?: WritingModeProperty | WritingModeProperty[],
-  WebkittextUnderlinePosition?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[],
 };
 
 export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
@@ -3009,7 +3009,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-box-shadow"?: BoxShadowProperty | BoxShadowProperty[],
   "-webkit-box-sizing"?: BoxSizingProperty | BoxSizingProperty[],
   "-webkit-clip-path"?: ClipPathProperty | ClipPathProperty[],
-  "-webkit-color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[],
   "-webkit-column-count"?: ColumnCountProperty | ColumnCountProperty[],
   "-webkit-column-fill"?: ColumnFillProperty | ColumnFillProperty[],
   "-webkit-column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
@@ -3052,6 +3051,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[],
   "-webkit-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[],
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[],
+  "-webkit-print-color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[],
   "-webkit-scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   "-webkit-shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
   "-webkit-tap-highlight-color"?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[],
@@ -3068,6 +3068,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-text-size-adjust"?: TextSizeAdjustProperty | TextSizeAdjustProperty[],
   "-webkit-text-stroke-color"?: WebkitTextStrokeColorProperty | WebkitTextStrokeColorProperty[],
   "-webkit-text-stroke-width"?: WebkitTextStrokeWidthProperty<TLength> | WebkitTextStrokeWidthProperty<TLength>[],
+  "-webkit-text-underline-position"?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[],
   "-webkit-touch-callout"?: WebkitTouchCalloutProperty | WebkitTouchCalloutProperty[],
   "-webkit-transform"?: TransformProperty | TransformProperty[],
   "-webkit-transform-origin"?: TransformOriginProperty<TLength> | TransformOriginProperty<TLength>[],
@@ -3079,7 +3080,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-user-modify"?: WebkitUserModifyProperty | WebkitUserModifyProperty[],
   "-webkit-user-select"?: UserSelectProperty | UserSelectProperty[],
   "-webkit-writing-mode"?: WritingModeProperty | WritingModeProperty[],
-  "-webkittext-underline-position"?: TextUnderlinePositionProperty | TextUnderlinePositionProperty[],
 };
 
 export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
@@ -3631,7 +3631,6 @@ export type Pseudos = AdvancedPseudos | SimplePseudos;
 
 export type HtmlAttributes =
   | "[-webkit-dropzone]"
-  | "[-webkit-slot]"
   | "[abbr]"
   | "[accept-charset]"
   | "[accept]"
@@ -3696,6 +3695,7 @@ export type HtmlAttributes =
   | "[draggable]"
   | "[dropzone]"
   | "[enctype]"
+  | "[enterkeyhint]"
   | "[exportparts]"
   | "[face]"
   | "[for]"
@@ -3750,7 +3750,6 @@ export type HtmlAttributes =
   | "[minlength]"
   | "[moz-opaque]"
   | "[mozallowfullscreen]"
-  | "[mozbrowser]"
   | "[mozcurrentsampleoffset]"
   | "[msallowfullscreen]"
   | "[multiple]"
@@ -4061,6 +4060,7 @@ export type SvgAttributes =
   | "[textLength]"
   | "[title]"
   | "[to]"
+  | "[transform-origin]"
   | "[transform]"
   | "[type]"
   | "[u1]"
@@ -4127,7 +4127,7 @@ export type AnimationPlayStateProperty = Globals | "paused" | "running" | string
 
 export type AnimationTimingFunctionProperty = Globals | TimingFunction | string;
 
-export type AppearanceProperty = Globals | Compat | "button" | "none" | "textfield";
+export type AppearanceProperty = Globals | CompatAuto | "button" | "menulist-button" | "none" | "textfield";
 
 export type AspectRatioProperty = Globals | "auto" | string;
 
@@ -4355,7 +4355,7 @@ export type ColorAdjustProperty = Globals | "economy" | "exact";
 
 export type ColumnCountProperty = Globals | "auto" | number;
 
-export type ColumnFillProperty = Globals | "auto" | "balance" | "balance-all";
+export type ColumnFillProperty = Globals | "auto" | "balance";
 
 export type ColumnGapProperty<TLength> = Globals | TLength | "normal" | string;
 
@@ -5010,7 +5010,7 @@ export type TextSizeAdjustProperty = Globals | "auto" | "none" | string;
 
 export type TextTransformProperty = Globals | "capitalize" | "full-size-kana" | "full-width" | "lowercase" | "none" | "uppercase";
 
-export type TextUnderlineOffsetProperty<TLength> = Globals | TLength | "auto" | "from-font" | string;
+export type TextUnderlineOffsetProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type TextUnderlinePositionProperty = Globals | "auto" | "from-font" | "left" | "right" | "under" | string;
 
@@ -5035,7 +5035,7 @@ export type TouchActionProperty =
 
 export type TransformProperty = Globals | "none" | string;
 
-export type TransformBoxProperty = Globals | "border-box" | "fill-box" | "view-box";
+export type TransformBoxProperty = Globals | "border-box" | "content-box" | "fill-box" | "stroke-box" | "view-box";
 
 export type TransformOriginProperty<TLength> = Globals | TLength | "bottom" | "center" | "left" | "right" | "top" | string;
 
@@ -5607,20 +5607,7 @@ type Box = "border-box" | "content-box" | "padding-box";
 
 type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type Compat =
-  | "button-bevel"
-  | "checkbox"
-  | "listbox"
-  | "menulist"
-  | "menulist-button"
-  | "meter"
-  | "progress-bar"
-  | "push-button"
-  | "radio"
-  | "searchfield"
-  | "slider-horizontal"
-  | "square-button"
-  | "textarea";
+type CompatAuto = "checkbox" | "listbox" | "menulist" | "meter" | "progress-bar" | "push-button" | "radio" | "searchfield" | "slider-horizontal" | "square-button" | "textarea";
 
 type CompositeStyle =
   | "clear"

@@ -2529,15 +2529,15 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-"mdn-browser-compat-data@git+https://github.com/mdn/browser-compat-data.git#a78f891eaecdea55d6b24c779dbd3172a92473d1":
-  version "1.0.15"
-  resolved "git+https://github.com/mdn/browser-compat-data.git#a78f891eaecdea55d6b24c779dbd3172a92473d1"
+"mdn-browser-compat-data@git+https://github.com/mdn/browser-compat-data.git#e74deb234e870896575ef442a57d252c7677cb07":
+  version "1.0.28"
+  resolved "git+https://github.com/mdn/browser-compat-data.git#e74deb234e870896575ef442a57d252c7677cb07"
   dependencies:
     extend "3.0.2"
 
-"mdn-data@git+https://github.com/mdn/data.git#aa85883d41ae4f47fdf230466cc138976cab8b38":
-  version "2.0.8"
-  resolved "git+https://github.com/mdn/data.git#aa85883d41ae4f47fdf230466cc138976cab8b38"
+"mdn-data@git+https://github.com/mdn/data.git#bee2448507748e522b0e1158e420a647628e1fe4":
+  version "2.0.10"
+  resolved "git+https://github.com/mdn/data.git#bee2448507748e522b0e1158e420a647628e1fe4"
 
 merge-stream@^2.0.0:
   version "2.0.0"
