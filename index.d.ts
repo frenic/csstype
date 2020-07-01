@@ -215,7 +215,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | auto | button | textfield | <compat>`
+   * **Syntax**: `none | auto | button | textfield | menulist-button | <compat-auto>`
    *
    * **Initial value**: `auto`
    *
@@ -1327,9 +1327,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `economy`
    *
-   * |    Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :----------: | :-----: | :---------: | :----------: | :-: |
-   * | **49** _-x-_ | **48**  | **6** _-x-_ | **79** _-x-_ | No  |
+   * |                Chrome                 | Firefox |                Safari                |                 Edge                  | IE  |
+   * | :-----------------------------------: | :-----: | :----------------------------------: | :-----------------------------------: | :-: |
+   * | **49** _(-webkit-print-color-adjust)_ | **48**  | **6** _(-webkit-print-color-adjust)_ | **79** _(-webkit-print-color-adjust)_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
    */
@@ -1743,9 +1743,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **32** _-x-_ | **32**  | **7**  | **79** _-x-_ | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **33** | **32**  |  **9**  | **79** | No  |
+   * |        |         | 6 _-x-_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-kerning
    */
@@ -2154,9 +2155,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0deg`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **26**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **81** | **26**  | **13.1** | **81** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/image-orientation
    */
@@ -2526,9 +2527,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **66**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
    */
@@ -2582,9 +2583,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **66**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
    */
@@ -3247,7 +3248,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * | :----: | :-----: | :----: | :--: | :-: |
    * |   No   | **29**  |   No   |  No  | No  |
    *
-   * @see https://developer.mozilla.org/docs/Mozilla/CSS/overflow-clip-box
+   * @see https://developer.mozilla.org/docs/Mozilla/Gecko/Chrome/CSS/overflow-clip-box
    */
   overflowClipBox?: Property.OverflowClipBox;
   /**
@@ -3382,9 +3383,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **66**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
@@ -3438,9 +3439,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **66**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
@@ -4477,9 +4478,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **25** | **46**  | **6.1** | **79** | No  |
+   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
+   * | :----------: | :-----: | :-----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
    */
@@ -4491,9 +4492,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `over right`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **25** | **46**  | **6.1** | **79** | No  |
+   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
+   * | :----------: | :-----: | :-----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
@@ -4505,9 +4506,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **25** | **46**  | **6.1** | **79** | No  |
+   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
+   * | :----------: | :-----: | :-----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
    */
@@ -4628,7 +4629,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`text-underline-offset`** CSS property sets the offset distance of an underline text decoration line (applied using `text-decoration`) from its original position.
    *
-   * **Syntax**: `auto | from-font | <length> | <percentage> `
+   * **Syntax**: `auto | <length> | <percentage> `
    *
    * **Initial value**: `auto`
    *
@@ -4701,9 +4702,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`transform-box`** CSS property defines the layout box to which the `transform` and `transform-origin` properties relate.
    *
-   * **Syntax**: `border-box | fill-box | view-box`
+   * **Syntax**: `content-box | border-box | fill-box | stroke-box | view-box`
    *
-   * **Initial value**: `border-box `
+   * **Initial value**: `view-box`
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
@@ -5331,10 +5332,10 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    *
    * _Supported in Grid Layout_
    *
-   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
-   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
-   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
-   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   * |     Chrome      |     Firefox     |      Safari       |  Edge  | IE  |
+   * | :-------------: | :-------------: | :---------------: | :----: | :-: |
+   * |     **66**      |     **61**      |      **12**       | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ | 10.1 _(grid-gap)_ |        |     |
    *
    * ---
    *
@@ -5590,9 +5591,9 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **25** | **46**  | **6.1** | **79** | No  |
+   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
+   * | :----------: | :-----: | :-----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
    */
@@ -6812,14 +6813,6 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitClipPath?: Property.ClipPath;
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
-   *
-   * **Syntax**: `economy | exact`
-   *
-   * **Initial value**: `economy`
-   */
-  WebkitColorAdjust?: Property.ColorAdjust;
-  /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
    * **Syntax**: `<integer> | auto`
@@ -7156,6 +7149,14 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitPerspectiveOrigin?: Property.PerspectiveOrigin<TLength>;
   /**
+   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Syntax**: `economy | exact`
+   *
+   * **Initial value**: `economy`
+   */
+  WebkitPrintColorAdjust?: Property.ColorAdjust;
+  /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
    * **Syntax**: `none | [ x | y | block | inline | both ] [ mandatory | proximity ]?`
@@ -7284,6 +7285,14 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextStrokeWidth?: Property.WebkitTextStrokeWidth<TLength>;
   /**
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
+   *
+   * **Syntax**: `auto | from-font | [ under || [ left | right ] ]`
+   *
+   * **Initial value**: `auto`
+   */
+  WebkitTextUnderlinePosition?: Property.TextUnderlinePosition;
+  /**
    * The `-webkit-touch-callout` CSS property controls the display of the default callout shown when you touch and hold a touch target.
    *
    * **Syntax**: `default | none`
@@ -7369,14 +7378,6 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `horizontal-tb`
    */
   WebkitWritingMode?: Property.WritingMode;
-  /**
-   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
-   *
-   * **Syntax**: `auto | from-font | [ under || [ left | right ] ]`
-   *
-   * **Initial value**: `auto`
-   */
-  WebkittextUnderlinePosition?: Property.TextUnderlinePosition;
 }
 
 export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
@@ -8817,7 +8818,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | auto | button | textfield | <compat>`
+   * **Syntax**: `none | auto | button | textfield | menulist-button | <compat-auto>`
    *
    * **Initial value**: `auto`
    *
@@ -9929,9 +9930,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `economy`
    *
-   * |    Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :----------: | :-----: | :---------: | :----------: | :-: |
-   * | **49** _-x-_ | **48**  | **6** _-x-_ | **79** _-x-_ | No  |
+   * |                Chrome                 | Firefox |                Safari                |                 Edge                  | IE  |
+   * | :-----------------------------------: | :-----: | :----------------------------------: | :-----------------------------------: | :-: |
+   * | **49** _(-webkit-print-color-adjust)_ | **48**  | **6** _(-webkit-print-color-adjust)_ | **79** _(-webkit-print-color-adjust)_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
    */
@@ -10345,9 +10346,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **32** _-x-_ | **32**  | **7**  | **79** _-x-_ | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **33** | **32**  |  **9**  | **79** | No  |
+   * |        |         | 6 _-x-_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-kerning
    */
@@ -10756,9 +10758,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0deg`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **26**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **81** | **26**  | **13.1** | **81** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/image-orientation
    */
@@ -11128,9 +11130,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **66**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
    */
@@ -11184,9 +11186,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **66**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
    */
@@ -11849,7 +11851,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * | :----: | :-----: | :----: | :--: | :-: |
    * |   No   | **29**  |   No   |  No  | No  |
    *
-   * @see https://developer.mozilla.org/docs/Mozilla/CSS/overflow-clip-box
+   * @see https://developer.mozilla.org/docs/Mozilla/Gecko/Chrome/CSS/overflow-clip-box
    */
   "overflow-clip-box"?: Property.OverflowClipBox;
   /**
@@ -11984,9 +11986,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **66**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
@@ -12040,9 +12042,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **66**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   | **66**  |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
@@ -13079,9 +13081,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **25** | **46**  | **6.1** | **79** | No  |
+   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
+   * | :----------: | :-----: | :-----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
    */
@@ -13093,9 +13095,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `over right`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **25** | **46**  | **6.1** | **79** | No  |
+   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
+   * | :----------: | :-----: | :-----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
@@ -13107,9 +13109,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **25** | **46**  | **6.1** | **79** | No  |
+   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
+   * | :----------: | :-----: | :-----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
    */
@@ -13230,7 +13232,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`text-underline-offset`** CSS property sets the offset distance of an underline text decoration line (applied using `text-decoration`) from its original position.
    *
-   * **Syntax**: `auto | from-font | <length> | <percentage> `
+   * **Syntax**: `auto | <length> | <percentage> `
    *
    * **Initial value**: `auto`
    *
@@ -13303,9 +13305,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`transform-box`** CSS property defines the layout box to which the `transform` and `transform-origin` properties relate.
    *
-   * **Syntax**: `border-box | fill-box | view-box`
+   * **Syntax**: `content-box | border-box | fill-box | stroke-box | view-box`
    *
-   * **Initial value**: `border-box `
+   * **Initial value**: `view-box`
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
@@ -13933,10 +13935,10 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    *
    * _Supported in Grid Layout_
    *
-   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
-   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
-   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
-   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   * |     Chrome      |     Firefox     |      Safari       |  Edge  | IE  |
+   * | :-------------: | :-------------: | :---------------: | :----: | :-: |
+   * |     **66**      |     **61**      |      **12**       | **16** | No  |
+   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ | 10.1 _(grid-gap)_ |        |     |
    *
    * ---
    *
@@ -14192,9 +14194,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **25** | **46**  | **6.1** | **79** | No  |
+   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
+   * | :----------: | :-----: | :-----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
    */
@@ -15414,14 +15416,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-clip-path"?: Property.ClipPath;
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
-   *
-   * **Syntax**: `economy | exact`
-   *
-   * **Initial value**: `economy`
-   */
-  "-webkit-color-adjust"?: Property.ColorAdjust;
-  /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
    * **Syntax**: `<integer> | auto`
@@ -15758,6 +15752,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-perspective-origin"?: Property.PerspectiveOrigin<TLength>;
   /**
+   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Syntax**: `economy | exact`
+   *
+   * **Initial value**: `economy`
+   */
+  "-webkit-print-color-adjust"?: Property.ColorAdjust;
+  /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
    * **Syntax**: `none | [ x | y | block | inline | both ] [ mandatory | proximity ]?`
@@ -15886,6 +15888,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-stroke-width"?: Property.WebkitTextStrokeWidth<TLength>;
   /**
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
+   *
+   * **Syntax**: `auto | from-font | [ under || [ left | right ] ]`
+   *
+   * **Initial value**: `auto`
+   */
+  "-webkit-text-underline-position"?: Property.TextUnderlinePosition;
+  /**
    * The `-webkit-touch-callout` CSS property controls the display of the default callout shown when you touch and hold a touch target.
    *
    * **Syntax**: `default | none`
@@ -15971,14 +15981,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `horizontal-tb`
    */
   "-webkit-writing-mode"?: Property.WritingMode;
-  /**
-   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
-   *
-   * **Syntax**: `auto | from-font | [ under || [ left | right ] ]`
-   *
-   * **Initial value**: `auto`
-   */
-  "-webkittext-underline-position"?: Property.TextUnderlinePosition;
 }
 
 export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
@@ -17421,7 +17423,6 @@ export type Pseudos = AdvancedPseudos | SimplePseudos;
 
 export type HtmlAttributes =
   | "[-webkit-dropzone]"
-  | "[-webkit-slot]"
   | "[abbr]"
   | "[accept-charset]"
   | "[accept]"
@@ -17486,6 +17487,7 @@ export type HtmlAttributes =
   | "[draggable]"
   | "[dropzone]"
   | "[enctype]"
+  | "[enterkeyhint]"
   | "[exportparts]"
   | "[face]"
   | "[for]"
@@ -17540,7 +17542,6 @@ export type HtmlAttributes =
   | "[minlength]"
   | "[moz-opaque]"
   | "[mozallowfullscreen]"
-  | "[mozbrowser]"
   | "[mozcurrentsampleoffset]"
   | "[msallowfullscreen]"
   | "[multiple]"
@@ -17851,6 +17852,7 @@ export type SvgAttributes =
   | "[textLength]"
   | "[title]"
   | "[to]"
+  | "[transform-origin]"
   | "[transform]"
   | "[type]"
   | "[u1]"
@@ -17920,7 +17922,7 @@ export namespace Property {
 
   export type AnimationTimingFunction = Globals | DataType.TimingFunction | (string & {});
 
-  export type Appearance = Globals | DataType.Compat | "button" | "none" | "textfield";
+  export type Appearance = Globals | DataType.CompatAuto | "button" | "menulist-button" | "none" | "textfield";
 
   export type AspectRatio = Globals | "auto" | (string & {});
 
@@ -18154,7 +18156,7 @@ export namespace Property {
 
   export type ColumnCount = Globals | "auto" | (number & {});
 
-  export type ColumnFill = Globals | "auto" | "balance" | "balance-all";
+  export type ColumnFill = Globals | "auto" | "balance";
 
   export type ColumnGap<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {});
 
@@ -18838,7 +18840,7 @@ export namespace Property {
 
   export type TextTransform = Globals | "capitalize" | "full-size-kana" | "full-width" | "lowercase" | "none" | "uppercase";
 
-  export type TextUnderlineOffset<TLength = (string & {}) | 0> = Globals | TLength | "auto" | "from-font" | (string & {});
+  export type TextUnderlineOffset<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
   export type TextUnderlinePosition = Globals | "auto" | "from-font" | "left" | "right" | "under" | (string & {});
 
@@ -18863,7 +18865,7 @@ export namespace Property {
 
   export type Transform = Globals | "none" | (string & {});
 
-  export type TransformBox = Globals | "border-box" | "fill-box" | "view-box";
+  export type TransformBox = Globals | "border-box" | "content-box" | "fill-box" | "stroke-box" | "view-box";
 
   export type TransformOrigin<TLength = (string & {}) | 0> = Globals | TLength | "bottom" | "center" | "left" | "right" | "top" | (string & {});
 
@@ -19628,20 +19630,7 @@ declare namespace DataType {
 
   type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | (string & {});
 
-  type Compat =
-    | "button-bevel"
-    | "checkbox"
-    | "listbox"
-    | "menulist"
-    | "menulist-button"
-    | "meter"
-    | "progress-bar"
-    | "push-button"
-    | "radio"
-    | "searchfield"
-    | "slider-horizontal"
-    | "square-button"
-    | "textarea";
+  type CompatAuto = "checkbox" | "listbox" | "menulist" | "meter" | "progress-bar" | "push-button" | "radio" | "searchfield" | "slider-horizontal" | "square-button" | "textarea";
 
   type CompositeStyle =
     | "clear"
