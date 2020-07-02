@@ -26,7 +26,7 @@ export let getPseudos = () => {
       }
     }
   }
-  // Cache
+  // Memoize
   getPseudos = () => ({
     simple,
     advanced,

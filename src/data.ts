@@ -28,7 +28,7 @@ export let getProperties = () => {
     }
   }
 
-  // Cache
+  // Memoize
   getProperties = () => properties;
 
   return properties;
@@ -55,7 +55,7 @@ export let getSyntaxes = () => {
     }
   }
 
-  // Cache
+  // Memoize
   getSyntaxes = () => syntaxes;
 
   return syntaxes;

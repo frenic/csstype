@@ -115,7 +115,7 @@ function getCompatRows(compatibilityData: MDN.CompatData) {
 }
 
 function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): string[] {
-  supports = supports ? (Array.isArray(supports) ? supports : [supports]).reverse() : [];
+  supports = supports ? (Array.isArray(supports) ? supports : [supports]) : [];
 
   // Ignore versions hidden under flags
   supports = supports.filter(({ flags }) => !flags);
@@ -243,7 +243,7 @@ function formatL10n(phrase: string) {
       }
 
       if (chunk.startsWith('{{') && chunk.endsWith('}}')) {
-        warn('Unknown curly bracket block `%s` in i10n', chunk);
+        warn('Unknown curly braces block `%s` in i10n', chunk);
         return chunk;
       }
 

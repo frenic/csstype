@@ -183,18 +183,18 @@ export function isCombinator(entity: EntityType): entity is ICombinator {
   return entity.entity === Entity.Combinator;
 }
 
-export function isCurlyBracetMultiplier(multiplier: MultiplierType): multiplier is IMultiplierCurlyBracet {
+export function isCurlyBracesMultiplier(multiplier: MultiplierType): multiplier is IMultiplierCurlyBracet {
   return multiplier.sign === Multiplier.CurlyBracet;
 }
 
 export function isMandatoryMultiplied(multiplier: MultiplierType | null) {
-  return multiplier !== null && (isCurlyBracetMultiplier(multiplier) && multiplier.min > 1);
+  return multiplier !== null && (isCurlyBracesMultiplier(multiplier) && multiplier.min > 1);
 }
 
 export function isOptionallyMultiplied(multiplier: MultiplierType | null) {
   return (
     multiplier !== null &&
-    ((isCurlyBracetMultiplier(multiplier) && multiplier.min < multiplier.max && multiplier.max > 1) ||
+    ((isCurlyBracesMultiplier(multiplier) && multiplier.min < multiplier.max && multiplier.max > 1) ||
       multiplier.sign === Multiplier.Asterisk ||
       multiplier.sign === Multiplier.PlusSign ||
       multiplier.sign === Multiplier.HashMark ||
@@ -209,7 +209,7 @@ export function isMandatoryEntity(entity: EntityType) {
 
   if (entity.multiplier) {
     return (
-      (isCurlyBracetMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
+      (isCurlyBracesMultiplier(entity.multiplier) && entity.multiplier.min > 0) ||
       entity.multiplier.sign === Multiplier.PlusSign ||
       entity.multiplier.sign === Multiplier.HashMark ||
       entity.multiplier.sign === Multiplier.ExclamationPoint
@@ -261,6 +261,24 @@ function multiplierData(raw: string[]): MultiplierType | null {
     default:
       return null;
   }
+}
+
+export function precedenceCombinator(entities: EntityType[]) {
+  let combinator: ICombinator | null = null;
+
+  for (const entity of entities) {
+    if (isCombinator(entity)) {
+      if (!combinator) {
+        combinator = entity;
+      }
+      if (combinator !== entity) {
+        // This should never happen if grouping works as it should. So we just wnt to make sure.
+        throw new Error('Combinators must be grouped by precedence');
+      }
+    }
+  }
+
+  return combinator;
 }
 
 function groupByPrecedence(entities: EntityType[], precedence: number = Combinator.SingleBar): EntityType[] {

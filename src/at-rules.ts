@@ -73,7 +73,7 @@ export let getAtRules = () => {
     }
   }
 
-  // Cache
+  // Memoize
   getAtRules = () => ({
     literals,
     rules,

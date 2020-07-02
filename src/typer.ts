@@ -1,7 +1,7 @@
 import * as cssTypes from 'mdn-data/css/types.json';
-import { isProperty, isSyntax } from './data';
+import { isProperty, isSyntax, getSyntax, getPropertySyntax } from './data';
 import { warn } from './logger';
-import {
+import parse, {
   Combinator,
   Component,
   EntityType,
@@ -10,6 +10,8 @@ import {
   isMandatoryEntity,
   isMandatoryMultiplied,
   isOptionallyMultiplied,
+  isCurlyBracesMultiplier,
+  precedenceCombinator,
 } from './parser';
 
 export enum Type {
@@ -49,6 +51,8 @@ export type TypeType<TDataType = IDataType> = IBasic | IStringLiteral | INumeric
 
 export type ResolvedType = TypeType<DataType>;
 
+const CURLY_BRACES_MULTIPLIER_MAXIMUM = 3;
+
 let getBasicDataTypes = () => {
   const types = Object.keys(cssTypes).reduce<{ [name: string]: IBasic }>((dataTypes, name) => {
     switch (name) {
@@ -73,13 +77,19 @@ let getBasicDataTypes = () => {
     return dataTypes;
   }, {});
 
-  // Cache
+  // Memoize
   getBasicDataTypes = () => types;
 
   return types;
 };
 
 export default function typing(entities: EntityType[]): TypeType[] {
+  const strictTypes = strictTyping(entities);
+
+  if (strictTypes !== null) {
+    return strictTypes;
+  }
+
   let mandatoryCombinatorCount = 0;
   let mandatoryNonCombinatorsCount = 0;
   for (const entity of entities) {
@@ -165,6 +175,55 @@ export default function typing(entities: EntityType[]): TypeType[] {
 
   if (mandatoryNonCombinatorsCount > 1 && mandatoryCombinatorCount > 1) {
     return [{ type: Type.String }];
+  }
+
+  return types;
+}
+
+export function strictTyping(entities: EntityType[]): TypeType[] | null {
+  const types: TypeType[] = [];
+  const combinator = precedenceCombinator(entities);
+
+  for (const entity of entities) {
+    if (isComponent(entity)) {
+      switch (entity.component) {
+        case Component.DataType: {
+          if (isSyntax(entity.value) || isProperty(entity.value)) {
+            const strictTypes = strictTyping(
+              parse(isSyntax(entity.value) ? getSyntax(entity.value) : getPropertySyntax(entity.value)),
+            );
+
+            if (strictTypes === null) {
+              return null;
+            }
+          }
+
+          // Missing or basic data type
+          return null;
+        }
+        case Component.Group: {
+          const strictTypes = strictTyping(entity.entities);
+
+          if (strictTypes === null) {
+            return null;
+          }
+
+          // TODO
+
+          break;
+        }
+      }
+
+      if (
+        entity.multiplier !== null &&
+        // We can work with a small amount. But too many isn't worth it.
+        !(isCurlyBracesMultiplier(entity.multiplier) && entity.multiplier.max < CURLY_BRACES_MULTIPLIER_MAXIMUM)
+      ) {
+        return null;
+      }
+
+      continue;
+    }
   }
 
   return types;
