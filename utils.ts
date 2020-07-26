@@ -6,6 +6,7 @@ import { createInterface } from 'readline';
 export const ROOT_DIR = __dirname;
 export const TYPESCRIPT_FILENAME = 'index.d.ts';
 export const FLOW_FILENAME = 'index.js.flow';
+export const IOTS_FILENAME = 'csstype.ts';
 
 export function writeFileAsync(filename: string, content: string) {
   return new Promise((resolve, reject) => {
