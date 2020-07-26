@@ -1,7 +1,7 @@
 import * as chokidar from 'chokidar';
 import * as path from 'path';
 import * as prettier from 'prettier';
-import { FLOW_FILENAME, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
+import { FLOW_FILENAME, IOTS_FILENAME, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
 
 const ROOT_DIR = __dirname;
 const TEST_FILENAME = 'typecheck.ts';
@@ -42,9 +42,17 @@ export default async function trigger() {
   console.info('Generating...');
   const output = await create();
   console.info('Formatting...');
-  const [flow, typescript] = await Promise.all([format(output.flow, 'flow'), format(output.typescript, 'typescript')]);
+  const [flow, typescript, iots] = await Promise.all([
+    format(output.flow, 'flow'),
+    format(output.typescript, 'typescript'),
+    format(output.iots, 'typescript'),
+  ],);
   console.info(`Writing files...`);
-  await Promise.all([writeFileAsync(FLOW_FILENAME, flow), writeFileAsync(TYPESCRIPT_FILENAME, typescript)]);
+  await Promise.all([
+    writeFileAsync(FLOW_FILENAME, flow),
+    writeFileAsync(TYPESCRIPT_FILENAME, typescript),
+    writeFileAsync(IOTS_FILENAME, iots),
+  ],);
   console.info('Type checking...');
   await typecheck();
 }
@@ -79,6 +87,7 @@ function typecheck() {
     spawnAsync(
       path.join(ROOT_DIR, `node_modules/.bin/${process.platform === 'win32' ? 'tsc.cmd' : 'tsc'}`),
       path.join(ROOT_DIR, TYPESCRIPT_FILENAME),
+      path.join(ROOT_DIR, IOTS_FILENAME),
       path.join(ROOT_DIR, TEST_FILENAME),
       '--noEmit',
     ),

@@ -15,6 +15,7 @@ export interface IAlias {
 export interface IGenerics {
   name: string;
   defaults?: string;
+  default_types?: string;
 }
 
 interface Interface {
@@ -147,6 +148,7 @@ declarations.set(declarableGlobalsAndNumber, globalsAndNumberDeclaration);
 export const lengthGeneric: IGenerics = {
   name: 'TLength',
   defaults: 'string | 0',
+  default_types: 't.union([t.string, t.literal(0)])'
 };
 
 const standardLonghandPropertiesDefinition: IPropertyAlias[] = [];
