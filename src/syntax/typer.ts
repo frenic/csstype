@@ -177,7 +177,7 @@ export default function typing(entities: EntityType[]): TypeType[] {
   return types;
 }
 
-function addLength<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
+function addLength<TDataType extends IDataType>(types: TypeType<TDataType>[]): TypeType<TDataType>[] {
   if (types.every(type => type.type !== Type.Length)) {
     return [
       ...types,
@@ -190,7 +190,7 @@ function addLength<TDataType extends IDataType>(types: Array<TypeType<TDataType>
   return types;
 }
 
-function addTime<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
+function addTime<TDataType extends IDataType>(types: TypeType<TDataType>[]): TypeType<TDataType>[] {
   if (types.every(type => type.type !== Type.Time)) {
     return [
       ...types,
@@ -203,7 +203,7 @@ function addTime<TDataType extends IDataType>(types: Array<TypeType<TDataType>>)
   return types;
 }
 
-function addString<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
+function addString<TDataType extends IDataType>(types: TypeType<TDataType>[]): TypeType<TDataType>[] {
   if (types.every(type => type.type !== Type.String)) {
     return [
       ...types,
@@ -216,7 +216,7 @@ function addString<TDataType extends IDataType>(types: Array<TypeType<TDataType>
   return types;
 }
 
-function addNumber<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
+function addNumber<TDataType extends IDataType>(types: TypeType<TDataType>[]): TypeType<TDataType>[] {
   if (types.every(type => type.type !== Type.Number)) {
     return [
       ...types,
@@ -230,9 +230,9 @@ function addNumber<TDataType extends IDataType>(types: Array<TypeType<TDataType>
 }
 
 function addStringLiteral<TDataType extends IDataType>(
-  types: Array<TypeType<TDataType>>,
+  types: TypeType<TDataType>[],
   literal: string,
-): Array<TypeType<TDataType>> {
+): TypeType<TDataType>[] {
   if (types.every(type => !(type.type === Type.StringLiteral && type.literal === literal))) {
     return [
       ...types,
@@ -247,9 +247,9 @@ function addStringLiteral<TDataType extends IDataType>(
 }
 
 function addNumericLiteral<TDataType extends IDataType>(
-  types: Array<TypeType<TDataType>>,
+  types: TypeType<TDataType>[],
   literal: number,
-): Array<TypeType<TDataType>> {
+): TypeType<TDataType>[] {
   if (types.every(type => !(type.type === Type.NumericLiteral && type.literal === literal))) {
     return [
       ...types,
@@ -263,10 +263,7 @@ function addNumericLiteral<TDataType extends IDataType>(
   return types;
 }
 
-function addDataType<TDataType extends IDataType>(
-  types: Array<TypeType<TDataType>>,
-  name: string,
-): Array<TypeType<TDataType>> {
+function addDataType<TDataType extends IDataType>(types: TypeType<TDataType>[], name: string): TypeType<TDataType>[] {
   if (types.every(type => !(type.type === Type.DataType && type.name === name))) {
     return [
       ...types,
@@ -281,9 +278,9 @@ function addDataType<TDataType extends IDataType>(
 }
 
 function addPropertyReference<TDataType extends IDataType>(
-  types: Array<TypeType<TDataType>>,
+  types: TypeType<TDataType>[],
   name: string,
-): Array<TypeType<TDataType>> {
+): TypeType<TDataType>[] {
   if (types.every(type => !(type.type === Type.PropertyReference && type.name === name))) {
     return [
       ...types,
@@ -298,9 +295,9 @@ function addPropertyReference<TDataType extends IDataType>(
 }
 
 export function addType<TDataType extends IDataType>(
-  types: Array<TypeType<TDataType>>,
+  types: TypeType<TDataType>[],
   type: TypeType,
-): Array<TypeType<TDataType>> {
+): TypeType<TDataType>[] {
   switch (type.type) {
     case Type.Length:
       return addLength(types);

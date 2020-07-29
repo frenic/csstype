@@ -72,7 +72,7 @@ export type SimpleType = Exclude<DeclarableType, IAlias>;
 export interface INamespace {
   name: string;
   export: boolean;
-  body: () => Array<Interface | IDeclaration>;
+  body: () => (Interface | IDeclaration)[];
 }
 
 export interface IDeclaration {

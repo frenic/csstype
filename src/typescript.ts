@@ -119,12 +119,9 @@ function outputDeclaration(entry: IDeclaration, currentNamespace: INamespace | u
     output += 'export ';
   }
 
-  output += `type ${entry.name +
-    stringifyGenerics(entry.generics, entry.export, stringifySimpleTypes)} = ${stringifyTypes(
-    entry.types,
-    currentNamespace,
-    true,
-  )}`;
+  output += `type ${
+    entry.name + stringifyGenerics(entry.generics, entry.export, stringifySimpleTypes)
+  } = ${stringifyTypes(entry.types, currentNamespace, true)}`;
 
   return output;
 }

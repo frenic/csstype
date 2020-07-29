@@ -41,15 +41,9 @@ export default async function flow() {
     namespaceOutput += outputNamespace(namespace);
   }
 
-  return `// @flow strict ${EOL +
-    EOL +
-    EOL +
-    interfacesOutput +
-    EOL +
-    declarationsOutput +
-    EOL +
-    namespaceOutput +
-    EOL}`;
+  return `// @flow strict ${
+    EOL + EOL + EOL + interfacesOutput + EOL + declarationsOutput + EOL + namespaceOutput + EOL
+  }`;
 }
 
 function typeAliasName(namespace: string | undefined, name: string) {
@@ -136,8 +130,9 @@ function outputDeclaration(entry: IDeclaration, namespace = '') {
     output += 'export ';
   }
 
-  output += `type ${typeAliasName(namespace, entry.name) +
-    stringifyGenerics(entry.generics, entry.export, stringifyTypes)} = ${stringifyTypes(entry.types)}`;
+  output += `type ${
+    typeAliasName(namespace, entry.name) + stringifyGenerics(entry.generics, entry.export, stringifyTypes)
+  } = ${stringifyTypes(entry.types)}`;
 
   return output;
 }
