@@ -19699,7 +19699,7 @@ declare namespace DataType {
     | "ultra-expanded"
     | (string & {});
 
-  type FontWeightAbsolute = "bold" | "normal" | (string & {});
+  type FontWeightAbsolute = "bold" | "normal" | (number & {});
 
   type GenericFamily = "cursive" | "fantasy" | "monospace" | "sans-serif" | "serif";
 

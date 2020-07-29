@@ -88,7 +88,7 @@ export interface IUnknown {
 
 export type EntityType = ComponentType | ICombinator | IFunction | IUnknown;
 
-const REGEX_ENTITY = /(?:^|\s)((?:[\w]+\([^\)]*\))|[^\s*+?#!{]+)([*+?#!]|{(\d+),(\d+)})?/g;
+const REGEX_ENTITY = /(?:^|\s)((?:<[^>]+>)|(?:[\w]+\([^\)]*\))|[^\s*+?#!{]+)([*+?#!]|{(\d+),(\d+)})?/g;
 const REGEX_DATA_TYPE = /^(<[^>]+>)/g;
 const REGEX_KEYWORD = /^([\w-]+)/g;
 

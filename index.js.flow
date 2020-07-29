@@ -5834,7 +5834,7 @@ type DataType$FontStretchAbsolute =
   | "ultra-expanded"
   | string;
 
-type DataType$FontWeightAbsolute = "bold" | "normal" | string;
+type DataType$FontWeightAbsolute = "bold" | "normal" | number;
 
 type DataType$GenericFamily = "cursive" | "fantasy" | "monospace" | "sans-serif" | "serif";
 

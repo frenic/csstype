@@ -136,7 +136,7 @@ export default function typing(entities: EntityType[]): TypeType[] {
           }
           break;
         case Component.DataType: {
-          const value = entity.value.slice(1, -1);
+          const value = valueOfDataType(entity.value);
           if (value in getBasicDataTypes()) {
             types = addType(types, getBasicDataTypes()[value]);
           } else if (isSyntax(value)) {
@@ -321,4 +321,13 @@ export function addType<TDataType extends IDataType>(
 export function hasType(originalTypes: TypeType[], type: TypeType): boolean {
   const testTypes = addType(originalTypes, type);
   return originalTypes === testTypes;
+}
+
+const VALUE_OF_DATA_TYPE = /<([^\s>]+)/;
+function valueOfDataType(value: string) {
+  try {
+    return value.match(VALUE_OF_DATA_TYPE)![1];
+  } catch {
+    throw new Error(`Was not able to get value of \`${value}\``);
+  }
 }
