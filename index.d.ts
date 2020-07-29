@@ -5326,7 +5326,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | **84** | **63**  |   No   |  No  | No  |
    *
    * ---
    *
@@ -5697,6 +5697,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   MozBackfaceVisibility?: BackfaceVisibilityProperty;
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBorderBottomColors?: MozBorderBottomColorsProperty;
+  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -5721,6 +5729,22 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   MozBorderEndWidth?: BorderInlineEndWidthProperty<TLength>;
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBorderLeftColors?: MozBorderLeftColorsProperty;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBorderRightColors?: MozBorderRightColorsProperty;
+  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -5736,6 +5760,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    * **Initial value**: `none`
    */
   MozBorderStartStyle?: BorderInlineStartStyleProperty;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBorderTopColors?: MozBorderTopColorsProperty;
   /**
    * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
    *
@@ -5961,6 +5993,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   MozTabSize?: TabSizeProperty<TLength>;
   /**
+   * The **`-moz-text-blink`** non-standard Mozilla CSS extension specifies the blink mode.
+   *
+   * **Syntax**: `none | blink`
+   *
+   * **Initial value**: `none`
+   */
+  MozTextBlink?: MozTextBlinkProperty;
+  /**
    * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
    *
    * **Syntax**: `none | auto | <percentage>`
@@ -6048,6 +6088,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    * **Initial value**: `drag`
    */
   MozWindowDragging?: MozWindowDraggingProperty;
+  /**
+   * The **`-moz-window-shadow`** CSS property specifies whether a window will have a shadow. It only works on Mac OS X.
+   *
+   * **Syntax**: `default | menu | tooltip | sheet | none`
+   *
+   * **Initial value**: `default`
+   */
+  MozWindowShadow?: MozWindowShadowProperty;
   /**
    * The **`-ms-accelerator`** CSS property is a Microsoft extension that sets or retrieves a string indicating whether the object represents a keyboard shortcut.
    *
@@ -7967,26 +8015,6 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   MozBinding?: MozBindingProperty;
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBorderBottomColors?: MozBorderBottomColorsProperty;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBorderLeftColors?: MozBorderLeftColorsProperty;
-  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage>{1,4} [ / <length-percentage>{1,4} ]?`
@@ -8034,26 +8062,6 @@ export interface ObsoleteProperties<TLength = string | 0> {
    * @deprecated
    */
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength>;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBorderRightColors?: MozBorderRightColorsProperty;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBorderTopColors?: MozBorderTopColorsProperty;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -8191,16 +8199,6 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   MozTextAlignLast?: TextAlignLastProperty;
   /**
-   * The **`-moz-text-blink`** non-standard Mozilla CSS extension specifies the blink mode.
-   *
-   * **Syntax**: `none | blink`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozTextBlink?: MozTextBlinkProperty;
-  /**
    * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
@@ -8240,16 +8238,6 @@ export interface ObsoleteProperties<TLength = string | 0> {
    * @deprecated
    */
   MozUserInput?: MozUserInputProperty;
-  /**
-   * The **`-moz-window-shadow`** CSS property specifies whether a window will have a shadow. It only works on Mac OS X.
-   *
-   * **Syntax**: `default | menu | tooltip | sheet | none`
-   *
-   * **Initial value**: `default`
-   *
-   * @deprecated
-   */
-  MozWindowShadow?: MozWindowShadowProperty;
   /**
    * The **`ime-mode`** CSS property controls the state of the input method editor (IME) for text fields. This property is obsolete.
    *
@@ -13929,7 +13917,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | **84** | **63**  |   No   |  No  | No  |
    *
    * ---
    *
@@ -14300,6 +14288,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-moz-backface-visibility"?: BackfaceVisibilityProperty;
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty;
+  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -14324,6 +14320,22 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-moz-border-end-width"?: BorderInlineEndWidthProperty<TLength>;
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-border-left-colors"?: MozBorderLeftColorsProperty;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-border-right-colors"?: MozBorderRightColorsProperty;
+  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -14339,6 +14351,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    * **Initial value**: `none`
    */
   "-moz-border-start-style"?: BorderInlineStartStyleProperty;
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-border-top-colors"?: MozBorderTopColorsProperty;
   /**
    * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
    *
@@ -14564,6 +14584,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-moz-tab-size"?: TabSizeProperty<TLength>;
   /**
+   * The **`-moz-text-blink`** non-standard Mozilla CSS extension specifies the blink mode.
+   *
+   * **Syntax**: `none | blink`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-text-blink"?: MozTextBlinkProperty;
+  /**
    * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
    *
    * **Syntax**: `none | auto | <percentage>`
@@ -14651,6 +14679,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    * **Initial value**: `drag`
    */
   "-moz-window-dragging"?: MozWindowDraggingProperty;
+  /**
+   * The **`-moz-window-shadow`** CSS property specifies whether a window will have a shadow. It only works on Mac OS X.
+   *
+   * **Syntax**: `default | menu | tooltip | sheet | none`
+   *
+   * **Initial value**: `default`
+   */
+  "-moz-window-shadow"?: MozWindowShadowProperty;
   /**
    * The **`-ms-accelerator`** CSS property is a Microsoft extension that sets or retrieves a string indicating whether the object represents a keyboard shortcut.
    *
@@ -16570,26 +16606,6 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-moz-binding"?: MozBindingProperty;
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-border-left-colors"?: MozBorderLeftColorsProperty;
-  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage>{1,4} [ / <length-percentage>{1,4} ]?`
@@ -16637,26 +16653,6 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    * @deprecated
    */
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength>;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-border-right-colors"?: MozBorderRightColorsProperty;
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-border-top-colors"?: MozBorderTopColorsProperty;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -16794,16 +16790,6 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-moz-text-align-last"?: TextAlignLastProperty;
   /**
-   * The **`-moz-text-blink`** non-standard Mozilla CSS extension specifies the blink mode.
-   *
-   * **Syntax**: `none | blink`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-text-blink"?: MozTextBlinkProperty;
-  /**
    * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
@@ -16843,16 +16829,6 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    * @deprecated
    */
   "-moz-user-input"?: MozUserInputProperty;
-  /**
-   * The **`-moz-window-shadow`** CSS property specifies whether a window will have a shadow. It only works on Mac OS X.
-   *
-   * **Syntax**: `default | menu | tooltip | sheet | none`
-   *
-   * **Initial value**: `default`
-   *
-   * @deprecated
-   */
-  "-moz-window-shadow"?: MozWindowShadowProperty;
   /**
    * The **`ime-mode`** CSS property controls the state of the input method editor (IME) for text fields. This property is obsolete.
    *
@@ -22536,7 +22512,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | **84** | **63**  |   No   |  No  | No  |
    *
    * ---
    *
@@ -22907,6 +22883,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   MozBackfaceVisibility?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
+  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -22931,6 +22915,22 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   MozBorderEndWidth?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBorderLeftColors?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBorderRightColors?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[];
+  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -22946,6 +22946,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    * **Initial value**: `none`
    */
   MozBorderStartStyle?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBorderTopColors?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
   /**
    * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
    *
@@ -23171,6 +23179,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   MozTabSize?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
   /**
+   * The **`-moz-text-blink`** non-standard Mozilla CSS extension specifies the blink mode.
+   *
+   * **Syntax**: `none | blink`
+   *
+   * **Initial value**: `none`
+   */
+  MozTextBlink?: MozTextBlinkProperty | MozTextBlinkProperty[];
+  /**
    * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
    *
    * **Syntax**: `none | auto | <percentage>`
@@ -23258,6 +23274,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    * **Initial value**: `drag`
    */
   MozWindowDragging?: MozWindowDraggingProperty | MozWindowDraggingProperty[];
+  /**
+   * The **`-moz-window-shadow`** CSS property specifies whether a window will have a shadow. It only works on Mac OS X.
+   *
+   * **Syntax**: `default | menu | tooltip | sheet | none`
+   *
+   * **Initial value**: `default`
+   */
+  MozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[];
   /**
    * The **`-ms-accelerator`** CSS property is a Microsoft extension that sets or retrieves a string indicating whether the object represents a keyboard shortcut.
    *
@@ -25177,26 +25201,6 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   MozBinding?: MozBindingProperty | MozBindingProperty[];
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBorderBottomColors?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBorderLeftColors?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[];
-  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage>{1,4} [ / <length-percentage>{1,4} ]?`
@@ -25244,26 +25248,6 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    * @deprecated
    */
   MozBorderRadiusTopright?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBorderRightColors?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBorderTopColors?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -25401,16 +25385,6 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   MozTextAlignLast?: TextAlignLastProperty | TextAlignLastProperty[];
   /**
-   * The **`-moz-text-blink`** non-standard Mozilla CSS extension specifies the blink mode.
-   *
-   * **Syntax**: `none | blink`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozTextBlink?: MozTextBlinkProperty | MozTextBlinkProperty[];
-  /**
    * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
@@ -25450,16 +25424,6 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    * @deprecated
    */
   MozUserInput?: MozUserInputProperty | MozUserInputProperty[];
-  /**
-   * The **`-moz-window-shadow`** CSS property specifies whether a window will have a shadow. It only works on Mac OS X.
-   *
-   * **Syntax**: `default | menu | tooltip | sheet | none`
-   *
-   * **Initial value**: `default`
-   *
-   * @deprecated
-   */
-  MozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[];
   /**
    * The **`ime-mode`** CSS property controls the state of the input method editor (IME) for text fields. This property is obsolete.
    *
@@ -31143,7 +31107,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | **84** | **63**  |   No   |  No  | No  |
    *
    * ---
    *
@@ -31516,6 +31480,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-backface-visibility"?: BackfaceVisibilityProperty | BackfaceVisibilityProperty[];
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
+  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -31540,6 +31512,22 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-border-end-width"?: BorderInlineEndWidthProperty<TLength> | BorderInlineEndWidthProperty<TLength>[];
   /**
+   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-border-left-colors"?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-border-right-colors"?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[];
+  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -31555,6 +31543,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    * **Initial value**: `none`
    */
   "-moz-border-start-style"?: BorderInlineStartStyleProperty | BorderInlineStartStyleProperty[];
+  /**
+   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
+   *
+   * **Syntax**: `<color>+ | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-border-top-colors"?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
   /**
    * The **`box-sizing`** CSS property defines how the user agent should calculate the total width and height of an element.
    *
@@ -31780,6 +31776,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-tab-size"?: TabSizeProperty<TLength> | TabSizeProperty<TLength>[];
   /**
+   * The **`-moz-text-blink`** non-standard Mozilla CSS extension specifies the blink mode.
+   *
+   * **Syntax**: `none | blink`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-text-blink"?: MozTextBlinkProperty | MozTextBlinkProperty[];
+  /**
    * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
    *
    * **Syntax**: `none | auto | <percentage>`
@@ -31867,6 +31871,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    * **Initial value**: `drag`
    */
   "-moz-window-dragging"?: MozWindowDraggingProperty | MozWindowDraggingProperty[];
+  /**
+   * The **`-moz-window-shadow`** CSS property specifies whether a window will have a shadow. It only works on Mac OS X.
+   *
+   * **Syntax**: `default | menu | tooltip | sheet | none`
+   *
+   * **Initial value**: `default`
+   */
+  "-moz-window-shadow"?: MozWindowShadowProperty | MozWindowShadowProperty[];
   /**
    * The **`-ms-accelerator`** CSS property is a Microsoft extension that sets or retrieves a string indicating whether the object represents a keyboard shortcut.
    *
@@ -33786,26 +33798,6 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-binding"?: MozBindingProperty | MozBindingProperty[];
   /**
-   * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-border-bottom-colors"?: MozBorderBottomColorsProperty | MozBorderBottomColorsProperty[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-left-colors`** CSS property sets a list of colors for the left border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-border-left-colors"?: MozBorderLeftColorsProperty | MozBorderLeftColorsProperty[];
-  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage>{1,4} [ / <length-percentage>{1,4} ]?`
@@ -33853,26 +33845,6 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    * @deprecated
    */
   "-moz-border-radius-topright"?: BorderTopRightRadiusProperty<TLength> | BorderTopRightRadiusProperty<TLength>[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-right-colors`** CSS property sets a list of colors for the right border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-border-right-colors"?: MozBorderRightColorsProperty | MozBorderRightColorsProperty[];
-  /**
-   * In Mozilla applications like Firefox, the **`-moz-border-top-colors`** CSS property sets a list of colors for the top border.
-   *
-   * **Syntax**: `<color>+ | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-border-top-colors"?: MozBorderTopColorsProperty | MozBorderTopColorsProperty[];
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -34010,16 +33982,6 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-text-align-last"?: TextAlignLastProperty | TextAlignLastProperty[];
   /**
-   * The **`-moz-text-blink`** non-standard Mozilla CSS extension specifies the blink mode.
-   *
-   * **Syntax**: `none | blink`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-text-blink"?: MozTextBlinkProperty | MozTextBlinkProperty[];
-  /**
    * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
@@ -34059,16 +34021,6 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    * @deprecated
    */
   "-moz-user-input"?: MozUserInputProperty | MozUserInputProperty[];
-  /**
-   * The **`-moz-window-shadow`** CSS property specifies whether a window will have a shadow. It only works on Mac OS X.
-   *
-   * **Syntax**: `default | menu | tooltip | sheet | none`
-   *
-   * **Initial value**: `default`
-   *
-   * @deprecated
-   */
-  "-moz-window-shadow"?: MozWindowShadowProperty | MozWindowShadowProperty[];
   /**
    * The **`ime-mode`** CSS property controls the state of the input method editor (IME) for text fields. This property is obsolete.
    *
@@ -36840,7 +36792,7 @@ type FontStretchAbsolute =
   | "ultra-expanded"
   | string;
 
-type FontWeightAbsolute = "bold" | "normal" | number;
+type FontWeightAbsolute = "bold" | "normal" | string;
 
 type GenericFamily = "cursive" | "fantasy" | "monospace" | "sans-serif" | "serif";
 
