@@ -198,15 +198,16 @@ _If you're using CSS Custom Properties you can step directly to step 3._
       };
       ```
 
-## Version 2.0
+## Version 3.0
 
-The casing of CSS vendor properties are changed matching the casing of prefixes in Javascript. So all of them are capitalized except for `ms`.
-
-- `msOverflowStyle` is still `msOverflowStyle`
-- `mozAppearance` is now `MozAppearance`
-- `webkitOverflowScrolling` is now `WebkitOverflowScrolling`
-
-More info: https://www.andismith.com/blogs/2012/02/modernizr-prefixed/
+- All property types are exposed with namespace  
+  TypeScript: `Property.AlignContent`  
+  Flow: `Property$AlignContent`
+- All at-rules are exposed with namespace  
+  TypeScript: `AtRule.FontFace`  
+  Flow: `AtRule$FontFace`
+- TypeScript hack for autocompletion `(string & {})` for string and number literals
+- Flow types improvements
 
 ## Contributing
 
