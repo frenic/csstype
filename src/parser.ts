@@ -88,7 +88,7 @@ export interface IUnknown {
 
 export type EntityType = ComponentType | ICombinator | IFunction | IUnknown;
 
-const REGEX_ENTITY = /(?:^|\s)((?:[\w]+\([^\)]*\))|[^\s*+?#!{]+)([*+?#!]|{(\d+),(\d+)})?/g;
+const REGEX_ENTITY = /(?:^|\s)((?:<[^>]+>)|(?:[\w]+\([^\)]*\))|[^\s*+?#!{]+)([*+?#!]|{(\d+),(\d+)})?/g;
 const REGEX_DATA_TYPE = /^(<[^>]+>)/g;
 const REGEX_KEYWORD = /^([\w-]+)/g;
 
@@ -188,7 +188,7 @@ export function isCurlyBracetMultiplier(multiplier: MultiplierType): multiplier 
 }
 
 export function isMandatoryMultiplied(multiplier: MultiplierType | null) {
-  return multiplier !== null && (isCurlyBracetMultiplier(multiplier) && multiplier.min > 1);
+  return multiplier !== null && isCurlyBracetMultiplier(multiplier) && multiplier.min > 1;
 }
 
 export function isOptionallyMultiplied(multiplier: MultiplierType | null) {

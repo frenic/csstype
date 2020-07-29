@@ -74,4 +74,8 @@ describe('typing', () => {
       { type: Type.NumericLiteral },
     ]);
   });
+
+  it('types number with range', () => {
+    expect(typing(parse('<number [1,1000]>'))).toMatchObject([{ type: Type.Number }]);
+  });
 });

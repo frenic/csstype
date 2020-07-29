@@ -1,4 +1,4 @@
-import parse, { Combinator, Component } from '../src/parser';
+import parse, { Combinator, Component, Entity } from '../src/parser';
 
 describe('parsing', () => {
   it('parses combinators', () => {
@@ -162,6 +162,12 @@ describe('parsing', () => {
       },
       { combinator: Combinator.SingleBar },
       {},
+    ]);
+  });
+
+  it('parses number with range', () => {
+    expect(parse('<number [1,1000]>')).toMatchObject([
+      { component: Component.DataType, entity: Entity.Component, multiplier: null },
     ]);
   });
 });

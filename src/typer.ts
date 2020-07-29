@@ -129,7 +129,7 @@ export default function typing(entities: EntityType[]): TypeType[] {
           }
           break;
         case Component.DataType: {
-          const value = entity.value.slice(1, -1);
+          const value = valueOfDataType(entity.value);
           if (value in getBasicDataTypes()) {
             types = addType(types, getBasicDataTypes()[value]);
           } else if (isSyntax(value)) {
@@ -171,7 +171,7 @@ export default function typing(entities: EntityType[]): TypeType[] {
 }
 
 function addLength<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
-  if (types.every(type => type.type !== Type.Length)) {
+  if (types.every((type) => type.type !== Type.Length)) {
     return [
       ...types,
       {
@@ -184,7 +184,7 @@ function addLength<TDataType extends IDataType>(types: Array<TypeType<TDataType>
 }
 
 function addString<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
-  if (types.every(type => type.type !== Type.String)) {
+  if (types.every((type) => type.type !== Type.String)) {
     return [
       ...types,
       {
@@ -197,7 +197,7 @@ function addString<TDataType extends IDataType>(types: Array<TypeType<TDataType>
 }
 
 function addNumber<TDataType extends IDataType>(types: Array<TypeType<TDataType>>): Array<TypeType<TDataType>> {
-  if (types.every(type => type.type !== Type.Number)) {
+  if (types.every((type) => type.type !== Type.Number)) {
     return [
       ...types,
       {
@@ -213,7 +213,7 @@ function addStringLiteral<TDataType extends IDataType>(
   types: Array<TypeType<TDataType>>,
   literal: string,
 ): Array<TypeType<TDataType>> {
-  if (types.every(type => !(type.type === Type.StringLiteral && type.literal === literal))) {
+  if (types.every((type) => !(type.type === Type.StringLiteral && type.literal === literal))) {
     return [
       ...types,
       {
@@ -230,7 +230,7 @@ function addNumericLiteral<TDataType extends IDataType>(
   types: Array<TypeType<TDataType>>,
   literal: number,
 ): Array<TypeType<TDataType>> {
-  if (types.every(type => !(type.type === Type.NumericLiteral && type.literal === literal))) {
+  if (types.every((type) => !(type.type === Type.NumericLiteral && type.literal === literal))) {
     return [
       ...types,
       {
@@ -247,7 +247,7 @@ function addDataType<TDataType extends IDataType>(
   types: Array<TypeType<TDataType>>,
   name: string,
 ): Array<TypeType<TDataType>> {
-  if (types.every(type => !(type.type === Type.DataType && type.name === name))) {
+  if (types.every((type) => !(type.type === Type.DataType && type.name === name))) {
     return [
       ...types,
       {
@@ -264,7 +264,7 @@ function addPropertyReference<TDataType extends IDataType>(
   types: Array<TypeType<TDataType>>,
   name: string,
 ): Array<TypeType<TDataType>> {
-  if (types.every(type => !(type.type === Type.PropertyReference && type.name === name))) {
+  if (types.every((type) => !(type.type === Type.PropertyReference && type.name === name))) {
     return [
       ...types,
       {
@@ -302,4 +302,13 @@ export function addType<TDataType extends IDataType>(
 export function hasType(originalTypes: TypeType[], type: TypeType): boolean {
   const testTypes = addType(originalTypes, type);
   return originalTypes === testTypes;
+}
+
+const VALUE_OF_DATA_TYPE = /<([^\s>]+)/;
+function valueOfDataType(value: string) {
+  try {
+    return value.match(VALUE_OF_DATA_TYPE)![1];
+  } catch {
+    throw new Error(`Was not able to get value of \`${value}\``);
+  }
 }
