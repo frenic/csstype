@@ -144,6 +144,8 @@ propertyValueWithAutocompleteHack([1]); // Should fail
 
 const differentMajorVersions: CSS.Properties = {} as OldCSS.Properties;
 
+type DataTypeShouldNotBeExposed = CSS.DataType.Color;
+
 css;
 cssWithFallbackValues;
 cssWithHyphenProperties;

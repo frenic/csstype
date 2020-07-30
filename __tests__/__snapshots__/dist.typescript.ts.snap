@@ -51,6 +51,8 @@ exports[`Typescript 3.5 detects errors 14`] = `
     Type '1' is not assignable to type 'Width<0 | (string & {})>'."
 `;
 
+exports[`Typescript 3.5 detects errors 15`] = `"146:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;
+
 exports[`Typescript 3.6 detects errors 1`] = `
 "45:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
   Object literal may only specify known properties, and 'unknownProperty' does not exist in type 'Properties<0 | (string & {}), string & {}>'."
@@ -101,6 +103,8 @@ exports[`Typescript 3.6 detects errors 14`] = `
   Type '[1]' is not assignable to type '[Width<0 | (string & {})>]'.
     Type '1' is not assignable to type 'Width<0 | (string & {})>'."
 `;
+
+exports[`Typescript 3.6 detects errors 15`] = `"146:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;
 
 exports[`Typescript 3.7 detects errors 1`] = `
 "45:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
@@ -153,6 +157,8 @@ exports[`Typescript 3.7 detects errors 14`] = `
     Type '1' is not assignable to type 'Width<0 | (string & {})>'."
 `;
 
+exports[`Typescript 3.7 detects errors 15`] = `"146:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;
+
 exports[`Typescript 3.8 detects errors 1`] = `
 "45:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
   Object literal may only specify known properties, and 'unknownProperty' does not exist in type 'Properties<0 | (string & {}), string & {}>'."
@@ -190,6 +196,8 @@ exports[`Typescript 3.8 detects errors 13`] = `"141:34 - Argument of type '1' is
 
 exports[`Typescript 3.8 detects errors 14`] = `"142:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
 
+exports[`Typescript 3.8 detects errors 15`] = `"146:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;
+
 exports[`Typescript 3.9 detects errors 1`] = `
 "45:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
   Object literal may only specify known properties, and 'unknownProperty' does not exist in type 'Properties<0 | (string & {}), string & {}>'."
@@ -226,3 +234,5 @@ exports[`Typescript 3.9 detects errors 12`] = `"131:25 - This condition will alw
 exports[`Typescript 3.9 detects errors 13`] = `"141:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"max-content\\" | \\"min-content\\" | \\"-webkit-max-content\\" | \\"intrinsic\\" | \\"min-intrinsic\\" | [...]'."`;
 
 exports[`Typescript 3.9 detects errors 14`] = `"142:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
+
+exports[`Typescript 3.9 detects errors 15`] = `"146:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;

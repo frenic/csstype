@@ -63,6 +63,8 @@ export default async function typescript() {
     namespaceOutput += `}${EOL}`;
   }
 
+  const disableAutoExport = 'export {};' + EOL;
+
   const propertyValue =
     'export type PropertyValue<TValue> = TValue extends Array<infer AValue> ? Array<' +
     'AValue extends infer TUnpacked & {} ? TUnpacked : AValue' +
@@ -71,7 +73,9 @@ export default async function typescript() {
     ';' +
     EOL;
 
-  return propertyValue + EOL + interfacesOutput + EOL + declarationsOutput + EOL + namespaceOutput;
+  return (
+    disableAutoExport + EOL + propertyValue + EOL + interfacesOutput + EOL + declarationsOutput + EOL + namespaceOutput
+  );
 }
 
 async function outputInterface(entry: Interface, currentNamespace: INamespace | undefined) {
