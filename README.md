@@ -201,13 +201,13 @@ _If you're using CSS Custom Properties you can step directly to step 3._
 ## Version 3.0
 
 - **All property types are exposed with namespace**  
-  TypeScript: `Property.AlignContent`  
+  TypeScript: `Property.AlignContent` (was `AlignContentProperty` before)  
   Flow: `Property$AlignContent`
 - **All at-rules are exposed with namespace**  
   TypeScript: `AtRule.FontFace` (was `FontFace` before)  
   Flow: `AtRule$FontFace`
 - **Data types are NOT exposed**  
-  Because the generation of data types may suddenly be removed or renamed
+  E.g. `Color` and `Box`. Because the generation of data types may suddenly be removed or renamed.
 - **TypeScript hack for autocompletion**  
   Uses `(string & {})` for literal string unions and `(number & {})` for literal number unions (https://github.com/microsoft/TypeScript/issues/29729). Utilize `PropertyValue<T>` to unpack types from e.g. `(string & {})` to `string`.
 - **Flow types improvements**  
