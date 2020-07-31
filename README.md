@@ -36,8 +36,6 @@ $ yarn add csstype
 
 Properties are categorized in different uses and in several technical variations to provide typings that suits as many as possible.
 
-All interfaces has one optional generic argument to define length. It defaults to `string | 0` because `0` is the only [length where the unit identifier is optional](https://drafts.csswg.org/css-values-3/#lengths). You can specify this, e.g. `string | number`, for platforms and libraries that accepts any numeric value as length with a specific unit.
-
 |                | Default              | `Hyphen`                   | `Fallback`                   | `HyphenFallback`                   |
 | -------------- | -------------------- | -------------------------- | ---------------------------- | ---------------------------------- |
 | **All**        | `Properties`         | `PropertiesHyphen`         | `PropertiesFallback`         | `PropertiesHyphenFallback`         |
@@ -87,16 +85,31 @@ String literals of pseudo classes and pseudo elements
 
     Plain pseudos e.g. `:hover` that can only be **one** variation.
 
-## Usage
+## Generics
 
-Length defaults to `string | 0`. But it's possible to override it using generics.
+All interfaces has two optional generic argument to define length and time: `CSS.Properties<TLength = string | 0, TTime = string>`
+
+- **Length** is the first generic parameter and defaults to `string | 0` because `0` is the only [length where the unit identifier is optional](https://drafts.csswg.org/css-values-3/#lengths). You can specify this, e.g. `string | number`, for platforms and libraries that accepts any numeric value as length with a specific unit.
+  ```tsx
+  const style: CSS.Properties<string | number> = {
+    width: 100,
+  };
+  ```
+- **Time** is the second generic argument and defaults to `string`. You can specify this, e.g. `string | number`, for platforms and libraries that accepts any numeric value as length with a specific unit.
+  ```tsx
+  const style: CSS.Properties<string | number, number> = {
+    transitionDuration: 1000,
+  };
+  ```
+
+## Usage
 
 ```ts
 import * as CSS from 'csstype';
 
-const style: CSS.Properties<string | number> = {
-  padding: 10,
-  margin: '1rem',
+const style: CSS.Properties = {
+  width: '10px',
+  margin: '1em',
 };
 ```
 
@@ -210,6 +223,13 @@ _If you're using CSS Custom Properties you can step directly to step 3._
   E.g. `Color` and `Box`. Because the generation of data types may suddenly be removed or renamed.
 - **TypeScript hack for autocompletion**  
   Uses `(string & {})` for literal string unions and `(number & {})` for literal number unions (https://github.com/microsoft/TypeScript/issues/29729). Utilize `PropertyValue<T>` to unpack types from e.g. `(string & {})` to `string`.
+- **New generic for time**  
+  `Properties<TLength = string | 0, TTime = string>` gives you an opportunity to change type for time. E.g.
+  ```tsx
+  const style: CSS.Properties<string | number, number> = {
+    transitionDuration: 1000,
+  };
+  ```
 - **Flow types improvements**  
   Flow Strict enabled and exact types are used.
 
