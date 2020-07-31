@@ -34,8 +34,8 @@ const cssWithHyphenProperties: CSS.PropertiesHyphen<> = {
   '-ms-overflow-style': 'scrollbar',
 };
 
-const cssWithDifferentLength: CSS.Properties<{ px: number }> = {
-  width: { px: 1 },
+const cssWithDifferentLength: CSS.Properties<number> = {
+  width: 1,
 };
 
 const unknownProperty: CSS.Properties<> = {
