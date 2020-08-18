@@ -4,6 +4,7 @@
     "typescript3.5": "npm:typescript@3.5.3",
     "typescript3.6": "npm:typescript@3.6.5",
     "typescript3.7": "npm:typescript@3.7.5",
-    "typescript3.8": "npm:typescript@3.8.3"
+    "typescript3.8": "npm:typescript@3.8.3",
+    "typescript3.9": "npm:typescript@3.9.7"
   }
 }
