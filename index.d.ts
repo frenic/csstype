@@ -95,7 +95,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   alignSelf?: Property.AlignSelf;
   /**
-   * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
    *
@@ -110,7 +110,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationDelay?: Property.AnimationDelay<TTime>;
   /**
-   * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -155,7 +155,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationFillMode?: Property.AnimationFillMode;
   /**
-   * The **`animation-iteration-count`** CSS property sets the number of times an animation cycle should be played before stopping.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -170,7 +170,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationIterationCount?: Property.AnimationIterationCount;
   /**
-   * The **`animation-name`** CSS property sets one or more animations to apply to an element. Each name is an `@keyframes` at-rule that sets the property values for the animation sequence.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -200,7 +200,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationPlayState?: Property.AnimationPlayState;
   /**
-   * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<timing-function>#`
    *
@@ -215,21 +215,22 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationTimingFunction?: Property.AnimationTimingFunction;
   /**
-   * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
+   * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this propery, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support `-webkit-appearance`, for compatibility reasons.
    *
-   * **Syntax**: `none | auto | button | textfield | menulist-button | <compat-auto>`
+   * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    |   Firefox   |   Safari    |     Edge     | IE  |
-   * | :---------: | :---------: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * | Chrome  |   Firefox   |   Safari    |   Edge   | IE  |
+   * | :-----: | :---------: | :---------: | :------: | :-: |
+   * | **84**  | **1** _-x-_ | **3** _-x-_ |  **84**  | No  |
+   * | 1 _-x-_ |             |             | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
   appearance?: Property.Appearance;
   /**
-   * The **`aspect-ratio`**    CSS property sets a _**preferred aspect ratio**_ for the box, which will be used in the calculation of auto sizes and some other layout functions.
+   * The **`aspect-ratio`**   CSS property sets a **preferred aspect ratio** for the box, which will be used in the calculation of auto sizes and some other layout functions.
    *
    * **Syntax**: `auto | <ratio>`
    *
@@ -447,7 +448,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   blockSize?: Property.BlockSize<TLength>;
   /**
-   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>{1,2}`
    *
@@ -475,7 +476,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockEndColor?: Property.BorderBlockEndColor;
   /**
-   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-style`** CSS property defines the style of the logical block-end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -545,7 +546,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockStartWidth?: Property.BorderBlockStartWidth<TLength>;
   /**
-   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -587,7 +588,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBottomColor?: Property.BorderBottomColor;
   /**
-   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -602,7 +603,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBottomLeftRadius?: Property.BorderBottomLeftRadius<TLength>;
   /**
-   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element.
+   * The **`border-bottom-right-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -659,7 +660,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderCollapse?: Property.BorderCollapse;
   /**
-   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on on the element's `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -673,7 +674,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderEndEndRadius?: Property.BorderEndEndRadius<TLength>;
   /**
-   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -757,7 +758,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderImageWidth?: Property.BorderImageWidth<TLength>;
   /**
-   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>{1,2}`
    *
@@ -771,7 +772,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineColor?: Property.BorderInlineColor;
   /**
-   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
    *
@@ -786,7 +787,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineEndColor?: Property.BorderInlineEndColor;
   /**
-   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -801,7 +802,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineEndStyle?: Property.BorderInlineEndStyle;
   /**
-   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>`
    *
@@ -816,7 +817,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineEndWidth?: Property.BorderInlineEndWidth<TLength>;
   /**
-   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
    *
@@ -831,7 +832,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineStartColor?: Property.BorderInlineStartColor;
   /**
-   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -846,7 +847,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineStartStyle?: Property.BorderInlineStartStyle;
   /**
-   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>`
    *
@@ -986,7 +987,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderSpacing?: Property.BorderSpacing<TLength>;
   /**
-   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -1000,7 +1001,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderStartEndRadius?: Property.BorderStartEndRadius<TLength>;
   /**
-   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -1028,7 +1029,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderTopColor?: Property.BorderTopColor;
   /**
-   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -1043,7 +1044,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderTopLeftRadius?: Property.BorderTopLeftRadius<TLength>;
   /**
-   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -1114,7 +1115,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   boxDecorationBreak?: Property.BoxDecorationBreak;
   /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `none | <shadow>#`
    *
@@ -1266,7 +1267,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   captionSide?: Property.CaptionSide;
   /**
-   * The **`caret-color`** CSS property sets the color of the insertion caret, the visible marker where the next character typed will be inserted. The caret appears in elements such as `<input>` or those with the `contenteditable` attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
+   * The **`caret-color`** CSS property sets the color of the **insertion caret**, the visible marker where the next character typed will be inserted. This is sometimes referred to as the **text input cursor**. The caret appears in elements such as `<input>` or those with the `contenteditable` attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
    *
    * **Syntax**: `auto | <color>`
    *
@@ -1377,9 +1378,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   | **63**  | **3** _-x-_ |  No  | No  |
+   * | Chrome | Firefox |   Safari    |  Edge  | IE  |
+   * | :----: | :-----: | :---------: | :----: | :-: |
+   * | **84** | **63**  | **3** _-x-_ | **84** | No  |
    *
    * ---
    *
@@ -1494,7 +1495,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   contain?: Property.Contain;
   /**
-   * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are _anonymous replaced elements._
+   * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are **anonymous replaced elements**_._
    *
    * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ <string> ]?`
    *
@@ -1550,7 +1551,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   counterSet?: Property.CounterSet;
   /**
-   * The **`cursor`** CSS property sets the type of cursor, if any, to show when the mouse pointer is over an element.
+   * The **`cursor`** CSS property sets the type of mouse cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Syntax**: `[ [ <url> [ <x> <y> ]? , ]* [ auto | default | none | context-menu | help | pointer | progress | wait | cell | crosshair | text | vertical-text | alias | copy | move | no-drop | not-allowed | e-resize | n-resize | ne-resize | nw-resize | s-resize | se-resize | sw-resize | w-resize | ew-resize | ns-resize | nesw-resize | nwse-resize | col-resize | row-resize | all-scroll | zoom-in | zoom-out | grab | grabbing ] ]`
    *
@@ -1651,7 +1652,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   flexDirection?: Property.FlexDirection;
   /**
-   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size.
    *
    * **Syntax**: `<number>`
    *
@@ -1769,7 +1770,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontLanguageOverride?: Property.FontLanguageOverride;
   /**
-   * The **`font-optical-sizing`** CSS property sets whether text rendering is optimized for viewing at different sizes. This only works for fonts that have an optical size variation axis.
+   * The **`font-optical-sizing`** CSS property sets whether text rendering is optimized for viewing at different sizes.
    *
    * **Syntax**: `auto | none`
    *
@@ -1783,7 +1784,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontOpticalSizing?: Property.FontOpticalSizing;
   /**
-   * The **`font-size`** CSS property sets the size of the font. This property is also used to compute the size of `em`, `ex`, and other relative `<length>` units.
+   * The **`font-size`** CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative `<length>` units, such as `em`, `ex`, and so forth.
    *
    * **Syntax**: `<absolute-size> | <relative-size> | <length-percentage>`
    *
@@ -1797,7 +1798,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontSize?: Property.FontSize<TLength>;
   /**
-   * The **`font-size-adjust`** CSS property sets how the font size should be chosen based on the height of lowercase rather than capital letters.
+   * The **`font-size-adjust`** CSS property sets the size of lower-case letters relative to the current font size (which defines the size of upper-case letters).
    *
    * **Syntax**: `none | <number>`
    *
@@ -1810,6 +1811,20 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
    */
   fontSizeAdjust?: Property.FontSizeAdjust;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |              Chrome              |              Firefox               |              Safari              |               Edge                | IE  |
+   * | :------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-: |
+   * | **5** _(-webkit-font-smoothing)_ | **25** _(-moz-osx-font-smoothing)_ | **4** _(-webkit-font-smoothing)_ | **79** _(-webkit-font-smoothing)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-smooth
+   */
+  fontSmooth?: Property.FontSmooth<TLength>;
   /**
    * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
@@ -1853,7 +1868,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontSynthesis?: Property.FontSynthesis;
   /**
-   * The **font-variant** CSS property is a shorthand for the longhand properties `font-variant-caps`, `font-variant-numeric`, `font-variant-alternates`, `font-variant-ligatures`, and `font-variant-east-asian`. You can also set the CSS Level 2 (Revision 1) values of `font-variant`, (that is, `normal` or `small-caps`), by using the `font` shorthand.
+   * The **font-variant** CSS shorthand property allows you to set all the font variants for a font.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> || stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) || [ small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps ] || <numeric-figure-values> || <numeric-spacing-values> || <numeric-fraction-values> || ordinal || slashed-zero || <east-asian-variant-values> || <east-asian-width-values> || ruby ]`
    *
@@ -1952,7 +1967,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontVariationSettings?: Property.FontVariationSettings;
   /**
-   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` you are using.
+   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` that is currently set.
    *
    * **Syntax**: `<font-weight-absolute> | bolder | lighter`
    *
@@ -2066,7 +2081,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridRowStart?: Property.GridRowStart;
   /**
-   * The **`grid-template-areas`** CSS property specifies named grid areas.
+   * The **`grid-template-areas`** CSS property specifies named grid areas, establishing the cells in the grid and assigning them names.
    *
    * **Syntax**: `none | <string>+`
    *
@@ -2136,7 +2151,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   height?: Property.Height<TLength>;
   /**
-   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -2227,7 +2242,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   inset?: Property.Inset<TLength>;
   /**
-   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -2269,7 +2284,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   insetBlockStart?: Property.InsetBlockStart<TLength>;
   /**
-   * The **`inset-inline`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -2410,7 +2425,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   justifySelf?: Property.JustifySelf;
   /**
-   * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`left`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Syntax**: `<length> | <percentage> | auto`
    *
@@ -2424,7 +2439,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   left?: Property.Left<TLength>;
   /**
-   * The **`letter-spacing`** CSS property sets the spacing behavior between text characters.
+   * The **`letter-spacing`** CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of `letter-spacing` causes characters to spread farther apart, while negative values of `letter-spacing` bring characters closer together.
    *
    * **Syntax**: `normal | <length>`
    *
@@ -2523,7 +2538,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   listStyleType?: Property.ListStyleType;
   /**
-   * The **`margin-block`** CSS property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-left'>{1,2}`
    *
@@ -2579,7 +2594,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginBottom?: Property.MarginBottom<TLength>;
   /**
-   * The **`margin-inline`** CSS property defines the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-left'>{1,2}`
    *
@@ -2593,7 +2608,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginInline?: Property.MarginInline<TLength>;
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -2608,7 +2623,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginInlineEnd?: Property.MarginInlineEnd<TLength>;
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -2972,7 +2987,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   mixBlendMode?: Property.MixBlendMode;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -3057,7 +3072,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   offsetAnchor?: Property.OffsetAnchor<TLength>;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -3202,7 +3217,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   outlineStyle?: Property.OutlineStyle;
   /**
-   * The **`outline-width`** CSS property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -3379,7 +3394,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   overscrollBehaviorY?: Property.OverscrollBehaviorY;
   /**
-   * The **`padding-block`** CSS property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>{1,2}`
    *
@@ -3393,7 +3408,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingBlock?: Property.PaddingBlock<TLength>;
   /**
-   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -3407,7 +3422,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingBlockEnd?: Property.PaddingBlockEnd<TLength>;
   /**
-   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -3435,7 +3450,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingBottom?: Property.PaddingBottom<TLength>;
   /**
-   * The **`padding-inline`** CSS property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>{1,2}`
    *
@@ -3449,7 +3464,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingInline?: Property.PaddingInline<TLength>;
   /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -3464,7 +3479,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingInlineEnd?: Property.PaddingInlineEnd<TLength>;
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -3577,7 +3592,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paintOrder?: Property.PaintOrder;
   /**
-   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length>`
    *
@@ -3607,7 +3622,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   perspectiveOrigin?: Property.PerspectiveOrigin<TLength>;
   /**
-   * The `**place-content**` CSS property is a shorthand for `align-content` and `justify-content`. It can be used in any layout method which utilizes both of these alignment values.
+   * The `**place-content**` CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
    *
    * **Syntax**: `<'align-content'> <'justify-content'>?`
    *
@@ -3663,7 +3678,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   position?: Property.Position;
   /**
-   * The **`quotes`** CSS property sets how quotation marks appear.
+   * The **`quotes`** CSS property sets how the browser should render quotation marks that are added using the `open-quotes` or `close-quotes` values of the CSS `content` property.
    *
    * **Syntax**: `none | auto | [ <string> <string> ]+`
    *
@@ -3691,7 +3706,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   resize?: Property.Resize;
   /**
-   * The **`right`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`right`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Syntax**: `<length> | <percentage> | auto`
    *
@@ -3729,9 +3744,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
@@ -3782,7 +3797,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   rubyPosition?: Property.RubyPosition;
   /**
-   * The **`scale`** CSS property allows you to specify scale transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`scale`** CSS property allows you to specify scale transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Syntax**: `none | <number>{1,3}`
    *
@@ -3810,7 +3825,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollBehavior?: Property.ScrollBehavior;
   /**
-   * The **`scroll-margin`** property is a shorthand property which sets all of the `scroll-margin` longhands, assigning values much like the `margin` property does for the `margin-*` longhands.
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
    * **Syntax**: `<length>{1,4}`
    *
@@ -3824,7 +3839,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMargin?: Property.ScrollMargin<TLength>;
   /**
-   * The `scroll-margin-block` property is a shorthand property which sets the scroll-margin longhands in the block dimension.
+   * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
    *
    * **Syntax**: `<length>{1,2}`
    *
@@ -3838,7 +3853,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginBlock?: Property.ScrollMarginBlock<TLength>;
   /**
-   * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -3852,7 +3867,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginBlockEnd?: Property.ScrollMarginBlockEnd<TLength>;
   /**
-   * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -3866,7 +3881,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginBlockStart?: Property.ScrollMarginBlockStart<TLength>;
   /**
-   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -3880,7 +3895,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginBottom?: Property.ScrollMarginBottom<TLength>;
   /**
-   * The `scroll-margin-inline` property is a shorthand property which sets the scroll-margin longhands in the inline dimension.
+   * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
    *
    * **Syntax**: `<length>{1,2}`
    *
@@ -3894,7 +3909,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginInline?: Property.ScrollMarginInline<TLength>;
   /**
-   * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -3908,7 +3923,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginInlineEnd?: Property.ScrollMarginInlineEnd<TLength>;
   /**
-   * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -3922,7 +3937,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginInlineStart?: Property.ScrollMarginInlineStart<TLength>;
   /**
-   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -3936,7 +3951,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginLeft?: Property.ScrollMarginLeft<TLength>;
   /**
-   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -3950,7 +3965,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginRight?: Property.ScrollMarginRight<TLength>;
   /**
-   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -3964,7 +3979,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginTop?: Property.ScrollMarginTop<TLength>;
   /**
-   * The **`scroll-padding`** property is a shorthand property that sets all of the `scroll-padding-*` longhands. It assigns values much like the `padding` property does for the `padding-*` longhands.
+   * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
    *
    * **Syntax**: `[ auto | <length-percentage> ]{1,4}`
    *
@@ -3978,7 +3993,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPadding?: Property.ScrollPadding<TLength>;
   /**
-   * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.
+   * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
    *
    * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
    *
@@ -3992,7 +4007,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingBlock?: Property.ScrollPaddingBlock<TLength>;
   /**
-   * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -4006,7 +4021,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingBlockEnd?: Property.ScrollPaddingBlockEnd<TLength>;
   /**
-   * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -4020,7 +4035,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingBlockStart?: Property.ScrollPaddingBlockStart<TLength>;
   /**
-   * The `scroll-padding-bottom` property defines offsets for the bottom of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-bottom` property defines offsets for the bottom of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -4034,7 +4049,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingBottom?: Property.ScrollPaddingBottom<TLength>;
   /**
-   * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.
+   * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
    *
    * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
    *
@@ -4062,7 +4077,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingInlineEnd?: Property.ScrollPaddingInlineEnd<TLength>;
   /**
-   * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -4076,7 +4091,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingInlineStart?: Property.ScrollPaddingInlineStart<TLength>;
   /**
-   * The `scroll-padding-left` property defines offsets for the left of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-left` property defines offsets for the left of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -4104,7 +4119,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingRight?: Property.ScrollPaddingRight<TLength>;
   /**
-   * The `scroll-padding-top` property defines offsets for the top of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The **`scroll-padding-top`** property defines offsets for the top of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -4132,7 +4147,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapAlign?: Property.ScrollSnapAlign;
   /**
-   * The **`scroll-margin`** property is a shorthand property which sets all of the `scroll-margin` longhands, assigning values much like the `margin` property does for the `margin-*` longhands.
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
    * **Syntax**: `<length>{1,4}`
    *
@@ -4146,7 +4161,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapMargin?: Property.ScrollMargin<TLength>;
   /**
-   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -4160,7 +4175,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapMarginBottom?: Property.ScrollMarginBottom<TLength>;
   /**
-   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -4174,7 +4189,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapMarginLeft?: Property.ScrollMarginLeft<TLength>;
   /**
-   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -4188,7 +4203,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapMarginRight?: Property.ScrollMarginRight<TLength>;
   /**
-   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -4301,7 +4316,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   shapeOutside?: Property.ShapeOutside;
   /**
-   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<integer> | <length>`
    *
@@ -4446,7 +4461,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textDecorationStyle?: Property.TextDecorationStyle;
   /**
-   * The **`text-decoration-thickness`** CSS property sets the thickness, or width, of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
+   * The **`text-decoration-thickness`** CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
    *
    * **Syntax**: `auto | from-font | <length> | <percentage> `
    *
@@ -4460,7 +4475,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textDecorationThickness?: Property.TextDecorationThickness<TLength>;
   /**
-   * The **`text-decoration-thickness`** CSS property sets the thickness, or width, of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
+   * The **`text-decoration-thickness`** CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
    *
    * **Syntax**: `auto | from-font | <length> | <percentage> `
    *
@@ -4658,7 +4673,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textUnderlinePosition?: Property.TextUnderlinePosition;
   /**
-   * The **`top`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`top`** CSS property participates in specifying the vertical position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Syntax**: `<length> | <percentage> | auto`
    *
@@ -4849,7 +4864,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   userSelect?: Property.UserSelect;
   /**
-   * The **`vertical-align`** CSS property sets vertical alignment of an inline or table-cell box.
+   * The **`vertical-align`** CSS property sets vertical alignment of an inline, inline-block or table-cell box.
    *
    * **Syntax**: `baseline | sub | super | text-top | text-bottom | middle | top | bottom | <percentage> | <length>`
    *
@@ -5021,7 +5036,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
 
 export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * The `**all**` shorthand CSS property resets all of an element's properties (except `unicode-bidi` and `direction`). It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
+   * The `**all**` shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
    * **Syntax**: `initial | inherit | unset | revert`
    *
@@ -5072,7 +5087,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   border?: Property.Border<TLength>;
   /**
-   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
+   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
    *
@@ -5145,7 +5160,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderImage?: Property.BorderImage;
   /**
-   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
+   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
    *
@@ -5206,7 +5221,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderRadius?: Property.BorderRadius<TLength>;
   /**
-   * The **`border-right`** shorthand CSS property sets an element's right border. It sets the values of `border-right-width`, `border-right-style` and `border-right-color`.
+   * The **`border-right`** shorthand CSS property sets the properties of an element's right border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -5230,7 +5245,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderStyle?: Property.BorderStyle;
   /**
-   * The **`border-top`** shorthand CSS property set an element's top border. It sets the values of `border-top-width`, `border-top-style` and `border-top-color`.
+   * The **`border-top`** shorthand CSS property sets all the properties of an element's top border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -5267,7 +5282,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   columnRule?: Property.ColumnRule<TLength>;
   /**
-   * The **`columns`** CSS property sets the column width and column count of an element.
+   * The **`columns`** CSS shorthand property sets the number of columns to use when drawing an element's contents, as well as those columns' widths.
    *
    * **Syntax**: `<'column-width'> || <'column-count'>`
    *
@@ -5280,7 +5295,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   columns?: Property.Columns<TLength>;
   /**
-   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
@@ -5293,7 +5308,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   flex?: Property.Flex<TLength>;
   /**
-   * The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` properties.
+   * The **`flex-flow`** CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    *
@@ -5306,7 +5321,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   flexFlow?: Property.FlexFlow;
   /**
-   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-stretch`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
+   * The **`font`** CSS shorthand property sets all the different properties of an element's font. Alternatively, it sets an element's font to a system font.
    *
    * **Syntax**: `[ [ <'font-style'> || <font-variant-css21> || <'font-weight'> || <'font-stretch'> ]? <'font-size'> [ / <'line-height'> ]? <'font-family'> ] | caption | icon | menu | message-box | small-caption | status-bar`
    *
@@ -5326,9 +5341,9 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **84** | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
@@ -5353,7 +5368,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gap?: Property.Gap<TLength>;
   /**
-   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.
    *
    * **Syntax**: `<'grid-template'> | <'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>? | [ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>`
    *
@@ -5365,7 +5380,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   grid?: Property.Grid;
   /**
-   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   * The **`grid-area`** CSS shorthand property specifies a grid item’s size and location within a grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]{0,3}`
    *
@@ -5377,7 +5392,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gridArea?: Property.GridArea;
   /**
-   * The **`grid-column`** CSS property is a shorthand property for `grid-column-start` and `grid-column-end` specifying a grid item's size and location within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   * The **`grid-column`** CSS shorthand property specifies a grid item's size and location within a grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
    *
@@ -5389,7 +5404,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gridColumn?: Property.GridColumn;
   /**
-   * The **`grid-row`** CSS property is a shorthand property for `grid-row-start` and `grid-row-end` specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   * The **`grid-row`** CSS shorthand property specifies a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
    *
@@ -5419,7 +5434,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   lineClamp?: Property.LineClamp;
   /**
-   * The **`list-style`** CSS property is a shorthand to set list style properties `list-style-type`, `list-style-image`, and `list-style-position`.
+   * The **`list-style`** CSS shorthand property allows you set all the list style properties at once.
    *
    * **Syntax**: `<'list-style-type'> || <'list-style-position'> || <'list-style-image'>`
    *
@@ -5443,7 +5458,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   margin?: Property.Margin<TLength>;
   /**
-   * The **`mask`** CSS property hides an element (partially or fully) by masking or clipping the image at specific points.
+   * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
    *
    * **Syntax**: `<mask-layer>#`
    *
@@ -5455,13 +5470,13 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   mask?: Property.Mask<TLength>;
   /**
-   * The **`mask-border`** CSS property lets you create a mask along the edge of an element's border.
+   * The **`mask-border`** CSS shorthand property lets you create a mask along the edge of an element's border.
    *
    * **Syntax**: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask-border-repeat'> || <'mask-border-mode'>`
    */
   maskBorder?: Property.MaskBorder;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
+   * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path.
    *
    * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
    *
@@ -5474,7 +5489,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   motion?: Property.Offset<TLength>;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
+   * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path.
    *
    * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
    *
@@ -5487,7 +5502,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   offset?: Property.Offset<TLength>;
   /**
-   * The **`outline`** CSS property is a shorthand to set various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+   * The **`outline`** CSS shorthand property set all the outline properties in a single declaration.
    *
    * **Syntax**: `[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]`
    *
@@ -5499,7 +5514,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   outline?: Property.Outline<TLength>;
   /**
-   * The **`overflow`** shorthand CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
+   * The **`overflow`** CSS shorthand property sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
    *
    * **Syntax**: `[ visible | hidden | clip | scroll | auto ]{1,2}`
    *
@@ -5513,7 +5528,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   overflow?: Property.Overflow;
   /**
-   * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
+   * The **`padding`** CSS shorthand property sets the padding area on all four sides of an element at once.
    *
    * **Syntax**: `[ <length> | <percentage> ]{1,4}`
    *
@@ -5525,7 +5540,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   padding?: Property.Padding<TLength>;
   /**
-   * The CSS **`place-items`** shorthand property sets the `align-items` and `justify-items` properties, respectively. If the second value is not set, the first value is also used for it.
+   * The CSS **`place-items`** shorthand property allows you to align items along both the block and inline directions at once (i.e. the `align-items` and `justify-items` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not set, the first value is also used for it.
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
    *
@@ -5551,7 +5566,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   placeItems?: Property.PlaceItems;
   /**
-   * The **`place-self`** CSS property is a shorthand property sets both the `align-self` and `justify-self` properties. The first value is the `align-self` property value, the second the `justify-self` one. If the second value is not present, the first value is also used for it.
+   * The **`place-self`** CSS shorthand property allows you to align an individual item in both the block and inline directions at once (i.e. the `align-self` and `justify-self` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not present, the first value is also used for it.
    *
    * **Syntax**: `<'align-self'> <'justify-self'>?`
    *
@@ -5621,7 +5636,7 @@ export interface StandardProperties<TLength = (string & {}) | 0, TTime = string 
 
 export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
    *
@@ -5629,7 +5644,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationDelay?: Property.AnimationDelay<TTime>;
   /**
-   * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -5653,7 +5668,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationFillMode?: Property.AnimationFillMode;
   /**
-   * The **`animation-iteration-count`** CSS property sets the number of times an animation cycle should be played before stopping.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -5661,7 +5676,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationIterationCount?: Property.AnimationIterationCount;
   /**
-   * The **`animation-name`** CSS property sets one or more animations to apply to an element. Each name is an `@keyframes` at-rule that sets the property values for the animation sequence.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -5677,7 +5692,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationPlayState?: Property.AnimationPlayState;
   /**
-   * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<timing-function>#`
    *
@@ -5685,7 +5700,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationTimingFunction?: Property.AnimationTimingFunction;
   /**
-   * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
+   * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this propery, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support `-webkit-appearance`, for compatibility reasons.
    *
    * **Syntax**: `none | button | button-arrow-down | button-arrow-next | button-arrow-previous | button-arrow-up | button-bevel | button-focus | caret | checkbox | checkbox-container | checkbox-label | checkmenuitem | dualbutton | groupbox | listbox | listitem | menuarrow | menubar | menucheckbox | menuimage | menuitem | menuitemtext | menulist | menulist-button | menulist-text | menulist-textfield | menupopup | menuradio | menuseparator | meterbar | meterchunk | progressbar | progressbar-vertical | progresschunk | progresschunk-vertical | radio | radio-container | radio-label | radiomenuitem | range | range-thumb | resizer | resizerpanel | scale-horizontal | scalethumbend | scalethumb-horizontal | scalethumbstart | scalethumbtick | scalethumb-vertical | scale-vertical | scrollbarbutton-down | scrollbarbutton-left | scrollbarbutton-right | scrollbarbutton-up | scrollbarthumb-horizontal | scrollbarthumb-vertical | scrollbartrack-horizontal | scrollbartrack-vertical | searchfield | separator | sheet | spinner | spinner-downbutton | spinner-textfield | spinner-upbutton | splitter | statusbar | statusbarpanel | tab | tabpanel | tabpanels | tab-scroll-arrow-back | tab-scroll-arrow-forward | textfield | textfield-multiline | toolbar | toolbarbutton | toolbarbutton-dropdown | toolbargripper | toolbox | tooltip | treeheader | treeheadercell | treeheadersortarrow | treeitem | treeline | treetwisty | treetwistyopen | treeview | -moz-mac-unified-toolbar | -moz-win-borderless-glass | -moz-win-browsertabbar-toolbox | -moz-win-communicationstext | -moz-win-communications-toolbox | -moz-win-exclude-glass | -moz-win-glass | -moz-win-mediatext | -moz-win-media-toolbox | -moz-window-button-box | -moz-window-button-box-maximized | -moz-window-button-close | -moz-window-button-maximize | -moz-window-button-minimize | -moz-window-button-restore | -moz-window-frame-bottom | -moz-window-frame-left | -moz-window-frame-right | -moz-window-titlebar | -moz-window-titlebar-maximized`
    *
@@ -5709,7 +5724,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderBottomColors?: Property.MozBorderBottomColors;
   /**
-   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
    *
@@ -5717,7 +5732,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderEndColor?: Property.BorderInlineEndColor;
   /**
-   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -5725,7 +5740,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderEndStyle?: Property.BorderInlineEndStyle;
   /**
-   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>`
    *
@@ -5749,7 +5764,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderRightColors?: Property.MozBorderRightColors;
   /**
-   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
    *
@@ -5757,7 +5772,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderStartColor?: Property.BorderInlineStartColor;
   /**
-   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -5837,21 +5852,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozColumnWidth?: Property.ColumnWidth<TLength>;
   /**
-   * If you reference an SVG image in a webpage (such as with the `<img>` element or as a background image), the SVG image can coordinate with the embedding element (its context) to have the image adopt property values set on the embedding element. To do this the embedding element needs to list the properties that are to be made available to the image by listing them as values of the **`-moz-context-properties`** property, and the image needs to opt in to using those properties by using values such as the `context-fill` value.
+   * The `**-moz-context-properties**` property can be used within privileged contexts in Firefox to share the values of specified properties of the element with a child SVG image.
    *
    * **Syntax**: `none | [ fill | fill-opacity | stroke | stroke-opacity ]#`
    *
    * **Initial value**: `none`
    */
   MozContextProperties?: Property.MozContextProperties;
-  /**
-   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
-   *
-   * **Syntax**: `border-box | content-box | margin-box | padding-box`
-   *
-   * **Initial value**: `content-box`
-   */
-  MozFloatEdge?: Property.MozFloatEdge;
   /**
    * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
@@ -5869,15 +5876,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozFontLanguageOverride?: Property.FontLanguageOverride;
   /**
-   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
-   *
-   * **Syntax**: `<integer>`
-   *
-   * **Initial value**: `0`
-   */
-  MozForceBrokenImageIcon?: Property.MozForceBrokenImageIcon;
-  /**
-   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -5893,7 +5892,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozImageRegion?: Property.MozImageRegion;
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -5901,7 +5900,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozMarginEnd?: Property.MarginInlineEnd<TLength>;
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -5917,39 +5916,15 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozOrient?: Property.MozOrient;
   /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
    *
-   * **Syntax**: `<outline-radius>`
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `auto`
    */
-  MozOutlineRadiusBottomleft?: Property.MozOutlineRadiusBottomleft<TLength>;
+  MozOsxFontSmoothing?: Property.FontSmooth<TLength>;
   /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusBottomright?: Property.MozOutlineRadiusBottomright<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusTopleft?: Property.MozOutlineRadiusTopleft<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusTopright?: Property.MozOutlineRadiusTopright<TLength>;
-  /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -5957,7 +5932,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozPaddingEnd?: Property.PaddingInlineEnd<TLength>;
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -5965,7 +5940,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozPaddingStart?: Property.PaddingInlineStart<TLength>;
   /**
-   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length>`
    *
@@ -5981,7 +5956,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozPerspectiveOrigin?: Property.PerspectiveOrigin<TLength>;
   /**
-   * **`-moz-stack-sizing`** is an extended CSS property. Normally, a `stack` will change its size so that all of its child elements are completely visible. For example, moving a child of the stack far to the right will widen the stack so the child remains visible.
+   * **`-moz-stack-sizing`** is an extended CSS property. Normally, a `<xul:stack>` will change its size so that all of its child elements are completely visible. For example, moving a child of the stack far to the right will widen the stack so the child remains visible.
    *
    * **Syntax**: `ignore | stretch-to-fit`
    *
@@ -5989,7 +5964,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozStackSizing?: Property.MozStackSizing;
   /**
-   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<integer> | <length>`
    *
@@ -6189,7 +6164,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msFlexDirection?: Property.FlexDirection;
   /**
-   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size.
    *
    * **Syntax**: `<number>`
    *
@@ -6261,7 +6236,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msHyphenateLimitZone?: Property.MsHyphenateLimitZone<TLength>;
   /**
-   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -6605,7 +6580,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   OObjectPosition?: Property.ObjectPosition<TLength>;
   /**
-   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<integer> | <length>`
    *
@@ -6653,7 +6628,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitAlignSelf?: Property.AlignSelf;
   /**
-   * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
    *
@@ -6661,7 +6636,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitAnimationDelay?: Property.AnimationDelay<TTime>;
   /**
-   * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -6685,7 +6660,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitAnimationFillMode?: Property.AnimationFillMode;
   /**
-   * The **`animation-iteration-count`** CSS property sets the number of times an animation cycle should be played before stopping.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -6693,7 +6668,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitAnimationIterationCount?: Property.AnimationIterationCount;
   /**
-   * The **`animation-name`** CSS property sets one or more animations to apply to an element. Each name is an `@keyframes` at-rule that sets the property values for the animation sequence.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -6709,7 +6684,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitAnimationPlayState?: Property.AnimationPlayState;
   /**
-   * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<timing-function>#`
    *
@@ -6717,7 +6692,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitAnimationTimingFunction?: Property.AnimationTimingFunction;
   /**
-   * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
+   * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this propery, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support `-webkit-appearance`, for compatibility reasons.
    *
    * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield`
    *
@@ -6783,7 +6758,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitBorderBeforeWidth?: Property.WebkitBorderBeforeWidth<TLength>;
   /**
-   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -6791,7 +6766,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitBorderBottomLeftRadius?: Property.BorderBottomLeftRadius<TLength>;
   /**
-   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element.
+   * The **`border-bottom-right-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -6807,7 +6782,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitBorderImageSlice?: Property.BorderImageSlice;
   /**
-   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -6815,7 +6790,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitBorderTopLeftRadius?: Property.BorderTopLeftRadius<TLength>;
   /**
-   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -6839,7 +6814,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitBoxReflect?: Property.WebkitBoxReflect<TLength>;
   /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `none | <shadow>#`
    *
@@ -6951,7 +6926,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitFlexDirection?: Property.FlexDirection;
   /**
-   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size.
    *
    * **Syntax**: `<number>`
    *
@@ -6991,6 +6966,14 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitFontKerning?: Property.FontKerning;
   /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   */
+  WebkitFontSmoothing?: Property.FontSmooth<TLength>;
+  /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
@@ -6999,7 +6982,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitFontVariantLigatures?: Property.FontVariantLigatures;
   /**
-   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -7031,7 +7014,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitLineClamp?: Property.WebkitLineClamp;
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -7039,7 +7022,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitMarginEnd?: Property.MarginInlineEnd<TLength>;
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -7167,7 +7150,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitOverflowScrolling?: Property.WebkitOverflowScrolling;
   /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -7175,7 +7158,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitPaddingEnd?: Property.PaddingInlineEnd<TLength>;
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -7183,7 +7166,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitPaddingStart?: Property.PaddingInlineStart<TLength>;
   /**
-   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length>`
    *
@@ -7450,7 +7433,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   MozColumnRule?: Property.ColumnRule<TLength>;
   /**
-   * The **`columns`** CSS property sets the column width and column count of an element.
+   * The **`columns`** CSS shorthand property sets the number of columns to use when drawing an element's contents, as well as those columns' widths.
    *
    * **Syntax**: `<'column-width'> || <'column-count'>`
    */
@@ -7474,7 +7457,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   msContentZoomSnap?: Property.MsContentZoomSnap;
   /**
-   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    */
@@ -7534,25 +7517,25 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   WebkitColumnRule?: Property.ColumnRule<TLength>;
   /**
-   * The **`columns`** CSS property sets the column width and column count of an element.
+   * The **`columns`** CSS shorthand property sets the number of columns to use when drawing an element's contents, as well as those columns' widths.
    *
    * **Syntax**: `<'column-width'> || <'column-count'>`
    */
   WebkitColumns?: Property.Columns<TLength>;
   /**
-   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    */
   WebkitFlex?: Property.Flex<TLength>;
   /**
-   * The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` properties.
+   * The **`flex-flow`** CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    */
   WebkitFlexFlow?: Property.FlexFlow;
   /**
-   * The **`mask`** CSS property hides an element (partially or fully) by masking or clipping the image at specific points.
+   * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
    *
    * **Syntax**: `[ <mask-reference> || <position> [ / <bg-size> ]? || <repeat-style> || [ <box> | border | padding | content | text ] || [ <box> | border | padding | content ] ]#`
    */
@@ -7661,7 +7644,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   boxPack?: Property.BoxPack;
   /**
-   * The **`clip`** CSS property defines what portion of an element is visible. The `clip` property applies only to absolutely positioned elements, that is elements with `position:absolute` or `position:fixed`.
+   * The **`clip`** CSS property defines a visible portion of an element. The `clip` property applies only to absolutely positioned elements — that is, elements with `position:absolute` or `position:fixed`.
    *
    * **Syntax**: `<shape> | auto`
    *
@@ -7719,7 +7702,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   imeMode?: Property.ImeMode;
   /**
-   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -7749,7 +7732,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   offsetBlockStart?: Property.InsetBlockStart<TLength>;
   /**
-   * The **`inset-inline`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -8027,7 +8010,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadius?: Property.BorderRadius<TLength>;
   /**
-   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -8037,7 +8020,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadiusBottomleft?: Property.BorderBottomLeftRadius<TLength>;
   /**
-   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element.
+   * The **`border-bottom-right-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -8047,7 +8030,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadiusBottomright?: Property.BorderBottomRightRadius<TLength>;
   /**
-   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -8057,7 +8040,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadiusTopleft?: Property.BorderTopLeftRadius<TLength>;
   /**
-   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -8127,7 +8110,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBoxPack?: Property.BoxPack;
   /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `none | <shadow>#`
    *
@@ -8136,6 +8119,26 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    * @deprecated
    */
   MozBoxShadow?: Property.BoxShadow;
+  /**
+   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
+   *
+   * **Syntax**: `border-box | content-box | margin-box | padding-box`
+   *
+   * **Initial value**: `content-box`
+   *
+   * @deprecated
+   */
+  MozFloatEdge?: Property.MozFloatEdge;
+  /**
+   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozForceBrokenImageIcon?: Property.MozForceBrokenImageIcon;
   /**
    * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
@@ -8147,7 +8150,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozOpacity?: Property.Opacity;
   /**
-   * The **`outline`** CSS property is a shorthand to set various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+   * The **`outline`** CSS shorthand property set all the outline properties in a single declaration.
    *
    * **Syntax**: `[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]`
    *
@@ -8165,13 +8168,53 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozOutlineColor?: Property.OutlineColor;
   /**
-   * In Mozilla applications like Firefox, the **`-moz-outline-radius`** CSS property can be used to give an element's `outline` rounded corners.
+   * In Mozilla applications like Firefox, the **`-moz-outline-radius`** CSS shorthand property can be used to give an element's `outline` rounded corners.
    *
    * **Syntax**: `<outline-radius>{1,4} [ / <outline-radius>{1,4} ]?`
    *
    * @deprecated
    */
   MozOutlineRadius?: Property.MozOutlineRadius<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusBottomleft?: Property.MozOutlineRadiusBottomleft<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusBottomright?: Property.MozOutlineRadiusBottomright<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusTopleft?: Property.MozOutlineRadiusTopleft<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusTopright?: Property.MozOutlineRadiusTopright<TLength>;
   /**
    * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
@@ -8183,7 +8226,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozOutlineStyle?: Property.OutlineStyle;
   /**
-   * The **`outline-width`** CSS property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -8271,7 +8314,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimation?: Property.Animation<TTime>;
   /**
-   * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
    *
@@ -8281,7 +8324,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationDelay?: Property.AnimationDelay<TTime>;
   /**
-   * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -8311,7 +8354,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationFillMode?: Property.AnimationFillMode;
   /**
-   * The **`animation-iteration-count`** CSS property sets the number of times an animation cycle should be played before stopping.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -8321,7 +8364,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationIterationCount?: Property.AnimationIterationCount;
   /**
-   * The **`animation-name`** CSS property sets one or more animations to apply to an element. Each name is an `@keyframes` at-rule that sets the property values for the animation sequence.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -8341,7 +8384,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationPlayState?: Property.AnimationPlayState;
   /**
-   * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<timing-function>#`
    *
@@ -8686,7 +8729,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "align-self"?: Property.AlignSelf;
   /**
-   * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
    *
@@ -8701,7 +8744,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-delay"?: Property.AnimationDelay<TTime>;
   /**
-   * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -8746,7 +8789,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-fill-mode"?: Property.AnimationFillMode;
   /**
-   * The **`animation-iteration-count`** CSS property sets the number of times an animation cycle should be played before stopping.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -8761,7 +8804,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-iteration-count"?: Property.AnimationIterationCount;
   /**
-   * The **`animation-name`** CSS property sets one or more animations to apply to an element. Each name is an `@keyframes` at-rule that sets the property values for the animation sequence.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -8791,7 +8834,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-play-state"?: Property.AnimationPlayState;
   /**
-   * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<timing-function>#`
    *
@@ -8806,21 +8849,22 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-timing-function"?: Property.AnimationTimingFunction;
   /**
-   * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
+   * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this propery, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support `-webkit-appearance`, for compatibility reasons.
    *
-   * **Syntax**: `none | auto | button | textfield | menulist-button | <compat-auto>`
+   * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    |   Firefox   |   Safari    |     Edge     | IE  |
-   * | :---------: | :---------: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * | Chrome  |   Firefox   |   Safari    |   Edge   | IE  |
+   * | :-----: | :---------: | :---------: | :------: | :-: |
+   * | **84**  | **1** _-x-_ | **3** _-x-_ |  **84**  | No  |
+   * | 1 _-x-_ |             |             | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
   appearance?: Property.Appearance;
   /**
-   * The **`aspect-ratio`**    CSS property sets a _**preferred aspect ratio**_ for the box, which will be used in the calculation of auto sizes and some other layout functions.
+   * The **`aspect-ratio`**   CSS property sets a **preferred aspect ratio** for the box, which will be used in the calculation of auto sizes and some other layout functions.
    *
    * **Syntax**: `auto | <ratio>`
    *
@@ -9038,7 +9082,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "block-size"?: Property.BlockSize<TLength>;
   /**
-   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>{1,2}`
    *
@@ -9066,7 +9110,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-end-color"?: Property.BorderBlockEndColor;
   /**
-   * The **`border-block-end-style`** CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-end-style`** CSS property defines the style of the logical block-end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -9136,7 +9180,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-start-width"?: Property.BorderBlockStartWidth<TLength>;
   /**
-   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -9178,7 +9222,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-bottom-color"?: Property.BorderBottomColor;
   /**
-   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -9193,7 +9237,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-bottom-left-radius"?: Property.BorderBottomLeftRadius<TLength>;
   /**
-   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element.
+   * The **`border-bottom-right-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -9250,7 +9294,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-collapse"?: Property.BorderCollapse;
   /**
-   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on on the element's `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -9264,7 +9308,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-end-end-radius"?: Property.BorderEndEndRadius<TLength>;
   /**
-   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -9348,7 +9392,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-image-width"?: Property.BorderImageWidth<TLength>;
   /**
-   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>{1,2}`
    *
@@ -9362,7 +9406,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-color"?: Property.BorderInlineColor;
   /**
-   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
    *
@@ -9377,7 +9421,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-end-color"?: Property.BorderInlineEndColor;
   /**
-   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -9392,7 +9436,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-end-style"?: Property.BorderInlineEndStyle;
   /**
-   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>`
    *
@@ -9407,7 +9451,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-end-width"?: Property.BorderInlineEndWidth<TLength>;
   /**
-   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
    *
@@ -9422,7 +9466,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-start-color"?: Property.BorderInlineStartColor;
   /**
-   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -9437,7 +9481,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-start-style"?: Property.BorderInlineStartStyle;
   /**
-   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>`
    *
@@ -9577,7 +9621,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-spacing"?: Property.BorderSpacing<TLength>;
   /**
-   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -9591,7 +9635,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-start-end-radius"?: Property.BorderStartEndRadius<TLength>;
   /**
-   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -9619,7 +9663,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-top-color"?: Property.BorderTopColor;
   /**
-   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -9634,7 +9678,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-top-left-radius"?: Property.BorderTopLeftRadius<TLength>;
   /**
-   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -9705,7 +9749,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "box-decoration-break"?: Property.BoxDecorationBreak;
   /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `none | <shadow>#`
    *
@@ -9857,7 +9901,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "caption-side"?: Property.CaptionSide;
   /**
-   * The **`caret-color`** CSS property sets the color of the insertion caret, the visible marker where the next character typed will be inserted. The caret appears in elements such as `<input>` or those with the `contenteditable` attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
+   * The **`caret-color`** CSS property sets the color of the **insertion caret**, the visible marker where the next character typed will be inserted. This is sometimes referred to as the **text input cursor**. The caret appears in elements such as `<input>` or those with the `contenteditable` attribute. The caret is typically a thin vertical line that flashes to help make it more noticeable. By default, it is black, but its color can be altered with this property.
    *
    * **Syntax**: `auto | <color>`
    *
@@ -9968,9 +10012,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   | **63**  | **3** _-x-_ |  No  | No  |
+   * | Chrome | Firefox |   Safari    |  Edge  | IE  |
+   * | :----: | :-----: | :---------: | :----: | :-: |
+   * | **84** | **63**  | **3** _-x-_ | **84** | No  |
    *
    * ---
    *
@@ -10085,7 +10129,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   contain?: Property.Contain;
   /**
-   * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are _anonymous replaced elements._
+   * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are **anonymous replaced elements**_._
    *
    * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ <string> ]?`
    *
@@ -10141,7 +10185,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "counter-set"?: Property.CounterSet;
   /**
-   * The **`cursor`** CSS property sets the type of cursor, if any, to show when the mouse pointer is over an element.
+   * The **`cursor`** CSS property sets the type of mouse cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Syntax**: `[ [ <url> [ <x> <y> ]? , ]* [ auto | default | none | context-menu | help | pointer | progress | wait | cell | crosshair | text | vertical-text | alias | copy | move | no-drop | not-allowed | e-resize | n-resize | ne-resize | nw-resize | s-resize | se-resize | sw-resize | w-resize | ew-resize | ns-resize | nesw-resize | nwse-resize | col-resize | row-resize | all-scroll | zoom-in | zoom-out | grab | grabbing ] ]`
    *
@@ -10242,7 +10286,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "flex-direction"?: Property.FlexDirection;
   /**
-   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size.
    *
    * **Syntax**: `<number>`
    *
@@ -10360,7 +10404,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-language-override"?: Property.FontLanguageOverride;
   /**
-   * The **`font-optical-sizing`** CSS property sets whether text rendering is optimized for viewing at different sizes. This only works for fonts that have an optical size variation axis.
+   * The **`font-optical-sizing`** CSS property sets whether text rendering is optimized for viewing at different sizes.
    *
    * **Syntax**: `auto | none`
    *
@@ -10374,7 +10418,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-optical-sizing"?: Property.FontOpticalSizing;
   /**
-   * The **`font-size`** CSS property sets the size of the font. This property is also used to compute the size of `em`, `ex`, and other relative `<length>` units.
+   * The **`font-size`** CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative `<length>` units, such as `em`, `ex`, and so forth.
    *
    * **Syntax**: `<absolute-size> | <relative-size> | <length-percentage>`
    *
@@ -10388,7 +10432,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-size"?: Property.FontSize<TLength>;
   /**
-   * The **`font-size-adjust`** CSS property sets how the font size should be chosen based on the height of lowercase rather than capital letters.
+   * The **`font-size-adjust`** CSS property sets the size of lower-case letters relative to the current font size (which defines the size of upper-case letters).
    *
    * **Syntax**: `none | <number>`
    *
@@ -10401,6 +10445,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
    */
   "font-size-adjust"?: Property.FontSizeAdjust;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |              Chrome              |              Firefox               |              Safari              |               Edge                | IE  |
+   * | :------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-: |
+   * | **5** _(-webkit-font-smoothing)_ | **25** _(-moz-osx-font-smoothing)_ | **4** _(-webkit-font-smoothing)_ | **79** _(-webkit-font-smoothing)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-smooth
+   */
+  "font-smooth"?: Property.FontSmooth<TLength>;
   /**
    * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
@@ -10444,7 +10502,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-synthesis"?: Property.FontSynthesis;
   /**
-   * The **font-variant** CSS property is a shorthand for the longhand properties `font-variant-caps`, `font-variant-numeric`, `font-variant-alternates`, `font-variant-ligatures`, and `font-variant-east-asian`. You can also set the CSS Level 2 (Revision 1) values of `font-variant`, (that is, `normal` or `small-caps`), by using the `font` shorthand.
+   * The **font-variant** CSS shorthand property allows you to set all the font variants for a font.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> || stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) || [ small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps ] || <numeric-figure-values> || <numeric-spacing-values> || <numeric-fraction-values> || ordinal || slashed-zero || <east-asian-variant-values> || <east-asian-width-values> || ruby ]`
    *
@@ -10543,7 +10601,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-variation-settings"?: Property.FontVariationSettings;
   /**
-   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` you are using.
+   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` that is currently set.
    *
    * **Syntax**: `<font-weight-absolute> | bolder | lighter`
    *
@@ -10657,7 +10715,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-row-start"?: Property.GridRowStart;
   /**
-   * The **`grid-template-areas`** CSS property specifies named grid areas.
+   * The **`grid-template-areas`** CSS property specifies named grid areas, establishing the cells in the grid and assigning them names.
    *
    * **Syntax**: `none | <string>+`
    *
@@ -10727,7 +10785,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   height?: Property.Height<TLength>;
   /**
-   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -10818,7 +10876,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   inset?: Property.Inset<TLength>;
   /**
-   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -10860,7 +10918,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "inset-block-start"?: Property.InsetBlockStart<TLength>;
   /**
-   * The **`inset-inline`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -11001,7 +11059,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "justify-self"?: Property.JustifySelf;
   /**
-   * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`left`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Syntax**: `<length> | <percentage> | auto`
    *
@@ -11015,7 +11073,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   left?: Property.Left<TLength>;
   /**
-   * The **`letter-spacing`** CSS property sets the spacing behavior between text characters.
+   * The **`letter-spacing`** CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of `letter-spacing` causes characters to spread farther apart, while negative values of `letter-spacing` bring characters closer together.
    *
    * **Syntax**: `normal | <length>`
    *
@@ -11114,7 +11172,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "list-style-type"?: Property.ListStyleType;
   /**
-   * The **`margin-block`** CSS property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-left'>{1,2}`
    *
@@ -11170,7 +11228,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-bottom"?: Property.MarginBottom<TLength>;
   /**
-   * The **`margin-inline`** CSS property defines the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-left'>{1,2}`
    *
@@ -11184,7 +11242,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-inline"?: Property.MarginInline<TLength>;
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -11199,7 +11257,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-inline-end"?: Property.MarginInlineEnd<TLength>;
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -11563,7 +11621,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mix-blend-mode"?: Property.MixBlendMode;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -11648,7 +11706,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "offset-anchor"?: Property.OffsetAnchor<TLength>;
   /**
-   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -11793,7 +11851,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "outline-style"?: Property.OutlineStyle;
   /**
-   * The **`outline-width`** CSS property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -11970,7 +12028,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "overscroll-behavior-y"?: Property.OverscrollBehaviorY;
   /**
-   * The **`padding-block`** CSS property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>{1,2}`
    *
@@ -11984,7 +12042,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-block"?: Property.PaddingBlock<TLength>;
   /**
-   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -11998,7 +12056,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-block-end"?: Property.PaddingBlockEnd<TLength>;
   /**
-   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -12026,7 +12084,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-bottom"?: Property.PaddingBottom<TLength>;
   /**
-   * The **`padding-inline`** CSS property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>{1,2}`
    *
@@ -12040,7 +12098,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-inline"?: Property.PaddingInline<TLength>;
   /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -12055,7 +12113,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-inline-end"?: Property.PaddingInlineEnd<TLength>;
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -12168,7 +12226,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "paint-order"?: Property.PaintOrder;
   /**
-   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length>`
    *
@@ -12198,7 +12256,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "perspective-origin"?: Property.PerspectiveOrigin<TLength>;
   /**
-   * The `**place-content**` CSS property is a shorthand for `align-content` and `justify-content`. It can be used in any layout method which utilizes both of these alignment values.
+   * The `**place-content**` CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
    *
    * **Syntax**: `<'align-content'> <'justify-content'>?`
    *
@@ -12254,7 +12312,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   position?: Property.Position;
   /**
-   * The **`quotes`** CSS property sets how quotation marks appear.
+   * The **`quotes`** CSS property sets how the browser should render quotation marks that are added using the `open-quotes` or `close-quotes` values of the CSS `content` property.
    *
    * **Syntax**: `none | auto | [ <string> <string> ]+`
    *
@@ -12282,7 +12340,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   resize?: Property.Resize;
   /**
-   * The **`right`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`right`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Syntax**: `<length> | <percentage> | auto`
    *
@@ -12320,9 +12378,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
@@ -12373,7 +12431,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "ruby-position"?: Property.RubyPosition;
   /**
-   * The **`scale`** CSS property allows you to specify scale transforms individually and independantly of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
+   * The **`scale`** CSS property allows you to specify scale transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Syntax**: `none | <number>{1,3}`
    *
@@ -12401,7 +12459,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-behavior"?: Property.ScrollBehavior;
   /**
-   * The **`scroll-margin`** property is a shorthand property which sets all of the `scroll-margin` longhands, assigning values much like the `margin` property does for the `margin-*` longhands.
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
    * **Syntax**: `<length>{1,4}`
    *
@@ -12415,7 +12473,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin"?: Property.ScrollMargin<TLength>;
   /**
-   * The `scroll-margin-block` property is a shorthand property which sets the scroll-margin longhands in the block dimension.
+   * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
    *
    * **Syntax**: `<length>{1,2}`
    *
@@ -12429,7 +12487,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-block"?: Property.ScrollMarginBlock<TLength>;
   /**
-   * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12443,7 +12501,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-block-end"?: Property.ScrollMarginBlockEnd<TLength>;
   /**
-   * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12457,7 +12515,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-block-start"?: Property.ScrollMarginBlockStart<TLength>;
   /**
-   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12471,7 +12529,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-bottom"?: Property.ScrollMarginBottom<TLength>;
   /**
-   * The `scroll-margin-inline` property is a shorthand property which sets the scroll-margin longhands in the inline dimension.
+   * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
    *
    * **Syntax**: `<length>{1,2}`
    *
@@ -12485,7 +12543,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-inline"?: Property.ScrollMarginInline<TLength>;
   /**
-   * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12499,7 +12557,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-inline-end"?: Property.ScrollMarginInlineEnd<TLength>;
   /**
-   * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12513,7 +12571,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-inline-start"?: Property.ScrollMarginInlineStart<TLength>;
   /**
-   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12527,7 +12585,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-left"?: Property.ScrollMarginLeft<TLength>;
   /**
-   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12541,7 +12599,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-right"?: Property.ScrollMarginRight<TLength>;
   /**
-   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12555,7 +12613,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-top"?: Property.ScrollMarginTop<TLength>;
   /**
-   * The **`scroll-padding`** property is a shorthand property that sets all of the `scroll-padding-*` longhands. It assigns values much like the `padding` property does for the `padding-*` longhands.
+   * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
    *
    * **Syntax**: `[ auto | <length-percentage> ]{1,4}`
    *
@@ -12569,7 +12627,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding"?: Property.ScrollPadding<TLength>;
   /**
-   * The `scroll-padding-block` property is a shorthand property which sets the scroll-padding longhands for the block dimension.
+   * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
    *
    * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
    *
@@ -12583,7 +12641,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-block"?: Property.ScrollPaddingBlock<TLength>;
   /**
-   * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -12597,7 +12655,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-block-end"?: Property.ScrollPaddingBlockEnd<TLength>;
   /**
-   * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -12611,7 +12669,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-block-start"?: Property.ScrollPaddingBlockStart<TLength>;
   /**
-   * The `scroll-padding-bottom` property defines offsets for the bottom of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-bottom` property defines offsets for the bottom of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -12625,7 +12683,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-bottom"?: Property.ScrollPaddingBottom<TLength>;
   /**
-   * The `scroll-padding-inline` property is a shorthand property which sets the scroll-padding longhands for the inline dimension.
+   * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
    *
    * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
    *
@@ -12653,7 +12711,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-inline-end"?: Property.ScrollPaddingInlineEnd<TLength>;
   /**
-   * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -12667,7 +12725,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-inline-start"?: Property.ScrollPaddingInlineStart<TLength>;
   /**
-   * The `scroll-padding-left` property defines offsets for the left of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The `scroll-padding-left` property defines offsets for the left of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -12695,7 +12753,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-right"?: Property.ScrollPaddingRight<TLength>;
   /**
-   * The `scroll-padding-top` property defines offsets for the top of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
+   * The **`scroll-padding-top`** property defines offsets for the top of the optimal viewing region of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or simply to put more breathing room between a targetted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -12723,7 +12781,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-align"?: Property.ScrollSnapAlign;
   /**
-   * The **`scroll-margin`** property is a shorthand property which sets all of the `scroll-margin` longhands, assigning values much like the `margin` property does for the `margin-*` longhands.
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
    * **Syntax**: `<length>{1,4}`
    *
@@ -12737,7 +12795,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-margin"?: Property.ScrollMargin<TLength>;
   /**
-   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12751,7 +12809,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-margin-bottom"?: Property.ScrollMarginBottom<TLength>;
   /**
-   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12765,7 +12823,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-margin-left"?: Property.ScrollMarginLeft<TLength>;
   /**
-   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12779,7 +12837,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-margin-right"?: Property.ScrollMarginRight<TLength>;
   /**
-   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container’s coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -12892,7 +12950,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "shape-outside"?: Property.ShapeOutside;
   /**
-   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<integer> | <length>`
    *
@@ -13037,7 +13095,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-decoration-style"?: Property.TextDecorationStyle;
   /**
-   * The **`text-decoration-thickness`** CSS property sets the thickness, or width, of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
+   * The **`text-decoration-thickness`** CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
    *
    * **Syntax**: `auto | from-font | <length> | <percentage> `
    *
@@ -13051,7 +13109,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-decoration-thickness"?: Property.TextDecorationThickness<TLength>;
   /**
-   * The **`text-decoration-thickness`** CSS property sets the thickness, or width, of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
+   * The **`text-decoration-thickness`** CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
    *
    * **Syntax**: `auto | from-font | <length> | <percentage> `
    *
@@ -13249,7 +13307,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-underline-position"?: Property.TextUnderlinePosition;
   /**
-   * The **`top`** CSS property participates in specifying the vertical position of a _positioned element_. It has no effect on non-positioned elements.
+   * The **`top`** CSS property participates in specifying the vertical position of a positioned element. It has no effect on non-positioned elements.
    *
    * **Syntax**: `<length> | <percentage> | auto`
    *
@@ -13440,7 +13498,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "user-select"?: Property.UserSelect;
   /**
-   * The **`vertical-align`** CSS property sets vertical alignment of an inline or table-cell box.
+   * The **`vertical-align`** CSS property sets vertical alignment of an inline, inline-block or table-cell box.
    *
    * **Syntax**: `baseline | sub | super | text-top | text-bottom | middle | top | bottom | <percentage> | <length>`
    *
@@ -13612,7 +13670,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
 
 export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * The `**all**` shorthand CSS property resets all of an element's properties (except `unicode-bidi` and `direction`). It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
+   * The `**all**` shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
    * **Syntax**: `initial | inherit | unset | revert`
    *
@@ -13663,7 +13721,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   border?: Property.Border<TLength>;
   /**
-   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
+   * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
    *
@@ -13736,7 +13794,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-image"?: Property.BorderImage;
   /**
-   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
+   * The **`border-inline`** CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <'color'>`
    *
@@ -13797,7 +13855,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-radius"?: Property.BorderRadius<TLength>;
   /**
-   * The **`border-right`** shorthand CSS property sets an element's right border. It sets the values of `border-right-width`, `border-right-style` and `border-right-color`.
+   * The **`border-right`** shorthand CSS property sets the properties of an element's right border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -13821,7 +13879,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-style"?: Property.BorderStyle;
   /**
-   * The **`border-top`** shorthand CSS property set an element's top border. It sets the values of `border-top-width`, `border-top-style` and `border-top-color`.
+   * The **`border-top`** shorthand CSS property sets all the properties of an element's top border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -13858,7 +13916,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "column-rule"?: Property.ColumnRule<TLength>;
   /**
-   * The **`columns`** CSS property sets the column width and column count of an element.
+   * The **`columns`** CSS shorthand property sets the number of columns to use when drawing an element's contents, as well as those columns' widths.
    *
    * **Syntax**: `<'column-width'> || <'column-count'>`
    *
@@ -13871,7 +13929,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   columns?: Property.Columns<TLength>;
   /**
-   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
@@ -13884,7 +13942,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   flex?: Property.Flex<TLength>;
   /**
-   * The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` properties.
+   * The **`flex-flow`** CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    *
@@ -13897,7 +13955,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "flex-flow"?: Property.FlexFlow;
   /**
-   * The **`font`** CSS property is a shorthand for `font-style`, `font-variant`, `font-weight`, `font-stretch`, `font-size`, `line-height`, and `font-family`. Alternatively, it sets an element's font to a system font.
+   * The **`font`** CSS shorthand property sets all the different properties of an element's font. Alternatively, it sets an element's font to a system font.
    *
    * **Syntax**: `[ [ <'font-style'> || <font-variant-css21> || <'font-weight'> || <'font-stretch'> ]? <'font-size'> [ / <'line-height'> ]? <'font-family'> ] | caption | icon | menu | message-box | small-caption | status-bar`
    *
@@ -13917,9 +13975,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **84** | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
@@ -13944,7 +14002,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   gap?: Property.Gap<TLength>;
   /**
-   * The **`grid`** CSS property is a shorthand property that sets all of the explicit grid properties (`grid-template-rows`, `grid-template-columns`, and `grid-template-areas`), and all the implicit grid properties (`grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`), in a single declaration.
+   * The **`grid`** CSS property is a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.
    *
    * **Syntax**: `<'grid-template'> | <'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>? | [ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>`
    *
@@ -13956,7 +14014,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   grid?: Property.Grid;
   /**
-   * The **`grid-area`** CSS property is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, specifying a grid item’s size and location within the grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
+   * The **`grid-area`** CSS shorthand property specifies a grid item’s size and location within a grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]{0,3}`
    *
@@ -13968,7 +14026,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "grid-area"?: Property.GridArea;
   /**
-   * The **`grid-column`** CSS property is a shorthand property for `grid-column-start` and `grid-column-end` specifying a grid item's size and location within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   * The **`grid-column`** CSS shorthand property specifies a grid item's size and location within a grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
    *
@@ -13980,7 +14038,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "grid-column"?: Property.GridColumn;
   /**
-   * The **`grid-row`** CSS property is a shorthand property for `grid-row-start` and `grid-row-end` specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+   * The **`grid-row`** CSS shorthand property specifies a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
    *
@@ -14010,7 +14068,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "line-clamp"?: Property.LineClamp;
   /**
-   * The **`list-style`** CSS property is a shorthand to set list style properties `list-style-type`, `list-style-image`, and `list-style-position`.
+   * The **`list-style`** CSS shorthand property allows you set all the list style properties at once.
    *
    * **Syntax**: `<'list-style-type'> || <'list-style-position'> || <'list-style-image'>`
    *
@@ -14034,7 +14092,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   margin?: Property.Margin<TLength>;
   /**
-   * The **`mask`** CSS property hides an element (partially or fully) by masking or clipping the image at specific points.
+   * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
    *
    * **Syntax**: `<mask-layer>#`
    *
@@ -14046,13 +14104,13 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   mask?: Property.Mask<TLength>;
   /**
-   * The **`mask-border`** CSS property lets you create a mask along the edge of an element's border.
+   * The **`mask-border`** CSS shorthand property lets you create a mask along the edge of an element's border.
    *
    * **Syntax**: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask-border-repeat'> || <'mask-border-mode'>`
    */
   "mask-border"?: Property.MaskBorder;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
+   * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path.
    *
    * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
    *
@@ -14065,7 +14123,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   motion?: Property.Offset<TLength>;
   /**
-   * The **`offset`** CSS property is a shorthand property for animating an element along a defined path. It sets the values of `offset-position`, `offset-path`, `offset-distance`, `offset-rotate`, and `offset-anchor`.
+   * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path.
    *
    * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
    *
@@ -14078,7 +14136,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   offset?: Property.Offset<TLength>;
   /**
-   * The **`outline`** CSS property is a shorthand to set various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+   * The **`outline`** CSS shorthand property set all the outline properties in a single declaration.
    *
    * **Syntax**: `[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]`
    *
@@ -14090,7 +14148,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   outline?: Property.Outline<TLength>;
   /**
-   * The **`overflow`** shorthand CSS property sets what to do when an element's content is too big to fit in its block formatting context. It is a shorthand for `overflow-x` and `overflow-y`.
+   * The **`overflow`** CSS shorthand property sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
    *
    * **Syntax**: `[ visible | hidden | clip | scroll | auto ]{1,2}`
    *
@@ -14104,7 +14162,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   overflow?: Property.Overflow;
   /**
-   * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
+   * The **`padding`** CSS shorthand property sets the padding area on all four sides of an element at once.
    *
    * **Syntax**: `[ <length> | <percentage> ]{1,4}`
    *
@@ -14116,7 +14174,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   padding?: Property.Padding<TLength>;
   /**
-   * The CSS **`place-items`** shorthand property sets the `align-items` and `justify-items` properties, respectively. If the second value is not set, the first value is also used for it.
+   * The CSS **`place-items`** shorthand property allows you to align items along both the block and inline directions at once (i.e. the `align-items` and `justify-items` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not set, the first value is also used for it.
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
    *
@@ -14142,7 +14200,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "place-items"?: Property.PlaceItems;
   /**
-   * The **`place-self`** CSS property is a shorthand property sets both the `align-self` and `justify-self` properties. The first value is the `align-self` property value, the second the `justify-self` one. If the second value is not present, the first value is also used for it.
+   * The **`place-self`** CSS shorthand property allows you to align an individual item in both the block and inline directions at once (i.e. the `align-self` and `justify-self` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not present, the first value is also used for it.
    *
    * **Syntax**: `<'align-self'> <'justify-self'>?`
    *
@@ -14212,7 +14270,7 @@ export interface StandardPropertiesHyphen<TLength = (string & {}) | 0, TTime = s
 
 export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
    *
@@ -14220,7 +14278,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-delay"?: Property.AnimationDelay<TTime>;
   /**
-   * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -14244,7 +14302,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-fill-mode"?: Property.AnimationFillMode;
   /**
-   * The **`animation-iteration-count`** CSS property sets the number of times an animation cycle should be played before stopping.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -14252,7 +14310,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-iteration-count"?: Property.AnimationIterationCount;
   /**
-   * The **`animation-name`** CSS property sets one or more animations to apply to an element. Each name is an `@keyframes` at-rule that sets the property values for the animation sequence.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -14268,7 +14326,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-play-state"?: Property.AnimationPlayState;
   /**
-   * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<timing-function>#`
    *
@@ -14276,7 +14334,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-timing-function"?: Property.AnimationTimingFunction;
   /**
-   * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
+   * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this propery, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support `-webkit-appearance`, for compatibility reasons.
    *
    * **Syntax**: `none | button | button-arrow-down | button-arrow-next | button-arrow-previous | button-arrow-up | button-bevel | button-focus | caret | checkbox | checkbox-container | checkbox-label | checkmenuitem | dualbutton | groupbox | listbox | listitem | menuarrow | menubar | menucheckbox | menuimage | menuitem | menuitemtext | menulist | menulist-button | menulist-text | menulist-textfield | menupopup | menuradio | menuseparator | meterbar | meterchunk | progressbar | progressbar-vertical | progresschunk | progresschunk-vertical | radio | radio-container | radio-label | radiomenuitem | range | range-thumb | resizer | resizerpanel | scale-horizontal | scalethumbend | scalethumb-horizontal | scalethumbstart | scalethumbtick | scalethumb-vertical | scale-vertical | scrollbarbutton-down | scrollbarbutton-left | scrollbarbutton-right | scrollbarbutton-up | scrollbarthumb-horizontal | scrollbarthumb-vertical | scrollbartrack-horizontal | scrollbartrack-vertical | searchfield | separator | sheet | spinner | spinner-downbutton | spinner-textfield | spinner-upbutton | splitter | statusbar | statusbarpanel | tab | tabpanel | tabpanels | tab-scroll-arrow-back | tab-scroll-arrow-forward | textfield | textfield-multiline | toolbar | toolbarbutton | toolbarbutton-dropdown | toolbargripper | toolbox | tooltip | treeheader | treeheadercell | treeheadersortarrow | treeitem | treeline | treetwisty | treetwistyopen | treeview | -moz-mac-unified-toolbar | -moz-win-borderless-glass | -moz-win-browsertabbar-toolbox | -moz-win-communicationstext | -moz-win-communications-toolbox | -moz-win-exclude-glass | -moz-win-glass | -moz-win-mediatext | -moz-win-media-toolbox | -moz-window-button-box | -moz-window-button-box-maximized | -moz-window-button-close | -moz-window-button-maximize | -moz-window-button-minimize | -moz-window-button-restore | -moz-window-frame-bottom | -moz-window-frame-left | -moz-window-frame-right | -moz-window-titlebar | -moz-window-titlebar-maximized`
    *
@@ -14300,7 +14358,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-bottom-colors"?: Property.MozBorderBottomColors;
   /**
-   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
    *
@@ -14308,7 +14366,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-end-color"?: Property.BorderInlineEndColor;
   /**
-   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -14316,7 +14374,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-end-style"?: Property.BorderInlineEndStyle;
   /**
-   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>`
    *
@@ -14340,7 +14398,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-right-colors"?: Property.MozBorderRightColors;
   /**
-   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>`
    *
@@ -14348,7 +14406,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-start-color"?: Property.BorderInlineStartColor;
   /**
-   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>`
    *
@@ -14428,21 +14486,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-column-width"?: Property.ColumnWidth<TLength>;
   /**
-   * If you reference an SVG image in a webpage (such as with the `<img>` element or as a background image), the SVG image can coordinate with the embedding element (its context) to have the image adopt property values set on the embedding element. To do this the embedding element needs to list the properties that are to be made available to the image by listing them as values of the **`-moz-context-properties`** property, and the image needs to opt in to using those properties by using values such as the `context-fill` value.
+   * The `**-moz-context-properties**` property can be used within privileged contexts in Firefox to share the values of specified properties of the element with a child SVG image.
    *
    * **Syntax**: `none | [ fill | fill-opacity | stroke | stroke-opacity ]#`
    *
    * **Initial value**: `none`
    */
   "-moz-context-properties"?: Property.MozContextProperties;
-  /**
-   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
-   *
-   * **Syntax**: `border-box | content-box | margin-box | padding-box`
-   *
-   * **Initial value**: `content-box`
-   */
-  "-moz-float-edge"?: Property.MozFloatEdge;
   /**
    * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
@@ -14460,15 +14510,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-font-language-override"?: Property.FontLanguageOverride;
   /**
-   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
-   *
-   * **Syntax**: `<integer>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-force-broken-image-icon"?: Property.MozForceBrokenImageIcon;
-  /**
-   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -14484,7 +14526,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-image-region"?: Property.MozImageRegion;
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -14492,7 +14534,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-margin-end"?: Property.MarginInlineEnd<TLength>;
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -14508,39 +14550,15 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-orient"?: Property.MozOrient;
   /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
    *
-   * **Syntax**: `<outline-radius>`
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `auto`
    */
-  "-moz-outline-radius-bottomleft"?: Property.MozOutlineRadiusBottomleft<TLength>;
+  "-moz-osx-font-smoothing"?: Property.FontSmooth<TLength>;
   /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-bottomright"?: Property.MozOutlineRadiusBottomright<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-topleft"?: Property.MozOutlineRadiusTopleft<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-topright"?: Property.MozOutlineRadiusTopright<TLength>;
-  /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -14548,7 +14566,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-padding-end"?: Property.PaddingInlineEnd<TLength>;
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -14556,7 +14574,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-padding-start"?: Property.PaddingInlineStart<TLength>;
   /**
-   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length>`
    *
@@ -14572,7 +14590,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-perspective-origin"?: Property.PerspectiveOrigin<TLength>;
   /**
-   * **`-moz-stack-sizing`** is an extended CSS property. Normally, a `stack` will change its size so that all of its child elements are completely visible. For example, moving a child of the stack far to the right will widen the stack so the child remains visible.
+   * **`-moz-stack-sizing`** is an extended CSS property. Normally, a `<xul:stack>` will change its size so that all of its child elements are completely visible. For example, moving a child of the stack far to the right will widen the stack so the child remains visible.
    *
    * **Syntax**: `ignore | stretch-to-fit`
    *
@@ -14580,7 +14598,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-stack-sizing"?: Property.MozStackSizing;
   /**
-   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<integer> | <length>`
    *
@@ -14780,7 +14798,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-flex-direction"?: Property.FlexDirection;
   /**
-   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size.
    *
    * **Syntax**: `<number>`
    *
@@ -14852,7 +14870,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-hyphenate-limit-zone"?: Property.MsHyphenateLimitZone<TLength>;
   /**
-   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -15196,7 +15214,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-o-object-position"?: Property.ObjectPosition<TLength>;
   /**
-   * The **`tab-size`** CSS property is used to customize the width of a tab (`U+0009`) character.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<integer> | <length>`
    *
@@ -15244,7 +15262,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-align-self"?: Property.AlignSelf;
   /**
-   * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
    *
@@ -15252,7 +15270,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-animation-delay"?: Property.AnimationDelay<TTime>;
   /**
-   * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -15276,7 +15294,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-animation-fill-mode"?: Property.AnimationFillMode;
   /**
-   * The **`animation-iteration-count`** CSS property sets the number of times an animation cycle should be played before stopping.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -15284,7 +15302,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-animation-iteration-count"?: Property.AnimationIterationCount;
   /**
-   * The **`animation-name`** CSS property sets one or more animations to apply to an element. Each name is an `@keyframes` at-rule that sets the property values for the animation sequence.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -15300,7 +15318,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-animation-play-state"?: Property.AnimationPlayState;
   /**
-   * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<timing-function>#`
    *
@@ -15308,7 +15326,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-animation-timing-function"?: Property.AnimationTimingFunction;
   /**
-   * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
+   * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this propery, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support `-webkit-appearance`, for compatibility reasons.
    *
    * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield`
    *
@@ -15374,7 +15392,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-border-before-width"?: Property.WebkitBorderBeforeWidth<TLength>;
   /**
-   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -15382,7 +15400,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-border-bottom-left-radius"?: Property.BorderBottomLeftRadius<TLength>;
   /**
-   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element.
+   * The **`border-bottom-right-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -15398,7 +15416,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-border-image-slice"?: Property.BorderImageSlice;
   /**
-   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -15406,7 +15424,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-border-top-left-radius"?: Property.BorderTopLeftRadius<TLength>;
   /**
-   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -15430,7 +15448,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-box-reflect"?: Property.WebkitBoxReflect<TLength>;
   /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `none | <shadow>#`
    *
@@ -15542,7 +15560,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-flex-direction"?: Property.FlexDirection;
   /**
-   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size. It specifies how much of the remaining space in the flex container should be assigned to the item (the flex grow factor).
+   * The **`flex-grow`** CSS property sets the flex grow factor of a flex item main size.
    *
    * **Syntax**: `<number>`
    *
@@ -15582,6 +15600,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-font-kerning"?: Property.FontKerning;
   /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   */
+  "-webkit-font-smoothing"?: Property.FontSmooth<TLength>;
+  /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
@@ -15590,7 +15616,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-font-variant-ligatures"?: Property.FontVariantLigatures;
   /**
-   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -15622,7 +15648,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-line-clamp"?: Property.WebkitLineClamp;
   /**
-   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -15630,7 +15656,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-margin-end"?: Property.MarginInlineEnd<TLength>;
   /**
-   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-left'>`
    *
@@ -15758,7 +15784,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-overflow-scrolling"?: Property.WebkitOverflowScrolling;
   /**
-   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -15766,7 +15792,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-padding-end"?: Property.PaddingInlineEnd<TLength>;
   /**
-   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
    *
@@ -15774,7 +15800,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-padding-start"?: Property.PaddingInlineStart<TLength>;
   /**
-   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective. Each 3D element with z>0 becomes larger; each 3D-element with z<0 becomes smaller. The strength of the effect is determined by the value of this property.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length>`
    *
@@ -16041,7 +16067,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-moz-column-rule"?: Property.ColumnRule<TLength>;
   /**
-   * The **`columns`** CSS property sets the column width and column count of an element.
+   * The **`columns`** CSS shorthand property sets the number of columns to use when drawing an element's contents, as well as those columns' widths.
    *
    * **Syntax**: `<'column-width'> || <'column-count'>`
    */
@@ -16065,7 +16091,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-ms-content-zoom-snap"?: Property.MsContentZoomSnap;
   /**
-   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    */
@@ -16125,25 +16151,25 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-webkit-column-rule"?: Property.ColumnRule<TLength>;
   /**
-   * The **`columns`** CSS property sets the column width and column count of an element.
+   * The **`columns`** CSS shorthand property sets the number of columns to use when drawing an element's contents, as well as those columns' widths.
    *
    * **Syntax**: `<'column-width'> || <'column-count'>`
    */
   "-webkit-columns"?: Property.Columns<TLength>;
   /**
-   * The **`flex`** CSS property sets how a flex _item_ will grow or shrink to fit the space available in its flex container. It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
+   * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    */
   "-webkit-flex"?: Property.Flex<TLength>;
   /**
-   * The **`flex-flow`** CSS property is a shorthand property for `flex-direction` and `flex-wrap` properties.
+   * The **`flex-flow`** CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    */
   "-webkit-flex-flow"?: Property.FlexFlow;
   /**
-   * The **`mask`** CSS property hides an element (partially or fully) by masking or clipping the image at specific points.
+   * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
    *
    * **Syntax**: `[ <mask-reference> || <position> [ / <bg-size> ]? || <repeat-style> || [ <box> | border | padding | content | text ] || [ <box> | border | padding | content ] ]#`
    */
@@ -16254,7 +16280,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "box-pack"?: Property.BoxPack;
   /**
-   * The **`clip`** CSS property defines what portion of an element is visible. The `clip` property applies only to absolutely positioned elements, that is elements with `position:absolute` or `position:fixed`.
+   * The **`clip`** CSS property defines a visible portion of an element. The `clip` property applies only to absolutely positioned elements — that is, elements with `position:absolute` or `position:fixed`.
    *
    * **Syntax**: `<shape> | auto`
    *
@@ -16312,7 +16338,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "ime-mode"?: Property.ImeMode;
   /**
-   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -16342,7 +16368,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "offset-block-start"?: Property.InsetBlockStart<TLength>;
   /**
-   * The **`inset-inline`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -16620,7 +16646,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius"?: Property.BorderRadius<TLength>;
   /**
-   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -16630,7 +16656,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius-bottomleft"?: Property.BorderBottomLeftRadius<TLength>;
   /**
-   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element.
+   * The **`border-bottom-right-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -16640,7 +16666,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius-bottomright"?: Property.BorderBottomRightRadius<TLength>;
   /**
-   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -16650,7 +16676,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius-topleft"?: Property.BorderTopLeftRadius<TLength>;
   /**
-   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<length-percentage>{1,2}`
    *
@@ -16720,7 +16746,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-box-pack"?: Property.BoxPack;
   /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `none | <shadow>#`
    *
@@ -16729,6 +16755,26 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    * @deprecated
    */
   "-moz-box-shadow"?: Property.BoxShadow;
+  /**
+   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
+   *
+   * **Syntax**: `border-box | content-box | margin-box | padding-box`
+   *
+   * **Initial value**: `content-box`
+   *
+   * @deprecated
+   */
+  "-moz-float-edge"?: Property.MozFloatEdge;
+  /**
+   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-force-broken-image-icon"?: Property.MozForceBrokenImageIcon;
   /**
    * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
@@ -16740,7 +16786,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-opacity"?: Property.Opacity;
   /**
-   * The **`outline`** CSS property is a shorthand to set various outline properties in a single declaration: `outline-style`, `outline-width`, and `outline-color`.
+   * The **`outline`** CSS shorthand property set all the outline properties in a single declaration.
    *
    * **Syntax**: `[ <'outline-color'> || <'outline-style'> || <'outline-width'> ]`
    *
@@ -16758,13 +16804,53 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-outline-color"?: Property.OutlineColor;
   /**
-   * In Mozilla applications like Firefox, the **`-moz-outline-radius`** CSS property can be used to give an element's `outline` rounded corners.
+   * In Mozilla applications like Firefox, the **`-moz-outline-radius`** CSS shorthand property can be used to give an element's `outline` rounded corners.
    *
    * **Syntax**: `<outline-radius>{1,4} [ / <outline-radius>{1,4} ]?`
    *
    * @deprecated
    */
   "-moz-outline-radius"?: Property.MozOutlineRadius<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-bottomleft"?: Property.MozOutlineRadiusBottomleft<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-bottomright"?: Property.MozOutlineRadiusBottomright<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-topleft"?: Property.MozOutlineRadiusTopleft<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-topright"?: Property.MozOutlineRadiusTopright<TLength>;
   /**
    * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
@@ -16776,7 +16862,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-outline-style"?: Property.OutlineStyle;
   /**
-   * The **`outline-width`** CSS property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
+   * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -16864,7 +16950,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation"?: Property.Animation<TTime>;
   /**
-   * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
    *
@@ -16874,7 +16960,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-delay"?: Property.AnimationDelay<TTime>;
   /**
-   * The **`animation-direction`** CSS property sets whether an animation should play forwards, backwards, or alternating back and forth.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -16904,7 +16990,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-fill-mode"?: Property.AnimationFillMode;
   /**
-   * The **`animation-iteration-count`** CSS property sets the number of times an animation cycle should be played before stopping.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -16914,7 +17000,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-iteration-count"?: Property.AnimationIterationCount;
   /**
-   * The **`animation-name`** CSS property sets one or more animations to apply to an element. Each name is an `@keyframes` at-rule that sets the property values for the animation sequence.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules describing the animation or animations to apply to the element.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -16934,7 +17020,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-play-state"?: Property.AnimationPlayState;
   /**
-   * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<timing-function>#`
    *
@@ -17900,7 +17986,7 @@ export namespace Property {
 
   export type AnimationTimingFunction = Globals | DataType.TimingFunction | (string & {});
 
-  export type Appearance = Globals | DataType.CompatAuto | "button" | "menulist-button" | "none" | "textfield";
+  export type Appearance = Globals | DataType.CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
   export type AspectRatio = Globals | "auto" | (string & {});
 
@@ -18262,6 +18348,8 @@ export namespace Property {
   export type FontSize<TLength = (string & {}) | 0> = Globals | DataType.AbsoluteSize | TLength | "larger" | "smaller" | (string & {});
 
   export type FontSizeAdjust = Globals | "none" | (number & {});
+
+  export type FontSmooth<TLength = (string & {}) | 0> = Globals | DataType.AbsoluteSize | TLength | "always" | "auto" | "never";
 
   export type FontStretch = Globals | DataType.FontStretchAbsolute;
 
@@ -19608,7 +19696,19 @@ declare namespace DataType {
 
   type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | (string & {});
 
-  type CompatAuto = "checkbox" | "listbox" | "menulist" | "meter" | "progress-bar" | "push-button" | "radio" | "searchfield" | "slider-horizontal" | "square-button" | "textarea";
+  type CompatAuto =
+    | "button"
+    | "checkbox"
+    | "listbox"
+    | "menulist"
+    | "meter"
+    | "progress-bar"
+    | "push-button"
+    | "radio"
+    | "searchfield"
+    | "slider-horizontal"
+    | "square-button"
+    | "textarea";
 
   type CompositeStyle =
     | "clear"
