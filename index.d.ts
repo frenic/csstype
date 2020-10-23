@@ -221,10 +221,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  |   Firefox   |   Safari    |   Edge   | IE  |
-   * | :-----: | :---------: | :---------: | :------: | :-: |
-   * | **84**  | **1** _-x-_ | **3** _-x-_ |  **84**  | No  |
-   * | 1 _-x-_ |             |             | 12 _-x-_ |     |
+   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
+   * | :-----: | :-----: | :---------: | :------: | :-: |
+   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -238,7 +238,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **71**  |   No   | **79** | No  |
+   * | **79** | **71**  | **14** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -1378,18 +1378,18 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox |   Safari    |  Edge  | IE  |
-   * | :----: | :-----: | :---------: | :----: | :-: |
-   * | **84** | **63**  | **3** _-x-_ | **84** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
-   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
-   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
-   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
+   * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
+   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
    *
@@ -1543,9 +1543,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** | **68**  |   No   | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/counter-set
    */
@@ -2101,9 +2101,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
    */
@@ -2115,9 +2115,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
    */
@@ -2415,9 +2415,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * _Supported in Grid Layout_
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **45**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **45**  | **10.1** | **16** | **10** _-x-_ |
    *
    * ---
    *
@@ -2459,10 +2459,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |  Edge  |   IE    |
-   * | :-----: | :-----: | :---------: | :----: | :-----: |
-   * | **58**  | **69**  | **3** _-x-_ | **14** | **5.5** |
-   * | 1 _-x-_ |         |             |        |         |
+   * | Chrome  | Firefox | Safari  |  Edge  |   IE    |
+   * | :-----: | :-----: | :-----: | :----: | :-----: |
+   * | **58**  | **69**  | **11**  | **14** | **5.5** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |         |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-break
    */
@@ -2854,6 +2854,14 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskType?: Property.MaskType;
   /**
+   * The `math-style` property indicates whether MathML equations should render with normal or compact height.
+   *
+   * **Syntax**: `normal | compact`
+   *
+   * **Initial value**: `normal`
+   */
+  mathStyle?: Property.MathStyle;
+  /**
    * The `**max-block-size**` CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
    *
    * **Syntax**: `<'max-width'>`
@@ -2870,7 +2878,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -2905,7 +2913,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -3004,7 +3012,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -3089,7 +3097,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -3318,7 +3326,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
@@ -3752,10 +3760,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * _Supported in Grid Layout_
    *
-   * |       Chrome        |       Firefox       |          Safari           |  Edge  | IE  |
-   * | :-----------------: | :-----------------: | :-----------------------: | :----: | :-: |
-   * |       **66**        |       **61**        | **10.1** _(grid-row-gap)_ | **16** | No  |
-   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
+   * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
+   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
    *
@@ -3819,7 +3827,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |   No   | **79** | No  |
+   * | **61** | **36**  | **14** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -4294,9 +4302,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |     Safari     |  Edge  | IE  |
-   * | :----: | :-----: | :------------: | :----: | :-: |
-   * | **37** | **62**  | **10.1** _-x-_ | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **37** | **62**  | **10.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -4565,10 +4573,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `mixed`
    *
-   * |  Chrome  | Firefox |    Safari     |  Edge  | IE  |
-   * | :------: | :-----: | :-----------: | :----: | :-: |
-   * |  **48**  | **41**  | **5.1** _-x-_ | **79** | No  |
-   * | 11 _-x-_ |         |               |        |     |
+   * |  Chrome  | Firefox |  Safari   |  Edge  | IE  |
+   * | :------: | :-----: | :-------: | :----: | :-: |
+   * |  **48**  | **41**  |  **14**   | **79** | No  |
+   * | 11 _-x-_ |         | 5.1 _-x-_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
    */
@@ -4996,10 +5004,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `horizontal-tb`
    *
-   * | Chrome  | Firefox |  Safari   |  Edge  |     IE      |
-   * | :-----: | :-----: | :-------: | :----: | :---------: |
-   * | **48**  | **41**  | **10.1**  | **12** | **9** _-x-_ |
-   * | 8 _-x-_ |         | 5.1 _-x-_ |        |             |
+   * | Chrome  | Firefox |  Safari   |  Edge  |  IE   |
+   * | :-----: | :-----: | :-------: | :----: | :---: |
+   * | **48**  | **41**  | **10.1**  | **12** | **9** |
+   * | 8 _-x-_ |         | 5.1 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
    */
@@ -5576,7 +5584,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -6188,21 +6196,21 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msFlowInto?: Property.MsFlowInto;
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  msGridColumns?: Property.GridAutoColumns<TLength>;
+  msGridColumns?: Property.MsGridColumns<TLength>;
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  msGridRows?: Property.GridAutoRows<TLength>;
+  msGridRows?: Property.MsGridRows<TLength>;
   /**
    * The **`-ms-high-contrast-adjust`** CSS property is a Microsoft extension that gets or sets a value indicating whether to override any CSS properties that would have been set in high contrast mode.
    *
@@ -6251,6 +6259,14 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `auto`
    */
   msImeAlign?: Property.MsImeAlign;
+  /**
+   * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
+   *
+   * **Syntax**: `auto | normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ]`
+   *
+   * **Initial value**: `auto`
+   */
+  msJustifySelf?: Property.JustifySelf;
   /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
@@ -6694,7 +6710,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /**
    * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this propery, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support `-webkit-appearance`, for compatibility reasons.
    *
-   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield`
+   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield | -apple-pay-button`
    *
    * **Initial value**: `none` (but this value is overridden in the user agent CSS)
    */
@@ -8132,7 +8148,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
   /**
    * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
    *
-   * **Syntax**: `<integer>`
+   * **Syntax**: `<integer [0,1]>`
    *
    * **Initial value**: `0`
    *
@@ -8855,10 +8871,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  |   Firefox   |   Safari    |   Edge   | IE  |
-   * | :-----: | :---------: | :---------: | :------: | :-: |
-   * | **84**  | **1** _-x-_ | **3** _-x-_ |  **84**  | No  |
-   * | 1 _-x-_ |             |             | 12 _-x-_ |     |
+   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
+   * | :-----: | :-----: | :---------: | :------: | :-: |
+   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -8872,7 +8888,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **71**  |   No   | **79** | No  |
+   * | **79** | **71**  | **14** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -10012,18 +10028,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox |   Safari    |  Edge  | IE  |
-   * | :----: | :-----: | :---------: | :----: | :-: |
-   * | **84** | **63**  | **3** _-x-_ | **84** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
-   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
-   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
-   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
+   * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
+   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
    *
@@ -10177,9 +10193,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** | **68**  |   No   | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/counter-set
    */
@@ -10735,9 +10751,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
    */
@@ -10749,9 +10765,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
    */
@@ -11049,9 +11065,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * _Supported in Grid Layout_
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **45**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **45**  | **10.1** | **16** | **10** _-x-_ |
    *
    * ---
    *
@@ -11093,10 +11109,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |  Edge  |   IE    |
-   * | :-----: | :-----: | :---------: | :----: | :-----: |
-   * | **58**  | **69**  | **3** _-x-_ | **14** | **5.5** |
-   * | 1 _-x-_ |         |             |        |         |
+   * | Chrome  | Firefox | Safari  |  Edge  |   IE    |
+   * | :-----: | :-----: | :-----: | :----: | :-----: |
+   * | **58**  | **69**  | **11**  | **14** | **5.5** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |         |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-break
    */
@@ -11488,6 +11504,14 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-type"?: Property.MaskType;
   /**
+   * The `math-style` property indicates whether MathML equations should render with normal or compact height.
+   *
+   * **Syntax**: `normal | compact`
+   *
+   * **Initial value**: `normal`
+   */
+  "math-style"?: Property.MathStyle;
+  /**
    * The `**max-block-size**` CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
    *
    * **Syntax**: `<'max-width'>`
@@ -11504,7 +11528,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -11539,7 +11563,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -11638,7 +11662,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -11723,7 +11747,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -11952,7 +11976,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
@@ -12386,10 +12410,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * _Supported in Grid Layout_
    *
-   * |       Chrome        |       Firefox       |          Safari           |  Edge  | IE  |
-   * | :-----------------: | :-----------------: | :-----------------------: | :----: | :-: |
-   * |       **66**        |       **61**        | **10.1** _(grid-row-gap)_ | **16** | No  |
-   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
+   * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
+   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
    *
@@ -12453,7 +12477,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |   No   | **79** | No  |
+   * | **61** | **36**  | **14** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -12928,9 +12952,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |     Safari     |  Edge  | IE  |
-   * | :----: | :-----: | :------------: | :----: | :-: |
-   * | **37** | **62**  | **10.1** _-x-_ | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **37** | **62**  | **10.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -13199,10 +13223,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `mixed`
    *
-   * |  Chrome  | Firefox |    Safari     |  Edge  | IE  |
-   * | :------: | :-----: | :-----------: | :----: | :-: |
-   * |  **48**  | **41**  | **5.1** _-x-_ | **79** | No  |
-   * | 11 _-x-_ |         |               |        |     |
+   * |  Chrome  | Firefox |  Safari   |  Edge  | IE  |
+   * | :------: | :-----: | :-------: | :----: | :-: |
+   * |  **48**  | **41**  |  **14**   | **79** | No  |
+   * | 11 _-x-_ |         | 5.1 _-x-_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
    */
@@ -13630,10 +13654,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `horizontal-tb`
    *
-   * | Chrome  | Firefox |  Safari   |  Edge  |     IE      |
-   * | :-----: | :-----: | :-------: | :----: | :---------: |
-   * | **48**  | **41**  | **10.1**  | **12** | **9** _-x-_ |
-   * | 8 _-x-_ |         | 5.1 _-x-_ |        |             |
+   * | Chrome  | Firefox |  Safari   |  Edge  |  IE   |
+   * | :-----: | :-----: | :-------: | :----: | :---: |
+   * | **48**  | **41**  | **10.1**  | **12** | **9** |
+   * | 8 _-x-_ |         | 5.1 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
    */
@@ -14210,7 +14234,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -14822,21 +14846,21 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-flow-into"?: Property.MsFlowInto;
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  "-ms-grid-columns"?: Property.GridAutoColumns<TLength>;
+  "-ms-grid-columns"?: Property.MsGridColumns<TLength>;
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  "-ms-grid-rows"?: Property.GridAutoRows<TLength>;
+  "-ms-grid-rows"?: Property.MsGridRows<TLength>;
   /**
    * The **`-ms-high-contrast-adjust`** CSS property is a Microsoft extension that gets or sets a value indicating whether to override any CSS properties that would have been set in high contrast mode.
    *
@@ -14885,6 +14909,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `auto`
    */
   "-ms-ime-align"?: Property.MsImeAlign;
+  /**
+   * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
+   *
+   * **Syntax**: `auto | normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ]`
+   *
+   * **Initial value**: `auto`
+   */
+  "-ms-justify-self"?: Property.JustifySelf;
   /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
@@ -15328,7 +15360,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /**
    * The `**appearance**` CSS property is used to display an element using platform-native styling, based on the operating system's theme. The **`-moz-appearance`** and **`-webkit-appearance`** properties are non-standard versions of this propery, used (respectively) by Gecko (Firefox) and by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) browsers to achieve the same thing. Note that Firefox and Edge also support `-webkit-appearance`, for compatibility reasons.
    *
-   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield`
+   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield | -apple-pay-button`
    *
    * **Initial value**: `none` (but this value is overridden in the user agent CSS)
    */
@@ -16768,7 +16800,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
   /**
    * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
    *
-   * **Syntax**: `<integer>`
+   * **Syntax**: `<integer [0,1]>`
    *
    * **Initial value**: `0`
    *
@@ -17659,6 +17691,7 @@ export type HtmlAttributes =
   | "[rows]"
   | "[rowspan]"
   | "[rules]"
+  | "[sandbox-allow-downloads]"
   | "[sandbox-allow-modals]"
   | "[sandbox-allow-popups-to-escape-sandbox]"
   | "[sandbox-allow-popups]"
@@ -17723,7 +17756,6 @@ export type SvgAttributes =
   | "[baseProfile]"
   | "[baseline-shift]"
   | "[bbox]"
-  | "[begin]"
   | "[bias]"
   | "[by]"
   | "[calcMode]"
@@ -18583,7 +18615,9 @@ export namespace Property {
 
   export type MaskType = Globals | "alpha" | "luminance";
 
-  export type MaxBlockSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | (string & {});
+  export type MathStyle = Globals | "compact" | "normal";
+
+  export type MaxBlockSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | (string & {});
 
   export type MaxHeight<TLength = (string & {}) | 0> =
     | Globals
@@ -18592,12 +18626,12 @@ export namespace Property {
     | "-moz-min-content"
     | "-webkit-max-content"
     | "-webkit-min-content"
-    | "auto"
     | "max-content"
     | "min-content"
+    | "none"
     | (string & {});
 
-  export type MaxInlineSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | (string & {});
+  export type MaxInlineSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | (string & {});
 
   export type MaxLines = Globals | "none" | (number & {});
 
@@ -18608,10 +18642,10 @@ export namespace Property {
     | "-moz-min-content"
     | "-webkit-max-content"
     | "-webkit-min-content"
-    | "auto"
     | "intrinsic"
     | "max-content"
     | "min-content"
+    | "none"
     | (string & {});
 
   export type MinBlockSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | (string & {});
@@ -18676,7 +18710,7 @@ export namespace Property {
 
   export type OutlineWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength>;
 
-  export type Overflow = Globals | "auto" | "hidden" | "scroll" | "visible" | (string & {});
+  export type Overflow = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | (string & {});
 
   export type OverflowAnchor = Globals | "auto" | "none";
 
@@ -18688,9 +18722,9 @@ export namespace Property {
 
   export type OverflowWrap = Globals | "anywhere" | "break-word" | "normal";
 
-  export type OverflowX = Globals | "auto" | "hidden" | "scroll" | "visible";
+  export type OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
-  export type OverflowY = Globals | "auto" | "hidden" | "scroll" | "visible";
+  export type OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
   export type OverscrollBehavior = Globals | "auto" | "contain" | "none" | (string & {});
 
@@ -19193,6 +19227,10 @@ export namespace Property {
 
   export type MsFlowInto = Globals | "none" | (string & {});
 
+  export type MsGridColumns<TLength = (string & {}) | 0> = Globals | DataType.TrackBreadth<TLength> | "none" | (string & {});
+
+  export type MsGridRows<TLength = (string & {}) | 0> = Globals | DataType.TrackBreadth<TLength> | "none" | (string & {});
+
   export type MsHighContrastAdjust = Globals | "auto" | "none";
 
   export type MsHyphenateLimitChars = Globals | "auto" | (string & {}) | (number & {});
@@ -19259,6 +19297,7 @@ export namespace Property {
 
   export type WebkitAppearance =
     | Globals
+    | "-apple-pay-button"
     | "button"
     | "button-bevel"
     | "caret"

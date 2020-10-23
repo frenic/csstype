@@ -192,6 +192,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   maskRepeat?: Property$MaskRepeat,
   maskSize?: Property$MaskSize<TLength>,
   maskType?: Property$MaskType,
+  mathStyle?: Property$MathStyle,
   maxBlockSize?: Property$MaxBlockSize<TLength>,
   maxHeight?: Property$MaxHeight<TLength>,
   maxInlineSize?: Property$MaxInlineSize<TLength>,
@@ -467,14 +468,15 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   msFlexPositive?: Property$FlexGrow,
   msFlowFrom?: Property$MsFlowFrom,
   msFlowInto?: Property$MsFlowInto,
-  msGridColumns?: Property$GridAutoColumns<TLength>,
-  msGridRows?: Property$GridAutoRows<TLength>,
+  msGridColumns?: Property$MsGridColumns<TLength>,
+  msGridRows?: Property$MsGridRows<TLength>,
   msHighContrastAdjust?: Property$MsHighContrastAdjust,
   msHyphenateLimitChars?: Property$MsHyphenateLimitChars,
   msHyphenateLimitLines?: Property$MsHyphenateLimitLines,
   msHyphenateLimitZone?: Property$MsHyphenateLimitZone<TLength>,
   msHyphens?: Property$Hyphens,
   msImeAlign?: Property$MsImeAlign,
+  msJustifySelf?: Property$JustifySelf,
   msLineBreak?: Property$LineBreak,
   msOrder?: Property$Order,
   msOverflowStyle?: Property$MsOverflowStyle,
@@ -1019,6 +1021,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "mask-repeat"?: Property$MaskRepeat,
   "mask-size"?: Property$MaskSize<TLength>,
   "mask-type"?: Property$MaskType,
+  "math-style"?: Property$MathStyle,
   "max-block-size"?: Property$MaxBlockSize<TLength>,
   "max-height"?: Property$MaxHeight<TLength>,
   "max-inline-size"?: Property$MaxInlineSize<TLength>,
@@ -1297,14 +1300,15 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-ms-flex-positive"?: Property$FlexGrow,
   "-ms-flow-from"?: Property$MsFlowFrom,
   "-ms-flow-into"?: Property$MsFlowInto,
-  "-ms-grid-columns"?: Property$GridAutoColumns<TLength>,
-  "-ms-grid-rows"?: Property$GridAutoRows<TLength>,
+  "-ms-grid-columns"?: Property$MsGridColumns<TLength>,
+  "-ms-grid-rows"?: Property$MsGridRows<TLength>,
   "-ms-high-contrast-adjust"?: Property$MsHighContrastAdjust,
   "-ms-hyphenate-limit-chars"?: Property$MsHyphenateLimitChars,
   "-ms-hyphenate-limit-lines"?: Property$MsHyphenateLimitLines,
   "-ms-hyphenate-limit-zone"?: Property$MsHyphenateLimitZone<TLength>,
   "-ms-hyphens"?: Property$Hyphens,
   "-ms-ime-align"?: Property$MsImeAlign,
+  "-ms-justify-self"?: Property$JustifySelf,
   "-ms-line-break"?: Property$LineBreak,
   "-ms-order"?: Property$Order,
   "-ms-overflow-style"?: Property$MsOverflowStyle,
@@ -1852,6 +1856,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   maskRepeat?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   maskSize?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   maskType?: Property$MaskType | Array<Property$MaskType>,
+  mathStyle?: Property$MathStyle | Array<Property$MathStyle>,
   maxBlockSize?: Property$MaxBlockSize<TLength> | Array<Property$MaxBlockSize<TLength>>,
   maxHeight?: Property$MaxHeight<TLength> | Array<Property$MaxHeight<TLength>>,
   maxInlineSize?: Property$MaxInlineSize<TLength> | Array<Property$MaxInlineSize<TLength>>,
@@ -2130,14 +2135,15 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   msFlexPositive?: Property$FlexGrow | Array<Property$FlexGrow>,
   msFlowFrom?: Property$MsFlowFrom | Array<Property$MsFlowFrom>,
   msFlowInto?: Property$MsFlowInto | Array<Property$MsFlowInto>,
-  msGridColumns?: Property$GridAutoColumns<TLength> | Array<Property$GridAutoColumns<TLength>>,
-  msGridRows?: Property$GridAutoRows<TLength> | Array<Property$GridAutoRows<TLength>>,
+  msGridColumns?: Property$MsGridColumns<TLength> | Array<Property$MsGridColumns<TLength>>,
+  msGridRows?: Property$MsGridRows<TLength> | Array<Property$MsGridRows<TLength>>,
   msHighContrastAdjust?: Property$MsHighContrastAdjust | Array<Property$MsHighContrastAdjust>,
   msHyphenateLimitChars?: Property$MsHyphenateLimitChars | Array<Property$MsHyphenateLimitChars>,
   msHyphenateLimitLines?: Property$MsHyphenateLimitLines | Array<Property$MsHyphenateLimitLines>,
   msHyphenateLimitZone?: Property$MsHyphenateLimitZone<TLength> | Array<Property$MsHyphenateLimitZone<TLength>>,
   msHyphens?: Property$Hyphens | Array<Property$Hyphens>,
   msImeAlign?: Property$MsImeAlign | Array<Property$MsImeAlign>,
+  msJustifySelf?: Property$JustifySelf | Array<Property$JustifySelf>,
   msLineBreak?: Property$LineBreak | Array<Property$LineBreak>,
   msOrder?: Property$Order | Array<Property$Order>,
   msOverflowStyle?: Property$MsOverflowStyle | Array<Property$MsOverflowStyle>,
@@ -2685,6 +2691,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "mask-repeat"?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   "mask-size"?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   "mask-type"?: Property$MaskType | Array<Property$MaskType>,
+  "math-style"?: Property$MathStyle | Array<Property$MathStyle>,
   "max-block-size"?: Property$MaxBlockSize<TLength> | Array<Property$MaxBlockSize<TLength>>,
   "max-height"?: Property$MaxHeight<TLength> | Array<Property$MaxHeight<TLength>>,
   "max-inline-size"?: Property$MaxInlineSize<TLength> | Array<Property$MaxInlineSize<TLength>>,
@@ -2963,14 +2970,15 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-ms-flex-positive"?: Property$FlexGrow | Array<Property$FlexGrow>,
   "-ms-flow-from"?: Property$MsFlowFrom | Array<Property$MsFlowFrom>,
   "-ms-flow-into"?: Property$MsFlowInto | Array<Property$MsFlowInto>,
-  "-ms-grid-columns"?: Property$GridAutoColumns<TLength> | Array<Property$GridAutoColumns<TLength>>,
-  "-ms-grid-rows"?: Property$GridAutoRows<TLength> | Array<Property$GridAutoRows<TLength>>,
+  "-ms-grid-columns"?: Property$MsGridColumns<TLength> | Array<Property$MsGridColumns<TLength>>,
+  "-ms-grid-rows"?: Property$MsGridRows<TLength> | Array<Property$MsGridRows<TLength>>,
   "-ms-high-contrast-adjust"?: Property$MsHighContrastAdjust | Array<Property$MsHighContrastAdjust>,
   "-ms-hyphenate-limit-chars"?: Property$MsHyphenateLimitChars | Array<Property$MsHyphenateLimitChars>,
   "-ms-hyphenate-limit-lines"?: Property$MsHyphenateLimitLines | Array<Property$MsHyphenateLimitLines>,
   "-ms-hyphenate-limit-zone"?: Property$MsHyphenateLimitZone<TLength> | Array<Property$MsHyphenateLimitZone<TLength>>,
   "-ms-hyphens"?: Property$Hyphens | Array<Property$Hyphens>,
   "-ms-ime-align"?: Property$MsImeAlign | Array<Property$MsImeAlign>,
+  "-ms-justify-self"?: Property$JustifySelf | Array<Property$JustifySelf>,
   "-ms-line-break"?: Property$LineBreak | Array<Property$LineBreak>,
   "-ms-order"?: Property$Order | Array<Property$Order>,
   "-ms-overflow-style"?: Property$MsOverflowStyle | Array<Property$MsOverflowStyle>,
@@ -3633,6 +3641,7 @@ export type HtmlAttributes =
   | "[rows]"
   | "[rowspan]"
   | "[rules]"
+  | "[sandbox-allow-downloads]"
   | "[sandbox-allow-modals]"
   | "[sandbox-allow-popups-to-escape-sandbox]"
   | "[sandbox-allow-popups]"
@@ -3697,7 +3706,6 @@ export type SvgAttributes =
   | "[baseProfile]"
   | "[baseline-shift]"
   | "[bbox]"
-  | "[begin]"
   | "[bias]"
   | "[by]"
   | "[calcMode]"
@@ -4556,7 +4564,9 @@ export type Property$MaskSize<TLength = string | 0> = Globals | DataType$BgSize<
 
 export type Property$MaskType = Globals | "alpha" | "luminance";
 
-export type Property$MaxBlockSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type Property$MathStyle = Globals | "compact" | "normal";
+
+export type Property$MaxBlockSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
 
 export type Property$MaxHeight<TLength = string | 0> =
   | Globals
@@ -4565,12 +4575,12 @@ export type Property$MaxHeight<TLength = string | 0> =
   | "-moz-min-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
-  | "auto"
   | "max-content"
   | "min-content"
+  | "none"
   | string;
 
-export type Property$MaxInlineSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type Property$MaxInlineSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
 
 export type Property$MaxLines = Globals | "none" | number;
 
@@ -4581,10 +4591,10 @@ export type Property$MaxWidth<TLength = string | 0> =
   | "-moz-min-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
-  | "auto"
   | "intrinsic"
   | "max-content"
   | "min-content"
+  | "none"
   | string;
 
 export type Property$MinBlockSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
@@ -4649,7 +4659,7 @@ export type Property$OutlineStyle = Globals | DataType$LineStyle | "auto" | stri
 
 export type Property$OutlineWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength>;
 
-export type Property$Overflow = Globals | "auto" | "hidden" | "scroll" | "visible" | string;
+export type Property$Overflow = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
 export type Property$OverflowAnchor = Globals | "auto" | "none";
 
@@ -4661,9 +4671,9 @@ export type Property$OverflowInline = Globals | "auto" | "clip" | "hidden" | "sc
 
 export type Property$OverflowWrap = Globals | "anywhere" | "break-word" | "normal";
 
-export type Property$OverflowX = Globals | "auto" | "hidden" | "scroll" | "visible";
+export type Property$OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
-export type Property$OverflowY = Globals | "auto" | "hidden" | "scroll" | "visible";
+export type Property$OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type Property$OverscrollBehavior = Globals | "auto" | "contain" | "none" | string;
 
@@ -5155,6 +5165,10 @@ export type Property$MsFlowFrom = Globals | "none" | string;
 
 export type Property$MsFlowInto = Globals | "none" | string;
 
+export type Property$MsGridColumns<TLength = string | 0> = Globals | DataType$TrackBreadth<TLength> | "none" | string;
+
+export type Property$MsGridRows<TLength = string | 0> = Globals | DataType$TrackBreadth<TLength> | "none" | string;
+
 export type Property$MsHighContrastAdjust = Globals | "auto" | "none";
 
 export type Property$MsHyphenateLimitChars = Globals | "auto" | string | number;
@@ -5221,6 +5235,7 @@ export type Property$MsWrapThrough = Globals | "none" | "wrap";
 
 export type Property$WebkitAppearance =
   | Globals
+  | "-apple-pay-button"
   | "button"
   | "button-bevel"
   | "caret"
