@@ -1,7 +1,6 @@
 {
   "javascript.validate.enable": false,
-  "flow.useNPMPackagedFlow": true,
   "files.eol": "\n",
   "editor.formatOnSave": true,
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

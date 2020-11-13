@@ -3,6 +3,7 @@ import * as path from 'path';
 const COMPILER_OPTIONS = {
   noEmit: true,
   strict: true,
+  types: [],
 };
 
 describe('Typescript 4.1', () => {
