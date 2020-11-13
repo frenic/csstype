@@ -87,6 +87,14 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   alignSelf?: AlignSelfProperty;
   /**
+   * The **`align-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
+   *
+   * **Syntax**: `[ normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position> ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  alignTracks?: AlignTracksProperty;
+  /**
    * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
@@ -209,13 +217,14 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | auto | button | textfield | menulist-button | <compat-auto>`
+   * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    |   Firefox   |   Safari    |     Edge     | IE  |
-   * | :---------: | :---------: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
+   * | :-----: | :-----: | :---------: | :------: | :-: |
+   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -227,9 +236,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **71**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -1148,7 +1157,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    |   No   | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -1157,14 +1166,6 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -1196,14 +1197,6 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * ---
    *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
-   *
-   * ---
-   *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
   breakBefore?: BreakBeforeProperty;
@@ -1229,14 +1222,6 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -1369,18 +1354,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   | **63**  | **3** _-x-_ |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
-   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
-   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
-   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
+   * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
+   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
    *
@@ -1534,9 +1519,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** | **68**  |   No   | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/counter-set
    */
@@ -1802,6 +1787,20 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
    */
   fontSizeAdjust?: FontSizeAdjustProperty;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |              Chrome              |              Firefox               |              Safari              |               Edge                | IE  |
+   * | :------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-: |
+   * | **5** _(-webkit-font-smoothing)_ | **25** _(-moz-osx-font-smoothing)_ | **4** _(-webkit-font-smoothing)_ | **79** _(-webkit-font-smoothing)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-smooth
+   */
+  fontSmooth?: FontSmoothProperty<TLength>;
   /**
    * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
@@ -2078,9 +2077,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
    */
@@ -2092,9 +2091,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
    */
@@ -2147,7 +2146,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Syntax**: `from-image | <angle> | [ <angle>? flip ]`
    *
-   * **Initial value**: `0deg`
+   * **Initial value**: `from-image`
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -2392,15 +2391,23 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Grid Layout_
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **45**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **45**  | **10.1** | **16** | **10** _-x-_ |
    *
    * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
    */
   justifySelf?: JustifySelfProperty;
+  /**
+   * The **`justify-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their inline axis.
+   *
+   * **Syntax**: `[ normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ] ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  justifyTracks?: JustifyTracksProperty;
   /**
    * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
    *
@@ -2436,10 +2443,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |  Edge  |   IE    |
-   * | :-----: | :-----: | :---------: | :----: | :-----: |
-   * | **58**  | **69**  | **3** _-x-_ | **14** | **5.5** |
-   * | 1 _-x-_ |         |             |        |         |
+   * | Chrome  | Firefox | Safari  |  Edge  |   IE    |
+   * | :-----: | :-----: | :-----: | :----: | :-----: |
+   * | **58**  | **69**  | **11**  | **14** | **5.5** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |         |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-break
    */
@@ -2831,6 +2838,22 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   maskType?: MaskTypeProperty;
   /**
+   * The **`masonry-auto-flow`** CSS property modifies how items are placed when using masonry in CSS Grid Layout.
+   *
+   * **Syntax**: `[ pack | next ] || [ definite-first | ordered ]`
+   *
+   * **Initial value**: `pack`
+   */
+  masonryAutoFlow?: MasonryAutoFlowProperty;
+  /**
+   * The `math-style` property indicates whether MathML equations should render with normal or compact height.
+   *
+   * **Syntax**: `normal | compact`
+   *
+   * **Initial value**: `normal`
+   */
+  mathStyle?: MathStyleProperty;
+  /**
    * The `**max-block-size**` CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
    *
    * **Syntax**: `<'max-width'>`
@@ -2847,7 +2870,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -2882,7 +2905,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -2981,7 +3004,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -3066,7 +3089,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -3295,7 +3318,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
@@ -3721,18 +3744,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |       Chrome        |       Firefox       |          Safari           |  Edge  | IE  |
-   * | :-----------------: | :-----------------: | :-----------------------: | :----: | :-: |
-   * |       **66**        |       **61**        | **10.1** _(grid-row-gap)_ | **16** | No  |
-   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
+   * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
+   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
    *
@@ -3766,9 +3789,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `over`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **38**  |   No   | 12-79 | No  |
+   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
+   * | :-----: | :-----: | :-----------: | :---: | :-: |
+   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |               |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -3796,7 +3820,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |   No   | **79** | No  |
+   * | **61** | **36**  | **14** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -4243,6 +4267,14 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   scrollbarColor?: ScrollbarColorProperty;
   /**
+   * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
+   *
+   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   *
+   * **Initial value**: `auto`
+   */
+  scrollbarGutter?: ScrollbarGutterProperty;
+  /**
    * The `scrollbar-width` property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
    * **Syntax**: `auto | thin | none`
@@ -4277,9 +4309,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |     Safari     |  Edge  | IE  |
-   * | :----: | :-----: | :------------: | :----: | :-: |
-   * | **37** | **62**  | **10.1** _-x-_ | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **37** | **62**  | **10.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -4548,10 +4580,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `mixed`
    *
-   * |  Chrome  | Firefox |    Safari     |  Edge  | IE  |
-   * | :------: | :-----: | :-----------: | :----: | :-: |
-   * |  **48**  | **41**  | **5.1** _-x-_ | **79** | No  |
-   * | 11 _-x-_ |         |               |        |     |
+   * |  Chrome  | Firefox |  Safari   |  Edge  | IE  |
+   * | :------: | :-----: | :-------: | :----: | :-: |
+   * |  **48**  | **41**  |  **14**   | **79** | No  |
+   * | 11 _-x-_ |         | 5.1 _-x-_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
    */
@@ -4979,10 +5011,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `horizontal-tb`
    *
-   * | Chrome  | Firefox |  Safari   |  Edge  |     IE      |
-   * | :-----: | :-----: | :-------: | :----: | :---------: |
-   * | **48**  | **41**  | **10.1**  | **12** | **9** _-x-_ |
-   * | 8 _-x-_ |         | 5.1 _-x-_ |        |             |
+   * | Chrome  | Firefox |  Safari   |  Edge  |  IE   |
+   * | :-----: | :-----: | :-------: | :----: | :---: |
+   * | **48**  | **41**  | **10.1**  | **12** | **9** |
+   * | 8 _-x-_ |         | 5.1 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
    */
@@ -5324,9 +5356,9 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **84** | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
@@ -5559,7 +5591,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -5567,7 +5599,7 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -5841,14 +5873,6 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   MozContextProperties?: MozContextPropertiesProperty;
   /**
-   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
-   *
-   * **Syntax**: `border-box | content-box | margin-box | padding-box`
-   *
-   * **Initial value**: `content-box`
-   */
-  MozFloatEdge?: MozFloatEdgeProperty;
-  /**
    * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
@@ -5864,14 +5888,6 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    * **Initial value**: `normal`
    */
   MozFontLanguageOverride?: FontLanguageOverrideProperty;
-  /**
-   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
-   *
-   * **Syntax**: `<integer>`
-   *
-   * **Initial value**: `0`
-   */
-  MozForceBrokenImageIcon?: GlobalsNumber;
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
@@ -5913,37 +5929,13 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   MozOrient?: MozOrientProperty;
   /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
    *
-   * **Syntax**: `<outline-radius>`
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `auto`
    */
-  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength>;
+  MozOsxFontSmoothing?: FontSmoothProperty<TLength>;
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -6209,21 +6201,21 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   msFlowInto?: MsFlowIntoProperty;
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  msGridColumns?: GridAutoColumnsProperty<TLength>;
+  msGridColumns?: MsGridColumnsProperty<TLength>;
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  msGridRows?: GridAutoRowsProperty<TLength>;
+  msGridRows?: MsGridRowsProperty<TLength>;
   /**
    * The **`-ms-high-contrast-adjust`** CSS property is a Microsoft extension that gets or sets a value indicating whether to override any CSS properties that would have been set in high contrast mode.
    *
@@ -6272,6 +6264,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    * **Initial value**: `auto`
    */
   msImeAlign?: MsImeAlignProperty;
+  /**
+   * The CSS **`justify-self`** property set the way a box is justified inside its alignment container along the appropriate axis.
+   *
+   * **Syntax**: `auto | normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ]`
+   *
+   * **Initial value**: `auto`
+   */
+  msJustifySelf?: JustifySelfProperty;
   /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
@@ -6715,7 +6715,7 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield`
+   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield | -apple-pay-button`
    *
    * **Initial value**: `none` (but this value is overridden in the user agent CSS)
    */
@@ -6987,6 +6987,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitFontKerning?: FontKerningProperty;
   /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   */
+  WebkitFontSmoothing?: FontSmoothProperty<TLength>;
+  /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
@@ -7202,6 +7210,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    * **Initial value**: `economy`
    */
   WebkitPrintColorAdjust?: ColorAdjustProperty;
+  /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
+   * **Syntax**: `over | under | inter-character`
+   *
+   * **Initial value**: `over`
+   */
+  WebkitRubyPosition?: RubyPositionProperty;
   /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
@@ -7576,6 +7592,16 @@ export interface VendorShorthandProperties<TLength = string | 0> {
 export interface VendorProperties<TLength = string | 0> extends VendorLonghandProperties<TLength>, VendorShorthandProperties<TLength> {}
 
 export interface ObsoleteProperties<TLength = string | 0> {
+  /**
+   * In combination with `elevation`, the **`azimuth`** CSS property enables different audio sources to be positioned spatially for aural presentation. This is important in that it provides a natural way to tell several voices apart, as each can be positioned to originate at a different location on the sound stage. Stereo output produce a lateral sound stage, while binaural headphones and multi-speaker setups allow for a fully three-dimensional stage.
+   *
+   * **Syntax**: `<angle> | [ [ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards`
+   *
+   * **Initial value**: `center`
+   *
+   * @deprecated
+   */
+  azimuth?: AzimuthProperty;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -8133,6 +8159,26 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   MozBoxShadow?: BoxShadowProperty;
   /**
+   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
+   *
+   * **Syntax**: `border-box | content-box | margin-box | padding-box`
+   *
+   * **Initial value**: `content-box`
+   *
+   * @deprecated
+   */
+  MozFloatEdge?: MozFloatEdgeProperty;
+  /**
+   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
+   *
+   * **Syntax**: `<integer [0,1]>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozForceBrokenImageIcon?: GlobalsNumber;
+  /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
    * **Syntax**: `<alpha-value>`
@@ -8168,6 +8214,46 @@ export interface ObsoleteProperties<TLength = string | 0> {
    * @deprecated
    */
   MozOutlineRadius?: MozOutlineRadiusProperty<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength>;
   /**
    * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
@@ -8678,6 +8764,14 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "align-self"?: AlignSelfProperty;
   /**
+   * The **`align-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
+   *
+   * **Syntax**: `[ normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position> ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  "align-tracks"?: AlignTracksProperty;
+  /**
    * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
@@ -8800,13 +8894,14 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | auto | button | textfield | menulist-button | <compat-auto>`
+   * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    |   Firefox   |   Safari    |     Edge     | IE  |
-   * | :---------: | :---------: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
+   * | :-----: | :-----: | :---------: | :------: | :-: |
+   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -8818,9 +8913,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **71**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -9739,7 +9834,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    |   No   | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -9748,14 +9843,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -9787,14 +9874,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * ---
    *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
-   *
-   * ---
-   *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
   "break-before"?: BreakBeforeProperty;
@@ -9820,14 +9899,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -9960,18 +10031,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   | **63**  | **3** _-x-_ |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
-   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
-   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
-   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
+   * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
+   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
    *
@@ -10125,9 +10196,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** | **68**  |   No   | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/counter-set
    */
@@ -10393,6 +10464,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
    */
   "font-size-adjust"?: FontSizeAdjustProperty;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |              Chrome              |              Firefox               |              Safari              |               Edge                | IE  |
+   * | :------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-: |
+   * | **5** _(-webkit-font-smoothing)_ | **25** _(-moz-osx-font-smoothing)_ | **4** _(-webkit-font-smoothing)_ | **79** _(-webkit-font-smoothing)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-smooth
+   */
+  "font-smooth"?: FontSmoothProperty<TLength>;
   /**
    * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
@@ -10669,9 +10754,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
    */
@@ -10683,9 +10768,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
    */
@@ -10738,7 +10823,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `from-image | <angle> | [ <angle>? flip ]`
    *
-   * **Initial value**: `0deg`
+   * **Initial value**: `from-image`
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -10983,15 +11068,23 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Grid Layout_
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **45**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **45**  | **10.1** | **16** | **10** _-x-_ |
    *
    * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
    */
   "justify-self"?: JustifySelfProperty;
+  /**
+   * The **`justify-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their inline axis.
+   *
+   * **Syntax**: `[ normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ] ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  "justify-tracks"?: JustifyTracksProperty;
   /**
    * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
    *
@@ -11027,10 +11120,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |  Edge  |   IE    |
-   * | :-----: | :-----: | :---------: | :----: | :-----: |
-   * | **58**  | **69**  | **3** _-x-_ | **14** | **5.5** |
-   * | 1 _-x-_ |         |             |        |         |
+   * | Chrome  | Firefox | Safari  |  Edge  |   IE    |
+   * | :-----: | :-----: | :-----: | :----: | :-----: |
+   * | **58**  | **69**  | **11**  | **14** | **5.5** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |         |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-break
    */
@@ -11422,6 +11515,22 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "mask-type"?: MaskTypeProperty;
   /**
+   * The **`masonry-auto-flow`** CSS property modifies how items are placed when using masonry in CSS Grid Layout.
+   *
+   * **Syntax**: `[ pack | next ] || [ definite-first | ordered ]`
+   *
+   * **Initial value**: `pack`
+   */
+  "masonry-auto-flow"?: MasonryAutoFlowProperty;
+  /**
+   * The `math-style` property indicates whether MathML equations should render with normal or compact height.
+   *
+   * **Syntax**: `normal | compact`
+   *
+   * **Initial value**: `normal`
+   */
+  "math-style"?: MathStyleProperty;
+  /**
    * The `**max-block-size**` CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
    *
    * **Syntax**: `<'max-width'>`
@@ -11438,7 +11547,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -11473,7 +11582,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -11572,7 +11681,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -11657,7 +11766,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -11886,7 +11995,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
@@ -12312,18 +12421,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |       Chrome        |       Firefox       |          Safari           |  Edge  | IE  |
-   * | :-----------------: | :-----------------: | :-----------------------: | :----: | :-: |
-   * |       **66**        |       **61**        | **10.1** _(grid-row-gap)_ | **16** | No  |
-   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
+   * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
+   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
    *
@@ -12357,9 +12466,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `over`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **38**  |   No   | 12-79 | No  |
+   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
+   * | :-----: | :-----: | :-----------: | :---: | :-: |
+   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |               |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -12387,7 +12497,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |   No   | **79** | No  |
+   * | **61** | **36**  | **14** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -12834,6 +12944,14 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "scrollbar-color"?: ScrollbarColorProperty;
   /**
+   * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
+   *
+   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   *
+   * **Initial value**: `auto`
+   */
+  "scrollbar-gutter"?: ScrollbarGutterProperty;
+  /**
    * The `scrollbar-width` property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
    * **Syntax**: `auto | thin | none`
@@ -12868,9 +12986,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |     Safari     |  Edge  | IE  |
-   * | :----: | :-----: | :------------: | :----: | :-: |
-   * | **37** | **62**  | **10.1** _-x-_ | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **37** | **62**  | **10.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -13139,10 +13257,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `mixed`
    *
-   * |  Chrome  | Firefox |    Safari     |  Edge  | IE  |
-   * | :------: | :-----: | :-----------: | :----: | :-: |
-   * |  **48**  | **41**  | **5.1** _-x-_ | **79** | No  |
-   * | 11 _-x-_ |         |               |        |     |
+   * |  Chrome  | Firefox |  Safari   |  Edge  | IE  |
+   * | :------: | :-----: | :-------: | :----: | :-: |
+   * |  **48**  | **41**  |  **14**   | **79** | No  |
+   * | 11 _-x-_ |         | 5.1 _-x-_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
    */
@@ -13570,10 +13688,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `horizontal-tb`
    *
-   * | Chrome  | Firefox |  Safari   |  Edge  |     IE      |
-   * | :-----: | :-----: | :-------: | :----: | :---------: |
-   * | **48**  | **41**  | **10.1**  | **12** | **9** _-x-_ |
-   * | 8 _-x-_ |         | 5.1 _-x-_ |        |             |
+   * | Chrome  | Firefox |  Safari   |  Edge  |  IE   |
+   * | :-----: | :-----: | :-------: | :----: | :---: |
+   * | **48**  | **41**  | **10.1**  | **12** | **9** |
+   * | 8 _-x-_ |         | 5.1 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
    */
@@ -13915,9 +14033,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **84** | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
@@ -14150,7 +14268,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -14158,7 +14276,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -14432,14 +14550,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-moz-context-properties"?: MozContextPropertiesProperty;
   /**
-   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
-   *
-   * **Syntax**: `border-box | content-box | margin-box | padding-box`
-   *
-   * **Initial value**: `content-box`
-   */
-  "-moz-float-edge"?: MozFloatEdgeProperty;
-  /**
    * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
@@ -14455,14 +14565,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    * **Initial value**: `normal`
    */
   "-moz-font-language-override"?: FontLanguageOverrideProperty;
-  /**
-   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
-   *
-   * **Syntax**: `<integer>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-force-broken-image-icon"?: GlobalsNumber;
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
@@ -14504,37 +14606,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-moz-orient"?: MozOrientProperty;
   /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
    *
-   * **Syntax**: `<outline-radius>`
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `auto`
    */
-  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength>;
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength>;
+  "-moz-osx-font-smoothing"?: FontSmoothProperty<TLength>;
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -14800,21 +14878,21 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-ms-flow-into"?: MsFlowIntoProperty;
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  "-ms-grid-columns"?: GridAutoColumnsProperty<TLength>;
+  "-ms-grid-columns"?: MsGridColumnsProperty<TLength>;
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  "-ms-grid-rows"?: GridAutoRowsProperty<TLength>;
+  "-ms-grid-rows"?: MsGridRowsProperty<TLength>;
   /**
    * The **`-ms-high-contrast-adjust`** CSS property is a Microsoft extension that gets or sets a value indicating whether to override any CSS properties that would have been set in high contrast mode.
    *
@@ -14863,6 +14941,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    * **Initial value**: `auto`
    */
   "-ms-ime-align"?: MsImeAlignProperty;
+  /**
+   * The CSS **`justify-self`** property set the way a box is justified inside its alignment container along the appropriate axis.
+   *
+   * **Syntax**: `auto | normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ]`
+   *
+   * **Initial value**: `auto`
+   */
+  "-ms-justify-self"?: JustifySelfProperty;
   /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
@@ -15306,7 +15392,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield`
+   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield | -apple-pay-button`
    *
    * **Initial value**: `none` (but this value is overridden in the user agent CSS)
    */
@@ -15578,6 +15664,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-font-kerning"?: FontKerningProperty;
   /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   */
+  "-webkit-font-smoothing"?: FontSmoothProperty<TLength>;
+  /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
@@ -15793,6 +15887,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    * **Initial value**: `economy`
    */
   "-webkit-print-color-adjust"?: ColorAdjustProperty;
+  /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
+   * **Syntax**: `over | under | inter-character`
+   *
+   * **Initial value**: `over`
+   */
+  "-webkit-ruby-position"?: RubyPositionProperty;
   /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
@@ -16167,6 +16269,16 @@ export interface VendorShorthandPropertiesHyphen<TLength = string | 0> {
 export interface VendorPropertiesHyphen<TLength = string | 0> extends VendorLonghandPropertiesHyphen<TLength>, VendorShorthandPropertiesHyphen<TLength> {}
 
 export interface ObsoletePropertiesHyphen<TLength = string | 0> {
+  /**
+   * In combination with `elevation`, the **`azimuth`** CSS property enables different audio sources to be positioned spatially for aural presentation. This is important in that it provides a natural way to tell several voices apart, as each can be positioned to originate at a different location on the sound stage. Stereo output produce a lateral sound stage, while binaural headphones and multi-speaker setups allow for a fully three-dimensional stage.
+   *
+   * **Syntax**: `<angle> | [ [ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards`
+   *
+   * **Initial value**: `center`
+   *
+   * @deprecated
+   */
+  azimuth?: AzimuthProperty;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -16724,6 +16836,26 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   "-moz-box-shadow"?: BoxShadowProperty;
   /**
+   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
+   *
+   * **Syntax**: `border-box | content-box | margin-box | padding-box`
+   *
+   * **Initial value**: `content-box`
+   *
+   * @deprecated
+   */
+  "-moz-float-edge"?: MozFloatEdgeProperty;
+  /**
+   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
+   *
+   * **Syntax**: `<integer [0,1]>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-force-broken-image-icon"?: GlobalsNumber;
+  /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
    * **Syntax**: `<alpha-value>`
@@ -16759,6 +16891,46 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    * @deprecated
    */
   "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength>;
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength>;
   /**
    * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
@@ -17273,6 +17445,14 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   alignSelf?: AlignSelfProperty | AlignSelfProperty[];
   /**
+   * The **`align-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
+   *
+   * **Syntax**: `[ normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position> ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  alignTracks?: AlignTracksProperty | AlignTracksProperty[];
+  /**
    * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
@@ -17395,13 +17575,14 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | auto | button | textfield | menulist-button | <compat-auto>`
+   * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    |   Firefox   |   Safari    |     Edge     | IE  |
-   * | :---------: | :---------: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
+   * | :-----: | :-----: | :---------: | :------: | :-: |
+   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -17413,9 +17594,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **71**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -18334,7 +18515,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    |   No   | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -18343,14 +18524,6 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -18382,14 +18555,6 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * ---
    *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
-   *
-   * ---
-   *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
   breakBefore?: BreakBeforeProperty | BreakBeforeProperty[];
@@ -18415,14 +18580,6 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -18555,18 +18712,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   | **63**  | **3** _-x-_ |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
-   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
-   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
-   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
+   * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
+   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
    *
@@ -18720,9 +18877,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** | **68**  |   No   | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/counter-set
    */
@@ -18988,6 +19145,20 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
    */
   fontSizeAdjust?: FontSizeAdjustProperty | FontSizeAdjustProperty[];
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |              Chrome              |              Firefox               |              Safari              |               Edge                | IE  |
+   * | :------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-: |
+   * | **5** _(-webkit-font-smoothing)_ | **25** _(-moz-osx-font-smoothing)_ | **4** _(-webkit-font-smoothing)_ | **79** _(-webkit-font-smoothing)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-smooth
+   */
+  fontSmooth?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[];
   /**
    * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
@@ -19264,9 +19435,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
    */
@@ -19278,9 +19449,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
    */
@@ -19333,7 +19504,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `from-image | <angle> | [ <angle>? flip ]`
    *
-   * **Initial value**: `0deg`
+   * **Initial value**: `from-image`
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -19578,15 +19749,23 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Grid Layout_
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **45**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **45**  | **10.1** | **16** | **10** _-x-_ |
    *
    * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
    */
   justifySelf?: JustifySelfProperty | JustifySelfProperty[];
+  /**
+   * The **`justify-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their inline axis.
+   *
+   * **Syntax**: `[ normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ] ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  justifyTracks?: JustifyTracksProperty | JustifyTracksProperty[];
   /**
    * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
    *
@@ -19622,10 +19801,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |  Edge  |   IE    |
-   * | :-----: | :-----: | :---------: | :----: | :-----: |
-   * | **58**  | **69**  | **3** _-x-_ | **14** | **5.5** |
-   * | 1 _-x-_ |         |             |        |         |
+   * | Chrome  | Firefox | Safari  |  Edge  |   IE    |
+   * | :-----: | :-----: | :-----: | :----: | :-----: |
+   * | **58**  | **69**  | **11**  | **14** | **5.5** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |         |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-break
    */
@@ -20017,6 +20196,22 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   maskType?: MaskTypeProperty | MaskTypeProperty[];
   /**
+   * The **`masonry-auto-flow`** CSS property modifies how items are placed when using masonry in CSS Grid Layout.
+   *
+   * **Syntax**: `[ pack | next ] || [ definite-first | ordered ]`
+   *
+   * **Initial value**: `pack`
+   */
+  masonryAutoFlow?: MasonryAutoFlowProperty | MasonryAutoFlowProperty[];
+  /**
+   * The `math-style` property indicates whether MathML equations should render with normal or compact height.
+   *
+   * **Syntax**: `normal | compact`
+   *
+   * **Initial value**: `normal`
+   */
+  mathStyle?: MathStyleProperty | MathStyleProperty[];
+  /**
    * The `**max-block-size**` CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
    *
    * **Syntax**: `<'max-width'>`
@@ -20033,7 +20228,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -20068,7 +20263,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -20167,7 +20362,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -20252,7 +20447,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -20481,7 +20676,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
@@ -20907,18 +21102,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |       Chrome        |       Firefox       |          Safari           |  Edge  | IE  |
-   * | :-----------------: | :-----------------: | :-----------------------: | :----: | :-: |
-   * |       **66**        |       **61**        | **10.1** _(grid-row-gap)_ | **16** | No  |
-   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
+   * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
+   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
    *
@@ -20952,9 +21147,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `over`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **38**  |   No   | 12-79 | No  |
+   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
+   * | :-----: | :-----: | :-----------: | :---: | :-: |
+   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |               |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -20982,7 +21178,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |   No   | **79** | No  |
+   * | **61** | **36**  | **14** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -21429,6 +21625,14 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   scrollbarColor?: ScrollbarColorProperty | ScrollbarColorProperty[];
   /**
+   * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
+   *
+   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   *
+   * **Initial value**: `auto`
+   */
+  scrollbarGutter?: ScrollbarGutterProperty | ScrollbarGutterProperty[];
+  /**
    * The `scrollbar-width` property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
    * **Syntax**: `auto | thin | none`
@@ -21463,9 +21667,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |     Safari     |  Edge  | IE  |
-   * | :----: | :-----: | :------------: | :----: | :-: |
-   * | **37** | **62**  | **10.1** _-x-_ | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **37** | **62**  | **10.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -21734,10 +21938,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `mixed`
    *
-   * |  Chrome  | Firefox |    Safari     |  Edge  | IE  |
-   * | :------: | :-----: | :-----------: | :----: | :-: |
-   * |  **48**  | **41**  | **5.1** _-x-_ | **79** | No  |
-   * | 11 _-x-_ |         |               |        |     |
+   * |  Chrome  | Firefox |  Safari   |  Edge  | IE  |
+   * | :------: | :-----: | :-------: | :----: | :-: |
+   * |  **48**  | **41**  |  **14**   | **79** | No  |
+   * | 11 _-x-_ |         | 5.1 _-x-_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
    */
@@ -22165,10 +22369,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `horizontal-tb`
    *
-   * | Chrome  | Firefox |  Safari   |  Edge  |     IE      |
-   * | :-----: | :-----: | :-------: | :----: | :---------: |
-   * | **48**  | **41**  | **10.1**  | **12** | **9** _-x-_ |
-   * | 8 _-x-_ |         | 5.1 _-x-_ |        |             |
+   * | Chrome  | Firefox |  Safari   |  Edge  |  IE   |
+   * | :-----: | :-----: | :-------: | :----: | :---: |
+   * | **48**  | **41**  | **10.1**  | **12** | **9** |
+   * | 8 _-x-_ |         | 5.1 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
    */
@@ -22510,9 +22714,9 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **84** | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
@@ -22745,7 +22949,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -22753,7 +22957,7 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -23027,14 +23231,6 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   MozContextProperties?: MozContextPropertiesProperty | MozContextPropertiesProperty[];
   /**
-   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
-   *
-   * **Syntax**: `border-box | content-box | margin-box | padding-box`
-   *
-   * **Initial value**: `content-box`
-   */
-  MozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[];
-  /**
    * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
@@ -23050,14 +23246,6 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    * **Initial value**: `normal`
    */
   MozFontLanguageOverride?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
-  /**
-   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
-   *
-   * **Syntax**: `<integer>`
-   *
-   * **Initial value**: `0`
-   */
-  MozForceBrokenImageIcon?: GlobalsNumber | GlobalsNumber[];
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
@@ -23099,37 +23287,13 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   MozOrient?: MozOrientProperty | MozOrientProperty[];
   /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
    *
-   * **Syntax**: `<outline-radius>`
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `auto`
    */
-  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[];
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[];
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[];
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
+  MozOsxFontSmoothing?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[];
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -23395,21 +23559,21 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   msFlowInto?: MsFlowIntoProperty | MsFlowIntoProperty[];
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  msGridColumns?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
+  msGridColumns?: MsGridColumnsProperty<TLength> | MsGridColumnsProperty<TLength>[];
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  msGridRows?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
+  msGridRows?: MsGridRowsProperty<TLength> | MsGridRowsProperty<TLength>[];
   /**
    * The **`-ms-high-contrast-adjust`** CSS property is a Microsoft extension that gets or sets a value indicating whether to override any CSS properties that would have been set in high contrast mode.
    *
@@ -23458,6 +23622,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    * **Initial value**: `auto`
    */
   msImeAlign?: MsImeAlignProperty | MsImeAlignProperty[];
+  /**
+   * The CSS **`justify-self`** property set the way a box is justified inside its alignment container along the appropriate axis.
+   *
+   * **Syntax**: `auto | normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ]`
+   *
+   * **Initial value**: `auto`
+   */
+  msJustifySelf?: JustifySelfProperty | JustifySelfProperty[];
   /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
@@ -23901,7 +24073,7 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield`
+   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield | -apple-pay-button`
    *
    * **Initial value**: `none` (but this value is overridden in the user agent CSS)
    */
@@ -24173,6 +24345,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitFontKerning?: FontKerningProperty | FontKerningProperty[];
   /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   */
+  WebkitFontSmoothing?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[];
+  /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
@@ -24388,6 +24568,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    * **Initial value**: `economy`
    */
   WebkitPrintColorAdjust?: ColorAdjustProperty | ColorAdjustProperty[];
+  /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
+   * **Syntax**: `over | under | inter-character`
+   *
+   * **Initial value**: `over`
+   */
+  WebkitRubyPosition?: RubyPositionProperty | RubyPositionProperty[];
   /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
@@ -24762,6 +24950,16 @@ export interface VendorShorthandPropertiesFallback<TLength = string | 0> {
 export interface VendorPropertiesFallback<TLength = string | 0> extends VendorLonghandPropertiesFallback<TLength>, VendorShorthandPropertiesFallback<TLength> {}
 
 export interface ObsoletePropertiesFallback<TLength = string | 0> {
+  /**
+   * In combination with `elevation`, the **`azimuth`** CSS property enables different audio sources to be positioned spatially for aural presentation. This is important in that it provides a natural way to tell several voices apart, as each can be positioned to originate at a different location on the sound stage. Stereo output produce a lateral sound stage, while binaural headphones and multi-speaker setups allow for a fully three-dimensional stage.
+   *
+   * **Syntax**: `<angle> | [ [ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards`
+   *
+   * **Initial value**: `center`
+   *
+   * @deprecated
+   */
+  azimuth?: AzimuthProperty | AzimuthProperty[];
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -25319,6 +25517,26 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   MozBoxShadow?: BoxShadowProperty | BoxShadowProperty[];
   /**
+   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
+   *
+   * **Syntax**: `border-box | content-box | margin-box | padding-box`
+   *
+   * **Initial value**: `content-box`
+   *
+   * @deprecated
+   */
+  MozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[];
+  /**
+   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
+   *
+   * **Syntax**: `<integer [0,1]>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozForceBrokenImageIcon?: GlobalsNumber | GlobalsNumber[];
+  /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
    * **Syntax**: `<alpha-value>`
@@ -25354,6 +25572,46 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    * @deprecated
    */
   MozOutlineRadius?: MozOutlineRadiusProperty<TLength> | MozOutlineRadiusProperty<TLength>[];
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[];
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[];
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[];
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
   /**
    * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
@@ -25868,6 +26126,14 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "align-self"?: AlignSelfProperty | AlignSelfProperty[];
   /**
+   * The **`align-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
+   *
+   * **Syntax**: `[ normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position> ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  "align-tracks"?: AlignTracksProperty | AlignTracksProperty[];
+  /**
    * The **`animation-delay`** CSS property sets when an animation starts. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
@@ -25990,13 +26256,14 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | auto | button | textfield | menulist-button | <compat-auto>`
+   * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    |   Firefox   |   Safari    |     Edge     | IE  |
-   * | :---------: | :---------: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **1** _-x-_ | **3** _-x-_ | **12** _-x-_ | No  |
+   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
+   * | :-----: | :-----: | :---------: | :------: | :-: |
+   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -26008,9 +26275,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **71**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -26929,7 +27196,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    |   No   | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -26938,14 +27205,6 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -26977,14 +27236,6 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * ---
    *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
-   *
-   * ---
-   *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
   "break-before"?: BreakBeforeProperty | BreakBeforeProperty[];
@@ -27010,14 +27261,6 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -27150,18 +27393,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   | **63**  | **3** _-x-_ |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |     Chrome      |     Firefox     |        Safari         |  Edge  | IE  |
-   * | :-------------: | :-------------: | :-------------------: | :----: | :-: |
-   * |     **66**      |     **61**      | **10.1** _(grid-gap)_ | **16** | No  |
-   * | 57 _(grid-gap)_ | 52 _(grid-gap)_ |                       |        |     |
+   * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
+   * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
+   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
    *
@@ -27315,9 +27558,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** | **68**  |   No   | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/counter-set
    */
@@ -27583,6 +27826,20 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
    */
   "font-size-adjust"?: FontSizeAdjustProperty | FontSizeAdjustProperty[];
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |              Chrome              |              Firefox               |              Safari              |               Edge                | IE  |
+   * | :------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-: |
+   * | **5** _(-webkit-font-smoothing)_ | **25** _(-moz-osx-font-smoothing)_ | **4** _(-webkit-font-smoothing)_ | **79** _(-webkit-font-smoothing)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-smooth
+   */
+  "font-smooth"?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[];
   /**
    * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
@@ -27859,9 +28116,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-columns
    */
@@ -27873,9 +28130,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **52**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **52**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-template-rows
    */
@@ -27928,7 +28185,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Syntax**: `from-image | <angle> | [ <angle>? flip ]`
    *
-   * **Initial value**: `0deg`
+   * **Initial value**: `from-image`
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -28173,15 +28430,23 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Grid Layout_
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **57** | **45**  | **10.1** | **16** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :------: | :----: | :----------: |
+   * | **57** | **45**  | **10.1** | **16** | **10** _-x-_ |
    *
    * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
    */
   "justify-self"?: JustifySelfProperty | JustifySelfProperty[];
+  /**
+   * The **`justify-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their inline axis.
+   *
+   * **Syntax**: `[ normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ] ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  "justify-tracks"?: JustifyTracksProperty | JustifyTracksProperty[];
   /**
    * The **`left`** CSS property participates in specifying the horizontal position of a _positioned element_. It has no effect on non-positioned elements.
    *
@@ -28217,10 +28482,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |  Edge  |   IE    |
-   * | :-----: | :-----: | :---------: | :----: | :-----: |
-   * | **58**  | **69**  | **3** _-x-_ | **14** | **5.5** |
-   * | 1 _-x-_ |         |             |        |         |
+   * | Chrome  | Firefox | Safari  |  Edge  |   IE    |
+   * | :-----: | :-----: | :-----: | :----: | :-----: |
+   * | **58**  | **69**  | **11**  | **14** | **5.5** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |         |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-break
    */
@@ -28612,6 +28877,22 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "mask-type"?: MaskTypeProperty | MaskTypeProperty[];
   /**
+   * The **`masonry-auto-flow`** CSS property modifies how items are placed when using masonry in CSS Grid Layout.
+   *
+   * **Syntax**: `[ pack | next ] || [ definite-first | ordered ]`
+   *
+   * **Initial value**: `pack`
+   */
+  "masonry-auto-flow"?: MasonryAutoFlowProperty | MasonryAutoFlowProperty[];
+  /**
+   * The `math-style` property indicates whether MathML equations should render with normal or compact height.
+   *
+   * **Syntax**: `normal | compact`
+   *
+   * **Initial value**: `normal`
+   */
+  "math-style"?: MathStyleProperty | MathStyleProperty[];
+  /**
    * The `**max-block-size**` CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
    *
    * **Syntax**: `<'max-width'>`
@@ -28628,7 +28909,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -28663,7 +28944,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -28762,7 +29043,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -28847,7 +29128,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`offset-path`** CSS property specifies a motion path for an element to follow and defines the element's positioning within the parent container or SVG coordinate system.
    *
-   * **Syntax**: `none | ray( [ <angle> && <size>? && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
+   * **Syntax**: `none | ray( [ <angle> && <size> && contain? ] ) | <path()> | <url> | [ <basic-shape> || <geometry-box> ]`
    *
    * **Initial value**: `none`
    *
@@ -29076,7 +29357,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  | **1.5** | **3**  | **12** | **5** |
+   * | **1**  | **3.5** | **3**  | **12** | **5** |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
@@ -29502,18 +29783,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
    * _Supported in Grid Layout_
    *
-   * |       Chrome        |       Firefox       |          Safari           |  Edge  | IE  |
-   * | :-----------------: | :-----------------: | :-----------------------: | :----: | :-: |
-   * |       **66**        |       **61**        | **10.1** _(grid-row-gap)_ | **16** | No  |
-   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ |                           |        |     |
+   * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
+   * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
+   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
    *
@@ -29547,9 +29828,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `over`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **38**  |   No   | 12-79 | No  |
+   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
+   * | :-----: | :-----: | :-----------: | :---: | :-: |
+   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |               |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -29577,7 +29859,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |   No   | **79** | No  |
+   * | **61** | **36**  | **14** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -30024,6 +30306,14 @@ The scroll-padding properties define offsets for the optimal viewing region of
    */
   "scrollbar-color"?: ScrollbarColorProperty | ScrollbarColorProperty[];
   /**
+   * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
+   *
+   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   *
+   * **Initial value**: `auto`
+   */
+  "scrollbar-gutter"?: ScrollbarGutterProperty | ScrollbarGutterProperty[];
+  /**
    * The `scrollbar-width` property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
    * **Syntax**: `auto | thin | none`
@@ -30058,9 +30348,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |     Safari     |  Edge  | IE  |
-   * | :----: | :-----: | :------------: | :----: | :-: |
-   * | **37** | **62**  | **10.1** _-x-_ | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **37** | **62**  | **10.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/shape-margin
    */
@@ -30329,10 +30619,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `mixed`
    *
-   * |  Chrome  | Firefox |    Safari     |  Edge  | IE  |
-   * | :------: | :-----: | :-----------: | :----: | :-: |
-   * |  **48**  | **41**  | **5.1** _-x-_ | **79** | No  |
-   * | 11 _-x-_ |         |               |        |     |
+   * |  Chrome  | Firefox |  Safari   |  Edge  | IE  |
+   * | :------: | :-----: | :-------: | :----: | :-: |
+   * |  **48**  | **41**  |  **14**   | **79** | No  |
+   * | 11 _-x-_ |         | 5.1 _-x-_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-orientation
    */
@@ -30760,10 +31050,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `horizontal-tb`
    *
-   * | Chrome  | Firefox |  Safari   |  Edge  |     IE      |
-   * | :-----: | :-----: | :-------: | :----: | :---------: |
-   * | **48**  | **41**  | **10.1**  | **12** | **9** _-x-_ |
-   * | 8 _-x-_ |         | 5.1 _-x-_ |        |             |
+   * | Chrome  | Firefox |  Safari   |  Edge  |  IE   |
+   * | :-----: | :-----: | :-------: | :----: | :---: |
+   * | **48**  | **41**  | **10.1**  | **12** | **9** |
+   * | 8 _-x-_ |         | 5.1 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
    */
@@ -31105,9 +31395,9 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **84** | **63**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **84** | **63**  |   No   | **84** | No  |
    *
    * ---
    *
@@ -31340,7 +31630,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -31348,7 +31638,7 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -31624,14 +31914,6 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-context-properties"?: MozContextPropertiesProperty | MozContextPropertiesProperty[];
   /**
-   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
-   *
-   * **Syntax**: `border-box | content-box | margin-box | padding-box`
-   *
-   * **Initial value**: `content-box`
-   */
-  "-moz-float-edge"?: MozFloatEdgeProperty | MozFloatEdgeProperty[];
-  /**
    * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
@@ -31647,14 +31929,6 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    * **Initial value**: `normal`
    */
   "-moz-font-language-override"?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[];
-  /**
-   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
-   *
-   * **Syntax**: `<integer>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-force-broken-image-icon"?: GlobalsNumber | GlobalsNumber[];
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
@@ -31696,37 +31970,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-orient"?: MozOrientProperty | MozOrientProperty[];
   /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
    *
-   * **Syntax**: `<outline-radius>`
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `auto`
    */
-  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[];
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[];
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[];
-  /**
-   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
-   *
-   * **Syntax**: `<outline-radius>`
-   *
-   * **Initial value**: `0`
-   */
-  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
+  "-moz-osx-font-smoothing"?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[];
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation. It corresponds to the `padding-top`, `padding-right`, `padding-bottom`, or `padding-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -31992,21 +32242,21 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-ms-flow-into"?: MsFlowIntoProperty | MsFlowIntoProperty[];
   /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track.
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  "-ms-grid-columns"?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[];
+  "-ms-grid-columns"?: MsGridColumnsProperty<TLength> | MsGridColumnsProperty<TLength>[];
   /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track.
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
    *
-   * **Syntax**: `<track-size>+`
+   * **Syntax**: `none | <track-list> | <auto-track-list>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    */
-  "-ms-grid-rows"?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[];
+  "-ms-grid-rows"?: MsGridRowsProperty<TLength> | MsGridRowsProperty<TLength>[];
   /**
    * The **`-ms-high-contrast-adjust`** CSS property is a Microsoft extension that gets or sets a value indicating whether to override any CSS properties that would have been set in high contrast mode.
    *
@@ -32055,6 +32305,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    * **Initial value**: `auto`
    */
   "-ms-ime-align"?: MsImeAlignProperty | MsImeAlignProperty[];
+  /**
+   * The CSS **`justify-self`** property set the way a box is justified inside its alignment container along the appropriate axis.
+   *
+   * **Syntax**: `auto | normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ]`
+   *
+   * **Initial value**: `auto`
+   */
+  "-ms-justify-self"?: JustifySelfProperty | JustifySelfProperty[];
   /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
@@ -32498,7 +32756,7 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   /**
    * The **`-moz-appearance`** CSS property is used in Gecko (Firefox) to display an element using platform-native styling based on the operating system's theme.
    *
-   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield`
+   * **Syntax**: `none | button | button-bevel | caret | checkbox | default-button | inner-spin-button | listbox | listitem | media-controls-background | media-controls-fullscreen-background | media-current-time-display | media-enter-fullscreen-button | media-exit-fullscreen-button | media-fullscreen-button | media-mute-button | media-overlay-play-button | media-play-button | media-seek-back-button | media-seek-forward-button | media-slider | media-sliderthumb | media-time-remaining-display | media-toggle-closed-captions-button | media-volume-slider | media-volume-slider-container | media-volume-sliderthumb | menulist | menulist-button | menulist-text | menulist-textfield | meter | progress-bar | progress-bar-value | push-button | radio | searchfield | searchfield-cancel-button | searchfield-decoration | searchfield-results-button | searchfield-results-decoration | slider-horizontal | slider-vertical | sliderthumb-horizontal | sliderthumb-vertical | square-button | textarea | textfield | -apple-pay-button`
    *
    * **Initial value**: `none` (but this value is overridden in the user agent CSS)
    */
@@ -32770,6 +33028,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-font-kerning"?: FontKerningProperty | FontKerningProperty[];
   /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * **Initial value**: `auto`
+   */
+  "-webkit-font-smoothing"?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[];
+  /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
@@ -32985,6 +33251,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    * **Initial value**: `economy`
    */
   "-webkit-print-color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[];
+  /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
+   * **Syntax**: `over | under | inter-character`
+   *
+   * **Initial value**: `over`
+   */
+  "-webkit-ruby-position"?: RubyPositionProperty | RubyPositionProperty[];
   /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
@@ -33359,6 +33633,16 @@ export interface VendorShorthandPropertiesHyphenFallback<TLength = string | 0> {
 export interface VendorPropertiesHyphenFallback<TLength = string | 0> extends VendorLonghandPropertiesHyphenFallback<TLength>, VendorShorthandPropertiesHyphenFallback<TLength> {}
 
 export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
+  /**
+   * In combination with `elevation`, the **`azimuth`** CSS property enables different audio sources to be positioned spatially for aural presentation. This is important in that it provides a natural way to tell several voices apart, as each can be positioned to originate at a different location on the sound stage. Stereo output produce a lateral sound stage, while binaural headphones and multi-speaker setups allow for a fully three-dimensional stage.
+   *
+   * **Syntax**: `<angle> | [ [ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards`
+   *
+   * **Initial value**: `center`
+   *
+   * @deprecated
+   */
+  azimuth?: AzimuthProperty | AzimuthProperty[];
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -33916,6 +34200,26 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   "-moz-box-shadow"?: BoxShadowProperty | BoxShadowProperty[];
   /**
+   * The non-standard **`-moz-float-edge`** CSS property specifies whether the height and width properties of the element include the margin, border, or padding thickness.
+   *
+   * **Syntax**: `border-box | content-box | margin-box | padding-box`
+   *
+   * **Initial value**: `content-box`
+   *
+   * @deprecated
+   */
+  "-moz-float-edge"?: MozFloatEdgeProperty | MozFloatEdgeProperty[];
+  /**
+   * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
+   *
+   * **Syntax**: `<integer [0,1]>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-force-broken-image-icon"?: GlobalsNumber | GlobalsNumber[];
+  /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
    * **Syntax**: `<alpha-value>`
@@ -33951,6 +34255,46 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    * @deprecated
    */
   "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength> | MozOutlineRadiusProperty<TLength>[];
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomleft`** CSS property can be used to round the bottom-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[];
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-bottomright`** CSS property can be used to round the bottom-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[];
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topleft`** CSS property can be used to round the top-left corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[];
+  /**
+   * In Mozilla applications, the **`-moz-outline-radius-topright`** CSS property can be used to round the top-right corner of an element's `outline`.
+   *
+   * **Syntax**: `<outline-radius>`
+   *
+   * **Initial value**: `0`
+   *
+   * @deprecated
+   */
+  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[];
   /**
    * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
@@ -34484,6 +34828,46 @@ export interface FontFaceHyphenFallback {
   "unicode-range"?: string | string[];
 }
 
+export interface Page<TLength = string | 0> {
+  size?: PageSizeProperty<TLength>;
+}
+
+export interface PageHyphen<TLength = string | 0> {
+  size?: PageSizeProperty<TLength>;
+}
+
+export interface PageFallback<TLength = string | 0> {
+  size?: PageSizeProperty<TLength> | PageSizeProperty<TLength>[];
+}
+
+export interface PageHyphenFallback<TLength = string | 0> {
+  size?: PageSizeProperty<TLength> | PageSizeProperty<TLength>[];
+}
+
+export interface Property {
+  inherits?: PropertyInheritsProperty;
+  initialValue?: string;
+  syntax?: string;
+}
+
+export interface PropertyHyphen {
+  inherits?: PropertyInheritsProperty;
+  "initial-value"?: string;
+  syntax?: string;
+}
+
+export interface PropertyFallback {
+  inherits?: PropertyInheritsProperty | PropertyInheritsProperty[];
+  initialValue?: string | string[];
+  syntax?: string | string[];
+}
+
+export interface PropertyHyphenFallback {
+  inherits?: PropertyInheritsProperty | PropertyInheritsProperty[];
+  "initial-value"?: string | string[];
+  syntax?: string | string[];
+}
+
 export interface Viewport<TLength = string | 0> {
   msHeight?: ViewportHeightProperty<TLength>;
   msMaxHeight?: ViewportMaxHeightProperty<TLength>;
@@ -34599,6 +34983,7 @@ export type AtRules =
   | "@media"
   | "@namespace"
   | "@page"
+  | "@property"
   | "@supports"
   | "@viewport";
 
@@ -34895,6 +35280,7 @@ export type HtmlAttributes =
   | "[rows]"
   | "[rowspan]"
   | "[rules]"
+  | "[sandbox-allow-downloads]"
   | "[sandbox-allow-modals]"
   | "[sandbox-allow-popups-to-escape-sandbox]"
   | "[sandbox-allow-popups]"
@@ -34959,7 +35345,6 @@ export type SvgAttributes =
   | "[baseProfile]"
   | "[baseline-shift]"
   | "[bbox]"
-  | "[begin]"
   | "[bias]"
   | "[by]"
   | "[calcMode]"
@@ -35205,6 +35590,8 @@ export type AlignItemsProperty = Globals | SelfPosition | "baseline" | "normal" 
 
 export type AlignSelfProperty = Globals | SelfPosition | "auto" | "baseline" | "normal" | "stretch" | string;
 
+export type AlignTracksProperty = Globals | ContentDistribution | ContentPosition | "baseline" | "normal" | string;
+
 export type AnimationProperty = Globals | SingleAnimation | string;
 
 export type AnimationDirectionProperty = Globals | SingleAnimationDirection | string;
@@ -35219,9 +35606,25 @@ export type AnimationPlayStateProperty = Globals | "paused" | "running" | string
 
 export type AnimationTimingFunctionProperty = Globals | TimingFunction | string;
 
-export type AppearanceProperty = Globals | CompatAuto | "button" | "menulist-button" | "none" | "textfield";
+export type AppearanceProperty = Globals | CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
 export type AspectRatioProperty = Globals | "auto" | string;
+
+export type AzimuthProperty =
+  | Globals
+  | "behind"
+  | "center"
+  | "center-left"
+  | "center-right"
+  | "far-left"
+  | "far-right"
+  | "left"
+  | "left-side"
+  | "leftwards"
+  | "right"
+  | "right-side"
+  | "rightwards"
+  | string;
 
 export type BackdropFilterProperty = Globals | "none" | string;
 
@@ -35553,6 +35956,8 @@ export type FontSizeProperty<TLength> = Globals | AbsoluteSize | TLength | "larg
 
 export type FontSizeAdjustProperty = Globals | "none" | number;
 
+export type FontSmoothProperty<TLength> = Globals | AbsoluteSize | TLength | "always" | "auto" | "never";
+
 export type FontStretchProperty = Globals | FontStretchAbsolute;
 
 export type FontStyleProperty = Globals | "italic" | "normal" | "oblique" | string;
@@ -35709,6 +36114,8 @@ export type JustifyItemsProperty = Globals | SelfPosition | "baseline" | "left" 
 
 export type JustifySelfProperty = Globals | SelfPosition | "auto" | "baseline" | "left" | "normal" | "right" | "stretch" | string;
 
+export type JustifyTracksProperty = Globals | ContentDistribution | ContentPosition | "left" | "normal" | "right" | string;
+
 export type LeftProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type LetterSpacingProperty<TLength> = Globals | TLength | "normal";
@@ -35785,7 +36192,11 @@ export type MaskSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
 export type MaskTypeProperty = Globals | "alpha" | "luminance";
 
-export type MaxBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type MasonryAutoFlowProperty = Globals | "definite-first" | "next" | "ordered" | "pack" | string;
+
+export type MathStyleProperty = Globals | "compact" | "normal";
+
+export type MaxBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
 
 export type MaxHeightProperty<TLength> =
   | Globals
@@ -35794,12 +36205,12 @@ export type MaxHeightProperty<TLength> =
   | "-moz-min-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
-  | "auto"
   | "max-content"
   | "min-content"
+  | "none"
   | string;
 
-export type MaxInlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type MaxInlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
 
 export type MaxLinesProperty = Globals | "none" | number;
 
@@ -35810,10 +36221,10 @@ export type MaxWidthProperty<TLength> =
   | "-moz-min-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
-  | "auto"
   | "intrinsic"
   | "max-content"
   | "min-content"
+  | "none"
   | string;
 
 export type MinBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
@@ -35874,7 +36285,7 @@ export type OutlineStyleProperty = Globals | LineStyle | "auto" | string;
 
 export type OutlineWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
-export type OverflowProperty = Globals | "auto" | "hidden" | "scroll" | "visible" | string;
+export type OverflowProperty = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
 export type OverflowAnchorProperty = Globals | "auto" | "none";
 
@@ -35886,9 +36297,9 @@ export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scr
 
 export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
 
-export type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+export type OverflowXProperty = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
-export type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+export type OverflowYProperty = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none" | string;
 
@@ -36027,6 +36438,8 @@ export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximit
 export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximity";
 
 export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light";
+
+export type ScrollbarGutterProperty = Globals | "always" | "auto" | "stable" | string;
 
 export type MsScrollbarTrackColorProperty = Globals | Color;
 
@@ -36360,6 +36773,10 @@ export type MsFlowFromProperty = Globals | "none" | string;
 
 export type MsFlowIntoProperty = Globals | "none" | string;
 
+export type MsGridColumnsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | string;
+
+export type MsGridRowsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | string;
+
 export type MsHighContrastAdjustProperty = Globals | "auto" | "none";
 
 export type MsHyphenateLimitCharsProperty = Globals | "auto" | string | number;
@@ -36416,6 +36833,7 @@ export type MsWrapThroughProperty = Globals | "none" | "wrap";
 
 export type WebkitAppearanceProperty =
   | Globals
+  | "-apple-pay-button"
   | "button"
   | "button-bevel"
   | "caret"
@@ -36645,6 +37063,10 @@ type FontFaceFontVariationSettingsProperty = "normal" | string;
 
 type FontFaceFontWeightProperty = FontWeightAbsolute | string;
 
+type PageSizeProperty<TLength> = TLength | "auto" | "landscape" | "portrait" | string;
+
+type PropertyInheritsProperty = "false" | "true";
+
 type ViewportHeightProperty<TLength> = ViewportLength<TLength> | string;
 
 type ViewportMaxHeightProperty<TLength> = ViewportLength<TLength>;
@@ -36699,7 +37121,19 @@ type Box = "border-box" | "content-box" | "padding-box";
 
 type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type CompatAuto = "checkbox" | "listbox" | "menulist" | "meter" | "progress-bar" | "push-button" | "radio" | "searchfield" | "slider-horizontal" | "square-button" | "textarea";
+type CompatAuto =
+  | "button"
+  | "checkbox"
+  | "listbox"
+  | "menulist"
+  | "meter"
+  | "progress-bar"
+  | "push-button"
+  | "radio"
+  | "searchfield"
+  | "slider-horizontal"
+  | "square-button"
+  | "textarea";
 
 type CompositeStyle =
   | "clear"

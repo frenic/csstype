@@ -3,6 +3,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   alignContent?: AlignContentProperty,
   alignItems?: AlignItemsProperty,
   alignSelf?: AlignSelfProperty,
+  alignTracks?: AlignTracksProperty,
   animationDelay?: GlobalsString,
   animationDirection?: AnimationDirectionProperty,
   animationDuration?: GlobalsString,
@@ -117,6 +118,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   fontOpticalSizing?: FontOpticalSizingProperty,
   fontSize?: FontSizeProperty<TLength>,
   fontSizeAdjust?: FontSizeAdjustProperty,
+  fontSmooth?: FontSmoothProperty<TLength>,
   fontStretch?: FontStretchProperty,
   fontStyle?: FontStyleProperty,
   fontSynthesis?: FontSynthesisProperty,
@@ -157,6 +159,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   justifyContent?: JustifyContentProperty,
   justifyItems?: JustifyItemsProperty,
   justifySelf?: JustifySelfProperty,
+  justifyTracks?: JustifyTracksProperty,
   left?: LeftProperty<TLength>,
   letterSpacing?: LetterSpacingProperty<TLength>,
   lineBreak?: LineBreakProperty,
@@ -190,6 +193,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   maskRepeat?: MaskRepeatProperty,
   maskSize?: MaskSizeProperty<TLength>,
   maskType?: MaskTypeProperty,
+  masonryAutoFlow?: MasonryAutoFlowProperty,
+  mathStyle?: MathStyleProperty,
   maxBlockSize?: MaxBlockSizeProperty<TLength>,
   maxHeight?: MaxHeightProperty<TLength>,
   maxInlineSize?: MaxInlineSizeProperty<TLength>,
@@ -289,6 +294,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   scrollSnapStop?: ScrollSnapStopProperty,
   scrollSnapType?: ScrollSnapTypeProperty,
   scrollbarColor?: ScrollbarColorProperty,
+  scrollbarGutter?: ScrollbarGutterProperty,
   scrollbarWidth?: ScrollbarWidthProperty,
   shapeImageThreshold?: ShapeImageThresholdProperty,
   shapeMargin?: ShapeMarginProperty<TLength>,
@@ -424,19 +430,14 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   MozColumnRuleWidth?: ColumnRuleWidthProperty<TLength>,
   MozColumnWidth?: ColumnWidthProperty<TLength>,
   MozContextProperties?: MozContextPropertiesProperty,
-  MozFloatEdge?: MozFloatEdgeProperty,
   MozFontFeatureSettings?: FontFeatureSettingsProperty,
   MozFontLanguageOverride?: FontLanguageOverrideProperty,
-  MozForceBrokenImageIcon?: GlobalsNumber,
   MozHyphens?: HyphensProperty,
   MozImageRegion?: MozImageRegionProperty,
   MozMarginEnd?: MarginInlineEndProperty<TLength>,
   MozMarginStart?: MarginInlineStartProperty<TLength>,
   MozOrient?: MozOrientProperty,
-  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength>,
-  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength>,
-  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength>,
-  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength>,
+  MozOsxFontSmoothing?: FontSmoothProperty<TLength>,
   MozPaddingEnd?: PaddingInlineEndProperty<TLength>,
   MozPaddingStart?: PaddingInlineStartProperty<TLength>,
   MozPerspective?: PerspectiveProperty<TLength>,
@@ -470,14 +471,15 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   msFlexPositive?: GlobalsNumber,
   msFlowFrom?: MsFlowFromProperty,
   msFlowInto?: MsFlowIntoProperty,
-  msGridColumns?: GridAutoColumnsProperty<TLength>,
-  msGridRows?: GridAutoRowsProperty<TLength>,
+  msGridColumns?: MsGridColumnsProperty<TLength>,
+  msGridRows?: MsGridRowsProperty<TLength>,
   msHighContrastAdjust?: MsHighContrastAdjustProperty,
   msHyphenateLimitChars?: MsHyphenateLimitCharsProperty,
   msHyphenateLimitLines?: MsHyphenateLimitLinesProperty,
   msHyphenateLimitZone?: MsHyphenateLimitZoneProperty<TLength>,
   msHyphens?: HyphensProperty,
   msImeAlign?: MsImeAlignProperty,
+  msJustifySelf?: JustifySelfProperty,
   msLineBreak?: LineBreakProperty,
   msOrder?: GlobalsNumber,
   msOverflowStyle?: MsOverflowStyleProperty,
@@ -568,6 +570,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitFlexWrap?: FlexWrapProperty,
   WebkitFontFeatureSettings?: FontFeatureSettingsProperty,
   WebkitFontKerning?: FontKerningProperty,
+  WebkitFontSmoothing?: FontSmoothProperty<TLength>,
   WebkitFontVariantLigatures?: FontVariantLigaturesProperty,
   WebkitHyphens?: HyphensProperty,
   WebkitJustifyContent?: JustifyContentProperty,
@@ -595,6 +598,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitPerspective?: PerspectiveProperty<TLength>,
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength>,
   WebkitPrintColorAdjust?: ColorAdjustProperty,
+  WebkitRubyPosition?: RubyPositionProperty,
   WebkitScrollSnapType?: ScrollSnapTypeProperty,
   WebkitShapeMargin?: ShapeMarginProperty<TLength>,
   WebkitTapHighlightColor?: WebkitTapHighlightColorProperty,
@@ -655,6 +659,7 @@ export type VendorShorthandProperties<TLength = string | 0> = {
 export type VendorProperties<TLength = string | 0> = VendorLonghandProperties<TLength> & VendorShorthandProperties<TLength>;
 
 export type ObsoleteProperties<TLength = string | 0> = {
+  azimuth?: AzimuthProperty,
   boxAlign?: BoxAlignProperty,
   boxDirection?: BoxDirectionProperty,
   boxFlex?: GlobalsNumber,
@@ -711,10 +716,16 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozBoxOrient?: BoxOrientProperty,
   MozBoxPack?: BoxPackProperty,
   MozBoxShadow?: BoxShadowProperty,
+  MozFloatEdge?: MozFloatEdgeProperty,
+  MozForceBrokenImageIcon?: GlobalsNumber,
   MozOpacity?: OpacityProperty,
   MozOutline?: OutlineProperty<TLength>,
   MozOutlineColor?: OutlineColorProperty,
   MozOutlineRadius?: MozOutlineRadiusProperty<TLength>,
+  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength>,
+  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength>,
+  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength>,
+  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength>,
   MozOutlineStyle?: OutlineStyleProperty,
   MozOutlineWidth?: OutlineWidthProperty<TLength>,
   MozTextAlignLast?: TextAlignLastProperty,
@@ -822,6 +833,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "align-content"?: AlignContentProperty,
   "align-items"?: AlignItemsProperty,
   "align-self"?: AlignSelfProperty,
+  "align-tracks"?: AlignTracksProperty,
   "animation-delay"?: GlobalsString,
   "animation-direction"?: AnimationDirectionProperty,
   "animation-duration"?: GlobalsString,
@@ -936,6 +948,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "font-optical-sizing"?: FontOpticalSizingProperty,
   "font-size"?: FontSizeProperty<TLength>,
   "font-size-adjust"?: FontSizeAdjustProperty,
+  "font-smooth"?: FontSmoothProperty<TLength>,
   "font-stretch"?: FontStretchProperty,
   "font-style"?: FontStyleProperty,
   "font-synthesis"?: FontSynthesisProperty,
@@ -976,6 +989,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "justify-content"?: JustifyContentProperty,
   "justify-items"?: JustifyItemsProperty,
   "justify-self"?: JustifySelfProperty,
+  "justify-tracks"?: JustifyTracksProperty,
   left?: LeftProperty<TLength>,
   "letter-spacing"?: LetterSpacingProperty<TLength>,
   "line-break"?: LineBreakProperty,
@@ -1009,6 +1023,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "mask-repeat"?: MaskRepeatProperty,
   "mask-size"?: MaskSizeProperty<TLength>,
   "mask-type"?: MaskTypeProperty,
+  "masonry-auto-flow"?: MasonryAutoFlowProperty,
+  "math-style"?: MathStyleProperty,
   "max-block-size"?: MaxBlockSizeProperty<TLength>,
   "max-height"?: MaxHeightProperty<TLength>,
   "max-inline-size"?: MaxInlineSizeProperty<TLength>,
@@ -1108,6 +1124,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "scroll-snap-stop"?: ScrollSnapStopProperty,
   "scroll-snap-type"?: ScrollSnapTypeProperty,
   "scrollbar-color"?: ScrollbarColorProperty,
+  "scrollbar-gutter"?: ScrollbarGutterProperty,
   "scrollbar-width"?: ScrollbarWidthProperty,
   "shape-image-threshold"?: ShapeImageThresholdProperty,
   "shape-margin"?: ShapeMarginProperty<TLength>,
@@ -1243,19 +1260,14 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-moz-column-rule-width"?: ColumnRuleWidthProperty<TLength>,
   "-moz-column-width"?: ColumnWidthProperty<TLength>,
   "-moz-context-properties"?: MozContextPropertiesProperty,
-  "-moz-float-edge"?: MozFloatEdgeProperty,
   "-moz-font-feature-settings"?: FontFeatureSettingsProperty,
   "-moz-font-language-override"?: FontLanguageOverrideProperty,
-  "-moz-force-broken-image-icon"?: GlobalsNumber,
   "-moz-hyphens"?: HyphensProperty,
   "-moz-image-region"?: MozImageRegionProperty,
   "-moz-margin-end"?: MarginInlineEndProperty<TLength>,
   "-moz-margin-start"?: MarginInlineStartProperty<TLength>,
   "-moz-orient"?: MozOrientProperty,
-  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength>,
-  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength>,
-  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength>,
-  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength>,
+  "-moz-osx-font-smoothing"?: FontSmoothProperty<TLength>,
   "-moz-padding-end"?: PaddingInlineEndProperty<TLength>,
   "-moz-padding-start"?: PaddingInlineStartProperty<TLength>,
   "-moz-perspective"?: PerspectiveProperty<TLength>,
@@ -1289,14 +1301,15 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-flex-positive"?: GlobalsNumber,
   "-ms-flow-from"?: MsFlowFromProperty,
   "-ms-flow-into"?: MsFlowIntoProperty,
-  "-ms-grid-columns"?: GridAutoColumnsProperty<TLength>,
-  "-ms-grid-rows"?: GridAutoRowsProperty<TLength>,
+  "-ms-grid-columns"?: MsGridColumnsProperty<TLength>,
+  "-ms-grid-rows"?: MsGridRowsProperty<TLength>,
   "-ms-high-contrast-adjust"?: MsHighContrastAdjustProperty,
   "-ms-hyphenate-limit-chars"?: MsHyphenateLimitCharsProperty,
   "-ms-hyphenate-limit-lines"?: MsHyphenateLimitLinesProperty,
   "-ms-hyphenate-limit-zone"?: MsHyphenateLimitZoneProperty<TLength>,
   "-ms-hyphens"?: HyphensProperty,
   "-ms-ime-align"?: MsImeAlignProperty,
+  "-ms-justify-self"?: JustifySelfProperty,
   "-ms-line-break"?: LineBreakProperty,
   "-ms-order"?: GlobalsNumber,
   "-ms-overflow-style"?: MsOverflowStyleProperty,
@@ -1387,6 +1400,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-flex-wrap"?: FlexWrapProperty,
   "-webkit-font-feature-settings"?: FontFeatureSettingsProperty,
   "-webkit-font-kerning"?: FontKerningProperty,
+  "-webkit-font-smoothing"?: FontSmoothProperty<TLength>,
   "-webkit-font-variant-ligatures"?: FontVariantLigaturesProperty,
   "-webkit-hyphens"?: HyphensProperty,
   "-webkit-justify-content"?: JustifyContentProperty,
@@ -1414,6 +1428,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-perspective"?: PerspectiveProperty<TLength>,
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength>,
   "-webkit-print-color-adjust"?: ColorAdjustProperty,
+  "-webkit-ruby-position"?: RubyPositionProperty,
   "-webkit-scroll-snap-type"?: ScrollSnapTypeProperty,
   "-webkit-shape-margin"?: ShapeMarginProperty<TLength>,
   "-webkit-tap-highlight-color"?: WebkitTapHighlightColorProperty,
@@ -1474,6 +1489,7 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0> = {
 export type VendorPropertiesHyphen<TLength = string | 0> = VendorLonghandPropertiesHyphen<TLength> & VendorShorthandPropertiesHyphen<TLength>;
 
 export type ObsoletePropertiesHyphen<TLength = string | 0> = {
+  azimuth?: AzimuthProperty,
   "box-align"?: BoxAlignProperty,
   "box-direction"?: BoxDirectionProperty,
   "box-flex"?: GlobalsNumber,
@@ -1530,10 +1546,16 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-box-orient"?: BoxOrientProperty,
   "-moz-box-pack"?: BoxPackProperty,
   "-moz-box-shadow"?: BoxShadowProperty,
+  "-moz-float-edge"?: MozFloatEdgeProperty,
+  "-moz-force-broken-image-icon"?: GlobalsNumber,
   "-moz-opacity"?: OpacityProperty,
   "-moz-outline"?: OutlineProperty<TLength>,
   "-moz-outline-color"?: OutlineColorProperty,
   "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength>,
+  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength>,
+  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength>,
+  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength>,
+  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength>,
   "-moz-outline-style"?: OutlineStyleProperty,
   "-moz-outline-width"?: OutlineWidthProperty<TLength>,
   "-moz-text-align-last"?: TextAlignLastProperty,
@@ -1644,6 +1666,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   alignContent?: AlignContentProperty | AlignContentProperty[],
   alignItems?: AlignItemsProperty | AlignItemsProperty[],
   alignSelf?: AlignSelfProperty | AlignSelfProperty[],
+  alignTracks?: AlignTracksProperty | AlignTracksProperty[],
   animationDelay?: GlobalsString | GlobalsString[],
   animationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[],
   animationDuration?: GlobalsString | GlobalsString[],
@@ -1758,6 +1781,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   fontOpticalSizing?: FontOpticalSizingProperty | FontOpticalSizingProperty[],
   fontSize?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[],
   fontSizeAdjust?: FontSizeAdjustProperty | FontSizeAdjustProperty[],
+  fontSmooth?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[],
   fontStretch?: FontStretchProperty | FontStretchProperty[],
   fontStyle?: FontStyleProperty | FontStyleProperty[],
   fontSynthesis?: FontSynthesisProperty | FontSynthesisProperty[],
@@ -1798,6 +1822,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   justifyContent?: JustifyContentProperty | JustifyContentProperty[],
   justifyItems?: JustifyItemsProperty | JustifyItemsProperty[],
   justifySelf?: JustifySelfProperty | JustifySelfProperty[],
+  justifyTracks?: JustifyTracksProperty | JustifyTracksProperty[],
   left?: LeftProperty<TLength> | LeftProperty<TLength>[],
   letterSpacing?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[],
   lineBreak?: LineBreakProperty | LineBreakProperty[],
@@ -1831,6 +1856,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   maskRepeat?: MaskRepeatProperty | MaskRepeatProperty[],
   maskSize?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[],
   maskType?: MaskTypeProperty | MaskTypeProperty[],
+  masonryAutoFlow?: MasonryAutoFlowProperty | MasonryAutoFlowProperty[],
+  mathStyle?: MathStyleProperty | MathStyleProperty[],
   maxBlockSize?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[],
   maxHeight?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[],
   maxInlineSize?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[],
@@ -1930,6 +1957,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   scrollSnapStop?: ScrollSnapStopProperty | ScrollSnapStopProperty[],
   scrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   scrollbarColor?: ScrollbarColorProperty | ScrollbarColorProperty[],
+  scrollbarGutter?: ScrollbarGutterProperty | ScrollbarGutterProperty[],
   scrollbarWidth?: ScrollbarWidthProperty | ScrollbarWidthProperty[],
   shapeImageThreshold?: ShapeImageThresholdProperty | ShapeImageThresholdProperty[],
   shapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
@@ -2065,19 +2093,14 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   MozColumnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[],
   MozColumnWidth?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[],
   MozContextProperties?: MozContextPropertiesProperty | MozContextPropertiesProperty[],
-  MozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[],
   MozFontFeatureSettings?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[],
   MozFontLanguageOverride?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[],
-  MozForceBrokenImageIcon?: GlobalsNumber | GlobalsNumber[],
   MozHyphens?: HyphensProperty | HyphensProperty[],
   MozImageRegion?: MozImageRegionProperty | MozImageRegionProperty[],
   MozMarginEnd?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[],
   MozMarginStart?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[],
   MozOrient?: MozOrientProperty | MozOrientProperty[],
-  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[],
-  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[],
-  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[],
-  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[],
+  MozOsxFontSmoothing?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[],
   MozPaddingEnd?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[],
   MozPaddingStart?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[],
   MozPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[],
@@ -2111,14 +2134,15 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msFlexPositive?: GlobalsNumber | GlobalsNumber[],
   msFlowFrom?: MsFlowFromProperty | MsFlowFromProperty[],
   msFlowInto?: MsFlowIntoProperty | MsFlowIntoProperty[],
-  msGridColumns?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[],
-  msGridRows?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[],
+  msGridColumns?: MsGridColumnsProperty<TLength> | MsGridColumnsProperty<TLength>[],
+  msGridRows?: MsGridRowsProperty<TLength> | MsGridRowsProperty<TLength>[],
   msHighContrastAdjust?: MsHighContrastAdjustProperty | MsHighContrastAdjustProperty[],
   msHyphenateLimitChars?: MsHyphenateLimitCharsProperty | MsHyphenateLimitCharsProperty[],
   msHyphenateLimitLines?: MsHyphenateLimitLinesProperty | MsHyphenateLimitLinesProperty[],
   msHyphenateLimitZone?: MsHyphenateLimitZoneProperty<TLength> | MsHyphenateLimitZoneProperty<TLength>[],
   msHyphens?: HyphensProperty | HyphensProperty[],
   msImeAlign?: MsImeAlignProperty | MsImeAlignProperty[],
+  msJustifySelf?: JustifySelfProperty | JustifySelfProperty[],
   msLineBreak?: LineBreakProperty | LineBreakProperty[],
   msOrder?: GlobalsNumber | GlobalsNumber[],
   msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
@@ -2209,6 +2233,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitFlexWrap?: FlexWrapProperty | FlexWrapProperty[],
   WebkitFontFeatureSettings?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[],
   WebkitFontKerning?: FontKerningProperty | FontKerningProperty[],
+  WebkitFontSmoothing?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[],
   WebkitFontVariantLigatures?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[],
   WebkitHyphens?: HyphensProperty | HyphensProperty[],
   WebkitJustifyContent?: JustifyContentProperty | JustifyContentProperty[],
@@ -2236,6 +2261,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitPerspective?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[],
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[],
   WebkitPrintColorAdjust?: ColorAdjustProperty | ColorAdjustProperty[],
+  WebkitRubyPosition?: RubyPositionProperty | RubyPositionProperty[],
   WebkitScrollSnapType?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   WebkitShapeMargin?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
   WebkitTapHighlightColor?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[],
@@ -2296,6 +2322,7 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0> = {
 export type VendorPropertiesFallback<TLength = string | 0> = VendorLonghandPropertiesFallback<TLength> & VendorShorthandPropertiesFallback<TLength>;
 
 export type ObsoletePropertiesFallback<TLength = string | 0> = {
+  azimuth?: AzimuthProperty | AzimuthProperty[],
   boxAlign?: BoxAlignProperty | BoxAlignProperty[],
   boxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
   boxFlex?: GlobalsNumber | GlobalsNumber[],
@@ -2352,10 +2379,16 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozBoxOrient?: BoxOrientProperty | BoxOrientProperty[],
   MozBoxPack?: BoxPackProperty | BoxPackProperty[],
   MozBoxShadow?: BoxShadowProperty | BoxShadowProperty[],
+  MozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[],
+  MozForceBrokenImageIcon?: GlobalsNumber | GlobalsNumber[],
   MozOpacity?: OpacityProperty | OpacityProperty[],
   MozOutline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   MozOutlineColor?: OutlineColorProperty | OutlineColorProperty[],
   MozOutlineRadius?: MozOutlineRadiusProperty<TLength> | MozOutlineRadiusProperty<TLength>[],
+  MozOutlineRadiusBottomleft?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[],
+  MozOutlineRadiusBottomright?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[],
+  MozOutlineRadiusTopleft?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[],
+  MozOutlineRadiusTopright?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[],
   MozOutlineStyle?: OutlineStyleProperty | OutlineStyleProperty[],
   MozOutlineWidth?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[],
   MozTextAlignLast?: TextAlignLastProperty | TextAlignLastProperty[],
@@ -2466,6 +2499,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "align-content"?: AlignContentProperty | AlignContentProperty[],
   "align-items"?: AlignItemsProperty | AlignItemsProperty[],
   "align-self"?: AlignSelfProperty | AlignSelfProperty[],
+  "align-tracks"?: AlignTracksProperty | AlignTracksProperty[],
   "animation-delay"?: GlobalsString | GlobalsString[],
   "animation-direction"?: AnimationDirectionProperty | AnimationDirectionProperty[],
   "animation-duration"?: GlobalsString | GlobalsString[],
@@ -2580,6 +2614,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "font-optical-sizing"?: FontOpticalSizingProperty | FontOpticalSizingProperty[],
   "font-size"?: FontSizeProperty<TLength> | FontSizeProperty<TLength>[],
   "font-size-adjust"?: FontSizeAdjustProperty | FontSizeAdjustProperty[],
+  "font-smooth"?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[],
   "font-stretch"?: FontStretchProperty | FontStretchProperty[],
   "font-style"?: FontStyleProperty | FontStyleProperty[],
   "font-synthesis"?: FontSynthesisProperty | FontSynthesisProperty[],
@@ -2620,6 +2655,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "justify-content"?: JustifyContentProperty | JustifyContentProperty[],
   "justify-items"?: JustifyItemsProperty | JustifyItemsProperty[],
   "justify-self"?: JustifySelfProperty | JustifySelfProperty[],
+  "justify-tracks"?: JustifyTracksProperty | JustifyTracksProperty[],
   left?: LeftProperty<TLength> | LeftProperty<TLength>[],
   "letter-spacing"?: LetterSpacingProperty<TLength> | LetterSpacingProperty<TLength>[],
   "line-break"?: LineBreakProperty | LineBreakProperty[],
@@ -2653,6 +2689,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "mask-repeat"?: MaskRepeatProperty | MaskRepeatProperty[],
   "mask-size"?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[],
   "mask-type"?: MaskTypeProperty | MaskTypeProperty[],
+  "masonry-auto-flow"?: MasonryAutoFlowProperty | MasonryAutoFlowProperty[],
+  "math-style"?: MathStyleProperty | MathStyleProperty[],
   "max-block-size"?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[],
   "max-height"?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[],
   "max-inline-size"?: MaxInlineSizeProperty<TLength> | MaxInlineSizeProperty<TLength>[],
@@ -2752,6 +2790,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "scroll-snap-stop"?: ScrollSnapStopProperty | ScrollSnapStopProperty[],
   "scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   "scrollbar-color"?: ScrollbarColorProperty | ScrollbarColorProperty[],
+  "scrollbar-gutter"?: ScrollbarGutterProperty | ScrollbarGutterProperty[],
   "scrollbar-width"?: ScrollbarWidthProperty | ScrollbarWidthProperty[],
   "shape-image-threshold"?: ShapeImageThresholdProperty | ShapeImageThresholdProperty[],
   "shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
@@ -2887,19 +2926,14 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-column-rule-width"?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[],
   "-moz-column-width"?: ColumnWidthProperty<TLength> | ColumnWidthProperty<TLength>[],
   "-moz-context-properties"?: MozContextPropertiesProperty | MozContextPropertiesProperty[],
-  "-moz-float-edge"?: MozFloatEdgeProperty | MozFloatEdgeProperty[],
   "-moz-font-feature-settings"?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[],
   "-moz-font-language-override"?: FontLanguageOverrideProperty | FontLanguageOverrideProperty[],
-  "-moz-force-broken-image-icon"?: GlobalsNumber | GlobalsNumber[],
   "-moz-hyphens"?: HyphensProperty | HyphensProperty[],
   "-moz-image-region"?: MozImageRegionProperty | MozImageRegionProperty[],
   "-moz-margin-end"?: MarginInlineEndProperty<TLength> | MarginInlineEndProperty<TLength>[],
   "-moz-margin-start"?: MarginInlineStartProperty<TLength> | MarginInlineStartProperty<TLength>[],
   "-moz-orient"?: MozOrientProperty | MozOrientProperty[],
-  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[],
-  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[],
-  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[],
-  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[],
+  "-moz-osx-font-smoothing"?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[],
   "-moz-padding-end"?: PaddingInlineEndProperty<TLength> | PaddingInlineEndProperty<TLength>[],
   "-moz-padding-start"?: PaddingInlineStartProperty<TLength> | PaddingInlineStartProperty<TLength>[],
   "-moz-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[],
@@ -2933,14 +2967,15 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-flex-positive"?: GlobalsNumber | GlobalsNumber[],
   "-ms-flow-from"?: MsFlowFromProperty | MsFlowFromProperty[],
   "-ms-flow-into"?: MsFlowIntoProperty | MsFlowIntoProperty[],
-  "-ms-grid-columns"?: GridAutoColumnsProperty<TLength> | GridAutoColumnsProperty<TLength>[],
-  "-ms-grid-rows"?: GridAutoRowsProperty<TLength> | GridAutoRowsProperty<TLength>[],
+  "-ms-grid-columns"?: MsGridColumnsProperty<TLength> | MsGridColumnsProperty<TLength>[],
+  "-ms-grid-rows"?: MsGridRowsProperty<TLength> | MsGridRowsProperty<TLength>[],
   "-ms-high-contrast-adjust"?: MsHighContrastAdjustProperty | MsHighContrastAdjustProperty[],
   "-ms-hyphenate-limit-chars"?: MsHyphenateLimitCharsProperty | MsHyphenateLimitCharsProperty[],
   "-ms-hyphenate-limit-lines"?: MsHyphenateLimitLinesProperty | MsHyphenateLimitLinesProperty[],
   "-ms-hyphenate-limit-zone"?: MsHyphenateLimitZoneProperty<TLength> | MsHyphenateLimitZoneProperty<TLength>[],
   "-ms-hyphens"?: HyphensProperty | HyphensProperty[],
   "-ms-ime-align"?: MsImeAlignProperty | MsImeAlignProperty[],
+  "-ms-justify-self"?: JustifySelfProperty | JustifySelfProperty[],
   "-ms-line-break"?: LineBreakProperty | LineBreakProperty[],
   "-ms-order"?: GlobalsNumber | GlobalsNumber[],
   "-ms-overflow-style"?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
@@ -3031,6 +3066,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-flex-wrap"?: FlexWrapProperty | FlexWrapProperty[],
   "-webkit-font-feature-settings"?: FontFeatureSettingsProperty | FontFeatureSettingsProperty[],
   "-webkit-font-kerning"?: FontKerningProperty | FontKerningProperty[],
+  "-webkit-font-smoothing"?: FontSmoothProperty<TLength> | FontSmoothProperty<TLength>[],
   "-webkit-font-variant-ligatures"?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[],
   "-webkit-hyphens"?: HyphensProperty | HyphensProperty[],
   "-webkit-justify-content"?: JustifyContentProperty | JustifyContentProperty[],
@@ -3058,6 +3094,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-perspective"?: PerspectiveProperty<TLength> | PerspectiveProperty<TLength>[],
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[],
   "-webkit-print-color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[],
+  "-webkit-ruby-position"?: RubyPositionProperty | RubyPositionProperty[],
   "-webkit-scroll-snap-type"?: ScrollSnapTypeProperty | ScrollSnapTypeProperty[],
   "-webkit-shape-margin"?: ShapeMarginProperty<TLength> | ShapeMarginProperty<TLength>[],
   "-webkit-tap-highlight-color"?: WebkitTapHighlightColorProperty | WebkitTapHighlightColorProperty[],
@@ -3118,6 +3155,7 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0> = {
 export type VendorPropertiesHyphenFallback<TLength = string | 0> = VendorLonghandPropertiesHyphenFallback<TLength> & VendorShorthandPropertiesHyphenFallback<TLength>;
 
 export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
+  azimuth?: AzimuthProperty | AzimuthProperty[],
   "box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
   "box-flex"?: GlobalsNumber | GlobalsNumber[],
@@ -3174,10 +3212,16 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-box-orient"?: BoxOrientProperty | BoxOrientProperty[],
   "-moz-box-pack"?: BoxPackProperty | BoxPackProperty[],
   "-moz-box-shadow"?: BoxShadowProperty | BoxShadowProperty[],
+  "-moz-float-edge"?: MozFloatEdgeProperty | MozFloatEdgeProperty[],
+  "-moz-force-broken-image-icon"?: GlobalsNumber | GlobalsNumber[],
   "-moz-opacity"?: OpacityProperty | OpacityProperty[],
   "-moz-outline"?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   "-moz-outline-color"?: OutlineColorProperty | OutlineColorProperty[],
   "-moz-outline-radius"?: MozOutlineRadiusProperty<TLength> | MozOutlineRadiusProperty<TLength>[],
+  "-moz-outline-radius-bottomleft"?: MozOutlineRadiusBottomleftProperty<TLength> | MozOutlineRadiusBottomleftProperty<TLength>[],
+  "-moz-outline-radius-bottomright"?: MozOutlineRadiusBottomrightProperty<TLength> | MozOutlineRadiusBottomrightProperty<TLength>[],
+  "-moz-outline-radius-topleft"?: MozOutlineRadiusTopleftProperty<TLength> | MozOutlineRadiusTopleftProperty<TLength>[],
+  "-moz-outline-radius-topright"?: MozOutlineRadiusToprightProperty<TLength> | MozOutlineRadiusToprightProperty<TLength>[],
   "-moz-outline-style"?: OutlineStyleProperty | OutlineStyleProperty[],
   "-moz-outline-width"?: OutlineWidthProperty<TLength> | OutlineWidthProperty<TLength>[],
   "-moz-text-align-last"?: TextAlignLastProperty | TextAlignLastProperty[],
@@ -3392,6 +3436,46 @@ export type FontFaceHyphenFallback = {
   "unicode-range"?: string | string[],
 };
 
+export type Page<TLength = string | 0> = {
+  size?: PageSizeProperty<TLength>,
+};
+
+export type PageHyphen<TLength = string | 0> = {
+  size?: PageSizeProperty<TLength>,
+};
+
+export type PageFallback<TLength = string | 0> = {
+  size?: PageSizeProperty<TLength> | PageSizeProperty<TLength>[],
+};
+
+export type PageHyphenFallback<TLength = string | 0> = {
+  size?: PageSizeProperty<TLength> | PageSizeProperty<TLength>[],
+};
+
+export type Property = {
+  inherits?: PropertyInheritsProperty,
+  initialValue?: string,
+  syntax?: string,
+};
+
+export type PropertyHyphen = {
+  inherits?: PropertyInheritsProperty,
+  "initial-value"?: string,
+  syntax?: string,
+};
+
+export type PropertyFallback = {
+  inherits?: PropertyInheritsProperty | PropertyInheritsProperty[],
+  initialValue?: string | string[],
+  syntax?: string | string[],
+};
+
+export type PropertyHyphenFallback = {
+  inherits?: PropertyInheritsProperty | PropertyInheritsProperty[],
+  "initial-value"?: string | string[],
+  syntax?: string | string[],
+};
+
 export type Viewport<TLength = string | 0> = {
   msHeight?: ViewportHeightProperty<TLength>,
   msMaxHeight?: ViewportMaxHeightProperty<TLength>,
@@ -3507,6 +3591,7 @@ export type AtRules =
   | "@media"
   | "@namespace"
   | "@page"
+  | "@property"
   | "@supports"
   | "@viewport";
 
@@ -3803,6 +3888,7 @@ export type HtmlAttributes =
   | "[rows]"
   | "[rowspan]"
   | "[rules]"
+  | "[sandbox-allow-downloads]"
   | "[sandbox-allow-modals]"
   | "[sandbox-allow-popups-to-escape-sandbox]"
   | "[sandbox-allow-popups]"
@@ -3867,7 +3953,6 @@ export type SvgAttributes =
   | "[baseProfile]"
   | "[baseline-shift]"
   | "[bbox]"
-  | "[begin]"
   | "[bias]"
   | "[by]"
   | "[calcMode]"
@@ -4113,6 +4198,8 @@ export type AlignItemsProperty = Globals | SelfPosition | "baseline" | "normal" 
 
 export type AlignSelfProperty = Globals | SelfPosition | "auto" | "baseline" | "normal" | "stretch" | string;
 
+export type AlignTracksProperty = Globals | ContentDistribution | ContentPosition | "baseline" | "normal" | string;
+
 export type AnimationProperty = Globals | SingleAnimation | string;
 
 export type AnimationDirectionProperty = Globals | SingleAnimationDirection | string;
@@ -4127,9 +4214,25 @@ export type AnimationPlayStateProperty = Globals | "paused" | "running" | string
 
 export type AnimationTimingFunctionProperty = Globals | TimingFunction | string;
 
-export type AppearanceProperty = Globals | CompatAuto | "button" | "menulist-button" | "none" | "textfield";
+export type AppearanceProperty = Globals | CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
 export type AspectRatioProperty = Globals | "auto" | string;
+
+export type AzimuthProperty =
+  | Globals
+  | "behind"
+  | "center"
+  | "center-left"
+  | "center-right"
+  | "far-left"
+  | "far-right"
+  | "left"
+  | "left-side"
+  | "leftwards"
+  | "right"
+  | "right-side"
+  | "rightwards"
+  | string;
 
 export type BackdropFilterProperty = Globals | "none" | string;
 
@@ -4461,6 +4564,8 @@ export type FontSizeProperty<TLength> = Globals | AbsoluteSize | TLength | "larg
 
 export type FontSizeAdjustProperty = Globals | "none" | number;
 
+export type FontSmoothProperty<TLength> = Globals | AbsoluteSize | TLength | "always" | "auto" | "never";
+
 export type FontStretchProperty = Globals | FontStretchAbsolute;
 
 export type FontStyleProperty = Globals | "italic" | "normal" | "oblique" | string;
@@ -4617,6 +4722,8 @@ export type JustifyItemsProperty = Globals | SelfPosition | "baseline" | "left" 
 
 export type JustifySelfProperty = Globals | SelfPosition | "auto" | "baseline" | "left" | "normal" | "right" | "stretch" | string;
 
+export type JustifyTracksProperty = Globals | ContentDistribution | ContentPosition | "left" | "normal" | "right" | string;
+
 export type LeftProperty<TLength> = Globals | TLength | "auto" | string;
 
 export type LetterSpacingProperty<TLength> = Globals | TLength | "normal";
@@ -4693,7 +4800,11 @@ export type MaskSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
 export type MaskTypeProperty = Globals | "alpha" | "luminance";
 
-export type MaxBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type MasonryAutoFlowProperty = Globals | "definite-first" | "next" | "ordered" | "pack" | string;
+
+export type MathStyleProperty = Globals | "compact" | "normal";
+
+export type MaxBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
 
 export type MaxHeightProperty<TLength> =
   | Globals
@@ -4702,12 +4813,12 @@ export type MaxHeightProperty<TLength> =
   | "-moz-min-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
-  | "auto"
   | "max-content"
   | "min-content"
+  | "none"
   | string;
 
-export type MaxInlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type MaxInlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
 
 export type MaxLinesProperty = Globals | "none" | number;
 
@@ -4718,10 +4829,10 @@ export type MaxWidthProperty<TLength> =
   | "-moz-min-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
-  | "auto"
   | "intrinsic"
   | "max-content"
   | "min-content"
+  | "none"
   | string;
 
 export type MinBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
@@ -4782,7 +4893,7 @@ export type OutlineStyleProperty = Globals | LineStyle | "auto" | string;
 
 export type OutlineWidthProperty<TLength> = Globals | LineWidth<TLength>;
 
-export type OverflowProperty = Globals | "auto" | "hidden" | "scroll" | "visible" | string;
+export type OverflowProperty = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
 
 export type OverflowAnchorProperty = Globals | "auto" | "none";
 
@@ -4794,9 +4905,9 @@ export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scr
 
 export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
 
-export type OverflowXProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+export type OverflowXProperty = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
-export type OverflowYProperty = Globals | "auto" | "hidden" | "scroll" | "visible";
+export type OverflowYProperty = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type OverscrollBehaviorProperty = Globals | "auto" | "contain" | "none" | string;
 
@@ -4935,6 +5046,8 @@ export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximit
 export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximity";
 
 export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light";
+
+export type ScrollbarGutterProperty = Globals | "always" | "auto" | "stable" | string;
 
 export type MsScrollbarTrackColorProperty = Globals | Color;
 
@@ -5268,6 +5381,10 @@ export type MsFlowFromProperty = Globals | "none" | string;
 
 export type MsFlowIntoProperty = Globals | "none" | string;
 
+export type MsGridColumnsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | string;
+
+export type MsGridRowsProperty<TLength> = Globals | TrackBreadth<TLength> | "none" | string;
+
 export type MsHighContrastAdjustProperty = Globals | "auto" | "none";
 
 export type MsHyphenateLimitCharsProperty = Globals | "auto" | string | number;
@@ -5324,6 +5441,7 @@ export type MsWrapThroughProperty = Globals | "none" | "wrap";
 
 export type WebkitAppearanceProperty =
   | Globals
+  | "-apple-pay-button"
   | "button"
   | "button-bevel"
   | "caret"
@@ -5553,6 +5671,10 @@ type FontFaceFontVariationSettingsProperty = "normal" | string;
 
 type FontFaceFontWeightProperty = FontWeightAbsolute | string;
 
+type PageSizeProperty<TLength> = TLength | "auto" | "landscape" | "portrait" | string;
+
+type PropertyInheritsProperty = "false" | "true";
+
 type ViewportHeightProperty<TLength> = ViewportLength<TLength> | string;
 
 type ViewportMaxHeightProperty<TLength> = ViewportLength<TLength>;
@@ -5607,7 +5729,19 @@ type Box = "border-box" | "content-box" | "padding-box";
 
 type Color = NamedColor | DeprecatedSystemColor | "currentcolor" | string;
 
-type CompatAuto = "checkbox" | "listbox" | "menulist" | "meter" | "progress-bar" | "push-button" | "radio" | "searchfield" | "slider-horizontal" | "square-button" | "textarea";
+type CompatAuto =
+  | "button"
+  | "checkbox"
+  | "listbox"
+  | "menulist"
+  | "meter"
+  | "progress-bar"
+  | "push-button"
+  | "radio"
+  | "searchfield"
+  | "slider-horizontal"
+  | "square-button"
+  | "textarea";
 
 type CompositeStyle =
   | "clear"
