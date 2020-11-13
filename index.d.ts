@@ -95,6 +95,14 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   alignSelf?: Property.AlignSelf;
   /**
+   * The **`align-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
+   *
+   * **Syntax**: `[ normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position> ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  alignTracks?: Property.AlignTracks;
+  /**
    * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
@@ -236,9 +244,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **71**  | **14** | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -1157,7 +1165,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    |   No   | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -1166,14 +1174,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -1205,14 +1205,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * ---
    *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
-   *
-   * ---
-   *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
   breakBefore?: Property.BreakBefore;
@@ -1238,14 +1230,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -2170,7 +2154,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Syntax**: `from-image | <angle> | [ <angle>? flip ]`
    *
-   * **Initial value**: `0deg`
+   * **Initial value**: `from-image`
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -2424,6 +2408,14 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
    */
   justifySelf?: Property.JustifySelf;
+  /**
+   * The **`justify-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their inline axis.
+   *
+   * **Syntax**: `[ normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ] ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  justifyTracks?: Property.JustifyTracks;
   /**
    * The **`left`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
    *
@@ -2853,6 +2845,14 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
    */
   maskType?: Property.MaskType;
+  /**
+   * The **`masonry-auto-flow`** CSS property modifies how items are placed when using masonry in CSS Grid Layout.
+   *
+   * **Syntax**: `[ pack | next ] || [ definite-first | ordered ]`
+   *
+   * **Initial value**: `pack`
+   */
+  masonryAutoFlow?: Property.MasonryAutoFlow;
   /**
    * The `math-style` property indicates whether MathML equations should render with normal or compact height.
    *
@@ -3797,9 +3797,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `over`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **38**  |   No   | 12-79 | No  |
+   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
+   * | :-----: | :-----: | :-----------: | :---: | :-: |
+   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |               |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -4267,6 +4268,14 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-color
    */
   scrollbarColor?: Property.ScrollbarColor;
+  /**
+   * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
+   *
+   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   *
+   * **Initial value**: `auto`
+   */
+  scrollbarGutter?: Property.ScrollbarGutter;
   /**
    * The **`scrollbar-width`** property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
@@ -5592,7 +5601,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -7206,6 +7215,14 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitPrintColorAdjust?: Property.ColorAdjust;
   /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
+   * **Syntax**: `over | under | inter-character`
+   *
+   * **Initial value**: `over`
+   */
+  WebkitRubyPosition?: Property.RubyPosition;
+  /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
    * **Syntax**: `none | [ x | y | block | inline | both ] [ mandatory | proximity ]?`
@@ -7579,6 +7596,16 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
 export interface VendorProperties<TLength = (string & {}) | 0, TTime = string & {}> extends VendorLonghandProperties<TLength, TTime>, VendorShorthandProperties<TLength, TTime> {}
 
 export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string & {}> {
+  /**
+   * In combination with `elevation`, the **`azimuth`** CSS property enables different audio sources to be positioned spatially for aural presentation. This is important in that it provides a natural way to tell several voices apart, as each can be positioned to originate at a different location on the sound stage. Stereo output produce a lateral sound stage, while binaural headphones and multi-speaker setups allow for a fully three-dimensional stage.
+   *
+   * **Syntax**: `<angle> | [ [ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards`
+   *
+   * **Initial value**: `center`
+   *
+   * @deprecated
+   */
+  azimuth?: Property.Azimuth;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -8745,6 +8772,14 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "align-self"?: Property.AlignSelf;
   /**
+   * The **`align-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
+   *
+   * **Syntax**: `[ normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position> ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  "align-tracks"?: Property.AlignTracks;
+  /**
    * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `<time>#`
@@ -8886,9 +8921,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **71**  | **14** | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |  n/a   |   n/a   |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -9807,7 +9842,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
-   * | **50** |   No    |   No   | **12** | **10** |
+   * | **50** | **65**  |   No   | **12** | **10** |
    *
    * ---
    *
@@ -9816,14 +9851,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -9855,14 +9882,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * ---
    *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
-   *
-   * ---
-   *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
   "break-before"?: Property.BreakBefore;
@@ -9888,14 +9907,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * | Chrome | Firefox | Safari |  Edge  |   IE   |
    * | :----: | :-----: | :----: | :----: | :----: |
    * | **50** | **65**  | **10** | **12** | **10** |
-   *
-   * ---
-   *
-   * _Supported in CSS Regions_
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    |   No   |  No  | No  |
    *
    * ---
    *
@@ -10820,7 +10831,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Syntax**: `from-image | <angle> | [ <angle>? flip ]`
    *
-   * **Initial value**: `0deg`
+   * **Initial value**: `from-image`
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -11074,6 +11085,14 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/justify-self
    */
   "justify-self"?: Property.JustifySelf;
+  /**
+   * The **`justify-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their inline axis.
+   *
+   * **Syntax**: `[ normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ] ]#`
+   *
+   * **Initial value**: `normal`
+   */
+  "justify-tracks"?: Property.JustifyTracks;
   /**
    * The **`left`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
    *
@@ -11503,6 +11522,14 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
    */
   "mask-type"?: Property.MaskType;
+  /**
+   * The **`masonry-auto-flow`** CSS property modifies how items are placed when using masonry in CSS Grid Layout.
+   *
+   * **Syntax**: `[ pack | next ] || [ definite-first | ordered ]`
+   *
+   * **Initial value**: `pack`
+   */
+  "masonry-auto-flow"?: Property.MasonryAutoFlow;
   /**
    * The `math-style` property indicates whether MathML equations should render with normal or compact height.
    *
@@ -12447,9 +12474,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `over`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **38**  |   No   | 12-79 | No  |
+   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
+   * | :-----: | :-----: | :-----------: | :---: | :-: |
+   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |               |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -12917,6 +12945,14 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-color
    */
   "scrollbar-color"?: Property.ScrollbarColor;
+  /**
+   * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
+   *
+   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   *
+   * **Initial value**: `auto`
+   */
+  "scrollbar-gutter"?: Property.ScrollbarGutter;
   /**
    * The **`scrollbar-width`** property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.
    *
@@ -14242,7 +14278,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  |   No   | **79** | No  |
+   * | **59** | **45**  | **11** | **79** | No  |
    *
    * ---
    *
@@ -15856,6 +15892,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-print-color-adjust"?: Property.ColorAdjust;
   /**
+   * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
+   *
+   * **Syntax**: `over | under | inter-character`
+   *
+   * **Initial value**: `over`
+   */
+  "-webkit-ruby-position"?: Property.RubyPosition;
+  /**
    * The **`scroll-snap-type`** CSS property sets how strictly snap points are enforced on the scroll container in case there is one.
    *
    * **Syntax**: `none | [ x | y | block | inline | both ] [ mandatory | proximity ]?`
@@ -16231,6 +16275,16 @@ export interface VendorPropertiesHyphen<TLength = (string & {}) | 0, TTime = str
     VendorShorthandPropertiesHyphen<TLength, TTime> {}
 
 export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
+  /**
+   * In combination with `elevation`, the **`azimuth`** CSS property enables different audio sources to be positioned spatially for aural presentation. This is important in that it provides a natural way to tell several voices apart, as each can be positioned to originate at a different location on the sound stage. Stereo output produce a lateral sound stage, while binaural headphones and multi-speaker setups allow for a fully three-dimensional stage.
+   *
+   * **Syntax**: `<angle> | [ [ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards`
+   *
+   * **Initial value**: `center`
+   *
+   * @deprecated
+   */
+  azimuth?: Property.Azimuth;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -17395,6 +17449,7 @@ export type AtRules =
   | "@media"
   | "@namespace"
   | "@page"
+  | "@property"
   | "@supports"
   | "@viewport";
 
@@ -17998,6 +18053,8 @@ export namespace Property {
 
   export type AlignSelf = Globals | DataType.SelfPosition | "auto" | "baseline" | "normal" | "stretch" | (string & {});
 
+  export type AlignTracks = Globals | DataType.ContentDistribution | DataType.ContentPosition | "baseline" | "normal" | (string & {});
+
   export type All = Globals;
 
   export type Animation<TTime = string & {}> = Globals | DataType.SingleAnimation<TTime> | (string & {});
@@ -18021,6 +18078,22 @@ export namespace Property {
   export type Appearance = Globals | DataType.CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
   export type AspectRatio = Globals | "auto" | (string & {});
+
+  export type Azimuth =
+    | Globals
+    | "behind"
+    | "center"
+    | "center-left"
+    | "center-right"
+    | "far-left"
+    | "far-right"
+    | "left"
+    | "left-side"
+    | "leftwards"
+    | "right"
+    | "right-side"
+    | "rightwards"
+    | (string & {});
 
   export type BackdropFilter = Globals | "none" | (string & {});
 
@@ -18539,6 +18612,8 @@ export namespace Property {
 
   export type JustifySelf = Globals | DataType.SelfPosition | "auto" | "baseline" | "left" | "normal" | "right" | "stretch" | (string & {});
 
+  export type JustifyTracks = Globals | DataType.ContentDistribution | DataType.ContentPosition | "left" | "normal" | "right" | (string & {});
+
   export type Left<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
   export type LetterSpacing<TLength = (string & {}) | 0> = Globals | TLength | "normal";
@@ -18614,6 +18689,8 @@ export namespace Property {
   export type MaskSize<TLength = (string & {}) | 0> = Globals | DataType.BgSize<TLength> | (string & {});
 
   export type MaskType = Globals | "alpha" | "luminance";
+
+  export type MasonryAutoFlow = Globals | "definite-first" | "next" | "ordered" | "pack" | (string & {});
 
   export type MathStyle = Globals | "compact" | "normal";
 
@@ -18863,6 +18940,8 @@ export namespace Property {
   export type ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
 
   export type ScrollbarColor = Globals | DataType.Color | "auto" | "dark" | "light";
+
+  export type ScrollbarGutter = Globals | "always" | "auto" | "stable" | (string & {});
 
   export type MsScrollbarTrackColor = Globals | DataType.Color;
 
@@ -19569,6 +19648,42 @@ export namespace AtRule {
     [P in keyof FontFaceHyphen<TLength, TTime>]: FontFaceHyphen<TLength, TTime>[P] | FontFaceHyphen<TLength, TTime>[P][];
   };
 
+  export interface Page<TLength = (string & {}) | 0, TTime = string & {}> {
+    size?: Size<TLength>;
+  }
+
+  export interface PageHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
+    size?: Size<TLength>;
+  }
+
+  export type PageFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof Page<TLength, TTime>]: Page<TLength, TTime>[P] | Page<TLength, TTime>[P][];
+  };
+
+  export type PageHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof PageHyphen<TLength, TTime>]: PageHyphen<TLength, TTime>[P] | PageHyphen<TLength, TTime>[P][];
+  };
+
+  export interface Property<TLength = (string & {}) | 0, TTime = string & {}> {
+    inherits?: Inherits;
+    initialValue?: string;
+    syntax?: string;
+  }
+
+  export interface PropertyHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
+    inherits?: Inherits;
+    "initial-value"?: string;
+    syntax?: string;
+  }
+
+  export type PropertyFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof Property<TLength, TTime>]: Property<TLength, TTime>[P] | Property<TLength, TTime>[P][];
+  };
+
+  export type PropertyHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
+    [P in keyof PropertyHyphen<TLength, TTime>]: PropertyHyphen<TLength, TTime>[P] | PropertyHyphen<TLength, TTime>[P][];
+  };
+
   export interface Viewport<TLength = (string & {}) | 0, TTime = string & {}> {
     msHeight?: Height<TLength>;
     msMaxHeight?: MaxHeight<TLength>;
@@ -19678,6 +19793,10 @@ export namespace AtRule {
   type FontVariationSettings = "normal" | (string & {});
 
   type FontWeight = DataType.FontWeightAbsolute | (string & {});
+
+  type Size<TLength> = TLength | "auto" | "landscape" | "portrait" | (string & {});
+
+  type Inherits = "false" | "true";
 
   type Height<TLength> = DataType.ViewportLength<TLength> | (string & {});
 

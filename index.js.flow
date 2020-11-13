@@ -4,6 +4,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   alignContent?: Property$AlignContent,
   alignItems?: Property$AlignItems,
   alignSelf?: Property$AlignSelf,
+  alignTracks?: Property$AlignTracks,
   animationDelay?: Property$AnimationDelay<TTime>,
   animationDirection?: Property$AnimationDirection,
   animationDuration?: Property$AnimationDuration<TTime>,
@@ -159,6 +160,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   justifyContent?: Property$JustifyContent,
   justifyItems?: Property$JustifyItems,
   justifySelf?: Property$JustifySelf,
+  justifyTracks?: Property$JustifyTracks,
   left?: Property$Left<TLength>,
   letterSpacing?: Property$LetterSpacing<TLength>,
   lineBreak?: Property$LineBreak,
@@ -192,6 +194,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   maskRepeat?: Property$MaskRepeat,
   maskSize?: Property$MaskSize<TLength>,
   maskType?: Property$MaskType,
+  masonryAutoFlow?: Property$MasonryAutoFlow,
   mathStyle?: Property$MathStyle,
   maxBlockSize?: Property$MaxBlockSize<TLength>,
   maxHeight?: Property$MaxHeight<TLength>,
@@ -292,6 +295,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   scrollSnapStop?: Property$ScrollSnapStop,
   scrollSnapType?: Property$ScrollSnapType,
   scrollbarColor?: Property$ScrollbarColor,
+  scrollbarGutter?: Property$ScrollbarGutter,
   scrollbarWidth?: Property$ScrollbarWidth,
   shapeImageThreshold?: Property$ShapeImageThreshold,
   shapeMargin?: Property$ShapeMargin<TLength>,
@@ -595,6 +599,7 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   WebkitPerspective?: Property$Perspective<TLength>,
   WebkitPerspectiveOrigin?: Property$PerspectiveOrigin<TLength>,
   WebkitPrintColorAdjust?: Property$ColorAdjust,
+  WebkitRubyPosition?: Property$RubyPosition,
   WebkitScrollSnapType?: Property$ScrollSnapType,
   WebkitShapeMargin?: Property$ShapeMargin<TLength>,
   WebkitTapHighlightColor?: Property$WebkitTapHighlightColor,
@@ -655,6 +660,7 @@ export type VendorShorthandProperties<TLength = string | 0, TTime = string> = {|
 export type VendorProperties<TLength = string | 0, TTime = string> = {| ...VendorLonghandProperties<TLength, TTime>, ...VendorShorthandProperties<TLength, TTime> |};
 
 export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
+  azimuth?: Property$Azimuth,
   boxAlign?: Property$BoxAlign,
   boxDirection?: Property$BoxDirection,
   boxFlex?: Property$BoxFlex,
@@ -833,6 +839,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "align-content"?: Property$AlignContent,
   "align-items"?: Property$AlignItems,
   "align-self"?: Property$AlignSelf,
+  "align-tracks"?: Property$AlignTracks,
   "animation-delay"?: Property$AnimationDelay<TTime>,
   "animation-direction"?: Property$AnimationDirection,
   "animation-duration"?: Property$AnimationDuration<TTime>,
@@ -988,6 +995,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "justify-content"?: Property$JustifyContent,
   "justify-items"?: Property$JustifyItems,
   "justify-self"?: Property$JustifySelf,
+  "justify-tracks"?: Property$JustifyTracks,
   left?: Property$Left<TLength>,
   "letter-spacing"?: Property$LetterSpacing<TLength>,
   "line-break"?: Property$LineBreak,
@@ -1021,6 +1029,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "mask-repeat"?: Property$MaskRepeat,
   "mask-size"?: Property$MaskSize<TLength>,
   "mask-type"?: Property$MaskType,
+  "masonry-auto-flow"?: Property$MasonryAutoFlow,
   "math-style"?: Property$MathStyle,
   "max-block-size"?: Property$MaxBlockSize<TLength>,
   "max-height"?: Property$MaxHeight<TLength>,
@@ -1121,6 +1130,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "scroll-snap-stop"?: Property$ScrollSnapStop,
   "scroll-snap-type"?: Property$ScrollSnapType,
   "scrollbar-color"?: Property$ScrollbarColor,
+  "scrollbar-gutter"?: Property$ScrollbarGutter,
   "scrollbar-width"?: Property$ScrollbarWidth,
   "shape-image-threshold"?: Property$ShapeImageThreshold,
   "shape-margin"?: Property$ShapeMargin<TLength>,
@@ -1427,6 +1437,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-webkit-perspective"?: Property$Perspective<TLength>,
   "-webkit-perspective-origin"?: Property$PerspectiveOrigin<TLength>,
   "-webkit-print-color-adjust"?: Property$ColorAdjust,
+  "-webkit-ruby-position"?: Property$RubyPosition,
   "-webkit-scroll-snap-type"?: Property$ScrollSnapType,
   "-webkit-shape-margin"?: Property$ShapeMargin<TLength>,
   "-webkit-tap-highlight-color"?: Property$WebkitTapHighlightColor,
@@ -1490,6 +1501,7 @@ export type VendorPropertiesHyphen<TLength = string | 0, TTime = string> = {|
 |};
 
 export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
+  azimuth?: Property$Azimuth,
   "box-align"?: Property$BoxAlign,
   "box-direction"?: Property$BoxDirection,
   "box-flex"?: Property$BoxFlex,
@@ -1668,6 +1680,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   alignContent?: Property$AlignContent | Array<Property$AlignContent>,
   alignItems?: Property$AlignItems | Array<Property$AlignItems>,
   alignSelf?: Property$AlignSelf | Array<Property$AlignSelf>,
+  alignTracks?: Property$AlignTracks | Array<Property$AlignTracks>,
   animationDelay?: Property$AnimationDelay<TTime> | Array<Property$AnimationDelay<TTime>>,
   animationDirection?: Property$AnimationDirection | Array<Property$AnimationDirection>,
   animationDuration?: Property$AnimationDuration<TTime> | Array<Property$AnimationDuration<TTime>>,
@@ -1823,6 +1836,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   justifyContent?: Property$JustifyContent | Array<Property$JustifyContent>,
   justifyItems?: Property$JustifyItems | Array<Property$JustifyItems>,
   justifySelf?: Property$JustifySelf | Array<Property$JustifySelf>,
+  justifyTracks?: Property$JustifyTracks | Array<Property$JustifyTracks>,
   left?: Property$Left<TLength> | Array<Property$Left<TLength>>,
   letterSpacing?: Property$LetterSpacing<TLength> | Array<Property$LetterSpacing<TLength>>,
   lineBreak?: Property$LineBreak | Array<Property$LineBreak>,
@@ -1856,6 +1870,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   maskRepeat?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   maskSize?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   maskType?: Property$MaskType | Array<Property$MaskType>,
+  masonryAutoFlow?: Property$MasonryAutoFlow | Array<Property$MasonryAutoFlow>,
   mathStyle?: Property$MathStyle | Array<Property$MathStyle>,
   maxBlockSize?: Property$MaxBlockSize<TLength> | Array<Property$MaxBlockSize<TLength>>,
   maxHeight?: Property$MaxHeight<TLength> | Array<Property$MaxHeight<TLength>>,
@@ -1956,6 +1971,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   scrollSnapStop?: Property$ScrollSnapStop | Array<Property$ScrollSnapStop>,
   scrollSnapType?: Property$ScrollSnapType | Array<Property$ScrollSnapType>,
   scrollbarColor?: Property$ScrollbarColor | Array<Property$ScrollbarColor>,
+  scrollbarGutter?: Property$ScrollbarGutter | Array<Property$ScrollbarGutter>,
   scrollbarWidth?: Property$ScrollbarWidth | Array<Property$ScrollbarWidth>,
   shapeImageThreshold?: Property$ShapeImageThreshold | Array<Property$ShapeImageThreshold>,
   shapeMargin?: Property$ShapeMargin<TLength> | Array<Property$ShapeMargin<TLength>>,
@@ -2262,6 +2278,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   WebkitPerspective?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
   WebkitPerspectiveOrigin?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
   WebkitPrintColorAdjust?: Property$ColorAdjust | Array<Property$ColorAdjust>,
+  WebkitRubyPosition?: Property$RubyPosition | Array<Property$RubyPosition>,
   WebkitScrollSnapType?: Property$ScrollSnapType | Array<Property$ScrollSnapType>,
   WebkitShapeMargin?: Property$ShapeMargin<TLength> | Array<Property$ShapeMargin<TLength>>,
   WebkitTapHighlightColor?: Property$WebkitTapHighlightColor | Array<Property$WebkitTapHighlightColor>,
@@ -2325,6 +2342,7 @@ export type VendorPropertiesFallback<TLength = string | 0, TTime = string> = {|
 |};
 
 export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {|
+  azimuth?: Property$Azimuth | Array<Property$Azimuth>,
   boxAlign?: Property$BoxAlign | Array<Property$BoxAlign>,
   boxDirection?: Property$BoxDirection | Array<Property$BoxDirection>,
   boxFlex?: Property$BoxFlex | Array<Property$BoxFlex>,
@@ -2503,6 +2521,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "align-content"?: Property$AlignContent | Array<Property$AlignContent>,
   "align-items"?: Property$AlignItems | Array<Property$AlignItems>,
   "align-self"?: Property$AlignSelf | Array<Property$AlignSelf>,
+  "align-tracks"?: Property$AlignTracks | Array<Property$AlignTracks>,
   "animation-delay"?: Property$AnimationDelay<TTime> | Array<Property$AnimationDelay<TTime>>,
   "animation-direction"?: Property$AnimationDirection | Array<Property$AnimationDirection>,
   "animation-duration"?: Property$AnimationDuration<TTime> | Array<Property$AnimationDuration<TTime>>,
@@ -2658,6 +2677,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "justify-content"?: Property$JustifyContent | Array<Property$JustifyContent>,
   "justify-items"?: Property$JustifyItems | Array<Property$JustifyItems>,
   "justify-self"?: Property$JustifySelf | Array<Property$JustifySelf>,
+  "justify-tracks"?: Property$JustifyTracks | Array<Property$JustifyTracks>,
   left?: Property$Left<TLength> | Array<Property$Left<TLength>>,
   "letter-spacing"?: Property$LetterSpacing<TLength> | Array<Property$LetterSpacing<TLength>>,
   "line-break"?: Property$LineBreak | Array<Property$LineBreak>,
@@ -2691,6 +2711,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "mask-repeat"?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   "mask-size"?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   "mask-type"?: Property$MaskType | Array<Property$MaskType>,
+  "masonry-auto-flow"?: Property$MasonryAutoFlow | Array<Property$MasonryAutoFlow>,
   "math-style"?: Property$MathStyle | Array<Property$MathStyle>,
   "max-block-size"?: Property$MaxBlockSize<TLength> | Array<Property$MaxBlockSize<TLength>>,
   "max-height"?: Property$MaxHeight<TLength> | Array<Property$MaxHeight<TLength>>,
@@ -2791,6 +2812,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "scroll-snap-stop"?: Property$ScrollSnapStop | Array<Property$ScrollSnapStop>,
   "scroll-snap-type"?: Property$ScrollSnapType | Array<Property$ScrollSnapType>,
   "scrollbar-color"?: Property$ScrollbarColor | Array<Property$ScrollbarColor>,
+  "scrollbar-gutter"?: Property$ScrollbarGutter | Array<Property$ScrollbarGutter>,
   "scrollbar-width"?: Property$ScrollbarWidth | Array<Property$ScrollbarWidth>,
   "shape-image-threshold"?: Property$ShapeImageThreshold | Array<Property$ShapeImageThreshold>,
   "shape-margin"?: Property$ShapeMargin<TLength> | Array<Property$ShapeMargin<TLength>>,
@@ -3097,6 +3119,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-webkit-perspective"?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
   "-webkit-perspective-origin"?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
   "-webkit-print-color-adjust"?: Property$ColorAdjust | Array<Property$ColorAdjust>,
+  "-webkit-ruby-position"?: Property$RubyPosition | Array<Property$RubyPosition>,
   "-webkit-scroll-snap-type"?: Property$ScrollSnapType | Array<Property$ScrollSnapType>,
   "-webkit-shape-margin"?: Property$ShapeMargin<TLength> | Array<Property$ShapeMargin<TLength>>,
   "-webkit-tap-highlight-color"?: Property$WebkitTapHighlightColor | Array<Property$WebkitTapHighlightColor>,
@@ -3160,6 +3183,7 @@ export type VendorPropertiesHyphenFallback<TLength = string | 0, TTime = string>
 |};
 
 export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
+  azimuth?: Property$Azimuth | Array<Property$Azimuth>,
   "box-align"?: Property$BoxAlign | Array<Property$BoxAlign>,
   "box-direction"?: Property$BoxDirection | Array<Property$BoxDirection>,
   "box-flex"?: Property$BoxFlex | Array<Property$BoxFlex>,
@@ -3345,6 +3369,7 @@ export type AtRules =
   | "@media"
   | "@namespace"
   | "@page"
+  | "@property"
   | "@supports"
   | "@viewport";
 
@@ -3947,6 +3972,8 @@ export type Property$AlignItems = Globals | DataType$SelfPosition | "baseline" |
 
 export type Property$AlignSelf = Globals | DataType$SelfPosition | "auto" | "baseline" | "normal" | "stretch" | string;
 
+export type Property$AlignTracks = Globals | DataType$ContentDistribution | DataType$ContentPosition | "baseline" | "normal" | string;
+
 export type Property$All = Globals;
 
 export type Property$Animation<TTime = string> = Globals | DataType$SingleAnimation<TTime> | string;
@@ -3970,6 +3997,22 @@ export type Property$AnimationTimingFunction = Globals | DataType$TimingFunction
 export type Property$Appearance = Globals | DataType$CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
 export type Property$AspectRatio = Globals | "auto" | string;
+
+export type Property$Azimuth =
+  | Globals
+  | "behind"
+  | "center"
+  | "center-left"
+  | "center-right"
+  | "far-left"
+  | "far-right"
+  | "left"
+  | "left-side"
+  | "leftwards"
+  | "right"
+  | "right-side"
+  | "rightwards"
+  | string;
 
 export type Property$BackdropFilter = Globals | "none" | string;
 
@@ -4488,6 +4531,8 @@ export type Property$JustifyItems = Globals | DataType$SelfPosition | "baseline"
 
 export type Property$JustifySelf = Globals | DataType$SelfPosition | "auto" | "baseline" | "left" | "normal" | "right" | "stretch" | string;
 
+export type Property$JustifyTracks = Globals | DataType$ContentDistribution | DataType$ContentPosition | "left" | "normal" | "right" | string;
+
 export type Property$Left<TLength = string | 0> = Globals | TLength | "auto" | string;
 
 export type Property$LetterSpacing<TLength = string | 0> = Globals | TLength | "normal";
@@ -4563,6 +4608,8 @@ export type Property$MaskRepeat = Globals | DataType$RepeatStyle | string;
 export type Property$MaskSize<TLength = string | 0> = Globals | DataType$BgSize<TLength> | string;
 
 export type Property$MaskType = Globals | "alpha" | "luminance";
+
+export type Property$MasonryAutoFlow = Globals | "definite-first" | "next" | "ordered" | "pack" | string;
 
 export type Property$MathStyle = Globals | "compact" | "normal";
 
@@ -4812,6 +4859,8 @@ export type Property$ScrollSnapTypeX = Globals | "mandatory" | "none" | "proximi
 export type Property$ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
 
 export type Property$ScrollbarColor = Globals | DataType$Color | "auto" | "dark" | "light";
+
+export type Property$ScrollbarGutter = Globals | "always" | "auto" | "stable" | string;
 
 export type Property$MsScrollbarTrackColor = Globals | DataType$Color;
 
@@ -5543,6 +5592,46 @@ export type AtRule$FontFaceHyphenFallback<TLength = string | 0, TTime = string> 
   "unicode-range"?: string | Array<string>,
 |};
 
+export type AtRule$Page<TLength = string | 0, TTime = string> = {|
+  size?: AtRule$Size<TLength>,
+|};
+
+export type AtRule$PageHyphen<TLength = string | 0, TTime = string> = {|
+  size?: AtRule$Size<TLength>,
+|};
+
+export type AtRule$PageFallback<TLength = string | 0, TTime = string> = {|
+  size?: AtRule$Size<TLength> | Array<AtRule$Size<TLength>>,
+|};
+
+export type AtRule$PageHyphenFallback<TLength = string | 0, TTime = string> = {|
+  size?: AtRule$Size<TLength> | Array<AtRule$Size<TLength>>,
+|};
+
+export type AtRule$Property<TLength = string | 0, TTime = string> = {|
+  inherits?: AtRule$Inherits,
+  initialValue?: string,
+  syntax?: string,
+|};
+
+export type AtRule$PropertyHyphen<TLength = string | 0, TTime = string> = {|
+  inherits?: AtRule$Inherits,
+  "initial-value"?: string,
+  syntax?: string,
+|};
+
+export type AtRule$PropertyFallback<TLength = string | 0, TTime = string> = {|
+  inherits?: AtRule$Inherits | Array<AtRule$Inherits>,
+  initialValue?: string | Array<string>,
+  syntax?: string | Array<string>,
+|};
+
+export type AtRule$PropertyHyphenFallback<TLength = string | 0, TTime = string> = {|
+  inherits?: AtRule$Inherits | Array<AtRule$Inherits>,
+  "initial-value"?: string | Array<string>,
+  syntax?: string | Array<string>,
+|};
+
 export type AtRule$Viewport<TLength = string | 0, TTime = string> = {|
   msHeight?: AtRule$Height<TLength>,
   msMaxHeight?: AtRule$MaxHeight<TLength>,
@@ -5696,6 +5785,10 @@ type AtRule$FontVariant =
 type AtRule$FontVariationSettings = "normal" | string;
 
 type AtRule$FontWeight = DataType$FontWeightAbsolute | string;
+
+type AtRule$Size<TLength> = TLength | "auto" | "landscape" | "portrait" | string;
+
+type AtRule$Inherits = "false" | "true";
 
 type AtRule$Height<TLength> = DataType$ViewportLength<TLength> | string;
 
