@@ -12,6 +12,7 @@ const css: CSS.Properties = {
   flexDirection: 'row',
   MozAppearance: 'button',
   msOverflowStyle: 'scrollbar',
+  color: '#abcdef',
 
   // Test custom string
   width: 'calc(1px)',

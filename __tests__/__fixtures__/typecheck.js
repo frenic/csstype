@@ -8,6 +8,7 @@ const css: CSS.Properties<> = {
   flexDirection: 'row',
   MozAppearance: 'button',
   msOverflowStyle: 'scrollbar',
+  color: '#abcdef',
 
   // Test custom string
   borderBottomWidth: 'calc(1px)',

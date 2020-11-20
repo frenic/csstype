@@ -8,7 +8,7 @@ const COMPILER_OPTIONS = {
 
 describe('Typescript 4.1', () => {
   it('detects errors', async () => {
-    const ts = await import('typescript4.1');
+    const ts = await import('typescript');
     const program = ts.createProgram([path.resolve(__dirname, '__fixtures__/typecheck.ts')], COMPILER_OPTIONS);
     const diagnostics = ts.getPreEmitDiagnostics(program);
     const errors = diagnostics.map(diagnostic => {
@@ -28,7 +28,7 @@ describe('Typescript 4.1', () => {
 
 describe('Typescript 4.0', () => {
   it('detects errors', async () => {
-    const ts = await import('typescript');
+    const ts = await import('typescript4.0');
     const program = ts.createProgram([path.resolve(__dirname, '__fixtures__/typecheck.ts')], COMPILER_OPTIONS);
     const diagnostics = ts.getPreEmitDiagnostics(program);
     const errors = diagnostics.map(diagnostic => {

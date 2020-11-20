@@ -8,7 +8,7 @@ export const TYPESCRIPT_FILENAME = 'index.d.ts';
 export const FLOW_FILENAME = 'index.js.flow';
 
 export function writeFileAsync(filename: string, content: string) {
-  return new Promise((resolve, reject) => {
+  return new Promise<void>((resolve, reject) => {
     writeFile(filename, content, 'utf-8', error => {
       if (error) {
         reject(error);
@@ -39,7 +39,7 @@ export function spawnAsync(command: string, optionsOrArg: SpawnOptions | string,
       cp.stdout.on('data', chunk => (data += chunk));
       cp.on('close', code => (code === 0 ? resolve(data) : reject(data)));
     } else {
-      cp.on('close', code => (code === 0 ? resolve() : reject()));
+      cp.on('close', code => (code === 0 ? resolve('') : reject()));
     }
 
     cp.on('error', reject);
