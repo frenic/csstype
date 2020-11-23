@@ -98,6 +98,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   columnWidth?: Property$ColumnWidth<TLength>,
   contain?: Property$Contain,
   content?: Property$Content,
+  contentVisibility?: Property$ContentVisibility,
   counterIncrement?: Property$CounterIncrement,
   counterReset?: Property$CounterReset,
   counterSet?: Property$CounterSet,
@@ -933,6 +934,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "column-width"?: Property$ColumnWidth<TLength>,
   contain?: Property$Contain,
   content?: Property$Content,
+  "content-visibility"?: Property$ContentVisibility,
   "counter-increment"?: Property$CounterIncrement,
   "counter-reset"?: Property$CounterReset,
   "counter-set"?: Property$CounterSet,
@@ -1774,6 +1776,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   columnWidth?: Property$ColumnWidth<TLength> | Array<Property$ColumnWidth<TLength>>,
   contain?: Property$Contain | Array<Property$Contain>,
   content?: Property$Content | Array<Property$Content>,
+  contentVisibility?: Property$ContentVisibility | Array<Property$ContentVisibility>,
   counterIncrement?: Property$CounterIncrement | Array<Property$CounterIncrement>,
   counterReset?: Property$CounterReset | Array<Property$CounterReset>,
   counterSet?: Property$CounterSet | Array<Property$CounterSet>,
@@ -2615,6 +2618,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "column-width"?: Property$ColumnWidth<TLength> | Array<Property$ColumnWidth<TLength>>,
   contain?: Property$Contain | Array<Property$Contain>,
   content?: Property$Content | Array<Property$Content>,
+  "content-visibility"?: Property$ContentVisibility | Array<Property$ContentVisibility>,
   "counter-increment"?: Property$CounterIncrement | Array<Property$CounterIncrement>,
   "counter-reset"?: Property$CounterReset | Array<Property$CounterReset>,
   "counter-set"?: Property$CounterSet | Array<Property$CounterSet>,
@@ -4265,6 +4269,8 @@ export type Property$Columns<TLength = string | 0> = Globals | TLength | "auto" 
 export type Property$Contain = Globals | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
 
 export type Property$Content = Globals | DataType$ContentList | "none" | "normal" | string;
+
+export type Property$ContentVisibility = Globals | "auto" | "hidden" | "visible";
 
 export type Property$CounterIncrement = Globals | "none" | string;
 

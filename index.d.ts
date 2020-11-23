@@ -1493,6 +1493,18 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   content?: Property.Content;
   /**
+   * **Syntax**: `visible | auto | hidden`
+   *
+   * **Initial value**: `visible`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** |   No    |   No   | **85** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
+   */
+  contentVisibility?: Property.ContentVisibility;
+  /**
    * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
    *
    * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
@@ -10170,6 +10182,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   content?: Property.Content;
   /**
+   * **Syntax**: `visible | auto | hidden`
+   *
+   * **Initial value**: `visible`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** |   No    |   No   | **85** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
+   */
+  "content-visibility"?: Property.ContentVisibility;
+  /**
    * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
    *
    * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
@@ -18346,6 +18370,8 @@ export namespace Property {
   export type Contain = Globals | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | (string & {});
 
   export type Content = Globals | DataType.ContentList | "none" | "normal" | (string & {});
+
+  export type ContentVisibility = Globals | "auto" | "hidden" | "visible";
 
   export type CounterIncrement = Globals | "none" | (string & {});
 
