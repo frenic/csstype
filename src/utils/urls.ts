@@ -18,12 +18,14 @@ turndown.addRule('anchor', {
   replacement: (content: string) => content,
 });
 
-async function scrapeSummary(url: string): Promise<string> {
+async function scrapeSummary(url: string): Promise<string | undefined> {
   try {
     const htmlContents: string = await new Promise((resolve, reject) => {
       request(url, (e, response, body) => {
         if (e) {
           reject(e);
+        } else if (response.statusCode < 200 || response.statusCode >= 300) {
+          reject(`Response status code ${response.statusCode}`);
         } else {
           resolve(body);
         }
@@ -31,17 +33,16 @@ async function scrapeSummary(url: string): Promise<string> {
     });
 
     const { window } = new jsdom.JSDOM(htmlContents);
-    const summaryElement = window.document.querySelector('#wikiArticle > p:not(:empty)');
+    const summaryElement = window.document.querySelector('main :not(.notecard) > p:not(:empty)');
     window.close();
 
     if (summaryElement) {
       return turndown.turndown(summaryElement.innerHTML);
     }
 
-    return '';
-  } catch {
-    warn(`Could not fetch summary for '${url}'`);
-    return '';
+    throw new Error('Element was not found');
+  } catch (e) {
+    warn(`Could not fetch summary for '${url}': ${e}`);
   }
 }
 
@@ -61,13 +62,16 @@ function saveToFile(): void {
   }
 }
 
-export async function getSummary(url: string): Promise<string> {
-  let summaryData = urlData[url];
+export async function getSummary(url: string): Promise<string | undefined> {
+  let summaryData: string | undefined = urlData[url];
 
   if (url && !summaryData) {
     console.log('Fetching summary for ' + url);
-    urlData[url] = summaryData = (await scrapeSummary(url)) || '';
-    saveToFile();
+    summaryData = await scrapeSummary(url);
+    if (summaryData) {
+      urlData[url] = summaryData;
+      saveToFile();
+    }
   }
 
   return summaryData;

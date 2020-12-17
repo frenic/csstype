@@ -98,6 +98,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   columnWidth?: Property$ColumnWidth<TLength>,
   contain?: Property$Contain,
   content?: Property$Content,
+  contentVisibility?: Property$ContentVisibility,
   counterIncrement?: Property$CounterIncrement,
   counterReset?: Property$CounterReset,
   counterSet?: Property$CounterSet,
@@ -194,7 +195,6 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   maskRepeat?: Property$MaskRepeat,
   maskSize?: Property$MaskSize<TLength>,
   maskType?: Property$MaskType,
-  masonryAutoFlow?: Property$MasonryAutoFlow,
   mathStyle?: Property$MathStyle,
   maxBlockSize?: Property$MaxBlockSize<TLength>,
   maxHeight?: Property$MaxHeight<TLength>,
@@ -933,6 +933,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "column-width"?: Property$ColumnWidth<TLength>,
   contain?: Property$Contain,
   content?: Property$Content,
+  "content-visibility"?: Property$ContentVisibility,
   "counter-increment"?: Property$CounterIncrement,
   "counter-reset"?: Property$CounterReset,
   "counter-set"?: Property$CounterSet,
@@ -1029,7 +1030,6 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "mask-repeat"?: Property$MaskRepeat,
   "mask-size"?: Property$MaskSize<TLength>,
   "mask-type"?: Property$MaskType,
-  "masonry-auto-flow"?: Property$MasonryAutoFlow,
   "math-style"?: Property$MathStyle,
   "max-block-size"?: Property$MaxBlockSize<TLength>,
   "max-height"?: Property$MaxHeight<TLength>,
@@ -1774,6 +1774,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   columnWidth?: Property$ColumnWidth<TLength> | Array<Property$ColumnWidth<TLength>>,
   contain?: Property$Contain | Array<Property$Contain>,
   content?: Property$Content | Array<Property$Content>,
+  contentVisibility?: Property$ContentVisibility | Array<Property$ContentVisibility>,
   counterIncrement?: Property$CounterIncrement | Array<Property$CounterIncrement>,
   counterReset?: Property$CounterReset | Array<Property$CounterReset>,
   counterSet?: Property$CounterSet | Array<Property$CounterSet>,
@@ -1870,7 +1871,6 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   maskRepeat?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   maskSize?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   maskType?: Property$MaskType | Array<Property$MaskType>,
-  masonryAutoFlow?: Property$MasonryAutoFlow | Array<Property$MasonryAutoFlow>,
   mathStyle?: Property$MathStyle | Array<Property$MathStyle>,
   maxBlockSize?: Property$MaxBlockSize<TLength> | Array<Property$MaxBlockSize<TLength>>,
   maxHeight?: Property$MaxHeight<TLength> | Array<Property$MaxHeight<TLength>>,
@@ -2615,6 +2615,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "column-width"?: Property$ColumnWidth<TLength> | Array<Property$ColumnWidth<TLength>>,
   contain?: Property$Contain | Array<Property$Contain>,
   content?: Property$Content | Array<Property$Content>,
+  "content-visibility"?: Property$ContentVisibility | Array<Property$ContentVisibility>,
   "counter-increment"?: Property$CounterIncrement | Array<Property$CounterIncrement>,
   "counter-reset"?: Property$CounterReset | Array<Property$CounterReset>,
   "counter-set"?: Property$CounterSet | Array<Property$CounterSet>,
@@ -2711,7 +2712,6 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "mask-repeat"?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   "mask-size"?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   "mask-type"?: Property$MaskType | Array<Property$MaskType>,
-  "masonry-auto-flow"?: Property$MasonryAutoFlow | Array<Property$MasonryAutoFlow>,
   "math-style"?: Property$MathStyle | Array<Property$MathStyle>,
   "max-block-size"?: Property$MaxBlockSize<TLength> | Array<Property$MaxBlockSize<TLength>>,
   "max-height"?: Property$MaxHeight<TLength> | Array<Property$MaxHeight<TLength>>,
@@ -3413,6 +3413,7 @@ export type SimplePseudos =
   | "::-moz-range-thumb"
   | "::-moz-range-track"
   | "::-moz-selection"
+  | "::-moz-ui-invalid"
   | "::-ms-backdrop"
   | "::-ms-browse"
   | "::-ms-check"
@@ -3453,6 +3454,7 @@ export type SimplePseudos =
   | ":before"
   | ":blank"
   | ":checked"
+  | ":current"
   | ":default"
   | ":defined"
   | ":disabled"
@@ -3467,6 +3469,7 @@ export type SimplePseudos =
   | ":focus-visible"
   | ":focus-within"
   | ":fullscreen"
+  | ":future"
   | ":hover"
   | ":in-range"
   | ":indeterminate"
@@ -3475,10 +3478,15 @@ export type SimplePseudos =
   | ":last-of-type"
   | ":left"
   | ":link"
+  | ":local-link"
+  | ":nth-col"
+  | ":nth-last-col"
   | ":only-child"
   | ":only-of-type"
   | ":optional"
   | ":out-of-range"
+  | ":past"
+  | ":paused"
   | ":placeholder-shown"
   | ":read-only"
   | ":read-write"
@@ -3487,6 +3495,8 @@ export type SimplePseudos =
   | ":root"
   | ":scope"
   | ":target"
+  | ":target-within"
+  | ":user-invalid"
   | ":valid"
   | ":visited";
 
@@ -3553,6 +3563,7 @@ export type HtmlAttributes =
   | "[defer]"
   | "[dir]"
   | "[direction]"
+  | "[dirname]"
   | "[disabled]"
   | "[download]"
   | "[draggable]"
@@ -3671,6 +3682,7 @@ export type HtmlAttributes =
   | "[sandbox-allow-popups-to-escape-sandbox]"
   | "[sandbox-allow-popups]"
   | "[sandbox-allow-presentation]"
+  | "[sandbox-allow-same-origin]"
   | "[sandbox-allow-storage-access-by-user-activation]"
   | "[sandbox-allow-top-navigation-by-user-activation]"
   | "[sandbox]"
@@ -3992,7 +4004,7 @@ export type Property$AnimationName = Globals | "none" | string;
 
 export type Property$AnimationPlayState = Globals | "paused" | "running" | string;
 
-export type Property$AnimationTimingFunction = Globals | DataType$TimingFunction | string;
+export type Property$AnimationTimingFunction = Globals | DataType$EasingFunction | string;
 
 export type Property$Appearance = Globals | DataType$CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
@@ -4265,6 +4277,8 @@ export type Property$Columns<TLength = string | 0> = Globals | TLength | "auto" 
 export type Property$Contain = Globals | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
 
 export type Property$Content = Globals | DataType$ContentList | "none" | "normal" | string;
+
+export type Property$ContentVisibility = Globals | "auto" | "hidden" | "visible";
 
 export type Property$CounterIncrement = Globals | "none" | string;
 
@@ -4609,8 +4623,6 @@ export type Property$MaskSize<TLength = string | 0> = Globals | DataType$BgSize<
 
 export type Property$MaskType = Globals | "alpha" | "luminance";
 
-export type Property$MasonryAutoFlow = Globals | "definite-first" | "next" | "ordered" | "pack" | string;
-
 export type Property$MathStyle = Globals | "compact" | "normal";
 
 export type Property$MaxBlockSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
@@ -4880,7 +4892,7 @@ export type Property$TextAlign = Globals | "center" | "end" | "justify" | "left"
 
 export type Property$TextAlignLast = Globals | "auto" | "center" | "end" | "justify" | "left" | "right" | "start";
 
-export type Property$TextCombineUpright = Globals | "all" | "digits" | "none" | string;
+export type Property$TextCombineUpright = Globals | "-ms-text-combine-horizontal" | "all" | "digits" | "none" | string;
 
 export type Property$TextDecoration<TLength = string | 0> =
   | Globals
@@ -4977,7 +4989,7 @@ export type Property$TransitionDuration<TTime = string> = Globals | TTime | stri
 
 export type Property$TransitionProperty = Globals | "all" | "none" | string;
 
-export type Property$TransitionTimingFunction = Globals | DataType$TimingFunction | string;
+export type Property$TransitionTimingFunction = Globals | DataType$EasingFunction | string;
 
 export type Property$Translate<TLength = string | 0> = Globals | TLength | "none" | string;
 
@@ -5633,18 +5645,6 @@ export type AtRule$PropertyHyphenFallback<TLength = string | 0, TTime = string> 
 |};
 
 export type AtRule$Viewport<TLength = string | 0, TTime = string> = {|
-  msHeight?: AtRule$Height<TLength>,
-  msMaxHeight?: AtRule$MaxHeight<TLength>,
-  msMaxWidth?: AtRule$MaxWidth<TLength>,
-  msMaxZoom?: AtRule$MaxZoom,
-  msMinHeight?: AtRule$MinHeight<TLength>,
-  msMinWidth?: AtRule$MinWidth<TLength>,
-  msMinZoom?: AtRule$MinZoom,
-  msOrientation?: AtRule$Orientation,
-  msUserZoom?: AtRule$UserZoom,
-  msWidth?: AtRule$Width<TLength>,
-  msZoom?: AtRule$Zoom,
-  OOrientation?: AtRule$Orientation,
   height?: AtRule$Height<TLength>,
   maxHeight?: AtRule$MaxHeight<TLength>,
   maxWidth?: AtRule$MaxWidth<TLength>,
@@ -5654,23 +5654,12 @@ export type AtRule$Viewport<TLength = string | 0, TTime = string> = {|
   minZoom?: AtRule$MinZoom,
   orientation?: AtRule$Orientation,
   userZoom?: AtRule$UserZoom,
+  viewportFit?: AtRule$ViewportFit,
   width?: AtRule$Width<TLength>,
   zoom?: AtRule$Zoom,
 |};
 
 export type AtRule$ViewportHyphen<TLength = string | 0, TTime = string> = {|
-  "-ms-height"?: AtRule$Height<TLength>,
-  "-ms-max-height"?: AtRule$MaxHeight<TLength>,
-  "-ms-max-width"?: AtRule$MaxWidth<TLength>,
-  "-ms-max-zoom"?: AtRule$MaxZoom,
-  "-ms-min-height"?: AtRule$MinHeight<TLength>,
-  "-ms-min-width"?: AtRule$MinWidth<TLength>,
-  "-ms-min-zoom"?: AtRule$MinZoom,
-  "-ms-orientation"?: AtRule$Orientation,
-  "-ms-user-zoom"?: AtRule$UserZoom,
-  "-ms-width"?: AtRule$Width<TLength>,
-  "-ms-zoom"?: AtRule$Zoom,
-  "-o-orientation"?: AtRule$Orientation,
   height?: AtRule$Height<TLength>,
   "max-height"?: AtRule$MaxHeight<TLength>,
   "max-width"?: AtRule$MaxWidth<TLength>,
@@ -5680,23 +5669,12 @@ export type AtRule$ViewportHyphen<TLength = string | 0, TTime = string> = {|
   "min-zoom"?: AtRule$MinZoom,
   orientation?: AtRule$Orientation,
   "user-zoom"?: AtRule$UserZoom,
+  "viewport-fit"?: AtRule$ViewportFit,
   width?: AtRule$Width<TLength>,
   zoom?: AtRule$Zoom,
 |};
 
 export type AtRule$ViewportFallback<TLength = string | 0, TTime = string> = {|
-  msHeight?: AtRule$Height<TLength> | Array<AtRule$Height<TLength>>,
-  msMaxHeight?: AtRule$MaxHeight<TLength> | Array<AtRule$MaxHeight<TLength>>,
-  msMaxWidth?: AtRule$MaxWidth<TLength> | Array<AtRule$MaxWidth<TLength>>,
-  msMaxZoom?: AtRule$MaxZoom | Array<AtRule$MaxZoom>,
-  msMinHeight?: AtRule$MinHeight<TLength> | Array<AtRule$MinHeight<TLength>>,
-  msMinWidth?: AtRule$MinWidth<TLength> | Array<AtRule$MinWidth<TLength>>,
-  msMinZoom?: AtRule$MinZoom | Array<AtRule$MinZoom>,
-  msOrientation?: AtRule$Orientation | Array<AtRule$Orientation>,
-  msUserZoom?: AtRule$UserZoom | Array<AtRule$UserZoom>,
-  msWidth?: AtRule$Width<TLength> | Array<AtRule$Width<TLength>>,
-  msZoom?: AtRule$Zoom | Array<AtRule$Zoom>,
-  OOrientation?: AtRule$Orientation | Array<AtRule$Orientation>,
   height?: AtRule$Height<TLength> | Array<AtRule$Height<TLength>>,
   maxHeight?: AtRule$MaxHeight<TLength> | Array<AtRule$MaxHeight<TLength>>,
   maxWidth?: AtRule$MaxWidth<TLength> | Array<AtRule$MaxWidth<TLength>>,
@@ -5706,23 +5684,12 @@ export type AtRule$ViewportFallback<TLength = string | 0, TTime = string> = {|
   minZoom?: AtRule$MinZoom | Array<AtRule$MinZoom>,
   orientation?: AtRule$Orientation | Array<AtRule$Orientation>,
   userZoom?: AtRule$UserZoom | Array<AtRule$UserZoom>,
+  viewportFit?: AtRule$ViewportFit | Array<AtRule$ViewportFit>,
   width?: AtRule$Width<TLength> | Array<AtRule$Width<TLength>>,
   zoom?: AtRule$Zoom | Array<AtRule$Zoom>,
 |};
 
 export type AtRule$ViewportHyphenFallback<TLength = string | 0, TTime = string> = {|
-  "-ms-height"?: AtRule$Height<TLength> | Array<AtRule$Height<TLength>>,
-  "-ms-max-height"?: AtRule$MaxHeight<TLength> | Array<AtRule$MaxHeight<TLength>>,
-  "-ms-max-width"?: AtRule$MaxWidth<TLength> | Array<AtRule$MaxWidth<TLength>>,
-  "-ms-max-zoom"?: AtRule$MaxZoom | Array<AtRule$MaxZoom>,
-  "-ms-min-height"?: AtRule$MinHeight<TLength> | Array<AtRule$MinHeight<TLength>>,
-  "-ms-min-width"?: AtRule$MinWidth<TLength> | Array<AtRule$MinWidth<TLength>>,
-  "-ms-min-zoom"?: AtRule$MinZoom | Array<AtRule$MinZoom>,
-  "-ms-orientation"?: AtRule$Orientation | Array<AtRule$Orientation>,
-  "-ms-user-zoom"?: AtRule$UserZoom | Array<AtRule$UserZoom>,
-  "-ms-width"?: AtRule$Width<TLength> | Array<AtRule$Width<TLength>>,
-  "-ms-zoom"?: AtRule$Zoom | Array<AtRule$Zoom>,
-  "-o-orientation"?: AtRule$Orientation | Array<AtRule$Orientation>,
   height?: AtRule$Height<TLength> | Array<AtRule$Height<TLength>>,
   "max-height"?: AtRule$MaxHeight<TLength> | Array<AtRule$MaxHeight<TLength>>,
   "max-width"?: AtRule$MaxWidth<TLength> | Array<AtRule$MaxWidth<TLength>>,
@@ -5732,6 +5699,7 @@ export type AtRule$ViewportHyphenFallback<TLength = string | 0, TTime = string> 
   "min-zoom"?: AtRule$MinZoom | Array<AtRule$MinZoom>,
   orientation?: AtRule$Orientation | Array<AtRule$Orientation>,
   "user-zoom"?: AtRule$UserZoom | Array<AtRule$UserZoom>,
+  "viewport-fit"?: AtRule$ViewportFit | Array<AtRule$ViewportFit>,
   width?: AtRule$Width<TLength> | Array<AtRule$Width<TLength>>,
   zoom?: AtRule$Zoom | Array<AtRule$Zoom>,
 |};
@@ -5786,7 +5754,7 @@ type AtRule$FontVariationSettings = "normal" | string;
 
 type AtRule$FontWeight = DataType$FontWeightAbsolute | string;
 
-type AtRule$Size<TLength> = TLength | "auto" | "landscape" | "portrait" | string;
+type AtRule$Size<TLength> = DataType$PageSize | TLength | "auto" | "landscape" | "portrait" | string;
 
 type AtRule$Inherits = "false" | "true";
 
@@ -5806,7 +5774,9 @@ type AtRule$MinZoom = "auto" | string | number;
 
 type AtRule$Orientation = "auto" | "landscape" | "portrait";
 
-type AtRule$UserZoom = "-ms-zoom" | "fixed" | "zoom";
+type AtRule$UserZoom = "fixed" | "zoom";
+
+type AtRule$ViewportFit = "auto" | "contain" | "cover";
 
 type AtRule$Width<TLength> = DataType$ViewportLength<TLength> | string;
 
@@ -5940,6 +5910,8 @@ type DataType$DisplayLegacy =
   | "inline-table";
 
 type DataType$DisplayOutside = "block" | "inline" | "run-in";
+
+type DataType$EasingFunction = DataType$CubicBezierTimingFunction | DataType$StepTimingFunction | "linear";
 
 type DataType$EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
 
@@ -6132,6 +6104,8 @@ type DataType$NamedColor =
   | "yellow"
   | "yellowgreen";
 
+type DataType$PageSize = "A3" | "A4" | "A5" | "B4" | "B5" | "JIS-B4" | "JIS-B5" | "ledger" | "legal" | "letter";
+
 type DataType$Paint = DataType$Color | "child" | "context-fill" | "context-stroke" | "none" | string;
 
 type DataType$Position<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
@@ -6143,7 +6117,7 @@ type DataType$RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "
 type DataType$SelfPosition = "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
 
 type DataType$SingleAnimation<TTime> =
-  | DataType$TimingFunction
+  | DataType$EasingFunction
   | DataType$SingleAnimationDirection
   | DataType$SingleAnimationFillMode
   | TTime
@@ -6158,11 +6132,9 @@ type DataType$SingleAnimationDirection = "alternate" | "alternate-reverse" | "no
 
 type DataType$SingleAnimationFillMode = "backwards" | "both" | "forwards" | "none";
 
-type DataType$SingleTransition<TTime> = DataType$TimingFunction | TTime | "all" | "none" | string;
+type DataType$SingleTransition<TTime> = DataType$EasingFunction | TTime | "all" | "none" | string;
 
 type DataType$StepTimingFunction = "step-end" | "step-start" | string;
-
-type DataType$TimingFunction = DataType$CubicBezierTimingFunction | DataType$StepTimingFunction | "linear";
 
 type DataType$TrackBreadth<TLength> = TLength | "auto" | "max-content" | "min-content" | string;
 
