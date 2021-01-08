@@ -682,7 +682,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **66**  |   No   |  No  | No  |
+   * | **89** | **66**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -696,7 +696,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **66**  |   No   |  No  | No  |
+   * | **89** | **66**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -1009,7 +1009,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **66**  |   No   |  No  | No  |
+   * | **89** | **66**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -1023,7 +1023,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **66**  |   No   |  No  | No  |
+   * | **89** | **66**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -1984,6 +1984,20 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
    */
   fontWeight?: Property.FontWeight;
+  /**
+   * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
+   *
+   * **Syntax**: `auto | none`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |                Edge                 |                 IE                  |
+   * | :----: | :-----: | :----: | :---------------------------------: | :---------------------------------: |
+   * |  n/a   |   No    |   No   | **79** _(-ms-high-contrast-adjust)_ | **10** _(-ms-high-contrast-adjust)_ |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust
+   */
+  forcedColorAdjust?: Property.ForcedColorAdjust;
   /**
    * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
@@ -9383,7 +9397,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **66**  |   No   |  No  | No  |
+   * | **89** | **66**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -9397,7 +9411,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **66**  |   No   |  No  | No  |
+   * | **89** | **66**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -9710,7 +9724,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **66**  |   No   |  No  | No  |
+   * | **89** | **66**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -9724,7 +9738,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **66**  |   No   |  No  | No  |
+   * | **89** | **66**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -10685,6 +10699,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
    */
   "font-weight"?: Property.FontWeight;
+  /**
+   * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
+   *
+   * **Syntax**: `auto | none`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |                Edge                 |                 IE                  |
+   * | :----: | :-----: | :----: | :---------------------------------: | :---------------------------------: |
+   * |  n/a   |   No    |   No   | **79** _(-ms-high-contrast-adjust)_ | **10** _(-ms-high-contrast-adjust)_ |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust
+   */
+  "forced-color-adjust"?: Property.ForcedColorAdjust;
   /**
    * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
@@ -17615,6 +17643,7 @@ export type SimplePseudos =
   | ":out-of-range"
   | ":past"
   | ":paused"
+  | ":picture-in-picture"
   | ":placeholder-shown"
   | ":read-only"
   | ":read-write"
@@ -17631,7 +17660,6 @@ export type SimplePseudos =
 export type Pseudos = AdvancedPseudos | SimplePseudos;
 
 export type HtmlAttributes =
-  | "[-webkit-dropzone]"
   | "[abbr]"
   | "[accept-charset]"
   | "[accept]"
@@ -17695,7 +17723,6 @@ export type HtmlAttributes =
   | "[disabled]"
   | "[download]"
   | "[draggable]"
-  | "[dropzone]"
   | "[enctype]"
   | "[enterkeyhint]"
   | "[exportparts]"
@@ -18595,6 +18622,8 @@ export namespace Property {
   export type FontVariationSettings = Globals | "normal" | (string & {});
 
   export type FontWeight = Globals | DataType.FontWeightAbsolute | "bolder" | "lighter";
+
+  export type ForcedColorAdjust = Globals | "auto" | "none";
 
   export type Gap<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {});
 

@@ -132,6 +132,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   fontVariantPosition?: Property$FontVariantPosition,
   fontVariationSettings?: Property$FontVariationSettings,
   fontWeight?: Property$FontWeight,
+  forcedColorAdjust?: Property$ForcedColorAdjust,
   gridAutoColumns?: Property$GridAutoColumns<TLength>,
   gridAutoFlow?: Property$GridAutoFlow,
   gridAutoRows?: Property$GridAutoRows<TLength>,
@@ -967,6 +968,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "font-variant-position"?: Property$FontVariantPosition,
   "font-variation-settings"?: Property$FontVariationSettings,
   "font-weight"?: Property$FontWeight,
+  "forced-color-adjust"?: Property$ForcedColorAdjust,
   "grid-auto-columns"?: Property$GridAutoColumns<TLength>,
   "grid-auto-flow"?: Property$GridAutoFlow,
   "grid-auto-rows"?: Property$GridAutoRows<TLength>,
@@ -1808,6 +1810,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   fontVariantPosition?: Property$FontVariantPosition | Array<Property$FontVariantPosition>,
   fontVariationSettings?: Property$FontVariationSettings | Array<Property$FontVariationSettings>,
   fontWeight?: Property$FontWeight | Array<Property$FontWeight>,
+  forcedColorAdjust?: Property$ForcedColorAdjust | Array<Property$ForcedColorAdjust>,
   gridAutoColumns?: Property$GridAutoColumns<TLength> | Array<Property$GridAutoColumns<TLength>>,
   gridAutoFlow?: Property$GridAutoFlow | Array<Property$GridAutoFlow>,
   gridAutoRows?: Property$GridAutoRows<TLength> | Array<Property$GridAutoRows<TLength>>,
@@ -2649,6 +2652,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "font-variant-position"?: Property$FontVariantPosition | Array<Property$FontVariantPosition>,
   "font-variation-settings"?: Property$FontVariationSettings | Array<Property$FontVariationSettings>,
   "font-weight"?: Property$FontWeight | Array<Property$FontWeight>,
+  "forced-color-adjust"?: Property$ForcedColorAdjust | Array<Property$ForcedColorAdjust>,
   "grid-auto-columns"?: Property$GridAutoColumns<TLength> | Array<Property$GridAutoColumns<TLength>>,
   "grid-auto-flow"?: Property$GridAutoFlow | Array<Property$GridAutoFlow>,
   "grid-auto-rows"?: Property$GridAutoRows<TLength> | Array<Property$GridAutoRows<TLength>>,
@@ -3487,6 +3491,7 @@ export type SimplePseudos =
   | ":out-of-range"
   | ":past"
   | ":paused"
+  | ":picture-in-picture"
   | ":placeholder-shown"
   | ":read-only"
   | ":read-write"
@@ -3503,7 +3508,6 @@ export type SimplePseudos =
 export type Pseudos = AdvancedPseudos | SimplePseudos;
 
 export type HtmlAttributes =
-  | "[-webkit-dropzone]"
   | "[abbr]"
   | "[accept-charset]"
   | "[accept]"
@@ -3567,7 +3571,6 @@ export type HtmlAttributes =
   | "[disabled]"
   | "[download]"
   | "[draggable]"
-  | "[dropzone]"
   | "[enctype]"
   | "[enterkeyhint]"
   | "[exportparts]"
@@ -4466,6 +4469,8 @@ export type Property$FontVariantPosition = Globals | "normal" | "sub" | "super";
 export type Property$FontVariationSettings = Globals | "normal" | string;
 
 export type Property$FontWeight = Globals | DataType$FontWeightAbsolute | "bolder" | "lighter";
+
+export type Property$ForcedColorAdjust = Globals | "auto" | "none";
 
 export type Property$Gap<TLength = string | 0> = Globals | TLength | "normal" | string;
 
