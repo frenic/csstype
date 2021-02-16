@@ -1,6 +1,6 @@
 {
   "name": "csstype-fixtures",
   "dependencies": {
-    "csstype": "^2.6.13"
+    "csstype": "^2.6.15"
   }
 }
