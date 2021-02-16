@@ -25,7 +25,7 @@ function scrapeSummary(url: string): string {
     const htmlContents = syncRequest.default('GET', url).getBody() as string;
 
     const { window } = new jsdom.JSDOM(htmlContents);
-    const summaryElement = window.document.querySelector('#wikiArticle > p:not(:empty)');
+    const summaryElement = window.document.querySelector('main :not(.notecard) > p:not(:empty)');
     window.close();
 
     if (summaryElement) {
