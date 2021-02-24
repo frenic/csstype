@@ -521,11 +521,6 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   msWrapMargin?: Property$MsWrapMargin<TLength>,
   msWrapThrough?: Property$MsWrapThrough,
   msWritingMode?: Property$WritingMode,
-  OObjectFit?: Property$ObjectFit,
-  OObjectPosition?: Property$ObjectPosition<TLength>,
-  OTabSize?: Property$TabSize<TLength>,
-  OTextOverflow?: Property$TextOverflow,
-  OTransformOrigin?: Property$TransformOrigin<TLength>,
   WebkitAlignContent?: Property$AlignContent,
   WebkitAlignItems?: Property$AlignItems,
   WebkitAlignSelf?: Property$AlignSelf,
@@ -581,6 +576,11 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   WebkitMarginEnd?: Property$MarginInlineEnd<TLength>,
   WebkitMarginStart?: Property$MarginInlineStart<TLength>,
   WebkitMaskAttachment?: Property$WebkitMaskAttachment,
+  WebkitMaskBoxImageOutset?: Property$MaskBorderOutset<TLength>,
+  WebkitMaskBoxImageRepeat?: Property$MaskBorderRepeat,
+  WebkitMaskBoxImageSlice?: Property$MaskBorderSlice,
+  WebkitMaskBoxImageSource?: Property$MaskBorderSource,
+  WebkitMaskBoxImageWidth?: Property$MaskBorderWidth<TLength>,
   WebkitMaskClip?: Property$WebkitMaskClip,
   WebkitMaskComposite?: Property$WebkitMaskComposite,
   WebkitMaskImage?: Property$WebkitMaskImage,
@@ -653,6 +653,7 @@ export type VendorShorthandProperties<TLength = string | 0, TTime = string> = {|
   WebkitFlex?: Property$Flex<TLength>,
   WebkitFlexFlow?: Property$FlexFlow,
   WebkitMask?: Property$WebkitMask<TLength>,
+  WebkitMaskBoxImage?: Property$MaskBorder,
   WebkitTextEmphasis?: Property$TextEmphasis,
   WebkitTextStroke?: Property$WebkitTextStroke<TLength>,
   WebkitTransition?: Property$Transition<TTime>,
@@ -748,7 +749,12 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   OAnimationTimingFunction?: Property$AnimationTimingFunction,
   OBackgroundSize?: Property$BackgroundSize<TLength>,
   OBorderImage?: Property$BorderImage,
+  OObjectFit?: Property$ObjectFit,
+  OObjectPosition?: Property$ObjectPosition<TLength>,
+  OTabSize?: Property$TabSize<TLength>,
+  OTextOverflow?: Property$TextOverflow,
   OTransform?: Property$Transform,
+  OTransformOrigin?: Property$TransformOrigin<TLength>,
   OTransition?: Property$Transition<TTime>,
   OTransitionDelay?: Property$TransitionDelay<TTime>,
   OTransitionDuration?: Property$TransitionDuration<TTime>,
@@ -1360,11 +1366,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-ms-wrap-margin"?: Property$MsWrapMargin<TLength>,
   "-ms-wrap-through"?: Property$MsWrapThrough,
   "-ms-writing-mode"?: Property$WritingMode,
-  "-o-object-fit"?: Property$ObjectFit,
-  "-o-object-position"?: Property$ObjectPosition<TLength>,
-  "-o-tab-size"?: Property$TabSize<TLength>,
-  "-o-text-overflow"?: Property$TextOverflow,
-  "-o-transform-origin"?: Property$TransformOrigin<TLength>,
   "-webkit-align-content"?: Property$AlignContent,
   "-webkit-align-items"?: Property$AlignItems,
   "-webkit-align-self"?: Property$AlignSelf,
@@ -1420,6 +1421,11 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-webkit-margin-end"?: Property$MarginInlineEnd<TLength>,
   "-webkit-margin-start"?: Property$MarginInlineStart<TLength>,
   "-webkit-mask-attachment"?: Property$WebkitMaskAttachment,
+  "-webkit-mask-box-image-outset"?: Property$MaskBorderOutset<TLength>,
+  "-webkit-mask-box-image-repeat"?: Property$MaskBorderRepeat,
+  "-webkit-mask-box-image-slice"?: Property$MaskBorderSlice,
+  "-webkit-mask-box-image-source"?: Property$MaskBorderSource,
+  "-webkit-mask-box-image-width"?: Property$MaskBorderWidth<TLength>,
   "-webkit-mask-clip"?: Property$WebkitMaskClip,
   "-webkit-mask-composite"?: Property$WebkitMaskComposite,
   "-webkit-mask-image"?: Property$WebkitMaskImage,
@@ -1492,6 +1498,7 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0, TTime = string
   "-webkit-flex"?: Property$Flex<TLength>,
   "-webkit-flex-flow"?: Property$FlexFlow,
   "-webkit-mask"?: Property$WebkitMask<TLength>,
+  "-webkit-mask-box-image"?: Property$MaskBorder,
   "-webkit-text-emphasis"?: Property$TextEmphasis,
   "-webkit-text-stroke"?: Property$WebkitTextStroke<TLength>,
   "-webkit-transition"?: Property$Transition<TTime>,
@@ -1590,7 +1597,12 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-o-animation-timing-function"?: Property$AnimationTimingFunction,
   "-o-background-size"?: Property$BackgroundSize<TLength>,
   "-o-border-image"?: Property$BorderImage,
+  "-o-object-fit"?: Property$ObjectFit,
+  "-o-object-position"?: Property$ObjectPosition<TLength>,
+  "-o-tab-size"?: Property$TabSize<TLength>,
+  "-o-text-overflow"?: Property$TextOverflow,
   "-o-transform"?: Property$Transform,
+  "-o-transform-origin"?: Property$TransformOrigin<TLength>,
   "-o-transition"?: Property$Transition<TTime>,
   "-o-transition-delay"?: Property$TransitionDelay<TTime>,
   "-o-transition-duration"?: Property$TransitionDuration<TTime>,
@@ -2202,11 +2214,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   msWrapMargin?: Property$MsWrapMargin<TLength> | Array<Property$MsWrapMargin<TLength>>,
   msWrapThrough?: Property$MsWrapThrough | Array<Property$MsWrapThrough>,
   msWritingMode?: Property$WritingMode | Array<Property$WritingMode>,
-  OObjectFit?: Property$ObjectFit | Array<Property$ObjectFit>,
-  OObjectPosition?: Property$ObjectPosition<TLength> | Array<Property$ObjectPosition<TLength>>,
-  OTabSize?: Property$TabSize<TLength> | Array<Property$TabSize<TLength>>,
-  OTextOverflow?: Property$TextOverflow | Array<Property$TextOverflow>,
-  OTransformOrigin?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
   WebkitAlignContent?: Property$AlignContent | Array<Property$AlignContent>,
   WebkitAlignItems?: Property$AlignItems | Array<Property$AlignItems>,
   WebkitAlignSelf?: Property$AlignSelf | Array<Property$AlignSelf>,
@@ -2262,6 +2269,11 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   WebkitMarginEnd?: Property$MarginInlineEnd<TLength> | Array<Property$MarginInlineEnd<TLength>>,
   WebkitMarginStart?: Property$MarginInlineStart<TLength> | Array<Property$MarginInlineStart<TLength>>,
   WebkitMaskAttachment?: Property$WebkitMaskAttachment | Array<Property$WebkitMaskAttachment>,
+  WebkitMaskBoxImageOutset?: Property$MaskBorderOutset<TLength> | Array<Property$MaskBorderOutset<TLength>>,
+  WebkitMaskBoxImageRepeat?: Property$MaskBorderRepeat | Array<Property$MaskBorderRepeat>,
+  WebkitMaskBoxImageSlice?: Property$MaskBorderSlice | Array<Property$MaskBorderSlice>,
+  WebkitMaskBoxImageSource?: Property$MaskBorderSource | Array<Property$MaskBorderSource>,
+  WebkitMaskBoxImageWidth?: Property$MaskBorderWidth<TLength> | Array<Property$MaskBorderWidth<TLength>>,
   WebkitMaskClip?: Property$WebkitMaskClip | Array<Property$WebkitMaskClip>,
   WebkitMaskComposite?: Property$WebkitMaskComposite | Array<Property$WebkitMaskComposite>,
   WebkitMaskImage?: Property$WebkitMaskImage | Array<Property$WebkitMaskImage>,
@@ -2334,6 +2346,7 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0, TTime = stri
   WebkitFlex?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
   WebkitFlexFlow?: Property$FlexFlow | Array<Property$FlexFlow>,
   WebkitMask?: Property$WebkitMask<TLength> | Array<Property$WebkitMask<TLength>>,
+  WebkitMaskBoxImage?: Property$MaskBorder | Array<Property$MaskBorder>,
   WebkitTextEmphasis?: Property$TextEmphasis | Array<Property$TextEmphasis>,
   WebkitTextStroke?: Property$WebkitTextStroke<TLength> | Array<Property$WebkitTextStroke<TLength>>,
   WebkitTransition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
@@ -2432,7 +2445,12 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   OAnimationTimingFunction?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   OBackgroundSize?: Property$BackgroundSize<TLength> | Array<Property$BackgroundSize<TLength>>,
   OBorderImage?: Property$BorderImage | Array<Property$BorderImage>,
+  OObjectFit?: Property$ObjectFit | Array<Property$ObjectFit>,
+  OObjectPosition?: Property$ObjectPosition<TLength> | Array<Property$ObjectPosition<TLength>>,
+  OTabSize?: Property$TabSize<TLength> | Array<Property$TabSize<TLength>>,
+  OTextOverflow?: Property$TextOverflow | Array<Property$TextOverflow>,
   OTransform?: Property$Transform | Array<Property$Transform>,
+  OTransformOrigin?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
   OTransition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
   OTransitionDelay?: Property$TransitionDelay<TTime> | Array<Property$TransitionDelay<TTime>>,
   OTransitionDuration?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
@@ -3044,11 +3062,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-ms-wrap-margin"?: Property$MsWrapMargin<TLength> | Array<Property$MsWrapMargin<TLength>>,
   "-ms-wrap-through"?: Property$MsWrapThrough | Array<Property$MsWrapThrough>,
   "-ms-writing-mode"?: Property$WritingMode | Array<Property$WritingMode>,
-  "-o-object-fit"?: Property$ObjectFit | Array<Property$ObjectFit>,
-  "-o-object-position"?: Property$ObjectPosition<TLength> | Array<Property$ObjectPosition<TLength>>,
-  "-o-tab-size"?: Property$TabSize<TLength> | Array<Property$TabSize<TLength>>,
-  "-o-text-overflow"?: Property$TextOverflow | Array<Property$TextOverflow>,
-  "-o-transform-origin"?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
   "-webkit-align-content"?: Property$AlignContent | Array<Property$AlignContent>,
   "-webkit-align-items"?: Property$AlignItems | Array<Property$AlignItems>,
   "-webkit-align-self"?: Property$AlignSelf | Array<Property$AlignSelf>,
@@ -3104,6 +3117,11 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-webkit-margin-end"?: Property$MarginInlineEnd<TLength> | Array<Property$MarginInlineEnd<TLength>>,
   "-webkit-margin-start"?: Property$MarginInlineStart<TLength> | Array<Property$MarginInlineStart<TLength>>,
   "-webkit-mask-attachment"?: Property$WebkitMaskAttachment | Array<Property$WebkitMaskAttachment>,
+  "-webkit-mask-box-image-outset"?: Property$MaskBorderOutset<TLength> | Array<Property$MaskBorderOutset<TLength>>,
+  "-webkit-mask-box-image-repeat"?: Property$MaskBorderRepeat | Array<Property$MaskBorderRepeat>,
+  "-webkit-mask-box-image-slice"?: Property$MaskBorderSlice | Array<Property$MaskBorderSlice>,
+  "-webkit-mask-box-image-source"?: Property$MaskBorderSource | Array<Property$MaskBorderSource>,
+  "-webkit-mask-box-image-width"?: Property$MaskBorderWidth<TLength> | Array<Property$MaskBorderWidth<TLength>>,
   "-webkit-mask-clip"?: Property$WebkitMaskClip | Array<Property$WebkitMaskClip>,
   "-webkit-mask-composite"?: Property$WebkitMaskComposite | Array<Property$WebkitMaskComposite>,
   "-webkit-mask-image"?: Property$WebkitMaskImage | Array<Property$WebkitMaskImage>,
@@ -3176,6 +3194,7 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0, TTime 
   "-webkit-flex"?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
   "-webkit-flex-flow"?: Property$FlexFlow | Array<Property$FlexFlow>,
   "-webkit-mask"?: Property$WebkitMask<TLength> | Array<Property$WebkitMask<TLength>>,
+  "-webkit-mask-box-image"?: Property$MaskBorder | Array<Property$MaskBorder>,
   "-webkit-text-emphasis"?: Property$TextEmphasis | Array<Property$TextEmphasis>,
   "-webkit-text-stroke"?: Property$WebkitTextStroke<TLength> | Array<Property$WebkitTextStroke<TLength>>,
   "-webkit-transition"?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
@@ -3274,7 +3293,12 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-o-animation-timing-function"?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   "-o-background-size"?: Property$BackgroundSize<TLength> | Array<Property$BackgroundSize<TLength>>,
   "-o-border-image"?: Property$BorderImage | Array<Property$BorderImage>,
+  "-o-object-fit"?: Property$ObjectFit | Array<Property$ObjectFit>,
+  "-o-object-position"?: Property$ObjectPosition<TLength> | Array<Property$ObjectPosition<TLength>>,
+  "-o-tab-size"?: Property$TabSize<TLength> | Array<Property$TabSize<TLength>>,
+  "-o-text-overflow"?: Property$TextOverflow | Array<Property$TextOverflow>,
   "-o-transform"?: Property$Transform | Array<Property$Transform>,
+  "-o-transform-origin"?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
   "-o-transition"?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
   "-o-transition-delay"?: Property$TransitionDelay<TTime> | Array<Property$TransitionDelay<TTime>>,
   "-o-transition-duration"?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
@@ -3452,6 +3476,7 @@ export type SimplePseudos =
   | "::placeholder"
   | "::selection"
   | "::spelling-error"
+  | "::target-text"
   | ":active"
   | ":after"
   | ":any-link"
@@ -3594,6 +3619,8 @@ export type HtmlAttributes =
   | "[http-equiv]"
   | "[icon]"
   | "[id]"
+  | "[imagesizes]"
+  | "[imagesrcset]"
   | "[inputmode]"
   | "[integrity]"
   | "[intrinsicsize]"
@@ -3634,6 +3661,7 @@ export type HtmlAttributes =
   | "[name]"
   | "[nohref]"
   | "[nomodule]"
+  | "[nonce]"
   | "[noresize]"
   | "[noshade]"
   | "[novalidate]"
@@ -3852,7 +3880,6 @@ export type SvgAttributes =
   | "[mask]"
   | "[mathematical]"
   | "[media]"
-  | "[method]"
   | "[mode]"
   | "[name]"
   | "[numOctaves]"
@@ -4059,7 +4086,18 @@ export type Property$BackgroundSize<TLength = string | 0> = Globals | DataType$B
 
 export type Property$BlockOverflow = Globals | "clip" | "ellipsis" | string;
 
-export type Property$BlockSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type Property$BlockSize<TLength = string | 0> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "auto"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type Property$Border<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | DataType$LineStyle | DataType$Color | string;
 
@@ -4348,7 +4386,7 @@ export type Property$EmptyCells = Globals | "hide" | "show";
 
 export type Property$Filter = Globals | "none" | string;
 
-export type Property$Flex<TLength = string | 0> = Globals | TLength | "auto" | "content" | "max-content" | "min-content" | "none" | string | number;
+export type Property$Flex<TLength = string | 0> = Globals | TLength | "auto" | "content" | "fit-content" | "max-content" | "min-content" | "none" | string | number;
 
 export type Property$FlexBasis<TLength = string | 0> =
   | Globals
@@ -4358,6 +4396,7 @@ export type Property$FlexBasis<TLength = string | 0> =
   | "-webkit-auto"
   | "auto"
   | "content"
+  | "fit-content"
   | "max-content"
   | "min-content"
   | string;
@@ -4512,7 +4551,17 @@ export type Property$GridTemplateRows<TLength = string | 0> = Globals | DataType
 
 export type Property$HangingPunctuation = Globals | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
-export type Property$Height<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type Property$Height<TLength = string | 0> =
+  | Globals
+  | TLength
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "auto"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type Property$Hyphens = Globals | "auto" | "manual" | "none";
 
@@ -4526,7 +4575,18 @@ export type Property$ImeMode = Globals | "active" | "auto" | "disabled" | "inact
 
 export type Property$InitialLetter = Globals | "normal" | string | number;
 
-export type Property$InlineSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type Property$InlineSize<TLength = string | 0> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "auto"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type Property$Inset<TLength = string | 0> = Globals | TLength | "auto" | string;
 
@@ -4630,61 +4690,118 @@ export type Property$MaskType = Globals | "alpha" | "luminance";
 
 export type Property$MathStyle = Globals | "compact" | "normal";
 
-export type Property$MaxBlockSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
-
-export type Property$MaxHeight<TLength = string | 0> =
+export type Property$MaxBlockSize<TLength = string | 0> =
   | Globals
   | TLength
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-max-content"
-  | "-webkit-min-content"
+  | "-webkit-fill-available"
+  | "fit-content"
   | "max-content"
   | "min-content"
   | "none"
   | string;
 
-export type Property$MaxInlineSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
-
-export type Property$MaxLines = Globals | "none" | number;
-
-export type Property$MaxWidth<TLength = string | 0> =
+export type Property$MaxHeight<TLength = string | 0> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
+  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
+  | "fit-content"
   | "intrinsic"
   | "max-content"
   | "min-content"
   | "none"
   | string;
 
-export type Property$MinBlockSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type Property$MaxInlineSize<TLength = string | 0> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | "none"
+  | string;
 
-export type Property$MinHeight<TLength = string | 0> =
+export type Property$MaxLines = Globals | "none" | number;
+
+export type Property$MaxWidth<TLength = string | 0> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
+  | "fit-content"
+  | "intrinsic"
+  | "max-content"
+  | "min-content"
+  | "none"
+  | string;
+
+export type Property$MinBlockSize<TLength = string | 0> =
   | Globals
   | TLength
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-max-content"
-  | "-webkit-min-content"
+  | "-webkit-fill-available"
   | "auto"
+  | "fit-content"
   | "max-content"
   | "min-content"
   | string;
 
-export type Property$MinInlineSize<TLength = string | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type Property$MinHeight<TLength = string | 0> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
+  | "auto"
+  | "fit-content"
+  | "intrinsic"
+  | "max-content"
+  | "min-content"
+  | string;
+
+export type Property$MinInlineSize<TLength = string | 0> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "auto"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type Property$MinWidth<TLength = string | 0> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
   | "auto"
+  | "fit-content"
   | "intrinsic"
   | "max-content"
   | "min-content"
@@ -5024,10 +5141,13 @@ export type Property$Widows = Globals | number;
 export type Property$Width<TLength = string | 0> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
+  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "auto"
+  | "fit-content"
   | "intrinsic"
   | "max-content"
   | "min-content"

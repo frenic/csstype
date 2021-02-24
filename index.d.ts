@@ -250,9 +250,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   n/a   |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **88** |   n/a   |   No   | **88** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -2157,7 +2157,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -2530,7 +2530,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
    *
-   * **Syntax**: `<url> | none`
+   * **Syntax**: `<image> | none`
    *
    * **Initial value**: `none`
    *
@@ -2725,6 +2725,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * **Syntax**: `[ <length> | <number> ]{1,4}`
    *
    * **Initial value**: `0`
+   *
+   * |                 Chrome                  | Firefox |                  Safari                   |                   Edge                   | IE  |
+   * | :-------------------------------------: | :-----: | :---------------------------------------: | :--------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-outset)_ |   No    | **3.1** _(-webkit-mask-box-image-outset)_ | **79** _(-webkit-mask-box-image-outset)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-outset
    */
   maskBorderOutset?: Property.MaskBorderOutset<TLength>;
   /**
@@ -2733,6 +2739,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * **Syntax**: `[ stretch | repeat | round | space ]{1,2}`
    *
    * **Initial value**: `stretch`
+   *
+   * |                 Chrome                  | Firefox |                  Safari                   |                   Edge                   | IE  |
+   * | :-------------------------------------: | :-----: | :---------------------------------------: | :--------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-repeat)_ |   No    | **3.1** _(-webkit-mask-box-image-repeat)_ | **79** _(-webkit-mask-box-image-repeat)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat
    */
   maskBorderRepeat?: Property.MaskBorderRepeat;
   /**
@@ -2741,6 +2753,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * **Syntax**: `<number-percentage>{1,4} fill?`
    *
    * **Initial value**: `0`
+   *
+   * |                 Chrome                 | Firefox |                  Safari                  |                  Edge                   | IE  |
+   * | :------------------------------------: | :-----: | :--------------------------------------: | :-------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-slice)_ |   No    | **3.1** _(-webkit-mask-box-image-slice)_ | **79** _(-webkit-mask-box-image-slice)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-slice
    */
   maskBorderSlice?: Property.MaskBorderSlice;
   /**
@@ -2749,6 +2767,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * **Syntax**: `none | <image>`
    *
    * **Initial value**: `none`
+   *
+   * |                 Chrome                  | Firefox |                  Safari                   |                   Edge                   | IE  |
+   * | :-------------------------------------: | :-----: | :---------------------------------------: | :--------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-source)_ |   No    | **3.1** _(-webkit-mask-box-image-source)_ | **79** _(-webkit-mask-box-image-source)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-source
    */
   maskBorderSource?: Property.MaskBorderSource;
   /**
@@ -2757,6 +2781,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * **Syntax**: `[ <length-percentage> | <number> | auto ]{1,4}`
    *
    * **Initial value**: `auto`
+   *
+   * |                 Chrome                 | Firefox |                  Safari                  |                  Edge                   | IE  |
+   * | :------------------------------------: | :-----: | :--------------------------------------: | :-------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-width)_ |   No    | **3.1** _(-webkit-mask-box-image-width)_ | **79** _(-webkit-mask-box-image-width)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-width
    */
   maskBorderWidth?: Property.MaskBorderWidth<TLength>;
   /**
@@ -2916,7 +2946,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -2951,7 +2981,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -2979,7 +3009,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -3007,7 +3037,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -3086,7 +3116,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **31** | **36**  | **10** | **16** | No  |
+   * | **32** | **36**  | **10** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/object-fit
    */
@@ -3100,7 +3130,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **31** | **36**  | **10** | **16** | No  |
+   * | **32** | **36**  | **10** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/object-position
    */
@@ -4365,7 +4395,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
    *
-   * **Syntax**: `none | <shape-box> || <basic-shape> | <image>`
+   * **Syntax**: `none | [ <shape-box> || <basic-shape> ] | <image>`
    *
    * **Initial value**: `none`
    *
@@ -4983,7 +5013,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -5528,6 +5558,12 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * The **`mask-border`** CSS shorthand property lets you create a mask along the edge of an element's border.
    *
    * **Syntax**: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask-border-repeat'> || <'mask-border-mode'>`
+   *
+   * |              Chrome              | Firefox |               Safari               |               Edge                | IE  |
+   * | :------------------------------: | :-----: | :--------------------------------: | :-------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image)_ |   No    | **3.1** _(-webkit-mask-box-image)_ | **79** _(-webkit-mask-box-image)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border
    */
   maskBorder?: Property.MaskBorder;
   /**
@@ -6627,46 +6663,6 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msWritingMode?: Property.WritingMode;
   /**
-   * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
-   *
-   * **Syntax**: `fill | contain | cover | none | scale-down`
-   *
-   * **Initial value**: `fill`
-   */
-  OObjectFit?: Property.ObjectFit;
-  /**
-   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
-   *
-   * **Syntax**: `<position>`
-   *
-   * **Initial value**: `50% 50%`
-   */
-  OObjectPosition?: Property.ObjectPosition<TLength>;
-  /**
-   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
-   *
-   * **Syntax**: `<integer> | <length>`
-   *
-   * **Initial value**: `8`
-   */
-  OTabSize?: Property.TabSize<TLength>;
-  /**
-   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users. It can be clipped, display an ellipsis ('`…`'), or display a custom string.
-   *
-   * **Syntax**: `[ clip | ellipsis | <string> ]{1,2}`
-   *
-   * **Initial value**: `clip`
-   */
-  OTextOverflow?: Property.TextOverflow;
-  /**
-   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
-   *
-   * **Syntax**: `[ <length-percentage> | left | center | right | top | bottom ] | [ [ <length-percentage> | left | center | right ] && [ <length-percentage> | top | center | bottom ] ] <length>?`
-   *
-   * **Initial value**: `50% 50% 0`
-   */
-  OTransformOrigin?: Property.TransformOrigin<TLength>;
-  /**
    * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
@@ -7100,6 +7096,46 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `scroll`
    */
   WebkitMaskAttachment?: Property.WebkitMaskAttachment;
+  /**
+   * The **`mask-border-outset`** CSS property specifies the distance by which an element's mask border is set out from its border box.
+   *
+   * **Syntax**: `[ <length> | <number> ]{1,4}`
+   *
+   * **Initial value**: `0`
+   */
+  WebkitMaskBoxImageOutset?: Property.MaskBorderOutset<TLength>;
+  /**
+   * The **`mask-border-repeat`** CSS property sets how the edge regions of a source image are adjusted to fit the dimensions of an element's mask border.
+   *
+   * **Syntax**: `[ stretch | repeat | round | space ]{1,2}`
+   *
+   * **Initial value**: `stretch`
+   */
+  WebkitMaskBoxImageRepeat?: Property.MaskBorderRepeat;
+  /**
+   * The **`mask-border-slice`** CSS property divides the image set by `mask-border-source` into regions. These regions are used to form the components of an element's mask border.
+   *
+   * **Syntax**: `<number-percentage>{1,4} fill?`
+   *
+   * **Initial value**: `0`
+   */
+  WebkitMaskBoxImageSlice?: Property.MaskBorderSlice;
+  /**
+   * The **`mask-border-source`** CSS property sets the source image used to create an element's mask border.
+   *
+   * **Syntax**: `none | <image>`
+   *
+   * **Initial value**: `none`
+   */
+  WebkitMaskBoxImageSource?: Property.MaskBorderSource;
+  /**
+   * The **`mask-border-width`** CSS property sets the width of an element's mask border.
+   *
+   * **Syntax**: `[ <length-percentage> | <number> | auto ]{1,4}`
+   *
+   * **Initial value**: `auto`
+   */
+  WebkitMaskBoxImageWidth?: Property.MaskBorderWidth<TLength>;
   /**
    * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
@@ -7611,6 +7647,12 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    * **Syntax**: `[ <mask-reference> || <position> [ / <bg-size> ]? || <repeat-style> || [ <box> | border | padding | content | text ] || [ <box> | border | padding | content ] ]#`
    */
   WebkitMask?: Property.WebkitMask<TLength>;
+  /**
+   * The **`mask-border`** CSS shorthand property lets you create a mask along the edge of an element's border.
+   *
+   * **Syntax**: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask-border-repeat'> || <'mask-border-mode'>`
+   */
+  WebkitMaskBoxImage?: Property.MaskBorder;
   /**
    * The **`text-emphasis`** CSS property applies emphasis marks to text (except spaces and control characters). It is a shorthand for `text-emphasis-style` and `text-emphasis-color`.
    *
@@ -8493,6 +8535,46 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OBorderImage?: Property.BorderImage;
   /**
+   * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
+   *
+   * **Syntax**: `fill | contain | cover | none | scale-down`
+   *
+   * **Initial value**: `fill`
+   *
+   * @deprecated
+   */
+  OObjectFit?: Property.ObjectFit;
+  /**
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
+   *
+   * **Syntax**: `<position>`
+   *
+   * **Initial value**: `50% 50%`
+   *
+   * @deprecated
+   */
+  OObjectPosition?: Property.ObjectPosition<TLength>;
+  /**
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
+   *
+   * **Syntax**: `<integer> | <length>`
+   *
+   * **Initial value**: `8`
+   *
+   * @deprecated
+   */
+  OTabSize?: Property.TabSize<TLength>;
+  /**
+   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users. It can be clipped, display an ellipsis ('`…`'), or display a custom string.
+   *
+   * **Syntax**: `[ clip | ellipsis | <string> ]{1,2}`
+   *
+   * **Initial value**: `clip`
+   *
+   * @deprecated
+   */
+  OTextOverflow?: Property.TextOverflow;
+  /**
    * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
@@ -8502,6 +8584,16 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    * @deprecated
    */
   OTransform?: Property.Transform;
+  /**
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
+   *
+   * **Syntax**: `[ <length-percentage> | left | center | right | top | bottom ] | [ [ <length-percentage> | left | center | right ] && [ <length-percentage> | top | center | bottom ] ] <length>?`
+   *
+   * **Initial value**: `50% 50% 0`
+   *
+   * @deprecated
+   */
+  OTransformOrigin?: Property.TransformOrigin<TLength>;
   /**
    * The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
    *
@@ -8965,9 +9057,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   n/a   |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **88** |   n/a   |   No   | **88** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -10872,7 +10964,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -11245,7 +11337,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
    *
-   * **Syntax**: `<url> | none`
+   * **Syntax**: `<image> | none`
    *
    * **Initial value**: `none`
    *
@@ -11440,6 +11532,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * **Syntax**: `[ <length> | <number> ]{1,4}`
    *
    * **Initial value**: `0`
+   *
+   * |                 Chrome                  | Firefox |                  Safari                   |                   Edge                   | IE  |
+   * | :-------------------------------------: | :-----: | :---------------------------------------: | :--------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-outset)_ |   No    | **3.1** _(-webkit-mask-box-image-outset)_ | **79** _(-webkit-mask-box-image-outset)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-outset
    */
   "mask-border-outset"?: Property.MaskBorderOutset<TLength>;
   /**
@@ -11448,6 +11546,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * **Syntax**: `[ stretch | repeat | round | space ]{1,2}`
    *
    * **Initial value**: `stretch`
+   *
+   * |                 Chrome                  | Firefox |                  Safari                   |                   Edge                   | IE  |
+   * | :-------------------------------------: | :-----: | :---------------------------------------: | :--------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-repeat)_ |   No    | **3.1** _(-webkit-mask-box-image-repeat)_ | **79** _(-webkit-mask-box-image-repeat)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-repeat
    */
   "mask-border-repeat"?: Property.MaskBorderRepeat;
   /**
@@ -11456,6 +11560,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * **Syntax**: `<number-percentage>{1,4} fill?`
    *
    * **Initial value**: `0`
+   *
+   * |                 Chrome                 | Firefox |                  Safari                  |                  Edge                   | IE  |
+   * | :------------------------------------: | :-----: | :--------------------------------------: | :-------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-slice)_ |   No    | **3.1** _(-webkit-mask-box-image-slice)_ | **79** _(-webkit-mask-box-image-slice)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-slice
    */
   "mask-border-slice"?: Property.MaskBorderSlice;
   /**
@@ -11464,6 +11574,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * **Syntax**: `none | <image>`
    *
    * **Initial value**: `none`
+   *
+   * |                 Chrome                  | Firefox |                  Safari                   |                   Edge                   | IE  |
+   * | :-------------------------------------: | :-----: | :---------------------------------------: | :--------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-source)_ |   No    | **3.1** _(-webkit-mask-box-image-source)_ | **79** _(-webkit-mask-box-image-source)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-source
    */
   "mask-border-source"?: Property.MaskBorderSource;
   /**
@@ -11472,6 +11588,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * **Syntax**: `[ <length-percentage> | <number> | auto ]{1,4}`
    *
    * **Initial value**: `auto`
+   *
+   * |                 Chrome                 | Firefox |                  Safari                  |                  Edge                   | IE  |
+   * | :------------------------------------: | :-----: | :--------------------------------------: | :-------------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image-width)_ |   No    | **3.1** _(-webkit-mask-box-image-width)_ | **79** _(-webkit-mask-box-image-width)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border-width
    */
   "mask-border-width"?: Property.MaskBorderWidth<TLength>;
   /**
@@ -11631,7 +11753,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -11666,7 +11788,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -11694,7 +11816,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -11722,7 +11844,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -11801,7 +11923,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **31** | **36**  | **10** | **16** | No  |
+   * | **32** | **36**  | **10** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/object-fit
    */
@@ -11815,7 +11937,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **31** | **36**  | **10** | **16** | No  |
+   * | **32** | **36**  | **10** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/object-position
    */
@@ -13080,7 +13202,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
    *
-   * **Syntax**: `none | <shape-box> || <basic-shape> | <image>`
+   * **Syntax**: `none | [ <shape-box> || <basic-shape> ] | <image>`
    *
    * **Initial value**: `none`
    *
@@ -13698,7 +13820,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -14243,6 +14365,12 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * The **`mask-border`** CSS shorthand property lets you create a mask along the edge of an element's border.
    *
    * **Syntax**: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask-border-repeat'> || <'mask-border-mode'>`
+   *
+   * |              Chrome              | Firefox |               Safari               |               Edge                | IE  |
+   * | :------------------------------: | :-----: | :--------------------------------: | :-------------------------------: | :-: |
+   * | **1** _(-webkit-mask-box-image)_ |   No    | **3.1** _(-webkit-mask-box-image)_ | **79** _(-webkit-mask-box-image)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/mask-border
    */
   "mask-border"?: Property.MaskBorder;
   /**
@@ -15342,46 +15470,6 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-writing-mode"?: Property.WritingMode;
   /**
-   * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
-   *
-   * **Syntax**: `fill | contain | cover | none | scale-down`
-   *
-   * **Initial value**: `fill`
-   */
-  "-o-object-fit"?: Property.ObjectFit;
-  /**
-   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
-   *
-   * **Syntax**: `<position>`
-   *
-   * **Initial value**: `50% 50%`
-   */
-  "-o-object-position"?: Property.ObjectPosition<TLength>;
-  /**
-   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
-   *
-   * **Syntax**: `<integer> | <length>`
-   *
-   * **Initial value**: `8`
-   */
-  "-o-tab-size"?: Property.TabSize<TLength>;
-  /**
-   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users. It can be clipped, display an ellipsis ('`…`'), or display a custom string.
-   *
-   * **Syntax**: `[ clip | ellipsis | <string> ]{1,2}`
-   *
-   * **Initial value**: `clip`
-   */
-  "-o-text-overflow"?: Property.TextOverflow;
-  /**
-   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
-   *
-   * **Syntax**: `[ <length-percentage> | left | center | right | top | bottom ] | [ [ <length-percentage> | left | center | right ] && [ <length-percentage> | top | center | bottom ] ] <length>?`
-   *
-   * **Initial value**: `50% 50% 0`
-   */
-  "-o-transform-origin"?: Property.TransformOrigin<TLength>;
-  /**
    * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
    *
    * **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
@@ -15815,6 +15903,46 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `scroll`
    */
   "-webkit-mask-attachment"?: Property.WebkitMaskAttachment;
+  /**
+   * The **`mask-border-outset`** CSS property specifies the distance by which an element's mask border is set out from its border box.
+   *
+   * **Syntax**: `[ <length> | <number> ]{1,4}`
+   *
+   * **Initial value**: `0`
+   */
+  "-webkit-mask-box-image-outset"?: Property.MaskBorderOutset<TLength>;
+  /**
+   * The **`mask-border-repeat`** CSS property sets how the edge regions of a source image are adjusted to fit the dimensions of an element's mask border.
+   *
+   * **Syntax**: `[ stretch | repeat | round | space ]{1,2}`
+   *
+   * **Initial value**: `stretch`
+   */
+  "-webkit-mask-box-image-repeat"?: Property.MaskBorderRepeat;
+  /**
+   * The **`mask-border-slice`** CSS property divides the image set by `mask-border-source` into regions. These regions are used to form the components of an element's mask border.
+   *
+   * **Syntax**: `<number-percentage>{1,4} fill?`
+   *
+   * **Initial value**: `0`
+   */
+  "-webkit-mask-box-image-slice"?: Property.MaskBorderSlice;
+  /**
+   * The **`mask-border-source`** CSS property sets the source image used to create an element's mask border.
+   *
+   * **Syntax**: `none | <image>`
+   *
+   * **Initial value**: `none`
+   */
+  "-webkit-mask-box-image-source"?: Property.MaskBorderSource;
+  /**
+   * The **`mask-border-width`** CSS property sets the width of an element's mask border.
+   *
+   * **Syntax**: `[ <length-percentage> | <number> | auto ]{1,4}`
+   *
+   * **Initial value**: `auto`
+   */
+  "-webkit-mask-box-image-width"?: Property.MaskBorderWidth<TLength>;
   /**
    * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
@@ -16326,6 +16454,12 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    * **Syntax**: `[ <mask-reference> || <position> [ / <bg-size> ]? || <repeat-style> || [ <box> | border | padding | content | text ] || [ <box> | border | padding | content ] ]#`
    */
   "-webkit-mask"?: Property.WebkitMask<TLength>;
+  /**
+   * The **`mask-border`** CSS shorthand property lets you create a mask along the edge of an element's border.
+   *
+   * **Syntax**: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask-border-repeat'> || <'mask-border-mode'>`
+   */
+  "-webkit-mask-box-image"?: Property.MaskBorder;
   /**
    * The **`text-emphasis`** CSS property applies emphasis marks to text (except spaces and control characters). It is a shorthand for `text-emphasis-style` and `text-emphasis-color`.
    *
@@ -17210,6 +17344,46 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-border-image"?: Property.BorderImage;
   /**
+   * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
+   *
+   * **Syntax**: `fill | contain | cover | none | scale-down`
+   *
+   * **Initial value**: `fill`
+   *
+   * @deprecated
+   */
+  "-o-object-fit"?: Property.ObjectFit;
+  /**
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
+   *
+   * **Syntax**: `<position>`
+   *
+   * **Initial value**: `50% 50%`
+   *
+   * @deprecated
+   */
+  "-o-object-position"?: Property.ObjectPosition<TLength>;
+  /**
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
+   *
+   * **Syntax**: `<integer> | <length>`
+   *
+   * **Initial value**: `8`
+   *
+   * @deprecated
+   */
+  "-o-tab-size"?: Property.TabSize<TLength>;
+  /**
+   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users. It can be clipped, display an ellipsis ('`…`'), or display a custom string.
+   *
+   * **Syntax**: `[ clip | ellipsis | <string> ]{1,2}`
+   *
+   * **Initial value**: `clip`
+   *
+   * @deprecated
+   */
+  "-o-text-overflow"?: Property.TextOverflow;
+  /**
    * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
@@ -17219,6 +17393,16 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    * @deprecated
    */
   "-o-transform"?: Property.Transform;
+  /**
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
+   *
+   * **Syntax**: `[ <length-percentage> | left | center | right | top | bottom ] | [ [ <length-percentage> | left | center | right ] && [ <length-percentage> | top | center | bottom ] ] <length>?`
+   *
+   * **Initial value**: `50% 50% 0`
+   *
+   * @deprecated
+   */
+  "-o-transform-origin"?: Property.TransformOrigin<TLength>;
   /**
    * The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
    *
@@ -17604,6 +17788,7 @@ export type SimplePseudos =
   | "::placeholder"
   | "::selection"
   | "::spelling-error"
+  | "::target-text"
   | ":active"
   | ":after"
   | ":any-link"
@@ -17746,6 +17931,8 @@ export type HtmlAttributes =
   | "[http-equiv]"
   | "[icon]"
   | "[id]"
+  | "[imagesizes]"
+  | "[imagesrcset]"
   | "[inputmode]"
   | "[integrity]"
   | "[intrinsicsize]"
@@ -17786,6 +17973,7 @@ export type HtmlAttributes =
   | "[name]"
   | "[nohref]"
   | "[nomodule]"
+  | "[nonce]"
   | "[noresize]"
   | "[noshade]"
   | "[novalidate]"
@@ -18004,7 +18192,6 @@ export type SvgAttributes =
   | "[mask]"
   | "[mathematical]"
   | "[media]"
-  | "[method]"
   | "[mode]"
   | "[name]"
   | "[numOctaves]"
@@ -18212,7 +18399,18 @@ export namespace Property {
 
   export type BlockOverflow = Globals | "clip" | "ellipsis" | (string & {});
 
-  export type BlockSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | (string & {});
+  export type BlockSize<TLength = (string & {}) | 0> =
+    | Globals
+    | TLength
+    | "-moz-fit-content"
+    | "-moz-max-content"
+    | "-moz-min-content"
+    | "-webkit-fill-available"
+    | "auto"
+    | "fit-content"
+    | "max-content"
+    | "min-content"
+    | (string & {});
 
   export type Border<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
@@ -18501,7 +18699,7 @@ export namespace Property {
 
   export type Filter = Globals | "none" | (string & {});
 
-  export type Flex<TLength = (string & {}) | 0> = Globals | TLength | "auto" | "content" | "max-content" | "min-content" | "none" | (string & {}) | (number & {});
+  export type Flex<TLength = (string & {}) | 0> = Globals | TLength | "auto" | "content" | "fit-content" | "max-content" | "min-content" | "none" | (string & {}) | (number & {});
 
   export type FlexBasis<TLength = (string & {}) | 0> =
     | Globals
@@ -18511,6 +18709,7 @@ export namespace Property {
     | "-webkit-auto"
     | "auto"
     | "content"
+    | "fit-content"
     | "max-content"
     | "min-content"
     | (string & {});
@@ -18665,7 +18864,17 @@ export namespace Property {
 
   export type HangingPunctuation = Globals | "allow-end" | "first" | "force-end" | "last" | "none" | (string & {});
 
-  export type Height<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | (string & {});
+  export type Height<TLength = (string & {}) | 0> =
+    | Globals
+    | TLength
+    | "-moz-max-content"
+    | "-moz-min-content"
+    | "-webkit-fit-content"
+    | "auto"
+    | "fit-content"
+    | "max-content"
+    | "min-content"
+    | (string & {});
 
   export type Hyphens = Globals | "auto" | "manual" | "none";
 
@@ -18679,7 +18888,18 @@ export namespace Property {
 
   export type InitialLetter = Globals | "normal" | (string & {}) | (number & {});
 
-  export type InlineSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | (string & {});
+  export type InlineSize<TLength = (string & {}) | 0> =
+    | Globals
+    | TLength
+    | "-moz-fit-content"
+    | "-moz-max-content"
+    | "-moz-min-content"
+    | "-webkit-fill-available"
+    | "auto"
+    | "fit-content"
+    | "max-content"
+    | "min-content"
+    | (string & {});
 
   export type Inset<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
@@ -18783,61 +19003,118 @@ export namespace Property {
 
   export type MathStyle = Globals | "compact" | "normal";
 
-  export type MaxBlockSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | (string & {});
-
-  export type MaxHeight<TLength = (string & {}) | 0> =
+  export type MaxBlockSize<TLength = (string & {}) | 0> =
     | Globals
     | TLength
     | "-moz-max-content"
     | "-moz-min-content"
-    | "-webkit-max-content"
-    | "-webkit-min-content"
+    | "-webkit-fill-available"
+    | "fit-content"
     | "max-content"
     | "min-content"
     | "none"
     | (string & {});
 
-  export type MaxInlineSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | (string & {});
-
-  export type MaxLines = Globals | "none" | (number & {});
-
-  export type MaxWidth<TLength = (string & {}) | 0> =
+  export type MaxHeight<TLength = (string & {}) | 0> =
     | Globals
     | TLength
+    | "-moz-fit-content"
     | "-moz-max-content"
     | "-moz-min-content"
+    | "-webkit-fit-content"
     | "-webkit-max-content"
     | "-webkit-min-content"
+    | "fit-content"
     | "intrinsic"
     | "max-content"
     | "min-content"
     | "none"
     | (string & {});
 
-  export type MinBlockSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | (string & {});
+  export type MaxInlineSize<TLength = (string & {}) | 0> =
+    | Globals
+    | TLength
+    | "-moz-fit-content"
+    | "-moz-max-content"
+    | "-moz-min-content"
+    | "-webkit-fill-available"
+    | "fit-content"
+    | "max-content"
+    | "min-content"
+    | "none"
+    | (string & {});
 
-  export type MinHeight<TLength = (string & {}) | 0> =
+  export type MaxLines = Globals | "none" | (number & {});
+
+  export type MaxWidth<TLength = (string & {}) | 0> =
+    | Globals
+    | TLength
+    | "-moz-fit-content"
+    | "-moz-max-content"
+    | "-moz-min-content"
+    | "-webkit-fit-content"
+    | "-webkit-max-content"
+    | "-webkit-min-content"
+    | "fit-content"
+    | "intrinsic"
+    | "max-content"
+    | "min-content"
+    | "none"
+    | (string & {});
+
+  export type MinBlockSize<TLength = (string & {}) | 0> =
     | Globals
     | TLength
     | "-moz-max-content"
     | "-moz-min-content"
-    | "-webkit-max-content"
-    | "-webkit-min-content"
+    | "-webkit-fill-available"
     | "auto"
+    | "fit-content"
     | "max-content"
     | "min-content"
     | (string & {});
 
-  export type MinInlineSize<TLength = (string & {}) | 0> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | (string & {});
+  export type MinHeight<TLength = (string & {}) | 0> =
+    | Globals
+    | TLength
+    | "-moz-fit-content"
+    | "-moz-max-content"
+    | "-moz-min-content"
+    | "-webkit-fit-content"
+    | "-webkit-max-content"
+    | "-webkit-min-content"
+    | "auto"
+    | "fit-content"
+    | "intrinsic"
+    | "max-content"
+    | "min-content"
+    | (string & {});
+
+  export type MinInlineSize<TLength = (string & {}) | 0> =
+    | Globals
+    | TLength
+    | "-moz-fit-content"
+    | "-moz-max-content"
+    | "-moz-min-content"
+    | "-webkit-fill-available"
+    | "auto"
+    | "fit-content"
+    | "max-content"
+    | "min-content"
+    | (string & {});
 
   export type MinWidth<TLength = (string & {}) | 0> =
     | Globals
     | TLength
+    | "-moz-fit-content"
     | "-moz-max-content"
     | "-moz-min-content"
+    | "-webkit-fill-available"
+    | "-webkit-fit-content"
     | "-webkit-max-content"
     | "-webkit-min-content"
     | "auto"
+    | "fit-content"
     | "intrinsic"
     | "max-content"
     | "min-content"
@@ -19188,10 +19465,13 @@ export namespace Property {
   export type Width<TLength = (string & {}) | 0> =
     | Globals
     | TLength
+    | "-moz-fit-content"
     | "-moz-max-content"
     | "-moz-min-content"
+    | "-webkit-fit-content"
     | "-webkit-max-content"
     | "auto"
+    | "fit-content"
     | "intrinsic"
     | "max-content"
     | "min-content"
