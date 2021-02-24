@@ -2149,7 +2149,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -2522,7 +2522,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
    *
-   * **Syntax**: `<url> | none`
+   * **Syntax**: `<image> | none`
    *
    * **Initial value**: `none`
    *
@@ -2938,7 +2938,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -2973,7 +2973,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -3001,7 +3001,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -3029,7 +3029,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -5011,7 +5011,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -10956,7 +10956,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -11329,7 +11329,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
    *
-   * **Syntax**: `<url> | none`
+   * **Syntax**: `<image> | none`
    *
    * **Initial value**: `none`
    *
@@ -11745,7 +11745,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -11780,7 +11780,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -11808,7 +11808,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -11836,7 +11836,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -13818,7 +13818,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -19767,7 +19767,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -20140,7 +20140,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
    *
-   * **Syntax**: `<url> | none`
+   * **Syntax**: `<image> | none`
    *
    * **Initial value**: `none`
    *
@@ -20556,7 +20556,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -20591,7 +20591,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -20619,7 +20619,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -20647,7 +20647,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -22629,7 +22629,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -28578,7 +28578,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -28951,7 +28951,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
    *
-   * **Syntax**: `<url> | none`
+   * **Syntax**: `<image> | none`
    *
    * **Initial value**: `none`
    *
@@ -29367,7 +29367,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -29402,7 +29402,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
-   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `none | <length-percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `none`
    *
@@ -29430,7 +29430,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -29458,7 +29458,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -31440,7 +31440,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`width`** CSS property sets an element's width. By default it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
-   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content(<length-percentage>)`
+   * **Syntax**: `auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)`
    *
    * **Initial value**: `auto`
    *
@@ -35942,7 +35942,6 @@ export type SvgAttributes =
   | "[mask]"
   | "[mathematical]"
   | "[media]"
-  | "[method]"
   | "[mode]"
   | "[name]"
   | "[numOctaves]"
@@ -36147,7 +36146,18 @@ export type BackgroundSizeProperty<TLength> = Globals | BgSize<TLength> | string
 
 export type BlockOverflowProperty = Globals | "clip" | "ellipsis" | string;
 
-export type BlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type BlockSizeProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "auto"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type BorderProperty<TLength> = Globals | LineWidth<TLength> | LineStyle | Color | string;
 
@@ -36421,9 +36431,20 @@ export type EmptyCellsProperty = Globals | "hide" | "show";
 
 export type FilterProperty = Globals | "none" | string;
 
-export type FlexProperty<TLength> = Globals | TLength | "auto" | "content" | "max-content" | "min-content" | "none" | string | number;
+export type FlexProperty<TLength> = Globals | TLength | "auto" | "content" | "fit-content" | "max-content" | "min-content" | "none" | string | number;
 
-export type FlexBasisProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "-webkit-auto" | "auto" | "content" | "max-content" | "min-content" | string;
+export type FlexBasisProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-auto"
+  | "auto"
+  | "content"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type FlexDirectionProperty = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
@@ -36571,7 +36592,17 @@ export type GridTemplateRowsProperty<TLength> = Globals | TrackBreadth<TLength> 
 
 export type HangingPunctuationProperty = Globals | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
-export type HeightProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type HeightProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "auto"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type HyphensProperty = Globals | "auto" | "manual" | "none";
 
@@ -36585,7 +36616,18 @@ export type ImeModeProperty = Globals | "active" | "auto" | "disabled" | "inacti
 
 export type InitialLetterProperty = Globals | "normal" | string | number;
 
-export type InlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type InlineSizeProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "auto"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type InsetProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -36689,61 +36731,118 @@ export type MaskTypeProperty = Globals | "alpha" | "luminance";
 
 export type MathStyleProperty = Globals | "compact" | "normal";
 
-export type MaxBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
-
-export type MaxHeightProperty<TLength> =
+export type MaxBlockSizeProperty<TLength> =
   | Globals
   | TLength
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-max-content"
-  | "-webkit-min-content"
+  | "-webkit-fill-available"
+  | "fit-content"
   | "max-content"
   | "min-content"
   | "none"
   | string;
 
-export type MaxInlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "max-content" | "min-content" | "none" | string;
-
-export type MaxLinesProperty = Globals | "none" | number;
-
-export type MaxWidthProperty<TLength> =
+export type MaxHeightProperty<TLength> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
+  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
+  | "fit-content"
   | "intrinsic"
   | "max-content"
   | "min-content"
   | "none"
   | string;
 
-export type MinBlockSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type MaxInlineSizeProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | "none"
+  | string;
 
-export type MinHeightProperty<TLength> =
+export type MaxLinesProperty = Globals | "none" | number;
+
+export type MaxWidthProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
+  | "fit-content"
+  | "intrinsic"
+  | "max-content"
+  | "min-content"
+  | "none"
+  | string;
+
+export type MinBlockSizeProperty<TLength> =
   | Globals
   | TLength
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-max-content"
-  | "-webkit-min-content"
+  | "-webkit-fill-available"
   | "auto"
+  | "fit-content"
   | "max-content"
   | "min-content"
   | string;
 
-export type MinInlineSizeProperty<TLength> = Globals | TLength | "-moz-max-content" | "-moz-min-content" | "auto" | "max-content" | "min-content" | string;
+export type MinHeightProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fit-content"
+  | "-webkit-max-content"
+  | "-webkit-min-content"
+  | "auto"
+  | "fit-content"
+  | "intrinsic"
+  | "max-content"
+  | "min-content"
+  | string;
+
+export type MinInlineSizeProperty<TLength> =
+  | Globals
+  | TLength
+  | "-moz-fit-content"
+  | "-moz-max-content"
+  | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "auto"
+  | "fit-content"
+  | "max-content"
+  | "min-content"
+  | string;
 
 export type MinWidthProperty<TLength> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
+  | "-webkit-fill-available"
+  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "-webkit-min-content"
   | "auto"
+  | "fit-content"
   | "intrinsic"
   | "max-content"
   | "min-content"
@@ -37071,10 +37170,13 @@ export type WhiteSpaceProperty = Globals | "-moz-pre-wrap" | "break-spaces" | "n
 export type WidthProperty<TLength> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
+  | "-webkit-fit-content"
   | "-webkit-max-content"
   | "auto"
+  | "fit-content"
   | "intrinsic"
   | "max-content"
   | "min-content"
