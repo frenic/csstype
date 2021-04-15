@@ -26,7 +26,7 @@ async function update() {
     }),
     await getJsonAsync({
       hostname: 'api.github.com',
-      path: '/repos/mdn/browser-compat-data/branches/master',
+      path: '/repos/mdn/browser-compat-data/branches/main',
       headers: { 'User-Agent': 'NodeJS' },
     }),
   ];
