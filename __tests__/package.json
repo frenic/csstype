@@ -1,5 +1,6 @@
 {
   "name": "csstype-test",
+  "private": true,
   "dependencies": {
     "typescript3.5": "npm:typescript@~3.5.3",
     "typescript3.6": "npm:typescript@~3.6.5",
