@@ -18371,7 +18371,7 @@ export namespace Property {
 
   export type AnimationFillMode = Globals | DataType.SingleAnimationFillMode | (string & {});
 
-  export type AnimationIterationCount = Globals | "infinite" | (string & {}) | (number & {});
+  export type AnimationIterationCount = Globals | "infinite" | (string & {}) | ((number | `${number}`) & {});
 
   export type AnimationName = Globals | "none" | (string & {});
 
@@ -18488,17 +18488,17 @@ export namespace Property {
 
   export type BorderEndStartRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
-  export type BorderImage = Globals | "none" | "repeat" | "round" | "space" | "stretch" | (string & {}) | (number & {});
+  export type BorderImage = Globals | "none" | "repeat" | "round" | "space" | "stretch" | (string & {}) | ((number | `${number}`) & {});
 
-  export type BorderImageOutset<TLength = (string & {}) | 0> = Globals | TLength | (string & {}) | (number & {});
+  export type BorderImageOutset<TLength = (string & {}) | 0> = Globals | TLength | (string & {}) | ((number | `${number}`) & {});
 
   export type BorderImageRepeat = Globals | "repeat" | "round" | "space" | "stretch" | (string & {});
 
-  export type BorderImageSlice = Globals | (string & {}) | (number & {});
+  export type BorderImageSlice = Globals | (string & {}) | ((number | `${number}`) & {});
 
   export type BorderImageSource = Globals | "none" | (string & {});
 
-  export type BorderImageWidth<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {}) | (number & {});
+  export type BorderImageWidth<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {}) | ((number | `${number}`) & {});
 
   export type BorderInline<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
@@ -18572,13 +18572,13 @@ export namespace Property {
 
   export type BoxDirection = Globals | "inherit" | "normal" | "reverse";
 
-  export type BoxFlex = Globals | (number & {});
+  export type BoxFlex = Globals | ((number | `${number}`) & {});
 
-  export type BoxFlexGroup = Globals | (number & {});
+  export type BoxFlexGroup = Globals | ((number | `${number}`) & {});
 
   export type BoxLines = Globals | "multiple" | "single";
 
-  export type BoxOrdinalGroup = Globals | (number & {});
+  export type BoxOrdinalGroup = Globals | ((number | `${number}`) & {});
 
   export type BoxOrient = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
 
@@ -18640,7 +18640,7 @@ export namespace Property {
 
   export type ColorScheme = Globals | "dark" | "light" | "normal" | (string & {});
 
-  export type ColumnCount = Globals | "auto" | (number & {});
+  export type ColumnCount = Globals | "auto" | ((number | `${number}`) & {});
 
   export type ColumnFill = Globals | "auto" | "balance";
 
@@ -18658,7 +18658,7 @@ export namespace Property {
 
   export type ColumnWidth<TLength = (string & {}) | 0> = Globals | TLength | "auto";
 
-  export type Columns<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {}) | (number & {});
+  export type Columns<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {}) | ((number | `${number}`) & {});
 
   export type Contain = Globals | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | (string & {});
 
@@ -18731,7 +18731,17 @@ export namespace Property {
 
   export type Filter = Globals | "none" | (string & {});
 
-  export type Flex<TLength = (string & {}) | 0> = Globals | TLength | "auto" | "content" | "fit-content" | "max-content" | "min-content" | "none" | (string & {}) | (number & {});
+  export type Flex<TLength = (string & {}) | 0> =
+    | Globals
+    | TLength
+    | "auto"
+    | "content"
+    | "fit-content"
+    | "max-content"
+    | "min-content"
+    | "none"
+    | (string & {})
+    | ((number | `${number}`) & {});
 
   export type FlexBasis<TLength = (string & {}) | 0> =
     | Globals
@@ -18750,9 +18760,9 @@ export namespace Property {
 
   export type FlexFlow = Globals | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | (string & {});
 
-  export type FlexGrow = Globals | (number & {});
+  export type FlexGrow = Globals | ((number | `${number}`) & {});
 
-  export type FlexShrink = Globals | (number & {});
+  export type FlexShrink = Globals | ((number | `${number}`) & {});
 
   export type FlexWrap = Globals | "nowrap" | "wrap" | "wrap-reverse";
 
@@ -18772,7 +18782,7 @@ export namespace Property {
 
   export type FontSize<TLength = (string & {}) | 0> = Globals | DataType.AbsoluteSize | TLength | "larger" | "smaller" | (string & {});
 
-  export type FontSizeAdjust = Globals | "none" | (number & {});
+  export type FontSizeAdjust = Globals | "none" | ((number | `${number}`) & {});
 
   export type FontSmooth<TLength = (string & {}) | 0> = Globals | DataType.AbsoluteSize | TLength | "always" | "auto" | "never";
 
@@ -18918,7 +18928,7 @@ export namespace Property {
 
   export type ImeMode = Globals | "active" | "auto" | "disabled" | "inactive" | "normal";
 
-  export type InitialLetter = Globals | "normal" | (string & {}) | (number & {});
+  export type InitialLetter = Globals | "normal" | (string & {}) | ((number | `${number}`) & {});
 
   export type InlineSize<TLength = (string & {}) | 0> =
     | Globals
@@ -18963,9 +18973,9 @@ export namespace Property {
 
   export type LineBreak = Globals | "anywhere" | "auto" | "loose" | "normal" | "strict";
 
-  export type LineClamp = Globals | "none" | (number & {});
+  export type LineClamp = Globals | "none" | ((number | `${number}`) & {});
 
-  export type LineHeight<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {}) | (number & {});
+  export type LineHeight<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {}) | ((number | `${number}`) & {});
 
   export type LineHeightStep<TLength = (string & {}) | 0> = Globals | TLength;
 
@@ -19001,19 +19011,19 @@ export namespace Property {
 
   export type Mask<TLength = (string & {}) | 0> = Globals | DataType.MaskLayer<TLength> | (string & {});
 
-  export type MaskBorder = Globals | "alpha" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | (string & {}) | (number & {});
+  export type MaskBorder = Globals | "alpha" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | (string & {}) | ((number | `${number}`) & {});
 
   export type MaskBorderMode = Globals | "alpha" | "luminance";
 
-  export type MaskBorderOutset<TLength = (string & {}) | 0> = Globals | TLength | (string & {}) | (number & {});
+  export type MaskBorderOutset<TLength = (string & {}) | 0> = Globals | TLength | (string & {}) | ((number | `${number}`) & {});
 
   export type MaskBorderRepeat = Globals | "repeat" | "round" | "space" | "stretch" | (string & {});
 
-  export type MaskBorderSlice = Globals | (string & {}) | (number & {});
+  export type MaskBorderSlice = Globals | (string & {}) | ((number | `${number}`) & {});
 
   export type MaskBorderSource = Globals | "none" | (string & {});
 
-  export type MaskBorderWidth<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {}) | (number & {});
+  export type MaskBorderWidth<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {}) | ((number | `${number}`) & {});
 
   export type MaskClip = Globals | DataType.GeometryBox | "no-clip" | (string & {});
 
@@ -19076,7 +19086,7 @@ export namespace Property {
     | "none"
     | (string & {});
 
-  export type MaxLines = Globals | "none" | (number & {});
+  export type MaxLines = Globals | "none" | ((number | `${number}`) & {});
 
   export type MaxWidth<TLength = (string & {}) | 0> =
     | Globals
@@ -19169,11 +19179,11 @@ export namespace Property {
 
   export type OffsetAnchor<TLength = (string & {}) | 0> = Globals | DataType.Position<TLength> | "auto";
 
-  export type Opacity = Globals | (string & {}) | (number & {});
+  export type Opacity = Globals | (string & {}) | ((number | `${number}`) & {});
 
-  export type Order = Globals | (number & {});
+  export type Order = Globals | ((number | `${number}`) & {});
 
-  export type Orphans = Globals | (number & {});
+  export type Orphans = Globals | ((number | `${number}`) & {});
 
   export type Outline<TLength = (string & {}) | 0> = Globals | DataType.Color | DataType.LineStyle | DataType.LineWidth<TLength> | "auto" | "invert" | (string & {});
 
@@ -19273,7 +19283,7 @@ export namespace Property {
 
   export type RubyPosition = Globals | "alternate" | "over" | "under" | (string & {});
 
-  export type Scale = Globals | "none" | (string & {}) | (number & {});
+  export type Scale = Globals | "none" | (string & {}) | ((number | `${number}`) & {});
 
   export type ScrollBehavior = Globals | "auto" | "smooth";
 
@@ -19347,13 +19357,13 @@ export namespace Property {
 
   export type ScrollbarWidth = Globals | "auto" | "none" | "thin";
 
-  export type ShapeImageThreshold = Globals | (string & {}) | (number & {});
+  export type ShapeImageThreshold = Globals | (string & {}) | ((number | `${number}`) & {});
 
   export type ShapeMargin<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
   export type ShapeOutside = Globals | DataType.Box | "margin-box" | "none" | (string & {});
 
-  export type TabSize<TLength = (string & {}) | 0> = Globals | TLength | (number & {});
+  export type TabSize<TLength = (string & {}) | 0> = Globals | TLength | ((number | `${number}`) & {});
 
   export type TableLayout = Globals | "auto" | "fixed";
 
@@ -19496,7 +19506,7 @@ export namespace Property {
 
   export type WhiteSpace = Globals | "-moz-pre-wrap" | "break-spaces" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 
-  export type Widows = Globals | (number & {});
+  export type Widows = Globals | ((number | `${number}`) & {});
 
   export type Width<TLength = (string & {}) | 0> =
     | Globals
@@ -19524,9 +19534,9 @@ export namespace Property {
 
   export type WritingMode = Globals | "horizontal-tb" | "sideways-lr" | "sideways-rl" | "vertical-lr" | "vertical-rl";
 
-  export type ZIndex = Globals | "auto" | (number & {});
+  export type ZIndex = Globals | "auto" | ((number | `${number}`) & {});
 
-  export type Zoom = Globals | "normal" | "reset" | (string & {}) | (number & {});
+  export type Zoom = Globals | "normal" | "reset" | (string & {}) | ((number | `${number}`) & {});
 
   export type MozAppearance =
     | Globals
@@ -19655,7 +19665,7 @@ export namespace Property {
 
   export type MozFloatEdge = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
 
-  export type MozForceBrokenImageIcon = Globals | (number & {});
+  export type MozForceBrokenImageIcon = Globals | ((number | `${number}`) & {});
 
   export type MozImageRegion = Globals | "auto" | (string & {});
 
@@ -19717,9 +19727,9 @@ export namespace Property {
 
   export type MsHighContrastAdjust = Globals | "auto" | "none";
 
-  export type MsHyphenateLimitChars = Globals | "auto" | (string & {}) | (number & {});
+  export type MsHyphenateLimitChars = Globals | "auto" | (string & {}) | ((number | `${number}`) & {});
 
-  export type MsHyphenateLimitLines = Globals | "no-limit" | (number & {});
+  export type MsHyphenateLimitLines = Globals | "no-limit" | ((number | `${number}`) & {});
 
   export type MsHyphenateLimitZone<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
@@ -19841,7 +19851,7 @@ export namespace Property {
 
   export type WebkitBoxReflect<TLength = (string & {}) | 0> = Globals | TLength | "above" | "below" | "left" | "right" | (string & {});
 
-  export type WebkitLineClamp = Globals | "none" | (number & {});
+  export type WebkitLineClamp = Globals | "none" | ((number | `${number}`) & {});
 
   export type WebkitMask<TLength = (string & {}) | 0> =
     | Globals
@@ -19935,15 +19945,15 @@ export namespace Property {
 
   export type Fill = Globals | DataType.Paint;
 
-  export type FillOpacity = Globals | (number & {});
+  export type FillOpacity = Globals | ((number | `${number}`) & {});
 
   export type FillRule = Globals | "evenodd" | "nonzero";
 
   export type FloodColor = Globals | DataType.Color | "currentColor";
 
-  export type FloodOpacity = Globals | (number & {});
+  export type FloodOpacity = Globals | ((number | `${number}`) & {});
 
-  export type GlyphOrientationVertical = Globals | "auto" | (string & {}) | (number & {});
+  export type GlyphOrientationVertical = Globals | "auto" | (string & {}) | ((number | `${number}`) & {});
 
   export type LightingColor = Globals | DataType.Color | "currentColor";
 
@@ -19959,7 +19969,7 @@ export namespace Property {
 
   export type StopColor = Globals | DataType.Color | "currentColor";
 
-  export type StopOpacity = Globals | (number & {});
+  export type StopOpacity = Globals | ((number | `${number}`) & {});
 
   export type Stroke = Globals | DataType.Paint;
 
@@ -19971,9 +19981,9 @@ export namespace Property {
 
   export type StrokeLinejoin = Globals | "bevel" | "miter" | "round";
 
-  export type StrokeMiterlimit = Globals | (number & {});
+  export type StrokeMiterlimit = Globals | ((number | `${number}`) & {});
 
-  export type StrokeOpacity = Globals | (number & {});
+  export type StrokeOpacity = Globals | ((number | `${number}`) & {});
 
   export type StrokeWidth<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
@@ -20127,7 +20137,7 @@ export namespace AtRule {
     [P in keyof ViewportHyphen<TLength, TTime>]: ViewportHyphen<TLength, TTime>[P] | ViewportHyphen<TLength, TTime>[P][];
   };
 
-  type Range = "auto" | "infinite" | (string & {}) | (number & {});
+  type Range = "auto" | "infinite" | (string & {}) | ((number | `${number}`) & {});
 
   type SpeakAs = "auto" | "bullets" | "numbers" | "spell-out" | "words" | (string & {});
 
@@ -20187,13 +20197,13 @@ export namespace AtRule {
 
   type MaxWidth<TLength> = DataType.ViewportLength<TLength>;
 
-  type MaxZoom = "auto" | (string & {}) | (number & {});
+  type MaxZoom = "auto" | (string & {}) | ((number | `${number}`) & {});
 
   type MinHeight<TLength> = DataType.ViewportLength<TLength>;
 
   type MinWidth<TLength> = DataType.ViewportLength<TLength>;
 
-  type MinZoom = "auto" | (string & {}) | (number & {});
+  type MinZoom = "auto" | (string & {}) | ((number | `${number}`) & {});
 
   type Orientation = "auto" | "landscape" | "portrait";
 
@@ -20203,7 +20213,7 @@ export namespace AtRule {
 
   type Width<TLength> = DataType.ViewportLength<TLength> | (string & {});
 
-  type Zoom = "auto" | (string & {}) | (number & {});
+  type Zoom = "auto" | (string & {}) | ((number | `${number}`) & {});
 }
 
 declare namespace DataType {
@@ -20276,7 +20286,7 @@ declare namespace DataType {
 
   type CubicBezierTimingFunction = "ease" | "ease-in" | "ease-in-out" | "ease-out" | (string & {});
 
-  type Dasharray<TLength> = TLength | (string & {}) | (number & {});
+  type Dasharray<TLength> = TLength | (string & {}) | ((number | `${number}`) & {});
 
   type DeprecatedSystemColor =
     | "ActiveBorder"
@@ -20346,13 +20356,13 @@ declare namespace DataType {
     | "ultra-expanded"
     | (string & {});
 
-  type FontWeightAbsolute = "bold" | "normal" | (number & {});
+  type FontWeightAbsolute = "bold" | "normal" | ((number | `${number}`) & {});
 
   type GenericFamily = "cursive" | "fantasy" | "monospace" | "sans-serif" | "serif";
 
   type GeometryBox = Box | "fill-box" | "margin-box" | "stroke-box" | "view-box";
 
-  type GridLine = "auto" | (string & {}) | (number & {});
+  type GridLine = "auto" | (string & {}) | ((number | `${number}`) & {});
 
   type LineStyle = "dashed" | "dotted" | "double" | "groove" | "hidden" | "inset" | "none" | "outset" | "ridge" | "solid";
 
@@ -20535,7 +20545,7 @@ declare namespace DataType {
     | "paused"
     | "running"
     | (string & {})
-    | (number & {});
+    | ((number | `${number}`) & {});
 
   type SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 

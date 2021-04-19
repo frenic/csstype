@@ -101,7 +101,7 @@ async function outputInterface(entry: Interface, currentNamespace: INamespace | 
       }
 
       const type = isAliasProperty(property) ? property.alias : property.type;
-      const value = stringifyTypes([type], currentNamespace, false);
+      const value = stringifyTypes([type], currentNamespace, false, false);
       output += `${JSON.stringify(property.name)}?: ${value};`;
 
       output += EOL;
@@ -125,7 +125,7 @@ function outputDeclaration(entry: IDeclaration, currentNamespace: INamespace | u
 
   output += `type ${
     entry.name + stringifyGenerics(entry.generics, entry.export, stringifySimpleTypes)
-  } = ${stringifyTypes(entry.types, currentNamespace, true)}`;
+  } = ${stringifyTypes(entry.types, currentNamespace, true, false)}`;
 
   return output;
 }
@@ -134,6 +134,7 @@ function stringifyTypes(
   types: DeclarableType[],
   currentNamespace: INamespace | undefined,
   applyAutocompleteHack: boolean,
+  addNumericTemplatedString: boolean,
 ) {
   const stringifyType = createStringifyType(type => {
     // The type is in its own namespace so keep it empty
@@ -147,16 +148,20 @@ function stringifyTypes(
         return stringifyType(type);
       }
 
-      if (type.type === Type.String || type.type === Type.Number) {
-        // Apply autocomplete hack
+      // Apply autocomplete hack
+      if (type.type === Type.String) {
         return `(${stringifyType(type)} & {})`;
-      } else {
-        return stringifyType(type);
       }
+      if (type.type === Type.Number) {
+        return addNumericTemplatedString
+          ? `((${stringifyType(type)} | \`\${number}\`) & {})`
+          : `(${stringifyType(type)} & {})`;
+      }
+      return stringifyType(type);
     })
     .join(' | ');
 }
 
 function stringifySimpleTypes(types: SimpleType[]) {
-  return stringifyTypes(types, undefined, true);
+  return stringifyTypes(types, undefined, true, false);
 }
