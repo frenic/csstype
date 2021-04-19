@@ -363,20 +363,6 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   backgroundOrigin?: BackgroundOriginProperty;
   /**
-   * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
-   *
-   * **Syntax**: `<bg-position>#`
-   *
-   * **Initial value**: `0% 0%`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
-   */
-  backgroundPosition?: BackgroundPositionProperty<TLength>;
-  /**
    * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
@@ -672,9 +658,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -686,9 +672,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -999,9 +985,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -1013,9 +999,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -1319,6 +1305,20 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
    */
   colorAdjust?: ColorAdjustProperty;
+  /**
+   * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
+   *
+   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **81** |   No    | **13** | **81** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color-scheme
+   */
+  colorScheme?: ColorSchemeProperty;
   /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
@@ -1884,9 +1884,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **52** | **34**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **52** | **34**  | **9.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-caps
    */
@@ -1983,9 +1983,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |                Edge                 |                 IE                  |
-   * | :----: | :-----: | :----: | :---------------------------------: | :---------------------------------: |
-   * |  n/a   |   No    |   No   | **79** _(-ms-high-contrast-adjust)_ | **10** _(-ms-high-contrast-adjust)_ |
+   * | Chrome | Firefox | Safari |              Edge               |                 IE                  |
+   * | :----: | :-----: | :----: | :-----------------------------: | :---------------------------------: |
+   * | **89** |   No    |   No   |             **79**              | **10** _(-ms-high-contrast-adjust)_ |
+   * |        |         |        | 12 _(-ms-high-contrast-adjust)_ |                                     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust
    */
@@ -1997,10 +1998,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |          Edge           |             IE              |
-   * | :----: | :-----: | :------: | :---------------------: | :-------------------------: |
-   * | **57** | **70**  | **10.1** |         **16**          | **10** _(-ms-grid-columns)_ |
-   * |        |         |          | 12 _(-ms-grid-columns)_ |                             |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **70**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns
    */
@@ -2026,10 +2026,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |         Edge         |            IE            |
-   * | :----: | :-----: | :------: | :------------------: | :----------------------: |
-   * | **57** | **70**  | **10.1** |        **16**        | **10** _(-ms-grid-rows)_ |
-   * |        |         |          | 12 _(-ms-grid-rows)_ |                          |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **70**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows
    */
@@ -3337,6 +3336,18 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   overflowClipBox?: OverflowClipBoxProperty;
   /**
+   * **Syntax**: `<visual-box> || <length [0,∞]>`
+   *
+   * **Initial value**: `0px`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **90** |   No    |   No   | **90** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin
+   */
+  overflowClipMargin?: OverflowClipMarginProperty<TLength>;
+  /**
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
    * **Initial value**: `auto`
@@ -3391,20 +3402,6 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
   overflowY?: OverflowYProperty;
-  /**
-   * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
-   *
-   * **Syntax**: `[ contain | none | auto ]{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **63** | **59**  |   No   | **18** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
-   */
-  overscrollBehavior?: OverscrollBehaviorProperty;
   /**
    * The **`overscroll-behavior-block`** CSS property sets the browser's behavior when the block direction boundary of a scrolling area is reached.
    *
@@ -3853,9 +3850,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
-   * **Syntax**: `over | under | inter-character`
+   * **Syntax**: `[ alternate || [ over | under ] ] | inter-character`
    *
-   * **Initial value**: `over`
+   * **Initial value**: `alternate`
    *
    * | Chrome  | Firefox |    Safari     | Edge  | IE  |
    * | :-----: | :-----: | :-----------: | :---: | :-: |
@@ -4467,10 +4464,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * |           Chrome           | Firefox |              Safari              |                Edge                |                   IE                   |
-   * | :------------------------: | :-----: | :------------------------------: | :--------------------------------: | :------------------------------------: |
-   * |           **48**           | **48**  | **5.1** _(-webkit-text-combine)_ |               15-79                | **11** _(-ms-text-combine-horizontal)_ |
-   * | 9 _(-webkit-text-combine)_ |         |                                  | 12 _(-ms-text-combine-horizontal)_ |                                        |
+   * |           Chrome           | Firefox |              Safari              | Edge  |                   IE                   |
+   * | :------------------------: | :-----: | :------------------------------: | :---: | :------------------------------------: |
+   * |           **48**           | **48**  | **5.1** _(-webkit-text-combine)_ | 15-79 | **11** _(-ms-text-combine-horizontal)_ |
+   * | 9 _(-webkit-text-combine)_ |         |                                  |       |                                        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
    */
@@ -4558,7 +4555,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **70**  | **12.1** | **87** | No  |
+   * | **89** | **70**  | **12.1** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness
    */
@@ -4570,9 +4567,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **70**  | **12.1** | **87** | No  |
+   * | Chrome | Firefox |  Safari  | Edge  | IE  |
+   * | :----: | :-----: | :------: | :---: | :-: |
+   * | 87-89  | **70**  | **12.1** | 87-89 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness
    */
@@ -5158,6 +5155,20 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength>;
   /**
+   * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
+   *
+   * **Syntax**: `<bg-position>#`
+   *
+   * **Initial value**: `0% 0%`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
+   */
+  backgroundPosition?: BackgroundPositionProperty<TLength>;
+  /**
    * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
@@ -5616,6 +5627,20 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow
    */
   overflow?: OverflowProperty;
+  /**
+   * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
+   *
+   * **Syntax**: `[ contain | none | auto ]{1,2}`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **63** | **59**  |   No   | **18** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+   */
+  overscrollBehavior?: OverscrollBehaviorProperty;
   /**
    * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
    *
@@ -7287,9 +7312,9 @@ export interface VendorLonghandProperties<TLength = string | 0> {
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
-   * **Syntax**: `over | under | inter-character`
+   * **Syntax**: `[ alternate || [ over | under ] ] | inter-character`
    *
-   * **Initial value**: `over`
+   * **Initial value**: `alternate`
    */
   WebkitRubyPosition?: RubyPositionProperty;
   /**
@@ -7950,16 +7975,6 @@ export interface ObsoleteProperties<TLength = string | 0> {
    * @deprecated
    */
   scrollbarTrackColor?: MsScrollbarTrackColorProperty;
-  /**
-   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
-   *
-   * **Syntax**: `none | all | [ digits <integer>? ]`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  textCombineHorizontal?: TextCombineUprightProperty;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -9170,20 +9185,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "background-origin"?: BackgroundOriginProperty;
   /**
-   * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
-   *
-   * **Syntax**: `<bg-position>#`
-   *
-   * **Initial value**: `0% 0%`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
-   */
-  "background-position"?: BackgroundPositionProperty<TLength>;
-  /**
    * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
@@ -9479,9 +9480,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -9493,9 +9494,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -9806,9 +9807,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -9820,9 +9821,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -10126,6 +10127,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
    */
   "color-adjust"?: ColorAdjustProperty;
+  /**
+   * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
+   *
+   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **81** |   No    | **13** | **81** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color-scheme
+   */
+  "color-scheme"?: ColorSchemeProperty;
   /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
@@ -10691,9 +10706,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **52** | **34**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **52** | **34**  | **9.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-caps
    */
@@ -10790,9 +10805,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |                Edge                 |                 IE                  |
-   * | :----: | :-----: | :----: | :---------------------------------: | :---------------------------------: |
-   * |  n/a   |   No    |   No   | **79** _(-ms-high-contrast-adjust)_ | **10** _(-ms-high-contrast-adjust)_ |
+   * | Chrome | Firefox | Safari |              Edge               |                 IE                  |
+   * | :----: | :-----: | :----: | :-----------------------------: | :---------------------------------: |
+   * | **89** |   No    |   No   |             **79**              | **10** _(-ms-high-contrast-adjust)_ |
+   * |        |         |        | 12 _(-ms-high-contrast-adjust)_ |                                     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust
    */
@@ -10804,10 +10820,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |          Edge           |             IE              |
-   * | :----: | :-----: | :------: | :---------------------: | :-------------------------: |
-   * | **57** | **70**  | **10.1** |         **16**          | **10** _(-ms-grid-columns)_ |
-   * |        |         |          | 12 _(-ms-grid-columns)_ |                             |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **70**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns
    */
@@ -10833,10 +10848,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |         Edge         |            IE            |
-   * | :----: | :-----: | :------: | :------------------: | :----------------------: |
-   * | **57** | **70**  | **10.1** |        **16**        | **10** _(-ms-grid-rows)_ |
-   * |        |         |          | 12 _(-ms-grid-rows)_ |                          |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **70**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows
    */
@@ -12144,6 +12158,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "overflow-clip-box"?: OverflowClipBoxProperty;
   /**
+   * **Syntax**: `<visual-box> || <length [0,∞]>`
+   *
+   * **Initial value**: `0px`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **90** |   No    |   No   | **90** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin
+   */
+  "overflow-clip-margin"?: OverflowClipMarginProperty<TLength>;
+  /**
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
    * **Initial value**: `auto`
@@ -12198,20 +12224,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
   "overflow-y"?: OverflowYProperty;
-  /**
-   * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
-   *
-   * **Syntax**: `[ contain | none | auto ]{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **63** | **59**  |   No   | **18** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
-   */
-  "overscroll-behavior"?: OverscrollBehaviorProperty;
   /**
    * The **`overscroll-behavior-block`** CSS property sets the browser's behavior when the block direction boundary of a scrolling area is reached.
    *
@@ -12660,9 +12672,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
-   * **Syntax**: `over | under | inter-character`
+   * **Syntax**: `[ alternate || [ over | under ] ] | inter-character`
    *
-   * **Initial value**: `over`
+   * **Initial value**: `alternate`
    *
    * | Chrome  | Firefox |    Safari     | Edge  | IE  |
    * | :-----: | :-----: | :-----------: | :---: | :-: |
@@ -13274,10 +13286,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * |           Chrome           | Firefox |              Safari              |                Edge                |                   IE                   |
-   * | :------------------------: | :-----: | :------------------------------: | :--------------------------------: | :------------------------------------: |
-   * |           **48**           | **48**  | **5.1** _(-webkit-text-combine)_ |               15-79                | **11** _(-ms-text-combine-horizontal)_ |
-   * | 9 _(-webkit-text-combine)_ |         |                                  | 12 _(-ms-text-combine-horizontal)_ |                                        |
+   * |           Chrome           | Firefox |              Safari              | Edge  |                   IE                   |
+   * | :------------------------: | :-----: | :------------------------------: | :---: | :------------------------------------: |
+   * |           **48**           | **48**  | **5.1** _(-webkit-text-combine)_ | 15-79 | **11** _(-ms-text-combine-horizontal)_ |
+   * | 9 _(-webkit-text-combine)_ |         |                                  |       |                                        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
    */
@@ -13365,7 +13377,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **70**  | **12.1** | **87** | No  |
+   * | **89** | **70**  | **12.1** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness
    */
@@ -13377,9 +13389,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **70**  | **12.1** | **87** | No  |
+   * | Chrome | Firefox |  Safari  | Edge  | IE  |
+   * | :----: | :-----: | :------: | :---: | :-: |
+   * | 87-89  | **70**  | **12.1** | 87-89 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness
    */
@@ -13965,6 +13977,20 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength>;
   /**
+   * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
+   *
+   * **Syntax**: `<bg-position>#`
+   *
+   * **Initial value**: `0% 0%`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
+   */
+  "background-position"?: BackgroundPositionProperty<TLength>;
+  /**
    * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
@@ -14423,6 +14449,20 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow
    */
   overflow?: OverflowProperty;
+  /**
+   * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
+   *
+   * **Syntax**: `[ contain | none | auto ]{1,2}`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **63** | **59**  |   No   | **18** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+   */
+  "overscroll-behavior"?: OverscrollBehaviorProperty;
   /**
    * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
    *
@@ -16094,9 +16134,9 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
-   * **Syntax**: `over | under | inter-character`
+   * **Syntax**: `[ alternate || [ over | under ] ] | inter-character`
    *
-   * **Initial value**: `over`
+   * **Initial value**: `alternate`
    */
   "-webkit-ruby-position"?: RubyPositionProperty;
   /**
@@ -16757,16 +16797,6 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    * @deprecated
    */
   "scrollbar-track-color"?: MsScrollbarTrackColorProperty;
-  /**
-   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
-   *
-   * **Syntax**: `none | all | [ digits <integer>? ]`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "text-combine-horizontal"?: TextCombineUprightProperty;
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -17981,20 +18011,6 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   backgroundOrigin?: BackgroundOriginProperty | BackgroundOriginProperty[];
   /**
-   * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
-   *
-   * **Syntax**: `<bg-position>#`
-   *
-   * **Initial value**: `0% 0%`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
-   */
-  backgroundPosition?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
-  /**
    * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
@@ -18290,9 +18306,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -18304,9 +18320,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -18617,9 +18633,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -18631,9 +18647,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -18937,6 +18953,20 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
    */
   colorAdjust?: ColorAdjustProperty | ColorAdjustProperty[];
+  /**
+   * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
+   *
+   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **81** |   No    | **13** | **81** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color-scheme
+   */
+  colorScheme?: ColorSchemeProperty | ColorSchemeProperty[];
   /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
@@ -19502,9 +19532,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **52** | **34**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **52** | **34**  | **9.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-caps
    */
@@ -19601,9 +19631,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |                Edge                 |                 IE                  |
-   * | :----: | :-----: | :----: | :---------------------------------: | :---------------------------------: |
-   * |  n/a   |   No    |   No   | **79** _(-ms-high-contrast-adjust)_ | **10** _(-ms-high-contrast-adjust)_ |
+   * | Chrome | Firefox | Safari |              Edge               |                 IE                  |
+   * | :----: | :-----: | :----: | :-----------------------------: | :---------------------------------: |
+   * | **89** |   No    |   No   |             **79**              | **10** _(-ms-high-contrast-adjust)_ |
+   * |        |         |        | 12 _(-ms-high-contrast-adjust)_ |                                     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust
    */
@@ -19615,10 +19646,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |          Edge           |             IE              |
-   * | :----: | :-----: | :------: | :---------------------: | :-------------------------: |
-   * | **57** | **70**  | **10.1** |         **16**          | **10** _(-ms-grid-columns)_ |
-   * |        |         |          | 12 _(-ms-grid-columns)_ |                             |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **70**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns
    */
@@ -19644,10 +19674,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |         Edge         |            IE            |
-   * | :----: | :-----: | :------: | :------------------: | :----------------------: |
-   * | **57** | **70**  | **10.1** |        **16**        | **10** _(-ms-grid-rows)_ |
-   * |        |         |          | 12 _(-ms-grid-rows)_ |                          |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **70**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows
    */
@@ -20955,6 +20984,18 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   overflowClipBox?: OverflowClipBoxProperty | OverflowClipBoxProperty[];
   /**
+   * **Syntax**: `<visual-box> || <length [0,∞]>`
+   *
+   * **Initial value**: `0px`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **90** |   No    |   No   | **90** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin
+   */
+  overflowClipMargin?: OverflowClipMarginProperty<TLength> | OverflowClipMarginProperty<TLength>[];
+  /**
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
    * **Initial value**: `auto`
@@ -21009,20 +21050,6 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
   overflowY?: OverflowYProperty | OverflowYProperty[];
-  /**
-   * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
-   *
-   * **Syntax**: `[ contain | none | auto ]{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **63** | **59**  |   No   | **18** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
-   */
-  overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
   /**
    * The **`overscroll-behavior-block`** CSS property sets the browser's behavior when the block direction boundary of a scrolling area is reached.
    *
@@ -21471,9 +21498,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
-   * **Syntax**: `over | under | inter-character`
+   * **Syntax**: `[ alternate || [ over | under ] ] | inter-character`
    *
-   * **Initial value**: `over`
+   * **Initial value**: `alternate`
    *
    * | Chrome  | Firefox |    Safari     | Edge  | IE  |
    * | :-----: | :-----: | :-----------: | :---: | :-: |
@@ -22085,10 +22112,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * |           Chrome           | Firefox |              Safari              |                Edge                |                   IE                   |
-   * | :------------------------: | :-----: | :------------------------------: | :--------------------------------: | :------------------------------------: |
-   * |           **48**           | **48**  | **5.1** _(-webkit-text-combine)_ |               15-79                | **11** _(-ms-text-combine-horizontal)_ |
-   * | 9 _(-webkit-text-combine)_ |         |                                  | 12 _(-ms-text-combine-horizontal)_ |                                        |
+   * |           Chrome           | Firefox |              Safari              | Edge  |                   IE                   |
+   * | :------------------------: | :-----: | :------------------------------: | :---: | :------------------------------------: |
+   * |           **48**           | **48**  | **5.1** _(-webkit-text-combine)_ | 15-79 | **11** _(-ms-text-combine-horizontal)_ |
+   * | 9 _(-webkit-text-combine)_ |         |                                  |       |                                        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
    */
@@ -22176,7 +22203,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **70**  | **12.1** | **87** | No  |
+   * | **89** | **70**  | **12.1** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness
    */
@@ -22188,9 +22215,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **70**  | **12.1** | **87** | No  |
+   * | Chrome | Firefox |  Safari  | Edge  | IE  |
+   * | :----: | :-----: | :------: | :---: | :-: |
+   * | 87-89  | **70**  | **12.1** | 87-89 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness
    */
@@ -22776,6 +22803,20 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    */
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   /**
+   * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
+   *
+   * **Syntax**: `<bg-position>#`
+   *
+   * **Initial value**: `0% 0%`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
+   */
+  backgroundPosition?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
+  /**
    * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
@@ -23234,6 +23275,20 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow
    */
   overflow?: OverflowProperty | OverflowProperty[];
+  /**
+   * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
+   *
+   * **Syntax**: `[ contain | none | auto ]{1,2}`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **63** | **59**  |   No   | **18** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+   */
+  overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
   /**
    * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
    *
@@ -24905,9 +24960,9 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
-   * **Syntax**: `over | under | inter-character`
+   * **Syntax**: `[ alternate || [ over | under ] ] | inter-character`
    *
-   * **Initial value**: `over`
+   * **Initial value**: `alternate`
    */
   WebkitRubyPosition?: RubyPositionProperty | RubyPositionProperty[];
   /**
@@ -25568,16 +25623,6 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    * @deprecated
    */
   scrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[];
-  /**
-   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
-   *
-   * **Syntax**: `none | all | [ digits <integer>? ]`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  textCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[];
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -26792,20 +26837,6 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "background-origin"?: BackgroundOriginProperty | BackgroundOriginProperty[];
   /**
-   * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
-   *
-   * **Syntax**: `<bg-position>#`
-   *
-   * **Initial value**: `0% 0%`
-   *
-   * | Chrome | Firefox | Safari |  Edge  |  IE   |
-   * | :----: | :-----: | :----: | :----: | :---: |
-   * | **1**  |  **1**  | **1**  | **12** | **4** |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
-   */
-  "background-position"?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
-  /**
    * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
@@ -27101,9 +27132,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -27115,9 +27146,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -27428,9 +27459,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -27442,9 +27473,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **89** | **66**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **89** | **66**  |   No   | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -27748,6 +27779,20 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
    */
   "color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[];
+  /**
+   * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
+   *
+   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **81** |   No    | **13** | **81** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/color-scheme
+   */
+  "color-scheme"?: ColorSchemeProperty | ColorSchemeProperty[];
   /**
    * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
@@ -28313,9 +28358,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **52** | **34**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **52** | **34**  | **9.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-caps
    */
@@ -28412,9 +28457,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |                Edge                 |                 IE                  |
-   * | :----: | :-----: | :----: | :---------------------------------: | :---------------------------------: |
-   * |  n/a   |   No    |   No   | **79** _(-ms-high-contrast-adjust)_ | **10** _(-ms-high-contrast-adjust)_ |
+   * | Chrome | Firefox | Safari |              Edge               |                 IE                  |
+   * | :----: | :-----: | :----: | :-----------------------------: | :---------------------------------: |
+   * | **89** |   No    |   No   |             **79**              | **10** _(-ms-high-contrast-adjust)_ |
+   * |        |         |        | 12 _(-ms-high-contrast-adjust)_ |                                     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust
    */
@@ -28426,10 +28472,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |          Edge           |             IE              |
-   * | :----: | :-----: | :------: | :---------------------: | :-------------------------: |
-   * | **57** | **70**  | **10.1** |         **16**          | **10** _(-ms-grid-columns)_ |
-   * |        |         |          | 12 _(-ms-grid-columns)_ |                             |
+   * | Chrome | Firefox |  Safari  |  Edge  |             IE              |
+   * | :----: | :-----: | :------: | :----: | :-------------------------: |
+   * | **57** | **70**  | **10.1** | **16** | **10** _(-ms-grid-columns)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-columns
    */
@@ -28455,10 +28500,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |         Edge         |            IE            |
-   * | :----: | :-----: | :------: | :------------------: | :----------------------: |
-   * | **57** | **70**  | **10.1** |        **16**        | **10** _(-ms-grid-rows)_ |
-   * |        |         |          | 12 _(-ms-grid-rows)_ |                          |
+   * | Chrome | Firefox |  Safari  |  Edge  |            IE            |
+   * | :----: | :-----: | :------: | :----: | :----------------------: |
+   * | **57** | **70**  | **10.1** | **16** | **10** _(-ms-grid-rows)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/grid-auto-rows
    */
@@ -29766,6 +29810,18 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "overflow-clip-box"?: OverflowClipBoxProperty | OverflowClipBoxProperty[];
   /**
+   * **Syntax**: `<visual-box> || <length [0,∞]>`
+   *
+   * **Initial value**: `0px`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **90** |   No    |   No   | **90** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin
+   */
+  "overflow-clip-margin"?: OverflowClipMarginProperty<TLength> | OverflowClipMarginProperty<TLength>[];
+  /**
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
    * **Initial value**: `auto`
@@ -29820,20 +29876,6 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
   "overflow-y"?: OverflowYProperty | OverflowYProperty[];
-  /**
-   * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
-   *
-   * **Syntax**: `[ contain | none | auto ]{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **63** | **59**  |   No   | **18** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
-   */
-  "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
   /**
    * The **`overscroll-behavior-block`** CSS property sets the browser's behavior when the block direction boundary of a scrolling area is reached.
    *
@@ -30282,9 +30324,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
-   * **Syntax**: `over | under | inter-character`
+   * **Syntax**: `[ alternate || [ over | under ] ] | inter-character`
    *
-   * **Initial value**: `over`
+   * **Initial value**: `alternate`
    *
    * | Chrome  | Firefox |    Safari     | Edge  | IE  |
    * | :-----: | :-----: | :-----------: | :---: | :-: |
@@ -30896,10 +30938,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * |           Chrome           | Firefox |              Safari              |                Edge                |                   IE                   |
-   * | :------------------------: | :-----: | :------------------------------: | :--------------------------------: | :------------------------------------: |
-   * |           **48**           | **48**  | **5.1** _(-webkit-text-combine)_ |               15-79                | **11** _(-ms-text-combine-horizontal)_ |
-   * | 9 _(-webkit-text-combine)_ |         |                                  | 12 _(-ms-text-combine-horizontal)_ |                                        |
+   * |           Chrome           | Firefox |              Safari              | Edge  |                   IE                   |
+   * | :------------------------: | :-----: | :------------------------------: | :---: | :------------------------------------: |
+   * |           **48**           | **48**  | **5.1** _(-webkit-text-combine)_ | 15-79 | **11** _(-ms-text-combine-horizontal)_ |
+   * | 9 _(-webkit-text-combine)_ |         |                                  |       |                                        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
    */
@@ -30987,7 +31029,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **70**  | **12.1** | **87** | No  |
+   * | **89** | **70**  | **12.1** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness
    */
@@ -30999,9 +31041,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **70**  | **12.1** | **87** | No  |
+   * | Chrome | Firefox |  Safari  | Edge  | IE  |
+   * | :----: | :-----: | :------: | :---: | :-: |
+   * | 87-89  | **70**  | **12.1** | 87-89 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness
    */
@@ -31587,6 +31629,20 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    */
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[];
   /**
+   * The **`background-position`** CSS property sets the initial position for each background image. The position is relative to the position layer set by `background-origin`.
+   *
+   * **Syntax**: `<bg-position>#`
+   *
+   * **Initial value**: `0% 0%`
+   *
+   * | Chrome | Firefox | Safari |  Edge  |  IE   |
+   * | :----: | :-----: | :----: | :----: | :---: |
+   * | **1**  |  **1**  | **1**  | **12** | **4** |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/background-position
+   */
+  "background-position"?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[];
+  /**
    * The **`border`** CSS property sets an element's border. It's a shorthand for `border-width`, `border-style`, and `border-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
@@ -32045,6 +32101,20 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow
    */
   overflow?: OverflowProperty | OverflowProperty[];
+  /**
+   * The **`overscroll-behavior`** CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for `overscroll-behavior-x` and `overscroll-behavior-y`.
+   *
+   * **Syntax**: `[ contain | none | auto ]{1,2}`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **63** | **59**  |   No   | **18** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+   */
+  "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[];
   /**
    * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
    *
@@ -33718,9 +33788,9 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
-   * **Syntax**: `over | under | inter-character`
+   * **Syntax**: `[ alternate || [ over | under ] ] | inter-character`
    *
-   * **Initial value**: `over`
+   * **Initial value**: `alternate`
    */
   "-webkit-ruby-position"?: RubyPositionProperty | RubyPositionProperty[];
   /**
@@ -34381,16 +34451,6 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    * @deprecated
    */
   "scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[];
-  /**
-   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
-   *
-   * **Syntax**: `none | all | [ digits <integer>? ]`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[];
   /**
    * The **`box-align`** CSS property specifies how an element aligns its contents across its layout in a perpendicular direction. The effect of the property is only visible if there is extra space in the box.
    *
@@ -35493,6 +35553,8 @@ export type SimplePseudos =
   | ":-moz-placeholder"
   | ":-moz-read-only"
   | ":-moz-read-write"
+  | ":-moz-ui-invalid"
+  | ":-moz-ui-valid"
   | ":-ms-fullscreen"
   | ":-ms-input-placeholder"
   | ":-webkit-any-link"
@@ -35503,7 +35565,6 @@ export type SimplePseudos =
   | "::-moz-range-thumb"
   | "::-moz-range-track"
   | "::-moz-selection"
-  | "::-moz-ui-invalid"
   | "::-ms-backdrop"
   | "::-ms-browse"
   | "::-ms-check"
@@ -35589,6 +35650,7 @@ export type SimplePseudos =
   | ":target"
   | ":target-within"
   | ":user-invalid"
+  | ":user-valid"
   | ":valid"
   | ":visited";
 
@@ -35807,7 +35869,6 @@ export type HtmlAttributes =
   | "[translate]"
   | "[truespeed]"
   | "[type]"
-  | "[typemustmatch]"
   | "[usemap]"
   | "[valign]"
   | "[value]"
@@ -35927,7 +35988,6 @@ export type SvgAttributes =
   | "[lang]"
   | "[lengthAdjust]"
   | "[letter-spacing]"
-  | "[lighterForError]"
   | "[lighting-color]"
   | "[limitingConeAngle]"
   | "[local]"
@@ -36348,6 +36408,8 @@ export type ClipPathProperty = Globals | GeometryBox | "none" | string;
 export type ColorProperty = Globals | Color;
 
 export type ColorAdjustProperty = Globals | "economy" | "exact";
+
+export type ColorSchemeProperty = Globals | "dark" | "light" | "normal" | string;
 
 export type ColumnCountProperty = Globals | "auto" | number;
 
@@ -36885,6 +36947,8 @@ export type OverflowBlockProperty = Globals | "auto" | "clip" | "hidden" | "scro
 
 export type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
+export type OverflowClipMarginProperty<TLength> = Globals | VisualBox | TLength | string;
+
 export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
@@ -36961,7 +37025,7 @@ export type RubyAlignProperty = Globals | "center" | "space-around" | "space-bet
 
 export type RubyMergeProperty = Globals | "auto" | "collapse" | "separate";
 
-export type RubyPositionProperty = Globals | "over" | "under";
+export type RubyPositionProperty = Globals | "alternate" | "over" | "under" | string;
 
 export type ScaleProperty = Globals | "none" | string | number;
 
@@ -37152,6 +37216,8 @@ export type UnicodeBidiProperty =
   | "-moz-isolate-override"
   | "-moz-plaintext"
   | "-webkit-isolate"
+  | "-webkit-isolate-override"
+  | "-webkit-plaintext"
   | "bidi-override"
   | "embed"
   | "isolate"
@@ -38017,3 +38083,5 @@ type StepTimingFunction = "step-end" | "step-start" | string;
 type TrackBreadth<TLength> = TLength | "auto" | "max-content" | "min-content" | string;
 
 type ViewportLength<TLength> = TLength | "auto" | string;
+
+type VisualBox = "border-box" | "content-box" | "padding-box";

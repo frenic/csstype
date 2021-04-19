@@ -22,7 +22,6 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   backgroundColor?: BackgroundColorProperty,
   backgroundImage?: BackgroundImageProperty,
   backgroundOrigin?: BackgroundOriginProperty,
-  backgroundPosition?: BackgroundPositionProperty<TLength>,
   backgroundPositionX?: BackgroundPositionXProperty<TLength>,
   backgroundPositionY?: BackgroundPositionYProperty<TLength>,
   backgroundRepeat?: BackgroundRepeatProperty,
@@ -87,6 +86,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   clipPath?: ClipPathProperty,
   color?: ColorProperty,
   colorAdjust?: ColorAdjustProperty,
+  colorScheme?: ColorSchemeProperty,
   columnCount?: ColumnCountProperty,
   columnFill?: ColumnFillProperty,
   columnGap?: ColumnGapProperty<TLength>,
@@ -226,11 +226,11 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   overflowAnchor?: OverflowAnchorProperty,
   overflowBlock?: OverflowBlockProperty,
   overflowClipBox?: OverflowClipBoxProperty,
+  overflowClipMargin?: OverflowClipMarginProperty<TLength>,
   overflowInline?: OverflowInlineProperty,
   overflowWrap?: OverflowWrapProperty,
   overflowX?: OverflowXProperty,
   overflowY?: OverflowYProperty,
-  overscrollBehavior?: OverscrollBehaviorProperty,
   overscrollBehaviorBlock?: OverscrollBehaviorBlockProperty,
   overscrollBehaviorInline?: OverscrollBehaviorInlineProperty,
   overscrollBehaviorX?: OverscrollBehaviorXProperty,
@@ -356,6 +356,7 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   all?: Globals,
   animation?: AnimationProperty,
   background?: BackgroundProperty<TLength>,
+  backgroundPosition?: BackgroundPositionProperty<TLength>,
   border?: BorderProperty<TLength>,
   borderBlock?: BorderBlockProperty<TLength>,
   borderBlockEnd?: BorderBlockEndProperty<TLength>,
@@ -392,6 +393,7 @@ export type StandardShorthandProperties<TLength = string | 0> = {
   offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
   overflow?: OverflowProperty,
+  overscrollBehavior?: OverscrollBehaviorProperty,
   padding?: PaddingProperty<TLength>,
   placeItems?: PlaceItemsProperty,
   placeSelf?: PlaceSelfProperty,
@@ -689,7 +691,6 @@ export type ObsoleteProperties<TLength = string | 0> = {
   scrollSnapTypeX?: ScrollSnapTypeXProperty,
   scrollSnapTypeY?: ScrollSnapTypeYProperty,
   scrollbarTrackColor?: MsScrollbarTrackColorProperty,
-  textCombineHorizontal?: TextCombineUprightProperty,
   KhtmlBoxAlign?: BoxAlignProperty,
   KhtmlBoxDirection?: BoxDirectionProperty,
   KhtmlBoxFlex?: GlobalsNumber,
@@ -859,7 +860,6 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "background-color"?: BackgroundColorProperty,
   "background-image"?: BackgroundImageProperty,
   "background-origin"?: BackgroundOriginProperty,
-  "background-position"?: BackgroundPositionProperty<TLength>,
   "background-position-x"?: BackgroundPositionXProperty<TLength>,
   "background-position-y"?: BackgroundPositionYProperty<TLength>,
   "background-repeat"?: BackgroundRepeatProperty,
@@ -924,6 +924,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "clip-path"?: ClipPathProperty,
   color?: ColorProperty,
   "color-adjust"?: ColorAdjustProperty,
+  "color-scheme"?: ColorSchemeProperty,
   "column-count"?: ColumnCountProperty,
   "column-fill"?: ColumnFillProperty,
   "column-gap"?: ColumnGapProperty<TLength>,
@@ -1063,11 +1064,11 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "overflow-anchor"?: OverflowAnchorProperty,
   "overflow-block"?: OverflowBlockProperty,
   "overflow-clip-box"?: OverflowClipBoxProperty,
+  "overflow-clip-margin"?: OverflowClipMarginProperty<TLength>,
   "overflow-inline"?: OverflowInlineProperty,
   "overflow-wrap"?: OverflowWrapProperty,
   "overflow-x"?: OverflowXProperty,
   "overflow-y"?: OverflowYProperty,
-  "overscroll-behavior"?: OverscrollBehaviorProperty,
   "overscroll-behavior-block"?: OverscrollBehaviorBlockProperty,
   "overscroll-behavior-inline"?: OverscrollBehaviorInlineProperty,
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty,
@@ -1193,6 +1194,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   all?: Globals,
   animation?: AnimationProperty,
   background?: BackgroundProperty<TLength>,
+  "background-position"?: BackgroundPositionProperty<TLength>,
   border?: BorderProperty<TLength>,
   "border-block"?: BorderBlockProperty<TLength>,
   "border-block-end"?: BorderBlockEndProperty<TLength>,
@@ -1229,6 +1231,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0> = {
   offset?: OffsetProperty<TLength>,
   outline?: OutlineProperty<TLength>,
   overflow?: OverflowProperty,
+  "overscroll-behavior"?: OverscrollBehaviorProperty,
   padding?: PaddingProperty<TLength>,
   "place-items"?: PlaceItemsProperty,
   "place-self"?: PlaceSelfProperty,
@@ -1526,7 +1529,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "scroll-snap-type-x"?: ScrollSnapTypeXProperty,
   "scroll-snap-type-y"?: ScrollSnapTypeYProperty,
   "scrollbar-track-color"?: MsScrollbarTrackColorProperty,
-  "text-combine-horizontal"?: TextCombineUprightProperty,
   "-khtml-box-align"?: BoxAlignProperty,
   "-khtml-box-direction"?: BoxDirectionProperty,
   "-khtml-box-flex"?: GlobalsNumber,
@@ -1699,7 +1701,6 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   backgroundColor?: BackgroundColorProperty | BackgroundColorProperty[],
   backgroundImage?: BackgroundImageProperty | BackgroundImageProperty[],
   backgroundOrigin?: BackgroundOriginProperty | BackgroundOriginProperty[],
-  backgroundPosition?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[],
   backgroundPositionX?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[],
   backgroundPositionY?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[],
   backgroundRepeat?: BackgroundRepeatProperty | BackgroundRepeatProperty[],
@@ -1764,6 +1765,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   clipPath?: ClipPathProperty | ClipPathProperty[],
   color?: ColorProperty | ColorProperty[],
   colorAdjust?: ColorAdjustProperty | ColorAdjustProperty[],
+  colorScheme?: ColorSchemeProperty | ColorSchemeProperty[],
   columnCount?: ColumnCountProperty | ColumnCountProperty[],
   columnFill?: ColumnFillProperty | ColumnFillProperty[],
   columnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
@@ -1903,11 +1905,11 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   overflowAnchor?: OverflowAnchorProperty | OverflowAnchorProperty[],
   overflowBlock?: OverflowBlockProperty | OverflowBlockProperty[],
   overflowClipBox?: OverflowClipBoxProperty | OverflowClipBoxProperty[],
+  overflowClipMargin?: OverflowClipMarginProperty<TLength> | OverflowClipMarginProperty<TLength>[],
   overflowInline?: OverflowInlineProperty | OverflowInlineProperty[],
   overflowWrap?: OverflowWrapProperty | OverflowWrapProperty[],
   overflowX?: OverflowXProperty | OverflowXProperty[],
   overflowY?: OverflowYProperty | OverflowYProperty[],
-  overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[],
   overscrollBehaviorBlock?: OverscrollBehaviorBlockProperty | OverscrollBehaviorBlockProperty[],
   overscrollBehaviorInline?: OverscrollBehaviorInlineProperty | OverscrollBehaviorInlineProperty[],
   overscrollBehaviorX?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[],
@@ -2033,6 +2035,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   all?: Globals | Globals[],
   animation?: AnimationProperty | AnimationProperty[],
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
+  backgroundPosition?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[],
   border?: BorderProperty<TLength> | BorderProperty<TLength>[],
   borderBlock?: BorderBlockProperty<TLength> | BorderBlockProperty<TLength>[],
   borderBlockEnd?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[],
@@ -2069,6 +2072,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0> = {
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   overflow?: OverflowProperty | OverflowProperty[],
+  overscrollBehavior?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   placeItems?: PlaceItemsProperty | PlaceItemsProperty[],
   placeSelf?: PlaceSelfProperty | PlaceSelfProperty[],
@@ -2366,7 +2370,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   scrollSnapTypeX?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
   scrollSnapTypeY?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
   scrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
-  textCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[],
   KhtmlBoxAlign?: BoxAlignProperty | BoxAlignProperty[],
   KhtmlBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
   KhtmlBoxFlex?: GlobalsNumber | GlobalsNumber[],
@@ -2539,7 +2542,6 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "background-color"?: BackgroundColorProperty | BackgroundColorProperty[],
   "background-image"?: BackgroundImageProperty | BackgroundImageProperty[],
   "background-origin"?: BackgroundOriginProperty | BackgroundOriginProperty[],
-  "background-position"?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[],
   "background-position-x"?: BackgroundPositionXProperty<TLength> | BackgroundPositionXProperty<TLength>[],
   "background-position-y"?: BackgroundPositionYProperty<TLength> | BackgroundPositionYProperty<TLength>[],
   "background-repeat"?: BackgroundRepeatProperty | BackgroundRepeatProperty[],
@@ -2604,6 +2606,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "clip-path"?: ClipPathProperty | ClipPathProperty[],
   color?: ColorProperty | ColorProperty[],
   "color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[],
+  "color-scheme"?: ColorSchemeProperty | ColorSchemeProperty[],
   "column-count"?: ColumnCountProperty | ColumnCountProperty[],
   "column-fill"?: ColumnFillProperty | ColumnFillProperty[],
   "column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
@@ -2743,11 +2746,11 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "overflow-anchor"?: OverflowAnchorProperty | OverflowAnchorProperty[],
   "overflow-block"?: OverflowBlockProperty | OverflowBlockProperty[],
   "overflow-clip-box"?: OverflowClipBoxProperty | OverflowClipBoxProperty[],
+  "overflow-clip-margin"?: OverflowClipMarginProperty<TLength> | OverflowClipMarginProperty<TLength>[],
   "overflow-inline"?: OverflowInlineProperty | OverflowInlineProperty[],
   "overflow-wrap"?: OverflowWrapProperty | OverflowWrapProperty[],
   "overflow-x"?: OverflowXProperty | OverflowXProperty[],
   "overflow-y"?: OverflowYProperty | OverflowYProperty[],
-  "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[],
   "overscroll-behavior-block"?: OverscrollBehaviorBlockProperty | OverscrollBehaviorBlockProperty[],
   "overscroll-behavior-inline"?: OverscrollBehaviorInlineProperty | OverscrollBehaviorInlineProperty[],
   "overscroll-behavior-x"?: OverscrollBehaviorXProperty | OverscrollBehaviorXProperty[],
@@ -2873,6 +2876,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   all?: Globals | Globals[],
   animation?: AnimationProperty | AnimationProperty[],
   background?: BackgroundProperty<TLength> | BackgroundProperty<TLength>[],
+  "background-position"?: BackgroundPositionProperty<TLength> | BackgroundPositionProperty<TLength>[],
   border?: BorderProperty<TLength> | BorderProperty<TLength>[],
   "border-block"?: BorderBlockProperty<TLength> | BorderBlockProperty<TLength>[],
   "border-block-end"?: BorderBlockEndProperty<TLength> | BorderBlockEndProperty<TLength>[],
@@ -2909,6 +2913,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0> = {
   offset?: OffsetProperty<TLength> | OffsetProperty<TLength>[],
   outline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   overflow?: OverflowProperty | OverflowProperty[],
+  "overscroll-behavior"?: OverscrollBehaviorProperty | OverscrollBehaviorProperty[],
   padding?: PaddingProperty<TLength> | PaddingProperty<TLength>[],
   "place-items"?: PlaceItemsProperty | PlaceItemsProperty[],
   "place-self"?: PlaceSelfProperty | PlaceSelfProperty[],
@@ -3206,7 +3211,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "scroll-snap-type-x"?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
   "scroll-snap-type-y"?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
   "scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
-  "text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[],
   "-khtml-box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "-khtml-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
   "-khtml-box-flex"?: GlobalsNumber | GlobalsNumber[],
@@ -3609,6 +3613,8 @@ export type SimplePseudos =
   | ":-moz-placeholder"
   | ":-moz-read-only"
   | ":-moz-read-write"
+  | ":-moz-ui-invalid"
+  | ":-moz-ui-valid"
   | ":-ms-fullscreen"
   | ":-ms-input-placeholder"
   | ":-webkit-any-link"
@@ -3619,7 +3625,6 @@ export type SimplePseudos =
   | "::-moz-range-thumb"
   | "::-moz-range-track"
   | "::-moz-selection"
-  | "::-moz-ui-invalid"
   | "::-ms-backdrop"
   | "::-ms-browse"
   | "::-ms-check"
@@ -3705,6 +3710,7 @@ export type SimplePseudos =
   | ":target"
   | ":target-within"
   | ":user-invalid"
+  | ":user-valid"
   | ":valid"
   | ":visited";
 
@@ -3923,7 +3929,6 @@ export type HtmlAttributes =
   | "[translate]"
   | "[truespeed]"
   | "[type]"
-  | "[typemustmatch]"
   | "[usemap]"
   | "[valign]"
   | "[value]"
@@ -4043,7 +4048,6 @@ export type SvgAttributes =
   | "[lang]"
   | "[lengthAdjust]"
   | "[letter-spacing]"
-  | "[lighterForError]"
   | "[lighting-color]"
   | "[limitingConeAngle]"
   | "[local]"
@@ -4464,6 +4468,8 @@ export type ClipPathProperty = Globals | GeometryBox | "none" | string;
 export type ColorProperty = Globals | Color;
 
 export type ColorAdjustProperty = Globals | "economy" | "exact";
+
+export type ColorSchemeProperty = Globals | "dark" | "light" | "normal" | string;
 
 export type ColumnCountProperty = Globals | "auto" | number;
 
@@ -5001,6 +5007,8 @@ export type OverflowBlockProperty = Globals | "auto" | "clip" | "hidden" | "scro
 
 export type OverflowClipBoxProperty = Globals | "content-box" | "padding-box";
 
+export type OverflowClipMarginProperty<TLength> = Globals | VisualBox | TLength | string;
+
 export type OverflowInlineProperty = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type OverflowWrapProperty = Globals | "anywhere" | "break-word" | "normal";
@@ -5077,7 +5085,7 @@ export type RubyAlignProperty = Globals | "center" | "space-around" | "space-bet
 
 export type RubyMergeProperty = Globals | "auto" | "collapse" | "separate";
 
-export type RubyPositionProperty = Globals | "over" | "under";
+export type RubyPositionProperty = Globals | "alternate" | "over" | "under" | string;
 
 export type ScaleProperty = Globals | "none" | string | number;
 
@@ -5268,6 +5276,8 @@ export type UnicodeBidiProperty =
   | "-moz-isolate-override"
   | "-moz-plaintext"
   | "-webkit-isolate"
+  | "-webkit-isolate-override"
+  | "-webkit-plaintext"
   | "bidi-override"
   | "embed"
   | "isolate"
@@ -6133,3 +6143,5 @@ type StepTimingFunction = "step-end" | "step-start" | string;
 type TrackBreadth<TLength> = TLength | "auto" | "max-content" | "min-content" | string;
 
 type ViewportLength<TLength> = TLength | "auto" | string;
+
+type VisualBox = "border-box" | "content-box" | "padding-box";
