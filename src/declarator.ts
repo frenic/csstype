@@ -94,20 +94,18 @@ export const timeGeneric: IGenerics = {
 };
 
 export async function declarator(minTypesInDataTypes: number) {
-  const [
-    dataTypes,
-    [htmlProperties, svgProperties, atRules, globals, pseudos, htmlAttributes, svgAttributes],
-  ] = await getDataTypesOf(dictionary =>
-    Promise.all([
-      getHtmlProperties(dictionary, minTypesInDataTypes),
-      getSvgProperties(dictionary, minTypesInDataTypes),
-      getAtRules(dictionary, minTypesInDataTypes),
-      getGlobals(dictionary, minTypesInDataTypes),
-      getPseudos(),
-      getHtmlAttributes(),
-      getSvgAttributes(),
-    ]),
-  );
+  const [dataTypes, [htmlProperties, svgProperties, atRules, globals, pseudos, htmlAttributes, svgAttributes]] =
+    await getDataTypesOf(dictionary =>
+      Promise.all([
+        getHtmlProperties(dictionary, minTypesInDataTypes),
+        getSvgProperties(dictionary, minTypesInDataTypes),
+        getAtRules(dictionary, minTypesInDataTypes),
+        getGlobals(dictionary, minTypesInDataTypes),
+        getPseudos(),
+        getHtmlAttributes(),
+        getSvgAttributes(),
+      ]),
+    );
 
   function getGenericsFrom(types: MixedType[]): IGenerics[] {
     let hasLength = false;

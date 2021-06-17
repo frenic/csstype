@@ -1,6 +1,10 @@
 {
-  "javascript.validate.enable": false,
-  "files.eol": "\n",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": ["javascript", "javascriptreact", "html", "typescript", "typescriptreact"],
+  "files.eol": "\n",
   "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -7,7 +7,6 @@ import { error, warn } from './logger';
 
 const pathToCache = path.join(__dirname, '../data/urls.json');
 
-// tslint:disable-next-line:no-var-requires
 const urlData: Record<string, string> = require(pathToCache);
 
 const turndown = new Turndown();

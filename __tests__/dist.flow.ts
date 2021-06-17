@@ -1,7 +1,6 @@
 import { spawnSync } from 'child_process';
 import * as path from 'path';
 
-// tslint:disable-next-line no-var-requires
 const flow: string = require('flow-bin');
 
 test('it detects errors', () => {

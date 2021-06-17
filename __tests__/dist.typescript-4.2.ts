@@ -1,5 +1,5 @@
 import * as path from 'path';
-import * as ts from 'typescript';
+import * as ts from 'typescript4.2';
 import { removeAbsolutePaths, COMPILER_OPTIONS } from './typescript-utils';
 
 describe('Typescript 4.2', () => {
@@ -13,7 +13,7 @@ describe('Typescript 4.2', () => {
       )}`;
     });
 
-    expect(Number(ts.versionMajorMinor)).toBe(4.3);
+    expect(Number(ts.versionMajorMinor)).toBe(4.2);
     expect(errors.length).toBe(15);
     for (const error of errors) {
       expect(error).toMatchSnapshot();

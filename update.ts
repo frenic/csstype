@@ -1,5 +1,6 @@
-import * as path from 'path';
 import build from './build';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import * as packageJson from './package.json';
 import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
@@ -119,13 +120,5 @@ function reset() {
 }
 
 function install(pure = false) {
-  return spawnAsync(
-    path.resolve(__dirname, 'node_modules/.bin/', process.platform === 'win32' ? 'yarn.cmd' : 'yarn'),
-    { stdio: 'inherit' },
-    '--silent',
-    '--no-progress',
-    '--non-interactive',
-    '--ignore-scripts',
-    pure ? '--pure-lockfile' : '',
-  );
+  return spawnAsync('npm', { stdio: 'inherit' }, 'install', '--silent', '--ignore-scripts', pure ? '--dry-run' : '');
 }

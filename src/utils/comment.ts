@@ -6,7 +6,7 @@ import { warn } from './logger';
 import { getSummary } from './urls';
 
 const BLANK_ROW = '';
-const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\}]+\}\})/;
+const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\\}]+\}\})/;
 
 export async function composeCommentBlock(
   compatibilityData: MDN.CompatData | undefined,

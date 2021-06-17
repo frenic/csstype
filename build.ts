@@ -22,18 +22,16 @@ if (process.argv.includes('--start')) {
     .then(() => {
       console.info('Done! Watching...');
       let debounce: NodeJS.Timer;
-      chokidar
-        .watch(path.join(__dirname, 'src'), { ignored: '*.json', ignoreInitial: true })
-        .on('all', (event: string) => {
-          clearTimeout(debounce);
-          debounce = setTimeout(
-            () =>
-              trigger()
-                .catch(e => console.error(e))
-                .then(() => console.info('Done! Moving on...')),
-            300,
-          );
-        });
+      chokidar.watch(path.join(__dirname, 'src'), { ignored: '*.json', ignoreInitial: true }).on('all', () => {
+        clearTimeout(debounce);
+        debounce = setTimeout(
+          () =>
+            trigger()
+              .catch(e => console.error(e))
+              .then(() => console.info('Done! Moving on...')),
+          300,
+        );
+      });
     });
 }
 

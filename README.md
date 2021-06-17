@@ -33,8 +33,6 @@ _Further examples below will be in TypeScript!_
 
 ```sh
 $ npm install csstype
-$ # or
-$ yarn add csstype
 ```
 
 ## Table of content
@@ -267,7 +265,7 @@ _If you're using CSS Custom Properties you can step directly to step 3._
 
 ### Commands
 
-- `yarn build` Generates typings and type checks them
-- `yarn watch` Runs build on each save
-- `yarn test` Runs the tests
-- `yarn lazy` Type checks, lints and formats everything
+- `npm run build` Generates typings and type checks them
+- `npm run watch` Runs build on each save
+- `npm run test` Runs the tests
+- `npm run lazy` Type checks, lints and formats everything

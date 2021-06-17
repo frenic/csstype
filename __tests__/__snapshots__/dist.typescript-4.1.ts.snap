@@ -1,40 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Typescript 4.1 detects errors 1`] = `
-"46:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
+"44:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
   Object literal may only specify known properties, and 'unknownProperty' does not exist in type 'Properties<0 | (string & {}), string & {}>'."
 `;
 
-exports[`Typescript 4.1 detects errors 2`] = `"50:11 - Type 'number' is not assignable to type 'string'."`;
+exports[`Typescript 4.1 detects errors 2`] = `"48:11 - Type 'number' is not assignable to type 'string'."`;
 
-exports[`Typescript 4.1 detects errors 3`] = `"51:10 - Type 'number' is not assignable to type 'string'."`;
+exports[`Typescript 4.1 detects errors 3`] = `"49:10 - Type 'number' is not assignable to type 'string'."`;
 
 exports[`Typescript 4.1 detects errors 4`] = `
-"56:6 - Type '{}' is not assignable to type 'string & {}'.
+"54:6 - Type '{}' is not assignable to type 'string & {}'.
   Type '{}' is not assignable to type 'string'."
 `;
 
 exports[`Typescript 4.1 detects errors 5`] = `
-"61:10 - Type '\\"auto\\" | (string & {})' is not assignable to type '\\"auto\\"'.
+"59:10 - Type '\\"auto\\" | (string & {})' is not assignable to type '\\"auto\\"'.
   Type 'string & {}' is not assignable to type '\\"auto\\"'."
 `;
 
-exports[`Typescript 4.1 detects errors 6`] = `"68:6 - Type '1' is not assignable to type 'string | 0'."`;
+exports[`Typescript 4.1 detects errors 6`] = `"66:6 - Type '1' is not assignable to type 'string | 0'."`;
 
-exports[`Typescript 4.1 detects errors 7`] = `"80:23 - This condition will always return 'false' since the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
+exports[`Typescript 4.1 detects errors 7`] = `"78:23 - This condition will always return 'false' since the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
 
-exports[`Typescript 4.1 detects errors 8`] = `"94:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
+exports[`Typescript 4.1 detects errors 8`] = `"92:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 4.1 detects errors 9`] = `"104:14 - Argument of type '1' is not assignable to parameter of type 'string | 0 | (string | 0)[]'."`;
+exports[`Typescript 4.1 detects errors 9`] = `"102:14 - Argument of type '1' is not assignable to parameter of type 'string | 0 | (string | 0)[]'."`;
 
-exports[`Typescript 4.1 detects errors 10`] = `"105:15 - Type '1' is not assignable to type 'string | 0'."`;
+exports[`Typescript 4.1 detects errors 10`] = `"103:15 - Type '1' is not assignable to type 'string | 0'."`;
 
-exports[`Typescript 4.1 detects errors 11`] = `"118:23 - This condition will always return 'false' since the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
+exports[`Typescript 4.1 detects errors 11`] = `"116:23 - This condition will always return 'false' since the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
 
-exports[`Typescript 4.1 detects errors 12`] = `"132:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
+exports[`Typescript 4.1 detects errors 12`] = `"130:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 4.1 detects errors 13`] = `"142:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | \\"max-content\\" | ... 5 more ... | [...]'."`;
+exports[`Typescript 4.1 detects errors 13`] = `"140:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | \\"max-content\\" | ... 5 more ... | [...]'."`;
 
-exports[`Typescript 4.1 detects errors 14`] = `"143:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
+exports[`Typescript 4.1 detects errors 14`] = `"141:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
 
-exports[`Typescript 4.1 detects errors 15`] = `"147:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;
+exports[`Typescript 4.1 detects errors 15`] = `"146:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;
