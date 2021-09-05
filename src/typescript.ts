@@ -72,9 +72,20 @@ export default async function typescript() {
     'TValue extends infer TUnpacked & {} ? TUnpacked : TValue' +
     ';' +
     EOL;
+  const fallback = 'export type Fallback<T> = { [P in keyof T]: T[P] | T[P][] };' + EOL;
 
   return (
-    disableAutoExport + EOL + propertyValue + EOL + interfacesOutput + EOL + declarationsOutput + EOL + namespaceOutput
+    disableAutoExport +
+    EOL +
+    propertyValue +
+    EOL +
+    fallback +
+    EOL +
+    interfacesOutput +
+    EOL +
+    declarationsOutput +
+    EOL +
+    namespaceOutput
   );
 }
 
@@ -108,10 +119,10 @@ async function outputInterface(entry: Interface, currentNamespace: INamespace | 
     }
     output += '}';
   } else {
-    output += 'type ' + entry.name + stringifyGenerics(entry.generics, true, stringifySimpleTypes) + ' = {' + EOL;
+    output += 'type ' + entry.name + stringifyGenerics(entry.generics, true, stringifySimpleTypes) + ' = ';
 
     const name = entry.fallbacks.name + stringifyGenerics(entry.generics, false, stringifySimpleTypes);
-    output += '[P in keyof ' + name + ']: ' + name + '[P] | ' + name + '[P][];' + EOL + '}';
+    output += `Fallback<${name}>`;
   }
 
   return output;

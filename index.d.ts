@@ -6,6 +6,8 @@ export type PropertyValue<TValue> = TValue extends Array<infer AValue>
   ? TUnpacked
   : TValue;
 
+export type Fallback<T> = { [P in keyof T]: T[P] | T[P][] };
+
 export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
    * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
@@ -17652,37 +17654,25 @@ export interface PropertiesHyphen<TLength = (string & {}) | 0, TTime = string & 
     ObsoletePropertiesHyphen<TLength, TTime>,
     SvgPropertiesHyphen<TLength, TTime> {}
 
-export type StandardLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof StandardLonghandProperties<TLength, TTime>]: StandardLonghandProperties<TLength, TTime>[P] | StandardLonghandProperties<TLength, TTime>[P][];
-};
+export type StandardLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardLonghandProperties<TLength, TTime>>;
 
-export type StandardShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof StandardShorthandProperties<TLength, TTime>]: StandardShorthandProperties<TLength, TTime>[P] | StandardShorthandProperties<TLength, TTime>[P][];
-};
+export type StandardShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardShorthandProperties<TLength, TTime>>;
 
 export interface StandardPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardLonghandPropertiesFallback<TLength, TTime>,
     StandardShorthandPropertiesFallback<TLength, TTime> {}
 
-export type VendorLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof VendorLonghandProperties<TLength, TTime>]: VendorLonghandProperties<TLength, TTime>[P] | VendorLonghandProperties<TLength, TTime>[P][];
-};
+export type VendorLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorLonghandProperties<TLength, TTime>>;
 
-export type VendorShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof VendorShorthandProperties<TLength, TTime>]: VendorShorthandProperties<TLength, TTime>[P] | VendorShorthandProperties<TLength, TTime>[P][];
-};
+export type VendorShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorShorthandProperties<TLength, TTime>>;
 
 export interface VendorPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends VendorLonghandPropertiesFallback<TLength, TTime>,
     VendorShorthandPropertiesFallback<TLength, TTime> {}
 
-export type ObsoletePropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof ObsoleteProperties<TLength, TTime>]: ObsoleteProperties<TLength, TTime>[P] | ObsoleteProperties<TLength, TTime>[P][];
-};
+export type ObsoletePropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ObsoleteProperties<TLength, TTime>>;
 
-export type SvgPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof SvgProperties<TLength, TTime>]: SvgProperties<TLength, TTime>[P] | SvgProperties<TLength, TTime>[P][];
-};
+export type SvgPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<SvgProperties<TLength, TTime>>;
 
 export interface PropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardPropertiesFallback<TLength, TTime>,
@@ -17690,37 +17680,25 @@ export interface PropertiesFallback<TLength = (string & {}) | 0, TTime = string 
     ObsoletePropertiesFallback<TLength, TTime>,
     SvgPropertiesFallback<TLength, TTime> {}
 
-export type StandardLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof StandardLonghandPropertiesHyphen<TLength, TTime>]: StandardLonghandPropertiesHyphen<TLength, TTime>[P] | StandardLonghandPropertiesHyphen<TLength, TTime>[P][];
-};
+export type StandardLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardLonghandPropertiesHyphen<TLength, TTime>>;
 
-export type StandardShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof StandardShorthandPropertiesHyphen<TLength, TTime>]: StandardShorthandPropertiesHyphen<TLength, TTime>[P] | StandardShorthandPropertiesHyphen<TLength, TTime>[P][];
-};
+export type StandardShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardShorthandPropertiesHyphen<TLength, TTime>>;
 
 export interface StandardPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardLonghandPropertiesHyphenFallback<TLength, TTime>,
     StandardShorthandPropertiesHyphenFallback<TLength, TTime> {}
 
-export type VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof VendorLonghandPropertiesHyphen<TLength, TTime>]: VendorLonghandPropertiesHyphen<TLength, TTime>[P] | VendorLonghandPropertiesHyphen<TLength, TTime>[P][];
-};
+export type VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorLonghandPropertiesHyphen<TLength, TTime>>;
 
-export type VendorShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof VendorShorthandPropertiesHyphen<TLength, TTime>]: VendorShorthandPropertiesHyphen<TLength, TTime>[P] | VendorShorthandPropertiesHyphen<TLength, TTime>[P][];
-};
+export type VendorShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorShorthandPropertiesHyphen<TLength, TTime>>;
 
 export interface VendorPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends VendorLonghandPropertiesHyphenFallback<TLength, TTime>,
     VendorShorthandPropertiesHyphenFallback<TLength, TTime> {}
 
-export type ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof ObsoletePropertiesHyphen<TLength, TTime>]: ObsoletePropertiesHyphen<TLength, TTime>[P] | ObsoletePropertiesHyphen<TLength, TTime>[P][];
-};
+export type ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ObsoletePropertiesHyphen<TLength, TTime>>;
 
-export type SvgPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-  [P in keyof SvgPropertiesHyphen<TLength, TTime>]: SvgPropertiesHyphen<TLength, TTime>[P] | SvgPropertiesHyphen<TLength, TTime>[P][];
-};
+export type SvgPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<SvgPropertiesHyphen<TLength, TTime>>;
 
 export interface PropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardPropertiesHyphenFallback<TLength, TTime>,
@@ -20009,13 +19987,9 @@ export namespace AtRule {
     system?: System;
   }
 
-  export type CounterStyleFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof CounterStyle<TLength, TTime>]: CounterStyle<TLength, TTime>[P] | CounterStyle<TLength, TTime>[P][];
-  };
+  export type CounterStyleFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<CounterStyle<TLength, TTime>>;
 
-  export type CounterStyleHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof CounterStyleHyphen<TLength, TTime>]: CounterStyleHyphen<TLength, TTime>[P] | CounterStyleHyphen<TLength, TTime>[P][];
-  };
+  export type CounterStyleHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<CounterStyleHyphen<TLength, TTime>>;
 
   export interface FontFace<TLength = (string & {}) | 0, TTime = string & {}> {
     MozFontFeatureSettings?: FontFeatureSettings;
@@ -20045,13 +20019,9 @@ export namespace AtRule {
     "unicode-range"?: string;
   }
 
-  export type FontFaceFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof FontFace<TLength, TTime>]: FontFace<TLength, TTime>[P] | FontFace<TLength, TTime>[P][];
-  };
+  export type FontFaceFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontFace<TLength, TTime>>;
 
-  export type FontFaceHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof FontFaceHyphen<TLength, TTime>]: FontFaceHyphen<TLength, TTime>[P] | FontFaceHyphen<TLength, TTime>[P][];
-  };
+  export type FontFaceHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontFaceHyphen<TLength, TTime>>;
 
   export interface Page<TLength = (string & {}) | 0, TTime = string & {}> {
     size?: Size<TLength>;
@@ -20061,13 +20031,9 @@ export namespace AtRule {
     size?: Size<TLength>;
   }
 
-  export type PageFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof Page<TLength, TTime>]: Page<TLength, TTime>[P] | Page<TLength, TTime>[P][];
-  };
+  export type PageFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<Page<TLength, TTime>>;
 
-  export type PageHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof PageHyphen<TLength, TTime>]: PageHyphen<TLength, TTime>[P] | PageHyphen<TLength, TTime>[P][];
-  };
+  export type PageHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<PageHyphen<TLength, TTime>>;
 
   export interface Property<TLength = (string & {}) | 0, TTime = string & {}> {
     inherits?: Inherits;
@@ -20081,13 +20047,9 @@ export namespace AtRule {
     syntax?: string;
   }
 
-  export type PropertyFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof Property<TLength, TTime>]: Property<TLength, TTime>[P] | Property<TLength, TTime>[P][];
-  };
+  export type PropertyFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<Property<TLength, TTime>>;
 
-  export type PropertyHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof PropertyHyphen<TLength, TTime>]: PropertyHyphen<TLength, TTime>[P] | PropertyHyphen<TLength, TTime>[P][];
-  };
+  export type PropertyHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<PropertyHyphen<TLength, TTime>>;
 
   export interface Viewport<TLength = (string & {}) | 0, TTime = string & {}> {
     height?: Height<TLength>;
@@ -20119,13 +20081,9 @@ export namespace AtRule {
     zoom?: Zoom;
   }
 
-  export type ViewportFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof Viewport<TLength, TTime>]: Viewport<TLength, TTime>[P] | Viewport<TLength, TTime>[P][];
-  };
+  export type ViewportFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<Viewport<TLength, TTime>>;
 
-  export type ViewportHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = {
-    [P in keyof ViewportHyphen<TLength, TTime>]: ViewportHyphen<TLength, TTime>[P] | ViewportHyphen<TLength, TTime>[P][];
-  };
+  export type ViewportHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ViewportHyphen<TLength, TTime>>;
 
   type Range = "auto" | "infinite" | (string & {}) | (number & {});
 
