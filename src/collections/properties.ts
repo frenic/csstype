@@ -1,6 +1,6 @@
 import { properties as rawSvgProperties } from '../data/svg';
 import parse from '../syntax/parser';
-import typing, { ResolvedType } from '../syntax/typer';
+import typer, { ResolvedType } from '../syntax/typer';
 import { composeCommentBlock } from '../utils/comment';
 import {
   compatNames,
@@ -53,7 +53,7 @@ export async function getGlobals(
 ): Promise<ResolvedType[]> {
   const dataTypes = await resolveDataTypes(
     dataTypeDictionary,
-    typing(compatSyntax(await getGlobalCompatibilityData(), parse(await getPropertySyntax(ALL)))),
+    typer(compatSyntax(await getGlobalCompatibilityData(), parse(await getPropertySyntax(ALL)))),
     minTypesInDataTypes,
   );
 
@@ -129,7 +129,7 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
 
     const types = await resolveDataTypes(
       dataTypeDictionary,
-      typing(entities),
+      typer(entities),
       minTypesInDataTypes,
       createPropertyDataTypeResolver(compatibilityData),
     );
@@ -191,7 +191,7 @@ export async function getSvgProperties(dataTypeDictionary: IDataTypeDictionary, 
         comment: () => Promise.resolve(undefined),
         types: await resolveDataTypes(
           dataTypeDictionary,
-          typing(parse(syntax)),
+          typer(parse(syntax)),
           minTypesInDataTypes,
           createPropertyDataTypeResolver(compatibilityData),
         ),

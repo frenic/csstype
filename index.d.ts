@@ -18583,7 +18583,7 @@ export namespace Property {
 
   export type ColumnCount = Globals | "auto" | (number & {});
 
-  export type ColumnFill = Globals | "auto" | "balance";
+  export type ColumnFill = Globals | "auto" | "balance" | "balance-all";
 
   export type ColumnGap<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {});
 
@@ -18964,7 +18964,7 @@ export namespace Property {
 
   export type MaskMode = Globals | DataType.MaskingMode | (string & {});
 
-  export type MaskOrigin = Globals | DataType.Box | "margin-box" | (string & {});
+  export type MaskOrigin = Globals | DataType.GeometryBox | (string & {});
 
   export type MaskPosition<TLength = (string & {}) | 0> = Globals | DataType.Position<TLength> | (string & {});
 
@@ -19212,7 +19212,7 @@ export namespace Property {
 
   export type RubyMerge = Globals | "auto" | "collapse" | "separate";
 
-  export type RubyPosition = Globals | "alternate" | "over" | "under" | (string & {});
+  export type RubyPosition = Globals | "alternate" | "inter-character" | "over" | "under" | (string & {});
 
   export type Scale = Globals | "none" | (string & {}) | (number & {});
 
@@ -19280,7 +19280,7 @@ export namespace Property {
 
   export type ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
 
-  export type ScrollbarColor = Globals | DataType.Color | "auto";
+  export type ScrollbarColor = Globals | "auto" | (string & {});
 
   export type ScrollbarGutter = Globals | "auto" | "stable" | (string & {});
 
@@ -19302,7 +19302,7 @@ export namespace Property {
 
   export type TextAlignLast = Globals | "auto" | "center" | "end" | "justify" | "left" | "right" | "start";
 
-  export type TextCombineUpright = Globals | "-ms-text-combine-horizontal" | "all" | "digits" | "none" | (string & {});
+  export type TextCombineUpright = Globals | "all" | "none" | (string & {});
 
   export type TextDecoration<TLength = (string & {}) | 0> =
     | Globals
@@ -20060,7 +20060,7 @@ export namespace AtRule {
 
   export type ViewportHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ViewportHyphen<TLength, TTime>>;
 
-  type Range = "auto" | "infinite" | (string & {}) | (number & {});
+  type Range = "auto" | (string & {});
 
   type SpeakAs = "auto" | "bullets" | "numbers" | "spell-out" | "words" | (string & {});
 

@@ -1,7 +1,7 @@
 import * as CSS from '../..';
 
 // Old CSSType import needs to be AFTER the current one
-import * as OldCSS from 'csstype';
+import * as OldCSS from 'oldcsstype';
 
 const css: CSS.Properties = {
   flexGrow: 1,

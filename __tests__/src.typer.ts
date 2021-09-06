@@ -1,24 +1,16 @@
 import parse from '../src/syntax/parser';
-import typing, { Type } from '../src/syntax/typer';
+import typer, { Type } from '../src/syntax/typer';
 
 describe('typing', () => {
   it('types combinators', () => {
-    expect(typing(parse('something another-thing'))).toHaveLength(1);
-    expect(typing(parse('something && another-thing'))).toHaveLength(1);
-    expect(typing(parse('something || another-thing'))).toHaveLength(3);
-    expect(typing(parse('something | another-thing'))).toHaveLength(2);
+    expect(typer(parse('something another-thing'))).toHaveLength(1);
+    expect(typer(parse('something && another-thing'))).toHaveLength(1);
+    expect(typer(parse('something || another-thing'))).toHaveLength(3);
+    expect(typer(parse('something | another-thing'))).toHaveLength(2);
   });
 
   it('types components', () => {
-    expect(typing(parse('something | 100 | <color>'))).toMatchObject([
-      { type: Type.StringLiteral },
-      { type: Type.NumericLiteral },
-      { type: Type.DataType },
-    ]);
-  });
-
-  it('types group components', () => {
-    expect(typing(parse('[ something | 100 | <color> ]'))).toMatchObject([
+    expect(typer(parse('something | 100 | <color>'))).toMatchObject([
       { type: Type.StringLiteral },
       { type: Type.NumericLiteral },
       { type: Type.DataType },
@@ -26,56 +18,78 @@ describe('typing', () => {
   });
 
   it('types optional components', () => {
-    expect(typing(parse('something another-thing? | 100'))).toMatchObject([
-      { type: Type.StringLiteral },
-      { type: Type.String },
-      { type: Type.NumericLiteral },
-    ]);
-    expect(typing(parse('something another-thing? yet-another-thing? | 100'))).toMatchObject([
-      { type: Type.StringLiteral },
-      { type: Type.String },
-      { type: Type.NumericLiteral },
-    ]);
-    expect(typing(parse('something? another-thing yet-another-thing? | 100'))).toMatchObject([
+    expect(typer(parse('something another-thing? | 100'))).toMatchObject([
       { type: Type.String },
       { type: Type.StringLiteral },
       { type: Type.NumericLiteral },
     ]);
-    expect(typing(parse('something? another-thing? yet-another-thing | 100'))).toMatchObject([
+    expect(typer(parse('something another-thing? yet-another-thing? | 100'))).toMatchObject([
       { type: Type.String },
       { type: Type.StringLiteral },
       { type: Type.NumericLiteral },
     ]);
-    expect(typing(parse('something? another-thing? yet-another-thing? | 100'))).toMatchObject([
-      { type: Type.StringLiteral },
+    expect(typer(parse('something? another-thing yet-another-thing? | 100'))).toMatchObject([
       { type: Type.String },
+      { type: Type.StringLiteral },
+      { type: Type.NumericLiteral },
+    ]);
+    expect(typer(parse('something? another-thing? yet-another-thing | 100'))).toMatchObject([
+      { type: Type.String },
+      { type: Type.StringLiteral },
+      { type: Type.NumericLiteral },
+    ]);
+    expect(typer(parse('something? another-thing? yet-another-thing? | 100'))).toMatchObject([
+      { type: Type.String },
+      { type: Type.StringLiteral },
       { type: Type.StringLiteral },
       { type: Type.StringLiteral },
       { type: Type.NumericLiteral },
     ]);
-    expect(typing(parse('something another-thing yet-another-thing? | 100'))).toMatchObject([
+    expect(typer(parse('something another-thing yet-another-thing? | 100'))).toMatchObject([
       { type: Type.String },
       { type: Type.NumericLiteral },
     ]);
-    expect(typing(parse('something another-thing? yet-another-thing | 100'))).toMatchObject([
+    expect(typer(parse('something another-thing? yet-another-thing | 100'))).toMatchObject([
       { type: Type.String },
       { type: Type.NumericLiteral },
     ]);
-    expect(typing(parse('something? another-thing yet-another-thing | 100'))).toMatchObject([
+    expect(typer(parse('something? another-thing yet-another-thing | 100'))).toMatchObject([
       { type: Type.String },
+      { type: Type.NumericLiteral },
+    ]);
+  });
+
+  it('does not duplicate types', () => {
+    expect(typer(parse('something? another-thing | something? another-thing | 100 | 100'))).toMatchObject([
+      { type: Type.String },
+      { type: Type.StringLiteral },
       { type: Type.NumericLiteral },
     ]);
   });
 
   it('types optional group components', () => {
-    expect(typing(parse('[ something ] [ another-thing ]? | 100'))).toMatchObject([
-      { type: Type.StringLiteral },
+    expect(typer(parse('[ something another-thing ]? 100'))).toMatchObject([
       { type: Type.String },
       { type: Type.NumericLiteral },
     ]);
   });
 
+  it('types multipliers', () => {
+    expect(typer(parse('something-x | something-y | [ something | another-thing ]{1,2}'))).toMatchObject([
+      { type: Type.StringLiteral },
+      { type: Type.StringLiteral },
+      { type: Type.String },
+      { type: Type.StringLiteral },
+      { type: Type.StringLiteral },
+    ]);
+    expect(typer(parse('something{1,4} [ antoher-thing{1,4} ]?'))).toMatchObject([
+      { type: Type.String },
+      { type: Type.StringLiteral },
+    ]);
+    expect(typer(parse('something#'))).toMatchObject([{ type: Type.String }, { type: Type.StringLiteral }]);
+  });
+
   it('types number with range', () => {
-    expect(typing(parse('<number [1,1000]>'))).toMatchObject([{ type: Type.Number }]);
+    expect(typer(parse('<number [1,1000]>'))).toMatchObject([{ type: Type.Number }]);
   });
 });

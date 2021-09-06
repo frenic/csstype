@@ -2,6 +2,7 @@
   "name": "csstype-test",
   "private": true,
   "dependencies": {
+    "csstype": "file:..",
     "typescript3.5": "npm:typescript@~3.5.0",
     "typescript3.6": "npm:typescript@~3.6.0",
     "typescript3.7": "npm:typescript@~3.7.0",

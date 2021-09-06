@@ -1,16 +1,6 @@
 import * as cssTypes from 'mdn-data/css/types.json';
-import { isProperty, isSyntax } from '../collections/syntaxes';
-import { warn } from '../utils/logger';
-import {
-  Combinator,
-  Component,
-  EntityType,
-  isCombinator,
-  isComponent,
-  isMandatoryEntity,
-  isMandatoryMultiplied,
-  isOptionallyMultiplied,
-} from './parser';
+import { definitionSyntax, DSNode, DSNodeGroup } from 'css-tree';
+import { isSyntax } from '../collections/syntaxes';
 
 export enum Type {
   Alias,
@@ -29,8 +19,8 @@ interface IBasic {
   type: Type.String | Type.Number | Type.Length | Type.Time;
 }
 
-export interface IDataType<TType = Type.DataType | Type.PropertyReference> {
-  type: TType;
+export interface IDataType<TTypeKind = Type.DataType | Type.PropertyReference> {
+  type: TTypeKind;
   name: string;
 }
 
@@ -51,283 +41,171 @@ export type TypeType<TDataType = IDataType> = IBasic | IStringLiteral | INumeric
 
 export type ResolvedType = TypeType<DataType>;
 
-let getBasicDataTypes = () => {
-  const types = Object.keys(cssTypes).reduce<{ [name: string]: IBasic }>((dataTypes, name) => {
-    switch (name) {
-      case 'number':
-      case 'integer':
-        dataTypes[name] = {
-          type: Type.Number,
-        };
-        break;
-      case 'length':
-        dataTypes[name] = {
-          type: Type.Length,
-        };
-        break;
-      case 'time':
-        dataTypes[name] = {
-          type: Type.Time,
-        };
-        break;
-      default:
-        if (!isSyntax(name)) {
-          dataTypes[name] = {
-            type: Type.String,
-          };
-        }
-    }
-    return dataTypes;
-  }, {});
+export default function typer(node: DSNodeGroup): TypeType[] {
+  const types: TypeType[] = [];
+  let hasStringKeyword = false;
+  let hasNumbericKeyword = false;
+  let hasLength = false;
+  let hasTime = false;
+  const stringLiterals: string[] = [];
+  const numericLiterals: string[] = [];
+  const dataTypes: string[] = [];
+  const propertyReferences: string[] = [];
 
-  // Cache
-  getBasicDataTypes = () => types;
+  let skipComponent = 0;
+  const componentsToSkip: DSNode[] = [];
 
-  return types;
-};
-
-export default function typing(entities: EntityType[]): TypeType[] {
-  let mandatoryCombinatorCount = 0;
-  let mandatoryNonCombinatorsCount = 0;
-  for (const entity of entities) {
-    if (isMandatoryEntity(entity)) {
-      if (isCombinator(entity)) {
-        mandatoryCombinatorCount++;
-      } else {
-        mandatoryNonCombinatorsCount++;
-      }
-    }
-  }
-
-  let types: TypeType[] = [];
-
-  for (const entity of entities) {
-    if (isComponent(entity)) {
-      if (isMandatoryEntity(entity)) {
-        // In case of `something another-thing` we want to fall back to string until component combinations is solved
-        if (mandatoryCombinatorCount > 0 && mandatoryNonCombinatorsCount > 1) {
-          types = addString(types);
-          continue;
-        }
-      } else {
-        // In case of `something another-thing?` we want to add string until component combinations is solved
-        if (mandatoryCombinatorCount > 0 && mandatoryNonCombinatorsCount > 0) {
-          types = addString(types);
-          continue;
-        }
+  definitionSyntax.walk(node, {
+    enter(node) {
+      if (skipComponent > 0 || componentsToSkip.includes(node)) {
+        skipComponent++;
+        return;
       }
 
-      if (isMandatoryMultiplied(entity.multiplier)) {
-        // In case of `something{2,3}` we fallback to `string` and stop as it needs to be multiplied
-        types = addString(types);
-        continue;
-      } else if (isOptionallyMultiplied(entity.multiplier)) {
-        // In case of `something{1,2}` or `something+` we fallback to `string` but moves on
-        // as it doesn't necessary needs to be multiplied
-        types = addString(types);
-      }
-
-      switch (entity.component) {
-        case Component.Keyword:
-          if (String(Number(entity.value)) === entity.value) {
-            types = addNumericLiteral(types, Number(entity.value));
-          } else {
-            types = addStringLiteral(types, entity.value);
+      switch (node.type) {
+        case 'Group':
+          if (node.terms.length === 1) {
+            return;
           }
-          break;
-        case Component.DataType: {
-          const value = valueOfDataType(entity.value);
-          if (value in getBasicDataTypes()) {
-            types = addType(types, getBasicDataTypes()[value]);
-          } else if (isSyntax(value)) {
-            types = addDataType(types, value);
-          } else {
-            const property = /'([^']+)'/.exec(value);
-            if (property && isProperty(property[1])) {
-              types = addPropertyReference(types, property[1]);
-            } else if (isProperty(value)) {
-              warn('Property reference `%s` was malformed', value);
-              types = addPropertyReference(types, value);
-            } else {
-              warn('Data type `%s` was missing', value);
-              types = addString(types);
+
+          if (node.combinator === ' ' || node.combinator === '&&' || node.combinator === '||') {
+            if (!hasStringKeyword) {
+              types.push({ type: Type.String });
+              hasStringKeyword = true;
+            }
+
+            let mandatoryTermsInGroup = 0;
+            const optionalComponents: DSNode[] = [];
+
+            if (node.combinator !== '||') {
+              for (const term of node.terms) {
+                if (term.type === 'Multiplier') {
+                  if (term.min > 0) {
+                    mandatoryTermsInGroup++;
+                  } else {
+                    optionalComponents.push(term);
+                  }
+                } else {
+                  mandatoryTermsInGroup++;
+                }
+              }
+
+              if (mandatoryTermsInGroup > 1) {
+                // The whole group resolves to string for now,
+                // like `something another-thing`
+                skipComponent++;
+              } else if (mandatoryTermsInGroup === 1) {
+                // Proceed with the only mandatory term in group,
+                // like `something another-thing?`
+                componentsToSkip.push(...optionalComponents);
+              }
             }
           }
           break;
-        }
-        case Component.Group: {
-          for (const type of typing(entity.entities)) {
-            types = addType(types, type);
+        case 'Multiplier':
+          if (node.min > 1) {
+            skipComponent++;
+
+            if (!hasStringKeyword) {
+              types.push({ type: Type.String });
+              hasStringKeyword = true;
+            }
           }
-        }
+          if (node.max === 0 || node.max > 1) {
+            if (!hasStringKeyword) {
+              types.push({ type: Type.String });
+              hasStringKeyword = true;
+            }
+          }
+          break;
+        case 'Keyword':
+          if (node.name === String(parseInt(node.name))) {
+            if (!numericLiterals.includes(node.name)) {
+              types.push({ type: Type.NumericLiteral, literal: parseInt(node.name) });
+              numericLiterals.push(node.name);
+            }
+          } else {
+            if (!stringLiterals.includes(node.name)) {
+              types.push({ type: Type.StringLiteral, literal: node.name });
+              stringLiterals.push(node.name);
+            }
+          }
+          break;
+        case 'Type':
+          switch (node.name) {
+            case 'number':
+            case 'integer':
+              if (!hasNumbericKeyword) {
+                types.push({ type: Type.Number });
+                hasNumbericKeyword = true;
+              }
+              break;
+            case 'length':
+              if (!hasLength) {
+                types.push({ type: Type.Length });
+                hasLength = true;
+              }
+              break;
+            case 'time':
+              if (!hasTime) {
+                types.push({ type: Type.Time });
+                hasTime = true;
+              }
+              break;
+            default:
+              if (!isSyntax(node.name) && node.name in cssTypes) {
+                if (!hasStringKeyword) {
+                  types.push({ type: Type.String });
+                  hasStringKeyword = true;
+                }
+              } else if (!dataTypes.includes(node.name)) {
+                types.push({ type: Type.DataType, name: node.name });
+                dataTypes.push(node.name);
+              }
+              break;
+          }
+          break;
+        case 'Property':
+          if (!propertyReferences.includes(node.name)) {
+            types.push({ type: Type.PropertyReference, name: node.name });
+            propertyReferences.push(node.name);
+          }
+          break;
+        default:
+          if (!hasStringKeyword) {
+            types.push({ type: Type.String });
+            hasStringKeyword = true;
+          }
+          skipComponent++;
+          break;
       }
-    } else if (isCombinator(entity)) {
-      if (entity.combinator === Combinator.DoubleBar || isMandatoryEntity(entity)) {
-        types = addString(types);
+    },
+    leave() {
+      if (skipComponent > 0) {
+        skipComponent--;
       }
-    } else {
-      types = addString(types);
-    }
-  }
-
-  if (mandatoryNonCombinatorsCount > 1 && mandatoryCombinatorCount > 1) {
-    return [{ type: Type.String }];
-  }
-
+    },
+  });
   return types;
 }
 
-function addLength<TDataType extends IDataType>(types: TypeType<TDataType>[]): TypeType<TDataType>[] {
-  if (types.every(type => type.type !== Type.Length)) {
-    return [
-      ...types,
-      {
-        type: Type.Length,
-      },
-    ];
-  }
-
-  return types;
-}
-
-function addTime<TDataType extends IDataType>(types: TypeType<TDataType>[]): TypeType<TDataType>[] {
-  if (types.every(type => type.type !== Type.Time)) {
-    return [
-      ...types,
-      {
-        type: Type.Time,
-      },
-    ];
-  }
-
-  return types;
-}
-
-function addString<TDataType extends IDataType>(types: TypeType<TDataType>[]): TypeType<TDataType>[] {
-  if (types.every(type => type.type !== Type.String)) {
-    return [
-      ...types,
-      {
-        type: Type.String,
-      },
-    ];
-  }
-
-  return types;
-}
-
-function addNumber<TDataType extends IDataType>(types: TypeType<TDataType>[]): TypeType<TDataType>[] {
-  if (types.every(type => type.type !== Type.Number)) {
-    return [
-      ...types,
-      {
-        type: Type.Number,
-      },
-    ];
-  }
-
-  return types;
-}
-
-function addStringLiteral<TDataType extends IDataType>(
-  types: TypeType<TDataType>[],
-  literal: string,
-): TypeType<TDataType>[] {
-  if (types.every(type => !(type.type === Type.StringLiteral && type.literal === literal))) {
-    return [
-      ...types,
-      {
-        type: Type.StringLiteral,
-        literal,
-      },
-    ];
-  }
-
-  return types;
-}
-
-function addNumericLiteral<TDataType extends IDataType>(
-  types: TypeType<TDataType>[],
-  literal: number,
-): TypeType<TDataType>[] {
-  if (types.every(type => !(type.type === Type.NumericLiteral && type.literal === literal))) {
-    return [
-      ...types,
-      {
-        type: Type.NumericLiteral,
-        literal,
-      },
-    ];
-  }
-
-  return types;
-}
-
-function addDataType<TDataType extends IDataType>(types: TypeType<TDataType>[], name: string): TypeType<TDataType>[] {
-  if (types.every(type => !(type.type === Type.DataType && type.name === name))) {
-    return [
-      ...types,
-      {
-        type: Type.DataType,
-        name,
-      } as TDataType,
-    ];
-  }
-
-  return types;
-}
-
-function addPropertyReference<TDataType extends IDataType>(
-  types: TypeType<TDataType>[],
-  name: string,
-): TypeType<TDataType>[] {
-  if (types.every(type => !(type.type === Type.PropertyReference && type.name === name))) {
-    return [
-      ...types,
-      {
-        type: Type.PropertyReference,
-        name,
-      } as TDataType,
-    ];
-  }
-
-  return types;
-}
-
-export function addType<TDataType extends IDataType>(
-  types: TypeType<TDataType>[],
-  type: TypeType,
-): TypeType<TDataType>[] {
+export function hasType(types: TypeType[], type: TypeType): boolean {
   switch (type.type) {
     case Type.Length:
-      return addLength(types);
+      return types.some(t => t.type === Type.Length);
     case Type.Time:
-      return addTime(types);
+      return types.some(t => t.type === Type.Time);
     case Type.String:
-      return addString(types);
+      return types.some(t => t.type === Type.String);
     case Type.Number:
-      return addNumber(types);
+      return types.some(t => t.type === Type.Number);
     case Type.StringLiteral:
-      return addStringLiteral(types, type.literal);
+      return types.some(t => t.type === Type.StringLiteral && t.literal === type.literal);
     case Type.NumericLiteral:
-      return addNumericLiteral(types, type.literal);
+      return types.some(t => t.type === Type.NumericLiteral && t.literal === type.literal);
     case Type.DataType:
-      return addDataType(types, type.name);
+      return types.some(t => t.type === Type.DataType && t.name === type.name);
     case Type.PropertyReference:
-      return addPropertyReference(types, type.name);
-  }
-}
-
-export function hasType(originalTypes: TypeType[], type: TypeType): boolean {
-  const testTypes = addType(originalTypes, type);
-  return originalTypes === testTypes;
-}
-
-const VALUE_OF_DATA_TYPE = /<([^\s>]+)/;
-function valueOfDataType(value: string) {
-  try {
-    return value.match(VALUE_OF_DATA_TYPE)![1];
-  } catch {
-    throw new Error(`Was not able to get value of \`${value}\``);
+      return types.some(t => t.type === Type.PropertyReference && t.name === type.name);
   }
 }
