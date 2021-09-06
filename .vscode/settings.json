@@ -6,5 +6,6 @@
   "eslint.alwaysShowStatus": true,
   "eslint.validate": ["javascript", "javascriptreact", "html", "typescript", "typescriptreact"],
   "files.eol": "\n",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "jest.jestCommandLine": "npm run test --"
 }

@@ -1,5 +1,5 @@
 import parse from '../syntax/parser';
-import typing, { addType, DataType, hasType, IDataType, ResolvedType, Type, TypeType } from '../syntax/typer';
+import typer, { DataType, hasType, IDataType, ResolvedType, Type, TypeType } from '../syntax/typer';
 import { compatSyntax } from '../utils/compat';
 import { getPropertySyntax, getSyntax } from './syntaxes';
 
@@ -23,7 +23,7 @@ export async function resolveDataTypes(
     min: number,
   ) => Promise<ResolvedType[]> = simpleDataTypeResolver,
 ): Promise<ResolvedType[]> {
-  let resolvedDataTypes: ResolvedType[] = [];
+  const resolvedDataTypes: ResolvedType[] = [];
 
   for (const type of types) {
     switch (type.type) {
@@ -32,10 +32,15 @@ export async function resolveDataTypes(
 
         if (resolvedDataType.length >= minTypesInDataTypes) {
           // Dissolve data type if it's too small
-          resolvedDataTypes = addType(resolvedDataTypes, addDataType(dictionary, type.name, resolvedDataType));
+          const dataType = createDataType(dictionary, type.name, resolvedDataType);
+          if (!hasType(resolvedDataTypes, dataType)) {
+            resolvedDataTypes.push(dataType);
+          }
         } else {
           for (const resolvedType of resolvedDataType) {
-            resolvedDataTypes = addType(resolvedDataTypes, resolvedType);
+            if (!hasType(resolvedDataTypes, resolvedType)) {
+              resolvedDataTypes.push(resolvedType);
+            }
           }
         }
         break;
@@ -45,12 +50,16 @@ export async function resolveDataTypes(
 
         // Dissolve property references completely
         for (const resolvedType of resolvedProperty) {
-          resolvedDataTypes = addType(resolvedDataTypes, resolvedType);
+          if (!hasType(resolvedDataTypes, resolvedType)) {
+            resolvedDataTypes.push(resolvedType);
+          }
         }
         break;
       }
       default:
-        resolvedDataTypes = addType(resolvedDataTypes, type);
+        if (!hasType(resolvedDataTypes, type)) {
+          resolvedDataTypes.push(type);
+        }
     }
   }
 
@@ -64,7 +73,7 @@ async function simpleDataTypeResolver(
 ): Promise<ResolvedType[]> {
   const syntax = await getSyntax(dataType.name);
   return syntax
-    ? resolveDataTypes(dictionary, typing(parse(syntax)), minTypesInDataTypes, simpleDataTypeResolver)
+    ? resolveDataTypes(dictionary, typer(parse(syntax)), minTypesInDataTypes, simpleDataTypeResolver)
     : [{ type: Type.String }];
 }
 
@@ -76,7 +85,7 @@ export function createPropertyDataTypeResolver(data: MDN.CompatData | undefined)
       return syntax
         ? resolveDataTypes(
             dictionary,
-            data ? typing(compatSyntax(data, parse(syntax))) : typing(parse(syntax)),
+            data ? typer(compatSyntax(data, parse(syntax))) : typer(parse(syntax)),
             minTypesInDataTypes,
             resolver,
           )
@@ -86,7 +95,7 @@ export function createPropertyDataTypeResolver(data: MDN.CompatData | undefined)
   return resolver;
 }
 
-function addDataType(dictionary: IDataTypeDictionary, name: string, types: ResolvedType[], index = 0): DataType {
+function createDataType(dictionary: IDataTypeDictionary, name: string, types: ResolvedType[], index = 0): DataType {
   const realName = name + (index > 0 ? index + 1 : '');
 
   // Rename in case of conflict
@@ -95,12 +104,12 @@ function addDataType(dictionary: IDataTypeDictionary, name: string, types: Resol
 
     for (const type of types) {
       if (!hasType(existingDataType, type)) {
-        return addDataType(dictionary, name, types, index + 1);
+        return createDataType(dictionary, name, types, index + 1);
       }
     }
     for (const type of existingDataType) {
       if (!hasType(types, type)) {
-        return addDataType(dictionary, name, types, index + 1);
+        return createDataType(dictionary, name, types, index + 1);
       }
     }
   }

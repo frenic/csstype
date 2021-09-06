@@ -4,12 +4,12 @@
     "target": "es6",
     "lib": ["es7", "es2015.iterable", "dom"],
     "types": ["jest"],
-    "sourceMap": false,
     "noEmit": true,
     "strict": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
-    "allowJs": false
+    "allowJs": false,
+    "inlineSourceMap": true
   },
   "ts-node": {
     "ignore": ["prepare-tests.ts"]

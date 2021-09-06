@@ -1,10 +1,10 @@
 import * as glob from 'fast-glob';
 import * as rawGlobalAttributes from 'mdn-browser-compat-data/html/global_attributes.json';
-import { addType, ResolvedType, Type } from '../syntax/typer';
+import { hasType, ResolvedType, Type, TypeType } from '../syntax/typer';
 import { alternativeAttributes } from '../utils/compat';
 
 function assembleAttributes(baseAttrs: ResolvedType[], dataset: { [key: string]: MDN.CompatData }): ResolvedType[] {
-  let attributes: ResolvedType[] = baseAttrs;
+  const attributes: ResolvedType[] = baseAttrs;
 
   for (const name in dataset) {
     // Namespace attributes and categorical fields contain underscores,
@@ -15,10 +15,16 @@ function assembleAttributes(baseAttrs: ResolvedType[], dataset: { [key: string]:
 
     const attrCompat = dataset[name];
 
-    attributes = addType(attributes, { type: Type.StringLiteral, literal: `[${name}]` });
+    const type: TypeType = { type: Type.StringLiteral, literal: `[${name}]` };
+    if (!hasType(attributes, type)) {
+      attributes.push(type);
+    }
 
     for (const alternative of alternativeAttributes(name, attrCompat)) {
-      attributes = addType(attributes, { type: Type.StringLiteral, literal: `[${alternative}]` });
+      const type: TypeType = { type: Type.StringLiteral, literal: `[${alternative}]` };
+      if (!hasType(attributes, type)) {
+        attributes.push(type);
+      }
     }
   }
 

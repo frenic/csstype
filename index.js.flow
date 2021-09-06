@@ -4304,7 +4304,7 @@ export type Property$ColorScheme = Globals | "dark" | "light" | "normal" | strin
 
 export type Property$ColumnCount = Globals | "auto" | number;
 
-export type Property$ColumnFill = Globals | "auto" | "balance";
+export type Property$ColumnFill = Globals | "auto" | "balance" | "balance-all";
 
 export type Property$ColumnGap<TLength = string | 0> = Globals | TLength | "normal" | string;
 
@@ -4685,7 +4685,7 @@ export type Property$MaskImage = Globals | "none" | string;
 
 export type Property$MaskMode = Globals | DataType$MaskingMode | string;
 
-export type Property$MaskOrigin = Globals | DataType$Box | "margin-box" | string;
+export type Property$MaskOrigin = Globals | DataType$GeometryBox | string;
 
 export type Property$MaskPosition<TLength = string | 0> = Globals | DataType$Position<TLength> | string;
 
@@ -4933,7 +4933,7 @@ export type Property$RubyAlign = Globals | "center" | "space-around" | "space-be
 
 export type Property$RubyMerge = Globals | "auto" | "collapse" | "separate";
 
-export type Property$RubyPosition = Globals | "alternate" | "over" | "under" | string;
+export type Property$RubyPosition = Globals | "alternate" | "inter-character" | "over" | "under" | string;
 
 export type Property$Scale = Globals | "none" | string | number;
 
@@ -5001,7 +5001,7 @@ export type Property$ScrollSnapTypeX = Globals | "mandatory" | "none" | "proximi
 
 export type Property$ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
 
-export type Property$ScrollbarColor = Globals | DataType$Color | "auto";
+export type Property$ScrollbarColor = Globals | "auto" | string;
 
 export type Property$ScrollbarGutter = Globals | "auto" | "stable" | string;
 
@@ -5023,7 +5023,7 @@ export type Property$TextAlign = Globals | "center" | "end" | "justify" | "left"
 
 export type Property$TextAlignLast = Globals | "auto" | "center" | "end" | "justify" | "left" | "right" | "start";
 
-export type Property$TextCombineUpright = Globals | "-ms-text-combine-horizontal" | "all" | "digits" | "none" | string;
+export type Property$TextCombineUpright = Globals | "all" | "none" | string;
 
 export type Property$TextDecoration<TLength = string | 0> =
   | Globals
@@ -5864,7 +5864,7 @@ export type AtRule$ViewportHyphenFallback<TLength = string | 0, TTime = string> 
   zoom?: AtRule$Zoom | Array<AtRule$Zoom>,
 |};
 
-type AtRule$Range = "auto" | "infinite" | string | number;
+type AtRule$Range = "auto" | string;
 
 type AtRule$SpeakAs = "auto" | "bullets" | "numbers" | "spell-out" | "words" | string;
 

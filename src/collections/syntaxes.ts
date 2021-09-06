@@ -3,7 +3,7 @@ import * as rawSyntaxes from 'mdn-data/css/syntaxes.json';
 import { IExtendedProperty, properties as patchedProperties, syntaxes as patchedSyntaxes } from '../data/patches';
 import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from '../data/svg';
 import parse from '../syntax/parser';
-import typing, { hasType } from '../syntax/typer';
+import typer, { hasType } from '../syntax/typer';
 import { getPropertyData, getTypesData } from '../utils/compat';
 import { error, warn } from '../utils/logger';
 import { createPropertyDataTypeResolver, resolveDataTypes } from './data-types';
@@ -107,13 +107,13 @@ async function validatePatch(compat: MDN.CompatData, sourceSyntax: string, patch
   // Dissolve all data types to check whether it already exists or not
   const dissolvedSourceTypes = await resolveDataTypes(
     {},
-    typing(parse(sourceSyntax)),
+    typer(parse(sourceSyntax)),
     Infinity,
     createPropertyDataTypeResolver(compat),
   );
   const dissolvedPatchTypes = await resolveDataTypes(
     {},
-    typing(parse(patchSyntax)),
+    typer(parse(patchSyntax)),
     Infinity,
     createPropertyDataTypeResolver(compat),
   );
