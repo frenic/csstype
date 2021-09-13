@@ -1,6 +1,7 @@
 // @flow strict
 
 export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {|
+  accentColor?: Property$AccentColor,
   alignContent?: Property$AlignContent,
   alignItems?: Property$AlignItems,
   alignSelf?: Property$AlignSelf,
@@ -844,6 +845,7 @@ export type Properties<TLength = string | 0, TTime = string> = {|
 |};
 
 export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = string> = {|
+  "accent-color"?: Property$AccentColor,
   "align-content"?: Property$AlignContent,
   "align-items"?: Property$AlignItems,
   "align-self"?: Property$AlignSelf,
@@ -1693,6 +1695,7 @@ export type PropertiesHyphen<TLength = string | 0, TTime = string> = {|
 |};
 
 export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = string> = {|
+  accentColor?: Property$AccentColor | Array<Property$AccentColor>,
   alignContent?: Property$AlignContent | Array<Property$AlignContent>,
   alignItems?: Property$AlignItems | Array<Property$AlignItems>,
   alignSelf?: Property$AlignSelf | Array<Property$AlignSelf>,
@@ -2542,6 +2545,7 @@ export type PropertiesFallback<TLength = string | 0, TTime = string> = {|
 |};
 
 export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
+  "accent-color"?: Property$AccentColor | Array<Property$AccentColor>,
   "align-content"?: Property$AlignContent | Array<Property$AlignContent>,
   "align-items"?: Property$AlignItems | Array<Property$AlignItems>,
   "align-self"?: Property$AlignSelf | Array<Property$AlignSelf>,
@@ -3701,10 +3705,8 @@ export type HtmlAttributes =
   | "[prefetch]"
   | "[preload]"
   | "[profile]"
-  | "[prompt]"
   | "[radiogroup]"
   | "[readonly]"
-  | "[referrerPolicy]"
   | "[referrerpolicy]"
   | "[rel]"
   | "[required]"
@@ -3813,7 +3815,6 @@ export type SvgAttributes =
   | "[edgeMode]"
   | "[elevation]"
   | "[enable-background]"
-  | "[externalResourcesRequired]"
   | "[fill-opacity]"
   | "[fill-rule]"
   | "[fill]"
@@ -3872,7 +3873,6 @@ export type SvgAttributes =
   | "[letter-spacing]"
   | "[lighting-color]"
   | "[limitingConeAngle]"
-  | "[local]"
   | "[marker-end]"
   | "[marker-mid]"
   | "[marker-start]"
@@ -3917,9 +3917,8 @@ export type SvgAttributes =
   | "[radius]"
   | "[refX]"
   | "[refY]"
-  | "[referrerPolicy]"
+  | "[referrerpolicy]"
   | "[rel]"
-  | "[rendering-intent]"
   | "[repeatCount]"
   | "[requiredExtensions]"
   | "[requiredFeatures]"
@@ -4011,6 +4010,8 @@ export type SvgAttributes =
   | "[zoomAndPan]";
 
 export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset";
+
+export type Property$AccentColor = Globals | DataType$Color | "auto";
 
 export type Property$AlignContent = Globals | DataType$ContentDistribution | DataType$ContentPosition | "baseline" | "normal" | string;
 
@@ -4433,7 +4434,7 @@ export type Property$FontOpticalSizing = Globals | "auto" | "none";
 
 export type Property$FontSize<TLength = string | 0> = Globals | DataType$AbsoluteSize | TLength | "larger" | "smaller" | string;
 
-export type Property$FontSizeAdjust = Globals | "none" | number;
+export type Property$FontSizeAdjust = Globals | "from-font" | "none" | string | number;
 
 export type Property$FontSmooth<TLength = string | 0> = Globals | DataType$AbsoluteSize | TLength | "always" | "auto" | "never";
 
@@ -4441,7 +4442,7 @@ export type Property$FontStretch = Globals | DataType$FontStretchAbsolute;
 
 export type Property$FontStyle = Globals | "italic" | "normal" | "oblique" | string;
 
-export type Property$FontSynthesis = Globals | "none" | "style" | "weight" | string;
+export type Property$FontSynthesis = Globals | "none" | "small-caps" | "style" | "weight" | string;
 
 export type Property$FontVariant =
   | Globals
@@ -5000,9 +5001,9 @@ export type Property$ScrollSnapTypeX = Globals | "mandatory" | "none" | "proximi
 
 export type Property$ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
 
-export type Property$ScrollbarColor = Globals | DataType$Color | "auto" | "dark" | "light";
+export type Property$ScrollbarColor = Globals | DataType$Color | "auto";
 
-export type Property$ScrollbarGutter = Globals | "always" | "auto" | "stable" | string;
+export type Property$ScrollbarGutter = Globals | "auto" | "stable" | string;
 
 export type Property$MsScrollbarTrackColor = Globals | DataType$Color;
 
@@ -5168,7 +5169,7 @@ export type Property$WillChange = Globals | DataType$AnimateableFeature | "auto"
 
 export type Property$WordBreak = Globals | "break-all" | "break-word" | "keep-all" | "normal";
 
-export type Property$WordSpacing<TLength = string | 0> = Globals | TLength | "normal" | string;
+export type Property$WordSpacing<TLength = string | 0> = Globals | TLength | "normal";
 
 export type Property$WordWrap = Globals | "break-word" | "normal";
 
@@ -5305,7 +5306,7 @@ export type Property$MozContextProperties = Globals | "fill" | "fill-opacity" | 
 
 export type Property$MozFloatEdge = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
 
-export type Property$MozForceBrokenImageIcon = Globals | number;
+export type Property$MozForceBrokenImageIcon = Globals | 0 | 1;
 
 export type Property$MozImageRegion = Globals | "auto" | string;
 
@@ -5685,6 +5686,8 @@ export type AtRule$CounterStyleHyphenFallback<TLength = string | 0, TTime = stri
 
 export type AtRule$FontFace<TLength = string | 0, TTime = string> = {|
   MozFontFeatureSettings?: AtRule$FontFeatureSettings,
+  ascentOverride?: AtRule$AscentOverride,
+  descentOverride?: AtRule$DescentOverride,
   fontDisplay?: AtRule$FontDisplay,
   fontFamily?: string,
   fontFeatureSettings?: AtRule$FontFeatureSettings,
@@ -5693,12 +5696,16 @@ export type AtRule$FontFace<TLength = string | 0, TTime = string> = {|
   fontVariant?: AtRule$FontVariant,
   fontVariationSettings?: AtRule$FontVariationSettings,
   fontWeight?: AtRule$FontWeight,
+  lineGapOverride?: AtRule$LineGapOverride,
+  sizeAdjust?: string,
   src?: string,
   unicodeRange?: string,
 |};
 
 export type AtRule$FontFaceHyphen<TLength = string | 0, TTime = string> = {|
   "-moz-font-feature-settings"?: AtRule$FontFeatureSettings,
+  "ascent-override"?: AtRule$AscentOverride,
+  "descent-override"?: AtRule$DescentOverride,
   "font-display"?: AtRule$FontDisplay,
   "font-family"?: string,
   "font-feature-settings"?: AtRule$FontFeatureSettings,
@@ -5707,12 +5714,16 @@ export type AtRule$FontFaceHyphen<TLength = string | 0, TTime = string> = {|
   "font-variant"?: AtRule$FontVariant,
   "font-variation-settings"?: AtRule$FontVariationSettings,
   "font-weight"?: AtRule$FontWeight,
+  "line-gap-override"?: AtRule$LineGapOverride,
+  "size-adjust"?: string,
   src?: string,
   "unicode-range"?: string,
 |};
 
 export type AtRule$FontFaceFallback<TLength = string | 0, TTime = string> = {|
   MozFontFeatureSettings?: AtRule$FontFeatureSettings | Array<AtRule$FontFeatureSettings>,
+  ascentOverride?: AtRule$AscentOverride | Array<AtRule$AscentOverride>,
+  descentOverride?: AtRule$DescentOverride | Array<AtRule$DescentOverride>,
   fontDisplay?: AtRule$FontDisplay | Array<AtRule$FontDisplay>,
   fontFamily?: string | Array<string>,
   fontFeatureSettings?: AtRule$FontFeatureSettings | Array<AtRule$FontFeatureSettings>,
@@ -5721,12 +5732,16 @@ export type AtRule$FontFaceFallback<TLength = string | 0, TTime = string> = {|
   fontVariant?: AtRule$FontVariant | Array<AtRule$FontVariant>,
   fontVariationSettings?: AtRule$FontVariationSettings | Array<AtRule$FontVariationSettings>,
   fontWeight?: AtRule$FontWeight | Array<AtRule$FontWeight>,
+  lineGapOverride?: AtRule$LineGapOverride | Array<AtRule$LineGapOverride>,
+  sizeAdjust?: string | Array<string>,
   src?: string | Array<string>,
   unicodeRange?: string | Array<string>,
 |};
 
 export type AtRule$FontFaceHyphenFallback<TLength = string | 0, TTime = string> = {|
   "-moz-font-feature-settings"?: AtRule$FontFeatureSettings | Array<AtRule$FontFeatureSettings>,
+  "ascent-override"?: AtRule$AscentOverride | Array<AtRule$AscentOverride>,
+  "descent-override"?: AtRule$DescentOverride | Array<AtRule$DescentOverride>,
   "font-display"?: AtRule$FontDisplay | Array<AtRule$FontDisplay>,
   "font-family"?: string | Array<string>,
   "font-feature-settings"?: AtRule$FontFeatureSettings | Array<AtRule$FontFeatureSettings>,
@@ -5735,23 +5750,33 @@ export type AtRule$FontFaceHyphenFallback<TLength = string | 0, TTime = string> 
   "font-variant"?: AtRule$FontVariant | Array<AtRule$FontVariant>,
   "font-variation-settings"?: AtRule$FontVariationSettings | Array<AtRule$FontVariationSettings>,
   "font-weight"?: AtRule$FontWeight | Array<AtRule$FontWeight>,
+  "line-gap-override"?: AtRule$LineGapOverride | Array<AtRule$LineGapOverride>,
+  "size-adjust"?: string | Array<string>,
   src?: string | Array<string>,
   "unicode-range"?: string | Array<string>,
 |};
 
 export type AtRule$Page<TLength = string | 0, TTime = string> = {|
+  bleed?: AtRule$Bleed<TLength>,
+  marks?: AtRule$Marks,
   size?: AtRule$Size<TLength>,
 |};
 
 export type AtRule$PageHyphen<TLength = string | 0, TTime = string> = {|
+  bleed?: AtRule$Bleed<TLength>,
+  marks?: AtRule$Marks,
   size?: AtRule$Size<TLength>,
 |};
 
 export type AtRule$PageFallback<TLength = string | 0, TTime = string> = {|
+  bleed?: AtRule$Bleed<TLength> | Array<AtRule$Bleed<TLength>>,
+  marks?: AtRule$Marks | Array<AtRule$Marks>,
   size?: AtRule$Size<TLength> | Array<AtRule$Size<TLength>>,
 |};
 
 export type AtRule$PageHyphenFallback<TLength = string | 0, TTime = string> = {|
+  bleed?: AtRule$Bleed<TLength> | Array<AtRule$Bleed<TLength>>,
+  marks?: AtRule$Marks | Array<AtRule$Marks>,
   size?: AtRule$Size<TLength> | Array<AtRule$Size<TLength>>,
 |};
 
@@ -5847,6 +5872,10 @@ type AtRule$System = "additive" | "alphabetic" | "cyclic" | "fixed" | "numeric" 
 
 type AtRule$FontFeatureSettings = "normal" | string;
 
+type AtRule$AscentOverride = "normal" | string;
+
+type AtRule$DescentOverride = "normal" | string;
+
 type AtRule$FontDisplay = "auto" | "block" | "fallback" | "optional" | "swap";
 
 type AtRule$FontStretch = DataType$FontStretchAbsolute | string;
@@ -5888,6 +5917,12 @@ type AtRule$FontVariant =
 type AtRule$FontVariationSettings = "normal" | string;
 
 type AtRule$FontWeight = DataType$FontWeightAbsolute | string;
+
+type AtRule$LineGapOverride = "normal" | string;
+
+type AtRule$Bleed<TLength> = TLength | "auto";
+
+type AtRule$Marks = "crop" | "cross" | "none" | string;
 
 type AtRule$Size<TLength> = DataType$PageSize | TLength | "auto" | "landscape" | "portrait" | string;
 
