@@ -56,8 +56,12 @@ function saveToFile(): void {
 
     const fileContents = JSON.stringify(sortedUrlData, undefined, 2);
     fs.writeFileSync(pathToCache, fileContents, { encoding: 'utf-8' });
-  } catch (ex) {
-    error(ex.toString());
+  } catch (e) {
+    if (e instanceof Error) {
+      error(e.toString());
+    } else {
+      error('Unknown error');
+    }
   }
 }
 

@@ -3,12 +3,16 @@
     "module": "commonjs",
     "target": "es6",
     "lib": ["es7", "es2015.iterable", "dom"],
+    "types": ["jest"],
     "sourceMap": false,
     "noEmit": true,
     "strict": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": false
+  },
+  "ts-node": {
+    "ignore": ["prepare-tests.ts"]
   },
   "exclude": ["__tests__/__fixtures__"]
 }

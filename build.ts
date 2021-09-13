@@ -63,16 +63,12 @@ async function create() {
 
 async function format(output: string, parser: prettier.BuiltInParserName) {
   const options = await prettier.resolveConfig(path.join(__dirname, '.prettierrc'));
-  try {
-    return prettier.format(output, {
-      ...options,
-      printWidth: 180,
-      singleQuote: false,
-      parser,
-    });
-  } catch (e) {
-    throw new Error(e);
-  }
+  return prettier.format(output, {
+    ...options,
+    printWidth: 180,
+    singleQuote: false,
+    parser,
+  });
 }
 
 function testing() {

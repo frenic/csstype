@@ -45,11 +45,7 @@ async function update() {
     await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
     await install();
 
-    try {
-      await build();
-    } catch (e) {
-      throw new Error(e);
-    }
+    await build();
 
     const [indexDtsDiff, indexFlowDiff] = [
       await spawnAsync('git', '--no-pager', 'diff', '--color', TYPESCRIPT_FILENAME),
@@ -72,13 +68,9 @@ async function update() {
 
         packageJson.version = version;
 
-        try {
-          await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
-          await spawnAsync('git', 'commit', '-am', tag);
-          await spawnAsync('git', 'tag', tag);
-        } catch (e) {
-          throw new Error(e);
-        }
+        await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
+        await spawnAsync('git', 'commit', '-am', tag);
+        await spawnAsync('git', 'tag', tag);
 
         console.info(`The changes are committed and tagged with: ${tag}`);
 
@@ -109,11 +101,7 @@ async function update() {
   process.exit(0);
 }
 
-try {
-  update();
-} catch (e) {
-  throw new Error(e);
-}
+update();
 
 function reset() {
   return spawnAsync('git', 'reset', '--hard');
