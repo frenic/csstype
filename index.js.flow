@@ -1,5 +1,6 @@
 // @flow
 export type StandardLonghandProperties<TLength = string | 0> = {
+  accentColor?: AccentColorProperty,
   alignContent?: AlignContentProperty,
   alignItems?: AlignItemsProperty,
   alignSelf?: AlignSelfProperty,
@@ -720,7 +721,7 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozBoxPack?: BoxPackProperty,
   MozBoxShadow?: BoxShadowProperty,
   MozFloatEdge?: MozFloatEdgeProperty,
-  MozForceBrokenImageIcon?: GlobalsNumber,
+  MozForceBrokenImageIcon?: MozForceBrokenImageIconProperty,
   MozOpacity?: OpacityProperty,
   MozOutline?: OutlineProperty<TLength>,
   MozOutlineColor?: OutlineColorProperty,
@@ -838,6 +839,7 @@ export type SvgProperties<TLength = string | 0> = {
 export type Properties<TLength = string | 0> = StandardProperties<TLength> & VendorProperties<TLength> & ObsoleteProperties<TLength> & SvgProperties<TLength>;
 
 export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
+  "accent-color"?: AccentColorProperty,
   "align-content"?: AlignContentProperty,
   "align-items"?: AlignItemsProperty,
   "align-self"?: AlignSelfProperty,
@@ -1558,7 +1560,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-box-pack"?: BoxPackProperty,
   "-moz-box-shadow"?: BoxShadowProperty,
   "-moz-float-edge"?: MozFloatEdgeProperty,
-  "-moz-force-broken-image-icon"?: GlobalsNumber,
+  "-moz-force-broken-image-icon"?: MozForceBrokenImageIconProperty,
   "-moz-opacity"?: OpacityProperty,
   "-moz-outline"?: OutlineProperty<TLength>,
   "-moz-outline-color"?: OutlineColorProperty,
@@ -1679,6 +1681,7 @@ export type PropertiesHyphen<TLength = string | 0> = StandardPropertiesHyphen<TL
   SvgPropertiesHyphen<TLength>;
 
 export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
+  accentColor?: AccentColorProperty | AccentColorProperty[],
   alignContent?: AlignContentProperty | AlignContentProperty[],
   alignItems?: AlignItemsProperty | AlignItemsProperty[],
   alignSelf?: AlignSelfProperty | AlignSelfProperty[],
@@ -2399,7 +2402,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozBoxPack?: BoxPackProperty | BoxPackProperty[],
   MozBoxShadow?: BoxShadowProperty | BoxShadowProperty[],
   MozFloatEdge?: MozFloatEdgeProperty | MozFloatEdgeProperty[],
-  MozForceBrokenImageIcon?: GlobalsNumber | GlobalsNumber[],
+  MozForceBrokenImageIcon?: MozForceBrokenImageIconProperty | MozForceBrokenImageIconProperty[],
   MozOpacity?: OpacityProperty | OpacityProperty[],
   MozOutline?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   MozOutlineColor?: OutlineColorProperty | OutlineColorProperty[],
@@ -2520,6 +2523,7 @@ export type PropertiesFallback<TLength = string | 0> = StandardPropertiesFallbac
   SvgPropertiesFallback<TLength>;
 
 export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
+  "accent-color"?: AccentColorProperty | AccentColorProperty[],
   "align-content"?: AlignContentProperty | AlignContentProperty[],
   "align-items"?: AlignItemsProperty | AlignItemsProperty[],
   "align-self"?: AlignSelfProperty | AlignSelfProperty[],
@@ -3240,7 +3244,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-box-pack"?: BoxPackProperty | BoxPackProperty[],
   "-moz-box-shadow"?: BoxShadowProperty | BoxShadowProperty[],
   "-moz-float-edge"?: MozFloatEdgeProperty | MozFloatEdgeProperty[],
-  "-moz-force-broken-image-icon"?: GlobalsNumber | GlobalsNumber[],
+  "-moz-force-broken-image-icon"?: MozForceBrokenImageIconProperty | MozForceBrokenImageIconProperty[],
   "-moz-opacity"?: OpacityProperty | OpacityProperty[],
   "-moz-outline"?: OutlineProperty<TLength> | OutlineProperty<TLength>[],
   "-moz-outline-color"?: OutlineColorProperty | OutlineColorProperty[],
@@ -3414,6 +3418,8 @@ export type CounterStyleHyphenFallback = {
 
 export type FontFace = {
   MozFontFeatureSettings?: FontFaceFontFeatureSettingsProperty,
+  ascentOverride?: FontFaceAscentOverrideProperty,
+  descentOverride?: FontFaceDescentOverrideProperty,
   fontDisplay?: FontFaceFontDisplayProperty,
   fontFamily?: string,
   fontFeatureSettings?: FontFaceFontFeatureSettingsProperty,
@@ -3422,12 +3428,16 @@ export type FontFace = {
   fontVariant?: FontFaceFontVariantProperty,
   fontVariationSettings?: FontFaceFontVariationSettingsProperty,
   fontWeight?: FontFaceFontWeightProperty,
+  lineGapOverride?: FontFaceLineGapOverrideProperty,
+  sizeAdjust?: string,
   src?: string,
   unicodeRange?: string,
 };
 
 export type FontFaceHyphen = {
   "-moz-font-feature-settings"?: FontFaceFontFeatureSettingsProperty,
+  "ascent-override"?: FontFaceAscentOverrideProperty,
+  "descent-override"?: FontFaceDescentOverrideProperty,
   "font-display"?: FontFaceFontDisplayProperty,
   "font-family"?: string,
   "font-feature-settings"?: FontFaceFontFeatureSettingsProperty,
@@ -3436,12 +3446,16 @@ export type FontFaceHyphen = {
   "font-variant"?: FontFaceFontVariantProperty,
   "font-variation-settings"?: FontFaceFontVariationSettingsProperty,
   "font-weight"?: FontFaceFontWeightProperty,
+  "line-gap-override"?: FontFaceLineGapOverrideProperty,
+  "size-adjust"?: string,
   src?: string,
   "unicode-range"?: string,
 };
 
 export type FontFaceFallback = {
   MozFontFeatureSettings?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[],
+  ascentOverride?: FontFaceAscentOverrideProperty | FontFaceAscentOverrideProperty[],
+  descentOverride?: FontFaceDescentOverrideProperty | FontFaceDescentOverrideProperty[],
   fontDisplay?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[],
   fontFamily?: string | string[],
   fontFeatureSettings?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[],
@@ -3450,12 +3464,16 @@ export type FontFaceFallback = {
   fontVariant?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[],
   fontVariationSettings?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[],
   fontWeight?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[],
+  lineGapOverride?: FontFaceLineGapOverrideProperty | FontFaceLineGapOverrideProperty[],
+  sizeAdjust?: string | string[],
   src?: string | string[],
   unicodeRange?: string | string[],
 };
 
 export type FontFaceHyphenFallback = {
   "-moz-font-feature-settings"?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[],
+  "ascent-override"?: FontFaceAscentOverrideProperty | FontFaceAscentOverrideProperty[],
+  "descent-override"?: FontFaceDescentOverrideProperty | FontFaceDescentOverrideProperty[],
   "font-display"?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[],
   "font-family"?: string | string[],
   "font-feature-settings"?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[],
@@ -3464,23 +3482,33 @@ export type FontFaceHyphenFallback = {
   "font-variant"?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[],
   "font-variation-settings"?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[],
   "font-weight"?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[],
+  "line-gap-override"?: FontFaceLineGapOverrideProperty | FontFaceLineGapOverrideProperty[],
+  "size-adjust"?: string | string[],
   src?: string | string[],
   "unicode-range"?: string | string[],
 };
 
 export type Page<TLength = string | 0> = {
+  bleed?: PageBleedProperty<TLength>,
+  marks?: PageMarksProperty,
   size?: PageSizeProperty<TLength>,
 };
 
 export type PageHyphen<TLength = string | 0> = {
+  bleed?: PageBleedProperty<TLength>,
+  marks?: PageMarksProperty,
   size?: PageSizeProperty<TLength>,
 };
 
 export type PageFallback<TLength = string | 0> = {
+  bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[],
+  marks?: PageMarksProperty | PageMarksProperty[],
   size?: PageSizeProperty<TLength> | PageSizeProperty<TLength>[],
 };
 
 export type PageHyphenFallback<TLength = string | 0> = {
+  bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[],
+  marks?: PageMarksProperty | PageMarksProperty[],
   size?: PageSizeProperty<TLength> | PageSizeProperty<TLength>[],
 };
 
@@ -3879,10 +3907,8 @@ export type HtmlAttributes =
   | "[prefetch]"
   | "[preload]"
   | "[profile]"
-  | "[prompt]"
   | "[radiogroup]"
   | "[readonly]"
-  | "[referrerPolicy]"
   | "[referrerpolicy]"
   | "[rel]"
   | "[required]"
@@ -3991,7 +4017,6 @@ export type SvgAttributes =
   | "[edgeMode]"
   | "[elevation]"
   | "[enable-background]"
-  | "[externalResourcesRequired]"
   | "[fill-opacity]"
   | "[fill-rule]"
   | "[fill]"
@@ -4050,7 +4075,6 @@ export type SvgAttributes =
   | "[letter-spacing]"
   | "[lighting-color]"
   | "[limitingConeAngle]"
-  | "[local]"
   | "[marker-end]"
   | "[marker-mid]"
   | "[marker-start]"
@@ -4095,9 +4119,8 @@ export type SvgAttributes =
   | "[radius]"
   | "[refX]"
   | "[refY]"
-  | "[referrerPolicy]"
+  | "[referrerpolicy]"
   | "[rel]"
-  | "[rendering-intent]"
   | "[repeatCount]"
   | "[requiredExtensions]"
   | "[requiredFeatures]"
@@ -4193,6 +4216,8 @@ export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset
 type GlobalsString = Globals | string;
 
 type GlobalsNumber = Globals | number;
+
+export type AccentColorProperty = Globals | Color | "auto";
 
 export type AlignContentProperty = Globals | ContentDistribution | ContentPosition | "baseline" | "normal" | string;
 
@@ -4590,7 +4615,7 @@ export type FontOpticalSizingProperty = Globals | "auto" | "none";
 
 export type FontSizeProperty<TLength> = Globals | AbsoluteSize | TLength | "larger" | "smaller" | string;
 
-export type FontSizeAdjustProperty = Globals | "none" | number;
+export type FontSizeAdjustProperty = Globals | "from-font" | "none" | string | number;
 
 export type FontSmoothProperty<TLength> = Globals | AbsoluteSize | TLength | "always" | "auto" | "never";
 
@@ -4598,7 +4623,7 @@ export type FontStretchProperty = Globals | FontStretchAbsolute;
 
 export type FontStyleProperty = Globals | "italic" | "normal" | "oblique" | string;
 
-export type FontSynthesisProperty = Globals | "none" | "style" | "weight" | string;
+export type FontSynthesisProperty = Globals | "none" | "small-caps" | "style" | "weight" | string;
 
 export type FontVariantProperty =
   | Globals
@@ -5153,9 +5178,9 @@ export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximit
 
 export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximity";
 
-export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light";
+export type ScrollbarColorProperty = Globals | Color | "auto";
 
-export type ScrollbarGutterProperty = Globals | "always" | "auto" | "stable" | string;
+export type ScrollbarGutterProperty = Globals | "auto" | "stable" | string;
 
 export type MsScrollbarTrackColorProperty = Globals | Color;
 
@@ -5313,7 +5338,7 @@ export type WillChangeProperty = Globals | AnimateableFeature | "auto" | string;
 
 export type WordBreakProperty = Globals | "break-all" | "break-word" | "keep-all" | "normal";
 
-export type WordSpacingProperty<TLength> = Globals | TLength | "normal" | string;
+export type WordSpacingProperty<TLength> = Globals | TLength | "normal";
 
 export type WordWrapProperty = Globals | "break-word" | "normal";
 
@@ -5449,6 +5474,8 @@ export type MozBorderTopColorsProperty = Globals | Color | "none" | string;
 export type MozContextPropertiesProperty = Globals | "fill" | "fill-opacity" | "none" | "stroke" | "stroke-opacity" | string;
 
 export type MozFloatEdgeProperty = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
+
+export type MozForceBrokenImageIconProperty = Globals | 0 | 1;
 
 export type MozImageRegionProperty = Globals | "auto" | string;
 
@@ -5742,6 +5769,10 @@ type CounterStyleSystemProperty = "additive" | "alphabetic" | "cyclic" | "fixed"
 
 type FontFaceFontFeatureSettingsProperty = "normal" | string;
 
+type FontFaceAscentOverrideProperty = "normal" | string;
+
+type FontFaceDescentOverrideProperty = "normal" | string;
+
 type FontFaceFontDisplayProperty = "auto" | "block" | "fallback" | "optional" | "swap";
 
 type FontFaceFontStretchProperty = FontStretchAbsolute | string;
@@ -5783,6 +5814,12 @@ type FontFaceFontVariantProperty =
 type FontFaceFontVariationSettingsProperty = "normal" | string;
 
 type FontFaceFontWeightProperty = FontWeightAbsolute | string;
+
+type FontFaceLineGapOverrideProperty = "normal" | string;
+
+type PageBleedProperty<TLength> = TLength | "auto";
+
+type PageMarksProperty = "crop" | "cross" | "none" | string;
 
 type PageSizeProperty<TLength> = PageSize | TLength | "auto" | "landscape" | "portrait" | string;
 

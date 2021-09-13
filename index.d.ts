@@ -1,5 +1,19 @@
 export interface StandardLonghandProperties<TLength = string | 0> {
   /**
+   * The **`accent-color`** CSS property sets the color of the elements accent. An accent appears in elements such as `<input>` of `type="checkbox"`, or `type="radio"`.
+   *
+   * **Syntax**: `auto | <color>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **93** | **92**  |   No   | **93** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/accent-color
+   */
+  accentColor?: AccentColorProperty;
+  /**
    * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
    *
    * **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
@@ -10,10 +24,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -244,7 +258,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **88** |   n/a   |   No   | **88** | No  |
+   * | **88** | **89**  | **15** | **88** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -446,9 +460,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-color
    */
@@ -544,9 +558,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
    */
@@ -558,9 +572,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `medium`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-width
    */
@@ -660,7 +674,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -674,7 +688,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -756,9 +770,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-color
    */
@@ -859,9 +873,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
    */
@@ -873,9 +887,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `medium`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-width
    */
@@ -987,7 +1001,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -1001,7 +1015,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -1099,9 +1113,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `slice`
    *
-   * |    Chrome    | Firefox |    Safari     |     Edge     | IE  |
-   * | :----------: | :-----: | :-----------: | :----------: | :-: |
-   * | **22** _-x-_ | **32**  | **6.1** _-x-_ | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox |   Safari    |     Edge     | IE  |
+   * | :----------: | :-----: | :---------: | :----------: | :-: |
+   * | **22** _-x-_ | **32**  | **7** _-x-_ | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
    */
@@ -1360,9 +1374,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -1370,7 +1384,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
    * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
-   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * |         **66**         |         **61**         |          **12**          | **16** | No  |
    * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
@@ -1654,10 +1668,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |            IE            |
-   * | :------: | :-----: | :-------: | :----: | :----------------------: |
-   * |  **29**  | **20**  |   **9**   | **12** |          **11**          |
-   * | 22 _-x-_ |         | 6.1 _-x-_ |        | 10 _(-ms-flex-positive)_ |
+   * |  Chrome  | Firefox | Safari  |  Edge  |            IE            |
+   * | :------: | :-----: | :-----: | :----: | :----------------------: |
+   * |  **29**  | **20**  |  **9**  | **12** |          **11**          |
+   * | 22 _-x-_ |         | 7 _-x-_ |        | 10 _(-ms-flex-positive)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
@@ -1796,7 +1810,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`font-size-adjust`** CSS property sets how the font size should be chosen based on the height of lowercase rather than capital letters.
    *
-   * **Syntax**: `none | <number>`
+   * **Syntax**: `none | [ ex-height | cap-height | ch-width | ic-width | ic-height ]? [ from-font | <number> ]`
    *
    * **Initial value**: `none`
    *
@@ -1852,7 +1866,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
    *
-   * **Syntax**: `none | [ weight || style ]`
+   * **Syntax**: `none | [ weight || style || small-caps ]`
    *
    * **Initial value**: `weight style`
    *
@@ -1898,9 +1912,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **63** | **34**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **63** | **34**  | **9.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
    */
@@ -1941,9 +1955,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **34**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | :----: | :-----: | :-----: | :--: | :-: |
+   * |   No   | **34**  | **9.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-position
    */
@@ -2166,10 +2180,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `manual`
    *
-   * |  Chrome  | Firefox |    Safari     |     Edge     |      IE      |
-   * | :------: | :-----: | :-----------: | :----------: | :----------: |
-   * |  **55**  | **43**  | **5.1** _-x-_ | **12** _-x-_ | **10** _-x-_ |
-   * | 13 _-x-_ | 6 _-x-_ |               |              |              |
+   * |  Chrome  | Firefox |    Safari     |  Edge  |      IE      |
+   * | :------: | :-----: | :-----------: | :----: | :----------: |
+   * |  **55**  | **43**  | **5.1** _-x-_ | **79** | **10** _-x-_ |
+   * | 13 _-x-_ | 6 _-x-_ |               |        |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/hyphens
    */
@@ -2243,9 +2257,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset
    */
@@ -2257,9 +2271,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
    */
@@ -2271,9 +2285,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-end
    */
@@ -2285,9 +2299,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-start
    */
@@ -2299,9 +2313,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
    */
@@ -2313,9 +2327,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-end
    */
@@ -2327,9 +2341,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-start
    */
@@ -2567,9 +2581,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
    */
@@ -2623,9 +2637,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
    */
@@ -2815,9 +2829,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |   Chrome    | Firefox |   Safari    |  Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **16** | No  |
+   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
+   * | :---------: | :-----: | :---------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | 16-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
    */
@@ -2857,9 +2871,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `center`
    *
-   * |   Chrome    | Firefox |    Safari     |  Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **3.2** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
+   * | :---------: | :-----: | :-----------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
    */
@@ -2871,9 +2885,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `no-repeat`
    *
-   * |   Chrome    | Firefox |    Safari     |  Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **3.2** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
+   * | :---------: | :-----: | :-----------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
    */
@@ -2885,9 +2899,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |   Safari    |  Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :----: | :-: |
-   * | **4** _-x-_ | **53**  | **4** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
+   * | :---------: | :-----: | :---------: | :---: | :-: |
+   * | **4** _-x-_ | **53**  | **4** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
    */
@@ -2899,9 +2913,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `luminance`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **24** | **35**  | **6.1** | **79** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **24** | **35**  | **7**  | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
    */
@@ -2913,9 +2927,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   n/a   |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |  n/a   |   n/a   | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-style
    */
@@ -3368,7 +3382,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * |     Chrome      |      Firefox      |     Safari      |       Edge       |          IE           |
    * | :-------------: | :---------------: | :-------------: | :--------------: | :-------------------: |
-   * |     **23**      |      **49**       |     **6.1**     |      **18**      | **5.5** _(word-wrap)_ |
+   * |     **23**      |      **49**       |      **7**      |      **18**      | **5.5** _(word-wrap)_ |
    * | 1 _(word-wrap)_ | 3.5 _(word-wrap)_ | 1 _(word-wrap)_ | 12 _(word-wrap)_ |                       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
@@ -3465,9 +3479,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
@@ -3521,9 +3535,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
@@ -3693,23 +3707,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **9**  | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **53**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-content
    */
@@ -3791,9 +3791,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/rotate
    */
@@ -3809,9 +3809,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -3819,7 +3819,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
    * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
-   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * |       **66**        |       **61**        |        **12**         | **16** | No  |
    * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
@@ -3869,9 +3869,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scale
    */
@@ -3897,9 +3897,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   * | Chrome | Firefox |          Safari           |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------: | :----: | :-: |
+   * | **69** | **90**  |         **14.1**          | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
@@ -3911,9 +3912,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
    */
@@ -3925,9 +3926,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end
    */
@@ -3939,9 +3940,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start
    */
@@ -3953,9 +3954,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   * | Chrome | Firefox |              Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :------------------------------: | :----: | :-: |
+   * | **69** | **68**  |             **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-bottom)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
@@ -3967,9 +3969,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **68**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -3981,9 +3983,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end
    */
@@ -3995,9 +3997,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start
    */
@@ -4009,9 +4011,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-left)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
@@ -4023,9 +4026,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-right)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
@@ -4037,9 +4041,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  |           **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-top)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
@@ -4071,7 +4076,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * | Chrome | Firefox | Safari |  Edge  | IE  |
  * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  |   No   | **79** | No  |
+ * | **69** | **68**  | **15** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
  */
@@ -4085,7 +4090,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end
    */
@@ -4099,7 +4104,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start
    */
@@ -4129,7 +4134,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * | Chrome | Firefox | Safari |  Edge  | IE  |
  * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  |   No   | **79** | No  |
+ * | **69** | **68**  | **15** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
  */
@@ -4143,7 +4148,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end
    */
@@ -4157,7 +4162,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start
    */
@@ -4225,9 +4230,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   * | Chrome | Firefox |          Safari           |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------: | :----: | :-: |
+   * | **69** |  68-90  |         **14.1**          | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
@@ -4239,9 +4245,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   * | Chrome | Firefox |              Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :------------------------------: | :----: | :-: |
+   * | **69** | **68**  |             **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-bottom)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
@@ -4253,9 +4260,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-left)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
@@ -4267,9 +4275,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-right)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
@@ -4281,9 +4290,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  |           **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-top)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
@@ -4297,7 +4307,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **75** |   No    |   No   | **79** | No  |
+   * | **75** |   No    | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
    */
@@ -4309,10 +4319,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari  |     Edge     |      IE      |
-   * | :----: | :-----: | :-----: | :----------: | :----------: |
-   * | **69** |  39-68  | **11**  | **12** _-x-_ | **10** _-x-_ |
-   * |        |         | 9 _-x-_ |              |              |
+   * | Chrome | Firefox | Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :-----: | :----: | :----------: |
+   * | **69** |  39-68  | **11**  | **79** | **10** _-x-_ |
+   * |        |         | 9 _-x-_ |        |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
    */
@@ -4320,7 +4330,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`scrollbar-color`** CSS property sets the color of the scrollbar track and thumb.
    *
-   * **Syntax**: `auto | dark | light | <color>{2}`
+   * **Syntax**: `auto | <color>{2}`
    *
    * **Initial value**: `auto`
    *
@@ -4334,7 +4344,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
    *
-   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   * **Syntax**: `auto | stable && both-edges?`
    *
    * **Initial value**: `auto`
    *
@@ -4408,9 +4418,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `8`
    *
-   * | Chrome |   Firefox   | Safari  |  Edge  | IE  |
-   * | :----: | :---------: | :-----: | :----: | :-: |
-   * | **21** | **4** _-x-_ | **6.1** | **79** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **21** | **91**  | **7**  | **79** | No  |
+   * |        | 4 _-x-_ |        |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/tab-size
    */
@@ -4512,7 +4523,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
    * | 57-64  |   No    | **12.1** |  No  | No  |
-   * |        |         | 8 _-x-_  |      |     |
+   * |        |         | 7 _-x-_  |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip
    */
@@ -4581,9 +4592,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `currentcolor`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
    */
@@ -4595,9 +4606,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `over right`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
@@ -4609,9 +4620,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
    */
@@ -4913,9 +4924,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/translate
    */
@@ -4941,10 +4952,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |     Edge     |      IE      |
-   * | :-----: | :-----: | :---------: | :----------: | :----------: |
-   * | **54**  | **69**  | **3** _-x-_ | **12** _-x-_ | **10** _-x-_ |
-   * | 1 _-x-_ | 1 _-x-_ |             |              |              |
+   * | Chrome  | Firefox |   Safari    |   Edge   |      IE      |
+   * | :-----: | :-----: | :---------: | :------: | :----------: |
+   * | **54**  | **69**  | **3** _-x-_ |  **79**  | **10** _-x-_ |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
@@ -5050,7 +5061,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`word-spacing`** CSS property sets the length of space between words and between tags.
    *
-   * **Syntax**: `normal | <length-percentage>`
+   * **Syntax**: `normal | <length>`
    *
    * **Initial value**: `normal`
    *
@@ -5185,9 +5196,9 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
@@ -5258,9 +5269,9 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
@@ -5393,10 +5404,10 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
-   * | :------: | :-----: | :-------: | :----: | :------: |
-   * |  **29**  | **20**  |   **9**   | **12** |  **11**  |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
+   * |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
+   * | :------: | :-----: | :-----: | :----: | :------: |
+   * |  **29**  | **20**  |  **9**  | **12** |  **11**  |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex
    */
@@ -5406,10 +5417,10 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-flow
    */
@@ -5435,9 +5446,9 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -5556,9 +5567,9 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<mask-layer>#`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **1**  |  **2**  | **3.2** | **12** | No  |
+   * | Chrome | Firefox | Safari  | Edge  | IE  |
+   * | :----: | :-----: | :-----: | :---: | :-: |
+   * | **1**  |  **2**  | **3.1** | 12-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask
    */
@@ -5658,23 +5669,9 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-items
    */
@@ -5684,23 +5681,9 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<'align-self'> <'justify-self'>?`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-self
    */
@@ -5722,9 +5705,9 @@ export interface StandardShorthandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
    */
@@ -8266,13 +8249,13 @@ export interface ObsoleteProperties<TLength = string | 0> {
   /**
    * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
    *
-   * **Syntax**: `<integer [0,1]>`
+   * **Syntax**: `0 | 1`
    *
    * **Initial value**: `0`
    *
    * @deprecated
    */
-  MozForceBrokenImageIcon?: GlobalsNumber;
+  MozForceBrokenImageIcon?: MozForceBrokenImageIconProperty;
   /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
@@ -8822,6 +8805,20 @@ export interface Properties<TLength = string | 0> extends StandardProperties<TLe
 
 export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
+   * The **`accent-color`** CSS property sets the color of the elements accent. An accent appears in elements such as `<input>` of `type="checkbox"`, or `type="radio"`.
+   *
+   * **Syntax**: `auto | <color>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **93** | **92**  |   No   | **93** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/accent-color
+   */
+  "accent-color"?: AccentColorProperty;
+  /**
    * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
    *
    * **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
@@ -8832,10 +8829,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -9066,7 +9063,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **88** |   n/a   |   No   | **88** | No  |
+   * | **88** | **89**  | **15** | **88** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -9268,9 +9265,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-color
    */
@@ -9366,9 +9363,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
    */
@@ -9380,9 +9377,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `medium`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-width
    */
@@ -9482,7 +9479,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -9496,7 +9493,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -9578,9 +9575,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-color
    */
@@ -9681,9 +9678,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
    */
@@ -9695,9 +9692,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `medium`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-width
    */
@@ -9809,7 +9806,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -9823,7 +9820,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -9921,9 +9918,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `slice`
    *
-   * |    Chrome    | Firefox |    Safari     |     Edge     | IE  |
-   * | :----------: | :-----: | :-----------: | :----------: | :-: |
-   * | **22** _-x-_ | **32**  | **6.1** _-x-_ | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox |   Safari    |     Edge     | IE  |
+   * | :----------: | :-----: | :---------: | :----------: | :-: |
+   * | **22** _-x-_ | **32**  | **7** _-x-_ | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
    */
@@ -10182,9 +10179,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -10192,7 +10189,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
    * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
-   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * |         **66**         |         **61**         |          **12**          | **16** | No  |
    * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
@@ -10476,10 +10473,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |            IE            |
-   * | :------: | :-----: | :-------: | :----: | :----------------------: |
-   * |  **29**  | **20**  |   **9**   | **12** |          **11**          |
-   * | 22 _-x-_ |         | 6.1 _-x-_ |        | 10 _(-ms-flex-positive)_ |
+   * |  Chrome  | Firefox | Safari  |  Edge  |            IE            |
+   * | :------: | :-----: | :-----: | :----: | :----------------------: |
+   * |  **29**  | **20**  |  **9**  | **12** |          **11**          |
+   * | 22 _-x-_ |         | 7 _-x-_ |        | 10 _(-ms-flex-positive)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
@@ -10618,7 +10615,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`font-size-adjust`** CSS property sets how the font size should be chosen based on the height of lowercase rather than capital letters.
    *
-   * **Syntax**: `none | <number>`
+   * **Syntax**: `none | [ ex-height | cap-height | ch-width | ic-width | ic-height ]? [ from-font | <number> ]`
    *
    * **Initial value**: `none`
    *
@@ -10674,7 +10671,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
    *
-   * **Syntax**: `none | [ weight || style ]`
+   * **Syntax**: `none | [ weight || style || small-caps ]`
    *
    * **Initial value**: `weight style`
    *
@@ -10720,9 +10717,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **63** | **34**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **63** | **34**  | **9.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
    */
@@ -10763,9 +10760,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **34**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | :----: | :-----: | :-----: | :--: | :-: |
+   * |   No   | **34**  | **9.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-position
    */
@@ -10988,10 +10985,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `manual`
    *
-   * |  Chrome  | Firefox |    Safari     |     Edge     |      IE      |
-   * | :------: | :-----: | :-----------: | :----------: | :----------: |
-   * |  **55**  | **43**  | **5.1** _-x-_ | **12** _-x-_ | **10** _-x-_ |
-   * | 13 _-x-_ | 6 _-x-_ |               |              |              |
+   * |  Chrome  | Firefox |    Safari     |  Edge  |      IE      |
+   * | :------: | :-----: | :-----------: | :----: | :----------: |
+   * |  **55**  | **43**  | **5.1** _-x-_ | **79** | **10** _-x-_ |
+   * | 13 _-x-_ | 6 _-x-_ |               |        |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/hyphens
    */
@@ -11065,9 +11062,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset
    */
@@ -11079,9 +11076,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
    */
@@ -11093,9 +11090,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-end
    */
@@ -11107,9 +11104,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-start
    */
@@ -11121,9 +11118,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
    */
@@ -11135,9 +11132,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-end
    */
@@ -11149,9 +11146,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-start
    */
@@ -11389,9 +11386,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
    */
@@ -11445,9 +11442,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
    */
@@ -11637,9 +11634,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |   Chrome    | Firefox |   Safari    |  Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **16** | No  |
+   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
+   * | :---------: | :-----: | :---------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | 16-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
    */
@@ -11679,9 +11676,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `center`
    *
-   * |   Chrome    | Firefox |    Safari     |  Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **3.2** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
+   * | :---------: | :-----: | :-----------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
    */
@@ -11693,9 +11690,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `no-repeat`
    *
-   * |   Chrome    | Firefox |    Safari     |  Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **3.2** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
+   * | :---------: | :-----: | :-----------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
    */
@@ -11707,9 +11704,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |   Safari    |  Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :----: | :-: |
-   * | **4** _-x-_ | **53**  | **4** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
+   * | :---------: | :-----: | :---------: | :---: | :-: |
+   * | **4** _-x-_ | **53**  | **4** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
    */
@@ -11721,9 +11718,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `luminance`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **24** | **35**  | **6.1** | **79** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **24** | **35**  | **7**  | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
    */
@@ -11735,9 +11732,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   n/a   |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |  n/a   |   n/a   | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-style
    */
@@ -12190,7 +12187,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * |     Chrome      |      Firefox      |     Safari      |       Edge       |          IE           |
    * | :-------------: | :---------------: | :-------------: | :--------------: | :-------------------: |
-   * |     **23**      |      **49**       |     **6.1**     |      **18**      | **5.5** _(word-wrap)_ |
+   * |     **23**      |      **49**       |      **7**      |      **18**      | **5.5** _(word-wrap)_ |
    * | 1 _(word-wrap)_ | 3.5 _(word-wrap)_ | 1 _(word-wrap)_ | 12 _(word-wrap)_ |                       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
@@ -12287,9 +12284,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
@@ -12343,9 +12340,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
@@ -12515,23 +12512,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **9**  | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **53**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-content
    */
@@ -12613,9 +12596,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/rotate
    */
@@ -12631,9 +12614,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -12641,7 +12624,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
    * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
-   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * |       **66**        |       **61**        |        **12**         | **16** | No  |
    * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
@@ -12691,9 +12674,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scale
    */
@@ -12719,9 +12702,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   * | Chrome | Firefox |          Safari           |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------: | :----: | :-: |
+   * | **69** | **90**  |         **14.1**          | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
@@ -12733,9 +12717,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
    */
@@ -12747,9 +12731,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end
    */
@@ -12761,9 +12745,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start
    */
@@ -12775,9 +12759,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   * | Chrome | Firefox |              Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :------------------------------: | :----: | :-: |
+   * | **69** | **68**  |             **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-bottom)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
@@ -12789,9 +12774,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **68**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -12803,9 +12788,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end
    */
@@ -12817,9 +12802,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start
    */
@@ -12831,9 +12816,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-left)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
@@ -12845,9 +12831,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-right)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
@@ -12859,9 +12846,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  |           **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-top)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
@@ -12893,7 +12881,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * | Chrome | Firefox | Safari |  Edge  | IE  |
  * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  |   No   | **79** | No  |
+ * | **69** | **68**  | **15** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
  */
@@ -12907,7 +12895,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end
    */
@@ -12921,7 +12909,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start
    */
@@ -12951,7 +12939,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * | Chrome | Firefox | Safari |  Edge  | IE  |
  * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  |   No   | **79** | No  |
+ * | **69** | **68**  | **15** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
  */
@@ -12965,7 +12953,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end
    */
@@ -12979,7 +12967,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start
    */
@@ -13047,9 +13035,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   * | Chrome | Firefox |          Safari           |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------: | :----: | :-: |
+   * | **69** |  68-90  |         **14.1**          | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
@@ -13061,9 +13050,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   * | Chrome | Firefox |              Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :------------------------------: | :----: | :-: |
+   * | **69** | **68**  |             **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-bottom)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
@@ -13075,9 +13065,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-left)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
@@ -13089,9 +13080,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-right)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
@@ -13103,9 +13095,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  |           **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-top)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
@@ -13119,7 +13112,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **75** |   No    |   No   | **79** | No  |
+   * | **75** |   No    | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
    */
@@ -13131,10 +13124,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari  |     Edge     |      IE      |
-   * | :----: | :-----: | :-----: | :----------: | :----------: |
-   * | **69** |  39-68  | **11**  | **12** _-x-_ | **10** _-x-_ |
-   * |        |         | 9 _-x-_ |              |              |
+   * | Chrome | Firefox | Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :-----: | :----: | :----------: |
+   * | **69** |  39-68  | **11**  | **79** | **10** _-x-_ |
+   * |        |         | 9 _-x-_ |        |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
    */
@@ -13142,7 +13135,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`scrollbar-color`** CSS property sets the color of the scrollbar track and thumb.
    *
-   * **Syntax**: `auto | dark | light | <color>{2}`
+   * **Syntax**: `auto | <color>{2}`
    *
    * **Initial value**: `auto`
    *
@@ -13156,7 +13149,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
    *
-   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   * **Syntax**: `auto | stable && both-edges?`
    *
    * **Initial value**: `auto`
    *
@@ -13230,9 +13223,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `8`
    *
-   * | Chrome |   Firefox   | Safari  |  Edge  | IE  |
-   * | :----: | :---------: | :-----: | :----: | :-: |
-   * | **21** | **4** _-x-_ | **6.1** | **79** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **21** | **91**  | **7**  | **79** | No  |
+   * |        | 4 _-x-_ |        |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/tab-size
    */
@@ -13334,7 +13328,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
    * | 57-64  |   No    | **12.1** |  No  | No  |
-   * |        |         | 8 _-x-_  |      |     |
+   * |        |         | 7 _-x-_  |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip
    */
@@ -13403,9 +13397,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `currentcolor`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
    */
@@ -13417,9 +13411,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `over right`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
@@ -13431,9 +13425,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
    */
@@ -13735,9 +13729,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/translate
    */
@@ -13763,10 +13757,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |     Edge     |      IE      |
-   * | :-----: | :-----: | :---------: | :----------: | :----------: |
-   * | **54**  | **69**  | **3** _-x-_ | **12** _-x-_ | **10** _-x-_ |
-   * | 1 _-x-_ | 1 _-x-_ |             |              |              |
+   * | Chrome  | Firefox |   Safari    |   Edge   |      IE      |
+   * | :-----: | :-----: | :---------: | :------: | :----------: |
+   * | **54**  | **69**  | **3** _-x-_ |  **79**  | **10** _-x-_ |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
@@ -13872,7 +13866,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`word-spacing`** CSS property sets the length of space between words and between tags.
    *
-   * **Syntax**: `normal | <length-percentage>`
+   * **Syntax**: `normal | <length>`
    *
    * **Initial value**: `normal`
    *
@@ -14007,9 +14001,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
@@ -14080,9 +14074,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
@@ -14215,10 +14209,10 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
-   * | :------: | :-----: | :-------: | :----: | :------: |
-   * |  **29**  | **20**  |   **9**   | **12** |  **11**  |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
+   * |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
+   * | :------: | :-----: | :-----: | :----: | :------: |
+   * |  **29**  | **20**  |  **9**  | **12** |  **11**  |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex
    */
@@ -14228,10 +14222,10 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-flow
    */
@@ -14257,9 +14251,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -14378,9 +14372,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<mask-layer>#`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **1**  |  **2**  | **3.2** | **12** | No  |
+   * | Chrome | Firefox | Safari  | Edge  | IE  |
+   * | :----: | :-----: | :-----: | :---: | :-: |
+   * | **1**  |  **2**  | **3.1** | 12-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask
    */
@@ -14480,23 +14474,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-items
    */
@@ -14506,23 +14486,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<'align-self'> <'justify-self'>?`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-self
    */
@@ -14544,9 +14510,9 @@ export interface StandardShorthandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
    */
@@ -17088,13 +17054,13 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
   /**
    * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
    *
-   * **Syntax**: `<integer [0,1]>`
+   * **Syntax**: `0 | 1`
    *
    * **Initial value**: `0`
    *
    * @deprecated
    */
-  "-moz-force-broken-image-icon"?: GlobalsNumber;
+  "-moz-force-broken-image-icon"?: MozForceBrokenImageIconProperty;
   /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
@@ -17648,6 +17614,20 @@ export interface PropertiesHyphen<TLength = string | 0>
 
 export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
+   * The **`accent-color`** CSS property sets the color of the elements accent. An accent appears in elements such as `<input>` of `type="checkbox"`, or `type="radio"`.
+   *
+   * **Syntax**: `auto | <color>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **93** | **92**  |   No   | **93** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/accent-color
+   */
+  accentColor?: AccentColorProperty | AccentColorProperty[];
+  /**
    * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
    *
    * **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
@@ -17658,10 +17638,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -17892,7 +17872,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **88** |   n/a   |   No   | **88** | No  |
+   * | **88** | **89**  | **15** | **88** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -18094,9 +18074,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-color
    */
@@ -18192,9 +18172,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
    */
@@ -18206,9 +18186,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `medium`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-width
    */
@@ -18308,7 +18288,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -18322,7 +18302,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -18404,9 +18384,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-color
    */
@@ -18507,9 +18487,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
    */
@@ -18521,9 +18501,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `medium`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-width
    */
@@ -18635,7 +18615,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -18649,7 +18629,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -18747,9 +18727,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `slice`
    *
-   * |    Chrome    | Firefox |    Safari     |     Edge     | IE  |
-   * | :----------: | :-----: | :-----------: | :----------: | :-: |
-   * | **22** _-x-_ | **32**  | **6.1** _-x-_ | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox |   Safari    |     Edge     | IE  |
+   * | :----------: | :-----: | :---------: | :----------: | :-: |
+   * | **22** _-x-_ | **32**  | **7** _-x-_ | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
    */
@@ -19008,9 +18988,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -19018,7 +18998,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
    * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
-   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * |         **66**         |         **61**         |          **12**          | **16** | No  |
    * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
@@ -19302,10 +19282,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |            IE            |
-   * | :------: | :-----: | :-------: | :----: | :----------------------: |
-   * |  **29**  | **20**  |   **9**   | **12** |          **11**          |
-   * | 22 _-x-_ |         | 6.1 _-x-_ |        | 10 _(-ms-flex-positive)_ |
+   * |  Chrome  | Firefox | Safari  |  Edge  |            IE            |
+   * | :------: | :-----: | :-----: | :----: | :----------------------: |
+   * |  **29**  | **20**  |  **9**  | **12** |          **11**          |
+   * | 22 _-x-_ |         | 7 _-x-_ |        | 10 _(-ms-flex-positive)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
@@ -19444,7 +19424,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`font-size-adjust`** CSS property sets how the font size should be chosen based on the height of lowercase rather than capital letters.
    *
-   * **Syntax**: `none | <number>`
+   * **Syntax**: `none | [ ex-height | cap-height | ch-width | ic-width | ic-height ]? [ from-font | <number> ]`
    *
    * **Initial value**: `none`
    *
@@ -19500,7 +19480,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
    *
-   * **Syntax**: `none | [ weight || style ]`
+   * **Syntax**: `none | [ weight || style || small-caps ]`
    *
    * **Initial value**: `weight style`
    *
@@ -19546,9 +19526,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **63** | **34**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **63** | **34**  | **9.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
    */
@@ -19589,9 +19569,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **34**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | :----: | :-----: | :-----: | :--: | :-: |
+   * |   No   | **34**  | **9.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-position
    */
@@ -19814,10 +19794,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `manual`
    *
-   * |  Chrome  | Firefox |    Safari     |     Edge     |      IE      |
-   * | :------: | :-----: | :-----------: | :----------: | :----------: |
-   * |  **55**  | **43**  | **5.1** _-x-_ | **12** _-x-_ | **10** _-x-_ |
-   * | 13 _-x-_ | 6 _-x-_ |               |              |              |
+   * |  Chrome  | Firefox |    Safari     |  Edge  |      IE      |
+   * | :------: | :-----: | :-----------: | :----: | :----------: |
+   * |  **55**  | **43**  | **5.1** _-x-_ | **79** | **10** _-x-_ |
+   * | 13 _-x-_ | 6 _-x-_ |               |        |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/hyphens
    */
@@ -19891,9 +19871,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset
    */
@@ -19905,9 +19885,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
    */
@@ -19919,9 +19899,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-end
    */
@@ -19933,9 +19913,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-start
    */
@@ -19947,9 +19927,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
    */
@@ -19961,9 +19941,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-end
    */
@@ -19975,9 +19955,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-start
    */
@@ -20215,9 +20195,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
    */
@@ -20271,9 +20251,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
    */
@@ -20463,9 +20443,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |   Chrome    | Firefox |   Safari    |  Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **16** | No  |
+   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
+   * | :---------: | :-----: | :---------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | 16-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
    */
@@ -20505,9 +20485,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `center`
    *
-   * |   Chrome    | Firefox |    Safari     |  Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **3.2** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
+   * | :---------: | :-----: | :-----------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
    */
@@ -20519,9 +20499,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `no-repeat`
    *
-   * |   Chrome    | Firefox |    Safari     |  Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **3.2** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
+   * | :---------: | :-----: | :-----------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
    */
@@ -20533,9 +20513,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |   Safari    |  Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :----: | :-: |
-   * | **4** _-x-_ | **53**  | **4** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
+   * | :---------: | :-----: | :---------: | :---: | :-: |
+   * | **4** _-x-_ | **53**  | **4** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
    */
@@ -20547,9 +20527,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `luminance`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **24** | **35**  | **6.1** | **79** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **24** | **35**  | **7**  | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
    */
@@ -20561,9 +20541,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   n/a   |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |  n/a   |   n/a   | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-style
    */
@@ -21016,7 +20996,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * |     Chrome      |      Firefox      |     Safari      |       Edge       |          IE           |
    * | :-------------: | :---------------: | :-------------: | :--------------: | :-------------------: |
-   * |     **23**      |      **49**       |     **6.1**     |      **18**      | **5.5** _(word-wrap)_ |
+   * |     **23**      |      **49**       |      **7**      |      **18**      | **5.5** _(word-wrap)_ |
    * | 1 _(word-wrap)_ | 3.5 _(word-wrap)_ | 1 _(word-wrap)_ | 12 _(word-wrap)_ |                       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
@@ -21113,9 +21093,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
@@ -21169,9 +21149,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
@@ -21341,23 +21321,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **9**  | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **53**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-content
    */
@@ -21439,9 +21405,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/rotate
    */
@@ -21457,9 +21423,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -21467,7 +21433,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
    * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
-   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * |       **66**        |       **61**        |        **12**         | **16** | No  |
    * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
@@ -21517,9 +21483,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scale
    */
@@ -21545,9 +21511,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   * | Chrome | Firefox |          Safari           |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------: | :----: | :-: |
+   * | **69** | **90**  |         **14.1**          | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
@@ -21559,9 +21526,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
    */
@@ -21573,9 +21540,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end
    */
@@ -21587,9 +21554,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start
    */
@@ -21601,9 +21568,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   * | Chrome | Firefox |              Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :------------------------------: | :----: | :-: |
+   * | **69** | **68**  |             **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-bottom)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
@@ -21615,9 +21583,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **68**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -21629,9 +21597,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end
    */
@@ -21643,9 +21611,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start
    */
@@ -21657,9 +21625,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-left)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
@@ -21671,9 +21640,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-right)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
@@ -21685,9 +21655,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  |           **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-top)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
@@ -21719,7 +21690,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * | Chrome | Firefox | Safari |  Edge  | IE  |
  * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  |   No   | **79** | No  |
+ * | **69** | **68**  | **15** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
  */
@@ -21733,7 +21704,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end
    */
@@ -21747,7 +21718,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start
    */
@@ -21777,7 +21748,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * | Chrome | Firefox | Safari |  Edge  | IE  |
  * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  |   No   | **79** | No  |
+ * | **69** | **68**  | **15** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
  */
@@ -21791,7 +21762,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end
    */
@@ -21805,7 +21776,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start
    */
@@ -21873,9 +21844,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   * | Chrome | Firefox |          Safari           |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------: | :----: | :-: |
+   * | **69** |  68-90  |         **14.1**          | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
@@ -21887,9 +21859,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   * | Chrome | Firefox |              Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :------------------------------: | :----: | :-: |
+   * | **69** | **68**  |             **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-bottom)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
@@ -21901,9 +21874,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-left)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
@@ -21915,9 +21889,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-right)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
@@ -21929,9 +21904,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  |           **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-top)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
@@ -21945,7 +21921,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **75** |   No    |   No   | **79** | No  |
+   * | **75** |   No    | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
    */
@@ -21957,10 +21933,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari  |     Edge     |      IE      |
-   * | :----: | :-----: | :-----: | :----------: | :----------: |
-   * | **69** |  39-68  | **11**  | **12** _-x-_ | **10** _-x-_ |
-   * |        |         | 9 _-x-_ |              |              |
+   * | Chrome | Firefox | Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :-----: | :----: | :----------: |
+   * | **69** |  39-68  | **11**  | **79** | **10** _-x-_ |
+   * |        |         | 9 _-x-_ |        |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
    */
@@ -21968,7 +21944,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`scrollbar-color`** CSS property sets the color of the scrollbar track and thumb.
    *
-   * **Syntax**: `auto | dark | light | <color>{2}`
+   * **Syntax**: `auto | <color>{2}`
    *
    * **Initial value**: `auto`
    *
@@ -21982,7 +21958,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
    *
-   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   * **Syntax**: `auto | stable && both-edges?`
    *
    * **Initial value**: `auto`
    *
@@ -22056,9 +22032,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `8`
    *
-   * | Chrome |   Firefox   | Safari  |  Edge  | IE  |
-   * | :----: | :---------: | :-----: | :----: | :-: |
-   * | **21** | **4** _-x-_ | **6.1** | **79** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **21** | **91**  | **7**  | **79** | No  |
+   * |        | 4 _-x-_ |        |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/tab-size
    */
@@ -22160,7 +22137,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
    * | 57-64  |   No    | **12.1** |  No  | No  |
-   * |        |         | 8 _-x-_  |      |     |
+   * |        |         | 7 _-x-_  |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip
    */
@@ -22229,9 +22206,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `currentcolor`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
    */
@@ -22243,9 +22220,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `over right`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
@@ -22257,9 +22234,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
    */
@@ -22561,9 +22538,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/translate
    */
@@ -22589,10 +22566,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |     Edge     |      IE      |
-   * | :-----: | :-----: | :---------: | :----------: | :----------: |
-   * | **54**  | **69**  | **3** _-x-_ | **12** _-x-_ | **10** _-x-_ |
-   * | 1 _-x-_ | 1 _-x-_ |             |              |              |
+   * | Chrome  | Firefox |   Safari    |   Edge   |      IE      |
+   * | :-----: | :-----: | :---------: | :------: | :----------: |
+   * | **54**  | **69**  | **3** _-x-_ |  **79**  | **10** _-x-_ |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
@@ -22698,7 +22675,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`word-spacing`** CSS property sets the length of space between words and between tags.
    *
-   * **Syntax**: `normal | <length-percentage>`
+   * **Syntax**: `normal | <length>`
    *
    * **Initial value**: `normal`
    *
@@ -22833,9 +22810,9 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
@@ -22906,9 +22883,9 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
@@ -23041,10 +23018,10 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
-   * | :------: | :-----: | :-------: | :----: | :------: |
-   * |  **29**  | **20**  |   **9**   | **12** |  **11**  |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
+   * |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
+   * | :------: | :-----: | :-----: | :----: | :------: |
+   * |  **29**  | **20**  |  **9**  | **12** |  **11**  |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex
    */
@@ -23054,10 +23031,10 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-flow
    */
@@ -23083,9 +23060,9 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -23204,9 +23181,9 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<mask-layer>#`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **1**  |  **2**  | **3.2** | **12** | No  |
+   * | Chrome | Firefox | Safari  | Edge  | IE  |
+   * | :----: | :-----: | :-----: | :---: | :-: |
+   * | **1**  |  **2**  | **3.1** | 12-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask
    */
@@ -23306,23 +23283,9 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-items
    */
@@ -23332,23 +23295,9 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<'align-self'> <'justify-self'>?`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-self
    */
@@ -23370,9 +23319,9 @@ export interface StandardShorthandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
    */
@@ -25914,13 +25863,13 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
   /**
    * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
    *
-   * **Syntax**: `<integer [0,1]>`
+   * **Syntax**: `0 | 1`
    *
    * **Initial value**: `0`
    *
    * @deprecated
    */
-  MozForceBrokenImageIcon?: GlobalsNumber | GlobalsNumber[];
+  MozForceBrokenImageIcon?: MozForceBrokenImageIconProperty | MozForceBrokenImageIconProperty[];
   /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
@@ -26474,6 +26423,20 @@ export interface PropertiesFallback<TLength = string | 0>
 
 export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> {
   /**
+   * The **`accent-color`** CSS property sets the color of the elements accent. An accent appears in elements such as `<input>` of `type="checkbox"`, or `type="radio"`.
+   *
+   * **Syntax**: `auto | <color>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **93** | **92**  |   No   | **93** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/accent-color
+   */
+  "accent-color"?: AccentColorProperty | AccentColorProperty[];
+  /**
    * The CSS **`align-content`** property sets how the browser distributes space between and around content items along the cross-axis of a flexbox container, and the main-axis of a grid container.
    *
    * **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
@@ -26484,10 +26447,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -26718,7 +26681,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **88** |   n/a   |   No   | **88** | No  |
+   * | **88** | **89**  | **15** | **88** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
@@ -26920,9 +26883,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-color
    */
@@ -27018,9 +26981,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
    */
@@ -27032,9 +26995,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `medium`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-width
    */
@@ -27134,7 +27097,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-end-radius
    */
@@ -27148,7 +27111,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-end-start-radius
    */
@@ -27230,9 +27193,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `currentcolor`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-color
    */
@@ -27333,9 +27296,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
    */
@@ -27347,9 +27310,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `medium`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-width
    */
@@ -27461,7 +27424,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-end-radius
    */
@@ -27475,7 +27438,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **89** | **66**  |   No   | **89** | No  |
+   * | **89** | **66**  | **15** | **89** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-start-start-radius
    */
@@ -27573,9 +27536,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `slice`
    *
-   * |    Chrome    | Firefox |    Safari     |     Edge     | IE  |
-   * | :----------: | :-----: | :-----------: | :----------: | :-: |
-   * | **22** _-x-_ | **32**  | **6.1** _-x-_ | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox |   Safari    |     Edge     | IE  |
+   * | :----------: | :-----: | :---------: | :----------: | :-: |
+   * | **22** _-x-_ | **32**  | **7** _-x-_ | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
    */
@@ -27834,9 +27797,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -27844,7 +27807,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * |         Chrome         |        Firefox         |          Safari          |  Edge  | IE  |
    * | :--------------------: | :--------------------: | :----------------------: | :----: | :-: |
-   * |         **66**         |         **61**         |         **12.1**         | **16** | No  |
+   * |         **66**         |         **61**         |          **12**          | **16** | No  |
    * | 57 _(grid-column-gap)_ | 52 _(grid-column-gap)_ | 10.1 _(grid-column-gap)_ |        |     |
    *
    * ---
@@ -28128,10 +28091,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |            IE            |
-   * | :------: | :-----: | :-------: | :----: | :----------------------: |
-   * |  **29**  | **20**  |   **9**   | **12** |          **11**          |
-   * | 22 _-x-_ |         | 6.1 _-x-_ |        | 10 _(-ms-flex-positive)_ |
+   * |  Chrome  | Firefox | Safari  |  Edge  |            IE            |
+   * | :------: | :-----: | :-----: | :----: | :----------------------: |
+   * |  **29**  | **20**  |  **9**  | **12** |          **11**          |
+   * | 22 _-x-_ |         | 7 _-x-_ |        | 10 _(-ms-flex-positive)_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-grow
    */
@@ -28270,7 +28233,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`font-size-adjust`** CSS property sets how the font size should be chosen based on the height of lowercase rather than capital letters.
    *
-   * **Syntax**: `none | <number>`
+   * **Syntax**: `none | [ ex-height | cap-height | ch-width | ic-width | ic-height ]? [ from-font | <number> ]`
    *
    * **Initial value**: `none`
    *
@@ -28326,7 +28289,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`font-synthesis`** CSS property controls which missing typefaces, bold or italic, may be synthesized by the browser.
    *
-   * **Syntax**: `none | [ weight || style ]`
+   * **Syntax**: `none | [ weight || style || small-caps ]`
    *
    * **Initial value**: `weight style`
    *
@@ -28372,9 +28335,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **63** | **34**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :-----: | :----: | :-: |
+   * | **63** | **34**  | **9.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
    */
@@ -28415,9 +28378,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **34**  |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | :----: | :-----: | :-----: | :--: | :-: |
+   * |   No   | **34**  | **9.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-position
    */
@@ -28640,10 +28603,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `manual`
    *
-   * |  Chrome  | Firefox |    Safari     |     Edge     |      IE      |
-   * | :------: | :-----: | :-----------: | :----------: | :----------: |
-   * |  **55**  | **43**  | **5.1** _-x-_ | **12** _-x-_ | **10** _-x-_ |
-   * | 13 _-x-_ | 6 _-x-_ |               |              |              |
+   * |  Chrome  | Firefox |    Safari     |  Edge  |      IE      |
+   * | :------: | :-----: | :-----------: | :----: | :----------: |
+   * |  **55**  | **43**  | **5.1** _-x-_ | **79** | **10** _-x-_ |
+   * | 13 _-x-_ | 6 _-x-_ |               |        |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/hyphens
    */
@@ -28717,9 +28680,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset
    */
@@ -28731,9 +28694,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
    */
@@ -28745,9 +28708,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-end
    */
@@ -28759,9 +28722,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-start
    */
@@ -28773,9 +28736,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
    */
@@ -28787,9 +28750,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-end
    */
@@ -28801,9 +28764,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **63**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **63**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline-start
    */
@@ -29041,9 +29004,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
    */
@@ -29097,9 +29060,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
    */
@@ -29289,9 +29252,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * |   Chrome    | Firefox |   Safari    |  Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **16** | No  |
+   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
+   * | :---------: | :-----: | :---------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **4** _-x-_ | 16-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
    */
@@ -29331,9 +29294,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `center`
    *
-   * |   Chrome    | Firefox |    Safari     |  Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **3.2** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
+   * | :---------: | :-----: | :-----------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
    */
@@ -29345,9 +29308,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `no-repeat`
    *
-   * |   Chrome    | Firefox |    Safari     |  Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :----: | :-: |
-   * | **1** _-x-_ | **53**  | **3.2** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
+   * | :---------: | :-----: | :-----------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
    */
@@ -29359,9 +29322,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |   Safari    |  Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :----: | :-: |
-   * | **4** _-x-_ | **53**  | **4** _-x-_ | **18** | No  |
+   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
+   * | :---------: | :-----: | :---------: | :---: | :-: |
+   * | **4** _-x-_ | **53**  | **4** _-x-_ | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
    */
@@ -29373,9 +29336,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `luminance`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **24** | **35**  | **6.1** | **79** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **24** | **35**  | **7**  | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-type
    */
@@ -29387,9 +29350,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   n/a   |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |  n/a   |   n/a   | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-style
    */
@@ -29842,7 +29805,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * |     Chrome      |      Firefox      |     Safari      |       Edge       |          IE           |
    * | :-------------: | :---------------: | :-------------: | :--------------: | :-------------------: |
-   * |     **23**      |      **49**       |     **6.1**     |      **18**      | **5.5** _(word-wrap)_ |
+   * |     **23**      |      **49**       |      **7**      |      **18**      | **5.5** _(word-wrap)_ |
    * | 1 _(word-wrap)_ | 3.5 _(word-wrap)_ | 1 _(word-wrap)_ | 12 _(word-wrap)_ |                       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
@@ -29939,9 +29902,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
    */
@@ -29995,9 +29958,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
    */
@@ -30167,23 +30130,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **9**  | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **53**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-content
    */
@@ -30265,9 +30214,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/rotate
    */
@@ -30283,9 +30232,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -30293,7 +30242,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * |       Chrome        |       Firefox       |        Safari         |  Edge  | IE  |
    * | :-----------------: | :-----------------: | :-------------------: | :----: | :-: |
-   * |       **66**        |       **61**        |       **12.1**        | **16** | No  |
+   * |       **66**        |       **61**        |        **12**         | **16** | No  |
    * | 57 _(grid-row-gap)_ | 52 _(grid-row-gap)_ | 10.1 _(grid-row-gap)_ |        |     |
    *
    * ---
@@ -30343,9 +30292,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scale
    */
@@ -30371,9 +30320,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   * | Chrome | Firefox |          Safari           |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------: | :----: | :-: |
+   * | **69** | **90**  |         **14.1**          | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
@@ -30385,9 +30335,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
    */
@@ -30399,9 +30349,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-end
    */
@@ -30413,9 +30363,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block-start
    */
@@ -30427,9 +30377,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   * | Chrome | Firefox |              Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :------------------------------: | :----: | :-: |
+   * | **69** | **68**  |             **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-bottom)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
@@ -30441,9 +30392,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **68**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **68**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -30455,9 +30406,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-end
    */
@@ -30469,9 +30420,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline-start
    */
@@ -30483,9 +30434,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-left)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
@@ -30497,9 +30449,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-right)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
@@ -30511,9 +30464,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  |           **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-top)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
@@ -30545,7 +30499,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * | Chrome | Firefox | Safari |  Edge  | IE  |
  * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  |   No   | **79** | No  |
+ * | **69** | **68**  | **15** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
  */
@@ -30559,7 +30513,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-end
    */
@@ -30573,7 +30527,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block-start
    */
@@ -30603,7 +30557,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * | Chrome | Firefox | Safari |  Edge  | IE  |
  * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  |   No   | **79** | No  |
+ * | **69** | **68**  | **15** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
  */
@@ -30617,7 +30571,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-end
    */
@@ -30631,7 +30585,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  |   No   | **79** | No  |
+   * | **69** | **68**  | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline-start
    */
@@ -30699,9 +30653,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin)_ | **79** | No  |
+   * | Chrome | Firefox |          Safari           |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------: | :----: | :-: |
+   * | **69** |  68-90  |         **14.1**          | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
    */
@@ -30713,9 +30668,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |                Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :----------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-bottom)_ | **79** | No  |
+   * | Chrome | Firefox |              Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :------------------------------: | :----: | :-: |
+   * | **69** | **68**  |             **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-bottom)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
@@ -30727,9 +30683,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :--------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-left)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-left)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-left
    */
@@ -30741,9 +30698,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |               Safari                |  Edge  | IE  |
-   * | :----: | :-----: | :---------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-right)_ | **79** | No  |
+   * | Chrome | Firefox |             Safari              |  Edge  | IE  |
+   * | :----: | :-----: | :-----------------------------: | :----: | :-: |
+   * | **69** | **68**  |            **14.1**             | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-right)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-right
    */
@@ -30755,9 +30713,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |              Safari               |  Edge  | IE  |
-   * | :----: | :-----: | :-------------------------------: | :----: | :-: |
-   * | **69** | **68**  | **11** _(scroll-snap-margin-top)_ | **79** | No  |
+   * | Chrome | Firefox |            Safari             |  Edge  | IE  |
+   * | :----: | :-----: | :---------------------------: | :----: | :-: |
+   * | **69** | **68**  |           **14.1**            | **79** | No  |
+   * |        |         | 11 _(scroll-snap-margin-top)_ |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-top
    */
@@ -30771,7 +30730,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **75** |   No    |   No   | **79** | No  |
+   * | **75** |   No    | **15** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
    */
@@ -30783,10 +30742,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari  |     Edge     |      IE      |
-   * | :----: | :-----: | :-----: | :----------: | :----------: |
-   * | **69** |  39-68  | **11**  | **12** _-x-_ | **10** _-x-_ |
-   * |        |         | 9 _-x-_ |              |              |
+   * | Chrome | Firefox | Safari  |  Edge  |      IE      |
+   * | :----: | :-----: | :-----: | :----: | :----------: |
+   * | **69** |  39-68  | **11**  | **79** | **10** _-x-_ |
+   * |        |         | 9 _-x-_ |        |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
    */
@@ -30794,7 +30753,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`scrollbar-color`** CSS property sets the color of the scrollbar track and thumb.
    *
-   * **Syntax**: `auto | dark | light | <color>{2}`
+   * **Syntax**: `auto | <color>{2}`
    *
    * **Initial value**: `auto`
    *
@@ -30808,7 +30767,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`scrollbar-gutter`** CSS property allows authors to reserve space for the scrollbar, preventing unwanted layout changes as the content grows while also avoiding unnecessary visuals when scrolling isn't needed.
    *
-   * **Syntax**: `auto | [ stable | always ] && both? && force?`
+   * **Syntax**: `auto | stable && both-edges?`
    *
    * **Initial value**: `auto`
    *
@@ -30882,9 +30841,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `8`
    *
-   * | Chrome |   Firefox   | Safari  |  Edge  | IE  |
-   * | :----: | :---------: | :-----: | :----: | :-: |
-   * | **21** | **4** _-x-_ | **6.1** | **79** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **21** | **91**  | **7**  | **79** | No  |
+   * |        | 4 _-x-_ |        |        |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/tab-size
    */
@@ -30986,7 +30946,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    * | Chrome | Firefox |  Safari  | Edge | IE  |
    * | :----: | :-----: | :------: | :--: | :-: |
    * | 57-64  |   No    | **12.1** |  No  | No  |
-   * |        |         | 8 _-x-_  |      |     |
+   * |        |         | 7 _-x-_  |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip
    */
@@ -31055,9 +31015,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `currentcolor`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
    */
@@ -31069,9 +31029,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `over right`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
@@ -31083,9 +31043,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
    */
@@ -31387,9 +31347,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **72**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **72**  | **14.1** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/translate
    */
@@ -31415,10 +31375,10 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome  | Firefox |   Safari    |     Edge     |      IE      |
-   * | :-----: | :-----: | :---------: | :----------: | :----------: |
-   * | **54**  | **69**  | **3** _-x-_ | **12** _-x-_ | **10** _-x-_ |
-   * | 1 _-x-_ | 1 _-x-_ |             |              |              |
+   * | Chrome  | Firefox |   Safari    |   Edge   |      IE      |
+   * | :-----: | :-----: | :---------: | :------: | :----------: |
+   * | **54**  | **69**  | **3** _-x-_ |  **79**  | **10** _-x-_ |
+   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |              |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
@@ -31524,7 +31484,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
   /**
    * The **`word-spacing`** CSS property sets the length of space between words and between tags.
    *
-   * **Syntax**: `normal | <length-percentage>`
+   * **Syntax**: `normal | <length>`
    *
    * **Initial value**: `normal`
    *
@@ -31659,9 +31619,9 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
@@ -31732,9 +31692,9 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **87** | **66**  |   No   | n/a  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
@@ -31867,10 +31827,10 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |    IE    |
-   * | :------: | :-----: | :-------: | :----: | :------: |
-   * |  **29**  | **20**  |   **9**   | **12** |  **11**  |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        | 10 _-x-_ |
+   * |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
+   * | :------: | :-----: | :-----: | :----: | :------: |
+   * |  **29**  | **20**  |  **9**  | **12** |  **11**  |
+   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex
    */
@@ -31880,10 +31840,10 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-flow
    */
@@ -31909,9 +31869,9 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * _Supported in Flex Layout_
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **84** | **63**  |   No   | **84** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **84** | **63**  | **14.1** | **84** | No  |
    *
    * ---
    *
@@ -32030,9 +31990,9 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * **Syntax**: `<mask-layer>#`
    *
-   * | Chrome | Firefox | Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :-----: | :----: | :-: |
-   * | **1**  |  **2**  | **3.2** | **12** | No  |
+   * | Chrome | Firefox | Safari  | Edge  | IE  |
+   * | :----: | :-----: | :-----: | :---: | :-: |
+   * | **1**  |  **2**  | **3.1** | 12-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask
    */
@@ -32132,23 +32092,9 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-items
    */
@@ -32158,23 +32104,9 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * **Syntax**: `<'align-self'> <'justify-self'>?`
    *
-   * ---
-   *
-   * _Supported in Flex Layout_
-   *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
    * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
-   *
-   * _Supported in Grid Layout_
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **59** | **45**  | **11** | **79** | No  |
-   *
-   * ---
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/place-self
    */
@@ -32196,9 +32128,9 @@ export interface StandardShorthandPropertiesHyphenFallback<TLength = string | 0>
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
-   * |    Chrome    | Firefox | Safari  |     Edge     | IE  |
-   * | :----------: | :-----: | :-----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **6.1** | **79** _-x-_ | No  |
+   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
+   * | :----------: | :-----: | :----: | :----------: | :-: |
+   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
    */
@@ -34742,13 +34674,13 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
   /**
    * The **`-moz-force-broken-image-icon`** extended CSS property can be used to force the broken image icon to be shown even when a broken image has an `alt` attribute.
    *
-   * **Syntax**: `<integer [0,1]>`
+   * **Syntax**: `0 | 1`
    *
    * **Initial value**: `0`
    *
    * @deprecated
    */
-  "-moz-force-broken-image-icon"?: GlobalsNumber | GlobalsNumber[];
+  "-moz-force-broken-image-icon"?: MozForceBrokenImageIconProperty | MozForceBrokenImageIconProperty[];
   /**
    * The **`opacity`** CSS property sets the transparency of an element or the degree to which content behind an element is visible.
    *
@@ -35354,6 +35286,8 @@ export interface CounterStyleHyphenFallback {
 
 export interface FontFace {
   MozFontFeatureSettings?: FontFaceFontFeatureSettingsProperty;
+  ascentOverride?: FontFaceAscentOverrideProperty;
+  descentOverride?: FontFaceDescentOverrideProperty;
   fontDisplay?: FontFaceFontDisplayProperty;
   fontFamily?: string;
   fontFeatureSettings?: FontFaceFontFeatureSettingsProperty;
@@ -35362,12 +35296,16 @@ export interface FontFace {
   fontVariant?: FontFaceFontVariantProperty;
   fontVariationSettings?: FontFaceFontVariationSettingsProperty;
   fontWeight?: FontFaceFontWeightProperty;
+  lineGapOverride?: FontFaceLineGapOverrideProperty;
+  sizeAdjust?: string;
   src?: string;
   unicodeRange?: string;
 }
 
 export interface FontFaceHyphen {
   "-moz-font-feature-settings"?: FontFaceFontFeatureSettingsProperty;
+  "ascent-override"?: FontFaceAscentOverrideProperty;
+  "descent-override"?: FontFaceDescentOverrideProperty;
   "font-display"?: FontFaceFontDisplayProperty;
   "font-family"?: string;
   "font-feature-settings"?: FontFaceFontFeatureSettingsProperty;
@@ -35376,12 +35314,16 @@ export interface FontFaceHyphen {
   "font-variant"?: FontFaceFontVariantProperty;
   "font-variation-settings"?: FontFaceFontVariationSettingsProperty;
   "font-weight"?: FontFaceFontWeightProperty;
+  "line-gap-override"?: FontFaceLineGapOverrideProperty;
+  "size-adjust"?: string;
   src?: string;
   "unicode-range"?: string;
 }
 
 export interface FontFaceFallback {
   MozFontFeatureSettings?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[];
+  ascentOverride?: FontFaceAscentOverrideProperty | FontFaceAscentOverrideProperty[];
+  descentOverride?: FontFaceDescentOverrideProperty | FontFaceDescentOverrideProperty[];
   fontDisplay?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[];
   fontFamily?: string | string[];
   fontFeatureSettings?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[];
@@ -35390,12 +35332,16 @@ export interface FontFaceFallback {
   fontVariant?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[];
   fontVariationSettings?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[];
   fontWeight?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[];
+  lineGapOverride?: FontFaceLineGapOverrideProperty | FontFaceLineGapOverrideProperty[];
+  sizeAdjust?: string | string[];
   src?: string | string[];
   unicodeRange?: string | string[];
 }
 
 export interface FontFaceHyphenFallback {
   "-moz-font-feature-settings"?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[];
+  "ascent-override"?: FontFaceAscentOverrideProperty | FontFaceAscentOverrideProperty[];
+  "descent-override"?: FontFaceDescentOverrideProperty | FontFaceDescentOverrideProperty[];
   "font-display"?: FontFaceFontDisplayProperty | FontFaceFontDisplayProperty[];
   "font-family"?: string | string[];
   "font-feature-settings"?: FontFaceFontFeatureSettingsProperty | FontFaceFontFeatureSettingsProperty[];
@@ -35404,23 +35350,33 @@ export interface FontFaceHyphenFallback {
   "font-variant"?: FontFaceFontVariantProperty | FontFaceFontVariantProperty[];
   "font-variation-settings"?: FontFaceFontVariationSettingsProperty | FontFaceFontVariationSettingsProperty[];
   "font-weight"?: FontFaceFontWeightProperty | FontFaceFontWeightProperty[];
+  "line-gap-override"?: FontFaceLineGapOverrideProperty | FontFaceLineGapOverrideProperty[];
+  "size-adjust"?: string | string[];
   src?: string | string[];
   "unicode-range"?: string | string[];
 }
 
 export interface Page<TLength = string | 0> {
+  bleed?: PageBleedProperty<TLength>;
+  marks?: PageMarksProperty;
   size?: PageSizeProperty<TLength>;
 }
 
 export interface PageHyphen<TLength = string | 0> {
+  bleed?: PageBleedProperty<TLength>;
+  marks?: PageMarksProperty;
   size?: PageSizeProperty<TLength>;
 }
 
 export interface PageFallback<TLength = string | 0> {
+  bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[];
+  marks?: PageMarksProperty | PageMarksProperty[];
   size?: PageSizeProperty<TLength> | PageSizeProperty<TLength>[];
 }
 
 export interface PageHyphenFallback<TLength = string | 0> {
+  bleed?: PageBleedProperty<TLength> | PageBleedProperty<TLength>[];
+  marks?: PageMarksProperty | PageMarksProperty[];
   size?: PageSizeProperty<TLength> | PageSizeProperty<TLength>[];
 }
 
@@ -35819,10 +35775,8 @@ export type HtmlAttributes =
   | "[prefetch]"
   | "[preload]"
   | "[profile]"
-  | "[prompt]"
   | "[radiogroup]"
   | "[readonly]"
-  | "[referrerPolicy]"
   | "[referrerpolicy]"
   | "[rel]"
   | "[required]"
@@ -35931,7 +35885,6 @@ export type SvgAttributes =
   | "[edgeMode]"
   | "[elevation]"
   | "[enable-background]"
-  | "[externalResourcesRequired]"
   | "[fill-opacity]"
   | "[fill-rule]"
   | "[fill]"
@@ -35990,7 +35943,6 @@ export type SvgAttributes =
   | "[letter-spacing]"
   | "[lighting-color]"
   | "[limitingConeAngle]"
-  | "[local]"
   | "[marker-end]"
   | "[marker-mid]"
   | "[marker-start]"
@@ -36035,9 +35987,8 @@ export type SvgAttributes =
   | "[radius]"
   | "[refX]"
   | "[refY]"
-  | "[referrerPolicy]"
+  | "[referrerpolicy]"
   | "[rel]"
-  | "[rendering-intent]"
   | "[repeatCount]"
   | "[requiredExtensions]"
   | "[requiredFeatures]"
@@ -36133,6 +36084,8 @@ export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset
 type GlobalsString = Globals | string;
 
 type GlobalsNumber = Globals | number;
+
+export type AccentColorProperty = Globals | Color | "auto";
 
 export type AlignContentProperty = Globals | ContentDistribution | ContentPosition | "baseline" | "normal" | string;
 
@@ -36530,7 +36483,7 @@ export type FontOpticalSizingProperty = Globals | "auto" | "none";
 
 export type FontSizeProperty<TLength> = Globals | AbsoluteSize | TLength | "larger" | "smaller" | string;
 
-export type FontSizeAdjustProperty = Globals | "none" | number;
+export type FontSizeAdjustProperty = Globals | "from-font" | "none" | string | number;
 
 export type FontSmoothProperty<TLength> = Globals | AbsoluteSize | TLength | "always" | "auto" | "never";
 
@@ -36538,7 +36491,7 @@ export type FontStretchProperty = Globals | FontStretchAbsolute;
 
 export type FontStyleProperty = Globals | "italic" | "normal" | "oblique" | string;
 
-export type FontSynthesisProperty = Globals | "none" | "style" | "weight" | string;
+export type FontSynthesisProperty = Globals | "none" | "small-caps" | "style" | "weight" | string;
 
 export type FontVariantProperty =
   | Globals
@@ -37093,9 +37046,9 @@ export type ScrollSnapTypeXProperty = Globals | "mandatory" | "none" | "proximit
 
 export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximity";
 
-export type ScrollbarColorProperty = Globals | Color | "auto" | "dark" | "light";
+export type ScrollbarColorProperty = Globals | Color | "auto";
 
-export type ScrollbarGutterProperty = Globals | "always" | "auto" | "stable" | string;
+export type ScrollbarGutterProperty = Globals | "auto" | "stable" | string;
 
 export type MsScrollbarTrackColorProperty = Globals | Color;
 
@@ -37253,7 +37206,7 @@ export type WillChangeProperty = Globals | AnimateableFeature | "auto" | string;
 
 export type WordBreakProperty = Globals | "break-all" | "break-word" | "keep-all" | "normal";
 
-export type WordSpacingProperty<TLength> = Globals | TLength | "normal" | string;
+export type WordSpacingProperty<TLength> = Globals | TLength | "normal";
 
 export type WordWrapProperty = Globals | "break-word" | "normal";
 
@@ -37389,6 +37342,8 @@ export type MozBorderTopColorsProperty = Globals | Color | "none" | string;
 export type MozContextPropertiesProperty = Globals | "fill" | "fill-opacity" | "none" | "stroke" | "stroke-opacity" | string;
 
 export type MozFloatEdgeProperty = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
+
+export type MozForceBrokenImageIconProperty = Globals | 0 | 1;
 
 export type MozImageRegionProperty = Globals | "auto" | string;
 
@@ -37682,6 +37637,10 @@ type CounterStyleSystemProperty = "additive" | "alphabetic" | "cyclic" | "fixed"
 
 type FontFaceFontFeatureSettingsProperty = "normal" | string;
 
+type FontFaceAscentOverrideProperty = "normal" | string;
+
+type FontFaceDescentOverrideProperty = "normal" | string;
+
 type FontFaceFontDisplayProperty = "auto" | "block" | "fallback" | "optional" | "swap";
 
 type FontFaceFontStretchProperty = FontStretchAbsolute | string;
@@ -37723,6 +37682,12 @@ type FontFaceFontVariantProperty =
 type FontFaceFontVariationSettingsProperty = "normal" | string;
 
 type FontFaceFontWeightProperty = FontWeightAbsolute | string;
+
+type FontFaceLineGapOverrideProperty = "normal" | string;
+
+type PageBleedProperty<TLength> = TLength | "auto";
+
+type PageMarksProperty = "crop" | "cross" | "none" | string;
 
 type PageSizeProperty<TLength> = PageSize | TLength | "auto" | "landscape" | "portrait" | string;
 
