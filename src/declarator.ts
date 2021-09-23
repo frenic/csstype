@@ -5,6 +5,7 @@ import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } fro
 import { getPseudos } from './collections/selectors';
 import { IDataType, Type, TypeType } from './syntax/typer';
 import { toCamelCase, toPascalCase, toVendorPrefixCase } from './utils/casing';
+import { getHtmlElements, getSvgElements } from './collections/elements';
 
 export interface IArray {
   type: Type.Array;
@@ -94,18 +95,32 @@ export const timeGeneric: IGenerics = {
 };
 
 export async function declarator(minTypesInDataTypes: number) {
-  const [dataTypes, [htmlProperties, svgProperties, atRules, globals, pseudos, htmlAttributes, svgAttributes]] =
-    await getDataTypesOf(dictionary =>
-      Promise.all([
-        getHtmlProperties(dictionary, minTypesInDataTypes),
-        getSvgProperties(dictionary, minTypesInDataTypes),
-        getAtRules(dictionary, minTypesInDataTypes),
-        getGlobals(dictionary, minTypesInDataTypes),
-        getPseudos(),
-        getHtmlAttributes(),
-        getSvgAttributes(),
-      ]),
-    );
+  const [
+    dataTypes,
+    [
+      htmlProperties,
+      svgProperties,
+      atRules,
+      globals,
+      pseudos,
+      htmlAttributes,
+      svgAttributes,
+      [htmlElements, htmlObsoleteElements],
+      [svgElements, svgObsoleteElements],
+    ],
+  ] = await getDataTypesOf(dictionary =>
+    Promise.all([
+      getHtmlProperties(dictionary, minTypesInDataTypes),
+      getSvgProperties(dictionary, minTypesInDataTypes),
+      getAtRules(dictionary, minTypesInDataTypes),
+      getGlobals(dictionary, minTypesInDataTypes),
+      getPseudos(),
+      getHtmlAttributes(),
+      getSvgAttributes(),
+      getHtmlElements(),
+      getSvgElements(),
+    ]),
+  );
 
   function getGenericsFrom(types: MixedType[]): IGenerics[] {
     let hasLength = false;
@@ -245,6 +260,46 @@ export async function declarator(minTypesInDataTypes: number) {
   };
 
   globalDeclarations.set(svgAttributes, svgAttributesDeclaration);
+
+  const htmlElementsDeclaration: IDeclaration = {
+    name: 'HtmlElements',
+    export: true,
+    types: declarable(htmlElements),
+    generics: [],
+    namespace: undefined,
+  };
+
+  globalDeclarations.set(htmlElements, htmlElementsDeclaration);
+
+  const htmlObsoleteElementsDeclaration: IDeclaration = {
+    name: 'HtmlObsoleteElements',
+    export: true,
+    types: declarable(htmlObsoleteElements),
+    generics: [],
+    namespace: undefined,
+  };
+
+  globalDeclarations.set(htmlObsoleteElements, htmlObsoleteElementsDeclaration);
+
+  const svgElementsDeclaration: IDeclaration = {
+    name: 'SvgElements',
+    export: true,
+    types: declarable(svgElements),
+    generics: [],
+    namespace: undefined,
+  };
+
+  globalDeclarations.set(svgElements, svgElementsDeclaration);
+
+  const svgObsoleteElementsDeclaration: IDeclaration = {
+    name: 'SvgObsoleteElements',
+    export: true,
+    types: declarable(svgObsoleteElements),
+    generics: [],
+    namespace: undefined,
+  };
+
+  globalDeclarations.set(svgObsoleteElements, svgObsoleteElementsDeclaration);
 
   const globalsDeclaration: IDeclaration = {
     name: 'Globals',
