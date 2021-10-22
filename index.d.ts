@@ -5733,7 +5733,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
 
 export interface StandardProperties<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardLonghandProperties<TLength, TTime>,
-    StandardShorthandProperties<TLength, TTime> {}
+  StandardShorthandProperties<TLength, TTime> {}
 
 export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
@@ -8746,6 +8746,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
 
 export interface SvgProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   alignmentBaseline?: Property.AlignmentBaseline;
+  enableBackground?: Property.EnableBackground;
   baselineShift?: Property.BaselineShift<TLength>;
   clip?: Property.Clip;
   clipPath?: Property.ClipPath;
@@ -8809,9 +8810,9 @@ export interface SvgProperties<TLength = (string & {}) | 0, TTime = string & {}>
 
 export interface Properties<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardProperties<TLength, TTime>,
-    VendorProperties<TLength, TTime>,
-    ObsoleteProperties<TLength, TTime>,
-    SvgProperties<TLength, TTime> {}
+  VendorProperties<TLength, TTime>,
+  ObsoleteProperties<TLength, TTime>,
+  SvgProperties<TLength, TTime> {}
 
 export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
@@ -14538,7 +14539,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
 
 export interface StandardPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardLonghandPropertiesHyphen<TLength, TTime>,
-    StandardShorthandPropertiesHyphen<TLength, TTime> {}
+  StandardShorthandPropertiesHyphen<TLength, TTime> {}
 
 export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
@@ -16490,7 +16491,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
 
 export interface VendorPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
   extends VendorLonghandPropertiesHyphen<TLength, TTime>,
-    VendorShorthandPropertiesHyphen<TLength, TTime> {}
+  VendorShorthandPropertiesHyphen<TLength, TTime> {}
 
 export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
@@ -17616,9 +17617,9 @@ export interface SvgPropertiesHyphen<TLength = (string & {}) | 0, TTime = string
 
 export interface PropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardPropertiesHyphen<TLength, TTime>,
-    VendorPropertiesHyphen<TLength, TTime>,
-    ObsoletePropertiesHyphen<TLength, TTime>,
-    SvgPropertiesHyphen<TLength, TTime> {}
+  VendorPropertiesHyphen<TLength, TTime>,
+  ObsoletePropertiesHyphen<TLength, TTime>,
+  SvgPropertiesHyphen<TLength, TTime> {}
 
 export type StandardLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardLonghandProperties<TLength, TTime>>;
 
@@ -17626,7 +17627,7 @@ export type StandardShorthandPropertiesFallback<TLength = (string & {}) | 0, TTi
 
 export interface StandardPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardLonghandPropertiesFallback<TLength, TTime>,
-    StandardShorthandPropertiesFallback<TLength, TTime> {}
+  StandardShorthandPropertiesFallback<TLength, TTime> {}
 
 export type VendorLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorLonghandProperties<TLength, TTime>>;
 
@@ -17634,7 +17635,7 @@ export type VendorShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime
 
 export interface VendorPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends VendorLonghandPropertiesFallback<TLength, TTime>,
-    VendorShorthandPropertiesFallback<TLength, TTime> {}
+  VendorShorthandPropertiesFallback<TLength, TTime> {}
 
 export type ObsoletePropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ObsoleteProperties<TLength, TTime>>;
 
@@ -17642,9 +17643,9 @@ export type SvgPropertiesFallback<TLength = (string & {}) | 0, TTime = string & 
 
 export interface PropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardPropertiesFallback<TLength, TTime>,
-    VendorPropertiesFallback<TLength, TTime>,
-    ObsoletePropertiesFallback<TLength, TTime>,
-    SvgPropertiesFallback<TLength, TTime> {}
+  VendorPropertiesFallback<TLength, TTime>,
+  ObsoletePropertiesFallback<TLength, TTime>,
+  SvgPropertiesFallback<TLength, TTime> {}
 
 export type StandardLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardLonghandPropertiesHyphen<TLength, TTime>>;
 
@@ -17652,7 +17653,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = (string & {}) | 
 
 export interface StandardPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardLonghandPropertiesHyphenFallback<TLength, TTime>,
-    StandardShorthandPropertiesHyphenFallback<TLength, TTime> {}
+  StandardShorthandPropertiesHyphenFallback<TLength, TTime> {}
 
 export type VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorLonghandPropertiesHyphen<TLength, TTime>>;
 
@@ -17660,7 +17661,7 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0,
 
 export interface VendorPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends VendorLonghandPropertiesHyphenFallback<TLength, TTime>,
-    VendorShorthandPropertiesHyphenFallback<TLength, TTime> {}
+  VendorShorthandPropertiesHyphenFallback<TLength, TTime> {}
 
 export type ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ObsoletePropertiesHyphen<TLength, TTime>>;
 
@@ -17668,9 +17669,9 @@ export type SvgPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = str
 
 export interface PropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
   extends StandardPropertiesHyphenFallback<TLength, TTime>,
-    VendorPropertiesHyphenFallback<TLength, TTime>,
-    ObsoletePropertiesHyphenFallback<TLength, TTime>,
-    SvgPropertiesHyphenFallback<TLength, TTime> {}
+  VendorPropertiesHyphenFallback<TLength, TTime>,
+  ObsoletePropertiesHyphenFallback<TLength, TTime>,
+  SvgPropertiesHyphenFallback<TLength, TTime> {}
 
 export type AtRules =
   | "@charset"
@@ -18669,6 +18670,8 @@ export namespace Property {
     | (string & {});
 
   export type EmptyCells = Globals | "hide" | "show";
+
+  export type EnableBackground = Globals | "accumulate" | (string & {});
 
   export type Filter = Globals | "none" | (string & {});
 
