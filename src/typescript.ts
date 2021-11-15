@@ -72,7 +72,7 @@ export default async function typescript() {
     'TValue extends infer TUnpacked & {} ? TUnpacked : TValue' +
     ';' +
     EOL;
-  const fallback = 'export type Fallback<T> = { [P in keyof T]: T[P] | T[P][] };' + EOL;
+  const fallback = 'export type Fallback<T> = { [P in keyof T]: T[P] | NonNullable<T[P]>[] };' + EOL;
 
   return (
     disableAutoExport +
@@ -112,7 +112,7 @@ async function outputInterface(entry: Interface, currentNamespace: INamespace | 
       }
 
       const type = isAliasProperty(property) ? property.alias : property.type;
-      const value = stringifyTypes([type], currentNamespace, false);
+      const value = `${stringifyTypes([type], currentNamespace, false)} | undefined`;
       output += `${JSON.stringify(property.name)}?: ${value};`;
 
       output += EOL;

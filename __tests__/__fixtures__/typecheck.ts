@@ -11,6 +11,7 @@ const css: CSS.Properties = {
   MozAppearance: 'button',
   msOverflowStyle: 'scrollbar',
   color: '#abcdef',
+  height: undefined,
 
   // Test custom string
   width: 'calc(1px)',
@@ -26,6 +27,8 @@ const cssWithFallbackValues: CSS.PropertiesFallback = {
   flexDirection: ['row'],
   MozAppearance: ['button'],
   msOverflowStyle: ['scrollbar'],
+  height: undefined,
+  clip: [undefined],
 };
 
 const cssWithHyphenProperties: CSS.PropertiesHyphen = {
