@@ -18513,13 +18513,13 @@ export namespace Property {
 
   export type BoxDirection = Globals | "inherit" | "normal" | "reverse";
 
-  export type BoxFlex = Globals | (number & {});
+  export type BoxFlex = Globals | (number & {}) | (string & {});
 
-  export type BoxFlexGroup = Globals | (number & {});
+  export type BoxFlexGroup = Globals | (number & {}) | (string & {});
 
   export type BoxLines = Globals | "multiple" | "single";
 
-  export type BoxOrdinalGroup = Globals | (number & {});
+  export type BoxOrdinalGroup = Globals | (number & {}) | (string & {});
 
   export type BoxOrient = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
 
@@ -18581,7 +18581,7 @@ export namespace Property {
 
   export type ColorScheme = Globals | "dark" | "light" | "normal" | (string & {});
 
-  export type ColumnCount = Globals | "auto" | (number & {});
+  export type ColumnCount = Globals | "auto" | (number & {}) | (string & {});
 
   export type ColumnFill = Globals | "auto" | "balance" | "balance-all";
 
@@ -18691,9 +18691,9 @@ export namespace Property {
 
   export type FlexFlow = Globals | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | (string & {});
 
-  export type FlexGrow = Globals | (number & {});
+  export type FlexGrow = Globals | (number & {}) | (string & {});
 
-  export type FlexShrink = Globals | (number & {});
+  export type FlexShrink = Globals | (number & {}) | (string & {});
 
   export type FlexWrap = Globals | "nowrap" | "wrap" | "wrap-reverse";
 
@@ -18904,7 +18904,7 @@ export namespace Property {
 
   export type LineBreak = Globals | "anywhere" | "auto" | "loose" | "normal" | "strict";
 
-  export type LineClamp = Globals | "none" | (number & {});
+  export type LineClamp = Globals | "none" | (number & {}) | (string & {});
 
   export type LineHeight<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {}) | (number & {});
 
@@ -19017,7 +19017,7 @@ export namespace Property {
     | "none"
     | (string & {});
 
-  export type MaxLines = Globals | "none" | (number & {});
+  export type MaxLines = Globals | "none" | (number & {}) | (string & {});
 
   export type MaxWidth<TLength = (string & {}) | 0> =
     | Globals
@@ -19112,9 +19112,9 @@ export namespace Property {
 
   export type Opacity = Globals | (string & {}) | (number & {});
 
-  export type Order = Globals | (number & {});
+  export type Order = Globals | (number & {}) | (string & {});
 
-  export type Orphans = Globals | (number & {});
+  export type Orphans = Globals | (number & {}) | (string & {});
 
   export type Outline<TLength = (string & {}) | 0> = Globals | DataType.Color | DataType.LineStyle | DataType.LineWidth<TLength> | "auto" | "invert" | (string & {});
 
@@ -19294,7 +19294,7 @@ export namespace Property {
 
   export type ShapeOutside = Globals | DataType.Box | "margin-box" | "none" | (string & {});
 
-  export type TabSize<TLength = (string & {}) | 0> = Globals | TLength | (number & {});
+  export type TabSize<TLength = (string & {}) | 0> = Globals | TLength | (number & {}) | (string & {});
 
   export type TableLayout = Globals | "auto" | "fixed";
 
@@ -19437,7 +19437,7 @@ export namespace Property {
 
   export type WhiteSpace = Globals | "-moz-pre-wrap" | "break-spaces" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 
-  export type Widows = Globals | (number & {});
+  export type Widows = Globals | (number & {}) | (string & {});
 
   export type Width<TLength = (string & {}) | 0> =
     | Globals
@@ -19465,7 +19465,7 @@ export namespace Property {
 
   export type WritingMode = Globals | "horizontal-tb" | "sideways-lr" | "sideways-rl" | "vertical-lr" | "vertical-rl";
 
-  export type ZIndex = Globals | "auto" | (number & {});
+  export type ZIndex = Globals | "auto" | (number & {}) | (string & {});
 
   export type Zoom = Globals | "normal" | "reset" | (string & {}) | (number & {});
 
@@ -19596,7 +19596,7 @@ export namespace Property {
 
   export type MozFloatEdge = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
 
-  export type MozForceBrokenImageIcon = Globals | 0 | 1;
+  export type MozForceBrokenImageIcon = Globals | 0 | (string & {}) | 1;
 
   export type MozImageRegion = Globals | "auto" | (string & {});
 
@@ -19660,7 +19660,7 @@ export namespace Property {
 
   export type MsHyphenateLimitChars = Globals | "auto" | (string & {}) | (number & {});
 
-  export type MsHyphenateLimitLines = Globals | "no-limit" | (number & {});
+  export type MsHyphenateLimitLines = Globals | "no-limit" | (number & {}) | (string & {});
 
   export type MsHyphenateLimitZone<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
@@ -19782,7 +19782,7 @@ export namespace Property {
 
   export type WebkitBoxReflect<TLength = (string & {}) | 0> = Globals | TLength | "above" | "below" | "left" | "right" | (string & {});
 
-  export type WebkitLineClamp = Globals | "none" | (number & {});
+  export type WebkitLineClamp = Globals | "none" | (number & {}) | (string & {});
 
   export type WebkitMask<TLength = (string & {}) | 0> =
     | Globals
@@ -19876,13 +19876,13 @@ export namespace Property {
 
   export type Fill = Globals | DataType.Paint;
 
-  export type FillOpacity = Globals | (number & {});
+  export type FillOpacity = Globals | (number & {}) | (string & {});
 
   export type FillRule = Globals | "evenodd" | "nonzero";
 
   export type FloodColor = Globals | DataType.Color | "currentColor";
 
-  export type FloodOpacity = Globals | (number & {});
+  export type FloodOpacity = Globals | (number & {}) | (string & {});
 
   export type GlyphOrientationVertical = Globals | "auto" | (string & {}) | (number & {});
 
@@ -19900,7 +19900,7 @@ export namespace Property {
 
   export type StopColor = Globals | DataType.Color | "currentColor";
 
-  export type StopOpacity = Globals | (number & {});
+  export type StopOpacity = Globals | (number & {}) | (string & {});
 
   export type Stroke = Globals | DataType.Paint;
 
@@ -19912,9 +19912,9 @@ export namespace Property {
 
   export type StrokeLinejoin = Globals | "bevel" | "miter" | "round";
 
-  export type StrokeMiterlimit = Globals | (number & {});
+  export type StrokeMiterlimit = Globals | (number & {}) | (string & {});
 
-  export type StrokeOpacity = Globals | (number & {});
+  export type StrokeOpacity = Globals | (number & {}) | (string & {});
 
   export type StrokeWidth<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
@@ -20289,7 +20289,7 @@ declare namespace DataType {
     | "ultra-expanded"
     | (string & {});
 
-  type FontWeightAbsolute = "bold" | "normal" | (number & {});
+  type FontWeightAbsolute = "bold" | "normal" | (number & {}) | (string & {});
 
   type GenericFamily = "cursive" | "fantasy" | "monospace" | "sans-serif" | "serif";
 

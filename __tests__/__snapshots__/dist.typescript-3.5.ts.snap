@@ -17,7 +17,7 @@ exports[`Typescript 3.5 detects errors 3`] = `
 `;
 
 exports[`Typescript 3.5 detects errors 4`] = `
-"52:2 - Type 'number[]' is not assignable to type '\\"inherit\\" | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | (number & {}) | undefined'.
+"52:2 - Type 'number[]' is not assignable to type '\\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | (number & {}) | undefined'.
   Type 'number[]' is not assignable to type '\\"unset\\"'."
 `;
 

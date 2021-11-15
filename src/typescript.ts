@@ -152,19 +152,37 @@ function stringifyTypes(
     return namespace + type.name;
   }, currentNamespace);
 
+  const numberOutput = stringifyType({ type: Type.Number });
+  const stringOutput = stringifyType({ type: Type.String });
+  let hasUnionString = false;
+
   return types
-    .map(type => {
-      if (!applyAutocompleteHack) {
-        return stringifyType(type);
+    .reduce<string[]>((unions, type) => {
+      if (type.type === Type.String) {
+        if (!hasUnionString) {
+          unions.push(applyAutocompleteHack ? `(${stringOutput} & {})` : stringOutput);
+          hasUnionString = true;
+        }
+      } else if (type.type === Type.Number) {
+        unions.push(applyAutocompleteHack ? `(${numberOutput} & {})` : numberOutput);
+
+        if (!hasUnionString) {
+          unions.push(applyAutocompleteHack ? `(${stringOutput} & {})` : stringOutput);
+          hasUnionString = true;
+        }
+      } else if (type.type === Type.NumericLiteral) {
+        unions.push(stringifyType(type));
+
+        if (!hasUnionString) {
+          unions.push(applyAutocompleteHack ? `(${stringOutput} & {})` : stringOutput);
+          hasUnionString = true;
+        }
+      } else {
+        unions.push(stringifyType(type));
       }
 
-      if (type.type === Type.String || type.type === Type.Number) {
-        // Apply autocomplete hack
-        return `(${stringifyType(type)} & {})`;
-      } else {
-        return stringifyType(type);
-      }
-    })
+      return unions;
+    }, [])
     .join(' | ');
 }
 
