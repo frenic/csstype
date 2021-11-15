@@ -12,6 +12,7 @@ const css: CSS.Properties = {
   msOverflowStyle: 'scrollbar',
   color: '#abcdef',
   height: undefined,
+  fontWeight: '400',
 
   // Test custom string
   width: 'calc(1px)',
