@@ -2239,9 +2239,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    | **9**  |  No  | No  |
+   * | Chrome | Firefox |   Safari    | Edge | IE  |
+   * | :----: | :-----: | :---------: | :--: | :-: |
+   * |   No   |   No    | **9** _-x-_ |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
    */
@@ -3979,9 +3979,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * |   No   | **68**  | **14.1** |  No  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -4066,9 +4066,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
    */
@@ -4122,9 +4122,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
@@ -4178,9 +4178,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left
    */
@@ -4192,9 +4192,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right
    */
@@ -4206,9 +4206,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top
    */
@@ -4352,9 +4352,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   No    |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **94** |   No    |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -7058,6 +7058,14 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `manual`
    */
   WebkitHyphens?: Property.Hyphens | undefined;
+  /**
+   * The `initial-letter` CSS property sets styling for dropped, raised, and sunken initial letters.
+   *
+   * **Syntax**: `normal | [ <number> <integer>? ]`
+   *
+   * **Initial value**: `normal`
+   */
+  WebkitInitialLetter?: Property.InitialLetter | undefined;
   /**
    * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
    *
@@ -11044,9 +11052,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    | **9**  |  No  | No  |
+   * | Chrome | Firefox |   Safari    | Edge | IE  |
+   * | :----: | :-----: | :---------: | :--: | :-: |
+   * |   No   |   No    | **9** _-x-_ |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
    */
@@ -12784,9 +12792,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * |   No   | **68**  | **14.1** |  No  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -12871,9 +12879,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
    */
@@ -12927,9 +12935,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
@@ -12983,9 +12991,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left
    */
@@ -12997,9 +13005,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right
    */
@@ -13011,9 +13019,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top
    */
@@ -13157,9 +13165,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   No    |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **94** |   No    |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -15863,6 +15871,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `manual`
    */
   "-webkit-hyphens"?: Property.Hyphens | undefined;
+  /**
+   * The `initial-letter` CSS property sets styling for dropped, raised, and sunken initial letters.
+   *
+   * **Syntax**: `normal | [ <number> <integer>? ]`
+   *
+   * **Initial value**: `normal`
+   */
+  "-webkit-initial-letter"?: Property.InitialLetter | undefined;
   /**
    * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
    *
