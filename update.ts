@@ -85,7 +85,7 @@ async function update() {
         console.info('Resetting...');
         await reset();
         console.info('Downgrading...');
-        await install();
+        await install(true);
       }
     } else {
       console.info('No changes detected!');
@@ -108,5 +108,12 @@ function reset() {
 }
 
 function install(pure = false) {
-  return spawnAsync('npm', { stdio: 'inherit' }, 'install', '--silent', '--ignore-scripts', pure ? '--dry-run' : '');
+  return spawnAsync(
+    process.platform === 'win32' ? 'npm.cmd' : 'npm',
+    { stdio: 'inherit' },
+    'install',
+    '--silent',
+    '--ignore-scripts',
+    ...(pure ? ['--dry-run'] : []),
+  );
 }
