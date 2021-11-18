@@ -2229,9 +2229,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    | **9**  |  No  | No  |
+   * | Chrome | Firefox |   Safari    | Edge | IE  |
+   * | :----: | :-----: | :---------: | :--: | :-: |
+   * |   No   |   No    | **9** _-x-_ |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
    */
@@ -3969,9 +3969,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * |   No   | **68**  | **14.1** |  No  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -4058,9 +4058,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * **Initial value**: `auto`
  * 
- * | Chrome | Firefox | Safari |  Edge  | IE  |
- * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  | **11** | **79** | No  |
+ * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+ * | :----: | :-----: | :------: | :----: | :-: |
+ * | **69** | **68**  | **14.1** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
  */
@@ -4116,9 +4116,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
@@ -4174,9 +4174,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left
    */
@@ -4188,9 +4188,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right
    */
@@ -4202,9 +4202,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top
    */
@@ -4348,9 +4348,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   No    |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **94** |   No    |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -7052,6 +7052,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    * **Initial value**: `manual`
    */
   WebkitHyphens?: HyphensProperty;
+  /**
+   * The `initial-letter` CSS property sets styling for dropped, raised, and sunken initial letters.
+   *
+   * **Syntax**: `normal | [ <number> <integer>? ]`
+   *
+   * **Initial value**: `normal`
+   */
+  WebkitInitialLetter?: InitialLetterProperty;
   /**
    * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
    *
@@ -11034,9 +11042,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    | **9**  |  No  | No  |
+   * | Chrome | Firefox |   Safari    | Edge | IE  |
+   * | :----: | :-----: | :---------: | :--: | :-: |
+   * |   No   |   No    | **9** _-x-_ |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
    */
@@ -12774,9 +12782,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * |   No   | **68**  | **14.1** |  No  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -12863,9 +12871,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * **Initial value**: `auto`
  * 
- * | Chrome | Firefox | Safari |  Edge  | IE  |
- * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  | **11** | **79** | No  |
+ * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+ * | :----: | :-----: | :------: | :----: | :-: |
+ * | **69** | **68**  | **14.1** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
  */
@@ -12921,9 +12929,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
@@ -12979,9 +12987,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left
    */
@@ -12993,9 +13001,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right
    */
@@ -13007,9 +13015,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top
    */
@@ -13153,9 +13161,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   No    |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **94** |   No    |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -15857,6 +15865,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    * **Initial value**: `manual`
    */
   "-webkit-hyphens"?: HyphensProperty;
+  /**
+   * The `initial-letter` CSS property sets styling for dropped, raised, and sunken initial letters.
+   *
+   * **Syntax**: `normal | [ <number> <integer>? ]`
+   *
+   * **Initial value**: `normal`
+   */
+  "-webkit-initial-letter"?: InitialLetterProperty;
   /**
    * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
    *
@@ -19843,9 +19859,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    | **9**  |  No  | No  |
+   * | Chrome | Firefox |   Safari    | Edge | IE  |
+   * | :----: | :-----: | :---------: | :--: | :-: |
+   * |   No   |   No    | **9** _-x-_ |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
    */
@@ -21583,9 +21599,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * |   No   | **68**  | **14.1** |  No  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -21672,9 +21688,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * **Initial value**: `auto`
  * 
- * | Chrome | Firefox | Safari |  Edge  | IE  |
- * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  | **11** | **79** | No  |
+ * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+ * | :----: | :-----: | :------: | :----: | :-: |
+ * | **69** | **68**  | **14.1** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
  */
@@ -21730,9 +21746,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
@@ -21788,9 +21804,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left
    */
@@ -21802,9 +21818,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right
    */
@@ -21816,9 +21832,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top
    */
@@ -21962,9 +21978,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   No    |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **94** |   No    |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -24666,6 +24682,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    * **Initial value**: `manual`
    */
   WebkitHyphens?: HyphensProperty | HyphensProperty[];
+  /**
+   * The `initial-letter` CSS property sets styling for dropped, raised, and sunken initial letters.
+   *
+   * **Syntax**: `normal | [ <number> <integer>? ]`
+   *
+   * **Initial value**: `normal`
+   */
+  WebkitInitialLetter?: InitialLetterProperty | InitialLetterProperty[];
   /**
    * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
    *
@@ -28652,9 +28676,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   No    | **9**  |  No  | No  |
+   * | Chrome | Firefox |   Safari    | Edge | IE  |
+   * | :----: | :-----: | :---------: | :--: | :-: |
+   * |   No   |   No    | **9** _-x-_ |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
    */
@@ -30392,9 +30416,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * |   No   | **68**  | **14.1** |  No  | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
    */
@@ -30481,9 +30505,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
  * 
  * **Initial value**: `auto`
  * 
- * | Chrome | Firefox | Safari |  Edge  | IE  |
- * | :----: | :-----: | :----: | :----: | :-: |
- * | **69** | **68**  | **11** | **79** | No  |
+ * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+ * | :----: | :-----: | :------: | :----: | :-: |
+ * | **69** | **68**  | **14.1** | **79** | No  |
  * 
  * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
  */
@@ -30539,9 +30563,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
@@ -30597,9 +30621,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-left
    */
@@ -30611,9 +30635,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-right
    */
@@ -30625,9 +30649,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **69** | **68**  | **11** | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **69** | **68**  | **14.1** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-top
    */
@@ -30771,9 +30795,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   No    |   No   |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **94** |   No    |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -33477,6 +33501,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    * **Initial value**: `manual`
    */
   "-webkit-hyphens"?: HyphensProperty | HyphensProperty[];
+  /**
+   * The `initial-letter` CSS property sets styling for dropped, raised, and sunken initial letters.
+   *
+   * **Syntax**: `normal | [ <number> <integer>? ]`
+   *
+   * **Initial value**: `normal`
+   */
+  "-webkit-initial-letter"?: InitialLetterProperty | InitialLetterProperty[];
   /**
    * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
    *
