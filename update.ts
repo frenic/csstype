@@ -22,7 +22,7 @@ async function update() {
   const [mdnDataMaster, mdnCompatMaster] = [
     await getJsonAsync({
       hostname: 'api.github.com',
-      path: '/repos/mdn/data/branches/master',
+      path: '/repos/mdn/data/branches/main',
       headers: { 'User-Agent': 'NodeJS' },
     }),
     await getJsonAsync({
