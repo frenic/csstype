@@ -1529,6 +1529,20 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   contentVisibility?: Property.ContentVisibility | undefined;
   /**
+   * The **`contain-intrinsic size`** CSS property controls the natural size of an element specified by content-visibility.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `see individual properties`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **83** |   No    |   No   | **83** | No  |
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/contain-intrinsic-size
+   */
+  containIntrinsicSize?: Property.ContainIntrinsicSize | undefined;
+  /**
    * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
    *
    * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`

@@ -100,6 +100,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   contain?: Property$Contain,
   content?: Property$Content,
   contentVisibility?: Property$ContentVisibility,
+  containIntrinsicSize?: Property$ContainIntrinsicSize,
   counterIncrement?: Property$CounterIncrement,
   counterReset?: Property$CounterReset,
   counterSet?: Property$CounterSet,
@@ -1796,6 +1797,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   contain?: Property$Contain | Array<Property$Contain>,
   content?: Property$Content | Array<Property$Content>,
   contentVisibility?: Property$ContentVisibility | Array<Property$ContentVisibility>,
+  containIntrinsicSize?: Property$ContainIntrinsicSize | Array<Property$ContainIntrinsicSize>,
   counterIncrement?: Property$CounterIncrement | Array<Property$CounterIncrement>,
   counterReset?: Property$CounterReset | Array<Property$CounterReset>,
   counterSet?: Property$CounterSet | Array<Property$CounterSet>,
@@ -4331,6 +4333,8 @@ export type Property$Contain = Globals | "content" | "layout" | "none" | "paint"
 export type Property$Content = Globals | DataType$ContentList | "none" | "normal" | string;
 
 export type Property$ContentVisibility = Globals | "auto" | "hidden" | "visible";
+
+export type Property$ContainIntrinsicSize = "none" | string | "auto";
 
 export type Property$CounterIncrement = Globals | "none" | string;
 
