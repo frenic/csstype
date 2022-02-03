@@ -1,4 +1,4 @@
-import chalk = require('chalk');
+import chalk from 'chalk';
 
 export const error: typeof console.error = (message: any, ...params: any[]) => {
   // Complete the build process but exit with failure when done

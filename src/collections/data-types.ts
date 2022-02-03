@@ -78,19 +78,22 @@ async function simpleDataTypeResolver(
 }
 
 export function createPropertyDataTypeResolver(data: MDN.CompatData | undefined) {
-  const resolver: (dictionary: IDataTypeDictionary, dataType: IDataType, min: number) => Promise<ResolvedType[]> =
-    async (dictionary, dataType, minTypesInDataTypes) => {
-      const syntax =
-        dataType.type === Type.DataType ? await getSyntax(dataType.name) : await getPropertySyntax(dataType.name);
-      return syntax
-        ? resolveDataTypes(
-            dictionary,
-            data ? typer(compatSyntax(data, parse(syntax))) : typer(parse(syntax)),
-            minTypesInDataTypes,
-            resolver,
-          )
-        : [{ type: Type.String }];
-    };
+  const resolver: (
+    dictionary: IDataTypeDictionary,
+    dataType: IDataType,
+    min: number,
+  ) => Promise<ResolvedType[]> = async (dictionary, dataType, minTypesInDataTypes) => {
+    const syntax =
+      dataType.type === Type.DataType ? await getSyntax(dataType.name) : await getPropertySyntax(dataType.name);
+    return syntax
+      ? resolveDataTypes(
+          dictionary,
+          data ? typer(compatSyntax(data, parse(syntax))) : typer(parse(syntax)),
+          minTypesInDataTypes,
+          resolver,
+        )
+      : [{ type: Type.String }];
+  };
 
   return resolver;
 }
