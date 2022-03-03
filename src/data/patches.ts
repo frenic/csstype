@@ -17,6 +17,10 @@ export const syntaxes: { [property: string]: MDN.Syntax } = {
     syntax: '<string>',
   },
   // Undefined syntax
+  'reversed-counter-name': {
+    syntax: '<string>',
+  },
+  // Undefined syntax
   'unicode-range': {
     syntax: '<string>',
   },

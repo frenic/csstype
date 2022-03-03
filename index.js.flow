@@ -13,6 +13,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   animationIterationCount?: Property$AnimationIterationCount,
   animationName?: Property$AnimationName,
   animationPlayState?: Property$AnimationPlayState,
+  animationTimeline?: Property$AnimationTimeline,
   animationTimingFunction?: Property$AnimationTimingFunction,
   appearance?: Property$Appearance,
   aspectRatio?: Property$AspectRatio,
@@ -87,7 +88,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   clear?: Property$Clear,
   clipPath?: Property$ClipPath,
   color?: Property$Color,
-  colorAdjust?: Property$ColorAdjust,
+  colorAdjust?: Property$PrintColorAdjust,
   colorScheme?: Property$ColorScheme,
   columnCount?: Property$ColumnCount,
   columnFill?: Property$ColumnFill,
@@ -126,6 +127,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   fontStyle?: Property$FontStyle,
   fontSynthesis?: Property$FontSynthesis,
   fontVariant?: Property$FontVariant,
+  fontVariantAlternates?: Property$FontVariantAlternates,
   fontVariantCaps?: Property$FontVariantCaps,
   fontVariantEastAsian?: Property$FontVariantEastAsian,
   fontVariantLigatures?: Property$FontVariantLigatures,
@@ -146,12 +148,14 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   gridTemplateRows?: Property$GridTemplateRows<TLength>,
   hangingPunctuation?: Property$HangingPunctuation,
   height?: Property$Height<TLength>,
+  hyphenateCharacter?: Property$HyphenateCharacter,
   hyphens?: Property$Hyphens,
   imageOrientation?: Property$ImageOrientation,
   imageRendering?: Property$ImageRendering,
   imageResolution?: Property$ImageResolution,
   initialLetter?: Property$InitialLetter,
   inlineSize?: Property$InlineSize<TLength>,
+  inputSecurity?: Property$InputSecurity,
   inset?: Property$Inset<TLength>,
   insetBlock?: Property$InsetBlock<TLength>,
   insetBlockEnd?: Property$InsetBlockEnd<TLength>,
@@ -256,6 +260,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   placeContent?: Property$PlaceContent,
   pointerEvents?: Property$PointerEvents,
   position?: Property$Position,
+  printColorAdjust?: Property$PrintColorAdjust,
   quotes?: Property$Quotes,
   resize?: Property$Resize,
   right?: Property$Right<TLength>,
@@ -572,6 +577,7 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   WebkitFontKerning?: Property$FontKerning,
   WebkitFontSmoothing?: Property$FontSmooth<TLength>,
   WebkitFontVariantLigatures?: Property$FontVariantLigatures,
+  WebkitHyphenateCharacter?: Property$HyphenateCharacter,
   WebkitHyphens?: Property$Hyphens,
   WebkitInitialLetter?: Property$InitialLetter,
   WebkitJustifyContent?: Property$JustifyContent,
@@ -603,7 +609,7 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   WebkitPaddingStart?: Property$PaddingInlineStart<TLength>,
   WebkitPerspective?: Property$Perspective<TLength>,
   WebkitPerspectiveOrigin?: Property$PerspectiveOrigin<TLength>,
-  WebkitPrintColorAdjust?: Property$ColorAdjust,
+  WebkitPrintColorAdjust?: Property$PrintColorAdjust,
   WebkitRubyPosition?: Property$RubyPosition,
   WebkitScrollSnapType?: Property$ScrollSnapType,
   WebkitShapeMargin?: Property$ShapeMargin<TLength>,
@@ -676,7 +682,6 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   boxOrient?: Property$BoxOrient,
   boxPack?: Property$BoxPack,
   clip?: Property$Clip,
-  fontVariantAlternates?: Property$FontVariantAlternates,
   gridColumnGap?: Property$GridColumnGap<TLength>,
   gridGap?: Property$GridGap<TLength>,
   gridRowGap?: Property$GridRowGap<TLength>,
@@ -858,6 +863,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "animation-iteration-count"?: Property$AnimationIterationCount,
   "animation-name"?: Property$AnimationName,
   "animation-play-state"?: Property$AnimationPlayState,
+  "animation-timeline"?: Property$AnimationTimeline,
   "animation-timing-function"?: Property$AnimationTimingFunction,
   appearance?: Property$Appearance,
   "aspect-ratio"?: Property$AspectRatio,
@@ -932,7 +938,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   clear?: Property$Clear,
   "clip-path"?: Property$ClipPath,
   color?: Property$Color,
-  "color-adjust"?: Property$ColorAdjust,
+  "color-adjust"?: Property$PrintColorAdjust,
   "color-scheme"?: Property$ColorScheme,
   "column-count"?: Property$ColumnCount,
   "column-fill"?: Property$ColumnFill,
@@ -971,6 +977,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "font-style"?: Property$FontStyle,
   "font-synthesis"?: Property$FontSynthesis,
   "font-variant"?: Property$FontVariant,
+  "font-variant-alternates"?: Property$FontVariantAlternates,
   "font-variant-caps"?: Property$FontVariantCaps,
   "font-variant-east-asian"?: Property$FontVariantEastAsian,
   "font-variant-ligatures"?: Property$FontVariantLigatures,
@@ -991,12 +998,14 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "grid-template-rows"?: Property$GridTemplateRows<TLength>,
   "hanging-punctuation"?: Property$HangingPunctuation,
   height?: Property$Height<TLength>,
+  "hyphenate-character"?: Property$HyphenateCharacter,
   hyphens?: Property$Hyphens,
   "image-orientation"?: Property$ImageOrientation,
   "image-rendering"?: Property$ImageRendering,
   "image-resolution"?: Property$ImageResolution,
   "initial-letter"?: Property$InitialLetter,
   "inline-size"?: Property$InlineSize<TLength>,
+  "input-security"?: Property$InputSecurity,
   inset?: Property$Inset<TLength>,
   "inset-block"?: Property$InsetBlock<TLength>,
   "inset-block-end"?: Property$InsetBlockEnd<TLength>,
@@ -1101,6 +1110,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "place-content"?: Property$PlaceContent,
   "pointer-events"?: Property$PointerEvents,
   position?: Property$Position,
+  "print-color-adjust"?: Property$PrintColorAdjust,
   quotes?: Property$Quotes,
   resize?: Property$Resize,
   right?: Property$Right<TLength>,
@@ -1420,6 +1430,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-webkit-font-kerning"?: Property$FontKerning,
   "-webkit-font-smoothing"?: Property$FontSmooth<TLength>,
   "-webkit-font-variant-ligatures"?: Property$FontVariantLigatures,
+  "-webkit-hyphenate-character"?: Property$HyphenateCharacter,
   "-webkit-hyphens"?: Property$Hyphens,
   "-webkit-initial-letter"?: Property$InitialLetter,
   "-webkit-justify-content"?: Property$JustifyContent,
@@ -1451,7 +1462,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-webkit-padding-start"?: Property$PaddingInlineStart<TLength>,
   "-webkit-perspective"?: Property$Perspective<TLength>,
   "-webkit-perspective-origin"?: Property$PerspectiveOrigin<TLength>,
-  "-webkit-print-color-adjust"?: Property$ColorAdjust,
+  "-webkit-print-color-adjust"?: Property$PrintColorAdjust,
   "-webkit-ruby-position"?: Property$RubyPosition,
   "-webkit-scroll-snap-type"?: Property$ScrollSnapType,
   "-webkit-shape-margin"?: Property$ShapeMargin<TLength>,
@@ -1527,7 +1538,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "box-orient"?: Property$BoxOrient,
   "box-pack"?: Property$BoxPack,
   clip?: Property$Clip,
-  "font-variant-alternates"?: Property$FontVariantAlternates,
   "grid-column-gap"?: Property$GridColumnGap<TLength>,
   "grid-gap"?: Property$GridGap<TLength>,
   "grid-row-gap"?: Property$GridRowGap<TLength>,
@@ -1709,6 +1719,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   animationIterationCount?: Property$AnimationIterationCount | Array<Property$AnimationIterationCount>,
   animationName?: Property$AnimationName | Array<Property$AnimationName>,
   animationPlayState?: Property$AnimationPlayState | Array<Property$AnimationPlayState>,
+  animationTimeline?: Property$AnimationTimeline | Array<Property$AnimationTimeline>,
   animationTimingFunction?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   appearance?: Property$Appearance | Array<Property$Appearance>,
   aspectRatio?: Property$AspectRatio | Array<Property$AspectRatio>,
@@ -1783,7 +1794,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   clear?: Property$Clear | Array<Property$Clear>,
   clipPath?: Property$ClipPath | Array<Property$ClipPath>,
   color?: Property$Color | Array<Property$Color>,
-  colorAdjust?: Property$ColorAdjust | Array<Property$ColorAdjust>,
+  colorAdjust?: Property$PrintColorAdjust | Array<Property$PrintColorAdjust>,
   colorScheme?: Property$ColorScheme | Array<Property$ColorScheme>,
   columnCount?: Property$ColumnCount | Array<Property$ColumnCount>,
   columnFill?: Property$ColumnFill | Array<Property$ColumnFill>,
@@ -1822,6 +1833,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   fontStyle?: Property$FontStyle | Array<Property$FontStyle>,
   fontSynthesis?: Property$FontSynthesis | Array<Property$FontSynthesis>,
   fontVariant?: Property$FontVariant | Array<Property$FontVariant>,
+  fontVariantAlternates?: Property$FontVariantAlternates | Array<Property$FontVariantAlternates>,
   fontVariantCaps?: Property$FontVariantCaps | Array<Property$FontVariantCaps>,
   fontVariantEastAsian?: Property$FontVariantEastAsian | Array<Property$FontVariantEastAsian>,
   fontVariantLigatures?: Property$FontVariantLigatures | Array<Property$FontVariantLigatures>,
@@ -1842,12 +1854,14 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   gridTemplateRows?: Property$GridTemplateRows<TLength> | Array<Property$GridTemplateRows<TLength>>,
   hangingPunctuation?: Property$HangingPunctuation | Array<Property$HangingPunctuation>,
   height?: Property$Height<TLength> | Array<Property$Height<TLength>>,
+  hyphenateCharacter?: Property$HyphenateCharacter | Array<Property$HyphenateCharacter>,
   hyphens?: Property$Hyphens | Array<Property$Hyphens>,
   imageOrientation?: Property$ImageOrientation | Array<Property$ImageOrientation>,
   imageRendering?: Property$ImageRendering | Array<Property$ImageRendering>,
   imageResolution?: Property$ImageResolution | Array<Property$ImageResolution>,
   initialLetter?: Property$InitialLetter | Array<Property$InitialLetter>,
   inlineSize?: Property$InlineSize<TLength> | Array<Property$InlineSize<TLength>>,
+  inputSecurity?: Property$InputSecurity | Array<Property$InputSecurity>,
   inset?: Property$Inset<TLength> | Array<Property$Inset<TLength>>,
   insetBlock?: Property$InsetBlock<TLength> | Array<Property$InsetBlock<TLength>>,
   insetBlockEnd?: Property$InsetBlockEnd<TLength> | Array<Property$InsetBlockEnd<TLength>>,
@@ -1952,6 +1966,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   placeContent?: Property$PlaceContent | Array<Property$PlaceContent>,
   pointerEvents?: Property$PointerEvents | Array<Property$PointerEvents>,
   position?: Property$Position | Array<Property$Position>,
+  printColorAdjust?: Property$PrintColorAdjust | Array<Property$PrintColorAdjust>,
   quotes?: Property$Quotes | Array<Property$Quotes>,
   resize?: Property$Resize | Array<Property$Resize>,
   right?: Property$Right<TLength> | Array<Property$Right<TLength>>,
@@ -2271,6 +2286,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   WebkitFontKerning?: Property$FontKerning | Array<Property$FontKerning>,
   WebkitFontSmoothing?: Property$FontSmooth<TLength> | Array<Property$FontSmooth<TLength>>,
   WebkitFontVariantLigatures?: Property$FontVariantLigatures | Array<Property$FontVariantLigatures>,
+  WebkitHyphenateCharacter?: Property$HyphenateCharacter | Array<Property$HyphenateCharacter>,
   WebkitHyphens?: Property$Hyphens | Array<Property$Hyphens>,
   WebkitInitialLetter?: Property$InitialLetter | Array<Property$InitialLetter>,
   WebkitJustifyContent?: Property$JustifyContent | Array<Property$JustifyContent>,
@@ -2302,7 +2318,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   WebkitPaddingStart?: Property$PaddingInlineStart<TLength> | Array<Property$PaddingInlineStart<TLength>>,
   WebkitPerspective?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
   WebkitPerspectiveOrigin?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
-  WebkitPrintColorAdjust?: Property$ColorAdjust | Array<Property$ColorAdjust>,
+  WebkitPrintColorAdjust?: Property$PrintColorAdjust | Array<Property$PrintColorAdjust>,
   WebkitRubyPosition?: Property$RubyPosition | Array<Property$RubyPosition>,
   WebkitScrollSnapType?: Property$ScrollSnapType | Array<Property$ScrollSnapType>,
   WebkitShapeMargin?: Property$ShapeMargin<TLength> | Array<Property$ShapeMargin<TLength>>,
@@ -2378,7 +2394,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   boxOrient?: Property$BoxOrient | Array<Property$BoxOrient>,
   boxPack?: Property$BoxPack | Array<Property$BoxPack>,
   clip?: Property$Clip | Array<Property$Clip>,
-  fontVariantAlternates?: Property$FontVariantAlternates | Array<Property$FontVariantAlternates>,
   gridColumnGap?: Property$GridColumnGap<TLength> | Array<Property$GridColumnGap<TLength>>,
   gridGap?: Property$GridGap<TLength> | Array<Property$GridGap<TLength>>,
   gridRowGap?: Property$GridRowGap<TLength> | Array<Property$GridRowGap<TLength>>,
@@ -2560,6 +2575,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "animation-iteration-count"?: Property$AnimationIterationCount | Array<Property$AnimationIterationCount>,
   "animation-name"?: Property$AnimationName | Array<Property$AnimationName>,
   "animation-play-state"?: Property$AnimationPlayState | Array<Property$AnimationPlayState>,
+  "animation-timeline"?: Property$AnimationTimeline | Array<Property$AnimationTimeline>,
   "animation-timing-function"?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   appearance?: Property$Appearance | Array<Property$Appearance>,
   "aspect-ratio"?: Property$AspectRatio | Array<Property$AspectRatio>,
@@ -2634,7 +2650,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   clear?: Property$Clear | Array<Property$Clear>,
   "clip-path"?: Property$ClipPath | Array<Property$ClipPath>,
   color?: Property$Color | Array<Property$Color>,
-  "color-adjust"?: Property$ColorAdjust | Array<Property$ColorAdjust>,
+  "color-adjust"?: Property$PrintColorAdjust | Array<Property$PrintColorAdjust>,
   "color-scheme"?: Property$ColorScheme | Array<Property$ColorScheme>,
   "column-count"?: Property$ColumnCount | Array<Property$ColumnCount>,
   "column-fill"?: Property$ColumnFill | Array<Property$ColumnFill>,
@@ -2673,6 +2689,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "font-style"?: Property$FontStyle | Array<Property$FontStyle>,
   "font-synthesis"?: Property$FontSynthesis | Array<Property$FontSynthesis>,
   "font-variant"?: Property$FontVariant | Array<Property$FontVariant>,
+  "font-variant-alternates"?: Property$FontVariantAlternates | Array<Property$FontVariantAlternates>,
   "font-variant-caps"?: Property$FontVariantCaps | Array<Property$FontVariantCaps>,
   "font-variant-east-asian"?: Property$FontVariantEastAsian | Array<Property$FontVariantEastAsian>,
   "font-variant-ligatures"?: Property$FontVariantLigatures | Array<Property$FontVariantLigatures>,
@@ -2693,12 +2710,14 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "grid-template-rows"?: Property$GridTemplateRows<TLength> | Array<Property$GridTemplateRows<TLength>>,
   "hanging-punctuation"?: Property$HangingPunctuation | Array<Property$HangingPunctuation>,
   height?: Property$Height<TLength> | Array<Property$Height<TLength>>,
+  "hyphenate-character"?: Property$HyphenateCharacter | Array<Property$HyphenateCharacter>,
   hyphens?: Property$Hyphens | Array<Property$Hyphens>,
   "image-orientation"?: Property$ImageOrientation | Array<Property$ImageOrientation>,
   "image-rendering"?: Property$ImageRendering | Array<Property$ImageRendering>,
   "image-resolution"?: Property$ImageResolution | Array<Property$ImageResolution>,
   "initial-letter"?: Property$InitialLetter | Array<Property$InitialLetter>,
   "inline-size"?: Property$InlineSize<TLength> | Array<Property$InlineSize<TLength>>,
+  "input-security"?: Property$InputSecurity | Array<Property$InputSecurity>,
   inset?: Property$Inset<TLength> | Array<Property$Inset<TLength>>,
   "inset-block"?: Property$InsetBlock<TLength> | Array<Property$InsetBlock<TLength>>,
   "inset-block-end"?: Property$InsetBlockEnd<TLength> | Array<Property$InsetBlockEnd<TLength>>,
@@ -2803,6 +2822,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "place-content"?: Property$PlaceContent | Array<Property$PlaceContent>,
   "pointer-events"?: Property$PointerEvents | Array<Property$PointerEvents>,
   position?: Property$Position | Array<Property$Position>,
+  "print-color-adjust"?: Property$PrintColorAdjust | Array<Property$PrintColorAdjust>,
   quotes?: Property$Quotes | Array<Property$Quotes>,
   resize?: Property$Resize | Array<Property$Resize>,
   right?: Property$Right<TLength> | Array<Property$Right<TLength>>,
@@ -3122,6 +3142,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-webkit-font-kerning"?: Property$FontKerning | Array<Property$FontKerning>,
   "-webkit-font-smoothing"?: Property$FontSmooth<TLength> | Array<Property$FontSmooth<TLength>>,
   "-webkit-font-variant-ligatures"?: Property$FontVariantLigatures | Array<Property$FontVariantLigatures>,
+  "-webkit-hyphenate-character"?: Property$HyphenateCharacter | Array<Property$HyphenateCharacter>,
   "-webkit-hyphens"?: Property$Hyphens | Array<Property$Hyphens>,
   "-webkit-initial-letter"?: Property$InitialLetter | Array<Property$InitialLetter>,
   "-webkit-justify-content"?: Property$JustifyContent | Array<Property$JustifyContent>,
@@ -3153,7 +3174,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-webkit-padding-start"?: Property$PaddingInlineStart<TLength> | Array<Property$PaddingInlineStart<TLength>>,
   "-webkit-perspective"?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
   "-webkit-perspective-origin"?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
-  "-webkit-print-color-adjust"?: Property$ColorAdjust | Array<Property$ColorAdjust>,
+  "-webkit-print-color-adjust"?: Property$PrintColorAdjust | Array<Property$PrintColorAdjust>,
   "-webkit-ruby-position"?: Property$RubyPosition | Array<Property$RubyPosition>,
   "-webkit-scroll-snap-type"?: Property$ScrollSnapType | Array<Property$ScrollSnapType>,
   "-webkit-shape-margin"?: Property$ShapeMargin<TLength> | Array<Property$ShapeMargin<TLength>>,
@@ -3229,7 +3250,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "box-orient"?: Property$BoxOrient | Array<Property$BoxOrient>,
   "box-pack"?: Property$BoxPack | Array<Property$BoxPack>,
   clip?: Property$Clip | Array<Property$Clip>,
-  "font-variant-alternates"?: Property$FontVariantAlternates | Array<Property$FontVariantAlternates>,
   "grid-column-gap"?: Property$GridColumnGap<TLength> | Array<Property$GridColumnGap<TLength>>,
   "grid-gap"?: Property$GridGap<TLength> | Array<Property$GridGap<TLength>>,
   "grid-row-gap"?: Property$GridRowGap<TLength> | Array<Property$GridRowGap<TLength>>,
@@ -3406,10 +3426,12 @@ export type AtRules =
   | "@font-feature-values"
   | "@import"
   | "@keyframes"
+  | "@layer"
   | "@media"
   | "@namespace"
   | "@page"
   | "@property"
+  | "@scroll-timeline"
   | "@supports"
   | "@viewport";
 
@@ -3735,6 +3757,7 @@ export type HtmlAttributes =
   | "[scrolldelay]"
   | "[scrolling]"
   | "[selected]"
+  | "[shadowroot]"
   | "[shape]"
   | "[size]"
   | "[sizes]"
@@ -4043,6 +4066,8 @@ export type Property$AnimationName = Globals | "none" | string;
 
 export type Property$AnimationPlayState = Globals | "paused" | "running" | string;
 
+export type Property$AnimationTimeline = Globals | DataType$SingleAnimationTimeline | string;
+
 export type Property$AnimationTimingFunction = Globals | DataType$EasingFunction | string;
 
 export type Property$Appearance = Globals | DataType$CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
@@ -4302,7 +4327,7 @@ export type Property$ClipPath = Globals | DataType$GeometryBox | "none" | string
 
 export type Property$Color = Globals | DataType$Color;
 
-export type Property$ColorAdjust = Globals | "economy" | "exact";
+export type Property$PrintColorAdjust = Globals | "economy" | "exact";
 
 export type Property$ColorScheme = Globals | "dark" | "light" | "normal" | string;
 
@@ -4402,6 +4427,7 @@ export type Property$Flex<TLength = string | 0> = Globals | TLength | "auto" | "
 export type Property$FlexBasis<TLength = string | 0> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
   | "-webkit-auto"
@@ -4574,6 +4600,8 @@ export type Property$Height<TLength = string | 0> =
   | "min-content"
   | string;
 
+export type Property$HyphenateCharacter = Globals | "auto" | string;
+
 export type Property$Hyphens = Globals | "auto" | "manual" | "none";
 
 export type Property$ImageOrientation = Globals | "flip" | "from-image" | string;
@@ -4598,6 +4626,8 @@ export type Property$InlineSize<TLength = string | 0> =
   | "max-content"
   | "min-content"
   | string;
+
+export type Property$InputSecurity = Globals | "auto" | "none";
 
 export type Property$Inset<TLength = string | 0> = Globals | TLength | "auto" | string;
 
@@ -6305,6 +6335,8 @@ type DataType$SingleAnimation<TTime> =
 type DataType$SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 
 type DataType$SingleAnimationFillMode = "backwards" | "both" | "forwards" | "none";
+
+type DataType$SingleAnimationTimeline = "auto" | "none" | string;
 
 type DataType$SingleTransition<TTime> = DataType$EasingFunction | TTime | "all" | "none" | string;
 
