@@ -6,9 +6,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **93** | **92**  |   No   | **93** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **93** | **92**  | **15.4** | **93** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/accent-color
    */
@@ -82,10 +82,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **36**  | **20**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **36**  | **20**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -220,6 +220,20 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   animationPlayState?: AnimationPlayStateProperty;
   /**
+   * The **`animation-timeline`** CSS property specifies the names of one or more `@scroll-timeline` at-rules describing the scroll animations to apply to the element.
+   *
+   * **Syntax**: `<single-animation-timeline>#`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-timeline
+   */
+  animationTimeline?: AnimationTimelineProperty;
+  /**
    * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
@@ -239,12 +253,12 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    *
-   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
-   * | :-----: | :-----: | :---------: | :------: | :-: |
-   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
-   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
+   * | Chrome  | Firefox |  Safari  |   Edge   | IE  |
+   * | :-----: | :-----: | :------: | :------: | :-: |
+   * | **84**  | **80**  | **15.4** |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ | 3 _-x-_  | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -284,10 +298,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `visible`
    *
-   * |  Chrome  | Firefox  |    Safari     |  Edge  |   IE   |
-   * | :------: | :------: | :-----------: | :----: | :----: |
-   * |  **36**  |  **16**  | **5.1** _-x-_ | **12** | **10** |
-   * | 12 _-x-_ | 10 _-x-_ |               |        |        |
+   * |  Chrome  | Firefox  |  Safari   |  Edge  |   IE   |
+   * | :------: | :------: | :-------: | :----: | :----: |
+   * |  **36**  |  **16**  | **15.4**  | **12** | **10** |
+   * | 12 _-x-_ | 10 _-x-_ | 5.1 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
    */
@@ -327,9 +341,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * | Chrome | Firefox |   Safari    |  Edge  |  IE   |
-   * | :----: | :-----: | :---------: | :----: | :---: |
-   * | **1**  |  **4**  | **3** _-x-_ | **12** | **9** |
+   * | Chrome | Firefox | Safari  |  Edge  |  IE   |
+   * | :----: | :-----: | :-----: | :----: | :---: |
+   * | **1**  |  **4**  | **14**  | **12** | **9** |
+   * |        |         | 3 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
    */
@@ -381,7 +396,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
    *
-   * **Initial value**: `left`
+   * **Initial value**: `0%`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -395,7 +410,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Syntax**: `[ center | [ [ top | bottom | y-start | y-end ]? <length-percentage>? ]! ]#`
    *
-   * **Initial value**: `top`
+   * **Initial value**: `0%`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -1283,10 +1298,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **55**  | **3.5** |  **9.1**  | **12** | **10** |
-   * | 23 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **55**  | **3.5** | **9.1** | **12** | **10** |
+   * | 23 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/clip-path
    */
@@ -1296,7 +1311,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<color>`
    *
-   * **Initial value**: Varies from one browser to another
+   * **Initial value**: `canvastext`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -1306,29 +1321,30 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   color?: ColorProperty;
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
    * **Syntax**: `economy | exact`
    *
    * **Initial value**: `economy`
    *
-   * |                Chrome                 | Firefox |                Safari                |                 Edge                  | IE  |
-   * | :-----------------------------------: | :-----: | :----------------------------------: | :-----------------------------------: | :-: |
-   * | **49** _(-webkit-print-color-adjust)_ | **48**  | **6** _(-webkit-print-color-adjust)_ | **79** _(-webkit-print-color-adjust)_ | No  |
+   * |    Chrome    |       Firefox       |  Safari  |     Edge     | IE  |
+   * | :----------: | :-----------------: | :------: | :----------: | :-: |
+   * | **17** _-x-_ |       **97**        | **15.4** | **79** _-x-_ | No  |
+   * |              | 48 _(color-adjust)_ | 6 _-x-_  |              |     |
    *
-   * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
+   * @see https://developer.mozilla.org/docs/Web/CSS/print-color-adjust
    */
-  colorAdjust?: ColorAdjustProperty;
+  colorAdjust?: PrintColorAdjustProperty;
   /**
    * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
    *
-   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+`
+   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+ && only?`
    *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **81** |   No    | **13** | **81** | No  |
+   * | **81** | **96**  | **13** | **81** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/color-scheme
    */
@@ -1483,9 +1499,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **52** | **69**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **52** | **69**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/contain
    */
@@ -1493,7 +1509,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are _anonymous replaced elements._
    *
-   * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ <string> ]?`
+   * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ [ <string> | <counter> ]+ ]?`
    *
    * **Initial value**: `normal`
    *
@@ -1511,9 +1527,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `visible`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **85** |   No    |   No   | **85** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **85** |   No    | **15.4** | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
@@ -1521,7 +1537,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -1535,7 +1551,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`counter-reset`** CSS property resets a CSS counter to a given value.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? | <reversed-counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -1549,7 +1565,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
   /**
    * The **`counter-set`** CSS property sets a CSS counter to a given value. It manipulates the value of existing counters, and will only create new counters if there isn't already a counter of the given name on the element.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -1653,10 +1669,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `row`
    *
-   * |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
-   * | :------: | :-----: | :-----: | :----: | :------: |
-   * |  **29**  | **20**  |  **9**  | **12** |  **11**  |
-   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
+   * |  Chrome  | Firefox  | Safari  |  Edge  |    IE    |
+   * | :------: | :------: | :-----: | :----: | :------: |
+   * |  **29**  |  **81**  |  **9**  | **12** |  **11**  |
+   * | 21 _-x-_ | 49 _-x-_ | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
@@ -1698,10 +1714,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `nowrap`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
@@ -1870,9 +1886,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `weight style`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **34**  | **9**  |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **97** | **34**  | **9**  | **97** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-synthesis
    */
@@ -1891,6 +1907,20 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant
    */
   fontVariant?: FontVariantProperty;
+  /**
+   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
+   *
+   * **Syntax**: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) ]`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | :----: | :-----: | :-----: | :--: | :-: |
+   * |   No   | **34**  | **9.1** |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates
+   */
+  fontVariantAlternates?: FontVariantAlternatesProperty;
   /**
    * The **`font-variant-caps`** CSS property controls the use of alternate glyphs for capital letters.
    *
@@ -2174,6 +2204,20 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   height?: HeightProperty<TLength>;
   /**
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
+   *
+   * **Syntax**: `auto | <string>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |   Chrome    | Firefox |    Safari     |     Edge     | IE  |
+   * | :---------: | :-----: | :-----------: | :----------: | :-: |
+   * | **6** _-x-_ | **98**  | **5.1** _-x-_ | **79** _-x-_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/hyphenate-character
+   */
+  hyphenateCharacter?: HyphenateCharacterProperty;
+  /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
@@ -2250,6 +2294,12 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
    */
   inlineSize?: InlineSizeProperty<TLength>;
+  /**
+   * **Syntax**: `auto | none`
+   *
+   * **Initial value**: `auto`
+   */
+  inputSecurity?: InputSecurityProperty;
   /**
    * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -2373,10 +2423,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **52**  | **20**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **52**  | **20**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -2801,9 +2851,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * |   Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :---------: | :-----: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **79** _-x-_ | No  |
+   * |   Chrome    | Firefox |  Safari  |     Edge     | IE  |
+   * | :---------: | :-----: | :------: | :----------: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | **79** _-x-_ | No  |
+   * |             |         | 4 _-x-_  |              |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-clip
    */
@@ -2815,9 +2866,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `add`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **53**  |   No   | 18-79 | No  |
+   * | Chrome | Firefox |  Safari  | Edge  | IE  |
+   * | :----: | :-----: | :------: | :---: | :-: |
+   * |   No   | **53**  | **15.4** | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-composite
    */
@@ -2829,9 +2880,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | 16-79 | No  |
+   * |   Chrome    | Firefox |  Safari  | Edge  | IE  |
+   * | :---------: | :-----: | :------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | 16-79 | No  |
+   * |             |         | 4 _-x-_  |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
    */
@@ -2843,9 +2895,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `match-source`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **53**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **53**  | **15.4** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-mode
    */
@@ -2857,9 +2909,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * |   Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :---------: | :-----: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **79** _-x-_ | No  |
+   * |   Chrome    | Firefox |  Safari  |     Edge     | IE  |
+   * | :---------: | :-----: | :------: | :----------: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | **79** _-x-_ | No  |
+   * |             |         | 4 _-x-_  |              |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-origin
    */
@@ -2871,9 +2924,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `center`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari   | Edge  | IE  |
+   * | :---------: | :-----: | :-------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4**  | 18-79 | No  |
+   * |             |         | 3.1 _-x-_ |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
    */
@@ -2885,9 +2939,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `no-repeat`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari   | Edge  | IE  |
+   * | :---------: | :-----: | :-------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4**  | 18-79 | No  |
+   * |             |         | 3.1 _-x-_ |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
    */
@@ -2899,9 +2954,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :---: | :-: |
-   * | **4** _-x-_ | **53**  | **4** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari  | Edge  | IE  |
+   * | :---------: | :-----: | :------: | :---: | :-: |
+   * | **4** _-x-_ | **53**  | **15.4** | 18-79 | No  |
+   * |             |         | 4 _-x-_  |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
    */
@@ -3217,7 +3273,7 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -3743,6 +3799,21 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    */
   position?: PositionProperty;
   /**
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Syntax**: `economy | exact`
+   *
+   * **Initial value**: `economy`
+   *
+   * |    Chrome    |       Firefox       |  Safari  |     Edge     | IE  |
+   * | :----------: | :-----------------: | :------: | :----------: | :-: |
+   * | **17** _-x-_ |       **97**        | **15.4** | **79** _-x-_ | No  |
+   * |              | 48 _(color-adjust)_ | 6 _-x-_  |              |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/print-color-adjust
+   */
+  printColorAdjust?: PrintColorAdjustProperty;
+  /**
    * The **`quotes`** CSS property sets how quotation marks appear.
    *
    * **Syntax**: `none | auto | [ <string> <string> ]+`
@@ -3854,10 +3925,10 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `alternate`
    *
-   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
-   * | :-----: | :-----: | :-----------: | :---: | :-: |
-   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
-   * | 1 _-x-_ |         |               |       |     |
+   * | Chrome  | Firefox |   Safari    | Edge  | IE  |
+   * | :-----: | :-----: | :---------: | :---: | :-: |
+   * | **84**  | **38**  | **7** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |             |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -3883,9 +3954,9 @@ export interface StandardLonghandProperties<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |  n/a   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **61** | **36**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -4350,7 +4421,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **94** |   No    |   No   | **94** | No  |
+   * | **94** | **97**  |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -4535,9 +4606,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **64** | **70**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **64** | **70**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
    */
@@ -7045,6 +7116,14 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitFontVariantLigatures?: FontVariantLigaturesProperty;
   /**
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
+   *
+   * **Syntax**: `auto | <string>`
+   *
+   * **Initial value**: `auto`
+   */
+  WebkitHyphenateCharacter?: HyphenateCharacterProperty;
+  /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
@@ -7293,13 +7372,13 @@ export interface VendorLonghandProperties<TLength = string | 0> {
    */
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength>;
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
    * **Syntax**: `economy | exact`
    *
    * **Initial value**: `economy`
    */
-  WebkitPrintColorAdjust?: ColorAdjustProperty;
+  WebkitPrintColorAdjust?: PrintColorAdjustProperty;
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
@@ -7789,16 +7868,6 @@ export interface ObsoleteProperties<TLength = string | 0> {
    */
   clip?: ClipProperty;
   /**
-   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
-   *
-   * **Syntax**: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) ]`
-   *
-   * **Initial value**: `normal`
-   *
-   * @deprecated
-   */
-  fontVariantAlternates?: FontVariantAlternatesProperty;
-  /**
    * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
    * **Syntax**: `<length-percentage>`
@@ -8061,7 +8130,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * @deprecated
    */
@@ -8269,7 +8338,7 @@ export interface ObsoleteProperties<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * @deprecated
    */
@@ -8819,9 +8888,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **93** | **92**  |   No   | **93** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **93** | **92**  | **15.4** | **93** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/accent-color
    */
@@ -8895,10 +8964,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **36**  | **20**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **36**  | **20**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -9033,6 +9102,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "animation-play-state"?: AnimationPlayStateProperty;
   /**
+   * The **`animation-timeline`** CSS property specifies the names of one or more `@scroll-timeline` at-rules describing the scroll animations to apply to the element.
+   *
+   * **Syntax**: `<single-animation-timeline>#`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-timeline
+   */
+  "animation-timeline"?: AnimationTimelineProperty;
+  /**
    * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
@@ -9052,12 +9135,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    *
-   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
-   * | :-----: | :-----: | :---------: | :------: | :-: |
-   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
-   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
+   * | Chrome  | Firefox |  Safari  |   Edge   | IE  |
+   * | :-----: | :-----: | :------: | :------: | :-: |
+   * | **84**  | **80**  | **15.4** |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ | 3 _-x-_  | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -9097,10 +9180,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `visible`
    *
-   * |  Chrome  | Firefox  |    Safari     |  Edge  |   IE   |
-   * | :------: | :------: | :-----------: | :----: | :----: |
-   * |  **36**  |  **16**  | **5.1** _-x-_ | **12** | **10** |
-   * | 12 _-x-_ | 10 _-x-_ |               |        |        |
+   * |  Chrome  | Firefox  |  Safari   |  Edge  |   IE   |
+   * | :------: | :------: | :-------: | :----: | :----: |
+   * |  **36**  |  **16**  | **15.4**  | **12** | **10** |
+   * | 12 _-x-_ | 10 _-x-_ | 5.1 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
    */
@@ -9140,9 +9223,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * | Chrome | Firefox |   Safari    |  Edge  |  IE   |
-   * | :----: | :-----: | :---------: | :----: | :---: |
-   * | **1**  |  **4**  | **3** _-x-_ | **12** | **9** |
+   * | Chrome | Firefox | Safari  |  Edge  |  IE   |
+   * | :----: | :-----: | :-----: | :----: | :---: |
+   * | **1**  |  **4**  | **14**  | **12** | **9** |
+   * |        |         | 3 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
    */
@@ -9194,7 +9278,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
    *
-   * **Initial value**: `left`
+   * **Initial value**: `0%`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -9208,7 +9292,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `[ center | [ [ top | bottom | y-start | y-end ]? <length-percentage>? ]! ]#`
    *
-   * **Initial value**: `top`
+   * **Initial value**: `0%`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -10096,10 +10180,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **55**  | **3.5** |  **9.1**  | **12** | **10** |
-   * | 23 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **55**  | **3.5** | **9.1** | **12** | **10** |
+   * | 23 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/clip-path
    */
@@ -10109,7 +10193,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<color>`
    *
-   * **Initial value**: Varies from one browser to another
+   * **Initial value**: `canvastext`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -10119,29 +10203,30 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   color?: ColorProperty;
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
    * **Syntax**: `economy | exact`
    *
    * **Initial value**: `economy`
    *
-   * |                Chrome                 | Firefox |                Safari                |                 Edge                  | IE  |
-   * | :-----------------------------------: | :-----: | :----------------------------------: | :-----------------------------------: | :-: |
-   * | **49** _(-webkit-print-color-adjust)_ | **48**  | **6** _(-webkit-print-color-adjust)_ | **79** _(-webkit-print-color-adjust)_ | No  |
+   * |    Chrome    |       Firefox       |  Safari  |     Edge     | IE  |
+   * | :----------: | :-----------------: | :------: | :----------: | :-: |
+   * | **17** _-x-_ |       **97**        | **15.4** | **79** _-x-_ | No  |
+   * |              | 48 _(color-adjust)_ | 6 _-x-_  |              |     |
    *
-   * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
+   * @see https://developer.mozilla.org/docs/Web/CSS/print-color-adjust
    */
-  "color-adjust"?: ColorAdjustProperty;
+  "color-adjust"?: PrintColorAdjustProperty;
   /**
    * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
    *
-   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+`
+   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+ && only?`
    *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **81** |   No    | **13** | **81** | No  |
+   * | **81** | **96**  | **13** | **81** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/color-scheme
    */
@@ -10296,9 +10381,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **52** | **69**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **52** | **69**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/contain
    */
@@ -10306,7 +10391,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are _anonymous replaced elements._
    *
-   * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ <string> ]?`
+   * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ [ <string> | <counter> ]+ ]?`
    *
    * **Initial value**: `normal`
    *
@@ -10324,9 +10409,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `visible`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **85** |   No    |   No   | **85** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **85** |   No    | **15.4** | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
@@ -10334,7 +10419,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -10348,7 +10433,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`counter-reset`** CSS property resets a CSS counter to a given value.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? | <reversed-counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -10362,7 +10447,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
   /**
    * The **`counter-set`** CSS property sets a CSS counter to a given value. It manipulates the value of existing counters, and will only create new counters if there isn't already a counter of the given name on the element.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -10466,10 +10551,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `row`
    *
-   * |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
-   * | :------: | :-----: | :-----: | :----: | :------: |
-   * |  **29**  | **20**  |  **9**  | **12** |  **11**  |
-   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
+   * |  Chrome  | Firefox  | Safari  |  Edge  |    IE    |
+   * | :------: | :------: | :-----: | :----: | :------: |
+   * |  **29**  |  **81**  |  **9**  | **12** |  **11**  |
+   * | 21 _-x-_ | 49 _-x-_ | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
@@ -10511,10 +10596,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `nowrap`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
@@ -10683,9 +10768,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `weight style`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **34**  | **9**  |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **97** | **34**  | **9**  | **97** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-synthesis
    */
@@ -10704,6 +10789,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant
    */
   "font-variant"?: FontVariantProperty;
+  /**
+   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
+   *
+   * **Syntax**: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) ]`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | :----: | :-----: | :-----: | :--: | :-: |
+   * |   No   | **34**  | **9.1** |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates
+   */
+  "font-variant-alternates"?: FontVariantAlternatesProperty;
   /**
    * The **`font-variant-caps`** CSS property controls the use of alternate glyphs for capital letters.
    *
@@ -10987,6 +11086,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   height?: HeightProperty<TLength>;
   /**
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
+   *
+   * **Syntax**: `auto | <string>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |   Chrome    | Firefox |    Safari     |     Edge     | IE  |
+   * | :---------: | :-----: | :-----------: | :----------: | :-: |
+   * | **6** _-x-_ | **98**  | **5.1** _-x-_ | **79** _-x-_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/hyphenate-character
+   */
+  "hyphenate-character"?: HyphenateCharacterProperty;
+  /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
@@ -11063,6 +11176,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
    */
   "inline-size"?: InlineSizeProperty<TLength>;
+  /**
+   * **Syntax**: `auto | none`
+   *
+   * **Initial value**: `auto`
+   */
+  "input-security"?: InputSecurityProperty;
   /**
    * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -11186,10 +11305,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **52**  | **20**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **52**  | **20**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -11614,9 +11733,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * |   Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :---------: | :-----: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **79** _-x-_ | No  |
+   * |   Chrome    | Firefox |  Safari  |     Edge     | IE  |
+   * | :---------: | :-----: | :------: | :----------: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | **79** _-x-_ | No  |
+   * |             |         | 4 _-x-_  |              |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-clip
    */
@@ -11628,9 +11748,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `add`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **53**  |   No   | 18-79 | No  |
+   * | Chrome | Firefox |  Safari  | Edge  | IE  |
+   * | :----: | :-----: | :------: | :---: | :-: |
+   * |   No   | **53**  | **15.4** | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-composite
    */
@@ -11642,9 +11762,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | 16-79 | No  |
+   * |   Chrome    | Firefox |  Safari  | Edge  | IE  |
+   * | :---------: | :-----: | :------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | 16-79 | No  |
+   * |             |         | 4 _-x-_  |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
    */
@@ -11656,9 +11777,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `match-source`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **53**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **53**  | **15.4** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-mode
    */
@@ -11670,9 +11791,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * |   Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :---------: | :-----: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **79** _-x-_ | No  |
+   * |   Chrome    | Firefox |  Safari  |     Edge     | IE  |
+   * | :---------: | :-----: | :------: | :----------: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | **79** _-x-_ | No  |
+   * |             |         | 4 _-x-_  |              |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-origin
    */
@@ -11684,9 +11806,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `center`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari   | Edge  | IE  |
+   * | :---------: | :-----: | :-------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4**  | 18-79 | No  |
+   * |             |         | 3.1 _-x-_ |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
    */
@@ -11698,9 +11821,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `no-repeat`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari   | Edge  | IE  |
+   * | :---------: | :-----: | :-------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4**  | 18-79 | No  |
+   * |             |         | 3.1 _-x-_ |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
    */
@@ -11712,9 +11836,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :---: | :-: |
-   * | **4** _-x-_ | **53**  | **4** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari  | Edge  | IE  |
+   * | :---------: | :-----: | :------: | :---: | :-: |
+   * | **4** _-x-_ | **53**  | **15.4** | 18-79 | No  |
+   * |             |         | 4 _-x-_  |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
    */
@@ -12030,7 +12155,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -12556,6 +12681,21 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    */
   position?: PositionProperty;
   /**
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Syntax**: `economy | exact`
+   *
+   * **Initial value**: `economy`
+   *
+   * |    Chrome    |       Firefox       |  Safari  |     Edge     | IE  |
+   * | :----------: | :-----------------: | :------: | :----------: | :-: |
+   * | **17** _-x-_ |       **97**        | **15.4** | **79** _-x-_ | No  |
+   * |              | 48 _(color-adjust)_ | 6 _-x-_  |              |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/print-color-adjust
+   */
+  "print-color-adjust"?: PrintColorAdjustProperty;
+  /**
    * The **`quotes`** CSS property sets how quotation marks appear.
    *
    * **Syntax**: `none | auto | [ <string> <string> ]+`
@@ -12667,10 +12807,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `alternate`
    *
-   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
-   * | :-----: | :-----: | :-----------: | :---: | :-: |
-   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
-   * | 1 _-x-_ |         |               |       |     |
+   * | Chrome  | Firefox |   Safari    | Edge  | IE  |
+   * | :-----: | :-----: | :---------: | :---: | :-: |
+   * | **84**  | **38**  | **7** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |             |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -12696,9 +12836,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |  n/a   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **61** | **36**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -13163,7 +13303,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **94** |   No    |   No   | **94** | No  |
+   * | **94** | **97**  |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -13348,9 +13488,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **64** | **70**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **64** | **70**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
    */
@@ -15858,6 +15998,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-font-variant-ligatures"?: FontVariantLigaturesProperty;
   /**
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
+   *
+   * **Syntax**: `auto | <string>`
+   *
+   * **Initial value**: `auto`
+   */
+  "-webkit-hyphenate-character"?: HyphenateCharacterProperty;
+  /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
@@ -16106,13 +16254,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = string | 0> {
    */
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength>;
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
    * **Syntax**: `economy | exact`
    *
    * **Initial value**: `economy`
    */
-  "-webkit-print-color-adjust"?: ColorAdjustProperty;
+  "-webkit-print-color-adjust"?: PrintColorAdjustProperty;
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
@@ -16602,16 +16750,6 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    */
   clip?: ClipProperty;
   /**
-   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
-   *
-   * **Syntax**: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) ]`
-   *
-   * **Initial value**: `normal`
-   *
-   * @deprecated
-   */
-  "font-variant-alternates"?: FontVariantAlternatesProperty;
-  /**
    * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
    * **Syntax**: `<length-percentage>`
@@ -16874,7 +17012,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * @deprecated
    */
@@ -17082,7 +17220,7 @@ export interface ObsoletePropertiesHyphen<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * @deprecated
    */
@@ -17636,9 +17774,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **93** | **92**  |   No   | **93** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **93** | **92**  | **15.4** | **93** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/accent-color
    */
@@ -17712,10 +17850,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **36**  | **20**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **36**  | **20**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -17850,6 +17988,20 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   animationPlayState?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   /**
+   * The **`animation-timeline`** CSS property specifies the names of one or more `@scroll-timeline` at-rules describing the scroll animations to apply to the element.
+   *
+   * **Syntax**: `<single-animation-timeline>#`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-timeline
+   */
+  animationTimeline?: AnimationTimelineProperty | AnimationTimelineProperty[];
+  /**
    * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
@@ -17869,12 +18021,12 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    *
-   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
-   * | :-----: | :-----: | :---------: | :------: | :-: |
-   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
-   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
+   * | Chrome  | Firefox |  Safari  |   Edge   | IE  |
+   * | :-----: | :-----: | :------: | :------: | :-: |
+   * | **84**  | **80**  | **15.4** |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ | 3 _-x-_  | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -17914,10 +18066,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `visible`
    *
-   * |  Chrome  | Firefox  |    Safari     |  Edge  |   IE   |
-   * | :------: | :------: | :-----------: | :----: | :----: |
-   * |  **36**  |  **16**  | **5.1** _-x-_ | **12** | **10** |
-   * | 12 _-x-_ | 10 _-x-_ |               |        |        |
+   * |  Chrome  | Firefox  |  Safari   |  Edge  |   IE   |
+   * | :------: | :------: | :-------: | :----: | :----: |
+   * |  **36**  |  **16**  | **15.4**  | **12** | **10** |
+   * | 12 _-x-_ | 10 _-x-_ | 5.1 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
    */
@@ -17957,9 +18109,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * | Chrome | Firefox |   Safari    |  Edge  |  IE   |
-   * | :----: | :-----: | :---------: | :----: | :---: |
-   * | **1**  |  **4**  | **3** _-x-_ | **12** | **9** |
+   * | Chrome | Firefox | Safari  |  Edge  |  IE   |
+   * | :----: | :-----: | :-----: | :----: | :---: |
+   * | **1**  |  **4**  | **14**  | **12** | **9** |
+   * |        |         | 3 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
    */
@@ -18011,7 +18164,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
    *
-   * **Initial value**: `left`
+   * **Initial value**: `0%`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18025,7 +18178,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `[ center | [ [ top | bottom | y-start | y-end ]? <length-percentage>? ]! ]#`
    *
-   * **Initial value**: `top`
+   * **Initial value**: `0%`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18913,10 +19066,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **55**  | **3.5** |  **9.1**  | **12** | **10** |
-   * | 23 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **55**  | **3.5** | **9.1** | **12** | **10** |
+   * | 23 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/clip-path
    */
@@ -18926,7 +19079,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<color>`
    *
-   * **Initial value**: Varies from one browser to another
+   * **Initial value**: `canvastext`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -18936,29 +19089,30 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   color?: ColorProperty | ColorProperty[];
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
    * **Syntax**: `economy | exact`
    *
    * **Initial value**: `economy`
    *
-   * |                Chrome                 | Firefox |                Safari                |                 Edge                  | IE  |
-   * | :-----------------------------------: | :-----: | :----------------------------------: | :-----------------------------------: | :-: |
-   * | **49** _(-webkit-print-color-adjust)_ | **48**  | **6** _(-webkit-print-color-adjust)_ | **79** _(-webkit-print-color-adjust)_ | No  |
+   * |    Chrome    |       Firefox       |  Safari  |     Edge     | IE  |
+   * | :----------: | :-----------------: | :------: | :----------: | :-: |
+   * | **17** _-x-_ |       **97**        | **15.4** | **79** _-x-_ | No  |
+   * |              | 48 _(color-adjust)_ | 6 _-x-_  |              |     |
    *
-   * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
+   * @see https://developer.mozilla.org/docs/Web/CSS/print-color-adjust
    */
-  colorAdjust?: ColorAdjustProperty | ColorAdjustProperty[];
+  colorAdjust?: PrintColorAdjustProperty | PrintColorAdjustProperty[];
   /**
    * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
    *
-   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+`
+   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+ && only?`
    *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **81** |   No    | **13** | **81** | No  |
+   * | **81** | **96**  | **13** | **81** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/color-scheme
    */
@@ -19113,9 +19267,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **52** | **69**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **52** | **69**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/contain
    */
@@ -19123,7 +19277,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are _anonymous replaced elements._
    *
-   * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ <string> ]?`
+   * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ [ <string> | <counter> ]+ ]?`
    *
    * **Initial value**: `normal`
    *
@@ -19141,9 +19295,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `visible`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **85** |   No    |   No   | **85** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **85** |   No    | **15.4** | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
@@ -19151,7 +19305,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -19165,7 +19319,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`counter-reset`** CSS property resets a CSS counter to a given value.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? | <reversed-counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -19179,7 +19333,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
   /**
    * The **`counter-set`** CSS property sets a CSS counter to a given value. It manipulates the value of existing counters, and will only create new counters if there isn't already a counter of the given name on the element.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -19283,10 +19437,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `row`
    *
-   * |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
-   * | :------: | :-----: | :-----: | :----: | :------: |
-   * |  **29**  | **20**  |  **9**  | **12** |  **11**  |
-   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
+   * |  Chrome  | Firefox  | Safari  |  Edge  |    IE    |
+   * | :------: | :------: | :-----: | :----: | :------: |
+   * |  **29**  |  **81**  |  **9**  | **12** |  **11**  |
+   * | 21 _-x-_ | 49 _-x-_ | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
@@ -19328,10 +19482,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `nowrap`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
@@ -19500,9 +19654,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `weight style`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **34**  | **9**  |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **97** | **34**  | **9**  | **97** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-synthesis
    */
@@ -19521,6 +19675,20 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant
    */
   fontVariant?: FontVariantProperty | FontVariantProperty[];
+  /**
+   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
+   *
+   * **Syntax**: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) ]`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | :----: | :-----: | :-----: | :--: | :-: |
+   * |   No   | **34**  | **9.1** |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates
+   */
+  fontVariantAlternates?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
   /**
    * The **`font-variant-caps`** CSS property controls the use of alternate glyphs for capital letters.
    *
@@ -19804,6 +19972,20 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   height?: HeightProperty<TLength> | HeightProperty<TLength>[];
   /**
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
+   *
+   * **Syntax**: `auto | <string>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |   Chrome    | Firefox |    Safari     |     Edge     | IE  |
+   * | :---------: | :-----: | :-----------: | :----------: | :-: |
+   * | **6** _-x-_ | **98**  | **5.1** _-x-_ | **79** _-x-_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/hyphenate-character
+   */
+  hyphenateCharacter?: HyphenateCharacterProperty | HyphenateCharacterProperty[];
+  /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
@@ -19880,6 +20062,12 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
    */
   inlineSize?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
+  /**
+   * **Syntax**: `auto | none`
+   *
+   * **Initial value**: `auto`
+   */
+  inputSecurity?: InputSecurityProperty | InputSecurityProperty[];
   /**
    * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -20003,10 +20191,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **52**  | **20**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **52**  | **20**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -20431,9 +20619,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * |   Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :---------: | :-----: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **79** _-x-_ | No  |
+   * |   Chrome    | Firefox |  Safari  |     Edge     | IE  |
+   * | :---------: | :-----: | :------: | :----------: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | **79** _-x-_ | No  |
+   * |             |         | 4 _-x-_  |              |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-clip
    */
@@ -20445,9 +20634,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `add`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **53**  |   No   | 18-79 | No  |
+   * | Chrome | Firefox |  Safari  | Edge  | IE  |
+   * | :----: | :-----: | :------: | :---: | :-: |
+   * |   No   | **53**  | **15.4** | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-composite
    */
@@ -20459,9 +20648,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `none`
    *
-   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | 16-79 | No  |
+   * |   Chrome    | Firefox |  Safari  | Edge  | IE  |
+   * | :---------: | :-----: | :------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | 16-79 | No  |
+   * |             |         | 4 _-x-_  |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
    */
@@ -20473,9 +20663,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `match-source`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **53**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **53**  | **15.4** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-mode
    */
@@ -20487,9 +20677,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `border-box`
    *
-   * |   Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :---------: | :-----: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **79** _-x-_ | No  |
+   * |   Chrome    | Firefox |  Safari  |     Edge     | IE  |
+   * | :---------: | :-----: | :------: | :----------: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | **79** _-x-_ | No  |
+   * |             |         | 4 _-x-_  |              |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-origin
    */
@@ -20501,9 +20692,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `center`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari   | Edge  | IE  |
+   * | :---------: | :-----: | :-------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4**  | 18-79 | No  |
+   * |             |         | 3.1 _-x-_ |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
    */
@@ -20515,9 +20707,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `no-repeat`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari   | Edge  | IE  |
+   * | :---------: | :-----: | :-------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4**  | 18-79 | No  |
+   * |             |         | 3.1 _-x-_ |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
    */
@@ -20529,9 +20722,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :---: | :-: |
-   * | **4** _-x-_ | **53**  | **4** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari  | Edge  | IE  |
+   * | :---------: | :-----: | :------: | :---: | :-: |
+   * | **4** _-x-_ | **53**  | **15.4** | 18-79 | No  |
+   * |             |         | 4 _-x-_  |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
    */
@@ -20847,7 +21041,7 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -21373,6 +21567,21 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    */
   position?: PositionProperty | PositionProperty[];
   /**
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Syntax**: `economy | exact`
+   *
+   * **Initial value**: `economy`
+   *
+   * |    Chrome    |       Firefox       |  Safari  |     Edge     | IE  |
+   * | :----------: | :-----------------: | :------: | :----------: | :-: |
+   * | **17** _-x-_ |       **97**        | **15.4** | **79** _-x-_ | No  |
+   * |              | 48 _(color-adjust)_ | 6 _-x-_  |              |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/print-color-adjust
+   */
+  printColorAdjust?: PrintColorAdjustProperty | PrintColorAdjustProperty[];
+  /**
    * The **`quotes`** CSS property sets how quotation marks appear.
    *
    * **Syntax**: `none | auto | [ <string> <string> ]+`
@@ -21484,10 +21693,10 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `alternate`
    *
-   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
-   * | :-----: | :-----: | :-----------: | :---: | :-: |
-   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
-   * | 1 _-x-_ |         |               |       |     |
+   * | Chrome  | Firefox |   Safari    | Edge  | IE  |
+   * | :-----: | :-----: | :---------: | :---: | :-: |
+   * | **84**  | **38**  | **7** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |             |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -21513,9 +21722,9 @@ export interface StandardLonghandPropertiesFallback<TLength = string | 0> {
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |  n/a   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **61** | **36**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -21980,7 +22189,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **94** |   No    |   No   | **94** | No  |
+   * | **94** | **97**  |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -22165,9 +22374,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **64** | **70**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **64** | **70**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
    */
@@ -24675,6 +24884,14 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitFontVariantLigatures?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[];
   /**
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
+   *
+   * **Syntax**: `auto | <string>`
+   *
+   * **Initial value**: `auto`
+   */
+  WebkitHyphenateCharacter?: HyphenateCharacterProperty | HyphenateCharacterProperty[];
+  /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
@@ -24923,13 +25140,13 @@ export interface VendorLonghandPropertiesFallback<TLength = string | 0> {
    */
   WebkitPerspectiveOrigin?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
    * **Syntax**: `economy | exact`
    *
    * **Initial value**: `economy`
    */
-  WebkitPrintColorAdjust?: ColorAdjustProperty | ColorAdjustProperty[];
+  WebkitPrintColorAdjust?: PrintColorAdjustProperty | PrintColorAdjustProperty[];
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
@@ -25419,16 +25636,6 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    */
   clip?: ClipProperty | ClipProperty[];
   /**
-   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
-   *
-   * **Syntax**: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) ]`
-   *
-   * **Initial value**: `normal`
-   *
-   * @deprecated
-   */
-  fontVariantAlternates?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
-  /**
    * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
    * **Syntax**: `<length-percentage>`
@@ -25691,7 +25898,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * @deprecated
    */
@@ -25899,7 +26106,7 @@ export interface ObsoletePropertiesFallback<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * @deprecated
    */
@@ -26453,9 +26660,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **93** | **92**  |   No   | **93** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **93** | **92**  | **15.4** | **93** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/accent-color
    */
@@ -26529,10 +26736,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **36**  | **20**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **36**  | **20**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -26667,6 +26874,20 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   "animation-play-state"?: AnimationPlayStateProperty | AnimationPlayStateProperty[];
   /**
+   * The **`animation-timeline`** CSS property specifies the names of one or more `@scroll-timeline` at-rules describing the scroll animations to apply to the element.
+   *
+   * **Syntax**: `<single-animation-timeline>#`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/animation-timeline
+   */
+  "animation-timeline"?: AnimationTimelineProperty | AnimationTimelineProperty[];
+  /**
    * The `**animation-timing-function**` CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
@@ -26686,12 +26907,12 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Syntax**: `none | auto | textfield | menulist-button | <compat-auto>`
    *
-   * **Initial value**: `auto`
+   * **Initial value**: `none`
    *
-   * | Chrome  | Firefox |   Safari    |   Edge   | IE  |
-   * | :-----: | :-----: | :---------: | :------: | :-: |
-   * | **84**  | **80**  | **3** _-x-_ |  **84**  | No  |
-   * | 1 _-x-_ | 1 _-x-_ |             | 12 _-x-_ |     |
+   * | Chrome  | Firefox |  Safari  |   Edge   | IE  |
+   * | :-----: | :-----: | :------: | :------: | :-: |
+   * | **84**  | **80**  | **15.4** |  **84**  | No  |
+   * | 1 _-x-_ | 1 _-x-_ | 3 _-x-_  | 12 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
@@ -26731,10 +26952,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `visible`
    *
-   * |  Chrome  | Firefox  |    Safari     |  Edge  |   IE   |
-   * | :------: | :------: | :-----------: | :----: | :----: |
-   * |  **36**  |  **16**  | **5.1** _-x-_ | **12** | **10** |
-   * | 12 _-x-_ | 10 _-x-_ |               |        |        |
+   * |  Chrome  | Firefox  |  Safari   |  Edge  |   IE   |
+   * | :------: | :------: | :-------: | :----: | :----: |
+   * |  **36**  |  **16**  | **15.4**  | **12** | **10** |
+   * | 12 _-x-_ | 10 _-x-_ | 5.1 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
    */
@@ -26774,9 +26995,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `border-box`
    *
-   * | Chrome | Firefox |   Safari    |  Edge  |  IE   |
-   * | :----: | :-----: | :---------: | :----: | :---: |
-   * | **1**  |  **4**  | **3** _-x-_ | **12** | **9** |
+   * | Chrome | Firefox | Safari  |  Edge  |  IE   |
+   * | :----: | :-----: | :-----: | :----: | :---: |
+   * | **1**  |  **4**  | **14**  | **12** | **9** |
+   * |        |         | 3 _-x-_ |        |       |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
    */
@@ -26828,7 +27050,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
    *
-   * **Initial value**: `left`
+   * **Initial value**: `0%`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -26842,7 +27064,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Syntax**: `[ center | [ [ top | bottom | y-start | y-end ]? <length-percentage>? ]! ]#`
    *
-   * **Initial value**: `top`
+   * **Initial value**: `0%`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -27730,10 +27952,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **55**  | **3.5** |  **9.1**  | **12** | **10** |
-   * | 23 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **55**  | **3.5** | **9.1** | **12** | **10** |
+   * | 23 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/clip-path
    */
@@ -27743,7 +27965,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Syntax**: `<color>`
    *
-   * **Initial value**: Varies from one browser to another
+   * **Initial value**: `canvastext`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -27753,29 +27975,30 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   color?: ColorProperty | ColorProperty[];
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
    * **Syntax**: `economy | exact`
    *
    * **Initial value**: `economy`
    *
-   * |                Chrome                 | Firefox |                Safari                |                 Edge                  | IE  |
-   * | :-----------------------------------: | :-----: | :----------------------------------: | :-----------------------------------: | :-: |
-   * | **49** _(-webkit-print-color-adjust)_ | **48**  | **6** _(-webkit-print-color-adjust)_ | **79** _(-webkit-print-color-adjust)_ | No  |
+   * |    Chrome    |       Firefox       |  Safari  |     Edge     | IE  |
+   * | :----------: | :-----------------: | :------: | :----------: | :-: |
+   * | **17** _-x-_ |       **97**        | **15.4** | **79** _-x-_ | No  |
+   * |              | 48 _(color-adjust)_ | 6 _-x-_  |              |     |
    *
-   * @see https://developer.mozilla.org/docs/Web/CSS/color-adjust
+   * @see https://developer.mozilla.org/docs/Web/CSS/print-color-adjust
    */
-  "color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[];
+  "color-adjust"?: PrintColorAdjustProperty | PrintColorAdjustProperty[];
   /**
    * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in.
    *
-   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+`
+   * **Syntax**: `normal | [ light | dark | <custom-ident> ]+ && only?`
    *
    * **Initial value**: `normal`
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **81** |   No    | **13** | **81** | No  |
+   * | **81** | **96**  | **13** | **81** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/color-scheme
    */
@@ -27930,9 +28153,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **52** | **69**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **52** | **69**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/contain
    */
@@ -27940,7 +28163,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are _anonymous replaced elements._
    *
-   * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ <string> ]?`
+   * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ [ <string> | <counter> ]+ ]?`
    *
    * **Initial value**: `normal`
    *
@@ -27958,9 +28181,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `visible`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **85** |   No    |   No   | **85** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **85** |   No    | **15.4** | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
@@ -27968,7 +28191,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -27982,7 +28205,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`counter-reset`** CSS property resets a CSS counter to a given value.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? | <reversed-counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -27996,7 +28219,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
   /**
    * The **`counter-set`** CSS property sets a CSS counter to a given value. It manipulates the value of existing counters, and will only create new counters if there isn't already a counter of the given name on the element.
    *
-   * **Syntax**: `[ <custom-ident> <integer>? ]+ | none`
+   * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
    * **Initial value**: `none`
    *
@@ -28100,10 +28323,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `row`
    *
-   * |  Chrome  | Firefox | Safari  |  Edge  |    IE    |
-   * | :------: | :-----: | :-----: | :----: | :------: |
-   * |  **29**  | **20**  |  **9**  | **12** |  **11**  |
-   * | 21 _-x-_ |         | 7 _-x-_ |        | 10 _-x-_ |
+   * |  Chrome  | Firefox  | Safari  |  Edge  |    IE    |
+   * | :------: | :------: | :-----: | :----: | :------: |
+   * |  **29**  |  **81**  |  **9**  | **12** |  **11**  |
+   * | 21 _-x-_ | 49 _-x-_ | 7 _-x-_ |        | 10 _-x-_ |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
@@ -28145,10 +28368,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `nowrap`
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **29**  | **28**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **29**  | **28**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
@@ -28317,9 +28540,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `weight style`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **34**  | **9**  |  No  | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **97** | **34**  | **9**  | **97** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-synthesis
    */
@@ -28338,6 +28561,20 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant
    */
   "font-variant"?: FontVariantProperty | FontVariantProperty[];
+  /**
+   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
+   *
+   * **Syntax**: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) ]`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari  | Edge | IE  |
+   * | :----: | :-----: | :-----: | :--: | :-: |
+   * |   No   | **34**  | **9.1** |  No  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-alternates
+   */
+  "font-variant-alternates"?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
   /**
    * The **`font-variant-caps`** CSS property controls the use of alternate glyphs for capital letters.
    *
@@ -28621,6 +28858,20 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   height?: HeightProperty<TLength> | HeightProperty<TLength>[];
   /**
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
+   *
+   * **Syntax**: `auto | <string>`
+   *
+   * **Initial value**: `auto`
+   *
+   * |   Chrome    | Firefox |    Safari     |     Edge     | IE  |
+   * | :---------: | :-----: | :-----------: | :----------: | :-: |
+   * | **6** _-x-_ | **98**  | **5.1** _-x-_ | **79** _-x-_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/hyphenate-character
+   */
+  "hyphenate-character"?: HyphenateCharacterProperty | HyphenateCharacterProperty[];
+  /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
@@ -28697,6 +28948,12 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    * @see https://developer.mozilla.org/docs/Web/CSS/inline-size
    */
   "inline-size"?: InlineSizeProperty<TLength> | InlineSizeProperty<TLength>[];
+  /**
+   * **Syntax**: `auto | none`
+   *
+   * **Initial value**: `auto`
+   */
+  "input-security"?: InputSecurityProperty | InputSecurityProperty[];
   /**
    * The **`inset`** CSS property defines the logical block and inline start and end offsets of an element, which map to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -28820,10 +29077,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * _Supported in Flex Layout_
    *
-   * |  Chrome  | Firefox |  Safari   |  Edge  |   IE   |
-   * | :------: | :-----: | :-------: | :----: | :----: |
-   * |  **52**  | **20**  |   **9**   | **12** | **11** |
-   * | 21 _-x-_ |         | 6.1 _-x-_ |        |        |
+   * |  Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :------: | :-----: | :-----: | :----: | :----: |
+   * |  **52**  | **20**  |  **9**  | **12** | **11** |
+   * | 21 _-x-_ |         | 7 _-x-_ |        |        |
    *
    * ---
    *
@@ -29248,9 +29505,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `border-box`
    *
-   * |   Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :---------: | :-----: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **79** _-x-_ | No  |
+   * |   Chrome    | Firefox |  Safari  |     Edge     | IE  |
+   * | :---------: | :-----: | :------: | :----------: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | **79** _-x-_ | No  |
+   * |             |         | 4 _-x-_  |              |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-clip
    */
@@ -29262,9 +29520,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `add`
    *
-   * | Chrome | Firefox | Safari | Edge  | IE  |
-   * | :----: | :-----: | :----: | :---: | :-: |
-   * |   No   | **53**  |   No   | 18-79 | No  |
+   * | Chrome | Firefox |  Safari  | Edge  | IE  |
+   * | :----: | :-----: | :------: | :---: | :-: |
+   * |   No   | **53**  | **15.4** | 18-79 | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-composite
    */
@@ -29276,9 +29534,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `none`
    *
-   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | 16-79 | No  |
+   * |   Chrome    | Firefox |  Safari  | Edge  | IE  |
+   * | :---------: | :-----: | :------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | 16-79 | No  |
+   * |             |         | 4 _-x-_  |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-image
    */
@@ -29290,9 +29549,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `match-source`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   | **53**  |   No   |  No  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   | **53**  | **15.4** |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-mode
    */
@@ -29304,9 +29563,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `border-box`
    *
-   * |   Chrome    | Firefox |   Safari    |     Edge     | IE  |
-   * | :---------: | :-----: | :---------: | :----------: | :-: |
-   * | **1** _-x-_ | **53**  | **4** _-x-_ | **79** _-x-_ | No  |
+   * |   Chrome    | Firefox |  Safari  |     Edge     | IE  |
+   * | :---------: | :-----: | :------: | :----------: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4** | **79** _-x-_ | No  |
+   * |             |         | 4 _-x-_  |              |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-origin
    */
@@ -29318,9 +29578,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `center`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari   | Edge  | IE  |
+   * | :---------: | :-----: | :-------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4**  | 18-79 | No  |
+   * |             |         | 3.1 _-x-_ |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-position
    */
@@ -29332,9 +29593,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `no-repeat`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge  | IE  |
-   * | :---------: | :-----: | :-----------: | :---: | :-: |
-   * | **1** _-x-_ | **53**  | **3.1** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari   | Edge  | IE  |
+   * | :---------: | :-----: | :-------: | :---: | :-: |
+   * | **1** _-x-_ | **53**  | **15.4**  | 18-79 | No  |
+   * |             |         | 3.1 _-x-_ |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-repeat
    */
@@ -29346,9 +29608,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |   Safari    | Edge  | IE  |
-   * | :---------: | :-----: | :---------: | :---: | :-: |
-   * | **4** _-x-_ | **53**  | **4** _-x-_ | 18-79 | No  |
+   * |   Chrome    | Firefox |  Safari  | Edge  | IE  |
+   * | :---------: | :-----: | :------: | :---: | :-: |
+   * | **4** _-x-_ | **53**  | **15.4** | 18-79 | No  |
+   * |             |         | 4 _-x-_  |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mask-size
    */
@@ -29664,7 +29927,7 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * | Chrome | Firefox | Safari |  Edge  |  IE   |
    * | :----: | :-----: | :----: | :----: | :---: |
@@ -30190,6 +30453,21 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    */
   position?: PositionProperty | PositionProperty[];
   /**
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   *
+   * **Syntax**: `economy | exact`
+   *
+   * **Initial value**: `economy`
+   *
+   * |    Chrome    |       Firefox       |  Safari  |     Edge     | IE  |
+   * | :----------: | :-----------------: | :------: | :----------: | :-: |
+   * | **17** _-x-_ |       **97**        | **15.4** | **79** _-x-_ | No  |
+   * |              | 48 _(color-adjust)_ | 6 _-x-_  |              |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/print-color-adjust
+   */
+  "print-color-adjust"?: PrintColorAdjustProperty | PrintColorAdjustProperty[];
+  /**
    * The **`quotes`** CSS property sets how quotation marks appear.
    *
    * **Syntax**: `none | auto | [ <string> <string> ]+`
@@ -30301,10 +30579,10 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `alternate`
    *
-   * | Chrome  | Firefox |    Safari     | Edge  | IE  |
-   * | :-----: | :-----: | :-----------: | :---: | :-: |
-   * | **84**  | **38**  | **6.1** _-x-_ | 12-79 | No  |
-   * | 1 _-x-_ |         |               |       |     |
+   * | Chrome  | Firefox |   Safari    | Edge  | IE  |
+   * | :-----: | :-----: | :---------: | :---: | :-: |
+   * | **84**  | **38**  | **7** _-x-_ | 12-79 | No  |
+   * | 1 _-x-_ |         |             |       |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/ruby-position
    */
@@ -30330,9 +30608,9 @@ export interface StandardLonghandPropertiesHyphenFallback<TLength = string | 0> 
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **61** | **36**  |  n/a   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **61** | **36**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
@@ -30797,7 +31075,7 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * | Chrome | Firefox | Safari |  Edge  | IE  |
    * | :----: | :-----: | :----: | :----: | :-: |
-   * | **94** |   No    |   No   | **94** | No  |
+   * | **94** | **97**  |   No   | **94** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-gutter
    */
@@ -30982,9 +31260,9 @@ The scroll-padding properties define offsets for the optimal viewing region of
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **64** | **70**  |   No   | **79** | No  |
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **64** | **70**  | **15.4** | **79** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
    */
@@ -33494,6 +33772,14 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-font-variant-ligatures"?: FontVariantLigaturesProperty | FontVariantLigaturesProperty[];
   /**
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
+   *
+   * **Syntax**: `auto | <string>`
+   *
+   * **Initial value**: `auto`
+   */
+  "-webkit-hyphenate-character"?: HyphenateCharacterProperty | HyphenateCharacterProperty[];
+  /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. You can prevent hyphenation entirely, use hyphenation in manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
    *
    * **Syntax**: `none | manual | auto`
@@ -33742,13 +34028,13 @@ export interface VendorLonghandPropertiesHyphenFallback<TLength = string | 0> {
    */
   "-webkit-perspective-origin"?: PerspectiveOriginProperty<TLength> | PerspectiveOriginProperty<TLength>[];
   /**
-   * The **`color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
+   * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
    * **Syntax**: `economy | exact`
    *
    * **Initial value**: `economy`
    */
-  "-webkit-print-color-adjust"?: ColorAdjustProperty | ColorAdjustProperty[];
+  "-webkit-print-color-adjust"?: PrintColorAdjustProperty | PrintColorAdjustProperty[];
   /**
    * The `**ruby-position**` CSS property defines the position of a ruby element relatives to its base element. It can be position over the element (`over`), under it (`under`), or between the characters, on their right side (`inter-character`).
    *
@@ -34238,16 +34524,6 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    */
   clip?: ClipProperty | ClipProperty[];
   /**
-   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
-   *
-   * **Syntax**: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-variant( <feature-value-name># ) || swash( <feature-value-name> ) || ornaments( <feature-value-name> ) || annotation( <feature-value-name> ) ]`
-   *
-   * **Initial value**: `normal`
-   *
-   * @deprecated
-   */
-  "font-variant-alternates"?: FontVariantAlternatesProperty | FontVariantAlternatesProperty[];
-  /**
    * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
    * **Syntax**: `<length-percentage>`
@@ -34510,7 +34786,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * @deprecated
    */
@@ -34718,7 +34994,7 @@ export interface ObsoletePropertiesHyphenFallback<TLength = string | 0> {
    *
    * **Syntax**: `<alpha-value>`
    *
-   * **Initial value**: `1.0`
+   * **Initial value**: `1`
    *
    * @deprecated
    */
@@ -35504,10 +35780,12 @@ export type AtRules =
   | "@font-feature-values"
   | "@import"
   | "@keyframes"
+  | "@layer"
   | "@media"
   | "@namespace"
   | "@page"
   | "@property"
+  | "@scroll-timeline"
   | "@supports"
   | "@viewport";
 
@@ -35833,6 +36111,7 @@ export type HtmlAttributes =
   | "[scrolldelay]"
   | "[scrolling]"
   | "[selected]"
+  | "[shadowroot]"
   | "[shape]"
   | "[size]"
   | "[sizes]"
@@ -36139,6 +36418,8 @@ export type AnimationNameProperty = Globals | "none" | string;
 
 export type AnimationPlayStateProperty = Globals | "paused" | "running" | string;
 
+export type AnimationTimelineProperty = Globals | SingleAnimationTimeline | string;
+
 export type AnimationTimingFunctionProperty = Globals | EasingFunction | string;
 
 export type AppearanceProperty = Globals | CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
@@ -36392,7 +36673,7 @@ export type ClipPathProperty = Globals | GeometryBox | "none" | string;
 
 export type ColorProperty = Globals | Color;
 
-export type ColorAdjustProperty = Globals | "economy" | "exact";
+export type PrintColorAdjustProperty = Globals | "economy" | "exact";
 
 export type ColorSchemeProperty = Globals | "dark" | "light" | "normal" | string;
 
@@ -36483,6 +36764,7 @@ export type FlexProperty<TLength> = Globals | TLength | "auto" | "content" | "fi
 export type FlexBasisProperty<TLength> =
   | Globals
   | TLength
+  | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
   | "-webkit-auto"
@@ -36651,6 +36933,8 @@ export type HeightProperty<TLength> =
   | "min-content"
   | string;
 
+export type HyphenateCharacterProperty = Globals | "auto" | string;
+
 export type HyphensProperty = Globals | "auto" | "manual" | "none";
 
 export type ImageOrientationProperty = Globals | "flip" | "from-image" | string;
@@ -36675,6 +36959,8 @@ export type InlineSizeProperty<TLength> =
   | "max-content"
   | "min-content"
   | string;
+
+export type InputSecurityProperty = Globals | "auto" | "none";
 
 export type InsetProperty<TLength> = Globals | TLength | "auto" | string;
 
@@ -38072,6 +38358,8 @@ type SingleAnimation = EasingFunction | SingleAnimationDirection | SingleAnimati
 type SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 
 type SingleAnimationFillMode = "backwards" | "both" | "forwards" | "none";
+
+type SingleAnimationTimeline = "auto" | "none" | string;
 
 type SingleTransition = EasingFunction | "all" | "none" | string;
 
