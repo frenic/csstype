@@ -203,7 +203,7 @@ _If you're using CSS Custom Properties you can step directly to step 3._
       import * as CSS from 'csstype';
 
       declare module 'csstype' {
-        interface Properties {
+        interface Properties extends CSS.Properties {
           // Add a missing property
           WebkitRocketLauncher?: string;
 
