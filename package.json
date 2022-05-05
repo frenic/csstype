@@ -62,5 +62,8 @@
     "typings",
     "types",
     "definitions"
-  ]
+  ],
+  "exports": {
+    ".": "./index.d.ts"
+  }
 }
