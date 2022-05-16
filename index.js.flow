@@ -3636,6 +3636,7 @@ export type HtmlAttributes =
   | "[enterkeyhint]"
   | "[exportparts]"
   | "[face]"
+  | "[fetchpriority]"
   | "[for]"
   | "[form]"
   | "[formaction]"
@@ -3657,9 +3658,9 @@ export type HtmlAttributes =
   | "[id]"
   | "[imagesizes]"
   | "[imagesrcset]"
+  | "[inert]"
   | "[inputmode]"
   | "[integrity]"
-  | "[intrinsicsize]"
   | "[is]"
   | "[ismap]"
   | "[itemid]"
@@ -3703,24 +3704,7 @@ export type HtmlAttributes =
   | "[novalidate]"
   | "[nowrap]"
   | "[object]"
-  | "[onafterprint]"
-  | "[onbeforeprint]"
-  | "[onbeforeunload]"
-  | "[onblur]"
   | "[onerror]"
-  | "[onfocus]"
-  | "[onhashchange]"
-  | "[onlanguagechange]"
-  | "[onload]"
-  | "[onmessage]"
-  | "[onoffline]"
-  | "[ononline]"
-  | "[onpopstate]"
-  | "[onredo]"
-  | "[onresize]"
-  | "[onstorage]"
-  | "[onundo]"
-  | "[onunload]"
   | "[open]"
   | "[optimum]"
   | "[part]"
@@ -3752,7 +3736,6 @@ export type HtmlAttributes =
   | "[sandbox-allow-top-navigation-by-user-activation]"
   | "[sandbox]"
   | "[scope]"
-  | "[scoped]"
   | "[scrollamount]"
   | "[scrolldelay]"
   | "[scrolling]"
@@ -3873,8 +3856,6 @@ export type SvgAttributes =
   | "[gradientUnits]"
   | "[graphical]"
   | "[hanging]"
-  | "[hatchContentUnits]"
-  | "[hatchUnits]"
   | "[height]"
   | "[horiz-adv-x]"
   | "[horiz-origin-x]"
@@ -3931,7 +3912,6 @@ export type SvgAttributes =
   | "[patternTransform]"
   | "[patternUnits]"
   | "[ping]"
-  | "[pitch]"
   | "[pointer-events]"
   | "[pointsAtX]"
   | "[pointsAtY]"
@@ -4036,7 +4016,7 @@ export type SvgAttributes =
   | "[z]"
   | "[zoomAndPan]";
 
-export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset";
+export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "revert-layer" | "unset";
 
 export type Property$AccentColor = Globals | DataType$Color | "auto";
 
@@ -4849,7 +4829,7 @@ export type Property$MinWidth<TLength = string | 0> =
   | "min-intrinsic"
   | string;
 
-export type Property$MixBlendMode = Globals | DataType$BlendMode;
+export type Property$MixBlendMode = Globals | DataType$BlendMode | "plus-lighter";
 
 export type Property$Offset<TLength = string | 0> = Globals | DataType$Position<TLength> | DataType$GeometryBox | "auto" | "none" | string;
 

@@ -1537,9 +1537,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `visible`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **85** |   No    | **15.4** | **85** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** |   No    |   No   | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
@@ -2657,7 +2657,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **69** | **41**  | **12.1** | **79** | No  |
+   * | **87** | **41**  | **12.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-end
    */
@@ -2671,7 +2671,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **69** | **41**  | **12.1** | **79** | No  |
+   * | **87** | **41**  | **12.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-start
    */
@@ -2711,10 +2711,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * |          Chrome          |        Firefox        |          Safari          |  Edge  | IE  |
-   * | :----------------------: | :-------------------: | :----------------------: | :----: | :-: |
-   * |          **69**          |        **41**         |         **12.1**         | **79** | No  |
-   * | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-end)_ | 3 _(-webkit-margin-end)_ |        |     |
+   * |          Chrome          |        Firefox        |          Safari          |           Edge            | IE  |
+   * | :----------------------: | :-------------------: | :----------------------: | :-----------------------: | :-: |
+   * |          **87**          |        **41**         |         **12.1**         |          **87**           | No  |
+   * | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-end)_ | 3 _(-webkit-margin-end)_ | 79 _(-webkit-margin-end)_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
    */
@@ -2726,10 +2726,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * |           Chrome           |         Firefox         |           Safari           |  Edge  | IE  |
-   * | :------------------------: | :---------------------: | :------------------------: | :----: | :-: |
-   * |           **69**           |         **41**          |          **12.1**          | **79** | No  |
-   * | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ | 3 _(-webkit-margin-start)_ |        |     |
+   * |           Chrome           |         Firefox         |           Safari           |            Edge             | IE  |
+   * | :------------------------: | :---------------------: | :------------------------: | :-------------------------: | :-: |
+   * |           **87**           |         **41**          |          **12.1**          |           **87**            | No  |
+   * | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ | 3 _(-webkit-margin-start)_ | 79 _(-webkit-margin-start)_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -3005,7 +3005,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Syntax**: `<'max-width'>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `none`
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -3033,7 +3033,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Syntax**: `<'max-width'>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `none`
    *
    * | Chrome | Firefox |   Safari   |  Edge  | IE  |
    * | :----: | :-----: | :--------: | :----: | :-: |
@@ -3122,7 +3122,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`mix-blend-mode`** CSS property sets how an element's content should blend with the content of the element's parent and the element's background.
    *
-   * **Syntax**: `<blend-mode>`
+   * **Syntax**: `<blend-mode> | plus-lighter`
    *
    * **Initial value**: `normal`
    *
@@ -3211,9 +3211,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **72**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **72**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset-anchor
    */
@@ -3561,7 +3561,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **69** | **41**  | **12.1** | **79** | No  |
+   * | **87** | **41**  | **12.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-end
    */
@@ -3575,7 +3575,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **69** | **41**  | **12.1** | **79** | No  |
+   * | **87** | **41**  | **12.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-start
    */
@@ -3615,10 +3615,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * |          Chrome           |        Firefox         |          Safari           |  Edge  | IE  |
-   * | :-----------------------: | :--------------------: | :-----------------------: | :----: | :-: |
-   * |          **69**           |         **41**         |         **12.1**          | **79** | No  |
-   * | 2 _(-webkit-padding-end)_ | 3 _(-moz-padding-end)_ | 3 _(-webkit-padding-end)_ |        |     |
+   * |          Chrome           |        Firefox         |          Safari           |            Edge            | IE  |
+   * | :-----------------------: | :--------------------: | :-----------------------: | :------------------------: | :-: |
+   * |          **87**           |         **41**         |         **12.1**          |           **87**           | No  |
+   * | 2 _(-webkit-padding-end)_ | 3 _(-moz-padding-end)_ | 3 _(-webkit-padding-end)_ | 79 _(-webkit-padding-end)_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
    */
@@ -3630,10 +3630,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * |           Chrome            |         Firefox          |           Safari            |  Edge  | IE  |
-   * | :-------------------------: | :----------------------: | :-------------------------: | :----: | :-: |
-   * |           **69**            |          **41**          |          **12.1**           | **79** | No  |
-   * | 2 _(-webkit-padding-start)_ | 3 _(-moz-padding-start)_ | 3 _(-webkit-padding-start)_ |        |     |
+   * |           Chrome            |         Firefox          |           Safari            |             Edge             | IE  |
+   * | :-------------------------: | :----------------------: | :-------------------------: | :--------------------------: | :-: |
+   * |           **87**            |          **41**          |          **12.1**           |            **87**            | No  |
+   * | 2 _(-webkit-padding-start)_ | 3 _(-moz-padding-start)_ | 3 _(-webkit-padding-start)_ | 79 _(-webkit-padding-start)_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
    */
@@ -4667,9 +4667,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `currentcolor`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
+   * |  Chrome  | Firefox | Safari |   Edge   | IE  |
+   * | :------: | :-----: | :----: | :------: | :-: |
+   * |  **99**  | **46**  | **7**  |  **99**  | No  |
+   * | 25 _-x-_ |         |        | 79 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
    */
@@ -4681,9 +4682,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `over right`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
+   * |  Chrome  | Firefox | Safari |   Edge   | IE  |
+   * | :------: | :-----: | :----: | :------: | :-: |
+   * |  **99**  | **46**  | **7**  |  **99**  | No  |
+   * | 25 _-x-_ |         |        | 79 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
@@ -4695,9 +4697,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `none`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
+   * |  Chrome  | Firefox | Safari |   Edge   | IE  |
+   * | :------: | :-----: | :----: | :------: | :-: |
+   * |  **99**  | **46**  | **7**  |  **99**  | No  |
+   * | 25 _-x-_ |         |        | 79 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
    */
@@ -5204,7 +5207,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
   /**
    * The **`all`** shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
-   * **Syntax**: `initial | inherit | unset | revert`
+   * **Syntax**: `initial | inherit | unset | revert | revert-layer`
    *
    * **Initial value**: There is no practical initial value for it.
    *
@@ -5780,9 +5783,10 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
+   * |  Chrome  | Firefox | Safari |   Edge   | IE  |
+   * | :------: | :-----: | :----: | :------: | :-: |
+   * |  **99**  | **46**  | **7**  |  **99**  | No  |
+   * | 25 _-x-_ |         |        | 79 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
    */
@@ -7326,7 +7330,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    *
    * **Syntax**: `<'max-width'>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `none`
    */
   WebkitMaxInlineSize?: Property.MaxInlineSize<TLength> | undefined;
   /**
@@ -10419,9 +10423,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `visible`
    *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **85** |   No    | **15.4** | **85** | No  |
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **85** |   No    |   No   | **85** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
@@ -11539,7 +11543,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **69** | **41**  | **12.1** | **79** | No  |
+   * | **87** | **41**  | **12.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-end
    */
@@ -11553,7 +11557,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **69** | **41**  | **12.1** | **79** | No  |
+   * | **87** | **41**  | **12.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-block-start
    */
@@ -11593,10 +11597,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * |          Chrome          |        Firefox        |          Safari          |  Edge  | IE  |
-   * | :----------------------: | :-------------------: | :----------------------: | :----: | :-: |
-   * |          **69**          |        **41**         |         **12.1**         | **79** | No  |
-   * | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-end)_ | 3 _(-webkit-margin-end)_ |        |     |
+   * |          Chrome          |        Firefox        |          Safari          |           Edge            | IE  |
+   * | :----------------------: | :-------------------: | :----------------------: | :-----------------------: | :-: |
+   * |          **87**          |        **41**         |         **12.1**         |          **87**           | No  |
+   * | 2 _(-webkit-margin-end)_ | 3 _(-moz-margin-end)_ | 3 _(-webkit-margin-end)_ | 79 _(-webkit-margin-end)_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-end
    */
@@ -11608,10 +11612,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * |           Chrome           |         Firefox         |           Safari           |  Edge  | IE  |
-   * | :------------------------: | :---------------------: | :------------------------: | :----: | :-: |
-   * |           **69**           |         **41**          |          **12.1**          | **79** | No  |
-   * | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ | 3 _(-webkit-margin-start)_ |        |     |
+   * |           Chrome           |         Firefox         |           Safari           |            Edge             | IE  |
+   * | :------------------------: | :---------------------: | :------------------------: | :-------------------------: | :-: |
+   * |           **87**           |         **41**          |          **12.1**          |           **87**            | No  |
+   * | 2 _(-webkit-margin-start)_ | 3 _(-moz-margin-start)_ | 3 _(-webkit-margin-start)_ | 79 _(-webkit-margin-start)_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline-start
    */
@@ -11887,7 +11891,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Syntax**: `<'max-width'>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `none`
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
@@ -11915,7 +11919,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Syntax**: `<'max-width'>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `none`
    *
    * | Chrome | Firefox |   Safari   |  Edge  | IE  |
    * | :----: | :-----: | :--------: | :----: | :-: |
@@ -12004,7 +12008,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`mix-blend-mode`** CSS property sets how an element's content should blend with the content of the element's parent and the element's background.
    *
-   * **Syntax**: `<blend-mode>`
+   * **Syntax**: `<blend-mode> | plus-lighter`
    *
    * **Initial value**: `normal`
    *
@@ -12093,9 +12097,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **79** | **72**  |   No   | **79** | No  |
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **72**  |   No   |  No  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/offset-anchor
    */
@@ -12443,7 +12447,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **69** | **41**  | **12.1** | **79** | No  |
+   * | **87** | **41**  | **12.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-end
    */
@@ -12457,7 +12461,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox |  Safari  |  Edge  | IE  |
    * | :----: | :-----: | :------: | :----: | :-: |
-   * | **69** | **41**  | **12.1** | **79** | No  |
+   * | **87** | **41**  | **12.1** | **87** | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-block-start
    */
@@ -12497,10 +12501,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * |          Chrome           |        Firefox         |          Safari           |  Edge  | IE  |
-   * | :-----------------------: | :--------------------: | :-----------------------: | :----: | :-: |
-   * |          **69**           |         **41**         |         **12.1**          | **79** | No  |
-   * | 2 _(-webkit-padding-end)_ | 3 _(-moz-padding-end)_ | 3 _(-webkit-padding-end)_ |        |     |
+   * |          Chrome           |        Firefox         |          Safari           |            Edge            | IE  |
+   * | :-----------------------: | :--------------------: | :-----------------------: | :------------------------: | :-: |
+   * |          **87**           |         **41**         |         **12.1**          |           **87**           | No  |
+   * | 2 _(-webkit-padding-end)_ | 3 _(-moz-padding-end)_ | 3 _(-webkit-padding-end)_ | 79 _(-webkit-padding-end)_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-end
    */
@@ -12512,10 +12516,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * |           Chrome            |         Firefox          |           Safari            |  Edge  | IE  |
-   * | :-------------------------: | :----------------------: | :-------------------------: | :----: | :-: |
-   * |           **69**            |          **41**          |          **12.1**           | **79** | No  |
-   * | 2 _(-webkit-padding-start)_ | 3 _(-moz-padding-start)_ | 3 _(-webkit-padding-start)_ |        |     |
+   * |           Chrome            |         Firefox          |           Safari            |             Edge             | IE  |
+   * | :-------------------------: | :----------------------: | :-------------------------: | :--------------------------: | :-: |
+   * |           **87**            |          **41**          |          **12.1**           |            **87**            | No  |
+   * | 2 _(-webkit-padding-start)_ | 3 _(-moz-padding-start)_ | 3 _(-webkit-padding-start)_ | 79 _(-webkit-padding-start)_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline-start
    */
@@ -13549,9 +13553,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `currentcolor`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
+   * |  Chrome  | Firefox | Safari |   Edge   | IE  |
+   * | :------: | :-----: | :----: | :------: | :-: |
+   * |  **99**  | **46**  | **7**  |  **99**  | No  |
+   * | 25 _-x-_ |         |        | 79 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-color
    */
@@ -13563,9 +13568,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `over right`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
+   * |  Chrome  | Firefox | Safari |   Edge   | IE  |
+   * | :------: | :-----: | :----: | :------: | :-: |
+   * |  **99**  | **46**  | **7**  |  **99**  | No  |
+   * | 25 _-x-_ |         |        | 79 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-position
    */
@@ -13577,9 +13583,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `none`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
+   * |  Chrome  | Firefox | Safari |   Edge   | IE  |
+   * | :------: | :-----: | :----: | :------: | :-: |
+   * |  **99**  | **46**  | **7**  |  **99**  | No  |
+   * | 25 _-x-_ |         |        | 79 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis-style
    */
@@ -14086,7 +14093,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
   /**
    * The **`all`** shorthand CSS property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another stylesheet origin.
    *
-   * **Syntax**: `initial | inherit | unset | revert`
+   * **Syntax**: `initial | inherit | unset | revert | revert-layer`
    *
    * **Initial value**: There is no practical initial value for it.
    *
@@ -14662,9 +14669,10 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
-   * |    Chrome    | Firefox | Safari |     Edge     | IE  |
-   * | :----------: | :-----: | :----: | :----------: | :-: |
-   * | **25** _-x-_ | **46**  | **7**  | **79** _-x-_ | No  |
+   * |  Chrome  | Firefox | Safari |   Edge   | IE  |
+   * | :------: | :-----: | :----: | :------: | :-: |
+   * |  **99**  | **46**  | **7**  |  **99**  | No  |
+   * | 25 _-x-_ |         |        | 79 _-x-_ |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-emphasis
    */
@@ -16208,7 +16216,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    *
    * **Syntax**: `<'max-width'>`
    *
-   * **Initial value**: `0`
+   * **Initial value**: `none`
    */
   "-webkit-max-inline-size"?: Property.MaxInlineSize<TLength> | undefined;
   /**
@@ -18044,6 +18052,7 @@ export type HtmlAttributes =
   | "[enterkeyhint]"
   | "[exportparts]"
   | "[face]"
+  | "[fetchpriority]"
   | "[for]"
   | "[form]"
   | "[formaction]"
@@ -18065,9 +18074,9 @@ export type HtmlAttributes =
   | "[id]"
   | "[imagesizes]"
   | "[imagesrcset]"
+  | "[inert]"
   | "[inputmode]"
   | "[integrity]"
-  | "[intrinsicsize]"
   | "[is]"
   | "[ismap]"
   | "[itemid]"
@@ -18111,24 +18120,7 @@ export type HtmlAttributes =
   | "[novalidate]"
   | "[nowrap]"
   | "[object]"
-  | "[onafterprint]"
-  | "[onbeforeprint]"
-  | "[onbeforeunload]"
-  | "[onblur]"
   | "[onerror]"
-  | "[onfocus]"
-  | "[onhashchange]"
-  | "[onlanguagechange]"
-  | "[onload]"
-  | "[onmessage]"
-  | "[onoffline]"
-  | "[ononline]"
-  | "[onpopstate]"
-  | "[onredo]"
-  | "[onresize]"
-  | "[onstorage]"
-  | "[onundo]"
-  | "[onunload]"
   | "[open]"
   | "[optimum]"
   | "[part]"
@@ -18160,7 +18152,6 @@ export type HtmlAttributes =
   | "[sandbox-allow-top-navigation-by-user-activation]"
   | "[sandbox]"
   | "[scope]"
-  | "[scoped]"
   | "[scrollamount]"
   | "[scrolldelay]"
   | "[scrolling]"
@@ -18281,8 +18272,6 @@ export type SvgAttributes =
   | "[gradientUnits]"
   | "[graphical]"
   | "[hanging]"
-  | "[hatchContentUnits]"
-  | "[hatchUnits]"
   | "[height]"
   | "[horiz-adv-x]"
   | "[horiz-origin-x]"
@@ -18339,7 +18328,6 @@ export type SvgAttributes =
   | "[patternTransform]"
   | "[patternUnits]"
   | "[ping]"
-  | "[pitch]"
   | "[pointer-events]"
   | "[pointsAtX]"
   | "[pointsAtY]"
@@ -18444,7 +18432,7 @@ export type SvgAttributes =
   | "[z]"
   | "[zoomAndPan]";
 
-export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset";
+export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "revert-layer" | "unset";
 
 export namespace Property {
   export type AccentColor = Globals | DataType.Color | "auto";
@@ -19258,7 +19246,7 @@ export namespace Property {
     | "min-intrinsic"
     | (string & {});
 
-  export type MixBlendMode = Globals | DataType.BlendMode;
+  export type MixBlendMode = Globals | DataType.BlendMode | "plus-lighter";
 
   export type Offset<TLength = (string & {}) | 0> = Globals | DataType.Position<TLength> | DataType.GeometryBox | "auto" | "none" | (string & {});
 
