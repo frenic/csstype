@@ -20313,7 +20313,13 @@ export namespace AtRule {
   type Zoom = "auto" | (string & {}) | (number & {});
 }
 
-declare namespace DataType {
+/**
+ * **Attention!** Data types receives its name from the spec. E.g. `<color>` becomes `DataType.Color` and
+ * `<content-distribution>` becomes `DataType.ContentDistribution`. It happens quite frequent that these data types
+ * are split into several data types or/and name changes as the spec develops. So there's a risk that a minor/patch
+ * update from `csstype` can break your typing if you're using the `DataType` namespace.
+ */
+export namespace DataType {
   type AbsoluteSize = "large" | "medium" | "small" | "x-large" | "x-small" | "xx-large" | "xx-small" | "xxx-large";
 
   type AnimateableFeature = "contents" | "scroll-position" | (string & {});

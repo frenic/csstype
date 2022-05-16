@@ -71,7 +71,7 @@ export type SimpleType = Exclude<DeclarableType, IAlias>;
 
 export interface INamespace {
   name: string;
-  export: boolean;
+  comment?: string;
   body: () => (Interface | IDeclaration)[];
 }
 
@@ -274,12 +274,16 @@ export async function declarator(minTypesInDataTypes: number) {
 
   const propertyNamespace: INamespace = {
     name: 'Property',
-    export: true,
     body: () => Array.from(propertyDeclarations.values()),
   };
   const dataTypeNamespace: INamespace = {
     name: 'DataType',
-    export: false,
+    comment: `/**
+ * **Attention!** Data types receives its name from the spec. E.g. \`<color>\` becomes \`DataType.Color\` and
+ * \`<content-distribution>\` becomes \`DataType.ContentDistribution\`. It happens quite frequent that these data types
+ * are split into several data types or/and name changes as the spec develops. So there's a risk that a minor/patch
+ * update from \`csstype\` can break your typing if you're using the \`DataType\` namespace.
+ */`,
     body: () => Array.from(dataTypeDeclarations.values()),
   };
 
@@ -374,7 +378,6 @@ export async function declarator(minTypesInDataTypes: number) {
   const atRuleInterfaces: Interface[] = [];
   const atRuleNamespace: INamespace = {
     name: 'AtRule',
-    export: true,
     body: () => [...atRuleInterfaces, ...Array.from(atRuleDeclarations.values())],
   };
 

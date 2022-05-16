@@ -38,5 +38,3 @@ exports[`Typescript 4.2 detects errors 13`] = `"134:25 - This condition will alw
 exports[`Typescript 4.2 detects errors 14`] = `"144:34 - Argument of type '1' is not assignable to parameter of type 'Width<0 | (string & {})> | [Width<0 | (string & {})>]'."`;
 
 exports[`Typescript 4.2 detects errors 15`] = `"145:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
-
-exports[`Typescript 4.2 detects errors 16`] = `"150:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;

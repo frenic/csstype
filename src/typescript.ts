@@ -38,13 +38,11 @@ export default async function typescript() {
       namespaceOutput += EOL;
     }
 
-    if (namespace.export) {
-      namespaceOutput += 'export ';
-    } else {
-      namespaceOutput += 'declare ';
+    if (namespace.comment) {
+      namespaceOutput += namespace.comment + EOL;
     }
 
-    namespaceOutput += `namespace ${namespace.name} {${EOL}`;
+    namespaceOutput += `export namespace ${namespace.name} {${EOL}`;
 
     const body = namespace.body();
 

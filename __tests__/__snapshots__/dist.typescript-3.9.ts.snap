@@ -38,5 +38,3 @@ exports[`Typescript 3.9 detects errors 13`] = `"134:25 - This condition will alw
 exports[`Typescript 3.9 detects errors 14`] = `"144:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | \\"max-content\\" | ... 5 more ... | [...]'."`;
 
 exports[`Typescript 3.9 detects errors 15`] = `"145:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
-
-exports[`Typescript 3.9 detects errors 16`] = `"150:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;

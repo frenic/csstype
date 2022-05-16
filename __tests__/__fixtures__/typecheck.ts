@@ -147,9 +147,6 @@ propertyValueWithAutocompleteHack([1]); // Should fail
 
 const differentMajorVersions: CSS.Properties = {} as OldCSS.Properties;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type DataTypeShouldNotBeExposed = CSS.DataType.Color;
-
 css;
 cssWithFallbackValues;
 cssWithHyphenProperties;

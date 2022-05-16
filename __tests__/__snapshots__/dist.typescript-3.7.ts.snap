@@ -56,5 +56,3 @@ exports[`Typescript 3.7 detects errors 15`] = `
   Type '[1]' is not assignable to type '[0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | \\"max-content\\" | ... 4 more ... | \\"min-intrinsic\\"]'.
     Type '1' is not assignable to type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | \\"max-content\\" | ... 4 more ... | \\"min-intrinsic\\"'."
 `;
-
-exports[`Typescript 3.7 detects errors 16`] = `"150:38 - Namespace '\\"index\\"' has no exported member 'DataType'."`;
