@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Typescript 4.1 detects errors 1`] = `"31:9 - Type 'undefined' is not assignable to type 'AspectRatio'."`;
+exports[`Typescript 4.1 detects errors 1`] = `"31:9 - Type 'undefined' is not assignable to type 'HyphenateCharacter'."`;
 
 exports[`Typescript 4.1 detects errors 2`] = `
 "48:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.

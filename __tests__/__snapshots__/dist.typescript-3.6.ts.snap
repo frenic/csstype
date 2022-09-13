@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Typescript 3.6 detects errors 1`] = `
-"31:2 - Type 'undefined[]' is not assignable to type '\\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | AspectRatio[] | undefined'.
-  Type 'undefined[]' is not assignable to type 'AspectRatio[]'.
-    Type 'undefined' is not assignable to type 'AspectRatio'."
+"31:2 - Type 'undefined[]' is not assignable to type '\\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | HyphenateCharacter[] | undefined'.
+  Type 'undefined[]' is not assignable to type 'HyphenateCharacter[]'.
+    Type 'undefined' is not assignable to type 'HyphenateCharacter'."
 `;
 
 exports[`Typescript 3.6 detects errors 2`] = `
