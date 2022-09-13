@@ -6,6 +6,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   alignItems?: Property$AlignItems,
   alignSelf?: Property$AlignSelf,
   alignTracks?: Property$AlignTracks,
+  animationComposition?: Property$AnimationComposition,
   animationDelay?: Property$AnimationDelay<TTime>,
   animationDirection?: Property$AnimationDirection,
   animationDuration?: Property$AnimationDuration<TTime>,
@@ -201,6 +202,8 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   maskRepeat?: Property$MaskRepeat,
   maskSize?: Property$MaskSize<TLength>,
   maskType?: Property$MaskType,
+  mathDepth?: Property$MathDepth,
+  mathShift?: Property$MathShift,
   mathStyle?: Property$MathStyle,
   maxBlockSize?: Property$MaxBlockSize<TLength>,
   maxHeight?: Property$MaxHeight<TLength>,
@@ -318,7 +321,6 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   textDecorationSkipInk?: Property$TextDecorationSkipInk,
   textDecorationStyle?: Property$TextDecorationStyle,
   textDecorationThickness?: Property$TextDecorationThickness<TLength>,
-  textDecorationWidth?: Property$TextDecorationThickness<TLength>,
   textEmphasisColor?: Property$TextEmphasisColor,
   textEmphasisPosition?: Property$TextEmphasisPosition,
   textEmphasisStyle?: Property$TextEmphasisStyle,
@@ -434,7 +436,6 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   MozBoxSizing?: Property$BoxSizing,
   MozColumnCount?: Property$ColumnCount,
   MozColumnFill?: Property$ColumnFill,
-  MozColumnGap?: Property$ColumnGap<TLength>,
   MozColumnRuleColor?: Property$ColumnRuleColor,
   MozColumnRuleStyle?: Property$ColumnRuleStyle,
   MozColumnRuleWidth?: Property$ColumnRuleWidth<TLength>,
@@ -468,7 +469,6 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   MozWindowDragging?: Property$MozWindowDragging,
   MozWindowShadow?: Property$MozWindowShadow,
   msAccelerator?: Property$MsAccelerator,
-  msAlignSelf?: Property$AlignSelf,
   msBlockProgression?: Property$MsBlockProgression,
   msContentZoomChaining?: Property$MsContentZoomChaining,
   msContentZoomLimitMax?: Property$MsContentZoomLimitMax,
@@ -489,7 +489,6 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   msHyphenateLimitZone?: Property$MsHyphenateLimitZone<TLength>,
   msHyphens?: Property$Hyphens,
   msImeAlign?: Property$MsImeAlign,
-  msJustifySelf?: Property$JustifySelf,
   msLineBreak?: Property$LineBreak,
   msOrder?: Property$Order,
   msOverflowStyle?: Property$MsOverflowStyle,
@@ -512,6 +511,7 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   msScrollbarFaceColor?: Property$MsScrollbarFaceColor,
   msScrollbarHighlightColor?: Property$MsScrollbarHighlightColor,
   msScrollbarShadowColor?: Property$MsScrollbarShadowColor,
+  msScrollbarTrackColor?: Property$MsScrollbarTrackColor,
   msTextAutospace?: Property$MsTextAutospace,
   msTextCombineHorizontal?: Property$TextCombineUpright,
   msTextOverflow?: Property$TextOverflow,
@@ -561,7 +561,6 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   WebkitClipPath?: Property$ClipPath,
   WebkitColumnCount?: Property$ColumnCount,
   WebkitColumnFill?: Property$ColumnFill,
-  WebkitColumnGap?: Property$ColumnGap<TLength>,
   WebkitColumnRuleColor?: Property$ColumnRuleColor,
   WebkitColumnRuleStyle?: Property$ColumnRuleStyle,
   WebkitColumnRuleWidth?: Property$ColumnRuleWidth<TLength>,
@@ -698,7 +697,6 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   scrollSnapPointsY?: Property$ScrollSnapPointsY,
   scrollSnapTypeX?: Property$ScrollSnapTypeX,
   scrollSnapTypeY?: Property$ScrollSnapTypeY,
-  scrollbarTrackColor?: Property$MsScrollbarTrackColor,
   KhtmlBoxAlign?: Property$BoxAlign,
   KhtmlBoxDirection?: Property$BoxDirection,
   KhtmlBoxFlex?: Property$BoxFlex,
@@ -745,7 +743,6 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   MozTextDecorationStyle?: Property$TextDecorationStyle,
   MozUserInput?: Property$MozUserInput,
   msImeMode?: Property$ImeMode,
-  msScrollbarTrackColor?: Property$MsScrollbarTrackColor,
   OAnimation?: Property$Animation<TTime>,
   OAnimationDelay?: Property$AnimationDelay<TTime>,
   OAnimationDirection?: Property$AnimationDirection,
@@ -856,6 +853,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "align-items"?: Property$AlignItems,
   "align-self"?: Property$AlignSelf,
   "align-tracks"?: Property$AlignTracks,
+  "animation-composition"?: Property$AnimationComposition,
   "animation-delay"?: Property$AnimationDelay<TTime>,
   "animation-direction"?: Property$AnimationDirection,
   "animation-duration"?: Property$AnimationDuration<TTime>,
@@ -1051,6 +1049,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "mask-repeat"?: Property$MaskRepeat,
   "mask-size"?: Property$MaskSize<TLength>,
   "mask-type"?: Property$MaskType,
+  "math-depth"?: Property$MathDepth,
+  "math-shift"?: Property$MathShift,
   "math-style"?: Property$MathStyle,
   "max-block-size"?: Property$MaxBlockSize<TLength>,
   "max-height"?: Property$MaxHeight<TLength>,
@@ -1168,7 +1168,6 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "text-decoration-skip-ink"?: Property$TextDecorationSkipInk,
   "text-decoration-style"?: Property$TextDecorationStyle,
   "text-decoration-thickness"?: Property$TextDecorationThickness<TLength>,
-  "text-decoration-width"?: Property$TextDecorationThickness<TLength>,
   "text-emphasis-color"?: Property$TextEmphasisColor,
   "text-emphasis-position"?: Property$TextEmphasisPosition,
   "text-emphasis-style"?: Property$TextEmphasisStyle,
@@ -1287,7 +1286,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-moz-box-sizing"?: Property$BoxSizing,
   "-moz-column-count"?: Property$ColumnCount,
   "-moz-column-fill"?: Property$ColumnFill,
-  "-moz-column-gap"?: Property$ColumnGap<TLength>,
   "-moz-column-rule-color"?: Property$ColumnRuleColor,
   "-moz-column-rule-style"?: Property$ColumnRuleStyle,
   "-moz-column-rule-width"?: Property$ColumnRuleWidth<TLength>,
@@ -1321,7 +1319,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-moz-window-dragging"?: Property$MozWindowDragging,
   "-moz-window-shadow"?: Property$MozWindowShadow,
   "-ms-accelerator"?: Property$MsAccelerator,
-  "-ms-align-self"?: Property$AlignSelf,
   "-ms-block-progression"?: Property$MsBlockProgression,
   "-ms-content-zoom-chaining"?: Property$MsContentZoomChaining,
   "-ms-content-zoom-limit-max"?: Property$MsContentZoomLimitMax,
@@ -1342,7 +1339,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-ms-hyphenate-limit-zone"?: Property$MsHyphenateLimitZone<TLength>,
   "-ms-hyphens"?: Property$Hyphens,
   "-ms-ime-align"?: Property$MsImeAlign,
-  "-ms-justify-self"?: Property$JustifySelf,
   "-ms-line-break"?: Property$LineBreak,
   "-ms-order"?: Property$Order,
   "-ms-overflow-style"?: Property$MsOverflowStyle,
@@ -1365,6 +1361,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-ms-scrollbar-face-color"?: Property$MsScrollbarFaceColor,
   "-ms-scrollbar-highlight-color"?: Property$MsScrollbarHighlightColor,
   "-ms-scrollbar-shadow-color"?: Property$MsScrollbarShadowColor,
+  "-ms-scrollbar-track-color"?: Property$MsScrollbarTrackColor,
   "-ms-text-autospace"?: Property$MsTextAutospace,
   "-ms-text-combine-horizontal"?: Property$TextCombineUpright,
   "-ms-text-overflow"?: Property$TextOverflow,
@@ -1414,7 +1411,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-webkit-clip-path"?: Property$ClipPath,
   "-webkit-column-count"?: Property$ColumnCount,
   "-webkit-column-fill"?: Property$ColumnFill,
-  "-webkit-column-gap"?: Property$ColumnGap<TLength>,
   "-webkit-column-rule-color"?: Property$ColumnRuleColor,
   "-webkit-column-rule-style"?: Property$ColumnRuleStyle,
   "-webkit-column-rule-width"?: Property$ColumnRuleWidth<TLength>,
@@ -1554,7 +1550,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "scroll-snap-points-y"?: Property$ScrollSnapPointsY,
   "scroll-snap-type-x"?: Property$ScrollSnapTypeX,
   "scroll-snap-type-y"?: Property$ScrollSnapTypeY,
-  "scrollbar-track-color"?: Property$MsScrollbarTrackColor,
   "-khtml-box-align"?: Property$BoxAlign,
   "-khtml-box-direction"?: Property$BoxDirection,
   "-khtml-box-flex"?: Property$BoxFlex,
@@ -1601,7 +1596,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-moz-text-decoration-style"?: Property$TextDecorationStyle,
   "-moz-user-input"?: Property$MozUserInput,
   "-ms-ime-mode"?: Property$ImeMode,
-  "-ms-scrollbar-track-color"?: Property$MsScrollbarTrackColor,
   "-o-animation"?: Property$Animation<TTime>,
   "-o-animation-delay"?: Property$AnimationDelay<TTime>,
   "-o-animation-direction"?: Property$AnimationDirection,
@@ -1712,6 +1706,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   alignItems?: Property$AlignItems | Array<Property$AlignItems>,
   alignSelf?: Property$AlignSelf | Array<Property$AlignSelf>,
   alignTracks?: Property$AlignTracks | Array<Property$AlignTracks>,
+  animationComposition?: Property$AnimationComposition | Array<Property$AnimationComposition>,
   animationDelay?: Property$AnimationDelay<TTime> | Array<Property$AnimationDelay<TTime>>,
   animationDirection?: Property$AnimationDirection | Array<Property$AnimationDirection>,
   animationDuration?: Property$AnimationDuration<TTime> | Array<Property$AnimationDuration<TTime>>,
@@ -1907,6 +1902,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   maskRepeat?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   maskSize?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   maskType?: Property$MaskType | Array<Property$MaskType>,
+  mathDepth?: Property$MathDepth | Array<Property$MathDepth>,
+  mathShift?: Property$MathShift | Array<Property$MathShift>,
   mathStyle?: Property$MathStyle | Array<Property$MathStyle>,
   maxBlockSize?: Property$MaxBlockSize<TLength> | Array<Property$MaxBlockSize<TLength>>,
   maxHeight?: Property$MaxHeight<TLength> | Array<Property$MaxHeight<TLength>>,
@@ -2024,7 +2021,6 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   textDecorationSkipInk?: Property$TextDecorationSkipInk | Array<Property$TextDecorationSkipInk>,
   textDecorationStyle?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
   textDecorationThickness?: Property$TextDecorationThickness<TLength> | Array<Property$TextDecorationThickness<TLength>>,
-  textDecorationWidth?: Property$TextDecorationThickness<TLength> | Array<Property$TextDecorationThickness<TLength>>,
   textEmphasisColor?: Property$TextEmphasisColor | Array<Property$TextEmphasisColor>,
   textEmphasisPosition?: Property$TextEmphasisPosition | Array<Property$TextEmphasisPosition>,
   textEmphasisStyle?: Property$TextEmphasisStyle | Array<Property$TextEmphasisStyle>,
@@ -2143,7 +2139,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   MozBoxSizing?: Property$BoxSizing | Array<Property$BoxSizing>,
   MozColumnCount?: Property$ColumnCount | Array<Property$ColumnCount>,
   MozColumnFill?: Property$ColumnFill | Array<Property$ColumnFill>,
-  MozColumnGap?: Property$ColumnGap<TLength> | Array<Property$ColumnGap<TLength>>,
   MozColumnRuleColor?: Property$ColumnRuleColor | Array<Property$ColumnRuleColor>,
   MozColumnRuleStyle?: Property$ColumnRuleStyle | Array<Property$ColumnRuleStyle>,
   MozColumnRuleWidth?: Property$ColumnRuleWidth<TLength> | Array<Property$ColumnRuleWidth<TLength>>,
@@ -2177,7 +2172,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   MozWindowDragging?: Property$MozWindowDragging | Array<Property$MozWindowDragging>,
   MozWindowShadow?: Property$MozWindowShadow | Array<Property$MozWindowShadow>,
   msAccelerator?: Property$MsAccelerator | Array<Property$MsAccelerator>,
-  msAlignSelf?: Property$AlignSelf | Array<Property$AlignSelf>,
   msBlockProgression?: Property$MsBlockProgression | Array<Property$MsBlockProgression>,
   msContentZoomChaining?: Property$MsContentZoomChaining | Array<Property$MsContentZoomChaining>,
   msContentZoomLimitMax?: Property$MsContentZoomLimitMax | Array<Property$MsContentZoomLimitMax>,
@@ -2198,7 +2192,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   msHyphenateLimitZone?: Property$MsHyphenateLimitZone<TLength> | Array<Property$MsHyphenateLimitZone<TLength>>,
   msHyphens?: Property$Hyphens | Array<Property$Hyphens>,
   msImeAlign?: Property$MsImeAlign | Array<Property$MsImeAlign>,
-  msJustifySelf?: Property$JustifySelf | Array<Property$JustifySelf>,
   msLineBreak?: Property$LineBreak | Array<Property$LineBreak>,
   msOrder?: Property$Order | Array<Property$Order>,
   msOverflowStyle?: Property$MsOverflowStyle | Array<Property$MsOverflowStyle>,
@@ -2221,6 +2214,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   msScrollbarFaceColor?: Property$MsScrollbarFaceColor | Array<Property$MsScrollbarFaceColor>,
   msScrollbarHighlightColor?: Property$MsScrollbarHighlightColor | Array<Property$MsScrollbarHighlightColor>,
   msScrollbarShadowColor?: Property$MsScrollbarShadowColor | Array<Property$MsScrollbarShadowColor>,
+  msScrollbarTrackColor?: Property$MsScrollbarTrackColor | Array<Property$MsScrollbarTrackColor>,
   msTextAutospace?: Property$MsTextAutospace | Array<Property$MsTextAutospace>,
   msTextCombineHorizontal?: Property$TextCombineUpright | Array<Property$TextCombineUpright>,
   msTextOverflow?: Property$TextOverflow | Array<Property$TextOverflow>,
@@ -2270,7 +2264,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   WebkitClipPath?: Property$ClipPath | Array<Property$ClipPath>,
   WebkitColumnCount?: Property$ColumnCount | Array<Property$ColumnCount>,
   WebkitColumnFill?: Property$ColumnFill | Array<Property$ColumnFill>,
-  WebkitColumnGap?: Property$ColumnGap<TLength> | Array<Property$ColumnGap<TLength>>,
   WebkitColumnRuleColor?: Property$ColumnRuleColor | Array<Property$ColumnRuleColor>,
   WebkitColumnRuleStyle?: Property$ColumnRuleStyle | Array<Property$ColumnRuleStyle>,
   WebkitColumnRuleWidth?: Property$ColumnRuleWidth<TLength> | Array<Property$ColumnRuleWidth<TLength>>,
@@ -2410,7 +2403,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   scrollSnapPointsY?: Property$ScrollSnapPointsY | Array<Property$ScrollSnapPointsY>,
   scrollSnapTypeX?: Property$ScrollSnapTypeX | Array<Property$ScrollSnapTypeX>,
   scrollSnapTypeY?: Property$ScrollSnapTypeY | Array<Property$ScrollSnapTypeY>,
-  scrollbarTrackColor?: Property$MsScrollbarTrackColor | Array<Property$MsScrollbarTrackColor>,
   KhtmlBoxAlign?: Property$BoxAlign | Array<Property$BoxAlign>,
   KhtmlBoxDirection?: Property$BoxDirection | Array<Property$BoxDirection>,
   KhtmlBoxFlex?: Property$BoxFlex | Array<Property$BoxFlex>,
@@ -2457,7 +2449,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   MozTextDecorationStyle?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
   MozUserInput?: Property$MozUserInput | Array<Property$MozUserInput>,
   msImeMode?: Property$ImeMode | Array<Property$ImeMode>,
-  msScrollbarTrackColor?: Property$MsScrollbarTrackColor | Array<Property$MsScrollbarTrackColor>,
   OAnimation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
   OAnimationDelay?: Property$AnimationDelay<TTime> | Array<Property$AnimationDelay<TTime>>,
   OAnimationDirection?: Property$AnimationDirection | Array<Property$AnimationDirection>,
@@ -2568,6 +2559,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "align-items"?: Property$AlignItems | Array<Property$AlignItems>,
   "align-self"?: Property$AlignSelf | Array<Property$AlignSelf>,
   "align-tracks"?: Property$AlignTracks | Array<Property$AlignTracks>,
+  "animation-composition"?: Property$AnimationComposition | Array<Property$AnimationComposition>,
   "animation-delay"?: Property$AnimationDelay<TTime> | Array<Property$AnimationDelay<TTime>>,
   "animation-direction"?: Property$AnimationDirection | Array<Property$AnimationDirection>,
   "animation-duration"?: Property$AnimationDuration<TTime> | Array<Property$AnimationDuration<TTime>>,
@@ -2763,6 +2755,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "mask-repeat"?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   "mask-size"?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   "mask-type"?: Property$MaskType | Array<Property$MaskType>,
+  "math-depth"?: Property$MathDepth | Array<Property$MathDepth>,
+  "math-shift"?: Property$MathShift | Array<Property$MathShift>,
   "math-style"?: Property$MathStyle | Array<Property$MathStyle>,
   "max-block-size"?: Property$MaxBlockSize<TLength> | Array<Property$MaxBlockSize<TLength>>,
   "max-height"?: Property$MaxHeight<TLength> | Array<Property$MaxHeight<TLength>>,
@@ -2880,7 +2874,6 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "text-decoration-skip-ink"?: Property$TextDecorationSkipInk | Array<Property$TextDecorationSkipInk>,
   "text-decoration-style"?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
   "text-decoration-thickness"?: Property$TextDecorationThickness<TLength> | Array<Property$TextDecorationThickness<TLength>>,
-  "text-decoration-width"?: Property$TextDecorationThickness<TLength> | Array<Property$TextDecorationThickness<TLength>>,
   "text-emphasis-color"?: Property$TextEmphasisColor | Array<Property$TextEmphasisColor>,
   "text-emphasis-position"?: Property$TextEmphasisPosition | Array<Property$TextEmphasisPosition>,
   "text-emphasis-style"?: Property$TextEmphasisStyle | Array<Property$TextEmphasisStyle>,
@@ -2999,7 +2992,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-moz-box-sizing"?: Property$BoxSizing | Array<Property$BoxSizing>,
   "-moz-column-count"?: Property$ColumnCount | Array<Property$ColumnCount>,
   "-moz-column-fill"?: Property$ColumnFill | Array<Property$ColumnFill>,
-  "-moz-column-gap"?: Property$ColumnGap<TLength> | Array<Property$ColumnGap<TLength>>,
   "-moz-column-rule-color"?: Property$ColumnRuleColor | Array<Property$ColumnRuleColor>,
   "-moz-column-rule-style"?: Property$ColumnRuleStyle | Array<Property$ColumnRuleStyle>,
   "-moz-column-rule-width"?: Property$ColumnRuleWidth<TLength> | Array<Property$ColumnRuleWidth<TLength>>,
@@ -3033,7 +3025,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-moz-window-dragging"?: Property$MozWindowDragging | Array<Property$MozWindowDragging>,
   "-moz-window-shadow"?: Property$MozWindowShadow | Array<Property$MozWindowShadow>,
   "-ms-accelerator"?: Property$MsAccelerator | Array<Property$MsAccelerator>,
-  "-ms-align-self"?: Property$AlignSelf | Array<Property$AlignSelf>,
   "-ms-block-progression"?: Property$MsBlockProgression | Array<Property$MsBlockProgression>,
   "-ms-content-zoom-chaining"?: Property$MsContentZoomChaining | Array<Property$MsContentZoomChaining>,
   "-ms-content-zoom-limit-max"?: Property$MsContentZoomLimitMax | Array<Property$MsContentZoomLimitMax>,
@@ -3054,7 +3045,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-ms-hyphenate-limit-zone"?: Property$MsHyphenateLimitZone<TLength> | Array<Property$MsHyphenateLimitZone<TLength>>,
   "-ms-hyphens"?: Property$Hyphens | Array<Property$Hyphens>,
   "-ms-ime-align"?: Property$MsImeAlign | Array<Property$MsImeAlign>,
-  "-ms-justify-self"?: Property$JustifySelf | Array<Property$JustifySelf>,
   "-ms-line-break"?: Property$LineBreak | Array<Property$LineBreak>,
   "-ms-order"?: Property$Order | Array<Property$Order>,
   "-ms-overflow-style"?: Property$MsOverflowStyle | Array<Property$MsOverflowStyle>,
@@ -3077,6 +3067,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-ms-scrollbar-face-color"?: Property$MsScrollbarFaceColor | Array<Property$MsScrollbarFaceColor>,
   "-ms-scrollbar-highlight-color"?: Property$MsScrollbarHighlightColor | Array<Property$MsScrollbarHighlightColor>,
   "-ms-scrollbar-shadow-color"?: Property$MsScrollbarShadowColor | Array<Property$MsScrollbarShadowColor>,
+  "-ms-scrollbar-track-color"?: Property$MsScrollbarTrackColor | Array<Property$MsScrollbarTrackColor>,
   "-ms-text-autospace"?: Property$MsTextAutospace | Array<Property$MsTextAutospace>,
   "-ms-text-combine-horizontal"?: Property$TextCombineUpright | Array<Property$TextCombineUpright>,
   "-ms-text-overflow"?: Property$TextOverflow | Array<Property$TextOverflow>,
@@ -3126,7 +3117,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-webkit-clip-path"?: Property$ClipPath | Array<Property$ClipPath>,
   "-webkit-column-count"?: Property$ColumnCount | Array<Property$ColumnCount>,
   "-webkit-column-fill"?: Property$ColumnFill | Array<Property$ColumnFill>,
-  "-webkit-column-gap"?: Property$ColumnGap<TLength> | Array<Property$ColumnGap<TLength>>,
   "-webkit-column-rule-color"?: Property$ColumnRuleColor | Array<Property$ColumnRuleColor>,
   "-webkit-column-rule-style"?: Property$ColumnRuleStyle | Array<Property$ColumnRuleStyle>,
   "-webkit-column-rule-width"?: Property$ColumnRuleWidth<TLength> | Array<Property$ColumnRuleWidth<TLength>>,
@@ -3266,7 +3256,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "scroll-snap-points-y"?: Property$ScrollSnapPointsY | Array<Property$ScrollSnapPointsY>,
   "scroll-snap-type-x"?: Property$ScrollSnapTypeX | Array<Property$ScrollSnapTypeX>,
   "scroll-snap-type-y"?: Property$ScrollSnapTypeY | Array<Property$ScrollSnapTypeY>,
-  "scrollbar-track-color"?: Property$MsScrollbarTrackColor | Array<Property$MsScrollbarTrackColor>,
   "-khtml-box-align"?: Property$BoxAlign | Array<Property$BoxAlign>,
   "-khtml-box-direction"?: Property$BoxDirection | Array<Property$BoxDirection>,
   "-khtml-box-flex"?: Property$BoxFlex | Array<Property$BoxFlex>,
@@ -3313,7 +3302,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-moz-text-decoration-style"?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
   "-moz-user-input"?: Property$MozUserInput | Array<Property$MozUserInput>,
   "-ms-ime-mode"?: Property$ImeMode | Array<Property$ImeMode>,
-  "-ms-scrollbar-track-color"?: Property$MsScrollbarTrackColor | Array<Property$MsScrollbarTrackColor>,
   "-o-animation"?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
   "-o-animation-delay"?: Property$AnimationDelay<TTime> | Array<Property$AnimationDelay<TTime>>,
   "-o-animation-direction"?: Property$AnimationDirection | Array<Property$AnimationDirection>,
@@ -3481,6 +3469,7 @@ export type SimplePseudos =
   | "::-ms-browse"
   | "::-ms-check"
   | "::-ms-clear"
+  | "::-ms-expand"
   | "::-ms-fill"
   | "::-ms-fill-lower"
   | "::-ms-fill-upper"
@@ -3553,6 +3542,7 @@ export type SimplePseudos =
   | ":paused"
   | ":picture-in-picture"
   | ":placeholder-shown"
+  | ":playing"
   | ":read-only"
   | ":read-write"
   | ":required"
@@ -3593,7 +3583,7 @@ export type HtmlAttributes =
   | "[bgcolor]"
   | "[border]"
   | "[bottommargin]"
-  | "[buffered]"
+  | "[capture]"
   | "[cellpadding]"
   | "[cellspacing]"
   | "[char]"
@@ -3674,6 +3664,7 @@ export type HtmlAttributes =
   | "[language]"
   | "[leftmargin]"
   | "[link]"
+  | "[list]"
   | "[loading]"
   | "[longdesc]"
   | "[loop]"
@@ -3691,7 +3682,6 @@ export type HtmlAttributes =
   | "[minlength]"
   | "[moz-opaque]"
   | "[mozallowfullscreen]"
-  | "[mozcurrentsampleoffset]"
   | "[msallowfullscreen]"
   | "[multiple]"
   | "[muted]"
@@ -3708,9 +3698,9 @@ export type HtmlAttributes =
   | "[open]"
   | "[optimum]"
   | "[part]"
+  | "[pattern]"
   | "[ping]"
   | "[placeholder]"
-  | "[played]"
   | "[poster]"
   | "[prefetch]"
   | "[preload]"
@@ -3753,6 +3743,7 @@ export type HtmlAttributes =
   | "[srcset]"
   | "[standby]"
   | "[start]"
+  | "[step]"
   | "[style]"
   | "[summary]"
   | "[tabindex]"
@@ -3769,11 +3760,11 @@ export type HtmlAttributes =
   | "[valuetype]"
   | "[version]"
   | "[vlink]"
-  | "[volume]"
   | "[vspace]"
   | "[webkitallowfullscreen]"
   | "[width]"
   | "[wrap]"
+  | "[x-moz-errormessage]"
   | "[xmlns]";
 
 export type SvgAttributes =
@@ -3803,7 +3794,6 @@ export type SvgAttributes =
   | "[color-interpolation-filters]"
   | "[color-interpolation]"
   | "[color-profile]"
-  | "[color-rendering]"
   | "[color]"
   | "[contentScriptType]"
   | "[contentStyleType]"
@@ -4032,6 +4022,8 @@ export type Property$All = Globals;
 
 export type Property$Animation<TTime = string> = Globals | DataType$SingleAnimation<TTime> | string;
 
+export type Property$AnimationComposition = Globals | string;
+
 export type Property$AnimationDelay<TTime = string> = Globals | TTime | string;
 
 export type Property$AnimationDirection = Globals | DataType$SingleAnimationDirection | string;
@@ -4052,7 +4044,7 @@ export type Property$AnimationTimingFunction = Globals | DataType$EasingFunction
 
 export type Property$Appearance = Globals | DataType$CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
-export type Property$AspectRatio = Globals | "auto" | string;
+export type Property$AspectRatio = Globals | "auto" | string | number;
 
 export type Property$Azimuth =
   | Globals
@@ -4331,7 +4323,7 @@ export type Property$ColumnWidth<TLength = string | 0> = Globals | TLength | "au
 
 export type Property$Columns<TLength = string | 0> = Globals | TLength | "auto" | string | number;
 
-export type Property$Contain = Globals | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
+export type Property$Contain = Globals | "content" | "inline-size" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
 
 export type Property$Content = Globals | DataType$ContentList | "none" | "normal" | string;
 
@@ -4709,6 +4701,10 @@ export type Property$MaskSize<TLength = string | 0> = Globals | DataType$BgSize<
 
 export type Property$MaskType = Globals | "alpha" | "luminance";
 
+export type Property$MathDepth = Globals | "auto-add" | string | number;
+
+export type Property$MathShift = Globals | "compact" | "normal";
+
 export type Property$MathStyle = Globals | "compact" | "normal";
 
 export type Property$MaxBlockSize<TLength = string | 0> =
@@ -5018,8 +5014,6 @@ export type Property$ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximi
 export type Property$ScrollbarColor = Globals | "auto" | string;
 
 export type Property$ScrollbarGutter = Globals | "auto" | "stable" | string;
-
-export type Property$MsScrollbarTrackColor = Globals | DataType$Color;
 
 export type Property$ScrollbarWidth = Globals | "auto" | "none" | "thin";
 
@@ -5431,6 +5425,8 @@ export type Property$MsScrollbarFaceColor = Globals | DataType$Color;
 export type Property$MsScrollbarHighlightColor = Globals | DataType$Color;
 
 export type Property$MsScrollbarShadowColor = Globals | DataType$Color;
+
+export type Property$MsScrollbarTrackColor = Globals | DataType$Color;
 
 export type Property$MsTextAutospace = Globals | "ideograph-alpha" | "ideograph-numeric" | "ideograph-parenthesis" | "ideograph-space" | "none";
 
