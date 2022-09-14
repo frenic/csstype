@@ -3,6 +3,6 @@
   "private": true,
   "dependencies": {
     "csstype": "file:../..",
-    "oldcsstype": "npm:csstype@^2.6.20"
+    "oldcsstype": "npm:csstype@^2.6.21"
   }
 }
