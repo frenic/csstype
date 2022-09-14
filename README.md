@@ -214,7 +214,7 @@ More info: https://www.andismith.com/blogs/2012/02/modernizr-prefixed/
 
 ### Commands
 
-- `yarn build` Generates typings and type checks them
-- `yarn watch` Runs build on each save
-- `yarn test` Runs the tests
-- `yarn lazy` Type checks, lints and formats everything
+- `npm run build` Generates typings and type checks them
+- `npm run watch` Runs build on each save
+- `npm run test` Runs the tests
+- `npm run lazy` Type checks, lints and formats everything

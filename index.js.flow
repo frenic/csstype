@@ -5,6 +5,7 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   alignItems?: AlignItemsProperty,
   alignSelf?: AlignSelfProperty,
   alignTracks?: AlignTracksProperty,
+  animationComposition?: GlobalsString,
   animationDelay?: GlobalsString,
   animationDirection?: AnimationDirectionProperty,
   animationDuration?: GlobalsString,
@@ -200,6 +201,8 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   maskRepeat?: MaskRepeatProperty,
   maskSize?: MaskSizeProperty<TLength>,
   maskType?: MaskTypeProperty,
+  mathDepth?: MathDepthProperty,
+  mathShift?: MathShiftProperty,
   mathStyle?: MathStyleProperty,
   maxBlockSize?: MaxBlockSizeProperty<TLength>,
   maxHeight?: MaxHeightProperty<TLength>,
@@ -317,7 +320,6 @@ export type StandardLonghandProperties<TLength = string | 0> = {
   textDecorationSkipInk?: TextDecorationSkipInkProperty,
   textDecorationStyle?: TextDecorationStyleProperty,
   textDecorationThickness?: TextDecorationThicknessProperty<TLength>,
-  textDecorationWidth?: TextDecorationThicknessProperty<TLength>,
   textEmphasisColor?: TextEmphasisColorProperty,
   textEmphasisPosition?: GlobalsString,
   textEmphasisStyle?: TextEmphasisStyleProperty,
@@ -433,7 +435,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   MozBoxSizing?: BoxSizingProperty,
   MozColumnCount?: ColumnCountProperty,
   MozColumnFill?: ColumnFillProperty,
-  MozColumnGap?: ColumnGapProperty<TLength>,
   MozColumnRuleColor?: ColumnRuleColorProperty,
   MozColumnRuleStyle?: ColumnRuleStyleProperty,
   MozColumnRuleWidth?: ColumnRuleWidthProperty<TLength>,
@@ -467,7 +468,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   MozWindowDragging?: MozWindowDraggingProperty,
   MozWindowShadow?: MozWindowShadowProperty,
   msAccelerator?: MsAcceleratorProperty,
-  msAlignSelf?: AlignSelfProperty,
   msBlockProgression?: MsBlockProgressionProperty,
   msContentZoomChaining?: MsContentZoomChainingProperty,
   msContentZoomLimitMax?: GlobalsString,
@@ -488,7 +488,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   msHyphenateLimitZone?: MsHyphenateLimitZoneProperty<TLength>,
   msHyphens?: HyphensProperty,
   msImeAlign?: MsImeAlignProperty,
-  msJustifySelf?: JustifySelfProperty,
   msLineBreak?: LineBreakProperty,
   msOrder?: GlobalsNumber,
   msOverflowStyle?: MsOverflowStyleProperty,
@@ -511,6 +510,7 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   msScrollbarFaceColor?: MsScrollbarFaceColorProperty,
   msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty,
   msScrollbarShadowColor?: MsScrollbarShadowColorProperty,
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   msTextAutospace?: MsTextAutospaceProperty,
   msTextCombineHorizontal?: TextCombineUprightProperty,
   msTextOverflow?: TextOverflowProperty,
@@ -560,7 +560,6 @@ export type VendorLonghandProperties<TLength = string | 0> = {
   WebkitClipPath?: ClipPathProperty,
   WebkitColumnCount?: ColumnCountProperty,
   WebkitColumnFill?: ColumnFillProperty,
-  WebkitColumnGap?: ColumnGapProperty<TLength>,
   WebkitColumnRuleColor?: ColumnRuleColorProperty,
   WebkitColumnRuleStyle?: ColumnRuleStyleProperty,
   WebkitColumnRuleWidth?: ColumnRuleWidthProperty<TLength>,
@@ -697,7 +696,6 @@ export type ObsoleteProperties<TLength = string | 0> = {
   scrollSnapPointsY?: ScrollSnapPointsYProperty,
   scrollSnapTypeX?: ScrollSnapTypeXProperty,
   scrollSnapTypeY?: ScrollSnapTypeYProperty,
-  scrollbarTrackColor?: MsScrollbarTrackColorProperty,
   KhtmlBoxAlign?: BoxAlignProperty,
   KhtmlBoxDirection?: BoxDirectionProperty,
   KhtmlBoxFlex?: GlobalsNumber,
@@ -744,7 +742,6 @@ export type ObsoleteProperties<TLength = string | 0> = {
   MozTextDecorationStyle?: TextDecorationStyleProperty,
   MozUserInput?: MozUserInputProperty,
   msImeMode?: ImeModeProperty,
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty,
   OAnimation?: AnimationProperty,
   OAnimationDelay?: GlobalsString,
   OAnimationDirection?: AnimationDirectionProperty,
@@ -850,6 +847,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "align-items"?: AlignItemsProperty,
   "align-self"?: AlignSelfProperty,
   "align-tracks"?: AlignTracksProperty,
+  "animation-composition"?: GlobalsString,
   "animation-delay"?: GlobalsString,
   "animation-direction"?: AnimationDirectionProperty,
   "animation-duration"?: GlobalsString,
@@ -1045,6 +1043,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "mask-repeat"?: MaskRepeatProperty,
   "mask-size"?: MaskSizeProperty<TLength>,
   "mask-type"?: MaskTypeProperty,
+  "math-depth"?: MathDepthProperty,
+  "math-shift"?: MathShiftProperty,
   "math-style"?: MathStyleProperty,
   "max-block-size"?: MaxBlockSizeProperty<TLength>,
   "max-height"?: MaxHeightProperty<TLength>,
@@ -1162,7 +1162,6 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0> = {
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty,
   "text-decoration-style"?: TextDecorationStyleProperty,
   "text-decoration-thickness"?: TextDecorationThicknessProperty<TLength>,
-  "text-decoration-width"?: TextDecorationThicknessProperty<TLength>,
   "text-emphasis-color"?: TextEmphasisColorProperty,
   "text-emphasis-position"?: GlobalsString,
   "text-emphasis-style"?: TextEmphasisStyleProperty,
@@ -1278,7 +1277,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-moz-box-sizing"?: BoxSizingProperty,
   "-moz-column-count"?: ColumnCountProperty,
   "-moz-column-fill"?: ColumnFillProperty,
-  "-moz-column-gap"?: ColumnGapProperty<TLength>,
   "-moz-column-rule-color"?: ColumnRuleColorProperty,
   "-moz-column-rule-style"?: ColumnRuleStyleProperty,
   "-moz-column-rule-width"?: ColumnRuleWidthProperty<TLength>,
@@ -1312,7 +1310,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-moz-window-dragging"?: MozWindowDraggingProperty,
   "-moz-window-shadow"?: MozWindowShadowProperty,
   "-ms-accelerator"?: MsAcceleratorProperty,
-  "-ms-align-self"?: AlignSelfProperty,
   "-ms-block-progression"?: MsBlockProgressionProperty,
   "-ms-content-zoom-chaining"?: MsContentZoomChainingProperty,
   "-ms-content-zoom-limit-max"?: GlobalsString,
@@ -1333,7 +1330,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-hyphenate-limit-zone"?: MsHyphenateLimitZoneProperty<TLength>,
   "-ms-hyphens"?: HyphensProperty,
   "-ms-ime-align"?: MsImeAlignProperty,
-  "-ms-justify-self"?: JustifySelfProperty,
   "-ms-line-break"?: LineBreakProperty,
   "-ms-order"?: GlobalsNumber,
   "-ms-overflow-style"?: MsOverflowStyleProperty,
@@ -1356,6 +1352,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty,
   "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty,
   "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty,
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-ms-text-autospace"?: MsTextAutospaceProperty,
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty,
   "-ms-text-overflow"?: TextOverflowProperty,
@@ -1405,7 +1402,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0> = {
   "-webkit-clip-path"?: ClipPathProperty,
   "-webkit-column-count"?: ColumnCountProperty,
   "-webkit-column-fill"?: ColumnFillProperty,
-  "-webkit-column-gap"?: ColumnGapProperty<TLength>,
   "-webkit-column-rule-color"?: ColumnRuleColorProperty,
   "-webkit-column-rule-style"?: ColumnRuleStyleProperty,
   "-webkit-column-rule-width"?: ColumnRuleWidthProperty<TLength>,
@@ -1542,7 +1538,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "scroll-snap-points-y"?: ScrollSnapPointsYProperty,
   "scroll-snap-type-x"?: ScrollSnapTypeXProperty,
   "scroll-snap-type-y"?: ScrollSnapTypeYProperty,
-  "scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-khtml-box-align"?: BoxAlignProperty,
   "-khtml-box-direction"?: BoxDirectionProperty,
   "-khtml-box-flex"?: GlobalsNumber,
@@ -1589,7 +1584,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0> = {
   "-moz-text-decoration-style"?: TextDecorationStyleProperty,
   "-moz-user-input"?: MozUserInputProperty,
   "-ms-ime-mode"?: ImeModeProperty,
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty,
   "-o-animation"?: AnimationProperty,
   "-o-animation-delay"?: GlobalsString,
   "-o-animation-direction"?: AnimationDirectionProperty,
@@ -1698,6 +1692,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   alignItems?: AlignItemsProperty | AlignItemsProperty[],
   alignSelf?: AlignSelfProperty | AlignSelfProperty[],
   alignTracks?: AlignTracksProperty | AlignTracksProperty[],
+  animationComposition?: GlobalsString | GlobalsString[],
   animationDelay?: GlobalsString | GlobalsString[],
   animationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[],
   animationDuration?: GlobalsString | GlobalsString[],
@@ -1893,6 +1888,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   maskRepeat?: MaskRepeatProperty | MaskRepeatProperty[],
   maskSize?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[],
   maskType?: MaskTypeProperty | MaskTypeProperty[],
+  mathDepth?: MathDepthProperty | MathDepthProperty[],
+  mathShift?: MathShiftProperty | MathShiftProperty[],
   mathStyle?: MathStyleProperty | MathStyleProperty[],
   maxBlockSize?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[],
   maxHeight?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[],
@@ -2010,7 +2007,6 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0> = {
   textDecorationSkipInk?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[],
   textDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
   textDecorationThickness?: TextDecorationThicknessProperty<TLength> | TextDecorationThicknessProperty<TLength>[],
-  textDecorationWidth?: TextDecorationThicknessProperty<TLength> | TextDecorationThicknessProperty<TLength>[],
   textEmphasisColor?: TextEmphasisColorProperty | TextEmphasisColorProperty[],
   textEmphasisPosition?: GlobalsString | GlobalsString[],
   textEmphasisStyle?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[],
@@ -2126,7 +2122,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   MozBoxSizing?: BoxSizingProperty | BoxSizingProperty[],
   MozColumnCount?: ColumnCountProperty | ColumnCountProperty[],
   MozColumnFill?: ColumnFillProperty | ColumnFillProperty[],
-  MozColumnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
   MozColumnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
   MozColumnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[],
   MozColumnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[],
@@ -2160,7 +2155,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   MozWindowDragging?: MozWindowDraggingProperty | MozWindowDraggingProperty[],
   MozWindowShadow?: MozWindowShadowProperty | MozWindowShadowProperty[],
   msAccelerator?: MsAcceleratorProperty | MsAcceleratorProperty[],
-  msAlignSelf?: AlignSelfProperty | AlignSelfProperty[],
   msBlockProgression?: MsBlockProgressionProperty | MsBlockProgressionProperty[],
   msContentZoomChaining?: MsContentZoomChainingProperty | MsContentZoomChainingProperty[],
   msContentZoomLimitMax?: GlobalsString | GlobalsString[],
@@ -2181,7 +2175,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msHyphenateLimitZone?: MsHyphenateLimitZoneProperty<TLength> | MsHyphenateLimitZoneProperty<TLength>[],
   msHyphens?: HyphensProperty | HyphensProperty[],
   msImeAlign?: MsImeAlignProperty | MsImeAlignProperty[],
-  msJustifySelf?: JustifySelfProperty | JustifySelfProperty[],
   msLineBreak?: LineBreakProperty | LineBreakProperty[],
   msOrder?: GlobalsNumber | GlobalsNumber[],
   msOverflowStyle?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
@@ -2204,6 +2197,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   msScrollbarFaceColor?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
   msScrollbarHighlightColor?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
   msScrollbarShadowColor?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
+  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   msTextAutospace?: MsTextAutospaceProperty | MsTextAutospaceProperty[],
   msTextCombineHorizontal?: TextCombineUprightProperty | TextCombineUprightProperty[],
   msTextOverflow?: TextOverflowProperty | TextOverflowProperty[],
@@ -2253,7 +2247,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0> = {
   WebkitClipPath?: ClipPathProperty | ClipPathProperty[],
   WebkitColumnCount?: ColumnCountProperty | ColumnCountProperty[],
   WebkitColumnFill?: ColumnFillProperty | ColumnFillProperty[],
-  WebkitColumnGap?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
   WebkitColumnRuleColor?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
   WebkitColumnRuleStyle?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[],
   WebkitColumnRuleWidth?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[],
@@ -2390,7 +2383,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   scrollSnapPointsY?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[],
   scrollSnapTypeX?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
   scrollSnapTypeY?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
-  scrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   KhtmlBoxAlign?: BoxAlignProperty | BoxAlignProperty[],
   KhtmlBoxDirection?: BoxDirectionProperty | BoxDirectionProperty[],
   KhtmlBoxFlex?: GlobalsNumber | GlobalsNumber[],
@@ -2437,7 +2429,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0> = {
   MozTextDecorationStyle?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
   MozUserInput?: MozUserInputProperty | MozUserInputProperty[],
   msImeMode?: ImeModeProperty | ImeModeProperty[],
-  msScrollbarTrackColor?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   OAnimation?: AnimationProperty | AnimationProperty[],
   OAnimationDelay?: GlobalsString | GlobalsString[],
   OAnimationDirection?: AnimationDirectionProperty | AnimationDirectionProperty[],
@@ -2546,6 +2537,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "align-items"?: AlignItemsProperty | AlignItemsProperty[],
   "align-self"?: AlignSelfProperty | AlignSelfProperty[],
   "align-tracks"?: AlignTracksProperty | AlignTracksProperty[],
+  "animation-composition"?: GlobalsString | GlobalsString[],
   "animation-delay"?: GlobalsString | GlobalsString[],
   "animation-direction"?: AnimationDirectionProperty | AnimationDirectionProperty[],
   "animation-duration"?: GlobalsString | GlobalsString[],
@@ -2741,6 +2733,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "mask-repeat"?: MaskRepeatProperty | MaskRepeatProperty[],
   "mask-size"?: MaskSizeProperty<TLength> | MaskSizeProperty<TLength>[],
   "mask-type"?: MaskTypeProperty | MaskTypeProperty[],
+  "math-depth"?: MathDepthProperty | MathDepthProperty[],
+  "math-shift"?: MathShiftProperty | MathShiftProperty[],
   "math-style"?: MathStyleProperty | MathStyleProperty[],
   "max-block-size"?: MaxBlockSizeProperty<TLength> | MaxBlockSizeProperty<TLength>[],
   "max-height"?: MaxHeightProperty<TLength> | MaxHeightProperty<TLength>[],
@@ -2858,7 +2852,6 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "text-decoration-skip-ink"?: TextDecorationSkipInkProperty | TextDecorationSkipInkProperty[],
   "text-decoration-style"?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
   "text-decoration-thickness"?: TextDecorationThicknessProperty<TLength> | TextDecorationThicknessProperty<TLength>[],
-  "text-decoration-width"?: TextDecorationThicknessProperty<TLength> | TextDecorationThicknessProperty<TLength>[],
   "text-emphasis-color"?: TextEmphasisColorProperty | TextEmphasisColorProperty[],
   "text-emphasis-position"?: GlobalsString | GlobalsString[],
   "text-emphasis-style"?: TextEmphasisStyleProperty | TextEmphasisStyleProperty[],
@@ -2974,7 +2967,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-box-sizing"?: BoxSizingProperty | BoxSizingProperty[],
   "-moz-column-count"?: ColumnCountProperty | ColumnCountProperty[],
   "-moz-column-fill"?: ColumnFillProperty | ColumnFillProperty[],
-  "-moz-column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
   "-moz-column-rule-color"?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
   "-moz-column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[],
   "-moz-column-rule-width"?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[],
@@ -3008,7 +3000,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-window-dragging"?: MozWindowDraggingProperty | MozWindowDraggingProperty[],
   "-moz-window-shadow"?: MozWindowShadowProperty | MozWindowShadowProperty[],
   "-ms-accelerator"?: MsAcceleratorProperty | MsAcceleratorProperty[],
-  "-ms-align-self"?: AlignSelfProperty | AlignSelfProperty[],
   "-ms-block-progression"?: MsBlockProgressionProperty | MsBlockProgressionProperty[],
   "-ms-content-zoom-chaining"?: MsContentZoomChainingProperty | MsContentZoomChainingProperty[],
   "-ms-content-zoom-limit-max"?: GlobalsString | GlobalsString[],
@@ -3029,7 +3020,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-hyphenate-limit-zone"?: MsHyphenateLimitZoneProperty<TLength> | MsHyphenateLimitZoneProperty<TLength>[],
   "-ms-hyphens"?: HyphensProperty | HyphensProperty[],
   "-ms-ime-align"?: MsImeAlignProperty | MsImeAlignProperty[],
-  "-ms-justify-self"?: JustifySelfProperty | JustifySelfProperty[],
   "-ms-line-break"?: LineBreakProperty | LineBreakProperty[],
   "-ms-order"?: GlobalsNumber | GlobalsNumber[],
   "-ms-overflow-style"?: MsOverflowStyleProperty | MsOverflowStyleProperty[],
@@ -3052,6 +3042,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-ms-scrollbar-face-color"?: MsScrollbarFaceColorProperty | MsScrollbarFaceColorProperty[],
   "-ms-scrollbar-highlight-color"?: MsScrollbarHighlightColorProperty | MsScrollbarHighlightColorProperty[],
   "-ms-scrollbar-shadow-color"?: MsScrollbarShadowColorProperty | MsScrollbarShadowColorProperty[],
+  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "-ms-text-autospace"?: MsTextAutospaceProperty | MsTextAutospaceProperty[],
   "-ms-text-combine-horizontal"?: TextCombineUprightProperty | TextCombineUprightProperty[],
   "-ms-text-overflow"?: TextOverflowProperty | TextOverflowProperty[],
@@ -3101,7 +3092,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0> = {
   "-webkit-clip-path"?: ClipPathProperty | ClipPathProperty[],
   "-webkit-column-count"?: ColumnCountProperty | ColumnCountProperty[],
   "-webkit-column-fill"?: ColumnFillProperty | ColumnFillProperty[],
-  "-webkit-column-gap"?: ColumnGapProperty<TLength> | ColumnGapProperty<TLength>[],
   "-webkit-column-rule-color"?: ColumnRuleColorProperty | ColumnRuleColorProperty[],
   "-webkit-column-rule-style"?: ColumnRuleStyleProperty | ColumnRuleStyleProperty[],
   "-webkit-column-rule-width"?: ColumnRuleWidthProperty<TLength> | ColumnRuleWidthProperty<TLength>[],
@@ -3238,7 +3228,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "scroll-snap-points-y"?: ScrollSnapPointsYProperty | ScrollSnapPointsYProperty[],
   "scroll-snap-type-x"?: ScrollSnapTypeXProperty | ScrollSnapTypeXProperty[],
   "scroll-snap-type-y"?: ScrollSnapTypeYProperty | ScrollSnapTypeYProperty[],
-  "scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "-khtml-box-align"?: BoxAlignProperty | BoxAlignProperty[],
   "-khtml-box-direction"?: BoxDirectionProperty | BoxDirectionProperty[],
   "-khtml-box-flex"?: GlobalsNumber | GlobalsNumber[],
@@ -3285,7 +3274,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0> = {
   "-moz-text-decoration-style"?: TextDecorationStyleProperty | TextDecorationStyleProperty[],
   "-moz-user-input"?: MozUserInputProperty | MozUserInputProperty[],
   "-ms-ime-mode"?: ImeModeProperty | ImeModeProperty[],
-  "-ms-scrollbar-track-color"?: MsScrollbarTrackColorProperty | MsScrollbarTrackColorProperty[],
   "-o-animation"?: AnimationProperty | AnimationProperty[],
   "-o-animation-delay"?: GlobalsString | GlobalsString[],
   "-o-animation-direction"?: AnimationDirectionProperty | AnimationDirectionProperty[],
@@ -3683,6 +3671,7 @@ export type SimplePseudos =
   | "::-ms-browse"
   | "::-ms-check"
   | "::-ms-clear"
+  | "::-ms-expand"
   | "::-ms-fill"
   | "::-ms-fill-lower"
   | "::-ms-fill-upper"
@@ -3755,6 +3744,7 @@ export type SimplePseudos =
   | ":paused"
   | ":picture-in-picture"
   | ":placeholder-shown"
+  | ":playing"
   | ":read-only"
   | ":read-write"
   | ":required"
@@ -3795,7 +3785,7 @@ export type HtmlAttributes =
   | "[bgcolor]"
   | "[border]"
   | "[bottommargin]"
-  | "[buffered]"
+  | "[capture]"
   | "[cellpadding]"
   | "[cellspacing]"
   | "[char]"
@@ -3838,6 +3828,7 @@ export type HtmlAttributes =
   | "[enterkeyhint]"
   | "[exportparts]"
   | "[face]"
+  | "[fetchpriority]"
   | "[for]"
   | "[form]"
   | "[formaction]"
@@ -3859,9 +3850,9 @@ export type HtmlAttributes =
   | "[id]"
   | "[imagesizes]"
   | "[imagesrcset]"
+  | "[inert]"
   | "[inputmode]"
   | "[integrity]"
-  | "[intrinsicsize]"
   | "[is]"
   | "[ismap]"
   | "[itemid]"
@@ -3875,6 +3866,7 @@ export type HtmlAttributes =
   | "[language]"
   | "[leftmargin]"
   | "[link]"
+  | "[list]"
   | "[loading]"
   | "[longdesc]"
   | "[loop]"
@@ -3892,7 +3884,6 @@ export type HtmlAttributes =
   | "[minlength]"
   | "[moz-opaque]"
   | "[mozallowfullscreen]"
-  | "[mozcurrentsampleoffset]"
   | "[msallowfullscreen]"
   | "[multiple]"
   | "[muted]"
@@ -3905,30 +3896,13 @@ export type HtmlAttributes =
   | "[novalidate]"
   | "[nowrap]"
   | "[object]"
-  | "[onafterprint]"
-  | "[onbeforeprint]"
-  | "[onbeforeunload]"
-  | "[onblur]"
   | "[onerror]"
-  | "[onfocus]"
-  | "[onhashchange]"
-  | "[onlanguagechange]"
-  | "[onload]"
-  | "[onmessage]"
-  | "[onoffline]"
-  | "[ononline]"
-  | "[onpopstate]"
-  | "[onredo]"
-  | "[onresize]"
-  | "[onstorage]"
-  | "[onundo]"
-  | "[onunload]"
   | "[open]"
   | "[optimum]"
   | "[part]"
+  | "[pattern]"
   | "[ping]"
   | "[placeholder]"
-  | "[played]"
   | "[poster]"
   | "[prefetch]"
   | "[preload]"
@@ -3954,7 +3928,6 @@ export type HtmlAttributes =
   | "[sandbox-allow-top-navigation-by-user-activation]"
   | "[sandbox]"
   | "[scope]"
-  | "[scoped]"
   | "[scrollamount]"
   | "[scrolldelay]"
   | "[scrolling]"
@@ -3972,6 +3945,7 @@ export type HtmlAttributes =
   | "[srcset]"
   | "[standby]"
   | "[start]"
+  | "[step]"
   | "[style]"
   | "[summary]"
   | "[tabindex]"
@@ -3988,11 +3962,11 @@ export type HtmlAttributes =
   | "[valuetype]"
   | "[version]"
   | "[vlink]"
-  | "[volume]"
   | "[vspace]"
   | "[webkitallowfullscreen]"
   | "[width]"
   | "[wrap]"
+  | "[x-moz-errormessage]"
   | "[xmlns]";
 
 export type SvgAttributes =
@@ -4022,7 +3996,6 @@ export type SvgAttributes =
   | "[color-interpolation-filters]"
   | "[color-interpolation]"
   | "[color-profile]"
-  | "[color-rendering]"
   | "[color]"
   | "[contentScriptType]"
   | "[contentStyleType]"
@@ -4075,8 +4048,6 @@ export type SvgAttributes =
   | "[gradientUnits]"
   | "[graphical]"
   | "[hanging]"
-  | "[hatchContentUnits]"
-  | "[hatchUnits]"
   | "[height]"
   | "[horiz-adv-x]"
   | "[horiz-origin-x]"
@@ -4133,7 +4104,6 @@ export type SvgAttributes =
   | "[patternTransform]"
   | "[patternUnits]"
   | "[ping]"
-  | "[pitch]"
   | "[pointer-events]"
   | "[pointsAtX]"
   | "[pointsAtY]"
@@ -4238,7 +4208,7 @@ export type SvgAttributes =
   | "[z]"
   | "[zoomAndPan]";
 
-export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "unset";
+export type Globals = "-moz-initial" | "inherit" | "initial" | "revert" | "revert-layer" | "unset";
 
 type GlobalsString = Globals | string;
 
@@ -4272,7 +4242,7 @@ export type AnimationTimingFunctionProperty = Globals | EasingFunction | string;
 
 export type AppearanceProperty = Globals | CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
-export type AspectRatioProperty = Globals | "auto" | string;
+export type AspectRatioProperty = Globals | "auto" | string | number;
 
 export type AzimuthProperty =
   | Globals
@@ -4545,7 +4515,7 @@ export type ColumnWidthProperty<TLength> = Globals | TLength | "auto";
 
 export type ColumnsProperty<TLength> = Globals | TLength | "auto" | string | number;
 
-export type ContainProperty = Globals | "content" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
+export type ContainProperty = Globals | "content" | "inline-size" | "layout" | "none" | "paint" | "size" | "strict" | "style" | string;
 
 export type ContentProperty = Globals | ContentList | "none" | "normal" | string;
 
@@ -4910,6 +4880,10 @@ export type MaskSizeProperty<TLength> = Globals | BgSize<TLength> | string;
 
 export type MaskTypeProperty = Globals | "alpha" | "luminance";
 
+export type MathDepthProperty = Globals | "auto-add" | string | number;
+
+export type MathShiftProperty = Globals | "compact" | "normal";
+
 export type MathStyleProperty = Globals | "compact" | "normal";
 
 export type MaxBlockSizeProperty<TLength> =
@@ -5030,7 +5004,7 @@ export type MinWidthProperty<TLength> =
   | "min-intrinsic"
   | string;
 
-export type MixBlendModeProperty = Globals | BlendMode;
+export type MixBlendModeProperty = Globals | BlendMode | "plus-lighter";
 
 export type OffsetProperty<TLength> = Globals | Position<TLength> | GeometryBox | "auto" | "none" | string;
 
@@ -5215,8 +5189,6 @@ export type ScrollSnapTypeYProperty = Globals | "mandatory" | "none" | "proximit
 export type ScrollbarColorProperty = Globals | Color | "auto";
 
 export type ScrollbarGutterProperty = Globals | "auto" | "stable" | string;
-
-export type MsScrollbarTrackColorProperty = Globals | Color;
 
 export type ScrollbarWidthProperty = Globals | "auto" | "none" | "thin";
 
@@ -5600,6 +5572,8 @@ export type MsScrollbarFaceColorProperty = Globals | Color;
 export type MsScrollbarHighlightColorProperty = Globals | Color;
 
 export type MsScrollbarShadowColorProperty = Globals | Color;
+
+export type MsScrollbarTrackColorProperty = Globals | Color;
 
 export type MsTextAutospaceProperty = Globals | "ideograph-alpha" | "ideograph-numeric" | "ideograph-parenthesis" | "ideograph-space" | "none";
 
