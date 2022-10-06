@@ -18878,7 +18878,7 @@ export namespace Property {
 
   export type OutlineWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength>;
 
-  export type Overflow = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | (string & {});
+  export type Overflow = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | "overlay" | (string & {});
 
   export type OverflowAnchor = Globals | "auto" | "none";
 
@@ -18892,9 +18892,9 @@ export namespace Property {
 
   export type OverflowWrap = Globals | "anywhere" | "break-word" | "normal";
 
-  export type OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
+  export type OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | "overlay";
 
-  export type OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
+  export type OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | "overlay";
 
   export type OverscrollBehavior = Globals | "auto" | "contain" | "none" | (string & {});
 
