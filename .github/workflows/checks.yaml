@@ -8,6 +8,7 @@ on:
 
 jobs:
   do_not_modify_generated_files:
+    name: 'Check which files were modifed'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
