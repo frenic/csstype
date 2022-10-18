@@ -1,0 +1,31 @@
+name: 'Checks'
+on:
+  push:
+    # Only run if a generated file was modified
+    paths:
+      - index.d.ts
+      - index.js.flow
+
+jobs:
+  do_not_modify_generated_files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check if non-generated files were modified
+        id: other_files
+        uses: tj-actions/changed-files@v32
+        with:
+          files_ignore: |
+            index.d.ts
+            index.js.flow
+
+      - uses: LouisBrunner/checks-action@v1.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: 'Never modify index.d.ts and index.js.flow directly'
+          # Set status to 'success' if other files were changed,
+          # or 'failure' if only index.d.ts or index.js.flow were changed
+          conclusion: ${{ steps.other_files.outputs.any_changed == 'true' && 'success' || 'failure' }}
