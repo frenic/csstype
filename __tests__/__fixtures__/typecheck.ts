@@ -22,11 +22,11 @@ const css: CSS.Properties = {
 };
 
 const cssWithFallbackValues: CSS.PropertiesFallback = {
-  flexGrow: [1],
+  flexGrow: [1] as const,
   flexShrink: [1],
   flexBasis: ['max-content'],
   flexDirection: ['row'],
-  MozAppearance: ['button'],
+  MozAppearance: ['button'] as const,
   msOverflowStyle: ['scrollbar'],
   height: undefined,
   clip: [undefined],
