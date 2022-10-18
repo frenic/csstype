@@ -91,7 +91,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   n/a   |   No   | n/a  | No  |
+   * |   No   |   n/a   | **16** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-composition
    */
@@ -1218,6 +1218,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   caretColor?: Property.CaretColor | undefined;
   /**
+   * **Syntax**: `auto | bar | block | underscore`
+   *
+   * **Initial value**: `auto`
+   */
+  caretShape?: Property.CaretShape | undefined;
+  /**
    * The **`clear`** CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The `clear` property applies to floating and non-floating elements.
    *
    * **Syntax**: `none | left | right | both | inline-start | inline-end`
@@ -1422,6 +1428,62 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/contain
    */
   contain?: Property.Contain | undefined;
+  /**
+   * The **`contain-intrinsic-block-size`** CSS logical property defines the block size of an element that a browser can use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **95** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size
+   */
+  containIntrinsicBlockSize?: Property.ContainIntrinsicBlockSize<TLength> | undefined;
+  /**
+   * The **`contain-intrinsic-length`** CSS property sets the height of an element that a browser can use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **83** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height
+   */
+  containIntrinsicHeight?: Property.ContainIntrinsicHeight<TLength> | undefined;
+  /**
+   * The **`contain-intrinsic-inline-size`** CSS logical property defines the inline-size of an element that a browser can use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **95** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size
+   */
+  containIntrinsicInlineSize?: Property.ContainIntrinsicInlineSize<TLength> | undefined;
+  /**
+   * The **`contain-intrinsic-width`** CSS property sets the width of an element that a browser will use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **83** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width
+   */
+  containIntrinsicWidth?: Property.ContainIntrinsicWidth<TLength> | undefined;
   /**
    * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are **anonymous replaced elements**.
    *
@@ -2126,9 +2188,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge | IE  |
-   * | :---------: | :-----: | :-----------: | :--: | :-: |
-   * | **6** _-x-_ | **98**  | **5.1** _-x-_ | n/a  | No  |
+   * | Chrome  | Firefox |    Safari     | Edge | IE  |
+   * | :-----: | :-----: | :-----------: | :--: | :-: |
+   * | **106** | **98**  | **5.1** _-x-_ | n/a  | No  |
+   * | 6 _-x-_ |         |               |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/hyphenate-character
    */
@@ -2217,34 +2280,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   inputSecurity?: Property.InputSecurity | undefined;
   /**
-   * The **`inset`** CSS property is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties. It has the same multi-value syntax of the `margin` shorthand.
-   *
-   * **Syntax**: `<'top'>{1,4}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/inset
-   */
-  inset?: Property.Inset<TLength> | undefined;
-  /**
-   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
-   *
-   * **Syntax**: `<'top'>{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **63**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
-   */
-  insetBlock?: Property.InsetBlock<TLength> | undefined;
-  /**
    * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>`
@@ -2272,20 +2307,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-start
    */
   insetBlockStart?: Property.InsetBlockStart<TLength> | undefined;
-  /**
-   * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
-   *
-   * **Syntax**: `<'top'>{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **63**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
-   */
-  insetInline?: Property.InsetInline<TLength> | undefined;
   /**
    * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -2499,20 +2520,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   listStyleType?: Property.ListStyleType | undefined;
   /**
-   * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
-   *
-   * **Syntax**: `<'margin-left'>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
-   */
-  marginBlock?: Property.MarginBlock<TLength> | undefined;
-  /**
    * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-left'>`
@@ -2554,20 +2561,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
    */
   marginBottom?: Property.MarginBottom<TLength> | undefined;
-  /**
-   * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
-   *
-   * **Syntax**: `<'margin-left'>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
-   */
-  marginInline?: Property.MarginInline<TLength> | undefined;
   /**
    * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3314,7 +3307,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **90** |   No    |   No   | n/a  | No  |
+   * | **90** | **102** |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin
    */
@@ -3431,20 +3424,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   overscrollBehaviorY?: Property.OverscrollBehaviorY | undefined;
   /**
-   * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
-   *
-   * **Syntax**: `<'padding-left'>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
-   */
-  paddingBlock?: Property.PaddingBlock<TLength> | undefined;
-  /**
    * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
@@ -3486,20 +3465,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   paddingBottom?: Property.PaddingBottom<TLength> | undefined;
-  /**
-   * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
-   *
-   * **Syntax**: `<'padding-left'>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
-   */
-  paddingInline?: Property.PaddingInline<TLength> | undefined;
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -3658,20 +3623,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/perspective-origin
    */
   perspectiveOrigin?: Property.PerspectiveOrigin<TLength> | undefined;
-  /**
-   * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
-   *
-   * **Syntax**: `<'align-content'> <'justify-content'>?`
-   *
-   * **Initial value**: `normal`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **59** | **45**  | **9**  | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/place-content
-   */
-  placeContent?: Property.PlaceContent | undefined;
   /**
    * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
    *
@@ -3849,35 +3800,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollBehavior?: Property.ScrollBehavior | undefined;
   /**
-   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
-   *
-   * **Syntax**: `<length>{1,4}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |          Safari           | Edge | IE  |
-   * | :----: | :-----: | :-----------------------: | :--: | :-: |
-   * | **69** | **90**  |         **14.1**          | n/a  | No  |
-   * |        |         | 11 _(scroll-snap-margin)_ |      |     |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
-   */
-  scrollMargin?: Property.ScrollMargin<TLength> | undefined;
-  /**
-   * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
-   *
-   * **Syntax**: `<length>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **69** | **68**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
-   */
-  scrollMarginBlock?: Property.ScrollMarginBlock<TLength> | undefined;
-  /**
    * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
@@ -3920,20 +3842,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
   scrollMarginBottom?: Property.ScrollMarginBottom<TLength> | undefined;
-  /**
-   * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
-   *
-   * **Syntax**: `<length>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **69** | **68**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
-   */
-  scrollMarginInline?: Property.ScrollMarginInline<TLength> | undefined;
   /**
    * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -4008,34 +3916,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginTop?: Property.ScrollMarginTop<TLength> | undefined;
   /**
-   * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
-   *
-   * **Syntax**: `[ auto | <length-percentage> ]{1,4}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **69** | **68**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
-   */
-  scrollPadding?: Property.ScrollPadding<TLength> | undefined;
-  /**
-   * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
-   *
-   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **69** | **68**  | **15** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
-   */
-  scrollPaddingBlock?: Property.ScrollPaddingBlock<TLength> | undefined;
-  /**
    * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
@@ -4077,20 +3957,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
   scrollPaddingBottom?: Property.ScrollPaddingBottom<TLength> | undefined;
-  /**
-   * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
-   *
-   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **69** | **68**  | **15** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
-   */
-  scrollPaddingInline?: Property.ScrollPaddingInline<TLength> | undefined;
   /**
    * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -4175,21 +4041,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align
    */
   scrollSnapAlign?: Property.ScrollSnapAlign | undefined;
-  /**
-   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
-   *
-   * **Syntax**: `<length>{1,4}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |          Safari           | Edge | IE  |
-   * | :----: | :-----: | :-----------------------: | :--: | :-: |
-   * | **69** |  68-90  |         **14.1**          | n/a  | No  |
-   * |        |         | 11 _(scroll-snap-margin)_ |      |     |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
-   */
-  scrollSnapMargin?: Property.ScrollMargin<TLength> | undefined;
   /**
    * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -4279,6 +4130,34 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
    */
   scrollSnapType?: Property.ScrollSnapType | undefined;
+  /**
+   * The **`scroll-timeline-axis`** CSS property can be used to specify the scrollbar that will be used to provide the timeline for a scroll-timeline animation.
+   *
+   * **Syntax**: `block | inline | vertical | horizontal`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-timeline-axis
+   */
+  scrollTimelineAxis?: Property.ScrollTimelineAxis | undefined;
+  /**
+   * The **`scroll-timeline-name`** CSS property defines a name that can be used to identify an element as the source of a scroll timeline for an animation.
+   *
+   * **Syntax**: `none | <custom-ident>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-timeline-name
+   */
+  scrollTimelineName?: Property.ScrollTimelineName | undefined;
   /**
    * The **`scrollbar-color`** CSS property sets the color of the scrollbar track and thumb.
    *
@@ -5314,6 +5193,8 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/border-width
    */
   borderWidth?: Property.BorderWidth<TLength> | undefined;
+  /** **Syntax**: `<'caret-color'> || <'caret-shape'>` */
+  caret?: Property.Caret | undefined;
   /**
    * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
    *
@@ -5340,6 +5221,18 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/columns
    */
   columns?: Property.Columns<TLength> | undefined;
+  /**
+   * The **`contain-intrinsic-size`** CSS shorthand property sets the size of an element that a browser will use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `[ none | <length> | auto <length> ]{1,2}`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **83** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size
+   */
+  containIntrinsicSize?: Property.ContainIntrinsicSize<TLength> | undefined;
   /**
    * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
@@ -5451,6 +5344,42 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gridTemplate?: Property.GridTemplate | undefined;
   /**
+   * The **`inset`** CSS property is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties. It has the same multi-value syntax of the `margin` shorthand.
+   *
+   * **Syntax**: `<'top'>{1,4}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/inset
+   */
+  inset?: Property.Inset<TLength> | undefined;
+  /**
+   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Syntax**: `<'top'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **63**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
+   */
+  insetBlock?: Property.InsetBlock<TLength> | undefined;
+  /**
+   * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Syntax**: `<'top'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **63**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
+   */
+  insetInline?: Property.InsetInline<TLength> | undefined;
+  /**
    * **Syntax**: `none | <integer>`
    *
    * **Initial value**: `none`
@@ -5480,6 +5409,30 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/margin
    */
   margin?: Property.Margin<TLength> | undefined;
+  /**
+   * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Syntax**: `<'margin-left'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
+   */
+  marginBlock?: Property.MarginBlock<TLength> | undefined;
+  /**
+   * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Syntax**: `<'margin-left'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
+   */
+  marginInline?: Property.MarginInline<TLength> | undefined;
   /**
    * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
    *
@@ -5583,6 +5536,42 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   padding?: Property.Padding<TLength> | undefined;
   /**
+   * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Syntax**: `<'padding-left'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
+   */
+  paddingBlock?: Property.PaddingBlock<TLength> | undefined;
+  /**
+   * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Syntax**: `<'padding-left'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
+   */
+  paddingInline?: Property.PaddingInline<TLength> | undefined;
+  /**
+   * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
+   *
+   * **Syntax**: `<'align-content'> <'justify-content'>?`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  | **9**  | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-content
+   */
+  placeContent?: Property.PlaceContent | undefined;
+  /**
    * The CSS **`place-items`** shorthand property allows you to align items along both the block and inline directions at once (i.e. the `align-items` and `justify-items` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not set, the first value is also used for it.
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
@@ -5606,6 +5595,104 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/place-self
    */
   placeSelf?: Property.PlaceSelf | undefined;
+  /**
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
+   *
+   * **Syntax**: `<length>{1,4}`
+   *
+   * | Chrome | Firefox |          Safari           | Edge | IE  |
+   * | :----: | :-----: | :-----------------------: | :--: | :-: |
+   * | **69** | **90**  |         **14.1**          | n/a  | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
+   */
+  scrollMargin?: Property.ScrollMargin<TLength> | undefined;
+  /**
+   * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
+   *
+   * **Syntax**: `<length>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **69** | **68**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
+   */
+  scrollMarginBlock?: Property.ScrollMarginBlock<TLength> | undefined;
+  /**
+   * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
+   *
+   * **Syntax**: `<length>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **69** | **68**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
+   */
+  scrollMarginInline?: Property.ScrollMarginInline<TLength> | undefined;
+  /**
+   * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,4}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **69** | **68**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
+   */
+  scrollPadding?: Property.ScrollPadding<TLength> | undefined;
+  /**
+   * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  | **15** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
+   */
+  scrollPaddingBlock?: Property.ScrollPaddingBlock<TLength> | undefined;
+  /**
+   * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  | **15** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
+   */
+  scrollPaddingInline?: Property.ScrollPaddingInline<TLength> | undefined;
+  /**
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
+   *
+   * **Syntax**: `<length>{1,4}`
+   *
+   * | Chrome | Firefox |          Safari           | Edge | IE  |
+   * | :----: | :-----: | :-----------------------: | :--: | :-: |
+   * | **69** |  68-90  |         **14.1**          | n/a  | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
+   */
+  scrollSnapMargin?: Property.ScrollMargin<TLength> | undefined;
+  /**
+   * The **`scroll-timeline`** CSS shorthand property defines a name that can be used to identify the source element of a scroll timeline, along with the scrollbar axis that should provide the timeline.
+   *
+   * **Syntax**: `<scroll-timeline-name> || <scroll-timeline-axis>`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-timeline
+   */
+  scrollTimeline?: Property.ScrollTimeline | undefined;
   /**
    * The **`text-decoration`** shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
    *
@@ -7736,8 +7823,6 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    *
    * **Syntax**: `<'top'>{1,2}`
    *
-   * **Initial value**: `auto`
-   *
    * @deprecated
    */
   offsetBlock?: Property.InsetBlock<TLength> | undefined;
@@ -7765,8 +7850,6 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
-   *
-   * **Initial value**: `auto`
    *
    * @deprecated
    */
@@ -8773,7 +8856,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   n/a   |   No   | n/a  | No  |
+   * |   No   |   n/a   | **16** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-composition
    */
@@ -9900,6 +9983,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "caret-color"?: Property.CaretColor | undefined;
   /**
+   * **Syntax**: `auto | bar | block | underscore`
+   *
+   * **Initial value**: `auto`
+   */
+  "caret-shape"?: Property.CaretShape | undefined;
+  /**
    * The **`clear`** CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The `clear` property applies to floating and non-floating elements.
    *
    * **Syntax**: `none | left | right | both | inline-start | inline-end`
@@ -10104,6 +10193,62 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/contain
    */
   contain?: Property.Contain | undefined;
+  /**
+   * The **`contain-intrinsic-block-size`** CSS logical property defines the block size of an element that a browser can use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **95** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-block-size
+   */
+  "contain-intrinsic-block-size"?: Property.ContainIntrinsicBlockSize<TLength> | undefined;
+  /**
+   * The **`contain-intrinsic-length`** CSS property sets the height of an element that a browser can use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **83** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-height
+   */
+  "contain-intrinsic-height"?: Property.ContainIntrinsicHeight<TLength> | undefined;
+  /**
+   * The **`contain-intrinsic-inline-size`** CSS logical property defines the inline-size of an element that a browser can use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **95** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-contain-intrinsic-inline-size
+   */
+  "contain-intrinsic-inline-size"?: Property.ContainIntrinsicInlineSize<TLength> | undefined;
+  /**
+   * The **`contain-intrinsic-width`** CSS property sets the width of an element that a browser will use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `none | <length> | auto <length>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **83** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-width
+   */
+  "contain-intrinsic-width"?: Property.ContainIntrinsicWidth<TLength> | undefined;
   /**
    * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are **anonymous replaced elements**.
    *
@@ -10808,9 +10953,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `auto`
    *
-   * |   Chrome    | Firefox |    Safari     | Edge | IE  |
-   * | :---------: | :-----: | :-----------: | :--: | :-: |
-   * | **6** _-x-_ | **98**  | **5.1** _-x-_ | n/a  | No  |
+   * | Chrome  | Firefox |    Safari     | Edge | IE  |
+   * | :-----: | :-----: | :-----------: | :--: | :-: |
+   * | **106** | **98**  | **5.1** _-x-_ | n/a  | No  |
+   * | 6 _-x-_ |         |               |      |     |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/hyphenate-character
    */
@@ -10899,34 +11045,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "input-security"?: Property.InputSecurity | undefined;
   /**
-   * The **`inset`** CSS property is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties. It has the same multi-value syntax of the `margin` shorthand.
-   *
-   * **Syntax**: `<'top'>{1,4}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/inset
-   */
-  inset?: Property.Inset<TLength> | undefined;
-  /**
-   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
-   *
-   * **Syntax**: `<'top'>{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **63**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
-   */
-  "inset-block"?: Property.InsetBlock<TLength> | undefined;
-  /**
    * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>`
@@ -10954,20 +11072,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/inset-block-start
    */
   "inset-block-start"?: Property.InsetBlockStart<TLength> | undefined;
-  /**
-   * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
-   *
-   * **Syntax**: `<'top'>{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **63**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
-   */
-  "inset-inline"?: Property.InsetInline<TLength> | undefined;
   /**
    * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -11181,20 +11285,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "list-style-type"?: Property.ListStyleType | undefined;
   /**
-   * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
-   *
-   * **Syntax**: `<'margin-left'>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
-   */
-  "margin-block"?: Property.MarginBlock<TLength> | undefined;
-  /**
    * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-left'>`
@@ -11236,20 +11326,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
    */
   "margin-bottom"?: Property.MarginBottom<TLength> | undefined;
-  /**
-   * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
-   *
-   * **Syntax**: `<'margin-left'>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
-   */
-  "margin-inline"?: Property.MarginInline<TLength> | undefined;
   /**
    * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -11996,7 +12072,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **90** |   No    |   No   | n/a  | No  |
+   * | **90** | **102** |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin
    */
@@ -12113,20 +12189,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "overscroll-behavior-y"?: Property.OverscrollBehaviorY | undefined;
   /**
-   * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
-   *
-   * **Syntax**: `<'padding-left'>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
-   */
-  "padding-block"?: Property.PaddingBlock<TLength> | undefined;
-  /**
    * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-left'>`
@@ -12168,20 +12230,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
    */
   "padding-bottom"?: Property.PaddingBottom<TLength> | undefined;
-  /**
-   * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
-   *
-   * **Syntax**: `<'padding-left'>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **87** | **66**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
-   */
-  "padding-inline"?: Property.PaddingInline<TLength> | undefined;
   /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
@@ -12340,20 +12388,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/perspective-origin
    */
   "perspective-origin"?: Property.PerspectiveOrigin<TLength> | undefined;
-  /**
-   * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
-   *
-   * **Syntax**: `<'align-content'> <'justify-content'>?`
-   *
-   * **Initial value**: `normal`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **59** | **45**  | **9**  | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/place-content
-   */
-  "place-content"?: Property.PlaceContent | undefined;
   /**
    * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
    *
@@ -12531,35 +12565,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-behavior"?: Property.ScrollBehavior | undefined;
   /**
-   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
-   *
-   * **Syntax**: `<length>{1,4}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |          Safari           | Edge | IE  |
-   * | :----: | :-----: | :-----------------------: | :--: | :-: |
-   * | **69** | **90**  |         **14.1**          | n/a  | No  |
-   * |        |         | 11 _(scroll-snap-margin)_ |      |     |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
-   */
-  "scroll-margin"?: Property.ScrollMargin<TLength> | undefined;
-  /**
-   * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
-   *
-   * **Syntax**: `<length>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **69** | **68**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
-   */
-  "scroll-margin-block"?: Property.ScrollMarginBlock<TLength> | undefined;
-  /**
    * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
@@ -12602,20 +12607,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-bottom
    */
   "scroll-margin-bottom"?: Property.ScrollMarginBottom<TLength> | undefined;
-  /**
-   * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
-   *
-   * **Syntax**: `<length>{1,2}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **69** | **68**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
-   */
-  "scroll-margin-inline"?: Property.ScrollMarginInline<TLength> | undefined;
   /**
    * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -12690,34 +12681,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-top"?: Property.ScrollMarginTop<TLength> | undefined;
   /**
-   * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
-   *
-   * **Syntax**: `[ auto | <length-percentage> ]{1,4}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * | **69** | **68**  | **14.1** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
-   */
-  "scroll-padding"?: Property.ScrollPadding<TLength> | undefined;
-  /**
-   * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
-   *
-   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **69** | **68**  | **15** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
-   */
-  "scroll-padding-block"?: Property.ScrollPaddingBlock<TLength> | undefined;
-  /**
    * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage>`
@@ -12759,20 +12722,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-bottom
    */
   "scroll-padding-bottom"?: Property.ScrollPaddingBottom<TLength> | undefined;
-  /**
-   * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
-   *
-   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
-   *
-   * **Initial value**: `auto`
-   *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * | **69** | **68**  | **15** | n/a  | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
-   */
-  "scroll-padding-inline"?: Property.ScrollPaddingInline<TLength> | undefined;
   /**
    * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
@@ -12857,21 +12806,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align
    */
   "scroll-snap-align"?: Property.ScrollSnapAlign | undefined;
-  /**
-   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
-   *
-   * **Syntax**: `<length>{1,4}`
-   *
-   * **Initial value**: `0`
-   *
-   * | Chrome | Firefox |          Safari           | Edge | IE  |
-   * | :----: | :-----: | :-----------------------: | :--: | :-: |
-   * | **69** |  68-90  |         **14.1**          | n/a  | No  |
-   * |        |         | 11 _(scroll-snap-margin)_ |      |     |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
-   */
-  "scroll-snap-margin"?: Property.ScrollMargin<TLength> | undefined;
   /**
    * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
@@ -12961,6 +12895,34 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
    */
   "scroll-snap-type"?: Property.ScrollSnapType | undefined;
+  /**
+   * The **`scroll-timeline-axis`** CSS property can be used to specify the scrollbar that will be used to provide the timeline for a scroll-timeline animation.
+   *
+   * **Syntax**: `block | inline | vertical | horizontal`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-timeline-axis
+   */
+  "scroll-timeline-axis"?: Property.ScrollTimelineAxis | undefined;
+  /**
+   * The **`scroll-timeline-name`** CSS property defines a name that can be used to identify an element as the source of a scroll timeline for an animation.
+   *
+   * **Syntax**: `none | <custom-ident>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-timeline-name
+   */
+  "scroll-timeline-name"?: Property.ScrollTimelineName | undefined;
   /**
    * The **`scrollbar-color`** CSS property sets the color of the scrollbar track and thumb.
    *
@@ -13996,6 +13958,8 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/border-width
    */
   "border-width"?: Property.BorderWidth<TLength> | undefined;
+  /** **Syntax**: `<'caret-color'> || <'caret-shape'>` */
+  caret?: Property.Caret | undefined;
   /**
    * The **`column-rule`** shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
    *
@@ -14022,6 +13986,18 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/columns
    */
   columns?: Property.Columns<TLength> | undefined;
+  /**
+   * The **`contain-intrinsic-size`** CSS shorthand property sets the size of an element that a browser will use for layout when the element is subject to size containment.
+   *
+   * **Syntax**: `[ none | <length> | auto <length> ]{1,2}`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **83** |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size
+   */
+  "contain-intrinsic-size"?: Property.ContainIntrinsicSize<TLength> | undefined;
   /**
    * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
@@ -14133,6 +14109,42 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "grid-template"?: Property.GridTemplate | undefined;
   /**
+   * The **`inset`** CSS property is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties. It has the same multi-value syntax of the `margin` shorthand.
+   *
+   * **Syntax**: `<'top'>{1,4}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/inset
+   */
+  inset?: Property.Inset<TLength> | undefined;
+  /**
+   * The **`inset-block`** CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Syntax**: `<'top'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **63**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/inset-block
+   */
+  "inset-block"?: Property.InsetBlock<TLength> | undefined;
+  /**
+   * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
+   *
+   * **Syntax**: `<'top'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **63**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/inset-inline
+   */
+  "inset-inline"?: Property.InsetInline<TLength> | undefined;
+  /**
    * **Syntax**: `none | <integer>`
    *
    * **Initial value**: `none`
@@ -14162,6 +14174,30 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/margin
    */
   margin?: Property.Margin<TLength> | undefined;
+  /**
+   * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Syntax**: `<'margin-left'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-block
+   */
+  "margin-block"?: Property.MarginBlock<TLength> | undefined;
+  /**
+   * The **`margin-inline`** CSS shorthand property is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Syntax**: `<'margin-left'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-inline
+   */
+  "margin-inline"?: Property.MarginInline<TLength> | undefined;
   /**
    * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
    *
@@ -14265,6 +14301,42 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   padding?: Property.Padding<TLength> | undefined;
   /**
+   * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Syntax**: `<'padding-left'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-block
+   */
+  "padding-block"?: Property.PaddingBlock<TLength> | undefined;
+  /**
+   * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
+   *
+   * **Syntax**: `<'padding-left'>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **87** | **66**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/padding-inline
+   */
+  "padding-inline"?: Property.PaddingInline<TLength> | undefined;
+  /**
+   * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e. the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
+   *
+   * **Syntax**: `<'align-content'> <'justify-content'>?`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **59** | **45**  | **9**  | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/place-content
+   */
+  "place-content"?: Property.PlaceContent | undefined;
+  /**
    * The CSS **`place-items`** shorthand property allows you to align items along both the block and inline directions at once (i.e. the `align-items` and `justify-items` properties) in a relevant layout system such as Grid or Flexbox. If the second value is not set, the first value is also used for it.
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
@@ -14288,6 +14360,104 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/place-self
    */
   "place-self"?: Property.PlaceSelf | undefined;
+  /**
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
+   *
+   * **Syntax**: `<length>{1,4}`
+   *
+   * | Chrome | Firefox |          Safari           | Edge | IE  |
+   * | :----: | :-----: | :-----------------------: | :--: | :-: |
+   * | **69** | **90**  |         **14.1**          | n/a  | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
+   */
+  "scroll-margin"?: Property.ScrollMargin<TLength> | undefined;
+  /**
+   * The `scroll-margin-block` shorthand property sets the scroll margins of an element in the block dimension.
+   *
+   * **Syntax**: `<length>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **69** | **68**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-block
+   */
+  "scroll-margin-block"?: Property.ScrollMarginBlock<TLength> | undefined;
+  /**
+   * The `scroll-margin-inline` shorthand property sets the scroll margins of an element in the inline dimension.
+   *
+   * **Syntax**: `<length>{1,2}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **69** | **68**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin-inline
+   */
+  "scroll-margin-inline"?: Property.ScrollMarginInline<TLength> | undefined;
+  /**
+   * The **`scroll-padding`** shorthand property sets scroll padding on all sides of an element at once, much like the `padding` property does for padding on an element.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,4}`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * | **69** | **68**  | **14.1** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding
+   */
+  "scroll-padding"?: Property.ScrollPadding<TLength> | undefined;
+  /**
+   * The `scroll-padding-block` shorthand property sets the scroll padding of an element in the block dimension.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  | **15** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-block
+   */
+  "scroll-padding-block"?: Property.ScrollPaddingBlock<TLength> | undefined;
+  /**
+   * The `scroll-padding-inline` shorthand property sets the scroll padding of an element in the inline dimension.
+   *
+   * **Syntax**: `[ auto | <length-percentage> ]{1,2}`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * | **69** | **68**  | **15** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-padding-inline
+   */
+  "scroll-padding-inline"?: Property.ScrollPaddingInline<TLength> | undefined;
+  /**
+   * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
+   *
+   * **Syntax**: `<length>{1,4}`
+   *
+   * | Chrome | Firefox |          Safari           | Edge | IE  |
+   * | :----: | :-----: | :-----------------------: | :--: | :-: |
+   * | **69** |  68-90  |         **14.1**          | n/a  | No  |
+   * |        |         | 11 _(scroll-snap-margin)_ |      |     |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-margin
+   */
+  "scroll-snap-margin"?: Property.ScrollMargin<TLength> | undefined;
+  /**
+   * The **`scroll-timeline`** CSS shorthand property defines a name that can be used to identify the source element of a scroll timeline, along with the scrollbar axis that should provide the timeline.
+   *
+   * **Syntax**: `<scroll-timeline-name> || <scroll-timeline-axis>`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   |   n/a   |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/scroll-timeline
+   */
+  "scroll-timeline"?: Property.ScrollTimeline | undefined;
   /**
    * The **`text-decoration`** shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
    *
@@ -16420,8 +16590,6 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    *
    * **Syntax**: `<'top'>{1,2}`
    *
-   * **Initial value**: `auto`
-   *
    * @deprecated
    */
   "offset-block"?: Property.InsetBlock<TLength> | undefined;
@@ -16449,8 +16617,6 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
-   *
-   * **Initial value**: `auto`
    *
    * @deprecated
    */
@@ -18310,7 +18476,11 @@ export namespace Property {
 
   export type CaptionSide = Globals | "block-end" | "block-start" | "bottom" | "inline-end" | "inline-start" | "top";
 
+  export type Caret = Globals | DataType.Color | "auto" | "bar" | "block" | "underscore" | (string & {});
+
   export type CaretColor = Globals | DataType.Color | "auto";
+
+  export type CaretShape = Globals | "auto" | "bar" | "block" | "underscore";
 
   export type Clear = Globals | "both" | "inline-end" | "inline-start" | "left" | "none" | "right";
 
@@ -18345,6 +18515,16 @@ export namespace Property {
   export type Columns<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {}) | (number & {});
 
   export type Contain = Globals | "content" | "inline-size" | "layout" | "none" | "paint" | "size" | "strict" | "style" | (string & {});
+
+  export type ContainIntrinsicBlockSize<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
+
+  export type ContainIntrinsicHeight<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
+
+  export type ContainIntrinsicInlineSize<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
+
+  export type ContainIntrinsicSize<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
+
+  export type ContainIntrinsicWidth<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
 
   export type Content = Globals | DataType.ContentList | "none" | "normal" | (string & {});
 
@@ -19031,6 +19211,12 @@ export namespace Property {
   export type ScrollSnapTypeX = Globals | "mandatory" | "none" | "proximity";
 
   export type ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
+
+  export type ScrollTimeline = Globals | (string & {});
+
+  export type ScrollTimelineAxis = Globals | "block" | "horizontal" | "inline" | "vertical";
+
+  export type ScrollTimelineName = Globals | "none" | (string & {});
 
   export type ScrollbarColor = Globals | "auto" | (string & {});
 
