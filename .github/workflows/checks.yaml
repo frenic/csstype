@@ -29,3 +29,5 @@ jobs:
           # Set status to 'success' if other files were changed,
           # or 'failure' if only index.d.ts or index.js.flow were changed
           conclusion: ${{ steps.other_files.outputs.any_changed == 'true' && 'success' || 'failure' }}
+          output: |
+            {"summary":"We detected that you only modified `index.d.ts` and/or `index.js.flow`. **Never modify `index.d.ts` and `index.js.flow` directly. They are generated automatically and committed so that we can easily follow any change it results in.** You probably want to update [MDN's CSS data](https://github.com/mdn/data) or [add a patch](https://github.com/frenic/csstype/blob/master/src/data/patches.ts)."}
