@@ -210,6 +210,12 @@ _If you're using CSS Custom Properties you can step directly to step 3._
           // Add a CSS Custom Property
           '--theme-color'?: 'black' | 'white';
 
+          // Allow namespaced CSS Custom Properties
+          [index: `--theme-${string}`]: any;
+          
+          // Allow any CSS Custom Properties
+          [index: `--${string}`]: any;
+
           // ...or allow any other property
           [index: string]: any;
         }
