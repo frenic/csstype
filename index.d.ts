@@ -1507,7 +1507,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **85** |   No    |   No   | n/a  | No  |
+   * | **85** |   n/a   |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
@@ -1808,9 +1808,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   |  **3**  | **preview** | n/a  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   |  **3**  | **16.4** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
    */
@@ -2264,9 +2264,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   |   No    | **9** _-x-_ | n/a  | No  |
+   * | Chrome  | Firefox |   Safari    | Edge | IE  |
+   * | :-----: | :-----: | :---------: | :--: | :-: |
+   * | **110** |   No    | **9** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
    */
@@ -2646,6 +2646,20 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginTop?: Property.MarginTop<TLength> | undefined;
   /**
+   * The `margin-trim` property allows the container to trim the margins of its children where they adjoin the container's edges.
+   *
+   * **Syntax**: `none | in-flow | all`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   |   No    | **16.4** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-trim
+   */
+  marginTrim?: Property.MarginTrim | undefined;
+  /**
    * The **`mask-border-mode`** CSS property specifies the blending mode used in a mask border.
    *
    * **Syntax**: `luminance | alpha`
@@ -2862,9 +2876,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   n/a   |   No   | n/a  | No  |
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **109** |   n/a   |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-depth
    */
@@ -2876,9 +2890,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   No    |   No   | n/a  | No  |
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **109** |   No    |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-shift
    */
@@ -2890,9 +2904,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * |  n/a   |   n/a   | **14.1** | n/a  | No  |
+   * | Chrome  | Firefox |  Safari  | Edge | IE  |
+   * | :-----: | :-----: | :------: | :--: | :-: |
+   * | **109** |   n/a   | **14.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-style
    */
@@ -3562,6 +3576,20 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingTop?: Property.PaddingTop<TLength> | undefined;
   /**
+   * The **`page`** CSS property is used to specify the named page, a specific type of page defined by the `@page` at-rule.
+   *
+   * **Syntax**: `auto | <custom-ident>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox |   Safari    | Edge | IE  |
+   * | :----: | :-----: | :---------: | :--: | :-: |
+   * | **85** | **110** | **preview** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/page
+   */
+  page?: Property.Page | undefined;
+  /**
    * The **`page-break-after`** CSS property adjusts page breaks _after_ the current element.
    *
    * **Syntax**: `auto | always | avoid | left | right | recto | verso`
@@ -4157,7 +4185,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`scroll-timeline-axis`** CSS property can be used to specify the scrollbar that will be used to provide the timeline for a scroll-timeline animation.
    *
-   * **Syntax**: `block | inline | vertical | horizontal`
+   * **Syntax**: `[ block | inline | vertical | horizontal ]#`
    *
    * **Initial value**: `block`
    *
@@ -4171,7 +4199,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`scroll-timeline-name`** CSS property defines a name that can be used to identify an element as the source of a scroll timeline for an animation.
    *
-   * **Syntax**: `none | <custom-ident>`
+   * **Syntax**: `none | <custom-ident>#`
    *
    * **Initial value**: `none`
    *
@@ -4818,6 +4846,20 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/vertical-align
    */
   verticalAlign?: Property.VerticalAlign<TLength> | undefined;
+  /**
+   * The **`view-transition-name`** CSS property provides the selected element with a distinct identifying name (a `<custom-ident>`) and causes it to participate in a separate view transition from the root view transition — or no view transition if the `none` value is specified.
+   *
+   * **Syntax**: `none | <custom-ident>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **111** |   No    |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/view-transition-name
+   */
+  viewTransitionName?: Property.ViewTransitionName | undefined;
   /**
    * The **`visibility`** CSS property shows or hides an element without changing the layout of a document. The property can also hide rows or columns in a `<table>`.
    *
@@ -5708,7 +5750,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
   /**
    * The **`scroll-timeline`** CSS shorthand property defines a name that can be used to identify the source element of a scroll timeline, along with the scrollbar axis that should provide the timeline.
    *
-   * **Syntax**: `<scroll-timeline-name> || <scroll-timeline-axis>`
+   * **Syntax**: `[<'scroll-timeline-name'> <'scroll-timeline-axis'>?]#`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
@@ -5842,6 +5884,14 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `visible`
    */
   MozBackfaceVisibility?: Property.BackfaceVisibility | undefined;
+  /**
+   * The **`-moz-binding`** CSS property is used by Mozilla-based applications to attach an XBL binding to a DOM element.
+   *
+   * **Syntax**: `<url> | none`
+   *
+   * **Initial value**: `none`
+   */
+  MozBinding?: Property.MozBinding | undefined;
   /**
    * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
    *
@@ -8109,16 +8159,6 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBackgroundSize?: Property.BackgroundSize<TLength> | undefined;
   /**
-   * The **`-moz-binding`** CSS property is used by Mozilla-based applications to attach an XBL binding to a DOM element.
-   *
-   * **Syntax**: `<url> | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  MozBinding?: Property.MozBinding | undefined;
-  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage>{1,4} [ / <length-percentage>{1,4} ]?`
@@ -10296,7 +10336,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
-   * | **85** |   No    |   No   | n/a  | No  |
+   * | **85** |   n/a   |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
@@ -10597,9 +10637,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `none`
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   |  **3**  | **preview** | n/a  | No  |
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   |  **3**  | **16.4** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size-adjust
    */
@@ -11053,9 +11093,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox |   Safari    | Edge | IE  |
-   * | :----: | :-----: | :---------: | :--: | :-: |
-   * |   No   |   No    | **9** _-x-_ | n/a  | No  |
+   * | Chrome  | Firefox |   Safari    | Edge | IE  |
+   * | :-----: | :-----: | :---------: | :--: | :-: |
+   * | **110** |   No    | **9** _-x-_ | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/initial-letter
    */
@@ -11435,6 +11475,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-top"?: Property.MarginTop<TLength> | undefined;
   /**
+   * The `margin-trim` property allows the container to trim the margins of its children where they adjoin the container's edges.
+   *
+   * **Syntax**: `none | in-flow | all`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox |  Safari  | Edge | IE  |
+   * | :----: | :-----: | :------: | :--: | :-: |
+   * |   No   |   No    | **16.4** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/margin-trim
+   */
+  "margin-trim"?: Property.MarginTrim | undefined;
+  /**
    * The **`mask-border-mode`** CSS property specifies the blending mode used in a mask border.
    *
    * **Syntax**: `luminance | alpha`
@@ -11651,9 +11705,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `0`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   n/a   |   No   | n/a  | No  |
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **109** |   n/a   |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-depth
    */
@@ -11665,9 +11719,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |  n/a   |   No    |   No   | n/a  | No  |
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **109** |   No    |   No   | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-shift
    */
@@ -11679,9 +11733,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `normal`
    *
-   * | Chrome | Firefox |  Safari  | Edge | IE  |
-   * | :----: | :-----: | :------: | :--: | :-: |
-   * |  n/a   |   n/a   | **14.1** | n/a  | No  |
+   * | Chrome  | Firefox |  Safari  | Edge | IE  |
+   * | :-----: | :-----: | :------: | :--: | :-: |
+   * | **109** |   n/a   | **14.1** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/math-style
    */
@@ -12351,6 +12405,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-top"?: Property.PaddingTop<TLength> | undefined;
   /**
+   * The **`page`** CSS property is used to specify the named page, a specific type of page defined by the `@page` at-rule.
+   *
+   * **Syntax**: `auto | <custom-ident>`
+   *
+   * **Initial value**: `auto`
+   *
+   * | Chrome | Firefox |   Safari    | Edge | IE  |
+   * | :----: | :-----: | :---------: | :--: | :-: |
+   * | **85** | **110** | **preview** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/page
+   */
+  page?: Property.Page | undefined;
+  /**
    * The **`page-break-after`** CSS property adjusts page breaks _after_ the current element.
    *
    * **Syntax**: `auto | always | avoid | left | right | recto | verso`
@@ -12946,7 +13014,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`scroll-timeline-axis`** CSS property can be used to specify the scrollbar that will be used to provide the timeline for a scroll-timeline animation.
    *
-   * **Syntax**: `block | inline | vertical | horizontal`
+   * **Syntax**: `[ block | inline | vertical | horizontal ]#`
    *
    * **Initial value**: `block`
    *
@@ -12960,7 +13028,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`scroll-timeline-name`** CSS property defines a name that can be used to identify an element as the source of a scroll timeline for an animation.
    *
-   * **Syntax**: `none | <custom-ident>`
+   * **Syntax**: `none | <custom-ident>#`
    *
    * **Initial value**: `none`
    *
@@ -13607,6 +13675,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/vertical-align
    */
   "vertical-align"?: Property.VerticalAlign<TLength> | undefined;
+  /**
+   * The **`view-transition-name`** CSS property provides the selected element with a distinct identifying name (a `<custom-ident>`) and causes it to participate in a separate view transition from the root view transition — or no view transition if the `none` value is specified.
+   *
+   * **Syntax**: `none | <custom-ident>`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **111** |   No    |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/view-transition-name
+   */
+  "view-transition-name"?: Property.ViewTransitionName | undefined;
   /**
    * The **`visibility`** CSS property shows or hides an element without changing the layout of a document. The property can also hide rows or columns in a `<table>`.
    *
@@ -14497,7 +14579,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
   /**
    * The **`scroll-timeline`** CSS shorthand property defines a name that can be used to identify the source element of a scroll timeline, along with the scrollbar axis that should provide the timeline.
    *
-   * **Syntax**: `<scroll-timeline-name> || <scroll-timeline-axis>`
+   * **Syntax**: `[<'scroll-timeline-name'> <'scroll-timeline-axis'>?]#`
    *
    * | Chrome | Firefox | Safari | Edge | IE  |
    * | :----: | :-----: | :----: | :--: | :-: |
@@ -14631,6 +14713,14 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `visible`
    */
   "-moz-backface-visibility"?: Property.BackfaceVisibility | undefined;
+  /**
+   * The **`-moz-binding`** CSS property is used by Mozilla-based applications to attach an XBL binding to a DOM element.
+   *
+   * **Syntax**: `<url> | none`
+   *
+   * **Initial value**: `none`
+   */
+  "-moz-binding"?: Property.MozBinding | undefined;
   /**
    * In Mozilla applications like Firefox, the **`-moz-border-bottom-colors`** CSS property sets a list of colors for the bottom border.
    *
@@ -16900,16 +16990,6 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-background-size"?: Property.BackgroundSize<TLength> | undefined;
   /**
-   * The **`-moz-binding`** CSS property is used by Mozilla-based applications to attach an XBL binding to a DOM element.
-   *
-   * **Syntax**: `<url> | none`
-   *
-   * **Initial value**: `none`
-   *
-   * @deprecated
-   */
-  "-moz-binding"?: Property.MozBinding | undefined;
-  /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage>{1,4} [ / <length-percentage>{1,4} ]?`
@@ -17665,6 +17745,10 @@ export type AdvancedPseudos =
   | "::cue-region"
   | "::part"
   | "::slotted"
+  | "::view-transition-group"
+  | "::view-transition-image-pair"
+  | "::view-transition-new"
+  | "::view-transition-old"
   | ":dir"
   | ":has"
   | ":host"
@@ -17735,6 +17819,7 @@ export type SimplePseudos =
   | "::selection"
   | "::spelling-error"
   | "::target-text"
+  | "::view-transition"
   | ":active"
   | ":after"
   | ":any-link"
@@ -17834,7 +17919,6 @@ export type HtmlAttributes =
   | "[color]"
   | "[cols]"
   | "[colspan]"
-  | "[command]"
   | "[compact]"
   | "[content]"
   | "[contenteditable]"
@@ -17879,7 +17963,6 @@ export type HtmlAttributes =
   | "[hreflang]"
   | "[hspace]"
   | "[http-equiv]"
-  | "[icon]"
   | "[id]"
   | "[imagesizes]"
   | "[imagesrcset]"
@@ -17940,7 +18023,6 @@ export type HtmlAttributes =
   | "[prefetch]"
   | "[preload]"
   | "[profile]"
-  | "[radiogroup]"
   | "[readonly]"
   | "[referrerpolicy]"
   | "[rel]"
@@ -17966,6 +18048,7 @@ export type HtmlAttributes =
   | "[scrolling]"
   | "[selected]"
   | "[shadowroot]"
+  | "[shadowrootmode]"
   | "[shape]"
   | "[size]"
   | "[sizes]"
@@ -17994,6 +18077,7 @@ export type HtmlAttributes =
   | "[value]"
   | "[valuetype]"
   | "[version]"
+  | "[virtualkeyboardpolicy]"
   | "[vlink]"
   | "[vspace]"
   | "[webkitallowfullscreen]"
@@ -18919,6 +19003,8 @@ export namespace Property {
 
   export type MarginTop<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
+  export type MarginTrim = Globals | "all" | "in-flow" | "none";
+
   export type Mask<TLength = (string & {}) | 0> = Globals | DataType.MaskLayer<TLength> | (string & {});
 
   export type MaskBorder = Globals | "alpha" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | (string & {}) | (number & {});
@@ -19161,6 +19247,8 @@ export namespace Property {
 
   export type PaddingTop<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
+  export type Page = Globals | "auto" | (string & {});
+
   export type PageBreakAfter = Globals | "always" | "auto" | "avoid" | "left" | "recto" | "right" | "verso";
 
   export type PageBreakBefore = Globals | "always" | "auto" | "avoid" | "left" | "recto" | "right" | "verso";
@@ -19265,9 +19353,9 @@ export namespace Property {
 
   export type ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
 
-  export type ScrollTimeline = Globals | (string & {});
+  export type ScrollTimeline = Globals | "none" | (string & {});
 
-  export type ScrollTimelineAxis = Globals | "block" | "horizontal" | "inline" | "vertical";
+  export type ScrollTimelineAxis = Globals | "block" | "horizontal" | "inline" | "vertical" | (string & {});
 
   export type ScrollTimelineName = Globals | "none" | (string & {});
 
@@ -19421,6 +19509,8 @@ export namespace Property {
     | "text-top"
     | "top"
     | (string & {});
+
+  export type ViewTransitionName = Globals | "none" | (string & {});
 
   export type Visibility = Globals | "collapse" | "hidden" | "visible";
 
@@ -19988,12 +20078,14 @@ export namespace AtRule {
   export interface Page<TLength = (string & {}) | 0, TTime = string & {}> {
     bleed?: Bleed<TLength> | undefined;
     marks?: Marks | undefined;
+    pageOrientation?: PageOrientation | undefined;
     size?: Size<TLength> | undefined;
   }
 
   export interface PageHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
     bleed?: Bleed<TLength> | undefined;
     marks?: Marks | undefined;
+    "page-orientation"?: PageOrientation | undefined;
     size?: Size<TLength> | undefined;
   }
 
@@ -20110,6 +20202,8 @@ export namespace AtRule {
   type Bleed<TLength> = TLength | "auto";
 
   type Marks = "crop" | "cross" | "none" | (string & {});
+
+  type PageOrientation = "rotate-left" | "rotate-right" | "upright";
 
   type Size<TLength> = DataType.PageSize | TLength | "auto" | "landscape" | "portrait" | (string & {});
 

@@ -188,6 +188,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   marginLeft?: Property$MarginLeft<TLength>,
   marginRight?: Property$MarginRight<TLength>,
   marginTop?: Property$MarginTop<TLength>,
+  marginTrim?: Property$MarginTrim,
   maskBorderMode?: Property$MaskBorderMode,
   maskBorderOutset?: Property$MaskBorderOutset<TLength>,
   maskBorderRepeat?: Property$MaskBorderRepeat,
@@ -254,6 +255,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   paddingLeft?: Property$PaddingLeft<TLength>,
   paddingRight?: Property$PaddingRight<TLength>,
   paddingTop?: Property$PaddingTop<TLength>,
+  page?: Property$Page,
   pageBreakAfter?: Property$PageBreakAfter,
   pageBreakBefore?: Property$PageBreakBefore,
   pageBreakInside?: Property$PageBreakInside,
@@ -342,6 +344,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   unicodeBidi?: Property$UnicodeBidi,
   userSelect?: Property$UserSelect,
   verticalAlign?: Property$VerticalAlign<TLength>,
+  viewTransitionName?: Property$ViewTransitionName,
   visibility?: Property$Visibility,
   whiteSpace?: Property$WhiteSpace,
   widows?: Property$Widows,
@@ -436,6 +439,7 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   MozAnimationTimingFunction?: Property$AnimationTimingFunction,
   MozAppearance?: Property$MozAppearance,
   MozBackfaceVisibility?: Property$BackfaceVisibility,
+  MozBinding?: Property$MozBinding,
   MozBorderBottomColors?: Property$MozBorderBottomColors,
   MozBorderEndColor?: Property$BorderInlineEndColor,
   MozBorderEndStyle?: Property$BorderInlineEndStyle,
@@ -724,7 +728,6 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   MozBackgroundInlinePolicy?: Property$BoxDecorationBreak,
   MozBackgroundOrigin?: Property$BackgroundOrigin,
   MozBackgroundSize?: Property$BackgroundSize<TLength>,
-  MozBinding?: Property$MozBinding,
   MozBorderRadius?: Property$BorderRadius<TLength>,
   MozBorderRadiusBottomleft?: Property$BorderBottomLeftRadius<TLength>,
   MozBorderRadiusBottomright?: Property$BorderBottomRightRadius<TLength>,
@@ -1047,6 +1050,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "margin-left"?: Property$MarginLeft<TLength>,
   "margin-right"?: Property$MarginRight<TLength>,
   "margin-top"?: Property$MarginTop<TLength>,
+  "margin-trim"?: Property$MarginTrim,
   "mask-border-mode"?: Property$MaskBorderMode,
   "mask-border-outset"?: Property$MaskBorderOutset<TLength>,
   "mask-border-repeat"?: Property$MaskBorderRepeat,
@@ -1113,6 +1117,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "padding-left"?: Property$PaddingLeft<TLength>,
   "padding-right"?: Property$PaddingRight<TLength>,
   "padding-top"?: Property$PaddingTop<TLength>,
+  page?: Property$Page,
   "page-break-after"?: Property$PageBreakAfter,
   "page-break-before"?: Property$PageBreakBefore,
   "page-break-inside"?: Property$PageBreakInside,
@@ -1201,6 +1206,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "unicode-bidi"?: Property$UnicodeBidi,
   "user-select"?: Property$UserSelect,
   "vertical-align"?: Property$VerticalAlign<TLength>,
+  "view-transition-name"?: Property$ViewTransitionName,
   visibility?: Property$Visibility,
   "white-space"?: Property$WhiteSpace,
   widows?: Property$Widows,
@@ -1298,6 +1304,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-moz-animation-timing-function"?: Property$AnimationTimingFunction,
   "-moz-appearance"?: Property$MozAppearance,
   "-moz-backface-visibility"?: Property$BackfaceVisibility,
+  "-moz-binding"?: Property$MozBinding,
   "-moz-border-bottom-colors"?: Property$MozBorderBottomColors,
   "-moz-border-end-color"?: Property$BorderInlineEndColor,
   "-moz-border-end-style"?: Property$BorderInlineEndStyle,
@@ -1589,7 +1596,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-moz-background-inline-policy"?: Property$BoxDecorationBreak,
   "-moz-background-origin"?: Property$BackgroundOrigin,
   "-moz-background-size"?: Property$BackgroundSize<TLength>,
-  "-moz-binding"?: Property$MozBinding,
   "-moz-border-radius"?: Property$BorderRadius<TLength>,
   "-moz-border-radius-bottomleft"?: Property$BorderBottomLeftRadius<TLength>,
   "-moz-border-radius-bottomright"?: Property$BorderBottomRightRadius<TLength>,
@@ -1912,6 +1918,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   marginLeft?: Property$MarginLeft<TLength> | Array<Property$MarginLeft<TLength>>,
   marginRight?: Property$MarginRight<TLength> | Array<Property$MarginRight<TLength>>,
   marginTop?: Property$MarginTop<TLength> | Array<Property$MarginTop<TLength>>,
+  marginTrim?: Property$MarginTrim | Array<Property$MarginTrim>,
   maskBorderMode?: Property$MaskBorderMode | Array<Property$MaskBorderMode>,
   maskBorderOutset?: Property$MaskBorderOutset<TLength> | Array<Property$MaskBorderOutset<TLength>>,
   maskBorderRepeat?: Property$MaskBorderRepeat | Array<Property$MaskBorderRepeat>,
@@ -1978,6 +1985,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   paddingLeft?: Property$PaddingLeft<TLength> | Array<Property$PaddingLeft<TLength>>,
   paddingRight?: Property$PaddingRight<TLength> | Array<Property$PaddingRight<TLength>>,
   paddingTop?: Property$PaddingTop<TLength> | Array<Property$PaddingTop<TLength>>,
+  page?: Property$Page | Array<Property$Page>,
   pageBreakAfter?: Property$PageBreakAfter | Array<Property$PageBreakAfter>,
   pageBreakBefore?: Property$PageBreakBefore | Array<Property$PageBreakBefore>,
   pageBreakInside?: Property$PageBreakInside | Array<Property$PageBreakInside>,
@@ -2066,6 +2074,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   unicodeBidi?: Property$UnicodeBidi | Array<Property$UnicodeBidi>,
   userSelect?: Property$UserSelect | Array<Property$UserSelect>,
   verticalAlign?: Property$VerticalAlign<TLength> | Array<Property$VerticalAlign<TLength>>,
+  viewTransitionName?: Property$ViewTransitionName | Array<Property$ViewTransitionName>,
   visibility?: Property$Visibility | Array<Property$Visibility>,
   whiteSpace?: Property$WhiteSpace | Array<Property$WhiteSpace>,
   widows?: Property$Widows | Array<Property$Widows>,
@@ -2163,6 +2172,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   MozAnimationTimingFunction?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   MozAppearance?: Property$MozAppearance | Array<Property$MozAppearance>,
   MozBackfaceVisibility?: Property$BackfaceVisibility | Array<Property$BackfaceVisibility>,
+  MozBinding?: Property$MozBinding | Array<Property$MozBinding>,
   MozBorderBottomColors?: Property$MozBorderBottomColors | Array<Property$MozBorderBottomColors>,
   MozBorderEndColor?: Property$BorderInlineEndColor | Array<Property$BorderInlineEndColor>,
   MozBorderEndStyle?: Property$BorderInlineEndStyle | Array<Property$BorderInlineEndStyle>,
@@ -2454,7 +2464,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   MozBackgroundInlinePolicy?: Property$BoxDecorationBreak | Array<Property$BoxDecorationBreak>,
   MozBackgroundOrigin?: Property$BackgroundOrigin | Array<Property$BackgroundOrigin>,
   MozBackgroundSize?: Property$BackgroundSize<TLength> | Array<Property$BackgroundSize<TLength>>,
-  MozBinding?: Property$MozBinding | Array<Property$MozBinding>,
   MozBorderRadius?: Property$BorderRadius<TLength> | Array<Property$BorderRadius<TLength>>,
   MozBorderRadiusBottomleft?: Property$BorderBottomLeftRadius<TLength> | Array<Property$BorderBottomLeftRadius<TLength>>,
   MozBorderRadiusBottomright?: Property$BorderBottomRightRadius<TLength> | Array<Property$BorderBottomRightRadius<TLength>>,
@@ -2777,6 +2786,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "margin-left"?: Property$MarginLeft<TLength> | Array<Property$MarginLeft<TLength>>,
   "margin-right"?: Property$MarginRight<TLength> | Array<Property$MarginRight<TLength>>,
   "margin-top"?: Property$MarginTop<TLength> | Array<Property$MarginTop<TLength>>,
+  "margin-trim"?: Property$MarginTrim | Array<Property$MarginTrim>,
   "mask-border-mode"?: Property$MaskBorderMode | Array<Property$MaskBorderMode>,
   "mask-border-outset"?: Property$MaskBorderOutset<TLength> | Array<Property$MaskBorderOutset<TLength>>,
   "mask-border-repeat"?: Property$MaskBorderRepeat | Array<Property$MaskBorderRepeat>,
@@ -2843,6 +2853,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "padding-left"?: Property$PaddingLeft<TLength> | Array<Property$PaddingLeft<TLength>>,
   "padding-right"?: Property$PaddingRight<TLength> | Array<Property$PaddingRight<TLength>>,
   "padding-top"?: Property$PaddingTop<TLength> | Array<Property$PaddingTop<TLength>>,
+  page?: Property$Page | Array<Property$Page>,
   "page-break-after"?: Property$PageBreakAfter | Array<Property$PageBreakAfter>,
   "page-break-before"?: Property$PageBreakBefore | Array<Property$PageBreakBefore>,
   "page-break-inside"?: Property$PageBreakInside | Array<Property$PageBreakInside>,
@@ -2931,6 +2942,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "unicode-bidi"?: Property$UnicodeBidi | Array<Property$UnicodeBidi>,
   "user-select"?: Property$UserSelect | Array<Property$UserSelect>,
   "vertical-align"?: Property$VerticalAlign<TLength> | Array<Property$VerticalAlign<TLength>>,
+  "view-transition-name"?: Property$ViewTransitionName | Array<Property$ViewTransitionName>,
   visibility?: Property$Visibility | Array<Property$Visibility>,
   "white-space"?: Property$WhiteSpace | Array<Property$WhiteSpace>,
   widows?: Property$Widows | Array<Property$Widows>,
@@ -3028,6 +3040,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-moz-animation-timing-function"?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   "-moz-appearance"?: Property$MozAppearance | Array<Property$MozAppearance>,
   "-moz-backface-visibility"?: Property$BackfaceVisibility | Array<Property$BackfaceVisibility>,
+  "-moz-binding"?: Property$MozBinding | Array<Property$MozBinding>,
   "-moz-border-bottom-colors"?: Property$MozBorderBottomColors | Array<Property$MozBorderBottomColors>,
   "-moz-border-end-color"?: Property$BorderInlineEndColor | Array<Property$BorderInlineEndColor>,
   "-moz-border-end-style"?: Property$BorderInlineEndStyle | Array<Property$BorderInlineEndStyle>,
@@ -3319,7 +3332,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-moz-background-inline-policy"?: Property$BoxDecorationBreak | Array<Property$BoxDecorationBreak>,
   "-moz-background-origin"?: Property$BackgroundOrigin | Array<Property$BackgroundOrigin>,
   "-moz-background-size"?: Property$BackgroundSize<TLength> | Array<Property$BackgroundSize<TLength>>,
-  "-moz-binding"?: Property$MozBinding | Array<Property$MozBinding>,
   "-moz-border-radius"?: Property$BorderRadius<TLength> | Array<Property$BorderRadius<TLength>>,
   "-moz-border-radius-bottomleft"?: Property$BorderBottomLeftRadius<TLength> | Array<Property$BorderBottomLeftRadius<TLength>>,
   "-moz-border-radius-bottomright"?: Property$BorderBottomRightRadius<TLength> | Array<Property$BorderBottomRightRadius<TLength>>,
@@ -3479,6 +3491,10 @@ export type AdvancedPseudos =
   | "::cue-region"
   | "::part"
   | "::slotted"
+  | "::view-transition-group"
+  | "::view-transition-image-pair"
+  | "::view-transition-new"
+  | "::view-transition-old"
   | ":dir"
   | ":has"
   | ":host"
@@ -3549,6 +3565,7 @@ export type SimplePseudos =
   | "::selection"
   | "::spelling-error"
   | "::target-text"
+  | "::view-transition"
   | ":active"
   | ":after"
   | ":any-link"
@@ -3648,7 +3665,6 @@ export type HtmlAttributes =
   | "[color]"
   | "[cols]"
   | "[colspan]"
-  | "[command]"
   | "[compact]"
   | "[content]"
   | "[contenteditable]"
@@ -3693,7 +3709,6 @@ export type HtmlAttributes =
   | "[hreflang]"
   | "[hspace]"
   | "[http-equiv]"
-  | "[icon]"
   | "[id]"
   | "[imagesizes]"
   | "[imagesrcset]"
@@ -3754,7 +3769,6 @@ export type HtmlAttributes =
   | "[prefetch]"
   | "[preload]"
   | "[profile]"
-  | "[radiogroup]"
   | "[readonly]"
   | "[referrerpolicy]"
   | "[rel]"
@@ -3780,6 +3794,7 @@ export type HtmlAttributes =
   | "[scrolling]"
   | "[selected]"
   | "[shadowroot]"
+  | "[shadowrootmode]"
   | "[shape]"
   | "[size]"
   | "[sizes]"
@@ -3808,6 +3823,7 @@ export type HtmlAttributes =
   | "[value]"
   | "[valuetype]"
   | "[version]"
+  | "[virtualkeyboardpolicy]"
   | "[vlink]"
   | "[vspace]"
   | "[webkitallowfullscreen]"
@@ -4732,6 +4748,8 @@ export type Property$MarginRight<TLength = string | 0> = Globals | TLength | "au
 
 export type Property$MarginTop<TLength = string | 0> = Globals | TLength | "auto" | string;
 
+export type Property$MarginTrim = Globals | "all" | "in-flow" | "none";
+
 export type Property$Mask<TLength = string | 0> = Globals | DataType$MaskLayer<TLength> | string;
 
 export type Property$MaskBorder = Globals | "alpha" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | string | number;
@@ -4974,6 +4992,8 @@ export type Property$PaddingRight<TLength = string | 0> = Globals | TLength | st
 
 export type Property$PaddingTop<TLength = string | 0> = Globals | TLength | string;
 
+export type Property$Page = Globals | "auto" | string;
+
 export type Property$PageBreakAfter = Globals | "always" | "auto" | "avoid" | "left" | "recto" | "right" | "verso";
 
 export type Property$PageBreakBefore = Globals | "always" | "auto" | "avoid" | "left" | "recto" | "right" | "verso";
@@ -5078,9 +5098,9 @@ export type Property$ScrollSnapTypeX = Globals | "mandatory" | "none" | "proximi
 
 export type Property$ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
 
-export type Property$ScrollTimeline = Globals | string;
+export type Property$ScrollTimeline = Globals | "none" | string;
 
-export type Property$ScrollTimelineAxis = Globals | "block" | "horizontal" | "inline" | "vertical";
+export type Property$ScrollTimelineAxis = Globals | "block" | "horizontal" | "inline" | "vertical" | string;
 
 export type Property$ScrollTimelineName = Globals | "none" | string;
 
@@ -5223,6 +5243,8 @@ export type Property$UnicodeBidi =
 export type Property$UserSelect = Globals | "-moz-none" | "all" | "auto" | "contain" | "element" | "none" | "text";
 
 export type Property$VerticalAlign<TLength = string | 0> = Globals | TLength | "baseline" | "bottom" | "middle" | "sub" | "super" | "text-bottom" | "text-top" | "top" | string;
+
+export type Property$ViewTransitionName = Globals | "none" | string;
 
 export type Property$Visibility = Globals | "collapse" | "hidden" | "visible";
 
@@ -5842,24 +5864,28 @@ export type AtRule$FontFaceHyphenFallback<TLength = string | 0, TTime = string> 
 export type AtRule$Page<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength>,
   marks?: AtRule$Marks,
+  pageOrientation?: AtRule$PageOrientation,
   size?: AtRule$Size<TLength>,
 |};
 
 export type AtRule$PageHyphen<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength>,
   marks?: AtRule$Marks,
+  "page-orientation"?: AtRule$PageOrientation,
   size?: AtRule$Size<TLength>,
 |};
 
 export type AtRule$PageFallback<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength> | Array<AtRule$Bleed<TLength>>,
   marks?: AtRule$Marks | Array<AtRule$Marks>,
+  pageOrientation?: AtRule$PageOrientation | Array<AtRule$PageOrientation>,
   size?: AtRule$Size<TLength> | Array<AtRule$Size<TLength>>,
 |};
 
 export type AtRule$PageHyphenFallback<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength> | Array<AtRule$Bleed<TLength>>,
   marks?: AtRule$Marks | Array<AtRule$Marks>,
+  "page-orientation"?: AtRule$PageOrientation | Array<AtRule$PageOrientation>,
   size?: AtRule$Size<TLength> | Array<AtRule$Size<TLength>>,
 |};
 
@@ -6006,6 +6032,8 @@ type AtRule$LineGapOverride = "normal" | string;
 type AtRule$Bleed<TLength> = TLength | "auto";
 
 type AtRule$Marks = "crop" | "cross" | "none" | string;
+
+type AtRule$PageOrientation = "rotate-left" | "rotate-right" | "upright";
 
 type AtRule$Size<TLength> = DataType$PageSize | TLength | "auto" | "landscape" | "portrait" | string;
 
