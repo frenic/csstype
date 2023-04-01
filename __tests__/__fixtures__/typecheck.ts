@@ -32,6 +32,17 @@ const cssWithFallbackValues: CSS.PropertiesFallback = {
   clip: [undefined],
 };
 
+const cssWithFallbackConstValues: CSS.PropertiesFallback = {
+  flexGrow: [1] as const,
+  flexShrink: [1] as const,
+  flexBasis: ['max-content'] as const,
+  flexDirection: ['row'] as const,
+  MozAppearance: ['button'] as const,
+  msOverflowStyle: ['scrollbar'] as const,
+  height: undefined,
+  clip: [undefined] as const,
+};
+
 const cssWithHyphenProperties: CSS.PropertiesHyphen = {
   'flex-grow': 1,
   'flex-shrink': 0,
@@ -149,6 +160,7 @@ const differentMajorVersions: CSS.Properties = {} as OldCSS.Properties;
 
 css;
 cssWithFallbackValues;
+cssWithFallbackConstValues;
 cssWithHyphenProperties;
 cssWithDifferentLength;
 unknownProperty;

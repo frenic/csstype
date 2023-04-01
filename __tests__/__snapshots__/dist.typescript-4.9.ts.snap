@@ -3,38 +3,44 @@
 exports[`Typescript 4.9 detects errors 1`] = `"31:9 - Type 'undefined' is not assignable to type 'string'."`;
 
 exports[`Typescript 4.9 detects errors 2`] = `
-"48:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
+"42:2 - Type 'readonly [undefined]' is not assignable to type 'readonly string[] | Clip | undefined'.
+  Type 'readonly [undefined]' is not assignable to type 'readonly string[]'.
+    Type 'undefined' is not assignable to type 'string'."
+`;
+
+exports[`Typescript 4.9 detects errors 3`] = `
+"59:2 - Type '{ unknownProperty: number; }' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
   Object literal may only specify known properties, and 'unknownProperty' does not exist in type 'Properties<0 | (string & {}), string & {}>'."
 `;
 
-exports[`Typescript 4.9 detects errors 3`] = `"52:11 - Type 'number' is not assignable to type 'string'."`;
+exports[`Typescript 4.9 detects errors 4`] = `"63:11 - Type 'number' is not assignable to type 'string'."`;
 
-exports[`Typescript 4.9 detects errors 4`] = `"53:10 - Type 'number' is not assignable to type 'string'."`;
+exports[`Typescript 4.9 detects errors 5`] = `"64:10 - Type 'number' is not assignable to type 'string'."`;
 
-exports[`Typescript 4.9 detects errors 5`] = `
-"58:6 - Type '{}' is not assignable to type 'string & {}'.
+exports[`Typescript 4.9 detects errors 6`] = `
+"69:6 - Type '{}' is not assignable to type 'string & {}'.
   Type '{}' is not assignable to type 'string'."
 `;
 
-exports[`Typescript 4.9 detects errors 6`] = `
-"63:10 - Type '"auto" | (string & {})' is not assignable to type '"auto"'.
+exports[`Typescript 4.9 detects errors 7`] = `
+"74:10 - Type '"auto" | (string & {})' is not assignable to type '"auto"'.
   Type 'string & {}' is not assignable to type '"auto"'."
 `;
 
-exports[`Typescript 4.9 detects errors 7`] = `"70:6 - Type '1' is not assignable to type 'string | 0'."`;
+exports[`Typescript 4.9 detects errors 8`] = `"81:6 - Type '1' is not assignable to type 'string | 0'."`;
 
-exports[`Typescript 4.9 detects errors 8`] = `"82:23 - This comparison appears to be unintentional because the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
+exports[`Typescript 4.9 detects errors 9`] = `"93:23 - This comparison appears to be unintentional because the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
 
-exports[`Typescript 4.9 detects errors 9`] = `"96:25 - This comparison appears to be unintentional because the types 'string | 0' and '1' have no overlap."`;
+exports[`Typescript 4.9 detects errors 10`] = `"107:25 - This comparison appears to be unintentional because the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 4.9 detects errors 10`] = `"106:14 - Argument of type '1' is not assignable to parameter of type 'string | 0 | (string | 0)[]'."`;
+exports[`Typescript 4.9 detects errors 11`] = `"117:14 - Argument of type '1' is not assignable to parameter of type 'string | 0 | (string | 0)[]'."`;
 
-exports[`Typescript 4.9 detects errors 11`] = `"107:15 - Type '1' is not assignable to type 'string | 0'."`;
+exports[`Typescript 4.9 detects errors 12`] = `"118:15 - Type '1' is not assignable to type 'string | 0'."`;
 
-exports[`Typescript 4.9 detects errors 12`] = `"120:23 - This comparison appears to be unintentional because the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
+exports[`Typescript 4.9 detects errors 13`] = `"131:23 - This comparison appears to be unintentional because the types 'string | 0 | (string | 0)[]' and '1' have no overlap."`;
 
-exports[`Typescript 4.9 detects errors 13`] = `"134:25 - This comparison appears to be unintentional because the types 'string | 0' and '1' have no overlap."`;
+exports[`Typescript 4.9 detects errors 14`] = `"145:25 - This comparison appears to be unintentional because the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 4.9 detects errors 14`] = `"144:34 - Argument of type '1' is not assignable to parameter of type 'Width<0 | (string & {})> | [Width<0 | (string & {})>]'."`;
+exports[`Typescript 4.9 detects errors 15`] = `"155:34 - Argument of type '1' is not assignable to parameter of type 'Width<0 | (string & {})> | [Width<0 | (string & {})>]'."`;
 
-exports[`Typescript 4.9 detects errors 15`] = `"145:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
+exports[`Typescript 4.9 detects errors 16`] = `"156:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;

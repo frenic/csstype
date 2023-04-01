@@ -70,7 +70,7 @@ export default async function typescript() {
     'TValue extends infer TUnpacked & {} ? TUnpacked : TValue' +
     ';' +
     EOL;
-  const fallback = 'export type Fallback<T> = { [P in keyof T]: T[P] | NonNullable<T[P]>[] };' + EOL;
+  const fallback = 'export type Fallback<T> = { [P in keyof T]: T[P] | readonly NonNullable<T[P]>[] };' + EOL;
 
   return (
     disableAutoExport +
