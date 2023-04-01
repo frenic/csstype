@@ -4973,7 +4973,7 @@ export type Property$OutlineStyle = Globals | DataType$LineStyle | "auto" | stri
 
 export type Property$OutlineWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength>;
 
-export type Property$Overflow = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | string;
+export type Property$Overflow = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "overlay" | "scroll" | "visible" | string;
 
 export type Property$OverflowAnchor = Globals | "auto" | "none";
 
@@ -4987,9 +4987,9 @@ export type Property$OverflowInline = Globals | "auto" | "clip" | "hidden" | "sc
 
 export type Property$OverflowWrap = Globals | "anywhere" | "break-word" | "normal";
 
-export type Property$OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
+export type Property$OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "overlay" | "scroll" | "visible";
 
-export type Property$OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
+export type Property$OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "overlay" | "scroll" | "visible";
 
 export type Property$OverscrollBehavior = Globals | "auto" | "contain" | "none" | string;
 
