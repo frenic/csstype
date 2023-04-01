@@ -21,6 +21,14 @@ export const syntaxes: { [property: string]: MDN.Syntax } = {
     syntax: '<string>',
   },
   // Undefined syntax
+  'palette-identifier': {
+    syntax: '<string>',
+  },
+  // Undefined syntax
+  'single-animation-composition': {
+    syntax: 'replace | add | accumulate',
+  },
+  // Undefined syntax
   'unicode-range': {
     syntax: '<string>',
   },

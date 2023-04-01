@@ -213,14 +213,27 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
 }
 
 function versionDiff(a: string, b: string) {
-  const aNumber = Number(a);
-  const bNumber = Number(b);
+  let aNumber: number;
+  let bNumber: number;
 
-  if (String(aNumber) !== a) {
-    warn('Version `%s` is not properly handled', a);
+  if (a === 'preview') {
+    aNumber = Infinity;
+  } else {
+    aNumber = Number(a);
+
+    if (String(aNumber) !== a) {
+      warn('Version `%s` is not properly handled', a);
+    }
   }
-  if (String(bNumber) !== b) {
-    warn('Version `%s` is not properly handled', b);
+
+  if (b === 'preview') {
+    bNumber = Infinity;
+  } else {
+    bNumber = Number(b);
+
+    if (String(bNumber) !== b) {
+      warn('Version `%s` is not properly handled', b);
+    }
   }
 
   return bNumber - aNumber;

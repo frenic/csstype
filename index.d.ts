@@ -89,9 +89,9 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `replace`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   n/a   | **16** | n/a  | No  |
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **112** |   n/a   | **16** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-composition
    */
@@ -1485,6 +1485,34 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   containIntrinsicWidth?: Property.ContainIntrinsicWidth<TLength> | undefined;
   /**
+   * The **container-name** CSS property specifies a list of query container names used by the @container at-rule in a container query. A container query will apply styles to elements based on the size of the nearest ancestor with a containment context. When a containment context is given a name, it can be specifically targeted using the `@container` at-rule instead of the nearest ancestor with containment.
+   *
+   * **Syntax**: `none | <custom-ident>+`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **105** | **110** | **16** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/container-name
+   */
+  containerName?: Property.ContainerName | undefined;
+  /**
+   * The **container-type** CSS property is used to define the type of containment used in a container query.
+   *
+   * **Syntax**: `normal | size | inline-size`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **105** | **110** | **16** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/container-type
+   */
+  containerType?: Property.ContainerType | undefined;
+  /**
    * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are **anonymous replaced elements**.
    *
    * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ [ <string> | <counter> ]+ ]?`
@@ -1788,6 +1816,18 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontOpticalSizing?: Property.FontOpticalSizing | undefined;
   /**
+   * **Syntax**: `normal | light | dark | <palette-identifier>`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome  | Firefox |  Safari  | Edge | IE  |
+   * | :-----: | :-----: | :------: | :--: | :-: |
+   * | **101** | **107** | **15.4** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-palette
+   */
+  fontPalette?: Property.FontPalette | undefined;
+  /**
    * The **`font-size`** CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative `<length>` units, such as `em`, `ex`, and so forth.
    *
    * **Syntax**: `<absolute-size> | <relative-size> | <length-percentage>`
@@ -1927,6 +1967,18 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
    */
   fontVariantEastAsian?: Property.FontVariantEastAsian | undefined;
+  /**
+   * **Syntax**: `normal | text | emoji | unicode`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **108** |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-emoji
+   */
+  fontVariantEmoji?: Property.FontVariantEmoji | undefined;
   /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
@@ -4358,10 +4410,10 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    *
    * **Initial value**: `none`
    *
-   * |           Chrome           | Firefox |   Safari    | Edge  |                   IE                   |
-   * | :------------------------: | :-----: | :---------: | :---: | :------------------------------------: |
-   * |           **48**           | **48**  | **preview** | 15-79 | **11** _(-ms-text-combine-horizontal)_ |
-   * | 9 _(-webkit-text-combine)_ |         |             |       |                                        |
+   * |           Chrome           | Firefox |            Safari            | Edge  |                   IE                   |
+   * | :------------------------: | :-----: | :--------------------------: | :---: | :------------------------------------: |
+   * |           **48**           | **48**  |         **preview**          | 15-79 | **11** _(-ms-text-combine-horizontal)_ |
+   * | 9 _(-webkit-text-combine)_ |         | 5.1 _(-webkit-text-combine)_ |       |                                        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
    */
@@ -5299,6 +5351,18 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size
    */
   containIntrinsicSize?: Property.ContainIntrinsicSize<TLength> | undefined;
+  /**
+   * The **container** shorthand CSS property establishes the element as a query container and specifies the name or name for the containment context used in a container query.
+   *
+   * **Syntax**: `<'container-name'> [ / <'container-type'> ]?`
+   *
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **105** | **110** | **16** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/container
+   */
+  container?: Property.Container | undefined;
   /**
    * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
@@ -8918,9 +8982,9 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `replace`
    *
-   * | Chrome | Firefox | Safari | Edge | IE  |
-   * | :----: | :-----: | :----: | :--: | :-: |
-   * |   No   |   n/a   | **16** | n/a  | No  |
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **112** |   n/a   | **16** | n/a  | No  |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-composition
    */
@@ -10314,6 +10378,34 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "contain-intrinsic-width"?: Property.ContainIntrinsicWidth<TLength> | undefined;
   /**
+   * The **container-name** CSS property specifies a list of query container names used by the @container at-rule in a container query. A container query will apply styles to elements based on the size of the nearest ancestor with a containment context. When a containment context is given a name, it can be specifically targeted using the `@container` at-rule instead of the nearest ancestor with containment.
+   *
+   * **Syntax**: `none | <custom-ident>+`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **105** | **110** | **16** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/container-name
+   */
+  "container-name"?: Property.ContainerName | undefined;
+  /**
+   * The **container-type** CSS property is used to define the type of containment used in a container query.
+   *
+   * **Syntax**: `normal | size | inline-size`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **105** | **110** | **16** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/container-type
+   */
+  "container-type"?: Property.ContainerType | undefined;
+  /**
    * The **`content`** CSS property replaces an element with a generated value. Objects inserted using the `content` property are **anonymous replaced elements**.
    *
    * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ [ <string> | <counter> ]+ ]?`
@@ -10617,6 +10709,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-optical-sizing"?: Property.FontOpticalSizing | undefined;
   /**
+   * **Syntax**: `normal | light | dark | <palette-identifier>`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome  | Firefox |  Safari  | Edge | IE  |
+   * | :-----: | :-----: | :------: | :--: | :-: |
+   * | **101** | **107** | **15.4** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-palette
+   */
+  "font-palette"?: Property.FontPalette | undefined;
+  /**
    * The **`font-size`** CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative `<length>` units, such as `em`, `ex`, and so forth.
    *
    * **Syntax**: `<absolute-size> | <relative-size> | <length-percentage>`
@@ -10756,6 +10860,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-east-asian
    */
   "font-variant-east-asian"?: Property.FontVariantEastAsian | undefined;
+  /**
+   * **Syntax**: `normal | text | emoji | unicode`
+   *
+   * **Initial value**: `normal`
+   *
+   * | Chrome | Firefox | Safari | Edge | IE  |
+   * | :----: | :-----: | :----: | :--: | :-: |
+   * |   No   | **108** |   No   | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/font-variant-emoji
+   */
+  "font-variant-emoji"?: Property.FontVariantEmoji | undefined;
   /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
@@ -13187,10 +13303,10 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    *
    * **Initial value**: `none`
    *
-   * |           Chrome           | Firefox |   Safari    | Edge  |                   IE                   |
-   * | :------------------------: | :-----: | :---------: | :---: | :------------------------------------: |
-   * |           **48**           | **48**  | **preview** | 15-79 | **11** _(-ms-text-combine-horizontal)_ |
-   * | 9 _(-webkit-text-combine)_ |         |             |       |                                        |
+   * |           Chrome           | Firefox |            Safari            | Edge  |                   IE                   |
+   * | :------------------------: | :-----: | :--------------------------: | :---: | :------------------------------------: |
+   * |           **48**           | **48**  |         **preview**          | 15-79 | **11** _(-ms-text-combine-horizontal)_ |
+   * | 9 _(-webkit-text-combine)_ |         | 5.1 _(-webkit-text-combine)_ |       |                                        |
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-combine-upright
    */
@@ -14128,6 +14244,18 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size
    */
   "contain-intrinsic-size"?: Property.ContainIntrinsicSize<TLength> | undefined;
+  /**
+   * The **container** shorthand CSS property establishes the element as a query container and specifies the name or name for the containment context used in a container query.
+   *
+   * **Syntax**: `<'container-name'> [ / <'container-type'> ]?`
+   *
+   * | Chrome  | Firefox | Safari | Edge | IE  |
+   * | :-----: | :-----: | :----: | :--: | :-: |
+   * | **105** | **110** | **16** | n/a  | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/container
+   */
+  container?: Property.Container | undefined;
   /**
    * The **`flex`** CSS shorthand property sets how a flex _item_ will grow or shrink to fit the space available in its flex container.
    *
@@ -17726,6 +17854,7 @@ export type AtRules =
   | "@document"
   | "@font-face"
   | "@font-feature-values"
+  | "@font-palette-values"
   | "@import"
   | "@keyframes"
   | "@layer"
@@ -18342,7 +18471,7 @@ export namespace Property {
 
   export type Animation<TTime = string & {}> = Globals | DataType.SingleAnimation<TTime> | (string & {});
 
-  export type AnimationComposition = Globals | (string & {});
+  export type AnimationComposition = Globals | DataType.SingleAnimationComposition | (string & {});
 
   export type AnimationDelay<TTime = string & {}> = Globals | TTime | (string & {});
 
@@ -18659,6 +18788,12 @@ export namespace Property {
 
   export type ContainIntrinsicWidth<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
 
+  export type Container = Globals | "none" | (string & {});
+
+  export type ContainerName = Globals | "none" | (string & {});
+
+  export type ContainerType = Globals | "inline-size" | "normal" | "size";
+
   export type Content = Globals | DataType.ContentList | "none" | "normal" | (string & {});
 
   export type ContentVisibility = Globals | "auto" | "hidden" | "visible";
@@ -18768,6 +18903,8 @@ export namespace Property {
 
   export type FontOpticalSizing = Globals | "auto" | "none";
 
+  export type FontPalette = Globals | "dark" | "light" | "normal" | (string & {});
+
   export type FontSize<TLength = (string & {}) | 0> = Globals | DataType.AbsoluteSize | TLength | "larger" | "smaller" | (string & {});
 
   export type FontSizeAdjust = Globals | "from-font" | "none" | (string & {}) | (number & {});
@@ -18818,6 +18955,8 @@ export namespace Property {
   export type FontVariantCaps = Globals | "all-petite-caps" | "all-small-caps" | "normal" | "petite-caps" | "small-caps" | "titling-caps" | "unicase";
 
   export type FontVariantEastAsian = Globals | DataType.EastAsianVariantValues | "full-width" | "normal" | "proportional-width" | "ruby" | (string & {});
+
+  export type FontVariantEmoji = Globals | "emoji" | "normal" | "text" | "unicode";
 
   export type FontVariantLigatures =
     | Globals
@@ -20075,6 +20214,22 @@ export namespace AtRule {
 
   export type FontFaceHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontFaceHyphen<TLength, TTime>>;
 
+  export interface FontPaletteValues<TLength = (string & {}) | 0, TTime = string & {}> {
+    basePalette?: BasePalette | undefined;
+    fontFamily?: string | undefined;
+    overrideColors?: string | undefined;
+  }
+
+  export interface FontPaletteValuesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
+    "base-palette"?: BasePalette | undefined;
+    "font-family"?: string | undefined;
+    "override-colors"?: string | undefined;
+  }
+
+  export type FontPaletteValuesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontPaletteValues<TLength, TTime>>;
+
+  export type FontPaletteValuesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontPaletteValuesHyphen<TLength, TTime>>;
+
   export interface Page<TLength = (string & {}) | 0, TTime = string & {}> {
     bleed?: Bleed<TLength> | undefined;
     marks?: Marks | undefined;
@@ -20198,6 +20353,8 @@ export namespace AtRule {
   type FontWeight = DataType.FontWeightAbsolute | (string & {});
 
   type LineGapOverride = "normal" | (string & {});
+
+  type BasePalette = "dark" | "light" | (number & {}) | (string & {});
 
   type Bleed<TLength> = TLength | "auto";
 
@@ -20570,6 +20727,8 @@ export namespace DataType {
     | "running"
     | (string & {})
     | (number & {});
+
+  type SingleAnimationComposition = "accumulate" | "add" | "replace";
 
   type SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 

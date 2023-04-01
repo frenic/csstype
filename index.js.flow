@@ -105,6 +105,8 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   containIntrinsicHeight?: Property$ContainIntrinsicHeight<TLength>,
   containIntrinsicInlineSize?: Property$ContainIntrinsicInlineSize<TLength>,
   containIntrinsicWidth?: Property$ContainIntrinsicWidth<TLength>,
+  containerName?: Property$ContainerName,
+  containerType?: Property$ContainerType,
   content?: Property$Content,
   contentVisibility?: Property$ContentVisibility,
   counterIncrement?: Property$CounterIncrement,
@@ -126,6 +128,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   fontKerning?: Property$FontKerning,
   fontLanguageOverride?: Property$FontLanguageOverride,
   fontOpticalSizing?: Property$FontOpticalSizing,
+  fontPalette?: Property$FontPalette,
   fontSize?: Property$FontSize<TLength>,
   fontSizeAdjust?: Property$FontSizeAdjust,
   fontSmooth?: Property$FontSmooth<TLength>,
@@ -136,6 +139,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   fontVariantAlternates?: Property$FontVariantAlternates,
   fontVariantCaps?: Property$FontVariantCaps,
   fontVariantEastAsian?: Property$FontVariantEastAsian,
+  fontVariantEmoji?: Property$FontVariantEmoji,
   fontVariantLigatures?: Property$FontVariantLigatures,
   fontVariantNumeric?: Property$FontVariantNumeric,
   fontVariantPosition?: Property$FontVariantPosition,
@@ -383,6 +387,7 @@ export type StandardShorthandProperties<TLength = string | 0, TTime = string> = 
   columnRule?: Property$ColumnRule<TLength>,
   columns?: Property$Columns<TLength>,
   containIntrinsicSize?: Property$ContainIntrinsicSize<TLength>,
+  container?: Property$Container,
   flex?: Property$Flex<TLength>,
   flexFlow?: Property$FlexFlow,
   font?: Property$Font,
@@ -967,6 +972,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "contain-intrinsic-height"?: Property$ContainIntrinsicHeight<TLength>,
   "contain-intrinsic-inline-size"?: Property$ContainIntrinsicInlineSize<TLength>,
   "contain-intrinsic-width"?: Property$ContainIntrinsicWidth<TLength>,
+  "container-name"?: Property$ContainerName,
+  "container-type"?: Property$ContainerType,
   content?: Property$Content,
   "content-visibility"?: Property$ContentVisibility,
   "counter-increment"?: Property$CounterIncrement,
@@ -988,6 +995,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "font-kerning"?: Property$FontKerning,
   "font-language-override"?: Property$FontLanguageOverride,
   "font-optical-sizing"?: Property$FontOpticalSizing,
+  "font-palette"?: Property$FontPalette,
   "font-size"?: Property$FontSize<TLength>,
   "font-size-adjust"?: Property$FontSizeAdjust,
   "font-smooth"?: Property$FontSmooth<TLength>,
@@ -998,6 +1006,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "font-variant-alternates"?: Property$FontVariantAlternates,
   "font-variant-caps"?: Property$FontVariantCaps,
   "font-variant-east-asian"?: Property$FontVariantEastAsian,
+  "font-variant-emoji"?: Property$FontVariantEmoji,
   "font-variant-ligatures"?: Property$FontVariantLigatures,
   "font-variant-numeric"?: Property$FontVariantNumeric,
   "font-variant-position"?: Property$FontVariantPosition,
@@ -1245,6 +1254,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0, TTime = stri
   "column-rule"?: Property$ColumnRule<TLength>,
   columns?: Property$Columns<TLength>,
   "contain-intrinsic-size"?: Property$ContainIntrinsicSize<TLength>,
+  container?: Property$Container,
   flex?: Property$Flex<TLength>,
   "flex-flow"?: Property$FlexFlow,
   font?: Property$Font,
@@ -1835,6 +1845,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   containIntrinsicHeight?: Property$ContainIntrinsicHeight<TLength> | Array<Property$ContainIntrinsicHeight<TLength>>,
   containIntrinsicInlineSize?: Property$ContainIntrinsicInlineSize<TLength> | Array<Property$ContainIntrinsicInlineSize<TLength>>,
   containIntrinsicWidth?: Property$ContainIntrinsicWidth<TLength> | Array<Property$ContainIntrinsicWidth<TLength>>,
+  containerName?: Property$ContainerName | Array<Property$ContainerName>,
+  containerType?: Property$ContainerType | Array<Property$ContainerType>,
   content?: Property$Content | Array<Property$Content>,
   contentVisibility?: Property$ContentVisibility | Array<Property$ContentVisibility>,
   counterIncrement?: Property$CounterIncrement | Array<Property$CounterIncrement>,
@@ -1856,6 +1868,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   fontKerning?: Property$FontKerning | Array<Property$FontKerning>,
   fontLanguageOverride?: Property$FontLanguageOverride | Array<Property$FontLanguageOverride>,
   fontOpticalSizing?: Property$FontOpticalSizing | Array<Property$FontOpticalSizing>,
+  fontPalette?: Property$FontPalette | Array<Property$FontPalette>,
   fontSize?: Property$FontSize<TLength> | Array<Property$FontSize<TLength>>,
   fontSizeAdjust?: Property$FontSizeAdjust | Array<Property$FontSizeAdjust>,
   fontSmooth?: Property$FontSmooth<TLength> | Array<Property$FontSmooth<TLength>>,
@@ -1866,6 +1879,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   fontVariantAlternates?: Property$FontVariantAlternates | Array<Property$FontVariantAlternates>,
   fontVariantCaps?: Property$FontVariantCaps | Array<Property$FontVariantCaps>,
   fontVariantEastAsian?: Property$FontVariantEastAsian | Array<Property$FontVariantEastAsian>,
+  fontVariantEmoji?: Property$FontVariantEmoji | Array<Property$FontVariantEmoji>,
   fontVariantLigatures?: Property$FontVariantLigatures | Array<Property$FontVariantLigatures>,
   fontVariantNumeric?: Property$FontVariantNumeric | Array<Property$FontVariantNumeric>,
   fontVariantPosition?: Property$FontVariantPosition | Array<Property$FontVariantPosition>,
@@ -2113,6 +2127,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0, TTime = st
   columnRule?: Property$ColumnRule<TLength> | Array<Property$ColumnRule<TLength>>,
   columns?: Property$Columns<TLength> | Array<Property$Columns<TLength>>,
   containIntrinsicSize?: Property$ContainIntrinsicSize<TLength> | Array<Property$ContainIntrinsicSize<TLength>>,
+  container?: Property$Container | Array<Property$Container>,
   flex?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
   flexFlow?: Property$FlexFlow | Array<Property$FlexFlow>,
   font?: Property$Font | Array<Property$Font>,
@@ -2703,6 +2718,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "contain-intrinsic-height"?: Property$ContainIntrinsicHeight<TLength> | Array<Property$ContainIntrinsicHeight<TLength>>,
   "contain-intrinsic-inline-size"?: Property$ContainIntrinsicInlineSize<TLength> | Array<Property$ContainIntrinsicInlineSize<TLength>>,
   "contain-intrinsic-width"?: Property$ContainIntrinsicWidth<TLength> | Array<Property$ContainIntrinsicWidth<TLength>>,
+  "container-name"?: Property$ContainerName | Array<Property$ContainerName>,
+  "container-type"?: Property$ContainerType | Array<Property$ContainerType>,
   content?: Property$Content | Array<Property$Content>,
   "content-visibility"?: Property$ContentVisibility | Array<Property$ContentVisibility>,
   "counter-increment"?: Property$CounterIncrement | Array<Property$CounterIncrement>,
@@ -2724,6 +2741,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "font-kerning"?: Property$FontKerning | Array<Property$FontKerning>,
   "font-language-override"?: Property$FontLanguageOverride | Array<Property$FontLanguageOverride>,
   "font-optical-sizing"?: Property$FontOpticalSizing | Array<Property$FontOpticalSizing>,
+  "font-palette"?: Property$FontPalette | Array<Property$FontPalette>,
   "font-size"?: Property$FontSize<TLength> | Array<Property$FontSize<TLength>>,
   "font-size-adjust"?: Property$FontSizeAdjust | Array<Property$FontSizeAdjust>,
   "font-smooth"?: Property$FontSmooth<TLength> | Array<Property$FontSmooth<TLength>>,
@@ -2734,6 +2752,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "font-variant-alternates"?: Property$FontVariantAlternates | Array<Property$FontVariantAlternates>,
   "font-variant-caps"?: Property$FontVariantCaps | Array<Property$FontVariantCaps>,
   "font-variant-east-asian"?: Property$FontVariantEastAsian | Array<Property$FontVariantEastAsian>,
+  "font-variant-emoji"?: Property$FontVariantEmoji | Array<Property$FontVariantEmoji>,
   "font-variant-ligatures"?: Property$FontVariantLigatures | Array<Property$FontVariantLigatures>,
   "font-variant-numeric"?: Property$FontVariantNumeric | Array<Property$FontVariantNumeric>,
   "font-variant-position"?: Property$FontVariantPosition | Array<Property$FontVariantPosition>,
@@ -2981,6 +3000,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0, TTim
   "column-rule"?: Property$ColumnRule<TLength> | Array<Property$ColumnRule<TLength>>,
   columns?: Property$Columns<TLength> | Array<Property$Columns<TLength>>,
   "contain-intrinsic-size"?: Property$ContainIntrinsicSize<TLength> | Array<Property$ContainIntrinsicSize<TLength>>,
+  container?: Property$Container | Array<Property$Container>,
   flex?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
   "flex-flow"?: Property$FlexFlow | Array<Property$FlexFlow>,
   font?: Property$Font | Array<Property$Font>,
@@ -3472,6 +3492,7 @@ export type AtRules =
   | "@document"
   | "@font-face"
   | "@font-feature-values"
+  | "@font-palette-values"
   | "@import"
   | "@keyframes"
   | "@layer"
@@ -4087,7 +4108,7 @@ export type Property$All = Globals;
 
 export type Property$Animation<TTime = string> = Globals | DataType$SingleAnimation<TTime> | string;
 
-export type Property$AnimationComposition = Globals | string;
+export type Property$AnimationComposition = Globals | DataType$SingleAnimationComposition | string;
 
 export type Property$AnimationDelay<TTime = string> = Globals | TTime | string;
 
@@ -4404,6 +4425,12 @@ export type Property$ContainIntrinsicSize<TLength = string | 0> = Globals | TLen
 
 export type Property$ContainIntrinsicWidth<TLength = string | 0> = Globals | TLength | "none" | string;
 
+export type Property$Container = Globals | "none" | string;
+
+export type Property$ContainerName = Globals | "none" | string;
+
+export type Property$ContainerType = Globals | "inline-size" | "normal" | "size";
+
 export type Property$Content = Globals | DataType$ContentList | "none" | "normal" | string;
 
 export type Property$ContentVisibility = Globals | "auto" | "hidden" | "visible";
@@ -4513,6 +4540,8 @@ export type Property$FontLanguageOverride = Globals | "normal" | string;
 
 export type Property$FontOpticalSizing = Globals | "auto" | "none";
 
+export type Property$FontPalette = Globals | "dark" | "light" | "normal" | string;
+
 export type Property$FontSize<TLength = string | 0> = Globals | DataType$AbsoluteSize | TLength | "larger" | "smaller" | string;
 
 export type Property$FontSizeAdjust = Globals | "from-font" | "none" | string | number;
@@ -4563,6 +4592,8 @@ export type Property$FontVariantAlternates = Globals | "historical-forms" | "nor
 export type Property$FontVariantCaps = Globals | "all-petite-caps" | "all-small-caps" | "normal" | "petite-caps" | "small-caps" | "titling-caps" | "unicase";
 
 export type Property$FontVariantEastAsian = Globals | DataType$EastAsianVariantValues | "full-width" | "normal" | "proportional-width" | "ruby" | string;
+
+export type Property$FontVariantEmoji = Globals | "emoji" | "normal" | "text" | "unicode";
 
 export type Property$FontVariantLigatures =
   | Globals
@@ -5861,6 +5892,30 @@ export type AtRule$FontFaceHyphenFallback<TLength = string | 0, TTime = string> 
   "unicode-range"?: string | Array<string>,
 |};
 
+export type AtRule$FontPaletteValues<TLength = string | 0, TTime = string> = {|
+  basePalette?: AtRule$BasePalette,
+  fontFamily?: string,
+  overrideColors?: string,
+|};
+
+export type AtRule$FontPaletteValuesHyphen<TLength = string | 0, TTime = string> = {|
+  "base-palette"?: AtRule$BasePalette,
+  "font-family"?: string,
+  "override-colors"?: string,
+|};
+
+export type AtRule$FontPaletteValuesFallback<TLength = string | 0, TTime = string> = {|
+  basePalette?: AtRule$BasePalette | Array<AtRule$BasePalette>,
+  fontFamily?: string | Array<string>,
+  overrideColors?: string | Array<string>,
+|};
+
+export type AtRule$FontPaletteValuesHyphenFallback<TLength = string | 0, TTime = string> = {|
+  "base-palette"?: AtRule$BasePalette | Array<AtRule$BasePalette>,
+  "font-family"?: string | Array<string>,
+  "override-colors"?: string | Array<string>,
+|};
+
 export type AtRule$Page<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength>,
   marks?: AtRule$Marks,
@@ -6028,6 +6083,8 @@ type AtRule$FontVariationSettings = "normal" | string;
 type AtRule$FontWeight = DataType$FontWeightAbsolute | string;
 
 type AtRule$LineGapOverride = "normal" | string;
+
+type AtRule$BasePalette = "dark" | "light" | number;
 
 type AtRule$Bleed<TLength> = TLength | "auto";
 
@@ -6408,6 +6465,8 @@ type DataType$SingleAnimation<TTime> =
   | "running"
   | string
   | number;
+
+type DataType$SingleAnimationComposition = "accumulate" | "add" | "replace";
 
 type DataType$SingleAnimationDirection = "alternate" | "alternate-reverse" | "normal" | "reverse";
 
