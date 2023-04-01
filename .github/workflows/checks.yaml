@@ -1,0 +1,34 @@
+name: 'Checks'
+on:
+  push:
+    # Only run if a generated file was modified
+    paths:
+      - index.d.ts
+      - index.js.flow
+
+jobs:
+  do_not_modify_generated_files:
+    name: 'Check which files were modifed'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check if non-generated files were modified
+        id: other_files
+        uses: tj-actions/changed-files@v32
+        with:
+          files_ignore: |
+            index.d.ts
+            index.js.flow
+
+      - uses: LouisBrunner/checks-action@v1.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: 'Never modify index.d.ts and index.js.flow directly'
+          # Set status to 'success' if other files were changed,
+          # or 'failure' if only index.d.ts or index.js.flow were changed
+          conclusion: ${{ steps.other_files.outputs.any_changed == 'true' && 'success' || 'failure' }}
+          output: |
+            {"summary":"We detected that you only modified `index.d.ts` and/or `index.js.flow`. **Never modify `index.d.ts` and `index.js.flow` directly. They are generated automatically and committed so that we can easily follow any change it results in.** You probably want to update [MDN's CSS data](https://github.com/mdn/data) or [add a patch](https://github.com/frenic/csstype/blob/master/src/data/patches.ts)."}
