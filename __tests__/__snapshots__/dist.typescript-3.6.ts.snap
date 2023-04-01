@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Typescript 3.6 detects errors 1`] = `
-"31:2 - Type 'undefined[]' is not assignable to type '\\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | HyphenateCharacter[] | undefined'.
+"31:2 - Type 'undefined[]' is not assignable to type '"auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | HyphenateCharacter[] | undefined'.
   Type 'undefined[]' is not assignable to type 'HyphenateCharacter[]'.
     Type 'undefined' is not assignable to type 'HyphenateCharacter'."
 `;
@@ -12,13 +12,13 @@ exports[`Typescript 3.6 detects errors 2`] = `
 `;
 
 exports[`Typescript 3.6 detects errors 3`] = `
-"52:2 - Type 'number[]' is not assignable to type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | undefined'.
-  Type 'number[]' is not assignable to type '\\"unset\\"'."
+"52:2 - Type 'number[]' is not assignable to type '0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | undefined'.
+  Type 'number[]' is not assignable to type '"unset"'."
 `;
 
 exports[`Typescript 3.6 detects errors 4`] = `
-"53:2 - Type 'number[]' is not assignable to type '\\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | (number & {}) | undefined'.
-  Type 'number[]' is not assignable to type '\\"unset\\"'."
+"53:2 - Type 'number[]' is not assignable to type '"inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | (number & {}) | undefined'.
+  Type 'number[]' is not assignable to type '"unset"'."
 `;
 
 exports[`Typescript 3.6 detects errors 5`] = `
@@ -27,8 +27,8 @@ exports[`Typescript 3.6 detects errors 5`] = `
 `;
 
 exports[`Typescript 3.6 detects errors 6`] = `
-"63:10 - Type 'Range' is not assignable to type '\\"auto\\"'.
-  Type 'string & {}' is not assignable to type '\\"auto\\"'."
+"63:10 - Type 'Range' is not assignable to type '"auto"'.
+  Type 'string & {}' is not assignable to type '"auto"'."
 `;
 
 exports[`Typescript 3.6 detects errors 7`] = `"70:6 - Type '1' is not assignable to type 'string | 0'."`;
@@ -49,10 +49,10 @@ exports[`Typescript 3.6 detects errors 12`] = `"120:23 - This condition will alw
 
 exports[`Typescript 3.6 detects errors 13`] = `"134:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 3.6 detects errors 14`] = `"144:34 - Argument of type '1' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | ... 6 more ... | [...]'."`;
+exports[`Typescript 3.6 detects errors 14`] = `"144:34 - Argument of type '1' is not assignable to parameter of type '0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "fit-content" | ... 6 more ... | [...]'."`;
 
 exports[`Typescript 3.6 detects errors 15`] = `
-"145:34 - Argument of type '[1]' is not assignable to parameter of type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | ... 6 more ... | [...]'.
-  Type '[1]' is not assignable to type '[0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | ... 5 more ... | \\"min-intrinsic\\"]'.
-    Type '1' is not assignable to type '0 | \\"auto\\" | \\"inherit\\" | (string & {}) | \\"-moz-initial\\" | \\"initial\\" | \\"revert\\" | \\"revert-layer\\" | \\"unset\\" | \\"-moz-fit-content\\" | \\"-moz-max-content\\" | \\"-moz-min-content\\" | \\"fit-content\\" | ... 5 more ... | \\"min-intrinsic\\"'."
+"145:34 - Argument of type '[1]' is not assignable to parameter of type '0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "fit-content" | ... 6 more ... | [...]'.
+  Type '[1]' is not assignable to type '[0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "fit-content" | ... 5 more ... | "min-intrinsic"]'.
+    Type '1' is not assignable to type '0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "fit-content" | ... 5 more ... | "min-intrinsic"'."
 `;

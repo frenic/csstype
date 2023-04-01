@@ -72,5 +72,5 @@ async function format(output: string, parser: prettier.BuiltInParserName) {
 }
 
 function testing() {
-  return runCLI({ testMatch: ['**/__tests__/dist.*.ts'] } as any, [__dirname]);
+  return runCLI({ testMatch: ['**/__tests__/dist.*.ts'], runInBand: true } as any, [__dirname]);
 }

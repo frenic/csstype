@@ -17,8 +17,8 @@ exports[`Typescript 4.5 detects errors 5`] = `
 `;
 
 exports[`Typescript 4.5 detects errors 6`] = `
-"63:10 - Type '\\"auto\\" | (string & {})' is not assignable to type '\\"auto\\"'.
-  Type 'string & {}' is not assignable to type '\\"auto\\"'."
+"63:10 - Type '"auto" | (string & {})' is not assignable to type '"auto"'.
+  Type 'string & {}' is not assignable to type '"auto"'."
 `;
 
 exports[`Typescript 4.5 detects errors 7`] = `"70:6 - Type '1' is not assignable to type 'string | 0'."`;
