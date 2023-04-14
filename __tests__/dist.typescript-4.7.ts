@@ -14,7 +14,7 @@ describe('Typescript 4.7', () => {
     });
 
     expect(Number(ts.versionMajorMinor)).toBe(4.7);
-    expect(errors.length).toBe(15);
+    expect(errors.length).toBe(16);
     for (const error of errors) {
       expect(error).toMatchSnapshot();
     }
