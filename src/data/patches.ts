@@ -9,6 +9,42 @@ export const properties: { [property: string]: IExtendedProperty } = {
   'line-clamp': {
     shorthand: true,
   },
+  /**
+   * https://drafts.csswg.org/css-logical/#propdef-border-block-color
+   */
+  'border-block-color': {
+    shorthand: true,
+  },
+  /**
+   * https://drafts.csswg.org/css-logical/#propdef-border-inline-color
+   */
+  'border-inline-color': {
+    shorthand: true,
+  },
+  /**
+   * https://drafts.csswg.org/css-logical/#propdef-border-block-width
+   */
+  'border-block-width': {
+    shorthand: true,
+  },
+  /**
+   * https://drafts.csswg.org/css-logical/#propdef-border-inline-width
+   */
+  'border-inline-width': {
+    shorthand: true,
+  },
+  /**
+   * https://drafts.csswg.org/css-logical/#propdef-border-block-width
+   */
+  'border-block-width': {
+    shorthand: true,
+  },
+  /**
+   * https://drafts.csswg.org/css-logical/#propdef-border-inline-width
+   */
+  'border-inline-width': {
+    shorthand: true,
+  },
 };
 
 export const syntaxes: { [property: string]: MDN.Syntax } = {
