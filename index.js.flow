@@ -14,6 +14,8 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   animationIterationCount?: Property$AnimationIterationCount,
   animationName?: Property$AnimationName,
   animationPlayState?: Property$AnimationPlayState,
+  animationRangeEnd?: Property$AnimationRangeEnd<TLength>,
+  animationRangeStart?: Property$AnimationRangeStart<TLength>,
   animationTimeline?: Property$AnimationTimeline,
   animationTimingFunction?: Property$AnimationTimingFunction,
   appearance?: Property$Appearance,
@@ -135,6 +137,10 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   fontStretch?: Property$FontStretch,
   fontStyle?: Property$FontStyle,
   fontSynthesis?: Property$FontSynthesis,
+  fontSynthesisPosition?: Property$FontSynthesisPosition,
+  fontSynthesisSmallCaps?: Property$FontSynthesisSmallCaps,
+  fontSynthesisStyle?: Property$FontSynthesisStyle,
+  fontSynthesisWeight?: Property$FontSynthesisWeight,
   fontVariant?: Property$FontVariant,
   fontVariantAlternates?: Property$FontVariantAlternates,
   fontVariantCaps?: Property$FontVariantCaps,
@@ -208,6 +214,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   maskRepeat?: Property$MaskRepeat,
   maskSize?: Property$MaskSize<TLength>,
   maskType?: Property$MaskType,
+  masonryAutoFlow?: Property$MasonryAutoFlow,
   mathDepth?: Property$MathDepth,
   mathShift?: Property$MathShift,
   mathStyle?: Property$MathStyle,
@@ -247,6 +254,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   overflowWrap?: Property$OverflowWrap,
   overflowX?: Property$OverflowX,
   overflowY?: Property$OverflowY,
+  overlay?: Property$Overlay,
   overscrollBehaviorBlock?: Property$OverscrollBehaviorBlock,
   overscrollBehaviorInline?: Property$OverscrollBehaviorInline,
   overscrollBehaviorX?: Property$OverscrollBehaviorX,
@@ -334,12 +342,15 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   textTransform?: Property$TextTransform,
   textUnderlineOffset?: Property$TextUnderlineOffset<TLength>,
   textUnderlinePosition?: Property$TextUnderlinePosition,
+  textWrap?: Property$TextWrap,
+  timelineScope?: Property$TimelineScope,
   top?: Property$Top<TLength>,
   touchAction?: Property$TouchAction,
   transform?: Property$Transform,
   transformBox?: Property$TransformBox,
   transformOrigin?: Property$TransformOrigin<TLength>,
   transformStyle?: Property$TransformStyle,
+  transitionBehavior?: Property$TransitionBehavior,
   transitionDelay?: Property$TransitionDelay<TTime>,
   transitionDuration?: Property$TransitionDuration<TTime>,
   transitionProperty?: Property$TransitionProperty,
@@ -348,9 +359,14 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   unicodeBidi?: Property$UnicodeBidi,
   userSelect?: Property$UserSelect,
   verticalAlign?: Property$VerticalAlign<TLength>,
+  viewTimelineAxis?: Property$ViewTimelineAxis,
+  viewTimelineInset?: Property$ViewTimelineInset<TLength>,
+  viewTimelineName?: Property$ViewTimelineName,
   viewTransitionName?: Property$ViewTransitionName,
   visibility?: Property$Visibility,
   whiteSpace?: Property$WhiteSpace,
+  whiteSpaceCollapse?: Property$WhiteSpaceCollapse,
+  whiteSpaceTrim?: Property$WhiteSpaceTrim,
   widows?: Property$Widows,
   width?: Property$Width<TLength>,
   willChange?: Property$WillChange,
@@ -365,6 +381,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
 export type StandardShorthandProperties<TLength = string | 0, TTime = string> = {|
   all?: Property$All,
   animation?: Property$Animation<TTime>,
+  animationRange?: Property$AnimationRange<TLength>,
   background?: Property$Background<TLength>,
   backgroundPosition?: Property$BackgroundPosition<TLength>,
   border?: Property$Border<TLength>,
@@ -429,6 +446,7 @@ export type StandardShorthandProperties<TLength = string | 0, TTime = string> = 
   textDecoration?: Property$TextDecoration<TLength>,
   textEmphasis?: Property$TextEmphasis,
   transition?: Property$Transition<TTime>,
+  viewTimeline?: Property$ViewTimeline,
 |};
 
 export type StandardProperties<TLength = string | 0, TTime = string> = {| ...StandardLonghandProperties<TLength, TTime>, ...StandardShorthandProperties<TLength, TTime> |};
@@ -443,7 +461,6 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   MozAnimationPlayState?: Property$AnimationPlayState,
   MozAnimationTimingFunction?: Property$AnimationTimingFunction,
   MozAppearance?: Property$MozAppearance,
-  MozBackfaceVisibility?: Property$BackfaceVisibility,
   MozBinding?: Property$MozBinding,
   MozBorderBottomColors?: Property$MozBorderBottomColors,
   MozBorderEndColor?: Property$BorderInlineEndColor,
@@ -470,20 +487,16 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   MozMarginStart?: Property$MarginInlineStart<TLength>,
   MozOrient?: Property$MozOrient,
   MozOsxFontSmoothing?: Property$FontSmooth<TLength>,
+  MozOutlineRadiusBottomleft?: Property$MozOutlineRadiusBottomleft<TLength>,
+  MozOutlineRadiusBottomright?: Property$MozOutlineRadiusBottomright<TLength>,
+  MozOutlineRadiusTopleft?: Property$MozOutlineRadiusTopleft<TLength>,
+  MozOutlineRadiusTopright?: Property$MozOutlineRadiusTopright<TLength>,
   MozPaddingEnd?: Property$PaddingInlineEnd<TLength>,
   MozPaddingStart?: Property$PaddingInlineStart<TLength>,
-  MozPerspective?: Property$Perspective<TLength>,
-  MozPerspectiveOrigin?: Property$PerspectiveOrigin<TLength>,
   MozStackSizing?: Property$MozStackSizing,
   MozTabSize?: Property$TabSize<TLength>,
   MozTextBlink?: Property$MozTextBlink,
   MozTextSizeAdjust?: Property$TextSizeAdjust,
-  MozTransformOrigin?: Property$TransformOrigin<TLength>,
-  MozTransformStyle?: Property$TransformStyle,
-  MozTransitionDelay?: Property$TransitionDelay<TTime>,
-  MozTransitionDuration?: Property$TransitionDuration<TTime>,
-  MozTransitionProperty?: Property$TransitionProperty,
-  MozTransitionTimingFunction?: Property$TransitionTimingFunction,
   MozUserFocus?: Property$MozUserFocus,
   MozUserModify?: Property$MozUserModify,
   MozUserSelect?: Property$UserSelect,
@@ -666,7 +679,7 @@ export type VendorShorthandProperties<TLength = string | 0, TTime = string> = {|
   MozBorderImage?: Property$BorderImage,
   MozColumnRule?: Property$ColumnRule<TLength>,
   MozColumns?: Property$Columns<TLength>,
-  MozTransition?: Property$Transition<TTime>,
+  MozOutlineRadius?: Property$MozOutlineRadius<TLength>,
   msContentZoomLimit?: Property$MsContentZoomLimit,
   msContentZoomSnap?: Property$MsContentZoomSnap,
   msFlex?: Property$Flex<TLength>,
@@ -729,6 +742,7 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   KhtmlLineBreak?: Property$LineBreak,
   KhtmlOpacity?: Property$Opacity,
   KhtmlUserSelect?: Property$UserSelect,
+  MozBackfaceVisibility?: Property$BackfaceVisibility,
   MozBackgroundClip?: Property$BackgroundClip,
   MozBackgroundInlinePolicy?: Property$BoxDecorationBreak,
   MozBackgroundOrigin?: Property$BackgroundOrigin,
@@ -750,17 +764,22 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   MozOpacity?: Property$Opacity,
   MozOutline?: Property$Outline<TLength>,
   MozOutlineColor?: Property$OutlineColor,
-  MozOutlineRadius?: Property$MozOutlineRadius<TLength>,
-  MozOutlineRadiusBottomleft?: Property$MozOutlineRadiusBottomleft<TLength>,
-  MozOutlineRadiusBottomright?: Property$MozOutlineRadiusBottomright<TLength>,
-  MozOutlineRadiusTopleft?: Property$MozOutlineRadiusTopleft<TLength>,
-  MozOutlineRadiusTopright?: Property$MozOutlineRadiusTopright<TLength>,
   MozOutlineStyle?: Property$OutlineStyle,
   MozOutlineWidth?: Property$OutlineWidth<TLength>,
+  MozPerspective?: Property$Perspective<TLength>,
+  MozPerspectiveOrigin?: Property$PerspectiveOrigin<TLength>,
   MozTextAlignLast?: Property$TextAlignLast,
   MozTextDecorationColor?: Property$TextDecorationColor,
   MozTextDecorationLine?: Property$TextDecorationLine,
   MozTextDecorationStyle?: Property$TextDecorationStyle,
+  MozTransform?: Property$Transform,
+  MozTransformOrigin?: Property$TransformOrigin<TLength>,
+  MozTransformStyle?: Property$TransformStyle,
+  MozTransition?: Property$Transition<TTime>,
+  MozTransitionDelay?: Property$TransitionDelay<TTime>,
+  MozTransitionDuration?: Property$TransitionDuration<TTime>,
+  MozTransitionProperty?: Property$TransitionProperty,
+  MozTransitionTimingFunction?: Property$TransitionTimingFunction,
   MozUserInput?: Property$MozUserInput,
   msImeMode?: Property$ImeMode,
   OAnimation?: Property$Animation<TTime>,
@@ -793,8 +812,6 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   WebkitBoxOrdinalGroup?: Property$BoxOrdinalGroup,
   WebkitBoxOrient?: Property$BoxOrient,
   WebkitBoxPack?: Property$BoxPack,
-  WebkitScrollSnapPointsX?: Property$ScrollSnapPointsX,
-  WebkitScrollSnapPointsY?: Property$ScrollSnapPointsY,
 |};
 
 export type SvgProperties<TLength = string | 0, TTime = string> = {|
@@ -881,6 +898,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "animation-iteration-count"?: Property$AnimationIterationCount,
   "animation-name"?: Property$AnimationName,
   "animation-play-state"?: Property$AnimationPlayState,
+  "animation-range-end"?: Property$AnimationRangeEnd<TLength>,
+  "animation-range-start"?: Property$AnimationRangeStart<TLength>,
   "animation-timeline"?: Property$AnimationTimeline,
   "animation-timing-function"?: Property$AnimationTimingFunction,
   appearance?: Property$Appearance,
@@ -1002,6 +1021,10 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "font-stretch"?: Property$FontStretch,
   "font-style"?: Property$FontStyle,
   "font-synthesis"?: Property$FontSynthesis,
+  "font-synthesis-position"?: Property$FontSynthesisPosition,
+  "font-synthesis-small-caps"?: Property$FontSynthesisSmallCaps,
+  "font-synthesis-style"?: Property$FontSynthesisStyle,
+  "font-synthesis-weight"?: Property$FontSynthesisWeight,
   "font-variant"?: Property$FontVariant,
   "font-variant-alternates"?: Property$FontVariantAlternates,
   "font-variant-caps"?: Property$FontVariantCaps,
@@ -1075,6 +1098,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "mask-repeat"?: Property$MaskRepeat,
   "mask-size"?: Property$MaskSize<TLength>,
   "mask-type"?: Property$MaskType,
+  "masonry-auto-flow"?: Property$MasonryAutoFlow,
   "math-depth"?: Property$MathDepth,
   "math-shift"?: Property$MathShift,
   "math-style"?: Property$MathStyle,
@@ -1114,6 +1138,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "overflow-wrap"?: Property$OverflowWrap,
   "overflow-x"?: Property$OverflowX,
   "overflow-y"?: Property$OverflowY,
+  overlay?: Property$Overlay,
   "overscroll-behavior-block"?: Property$OverscrollBehaviorBlock,
   "overscroll-behavior-inline"?: Property$OverscrollBehaviorInline,
   "overscroll-behavior-x"?: Property$OverscrollBehaviorX,
@@ -1201,12 +1226,15 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "text-transform"?: Property$TextTransform,
   "text-underline-offset"?: Property$TextUnderlineOffset<TLength>,
   "text-underline-position"?: Property$TextUnderlinePosition,
+  "text-wrap"?: Property$TextWrap,
+  "timeline-scope"?: Property$TimelineScope,
   top?: Property$Top<TLength>,
   "touch-action"?: Property$TouchAction,
   transform?: Property$Transform,
   "transform-box"?: Property$TransformBox,
   "transform-origin"?: Property$TransformOrigin<TLength>,
   "transform-style"?: Property$TransformStyle,
+  "transition-behavior"?: Property$TransitionBehavior,
   "transition-delay"?: Property$TransitionDelay<TTime>,
   "transition-duration"?: Property$TransitionDuration<TTime>,
   "transition-property"?: Property$TransitionProperty,
@@ -1215,9 +1243,14 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "unicode-bidi"?: Property$UnicodeBidi,
   "user-select"?: Property$UserSelect,
   "vertical-align"?: Property$VerticalAlign<TLength>,
+  "view-timeline-axis"?: Property$ViewTimelineAxis,
+  "view-timeline-inset"?: Property$ViewTimelineInset<TLength>,
+  "view-timeline-name"?: Property$ViewTimelineName,
   "view-transition-name"?: Property$ViewTransitionName,
   visibility?: Property$Visibility,
   "white-space"?: Property$WhiteSpace,
+  "white-space-collapse"?: Property$WhiteSpaceCollapse,
+  "white-space-trim"?: Property$WhiteSpaceTrim,
   widows?: Property$Widows,
   width?: Property$Width<TLength>,
   "will-change"?: Property$WillChange,
@@ -1232,6 +1265,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
 export type StandardShorthandPropertiesHyphen<TLength = string | 0, TTime = string> = {|
   all?: Property$All,
   animation?: Property$Animation<TTime>,
+  "animation-range"?: Property$AnimationRange<TLength>,
   background?: Property$Background<TLength>,
   "background-position"?: Property$BackgroundPosition<TLength>,
   border?: Property$Border<TLength>,
@@ -1296,6 +1330,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0, TTime = stri
   "text-decoration"?: Property$TextDecoration<TLength>,
   "text-emphasis"?: Property$TextEmphasis,
   transition?: Property$Transition<TTime>,
+  "view-timeline"?: Property$ViewTimeline,
 |};
 
 export type StandardPropertiesHyphen<TLength = string | 0, TTime = string> = {|
@@ -1313,7 +1348,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-moz-animation-play-state"?: Property$AnimationPlayState,
   "-moz-animation-timing-function"?: Property$AnimationTimingFunction,
   "-moz-appearance"?: Property$MozAppearance,
-  "-moz-backface-visibility"?: Property$BackfaceVisibility,
   "-moz-binding"?: Property$MozBinding,
   "-moz-border-bottom-colors"?: Property$MozBorderBottomColors,
   "-moz-border-end-color"?: Property$BorderInlineEndColor,
@@ -1340,20 +1374,16 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-moz-margin-start"?: Property$MarginInlineStart<TLength>,
   "-moz-orient"?: Property$MozOrient,
   "-moz-osx-font-smoothing"?: Property$FontSmooth<TLength>,
+  "-moz-outline-radius-bottomleft"?: Property$MozOutlineRadiusBottomleft<TLength>,
+  "-moz-outline-radius-bottomright"?: Property$MozOutlineRadiusBottomright<TLength>,
+  "-moz-outline-radius-topleft"?: Property$MozOutlineRadiusTopleft<TLength>,
+  "-moz-outline-radius-topright"?: Property$MozOutlineRadiusTopright<TLength>,
   "-moz-padding-end"?: Property$PaddingInlineEnd<TLength>,
   "-moz-padding-start"?: Property$PaddingInlineStart<TLength>,
-  "-moz-perspective"?: Property$Perspective<TLength>,
-  "-moz-perspective-origin"?: Property$PerspectiveOrigin<TLength>,
   "-moz-stack-sizing"?: Property$MozStackSizing,
   "-moz-tab-size"?: Property$TabSize<TLength>,
   "-moz-text-blink"?: Property$MozTextBlink,
   "-moz-text-size-adjust"?: Property$TextSizeAdjust,
-  "-moz-transform-origin"?: Property$TransformOrigin<TLength>,
-  "-moz-transform-style"?: Property$TransformStyle,
-  "-moz-transition-delay"?: Property$TransitionDelay<TTime>,
-  "-moz-transition-duration"?: Property$TransitionDuration<TTime>,
-  "-moz-transition-property"?: Property$TransitionProperty,
-  "-moz-transition-timing-function"?: Property$TransitionTimingFunction,
   "-moz-user-focus"?: Property$MozUserFocus,
   "-moz-user-modify"?: Property$MozUserModify,
   "-moz-user-select"?: Property$UserSelect,
@@ -1536,7 +1566,7 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0, TTime = string
   "-moz-border-image"?: Property$BorderImage,
   "-moz-column-rule"?: Property$ColumnRule<TLength>,
   "-moz-columns"?: Property$Columns<TLength>,
-  "-moz-transition"?: Property$Transition<TTime>,
+  "-moz-outline-radius"?: Property$MozOutlineRadius<TLength>,
   "-ms-content-zoom-limit"?: Property$MsContentZoomLimit,
   "-ms-content-zoom-snap"?: Property$MsContentZoomSnap,
   "-ms-flex"?: Property$Flex<TLength>,
@@ -1602,6 +1632,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-khtml-line-break"?: Property$LineBreak,
   "-khtml-opacity"?: Property$Opacity,
   "-khtml-user-select"?: Property$UserSelect,
+  "-moz-backface-visibility"?: Property$BackfaceVisibility,
   "-moz-background-clip"?: Property$BackgroundClip,
   "-moz-background-inline-policy"?: Property$BoxDecorationBreak,
   "-moz-background-origin"?: Property$BackgroundOrigin,
@@ -1623,17 +1654,22 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-moz-opacity"?: Property$Opacity,
   "-moz-outline"?: Property$Outline<TLength>,
   "-moz-outline-color"?: Property$OutlineColor,
-  "-moz-outline-radius"?: Property$MozOutlineRadius<TLength>,
-  "-moz-outline-radius-bottomleft"?: Property$MozOutlineRadiusBottomleft<TLength>,
-  "-moz-outline-radius-bottomright"?: Property$MozOutlineRadiusBottomright<TLength>,
-  "-moz-outline-radius-topleft"?: Property$MozOutlineRadiusTopleft<TLength>,
-  "-moz-outline-radius-topright"?: Property$MozOutlineRadiusTopright<TLength>,
   "-moz-outline-style"?: Property$OutlineStyle,
   "-moz-outline-width"?: Property$OutlineWidth<TLength>,
+  "-moz-perspective"?: Property$Perspective<TLength>,
+  "-moz-perspective-origin"?: Property$PerspectiveOrigin<TLength>,
   "-moz-text-align-last"?: Property$TextAlignLast,
   "-moz-text-decoration-color"?: Property$TextDecorationColor,
   "-moz-text-decoration-line"?: Property$TextDecorationLine,
   "-moz-text-decoration-style"?: Property$TextDecorationStyle,
+  "-moz-transform"?: Property$Transform,
+  "-moz-transform-origin"?: Property$TransformOrigin<TLength>,
+  "-moz-transform-style"?: Property$TransformStyle,
+  "-moz-transition"?: Property$Transition<TTime>,
+  "-moz-transition-delay"?: Property$TransitionDelay<TTime>,
+  "-moz-transition-duration"?: Property$TransitionDuration<TTime>,
+  "-moz-transition-property"?: Property$TransitionProperty,
+  "-moz-transition-timing-function"?: Property$TransitionTimingFunction,
   "-moz-user-input"?: Property$MozUserInput,
   "-ms-ime-mode"?: Property$ImeMode,
   "-o-animation"?: Property$Animation<TTime>,
@@ -1666,8 +1702,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-webkit-box-ordinal-group"?: Property$BoxOrdinalGroup,
   "-webkit-box-orient"?: Property$BoxOrient,
   "-webkit-box-pack"?: Property$BoxPack,
-  "-webkit-scroll-snap-points-x"?: Property$ScrollSnapPointsX,
-  "-webkit-scroll-snap-points-y"?: Property$ScrollSnapPointsY,
 |};
 
 export type SvgPropertiesHyphen<TLength = string | 0, TTime = string> = {|
@@ -1754,6 +1788,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   animationIterationCount?: Property$AnimationIterationCount | Array<Property$AnimationIterationCount>,
   animationName?: Property$AnimationName | Array<Property$AnimationName>,
   animationPlayState?: Property$AnimationPlayState | Array<Property$AnimationPlayState>,
+  animationRangeEnd?: Property$AnimationRangeEnd<TLength> | Array<Property$AnimationRangeEnd<TLength>>,
+  animationRangeStart?: Property$AnimationRangeStart<TLength> | Array<Property$AnimationRangeStart<TLength>>,
   animationTimeline?: Property$AnimationTimeline | Array<Property$AnimationTimeline>,
   animationTimingFunction?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   appearance?: Property$Appearance | Array<Property$Appearance>,
@@ -1875,6 +1911,10 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   fontStretch?: Property$FontStretch | Array<Property$FontStretch>,
   fontStyle?: Property$FontStyle | Array<Property$FontStyle>,
   fontSynthesis?: Property$FontSynthesis | Array<Property$FontSynthesis>,
+  fontSynthesisPosition?: Property$FontSynthesisPosition | Array<Property$FontSynthesisPosition>,
+  fontSynthesisSmallCaps?: Property$FontSynthesisSmallCaps | Array<Property$FontSynthesisSmallCaps>,
+  fontSynthesisStyle?: Property$FontSynthesisStyle | Array<Property$FontSynthesisStyle>,
+  fontSynthesisWeight?: Property$FontSynthesisWeight | Array<Property$FontSynthesisWeight>,
   fontVariant?: Property$FontVariant | Array<Property$FontVariant>,
   fontVariantAlternates?: Property$FontVariantAlternates | Array<Property$FontVariantAlternates>,
   fontVariantCaps?: Property$FontVariantCaps | Array<Property$FontVariantCaps>,
@@ -1948,6 +1988,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   maskRepeat?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   maskSize?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   maskType?: Property$MaskType | Array<Property$MaskType>,
+  masonryAutoFlow?: Property$MasonryAutoFlow | Array<Property$MasonryAutoFlow>,
   mathDepth?: Property$MathDepth | Array<Property$MathDepth>,
   mathShift?: Property$MathShift | Array<Property$MathShift>,
   mathStyle?: Property$MathStyle | Array<Property$MathStyle>,
@@ -1987,6 +2028,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   overflowWrap?: Property$OverflowWrap | Array<Property$OverflowWrap>,
   overflowX?: Property$OverflowX | Array<Property$OverflowX>,
   overflowY?: Property$OverflowY | Array<Property$OverflowY>,
+  overlay?: Property$Overlay | Array<Property$Overlay>,
   overscrollBehaviorBlock?: Property$OverscrollBehaviorBlock | Array<Property$OverscrollBehaviorBlock>,
   overscrollBehaviorInline?: Property$OverscrollBehaviorInline | Array<Property$OverscrollBehaviorInline>,
   overscrollBehaviorX?: Property$OverscrollBehaviorX | Array<Property$OverscrollBehaviorX>,
@@ -2074,12 +2116,15 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   textTransform?: Property$TextTransform | Array<Property$TextTransform>,
   textUnderlineOffset?: Property$TextUnderlineOffset<TLength> | Array<Property$TextUnderlineOffset<TLength>>,
   textUnderlinePosition?: Property$TextUnderlinePosition | Array<Property$TextUnderlinePosition>,
+  textWrap?: Property$TextWrap | Array<Property$TextWrap>,
+  timelineScope?: Property$TimelineScope | Array<Property$TimelineScope>,
   top?: Property$Top<TLength> | Array<Property$Top<TLength>>,
   touchAction?: Property$TouchAction | Array<Property$TouchAction>,
   transform?: Property$Transform | Array<Property$Transform>,
   transformBox?: Property$TransformBox | Array<Property$TransformBox>,
   transformOrigin?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
   transformStyle?: Property$TransformStyle | Array<Property$TransformStyle>,
+  transitionBehavior?: Property$TransitionBehavior | Array<Property$TransitionBehavior>,
   transitionDelay?: Property$TransitionDelay<TTime> | Array<Property$TransitionDelay<TTime>>,
   transitionDuration?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
   transitionProperty?: Property$TransitionProperty | Array<Property$TransitionProperty>,
@@ -2088,9 +2133,14 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   unicodeBidi?: Property$UnicodeBidi | Array<Property$UnicodeBidi>,
   userSelect?: Property$UserSelect | Array<Property$UserSelect>,
   verticalAlign?: Property$VerticalAlign<TLength> | Array<Property$VerticalAlign<TLength>>,
+  viewTimelineAxis?: Property$ViewTimelineAxis | Array<Property$ViewTimelineAxis>,
+  viewTimelineInset?: Property$ViewTimelineInset<TLength> | Array<Property$ViewTimelineInset<TLength>>,
+  viewTimelineName?: Property$ViewTimelineName | Array<Property$ViewTimelineName>,
   viewTransitionName?: Property$ViewTransitionName | Array<Property$ViewTransitionName>,
   visibility?: Property$Visibility | Array<Property$Visibility>,
   whiteSpace?: Property$WhiteSpace | Array<Property$WhiteSpace>,
+  whiteSpaceCollapse?: Property$WhiteSpaceCollapse | Array<Property$WhiteSpaceCollapse>,
+  whiteSpaceTrim?: Property$WhiteSpaceTrim | Array<Property$WhiteSpaceTrim>,
   widows?: Property$Widows | Array<Property$Widows>,
   width?: Property$Width<TLength> | Array<Property$Width<TLength>>,
   willChange?: Property$WillChange | Array<Property$WillChange>,
@@ -2105,6 +2155,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
 export type StandardShorthandPropertiesFallback<TLength = string | 0, TTime = string> = {|
   all?: Property$All | Array<Property$All>,
   animation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
+  animationRange?: Property$AnimationRange<TLength> | Array<Property$AnimationRange<TLength>>,
   background?: Property$Background<TLength> | Array<Property$Background<TLength>>,
   backgroundPosition?: Property$BackgroundPosition<TLength> | Array<Property$BackgroundPosition<TLength>>,
   border?: Property$Border<TLength> | Array<Property$Border<TLength>>,
@@ -2169,6 +2220,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0, TTime = st
   textDecoration?: Property$TextDecoration<TLength> | Array<Property$TextDecoration<TLength>>,
   textEmphasis?: Property$TextEmphasis | Array<Property$TextEmphasis>,
   transition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
+  viewTimeline?: Property$ViewTimeline | Array<Property$ViewTimeline>,
 |};
 
 export type StandardPropertiesFallback<TLength = string | 0, TTime = string> = {|
@@ -2186,7 +2238,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   MozAnimationPlayState?: Property$AnimationPlayState | Array<Property$AnimationPlayState>,
   MozAnimationTimingFunction?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   MozAppearance?: Property$MozAppearance | Array<Property$MozAppearance>,
-  MozBackfaceVisibility?: Property$BackfaceVisibility | Array<Property$BackfaceVisibility>,
   MozBinding?: Property$MozBinding | Array<Property$MozBinding>,
   MozBorderBottomColors?: Property$MozBorderBottomColors | Array<Property$MozBorderBottomColors>,
   MozBorderEndColor?: Property$BorderInlineEndColor | Array<Property$BorderInlineEndColor>,
@@ -2213,20 +2264,16 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   MozMarginStart?: Property$MarginInlineStart<TLength> | Array<Property$MarginInlineStart<TLength>>,
   MozOrient?: Property$MozOrient | Array<Property$MozOrient>,
   MozOsxFontSmoothing?: Property$FontSmooth<TLength> | Array<Property$FontSmooth<TLength>>,
+  MozOutlineRadiusBottomleft?: Property$MozOutlineRadiusBottomleft<TLength> | Array<Property$MozOutlineRadiusBottomleft<TLength>>,
+  MozOutlineRadiusBottomright?: Property$MozOutlineRadiusBottomright<TLength> | Array<Property$MozOutlineRadiusBottomright<TLength>>,
+  MozOutlineRadiusTopleft?: Property$MozOutlineRadiusTopleft<TLength> | Array<Property$MozOutlineRadiusTopleft<TLength>>,
+  MozOutlineRadiusTopright?: Property$MozOutlineRadiusTopright<TLength> | Array<Property$MozOutlineRadiusTopright<TLength>>,
   MozPaddingEnd?: Property$PaddingInlineEnd<TLength> | Array<Property$PaddingInlineEnd<TLength>>,
   MozPaddingStart?: Property$PaddingInlineStart<TLength> | Array<Property$PaddingInlineStart<TLength>>,
-  MozPerspective?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
-  MozPerspectiveOrigin?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
   MozStackSizing?: Property$MozStackSizing | Array<Property$MozStackSizing>,
   MozTabSize?: Property$TabSize<TLength> | Array<Property$TabSize<TLength>>,
   MozTextBlink?: Property$MozTextBlink | Array<Property$MozTextBlink>,
   MozTextSizeAdjust?: Property$TextSizeAdjust | Array<Property$TextSizeAdjust>,
-  MozTransformOrigin?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
-  MozTransformStyle?: Property$TransformStyle | Array<Property$TransformStyle>,
-  MozTransitionDelay?: Property$TransitionDelay<TTime> | Array<Property$TransitionDelay<TTime>>,
-  MozTransitionDuration?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
-  MozTransitionProperty?: Property$TransitionProperty | Array<Property$TransitionProperty>,
-  MozTransitionTimingFunction?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
   MozUserFocus?: Property$MozUserFocus | Array<Property$MozUserFocus>,
   MozUserModify?: Property$MozUserModify | Array<Property$MozUserModify>,
   MozUserSelect?: Property$UserSelect | Array<Property$UserSelect>,
@@ -2409,7 +2456,7 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0, TTime = stri
   MozBorderImage?: Property$BorderImage | Array<Property$BorderImage>,
   MozColumnRule?: Property$ColumnRule<TLength> | Array<Property$ColumnRule<TLength>>,
   MozColumns?: Property$Columns<TLength> | Array<Property$Columns<TLength>>,
-  MozTransition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
+  MozOutlineRadius?: Property$MozOutlineRadius<TLength> | Array<Property$MozOutlineRadius<TLength>>,
   msContentZoomLimit?: Property$MsContentZoomLimit | Array<Property$MsContentZoomLimit>,
   msContentZoomSnap?: Property$MsContentZoomSnap | Array<Property$MsContentZoomSnap>,
   msFlex?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
@@ -2475,6 +2522,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   KhtmlLineBreak?: Property$LineBreak | Array<Property$LineBreak>,
   KhtmlOpacity?: Property$Opacity | Array<Property$Opacity>,
   KhtmlUserSelect?: Property$UserSelect | Array<Property$UserSelect>,
+  MozBackfaceVisibility?: Property$BackfaceVisibility | Array<Property$BackfaceVisibility>,
   MozBackgroundClip?: Property$BackgroundClip | Array<Property$BackgroundClip>,
   MozBackgroundInlinePolicy?: Property$BoxDecorationBreak | Array<Property$BoxDecorationBreak>,
   MozBackgroundOrigin?: Property$BackgroundOrigin | Array<Property$BackgroundOrigin>,
@@ -2496,17 +2544,22 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   MozOpacity?: Property$Opacity | Array<Property$Opacity>,
   MozOutline?: Property$Outline<TLength> | Array<Property$Outline<TLength>>,
   MozOutlineColor?: Property$OutlineColor | Array<Property$OutlineColor>,
-  MozOutlineRadius?: Property$MozOutlineRadius<TLength> | Array<Property$MozOutlineRadius<TLength>>,
-  MozOutlineRadiusBottomleft?: Property$MozOutlineRadiusBottomleft<TLength> | Array<Property$MozOutlineRadiusBottomleft<TLength>>,
-  MozOutlineRadiusBottomright?: Property$MozOutlineRadiusBottomright<TLength> | Array<Property$MozOutlineRadiusBottomright<TLength>>,
-  MozOutlineRadiusTopleft?: Property$MozOutlineRadiusTopleft<TLength> | Array<Property$MozOutlineRadiusTopleft<TLength>>,
-  MozOutlineRadiusTopright?: Property$MozOutlineRadiusTopright<TLength> | Array<Property$MozOutlineRadiusTopright<TLength>>,
   MozOutlineStyle?: Property$OutlineStyle | Array<Property$OutlineStyle>,
   MozOutlineWidth?: Property$OutlineWidth<TLength> | Array<Property$OutlineWidth<TLength>>,
+  MozPerspective?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
+  MozPerspectiveOrigin?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
   MozTextAlignLast?: Property$TextAlignLast | Array<Property$TextAlignLast>,
   MozTextDecorationColor?: Property$TextDecorationColor | Array<Property$TextDecorationColor>,
   MozTextDecorationLine?: Property$TextDecorationLine | Array<Property$TextDecorationLine>,
   MozTextDecorationStyle?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
+  MozTransform?: Property$Transform | Array<Property$Transform>,
+  MozTransformOrigin?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
+  MozTransformStyle?: Property$TransformStyle | Array<Property$TransformStyle>,
+  MozTransition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
+  MozTransitionDelay?: Property$TransitionDelay<TTime> | Array<Property$TransitionDelay<TTime>>,
+  MozTransitionDuration?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
+  MozTransitionProperty?: Property$TransitionProperty | Array<Property$TransitionProperty>,
+  MozTransitionTimingFunction?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
   MozUserInput?: Property$MozUserInput | Array<Property$MozUserInput>,
   msImeMode?: Property$ImeMode | Array<Property$ImeMode>,
   OAnimation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
@@ -2539,8 +2592,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   WebkitBoxOrdinalGroup?: Property$BoxOrdinalGroup | Array<Property$BoxOrdinalGroup>,
   WebkitBoxOrient?: Property$BoxOrient | Array<Property$BoxOrient>,
   WebkitBoxPack?: Property$BoxPack | Array<Property$BoxPack>,
-  WebkitScrollSnapPointsX?: Property$ScrollSnapPointsX | Array<Property$ScrollSnapPointsX>,
-  WebkitScrollSnapPointsY?: Property$ScrollSnapPointsY | Array<Property$ScrollSnapPointsY>,
 |};
 
 export type SvgPropertiesFallback<TLength = string | 0, TTime = string> = {|
@@ -2627,6 +2678,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "animation-iteration-count"?: Property$AnimationIterationCount | Array<Property$AnimationIterationCount>,
   "animation-name"?: Property$AnimationName | Array<Property$AnimationName>,
   "animation-play-state"?: Property$AnimationPlayState | Array<Property$AnimationPlayState>,
+  "animation-range-end"?: Property$AnimationRangeEnd<TLength> | Array<Property$AnimationRangeEnd<TLength>>,
+  "animation-range-start"?: Property$AnimationRangeStart<TLength> | Array<Property$AnimationRangeStart<TLength>>,
   "animation-timeline"?: Property$AnimationTimeline | Array<Property$AnimationTimeline>,
   "animation-timing-function"?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   appearance?: Property$Appearance | Array<Property$Appearance>,
@@ -2748,6 +2801,10 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "font-stretch"?: Property$FontStretch | Array<Property$FontStretch>,
   "font-style"?: Property$FontStyle | Array<Property$FontStyle>,
   "font-synthesis"?: Property$FontSynthesis | Array<Property$FontSynthesis>,
+  "font-synthesis-position"?: Property$FontSynthesisPosition | Array<Property$FontSynthesisPosition>,
+  "font-synthesis-small-caps"?: Property$FontSynthesisSmallCaps | Array<Property$FontSynthesisSmallCaps>,
+  "font-synthesis-style"?: Property$FontSynthesisStyle | Array<Property$FontSynthesisStyle>,
+  "font-synthesis-weight"?: Property$FontSynthesisWeight | Array<Property$FontSynthesisWeight>,
   "font-variant"?: Property$FontVariant | Array<Property$FontVariant>,
   "font-variant-alternates"?: Property$FontVariantAlternates | Array<Property$FontVariantAlternates>,
   "font-variant-caps"?: Property$FontVariantCaps | Array<Property$FontVariantCaps>,
@@ -2821,6 +2878,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "mask-repeat"?: Property$MaskRepeat | Array<Property$MaskRepeat>,
   "mask-size"?: Property$MaskSize<TLength> | Array<Property$MaskSize<TLength>>,
   "mask-type"?: Property$MaskType | Array<Property$MaskType>,
+  "masonry-auto-flow"?: Property$MasonryAutoFlow | Array<Property$MasonryAutoFlow>,
   "math-depth"?: Property$MathDepth | Array<Property$MathDepth>,
   "math-shift"?: Property$MathShift | Array<Property$MathShift>,
   "math-style"?: Property$MathStyle | Array<Property$MathStyle>,
@@ -2860,6 +2918,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "overflow-wrap"?: Property$OverflowWrap | Array<Property$OverflowWrap>,
   "overflow-x"?: Property$OverflowX | Array<Property$OverflowX>,
   "overflow-y"?: Property$OverflowY | Array<Property$OverflowY>,
+  overlay?: Property$Overlay | Array<Property$Overlay>,
   "overscroll-behavior-block"?: Property$OverscrollBehaviorBlock | Array<Property$OverscrollBehaviorBlock>,
   "overscroll-behavior-inline"?: Property$OverscrollBehaviorInline | Array<Property$OverscrollBehaviorInline>,
   "overscroll-behavior-x"?: Property$OverscrollBehaviorX | Array<Property$OverscrollBehaviorX>,
@@ -2947,12 +3006,15 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "text-transform"?: Property$TextTransform | Array<Property$TextTransform>,
   "text-underline-offset"?: Property$TextUnderlineOffset<TLength> | Array<Property$TextUnderlineOffset<TLength>>,
   "text-underline-position"?: Property$TextUnderlinePosition | Array<Property$TextUnderlinePosition>,
+  "text-wrap"?: Property$TextWrap | Array<Property$TextWrap>,
+  "timeline-scope"?: Property$TimelineScope | Array<Property$TimelineScope>,
   top?: Property$Top<TLength> | Array<Property$Top<TLength>>,
   "touch-action"?: Property$TouchAction | Array<Property$TouchAction>,
   transform?: Property$Transform | Array<Property$Transform>,
   "transform-box"?: Property$TransformBox | Array<Property$TransformBox>,
   "transform-origin"?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
   "transform-style"?: Property$TransformStyle | Array<Property$TransformStyle>,
+  "transition-behavior"?: Property$TransitionBehavior | Array<Property$TransitionBehavior>,
   "transition-delay"?: Property$TransitionDelay<TTime> | Array<Property$TransitionDelay<TTime>>,
   "transition-duration"?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
   "transition-property"?: Property$TransitionProperty | Array<Property$TransitionProperty>,
@@ -2961,9 +3023,14 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "unicode-bidi"?: Property$UnicodeBidi | Array<Property$UnicodeBidi>,
   "user-select"?: Property$UserSelect | Array<Property$UserSelect>,
   "vertical-align"?: Property$VerticalAlign<TLength> | Array<Property$VerticalAlign<TLength>>,
+  "view-timeline-axis"?: Property$ViewTimelineAxis | Array<Property$ViewTimelineAxis>,
+  "view-timeline-inset"?: Property$ViewTimelineInset<TLength> | Array<Property$ViewTimelineInset<TLength>>,
+  "view-timeline-name"?: Property$ViewTimelineName | Array<Property$ViewTimelineName>,
   "view-transition-name"?: Property$ViewTransitionName | Array<Property$ViewTransitionName>,
   visibility?: Property$Visibility | Array<Property$Visibility>,
   "white-space"?: Property$WhiteSpace | Array<Property$WhiteSpace>,
+  "white-space-collapse"?: Property$WhiteSpaceCollapse | Array<Property$WhiteSpaceCollapse>,
+  "white-space-trim"?: Property$WhiteSpaceTrim | Array<Property$WhiteSpaceTrim>,
   widows?: Property$Widows | Array<Property$Widows>,
   width?: Property$Width<TLength> | Array<Property$Width<TLength>>,
   "will-change"?: Property$WillChange | Array<Property$WillChange>,
@@ -2978,6 +3045,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
 export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
   all?: Property$All | Array<Property$All>,
   animation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
+  "animation-range"?: Property$AnimationRange<TLength> | Array<Property$AnimationRange<TLength>>,
   background?: Property$Background<TLength> | Array<Property$Background<TLength>>,
   "background-position"?: Property$BackgroundPosition<TLength> | Array<Property$BackgroundPosition<TLength>>,
   border?: Property$Border<TLength> | Array<Property$Border<TLength>>,
@@ -3042,6 +3110,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0, TTim
   "text-decoration"?: Property$TextDecoration<TLength> | Array<Property$TextDecoration<TLength>>,
   "text-emphasis"?: Property$TextEmphasis | Array<Property$TextEmphasis>,
   transition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
+  "view-timeline"?: Property$ViewTimeline | Array<Property$ViewTimeline>,
 |};
 
 export type StandardPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
@@ -3059,7 +3128,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-moz-animation-play-state"?: Property$AnimationPlayState | Array<Property$AnimationPlayState>,
   "-moz-animation-timing-function"?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
   "-moz-appearance"?: Property$MozAppearance | Array<Property$MozAppearance>,
-  "-moz-backface-visibility"?: Property$BackfaceVisibility | Array<Property$BackfaceVisibility>,
   "-moz-binding"?: Property$MozBinding | Array<Property$MozBinding>,
   "-moz-border-bottom-colors"?: Property$MozBorderBottomColors | Array<Property$MozBorderBottomColors>,
   "-moz-border-end-color"?: Property$BorderInlineEndColor | Array<Property$BorderInlineEndColor>,
@@ -3086,20 +3154,16 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-moz-margin-start"?: Property$MarginInlineStart<TLength> | Array<Property$MarginInlineStart<TLength>>,
   "-moz-orient"?: Property$MozOrient | Array<Property$MozOrient>,
   "-moz-osx-font-smoothing"?: Property$FontSmooth<TLength> | Array<Property$FontSmooth<TLength>>,
+  "-moz-outline-radius-bottomleft"?: Property$MozOutlineRadiusBottomleft<TLength> | Array<Property$MozOutlineRadiusBottomleft<TLength>>,
+  "-moz-outline-radius-bottomright"?: Property$MozOutlineRadiusBottomright<TLength> | Array<Property$MozOutlineRadiusBottomright<TLength>>,
+  "-moz-outline-radius-topleft"?: Property$MozOutlineRadiusTopleft<TLength> | Array<Property$MozOutlineRadiusTopleft<TLength>>,
+  "-moz-outline-radius-topright"?: Property$MozOutlineRadiusTopright<TLength> | Array<Property$MozOutlineRadiusTopright<TLength>>,
   "-moz-padding-end"?: Property$PaddingInlineEnd<TLength> | Array<Property$PaddingInlineEnd<TLength>>,
   "-moz-padding-start"?: Property$PaddingInlineStart<TLength> | Array<Property$PaddingInlineStart<TLength>>,
-  "-moz-perspective"?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
-  "-moz-perspective-origin"?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
   "-moz-stack-sizing"?: Property$MozStackSizing | Array<Property$MozStackSizing>,
   "-moz-tab-size"?: Property$TabSize<TLength> | Array<Property$TabSize<TLength>>,
   "-moz-text-blink"?: Property$MozTextBlink | Array<Property$MozTextBlink>,
   "-moz-text-size-adjust"?: Property$TextSizeAdjust | Array<Property$TextSizeAdjust>,
-  "-moz-transform-origin"?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
-  "-moz-transform-style"?: Property$TransformStyle | Array<Property$TransformStyle>,
-  "-moz-transition-delay"?: Property$TransitionDelay<TTime> | Array<Property$TransitionDelay<TTime>>,
-  "-moz-transition-duration"?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
-  "-moz-transition-property"?: Property$TransitionProperty | Array<Property$TransitionProperty>,
-  "-moz-transition-timing-function"?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
   "-moz-user-focus"?: Property$MozUserFocus | Array<Property$MozUserFocus>,
   "-moz-user-modify"?: Property$MozUserModify | Array<Property$MozUserModify>,
   "-moz-user-select"?: Property$UserSelect | Array<Property$UserSelect>,
@@ -3282,7 +3346,7 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0, TTime 
   "-moz-border-image"?: Property$BorderImage | Array<Property$BorderImage>,
   "-moz-column-rule"?: Property$ColumnRule<TLength> | Array<Property$ColumnRule<TLength>>,
   "-moz-columns"?: Property$Columns<TLength> | Array<Property$Columns<TLength>>,
-  "-moz-transition"?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
+  "-moz-outline-radius"?: Property$MozOutlineRadius<TLength> | Array<Property$MozOutlineRadius<TLength>>,
   "-ms-content-zoom-limit"?: Property$MsContentZoomLimit | Array<Property$MsContentZoomLimit>,
   "-ms-content-zoom-snap"?: Property$MsContentZoomSnap | Array<Property$MsContentZoomSnap>,
   "-ms-flex"?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
@@ -3348,6 +3412,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-khtml-line-break"?: Property$LineBreak | Array<Property$LineBreak>,
   "-khtml-opacity"?: Property$Opacity | Array<Property$Opacity>,
   "-khtml-user-select"?: Property$UserSelect | Array<Property$UserSelect>,
+  "-moz-backface-visibility"?: Property$BackfaceVisibility | Array<Property$BackfaceVisibility>,
   "-moz-background-clip"?: Property$BackgroundClip | Array<Property$BackgroundClip>,
   "-moz-background-inline-policy"?: Property$BoxDecorationBreak | Array<Property$BoxDecorationBreak>,
   "-moz-background-origin"?: Property$BackgroundOrigin | Array<Property$BackgroundOrigin>,
@@ -3369,17 +3434,22 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-moz-opacity"?: Property$Opacity | Array<Property$Opacity>,
   "-moz-outline"?: Property$Outline<TLength> | Array<Property$Outline<TLength>>,
   "-moz-outline-color"?: Property$OutlineColor | Array<Property$OutlineColor>,
-  "-moz-outline-radius"?: Property$MozOutlineRadius<TLength> | Array<Property$MozOutlineRadius<TLength>>,
-  "-moz-outline-radius-bottomleft"?: Property$MozOutlineRadiusBottomleft<TLength> | Array<Property$MozOutlineRadiusBottomleft<TLength>>,
-  "-moz-outline-radius-bottomright"?: Property$MozOutlineRadiusBottomright<TLength> | Array<Property$MozOutlineRadiusBottomright<TLength>>,
-  "-moz-outline-radius-topleft"?: Property$MozOutlineRadiusTopleft<TLength> | Array<Property$MozOutlineRadiusTopleft<TLength>>,
-  "-moz-outline-radius-topright"?: Property$MozOutlineRadiusTopright<TLength> | Array<Property$MozOutlineRadiusTopright<TLength>>,
   "-moz-outline-style"?: Property$OutlineStyle | Array<Property$OutlineStyle>,
   "-moz-outline-width"?: Property$OutlineWidth<TLength> | Array<Property$OutlineWidth<TLength>>,
+  "-moz-perspective"?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
+  "-moz-perspective-origin"?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
   "-moz-text-align-last"?: Property$TextAlignLast | Array<Property$TextAlignLast>,
   "-moz-text-decoration-color"?: Property$TextDecorationColor | Array<Property$TextDecorationColor>,
   "-moz-text-decoration-line"?: Property$TextDecorationLine | Array<Property$TextDecorationLine>,
   "-moz-text-decoration-style"?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
+  "-moz-transform"?: Property$Transform | Array<Property$Transform>,
+  "-moz-transform-origin"?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
+  "-moz-transform-style"?: Property$TransformStyle | Array<Property$TransformStyle>,
+  "-moz-transition"?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
+  "-moz-transition-delay"?: Property$TransitionDelay<TTime> | Array<Property$TransitionDelay<TTime>>,
+  "-moz-transition-duration"?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
+  "-moz-transition-property"?: Property$TransitionProperty | Array<Property$TransitionProperty>,
+  "-moz-transition-timing-function"?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
   "-moz-user-input"?: Property$MozUserInput | Array<Property$MozUserInput>,
   "-ms-ime-mode"?: Property$ImeMode | Array<Property$ImeMode>,
   "-o-animation"?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
@@ -3412,8 +3482,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-webkit-box-ordinal-group"?: Property$BoxOrdinalGroup | Array<Property$BoxOrdinalGroup>,
   "-webkit-box-orient"?: Property$BoxOrient | Array<Property$BoxOrient>,
   "-webkit-box-pack"?: Property$BoxPack | Array<Property$BoxPack>,
-  "-webkit-scroll-snap-points-x"?: Property$ScrollSnapPointsX | Array<Property$ScrollSnapPointsX>,
-  "-webkit-scroll-snap-points-y"?: Property$ScrollSnapPointsY | Array<Property$ScrollSnapPointsY>,
 |};
 
 export type SvgPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
@@ -3500,7 +3568,9 @@ export type AtRules =
   | "@namespace"
   | "@page"
   | "@property"
+  | "@scope"
   | "@scroll-timeline"
+  | "@starting-style"
   | "@supports"
   | "@viewport";
 
@@ -3658,6 +3728,7 @@ export type HtmlAttributes =
   | "[alt]"
   | "[archive]"
   | "[async]"
+  | "[attributionsrc]"
   | "[autobuffer]"
   | "[autocapitalize]"
   | "[autocomplete]"
@@ -3667,8 +3738,10 @@ export type HtmlAttributes =
   | "[background]"
   | "[behavior]"
   | "[bgcolor]"
+  | "[blocking]"
   | "[border]"
   | "[bottommargin]"
+  | "[browsingtopics]"
   | "[capture]"
   | "[cellpadding]"
   | "[cellspacing]"
@@ -3680,7 +3753,6 @@ export type HtmlAttributes =
   | "[class]"
   | "[classid]"
   | "[clear]"
-  | "[code]"
   | "[codebase]"
   | "[codetype]"
   | "[color]"
@@ -3695,8 +3767,6 @@ export type HtmlAttributes =
   | "[credentialless]"
   | "[crossorigin]"
   | "[data]"
-  | "[datafld]"
-  | "[datasrc]"
   | "[datetime]"
   | "[declare]"
   | "[decoding]"
@@ -3759,13 +3829,13 @@ export type HtmlAttributes =
   | "[marginwidth]"
   | "[max]"
   | "[maxlength]"
-  | "[mayscript]"
   | "[media]"
   | "[method]"
   | "[methods]"
   | "[min]"
   | "[minlength]"
   | "[moz-opaque]"
+  | "[mozactionhint]"
   | "[mozallowfullscreen]"
   | "[msallowfullscreen]"
   | "[multiple]"
@@ -3778,7 +3848,6 @@ export type HtmlAttributes =
   | "[noshade]"
   | "[novalidate]"
   | "[nowrap]"
-  | "[object]"
   | "[onerror]"
   | "[open]"
   | "[optimum]"
@@ -3786,8 +3855,10 @@ export type HtmlAttributes =
   | "[pattern]"
   | "[ping]"
   | "[placeholder]"
+  | "[popover]"
+  | "[popovertarget]"
+  | "[popovertargetaction]"
   | "[poster]"
-  | "[prefetch]"
   | "[preload]"
   | "[profile]"
   | "[readonly]"
@@ -3800,14 +3871,6 @@ export type HtmlAttributes =
   | "[rows]"
   | "[rowspan]"
   | "[rules]"
-  | "[sandbox-allow-downloads]"
-  | "[sandbox-allow-modals]"
-  | "[sandbox-allow-popups-to-escape-sandbox]"
-  | "[sandbox-allow-popups]"
-  | "[sandbox-allow-presentation]"
-  | "[sandbox-allow-same-origin]"
-  | "[sandbox-allow-storage-access-by-user-activation]"
-  | "[sandbox-allow-top-navigation-by-user-activation]"
   | "[sandbox]"
   | "[scope]"
   | "[scrollamount]"
@@ -3861,6 +3924,7 @@ export type SvgAttributes =
   | "[animation]"
   | "[arabic-form]"
   | "[ascent]"
+  | "[async]"
   | "[attributeName]"
   | "[attributeType]"
   | "[azimuth]"
@@ -3883,10 +3947,13 @@ export type SvgAttributes =
   | "[color]"
   | "[contentScriptType]"
   | "[contentStyleType]"
+  | "[crossorigin]"
   | "[cursor]"
   | "[cx]"
   | "[cy]"
   | "[d]"
+  | "[decoding]"
+  | "[defer]"
   | "[descent]"
   | "[diffuseConstant]"
   | "[direction]"
@@ -4124,6 +4191,12 @@ export type Property$AnimationName = Globals | "none" | string;
 
 export type Property$AnimationPlayState = Globals | "paused" | "running" | string;
 
+export type Property$AnimationRange<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "normal" | string;
+
+export type Property$AnimationRangeEnd<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "normal" | string;
+
+export type Property$AnimationRangeStart<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "normal" | string;
+
 export type Property$AnimationTimeline = Globals | DataType$SingleAnimationTimeline | string;
 
 export type Property$AnimationTimingFunction = Globals | DataType$EasingFunction | string;
@@ -4184,7 +4257,6 @@ export type Property$BlockSize<TLength = string | 0> =
   | "-moz-fit-content"
   | "-moz-max-content"
   | "-moz-min-content"
-  | "-webkit-fill-available"
   | "auto"
   | "fit-content"
   | "max-content"
@@ -4552,7 +4624,15 @@ export type Property$FontStretch = Globals | DataType$FontStretchAbsolute;
 
 export type Property$FontStyle = Globals | "italic" | "normal" | "oblique" | string;
 
-export type Property$FontSynthesis = Globals | "none" | "small-caps" | "style" | "weight" | string;
+export type Property$FontSynthesis = Globals | "none" | "position" | "small-caps" | "style" | "weight" | string;
+
+export type Property$FontSynthesisPosition = Globals | "auto" | "none";
+
+export type Property$FontSynthesisSmallCaps = Globals | "auto" | "none";
+
+export type Property$FontSynthesisStyle = Globals | "auto" | "none";
+
+export type Property$FontSynthesisWeight = Globals | "auto" | "none";
 
 export type Property$FontVariant =
   | Globals
@@ -4815,6 +4895,8 @@ export type Property$MaskSize<TLength = string | 0> = Globals | DataType$BgSize<
 
 export type Property$MaskType = Globals | "alpha" | "luminance";
 
+export type Property$MasonryAutoFlow = Globals | "definite-first" | "next" | "ordered" | "pack" | string;
+
 export type Property$MathDepth = Globals | "auto-add" | string | number;
 
 export type Property$MathShift = Globals | "compact" | "normal";
@@ -4941,11 +5023,11 @@ export type Property$MinWidth<TLength = string | 0> =
 
 export type Property$MixBlendMode = Globals | DataType$BlendMode | "plus-lighter";
 
-export type Property$Offset<TLength = string | 0> = Globals | DataType$Position<TLength> | DataType$GeometryBox | "auto" | "none" | string;
+export type Property$Offset<TLength = string | 0> = Globals | DataType$Position<TLength> | "auto" | "none" | "normal" | string;
 
 export type Property$OffsetDistance<TLength = string | 0> = Globals | TLength | string;
 
-export type Property$OffsetPath = Globals | DataType$GeometryBox | "none" | string;
+export type Property$OffsetPath = Globals | "none" | string;
 
 export type Property$OffsetRotate = Globals | "auto" | "reverse" | string;
 
@@ -4955,7 +5037,7 @@ export type Property$ObjectPosition<TLength = string | 0> = Globals | DataType$P
 
 export type Property$OffsetAnchor<TLength = string | 0> = Globals | DataType$Position<TLength> | "auto";
 
-export type Property$OffsetPosition<TLength = string | 0> = Globals | DataType$Position<TLength> | "auto";
+export type Property$OffsetPosition<TLength = string | 0> = Globals | DataType$Position<TLength> | "auto" | "normal";
 
 export type Property$Opacity = Globals | string | number;
 
@@ -4990,6 +5072,8 @@ export type Property$OverflowWrap = Globals | "anywhere" | "break-word" | "norma
 export type Property$OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
 export type Property$OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
+
+export type Property$Overlay = Globals | "auto" | "none";
 
 export type Property$OverscrollBehavior = Globals | "auto" | "contain" | "none" | string;
 
@@ -5131,7 +5215,7 @@ export type Property$ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximi
 
 export type Property$ScrollTimeline = Globals | "none" | string;
 
-export type Property$ScrollTimelineAxis = Globals | "block" | "horizontal" | "inline" | "vertical" | string;
+export type Property$ScrollTimelineAxis = Globals | "block" | "inline" | "x" | "y" | string;
 
 export type Property$ScrollTimelineName = Globals | "none" | string;
 
@@ -5151,7 +5235,7 @@ export type Property$TabSize<TLength = string | 0> = Globals | TLength | number;
 
 export type Property$TableLayout = Globals | "auto" | "fixed";
 
-export type Property$TextAlign = Globals | "center" | "end" | "justify" | "left" | "match-parent" | "right" | "start";
+export type Property$TextAlign = Globals | "-webkit-match-parent" | "center" | "end" | "justify" | "left" | "match-parent" | "right" | "start";
 
 export type Property$TextAlignLast = Globals | "auto" | "center" | "end" | "justify" | "left" | "right" | "start";
 
@@ -5217,6 +5301,10 @@ export type Property$TextUnderlineOffset<TLength = string | 0> = Globals | TLeng
 
 export type Property$TextUnderlinePosition = Globals | "auto" | "from-font" | "left" | "right" | "under" | string;
 
+export type Property$TextWrap = Globals | "balance" | "nowrap" | "pretty" | "stable" | "wrap";
+
+export type Property$TimelineScope = Globals | "none" | string;
+
 export type Property$Top<TLength = string | 0> = Globals | TLength | "auto" | string;
 
 export type Property$TouchAction =
@@ -5245,6 +5333,8 @@ export type Property$TransformOrigin<TLength = string | 0> = Globals | TLength |
 export type Property$TransformStyle = Globals | "flat" | "preserve-3d";
 
 export type Property$Transition<TTime = string> = Globals | DataType$SingleTransition<TTime> | string;
+
+export type Property$TransitionBehavior = Globals | "allow-discrete" | "normal" | string;
 
 export type Property$TransitionDelay<TTime = string> = Globals | TTime | string;
 
@@ -5275,11 +5365,45 @@ export type Property$UserSelect = Globals | "-moz-none" | "all" | "auto" | "cont
 
 export type Property$VerticalAlign<TLength = string | 0> = Globals | TLength | "baseline" | "bottom" | "middle" | "sub" | "super" | "text-bottom" | "text-top" | "top" | string;
 
+export type Property$ViewTimeline = Globals | "none" | string;
+
+export type Property$ViewTimelineAxis = Globals | "block" | "inline" | "x" | "y" | string;
+
+export type Property$ViewTimelineInset<TLength = string | 0> = Globals | TLength | "auto" | string;
+
+export type Property$ViewTimelineName = Globals | "none" | string;
+
 export type Property$ViewTransitionName = Globals | "none" | string;
 
 export type Property$Visibility = Globals | "collapse" | "hidden" | "visible";
 
-export type Property$WhiteSpace = Globals | "-moz-pre-wrap" | "break-spaces" | "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+export type Property$WhiteSpace =
+  | Globals
+  | "-moz-pre-wrap"
+  | "balance"
+  | "break-spaces"
+  | "collapse"
+  | "discard"
+  | "discard-after"
+  | "discard-before"
+  | "discard-inner"
+  | "none"
+  | "normal"
+  | "nowrap"
+  | "pre"
+  | "pre-line"
+  | "pre-wrap"
+  | "preserve"
+  | "preserve-breaks"
+  | "preserve-spaces"
+  | "pretty"
+  | "stable"
+  | "wrap"
+  | string;
+
+export type Property$WhiteSpaceCollapse = Globals | "break-spaces" | "collapse" | "discard" | "preserve" | "preserve-breaks" | "preserve-spaces";
+
+export type Property$WhiteSpaceTrim = Globals | "discard-after" | "discard-before" | "discard-inner" | "none" | string;
 
 export type Property$Widows = Globals | number;
 
@@ -6458,6 +6582,7 @@ type DataType$SingleAnimation<TTime> =
   | DataType$EasingFunction
   | DataType$SingleAnimationDirection
   | DataType$SingleAnimationFillMode
+  | DataType$SingleAnimationTimeline
   | TTime
   | "infinite"
   | "none"
@@ -6474,9 +6599,11 @@ type DataType$SingleAnimationFillMode = "backwards" | "both" | "forwards" | "non
 
 type DataType$SingleAnimationTimeline = "auto" | "none" | string;
 
-type DataType$SingleTransition<TTime> = DataType$EasingFunction | TTime | "all" | "none" | string;
+type DataType$SingleTransition<TTime> = DataType$EasingFunction | TTime | "all" | "allow-discrete" | "none" | "normal" | string;
 
 type DataType$StepTimingFunction = "step-end" | "step-start" | string;
+
+type DataType$TimelineRangeName = "contain" | "cover" | "entry" | "entry-crossing" | "exit" | "exit-crossing";
 
 type DataType$TrackBreadth<TLength> = TLength | "auto" | "max-content" | "min-content" | string;
 
