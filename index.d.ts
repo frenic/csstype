@@ -3529,7 +3529,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content.
    *
-   * **Syntax**: `visible | hidden | clip | scroll | auto`
+   * **Syntax**: `visible | hidden | clip | scroll | overlay | auto`
    *
    * **Initial value**: `visible`
    *
@@ -3543,7 +3543,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content.
    *
-   * **Syntax**: `visible | hidden | clip | scroll | auto`
+   * **Syntax**: `visible | hidden | clip | scroll | overlay | auto`
    *
    * **Initial value**: `visible`
    *
@@ -5861,7 +5861,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
   /**
    * The **`overflow`** CSS shorthand property sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
    *
-   * **Syntax**: `[ visible | hidden | clip | scroll | auto ]{1,2}`
+   * **Syntax**: `[ visible | hidden | clip | scroll | overlay | auto ]{1,2}`
    *
    * **Initial value**: `visible`
    *
@@ -6708,7 +6708,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /**
    * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content.
    *
-   * **Syntax**: `visible | hidden | clip | scroll | auto`
+   * **Syntax**: `visible | hidden | clip | scroll | overlay | auto`
    *
    * **Initial value**: `visible`
    */
@@ -6716,7 +6716,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /**
    * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content.
    *
-   * **Syntax**: `visible | hidden | clip | scroll | auto`
+   * **Syntax**: `visible | hidden | clip | scroll | overlay | auto`
    *
    * **Initial value**: `visible`
    */
@@ -12667,7 +12667,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content.
    *
-   * **Syntax**: `visible | hidden | clip | scroll | auto`
+   * **Syntax**: `visible | hidden | clip | scroll | overlay | auto`
    *
    * **Initial value**: `visible`
    *
@@ -12681,7 +12681,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content.
    *
-   * **Syntax**: `visible | hidden | clip | scroll | auto`
+   * **Syntax**: `visible | hidden | clip | scroll | overlay | auto`
    *
    * **Initial value**: `visible`
    *
@@ -14999,7 +14999,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
   /**
    * The **`overflow`** CSS shorthand property sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
    *
-   * **Syntax**: `[ visible | hidden | clip | scroll | auto ]{1,2}`
+   * **Syntax**: `[ visible | hidden | clip | scroll | overlay | auto ]{1,2}`
    *
    * **Initial value**: `visible`
    *
@@ -15846,7 +15846,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /**
    * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content.
    *
-   * **Syntax**: `visible | hidden | clip | scroll | auto`
+   * **Syntax**: `visible | hidden | clip | scroll | overlay | auto`
    *
    * **Initial value**: `visible`
    */
@@ -15854,7 +15854,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /**
    * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content.
    *
-   * **Syntax**: `visible | hidden | clip | scroll | auto`
+   * **Syntax**: `visible | hidden | clip | scroll | overlay | auto`
    *
    * **Initial value**: `visible`
    */
@@ -19840,7 +19840,7 @@ export namespace Property {
 
   export type OutlineWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength>;
 
-  export type Overflow = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible" | (string & {});
+  export type Overflow = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "overlay" | "scroll" | "visible" | (string & {});
 
   export type OverflowAnchor = Globals | "auto" | "none";
 
@@ -19854,9 +19854,9 @@ export namespace Property {
 
   export type OverflowWrap = Globals | "anywhere" | "break-word" | "normal";
 
-  export type OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
+  export type OverflowX = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "overlay" | "scroll" | "visible";
 
-  export type OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "scroll" | "visible";
+  export type OverflowY = Globals | "-moz-hidden-unscrollable" | "auto" | "clip" | "hidden" | "overlay" | "scroll" | "visible";
 
   export type Overlay = Globals | "auto" | "none";
 
