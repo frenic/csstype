@@ -62,3 +62,10 @@ exports[`Typescript 3.7 detects errors 16`] = `
   Type '[1]' is not assignable to type '[0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "fit-content" | ... 5 more ... | "min-intrinsic"]'.
     Type '1' is not assignable to type '0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "fit-content" | ... 5 more ... | "min-intrinsic"'."
 `;
+
+exports[`Typescript 3.7 detects errors 17`] = `
+"158:6 - Type 'Properties<string | 0>' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
+  Types of property 'dominantBaseline' are incompatible.
+    Type '"auto" | "inherit" | "hanging" | "middle" | "alphabetic" | "ideographic" | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "central" | "mathematical" | "text-after-edge" | ... 4 more ... | undefined' is not assignable to type '"auto" | "inherit" | "hanging" | "middle" | "alphabetic" | "ideographic" | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "central" | "mathematical" | "text-bottom" | "text-top" | undefined'.
+      Type '"text-after-edge"' is not assignable to type '"auto" | "inherit" | "hanging" | "middle" | "alphabetic" | "ideographic" | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "central" | "mathematical" | "text-bottom" | "text-top" | undefined'."
+`;

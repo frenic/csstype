@@ -48,92 +48,49 @@ declare namespace MDN {
   type CompatData = CompatDataInner & Record<string, CompatDataInner>;
 
   interface AtRulesCompat {
-    css: {
-      'at-rules': {
-        [rule: string]: CompatData;
-      };
-    };
+    [rule: string]: CompatData;
   }
 
   interface PropertiesCompat {
-    css: {
-      properties: {
-        [property: string]: CompatData;
-      };
-    };
+    [property: string]: CompatData;
   }
 
   interface SelectorsCompat {
-    css: {
-      selectors: {
-        [selector: string]: CompatData;
-      };
-    };
+    [selector: string]: CompatData;
   }
 
   interface TypesCompat {
-    css: {
-      types: {
-        [type: string]: CompatData;
-      };
-    };
+    [type: string]: CompatData;
   }
 
   interface GlobalAttributesCompat {
-    html: {
-      global_attributes: {
-        [attribute: string]: CompatData;
-      };
-    };
+    [attribute: string]: CompatData;
   }
 
   interface AttributesCompat {
-    [htmlOrSvg: string]: {
-      [attributesOrElements: string]: {
-        [categoryOrElement: string]: {
-          [attribute: string]: CompatData;
-        };
-      };
+    [categoryOrElement: string]: {
+      [attribute: string]: CompatData;
     };
   }
 }
 
-declare module 'browser-compat-data/css/at-rules/*.json' {
-  var atRules: MDN.AtRulesCompat;
-  export = atRules;
-}
+declare module 'mdn-browser-compat-data' {
+  const data: {
+    "css": {
+      "at-rules": MDN.AtRulesCompat,
+      "properties": MDN.PropertiesCompat,
+      "selectors": MDN.SelectorsCompat,
+      "types": MDN.TypesCompat,
+    },
+    "html": {
+      "elements": MDN.AttributesCompat;
+      "global_attributes": MDN.GlobalAttributesCompat;
+    },
+    "svg": {
+      "elements": MDN.AttributesCompat;
+      "global_attributes": MDN.AttributesCompat;
+    }
+  };
 
-declare module 'browser-compat-data/css/properties/*.json' {
-  var properties: MDN.PropertiesCompat;
-  export = properties;
-}
-
-declare module 'browser-compat-data/css/selectors/*.json' {
-  var selectors: MDN.SelectorsCompat;
-  export = selectors;
-}
-
-declare module 'browser-compat-data/css/types/*.json' {
-  var types: MDN.TypesCompat;
-  export = types;
-}
-
-declare module 'mdn-browser-compat-data/html/global_attributes.json' {
-  var types: MDN.GlobalAttributesCompat;
-  export = types;
-}
-
-declare module 'mdn-browser-compat-data/html/elements/*.json' {
-  var types: MDN.AttributesCompat;
-  export = types;
-}
-
-declare module 'mdn-browser-compat-data/svg/attributes/*.json' {
-  var types: MDN.AttributesCompat;
-  export = types;
-}
-
-declare module 'mdn-browser-compat-data/svg/elements/*.json' {
-  var types: MDN.AttributesCompat;
-  export = types;
+  export = data;
 }

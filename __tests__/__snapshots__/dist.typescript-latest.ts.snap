@@ -44,3 +44,10 @@ exports[`Typescript 5.0 detects errors 14`] = `"145:25 - This comparison appears
 exports[`Typescript 5.0 detects errors 15`] = `"155:34 - Argument of type '1' is not assignable to parameter of type 'Width<0 | (string & {})> | [Width<0 | (string & {})>]'."`;
 
 exports[`Typescript 5.0 detects errors 16`] = `"156:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
+
+exports[`Typescript 5.0 detects errors 17`] = `
+"158:6 - Type 'Properties<string | 0>' is not assignable to type 'Properties<0 | (string & {}), string & {}>'.
+  Types of property 'dominantBaseline' are incompatible.
+    Type 'DominantBaselineProperty | undefined' is not assignable to type 'DominantBaseline | undefined'.
+      Type '"text-after-edge"' is not assignable to type 'DominantBaseline | undefined'."
+`;

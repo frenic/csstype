@@ -1,6 +1,5 @@
 import { definitionSyntax, DSNodeGroup } from 'css-tree';
-
-const importsCache: { [cssPath: string]: MDN.CompatData | undefined } = {};
+import * as rawGlobalAttributes from 'mdn-browser-compat-data';
 
 interface IRegularCompat {
   __compat: MDN.Compat;
@@ -40,22 +39,18 @@ async function getData(
   type: 'at-rules' | 'properties' | 'selectors' | 'types',
   name: string,
 ): Promise<MDN.CompatData | undefined> {
-  const cssPath = type + '/' + name;
-  if (cssPath in importsCache) {
-    return importsCache[cssPath];
-  }
-
   try {
-    const data = await import(`mdn-browser-compat-data/css/${cssPath}.json`);
+    const data = rawGlobalAttributes.css[type];
 
     if (!data) {
-      return (importsCache[cssPath] = undefined);
+      return (undefined);
     }
 
-    const cssData = data.css[type][name];
-    return (importsCache[cssPath] = cssData);
-  } catch {
-    return (importsCache[cssPath] = undefined);
+    const cssData = data[name];
+
+    return cssData;
+  } catch (error) {
+    return undefined;
   }
 }
 

@@ -69,7 +69,6 @@ export async function getSummary(url: string): Promise<string | undefined> {
   let summaryData: string | undefined = urlData[url];
 
   if (url && !summaryData) {
-    console.log('Fetching summary for ' + url);
     summaryData = await scrapeSummary(url);
     if (summaryData) {
       urlData[url] = summaryData;

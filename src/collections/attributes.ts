@@ -1,5 +1,4 @@
-import * as glob from 'fast-glob';
-import * as rawGlobalAttributes from 'mdn-browser-compat-data/html/global_attributes.json';
+import * as rawGlobalAttributes from 'mdn-browser-compat-data';
 import { hasType, ResolvedType, Type, TypeType } from '../syntax/typer';
 import { alternativeAttributes } from '../utils/compat';
 
@@ -33,26 +32,19 @@ function assembleAttributes(baseAttrs: ResolvedType[], dataset: { [key: string]:
 
 async function fetchAttributes(
   baseAttrs: ResolvedType[],
-  lang: 'html' | 'svg',
-  type: 'attributes' | 'elements',
+  keys:
+    | { lang: 'html', type: 'elements' }
+    | { lang: 'svg', type: 'global_attributes' | 'elements' }
 ): Promise<ResolvedType[]> {
   let attributes: ResolvedType[] = baseAttrs;
 
-  const files = glob.sync(`node_modules/mdn-browser-compat-data/${lang}/${type}/*.json`, {
-    absolute: true,
-  });
+  if (rawGlobalAttributes?.[keys.lang]?.[keys.type]) {
+    const compactAttributes = rawGlobalAttributes[keys.lang][keys.type] as MDN.AttributesCompat;
 
-  await Promise.all(
-    files.map(async file => {
-      const data: MDN.AttributesCompat = await import(String(file));
-
-      if (data && data[lang] && data[lang][type]) {
-        Object.keys(data[lang][type]).forEach(element => {
-          attributes = assembleAttributes(attributes, data[lang][type][element]);
-        });
-      }
-    }),
-  );
+    Object.keys(compactAttributes).forEach(element => {
+      attributes = assembleAttributes(attributes, (compactAttributes)[element]);
+    });
+  }
 
   return attributes;
 }
@@ -61,7 +53,7 @@ export async function getHtmlAttributes() {
   let attributes: ResolvedType[] = [];
 
   attributes = assembleAttributes(attributes, rawGlobalAttributes.html.global_attributes);
-  attributes = await fetchAttributes(attributes, 'html', 'elements');
+  attributes = await fetchAttributes(attributes, { lang: 'html', type: 'elements' });
 
   return attributes;
 }
@@ -69,8 +61,8 @@ export async function getHtmlAttributes() {
 export async function getSvgAttributes() {
   let attributes: ResolvedType[] = [];
 
-  attributes = await fetchAttributes(attributes, 'svg', 'attributes');
-  attributes = await fetchAttributes(attributes, 'svg', 'elements');
+  attributes = await fetchAttributes(attributes, { lang: 'svg', type: 'global_attributes' });
+  attributes = await fetchAttributes(attributes, { lang: 'svg', type: 'elements' });
 
   return attributes;
 }
