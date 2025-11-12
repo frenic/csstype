@@ -1,5 +1,5 @@
-import * as rawProperties from 'mdn-data/css/properties.json';
-import * as rawSyntaxes from 'mdn-data/css/syntaxes.json';
+import rawProperties from 'mdn-data/css/properties.json';
+import rawSyntaxes from 'mdn-data/css/syntaxes.json';
 import { IExtendedProperty, properties as patchedProperties, syntaxes as patchedSyntaxes } from '../data/patches';
 import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from '../data/svg';
 import parse from '../syntax/parser';

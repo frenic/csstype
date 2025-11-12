@@ -2,8 +2,11 @@ import * as chokidar from 'chokidar';
 import * as path from 'path';
 import * as prettier from 'prettier';
 import { FLOW_FILENAME, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
-
 import { runCLI } from 'jest';
+import { fileURLToPath } from 'url';
+import { Config } from '@jest/types';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 if (process.argv.includes('--start')) {
   trigger()
@@ -21,7 +24,7 @@ if (process.argv.includes('--start')) {
     })
     .then(() => {
       console.info('Done! Watching...');
-      let debounce: NodeJS.Timer;
+      let debounce: NodeJS.Timeout;
       chokidar.watch(path.join(__dirname, 'src'), { ignored: '*.json', ignoreInitial: true }).on('all', () => {
         clearTimeout(debounce);
         debounce = setTimeout(
@@ -50,12 +53,12 @@ export default async function trigger() {
 }
 
 async function create() {
-  const generatePath = path.resolve('./src');
-  for (const key in require.cache) {
-    if (key.indexOf(generatePath) !== -1) {
-      delete require.cache[key];
-    }
-  }
+  // const generatePath = path.resolve('./src');
+  // for (const key in require.cache) {
+  //   if (key.indexOf(generatePath) !== -1) {
+  //     delete require.cache[key];
+  //   }
+  // }
   const { default: generateFlow } = await import('./src/flow');
   const { default: generateTypescript } = await import('./src/typescript');
   return { unformattedFlow: await generateFlow(), unformattedTypescript: await generateTypescript() };
@@ -72,5 +75,5 @@ async function format(output: string, parser: prettier.BuiltInParserName) {
 }
 
 function testing() {
-  return runCLI({ testMatch: ['**/__tests__/dist.*.ts'], runInBand: true } as any, [__dirname]);
+  return runCLI({ testMatch: ['**/__tests__/dist.*.ts'], runInBand: true } as Config.Argv, [__dirname]);
 }

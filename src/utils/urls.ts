@@ -1,13 +1,14 @@
 import * as fs from 'fs';
 import * as jsdom from 'jsdom';
 import * as path from 'path';
-import * as request from 'request';
-import * as Turndown from 'turndown';
+import Turndown from 'turndown';
 import { error, warn } from './logger';
+import urlData from '../data/urls.json';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const pathToCache = path.join(__dirname, '../data/urls.json');
-
-const urlData: Record<string, string> = require(pathToCache);
 
 const turndown = new Turndown();
 
@@ -19,17 +20,8 @@ turndown.addRule('anchor', {
 
 async function scrapeSummary(url: string): Promise<string | undefined> {
   try {
-    const htmlContents: string = await new Promise((resolve, reject) => {
-      request(url, (e, response, body) => {
-        if (e) {
-          reject(e);
-        } else if (response.statusCode < 200 || response.statusCode >= 300) {
-          reject(`Response status code ${response.statusCode}`);
-        } else {
-          resolve(body);
-        }
-      });
-    });
+    const htmlResponse = await fetch(url);
+    const htmlContents = await htmlResponse.text();
 
     const { window } = new jsdom.JSDOM(htmlContents);
     const summaryElement = window.document.querySelector('main :not(.notecard) > p:not(:empty)');
@@ -47,7 +39,7 @@ async function scrapeSummary(url: string): Promise<string | undefined> {
 
 function saveToFile(): void {
   try {
-    const sortedUrlData = Object.keys(urlData)
+    const sortedUrlData = (Object.keys(urlData) as (keyof typeof urlData)[])
       .sort()
       .reduce<Record<string, string>>((data, url) => {
         data[url] = urlData[url];
@@ -66,13 +58,13 @@ function saveToFile(): void {
 }
 
 export async function getSummary(url: string): Promise<string | undefined> {
-  let summaryData: string | undefined = urlData[url];
+  let summaryData: string | undefined = urlData[url as keyof typeof urlData];
 
   if (url && !summaryData) {
     console.log('Fetching summary for ' + url);
     summaryData = await scrapeSummary(url);
     if (summaryData) {
-      urlData[url] = summaryData;
+      urlData[url as keyof typeof urlData] = summaryData;
       saveToFile();
     }
   }

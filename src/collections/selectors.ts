@@ -1,4 +1,4 @@
-import * as selectors from 'mdn-data/css/selectors.json';
+import selectors from 'mdn-data/css/selectors.json';
 import { hasType, ResolvedType, Type, TypeType } from '../syntax/typer';
 import { alternativeSelectors } from '../utils/compat';
 

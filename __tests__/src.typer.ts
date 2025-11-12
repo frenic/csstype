@@ -93,3 +93,5 @@ describe('typing', () => {
     expect(typer(parse('<number [1,1000]>'))).toMatchObject([{ type: Type.Number }]);
   });
 });
+
+jest.mock('chalk', () => ({}) as typeof import('chalk'));

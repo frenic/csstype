@@ -2,10 +2,12 @@ import build from './build';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import * as packageJson from './package.json';
+import packageJson from './package.json';
 import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
 
 async function update() {
+  const nextPackageJson = { ...packageJson };
+
   if ((await spawnAsync('git', 'status', '--porcelain')) !== '') {
     console.error('Your working directory needs to be clean!');
     process.exit(1);
@@ -16,8 +18,8 @@ async function update() {
   const MDN_DATA = 'mdn-data';
   const MDN_COMPAT = 'mdn-browser-compat-data';
 
-  const [mdnDataRepo, currentMdnDataCommit] = packageJson.devDependencies[MDN_DATA].split('#');
-  const [mdnCompatRepo, currentMdnCompatCommit] = packageJson.devDependencies[MDN_COMPAT].split('#');
+  const [mdnDataRepo, currentMdnDataCommit] = nextPackageJson.devDependencies[MDN_DATA].split('#');
+  const [mdnCompatRepo, currentMdnCompatCommit] = nextPackageJson.devDependencies[MDN_COMPAT].split('#');
 
   const [mdnDataMaster, mdnCompatMaster] = [
     await getJsonAsync({
@@ -32,17 +34,19 @@ async function update() {
     }),
   ];
 
-  const latestMdnDataCommit = mdnDataMaster.commit.sha;
-  const latestMdnCompatCommit = mdnCompatMaster.commit.sha;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const latestMdnDataCommit = (mdnDataMaster as any).commit.sha;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const latestMdnCompatCommit = (mdnCompatMaster as any).commit.sha;
 
   if (latestMdnDataCommit !== currentMdnDataCommit || latestMdnCompatCommit !== currentMdnCompatCommit) {
     console.info('Update found!');
     console.info('Upgrading...');
 
-    packageJson.devDependencies[MDN_DATA] = `${mdnDataRepo}#${latestMdnDataCommit}`;
-    packageJson.devDependencies[MDN_COMPAT] = `${mdnCompatRepo}#${latestMdnCompatCommit}`;
+    nextPackageJson.devDependencies[MDN_DATA] = `${mdnDataRepo}#${latestMdnDataCommit}`;
+    nextPackageJson.devDependencies[MDN_COMPAT] = `${mdnCompatRepo}#${latestMdnCompatCommit}`;
 
-    await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
+    await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
     await install();
 
     await build();
@@ -62,13 +66,13 @@ async function update() {
       if (doPrepare === 'y') {
         await spawnAsync('git', 'commit', '-am', 'Bump MDN');
 
-        const [major, minor, patch] = packageJson.version.split('.');
+        const [major, minor, patch] = nextPackageJson.version.split('.');
         const version = `${major}.${minor}.${Number(patch) + 1}`;
         const tag = `v${version}`;
 
-        packageJson.version = version;
+        nextPackageJson.version = version;
 
-        await writeFileAsync('./package.json', JSON.stringify(packageJson, null, 2) + '\n');
+        await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
         await spawnAsync('git', 'commit', '-am', tag);
         await spawnAsync('git', 'tag', tag);
 

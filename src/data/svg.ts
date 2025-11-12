@@ -1,7 +1,7 @@
 // This is originated from https://svgwg.org/svg2-draft/propidx.html to add SVG specific properties
 // and is a temporarily solution until https://github.com/mdn/data/issues/59 is solved
 
-import * as styleProperties from 'mdn-data/css/properties.json';
+import styleProperties from 'mdn-data/css/properties.json';
 
 export const properties: { [property: string]: Pick<MDN.Property, 'syntax' | 'initial' | 'inherited' | 'media'> } = {
   'alignment-baseline': {

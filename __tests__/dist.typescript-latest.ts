@@ -13,7 +13,7 @@ describe('Typescript 5.0', () => {
       )}`;
     });
 
-    expect(Number(ts.versionMajorMinor)).toBe(5.0);
+    expect(Number(ts.versionMajorMinor)).toBe(5.9);
     expect(errors.length).toBe(16);
     for (const error of errors) {
       expect(error).toMatchSnapshot();

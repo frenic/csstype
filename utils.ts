@@ -1,9 +1,13 @@
-import { spawn, SpawnOptions } from 'child_process';
+import { spawn } from 'child_process';
+import type { SpawnOptions } from 'child_process';
 import { writeFile } from 'fs';
-import { get, RequestOptions } from 'https';
+import { get } from 'https';
+import type { RequestOptions } from 'https';
+import path from 'path';
 import { createInterface } from 'readline';
+import { fileURLToPath } from 'url';
 
-export const ROOT_DIR = __dirname;
+export const ROOT_DIR = path.dirname(fileURLToPath(import.meta.url));
 export const TYPESCRIPT_FILENAME = 'index.d.ts';
 export const FLOW_FILENAME = 'index.js.flow';
 
@@ -46,7 +50,7 @@ export function spawnAsync(command: string, optionsOrArg: SpawnOptions | string,
   });
 }
 
-export function getJsonAsync(url: RequestOptions): Promise<any> {
+export function getJsonAsync(url: RequestOptions): Promise<unknown> {
   return new Promise((resolve, reject) => {
     const req = get(url, res => {
       let data = '';

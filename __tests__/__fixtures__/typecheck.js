@@ -1,7 +1,6 @@
 // @flow strict
 import * as CSS from '../../index.js.flow';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const css: CSS.Properties<> = {
   flexGrow: 1,
   flexShrink: 1,
@@ -18,7 +17,6 @@ const css: CSS.Properties<> = {
   lineHeightStep: '2em',
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cssWithFallbackValues: CSS.PropertiesFallback<> = {
   flexGrow: [1],
   flexShrink: [1],
@@ -28,7 +26,6 @@ const cssWithFallbackValues: CSS.PropertiesFallback<> = {
   msOverflowStyle: ['scrollbar'],
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cssWithHyphenProperties: CSS.PropertiesHyphen<> = {
   'flex-grow': 1,
   'flex-shrink': 0,
@@ -38,24 +35,20 @@ const cssWithHyphenProperties: CSS.PropertiesHyphen<> = {
   '-ms-overflow-style': 'scrollbar',
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cssWithDifferentLength: CSS.Properties<number> = {
   width: 1,
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const unknownProperty: CSS.Properties<> = {
   unknownProperty: 1,
 };
 
 // Should fail but doesn't
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cssWithDisallowedValue: CSS.Properties<> = {
   order: '0',
 };
 
 // Should fail but doesn't
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cssWithDisallowedFallbackValues: CSS.Properties<> = {
   bottom: [0],
   order: [0],

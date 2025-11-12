@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Typescript 4.8 detects errors 1`] = `"31:9 - Type 'undefined' is not assignable to type 'string'."`;
 

@@ -1,4 +1,4 @@
-import * as atRules from 'mdn-data/css/at-rules.json';
+import atRules from 'mdn-data/css/at-rules.json';
 import parse from '../syntax/parser';
 import typer, { IStringLiteral, ResolvedType, Type } from '../syntax/typer';
 import { compatNames, compatSyntax, getAtRuleData, getCompats, isAddedBySome } from '../utils/compat';

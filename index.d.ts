@@ -1,10 +1,7 @@
 export {};
 
-export type PropertyValue<TValue> = TValue extends Array<infer AValue>
-  ? Array<AValue extends infer TUnpacked & {} ? TUnpacked : AValue>
-  : TValue extends infer TUnpacked & {}
-  ? TUnpacked
-  : TValue;
+export type PropertyValue<TValue> =
+  TValue extends Array<infer AValue> ? Array<AValue extends infer TUnpacked & {} ? TUnpacked : AValue> : TValue extends infer TUnpacked & {} ? TUnpacked : TValue;
 
 export type Fallback<T> = { [P in keyof T]: T[P] | readonly NonNullable<T[P]>[] };
 

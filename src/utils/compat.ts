@@ -215,7 +215,7 @@ export function alternativeAttributes(name: string, data: MDN.CompatData): strin
 
   for (const compat of compats) {
     for (const browser in compat.support) {
-      const support = (compat.support as any)[browser];
+      const support = compat.support[browser as keyof typeof compat.support];
 
       for (const version of getSupport(support)) {
         // Assume that the version has the property implemented if `null`

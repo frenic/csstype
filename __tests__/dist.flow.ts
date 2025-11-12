@@ -1,6 +1,7 @@
 import { spawnSync } from 'child_process';
 import * as path from 'path';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const flow: string = require('flow-bin');
 
 test('it detects errors', () => {
@@ -64,7 +65,7 @@ interface IMessage {
 interface IError {
   kind: string;
   level: string;
-  suppressions: any[];
+  suppressions: unknown[];
   extra: IExtra[];
   message: IMessage[];
 }

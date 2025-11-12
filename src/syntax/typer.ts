@@ -1,4 +1,4 @@
-import * as cssTypes from 'mdn-data/css/types.json';
+import cssTypes from 'mdn-data/css/types.json';
 import { definitionSyntax, DSNode, DSNodeGroup } from 'css-tree';
 import { isSyntax } from '../collections/syntaxes';
 

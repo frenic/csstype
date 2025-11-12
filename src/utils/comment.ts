@@ -1,4 +1,4 @@
-import * as l10n from 'mdn-data/l10n/css.json';
+import l10n from 'mdn-data/l10n/css.json';
 import { format } from 'prettier';
 import { IExtendedProperty } from '../data/patches';
 import { getCompats } from '../utils/compat';
@@ -40,7 +40,7 @@ export async function composeCommentBlock(
 
   // Skip compatibility table for obsolete and vendor properties
   if (includeCompatibility) {
-    rows.push(...getCompatRows(compatibilityData!));
+    rows.push(...(await getCompatRows(compatibilityData!)));
   }
 
   if (obsolete) {
@@ -61,7 +61,7 @@ export async function composeCommentBlock(
   }
 }
 
-function getCompatRows(compatibilityData: MDN.CompatData) {
+async function getCompatRows(compatibilityData: MDN.CompatData) {
   const compats = getCompats(compatibilityData);
   const rows: string[] = [];
 
@@ -83,16 +83,18 @@ function getCompatRows(compatibilityData: MDN.CompatData) {
     const versions = [chrome, firefox, safari, edge, ie];
 
     rows.push(
-      ...format(
-        [
-          '| Chrome | Firefox | Safari | Edge | IE |',
-          '| :---: | :---: | :---: | :---: | :---: |',
-          '| ' + versions.map(version => version[0] || '').join(' | ') + ' |',
-          versions.some(version => !!version[1])
-            ? '| ' + versions.map(version => version[1] || '').join(' | ') + ' |'
-            : '',
-        ].join('\n'),
-        { parser: 'markdown' },
+      ...(
+        await format(
+          [
+            '| Chrome | Firefox | Safari | Edge | IE |',
+            '| :---: | :---: | :---: | :---: | :---: |',
+            '| ' + versions.map(version => version[0] || '').join(' | ') + ' |',
+            versions.some(version => !!version[1])
+              ? '| ' + versions.map(version => version[1] || '').join(' | ') + ' |'
+              : '',
+          ].join('\n'),
+          { parser: 'markdown' },
+        )
       )
         .trim()
         .split('\n'),
@@ -191,8 +193,8 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
           (supportsPrefixed.prefix
             ? ` _-x-_`
             : supportsPrefixed.alternative_name
-            ? ` _(${supportsPrefixed.alternative_name})_`
-            : ''),
+              ? ` _(${supportsPrefixed.alternative_name})_`
+              : ''),
       );
     }
 
