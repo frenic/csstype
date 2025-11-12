@@ -1,3 +1,4 @@
+import { Identifier } from '@mdn/browser-compat-data';
 import parse from '../syntax/parser';
 import typer, { DataType, hasType, IDataType, ResolvedType, Type, TypeType } from '../syntax/typer';
 import { compatSyntax } from '../utils/compat';
@@ -77,7 +78,7 @@ async function simpleDataTypeResolver(
     : [{ type: Type.String }];
 }
 
-export function createPropertyDataTypeResolver(data: MDN.CompatData | undefined) {
+export function createPropertyDataTypeResolver(data: Identifier | undefined) {
   const resolver: (
     dictionary: IDataTypeDictionary,
     dataType: IDataType,

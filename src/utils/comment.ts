@@ -1,7 +1,8 @@
-import l10n from 'mdn-data/l10n/css.json';
 import { format } from 'prettier';
+import l10n from 'mdn-data/l10n/css.json';
+import { Identifier, SupportStatement } from '@mdn/browser-compat-data';
 import { IExtendedProperty } from '../data/patches';
-import { getCompats } from '../utils/compat';
+import { getCompats, getSupport, SupportedSimpleSupportStatement, versionAdded } from '../utils/compat';
 import { warn } from './logger';
 import { getSummary } from './urls';
 
@@ -9,7 +10,7 @@ const BLANK_ROW = '';
 const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\\}]+\}\})/;
 
 export async function composeCommentBlock(
-  compatibilityData: MDN.CompatData | undefined,
+  compatibilityData: Identifier | undefined,
   data: IExtendedProperty,
   vendor = false,
   obsolete = false,
@@ -61,7 +62,7 @@ export async function composeCommentBlock(
   }
 }
 
-async function getCompatRows(compatibilityData: MDN.CompatData) {
+async function getCompatRows(compatibilityData: Identifier) {
   const compats = getCompats(compatibilityData);
   const rows: string[] = [];
 
@@ -118,53 +119,43 @@ async function getCompatRows(compatibilityData: MDN.CompatData) {
   return rows;
 }
 
-function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): string[] {
-  supports = supports ? (Array.isArray(supports) ? supports : [supports]).reverse() : [];
+function supportVersion(supports: SupportStatement | undefined): string[] {
+  const statements = (supports ? getSupport(supports).reverse() : []).filter(({ flags }) => !flags);
 
-  // Ignore versions hidden under flags
-  supports = supports.filter(({ flags }) => !flags);
-
-  const supportsVersions = supports.filter(({ version_added }) => typeof version_added === 'string');
+  const supportsVersions = statements.filter(versionAdded);
 
   if (supportsVersions.length > 0) {
     // Find lowest version of standard implementation
-    const supportsStandard = supportsVersions.reduce<MDN.Support | null>((previous, current) => {
-      if (!current.prefix && !current.alternative_name) {
-        if (
-          !previous ||
-          (previous.version_added !== true && current.version_added === true) ||
-          typeof previous.version_added !== 'string' ||
-          typeof current.version_added !== 'string' ||
-          // Lower version
-          versionDiff(previous.version_added, current.version_added) < 0 ||
-          // Prioritize version of full implementation
-          (previous.partial_implementation && !current.partial_implementation)
-        ) {
-          return current;
+    const supportsStandard = supportsVersions.reduce<SupportedSimpleSupportStatement | undefined>(
+      (previous, current) => {
+        if (!current.prefix && !current.alternative_name) {
+          if (
+            !previous ||
+            // Lower version
+            versionDiff(previous.version_added, current.version_added) < 0 ||
+            // Prioritize version of full implementation
+            (previous.partial_implementation && !current.partial_implementation)
+          ) {
+            return current;
+          }
         }
-      }
 
-      return previous;
-    }, null);
+        return previous;
+      },
+      undefined,
+    );
 
     // Find lowest version of non-standard or prefix implementation
-    const supportsPrefixed = supportsVersions.reduce<MDN.Support | null>((previous, current) => {
+    const supportsPrefixed = supportsVersions.reduce<SupportedSimpleSupportStatement | null>((previous, current) => {
       if (
         (current.prefix || current.alternative_name) &&
         // Ignore removed versions
         !current.version_removed &&
         // Only display prefixed or alternative if this version is lower than standard implementation
-        (!supportsStandard ||
-          (supportsStandard.version_added !== true && current.version_added === true) ||
-          typeof supportsStandard.version_added !== 'string' ||
-          typeof current.version_added !== 'string' ||
-          versionDiff(supportsStandard.version_added, current.version_added) < 0)
+        (!supportsStandard || versionDiff(supportsStandard.version_added, current.version_added) < 0)
       ) {
         if (
           !previous ||
-          (previous.version_added !== true && current.version_added === true) ||
-          typeof previous.version_added !== 'string' ||
-          typeof current.version_added !== 'string' ||
           // Lower version
           versionDiff(previous.version_added, current.version_added) < 0 ||
           // Prioritize version of full implementation
@@ -199,19 +190,13 @@ function supportVersion(supports: MDN.Support | MDN.Support[] | undefined): stri
     }
 
     return version;
-  } else {
-    const supportYes = supports.find(({ version_added }) => version_added === true);
-    if (supportYes) {
-      return ['Yes'];
-    }
-
-    const supportsNo = supports.find(({ version_added }) => version_added === false);
-    if (supportsNo) {
-      return ['No'];
-    }
   }
 
-  return ['n/a'];
+  if (statements.some(versionAdded)) {
+    return ['Yes'];
+  }
+
+  return ['No'];
 }
 
 function versionDiff(a: string, b: string) {

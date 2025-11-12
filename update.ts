@@ -19,7 +19,7 @@ async function update() {
   const MDN_COMPAT = 'mdn-browser-compat-data';
 
   const [mdnDataRepo, currentMdnDataCommit] = nextPackageJson.devDependencies[MDN_DATA].split('#');
-  const [mdnCompatRepo, currentMdnCompatCommit] = nextPackageJson.devDependencies[MDN_COMPAT].split('#');
+  // const [mdnCompatRepo, currentMdnCompatCommit] = nextPackageJson.devDependencies[MDN_COMPAT].split('#');
 
   const [mdnDataMaster, mdnCompatMaster] = [
     await getJsonAsync({

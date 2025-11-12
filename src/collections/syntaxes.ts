@@ -1,5 +1,6 @@
 import rawProperties from 'mdn-data/css/properties.json';
 import rawSyntaxes from 'mdn-data/css/syntaxes.json';
+import { Identifier } from '@mdn/browser-compat-data';
 import { IExtendedProperty, properties as patchedProperties, syntaxes as patchedSyntaxes } from '../data/patches';
 import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from '../data/svg';
 import parse from '../syntax/parser';
@@ -103,7 +104,7 @@ export async function getSyntax(name: string) {
   return rawSyntax;
 }
 
-async function validatePatch(compat: MDN.CompatData, sourceSyntax: string, patchSyntax: string): Promise<boolean> {
+async function validatePatch(compat: Identifier, sourceSyntax: string, patchSyntax: string): Promise<boolean> {
   // Dissolve all data types to check whether it already exists or not
   const dissolvedSourceTypes = await resolveDataTypes(
     {},

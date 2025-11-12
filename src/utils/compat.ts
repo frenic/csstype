@@ -1,22 +1,26 @@
+import mdnBrowserCompatData, {
+  Identifier,
+  CompatStatement,
+  BrowserName,
+  SupportStatement,
+  SimpleSupportStatement,
+} from '@mdn/browser-compat-data';
 import { definitionSyntax, DSNodeGroup } from 'css-tree';
 
-const importsCache: { [cssPath: string]: MDN.CompatData | undefined } = {};
+export function getCompats(data: Identifier): CompatStatement[] {
+  const { __compat, ...values } = data;
 
-interface IRegularCompat {
-  __compat: MDN.Compat;
+  if (__compat) {
+    return [__compat];
+  }
+
+  return Object.values(values).reduce<CompatStatement[]>((compats, value) => {
+    compats.push(...getCompats(value));
+    return compats;
+  }, []);
 }
 
-interface IContextCompat {
-  [context: string]: IRegularCompat;
-}
-
-export function getCompats(data: IRegularCompat | IContextCompat): MDN.Compat[] {
-  return '__compat' in data
-    ? [(data as IRegularCompat).__compat]
-    : Object.keys(data).map(context => (data as IContextCompat)[context].__compat);
-}
-
-export function getSupport(support: MDN.Support | MDN.Support[]): MDN.Support[] {
+export function getSupport(support: SupportStatement): SimpleSupportStatement[] {
   return Array.isArray(support) ? support : [support];
 }
 
@@ -36,42 +40,25 @@ export function getTypesData(name: string) {
   return getData('types', name);
 }
 
-async function getData(
-  type: 'at-rules' | 'properties' | 'selectors' | 'types',
-  name: string,
-): Promise<MDN.CompatData | undefined> {
-  const cssPath = type + '/' + name;
-  if (cssPath in importsCache) {
-    return importsCache[cssPath];
-  }
-
-  try {
-    const data = await import(`mdn-browser-compat-data/css/${cssPath}.json`);
-
-    if (!data) {
-      return (importsCache[cssPath] = undefined);
-    }
-
-    const cssData = data.css[type][name];
-    return (importsCache[cssPath] = cssData);
-  } catch {
-    return (importsCache[cssPath] = undefined);
-  }
+function getData(type: 'at-rules' | 'properties' | 'selectors' | 'types', name: string): Identifier | undefined {
+  return mdnBrowserCompatData.css[type][name];
 }
 
-export function compatNames(compat: MDN.Compat, name: string, onlyRemoved = false): string[] {
+export function compatNames(compat: CompatStatement, name: string, onlyRemoved = false): string[] {
   const properties: string[] = [];
 
-  let browser: MDN.Browsers;
+  let browser: BrowserName;
   for (browser in compat.support) {
     const support = compat.support[browser];
 
-    for (const version of getSupport(support)) {
-      // Assume that the version has the property implemented if `null`
-      const isAdded = !!version.version_added || version.version_added === null;
-      const isRemoved = !!version.version_removed;
+    if (!support) {
+      continue;
+    }
 
-      if (isAdded && isRemoved === onlyRemoved) {
+    for (const version of getSupport(support)) {
+      const isRemoved = typeof version.version_removed === 'string';
+
+      if (versionAdded(version) && isRemoved === onlyRemoved) {
         if (version.prefix) {
           properties.push(version.prefix + name);
         }
@@ -85,7 +72,7 @@ export function compatNames(compat: MDN.Compat, name: string, onlyRemoved = fals
   return properties;
 }
 
-export function compatSyntax(data: MDN.CompatData, node: DSNodeGroup): DSNodeGroup {
+export function compatSyntax(data: Identifier, node: DSNodeGroup): DSNodeGroup {
   const nodeClone = definitionSyntax.parse(definitionSyntax.generate(node));
 
   let currentGroup = node;
@@ -118,23 +105,23 @@ export function compatSyntax(data: MDN.CompatData, node: DSNodeGroup): DSNodeGro
   return nodeClone;
 }
 
-function alternativeKeywords(data: MDN.CompatData, value: string): string[] {
+function alternativeKeywords(data: Identifier, value: string): string[] {
   const alternatives: string[] = [];
 
   if (value in data) {
     const compats = getCompats(data[value]);
 
     for (const compat of compats) {
-      let browser: MDN.Browsers;
+      let browser: BrowserName;
       for (browser in compat.support) {
         const support = compat.support[browser];
 
-        for (const version of Array.isArray(support) ? support : [support]) {
-          const isCurrent =
-            // Assume that the version has the value implemented if `null`
-            !!version.version_added || version.version_added === null;
+        if (!support) {
+          continue;
+        }
 
-          if (isCurrent) {
+        for (const version of Array.isArray(support) ? support : [support]) {
+          if (versionAdded(version)) {
             if (version.prefix && !alternatives.includes(version.prefix + value)) {
               alternatives.push(version.prefix + value);
             }
@@ -150,19 +137,22 @@ function alternativeKeywords(data: MDN.CompatData, value: string): string[] {
   return alternatives;
 }
 
-export function isDeprecated(data: { status?: string }, compat?: MDN.Compat) {
+export function isDeprecated(data: { status?: string }, compat?: CompatStatement) {
   // Assume not deprecated if is status i missing
   return data.status === 'obsolete' || (!!compat && !!compat.status && compat.status.deprecated);
 }
 
-export function isAddedBySome(compat: MDN.Compat): boolean {
-  let browser: MDN.Browsers;
+export function isAddedBySome(compat: CompatStatement): boolean {
+  let browser: BrowserName;
   for (browser in compat.support) {
     const support = compat.support[browser];
 
+    if (!support) {
+      continue;
+    }
+
     for (const version of getSupport(support)) {
-      // Assume that the version has the property implemented if `null`
-      if (!!version.version_added || version.version_added === null) {
+      if (versionAdded(version)) {
         return true;
       }
     }
@@ -183,15 +173,16 @@ export async function alternativeSelectors(selector: string): Promise<string[]> 
     const compats = getCompats(compatibilityData);
 
     for (const compat of compats) {
-      let browser: MDN.Browsers;
+      let browser: BrowserName;
       for (browser in compat.support) {
         const support = compat.support[browser];
 
-        for (const version of getSupport(support)) {
-          // Assume that the version has the property implemented if `null`
-          const isAdded = !!version.version_added || version.version_added === null;
+        if (!support) {
+          continue;
+        }
 
-          if (isAdded) {
+        for (const version of getSupport(support)) {
+          if (versionAdded(version)) {
             if (version.prefix) {
               alternatives.push(colons + version.prefix + name);
             }
@@ -209,19 +200,21 @@ export async function alternativeSelectors(selector: string): Promise<string[]> 
   return alternatives;
 }
 
-export function alternativeAttributes(name: string, data: MDN.CompatData): string[] {
+export function alternativeAttributes(name: string, data: Identifier): string[] {
   const alternatives: string[] = [];
   const compats = getCompats(data);
 
   for (const compat of compats) {
-    for (const browser in compat.support) {
-      const support = compat.support[browser as keyof typeof compat.support];
+    let browser: BrowserName;
+    for (browser in compat.support) {
+      const support = compat.support[browser];
+
+      if (!support) {
+        continue;
+      }
 
       for (const version of getSupport(support)) {
-        // Assume that the version has the property implemented if `null`
-        const isAdded = !!version.version_added || version.version_added === null;
-
-        if (isAdded) {
+        if (versionAdded(version)) {
           if (version.prefix) {
             alternatives.push(version.prefix + name);
           }
@@ -234,4 +227,10 @@ export function alternativeAttributes(name: string, data: MDN.CompatData): strin
   }
 
   return alternatives;
+}
+
+export type SupportedSimpleSupportStatement = SimpleSupportStatement & { version_added: string };
+
+export function versionAdded(statement: SimpleSupportStatement): statement is SupportedSimpleSupportStatement {
+  return typeof statement.version_added === 'string';
 }
