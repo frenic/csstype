@@ -16,35 +16,35 @@ async function update() {
   console.info('Check for updates...');
 
   const MDN_DATA = 'mdn-data';
-  const MDN_COMPAT = 'mdn-browser-compat-data';
+  const MDN_COMPAT = '@mdn/browser-compat-data';
 
-  const [mdnDataRepo, currentMdnDataCommit] = nextPackageJson.devDependencies[MDN_DATA].split('#');
-  // const [mdnCompatRepo, currentMdnCompatCommit] = nextPackageJson.devDependencies[MDN_COMPAT].split('#');
+  const currentMdnDataVersion = nextPackageJson.devDependencies[MDN_DATA];
+  const currentMdnCompatVersion = nextPackageJson.devDependencies[MDN_COMPAT];
 
   const [mdnDataMaster, mdnCompatMaster] = [
     await getJsonAsync({
       hostname: 'api.github.com',
-      path: '/repos/mdn/data/branches/main',
+      path: '/repos/mdn/data/releases',
       headers: { 'User-Agent': 'NodeJS' },
     }),
     await getJsonAsync({
       hostname: 'api.github.com',
-      path: '/repos/mdn/browser-compat-data/branches/main',
+      path: '/repos/mdn/browser-compat-data/releases',
       headers: { 'User-Agent': 'NodeJS' },
     }),
   ];
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const latestMdnDataCommit = (mdnDataMaster as any).commit.sha;
+  const latestMdnDataVersion = (mdnDataMaster as any)[0].name.replace(/^v/, '');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const latestMdnCompatCommit = (mdnCompatMaster as any).commit.sha;
+  const latestMdnCompatVersion = (mdnCompatMaster as any)[0].name.replace(/^v/, '');
 
-  if (latestMdnDataCommit !== currentMdnDataCommit || latestMdnCompatCommit !== currentMdnCompatCommit) {
+  if (currentMdnDataVersion !== latestMdnDataVersion || currentMdnCompatVersion !== latestMdnCompatVersion) {
     console.info('Update found!');
     console.info('Upgrading...');
 
-    nextPackageJson.devDependencies[MDN_DATA] = `${mdnDataRepo}#${latestMdnDataCommit}`;
-    nextPackageJson.devDependencies[MDN_COMPAT] = `${mdnCompatRepo}#${latestMdnCompatCommit}`;
+    nextPackageJson.devDependencies[MDN_DATA] = latestMdnDataVersion;
+    nextPackageJson.devDependencies[MDN_COMPAT] = latestMdnCompatVersion;
 
     await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
     await install();
