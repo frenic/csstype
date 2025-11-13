@@ -69,5 +69,11 @@ export async function getSummary(url: string): Promise<string | undefined> {
     }
   }
 
-  return summaryData;
+  if (summaryData) {
+    return cleanup(summaryData);
+  }
+}
+
+function cleanup(summary: string) {
+  return summary.replace(/\u2068/g, '').replace(/\u2069/g, '');
 }
