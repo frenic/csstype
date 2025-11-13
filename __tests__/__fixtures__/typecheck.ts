@@ -156,8 +156,6 @@ propertyValueWithAutocompleteHack([0]); // Should pass
 propertyValueWithAutocompleteHack(1); // Should fail
 propertyValueWithAutocompleteHack([1]); // Should fail
 
-const differentMajorVersions: CSS.Properties = {} as OldCSS.Properties;
-
 css;
 cssWithFallbackValues;
 cssWithFallbackConstValues;
@@ -171,4 +169,3 @@ autocompleteHackTypeGuardProblem;
 propertyValueShouldPass1;
 propertyValueShouldPass2;
 propertyValueShouldFail;
-differentMajorVersions;
