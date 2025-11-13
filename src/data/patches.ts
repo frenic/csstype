@@ -21,15 +21,23 @@ export const syntaxes: { [property: string]: MDN.Syntax } = {
     syntax: '<string>',
   },
   // Undefined syntax
-  'palette-identifier': {
+  'dashed-ident': {
     syntax: '<string>',
   },
   // Undefined syntax
-  'single-animation-composition': {
-    syntax: 'replace | add | accumulate',
+  'unicode-range-token': {
+    syntax: '<string>',
   },
   // Undefined syntax
-  'unicode-range': {
+  'declaration-value': {
     syntax: '<string>',
+  },
+  // Undefined syntax
+  autospace: {
+    syntax: 'no-autospace | [ ideograph-alpha || ideograph-numeric || punctuation ] || [ insert | replace ]',
+  },
+  // Faulty syntax
+  'content-list': {
+    syntax: '[ <string> | <image> | <attr()> | <quote> | <counter> ]+',
   },
 };
