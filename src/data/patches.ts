@@ -24,7 +24,7 @@ export const properties: { [property: string]: IExtendedProperty } = {
   /**
    * https://drafts.csswg.org/css-logical/#propdef-border-block-width
    */
-  'border-block-width': {
+  'border-block-style': {
     shorthand: true,
   },
   /**
