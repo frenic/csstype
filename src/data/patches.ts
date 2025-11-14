@@ -30,7 +30,7 @@ export const properties: { [property: string]: IExtendedProperty } = {
   /**
    * https://drafts.csswg.org/css-logical/#propdef-border-inline-width
    */
-  'border-inline-width': {
+  'border-inline-style': {
     shorthand: true,
   },
   /**
