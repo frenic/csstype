@@ -512,20 +512,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   blockSize?: Property.BlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-color'>{1,2}`
-   *
-   * **Initial value**: `currentcolor`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-color
-   */
-  borderBlockColor?: Property.BorderBlockColor | undefined;
-  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -609,34 +595,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-start-width
    */
   borderBlockStartWidth?: Property.BorderBlockStartWidth<TLength> | undefined;
-  /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-style'>{1,2}`
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-style
-   */
-  borderBlockStyle?: Property.BorderBlockStyle | undefined;
-  /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-width'>{1,2}`
-   *
-   * **Initial value**: `medium`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-width
-   */
-  borderBlockWidth?: Property.BorderBlockWidth<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -822,20 +780,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderImageWidth?: Property.BorderImageWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-color'>{1,2}`
-   *
-   * **Initial value**: `currentcolor`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-color
-   */
-  borderInlineColor?: Property.BorderInlineColor | undefined;
-  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -924,34 +868,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-start-width
    */
   borderInlineStartWidth?: Property.BorderInlineStartWidth<TLength> | undefined;
-  /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-style'>{1,2}`
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-style
-   */
-  borderInlineStyle?: Property.BorderInlineStyle | undefined;
-  /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-width'>{1,2}`
-   *
-   * **Initial value**: `medium`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-width
-   */
-  borderInlineWidth?: Property.BorderInlineWidth<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -6072,6 +5988,20 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderBlock?: Property.BorderBlock<TLength> | undefined;
   /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-color'>{1,2}`
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-color
+   */
+  borderBlockColor?: Property.BorderBlockColor | undefined;
+  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
@@ -6095,6 +6025,34 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-start
    */
   borderBlockStart?: Property.BorderBlockStart<TLength> | undefined;
+  /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-style'>{1,2}`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-style
+   */
+  borderBlockStyle?: Property.BorderBlockStyle | undefined;
+  /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-width'>{1,2}`
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-width
+   */
+  borderBlockWidth?: Property.BorderBlockWidth<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -6145,6 +6103,20 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderInline?: Property.BorderInline<TLength> | undefined;
   /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-color'>{1,2}`
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-color
+   */
+  borderInlineColor?: Property.BorderInlineColor | undefined;
+  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
@@ -6168,6 +6140,34 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-start
    */
   borderInlineStart?: Property.BorderInlineStart<TLength> | undefined;
+  /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-style'>{1,2}`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-style
+   */
+  borderInlineStyle?: Property.BorderInlineStyle | undefined;
+  /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-width'>{1,2}`
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-width
+   */
+  borderInlineWidth?: Property.BorderInlineWidth<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -10269,20 +10269,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "block-size"?: Property.BlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-color'>{1,2}`
-   *
-   * **Initial value**: `currentcolor`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-color
-   */
-  "border-block-color"?: Property.BorderBlockColor | undefined;
-  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -10366,34 +10352,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-start-width
    */
   "border-block-start-width"?: Property.BorderBlockStartWidth<TLength> | undefined;
-  /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-style'>{1,2}`
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-style
-   */
-  "border-block-style"?: Property.BorderBlockStyle | undefined;
-  /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-width'>{1,2}`
-   *
-   * **Initial value**: `medium`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-width
-   */
-  "border-block-width"?: Property.BorderBlockWidth<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -10579,20 +10537,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-image-width"?: Property.BorderImageWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-color'>{1,2}`
-   *
-   * **Initial value**: `currentcolor`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-color
-   */
-  "border-inline-color"?: Property.BorderInlineColor | undefined;
-  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
    * **Syntax**: `<'border-top-color'>`
@@ -10681,34 +10625,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-start-width
    */
   "border-inline-start-width"?: Property.BorderInlineStartWidth<TLength> | undefined;
-  /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-style'>{1,2}`
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-style
-   */
-  "border-inline-style"?: Property.BorderInlineStyle | undefined;
-  /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
-   *
-   * **Syntax**: `<'border-top-width'>{1,2}`
-   *
-   * **Initial value**: `medium`
-   *
-   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
-   * | :----: | :-----: | :------: | :----: | :-: |
-   * | **87** | **66**  | **14.1** | **87** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-width
-   */
-  "border-inline-width"?: Property.BorderInlineWidth<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -15829,6 +15745,20 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-block"?: Property.BorderBlock<TLength> | undefined;
   /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-color'>{1,2}`
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-color
+   */
+  "border-block-color"?: Property.BorderBlockColor | undefined;
+  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
@@ -15852,6 +15782,34 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-start
    */
   "border-block-start"?: Property.BorderBlockStart<TLength> | undefined;
+  /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-style'>{1,2}`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-style
+   */
+  "border-block-style"?: Property.BorderBlockStyle | undefined;
+  /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-width'>{1,2}`
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-width
+   */
+  "border-block-width"?: Property.BorderBlockWidth<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -15902,6 +15860,20 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-inline"?: Property.BorderInline<TLength> | undefined;
   /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-color'>{1,2}`
+   *
+   * **Initial value**: `currentcolor`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-color
+   */
+  "border-inline-color"?: Property.BorderInlineColor | undefined;
+  /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
    *
    * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
@@ -15925,6 +15897,34 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-start
    */
   "border-inline-start"?: Property.BorderInlineStart<TLength> | undefined;
+  /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-style'>{1,2}`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-style
+   */
+  "border-inline-style"?: Property.BorderInlineStyle | undefined;
+  /**
+   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   *
+   * **Syntax**: `<'border-top-width'>{1,2}`
+   *
+   * **Initial value**: `medium`
+   *
+   * | Chrome | Firefox |  Safari  |  Edge  | IE  |
+   * | :----: | :-----: | :------: | :----: | :-: |
+   * | **87** | **66**  | **14.1** | **87** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-width
+   */
+  "border-inline-width"?: Property.BorderInlineWidth<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
