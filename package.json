@@ -32,6 +32,7 @@
     "jsdom": "^27.2.0",
     "mdn-data": "2.25.0",
     "prettier": "^3.6.2",
+    "release-it": "^19.0.6",
     "tsx": "^4.20.6",
     "turndown": "^7.2.2",
     "typescript": "~5.9.3",
@@ -39,7 +40,7 @@
   },
   "scripts": {
     "prepublish": "npm install --prefix __tests__ && npm install --prefix __tests__/__fixtures__",
-    "prepublishOnly": "tsc && npm run test:src && npm run build && tsx prepublish.ts",
+    "release": "release-it",
     "update": "tsx update.ts",
     "build": "tsx --inspect build.ts --start",
     "watch": "tsx build.ts --watch",

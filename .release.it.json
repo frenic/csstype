@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/release-it@19/schema/release-it.json",
+  "git": {
+    "commitMessage": "v${version}"
+  },
+  "github": {
+    "release": false
+  },
+  "hooks": {
+    "before:init": ["npx tsc", "npm run test:src"],
+    "after:bump": "npm run build"
+  }
+}
