@@ -428,7 +428,7 @@ export type StandardShorthandProperties<TLength = string | 0, TTime = string> = 
   all?: Property$All,
   animation?: Property$Animation<TTime>,
   animationRange?: Property$AnimationRange<TLength>,
-  background?: Property$Background,
+  background?: Property$Background<TLength>,
   backgroundPosition?: Property$BackgroundPosition<TLength>,
   border?: Property$Border<TLength>,
   borderBlock?: Property$BorderBlock<TLength>,
@@ -1371,7 +1371,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0, TTime = stri
   all?: Property$All,
   animation?: Property$Animation<TTime>,
   "animation-range"?: Property$AnimationRange<TLength>,
-  background?: Property$Background,
+  background?: Property$Background<TLength>,
   "background-position"?: Property$BackgroundPosition<TLength>,
   border?: Property$Border<TLength>,
   "border-block"?: Property$BorderBlock<TLength>,
@@ -2320,7 +2320,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0, TTime = st
   all?: Property$All | Array<Property$All>,
   animation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
   animationRange?: Property$AnimationRange<TLength> | Array<Property$AnimationRange<TLength>>,
-  background?: Property$Background | Array<Property$Background>,
+  background?: Property$Background<TLength> | Array<Property$Background<TLength>>,
   backgroundPosition?: Property$BackgroundPosition<TLength> | Array<Property$BackgroundPosition<TLength>>,
   border?: Property$Border<TLength> | Array<Property$Border<TLength>>,
   borderBlock?: Property$BorderBlock<TLength> | Array<Property$BorderBlock<TLength>>,
@@ -3269,7 +3269,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0, TTim
   all?: Property$All | Array<Property$All>,
   animation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
   "animation-range"?: Property$AnimationRange<TLength> | Array<Property$AnimationRange<TLength>>,
-  background?: Property$Background | Array<Property$Background>,
+  background?: Property$Background<TLength> | Array<Property$Background<TLength>>,
   "background-position"?: Property$BackgroundPosition<TLength> | Array<Property$BackgroundPosition<TLength>>,
   border?: Property$Border<TLength> | Array<Property$Border<TLength>>,
   "border-block"?: Property$BorderBlock<TLength> | Array<Property$BorderBlock<TLength>>,
@@ -4439,7 +4439,7 @@ export type Property$BackdropFilter = Globals | "none" | string;
 
 export type Property$BackfaceVisibility = Globals | "hidden" | "visible";
 
-export type Property$Background = Globals | string;
+export type Property$Background<TLength = string | 0> = Globals | DataType$FinalBgLayer<TLength> | string;
 
 export type Property$BackgroundAttachment = Globals | DataType$Attachment | string;
 
@@ -6537,6 +6537,8 @@ type DataType$DisplayOutside = "block" | "inline" | "run-in";
 type DataType$EasingFunction = DataType$CubicBezierEasingFunction | DataType$StepEasingFunction | "linear" | string;
 
 type DataType$EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
+
+type DataType$FinalBgLayer<TLength> = DataType$BgPosition<TLength> | DataType$RepeatStyle | DataType$Attachment | DataType$VisualBox | DataType$Color | "none" | string;
 
 type DataType$FontStretchAbsolute =
   | "condensed"

@@ -5948,7 +5948,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background
    */
-  background?: Property.Background | undefined;
+  background?: Property.Background<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -15705,7 +15705,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background
    */
-  background?: Property.Background | undefined;
+  background?: Property.Background<TLength> | undefined;
   /**
    * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
    *
@@ -20223,7 +20223,7 @@ export namespace Property {
 
   export type BackfaceVisibility = Globals | "hidden" | "visible";
 
-  export type Background = Globals | (string & {});
+  export type Background<TLength = (string & {}) | 0> = Globals | DataType.FinalBgLayer<TLength> | (string & {});
 
   export type BackgroundAttachment = Globals | DataType.Attachment | (string & {});
 
@@ -22250,6 +22250,8 @@ export namespace DataType {
   type EasingFunction = CubicBezierEasingFunction | StepEasingFunction | "linear" | (string & {});
 
   type EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
+
+  type FinalBgLayer<TLength> = BgPosition<TLength> | RepeatStyle | Attachment | VisualBox | Color | "none" | (string & {});
 
   type FontStretchAbsolute =
     | "condensed"

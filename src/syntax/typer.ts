@@ -79,6 +79,10 @@ export default function typer(node: DSNodeGroup): TypeType[] {
 
             if (node.combinator !== '||') {
               for (const term of node.terms) {
+                if (term.type === 'Comma') {
+                  // Not sure what this comma is, ignoring for now. Exists on `background` property.
+                  continue;
+                }
                 if (term.type === 'Multiplier') {
                   if (term.min > 0) {
                     mandatoryTermsInGroup++;
