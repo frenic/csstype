@@ -13,7 +13,7 @@
     "@babel/preset-typescript": "^7.28.5",
     "@eslint/js": "^9.39.1",
     "@mdn/browser-compat-data": "7.1.21",
-    "@tsconfig/node24": "^24.0.1",
+    "@tsconfig/node24": "^24.0.2",
     "@types/chokidar": "^2.1.7",
     "@types/css-tree": "^2.3.11",
     "@types/jest": "^30.0.0",
@@ -37,6 +37,9 @@
     "turndown": "^7.2.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4"
+  },
+  "overrides": {
+    "js-yaml": ">=4.1.1"
   },
   "scripts": {
     "prepublish": "npm install --prefix __tests__ && npm install --prefix __tests__/__fixtures__",
