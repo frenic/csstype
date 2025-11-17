@@ -9,13 +9,13 @@ import { getPropertyData, getTypesData } from '../utils/compat';
 import { error, warn } from '../utils/logger';
 import { createPropertyDataTypeResolver, resolveDataTypes } from './data-types';
 
-export async function getProperties() {
+export function getProperties() {
   const properties: { [property: string]: IExtendedProperty } = {};
 
   for (const name in rawProperties) {
     properties[name] = {
       ...rawProperties[name],
-      syntax: await getPropertySyntax(name),
+      syntax: getPropertySyntax(name),
       shorthand:
         name in patchedProperties && typeof patchedProperties[name].shorthand === 'boolean'
           ? patchedProperties[name].shorthand
@@ -44,13 +44,13 @@ export function isSyntax(name: string) {
 
 const validatedPropertySyntaxes: string[] = [];
 
-export async function getPropertySyntax(name: string) {
+export function getPropertySyntax(name: string) {
   const patch = patchedProperties[name];
   const rawSyntax = rawProperties[name] && rawProperties[name].syntax;
 
   if (patch && patch.syntax) {
     if (rawSyntax && !validatedPropertySyntaxes.includes(name)) {
-      const compatibilityData = await getPropertyData(name);
+      const compatibilityData = getPropertyData(name);
 
       if (compatibilityData && !validatePatch(compatibilityData, rawProperties[name].syntax, patch.syntax)) {
         error(
@@ -74,7 +74,7 @@ export async function getPropertySyntax(name: string) {
 
 const validatedSyntaxes: string[] = [];
 
-export async function getSyntax(name: string) {
+export function getSyntax(name: string) {
   const patch = patchedSyntaxes[name];
 
   const rawSyntax =
@@ -82,7 +82,7 @@ export async function getSyntax(name: string) {
 
   if (patch && patch.syntax) {
     if (rawSyntax && !validatedSyntaxes.includes(name)) {
-      const compatibilityData = await getTypesData(name);
+      const compatibilityData = getTypesData(name);
 
       if (compatibilityData && !validatePatch(compatibilityData, rawSyntaxes[name].syntax, patch.syntax)) {
         error(
@@ -106,13 +106,13 @@ export async function getSyntax(name: string) {
 
 async function validatePatch(compat: Identifier, sourceSyntax: string, patchSyntax: string): Promise<boolean> {
   // Dissolve all data types to check whether it already exists or not
-  const dissolvedSourceTypes = await resolveDataTypes(
+  const dissolvedSourceTypes = resolveDataTypes(
     {},
     typer(parse(sourceSyntax)),
     Infinity,
     createPropertyDataTypeResolver(compat),
   );
-  const dissolvedPatchTypes = await resolveDataTypes(
+  const dissolvedPatchTypes = resolveDataTypes(
     {},
     typer(parse(patchSyntax)),
     Infinity,

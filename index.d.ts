@@ -20223,7 +20223,7 @@ export namespace Property {
 
   export type BackfaceVisibility = Globals | "hidden" | "visible";
 
-  export type Background<TLength = (string & {}) | 0> = Globals | DataType.FinalBgLayer<TLength> | (string & {});
+  export type Background<TLength = (string & {}) | 0> = Globals | DataType.BgLayer<TLength> | DataType.FinalBgLayer<TLength> | (string & {});
 
   export type BackgroundAttachment = Globals | DataType.Attachment | (string & {});
 
@@ -22105,6 +22105,8 @@ export namespace DataType {
   type Autospace = "ideograph-alpha" | "ideograph-numeric" | "insert" | "no-autospace" | "punctuation" | "replace" | (string & {});
 
   type BgClip = VisualBox | "border-area" | "text";
+
+  type BgLayer<TLength> = BgPosition<TLength> | RepeatStyle | Attachment | VisualBox | "none" | (string & {});
 
   type BgPosition<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | (string & {});
 

@@ -35,8 +35,8 @@ interface IProperty {
   types: ResolvedType[];
 }
 
-const getGlobalCompatibilityData = async () => {
-  const data = await getTypesData('global_keywords');
+const getGlobalCompatibilityData = () => {
+  const data = getTypesData('global_keywords');
 
   if (!data) {
     throw new Error('Compatibility data for CSS-wide keywords is missing or may have been moved');
@@ -51,9 +51,9 @@ export async function getGlobals(
   dataTypeDictionary: IDataTypeDictionary,
   minTypesInDataTypes: number,
 ): Promise<ResolvedType[]> {
-  const dataTypes = await resolveDataTypes(
+  const dataTypes = resolveDataTypes(
     dataTypeDictionary,
-    typer(compatSyntax(await getGlobalCompatibilityData(), parse(await getPropertySyntax(ALL)))),
+    typer(compatSyntax(getGlobalCompatibilityData(), parse(getPropertySyntax(ALL)))),
     minTypesInDataTypes,
   );
 
@@ -65,8 +65,8 @@ const htmlPropertiesMap: { [name: string]: IProperty } = {};
 const svgPropertiesMap: { [name: string]: IProperty } = {};
 
 export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary, minTypesInDataTypes: number) {
-  const propertiesMap = await getProperties();
-  const allPropertyData = await getPropertyData(ALL);
+  const propertiesMap = getProperties();
+  const allPropertyData = getPropertyData(ALL);
 
   let getAllComment = async () => {
     const comment = await composeCommentBlock(allPropertyData, propertiesMap[ALL]);
@@ -96,12 +96,12 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
     const data = propertiesMap[originalName];
 
     // Default values
-    let entities = parse(await getPropertySyntax(originalName));
+    let entities = parse(getPropertySyntax(originalName));
     let currentNames: string[] = [originalName];
     let obsoleteNames: string[] = [];
     let deprecated = isDeprecated(data);
 
-    const compatibilityData = await getPropertyData(originalName);
+    const compatibilityData = getPropertyData(originalName);
 
     if (compatibilityData) {
       const compats = getCompats(compatibilityData);
@@ -127,7 +127,7 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
       currentNames = [];
     }
 
-    const types = await resolveDataTypes(
+    const types = resolveDataTypes(
       dataTypeDictionary,
       typer(entities),
       minTypesInDataTypes,
@@ -180,7 +180,7 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
 
 export async function getSvgProperties(dataTypeDictionary: IDataTypeDictionary, minTypesInDataTypes: number) {
   for (const name in rawSvgProperties) {
-    const compatibilityData = await getPropertyData(name);
+    const compatibilityData = getPropertyData(name);
     const syntax = rawSvgProperties[name].syntax;
     if (syntax) {
       svgPropertiesMap[name] = {
@@ -189,7 +189,7 @@ export async function getSvgProperties(dataTypeDictionary: IDataTypeDictionary, 
         shorthand: false,
         obsolete: false,
         comment: () => Promise.resolve(undefined),
-        types: await resolveDataTypes(
+        types: resolveDataTypes(
           dataTypeDictionary,
           typer(parse(syntax)),
           minTypesInDataTypes,

@@ -48,27 +48,27 @@ export const properties: { [property: string]: IExtendedProperty } = {
 };
 
 export const syntaxes: { [property: string]: MDN.Syntax } = {
-  // Undefined syntax
+  // Missing syntax
   'hex-color': {
     syntax: '<string>',
   },
-  // Undefined syntax
+  // Missing syntax
   'reversed-counter-name': {
     syntax: '<string>',
   },
-  // Undefined syntax
+  // Missing syntax
   'dashed-ident': {
     syntax: '<string>',
   },
-  // Undefined syntax
+  // Missing syntax
   'unicode-range-token': {
     syntax: '<string>',
   },
-  // Undefined syntax
+  // Missing syntax
   'declaration-value': {
     syntax: '<string>',
   },
-  // Undefined syntax
+  // Missing syntax
   autospace: {
     syntax: 'no-autospace | [ ideograph-alpha || ideograph-numeric || punctuation ] || [ insert | replace ]',
   },

@@ -58,14 +58,40 @@ export default function typer(node: DSNodeGroup): TypeType[] {
   definitionSyntax.walk(node, {
     enter(node) {
       if (skipComponent > 0 || componentsToSkip.includes(node)) {
+        if (!hasStringKeyword) {
+          types.push({ type: Type.String });
+          hasStringKeyword = true;
+        }
+
         skipComponent++;
         return;
       }
 
       switch (node.type) {
         case 'Group':
-          if (node.terms.length === 1) {
-            return;
+          if (node.terms.length < 2) {
+            break;
+          }
+
+          // Skip functions since they may cause recurring data types
+          if (node.terms[0].type === 'Function') {
+            const lastTerm = node.terms.at(-1)!;
+            if (lastTerm.type !== 'Token' || lastTerm.value !== ')') {
+              throw new Error('This is a weird looking function to me');
+            }
+
+            skipComponent++;
+
+            break;
+          }
+
+          // Comma is an optional separator, like | but with a comma
+          if (isCommaSeparator(node.terms)) {
+            if (node.combinator !== ' ') {
+              throw new Error('Cannot assume whitespace combinator with comma anymore');
+            }
+
+            break;
           }
 
           if (node.combinator === ' ' || node.combinator === '&&' || node.combinator === '||') {
@@ -79,10 +105,6 @@ export default function typer(node: DSNodeGroup): TypeType[] {
 
             if (node.combinator !== '||') {
               for (const term of node.terms) {
-                if (term.type === 'Comma') {
-                  // Not sure what this comma is, ignoring for now. Exists on `background` property.
-                  continue;
-                }
                 if (term.type === 'Multiplier') {
                   if (term.min > 0) {
                     mandatoryTermsInGroup++;
@@ -212,4 +234,14 @@ export function hasType(types: TypeType[], type: TypeType): boolean {
     case Type.PropertyReference:
       return types.some(t => t.type === Type.PropertyReference && t.name === type.name);
   }
+}
+
+function isCommaSeparator(terms: DSNode[]) {
+  for (const term of terms) {
+    if (term.type === 'Comma') {
+      return true;
+    }
+  }
+
+  return false;
 }

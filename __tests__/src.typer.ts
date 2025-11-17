@@ -92,6 +92,14 @@ describe('typing', () => {
   it('types number with range', () => {
     expect(typer(parse('<number [1,1000]>'))).toMatchObject([{ type: Type.Number }]);
   });
+
+  it('types comma components', () => {
+    expect(typer(parse('something , another-thing'))).toMatchObject([
+      { type: Type.StringLiteral },
+      { type: Type.String },
+      { type: Type.StringLiteral },
+    ]);
+  });
 });
 
 jest.mock('chalk', () => ({}) as typeof import('chalk'));

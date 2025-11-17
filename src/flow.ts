@@ -1,5 +1,6 @@
 import {
   DeclarableType,
+  declarator,
   IDeclaration,
   INamespace,
   Interface,
@@ -8,10 +9,10 @@ import {
   isInterfaceProperties,
 } from './declarator';
 import { Type } from './syntax/typer';
-import { createStringifyType, EOL, generatingDeclarations, stringifyGenerics } from './utils/output';
+import { createStringifyType, EOL, stringifyGenerics } from './utils/output';
 
-export default async function flow() {
-  const { namespaces, interfaces, declarations } = await generatingDeclarations;
+export default async function flow(data: ReturnType<typeof declarator>) {
+  const { namespaces, interfaces, declarations } = await data;
 
   let interfacesOutput = '';
 

@@ -167,7 +167,7 @@ export async function alternativeSelectors(selector: string): Promise<string[]> 
   // Pseudo without ':'
   const colons = ':'.repeat(selector.lastIndexOf(':') + 1);
   const name = selector.slice(colons.length);
-  const compatibilityData = await getSelectorsData(name);
+  const compatibilityData = getSelectorsData(name);
 
   if (compatibilityData) {
     const compats = getCompats(compatibilityData);

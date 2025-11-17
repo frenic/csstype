@@ -30,7 +30,7 @@ export async function getAtRules(dataTypeDictionary: IDataTypeDictionary, minTyp
 
     if ('descriptors' in atRule) {
       const descriptors: IAtRuleDescriptors = {};
-      const compatibilityData = await getAtRuleData(name);
+      const compatibilityData = getAtRuleData(name);
       let hasSupportedProperties = false;
 
       for (const descriptor in atRule.descriptors) {
@@ -56,7 +56,7 @@ export async function getAtRules(dataTypeDictionary: IDataTypeDictionary, minTyp
           );
         }
 
-        const types = await resolveDataTypes(dataTypeDictionary, typer(entities), minTypesInDataTypes);
+        const types = resolveDataTypes(dataTypeDictionary, typer(entities), minTypesInDataTypes);
 
         for (const property of properties) {
           hasSupportedProperties = true;

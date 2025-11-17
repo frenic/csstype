@@ -1,18 +1,8 @@
-import {
-  DeclarableType,
-  declarator,
-  IAlias,
-  IGenerics,
-  INamespace,
-  lengthGeneric,
-  SimpleType,
-  timeGeneric,
-} from '../declarator';
+import { DeclarableType, IAlias, IGenerics, INamespace, lengthGeneric, SimpleType, timeGeneric } from '../declarator';
 import { Type } from '../syntax/typer';
 
 export const EOL = '\n';
 
-export const generatingDeclarations = declarator(3);
 export function createStringifyType(): (type: SimpleType) => string;
 
 export function createStringifyType(

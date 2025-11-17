@@ -5,6 +5,9 @@ import { FLOW_FILENAME, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
 import { runCLI } from 'jest';
 import { fileURLToPath } from 'url';
 import { Config } from '@jest/types';
+import { declarator } from './src/declarator';
+import generateFlow from './src/flow';
+import generateTypescript from './src/typescript';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -53,15 +56,8 @@ export default async function trigger() {
 }
 
 async function create() {
-  // const generatePath = path.resolve('./src');
-  // for (const key in require.cache) {
-  //   if (key.indexOf(generatePath) !== -1) {
-  //     delete require.cache[key];
-  //   }
-  // }
-  const { default: generateFlow } = await import('./src/flow');
-  const { default: generateTypescript } = await import('./src/typescript');
-  return { unformattedFlow: await generateFlow(), unformattedTypescript: await generateTypescript() };
+  const data = declarator(3);
+  return { unformattedFlow: await generateFlow(data), unformattedTypescript: await generateTypescript(data) };
 }
 
 async function format(output: string, parser: prettier.BuiltInParserName) {

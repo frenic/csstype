@@ -4439,7 +4439,7 @@ export type Property$BackdropFilter = Globals | "none" | string;
 
 export type Property$BackfaceVisibility = Globals | "hidden" | "visible";
 
-export type Property$Background<TLength = string | 0> = Globals | DataType$FinalBgLayer<TLength> | string;
+export type Property$Background<TLength = string | 0> = Globals | DataType$BgLayer<TLength> | DataType$FinalBgLayer<TLength> | string;
 
 export type Property$BackgroundAttachment = Globals | DataType$Attachment | string;
 
@@ -6384,6 +6384,8 @@ type DataType$Attachment = "fixed" | "local" | "scroll";
 type DataType$Autospace = "ideograph-alpha" | "ideograph-numeric" | "insert" | "no-autospace" | "punctuation" | "replace" | string;
 
 type DataType$BgClip = DataType$VisualBox | "border-area" | "text";
+
+type DataType$BgLayer<TLength> = DataType$BgPosition<TLength> | DataType$RepeatStyle | DataType$Attachment | DataType$VisualBox | "none" | string;
 
 type DataType$BgPosition<TLength> = TLength | "bottom" | "center" | "left" | "right" | "top" | string;
 
