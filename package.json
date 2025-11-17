@@ -42,7 +42,7 @@
     "js-yaml": ">=4.1.1"
   },
   "scripts": {
-    "prepublish": "npm install --prefix __tests__ && npm install --prefix __tests__/__fixtures__",
+    "prepublish": "npm install --no-save --prefix __tests__ && npm install --no-save --prefix __tests__/__fixtures__",
     "release": "release-it",
     "update": "tsx update.ts",
     "build": "tsx --inspect build.ts --start",
