@@ -48,12 +48,11 @@ async function update() {
 
     await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
     await install();
-
     await build();
 
     const [indexDtsDiff, indexFlowDiff] = [
-      await spawnAsync('git', '--no-pager', 'diff', '--color', TYPESCRIPT_FILENAME),
-      await spawnAsync('git', '--no-pager', 'diff', '--color', FLOW_FILENAME),
+      await spawnAsync('git', '--no-pager', 'diff', TYPESCRIPT_FILENAME),
+      await spawnAsync('git', '--no-pager', 'diff', FLOW_FILENAME),
     ];
 
     if (indexDtsDiff !== '' || indexFlowDiff !== '') {
@@ -61,35 +60,64 @@ async function update() {
       console.info(indexDtsDiff);
       console.info(indexFlowDiff);
 
-      const doPrepare = await questionAsync('Do you want to prepare a release for this? (y/n) ');
-
-      if (doPrepare === 'y') {
+      if (process.argv.includes('--auto')) {
         await spawnAsync('git', 'commit', '-am', 'Bump MDN');
+        await spawnAsync('git', 'push', 'origin', 'HEAD');
 
-        const [major, minor, patch] = nextPackageJson.version.split('.');
-        const version = `${major}.${minor}.${Number(patch) + 1}`;
-        const tag = `v${version}`;
+        let body = 'Automated update of types based on the latest MDN data:';
 
-        nextPackageJson.version = version;
-
-        await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
-        await spawnAsync('git', 'commit', '-am', tag);
-        await spawnAsync('git', 'tag', tag);
-
-        console.info(`The changes are committed and tagged with: ${tag}`);
-
-        const doPush = await questionAsync('Do you want to push now? (y/n) ');
-
-        if (doPush === 'y') {
-          console.info('Pushing...');
-          await spawnAsync('git', 'push', 'origin', 'HEAD', '--tags');
+        if (currentMdnDataVersion !== latestMdnDataVersion) {
+          body += `\n- ${MDN_DATA}: ${currentMdnDataVersion} → ${latestMdnDataVersion}`;
         }
+
+        if (currentMdnCompatVersion !== latestMdnCompatVersion) {
+          body += `\n- ${MDN_COMPAT}: ${currentMdnCompatVersion} → ${latestMdnCompatVersion}`;
+        }
+
+        await spawnAsync(
+          'gh',
+          'pr',
+          'create',
+          '-B',
+          'master',
+          '-H',
+          'HEAD',
+          '--title',
+          '"Update types"',
+          '--body',
+          JSON.stringify(body),
+        );
       } else {
-        console.info('Maybe next time!');
-        console.info('Resetting...');
-        await reset();
-        console.info('Downgrading...');
-        await install(true);
+        const doPrepare = await questionAsync('Do you want to prepare a release for this? (y/n) ');
+
+        if (doPrepare === 'y') {
+          await spawnAsync('git', 'commit', '-am', 'Bump MDN');
+
+          const [major, minor, patch] = nextPackageJson.version.split('.');
+          const version = `${major}.${minor}.${Number(patch) + 1}`;
+          const tag = `v${version}`;
+
+          nextPackageJson.version = version;
+
+          await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
+          await spawnAsync('git', 'commit', '-am', tag);
+          await spawnAsync('git', 'tag', tag);
+
+          console.info(`The changes are committed and tagged with: ${tag}`);
+
+          const doPush = await questionAsync('Do you want to push now? (y/n) ');
+
+          if (doPush === 'y') {
+            console.info('Pushing...');
+            await spawnAsync('git', 'push', 'origin', 'HEAD', '--tags');
+          }
+        } else {
+          console.info('Maybe next time!');
+          console.info('Resetting...');
+          await reset();
+          console.info('Downgrading...');
+          await install(true);
+        }
       }
     } else {
       console.info('No changes detected!');

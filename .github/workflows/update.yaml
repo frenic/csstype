@@ -1,13 +1,11 @@
-name: 'CI checks'
+name: 'Update types'
 
 on:
-  push:
-    branches: ['master']
-  pull_request:
-    branches: ['master']
+  schedule:
+    - cron: '0 6 * * *'
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,6 +16,6 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
-      - run: npm run test:src
-      - run: npm run build
-      - run: npx tsx is-clean.ts
+      - run: npm run update -- --auto
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
