@@ -1,10 +1,10 @@
-import { getAtRules } from './collections/at-rules';
-import { getHtmlAttributes, getSvgAttributes } from './collections/attributes';
-import { getDataTypesOf } from './collections/data-types';
-import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } from './collections/properties';
-import { getPseudos } from './collections/selectors';
-import { IDataType, Type, TypeType } from './syntax/typer';
-import { toCamelCase, toPascalCase, toVendorPrefixCase } from './utils/casing';
+import { getAtRules } from './collections/at-rules.mjs';
+import { getHtmlAttributes, getSvgAttributes } from './collections/attributes.mjs';
+import { getDataTypesOf } from './collections/data-types.mjs';
+import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } from './collections/properties.mjs';
+import { getPseudos } from './collections/selectors.mjs';
+import { IDataType, Type, TypeType } from './syntax/typer.mjs';
+import { toCamelCase, toPascalCase, toVendorPrefixCase } from './utils/casing.mjs';
 
 export interface IArray {
   type: Type.Array;

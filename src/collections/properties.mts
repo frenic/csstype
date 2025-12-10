@@ -1,7 +1,7 @@
-import { properties as rawSvgProperties } from '../data/svg';
-import parse from '../syntax/parser';
-import typer, { ResolvedType } from '../syntax/typer';
-import { composeCommentBlock } from '../utils/comment';
+import { properties as rawSvgProperties } from '../data/svg.mjs';
+import parse from '../syntax/parser.mjs';
+import typer, { ResolvedType } from '../syntax/typer.mjs';
+import { composeCommentBlock } from '../utils/comment.mjs';
 import {
   compatNames,
   compatSyntax,
@@ -10,10 +10,10 @@ import {
   getTypesData,
   isAddedBySome,
   isDeprecated,
-} from '../utils/compat';
-import { warn } from '../utils/logger';
-import { createPropertyDataTypeResolver, IDataTypeDictionary, resolveDataTypes } from './data-types';
-import { getProperties, getPropertySyntax } from './syntaxes';
+} from '../utils/compat.mjs';
+import { warn } from '../utils/logger.mjs';
+import { createPropertyDataTypeResolver, IDataTypeDictionary, resolveDataTypes } from './data-types.mjs';
+import { getProperties, getPropertySyntax } from './syntaxes.mjs';
 
 const ALL = 'all';
 
@@ -51,9 +51,15 @@ export async function getGlobals(
   dataTypeDictionary: IDataTypeDictionary,
   minTypesInDataTypes: number,
 ): Promise<ResolvedType[]> {
+  const syntax = getPropertySyntax(ALL);
+
+  if (!syntax) {
+    throw new Error(`Syntax for ${ALL} is missing`);
+  }
+
   const dataTypes = resolveDataTypes(
     dataTypeDictionary,
-    typer(compatSyntax(getGlobalCompatibilityData(), parse(getPropertySyntax(ALL)))),
+    typer(compatSyntax(getGlobalCompatibilityData(), parse(syntax))),
     minTypesInDataTypes,
   );
 
@@ -94,12 +100,17 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
     }
 
     const data = propertiesMap[originalName];
+    const syntax = getPropertySyntax(originalName);
+
+    if (!syntax) {
+      continue;
+    }
 
     // Default values
-    let entities = parse(getPropertySyntax(originalName));
+    let entities = parse(syntax);
     let currentNames: string[] = [originalName];
     let obsoleteNames: string[] = [];
-    let deprecated = isDeprecated(data);
+    let deprecated: boolean = false;
 
     const compatibilityData = getPropertyData(originalName);
 
@@ -118,7 +129,7 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
       obsoleteNames = obsoleteNames.concat(
         ...compats.map(compat => filterMissingProperties(compatNames(compat, originalName, true))),
       );
-      deprecated = compats.every(compat => isDeprecated(data, compat));
+      deprecated = compats.every(compat => isDeprecated(compat));
     }
 
     if (deprecated) {

@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as jsdom from 'jsdom';
 import * as path from 'path';
 import Turndown from 'turndown';
-import { error, warn } from './logger';
+import { error, warn } from './logger.mjs';
 import urlData from '../data/urls.json';
 import { fileURLToPath } from 'url';
 

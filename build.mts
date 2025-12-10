@@ -1,13 +1,13 @@
 import * as chokidar from 'chokidar';
 import * as path from 'path';
 import * as prettier from 'prettier';
-import { FLOW_FILENAME, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
+import { FLOW_FILENAME, TYPESCRIPT_FILENAME, writeFileAsync } from './utils.mjs';
 import { runCLI } from 'jest';
 import { fileURLToPath } from 'url';
 import { Config } from '@jest/types';
-import { declarator } from './src/declarator';
-import generateFlow from './src/flow';
-import generateTypescript from './src/typescript';
+import { declarator } from './src/declarator.mjs';
+import generateFlow from './src/flow.mjs';
+import generateTypescript from './src/typescript.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

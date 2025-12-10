@@ -1,6 +1,6 @@
 import mdnBrowserCompatData, { Identifier } from '@mdn/browser-compat-data';
-import { hasType, ResolvedType, Type, TypeType } from '../syntax/typer';
-import { alternativeAttributes } from '../utils/compat';
+import { hasType, ResolvedType, Type, TypeType } from '../syntax/typer.mjs';
+import { alternativeAttributes } from '../utils/compat.mjs';
 
 function assembleAttributes(attributes: ResolvedType[], dataset: { [key: string]: Identifier }): ResolvedType[] {
   const nextAttributes = [...attributes];

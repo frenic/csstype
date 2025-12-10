@@ -1,5 +1,5 @@
-import parse from '../src/syntax/parser';
-import typer, { Type } from '../src/syntax/typer';
+import parse from '../src/syntax/parser.mjs';
+import typer, { Type } from '../src/syntax/typer.mjs';
 
 describe('typing', () => {
   it('types combinators', () => {

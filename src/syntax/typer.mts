@@ -1,6 +1,4 @@
-import cssTypes from 'mdn-data/css/types.json';
 import { definitionSyntax, DSNode, DSNodeGroup } from 'css-tree';
-import { isSyntax } from '../collections/syntaxes';
 
 export enum Type {
   Alias,
@@ -52,12 +50,13 @@ export default function typer(node: DSNodeGroup): TypeType[] {
   const dataTypes: string[] = [];
   const propertyReferences: string[] = [];
 
+  let insideFunction = 0;
   let skipComponent = 0;
   const componentsToSkip: DSNode[] = [];
 
   definitionSyntax.walk(node, {
-    enter(node) {
-      if (skipComponent > 0 || componentsToSkip.includes(node)) {
+    enter(child) {
+      if (skipComponent > 0 || componentsToSkip.includes(child)) {
         if (!hasStringKeyword) {
           types.push({ type: Type.String });
           hasStringKeyword = true;
@@ -67,34 +66,30 @@ export default function typer(node: DSNodeGroup): TypeType[] {
         return;
       }
 
-      switch (node.type) {
+      if (insideFunction > 0) {
+        if (child.type === 'Token' && child.value === ')') {
+          insideFunction--;
+        }
+
+        return;
+      }
+
+      switch (child.type) {
         case 'Group':
-          if (node.terms.length < 2) {
-            break;
-          }
-
-          // Skip functions since they may cause recurring data types
-          if (node.terms[0].type === 'Function') {
-            const lastTerm = node.terms.at(-1)!;
-            if (lastTerm.type !== 'Token' || lastTerm.value !== ')') {
-              throw new Error('This is a weird looking function to me');
-            }
-
-            skipComponent++;
-
+          if (child.terms.length < 2) {
             break;
           }
 
           // Comma is an optional separator, like | but with a comma
-          if (isCommaSeparator(node.terms)) {
-            if (node.combinator !== ' ') {
+          if (isCommaSeparator(child.terms)) {
+            if (child.combinator !== ' ') {
               throw new Error('Cannot assume whitespace combinator with comma anymore');
             }
 
             break;
           }
 
-          if (node.combinator === ' ' || node.combinator === '&&' || node.combinator === '||') {
+          if (child.combinator === ' ' || child.combinator === '&&' || child.combinator === '||') {
             if (!hasStringKeyword) {
               types.push({ type: Type.String });
               hasStringKeyword = true;
@@ -103,8 +98,8 @@ export default function typer(node: DSNodeGroup): TypeType[] {
             let mandatoryTermsInGroup = 0;
             const optionalComponents: DSNode[] = [];
 
-            if (node.combinator !== '||') {
-              for (const term of node.terms) {
+            if (child.combinator !== '||') {
+              for (const term of child.terms) {
                 if (term.type === 'Multiplier') {
                   if (term.min > 0) {
                     mandatoryTermsInGroup++;
@@ -128,8 +123,18 @@ export default function typer(node: DSNodeGroup): TypeType[] {
             }
           }
           break;
+        case 'Function': {
+          insideFunction++;
+
+          // Skip functions since they may cause recurring data types
+          if (!hasStringKeyword) {
+            types.push({ type: Type.String });
+            hasStringKeyword = true;
+          }
+          break;
+        }
         case 'Multiplier':
-          if (node.min > 1) {
+          if (child.min > 1) {
             skipComponent++;
 
             if (!hasStringKeyword) {
@@ -137,7 +142,7 @@ export default function typer(node: DSNodeGroup): TypeType[] {
               hasStringKeyword = true;
             }
           }
-          if (node.max === 0 || node.max > 1) {
+          if (child.max === 0 || child.max > 1) {
             if (!hasStringKeyword) {
               types.push({ type: Type.String });
               hasStringKeyword = true;
@@ -145,20 +150,20 @@ export default function typer(node: DSNodeGroup): TypeType[] {
           }
           break;
         case 'Keyword':
-          if (node.name === String(parseInt(node.name))) {
-            if (!numericLiterals.includes(node.name)) {
-              types.push({ type: Type.NumericLiteral, literal: parseInt(node.name) });
-              numericLiterals.push(node.name);
+          if (child.name === String(parseInt(child.name))) {
+            if (!numericLiterals.includes(child.name)) {
+              types.push({ type: Type.NumericLiteral, literal: parseInt(child.name) });
+              numericLiterals.push(child.name);
             }
           } else {
-            if (!stringLiterals.includes(node.name)) {
-              types.push({ type: Type.StringLiteral, literal: node.name });
-              stringLiterals.push(node.name);
+            if (!stringLiterals.includes(child.name)) {
+              types.push({ type: Type.StringLiteral, literal: child.name });
+              stringLiterals.push(child.name);
             }
           }
           break;
         case 'Type':
-          switch (node.name) {
+          switch (child.name) {
             case 'number':
             case 'integer':
               if (!hasNumbericKeyword) {
@@ -178,23 +183,24 @@ export default function typer(node: DSNodeGroup): TypeType[] {
                 hasTime = true;
               }
               break;
+            case 'string':
+              if (!hasStringKeyword) {
+                types.push({ type: Type.String });
+                hasStringKeyword = true;
+              }
+              break;
             default:
-              if (!isSyntax(node.name) && node.name in cssTypes) {
-                if (!hasStringKeyword) {
-                  types.push({ type: Type.String });
-                  hasStringKeyword = true;
-                }
-              } else if (!dataTypes.includes(node.name)) {
-                types.push({ type: Type.DataType, name: node.name });
-                dataTypes.push(node.name);
+              if (!dataTypes.includes(child.name)) {
+                types.push({ type: Type.DataType, name: child.name });
+                dataTypes.push(child.name);
               }
               break;
           }
           break;
         case 'Property':
-          if (!propertyReferences.includes(node.name)) {
-            types.push({ type: Type.PropertyReference, name: node.name });
-            propertyReferences.push(node.name);
+          if (!propertyReferences.includes(child.name)) {
+            types.push({ type: Type.PropertyReference, name: child.name });
+            propertyReferences.push(child.name);
           }
           break;
         default:
