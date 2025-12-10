@@ -1,5 +1,13 @@
-import { DeclarableType, IAlias, IGenerics, INamespace, lengthGeneric, SimpleType, timeGeneric } from '../declarator';
-import { Type } from '../syntax/typer';
+import {
+  DeclarableType,
+  IAlias,
+  IGenerics,
+  INamespace,
+  lengthGeneric,
+  SimpleType,
+  timeGeneric,
+} from '../declarator.mjs';
+import { Type } from '../syntax/typer.mjs';
 
 export const EOL = '\n';
 

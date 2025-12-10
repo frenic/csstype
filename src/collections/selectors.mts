@@ -1,6 +1,6 @@
-import selectors from 'mdn-data/css/selectors.json';
-import { hasType, ResolvedType, Type, TypeType } from '../syntax/typer';
-import { alternativeSelectors } from '../utils/compat';
+import { selectors } from '../data/css.mjs';
+import { hasType, ResolvedType, Type, TypeType } from '../syntax/typer.mjs';
+import { alternativeSelectors } from '../utils/compat.mjs';
 
 const REGEX_SIMPLE_PSEUDO_SELECTOR = /(?!:?:[\w-]+\()(:?:[\w-]+)/g;
 const REGEX_ADVANCED_PSEUDO_SELECTOR = /(:?:[\w-]+)\(/g;
@@ -9,9 +9,9 @@ export async function getPseudos() {
   const simple: ResolvedType[] = [];
   const advanced: ResolvedType[] = [];
 
-  for (const selector in selectors) {
-    let match: RegExpMatchArray | null = null;
-    while ((match = REGEX_SIMPLE_PSEUDO_SELECTOR.exec(selectors[selector].syntax))) {
+  for (const selector of selectors) {
+    let match: RegExpMatchArray | false | null = null;
+    while ((match = typeof selector.syntax === 'string' && REGEX_SIMPLE_PSEUDO_SELECTOR.exec(selector.syntax))) {
       const type: TypeType = { type: Type.StringLiteral, literal: match[1] };
       if (!hasType(simple, type)) {
         simple.push(type);
@@ -24,7 +24,7 @@ export async function getPseudos() {
         }
       }
     }
-    while ((match = REGEX_ADVANCED_PSEUDO_SELECTOR.exec(selectors[selector].syntax))) {
+    while ((match = typeof selector.syntax === 'string' && REGEX_ADVANCED_PSEUDO_SELECTOR.exec(selector.syntax))) {
       const type: TypeType = { type: Type.StringLiteral, literal: match[1] };
       if (!hasType(advanced, type)) {
         advanced.push(type);

@@ -1,50 +1,49 @@
-import build from './build';
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+import { promisify } from 'util';
+import { exec } from 'child_process';
+import build from './build.mjs';
 import packageJson from './package.json';
-import { FLOW_FILENAME, getJsonAsync, questionAsync, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
+import { FLOW_FILENAME, questionAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils.mjs';
+
+const execAsync = promisify(exec);
 
 async function update() {
   const nextPackageJson = { ...packageJson };
 
-  if ((await spawnAsync('git', 'status', '--porcelain')) !== '') {
+  if ((await execAsync('git status --porcelain')).stdout !== '') {
     console.error('Your working directory needs to be clean!');
     process.exit(1);
   }
 
   console.info('Check for updates...');
 
-  const MDN_DATA = 'mdn-data';
+  const WEBREF_CSS = '@webref/css';
   const MDN_COMPAT = '@mdn/browser-compat-data';
 
-  const currentMdnDataVersion = nextPackageJson.devDependencies[MDN_DATA];
+  const currentMdnDataVersion = nextPackageJson.devDependencies[WEBREF_CSS];
   const currentMdnCompatVersion = nextPackageJson.devDependencies[MDN_COMPAT];
 
-  const [mdnDataMaster, mdnCompatMaster] = [
-    await getJsonAsync({
-      hostname: 'api.github.com',
-      path: '/repos/mdn/data/releases',
-      headers: { 'User-Agent': 'NodeJS' },
-    }),
-    await getJsonAsync({
-      hostname: 'api.github.com',
-      path: '/repos/mdn/browser-compat-data/releases',
-      headers: { 'User-Agent': 'NodeJS' },
-    }),
+  const [webrefCssVersions, mdnCompatVersions] = [
+    JSON.parse((await execAsync(`npm view ${WEBREF_CSS} versions`)).stdout) as string[],
+    JSON.parse((await execAsync(`npm view ${MDN_COMPAT} versions`)).stdout) as string[],
   ];
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const latestMdnDataVersion = (mdnDataMaster as any)[0].name.replace(/^v/, '');
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const latestMdnCompatVersion = (mdnCompatMaster as any)[0].name.replace(/^v/, '');
+  const latestWebrefCssVersion = webrefCssVersions.at(-1);
+  const latestMdnCompatVersion = mdnCompatVersions.at(-1);
 
-  if (currentMdnDataVersion !== latestMdnDataVersion || currentMdnCompatVersion !== latestMdnCompatVersion) {
+  const hasNewerWebrefCssVersion = latestWebrefCssVersion && latestWebrefCssVersion !== currentMdnDataVersion;
+  const hasNewerMdnCompatVersion = latestMdnCompatVersion && currentMdnCompatVersion !== latestMdnCompatVersion;
+
+  if (hasNewerWebrefCssVersion || hasNewerMdnCompatVersion) {
     console.info('Update found!');
     console.info('Upgrading...');
 
-    nextPackageJson.devDependencies[MDN_DATA] = latestMdnDataVersion;
-    nextPackageJson.devDependencies[MDN_COMPAT] = latestMdnCompatVersion;
+    if (hasNewerWebrefCssVersion) {
+      nextPackageJson.devDependencies[WEBREF_CSS] = latestWebrefCssVersion;
+    }
+
+    if (hasNewerMdnCompatVersion) {
+      nextPackageJson.devDependencies[MDN_COMPAT] = latestMdnCompatVersion;
+    }
 
     await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
     await install();
@@ -52,8 +51,8 @@ async function update() {
     await build();
 
     const [indexDtsDiff, indexFlowDiff] = [
-      await spawnAsync('git', '--no-pager', 'diff', '--color', TYPESCRIPT_FILENAME),
-      await spawnAsync('git', '--no-pager', 'diff', '--color', FLOW_FILENAME),
+      (await execAsync(`git --no-pager diff --color ${TYPESCRIPT_FILENAME}`)).stdout,
+      (await execAsync(`git --no-pager diff --color ${FLOW_FILENAME}`)).stdout,
     ];
 
     if (indexDtsDiff !== '' || indexFlowDiff !== '') {
@@ -64,7 +63,7 @@ async function update() {
       const doPrepare = await questionAsync('Do you want to prepare a release for this? (y/n) ');
 
       if (doPrepare === 'y') {
-        await spawnAsync('git', 'commit', '-am', 'Bump MDN');
+        await execAsync('git commit -am Bump MDN');
 
         const [major, minor, patch] = nextPackageJson.version.split('.');
         const version = `${major}.${minor}.${Number(patch) + 1}`;
@@ -73,8 +72,8 @@ async function update() {
         nextPackageJson.version = version;
 
         await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
-        await spawnAsync('git', 'commit', '-am', tag);
-        await spawnAsync('git', 'tag', tag);
+        await execAsync(`git commit -am ${tag}`);
+        await execAsync(`git tag ${tag}`);
 
         console.info(`The changes are committed and tagged with: ${tag}`);
 
@@ -82,7 +81,7 @@ async function update() {
 
         if (doPush === 'y') {
           console.info('Pushing...');
-          await spawnAsync('git', 'push', 'origin', 'HEAD', '--tags');
+          await execAsync('git push origin HEAD --tags');
         }
       } else {
         console.info('Maybe next time!');
@@ -108,16 +107,9 @@ async function update() {
 update();
 
 function reset() {
-  return spawnAsync('git', 'reset', '--hard');
+  return execAsync('git reset --hard');
 }
 
 function install(pure = false) {
-  return spawnAsync(
-    process.platform === 'win32' ? 'npm.cmd' : 'npm',
-    { stdio: 'inherit' },
-    'install',
-    '--silent',
-    '--ignore-scripts',
-    ...(pure ? ['--dry-run'] : []),
-  );
+  return execAsync(`npm install --silent --ignore-scripts${pure ? ' --dry-run' : ''}`);
 }

@@ -1,41 +1,44 @@
 import { format } from 'prettier';
+import rawProperties from 'mdn-data/css/properties.json';
 import l10n from 'mdn-data/l10n/css.json';
 import { Identifier, SupportStatement } from '@mdn/browser-compat-data';
-import { IExtendedProperty } from '../data/patches';
-import { getCompats, getSupport, SupportedSimpleSupportStatement, versionAdded } from '../utils/compat';
-import { warn } from './logger';
-import { getSummary } from './urls';
+import { IExtendedProperty } from '../data/patches.mjs';
+import { getCompats, getSupport, SupportedSimpleSupportStatement, versionAdded } from './compat.mjs';
+import { warn } from './logger.mjs';
+import { getSummary } from './urls.mjs';
 
 const BLANK_ROW = '';
 const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\\}]+\}\})/;
 
 export async function composeCommentBlock(
   compatibilityData: Identifier | undefined,
-  data: IExtendedProperty,
+  property: IExtendedProperty,
   vendor = false,
   obsolete = false,
 ) {
   const rows: string[] = [];
   const includeCompatibility = !vendor && !obsolete && compatibilityData;
 
-  if (data.mdn_url) {
-    const summary = await getSummary(data.mdn_url);
+  const mdnUrl = property.name && property.name in rawProperties && rawProperties[property.name].mdn_url;
+
+  if (mdnUrl) {
+    const summary = await getSummary(mdnUrl);
     if (summary) {
       rows.push(summary, BLANK_ROW);
     }
   }
 
-  if (data.syntax) {
-    rows.push(`**Syntax**: \`${data.syntax}\``, BLANK_ROW);
+  if (property.syntax) {
+    rows.push(`**Syntax**: \`${property.syntax}\``, BLANK_ROW);
   }
 
-  if (typeof data.initial === 'string') {
-    if (data.initial in l10n) {
-      if (typeof l10n[data.initial]['en-US'] === 'string') {
-        rows.push(`**Initial value**: ${formatL10n(l10n[data.initial]['en-US'])}`, BLANK_ROW);
+  if (typeof property.initial === 'string') {
+    if (property.initial in l10n) {
+      if (typeof l10n[property.initial]['en-US'] === 'string') {
+        rows.push(`**Initial value**: ${formatL10n(l10n[property.initial]['en-US'])}`, BLANK_ROW);
       }
     } else {
-      rows.push(`**Initial value**: \`${data.initial}\``, BLANK_ROW);
+      rows.push(`**Initial value**: \`${property.initial}\``, BLANK_ROW);
     }
   }
 

@@ -1,8 +1,8 @@
 import { Identifier } from '@mdn/browser-compat-data';
-import parse from '../syntax/parser';
-import typer, { DataType, hasType, IDataType, ResolvedType, Type, TypeType } from '../syntax/typer';
-import { compatSyntax } from '../utils/compat';
-import { getPropertySyntax, getSyntax } from './syntaxes';
+import parse from '../syntax/parser.mjs';
+import typer, { DataType, hasType, IDataType, ResolvedType, Type, TypeType } from '../syntax/typer.mjs';
+import { compatSyntax } from '../utils/compat.mjs';
+import { getPropertySyntax, getSyntax } from './syntaxes.mjs';
 
 export interface IDataTypeDictionary {
   [key: string]: ResolvedType[];

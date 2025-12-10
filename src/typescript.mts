@@ -8,9 +8,9 @@ import {
   isInterface,
   isInterfaceProperties,
   SimpleType,
-} from './declarator';
-import { Type } from './syntax/typer';
-import { createStringifyType, EOL, stringifyGenerics } from './utils/output';
+} from './declarator.mjs';
+import { Type } from './syntax/typer.mjs';
+import { createStringifyType, EOL, stringifyGenerics } from './utils/output.mjs';
 
 export default async function typescript(data: ReturnType<typeof declarator>) {
   const { namespaces, interfaces, declarations } = await data;

@@ -7,9 +7,9 @@ import {
   isAliasProperty,
   isInterface,
   isInterfaceProperties,
-} from './declarator';
-import { Type } from './syntax/typer';
-import { createStringifyType, EOL, stringifyGenerics } from './utils/output';
+} from './declarator.mjs';
+import { Type } from './syntax/typer.mjs';
+import { createStringifyType, EOL, stringifyGenerics } from './utils/output.mjs';
 
 export default async function flow(data: ReturnType<typeof declarator>) {
   const { namespaces, interfaces, declarations } = await data;
@@ -88,9 +88,15 @@ function outputNamespace(namespace: INamespace) {
 function outputInterface(entry: Interface, namespace = '') {
   let output = '';
 
+  const properties = isInterfaceProperties(entry) ? entry.properties : entry.fallbacks.properties;
+
   const extendList = isInterfaceProperties(entry)
     ? combineFlowExactTypes(entry.extends.map(extend => extend.name + stringifyGenerics(extend.generics)))
     : '';
+
+  if (properties.length === 0 && !extendList) {
+    return '';
+  }
 
   if (entry.export) {
     output += 'export ';
@@ -99,8 +105,6 @@ function outputInterface(entry: Interface, namespace = '') {
   output += 'type ';
   output += typeAliasName(namespace, entry.name) + stringifyGenerics(entry.generics, true, stringifyTypes);
   output += ' = ' + extendList;
-
-  const properties = isInterfaceProperties(entry) ? entry.properties : entry.fallbacks.properties;
 
   if (properties.length > 0) {
     if (extendList) {
@@ -120,6 +124,8 @@ function outputInterface(entry: Interface, namespace = '') {
     }
     output += '|}';
   }
+
+  output += ';';
 
   return output;
 }
