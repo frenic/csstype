@@ -21,6 +21,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   animationRangeStart?: Property$AnimationRangeStart<TLength>,
   animationTimeline?: Property$AnimationTimeline,
   animationTimingFunction?: Property$AnimationTimingFunction,
+  animationTrigger?: Property$AnimationTrigger,
   appearance?: Property$Appearance,
   aspectRatio?: Property$AspectRatio,
   backdropFilter?: Property$BackdropFilter,
@@ -36,6 +37,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   backgroundRepeat?: Property$BackgroundRepeat,
   backgroundSize?: Property$BackgroundSize<TLength>,
   baselineShift?: Property$BaselineShift<TLength>,
+  baselineSource?: Property$BaselineSource,
   blockSize?: Property$BlockSize<TLength>,
   borderBlockEndColor?: Property$BorderBlockEndColor,
   borderBlockEndStyle?: Property$BorderBlockEndStyle,
@@ -68,6 +70,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   borderRightColor?: Property$BorderRightColor,
   borderRightStyle?: Property$BorderRightStyle,
   borderRightWidth?: Property$BorderRightWidth<TLength>,
+  borderShape?: Property$BorderShape,
   borderSpacing?: Property$BorderSpacing<TLength>,
   borderStartEndRadius?: Property$BorderStartEndRadius<TLength>,
   borderStartStartRadius?: Property$BorderStartStartRadius<TLength>,
@@ -84,6 +87,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   breakBefore?: Property$BreakBefore,
   breakInside?: Property$BreakInside,
   captionSide?: Property$CaptionSide,
+  caretAnimation?: Property$CaretAnimation,
   caretColor?: Property$CaretColor,
   caretShape?: Property$CaretShape,
   clear?: Property$Clear,
@@ -96,11 +100,13 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   columnCount?: Property$ColumnCount,
   columnFill?: Property$ColumnFill,
   columnGap?: Property$ColumnGap<TLength>,
+  columnHeight?: Property$ColumnHeight<TLength>,
   columnRuleColor?: Property$ColumnRuleColor,
   columnRuleStyle?: Property$ColumnRuleStyle,
   columnRuleWidth?: Property$ColumnRuleWidth<TLength>,
   columnSpan?: Property$ColumnSpan,
   columnWidth?: Property$ColumnWidth<TLength>,
+  columnWrap?: Property$ColumnWrap,
   contain?: Property$Contain,
   containIntrinsicBlockSize?: Property$ContainIntrinsicBlockSize<TLength>,
   containIntrinsicHeight?: Property$ContainIntrinsicHeight<TLength>,
@@ -110,6 +116,14 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   containerType?: Property$ContainerType,
   content?: Property$Content,
   contentVisibility?: Property$ContentVisibility,
+  cornerBottomLeftShape?: Property$CornerBottomLeftShape,
+  cornerBottomRightShape?: Property$CornerBottomRightShape,
+  cornerEndEndShape?: Property$CornerEndEndShape,
+  cornerEndStartShape?: Property$CornerEndStartShape,
+  cornerStartEndShape?: Property$CornerStartEndShape,
+  cornerStartStartShape?: Property$CornerStartStartShape,
+  cornerTopLeftShape?: Property$CornerTopLeftShape,
+  cornerTopRightShape?: Property$CornerTopRightShape,
   counterIncrement?: Property$CounterIncrement,
   counterReset?: Property$CounterReset,
   counterSet?: Property$CounterSet,
@@ -120,6 +134,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   direction?: Property$Direction,
   display?: Property$Display,
   dominantBaseline?: Property$DominantBaseline,
+  dynamicRangeLimit?: Property$DynamicRangeLimit,
   emptyCells?: Property$EmptyCells,
   fieldSizing?: Property$FieldSizing,
   fill?: Property$Fill,
@@ -129,6 +144,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   flexBasis?: Property$FlexBasis<TLength>,
   flexDirection?: Property$FlexDirection,
   flexGrow?: Property$FlexGrow,
+  flexLineCount?: Property$FlexLineCount,
   flexShrink?: Property$FlexShrink,
   flexWrap?: Property$FlexWrap,
   float?: Property$Float,
@@ -161,6 +177,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   fontWeight?: Property$FontWeight,
   fontWidth?: Property$FontWidth,
   forcedColorAdjust?: Property$ForcedColorAdjust,
+  frameSizing?: Property$FrameSizing,
   gridAutoColumns?: Property$GridAutoColumns<TLength>,
   gridAutoFlow?: Property$GridAutoFlow,
   gridAutoRows?: Property$GridAutoRows<TLength>,
@@ -186,6 +203,9 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   insetBlockStart?: Property$InsetBlockStart<TLength>,
   insetInlineEnd?: Property$InsetInlineEnd<TLength>,
   insetInlineStart?: Property$InsetInlineStart<TLength>,
+  interactivity?: Property$Interactivity,
+  interestDelayEnd?: Property$InterestDelayEnd<TTime>,
+  interestDelayStart?: Property$InterestDelayStart<TTime>,
   interpolateSize?: Property$InterpolateSize,
   isolation?: Property$Isolation,
   justifyContent?: Property$JustifyContent,
@@ -198,6 +218,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   lineBreak?: Property$LineBreak,
   lineHeight?: Property$LineHeight<TLength>,
   lineHeightStep?: Property$LineHeightStep<TLength>,
+  linkParameters?: Property$LinkParameters,
   listStyleImage?: Property$ListStyleImage,
   listStylePosition?: Property$ListStylePosition,
   listStyleType?: Property$ListStyleType,
@@ -285,6 +306,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   paddingTop?: Property$PaddingTop<TLength>,
   page?: Property$Page,
   paintOrder?: Property$PaintOrder,
+  pathLength?: Property$PathLength,
   perspective?: Property$Perspective<TLength>,
   perspectiveOrigin?: Property$PerspectiveOrigin<TLength>,
   pointerEvents?: Property$PointerEvents,
@@ -297,6 +319,8 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   printColorAdjust?: Property$PrintColorAdjust,
   quotes?: Property$Quotes,
   r?: Property$R<TLength>,
+  readingFlow?: Property$ReadingFlow,
+  readingOrder?: Property$ReadingOrder,
   resize?: Property$Resize,
   right?: Property$Right<TLength>,
   rotate?: Property$Rotate,
@@ -308,6 +332,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   rx?: Property$Rx<TLength>,
   ry?: Property$Ry<TLength>,
   scale?: Property$Scale,
+  scrollAxisLock?: Property$ScrollAxisLock,
   scrollBehavior?: Property$ScrollBehavior,
   scrollInitialTarget?: Property$ScrollInitialTarget,
   scrollMarginBlockEnd?: Property$ScrollMarginBlockEnd<TLength>,
@@ -318,6 +343,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   scrollMarginLeft?: Property$ScrollMarginLeft<TLength>,
   scrollMarginRight?: Property$ScrollMarginRight<TLength>,
   scrollMarginTop?: Property$ScrollMarginTop<TLength>,
+  scrollMarkerGroup?: Property$ScrollMarkerGroup,
   scrollPaddingBlockEnd?: Property$ScrollPaddingBlockEnd<TLength>,
   scrollPaddingBlockStart?: Property$ScrollPaddingBlockStart<TLength>,
   scrollPaddingBottom?: Property$ScrollPaddingBottom<TLength>,
@@ -333,6 +359,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   scrollSnapMarginTop?: Property$ScrollMarginTop<TLength>,
   scrollSnapStop?: Property$ScrollSnapStop,
   scrollSnapType?: Property$ScrollSnapType,
+  scrollTargetGroup?: Property$ScrollTargetGroup,
   scrollTimelineAxis?: Property$ScrollTimelineAxis,
   scrollTimelineName?: Property$ScrollTimelineName,
   scrollbarColor?: Property$ScrollbarColor,
@@ -365,14 +392,15 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   textBoxTrim?: Property$TextBoxTrim,
   textCombineUpright?: Property$TextCombineUpright,
   textDecorationColor?: Property$TextDecorationColor,
+  textDecorationInset?: Property$TextDecorationInset<TLength>,
   textDecorationLine?: Property$TextDecorationLine,
-  textDecorationSkip?: Property$TextDecorationSkip,
   textDecorationSkipInk?: Property$TextDecorationSkipInk,
   textDecorationStyle?: Property$TextDecorationStyle,
   textDecorationThickness?: Property$TextDecorationThickness<TLength>,
   textEmphasisColor?: Property$TextEmphasisColor,
   textEmphasisPosition?: Property$TextEmphasisPosition,
   textEmphasisStyle?: Property$TextEmphasisStyle,
+  textFit?: Property$TextFit,
   textIndent?: Property$TextIndent<TLength>,
   textJustify?: Property$TextJustify,
   textOrientation?: Property$TextOrientation,
@@ -387,6 +415,12 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   textWrapMode?: Property$TextWrapMode,
   textWrapStyle?: Property$TextWrapStyle,
   timelineScope?: Property$TimelineScope,
+  timelineTriggerActivationRangeEnd?: Property$TimelineTriggerActivationRangeEnd<TLength>,
+  timelineTriggerActivationRangeStart?: Property$TimelineTriggerActivationRangeStart<TLength>,
+  timelineTriggerActiveRangeEnd?: Property$TimelineTriggerActiveRangeEnd<TLength>,
+  timelineTriggerActiveRangeStart?: Property$TimelineTriggerActiveRangeStart<TLength>,
+  timelineTriggerName?: Property$TimelineTriggerName,
+  timelineTriggerSource?: Property$TimelineTriggerSource,
   top?: Property$Top<TLength>,
   touchAction?: Property$TouchAction,
   transform?: Property$Transform,
@@ -399,6 +433,7 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   transitionProperty?: Property$TransitionProperty,
   transitionTimingFunction?: Property$TransitionTimingFunction,
   translate?: Property$Translate<TLength>,
+  triggerScope?: Property$TriggerScope,
   unicodeBidi?: Property$UnicodeBidi,
   userSelect?: Property$UserSelect,
   vectorEffect?: Property$VectorEffect,
@@ -408,12 +443,14 @@ export type StandardLonghandProperties<TLength = string | 0, TTime = string> = {
   viewTimelineName?: Property$ViewTimelineName,
   viewTransitionClass?: Property$ViewTransitionClass,
   viewTransitionName?: Property$ViewTransitionName,
+  viewTransitionScope?: Property$ViewTransitionScope,
   visibility?: Property$Visibility,
   whiteSpace?: Property$WhiteSpace,
   whiteSpaceCollapse?: Property$WhiteSpaceCollapse,
   widows?: Property$Widows,
   width?: Property$Width<TLength>,
   willChange?: Property$WillChange,
+  windowDrag?: Property$WindowDrag,
   wordBreak?: Property$WordBreak,
   wordSpacing?: Property$WordSpacing<TLength>,
   wordWrap?: Property$WordWrap,
@@ -457,6 +494,15 @@ export type StandardShorthandProperties<TLength = string | 0, TTime = string> = 
   columns?: Property$Columns<TLength>,
   containIntrinsicSize?: Property$ContainIntrinsicSize<TLength>,
   container?: Property$Container,
+  cornerBlockEndShape?: Property$CornerBlockEndShape,
+  cornerBlockStartShape?: Property$CornerBlockStartShape,
+  cornerBottomShape?: Property$CornerBottomShape,
+  cornerInlineEndShape?: Property$CornerInlineEndShape,
+  cornerInlineStartShape?: Property$CornerInlineStartShape,
+  cornerLeftShape?: Property$CornerLeftShape,
+  cornerRightShape?: Property$CornerRightShape,
+  cornerShape?: Property$CornerShape,
+  cornerTopShape?: Property$CornerTopShape,
   flex?: Property$Flex<TLength>,
   flexFlow?: Property$FlexFlow,
   font?: Property$Font,
@@ -469,6 +515,7 @@ export type StandardShorthandProperties<TLength = string | 0, TTime = string> = 
   inset?: Property$Inset<TLength>,
   insetBlock?: Property$InsetBlock<TLength>,
   insetInline?: Property$InsetInline<TLength>,
+  interestDelay?: Property$InterestDelay<TTime>,
   lineClamp?: Property$LineClamp,
   listStyle?: Property$ListStyle,
   margin?: Property$Margin<TLength>,
@@ -499,6 +546,9 @@ export type StandardShorthandProperties<TLength = string | 0, TTime = string> = 
   textDecoration?: Property$TextDecoration<TLength>,
   textEmphasis?: Property$TextEmphasis,
   textWrap?: Property$TextWrap,
+  timelineTrigger?: Property$TimelineTrigger,
+  timelineTriggerActivationRange?: Property$TimelineTriggerActivationRange<TLength>,
+  timelineTriggerActiveRange?: Property$TimelineTriggerActiveRange<TLength>,
   transition?: Property$Transition<TTime>,
   viewTimeline?: Property$ViewTimeline,
 |};
@@ -554,6 +604,7 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   MozTransform?: Property$Transform,
   MozTransformOrigin?: Property$TransformOrigin<TLength>,
   MozTransformStyle?: Property$TransformStyle,
+  MozUserFocus?: Property$MozUserFocus,
   MozUserModify?: Property$MozUserModify,
   MozUserSelect?: Property$UserSelect,
   MozWindowDragging?: Property$MozWindowDragging,
@@ -636,12 +687,21 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   WebkitBackgroundClip?: Property$BackgroundClip,
   WebkitBackgroundOrigin?: Property$BackgroundOrigin,
   WebkitBackgroundSize?: Property$BackgroundSize<TLength>,
+  WebkitBorderAfterColor?: Property$WebkitBorderAfterColor,
+  WebkitBorderAfterStyle?: Property$WebkitBorderAfterStyle,
+  WebkitBorderAfterWidth?: Property$WebkitBorderAfterWidth<TLength>,
   WebkitBorderBeforeColor?: Property$WebkitBorderBeforeColor,
   WebkitBorderBeforeStyle?: Property$WebkitBorderBeforeStyle,
   WebkitBorderBeforeWidth?: Property$WebkitBorderBeforeWidth<TLength>,
   WebkitBorderBottomLeftRadius?: Property$BorderBottomLeftRadius<TLength>,
   WebkitBorderBottomRightRadius?: Property$BorderBottomRightRadius<TLength>,
+  WebkitBorderEndColor?: Property$WebkitBorderEndColor,
+  WebkitBorderEndStyle?: Property$WebkitBorderEndStyle,
+  WebkitBorderEndWidth?: Property$WebkitBorderEndWidth<TLength>,
   WebkitBorderImageSlice?: Property$BorderImageSlice,
+  WebkitBorderStartColor?: Property$WebkitBorderStartColor,
+  WebkitBorderStartStyle?: Property$WebkitBorderStartStyle,
+  WebkitBorderStartWidth?: Property$WebkitBorderStartWidth<TLength>,
   WebkitBorderTopLeftRadius?: Property$BorderTopLeftRadius<TLength>,
   WebkitBorderTopRightRadius?: Property$BorderTopRightRadius<TLength>,
   WebkitBoxDecorationBreak?: Property$BoxDecorationBreak,
@@ -674,6 +734,8 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   WebkitLineClamp?: Property$WebkitLineClamp,
   WebkitLogicalHeight?: Property$BlockSize<TLength>,
   WebkitLogicalWidth?: Property$InlineSize<TLength>,
+  WebkitMarginAfter?: Property$MarginBlockEnd<TLength>,
+  WebkitMarginBefore?: Property$MarginBlockStart<TLength>,
   WebkitMarginEnd?: Property$MarginInlineEnd<TLength>,
   WebkitMarginStart?: Property$MarginInlineStart<TLength>,
   WebkitMaskAttachment?: Property$WebkitMaskAttachment,
@@ -708,7 +770,6 @@ export type VendorLonghandProperties<TLength = string | 0, TTime = string> = {|
   WebkitTextCombine?: Property$TextCombineUpright,
   WebkitTextDecorationColor?: Property$TextDecorationColor,
   WebkitTextDecorationLine?: Property$TextDecorationLine,
-  WebkitTextDecorationSkip?: Property$TextDecorationSkip,
   WebkitTextDecorationStyle?: Property$TextDecorationStyle,
   WebkitTextEmphasisColor?: Property$TextEmphasisColor,
   WebkitTextEmphasisPosition?: Property$TextEmphasisPosition,
@@ -747,9 +808,12 @@ export type VendorShorthandProperties<TLength = string | 0, TTime = string> = {|
   msScrollSnapY?: Property$MsScrollSnapY,
   msTransition?: Property$Transition<TTime>,
   WebkitAnimation?: Property$Animation<TTime>,
+  WebkitBorderAfter?: Property$WebkitBorderAfter<TLength>,
   WebkitBorderBefore?: Property$WebkitBorderBefore<TLength>,
+  WebkitBorderEnd?: Property$WebkitBorderEnd<TLength>,
   WebkitBorderImage?: Property$BorderImage,
   WebkitBorderRadius?: Property$BorderRadius<TLength>,
+  WebkitBorderStart?: Property$WebkitBorderStart<TLength>,
   WebkitColumnRule?: Property$ColumnRule<TLength>,
   WebkitColumns?: Property$Columns<TLength>,
   WebkitFlex?: Property$Flex<TLength>,
@@ -795,6 +859,7 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   scrollSnapPointsY?: Property$ScrollSnapPointsY,
   scrollSnapTypeX?: Property$ScrollSnapTypeX,
   scrollSnapTypeY?: Property$ScrollSnapTypeY,
+  textDecorationSkip?: Property$TextDecorationSkip,
   KhtmlBoxAlign?: Property$BoxAlign,
   KhtmlBoxDirection?: Property$BoxDirection,
   KhtmlBoxFlex?: Property$BoxFlex,
@@ -838,7 +903,6 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   MozTransitionDuration?: Property$TransitionDuration<TTime>,
   MozTransitionProperty?: Property$TransitionProperty,
   MozTransitionTimingFunction?: Property$TransitionTimingFunction,
-  MozUserFocus?: Property$MozUserFocus,
   MozUserInput?: Property$MozUserInput,
   msImeMode?: Property$ImeMode,
   OAnimation?: Property$Animation<TTime>,
@@ -871,6 +935,7 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   WebkitBoxOrdinalGroup?: Property$BoxOrdinalGroup,
   WebkitBoxOrient?: Property$BoxOrient,
   WebkitBoxPack?: Property$BoxPack,
+  WebkitTextDecorationSkip?: Property$TextDecorationSkip,
 |};
 
 export type SvgProperties<TLength = string | 0, TTime = string> = {|
@@ -964,6 +1029,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "animation-range-start"?: Property$AnimationRangeStart<TLength>,
   "animation-timeline"?: Property$AnimationTimeline,
   "animation-timing-function"?: Property$AnimationTimingFunction,
+  "animation-trigger"?: Property$AnimationTrigger,
   appearance?: Property$Appearance,
   "aspect-ratio"?: Property$AspectRatio,
   "backdrop-filter"?: Property$BackdropFilter,
@@ -979,6 +1045,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "background-repeat"?: Property$BackgroundRepeat,
   "background-size"?: Property$BackgroundSize<TLength>,
   "baseline-shift"?: Property$BaselineShift<TLength>,
+  "baseline-source"?: Property$BaselineSource,
   "block-size"?: Property$BlockSize<TLength>,
   "border-block-end-color"?: Property$BorderBlockEndColor,
   "border-block-end-style"?: Property$BorderBlockEndStyle,
@@ -1011,6 +1078,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "border-right-color"?: Property$BorderRightColor,
   "border-right-style"?: Property$BorderRightStyle,
   "border-right-width"?: Property$BorderRightWidth<TLength>,
+  "border-shape"?: Property$BorderShape,
   "border-spacing"?: Property$BorderSpacing<TLength>,
   "border-start-end-radius"?: Property$BorderStartEndRadius<TLength>,
   "border-start-start-radius"?: Property$BorderStartStartRadius<TLength>,
@@ -1027,6 +1095,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "break-before"?: Property$BreakBefore,
   "break-inside"?: Property$BreakInside,
   "caption-side"?: Property$CaptionSide,
+  "caret-animation"?: Property$CaretAnimation,
   "caret-color"?: Property$CaretColor,
   "caret-shape"?: Property$CaretShape,
   clear?: Property$Clear,
@@ -1039,11 +1108,13 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "column-count"?: Property$ColumnCount,
   "column-fill"?: Property$ColumnFill,
   "column-gap"?: Property$ColumnGap<TLength>,
+  "column-height"?: Property$ColumnHeight<TLength>,
   "column-rule-color"?: Property$ColumnRuleColor,
   "column-rule-style"?: Property$ColumnRuleStyle,
   "column-rule-width"?: Property$ColumnRuleWidth<TLength>,
   "column-span"?: Property$ColumnSpan,
   "column-width"?: Property$ColumnWidth<TLength>,
+  "column-wrap"?: Property$ColumnWrap,
   contain?: Property$Contain,
   "contain-intrinsic-block-size"?: Property$ContainIntrinsicBlockSize<TLength>,
   "contain-intrinsic-height"?: Property$ContainIntrinsicHeight<TLength>,
@@ -1053,6 +1124,14 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "container-type"?: Property$ContainerType,
   content?: Property$Content,
   "content-visibility"?: Property$ContentVisibility,
+  "corner-bottom-left-shape"?: Property$CornerBottomLeftShape,
+  "corner-bottom-right-shape"?: Property$CornerBottomRightShape,
+  "corner-end-end-shape"?: Property$CornerEndEndShape,
+  "corner-end-start-shape"?: Property$CornerEndStartShape,
+  "corner-start-end-shape"?: Property$CornerStartEndShape,
+  "corner-start-start-shape"?: Property$CornerStartStartShape,
+  "corner-top-left-shape"?: Property$CornerTopLeftShape,
+  "corner-top-right-shape"?: Property$CornerTopRightShape,
   "counter-increment"?: Property$CounterIncrement,
   "counter-reset"?: Property$CounterReset,
   "counter-set"?: Property$CounterSet,
@@ -1063,6 +1142,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   direction?: Property$Direction,
   display?: Property$Display,
   "dominant-baseline"?: Property$DominantBaseline,
+  "dynamic-range-limit"?: Property$DynamicRangeLimit,
   "empty-cells"?: Property$EmptyCells,
   "field-sizing"?: Property$FieldSizing,
   fill?: Property$Fill,
@@ -1072,6 +1152,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "flex-basis"?: Property$FlexBasis<TLength>,
   "flex-direction"?: Property$FlexDirection,
   "flex-grow"?: Property$FlexGrow,
+  "flex-line-count"?: Property$FlexLineCount,
   "flex-shrink"?: Property$FlexShrink,
   "flex-wrap"?: Property$FlexWrap,
   float?: Property$Float,
@@ -1104,6 +1185,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "font-weight"?: Property$FontWeight,
   "font-width"?: Property$FontWidth,
   "forced-color-adjust"?: Property$ForcedColorAdjust,
+  "frame-sizing"?: Property$FrameSizing,
   "grid-auto-columns"?: Property$GridAutoColumns<TLength>,
   "grid-auto-flow"?: Property$GridAutoFlow,
   "grid-auto-rows"?: Property$GridAutoRows<TLength>,
@@ -1129,6 +1211,9 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "inset-block-start"?: Property$InsetBlockStart<TLength>,
   "inset-inline-end"?: Property$InsetInlineEnd<TLength>,
   "inset-inline-start"?: Property$InsetInlineStart<TLength>,
+  interactivity?: Property$Interactivity,
+  "interest-delay-end"?: Property$InterestDelayEnd<TTime>,
+  "interest-delay-start"?: Property$InterestDelayStart<TTime>,
   "interpolate-size"?: Property$InterpolateSize,
   isolation?: Property$Isolation,
   "justify-content"?: Property$JustifyContent,
@@ -1141,6 +1226,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "line-break"?: Property$LineBreak,
   "line-height"?: Property$LineHeight<TLength>,
   "line-height-step"?: Property$LineHeightStep<TLength>,
+  "link-parameters"?: Property$LinkParameters,
   "list-style-image"?: Property$ListStyleImage,
   "list-style-position"?: Property$ListStylePosition,
   "list-style-type"?: Property$ListStyleType,
@@ -1228,6 +1314,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "padding-top"?: Property$PaddingTop<TLength>,
   page?: Property$Page,
   "paint-order"?: Property$PaintOrder,
+  "path-length"?: Property$PathLength,
   perspective?: Property$Perspective<TLength>,
   "perspective-origin"?: Property$PerspectiveOrigin<TLength>,
   "pointer-events"?: Property$PointerEvents,
@@ -1240,6 +1327,8 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "print-color-adjust"?: Property$PrintColorAdjust,
   quotes?: Property$Quotes,
   r?: Property$R<TLength>,
+  "reading-flow"?: Property$ReadingFlow,
+  "reading-order"?: Property$ReadingOrder,
   resize?: Property$Resize,
   right?: Property$Right<TLength>,
   rotate?: Property$Rotate,
@@ -1251,6 +1340,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   rx?: Property$Rx<TLength>,
   ry?: Property$Ry<TLength>,
   scale?: Property$Scale,
+  "scroll-axis-lock"?: Property$ScrollAxisLock,
   "scroll-behavior"?: Property$ScrollBehavior,
   "scroll-initial-target"?: Property$ScrollInitialTarget,
   "scroll-margin-block-end"?: Property$ScrollMarginBlockEnd<TLength>,
@@ -1261,6 +1351,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "scroll-margin-left"?: Property$ScrollMarginLeft<TLength>,
   "scroll-margin-right"?: Property$ScrollMarginRight<TLength>,
   "scroll-margin-top"?: Property$ScrollMarginTop<TLength>,
+  "scroll-marker-group"?: Property$ScrollMarkerGroup,
   "scroll-padding-block-end"?: Property$ScrollPaddingBlockEnd<TLength>,
   "scroll-padding-block-start"?: Property$ScrollPaddingBlockStart<TLength>,
   "scroll-padding-bottom"?: Property$ScrollPaddingBottom<TLength>,
@@ -1276,6 +1367,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "scroll-snap-margin-top"?: Property$ScrollMarginTop<TLength>,
   "scroll-snap-stop"?: Property$ScrollSnapStop,
   "scroll-snap-type"?: Property$ScrollSnapType,
+  "scroll-target-group"?: Property$ScrollTargetGroup,
   "scroll-timeline-axis"?: Property$ScrollTimelineAxis,
   "scroll-timeline-name"?: Property$ScrollTimelineName,
   "scrollbar-color"?: Property$ScrollbarColor,
@@ -1308,14 +1400,15 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "text-box-trim"?: Property$TextBoxTrim,
   "text-combine-upright"?: Property$TextCombineUpright,
   "text-decoration-color"?: Property$TextDecorationColor,
+  "text-decoration-inset"?: Property$TextDecorationInset<TLength>,
   "text-decoration-line"?: Property$TextDecorationLine,
-  "text-decoration-skip"?: Property$TextDecorationSkip,
   "text-decoration-skip-ink"?: Property$TextDecorationSkipInk,
   "text-decoration-style"?: Property$TextDecorationStyle,
   "text-decoration-thickness"?: Property$TextDecorationThickness<TLength>,
   "text-emphasis-color"?: Property$TextEmphasisColor,
   "text-emphasis-position"?: Property$TextEmphasisPosition,
   "text-emphasis-style"?: Property$TextEmphasisStyle,
+  "text-fit"?: Property$TextFit,
   "text-indent"?: Property$TextIndent<TLength>,
   "text-justify"?: Property$TextJustify,
   "text-orientation"?: Property$TextOrientation,
@@ -1330,6 +1423,12 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "text-wrap-mode"?: Property$TextWrapMode,
   "text-wrap-style"?: Property$TextWrapStyle,
   "timeline-scope"?: Property$TimelineScope,
+  "timeline-trigger-activation-range-end"?: Property$TimelineTriggerActivationRangeEnd<TLength>,
+  "timeline-trigger-activation-range-start"?: Property$TimelineTriggerActivationRangeStart<TLength>,
+  "timeline-trigger-active-range-end"?: Property$TimelineTriggerActiveRangeEnd<TLength>,
+  "timeline-trigger-active-range-start"?: Property$TimelineTriggerActiveRangeStart<TLength>,
+  "timeline-trigger-name"?: Property$TimelineTriggerName,
+  "timeline-trigger-source"?: Property$TimelineTriggerSource,
   top?: Property$Top<TLength>,
   "touch-action"?: Property$TouchAction,
   transform?: Property$Transform,
@@ -1342,6 +1441,7 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "transition-property"?: Property$TransitionProperty,
   "transition-timing-function"?: Property$TransitionTimingFunction,
   translate?: Property$Translate<TLength>,
+  "trigger-scope"?: Property$TriggerScope,
   "unicode-bidi"?: Property$UnicodeBidi,
   "user-select"?: Property$UserSelect,
   "vector-effect"?: Property$VectorEffect,
@@ -1351,12 +1451,14 @@ export type StandardLonghandPropertiesHyphen<TLength = string | 0, TTime = strin
   "view-timeline-name"?: Property$ViewTimelineName,
   "view-transition-class"?: Property$ViewTransitionClass,
   "view-transition-name"?: Property$ViewTransitionName,
+  "view-transition-scope"?: Property$ViewTransitionScope,
   visibility?: Property$Visibility,
   "white-space"?: Property$WhiteSpace,
   "white-space-collapse"?: Property$WhiteSpaceCollapse,
   widows?: Property$Widows,
   width?: Property$Width<TLength>,
   "will-change"?: Property$WillChange,
+  "window-drag"?: Property$WindowDrag,
   "word-break"?: Property$WordBreak,
   "word-spacing"?: Property$WordSpacing<TLength>,
   "word-wrap"?: Property$WordWrap,
@@ -1400,6 +1502,15 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0, TTime = stri
   columns?: Property$Columns<TLength>,
   "contain-intrinsic-size"?: Property$ContainIntrinsicSize<TLength>,
   container?: Property$Container,
+  "corner-block-end-shape"?: Property$CornerBlockEndShape,
+  "corner-block-start-shape"?: Property$CornerBlockStartShape,
+  "corner-bottom-shape"?: Property$CornerBottomShape,
+  "corner-inline-end-shape"?: Property$CornerInlineEndShape,
+  "corner-inline-start-shape"?: Property$CornerInlineStartShape,
+  "corner-left-shape"?: Property$CornerLeftShape,
+  "corner-right-shape"?: Property$CornerRightShape,
+  "corner-shape"?: Property$CornerShape,
+  "corner-top-shape"?: Property$CornerTopShape,
   flex?: Property$Flex<TLength>,
   "flex-flow"?: Property$FlexFlow,
   font?: Property$Font,
@@ -1412,6 +1523,7 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0, TTime = stri
   inset?: Property$Inset<TLength>,
   "inset-block"?: Property$InsetBlock<TLength>,
   "inset-inline"?: Property$InsetInline<TLength>,
+  "interest-delay"?: Property$InterestDelay<TTime>,
   "line-clamp"?: Property$LineClamp,
   "list-style"?: Property$ListStyle,
   margin?: Property$Margin<TLength>,
@@ -1442,6 +1554,9 @@ export type StandardShorthandPropertiesHyphen<TLength = string | 0, TTime = stri
   "text-decoration"?: Property$TextDecoration<TLength>,
   "text-emphasis"?: Property$TextEmphasis,
   "text-wrap"?: Property$TextWrap,
+  "timeline-trigger"?: Property$TimelineTrigger,
+  "timeline-trigger-activation-range"?: Property$TimelineTriggerActivationRange<TLength>,
+  "timeline-trigger-active-range"?: Property$TimelineTriggerActiveRange<TLength>,
   transition?: Property$Transition<TTime>,
   "view-timeline"?: Property$ViewTimeline,
 |};
@@ -1500,6 +1615,7 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-moz-transform"?: Property$Transform,
   "-moz-transform-origin"?: Property$TransformOrigin<TLength>,
   "-moz-transform-style"?: Property$TransformStyle,
+  "-moz-user-focus"?: Property$MozUserFocus,
   "-moz-user-modify"?: Property$MozUserModify,
   "-moz-user-select"?: Property$UserSelect,
   "-moz-window-dragging"?: Property$MozWindowDragging,
@@ -1582,12 +1698,21 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-webkit-background-clip"?: Property$BackgroundClip,
   "-webkit-background-origin"?: Property$BackgroundOrigin,
   "-webkit-background-size"?: Property$BackgroundSize<TLength>,
+  "-webkit-border-after-color"?: Property$WebkitBorderAfterColor,
+  "-webkit-border-after-style"?: Property$WebkitBorderAfterStyle,
+  "-webkit-border-after-width"?: Property$WebkitBorderAfterWidth<TLength>,
   "-webkit-border-before-color"?: Property$WebkitBorderBeforeColor,
   "-webkit-border-before-style"?: Property$WebkitBorderBeforeStyle,
   "-webkit-border-before-width"?: Property$WebkitBorderBeforeWidth<TLength>,
   "-webkit-border-bottom-left-radius"?: Property$BorderBottomLeftRadius<TLength>,
   "-webkit-border-bottom-right-radius"?: Property$BorderBottomRightRadius<TLength>,
+  "-webkit-border-end-color"?: Property$WebkitBorderEndColor,
+  "-webkit-border-end-style"?: Property$WebkitBorderEndStyle,
+  "-webkit-border-end-width"?: Property$WebkitBorderEndWidth<TLength>,
   "-webkit-border-image-slice"?: Property$BorderImageSlice,
+  "-webkit-border-start-color"?: Property$WebkitBorderStartColor,
+  "-webkit-border-start-style"?: Property$WebkitBorderStartStyle,
+  "-webkit-border-start-width"?: Property$WebkitBorderStartWidth<TLength>,
   "-webkit-border-top-left-radius"?: Property$BorderTopLeftRadius<TLength>,
   "-webkit-border-top-right-radius"?: Property$BorderTopRightRadius<TLength>,
   "-webkit-box-decoration-break"?: Property$BoxDecorationBreak,
@@ -1620,6 +1745,8 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-webkit-line-clamp"?: Property$WebkitLineClamp,
   "-webkit-logical-height"?: Property$BlockSize<TLength>,
   "-webkit-logical-width"?: Property$InlineSize<TLength>,
+  "-webkit-margin-after"?: Property$MarginBlockEnd<TLength>,
+  "-webkit-margin-before"?: Property$MarginBlockStart<TLength>,
   "-webkit-margin-end"?: Property$MarginInlineEnd<TLength>,
   "-webkit-margin-start"?: Property$MarginInlineStart<TLength>,
   "-webkit-mask-attachment"?: Property$WebkitMaskAttachment,
@@ -1654,7 +1781,6 @@ export type VendorLonghandPropertiesHyphen<TLength = string | 0, TTime = string>
   "-webkit-text-combine"?: Property$TextCombineUpright,
   "-webkit-text-decoration-color"?: Property$TextDecorationColor,
   "-webkit-text-decoration-line"?: Property$TextDecorationLine,
-  "-webkit-text-decoration-skip"?: Property$TextDecorationSkip,
   "-webkit-text-decoration-style"?: Property$TextDecorationStyle,
   "-webkit-text-emphasis-color"?: Property$TextEmphasisColor,
   "-webkit-text-emphasis-position"?: Property$TextEmphasisPosition,
@@ -1693,9 +1819,12 @@ export type VendorShorthandPropertiesHyphen<TLength = string | 0, TTime = string
   "-ms-scroll-snap-y"?: Property$MsScrollSnapY,
   "-ms-transition"?: Property$Transition<TTime>,
   "-webkit-animation"?: Property$Animation<TTime>,
+  "-webkit-border-after"?: Property$WebkitBorderAfter<TLength>,
   "-webkit-border-before"?: Property$WebkitBorderBefore<TLength>,
+  "-webkit-border-end"?: Property$WebkitBorderEnd<TLength>,
   "-webkit-border-image"?: Property$BorderImage,
   "-webkit-border-radius"?: Property$BorderRadius<TLength>,
+  "-webkit-border-start"?: Property$WebkitBorderStart<TLength>,
   "-webkit-column-rule"?: Property$ColumnRule<TLength>,
   "-webkit-columns"?: Property$Columns<TLength>,
   "-webkit-flex"?: Property$Flex<TLength>,
@@ -1744,6 +1873,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "scroll-snap-points-y"?: Property$ScrollSnapPointsY,
   "scroll-snap-type-x"?: Property$ScrollSnapTypeX,
   "scroll-snap-type-y"?: Property$ScrollSnapTypeY,
+  "text-decoration-skip"?: Property$TextDecorationSkip,
   "-khtml-box-align"?: Property$BoxAlign,
   "-khtml-box-direction"?: Property$BoxDirection,
   "-khtml-box-flex"?: Property$BoxFlex,
@@ -1787,7 +1917,6 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-moz-transition-duration"?: Property$TransitionDuration<TTime>,
   "-moz-transition-property"?: Property$TransitionProperty,
   "-moz-transition-timing-function"?: Property$TransitionTimingFunction,
-  "-moz-user-focus"?: Property$MozUserFocus,
   "-moz-user-input"?: Property$MozUserInput,
   "-ms-ime-mode"?: Property$ImeMode,
   "-o-animation"?: Property$Animation<TTime>,
@@ -1820,6 +1949,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-webkit-box-ordinal-group"?: Property$BoxOrdinalGroup,
   "-webkit-box-orient"?: Property$BoxOrient,
   "-webkit-box-pack"?: Property$BoxPack,
+  "-webkit-text-decoration-skip"?: Property$TextDecorationSkip,
 |};
 
 export type SvgPropertiesHyphen<TLength = string | 0, TTime = string> = {|
@@ -1913,6 +2043,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   animationRangeStart?: Property$AnimationRangeStart<TLength> | Array<Property$AnimationRangeStart<TLength>>,
   animationTimeline?: Property$AnimationTimeline | Array<Property$AnimationTimeline>,
   animationTimingFunction?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
+  animationTrigger?: Property$AnimationTrigger | Array<Property$AnimationTrigger>,
   appearance?: Property$Appearance | Array<Property$Appearance>,
   aspectRatio?: Property$AspectRatio | Array<Property$AspectRatio>,
   backdropFilter?: Property$BackdropFilter | Array<Property$BackdropFilter>,
@@ -1928,6 +2059,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   backgroundRepeat?: Property$BackgroundRepeat | Array<Property$BackgroundRepeat>,
   backgroundSize?: Property$BackgroundSize<TLength> | Array<Property$BackgroundSize<TLength>>,
   baselineShift?: Property$BaselineShift<TLength> | Array<Property$BaselineShift<TLength>>,
+  baselineSource?: Property$BaselineSource | Array<Property$BaselineSource>,
   blockSize?: Property$BlockSize<TLength> | Array<Property$BlockSize<TLength>>,
   borderBlockEndColor?: Property$BorderBlockEndColor | Array<Property$BorderBlockEndColor>,
   borderBlockEndStyle?: Property$BorderBlockEndStyle | Array<Property$BorderBlockEndStyle>,
@@ -1960,6 +2092,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   borderRightColor?: Property$BorderRightColor | Array<Property$BorderRightColor>,
   borderRightStyle?: Property$BorderRightStyle | Array<Property$BorderRightStyle>,
   borderRightWidth?: Property$BorderRightWidth<TLength> | Array<Property$BorderRightWidth<TLength>>,
+  borderShape?: Property$BorderShape | Array<Property$BorderShape>,
   borderSpacing?: Property$BorderSpacing<TLength> | Array<Property$BorderSpacing<TLength>>,
   borderStartEndRadius?: Property$BorderStartEndRadius<TLength> | Array<Property$BorderStartEndRadius<TLength>>,
   borderStartStartRadius?: Property$BorderStartStartRadius<TLength> | Array<Property$BorderStartStartRadius<TLength>>,
@@ -1976,6 +2109,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   breakBefore?: Property$BreakBefore | Array<Property$BreakBefore>,
   breakInside?: Property$BreakInside | Array<Property$BreakInside>,
   captionSide?: Property$CaptionSide | Array<Property$CaptionSide>,
+  caretAnimation?: Property$CaretAnimation | Array<Property$CaretAnimation>,
   caretColor?: Property$CaretColor | Array<Property$CaretColor>,
   caretShape?: Property$CaretShape | Array<Property$CaretShape>,
   clear?: Property$Clear | Array<Property$Clear>,
@@ -1988,11 +2122,13 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   columnCount?: Property$ColumnCount | Array<Property$ColumnCount>,
   columnFill?: Property$ColumnFill | Array<Property$ColumnFill>,
   columnGap?: Property$ColumnGap<TLength> | Array<Property$ColumnGap<TLength>>,
+  columnHeight?: Property$ColumnHeight<TLength> | Array<Property$ColumnHeight<TLength>>,
   columnRuleColor?: Property$ColumnRuleColor | Array<Property$ColumnRuleColor>,
   columnRuleStyle?: Property$ColumnRuleStyle | Array<Property$ColumnRuleStyle>,
   columnRuleWidth?: Property$ColumnRuleWidth<TLength> | Array<Property$ColumnRuleWidth<TLength>>,
   columnSpan?: Property$ColumnSpan | Array<Property$ColumnSpan>,
   columnWidth?: Property$ColumnWidth<TLength> | Array<Property$ColumnWidth<TLength>>,
+  columnWrap?: Property$ColumnWrap | Array<Property$ColumnWrap>,
   contain?: Property$Contain | Array<Property$Contain>,
   containIntrinsicBlockSize?: Property$ContainIntrinsicBlockSize<TLength> | Array<Property$ContainIntrinsicBlockSize<TLength>>,
   containIntrinsicHeight?: Property$ContainIntrinsicHeight<TLength> | Array<Property$ContainIntrinsicHeight<TLength>>,
@@ -2002,6 +2138,14 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   containerType?: Property$ContainerType | Array<Property$ContainerType>,
   content?: Property$Content | Array<Property$Content>,
   contentVisibility?: Property$ContentVisibility | Array<Property$ContentVisibility>,
+  cornerBottomLeftShape?: Property$CornerBottomLeftShape | Array<Property$CornerBottomLeftShape>,
+  cornerBottomRightShape?: Property$CornerBottomRightShape | Array<Property$CornerBottomRightShape>,
+  cornerEndEndShape?: Property$CornerEndEndShape | Array<Property$CornerEndEndShape>,
+  cornerEndStartShape?: Property$CornerEndStartShape | Array<Property$CornerEndStartShape>,
+  cornerStartEndShape?: Property$CornerStartEndShape | Array<Property$CornerStartEndShape>,
+  cornerStartStartShape?: Property$CornerStartStartShape | Array<Property$CornerStartStartShape>,
+  cornerTopLeftShape?: Property$CornerTopLeftShape | Array<Property$CornerTopLeftShape>,
+  cornerTopRightShape?: Property$CornerTopRightShape | Array<Property$CornerTopRightShape>,
   counterIncrement?: Property$CounterIncrement | Array<Property$CounterIncrement>,
   counterReset?: Property$CounterReset | Array<Property$CounterReset>,
   counterSet?: Property$CounterSet | Array<Property$CounterSet>,
@@ -2012,6 +2156,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   direction?: Property$Direction | Array<Property$Direction>,
   display?: Property$Display | Array<Property$Display>,
   dominantBaseline?: Property$DominantBaseline | Array<Property$DominantBaseline>,
+  dynamicRangeLimit?: Property$DynamicRangeLimit | Array<Property$DynamicRangeLimit>,
   emptyCells?: Property$EmptyCells | Array<Property$EmptyCells>,
   fieldSizing?: Property$FieldSizing | Array<Property$FieldSizing>,
   fill?: Property$Fill | Array<Property$Fill>,
@@ -2021,6 +2166,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   flexBasis?: Property$FlexBasis<TLength> | Array<Property$FlexBasis<TLength>>,
   flexDirection?: Property$FlexDirection | Array<Property$FlexDirection>,
   flexGrow?: Property$FlexGrow | Array<Property$FlexGrow>,
+  flexLineCount?: Property$FlexLineCount | Array<Property$FlexLineCount>,
   flexShrink?: Property$FlexShrink | Array<Property$FlexShrink>,
   flexWrap?: Property$FlexWrap | Array<Property$FlexWrap>,
   float?: Property$Float | Array<Property$Float>,
@@ -2053,6 +2199,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   fontWeight?: Property$FontWeight | Array<Property$FontWeight>,
   fontWidth?: Property$FontWidth | Array<Property$FontWidth>,
   forcedColorAdjust?: Property$ForcedColorAdjust | Array<Property$ForcedColorAdjust>,
+  frameSizing?: Property$FrameSizing | Array<Property$FrameSizing>,
   gridAutoColumns?: Property$GridAutoColumns<TLength> | Array<Property$GridAutoColumns<TLength>>,
   gridAutoFlow?: Property$GridAutoFlow | Array<Property$GridAutoFlow>,
   gridAutoRows?: Property$GridAutoRows<TLength> | Array<Property$GridAutoRows<TLength>>,
@@ -2078,6 +2225,9 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   insetBlockStart?: Property$InsetBlockStart<TLength> | Array<Property$InsetBlockStart<TLength>>,
   insetInlineEnd?: Property$InsetInlineEnd<TLength> | Array<Property$InsetInlineEnd<TLength>>,
   insetInlineStart?: Property$InsetInlineStart<TLength> | Array<Property$InsetInlineStart<TLength>>,
+  interactivity?: Property$Interactivity | Array<Property$Interactivity>,
+  interestDelayEnd?: Property$InterestDelayEnd<TTime> | Array<Property$InterestDelayEnd<TTime>>,
+  interestDelayStart?: Property$InterestDelayStart<TTime> | Array<Property$InterestDelayStart<TTime>>,
   interpolateSize?: Property$InterpolateSize | Array<Property$InterpolateSize>,
   isolation?: Property$Isolation | Array<Property$Isolation>,
   justifyContent?: Property$JustifyContent | Array<Property$JustifyContent>,
@@ -2090,6 +2240,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   lineBreak?: Property$LineBreak | Array<Property$LineBreak>,
   lineHeight?: Property$LineHeight<TLength> | Array<Property$LineHeight<TLength>>,
   lineHeightStep?: Property$LineHeightStep<TLength> | Array<Property$LineHeightStep<TLength>>,
+  linkParameters?: Property$LinkParameters | Array<Property$LinkParameters>,
   listStyleImage?: Property$ListStyleImage | Array<Property$ListStyleImage>,
   listStylePosition?: Property$ListStylePosition | Array<Property$ListStylePosition>,
   listStyleType?: Property$ListStyleType | Array<Property$ListStyleType>,
@@ -2177,6 +2328,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   paddingTop?: Property$PaddingTop<TLength> | Array<Property$PaddingTop<TLength>>,
   page?: Property$Page | Array<Property$Page>,
   paintOrder?: Property$PaintOrder | Array<Property$PaintOrder>,
+  pathLength?: Property$PathLength | Array<Property$PathLength>,
   perspective?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
   perspectiveOrigin?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
   pointerEvents?: Property$PointerEvents | Array<Property$PointerEvents>,
@@ -2189,6 +2341,8 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   printColorAdjust?: Property$PrintColorAdjust | Array<Property$PrintColorAdjust>,
   quotes?: Property$Quotes | Array<Property$Quotes>,
   r?: Property$R<TLength> | Array<Property$R<TLength>>,
+  readingFlow?: Property$ReadingFlow | Array<Property$ReadingFlow>,
+  readingOrder?: Property$ReadingOrder | Array<Property$ReadingOrder>,
   resize?: Property$Resize | Array<Property$Resize>,
   right?: Property$Right<TLength> | Array<Property$Right<TLength>>,
   rotate?: Property$Rotate | Array<Property$Rotate>,
@@ -2200,6 +2354,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   rx?: Property$Rx<TLength> | Array<Property$Rx<TLength>>,
   ry?: Property$Ry<TLength> | Array<Property$Ry<TLength>>,
   scale?: Property$Scale | Array<Property$Scale>,
+  scrollAxisLock?: Property$ScrollAxisLock | Array<Property$ScrollAxisLock>,
   scrollBehavior?: Property$ScrollBehavior | Array<Property$ScrollBehavior>,
   scrollInitialTarget?: Property$ScrollInitialTarget | Array<Property$ScrollInitialTarget>,
   scrollMarginBlockEnd?: Property$ScrollMarginBlockEnd<TLength> | Array<Property$ScrollMarginBlockEnd<TLength>>,
@@ -2210,6 +2365,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   scrollMarginLeft?: Property$ScrollMarginLeft<TLength> | Array<Property$ScrollMarginLeft<TLength>>,
   scrollMarginRight?: Property$ScrollMarginRight<TLength> | Array<Property$ScrollMarginRight<TLength>>,
   scrollMarginTop?: Property$ScrollMarginTop<TLength> | Array<Property$ScrollMarginTop<TLength>>,
+  scrollMarkerGroup?: Property$ScrollMarkerGroup | Array<Property$ScrollMarkerGroup>,
   scrollPaddingBlockEnd?: Property$ScrollPaddingBlockEnd<TLength> | Array<Property$ScrollPaddingBlockEnd<TLength>>,
   scrollPaddingBlockStart?: Property$ScrollPaddingBlockStart<TLength> | Array<Property$ScrollPaddingBlockStart<TLength>>,
   scrollPaddingBottom?: Property$ScrollPaddingBottom<TLength> | Array<Property$ScrollPaddingBottom<TLength>>,
@@ -2225,6 +2381,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   scrollSnapMarginTop?: Property$ScrollMarginTop<TLength> | Array<Property$ScrollMarginTop<TLength>>,
   scrollSnapStop?: Property$ScrollSnapStop | Array<Property$ScrollSnapStop>,
   scrollSnapType?: Property$ScrollSnapType | Array<Property$ScrollSnapType>,
+  scrollTargetGroup?: Property$ScrollTargetGroup | Array<Property$ScrollTargetGroup>,
   scrollTimelineAxis?: Property$ScrollTimelineAxis | Array<Property$ScrollTimelineAxis>,
   scrollTimelineName?: Property$ScrollTimelineName | Array<Property$ScrollTimelineName>,
   scrollbarColor?: Property$ScrollbarColor | Array<Property$ScrollbarColor>,
@@ -2257,14 +2414,15 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   textBoxTrim?: Property$TextBoxTrim | Array<Property$TextBoxTrim>,
   textCombineUpright?: Property$TextCombineUpright | Array<Property$TextCombineUpright>,
   textDecorationColor?: Property$TextDecorationColor | Array<Property$TextDecorationColor>,
+  textDecorationInset?: Property$TextDecorationInset<TLength> | Array<Property$TextDecorationInset<TLength>>,
   textDecorationLine?: Property$TextDecorationLine | Array<Property$TextDecorationLine>,
-  textDecorationSkip?: Property$TextDecorationSkip | Array<Property$TextDecorationSkip>,
   textDecorationSkipInk?: Property$TextDecorationSkipInk | Array<Property$TextDecorationSkipInk>,
   textDecorationStyle?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
   textDecorationThickness?: Property$TextDecorationThickness<TLength> | Array<Property$TextDecorationThickness<TLength>>,
   textEmphasisColor?: Property$TextEmphasisColor | Array<Property$TextEmphasisColor>,
   textEmphasisPosition?: Property$TextEmphasisPosition | Array<Property$TextEmphasisPosition>,
   textEmphasisStyle?: Property$TextEmphasisStyle | Array<Property$TextEmphasisStyle>,
+  textFit?: Property$TextFit | Array<Property$TextFit>,
   textIndent?: Property$TextIndent<TLength> | Array<Property$TextIndent<TLength>>,
   textJustify?: Property$TextJustify | Array<Property$TextJustify>,
   textOrientation?: Property$TextOrientation | Array<Property$TextOrientation>,
@@ -2279,6 +2437,12 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   textWrapMode?: Property$TextWrapMode | Array<Property$TextWrapMode>,
   textWrapStyle?: Property$TextWrapStyle | Array<Property$TextWrapStyle>,
   timelineScope?: Property$TimelineScope | Array<Property$TimelineScope>,
+  timelineTriggerActivationRangeEnd?: Property$TimelineTriggerActivationRangeEnd<TLength> | Array<Property$TimelineTriggerActivationRangeEnd<TLength>>,
+  timelineTriggerActivationRangeStart?: Property$TimelineTriggerActivationRangeStart<TLength> | Array<Property$TimelineTriggerActivationRangeStart<TLength>>,
+  timelineTriggerActiveRangeEnd?: Property$TimelineTriggerActiveRangeEnd<TLength> | Array<Property$TimelineTriggerActiveRangeEnd<TLength>>,
+  timelineTriggerActiveRangeStart?: Property$TimelineTriggerActiveRangeStart<TLength> | Array<Property$TimelineTriggerActiveRangeStart<TLength>>,
+  timelineTriggerName?: Property$TimelineTriggerName | Array<Property$TimelineTriggerName>,
+  timelineTriggerSource?: Property$TimelineTriggerSource | Array<Property$TimelineTriggerSource>,
   top?: Property$Top<TLength> | Array<Property$Top<TLength>>,
   touchAction?: Property$TouchAction | Array<Property$TouchAction>,
   transform?: Property$Transform | Array<Property$Transform>,
@@ -2291,6 +2455,7 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   transitionProperty?: Property$TransitionProperty | Array<Property$TransitionProperty>,
   transitionTimingFunction?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
   translate?: Property$Translate<TLength> | Array<Property$Translate<TLength>>,
+  triggerScope?: Property$TriggerScope | Array<Property$TriggerScope>,
   unicodeBidi?: Property$UnicodeBidi | Array<Property$UnicodeBidi>,
   userSelect?: Property$UserSelect | Array<Property$UserSelect>,
   vectorEffect?: Property$VectorEffect | Array<Property$VectorEffect>,
@@ -2300,12 +2465,14 @@ export type StandardLonghandPropertiesFallback<TLength = string | 0, TTime = str
   viewTimelineName?: Property$ViewTimelineName | Array<Property$ViewTimelineName>,
   viewTransitionClass?: Property$ViewTransitionClass | Array<Property$ViewTransitionClass>,
   viewTransitionName?: Property$ViewTransitionName | Array<Property$ViewTransitionName>,
+  viewTransitionScope?: Property$ViewTransitionScope | Array<Property$ViewTransitionScope>,
   visibility?: Property$Visibility | Array<Property$Visibility>,
   whiteSpace?: Property$WhiteSpace | Array<Property$WhiteSpace>,
   whiteSpaceCollapse?: Property$WhiteSpaceCollapse | Array<Property$WhiteSpaceCollapse>,
   widows?: Property$Widows | Array<Property$Widows>,
   width?: Property$Width<TLength> | Array<Property$Width<TLength>>,
   willChange?: Property$WillChange | Array<Property$WillChange>,
+  windowDrag?: Property$WindowDrag | Array<Property$WindowDrag>,
   wordBreak?: Property$WordBreak | Array<Property$WordBreak>,
   wordSpacing?: Property$WordSpacing<TLength> | Array<Property$WordSpacing<TLength>>,
   wordWrap?: Property$WordWrap | Array<Property$WordWrap>,
@@ -2349,6 +2516,15 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0, TTime = st
   columns?: Property$Columns<TLength> | Array<Property$Columns<TLength>>,
   containIntrinsicSize?: Property$ContainIntrinsicSize<TLength> | Array<Property$ContainIntrinsicSize<TLength>>,
   container?: Property$Container | Array<Property$Container>,
+  cornerBlockEndShape?: Property$CornerBlockEndShape | Array<Property$CornerBlockEndShape>,
+  cornerBlockStartShape?: Property$CornerBlockStartShape | Array<Property$CornerBlockStartShape>,
+  cornerBottomShape?: Property$CornerBottomShape | Array<Property$CornerBottomShape>,
+  cornerInlineEndShape?: Property$CornerInlineEndShape | Array<Property$CornerInlineEndShape>,
+  cornerInlineStartShape?: Property$CornerInlineStartShape | Array<Property$CornerInlineStartShape>,
+  cornerLeftShape?: Property$CornerLeftShape | Array<Property$CornerLeftShape>,
+  cornerRightShape?: Property$CornerRightShape | Array<Property$CornerRightShape>,
+  cornerShape?: Property$CornerShape | Array<Property$CornerShape>,
+  cornerTopShape?: Property$CornerTopShape | Array<Property$CornerTopShape>,
   flex?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
   flexFlow?: Property$FlexFlow | Array<Property$FlexFlow>,
   font?: Property$Font | Array<Property$Font>,
@@ -2361,6 +2537,7 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0, TTime = st
   inset?: Property$Inset<TLength> | Array<Property$Inset<TLength>>,
   insetBlock?: Property$InsetBlock<TLength> | Array<Property$InsetBlock<TLength>>,
   insetInline?: Property$InsetInline<TLength> | Array<Property$InsetInline<TLength>>,
+  interestDelay?: Property$InterestDelay<TTime> | Array<Property$InterestDelay<TTime>>,
   lineClamp?: Property$LineClamp | Array<Property$LineClamp>,
   listStyle?: Property$ListStyle | Array<Property$ListStyle>,
   margin?: Property$Margin<TLength> | Array<Property$Margin<TLength>>,
@@ -2391,6 +2568,9 @@ export type StandardShorthandPropertiesFallback<TLength = string | 0, TTime = st
   textDecoration?: Property$TextDecoration<TLength> | Array<Property$TextDecoration<TLength>>,
   textEmphasis?: Property$TextEmphasis | Array<Property$TextEmphasis>,
   textWrap?: Property$TextWrap | Array<Property$TextWrap>,
+  timelineTrigger?: Property$TimelineTrigger | Array<Property$TimelineTrigger>,
+  timelineTriggerActivationRange?: Property$TimelineTriggerActivationRange<TLength> | Array<Property$TimelineTriggerActivationRange<TLength>>,
+  timelineTriggerActiveRange?: Property$TimelineTriggerActiveRange<TLength> | Array<Property$TimelineTriggerActiveRange<TLength>>,
   transition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
   viewTimeline?: Property$ViewTimeline | Array<Property$ViewTimeline>,
 |};
@@ -2449,6 +2629,7 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   MozTransform?: Property$Transform | Array<Property$Transform>,
   MozTransformOrigin?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
   MozTransformStyle?: Property$TransformStyle | Array<Property$TransformStyle>,
+  MozUserFocus?: Property$MozUserFocus | Array<Property$MozUserFocus>,
   MozUserModify?: Property$MozUserModify | Array<Property$MozUserModify>,
   MozUserSelect?: Property$UserSelect | Array<Property$UserSelect>,
   MozWindowDragging?: Property$MozWindowDragging | Array<Property$MozWindowDragging>,
@@ -2531,12 +2712,21 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   WebkitBackgroundClip?: Property$BackgroundClip | Array<Property$BackgroundClip>,
   WebkitBackgroundOrigin?: Property$BackgroundOrigin | Array<Property$BackgroundOrigin>,
   WebkitBackgroundSize?: Property$BackgroundSize<TLength> | Array<Property$BackgroundSize<TLength>>,
+  WebkitBorderAfterColor?: Property$WebkitBorderAfterColor | Array<Property$WebkitBorderAfterColor>,
+  WebkitBorderAfterStyle?: Property$WebkitBorderAfterStyle | Array<Property$WebkitBorderAfterStyle>,
+  WebkitBorderAfterWidth?: Property$WebkitBorderAfterWidth<TLength> | Array<Property$WebkitBorderAfterWidth<TLength>>,
   WebkitBorderBeforeColor?: Property$WebkitBorderBeforeColor | Array<Property$WebkitBorderBeforeColor>,
   WebkitBorderBeforeStyle?: Property$WebkitBorderBeforeStyle | Array<Property$WebkitBorderBeforeStyle>,
   WebkitBorderBeforeWidth?: Property$WebkitBorderBeforeWidth<TLength> | Array<Property$WebkitBorderBeforeWidth<TLength>>,
   WebkitBorderBottomLeftRadius?: Property$BorderBottomLeftRadius<TLength> | Array<Property$BorderBottomLeftRadius<TLength>>,
   WebkitBorderBottomRightRadius?: Property$BorderBottomRightRadius<TLength> | Array<Property$BorderBottomRightRadius<TLength>>,
+  WebkitBorderEndColor?: Property$WebkitBorderEndColor | Array<Property$WebkitBorderEndColor>,
+  WebkitBorderEndStyle?: Property$WebkitBorderEndStyle | Array<Property$WebkitBorderEndStyle>,
+  WebkitBorderEndWidth?: Property$WebkitBorderEndWidth<TLength> | Array<Property$WebkitBorderEndWidth<TLength>>,
   WebkitBorderImageSlice?: Property$BorderImageSlice | Array<Property$BorderImageSlice>,
+  WebkitBorderStartColor?: Property$WebkitBorderStartColor | Array<Property$WebkitBorderStartColor>,
+  WebkitBorderStartStyle?: Property$WebkitBorderStartStyle | Array<Property$WebkitBorderStartStyle>,
+  WebkitBorderStartWidth?: Property$WebkitBorderStartWidth<TLength> | Array<Property$WebkitBorderStartWidth<TLength>>,
   WebkitBorderTopLeftRadius?: Property$BorderTopLeftRadius<TLength> | Array<Property$BorderTopLeftRadius<TLength>>,
   WebkitBorderTopRightRadius?: Property$BorderTopRightRadius<TLength> | Array<Property$BorderTopRightRadius<TLength>>,
   WebkitBoxDecorationBreak?: Property$BoxDecorationBreak | Array<Property$BoxDecorationBreak>,
@@ -2569,6 +2759,8 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   WebkitLineClamp?: Property$WebkitLineClamp | Array<Property$WebkitLineClamp>,
   WebkitLogicalHeight?: Property$BlockSize<TLength> | Array<Property$BlockSize<TLength>>,
   WebkitLogicalWidth?: Property$InlineSize<TLength> | Array<Property$InlineSize<TLength>>,
+  WebkitMarginAfter?: Property$MarginBlockEnd<TLength> | Array<Property$MarginBlockEnd<TLength>>,
+  WebkitMarginBefore?: Property$MarginBlockStart<TLength> | Array<Property$MarginBlockStart<TLength>>,
   WebkitMarginEnd?: Property$MarginInlineEnd<TLength> | Array<Property$MarginInlineEnd<TLength>>,
   WebkitMarginStart?: Property$MarginInlineStart<TLength> | Array<Property$MarginInlineStart<TLength>>,
   WebkitMaskAttachment?: Property$WebkitMaskAttachment | Array<Property$WebkitMaskAttachment>,
@@ -2603,7 +2795,6 @@ export type VendorLonghandPropertiesFallback<TLength = string | 0, TTime = strin
   WebkitTextCombine?: Property$TextCombineUpright | Array<Property$TextCombineUpright>,
   WebkitTextDecorationColor?: Property$TextDecorationColor | Array<Property$TextDecorationColor>,
   WebkitTextDecorationLine?: Property$TextDecorationLine | Array<Property$TextDecorationLine>,
-  WebkitTextDecorationSkip?: Property$TextDecorationSkip | Array<Property$TextDecorationSkip>,
   WebkitTextDecorationStyle?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
   WebkitTextEmphasisColor?: Property$TextEmphasisColor | Array<Property$TextEmphasisColor>,
   WebkitTextEmphasisPosition?: Property$TextEmphasisPosition | Array<Property$TextEmphasisPosition>,
@@ -2642,9 +2833,12 @@ export type VendorShorthandPropertiesFallback<TLength = string | 0, TTime = stri
   msScrollSnapY?: Property$MsScrollSnapY | Array<Property$MsScrollSnapY>,
   msTransition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
   WebkitAnimation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
+  WebkitBorderAfter?: Property$WebkitBorderAfter<TLength> | Array<Property$WebkitBorderAfter<TLength>>,
   WebkitBorderBefore?: Property$WebkitBorderBefore<TLength> | Array<Property$WebkitBorderBefore<TLength>>,
+  WebkitBorderEnd?: Property$WebkitBorderEnd<TLength> | Array<Property$WebkitBorderEnd<TLength>>,
   WebkitBorderImage?: Property$BorderImage | Array<Property$BorderImage>,
   WebkitBorderRadius?: Property$BorderRadius<TLength> | Array<Property$BorderRadius<TLength>>,
+  WebkitBorderStart?: Property$WebkitBorderStart<TLength> | Array<Property$WebkitBorderStart<TLength>>,
   WebkitColumnRule?: Property$ColumnRule<TLength> | Array<Property$ColumnRule<TLength>>,
   WebkitColumns?: Property$Columns<TLength> | Array<Property$Columns<TLength>>,
   WebkitFlex?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
@@ -2693,6 +2887,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   scrollSnapPointsY?: Property$ScrollSnapPointsY | Array<Property$ScrollSnapPointsY>,
   scrollSnapTypeX?: Property$ScrollSnapTypeX | Array<Property$ScrollSnapTypeX>,
   scrollSnapTypeY?: Property$ScrollSnapTypeY | Array<Property$ScrollSnapTypeY>,
+  textDecorationSkip?: Property$TextDecorationSkip | Array<Property$TextDecorationSkip>,
   KhtmlBoxAlign?: Property$BoxAlign | Array<Property$BoxAlign>,
   KhtmlBoxDirection?: Property$BoxDirection | Array<Property$BoxDirection>,
   KhtmlBoxFlex?: Property$BoxFlex | Array<Property$BoxFlex>,
@@ -2736,7 +2931,6 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   MozTransitionDuration?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
   MozTransitionProperty?: Property$TransitionProperty | Array<Property$TransitionProperty>,
   MozTransitionTimingFunction?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
-  MozUserFocus?: Property$MozUserFocus | Array<Property$MozUserFocus>,
   MozUserInput?: Property$MozUserInput | Array<Property$MozUserInput>,
   msImeMode?: Property$ImeMode | Array<Property$ImeMode>,
   OAnimation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
@@ -2769,6 +2963,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   WebkitBoxOrdinalGroup?: Property$BoxOrdinalGroup | Array<Property$BoxOrdinalGroup>,
   WebkitBoxOrient?: Property$BoxOrient | Array<Property$BoxOrient>,
   WebkitBoxPack?: Property$BoxPack | Array<Property$BoxPack>,
+  WebkitTextDecorationSkip?: Property$TextDecorationSkip | Array<Property$TextDecorationSkip>,
 |};
 
 export type SvgPropertiesFallback<TLength = string | 0, TTime = string> = {|
@@ -2862,6 +3057,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "animation-range-start"?: Property$AnimationRangeStart<TLength> | Array<Property$AnimationRangeStart<TLength>>,
   "animation-timeline"?: Property$AnimationTimeline | Array<Property$AnimationTimeline>,
   "animation-timing-function"?: Property$AnimationTimingFunction | Array<Property$AnimationTimingFunction>,
+  "animation-trigger"?: Property$AnimationTrigger | Array<Property$AnimationTrigger>,
   appearance?: Property$Appearance | Array<Property$Appearance>,
   "aspect-ratio"?: Property$AspectRatio | Array<Property$AspectRatio>,
   "backdrop-filter"?: Property$BackdropFilter | Array<Property$BackdropFilter>,
@@ -2877,6 +3073,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "background-repeat"?: Property$BackgroundRepeat | Array<Property$BackgroundRepeat>,
   "background-size"?: Property$BackgroundSize<TLength> | Array<Property$BackgroundSize<TLength>>,
   "baseline-shift"?: Property$BaselineShift<TLength> | Array<Property$BaselineShift<TLength>>,
+  "baseline-source"?: Property$BaselineSource | Array<Property$BaselineSource>,
   "block-size"?: Property$BlockSize<TLength> | Array<Property$BlockSize<TLength>>,
   "border-block-end-color"?: Property$BorderBlockEndColor | Array<Property$BorderBlockEndColor>,
   "border-block-end-style"?: Property$BorderBlockEndStyle | Array<Property$BorderBlockEndStyle>,
@@ -2909,6 +3106,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "border-right-color"?: Property$BorderRightColor | Array<Property$BorderRightColor>,
   "border-right-style"?: Property$BorderRightStyle | Array<Property$BorderRightStyle>,
   "border-right-width"?: Property$BorderRightWidth<TLength> | Array<Property$BorderRightWidth<TLength>>,
+  "border-shape"?: Property$BorderShape | Array<Property$BorderShape>,
   "border-spacing"?: Property$BorderSpacing<TLength> | Array<Property$BorderSpacing<TLength>>,
   "border-start-end-radius"?: Property$BorderStartEndRadius<TLength> | Array<Property$BorderStartEndRadius<TLength>>,
   "border-start-start-radius"?: Property$BorderStartStartRadius<TLength> | Array<Property$BorderStartStartRadius<TLength>>,
@@ -2925,6 +3123,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "break-before"?: Property$BreakBefore | Array<Property$BreakBefore>,
   "break-inside"?: Property$BreakInside | Array<Property$BreakInside>,
   "caption-side"?: Property$CaptionSide | Array<Property$CaptionSide>,
+  "caret-animation"?: Property$CaretAnimation | Array<Property$CaretAnimation>,
   "caret-color"?: Property$CaretColor | Array<Property$CaretColor>,
   "caret-shape"?: Property$CaretShape | Array<Property$CaretShape>,
   clear?: Property$Clear | Array<Property$Clear>,
@@ -2937,11 +3136,13 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "column-count"?: Property$ColumnCount | Array<Property$ColumnCount>,
   "column-fill"?: Property$ColumnFill | Array<Property$ColumnFill>,
   "column-gap"?: Property$ColumnGap<TLength> | Array<Property$ColumnGap<TLength>>,
+  "column-height"?: Property$ColumnHeight<TLength> | Array<Property$ColumnHeight<TLength>>,
   "column-rule-color"?: Property$ColumnRuleColor | Array<Property$ColumnRuleColor>,
   "column-rule-style"?: Property$ColumnRuleStyle | Array<Property$ColumnRuleStyle>,
   "column-rule-width"?: Property$ColumnRuleWidth<TLength> | Array<Property$ColumnRuleWidth<TLength>>,
   "column-span"?: Property$ColumnSpan | Array<Property$ColumnSpan>,
   "column-width"?: Property$ColumnWidth<TLength> | Array<Property$ColumnWidth<TLength>>,
+  "column-wrap"?: Property$ColumnWrap | Array<Property$ColumnWrap>,
   contain?: Property$Contain | Array<Property$Contain>,
   "contain-intrinsic-block-size"?: Property$ContainIntrinsicBlockSize<TLength> | Array<Property$ContainIntrinsicBlockSize<TLength>>,
   "contain-intrinsic-height"?: Property$ContainIntrinsicHeight<TLength> | Array<Property$ContainIntrinsicHeight<TLength>>,
@@ -2951,6 +3152,14 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "container-type"?: Property$ContainerType | Array<Property$ContainerType>,
   content?: Property$Content | Array<Property$Content>,
   "content-visibility"?: Property$ContentVisibility | Array<Property$ContentVisibility>,
+  "corner-bottom-left-shape"?: Property$CornerBottomLeftShape | Array<Property$CornerBottomLeftShape>,
+  "corner-bottom-right-shape"?: Property$CornerBottomRightShape | Array<Property$CornerBottomRightShape>,
+  "corner-end-end-shape"?: Property$CornerEndEndShape | Array<Property$CornerEndEndShape>,
+  "corner-end-start-shape"?: Property$CornerEndStartShape | Array<Property$CornerEndStartShape>,
+  "corner-start-end-shape"?: Property$CornerStartEndShape | Array<Property$CornerStartEndShape>,
+  "corner-start-start-shape"?: Property$CornerStartStartShape | Array<Property$CornerStartStartShape>,
+  "corner-top-left-shape"?: Property$CornerTopLeftShape | Array<Property$CornerTopLeftShape>,
+  "corner-top-right-shape"?: Property$CornerTopRightShape | Array<Property$CornerTopRightShape>,
   "counter-increment"?: Property$CounterIncrement | Array<Property$CounterIncrement>,
   "counter-reset"?: Property$CounterReset | Array<Property$CounterReset>,
   "counter-set"?: Property$CounterSet | Array<Property$CounterSet>,
@@ -2961,6 +3170,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   direction?: Property$Direction | Array<Property$Direction>,
   display?: Property$Display | Array<Property$Display>,
   "dominant-baseline"?: Property$DominantBaseline | Array<Property$DominantBaseline>,
+  "dynamic-range-limit"?: Property$DynamicRangeLimit | Array<Property$DynamicRangeLimit>,
   "empty-cells"?: Property$EmptyCells | Array<Property$EmptyCells>,
   "field-sizing"?: Property$FieldSizing | Array<Property$FieldSizing>,
   fill?: Property$Fill | Array<Property$Fill>,
@@ -2970,6 +3180,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "flex-basis"?: Property$FlexBasis<TLength> | Array<Property$FlexBasis<TLength>>,
   "flex-direction"?: Property$FlexDirection | Array<Property$FlexDirection>,
   "flex-grow"?: Property$FlexGrow | Array<Property$FlexGrow>,
+  "flex-line-count"?: Property$FlexLineCount | Array<Property$FlexLineCount>,
   "flex-shrink"?: Property$FlexShrink | Array<Property$FlexShrink>,
   "flex-wrap"?: Property$FlexWrap | Array<Property$FlexWrap>,
   float?: Property$Float | Array<Property$Float>,
@@ -3002,6 +3213,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "font-weight"?: Property$FontWeight | Array<Property$FontWeight>,
   "font-width"?: Property$FontWidth | Array<Property$FontWidth>,
   "forced-color-adjust"?: Property$ForcedColorAdjust | Array<Property$ForcedColorAdjust>,
+  "frame-sizing"?: Property$FrameSizing | Array<Property$FrameSizing>,
   "grid-auto-columns"?: Property$GridAutoColumns<TLength> | Array<Property$GridAutoColumns<TLength>>,
   "grid-auto-flow"?: Property$GridAutoFlow | Array<Property$GridAutoFlow>,
   "grid-auto-rows"?: Property$GridAutoRows<TLength> | Array<Property$GridAutoRows<TLength>>,
@@ -3027,6 +3239,9 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "inset-block-start"?: Property$InsetBlockStart<TLength> | Array<Property$InsetBlockStart<TLength>>,
   "inset-inline-end"?: Property$InsetInlineEnd<TLength> | Array<Property$InsetInlineEnd<TLength>>,
   "inset-inline-start"?: Property$InsetInlineStart<TLength> | Array<Property$InsetInlineStart<TLength>>,
+  interactivity?: Property$Interactivity | Array<Property$Interactivity>,
+  "interest-delay-end"?: Property$InterestDelayEnd<TTime> | Array<Property$InterestDelayEnd<TTime>>,
+  "interest-delay-start"?: Property$InterestDelayStart<TTime> | Array<Property$InterestDelayStart<TTime>>,
   "interpolate-size"?: Property$InterpolateSize | Array<Property$InterpolateSize>,
   isolation?: Property$Isolation | Array<Property$Isolation>,
   "justify-content"?: Property$JustifyContent | Array<Property$JustifyContent>,
@@ -3039,6 +3254,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "line-break"?: Property$LineBreak | Array<Property$LineBreak>,
   "line-height"?: Property$LineHeight<TLength> | Array<Property$LineHeight<TLength>>,
   "line-height-step"?: Property$LineHeightStep<TLength> | Array<Property$LineHeightStep<TLength>>,
+  "link-parameters"?: Property$LinkParameters | Array<Property$LinkParameters>,
   "list-style-image"?: Property$ListStyleImage | Array<Property$ListStyleImage>,
   "list-style-position"?: Property$ListStylePosition | Array<Property$ListStylePosition>,
   "list-style-type"?: Property$ListStyleType | Array<Property$ListStyleType>,
@@ -3126,6 +3342,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "padding-top"?: Property$PaddingTop<TLength> | Array<Property$PaddingTop<TLength>>,
   page?: Property$Page | Array<Property$Page>,
   "paint-order"?: Property$PaintOrder | Array<Property$PaintOrder>,
+  "path-length"?: Property$PathLength | Array<Property$PathLength>,
   perspective?: Property$Perspective<TLength> | Array<Property$Perspective<TLength>>,
   "perspective-origin"?: Property$PerspectiveOrigin<TLength> | Array<Property$PerspectiveOrigin<TLength>>,
   "pointer-events"?: Property$PointerEvents | Array<Property$PointerEvents>,
@@ -3138,6 +3355,8 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "print-color-adjust"?: Property$PrintColorAdjust | Array<Property$PrintColorAdjust>,
   quotes?: Property$Quotes | Array<Property$Quotes>,
   r?: Property$R<TLength> | Array<Property$R<TLength>>,
+  "reading-flow"?: Property$ReadingFlow | Array<Property$ReadingFlow>,
+  "reading-order"?: Property$ReadingOrder | Array<Property$ReadingOrder>,
   resize?: Property$Resize | Array<Property$Resize>,
   right?: Property$Right<TLength> | Array<Property$Right<TLength>>,
   rotate?: Property$Rotate | Array<Property$Rotate>,
@@ -3149,6 +3368,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   rx?: Property$Rx<TLength> | Array<Property$Rx<TLength>>,
   ry?: Property$Ry<TLength> | Array<Property$Ry<TLength>>,
   scale?: Property$Scale | Array<Property$Scale>,
+  "scroll-axis-lock"?: Property$ScrollAxisLock | Array<Property$ScrollAxisLock>,
   "scroll-behavior"?: Property$ScrollBehavior | Array<Property$ScrollBehavior>,
   "scroll-initial-target"?: Property$ScrollInitialTarget | Array<Property$ScrollInitialTarget>,
   "scroll-margin-block-end"?: Property$ScrollMarginBlockEnd<TLength> | Array<Property$ScrollMarginBlockEnd<TLength>>,
@@ -3159,6 +3379,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "scroll-margin-left"?: Property$ScrollMarginLeft<TLength> | Array<Property$ScrollMarginLeft<TLength>>,
   "scroll-margin-right"?: Property$ScrollMarginRight<TLength> | Array<Property$ScrollMarginRight<TLength>>,
   "scroll-margin-top"?: Property$ScrollMarginTop<TLength> | Array<Property$ScrollMarginTop<TLength>>,
+  "scroll-marker-group"?: Property$ScrollMarkerGroup | Array<Property$ScrollMarkerGroup>,
   "scroll-padding-block-end"?: Property$ScrollPaddingBlockEnd<TLength> | Array<Property$ScrollPaddingBlockEnd<TLength>>,
   "scroll-padding-block-start"?: Property$ScrollPaddingBlockStart<TLength> | Array<Property$ScrollPaddingBlockStart<TLength>>,
   "scroll-padding-bottom"?: Property$ScrollPaddingBottom<TLength> | Array<Property$ScrollPaddingBottom<TLength>>,
@@ -3174,6 +3395,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "scroll-snap-margin-top"?: Property$ScrollMarginTop<TLength> | Array<Property$ScrollMarginTop<TLength>>,
   "scroll-snap-stop"?: Property$ScrollSnapStop | Array<Property$ScrollSnapStop>,
   "scroll-snap-type"?: Property$ScrollSnapType | Array<Property$ScrollSnapType>,
+  "scroll-target-group"?: Property$ScrollTargetGroup | Array<Property$ScrollTargetGroup>,
   "scroll-timeline-axis"?: Property$ScrollTimelineAxis | Array<Property$ScrollTimelineAxis>,
   "scroll-timeline-name"?: Property$ScrollTimelineName | Array<Property$ScrollTimelineName>,
   "scrollbar-color"?: Property$ScrollbarColor | Array<Property$ScrollbarColor>,
@@ -3206,14 +3428,15 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "text-box-trim"?: Property$TextBoxTrim | Array<Property$TextBoxTrim>,
   "text-combine-upright"?: Property$TextCombineUpright | Array<Property$TextCombineUpright>,
   "text-decoration-color"?: Property$TextDecorationColor | Array<Property$TextDecorationColor>,
+  "text-decoration-inset"?: Property$TextDecorationInset<TLength> | Array<Property$TextDecorationInset<TLength>>,
   "text-decoration-line"?: Property$TextDecorationLine | Array<Property$TextDecorationLine>,
-  "text-decoration-skip"?: Property$TextDecorationSkip | Array<Property$TextDecorationSkip>,
   "text-decoration-skip-ink"?: Property$TextDecorationSkipInk | Array<Property$TextDecorationSkipInk>,
   "text-decoration-style"?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
   "text-decoration-thickness"?: Property$TextDecorationThickness<TLength> | Array<Property$TextDecorationThickness<TLength>>,
   "text-emphasis-color"?: Property$TextEmphasisColor | Array<Property$TextEmphasisColor>,
   "text-emphasis-position"?: Property$TextEmphasisPosition | Array<Property$TextEmphasisPosition>,
   "text-emphasis-style"?: Property$TextEmphasisStyle | Array<Property$TextEmphasisStyle>,
+  "text-fit"?: Property$TextFit | Array<Property$TextFit>,
   "text-indent"?: Property$TextIndent<TLength> | Array<Property$TextIndent<TLength>>,
   "text-justify"?: Property$TextJustify | Array<Property$TextJustify>,
   "text-orientation"?: Property$TextOrientation | Array<Property$TextOrientation>,
@@ -3228,6 +3451,12 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "text-wrap-mode"?: Property$TextWrapMode | Array<Property$TextWrapMode>,
   "text-wrap-style"?: Property$TextWrapStyle | Array<Property$TextWrapStyle>,
   "timeline-scope"?: Property$TimelineScope | Array<Property$TimelineScope>,
+  "timeline-trigger-activation-range-end"?: Property$TimelineTriggerActivationRangeEnd<TLength> | Array<Property$TimelineTriggerActivationRangeEnd<TLength>>,
+  "timeline-trigger-activation-range-start"?: Property$TimelineTriggerActivationRangeStart<TLength> | Array<Property$TimelineTriggerActivationRangeStart<TLength>>,
+  "timeline-trigger-active-range-end"?: Property$TimelineTriggerActiveRangeEnd<TLength> | Array<Property$TimelineTriggerActiveRangeEnd<TLength>>,
+  "timeline-trigger-active-range-start"?: Property$TimelineTriggerActiveRangeStart<TLength> | Array<Property$TimelineTriggerActiveRangeStart<TLength>>,
+  "timeline-trigger-name"?: Property$TimelineTriggerName | Array<Property$TimelineTriggerName>,
+  "timeline-trigger-source"?: Property$TimelineTriggerSource | Array<Property$TimelineTriggerSource>,
   top?: Property$Top<TLength> | Array<Property$Top<TLength>>,
   "touch-action"?: Property$TouchAction | Array<Property$TouchAction>,
   transform?: Property$Transform | Array<Property$Transform>,
@@ -3240,6 +3469,7 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "transition-property"?: Property$TransitionProperty | Array<Property$TransitionProperty>,
   "transition-timing-function"?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
   translate?: Property$Translate<TLength> | Array<Property$Translate<TLength>>,
+  "trigger-scope"?: Property$TriggerScope | Array<Property$TriggerScope>,
   "unicode-bidi"?: Property$UnicodeBidi | Array<Property$UnicodeBidi>,
   "user-select"?: Property$UserSelect | Array<Property$UserSelect>,
   "vector-effect"?: Property$VectorEffect | Array<Property$VectorEffect>,
@@ -3249,12 +3479,14 @@ export type StandardLonghandPropertiesHyphenFallback<TLength = string | 0, TTime
   "view-timeline-name"?: Property$ViewTimelineName | Array<Property$ViewTimelineName>,
   "view-transition-class"?: Property$ViewTransitionClass | Array<Property$ViewTransitionClass>,
   "view-transition-name"?: Property$ViewTransitionName | Array<Property$ViewTransitionName>,
+  "view-transition-scope"?: Property$ViewTransitionScope | Array<Property$ViewTransitionScope>,
   visibility?: Property$Visibility | Array<Property$Visibility>,
   "white-space"?: Property$WhiteSpace | Array<Property$WhiteSpace>,
   "white-space-collapse"?: Property$WhiteSpaceCollapse | Array<Property$WhiteSpaceCollapse>,
   widows?: Property$Widows | Array<Property$Widows>,
   width?: Property$Width<TLength> | Array<Property$Width<TLength>>,
   "will-change"?: Property$WillChange | Array<Property$WillChange>,
+  "window-drag"?: Property$WindowDrag | Array<Property$WindowDrag>,
   "word-break"?: Property$WordBreak | Array<Property$WordBreak>,
   "word-spacing"?: Property$WordSpacing<TLength> | Array<Property$WordSpacing<TLength>>,
   "word-wrap"?: Property$WordWrap | Array<Property$WordWrap>,
@@ -3298,6 +3530,15 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0, TTim
   columns?: Property$Columns<TLength> | Array<Property$Columns<TLength>>,
   "contain-intrinsic-size"?: Property$ContainIntrinsicSize<TLength> | Array<Property$ContainIntrinsicSize<TLength>>,
   container?: Property$Container | Array<Property$Container>,
+  "corner-block-end-shape"?: Property$CornerBlockEndShape | Array<Property$CornerBlockEndShape>,
+  "corner-block-start-shape"?: Property$CornerBlockStartShape | Array<Property$CornerBlockStartShape>,
+  "corner-bottom-shape"?: Property$CornerBottomShape | Array<Property$CornerBottomShape>,
+  "corner-inline-end-shape"?: Property$CornerInlineEndShape | Array<Property$CornerInlineEndShape>,
+  "corner-inline-start-shape"?: Property$CornerInlineStartShape | Array<Property$CornerInlineStartShape>,
+  "corner-left-shape"?: Property$CornerLeftShape | Array<Property$CornerLeftShape>,
+  "corner-right-shape"?: Property$CornerRightShape | Array<Property$CornerRightShape>,
+  "corner-shape"?: Property$CornerShape | Array<Property$CornerShape>,
+  "corner-top-shape"?: Property$CornerTopShape | Array<Property$CornerTopShape>,
   flex?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
   "flex-flow"?: Property$FlexFlow | Array<Property$FlexFlow>,
   font?: Property$Font | Array<Property$Font>,
@@ -3310,6 +3551,7 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0, TTim
   inset?: Property$Inset<TLength> | Array<Property$Inset<TLength>>,
   "inset-block"?: Property$InsetBlock<TLength> | Array<Property$InsetBlock<TLength>>,
   "inset-inline"?: Property$InsetInline<TLength> | Array<Property$InsetInline<TLength>>,
+  "interest-delay"?: Property$InterestDelay<TTime> | Array<Property$InterestDelay<TTime>>,
   "line-clamp"?: Property$LineClamp | Array<Property$LineClamp>,
   "list-style"?: Property$ListStyle | Array<Property$ListStyle>,
   margin?: Property$Margin<TLength> | Array<Property$Margin<TLength>>,
@@ -3340,6 +3582,9 @@ export type StandardShorthandPropertiesHyphenFallback<TLength = string | 0, TTim
   "text-decoration"?: Property$TextDecoration<TLength> | Array<Property$TextDecoration<TLength>>,
   "text-emphasis"?: Property$TextEmphasis | Array<Property$TextEmphasis>,
   "text-wrap"?: Property$TextWrap | Array<Property$TextWrap>,
+  "timeline-trigger"?: Property$TimelineTrigger | Array<Property$TimelineTrigger>,
+  "timeline-trigger-activation-range"?: Property$TimelineTriggerActivationRange<TLength> | Array<Property$TimelineTriggerActivationRange<TLength>>,
+  "timeline-trigger-active-range"?: Property$TimelineTriggerActiveRange<TLength> | Array<Property$TimelineTriggerActiveRange<TLength>>,
   transition?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
   "view-timeline"?: Property$ViewTimeline | Array<Property$ViewTimeline>,
 |};
@@ -3398,6 +3643,7 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-moz-transform"?: Property$Transform | Array<Property$Transform>,
   "-moz-transform-origin"?: Property$TransformOrigin<TLength> | Array<Property$TransformOrigin<TLength>>,
   "-moz-transform-style"?: Property$TransformStyle | Array<Property$TransformStyle>,
+  "-moz-user-focus"?: Property$MozUserFocus | Array<Property$MozUserFocus>,
   "-moz-user-modify"?: Property$MozUserModify | Array<Property$MozUserModify>,
   "-moz-user-select"?: Property$UserSelect | Array<Property$UserSelect>,
   "-moz-window-dragging"?: Property$MozWindowDragging | Array<Property$MozWindowDragging>,
@@ -3480,12 +3726,21 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-webkit-background-clip"?: Property$BackgroundClip | Array<Property$BackgroundClip>,
   "-webkit-background-origin"?: Property$BackgroundOrigin | Array<Property$BackgroundOrigin>,
   "-webkit-background-size"?: Property$BackgroundSize<TLength> | Array<Property$BackgroundSize<TLength>>,
+  "-webkit-border-after-color"?: Property$WebkitBorderAfterColor | Array<Property$WebkitBorderAfterColor>,
+  "-webkit-border-after-style"?: Property$WebkitBorderAfterStyle | Array<Property$WebkitBorderAfterStyle>,
+  "-webkit-border-after-width"?: Property$WebkitBorderAfterWidth<TLength> | Array<Property$WebkitBorderAfterWidth<TLength>>,
   "-webkit-border-before-color"?: Property$WebkitBorderBeforeColor | Array<Property$WebkitBorderBeforeColor>,
   "-webkit-border-before-style"?: Property$WebkitBorderBeforeStyle | Array<Property$WebkitBorderBeforeStyle>,
   "-webkit-border-before-width"?: Property$WebkitBorderBeforeWidth<TLength> | Array<Property$WebkitBorderBeforeWidth<TLength>>,
   "-webkit-border-bottom-left-radius"?: Property$BorderBottomLeftRadius<TLength> | Array<Property$BorderBottomLeftRadius<TLength>>,
   "-webkit-border-bottom-right-radius"?: Property$BorderBottomRightRadius<TLength> | Array<Property$BorderBottomRightRadius<TLength>>,
+  "-webkit-border-end-color"?: Property$WebkitBorderEndColor | Array<Property$WebkitBorderEndColor>,
+  "-webkit-border-end-style"?: Property$WebkitBorderEndStyle | Array<Property$WebkitBorderEndStyle>,
+  "-webkit-border-end-width"?: Property$WebkitBorderEndWidth<TLength> | Array<Property$WebkitBorderEndWidth<TLength>>,
   "-webkit-border-image-slice"?: Property$BorderImageSlice | Array<Property$BorderImageSlice>,
+  "-webkit-border-start-color"?: Property$WebkitBorderStartColor | Array<Property$WebkitBorderStartColor>,
+  "-webkit-border-start-style"?: Property$WebkitBorderStartStyle | Array<Property$WebkitBorderStartStyle>,
+  "-webkit-border-start-width"?: Property$WebkitBorderStartWidth<TLength> | Array<Property$WebkitBorderStartWidth<TLength>>,
   "-webkit-border-top-left-radius"?: Property$BorderTopLeftRadius<TLength> | Array<Property$BorderTopLeftRadius<TLength>>,
   "-webkit-border-top-right-radius"?: Property$BorderTopRightRadius<TLength> | Array<Property$BorderTopRightRadius<TLength>>,
   "-webkit-box-decoration-break"?: Property$BoxDecorationBreak | Array<Property$BoxDecorationBreak>,
@@ -3518,6 +3773,8 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-webkit-line-clamp"?: Property$WebkitLineClamp | Array<Property$WebkitLineClamp>,
   "-webkit-logical-height"?: Property$BlockSize<TLength> | Array<Property$BlockSize<TLength>>,
   "-webkit-logical-width"?: Property$InlineSize<TLength> | Array<Property$InlineSize<TLength>>,
+  "-webkit-margin-after"?: Property$MarginBlockEnd<TLength> | Array<Property$MarginBlockEnd<TLength>>,
+  "-webkit-margin-before"?: Property$MarginBlockStart<TLength> | Array<Property$MarginBlockStart<TLength>>,
   "-webkit-margin-end"?: Property$MarginInlineEnd<TLength> | Array<Property$MarginInlineEnd<TLength>>,
   "-webkit-margin-start"?: Property$MarginInlineStart<TLength> | Array<Property$MarginInlineStart<TLength>>,
   "-webkit-mask-attachment"?: Property$WebkitMaskAttachment | Array<Property$WebkitMaskAttachment>,
@@ -3552,7 +3809,6 @@ export type VendorLonghandPropertiesHyphenFallback<TLength = string | 0, TTime =
   "-webkit-text-combine"?: Property$TextCombineUpright | Array<Property$TextCombineUpright>,
   "-webkit-text-decoration-color"?: Property$TextDecorationColor | Array<Property$TextDecorationColor>,
   "-webkit-text-decoration-line"?: Property$TextDecorationLine | Array<Property$TextDecorationLine>,
-  "-webkit-text-decoration-skip"?: Property$TextDecorationSkip | Array<Property$TextDecorationSkip>,
   "-webkit-text-decoration-style"?: Property$TextDecorationStyle | Array<Property$TextDecorationStyle>,
   "-webkit-text-emphasis-color"?: Property$TextEmphasisColor | Array<Property$TextEmphasisColor>,
   "-webkit-text-emphasis-position"?: Property$TextEmphasisPosition | Array<Property$TextEmphasisPosition>,
@@ -3591,9 +3847,12 @@ export type VendorShorthandPropertiesHyphenFallback<TLength = string | 0, TTime 
   "-ms-scroll-snap-y"?: Property$MsScrollSnapY | Array<Property$MsScrollSnapY>,
   "-ms-transition"?: Property$Transition<TTime> | Array<Property$Transition<TTime>>,
   "-webkit-animation"?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
+  "-webkit-border-after"?: Property$WebkitBorderAfter<TLength> | Array<Property$WebkitBorderAfter<TLength>>,
   "-webkit-border-before"?: Property$WebkitBorderBefore<TLength> | Array<Property$WebkitBorderBefore<TLength>>,
+  "-webkit-border-end"?: Property$WebkitBorderEnd<TLength> | Array<Property$WebkitBorderEnd<TLength>>,
   "-webkit-border-image"?: Property$BorderImage | Array<Property$BorderImage>,
   "-webkit-border-radius"?: Property$BorderRadius<TLength> | Array<Property$BorderRadius<TLength>>,
+  "-webkit-border-start"?: Property$WebkitBorderStart<TLength> | Array<Property$WebkitBorderStart<TLength>>,
   "-webkit-column-rule"?: Property$ColumnRule<TLength> | Array<Property$ColumnRule<TLength>>,
   "-webkit-columns"?: Property$Columns<TLength> | Array<Property$Columns<TLength>>,
   "-webkit-flex"?: Property$Flex<TLength> | Array<Property$Flex<TLength>>,
@@ -3642,6 +3901,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "scroll-snap-points-y"?: Property$ScrollSnapPointsY | Array<Property$ScrollSnapPointsY>,
   "scroll-snap-type-x"?: Property$ScrollSnapTypeX | Array<Property$ScrollSnapTypeX>,
   "scroll-snap-type-y"?: Property$ScrollSnapTypeY | Array<Property$ScrollSnapTypeY>,
+  "text-decoration-skip"?: Property$TextDecorationSkip | Array<Property$TextDecorationSkip>,
   "-khtml-box-align"?: Property$BoxAlign | Array<Property$BoxAlign>,
   "-khtml-box-direction"?: Property$BoxDirection | Array<Property$BoxDirection>,
   "-khtml-box-flex"?: Property$BoxFlex | Array<Property$BoxFlex>,
@@ -3685,7 +3945,6 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-moz-transition-duration"?: Property$TransitionDuration<TTime> | Array<Property$TransitionDuration<TTime>>,
   "-moz-transition-property"?: Property$TransitionProperty | Array<Property$TransitionProperty>,
   "-moz-transition-timing-function"?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
-  "-moz-user-focus"?: Property$MozUserFocus | Array<Property$MozUserFocus>,
   "-moz-user-input"?: Property$MozUserInput | Array<Property$MozUserInput>,
   "-ms-ime-mode"?: Property$ImeMode | Array<Property$ImeMode>,
   "-o-animation"?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
@@ -3718,6 +3977,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-webkit-box-ordinal-group"?: Property$BoxOrdinalGroup | Array<Property$BoxOrdinalGroup>,
   "-webkit-box-orient"?: Property$BoxOrient | Array<Property$BoxOrient>,
   "-webkit-box-pack"?: Property$BoxPack | Array<Property$BoxPack>,
+  "-webkit-text-decoration-skip"?: Property$TextDecorationSkip | Array<Property$TextDecorationSkip>,
 |};
 
 export type SvgPropertiesHyphenFallback<TLength = string | 0, TTime = string> = {|
@@ -3999,6 +4259,7 @@ export type HtmlAttributes =
   | "[autocomplete]"
   | "[autocorrect]"
   | "[autofocus]"
+  | "[autolocate]"
   | "[autoplay]"
   | "[axis]"
   | "[background]"
@@ -4029,6 +4290,8 @@ export type HtmlAttributes =
   | "[command]"
   | "[commandfor]"
   | "[compact]"
+  | "[containertiming]"
+  | "[containertimingignore]"
   | "[content]"
   | "[contenteditable]"
   | "[controls]"
@@ -4052,11 +4315,15 @@ export type HtmlAttributes =
   | "[disableremoteplayback]"
   | "[download]"
   | "[draggable]"
+  | "[drawable]"
+  | "[elementtiming]"
   | "[enctype]"
   | "[enterkeyhint]"
   | "[exportparts]"
   | "[face]"
   | "[fetchpriority]"
+  | "[focusgroup]"
+  | "[focusgroupstart]"
   | "[for]"
   | "[form]"
   | "[formaction]"
@@ -4067,6 +4334,8 @@ export type HtmlAttributes =
   | "[frame]"
   | "[frameborder]"
   | "[headers]"
+  | "[headingoffset]"
+  | "[headingreset]"
   | "[height]"
   | "[hidden]"
   | "[high]"
@@ -4081,6 +4350,7 @@ export type HtmlAttributes =
   | "[inert]"
   | "[inputmode]"
   | "[integrity]"
+  | "[interestfor]"
   | "[is]"
   | "[ismap]"
   | "[kind]"
@@ -4093,6 +4363,8 @@ export type HtmlAttributes =
   | "[longdesc]"
   | "[loop]"
   | "[low]"
+  | "[manifestId]"
+  | "[manifest]"
   | "[marginheight]"
   | "[marginwidth]"
   | "[max]"
@@ -4145,9 +4417,12 @@ export type HtmlAttributes =
   | "[selected]"
   | "[shadowroot]"
   | "[shadowrootclonable]"
+  | "[shadowrootcustomelementregistry]"
   | "[shadowrootdelegatesfocus]"
   | "[shadowrootmode]"
+  | "[shadowrootreferencetarget]"
   | "[shadowrootserializable]"
+  | "[shadowrootslotassignment]"
   | "[shape]"
   | "[size]"
   | "[sizes]"
@@ -4158,11 +4433,13 @@ export type HtmlAttributes =
   | "[srcdoc]"
   | "[srclang]"
   | "[srcset]"
+  | "[stagemode]"
   | "[standby]"
   | "[start]"
   | "[step]"
   | "[style]"
   | "[summary]"
+  | "[switch]"
   | "[tabindex]"
   | "[target]"
   | "[text]"
@@ -4179,6 +4456,7 @@ export type HtmlAttributes =
   | "[virtualkeyboardpolicy]"
   | "[vlink]"
   | "[vspace]"
+  | "[watch]"
   | "[webkit-playsinline]"
   | "[webkitallowfullscreen]"
   | "[webkitdirectory]"
@@ -4245,6 +4523,8 @@ export type SvgAttributes =
   | "[filter]"
   | "[flood-color]"
   | "[flood-opacity]"
+  | "[focusgroup]"
+  | "[focusgroupstart]"
   | "[font-family]"
   | "[font-size-adjust]"
   | "[font-size]"
@@ -4268,6 +4548,7 @@ export type SvgAttributes =
   | "[image-rendering]"
   | "[in2]"
   | "[in]"
+  | "[interestfor]"
   | "[k1]"
   | "[k2]"
   | "[k3]"
@@ -4290,6 +4571,7 @@ export type SvgAttributes =
   | "[maskUnits]"
   | "[mask]"
   | "[media]"
+  | "[method]"
   | "[mode]"
   | "[numOctaves]"
   | "[offset]"
@@ -4300,6 +4582,7 @@ export type SvgAttributes =
   | "[origin]"
   | "[overflow]"
   | "[paint-order]"
+  | "[pathLength]"
   | "[path]"
   | "[patternContentUnits]"
   | "[patternTransform]"
@@ -4347,6 +4630,7 @@ export type SvgAttributes =
   | "[stroke]"
   | "[style]"
   | "[surfaceScale]"
+  | "[svgView]"
   | "[systemLanguage]"
   | "[tabindex]"
   | "[targetX]"
@@ -4431,6 +4715,8 @@ export type Property$AnimationTimeline = Globals | DataType$SingleAnimationTimel
 
 export type Property$AnimationTimingFunction = Globals | DataType$EasingFunction | string;
 
+export type Property$AnimationTrigger = Globals | "none" | string;
+
 export type Property$Appearance = Globals | DataType$CompatAuto | "auto" | "menulist-button" | "none" | "textfield";
 
 export type Property$AspectRatio = Globals | "auto" | string | number;
@@ -4464,6 +4750,8 @@ export type Property$BackgroundRepeat = Globals | DataType$RepeatStyle | string;
 export type Property$BackgroundSize<TLength = string | 0> = Globals | DataType$BgSize<TLength> | string;
 
 export type Property$BaselineShift<TLength = string | 0> = Globals | TLength | "baseline" | "sub" | "super" | string;
+
+export type Property$BaselineSource = Globals | "auto" | "first" | "last";
 
 export type Property$BlockSize<TLength = string | 0> =
   Globals | TLength | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "auto" | "fit-content" | "max-content" | "min-content" | string;
@@ -4568,6 +4856,8 @@ export type Property$BorderRightStyle = Globals | DataType$LineStyle;
 
 export type Property$BorderRightWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength>;
 
+export type Property$BorderShape = Globals | "none" | string;
+
 export type Property$BorderSpacing<TLength = string | 0> = Globals | TLength | string;
 
 export type Property$BorderStartEndRadius<TLength = string | 0> = Globals | TLength | string;
@@ -4624,7 +4914,9 @@ export type Property$BreakInside = Globals | "auto" | "avoid" | "avoid-column" |
 
 export type Property$CaptionSide = Globals | "bottom" | "top";
 
-export type Property$Caret = Globals | DataType$Color | "auto" | "bar" | "block" | "underscore" | string;
+export type Property$Caret = Globals | DataType$Color | "auto" | "bar" | "block" | "manual" | "underscore" | string;
+
+export type Property$CaretAnimation = Globals | "auto" | "manual";
 
 export type Property$CaretColor = Globals | DataType$Color | "auto";
 
@@ -4652,17 +4944,21 @@ export type Property$ColumnFill = Globals | "auto" | "balance";
 
 export type Property$ColumnGap<TLength = string | 0> = Globals | TLength | "normal" | string;
 
+export type Property$ColumnHeight<TLength = string | 0> = Globals | TLength | "auto";
+
 export type Property$ColumnRule<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | DataType$LineStyle | DataType$Color | string;
 
 export type Property$ColumnRuleColor = Globals | DataType$Color;
 
-export type Property$ColumnRuleStyle = Globals | DataType$LineStyle | string;
+export type Property$ColumnRuleStyle = Globals | DataType$LineStyle;
 
-export type Property$ColumnRuleWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | string;
+export type Property$ColumnRuleWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength>;
 
 export type Property$ColumnSpan = Globals | "all" | "none";
 
 export type Property$ColumnWidth<TLength = string | 0> = Globals | TLength | "auto";
+
+export type Property$ColumnWrap = Globals | "auto" | "nowrap" | "wrap";
 
 export type Property$Columns<TLength = string | 0> = Globals | TLength | "auto" | string | number;
 
@@ -4688,6 +4984,40 @@ export type Property$Content = Globals | DataType$Quote | "none" | "normal" | st
 
 export type Property$ContentVisibility = Globals | "auto" | "hidden" | "visible";
 
+export type Property$CornerBlockEndShape = Globals | DataType$CornerShapeValue | string;
+
+export type Property$CornerBlockStartShape = Globals | DataType$CornerShapeValue | string;
+
+export type Property$CornerBottomLeftShape = Globals | DataType$CornerShapeValue;
+
+export type Property$CornerBottomRightShape = Globals | DataType$CornerShapeValue;
+
+export type Property$CornerBottomShape = Globals | DataType$CornerShapeValue | string;
+
+export type Property$CornerEndEndShape = Globals | DataType$CornerShapeValue;
+
+export type Property$CornerEndStartShape = Globals | DataType$CornerShapeValue;
+
+export type Property$CornerInlineEndShape = Globals | DataType$CornerShapeValue | string;
+
+export type Property$CornerInlineStartShape = Globals | DataType$CornerShapeValue | string;
+
+export type Property$CornerLeftShape = Globals | DataType$CornerShapeValue | string;
+
+export type Property$CornerRightShape = Globals | DataType$CornerShapeValue | string;
+
+export type Property$CornerShape = Globals | DataType$CornerShapeValue | string;
+
+export type Property$CornerStartEndShape = Globals | DataType$CornerShapeValue;
+
+export type Property$CornerStartStartShape = Globals | DataType$CornerShapeValue;
+
+export type Property$CornerTopLeftShape = Globals | DataType$CornerShapeValue;
+
+export type Property$CornerTopRightShape = Globals | DataType$CornerShapeValue;
+
+export type Property$CornerTopShape = Globals | DataType$CornerShapeValue | string;
+
 export type Property$CounterIncrement = Globals | "none" | string;
 
 export type Property$CounterReset = Globals | "none" | string;
@@ -4709,6 +5039,8 @@ export type Property$Display =
 
 export type Property$DominantBaseline = Globals | "alphabetic" | "auto" | "central" | "hanging" | "ideographic" | "mathematical" | "middle" | "text-bottom" | "text-top";
 
+export type Property$DynamicRangeLimit = Globals | "constrained" | "no-limit" | "standard" | string;
+
 export type Property$EmptyCells = Globals | "hide" | "show";
 
 export type Property$FieldSizing = Globals | "content" | "fixed";
@@ -4728,13 +5060,15 @@ export type Property$FlexBasis<TLength = string | 0> =
 
 export type Property$FlexDirection = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
-export type Property$FlexFlow = Globals | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | string;
+export type Property$FlexFlow = Globals | "balance" | "column" | "column-reverse" | "nowrap" | "row" | "row-reverse" | "wrap" | "wrap-reverse" | string;
 
 export type Property$FlexGrow = Globals | number;
 
+export type Property$FlexLineCount = Globals | number;
+
 export type Property$FlexShrink = Globals | number;
 
-export type Property$FlexWrap = Globals | "nowrap" | "wrap" | "wrap-reverse";
+export type Property$FlexWrap = Globals | "balance" | "nowrap" | "wrap" | "wrap-reverse" | string;
 
 export type Property$Float = Globals | "inline-end" | "inline-start" | "left" | "none" | "right";
 
@@ -4845,6 +5179,8 @@ export type Property$FontWidth =
 
 export type Property$ForcedColorAdjust = Globals | "auto" | "none" | "preserve-parent-color";
 
+export type Property$FrameSizing = Globals | "auto" | "content-block-size" | "content-height" | "content-inline-size" | "content-width";
+
 export type Property$Gap<TLength = string | 0> = Globals | TLength | "normal" | string;
 
 export type Property$Grid = Globals | "none" | string;
@@ -4925,6 +5261,14 @@ export type Property$InsetInlineEnd<TLength = string | 0> = Globals | TLength | 
 
 export type Property$InsetInlineStart<TLength = string | 0> = Globals | TLength | "auto" | string;
 
+export type Property$Interactivity = Globals | "auto" | "inert";
+
+export type Property$InterestDelay<TTime = string> = Globals | TTime | "normal" | string;
+
+export type Property$InterestDelayEnd<TTime = string> = Globals | TTime | "normal";
+
+export type Property$InterestDelayStart<TTime = string> = Globals | TTime | "normal";
+
 export type Property$InterpolateSize = Globals | "allow-keywords" | "numeric-only";
 
 export type Property$Isolation = Globals | "auto" | "isolate";
@@ -4933,7 +5277,7 @@ export type Property$JustifyContent = Globals | DataType$ContentDistribution | D
 
 export type Property$JustifyItems = Globals | DataType$SelfPosition | "anchor-center" | "baseline" | "left" | "legacy" | "normal" | "right" | "stretch" | string;
 
-export type Property$JustifySelf = Globals | DataType$SelfPosition | "anchor-center" | "auto" | "baseline" | "left" | "normal" | "right" | "stretch" | string;
+export type Property$JustifySelf = Globals | DataType$SelfPosition2 | "anchor-center" | "auto" | "baseline" | "left" | "normal" | "right" | "stretch" | string;
 
 export type Property$JustifyTracks = Globals | DataType$ContentDistribution | DataType$ContentPosition | "left" | "normal" | "right" | string;
 
@@ -4950,6 +5294,8 @@ export type Property$LineClamp = Globals | "none" | number;
 export type Property$LineHeight<TLength = string | 0> = Globals | TLength | "normal" | string | number;
 
 export type Property$LineHeightStep<TLength = string | 0> = Globals | TLength;
+
+export type Property$LinkParameters = Globals | "none" | string;
 
 export type Property$ListStyle = Globals | "inside" | "none" | "outside" | string;
 
@@ -5210,6 +5556,8 @@ export type Property$PageBreakInside = Globals | "auto" | "avoid";
 
 export type Property$PaintOrder = Globals | "fill" | "markers" | "normal" | "stroke" | string;
 
+export type Property$PathLength = Globals | "none" | string;
+
 export type Property$Perspective<TLength = string | 0> = Globals | TLength | "none";
 
 export type Property$PerspectiveOrigin<TLength = string | 0> = Globals | DataType$Position<TLength>;
@@ -5224,7 +5572,7 @@ export type Property$PointerEvents = Globals | "all" | "auto" | "fill" | "inheri
 
 export type Property$Position = Globals | "-webkit-sticky" | "absolute" | "fixed" | "relative" | "static" | "sticky";
 
-export type Property$PositionAnchor = Globals | "auto" | string;
+export type Property$PositionAnchor = Globals | "auto" | "match-parent" | "none" | "normal" | string;
 
 export type Property$PositionTry = Globals | DataType$TryTactic | DataType$PositionArea | "none" | string;
 
@@ -5237,6 +5585,10 @@ export type Property$PositionVisibility = Globals | "always" | "anchors-valid" |
 export type Property$Quotes = Globals | "auto" | "none" | string;
 
 export type Property$R<TLength = string | 0> = Globals | TLength | string;
+
+export type Property$ReadingFlow = Globals | "flex-flow" | "flex-visual" | "grid-columns" | "grid-order" | "grid-rows" | "normal" | "source-order";
+
+export type Property$ReadingOrder = Globals | number;
 
 export type Property$Resize = Globals | "block" | "both" | "horizontal" | "inline" | "none" | "vertical";
 
@@ -5254,11 +5606,13 @@ export type Property$RubyOverhang = Globals | "auto" | "none";
 
 export type Property$RubyPosition = Globals | "alternate" | "inter-character" | "over" | "under" | string;
 
-export type Property$Rx<TLength = string | 0> = Globals | TLength | string;
+export type Property$Rx<TLength = string | 0> = Globals | TLength | "auto" | string;
 
-export type Property$Ry<TLength = string | 0> = Globals | TLength | string;
+export type Property$Ry<TLength = string | 0> = Globals | TLength | "auto" | string;
 
 export type Property$Scale = Globals | "none" | string | number;
+
+export type Property$ScrollAxisLock = Globals | "auto" | "none";
 
 export type Property$ScrollBehavior = Globals | "auto" | "smooth";
 
@@ -5285,6 +5639,8 @@ export type Property$ScrollMarginLeft<TLength = string | 0> = Globals | TLength;
 export type Property$ScrollMarginRight<TLength = string | 0> = Globals | TLength;
 
 export type Property$ScrollMarginTop<TLength = string | 0> = Globals | TLength;
+
+export type Property$ScrollMarkerGroup = Globals | "after" | "before" | "none";
 
 export type Property$ScrollPadding<TLength = string | 0> = Globals | TLength | "auto" | string;
 
@@ -5325,6 +5681,8 @@ export type Property$ScrollSnapType = Globals | "block" | "both" | "inline" | "n
 export type Property$ScrollSnapTypeX = Globals | "mandatory" | "none" | "proximity";
 
 export type Property$ScrollSnapTypeY = Globals | "mandatory" | "none" | "proximity";
+
+export type Property$ScrollTargetGroup = Globals | "auto" | "none";
 
 export type Property$ScrollTimeline = Globals | "none" | string;
 
@@ -5430,6 +5788,8 @@ export type Property$TextDecoration<TLength = string | 0> =
 
 export type Property$TextDecorationColor = Globals | DataType$Color;
 
+export type Property$TextDecorationInset<TLength = string | 0> = Globals | TLength | "auto" | string;
+
 export type Property$TextDecorationLine = Globals | "blink" | "grammar-error" | "line-through" | "none" | "overline" | "spelling-error" | "underline" | string;
 
 export type Property$TextDecorationSkip = Globals | "box-decoration" | "edges" | "leading-spaces" | "none" | "objects" | "spaces" | "trailing-spaces" | string;
@@ -5447,6 +5807,8 @@ export type Property$TextEmphasisColor = Globals | DataType$Color;
 export type Property$TextEmphasisPosition = Globals | "auto" | "over" | "under" | string;
 
 export type Property$TextEmphasisStyle = Globals | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | string;
+
+export type Property$TextFit = Globals | "grow" | "none" | "shrink" | string;
 
 export type Property$TextIndent<TLength = string | 0> = Globals | TLength | string;
 
@@ -5477,6 +5839,24 @@ export type Property$TextWrapMode = Globals | "nowrap" | "wrap";
 export type Property$TextWrapStyle = Globals | "auto" | "balance" | "pretty" | "stable";
 
 export type Property$TimelineScope = Globals | "none" | string;
+
+export type Property$TimelineTrigger = Globals | "none" | string;
+
+export type Property$TimelineTriggerActivationRange<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "normal" | string;
+
+export type Property$TimelineTriggerActivationRangeEnd<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "normal" | string;
+
+export type Property$TimelineTriggerActivationRangeStart<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "normal" | string;
+
+export type Property$TimelineTriggerActiveRange<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "auto" | "normal" | string;
+
+export type Property$TimelineTriggerActiveRangeEnd<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "auto" | "normal" | string;
+
+export type Property$TimelineTriggerActiveRangeStart<TLength = string | 0> = Globals | DataType$TimelineRangeName | TLength | "auto" | "normal" | string;
+
+export type Property$TimelineTriggerName = Globals | "none" | string;
+
+export type Property$TimelineTriggerSource = Globals | DataType$SingleAnimationTimeline | string;
 
 export type Property$Top<TLength = string | 0> = Globals | TLength | "auto" | string;
 
@@ -5521,6 +5901,8 @@ export type Property$TransitionTimingFunction = Globals | DataType$EasingFunctio
 
 export type Property$Translate<TLength = string | 0> = Globals | TLength | "none" | string;
 
+export type Property$TriggerScope = Globals | "all" | "none" | string;
+
 export type Property$UnicodeBidi =
   | Globals
   | "-moz-isolate"
@@ -5553,6 +5935,8 @@ export type Property$ViewTimelineName = Globals | "none" | string;
 export type Property$ViewTransitionClass = Globals | "none" | string;
 
 export type Property$ViewTransitionName = Globals | "match-element" | "none" | string;
+
+export type Property$ViewTransitionScope = Globals | "all" | "none";
 
 export type Property$Visibility = Globals | "collapse" | "hidden" | "visible";
 
@@ -5593,6 +5977,8 @@ export type Property$Width<TLength = string | 0> =
   | string;
 
 export type Property$WillChange = Globals | DataType$AnimateableFeature | "auto" | string;
+
+export type Property$WindowDrag = Globals | "move" | "none";
 
 export type Property$WordBreak = Globals | "auto-phrase" | "break-all" | "break-word" | "keep-all" | "normal";
 
@@ -5913,13 +6299,37 @@ export type Property$WebkitAppearance =
   | "textarea"
   | "textfield";
 
+export type Property$WebkitBorderAfter<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | DataType$LineStyle | DataType$Color | string;
+
+export type Property$WebkitBorderAfterColor = Globals | DataType$Color;
+
+export type Property$WebkitBorderAfterStyle = Globals | DataType$LineStyle;
+
+export type Property$WebkitBorderAfterWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength>;
+
 export type Property$WebkitBorderBefore<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | DataType$LineStyle | DataType$Color | string;
 
 export type Property$WebkitBorderBeforeColor = Globals | DataType$Color;
 
-export type Property$WebkitBorderBeforeStyle = Globals | DataType$LineStyle | string;
+export type Property$WebkitBorderBeforeStyle = Globals | DataType$LineStyle;
 
-export type Property$WebkitBorderBeforeWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | string;
+export type Property$WebkitBorderBeforeWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength>;
+
+export type Property$WebkitBorderEnd<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | DataType$LineStyle | DataType$Color | string;
+
+export type Property$WebkitBorderEndColor = Globals | DataType$Color;
+
+export type Property$WebkitBorderEndStyle = Globals | DataType$LineStyle;
+
+export type Property$WebkitBorderEndWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength>;
+
+export type Property$WebkitBorderStart<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | DataType$LineStyle | DataType$Color | string;
+
+export type Property$WebkitBorderStartColor = Globals | DataType$Color;
+
+export type Property$WebkitBorderStartStyle = Globals | DataType$LineStyle;
+
+export type Property$WebkitBorderStartWidth<TLength = string | 0> = Globals | DataType$LineWidth<TLength>;
 
 export type Property$WebkitBoxReflect<TLength = string | 0> = Globals | TLength | "above" | "below" | "left" | "right" | string;
 
@@ -6123,6 +6533,7 @@ export type AtRule$FontPaletteValuesHyphenFallback<TLength = string | 0, TTime =
 export type AtRule$Page<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength>,
   marks?: AtRule$Marks,
+  pageMarginSafety?: AtRule$PageMarginSafety,
   pageOrientation?: AtRule$PageOrientation,
   size?: AtRule$Size<TLength>,
 |};
@@ -6130,6 +6541,7 @@ export type AtRule$Page<TLength = string | 0, TTime = string> = {|
 export type AtRule$PageHyphen<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength>,
   marks?: AtRule$Marks,
+  "page-margin-safety"?: AtRule$PageMarginSafety,
   "page-orientation"?: AtRule$PageOrientation,
   size?: AtRule$Size<TLength>,
 |};
@@ -6137,6 +6549,7 @@ export type AtRule$PageHyphen<TLength = string | 0, TTime = string> = {|
 export type AtRule$PageFallback<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength> | Array<AtRule$Bleed<TLength>>,
   marks?: AtRule$Marks | Array<AtRule$Marks>,
+  pageMarginSafety?: AtRule$PageMarginSafety | Array<AtRule$PageMarginSafety>,
   pageOrientation?: AtRule$PageOrientation | Array<AtRule$PageOrientation>,
   size?: AtRule$Size<TLength> | Array<AtRule$Size<TLength>>,
 |};
@@ -6144,6 +6557,7 @@ export type AtRule$PageFallback<TLength = string | 0, TTime = string> = {|
 export type AtRule$PageHyphenFallback<TLength = string | 0, TTime = string> = {|
   bleed?: AtRule$Bleed<TLength> | Array<AtRule$Bleed<TLength>>,
   marks?: AtRule$Marks | Array<AtRule$Marks>,
+  "page-margin-safety"?: AtRule$PageMarginSafety | Array<AtRule$PageMarginSafety>,
   "page-orientation"?: AtRule$PageOrientation | Array<AtRule$PageOrientation>,
   size?: AtRule$Size<TLength> | Array<AtRule$Size<TLength>>,
 |};
@@ -6222,6 +6636,8 @@ type AtRule$Bleed<TLength> = TLength | "auto";
 
 type AtRule$Marks = "crop" | "cross" | "none" | string;
 
+type AtRule$PageMarginSafety = "add" | "clamp" | "none";
+
 type AtRule$PageOrientation = "rotate-left" | "rotate-right" | "upright";
 
 type AtRule$Size<TLength> = DataType$PageSize | TLength | "auto" | "landscape" | "portrait" | string;
@@ -6280,6 +6696,8 @@ type DataType$CompositingOperator = "add" | "exclude" | "intersect" | "subtract"
 type DataType$ContentDistribution = "space-around" | "space-between" | "space-evenly" | "stretch";
 
 type DataType$ContentPosition = "center" | "end" | "flex-end" | "flex-start" | "start";
+
+type DataType$CornerShapeValue = "bevel" | "notch" | "round" | "scoop" | "square" | "squircle" | string;
 
 type DataType$CubicBezierEasingFunction = "ease" | "ease-in" | "ease-in-out" | "ease-out" | string;
 
@@ -6624,6 +7042,8 @@ type DataType$Quote = "close-quote" | "no-close-quote" | "no-open-quote" | "open
 type DataType$RepeatStyle = "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "round" | "space" | string;
 
 type DataType$SelfPosition = "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
+
+type DataType$SelfPosition2 = "-ms-center" | "center" | "end" | "flex-end" | "flex-start" | "self-end" | "self-start" | "start";
 
 type DataType$SingleAnimation<TTime> =
   | DataType$EasingFunction

@@ -1,4 +1,5 @@
 import mdnBrowserCompatData, { Identifier } from '@mdn/browser-compat-data';
+import { htmlAttributes as patchedHtmlAttributes } from '../data/patches';
 import { hasType, ResolvedType, Type, TypeType } from '../syntax/typer';
 import { alternativeAttributes } from '../utils/compat';
 
@@ -39,6 +40,15 @@ export async function getHtmlAttributes() {
   for (const name in elements) {
     attributes = assembleAttributes(attributes, elements[name]);
   }
+
+  // BCD has moved some element attributes under per-type sub-identifiers
+  // (e.g. `input.type_text.list`), which the walk above does not reach, so
+  // they are patched back in here.
+  const patchedDataset: { [key: string]: Identifier } = {};
+  for (const name of patchedHtmlAttributes) {
+    patchedDataset[name] = {};
+  }
+  attributes = assembleAttributes(attributes, patchedDataset);
 
   return attributes;
 }

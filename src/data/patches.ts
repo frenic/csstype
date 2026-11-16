@@ -2,6 +2,15 @@ export interface IExtendedProperty extends Partial<MDN.Property> {
   shorthand?: boolean;
 }
 
+/**
+ * HTML attributes that BCD only exposes under per-type sub-identifiers
+ * (e.g. `input.type_text.list`), which the attribute collection walk does
+ * not reach. They are still valid attribute selectors.
+ *
+ * https://html.spec.whatwg.org/multipage/input.html#attr-input-list
+ */
+export const htmlAttributes: string[] = ['list'];
+
 export const properties: { [property: string]: IExtendedProperty } = {
   /**
    * https://drafts.csswg.org/css-overflow-3/#line-clamp
