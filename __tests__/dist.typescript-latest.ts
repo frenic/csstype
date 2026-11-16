@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as ts from 'typescript';
 import { removeAbsolutePaths, COMPILER_OPTIONS } from './typescript-utils';
 
-describe('Typescript 5.0', () => {
+describe('Typescript latest', () => {
   it('detects errors', async () => {
     const program = ts.createProgram([path.resolve(__dirname, '__fixtures__/typecheck.ts')], COMPILER_OPTIONS);
     const diagnostics = ts.getPreEmitDiagnostics(program);
@@ -13,7 +13,7 @@ describe('Typescript 5.0', () => {
       )}`;
     });
 
-    expect(Number(ts.versionMajorMinor)).toBe(5.9);
+    expect(Number(ts.versionMajorMinor)).toBe(6.0);
     expect(errors.length).toBe(16);
     for (const error of errors) {
       expect(error).toMatchSnapshot();
