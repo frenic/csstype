@@ -4466,16 +4466,7 @@ export type Property$BackgroundSize<TLength = string | 0> = Globals | DataType$B
 export type Property$BaselineShift<TLength = string | 0> = Globals | TLength | "baseline" | "sub" | "super" | string;
 
 export type Property$BlockSize<TLength = string | 0> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "auto"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+  Globals | TLength | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "auto" | "fit-content" | "max-content" | "min-content" | string;
 
 export type Property$Border<TLength = string | 0> = Globals | DataType$LineWidth<TLength> | DataType$LineStyle | DataType$Color | string;
 
@@ -4624,38 +4615,10 @@ export type Property$BoxShadow = Globals | "none" | string;
 export type Property$BoxSizing = Globals | "border-box" | "content-box";
 
 export type Property$BreakAfter =
-  | Globals
-  | "all"
-  | "always"
-  | "auto"
-  | "avoid"
-  | "avoid-column"
-  | "avoid-page"
-  | "avoid-region"
-  | "column"
-  | "left"
-  | "page"
-  | "recto"
-  | "region"
-  | "right"
-  | "verso";
+  Globals | "all" | "always" | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
 
 export type Property$BreakBefore =
-  | Globals
-  | "all"
-  | "always"
-  | "auto"
-  | "avoid"
-  | "avoid-column"
-  | "avoid-page"
-  | "avoid-region"
-  | "column"
-  | "left"
-  | "page"
-  | "recto"
-  | "region"
-  | "right"
-  | "verso";
+  Globals | "all" | "always" | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
 
 export type Property$BreakInside = Globals | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region";
 
@@ -4742,15 +4705,7 @@ export type Property$D = Globals | "none" | string;
 export type Property$Direction = Globals | "ltr" | "rtl";
 
 export type Property$Display =
-  | Globals
-  | DataType$DisplayOutside
-  | DataType$DisplayInside
-  | DataType$DisplayInternal
-  | DataType$DisplayLegacy
-  | "contents"
-  | "list-item"
-  | "none"
-  | string;
+  Globals | DataType$DisplayOutside | DataType$DisplayInside | DataType$DisplayInternal | DataType$DisplayLegacy | "contents" | "list-item" | "none" | string;
 
 export type Property$DominantBaseline = Globals | "alphabetic" | "auto" | "central" | "hanging" | "ideographic" | "mathematical" | "middle" | "text-bottom" | "text-top";
 
@@ -4769,18 +4724,7 @@ export type Property$Filter = Globals | "none" | string;
 export type Property$Flex<TLength = string | 0> = Globals | TLength | "auto" | "content" | "fit-content" | "max-content" | "min-content" | "none" | string | number;
 
 export type Property$FlexBasis<TLength = string | 0> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-auto"
-  | "auto"
-  | "content"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+  Globals | TLength | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "-webkit-auto" | "auto" | "content" | "fit-content" | "max-content" | "min-content" | string;
 
 export type Property$FlexDirection = Globals | "column" | "column-reverse" | "row" | "row-reverse";
 
@@ -4888,17 +4832,7 @@ export type Property$FontVariantLigatures =
   | string;
 
 export type Property$FontVariantNumeric =
-  | Globals
-  | "diagonal-fractions"
-  | "lining-nums"
-  | "normal"
-  | "oldstyle-nums"
-  | "ordinal"
-  | "proportional-nums"
-  | "slashed-zero"
-  | "stacked-fractions"
-  | "tabular-nums"
-  | string;
+  Globals | "diagonal-fractions" | "lining-nums" | "normal" | "oldstyle-nums" | "ordinal" | "proportional-nums" | "slashed-zero" | "stacked-fractions" | "tabular-nums" | string;
 
 export type Property$FontVariantPosition = Globals | "normal" | "sub" | "super";
 
@@ -4907,17 +4841,7 @@ export type Property$FontVariationSettings = Globals | "normal" | string;
 export type Property$FontWeight = Globals | DataType$FontWeightAbsolute | "bolder" | "lighter";
 
 export type Property$FontWidth =
-  | Globals
-  | "condensed"
-  | "expanded"
-  | "extra-condensed"
-  | "extra-expanded"
-  | "normal"
-  | "semi-condensed"
-  | "semi-expanded"
-  | "ultra-condensed"
-  | "ultra-expanded"
-  | string;
+  Globals | "condensed" | "expanded" | "extra-condensed" | "extra-expanded" | "normal" | "semi-condensed" | "semi-expanded" | "ultra-condensed" | "ultra-expanded" | string;
 
 export type Property$ForcedColorAdjust = Globals | "auto" | "none" | "preserve-parent-color";
 
@@ -4962,17 +4886,7 @@ export type Property$GridTemplateRows<TLength = string | 0> = Globals | DataType
 export type Property$HangingPunctuation = Globals | "allow-end" | "first" | "force-end" | "last" | "none" | string;
 
 export type Property$Height<TLength = string | 0> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fit-content"
-  | "auto"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+  Globals | TLength | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "-webkit-fit-content" | "auto" | "fit-content" | "max-content" | "min-content" | string;
 
 export type Property$HyphenateCharacter = Globals | "auto" | string;
 
@@ -4993,17 +4907,7 @@ export type Property$InitialLetter = Globals | "normal" | string | number;
 export type Property$InitialLetterAlign = Globals | "alphabetic" | "auto" | "hanging" | "ideographic";
 
 export type Property$InlineSize<TLength = string | 0> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "auto"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+  Globals | TLength | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "-webkit-fill-available" | "auto" | "fit-content" | "max-content" | "min-content" | string;
 
 export type Property$Inset<TLength = string | 0> = Globals | TLength | "auto" | string;
 
@@ -5130,16 +5034,7 @@ export type Property$MathShift = Globals | "compact" | "normal";
 export type Property$MathStyle = Globals | "compact" | "normal";
 
 export type Property$MaxBlockSize<TLength = string | 0> =
-  | Globals
-  | TLength
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | "none"
-  | string;
+  Globals | TLength | "-moz-max-content" | "-moz-min-content" | "-webkit-fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
 export type Property$MaxHeight<TLength = string | 0> =
   | Globals
@@ -5158,17 +5053,7 @@ export type Property$MaxHeight<TLength = string | 0> =
   | string;
 
 export type Property$MaxInlineSize<TLength = string | 0> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | "none"
-  | string;
+  Globals | TLength | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "-webkit-fill-available" | "fit-content" | "max-content" | "min-content" | "none" | string;
 
 export type Property$MaxLines = Globals | "none" | number;
 
@@ -5189,16 +5074,7 @@ export type Property$MaxWidth<TLength = string | 0> =
   | string;
 
 export type Property$MinBlockSize<TLength = string | 0> =
-  | Globals
-  | TLength
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "auto"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+  Globals | TLength | "-moz-max-content" | "-moz-min-content" | "-webkit-fill-available" | "auto" | "fit-content" | "max-content" | "min-content" | string;
 
 export type Property$MinHeight<TLength = string | 0> =
   | Globals
@@ -5217,17 +5093,7 @@ export type Property$MinHeight<TLength = string | 0> =
   | string;
 
 export type Property$MinInlineSize<TLength = string | 0> =
-  | Globals
-  | TLength
-  | "-moz-fit-content"
-  | "-moz-max-content"
-  | "-moz-min-content"
-  | "-webkit-fill-available"
-  | "auto"
-  | "fit-content"
-  | "max-content"
-  | "min-content"
-  | string;
+  Globals | TLength | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "-webkit-fill-available" | "auto" | "fit-content" | "max-content" | "min-content" | string;
 
 export type Property$MinWidth<TLength = string | 0> =
   | Globals
@@ -6060,16 +5926,7 @@ export type Property$WebkitBoxReflect<TLength = string | 0> = Globals | TLength 
 export type Property$WebkitLineClamp = Globals | "none" | number;
 
 export type Property$WebkitMask<TLength = string | 0> =
-  | Globals
-  | DataType$Position<TLength>
-  | DataType$RepeatStyle
-  | DataType$VisualBox
-  | "border"
-  | "content"
-  | "none"
-  | "padding"
-  | "text"
-  | string;
+  Globals | DataType$Position<TLength> | DataType$RepeatStyle | DataType$VisualBox | "border" | "content" | "none" | "padding" | "text" | string;
 
 export type Property$WebkitMaskAttachment = Globals | DataType$Attachment | string;
 
@@ -6416,17 +6273,7 @@ type DataType$ColorBase = DataType$NamedColor | "transparent" | string;
 type DataType$CompatAuto = "button" | "checkbox" | "listbox" | "menulist" | "meter" | "progress-bar" | "radio" | "searchfield" | "textarea";
 
 type DataType$CompositeStyle =
-  | "clear"
-  | "copy"
-  | "destination-atop"
-  | "destination-in"
-  | "destination-out"
-  | "destination-over"
-  | "source-atop"
-  | "source-in"
-  | "source-out"
-  | "source-over"
-  | "xor";
+  "clear" | "copy" | "destination-atop" | "destination-in" | "destination-out" | "destination-over" | "source-atop" | "source-in" | "source-out" | "source-over" | "xor";
 
 type DataType$CompositingOperator = "add" | "exclude" | "intersect" | "subtract";
 
@@ -6525,14 +6372,7 @@ type DataType$DisplayInternal =
   | "table-row-group";
 
 type DataType$DisplayLegacy =
-  | "-ms-inline-flexbox"
-  | "-ms-inline-grid"
-  | "-webkit-inline-flex"
-  | "inline-block"
-  | "inline-flex"
-  | "inline-grid"
-  | "inline-list-item"
-  | "inline-table";
+  "-ms-inline-flexbox" | "-ms-inline-grid" | "-webkit-inline-flex" | "inline-block" | "inline-flex" | "inline-grid" | "inline-list-item" | "inline-table";
 
 type DataType$DisplayOutside = "block" | "inline" | "run-in";
 
@@ -6543,16 +6383,7 @@ type DataType$EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "
 type DataType$FinalBgLayer<TLength> = DataType$BgPosition<TLength> | DataType$RepeatStyle | DataType$Attachment | DataType$VisualBox | DataType$Color | "none" | string;
 
 type DataType$FontStretchAbsolute =
-  | "condensed"
-  | "expanded"
-  | "extra-condensed"
-  | "extra-expanded"
-  | "normal"
-  | "semi-condensed"
-  | "semi-expanded"
-  | "ultra-condensed"
-  | "ultra-expanded"
-  | string;
+  "condensed" | "expanded" | "extra-condensed" | "extra-expanded" | "normal" | "semi-condensed" | "semi-expanded" | "ultra-condensed" | "ultra-expanded" | string;
 
 type DataType$FontWeightAbsolute = "bold" | "normal" | number;
 
@@ -6571,14 +6402,7 @@ type DataType$LineStyle = "dashed" | "dotted" | "double" | "groove" | "hidden" |
 type DataType$LineWidth<TLength> = TLength | "medium" | "thick" | "thin";
 
 type DataType$MaskLayer<TLength> =
-  | DataType$Position<TLength>
-  | DataType$RepeatStyle
-  | DataType$GeometryBox
-  | DataType$CompositingOperator
-  | DataType$MaskingMode
-  | "no-clip"
-  | "none"
-  | string;
+  DataType$Position<TLength> | DataType$RepeatStyle | DataType$GeometryBox | DataType$CompositingOperator | DataType$MaskingMode | "no-clip" | "none" | string;
 
 type DataType$MaskingMode = "alpha" | "luminance" | "match-source";
 

@@ -1,5 +1,5 @@
 {
   "extends": "@tsconfig/node24/tsconfig.json",
   "exclude": ["__tests__/__fixtures__"],
-  "compilerOptions": { "module": "es2022", "moduleResolution": "bundler", "noEmit": true }
+  "compilerOptions": { "module": "es2022", "moduleResolution": "bundler", "types": ["node", "jest"], "noEmit": true }
 }

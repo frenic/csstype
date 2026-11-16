@@ -10,7 +10,7 @@ export async function getPseudos() {
   const advanced: ResolvedType[] = [];
 
   for (const selector in selectors) {
-    let match: RegExpMatchArray | null = null;
+    let match: RegExpMatchArray | null;
     while ((match = REGEX_SIMPLE_PSEUDO_SELECTOR.exec(selectors[selector].syntax))) {
       const type: TypeType = { type: Type.StringLiteral, literal: match[1] };
       if (!hasType(simple, type)) {

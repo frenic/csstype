@@ -6843,8 +6843,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
 }
 
 export interface StandardProperties<TLength = (string & {}) | 0, TTime = string & {}>
-  extends StandardLonghandProperties<TLength, TTime>,
-    StandardShorthandProperties<TLength, TTime> {}
+  extends StandardLonghandProperties<TLength, TTime>, StandardShorthandProperties<TLength, TTime> {}
 
 export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
@@ -9757,10 +9756,7 @@ export interface SvgProperties<TLength = (string & {}) | 0, TTime = string & {}>
 }
 
 export interface Properties<TLength = (string & {}) | 0, TTime = string & {}>
-  extends StandardProperties<TLength, TTime>,
-    VendorProperties<TLength, TTime>,
-    ObsoleteProperties<TLength, TTime>,
-    SvgProperties<TLength, TTime> {}
+  extends StandardProperties<TLength, TTime>, VendorProperties<TLength, TTime>, ObsoleteProperties<TLength, TTime>, SvgProperties<TLength, TTime> {}
 
 export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
@@ -16600,8 +16596,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
 }
 
 export interface StandardPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
-  extends StandardLonghandPropertiesHyphen<TLength, TTime>,
-    StandardShorthandPropertiesHyphen<TLength, TTime> {}
+  extends StandardLonghandPropertiesHyphen<TLength, TTime>, StandardShorthandPropertiesHyphen<TLength, TTime> {}
 
 export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
@@ -18408,8 +18403,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
 }
 
 export interface VendorPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
-  extends VendorLonghandPropertiesHyphen<TLength, TTime>,
-    VendorShorthandPropertiesHyphen<TLength, TTime> {}
+  extends VendorLonghandPropertiesHyphen<TLength, TTime>, VendorShorthandPropertiesHyphen<TLength, TTime> {}
 
 export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
@@ -19516,59 +19510,50 @@ export interface SvgPropertiesHyphen<TLength = (string & {}) | 0, TTime = string
 }
 
 export interface PropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}>
-  extends StandardPropertiesHyphen<TLength, TTime>,
-    VendorPropertiesHyphen<TLength, TTime>,
-    ObsoletePropertiesHyphen<TLength, TTime>,
-    SvgPropertiesHyphen<TLength, TTime> {}
+  extends StandardPropertiesHyphen<TLength, TTime>, VendorPropertiesHyphen<TLength, TTime>, ObsoletePropertiesHyphen<TLength, TTime>, SvgPropertiesHyphen<TLength, TTime> {}
 
 export type StandardLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardLonghandProperties<TLength, TTime>>;
 
 export type StandardShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardShorthandProperties<TLength, TTime>>;
 
 export interface StandardPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
-  extends StandardLonghandPropertiesFallback<TLength, TTime>,
-    StandardShorthandPropertiesFallback<TLength, TTime> {}
+  extends StandardLonghandPropertiesFallback<TLength, TTime>, StandardShorthandPropertiesFallback<TLength, TTime> {}
 
 export type VendorLonghandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorLonghandProperties<TLength, TTime>>;
 
 export type VendorShorthandPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorShorthandProperties<TLength, TTime>>;
 
 export interface VendorPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
-  extends VendorLonghandPropertiesFallback<TLength, TTime>,
-    VendorShorthandPropertiesFallback<TLength, TTime> {}
+  extends VendorLonghandPropertiesFallback<TLength, TTime>, VendorShorthandPropertiesFallback<TLength, TTime> {}
 
 export type ObsoletePropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ObsoleteProperties<TLength, TTime>>;
 
 export type SvgPropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<SvgProperties<TLength, TTime>>;
 
 export interface PropertiesFallback<TLength = (string & {}) | 0, TTime = string & {}>
-  extends StandardPropertiesFallback<TLength, TTime>,
-    VendorPropertiesFallback<TLength, TTime>,
-    ObsoletePropertiesFallback<TLength, TTime>,
-    SvgPropertiesFallback<TLength, TTime> {}
+  extends StandardPropertiesFallback<TLength, TTime>, VendorPropertiesFallback<TLength, TTime>, ObsoletePropertiesFallback<TLength, TTime>, SvgPropertiesFallback<TLength, TTime> {}
 
 export type StandardLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardLonghandPropertiesHyphen<TLength, TTime>>;
 
 export type StandardShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<StandardShorthandPropertiesHyphen<TLength, TTime>>;
 
 export interface StandardPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
-  extends StandardLonghandPropertiesHyphenFallback<TLength, TTime>,
-    StandardShorthandPropertiesHyphenFallback<TLength, TTime> {}
+  extends StandardLonghandPropertiesHyphenFallback<TLength, TTime>, StandardShorthandPropertiesHyphenFallback<TLength, TTime> {}
 
 export type VendorLonghandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorLonghandPropertiesHyphen<TLength, TTime>>;
 
 export type VendorShorthandPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<VendorShorthandPropertiesHyphen<TLength, TTime>>;
 
 export interface VendorPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
-  extends VendorLonghandPropertiesHyphenFallback<TLength, TTime>,
-    VendorShorthandPropertiesHyphenFallback<TLength, TTime> {}
+  extends VendorLonghandPropertiesHyphenFallback<TLength, TTime>, VendorShorthandPropertiesHyphenFallback<TLength, TTime> {}
 
 export type ObsoletePropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ObsoletePropertiesHyphen<TLength, TTime>>;
 
 export type SvgPropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<SvgPropertiesHyphen<TLength, TTime>>;
 
 export interface PropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}>
-  extends StandardPropertiesHyphenFallback<TLength, TTime>,
+  extends
+    StandardPropertiesHyphenFallback<TLength, TTime>,
     VendorPropertiesHyphenFallback<TLength, TTime>,
     ObsoletePropertiesHyphenFallback<TLength, TTime>,
     SvgPropertiesHyphenFallback<TLength, TTime> {}
@@ -20250,16 +20235,7 @@ export namespace Property {
   export type BaselineShift<TLength = (string & {}) | 0> = Globals | TLength | "baseline" | "sub" | "super" | (string & {});
 
   export type BlockSize<TLength = (string & {}) | 0> =
-    | Globals
-    | TLength
-    | "-moz-fit-content"
-    | "-moz-max-content"
-    | "-moz-min-content"
-    | "auto"
-    | "fit-content"
-    | "max-content"
-    | "min-content"
-    | (string & {});
+    Globals | TLength | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "auto" | "fit-content" | "max-content" | "min-content" | (string & {});
 
   export type Border<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
@@ -20408,38 +20384,10 @@ export namespace Property {
   export type BoxSizing = Globals | "border-box" | "content-box";
 
   export type BreakAfter =
-    | Globals
-    | "all"
-    | "always"
-    | "auto"
-    | "avoid"
-    | "avoid-column"
-    | "avoid-page"
-    | "avoid-region"
-    | "column"
-    | "left"
-    | "page"
-    | "recto"
-    | "region"
-    | "right"
-    | "verso";
+    Globals | "all" | "always" | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
 
   export type BreakBefore =
-    | Globals
-    | "all"
-    | "always"
-    | "auto"
-    | "avoid"
-    | "avoid-column"
-    | "avoid-page"
-    | "avoid-region"
-    | "column"
-    | "left"
-    | "page"
-    | "recto"
-    | "region"
-    | "right"
-    | "verso";
+    Globals | "all" | "always" | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
 
   export type BreakInside = Globals | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region";
 
@@ -20526,15 +20474,7 @@ export namespace Property {
   export type Direction = Globals | "ltr" | "rtl";
 
   export type Display =
-    | Globals
-    | DataType.DisplayOutside
-    | DataType.DisplayInside
-    | DataType.DisplayInternal
-    | DataType.DisplayLegacy
-    | "contents"
-    | "list-item"
-    | "none"
-    | (string & {});
+    Globals | DataType.DisplayOutside | DataType.DisplayInside | DataType.DisplayInternal | DataType.DisplayLegacy | "contents" | "list-item" | "none" | (string & {});
 
   export type DominantBaseline = Globals | "alphabetic" | "auto" | "central" | "hanging" | "ideographic" | "mathematical" | "middle" | "text-bottom" | "text-top";
 
@@ -20914,16 +20854,7 @@ export namespace Property {
   export type MathStyle = Globals | "compact" | "normal";
 
   export type MaxBlockSize<TLength = (string & {}) | 0> =
-    | Globals
-    | TLength
-    | "-moz-max-content"
-    | "-moz-min-content"
-    | "-webkit-fill-available"
-    | "fit-content"
-    | "max-content"
-    | "min-content"
-    | "none"
-    | (string & {});
+    Globals | TLength | "-moz-max-content" | "-moz-min-content" | "-webkit-fill-available" | "fit-content" | "max-content" | "min-content" | "none" | (string & {});
 
   export type MaxHeight<TLength = (string & {}) | 0> =
     | Globals
@@ -20973,16 +20904,7 @@ export namespace Property {
     | (string & {});
 
   export type MinBlockSize<TLength = (string & {}) | 0> =
-    | Globals
-    | TLength
-    | "-moz-max-content"
-    | "-moz-min-content"
-    | "-webkit-fill-available"
-    | "auto"
-    | "fit-content"
-    | "max-content"
-    | "min-content"
-    | (string & {});
+    Globals | TLength | "-moz-max-content" | "-moz-min-content" | "-webkit-fill-available" | "auto" | "fit-content" | "max-content" | "min-content" | (string & {});
 
   export type MinHeight<TLength = (string & {}) | 0> =
     | Globals
@@ -21459,17 +21381,7 @@ export namespace Property {
   export type VectorEffect = Globals | "fixed-position" | "non-rotation" | "non-scaling-size" | "non-scaling-stroke" | "none";
 
   export type VerticalAlign<TLength = (string & {}) | 0> =
-    | Globals
-    | TLength
-    | "baseline"
-    | "bottom"
-    | "middle"
-    | "sub"
-    | "super"
-    | "text-bottom"
-    | "text-top"
-    | "top"
-    | (string & {});
+    Globals | TLength | "baseline" | "bottom" | "middle" | "sub" | "super" | "text-bottom" | "text-top" | "top" | (string & {});
 
   export type ViewTimeline = Globals | "none" | (string & {});
 
@@ -21855,16 +21767,7 @@ export namespace Property {
   export type WebkitLineClamp = Globals | "none" | (number & {}) | (string & {});
 
   export type WebkitMask<TLength = (string & {}) | 0> =
-    | Globals
-    | DataType.Position<TLength>
-    | DataType.RepeatStyle
-    | DataType.VisualBox
-    | "border"
-    | "content"
-    | "none"
-    | "padding"
-    | "text"
-    | (string & {});
+    Globals | DataType.Position<TLength> | DataType.RepeatStyle | DataType.VisualBox | "border" | "content" | "none" | "padding" | "text" | (string & {});
 
   export type WebkitMaskAttachment = Globals | DataType.Attachment | (string & {});
 
@@ -22137,17 +22040,7 @@ export namespace DataType {
   type CompatAuto = "button" | "checkbox" | "listbox" | "menulist" | "meter" | "progress-bar" | "radio" | "searchfield" | "textarea";
 
   type CompositeStyle =
-    | "clear"
-    | "copy"
-    | "destination-atop"
-    | "destination-in"
-    | "destination-out"
-    | "destination-over"
-    | "source-atop"
-    | "source-in"
-    | "source-out"
-    | "source-over"
-    | "xor";
+    "clear" | "copy" | "destination-atop" | "destination-in" | "destination-out" | "destination-over" | "source-atop" | "source-in" | "source-out" | "source-over" | "xor";
 
   type CompositingOperator = "add" | "exclude" | "intersect" | "subtract";
 
@@ -22256,16 +22149,7 @@ export namespace DataType {
   type FinalBgLayer<TLength> = BgPosition<TLength> | RepeatStyle | Attachment | VisualBox | Color | "none" | (string & {});
 
   type FontStretchAbsolute =
-    | "condensed"
-    | "expanded"
-    | "extra-condensed"
-    | "extra-expanded"
-    | "normal"
-    | "semi-condensed"
-    | "semi-expanded"
-    | "ultra-condensed"
-    | "ultra-expanded"
-    | (string & {});
+    "condensed" | "expanded" | "extra-condensed" | "extra-expanded" | "normal" | "semi-condensed" | "semi-expanded" | "ultra-condensed" | "ultra-expanded" | (string & {});
 
   type FontWeightAbsolute = "bold" | "normal" | (number & {}) | (string & {});
 
