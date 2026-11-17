@@ -20,6 +20,7 @@
     "@types/node": "^24.19.2",
     "@types/prettier": "^3.0.0",
     "@types/turndown": "^5.0.6",
+    "@webref/css": "8.7.9",
     "babel-jest": "^30.5.2",
     "chalk": "^6.0.1",
     "chokidar": "^6.0.0",
