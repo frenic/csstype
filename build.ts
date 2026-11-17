@@ -52,7 +52,12 @@ export default async function trigger() {
   console.info(`Writing files...`);
   await Promise.all([writeFileAsync(FLOW_FILENAME, flow), writeFileAsync(TYPESCRIPT_FILENAME, typescript)]);
   console.info('Testing...');
-  await testing();
+  const { results } = await testing();
+
+  // jest's runCLI resolves even when tests fail
+  if (!results.success) {
+    throw new Error('The type tests failed');
+  }
 }
 
 async function create() {
