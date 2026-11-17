@@ -54,6 +54,9 @@ describe('at-rules', () => {
     expect(literals).not.toContain('@mixin');
     expect(literals).not.toContain('@when');
 
+    // `navigation` is only a descriptor of `@view-transition` in BCD, not an at-rule
+    expect(literals).not.toContain('@navigation');
+
     // Nested BCD entries: `@-webkit-keyframes` is prefix support on
     // `@keyframes`, the page-margin boxes live under `css.at-rules.page`,
     // and `@document` comes from local legacy data

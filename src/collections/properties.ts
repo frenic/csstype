@@ -11,6 +11,7 @@ import {
   isAddedBySome,
   isDeprecated,
   isGeneratedPropertyName,
+  isRemovedGeneratedPropertyName,
 } from '../utils/compat';
 import { warn } from '../utils/logger';
 import { createPropertyDataTypeResolver, IDataTypeDictionary, resolveDataTypes } from './data-types';
@@ -132,6 +133,10 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
       // prefix/alternative_name support data of another property (BCD deletes
       // features no browser has shipped), so the property is dropped
       continue;
+    } else if (isRemovedGeneratedPropertyName(originalName)) {
+      // Only removed support data generates this name (e.g. `-moz-user-modify`
+      // via `user-modify`), so it is obsolete like other removed names
+      deprecated = true;
     }
 
     if (deprecated) {

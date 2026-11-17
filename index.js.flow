@@ -874,6 +874,7 @@ export type ObsoleteProperties<TLength = string | 0, TTime = string> = {|
   MozTransitionProperty?: Property$TransitionProperty,
   MozTransitionTimingFunction?: Property$TransitionTimingFunction,
   MozUserInput?: Property$MozUserInput,
+  MozUserModify?: Property$MozUserModify,
   msImeMode?: Property$ImeMode,
   OAnimation?: Property$Animation<TTime>,
   OAnimationDelay?: Property$AnimationDelay<TTime>,
@@ -1853,6 +1854,7 @@ export type ObsoletePropertiesHyphen<TLength = string | 0, TTime = string> = {|
   "-moz-transition-property"?: Property$TransitionProperty,
   "-moz-transition-timing-function"?: Property$TransitionTimingFunction,
   "-moz-user-input"?: Property$MozUserInput,
+  "-moz-user-modify"?: Property$MozUserModify,
   "-ms-ime-mode"?: Property$ImeMode,
   "-o-animation"?: Property$Animation<TTime>,
   "-o-animation-delay"?: Property$AnimationDelay<TTime>,
@@ -2832,6 +2834,7 @@ export type ObsoletePropertiesFallback<TLength = string | 0, TTime = string> = {
   MozTransitionProperty?: Property$TransitionProperty | Array<Property$TransitionProperty>,
   MozTransitionTimingFunction?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
   MozUserInput?: Property$MozUserInput | Array<Property$MozUserInput>,
+  MozUserModify?: Property$MozUserModify | Array<Property$MozUserModify>,
   msImeMode?: Property$ImeMode | Array<Property$ImeMode>,
   OAnimation?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
   OAnimationDelay?: Property$AnimationDelay<TTime> | Array<Property$AnimationDelay<TTime>>,
@@ -3811,6 +3814,7 @@ export type ObsoletePropertiesHyphenFallback<TLength = string | 0, TTime = strin
   "-moz-transition-property"?: Property$TransitionProperty | Array<Property$TransitionProperty>,
   "-moz-transition-timing-function"?: Property$TransitionTimingFunction | Array<Property$TransitionTimingFunction>,
   "-moz-user-input"?: Property$MozUserInput | Array<Property$MozUserInput>,
+  "-moz-user-modify"?: Property$MozUserModify | Array<Property$MozUserModify>,
   "-ms-ime-mode"?: Property$ImeMode | Array<Property$ImeMode>,
   "-o-animation"?: Property$Animation<TTime> | Array<Property$Animation<TTime>>,
   "-o-animation-delay"?: Property$AnimationDelay<TTime> | Array<Property$AnimationDelay<TTime>>,
@@ -3937,7 +3941,6 @@ export type AtRules =
   | "@left-top"
   | "@media"
   | "@namespace"
-  | "@navigation"
   | "@ornaments"
   | "@page"
   | "@position-try"
@@ -6034,6 +6037,8 @@ export type Property$MozForceBrokenImageIcon = Globals | 0 | 1;
 export type Property$MozOrient = Globals | "block" | "horizontal" | "inline" | "vertical";
 
 export type Property$MozUserInput = Globals | "auto" | "disabled" | "enabled" | "none";
+
+export type Property$MozUserModify = Globals | "read-only" | "read-write" | "write-only";
 
 export type Property$MsGridColumns<TLength = string | 0> = Globals | DataType$TrackBreadth<TLength> | "none" | string;
 

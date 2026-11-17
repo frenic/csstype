@@ -10117,6 +10117,12 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozUserInput?: Property.MozUserInput | undefined;
   /**
+   * **Syntax**: `read-only | read-write | write-only`
+   *
+   * @deprecated
+   */
+  MozUserModify?: Property.MozUserModify | undefined;
+  /**
    * **Syntax**: `auto | normal | active | inactive | disabled`
    *
    * @deprecated
@@ -20557,6 +20563,12 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-user-input"?: Property.MozUserInput | undefined;
   /**
+   * **Syntax**: `read-only | read-write | write-only`
+   *
+   * @deprecated
+   */
+  "-moz-user-modify"?: Property.MozUserModify | undefined;
+  /**
    * **Syntax**: `auto | normal | active | inactive | disabled`
    *
    * @deprecated
@@ -20957,7 +20969,6 @@ export type AtRules =
   | "@left-top"
   | "@media"
   | "@namespace"
-  | "@navigation"
   | "@ornaments"
   | "@page"
   | "@position-try"
@@ -23096,6 +23107,8 @@ export namespace Property {
   export type MozOrient = Globals | "block" | "horizontal" | "inline" | "vertical";
 
   export type MozUserInput = Globals | "auto" | "disabled" | "enabled" | "none";
+
+  export type MozUserModify = Globals | "read-only" | "read-write" | "write-only";
 
   export type MsGridColumns<TLength = (string & {}) | 0> = Globals | DataType.TrackBreadth<TLength> | "none" | (string & {});
 

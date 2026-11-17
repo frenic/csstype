@@ -36,8 +36,11 @@ export function getSelectorsData(name: string) {
   return getData('selectors', name);
 }
 
-// Nested BCD entries, e.g. the page-margin boxes: `@top-left` lives under
-// `css.at-rules.page` as `at_top-left`
+// Nested BCD entries for at-rules: the page-margin boxes live under
+// `css.at-rules.page` (`@top-left` is `at_top-left`) and the `@font-feature-values`
+// sub-rules under `css.at-rules['font-feature-values']` (`@swash` is `swash`).
+// Sub-keys of other at-rules are descriptors (e.g. `view-transition/navigation`),
+// not at-rules, so they are not accepted here.
 export function getNestedAtRuleData(name: string): Identifier | undefined {
   const direct = getAtRuleData(name);
 
@@ -46,49 +49,65 @@ export function getNestedAtRuleData(name: string): Identifier | undefined {
   }
 
   const atRules = mdnBrowserCompatData.css['at-rules'];
+  const pageMarginBox = atRules.page && atRules.page['at_' + name];
 
-  for (const key of Object.keys(atRules)) {
-    for (const sub of Object.keys(atRules[key])) {
-      if (sub !== '__compat' && (sub === name || sub === 'at_' + name)) {
-        return atRules[key][sub];
-      }
-    }
+  if (pageMarginBox) {
+    return pageMarginBox;
+  }
+
+  const fontFeatureValues = atRules['font-feature-values'];
+
+  if (fontFeatureValues && name !== '__compat' && name in fontFeatureValues) {
+    return fontFeatureValues[name];
   }
 
   return undefined;
 }
 
-const generatedNames: { [type: string]: Set<string> } = {};
+const generatedNames: { [type: string]: { added: Set<string>; removed: Set<string> } } = {};
 
 // Names a feature only has through the `prefix`/`alternative_name` support data
 // of another feature, e.g. `-webkit-box-align` via `box-align`, or
-// `@-webkit-keyframes` via `@keyframes`. `compatNames` only yields names whose
-// support statement has a `version_added`, so membership means "added by some browser".
-function getGeneratedNames(type: 'at-rules' | 'properties'): Set<string> {
+// `@-webkit-keyframes` via `@keyframes`. Split into names still added by some
+// browser and names whose support was removed again (`-moz-user-modify` via
+// `user-modify`); the generator treats the latter as obsolete.
+function getGeneratedNames(type: 'at-rules' | 'properties') {
   if (!generatedNames[type]) {
-    const names = new Set<string>();
+    const added = new Set<string>();
+    const removed = new Set<string>();
     const category = mdnBrowserCompatData.css[type];
 
     for (const key of Object.keys(category)) {
       for (const compat of getCompats(category[key])) {
         for (const name of compatNames(compat, key)) {
-          names.add(name);
+          added.add(name);
+        }
+        for (const name of compatNames(compat, key, true)) {
+          removed.add(name);
         }
       }
     }
 
-    generatedNames[type] = names;
+    generatedNames[type] = { added, removed };
   }
 
   return generatedNames[type];
 }
 
 export function isGeneratedAtRuleName(name: string) {
-  return getGeneratedNames('at-rules').has(name);
+  const { added, removed } = getGeneratedNames('at-rules');
+  return added.has(name) || removed.has(name);
 }
 
 export function isGeneratedPropertyName(name: string) {
-  return getGeneratedNames('properties').has(name);
+  const { added, removed } = getGeneratedNames('properties');
+  return added.has(name) || removed.has(name);
+}
+
+// True when only removed support data generates the name, e.g. `-moz-user-modify`
+export function isRemovedGeneratedPropertyName(name: string) {
+  const { added, removed } = getGeneratedNames('properties');
+  return removed.has(name) && !added.has(name);
 }
 
 // BCD decides: an at-rule stays only if its own (possibly nested) entry says a

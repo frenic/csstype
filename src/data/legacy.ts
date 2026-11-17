@@ -24,9 +24,10 @@ export const syntaxes: { [name: string]: { syntax: string } } = {
  * Properties webref lacks entirely, but BCD keeps because some browser added
  * them. Syntaxes copied from mdn-data 2.37.2. The deprecated `box-*`/`ime-mode`
  * family lands in the `Obsolete*` types via BCD's `deprecated` status.
- * `-webkit-box-*` are webref vendor aliases without a syntax; they get the
- * syntax of their standard `box-*` property (BCD has `-webkit-` prefix
- * support on `box-*`, Chrome 1 / Firefox 49).
+ * `-webkit-box-*` are webref vendor aliases without a syntax; they reuse the
+ * `box-*` syntaxes in this file (copied from mdn-data) instead of being copied
+ * again — BCD models them as the `-webkit-` prefix support on `box-*`
+ * (Chrome 1, Firefox 49).
  */
 export const properties: { [property: string]: { syntax: string } } = {
   '-moz-appearance': {
