@@ -24,7 +24,10 @@ async function scrapeSummary(url: string): Promise<string | undefined> {
     const htmlContents = await htmlResponse.text();
 
     const { window } = new jsdom.JSDOM(htmlContents);
-    const summaryElement = window.document.querySelector('main :not(.notecard) > p:not(:empty)');
+    // Skip the Baseline banner: its text is the first matching paragraph on
+    // pages with a `baseline-indicator`, and it is not a property summary
+    const paragraphs = window.document.querySelectorAll('main :not(.notecard) > p:not(:empty)');
+    const summaryElement = Array.from(paragraphs).find(p => !p.closest('.baseline-indicator'));
     window.close();
 
     if (summaryElement) {
