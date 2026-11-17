@@ -21,7 +21,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   accentColor?: Property.AccentColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross axis, or a grid or block-level element's block axis.
    *
    * **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
    *
@@ -36,7 +36,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   alignContent?: Property.AlignContent | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In flexbox, it controls the alignment of items on the cross axis. In grid layout, it controls the alignment of items on the block axis within their grid areas.
    *
    * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position>`
    *
@@ -51,7 +51,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   alignItems?: Property.AlignItems | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In grid, it aligns the item inside the grid area. In flexbox, it aligns the item on the cross axis.
    *
    * **Syntax**: `auto | <overflow-position>? [ normal | <self-position> ]| stretch | <baseline-position> | anchor-center`
    *
@@ -108,7 +108,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   anchorScope?: Property.AnchorScope | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2023.
+   * The **`animation-composition`** CSS property specifies the composite operation to use when multiple animations affect the same property simultaneously.
    *
    * **Syntax**: `<single-animation-composition>#`
    *
@@ -134,7 +134,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationDelayStart?: Property.AnimationDelayStart<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -149,7 +149,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationDirection?: Property.AnimationDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-duration`** CSS property sets the length of time that an animation takes to complete one cycle.
    *
    * **Syntax**: `[ auto | <time [0s,∞]> ]#`
    *
@@ -164,7 +164,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationDuration?: Property.AnimationDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
    * **Syntax**: `<single-animation-fill-mode>#`
    *
@@ -179,7 +179,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationFillMode?: Property.AnimationFillMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -194,7 +194,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationIterationCount?: Property.AnimationIterationCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules that describe the animation to apply to an element. Multiple `@keyframes` at-rules are specified as a comma-separated list of names. If the specified name does not match any `@keyframes` at-rule, no properties are animated.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -209,7 +209,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationName?: Property.AnimationName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-play-state`** CSS property sets whether an animation is running or paused.
    *
    * **Syntax**: `<single-animation-play-state>#`
    *
@@ -272,7 +272,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationTimeline?: Property.AnimationTimeline | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -301,7 +301,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationTrigger?: Property.AnimationTrigger | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`appearance`** CSS property specifies the rendered appearance of replaced UI widget elements such as form controls. Most commonly, such elements are given native, platform-specific styling based on the operating system's theme, or a primitive appearance with styles that can be overridden using CSS.
    *
    * **Syntax**: `none | auto | base | base-select | <compat-auto> | <compat-special>`
    *
@@ -316,7 +316,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   appearance?: Property.Appearance | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`aspect-ratio`** CSS property allows you to define the desired width-to-height ratio of an element's box.
    *
    * **Syntax**: `auto || <ratio>`
    *
@@ -345,7 +345,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backdropFilter?: Property.BackdropFilter | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`backface-visibility`** CSS property sets whether the back face of an element is visible when turned towards the user.
    *
    * **Syntax**: `visible | hidden`
    *
@@ -360,7 +360,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backfaceVisibility?: Property.BackfaceVisibility | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-attachment`** CSS property sets whether a background image's position is fixed within the viewport, or scrolls with its containing block.
    *
    * **Syntax**: `<attachment>#`
    *
@@ -374,7 +374,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundAttachment?: Property.BackgroundAttachment | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`background-blend-mode`** CSS property sets how an element's background images should blend with each other and with the element's background color.
    *
    * **Syntax**: `<'mix-blend-mode'>#`
    *
@@ -388,7 +388,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundBlendMode?: Property.BackgroundBlendMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Syntax**: `<bg-clip>#`
    *
@@ -403,7 +403,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundClip?: Property.BackgroundClip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-color`** CSS property sets the background color of an element.
    *
    * **Syntax**: `<color>`
    *
@@ -417,7 +417,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundColor?: Property.BackgroundColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Syntax**: `<bg-image>#`
    *
@@ -431,7 +431,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundImage?: Property.BackgroundImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Syntax**: `<visual-box>#`
    *
@@ -457,7 +457,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundPositionInline?: Property.BackgroundPositionInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2016.
+   * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
    *
@@ -471,7 +471,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundPositionX?: Property.BackgroundPositionX<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2016.
+   * The **`background-position-y`** CSS property sets the initial vertical position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ top | bottom | y-start | y-end ]? <length-percentage>? ]! ]#`
    *
@@ -485,7 +485,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundPositionY?: Property.BackgroundPositionY<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-repeat`** CSS shorthand property sets how background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.
    *
    * **Syntax**: `<repeat-style>#`
    *
@@ -539,7 +539,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundRepeatY?: Property.BackgroundRepeatY | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-size`** CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
    *
    * **Syntax**: `<bg-size>#`
    *
@@ -598,7 +598,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   blockEllipsis?: Property.BlockEllipsis | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`block-size`** CSS property defines the size of an element's block along the block axis. If the `writing-mode` is horizontal, it corresponds to the `height`; if the writing mode is vertical, it corresponds to the `width`. A related property is `inline-size`, which defines the other dimension of the element.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -661,7 +661,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockEndClip?: Property.BorderBlockEndClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -675,7 +675,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockEndColor?: Property.BorderBlockEndColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-end-style`** CSS property defines the style of the logical block-end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -689,7 +689,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockEndStyle?: Property.BorderBlockEndStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -709,7 +709,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockStartClip?: Property.BorderBlockStartClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -723,7 +723,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockStartColor?: Property.BorderBlockStartColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -737,7 +737,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockStartStyle?: Property.BorderBlockStartStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -757,7 +757,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBottomClip?: Property.BorderBottomClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -771,7 +771,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBottomColor?: Property.BorderBottomColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -786,7 +786,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBottomLeftRadius?: Property.BorderBottomLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -801,7 +801,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBottomRightRadius?: Property.BorderBottomRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -815,7 +815,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBottomStyle?: Property.BorderBottomStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of an element.
    *
    * **Syntax**: `<line-width>`
    *
@@ -835,7 +835,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBoundary?: Property.BorderBoundary | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-collapse`** CSS property sets whether cells inside a `<table>` have shared or separate borders.
    *
    * **Syntax**: `separate | collapse`
    *
@@ -849,7 +849,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderCollapse?: Property.BorderCollapse | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -863,7 +863,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderEndEndRadius?: Property.BorderEndEndRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -877,7 +877,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderEndStartRadius?: Property.BorderEndStartRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-outset`** CSS property sets the distance by which an element's border image is set out from its border box.
    *
    * **Syntax**: `[ <length [0,∞]> | <number [0,∞]> ]{1,4}`
    *
@@ -891,7 +891,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderImageOutset?: Property.BorderImageOutset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
+   * The **`border-image-repeat`** CSS property defines how the images for the sides and the middle part of the border image are scaled and tiled. The middle region can be displayed by using the keyword "fill" in the `border-image-slice` property.
    *
    * **Syntax**: `[ stretch | repeat | round | space ]{1,2}`
    *
@@ -905,7 +905,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderImageRepeat?: Property.BorderImageRepeat | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions form the components of an element's border image.
    *
    * **Syntax**: `[<number [0,∞]> | <percentage [0,∞]>]{1,4} && fill?`
    *
@@ -919,7 +919,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderImageSlice?: Property.BorderImageSlice | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-source`** CSS property sets the source image used to create an element's border image.
    *
    * **Syntax**: `none | <image>`
    *
@@ -933,7 +933,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderImageSource?: Property.BorderImageSource | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-width`** CSS property sets the width of an element's border image.
    *
    * **Syntax**: `[ <length-percentage [0,∞]> | <number [0,∞]> | auto ]{1,4}`
    *
@@ -953,7 +953,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineEndClip?: Property.BorderInlineEndClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -968,7 +968,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineEndColor?: Property.BorderInlineEndColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -983,7 +983,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineEndStyle?: Property.BorderInlineEndStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -1004,7 +1004,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineStartClip?: Property.BorderInlineStartClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -1019,7 +1019,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineStartColor?: Property.BorderInlineStartColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -1034,7 +1034,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineStartStyle?: Property.BorderInlineStartStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -1054,7 +1054,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderLeftClip?: Property.BorderLeftClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -1068,7 +1068,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderLeftColor?: Property.BorderLeftColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -1082,7 +1082,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderLeftStyle?: Property.BorderLeftStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-left-width`** CSS property sets the width of the left border of an element.
    *
    * **Syntax**: `<line-width>`
    *
@@ -1108,7 +1108,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderRightClip?: Property.BorderRightClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-right-color`** CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties `border-color` or `border-right`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -1122,7 +1122,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderRightColor?: Property.BorderRightColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -1136,7 +1136,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderRightStyle?: Property.BorderRightStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-right-width`** CSS property sets the width of the right border of an element.
    *
    * **Syntax**: `<line-width>`
    *
@@ -1164,7 +1164,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderShape?: Property.BorderShape | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-spacing`** CSS property sets the distance between the borders of adjacent cells in a `<table>`. This property applies only when `border-collapse` is `separate`.
    *
    * **Syntax**: `<length [0,∞]>{1,2}`
    *
@@ -1178,7 +1178,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderSpacing?: Property.BorderSpacing<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -1192,7 +1192,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderStartEndRadius?: Property.BorderStartEndRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -1212,7 +1212,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderTopClip?: Property.BorderTopClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -1226,7 +1226,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderTopColor?: Property.BorderTopColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -1241,7 +1241,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderTopLeftRadius?: Property.BorderTopLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -1256,7 +1256,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderTopRightRadius?: Property.BorderTopRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -1270,7 +1270,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderTopStyle?: Property.BorderTopStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-width`** CSS property sets the width of the top border of an element.
    *
    * **Syntax**: `<line-width>`
    *
@@ -1284,7 +1284,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderTopWidth?: Property.BorderTopWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`bottom`** CSS property participates in setting the vertical position of a positioned element. This inset property has no effect on non-positioned elements.
    *
    * **Syntax**: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
    *
@@ -1343,7 +1343,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   boxShadowSpread?: Property.BoxShadowSpread<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Syntax**: `content-box | border-box`
    *
@@ -1364,7 +1364,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   boxSnap?: Property.BoxSnap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2019.
+   * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
    * **Syntax**: `auto | avoid | always | all | avoid-page | page | left | right | recto | verso | avoid-column | column | avoid-region | region`
    *
@@ -1378,7 +1378,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   breakAfter?: Property.BreakAfter | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2019.
+   * The **`break-before`** CSS property sets how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
    *
    * **Syntax**: `auto | avoid | always | all | avoid-page | page | left | right | recto | verso | avoid-column | column | avoid-region | region`
    *
@@ -1392,7 +1392,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   breakBefore?: Property.BreakBefore | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2019.
+   * The **`break-inside`** CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
    *
    * **Syntax**: `auto | avoid | avoid-page | avoid-column | avoid-region`
    *
@@ -1406,7 +1406,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   breakInside?: Property.BreakInside | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`caption-side`** CSS property puts the content of a table's `<caption>` on the specified side. The values are relative to the `writing-mode` of the table.
    *
    * **Syntax**: `top | bottom`
    *
@@ -1434,7 +1434,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   caretAnimation?: Property.CaretAnimation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`caret-color`** CSS property sets the color of the **insertion caret**, sometimes referred to as the **text input cursor**. This is the visible marker appearing at the insertion point where the next character typed will be added or where the next character deleted will be removed.
    *
    * **Syntax**: `auto | <color> [auto | <color>]?`
    *
@@ -1462,7 +1462,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   caretShape?: Property.CaretShape | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`clear`** CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The `clear` property applies to floating and non-floating elements.
    *
    * **Syntax**: `inline-start | inline-end | block-start | block-end | left | right | top | bottom | both-inline | both-block | both | none`
    *
@@ -1476,7 +1476,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   clear?: Property.Clear | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`clip-path`** CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.
    *
    * **Syntax**: `<clip-source> | [ <basic-shape> || <geometry-box> ] | none`
    *
@@ -1491,7 +1491,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   clipPath?: Property.ClipPath | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`clip-rule`** CSS property determines, when parts of the path overlap other parts, which pixels in a mask's box are inside the clipping shape defined by a clip path and which are outside.
    *
    * **Syntax**: `nonzero | evenodd`
    *
@@ -1505,7 +1505,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   clipRule?: Property.ClipRule | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`color`** CSS property sets the foreground color value of an element's text and text decorations, and sets the `currentColor` value. `currentColor` may be used as an indirect value on _other_ properties and is the default for other color properties, such as `border-color`.
    *
    * **Syntax**: `<color>`
    *
@@ -1533,7 +1533,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   colorInterpolation?: Property.ColorInterpolation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`color-interpolation-filters`** CSS property specifies the color space for imaging operations performed via SVG filter effects. If explicitly declared, the value of the CSS property overrides any value given in the element's `color-interpolation-filters` attribute.
    *
    * **Syntax**: `auto | sRGB | linearRGB`
    *
@@ -1547,7 +1547,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   colorInterpolationFilters?: Property.ColorInterpolationFilters | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2022.
+   * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in. User agents change the following aspects of the UI chrome to match the used color scheme:
    *
    * **Syntax**: `normal | [ light | dark | <custom-ident> ]+ && only?`
    *
@@ -1561,7 +1561,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   colorScheme?: Property.ColorScheme | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
    * **Syntax**: `auto | <integer [1,∞]>`
    *
@@ -1576,7 +1576,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   columnCount?: Property.ColumnCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
    *
    * **Syntax**: `auto | balance | balance-all`
    *
@@ -1591,7 +1591,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   columnFill?: Property.ColumnFill | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
    *
    * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
    *
@@ -1633,7 +1633,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   columnRuleBreak?: Property.ColumnRuleBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-color`** CSS property defines the colors of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-color-list> | <auto-line-color-list>`
    *
@@ -1704,7 +1704,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   columnRuleInsetJunctionStart?: Property.ColumnRuleInsetJunctionStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-style`** CSS property defines the line style of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-style-list> | <auto-line-style-list>`
    *
@@ -1733,7 +1733,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   columnRuleVisibilityItems?: Property.ColumnRuleVisibilityItems | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-width`** CSS property defines the widths of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-width-list> | <auto-line-width-list>`
    *
@@ -1748,7 +1748,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   columnRuleWidth?: Property.ColumnRuleWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
    *
    * **Syntax**: `none | <integer [1,∞]> | all | auto`
    *
@@ -1763,7 +1763,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   columnSpan?: Property.ColumnSpan | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2016.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout.
    *
    * **Syntax**: `auto | <box-size> | auto | <box-size>`
    *
@@ -1790,7 +1790,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   columnWrap?: Property.ColumnWrap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`contain`** CSS property indicates that an element and its contents are, as much as possible, independent from the rest of the document tree. Containment enables isolating a subsection of the DOM, providing performance benefits by limiting calculations of layout, style, paint, size, or any combination to a DOM subtree rather than the entire page. Containment can also be used to scope CSS counters and quotes.
    *
    * **Syntax**: `none | strict | content | [ [size | inline-size] || layout || style || paint ]`
    *
@@ -1804,7 +1804,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   contain?: Property.Contain | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-block-size`** CSS logical property defines the block size of an element that a browser can use for layout when the element is subject to size containment.
    *
    * **Syntax**: `auto? [ none | <length [0,∞]> ]`
    *
@@ -1818,7 +1818,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   containIntrinsicBlockSize?: Property.ContainIntrinsicBlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-height`** CSS property sets the height of an element that a browser can use for layout when the element is subject to size containment.
    *
    * **Syntax**: `auto? [ none | <length [0,∞]> ]`
    *
@@ -1832,7 +1832,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   containIntrinsicHeight?: Property.ContainIntrinsicHeight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-inline-size`** CSS logical property defines the inline-size of an element that a browser can use for layout when the element is subject to size containment.
    *
    * **Syntax**: `auto? [ none | <length [0,∞]> ]`
    *
@@ -1846,7 +1846,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   containIntrinsicInlineSize?: Property.ContainIntrinsicInlineSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-width`** CSS property sets the width of an element that a browser will use for layout when the element is subject to size containment.
    *
    * **Syntax**: `auto? [ none | <length [0,∞]> ]`
    *
@@ -1860,7 +1860,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   containIntrinsicWidth?: Property.ContainIntrinsicWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since February 2023.
+   * The **container-name** CSS property specifies a list of query container names used by the @container at-rule in a container query.
    *
    * **Syntax**: `none | <custom-ident>+`
    *
@@ -1874,7 +1874,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   containerName?: Property.ContainerName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since February 2023.
+   * The **container-type** CSS property specifies the type of container context used in a container query.
    *
    * **Syntax**: `normal | [ [ size | inline-size ] || scroll-state ]`
    *
@@ -1888,7 +1888,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   containerType?: Property.ContainerType | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`content`** CSS property replaces content with a generated value. It can be used to define what is rendered inside an element or pseudo-element. For elements, the `content` property specifies whether the element renders normally (`normal` or `none`) or is replaced with an image (and associated "alt" text). For pseudo-elements and margin boxes, `content` defines the content as images, text, both, or none, which determines whether the element renders at all.
    *
    * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ <alt-text> ]? | <element()>`
    *
@@ -2044,7 +2044,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   cornerTopRightShape?: Property.CornerTopRightShape | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`counter-increment`** CSS property can be used to increase or decrease the value of the named CSS counters by the specified values, or to prevent all counters or an individual counter's value from being changed.
    *
    * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
@@ -2058,7 +2058,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   counterIncrement?: Property.CounterIncrement | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`counter-reset`** CSS property creates named CSS counters and initializes their values. It can create both regular and reversed counters.
    *
    * **Syntax**: `[ <counter-name> <integer>? | <reversed-counter-name> <integer>? ]+ | none`
    *
@@ -2072,7 +2072,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   counterReset?: Property.CounterReset | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`counter-set`** CSS property sets CSS counters on the element to the given values.
    *
    * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
@@ -2098,7 +2098,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   cueBefore?: Property.CueBefore | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2021.
+   * The **`cursor`** CSS property sets the mouse cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Syntax**: `[<cursor-image>,]* <cursor-predefined>`
    *
@@ -2112,7 +2112,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   cursor?: Property.Cursor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`cx`** CSS property defines the x-axis center point of an SVG `<circle>` or `<ellipse>` element. If present, it overrides the element's `cx` attribute.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -2126,7 +2126,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   cx?: Property.Cx<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`cy`** CSS property defines the y-axis center point of an SVG `<circle>` or `<ellipse>` elements. If present, it overrides the element's `cy` attribute.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -2154,7 +2154,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   d?: Property.D | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`direction`** CSS property sets the direction of text, table and grid columns, and horizontal overflow. Use `rtl` for languages written from right to left (like Hebrew or Arabic), and `ltr` for those written from left to right (like English and most other languages).
    *
    * **Syntax**: `ltr | rtl`
    *
@@ -2168,7 +2168,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   direction?: Property.Direction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`display`** CSS property sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex.
    *
    * **Syntax**: `[ <display-outside> || <display-inside> ] | <display-listitem> | <display-internal> | <display-box> | <display-legacy> | grid-lanes | inline-grid-lanes | <display-outside> || [ <display-inside> | math ]`
    *
@@ -2182,7 +2182,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   display?: Property.Display | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`dominant-baseline`** CSS property specifies the specific baseline used to align the box's text and inline-level contents. It also indicates the default alignment baseline of any boxes participating in baseline alignment in the box's alignment context. If present, it overrides the shape's `dominant-baseline` attribute.
    *
    * **Syntax**: `auto | <baseline-metric>`
    *
@@ -2210,7 +2210,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   dynamicRangeLimit?: Property.DynamicRangeLimit | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`empty-cells`** CSS property sets whether borders and backgrounds appear around `<table>` cells that have no visible content.
    *
    * **Syntax**: `show | hide`
    *
@@ -2256,7 +2256,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fieldSizing?: Property.FieldSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`fill`** CSS property defines how SVG text content and the interior canvas of SVG shapes are filled or painted. If present, it overrides the element's `fill` attribute.
    *
    * **Syntax**: `<paint>`
    *
@@ -2288,7 +2288,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fillImage?: Property.FillImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`fill-opacity`** CSS property defines the opacity of the painting operation (color, gradient, pattern, etc.) applied to SVG shapes or text content elements to fill the element. The property defines the opacity of the element's `fill` only; it does not affect the stroke. If present, it overrides the element's `fill-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
    *
@@ -2320,7 +2320,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fillRepeat?: Property.FillRepeat | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`fill-rule`** CSS property defines the rule used to determine which parts of the SVG shape's canvas are included inside a shape to be filled. If present, it overrides the element's `fill-rule` attribute.
    *
    * **Syntax**: `nonzero | evenodd`
    *
@@ -2340,7 +2340,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fillSize?: Property.FillSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2016.
+   * The **`filter`** CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
    *
    * **Syntax**: `none | <filter-value-list>`
    *
@@ -2366,7 +2366,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fitTolerance?: Property.FitTolerance<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-basis`** CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with `box-sizing`.
    *
    * **Syntax**: `content | <'width'>`
    *
@@ -2381,7 +2381,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   flexBasis?: Property.FlexBasis<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
    * **Syntax**: `row | row-reverse | column | column-reverse`
    *
@@ -2396,7 +2396,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   flexDirection?: Property.FlexDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-grow`** CSS property sets the flex grow factor, which specifies how much of the flex container's **positive free space**, if any, should be assigned to the flex item's main size.
    *
    * **Syntax**: `<number [0,∞]>`
    *
@@ -2425,7 +2425,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   flexLineCount?: Property.FlexLineCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, the flex items can shrink to fit according to their `flex-shrink` value. Each flex line's negative free space is distributed between the line's flex items that have a `flex-shrink` value greater than `0`.
    *
    * **Syntax**: `<number [0,∞]>`
    *
@@ -2440,7 +2440,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   flexShrink?: Property.FlexShrink | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
    * **Syntax**: `nowrap | [ wrap | wrap-reverse ] || balance`
    *
@@ -2455,7 +2455,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   flexWrap?: Property.FlexWrap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`float`** CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).
    *
    * **Syntax**: `block-start | block-end | inline-start | inline-end | snap-block | <snap-block()> | snap-inline | <snap-inline()> | left | right | top | bottom | none | footnote`
    *
@@ -2487,7 +2487,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   floatReference?: Property.FloatReference | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`flood-color`** CSS property defines the color of the current filter primitive subregion in `<feFlood>` and `<feDropShadow>` elements within a `<filter>`. If present, it overrides the element's `flood-color` attribute.
    *
    * **Syntax**: `<color>`
    *
@@ -2501,7 +2501,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   floodColor?: Property.FloodColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`flood-opacity`** CSS property defines the opacity of the current filter primitive subregion in `<feFlood>` and `<feDropShadow>` elements within a `<filter>`. If present, it overrides the element's `flood-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
    *
@@ -2538,7 +2538,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   flowTolerance?: Property.FitTolerance<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-family`** CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
    *
    * **Syntax**: `[ <font-family-name> | <generic-font-family> ]#`
    *
@@ -2552,7 +2552,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontFamily?: Property.FontFamily | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
+   * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
    *
@@ -2567,7 +2567,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontFeatureSettings?: Property.FontFeatureSettings | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-kerning`** CSS property sets the use of the kerning information stored in a font.
    *
    * **Syntax**: `auto | normal | none`
    *
@@ -2597,7 +2597,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontLanguageOverride?: Property.FontLanguageOverride | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2020.
+   * The **`font-optical-sizing`** CSS property sets whether text rendering is optimized for viewing at different sizes.
    *
    * **Syntax**: `auto | none`
    *
@@ -2611,7 +2611,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontOpticalSizing?: Property.FontOpticalSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2022.
+   * The **`font-palette`** CSS property allows specifying one of the many palettes contained in a color font that a user agent may use for the font. Users can also override the values in a palette or create a new palette by using the `@font-palette-values` at-rule.
    *
    * **Syntax**: `normal | light | dark | <palette-identifier> | <palette-mix()>`
    *
@@ -2625,7 +2625,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontPalette?: Property.FontPalette | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-size`** CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative `<length>` units, such as `em`, `ex`, and so forth.
    *
    * **Syntax**: `<absolute-size> | <relative-size> | <length-percentage [0,∞]> | math`
    *
@@ -2653,7 +2653,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontSizeAdjust?: Property.FontSizeAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2017.
+   * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
    * **Syntax**: `normal | <percentage [0,∞]> | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded | expanded | extra-expanded | ultra-expanded`
    *
@@ -2665,7 +2665,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontStretch?: Property.FontStretch | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-style`** CSS property sets whether a font should be styled with a normal, italic, or oblique face from its `font-family`.
    *
    * **Syntax**: `normal | italic | left | right | oblique <angle [-90deg,90deg]>?`
    *
@@ -2693,7 +2693,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontSynthesisPosition?: Property.FontSynthesisPosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`font-synthesis-small-caps`** CSS property lets you specify whether or not the browser may synthesize small-caps typeface when it is missing in a font family. Small-caps glyphs typically use the form of uppercase letters but are reduced to the size of lowercase letters.
    *
    * **Syntax**: `auto | none`
    *
@@ -2707,7 +2707,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontSynthesisSmallCaps?: Property.FontSynthesisSmallCaps | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`font-synthesis-style`** CSS property lets you specify whether or not the browser may synthesize the oblique typeface when it is missing in a font family.
    *
    * **Syntax**: `auto | none | oblique-only`
    *
@@ -2721,7 +2721,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontSynthesisStyle?: Property.FontSynthesisStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`font-synthesis-weight`** CSS property lets you specify whether or not the browser may synthesize the bold typeface when it is missing in a font family.
    *
    * **Syntax**: `auto | none`
    *
@@ -2735,7 +2735,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontSynthesisWeight?: Property.FontSynthesisWeight | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
    *
    * **Syntax**: `normal | [ stylistic(<font-feature-value-name>) || historical-forms || styleset(<font-feature-value-name>#) || character-variant(<font-feature-value-name>#) || swash(<font-feature-value-name>) || ornaments(<font-feature-value-name>) || annotation(<font-feature-value-name>) ]`
    *
@@ -2749,7 +2749,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontVariantAlternates?: Property.FontVariantAlternates | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-caps`** CSS property controls the use of alternate glyphs used for small or petite capitals or for titling.
    *
    * **Syntax**: `normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps`
    *
@@ -2763,7 +2763,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontVariantCaps?: Property.FontVariantCaps | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-east-asian`** CSS property controls the use of alternate glyphs for East Asian scripts, like Japanese and Chinese.
    *
    * **Syntax**: `normal | [ <east-asian-variant-values> || <east-asian-width-values> || ruby ]`
    *
@@ -2791,7 +2791,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontVariantEmoji?: Property.FontVariantEmoji | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in the textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
    *
@@ -2806,7 +2806,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontVariantLigatures?: Property.FontVariantLigatures | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-numeric`** CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
    *
    * **Syntax**: `normal | [ <numeric-figure-values> || <numeric-spacing-values> || <numeric-fraction-values> || ordinal || slashed-zero ]`
    *
@@ -2820,7 +2820,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontVariantNumeric?: Property.FontVariantNumeric | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`font-variant-position`** CSS property controls the use of alternate, smaller glyphs that are positioned as superscript or subscript.
    *
    * **Syntax**: `normal | sub | super`
    *
@@ -2834,7 +2834,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontVariantPosition?: Property.FontVariantPosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2018.
+   * The **`font-variation-settings`** CSS property provides low-level control over variable font characteristics by letting you specify the four letter axis names of the characteristics you want to vary along with their values.
    *
    * **Syntax**: `normal | [ <opentype-tag> <number> ]#`
    *
@@ -2848,7 +2848,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontVariationSettings?: Property.FontVariationSettings | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` that is currently set.
    *
    * **Syntax**: `<font-weight-absolute> | bolder | lighter`
    *
@@ -2917,7 +2917,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   frameSizing?: Property.FrameSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Syntax**: `<track-size>+`
    *
@@ -2931,7 +2931,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridAutoColumns?: Property.GridAutoColumns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-auto-flow`** CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
    *
    * **Syntax**: `[ row | column ] || dense`
    *
@@ -2945,7 +2945,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridAutoFlow?: Property.GridAutoFlow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Syntax**: `<track-size>+`
    *
@@ -2959,7 +2959,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridAutoRows?: Property.GridAutoRows<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-column-end`** CSS property specifies a grid item's end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.
    *
    * **Syntax**: `<grid-line>`
    *
@@ -2973,13 +2973,13 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridColumnEnd?: Property.GridColumnEnd | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
    *
    * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
    */
   gridColumnGap?: Property.GridColumnGap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-column-start`** CSS property specifies a grid item's start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
    *
    * **Syntax**: `<grid-line>`
    *
@@ -2993,7 +2993,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridColumnStart?: Property.GridColumnStart | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-row-end`** CSS property specifies a grid item's end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line>`
    *
@@ -3007,13 +3007,13 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridRowEnd?: Property.GridRowEnd | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
    *
    * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
    */
   gridRowGap?: Property.GridRowGap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-row-start`** CSS property specifies a grid item's start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
    *
    * **Syntax**: `<grid-line>`
    *
@@ -3027,7 +3027,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridRowStart?: Property.GridRowStart | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-template-areas`** CSS property specifies named grid areas, establishing the cells in the grid and assigning them names.
    *
    * **Syntax**: `none | <string>+`
    *
@@ -3041,7 +3041,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridTemplateAreas?: Property.GridTemplateAreas | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
    *
    * **Syntax**: `none | <track-list> | <auto-track-list> | subgrid <line-name-list>?`
    *
@@ -3055,7 +3055,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridTemplateColumns?: Property.GridTemplateColumns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
    *
    * **Syntax**: `none | <track-list> | <auto-track-list> | subgrid <line-name-list>?`
    *
@@ -3083,7 +3083,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   hangingPunctuation?: Property.HangingPunctuation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -3097,7 +3097,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   height?: Property.Height<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
    *
    * **Syntax**: `auto | <string>`
    *
@@ -3148,7 +3148,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   hyphenateLimitZone?: Property.HyphenateLimitZone<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -3169,7 +3169,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   imageAnimation?: Property.ImageAnimation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2020.
+   * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image.
    *
    * **Syntax**: `from-image | none | [ <angle> || flip ]`
    *
@@ -3183,7 +3183,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   imageOrientation?: Property.ImageOrientation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`image-rendering`** CSS property sets an image scaling algorithm. The property applies to an element itself, to any images set in its other properties, and to its descendants.
    *
    * **Syntax**: `auto | smooth | high-quality | pixelated | crisp-edges`
    *
@@ -3231,7 +3231,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   initialLetterWrap?: Property.InitialLetterWrap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`inline-size`** CSS property defines the size of an element's block along the inline axis. If the `writing-mode` is horizontal, it corresponds to the `width`; if the writing mode is vertical, it corresponds to the `height`. A related property is `block-size`, which defines the other dimension of the element.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -3258,7 +3258,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   inputSecurity?: Property.InputSecurity | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -3272,7 +3272,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   insetBlockEnd?: Property.InsetBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -3286,7 +3286,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   insetBlockStart?: Property.InsetBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -3300,7 +3300,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   insetInlineEnd?: Property.InsetInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline-start`** CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -3370,7 +3370,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   interpolateSize?: Property.InterpolateSize | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`isolation`** CSS property determines whether an element must create a new stacking context.
    *
    * **Syntax**: `<isolation-mode>`
    *
@@ -3384,7 +3384,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   isolation?: Property.Isolation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main axis of a flex container and the inline axis of grid and multicol containers.
    *
    * **Syntax**: `normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ]`
    *
@@ -3399,7 +3399,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   justifyContent?: Property.JustifyContent | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2016.
+   * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
    *
    * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ] | legacy | legacy && [ left | right | center ]`
    *
@@ -3413,7 +3413,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   justifyItems?: Property.JustifyItems | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
    *
    * **Syntax**: `auto | <overflow-position>? [ normal | <self-position> | left | right ] | stretch | <baseline-position> | anchor-center`
    *
@@ -3427,7 +3427,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   justifySelf?: Property.JustifySelf | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`left`** CSS property participates in specifying the horizontal position of a positioned element. This inset property has no effect on non-positioned elements.
    *
    * **Syntax**: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
    *
@@ -3441,7 +3441,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   left?: Property.Left<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`letter-spacing`** CSS property sets the spacing between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of `letter-spacing` spread characters further apart, while negative values of `letter-spacing` bring characters closer together.
    *
    * **Syntax**: `normal | <length-percentage>`
    *
@@ -3455,7 +3455,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   letterSpacing?: Property.LetterSpacing<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`lighting-color`** CSS property defines the color of the light source for the `<feDiffuseLighting>` and `<feSpecularLighting>` SVG lighting filter primitives within an SVG `<filter>`. If present, it overrides the element's `lighting-color` attribute.
    *
    * **Syntax**: `<color>`
    *
@@ -3469,7 +3469,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   lightingColor?: Property.LightingColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
    *
@@ -3496,7 +3496,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   lineGrid?: Property.LineGrid | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`line-height`** CSS property sets the height of a line box in horizontal writing modes. In vertical writing modes, it sets the width of a line box. It's commonly used to set the distance between lines of text. On block-level elements in horizontal writing modes, it specifies the preferred height of line boxes within the element, and on non-replaced inline elements, it specifies the height that is used to calculate line box height.
    *
    * **Syntax**: `normal | <number [0,∞]> | <length-percentage [0,∞]>`
    *
@@ -3544,7 +3544,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   linkParameters?: Property.LinkParameters | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
    *
    * **Syntax**: `<image> | none`
    *
@@ -3558,7 +3558,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   listStyleImage?: Property.ListStyleImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`list-style-position`** CSS property sets the position of the `::marker` relative to a list item.
    *
    * **Syntax**: `inside | outside`
    *
@@ -3572,7 +3572,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   listStylePosition?: Property.ListStylePosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`list-style-type`** CSS property sets the marker (such as a disc, character, or custom counter style) of a list item element.
    *
    * **Syntax**: `<counter-style> | <string> | none`
    *
@@ -3586,7 +3586,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   listStyleType?: Property.ListStyleType | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -3601,7 +3601,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginBlockEnd?: Property.MarginBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -3616,7 +3616,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginBlockStart?: Property.MarginBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin-bottom`** CSS property sets the margin area on the bottom of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
    * **Syntax**: `<length-percentage> | auto | <anchor-size()>`
    *
@@ -3636,7 +3636,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginBreak?: Property.MarginBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -3651,7 +3651,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginInlineEnd?: Property.MarginInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -3666,7 +3666,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginInlineStart?: Property.MarginInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
    * **Syntax**: `<length-percentage> | auto | <anchor-size()>`
    *
@@ -3680,7 +3680,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginLeft?: Property.MarginLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin-right`** CSS property sets the margin area on the right side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
    * **Syntax**: `<length-percentage> | auto | <anchor-size()>`
    *
@@ -3694,7 +3694,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginRight?: Property.MarginRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
    * **Syntax**: `<length-percentage> | auto | <anchor-size()>`
    *
@@ -3722,7 +3722,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   marginTrim?: Property.MarginTrim | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`marker-end`** CSS property points to a marker that will be drawn on the last vertex of the element's path; that is, at its ending vertex. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-end` attribute in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
    *
@@ -3736,7 +3736,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   markerEnd?: Property.MarkerEnd | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`marker-mid`** CSS property points to a marker that will be drawn on the middle vertices of the element's path; that is, at each of its vertices between the start and end vertices. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-mid` attribute in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
    *
@@ -3756,7 +3756,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   markerSide?: Property.MarkerSide | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`marker-start`** CSS property points to a marker that will be drawn on the first vertex of the element's path; that is, at its starting vertex. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-start` attribute in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
    *
@@ -3853,7 +3853,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskBorderWidth?: Property.MaskBorderWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Syntax**: `[ <coord-box> | no-clip ]#`
    *
@@ -3868,7 +3868,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskClip?: Property.MaskClip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-composite`** CSS property represents a compositing operation used on the current mask layer with the mask layers below it.
    *
    * **Syntax**: `<compositing-operator>#`
    *
@@ -3882,7 +3882,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskComposite?: Property.MaskComposite | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-image`** CSS property sets the image that is used as the mask layer for an element, hiding sections of the element on which the masking image is set based on the alpha channel of the mask image and, depending on the `mask-mode` property value, the luminance of the mask image's colors.
    *
    * **Syntax**: `<mask-reference>#`
    *
@@ -3911,7 +3911,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskMode?: Property.MaskMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-origin`** CSS property sets the origin of a mask. This property determines the mask positioning area: the area within which a mask image is positioned. HTML elements can have masks contained within their content border box, padding box, or content box, whereas SVG elements (which don't have the associated CSS layout boxes) can have masks contained inside their fill, stroke, or view box. For elements rendered as multiple boxes, such as a `<span>` of text that spans more than one line, the `mask-origin` property specifies which boxes the `box-decoration-break` property operates on to determine the mask positioning area.
    *
    * **Syntax**: `<coord-box>#`
    *
@@ -3926,7 +3926,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskOrigin?: Property.MaskOrigin | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer set by `mask-origin`, for each defined mask image.
    *
    * **Syntax**: `<position>#`
    *
@@ -3941,7 +3941,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskPosition?: Property.MaskPosition<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-repeat`** CSS property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
    *
    * **Syntax**: `<repeat-style>#`
    *
@@ -3956,7 +3956,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskRepeat?: Property.MaskRepeat | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-size`** CSS property specifies the sizes of specified mask images. Mask image sizes can be fully or partially constrained to preserve their intrinsic aspect ratios.
    *
    * **Syntax**: `<bg-size>#`
    *
@@ -3971,7 +3971,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maskSize?: Property.MaskSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`mask-type`** CSS property applies to the SVG `<mask>` element. It defines whether to use the _luminance_ (brightness) or _alpha_ (transparency) content of the mask. This property may be overridden by the `mask-mode` property. The `mask-type` property has no effect on image or gradient masks.
    *
    * **Syntax**: `luminance | alpha`
    *
@@ -4013,7 +4013,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   mathShift?: Property.MathShift | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2023.
+   * The `math-style` property indicates whether MathML equations should render with normal or compact height.
    *
    * **Syntax**: `normal | compact`
    *
@@ -4027,7 +4027,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   mathStyle?: Property.MathStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`max-block-size`** CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -4041,7 +4041,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maxBlockSize?: Property.MaxBlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -4055,7 +4055,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maxHeight?: Property.MaxHeight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block, depending on its writing mode. It corresponds to either the `max-width` or the `max-height` property, depending on the value of `writing-mode`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -4080,7 +4080,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maxLines?: Property.MaxLines | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -4094,7 +4094,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   maxWidth?: Property.MaxWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -4108,7 +4108,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   minBlockSize?: Property.MinBlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -4122,7 +4122,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   minHeight?: Property.MinHeight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -4142,7 +4142,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   minIntrinsicSizing?: Property.MinIntrinsicSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -4156,7 +4156,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   minWidth?: Property.MinWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`mix-blend-mode`** CSS property sets how an element's content should blend with its _backdrop_ — the content rendered behind the element within the same stacking context.
    *
    * **Syntax**: `<blend-mode> | plus-lighter`
    *
@@ -4170,7 +4170,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   mixBlendMode?: Property.MixBlendMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -4185,7 +4185,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   motionDistance?: Property.OffsetDistance<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`offset-path`** CSS property specifies a path for an element to follow and determines the element's positioning within the path's parent container or the SVG coordinate system. The path is a line, a curve, or a geometrical shape along which the element gets positioned or moves.
    *
    * **Syntax**: `none | <offset-path> || <coord-box>`
    *
@@ -4200,7 +4200,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   motionPath?: Property.OffsetPath | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Syntax**: `[ auto | reverse ] || <angle>`
    *
@@ -4239,7 +4239,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   navUp?: Property.NavUp | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
    * **Syntax**: `fill | none | [contain | cover] || scale-down`
    *
@@ -4253,7 +4253,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   objectFit?: Property.ObjectFit | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
    *
    * **Syntax**: `<position>`
    *
@@ -4281,7 +4281,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   objectViewBox?: Property.ObjectViewBox | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2023.
+   * The **`offset-anchor`** CSS property specifies the point inside the box of an element traveling along an `offset-path` that is actually moving along the path.
    *
    * **Syntax**: `auto | <position>`
    *
@@ -4295,7 +4295,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   offsetAnchor?: Property.OffsetAnchor<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -4310,7 +4310,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   offsetDistance?: Property.OffsetDistance<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`offset-path`** CSS property specifies a path for an element to follow and determines the element's positioning within the path's parent container or the SVG coordinate system. The path is a line, a curve, or a geometrical shape along which the element gets positioned or moves.
    *
    * **Syntax**: `none | <offset-path> || <coord-box>`
    *
@@ -4325,7 +4325,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   offsetPath?: Property.OffsetPath | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2024.
+   * The **`offset-position`** CSS property defines the initial position of an element along a path. This property is typically used in combination with the `offset-path` property to create a motion effect. The value of `offset-position` determines where the element gets placed initially for moving along an offset path if an `offset-path` function such as `path()` does not specify its own starting position.
    *
    * **Syntax**: `normal | auto | <position>`
    *
@@ -4339,7 +4339,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   offsetPosition?: Property.OffsetPosition<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Syntax**: `[ auto | reverse ] || <angle>`
    *
@@ -4354,7 +4354,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   offsetRotate?: Property.OffsetRotate | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Syntax**: `[ auto | reverse ] || <angle>`
    *
@@ -4369,7 +4369,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   offsetRotation?: Property.OffsetRotate | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Syntax**: `<opacity-value>`
    *
@@ -4383,7 +4383,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   opacity?: Property.Opacity | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`order`** CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order. Items not given an explicit `order` value are assigned the default value of `0`.
    *
    * **Syntax**: `<integer>`
    *
@@ -4412,7 +4412,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   orphans?: Property.Orphans | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`outline-color`** CSS property sets the color of an element's outline.
    *
    * **Syntax**: `auto | <'border-top-color'>`
    *
@@ -4426,7 +4426,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   outlineColor?: Property.OutlineColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`outline-offset`** CSS property sets the amount of space between an outline and the edge or border of an element.
    *
    * **Syntax**: `<length> | inset`
    *
@@ -4440,7 +4440,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   outlineOffset?: Property.OutlineOffset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `auto | <outline-line-style>`
    *
@@ -4454,7 +4454,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   outlineStyle?: Property.OutlineStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -4558,7 +4558,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   overflowInline?: Property.OverflowInline | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2018.
+   * The **`overflow-wrap`** CSS property applies to text, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Syntax**: `normal | break-word | anywhere`
    *
@@ -4573,7 +4573,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   overflowWrap?: Property.OverflowWrap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content. This property may also be set by using the `overflow` shorthand property.
    *
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
@@ -4587,7 +4587,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   overflowX?: Property.OverflowX | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content. This property may also be set by using the `overflow` shorthand property.
    *
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
@@ -4671,7 +4671,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   overscrollBehaviorY?: Property.OverscrollBehaviorY | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -4685,7 +4685,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingBlockEnd?: Property.PaddingBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -4699,7 +4699,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingBlockStart?: Property.PaddingBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -4713,7 +4713,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingBottom?: Property.PaddingBottom<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -4728,7 +4728,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingInlineEnd?: Property.PaddingInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -4743,7 +4743,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingInlineStart?: Property.PaddingInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -4757,7 +4757,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingLeft?: Property.PaddingLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -4771,7 +4771,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingRight?: Property.PaddingRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -4785,7 +4785,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   paddingTop?: Property.PaddingTop<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since February 2023.
+   * The **`page`** CSS property is used to specify the named page, a specific type of page defined by the `@page` at-rule.
    *
    * **Syntax**: `auto | <custom-ident>`
    *
@@ -4799,7 +4799,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   page?: Property.Page | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`paint-order`** CSS property lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.
    *
    * **Syntax**: `normal | [ fill || stroke || markers ]`
    *
@@ -4839,7 +4839,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   pauseBefore?: Property.PauseBefore<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length [0,∞]>`
    *
@@ -4854,7 +4854,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   perspective?: Property.Perspective<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
    *
    * **Syntax**: `<position>`
    *
@@ -4869,7 +4869,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   perspectiveOrigin?: Property.PerspectiveOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
    *
    * **Syntax**: `auto | bounding-box | visiblePainted | visibleFill | visibleStroke | visible | painted | fill | stroke | all | none`
    *
@@ -4895,7 +4895,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   pointerTimelineName?: Property.PointerTimelineName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`position`** CSS property sets how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` physical properties and the `inset-block-start`, `inset-block-end`, `inset-inline-start`, and `inset-inline-end` flow-relative logical properties can be used to determine the final location of positioned elements.
    *
    * **Syntax**: `static | relative | absolute | sticky | fixed | <running()>`
    *
@@ -4994,7 +4994,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   printColorAdjust?: Property.PrintColorAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The CSS **`quotes`** property sets how the browser should render quotation marks that are automatically added to the HTML `<q>` element or added using the `open-quotes` or `close-quotes` (or omitted using the `no-open-quote` and `no-close-quote`) values of the of the CSS `content` property.
    *
    * **Syntax**: `auto | none | bikeshed-this | [ <string> <string> ]+`
    *
@@ -5008,7 +5008,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   quotes?: Property.Quotes | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`r`** CSS property defines the radius of a circle. It can only be used with the SVG `<circle>` element. If present, it overrides the circle's `r` attribute.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -5082,7 +5082,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   restBefore?: Property.RestBefore<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`right`** CSS property participates in specifying the horizontal position of a positioned element. This inset property has no effect on non-positioned elements.
    *
    * **Syntax**: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
    *
@@ -5096,7 +5096,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   right?: Property.Right<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2022.
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` property.
    *
    * **Syntax**: `none | <angle> | [ x | y | z | <number>{3} ] && <angle>`
    *
@@ -5110,7 +5110,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   rotate?: Property.Rotate | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
    *
    * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
    *
@@ -5313,7 +5313,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   ruleOverlap?: Property.RuleOverlap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`rx`** CSS property defines the x-axis, or horizontal, radius of an SVG `<ellipse>` and the horizontal curve of the corners of an SVG `<rect>` rectangle. If present, it overrides the shape's `rx` attribute.
    *
    * **Syntax**: `<length-percentage [0,∞]> | auto`
    *
@@ -5327,7 +5327,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   rx?: Property.Rx<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`ry`** CSS property defines the y-axis, or vertical, radius of an SVG `<ellipse>` and the vertical curve of the corners of an SVG `<rect>` rectangle. If present, it overrides the shape's `ry` attribute.
    *
    * **Syntax**: `<length-percentage [0,∞]> | auto`
    *
@@ -5341,7 +5341,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   ry?: Property.Ry<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2022.
+   * The **`scale`** CSS property allows you to specify scale transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Syntax**: `none | [ <number> | <percentage> ]{1,3}`
    *
@@ -5365,7 +5365,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollAxisLock?: Property.ScrollAxisLock | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`scroll-behavior`** CSS property sets the behavior for a scrolling box when scrolling is triggered by the navigation or CSSOM scrolling APIs.
    *
    * **Syntax**: `auto | smooth`
    *
@@ -5393,7 +5393,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollInitialTarget?: Property.ScrollInitialTarget | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5407,7 +5407,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginBlockEnd?: Property.ScrollMarginBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5421,7 +5421,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginBlockStart?: Property.ScrollMarginBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5436,7 +5436,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginBottom?: Property.ScrollMarginBottom<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5450,7 +5450,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginInlineEnd?: Property.ScrollMarginInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5464,7 +5464,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginInlineStart?: Property.ScrollMarginInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5479,7 +5479,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginLeft?: Property.ScrollMarginLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5494,7 +5494,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarginRight?: Property.ScrollMarginRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5523,7 +5523,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollMarkerGroup?: Property.ScrollMarkerGroup | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -5537,7 +5537,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingBlockEnd?: Property.ScrollPaddingBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -5551,7 +5551,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingBlockStart?: Property.ScrollPaddingBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-padding-bottom` property defines offsets for the bottom of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -5565,7 +5565,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingBottom?: Property.ScrollPaddingBottom<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -5579,7 +5579,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingInlineEnd?: Property.ScrollPaddingInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -5593,7 +5593,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingInlineStart?: Property.ScrollPaddingInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-padding-left` property defines offsets for the left of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -5607,7 +5607,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingLeft?: Property.ScrollPaddingLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-padding-right` property defines offsets for the right of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -5621,7 +5621,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingRight?: Property.ScrollPaddingRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`scroll-padding-top`** property defines offsets for the top of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -5635,7 +5635,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollPaddingTop?: Property.ScrollPaddingTop<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`scroll-snap-align`** CSS property specifies the box's snap position as an alignment of its snap area.
    *
    * **Syntax**: `[ none | start | end | center ]{1,2}`
    *
@@ -5649,7 +5649,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapAlign?: Property.ScrollSnapAlign | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5664,7 +5664,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapMarginBottom?: Property.ScrollMarginBottom<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5679,7 +5679,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapMarginLeft?: Property.ScrollMarginLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5694,7 +5694,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapMarginRight?: Property.ScrollMarginRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -5709,7 +5709,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapMarginTop?: Property.ScrollMarginTop<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2022.
+   * The **`scroll-snap-stop`** CSS property defines whether or not the scroll container is allowed to "pass over" possible snap positions.
    *
    * **Syntax**: `normal | always`
    *
@@ -5723,7 +5723,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollSnapStop?: Property.ScrollSnapStop | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2022.
+   * The **`scroll-snap-type`** CSS property is set on a scroll container, opting it into scroll snapping by setting the direction and strictness of snap point enforcement within the snap port.
    *
    * **Syntax**: `none | [ x | y | block | inline | both | pair ] [ mandatory | proximity ]?`
    *
@@ -5822,7 +5822,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   scrollbarWidth?: Property.ScrollbarWidth | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-image-threshold`** CSS property sets the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
    *
    * **Syntax**: `<opacity-value>`
    *
@@ -5842,7 +5842,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   shapeInside?: Property.ShapeInside | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-margin`** CSS property sets a margin for a CSS shape created using `shape-outside`.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -5856,7 +5856,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   shapeMargin?: Property.ShapeMargin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than rectangular boxes.
    *
    * **Syntax**: `none | [ <basic-shape> || <shape-box> ] | <image>`
    *
@@ -5876,7 +5876,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   shapePadding?: Property.ShapePadding<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-rendering`** CSS property provides hints to the renderer about what tradeoffs to make when rendering shapes like paths, circles, or rectangles. It only has an effect on the `<circle>`, `<ellipse>`, `<line>`, `<path>`, `<polygon>`, `<polyline>`, and `<rect>` elements. If explicitly declared, the value of the CSS property overrides the any values of the element's `shape-rendering` attribute.
    *
    * **Syntax**: `auto | optimizeSpeed | crispEdges | geometricPrecision`
    *
@@ -5938,7 +5938,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   speakAs?: Property.SpeakAs | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stop-color`** CSS property defines the color to use for an SVG `<stop>` element within a gradient. If present, it overrides the element's `stop-color` attribute.
    *
    * **Syntax**: `<'color'>`
    *
@@ -5950,7 +5950,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   stopColor?: Property.StopColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stop-opacity`** CSS property defines the opacity of a given color gradient stop in the SVG `<stop>` element within an SVG gradient. If present, it overrides the element's `stop-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
    *
@@ -5968,7 +5968,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   stringSet?: Property.StringSet | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke`** CSS property defines the color or SVG paint server used to draw an element's stroke. As such, `stroke` only has an effect on elements that can be given a stroke (for example, `<rect>` or `<ellipse>`); see the page on the SVG `stroke` attribute for a complete list. When declared, the CSS value overrides any value of the element's `stroke` SVG attribute.
    *
    * **Syntax**: `<paint>`
    *
@@ -6028,7 +6028,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeDashadjust?: Property.StrokeDashadjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-dasharray`** CSS property defines a pattern of dashes and gaps used in the painting of the SVG shape's stroke. If present, it overrides the element's `stroke-dasharray` attribute.
    *
    * **Syntax**: `none | [<length-percentage> | <number>]+#`
    *
@@ -6048,7 +6048,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeDashcorner?: Property.StrokeDashcorner<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-dashoffset`** CSS property defines an offset for the starting point of the rendering of an SVG element's associated dash array. If present, it overrides the element's `stroke-dashoffset` attribute.
    *
    * **Syntax**: `<length-percentage> | <number>`
    *
@@ -6068,7 +6068,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeImage?: Property.StrokeImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-linecap`** CSS property defines the shape to be used at the end of open subpaths of SVG elements' unclosed strokes. If present, it overrides the element's `stroke-linecap` attribute.
    *
    * **Syntax**: `butt | round | square`
    *
@@ -6082,7 +6082,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeLinecap?: Property.StrokeLinecap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-linejoin`** CSS property defines the shape to be used at the corners of an SVG element's stroked paths. If present, it overrides the element's `stroke-linejoin` attribute.
    *
    * **Syntax**: `[ crop | arcs | miter ] || [ bevel | round | fallback ]`
    *
@@ -6096,7 +6096,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeLinejoin?: Property.StrokeLinejoin | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-miterlimit`** CSS property defines a limit on the ratio of the miter length to the `stroke-width` when the shape to be used at the corners of an SVG element's stroked path is a mitered join. If the limit defined by this property is exceeded, the join is converted from `miter` to `bevel`, thus making the corner appear truncated.
    *
    * **Syntax**: `<number>`
    *
@@ -6110,7 +6110,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeMiterlimit?: Property.StrokeMiterlimit | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-opacity`** CSS property defines the opacity of an SVG shape's stroke. The effect is identical to that of `opacity`, except it is applied only to the stroke, not to the entire element. If present, it overrides the element's `stroke-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
    *
@@ -6148,7 +6148,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeSize?: Property.StrokeSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-width`** CSS property defines the width of a stroke applied to the SVG shape. If present, it overrides the element's `stroke-width` attribute.
    *
    * **Syntax**: `[ <length-percentage> | <line-width> | <number> ]#`
    *
@@ -6162,7 +6162,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeWidth?: Property.StrokeWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2021.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<number [0,∞]> | <length [0,∞]>`
    *
@@ -6177,7 +6177,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   tabSize?: Property.TabSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`table-layout`** CSS property sets the algorithm used to lay out `<table>` cells, rows, and columns.
    *
    * **Syntax**: `auto | fixed`
    *
@@ -6197,7 +6197,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textAlignAll?: Property.TextAlignAll | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`text-align-last`** CSS property sets how the last line of a block or a line, right before a forced line break, is aligned.
    *
    * **Syntax**: `auto | start | end | left | right | center | justify | match-parent`
    *
@@ -6211,7 +6211,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textAlignLast?: Property.TextAlignLast | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2016.
+   * The **`text-anchor`** CSS property aligns a box containing a string of text where the wrapping area is determined from the `inline-size` property, and the text is then placed relative to the anchor point of the element, which is defined using the `x` and `y` (or `dx` and `dy`) attributes. If present, the value of the CSS property overrides any value of the element's `text-anchor` attribute.
    *
    * **Syntax**: `start | middle | end`
    *
@@ -6281,7 +6281,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textBoxTrim?: Property.TextBoxTrim | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
    * **Syntax**: `none | all | [ digits <integer [2,4]>? ]`
    *
@@ -6296,7 +6296,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textCombineUpright?: Property.TextCombineUpright | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
    *
@@ -6325,7 +6325,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textDecorationInset?: Property.TextDecorationInset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
    *
    * **Syntax**: `none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error`
    *
@@ -6346,7 +6346,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textDecorationSkipBox?: Property.TextDecorationSkipBox | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
    *
    * **Syntax**: `auto | none | all`
    *
@@ -6376,7 +6376,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textDecorationSkipSpaces?: Property.TextDecorationSkipSpaces | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are set with `text-decoration-line`.
    *
    * **Syntax**: `solid | double | dotted | dashed | wavy`
    *
@@ -6391,7 +6391,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textDecorationStyle?: Property.TextDecorationStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2021.
+   * The **`text-decoration-thickness`** CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
    *
    * **Syntax**: `auto | from-font | <length-percentage> | <line-width>`
    *
@@ -6405,7 +6405,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textDecorationThickness?: Property.TextDecorationThickness<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-color`** CSS property sets the color of emphasis marks. This value can also be set using the `text-emphasis` shorthand.
    *
    * **Syntax**: `<color>`
    *
@@ -6420,7 +6420,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textEmphasisColor?: Property.TextEmphasisColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Similar to the text rendered by the `<ruby>` HTML element, if there isn't enough room for emphasis marks, the line height is increased.
    *
    * **Syntax**: `[ over | under ] && [ right | left ]?`
    *
@@ -6441,7 +6441,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textEmphasisSkip?: Property.TextEmphasisSkip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
    * **Syntax**: `none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | <string>`
    *
@@ -6476,7 +6476,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textGroupAlign?: Property.TextGroupAlign | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-indent`** CSS property sets the length of empty space (indentation) that is put before lines of text in a block.
    *
    * **Syntax**: `[ <length-percentage> ] && hanging? && each-line?`
    *
@@ -6504,7 +6504,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textJustify?: Property.TextJustify | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2020.
+   * The **`text-orientation`** CSS property sets the orientation of the text characters in a line. It only affects text in vertical mode (when `writing-mode` is not `horizontal-tb`). It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
    *
    * **Syntax**: `mixed | upright | sideways`
    *
@@ -6519,7 +6519,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textOrientation?: Property.TextOrientation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users.
    *
    * **Syntax**: `[ clip | ellipsis | <string> | fade | <fade()> ]{1,2}`
    *
@@ -6533,7 +6533,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textOverflow?: Property.TextOverflow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-rendering`** CSS property provides information to the rendering engine about what to optimize for when rendering text.
    *
    * **Syntax**: `auto | optimizeSpeed | optimizeLegibility | geometricPrecision`
    *
@@ -6547,7 +6547,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textRendering?: Property.TextRendering | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-shadow`** CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its `text-decoration`. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
    *
    * **Syntax**: `none | <shadow>#`
    *
@@ -6589,7 +6589,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textSpacingTrim?: Property.TextSpacingTrim | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.
    *
    * **Syntax**: `none | [capitalize | uppercase | lowercase ] || full-width || full-size-kana | math-auto`
    *
@@ -6603,7 +6603,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textTransform?: Property.TextTransform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2020.
+   * The **`text-underline-offset`** CSS property sets the offset distance of an underline text decoration line (applied using `text-decoration`) from its original position.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -6617,7 +6617,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textUnderlineOffset?: Property.TextUnderlineOffset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
    *
    * **Syntax**: `auto | [ from-font | under ] || [ left | right ]`
    *
@@ -6758,7 +6758,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   timelineTriggerSource?: Property.TimelineTriggerSource | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`top`** CSS property sets the vertical position of a positioned element. This inset property has no effect on non-positioned elements.
    *
    * **Syntax**: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
    *
@@ -6772,7 +6772,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   top?: Property.Top<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2019.
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Syntax**: `auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation`
    *
@@ -6787,7 +6787,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   touchAction?: Property.TouchAction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
    *
@@ -6802,7 +6802,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   transform?: Property.Transform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`transform-box`** CSS property defines the layout box to which the `transform`, individual transform properties `translate`, `scale`, and `rotate`, and `transform-origin` properties relate.
    *
    * **Syntax**: `content-box | border-box | fill-box | stroke-box | view-box`
    *
@@ -6816,7 +6816,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   transformBox?: Property.TransformBox | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
    * **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?`
    *
@@ -6831,7 +6831,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   transformOrigin?: Property.TransformOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-style`** CSS property sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element.
    *
    * **Syntax**: `flat | preserve-3d`
    *
@@ -6860,7 +6860,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   transitionBehavior?: Property.TransitionBehavior | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
    * **Syntax**: `<time>#`
    *
@@ -6875,7 +6875,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   transitionDelay?: Property.TransitionDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Syntax**: `<time [0s,∞]>#`
    *
@@ -6890,7 +6890,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   transitionDuration?: Property.TransitionDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
    * **Syntax**: `none | <single-transition-property>#`
    *
@@ -6905,7 +6905,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   transitionProperty?: Property.TransitionProperty | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -6920,7 +6920,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   transitionTimingFunction?: Property.TransitionTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2022.
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Syntax**: `none | <length-percentage> [ <length-percentage> <length>? ]?`
    *
@@ -6948,7 +6948,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   triggerScope?: Property.TriggerScope | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`unicode-bidi`** CSS property, together with the `direction` property, determines how bidirectional text in a document is handled. For example, if a block of content contains both left-to-right and right-to-left text, the user-agent uses a complex Unicode algorithm to decide how to display the text. The `unicode-bidi` property overrides this algorithm and allows the developer to control the text embedding.
    *
    * **Syntax**: `normal | embed | isolate | bidi-override | isolate-override | plaintext`
    *
@@ -6977,7 +6977,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   userSelect?: Property.UserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`vector-effect`** CSS property suppresses specific transformation effects in SVG, thus permitting effects like a road on a map staying the same width no matter how the map is zoomed, or allowing a diagram key to retain its position and size regardless of other transforms. It can only be used with SVG elements that accept the `vector-effect` attribute. When used, the CSS value overrides any values of the element's `vector-effect` attribute.
    *
    * **Syntax**: `none | non-scaling-stroke | non-scaling-size | non-rotation | fixed-position`
    *
@@ -7085,7 +7085,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   viewTransitionScope?: Property.ViewTransitionScope | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`visibility`** CSS property shows or hides an element without changing the layout of a document. The property can also hide rows or columns in a `<table>`.
    *
    * **Syntax**: `visible | hidden | force-hidden | collapse`
    *
@@ -7147,7 +7147,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   voiceVolume?: Property.VoiceVolume | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`white-space-collapse`** CSS property controls how white space inside an element is collapsed.
    *
    * **Syntax**: `collapse | discard | preserve | preserve-breaks | preserve-spaces | break-spaces`
    *
@@ -7185,7 +7185,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   widows?: Property.Widows | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -7199,7 +7199,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   width?: Property.Width<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`will-change`** CSS property enables optimizing animations by providing a rendering hint to a browser about how an element is expected to change.
    *
    * **Syntax**: `auto | <animateable-feature>#`
    *
@@ -7223,7 +7223,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   windowDrag?: Property.WindowDrag | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`word-break`** CSS property sets whether line breaks appear wherever the text would otherwise overflow its content box.
    *
    * **Syntax**: `normal | break-all | keep-all | manual | auto-phrase | break-word`
    *
@@ -7243,7 +7243,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   wordSpaceTransform?: Property.WordSpaceTransform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`word-spacing`** CSS property sets the spacing between words and between tags.
    *
    * **Syntax**: `normal | <length-percentage>`
    *
@@ -7257,7 +7257,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   wordSpacing?: Property.WordSpacing<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2018.
+   * The **`overflow-wrap`** CSS property applies to text, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Syntax**: `normal | break-word | anywhere`
    */
@@ -7297,7 +7297,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   wrapThrough?: Property.WrapThrough | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
    *
    * **Syntax**: `horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr`
    *
@@ -7312,7 +7312,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   writingMode?: Property.WritingMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`x`** CSS property defines the x-axis coordinate of the top left corner of the SVG `<rect>` shape, `<image>` image, `<foreignObject>` viewport or nested `<svg>` viewport relative to the nearest `<svg>` ancestor's user coordinate system. If present, it overrides the element's `x` attribute.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -7326,7 +7326,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   x?: Property.X<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`y`** CSS property defines the y-axis coordinate of the top left corner of the SVG `<rect>` shape, `<image>` image, `<foreignObject>` viewport and nested `<svg>` viewport relative to the nearest `<svg>` ancestor's user coordinate system. If present, it overrides the element's `y` attribute.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -7340,7 +7340,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   y?: Property.Y<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex and grid items. Overlapping elements with a larger z-index cover those with a smaller one.
    *
    * **Syntax**: `auto | <integer> | inherit`
    *
@@ -7371,7 +7371,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
 
 export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`all`** CSS shorthand property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another cascade layer or stylesheet origin.
    *
    * **Syntax**: `initial | inherit | unset | revert | revert-layer | revert-rule`
    *
@@ -7385,7 +7385,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   all?: Property.All | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`, and `animation-timeline`.
    *
    * **Syntax**: `<single-animation>#`
    *
@@ -7400,7 +7400,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   animation?: Property.Animation<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
    *
@@ -7429,7 +7429,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   animationRange?: Property.AnimationRange<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background`** CSS shorthand property sets all background style properties at once, such as color, image, origin, size, and repeat method.
    *
    * **Syntax**: `<bg-layer>#? , <final-bg-layer>`
    *
@@ -7443,7 +7443,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   background?: Property.Background<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-position`** CSS property sets the initial position for each background image.
    *
    * **Syntax**: `<bg-position>#`
    *
@@ -7463,7 +7463,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   blockStep?: Property.BlockStep<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border`** CSS shorthand property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7477,7 +7477,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   border?: Property.Border<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-block`** CSS shorthand property sets the individual logical block border property values in a single place in the style sheet.
    *
    * **Syntax**: `<'border-block-start'>`
    *
@@ -7497,7 +7497,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderBlockClip?: Property.BorderBlockClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>{1,2}`
    *
@@ -7511,7 +7511,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderBlockColor?: Property.BorderBlockColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-end`** CSS shorthand property sets the individual logical block-end border property values in a single place in the style sheet.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7535,7 +7535,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderBlockEndRadius?: Property.BorderBlockEndRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-start`** CSS shorthand property sets the individual logical block-start border property values in a single place in the style sheet.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7559,7 +7559,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderBlockStartRadius?: Property.BorderBlockStartRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>{1,2}`
    *
@@ -7573,7 +7573,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderBlockStyle?: Property.BorderBlockStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>{1,2}`
    *
@@ -7587,7 +7587,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderBlockWidth?: Property.BorderBlockWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom`** CSS shorthand property sets an element's bottom border. It sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7617,7 +7617,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderClip?: Property.BorderClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-color`** CSS shorthand property sets the color of an element's border.
    *
    * **Syntax**: `[ <color> | <image-1D> ]{1,4}`
    *
@@ -7631,7 +7631,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderColor?: Property.BorderColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
    *
@@ -7646,7 +7646,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderImage?: Property.BorderImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-inline`** CSS shorthand property sets the individual logical inline border property values in a single place in the style sheet.
    *
    * **Syntax**: `<'border-block-start'>`
    *
@@ -7666,7 +7666,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderInlineClip?: Property.BorderInlineClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>{1,2}`
    *
@@ -7680,7 +7680,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderInlineColor?: Property.BorderInlineColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end`** CSS shorthand property sets the individual logical inline-end border property values in a single place in the style sheet.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7704,7 +7704,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderInlineEndRadius?: Property.BorderInlineEndRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start`** CSS shorthand property sets the individual logical inline-start border property values in a single place in the style sheet.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7728,7 +7728,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderInlineStartRadius?: Property.BorderInlineStartRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-inline-style`** CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>{1,2}`
    *
@@ -7742,7 +7742,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderInlineStyle?: Property.BorderInlineStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>{1,2}`
    *
@@ -7756,7 +7756,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderInlineWidth?: Property.BorderInlineWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-left`** CSS shorthand property sets all the properties of an element's left border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7780,7 +7780,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderLeftRadius?: Property.BorderLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-radius`** CSS shorthand property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage [0,∞]>{1,4} [ / <length-percentage [0,∞]>{1,4} ]?`
    *
@@ -7795,7 +7795,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderRadius?: Property.BorderRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-right`** CSS shorthand property sets all the properties of an element's right border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7819,7 +7819,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderRightRadius?: Property.BorderRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-style`** CSS shorthand property sets the line style for all four sides of an element's border.
    *
    * **Syntax**: `<'border-top-style'>{1,4}`
    *
@@ -7833,7 +7833,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderStyle?: Property.BorderStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top`** CSS shorthand property sets all the properties of an element's top border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -7857,7 +7857,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderTopRadius?: Property.BorderTopRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-width`** CSS shorthand property sets the width of an element's border.
    *
    * **Syntax**: `<'border-top-width'>{1,4}`
    *
@@ -7871,7 +7871,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderWidth?: Property.BorderWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `<spread-shadow>#`
    *
@@ -7892,7 +7892,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   caret?: Property.Caret | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
    *
@@ -7965,7 +7965,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   columnRuleInsetStart?: Property.ColumnRuleInsetStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`columns`** CSS shorthand property sets the maximum number of columns to use when drawing an element's contents, along with the minimum width and maximum height of the element's columns.
    *
    * **Syntax**: `[ <'column-width'> || <'column-count'> ] [ / <'column-height'> ]?`
    *
@@ -7980,7 +7980,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   columns?: Property.Columns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-size`** CSS shorthand property sets the size of an element that a browser will use for layout when the element is subject to size containment.
    *
    * **Syntax**: `[ auto? [ none | <length [0,∞]> ] ]{1,2}`
    *
@@ -7994,7 +7994,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   containIntrinsicSize?: Property.ContainIntrinsicSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since February 2023.
+   * The **container** shorthand CSS property establishes the element as a query container and specifies the name and type of the containment context used in a container query.
    *
    * **Syntax**: `<'container-name'> [ / <'container-type'> ]?`
    *
@@ -8242,7 +8242,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   cue?: Property.Cue | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex`** CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
@@ -8257,7 +8257,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   flex?: Property.Flex<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-flow`** CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    *
@@ -8272,7 +8272,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   flexFlow?: Property.FlexFlow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font`** CSS shorthand property sets all the different properties of an element's font. Alternatively, it sets an element's font to a system font.
    *
    * **Syntax**: `[ [ <'font-style'> || <font-variant-css2> || <'font-weight'> || <font-width-css3> ]? <'font-size'> [ / <'line-height'> ]? <'font-family'># ] | <system-font-family-name>`
    *
@@ -8286,7 +8286,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   font?: Property.Font | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2022.
+   * The **`font-synthesis`** CSS shorthand property lets you specify whether or not the browser may synthesize the bold, italic, small-caps, and/or subscript and superscript typefaces when they are missing in the specified font-family.
    *
    * **Syntax**: `none | [ weight || style || small-caps || position]`
    *
@@ -8300,7 +8300,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   fontSynthesis?: Property.FontSynthesis | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-variant`** CSS shorthand property allows you to set all the font variants for a font.
    *
    * **Syntax**: `normal | none | [ [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ] || [ small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps ] || [ stylistic(<font-feature-value-name>) || historical-forms || styleset(<font-feature-value-name>#) || character-variant(<font-feature-value-name>#) || swash(<font-feature-value-name>) || ornaments(<font-feature-value-name>) || annotation(<font-feature-value-name>) ] || [ <numeric-figure-values> || <numeric-spacing-values> || <numeric-fraction-values> || ordinal || slashed-zero ] || [ <east-asian-variant-values> || <east-asian-width-values> || ruby ] || [ sub | super ] || [ text | emoji | unicode ] ]`
    *
@@ -8314,7 +8314,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   fontVariant?: Property.FontVariant | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
    *
    * **Syntax**: `<'row-gap'> <'column-gap'>?`
    *
@@ -8328,7 +8328,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gap?: Property.Gap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid`** CSS shorthand property sets all of the explicit and implicit grid properties in a single declaration.
    *
    * **Syntax**: `<'grid-template'> | <'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>? | [ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>`
    *
@@ -8342,7 +8342,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   grid?: Property.Grid | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-area`** CSS shorthand property specifies a grid item's size and location within a grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]{0,3}`
    *
@@ -8356,7 +8356,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gridArea?: Property.GridArea | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-column`** CSS shorthand property specifies a grid item's size and location within a grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
    *
@@ -8370,13 +8370,13 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gridColumn?: Property.GridColumn | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
    *
    * **Syntax**: `<'row-gap'> <'column-gap'>?`
    */
   gridGap?: Property.GridGap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
    *
@@ -8390,7 +8390,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gridRow?: Property.GridRow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-template`** CSS shorthand property specifies the grid columns, grid rows, and grid areas.
    *
    * **Syntax**: `none | [ <'grid-template-rows'> / <'grid-template-columns'> ] | [ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?`
    *
@@ -8404,7 +8404,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gridTemplate?: Property.GridTemplate | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset`** CSS shorthand property corresponds to the `top`, `right`, `bottom`, and/or `left` properties. It has the same multi-value syntax of the `margin` shorthand.
    *
    * **Syntax**: `<'top'>{1,4}`
    *
@@ -8418,7 +8418,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   inset?: Property.Inset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block`** CSS shorthand property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -8432,7 +8432,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   insetBlock?: Property.InsetBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline`** CSS shorthand property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -8475,7 +8475,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   lineClamp?: Property.LineClamp | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`list-style`** CSS shorthand property allows you to set all the list style properties at once.
    *
    * **Syntax**: `<'list-style-position'> || <'list-style-image'> || <'list-style-type'>`
    *
@@ -8489,7 +8489,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   listStyle?: Property.ListStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin`** CSS shorthand property sets the margin area on all four sides of an element.
    *
    * **Syntax**: `<'margin-top'>{1,4}`
    *
@@ -8503,7 +8503,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   margin?: Property.Margin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>{1,2}`
    *
@@ -8517,7 +8517,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   marginBlock?: Property.MarginBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`margin-inline`** CSS shorthand property defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>{1,2}`
    *
@@ -8531,7 +8531,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   marginInline?: Property.MarginInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`marker`** CSS property points to a marker that will be drawn on the first, middle, and last vertices of the element's path; that is, at all of its vertices. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-start`, `marker`, and `marker-end` attributes in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
    *
@@ -8545,7 +8545,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   marker?: Property.Marker | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping a specified area of the image. It is a shorthand for all the `mask-*` properties. The property accepts one or more comma-separated values, where each value corresponds to a `<mask-layer>`.
    *
    * **Syntax**: `<mask-layer>#`
    *
@@ -8595,7 +8595,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   minSize?: Property.MinSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path. The offset properties together help to define an _offset transform_, a transform that aligns a point in an element (offset-anchor) to an _offset position_ (offset-position) on a path (offset-path) at various points along the path (offset-distance) and optionally rotates the element (offset-rotate) to follow the direction of the path.
    *
    * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
    *
@@ -8610,7 +8610,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   motion?: Property.Offset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path. The offset properties together help to define an _offset transform_, a transform that aligns a point in an element (offset-anchor) to an _offset position_ (offset-position) on a path (offset-path) at various points along the path (offset-distance) and optionally rotates the element (offset-rotate) to follow the direction of the path.
    *
    * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
    *
@@ -8625,7 +8625,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   offset?: Property.Offset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`outline`** CSS shorthand property sets the style, color, and width of an element's outline.
    *
    * **Syntax**: `<'outline-width'> || <'outline-style'> || <'outline-color'>`
    *
@@ -8639,7 +8639,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   outline?: Property.Outline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow`** CSS shorthand property sets the desired behavior when content does not fit in the element's padding box (overflows) in the horizontal and/or vertical direction.
    *
    * **Syntax**: `<'overflow-block'>{1,2}`
    *
@@ -8693,7 +8693,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   overscrollBehavior?: Property.OverscrollBehavior | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding`** CSS shorthand property sets the padding area on all four sides of an element at once.
    *
    * **Syntax**: `<'padding-top'>{1,4}`
    *
@@ -8707,7 +8707,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   padding?: Property.Padding<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>{1,2}`
    *
@@ -8721,7 +8721,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   paddingBlock?: Property.PaddingBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>{1,2}`
    *
@@ -8741,7 +8741,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   pause?: Property.Pause<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e., the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
    *
    * **Syntax**: `<'align-content'> <'justify-content'>?`
    *
@@ -8755,7 +8755,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   placeContent?: Property.PlaceContent | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`place-items`** CSS shorthand property aligns items along both block and inline directions at the same time.
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
    *
@@ -8769,7 +8769,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   placeItems?: Property.PlaceItems | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`place-self`** CSS shorthand property allows you to align an individual item in both the block and inline directions at once (i.e., the `align-self` and `justify-self` properties). This property applies to block-level boxes, absolutely-positioned boxes, and grid items. If the second value is not present, the first value is also used for it.
    *
    * **Syntax**: `<'align-self'> <'justify-self'>?`
    *
@@ -9023,7 +9023,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   ruleWidth?: Property.RuleWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2021.
+   * The **`scroll-margin`** CSS shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
    * **Syntax**: `<length>{1,4}`
    *
@@ -9038,7 +9038,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   scrollMargin?: Property.ScrollMargin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`scroll-margin-block`** CSS shorthand property sets the scroll margins of an element in the block dimension.
    *
    * **Syntax**: `<length>{1,2}`
    *
@@ -9052,7 +9052,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   scrollMarginBlock?: Property.ScrollMarginBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`scroll-margin-inline`** CSS shorthand property sets the scroll margins of an element in the inline dimension.
    *
    * **Syntax**: `<length>{1,2}`
    *
@@ -9066,7 +9066,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   scrollMarginInline?: Property.ScrollMarginInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`scroll-padding`** CSS shorthand property sets scroll padding on all sides of an element at once. It specifies offsets that define the optimal viewing region of a scrollport within a scroll container.
    *
    * **Syntax**: `[ auto | <length-percentage [0,∞]> ]{1,4}`
    *
@@ -9080,7 +9080,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   scrollPadding?: Property.ScrollPadding<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`scroll-padding-block`** CSS shorthand property sets the scroll padding of an element in the block dimension.
    *
    * **Syntax**: `[ auto | <length-percentage [0,∞]> ]{1,2}`
    *
@@ -9094,7 +9094,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   scrollPaddingBlock?: Property.ScrollPaddingBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`scroll-padding-inline`** CSS shorthand property sets the scroll padding of an element in the inline dimension.
    *
    * **Syntax**: `[ auto | <length-percentage [0,∞]> ]{1,2}`
    *
@@ -9108,7 +9108,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   scrollPaddingInline?: Property.ScrollPaddingInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2021.
+   * The **`scroll-margin`** CSS shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
    * **Syntax**: `<length>{1,4}`
    *
@@ -9147,7 +9147,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   size?: Property.Size<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-align`** CSS property sets the horizontal alignment of the inline-level content inside a block element or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
    *
    * **Syntax**: `start | end | left | right | center | <string> | justify | match-parent | justify-all`
    *
@@ -9161,7 +9161,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   textAlign?: Property.TextAlign | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-decoration`** CSS shorthand property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
    *
    * **Syntax**: `<'text-decoration-line'> || <'text-decoration-thickness'> || <'text-decoration-style'> || <'text-decoration-color'>`
    *
@@ -9175,7 +9175,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   textDecoration?: Property.TextDecoration<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis`** CSS shorthand property applies emphasis marks to text (except spaces and control characters).
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
@@ -9196,7 +9196,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   textSpacing?: Property.TextSpacing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`text-wrap`** CSS shorthand property controls how text inside an element is wrapped. The different values provide:
    *
    * **Syntax**: `<'text-wrap-mode'> || <'text-wrap-style'>`
    *
@@ -9258,7 +9258,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   timelineTriggerRange?: Property.TimelineTriggerRange<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
    * **Syntax**: `<single-transition>#`
    *
@@ -9273,7 +9273,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   transition?: Property.Transition<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`vertical-align`** CSS shorthand property sets the vertical alignment of an inline, inline-block, or table-cell box.
    *
    * **Syntax**: `[ first | last] || <'alignment-baseline'> || <'baseline-shift'>`
    *
@@ -9301,7 +9301,7 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   viewTimeline?: Property.ViewTimeline | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`white-space`** CSS shorthand property sets how white space inside an element is handled.
    *
    * **Syntax**: `normal | pre | pre-wrap | pre-line | <'white-space-collapse'> || <'text-wrap-mode'> || <'white-space-trim'>`
    *
@@ -9321,7 +9321,7 @@ export interface StandardProperties<TLength = (string & {}) | 0, TTime = string 
 
 export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -9329,7 +9329,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationDirection?: Property.AnimationDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-duration`** CSS property sets the length of time that an animation takes to complete one cycle.
    *
    * **Syntax**: `[ auto | <time [0s,∞]> ]#`
    *
@@ -9337,7 +9337,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationDuration?: Property.AnimationDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
    * **Syntax**: `<single-animation-fill-mode>#`
    *
@@ -9345,7 +9345,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationFillMode?: Property.AnimationFillMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -9353,7 +9353,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationIterationCount?: Property.AnimationIterationCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules that describe the animation to apply to an element. Multiple `@keyframes` at-rules are specified as a comma-separated list of names. If the specified name does not match any `@keyframes` at-rule, no properties are animated.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -9361,7 +9361,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationName?: Property.AnimationName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-play-state`** CSS property sets whether an animation is running or paused.
    *
    * **Syntax**: `<single-animation-play-state>#`
    *
@@ -9369,7 +9369,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationPlayState?: Property.AnimationPlayState | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -9377,7 +9377,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAnimationTimingFunction?: Property.AnimationTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`appearance`** CSS property specifies the rendered appearance of replaced UI widget elements such as form controls. Most commonly, such elements are given native, platform-specific styling based on the operating system's theme, or a primitive appearance with styles that can be overridden using CSS.
    *
    * **Syntax**: `none | auto | base | base-select | <compat-auto> | <compat-special>`
    *
@@ -9385,7 +9385,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozAppearance?: Property.Appearance | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`backface-visibility`** CSS property sets whether the back face of an element is visible when turned towards the user.
    *
    * **Syntax**: `visible | hidden`
    *
@@ -9393,7 +9393,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBackfaceVisibility?: Property.BackfaceVisibility | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -9401,7 +9401,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderEndColor?: Property.BorderInlineEndColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -9409,7 +9409,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderEndStyle?: Property.BorderInlineEndStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -9417,7 +9417,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderEndWidth?: Property.BorderInlineEndWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -9425,7 +9425,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderStartColor?: Property.BorderInlineStartColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -9433,7 +9433,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBorderStartStyle?: Property.BorderInlineStartStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Syntax**: `content-box | border-box`
    *
@@ -9441,7 +9441,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozBoxSizing?: Property.BoxSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-color`** CSS property defines the colors of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-color-list> | <auto-line-color-list>`
    *
@@ -9449,7 +9449,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozColumnRuleColor?: Property.ColumnRuleColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-style`** CSS property defines the line style of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-style-list> | <auto-line-style-list>`
    *
@@ -9457,7 +9457,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozColumnRuleStyle?: Property.ColumnRuleStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-width`** CSS property defines the widths of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-width-list> | <auto-line-width-list>`
    *
@@ -9465,13 +9465,13 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozColumnRuleWidth?: Property.ColumnRuleWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2016.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout.
    *
    * **Syntax**: `auto | <box-size> | auto | <box-size>`
    */
   MozColumnWidth?: Property.ColumnWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
+   * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
    *
@@ -9487,7 +9487,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozFontLanguageOverride?: Property.FontLanguageOverride | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -9495,7 +9495,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozHyphens?: Property.Hyphens | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -9503,7 +9503,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozMarginEnd?: Property.MarginInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -9511,7 +9511,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozMarginStart?: Property.MarginInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -9519,7 +9519,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozPaddingEnd?: Property.PaddingInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -9527,7 +9527,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozPaddingStart?: Property.PaddingInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length [0,∞]>`
    *
@@ -9535,7 +9535,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozPerspective?: Property.Perspective<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
    *
    * **Syntax**: `<position>`
    *
@@ -9543,7 +9543,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozPerspectiveOrigin?: Property.PerspectiveOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2021.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<number [0,∞]> | <length [0,∞]>`
    *
@@ -9559,7 +9559,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozTextSizeAdjust?: Property.TextSizeAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
    *
@@ -9567,7 +9567,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozTransform?: Property.Transform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
    * **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?`
    *
@@ -9575,7 +9575,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozTransformOrigin?: Property.TransformOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-style`** CSS property sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element.
    *
    * **Syntax**: `flat | preserve-3d`
    *
@@ -9591,7 +9591,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozUserSelect?: Property.UserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
    * **Syntax**: `row | row-reverse | column | column-reverse`
    *
@@ -9599,7 +9599,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msFlexDirection?: Property.FlexDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-grow`** CSS property sets the flex grow factor, which specifies how much of the flex container's **positive free space**, if any, should be assigned to the flex item's main size.
    *
    * **Syntax**: `<number [0,∞]>`
    *
@@ -9607,7 +9607,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msFlexPositive?: Property.FlexGrow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Syntax**: `<track-size>+`
    *
@@ -9615,7 +9615,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msGridColumns?: Property.GridAutoColumns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Syntax**: `<track-size>+`
    *
@@ -9631,7 +9631,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msHighContrastAdjust?: Property.ForcedColorAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -9639,7 +9639,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msHyphens?: Property.Hyphens | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
    *
@@ -9647,7 +9647,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msLineBreak?: Property.LineBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`order`** CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order. Items not given an explicit `order` value are assigned the default value of `0`.
    *
    * **Syntax**: `<integer>`
    *
@@ -9655,7 +9655,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msOrder?: Property.Order | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content. This property may also be set by using the `overflow` shorthand property.
    *
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
@@ -9663,7 +9663,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msOverflowX?: Property.OverflowX | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content. This property may also be set by using the `overflow` shorthand property.
    *
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
@@ -9671,7 +9671,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msOverflowY?: Property.OverflowY | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2022.
+   * The **`scroll-snap-type`** CSS property is set on a scroll container, opting it into scroll snapping by setting the direction and strictness of snap point enforcement within the snap port.
    *
    * **Syntax**: `none | [ x | y | block | inline | both | pair ] [ mandatory | proximity ]?`
    *
@@ -9679,7 +9679,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msScrollSnapType?: Property.ScrollSnapType | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
    * **Syntax**: `none | all | [ digits <integer [2,4]>? ]`
    *
@@ -9687,7 +9687,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msTextCombineHorizontal?: Property.TextCombineUpright | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users.
    *
    * **Syntax**: `[ clip | ellipsis | <string> | fade | <fade()> ]{1,2}`
    *
@@ -9695,7 +9695,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msTextOverflow?: Property.TextOverflow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2019.
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Syntax**: `auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation`
    *
@@ -9703,7 +9703,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msTouchAction?: Property.TouchAction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
    *
@@ -9711,7 +9711,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msTransform?: Property.Transform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
    * **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?`
    *
@@ -9719,7 +9719,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msTransformOrigin?: Property.TransformOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
    * **Syntax**: `<time>#`
    *
@@ -9727,7 +9727,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msTransitionDelay?: Property.TransitionDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Syntax**: `<time [0s,∞]>#`
    *
@@ -9735,7 +9735,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msTransitionDuration?: Property.TransitionDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
    * **Syntax**: `none | <single-transition-property>#`
    *
@@ -9743,7 +9743,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msTransitionProperty?: Property.TransitionProperty | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -9759,7 +9759,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msUserSelect?: Property.UserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`word-break`** CSS property sets whether line breaks appear wherever the text would otherwise overflow its content box.
    *
    * **Syntax**: `normal | break-all | keep-all | manual | auto-phrase | break-word`
    *
@@ -9767,7 +9767,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   msWordBreak?: Property.WordBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
    *
    * **Syntax**: `horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr`
    *
@@ -9797,7 +9797,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /** **Syntax**: `<easing-function>#` */
   WebkitAnimationTimingFunction?: Property.WebkitAnimationTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`appearance`** CSS property specifies the rendered appearance of replaced UI widget elements such as form controls. Most commonly, such elements are given native, platform-specific styling based on the operating system's theme, or a primitive appearance with styles that can be overridden using CSS.
    *
    * **Syntax**: `none | auto | base | base-select | <compat-auto> | <compat-special>`
    */
@@ -9823,7 +9823,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /** **Syntax**: `<border-radius>` */
   WebkitBorderBottomRightRadius?: Property.WebkitBorderBottomRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions form the components of an element's border image.
    *
    * **Syntax**: `[<number [0,∞]> | <percentage [0,∞]>]{1,4} && fill?`
    *
@@ -9845,7 +9845,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /** **Syntax**: `content-box | border-box` */
   WebkitBoxSizing?: Property.WebkitBoxSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`clip-path`** CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.
    *
    * **Syntax**: `<clip-source> | [ <basic-shape> || <geometry-box> ] | none`
    *
@@ -9853,7 +9853,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitClipPath?: Property.ClipPath | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
    * **Syntax**: `auto | <integer [1,∞]>`
    *
@@ -9861,7 +9861,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitColumnCount?: Property.ColumnCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
    *
    * **Syntax**: `auto | balance | balance-all`
    *
@@ -9869,7 +9869,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitColumnFill?: Property.ColumnFill | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-color`** CSS property defines the colors of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-color-list> | <auto-line-color-list>`
    *
@@ -9877,7 +9877,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitColumnRuleColor?: Property.ColumnRuleColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-style`** CSS property defines the line style of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-style-list> | <auto-line-style-list>`
    *
@@ -9885,7 +9885,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitColumnRuleStyle?: Property.ColumnRuleStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-width`** CSS property defines the widths of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-width-list> | <auto-line-width-list>`
    *
@@ -9893,7 +9893,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitColumnRuleWidth?: Property.ColumnRuleWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
    *
    * **Syntax**: `none | <integer [1,∞]> | all | auto`
    *
@@ -9901,7 +9901,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitColumnSpan?: Property.ColumnSpan | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2016.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout.
    *
    * **Syntax**: `auto | <box-size> | auto | <box-size>`
    */
@@ -9919,7 +9919,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /** **Syntax**: `nowrap | [ wrap | wrap-reverse ] || balance` */
   WebkitFlexWrap?: Property.WebkitFlexWrap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
+   * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
    *
@@ -9927,7 +9927,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitFontFeatureSettings?: Property.FontFeatureSettings | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-kerning`** CSS property sets the use of the kerning information stored in a font.
    *
    * **Syntax**: `auto | normal | none`
    *
@@ -9935,7 +9935,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitFontKerning?: Property.FontKerning | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in the textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
    *
@@ -9943,7 +9943,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitFontVariantLigatures?: Property.FontVariantLigatures | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
    *
    * **Syntax**: `auto | <string>`
    *
@@ -9951,7 +9951,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitHyphenateCharacter?: Property.HyphenateCharacter | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -9969,7 +9969,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /** **Syntax**: `normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ]` */
   WebkitJustifyContent?: Property.WebkitJustifyContent | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
    *
@@ -9977,7 +9977,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitLineBreak?: Property.LineBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`block-size`** CSS property defines the size of an element's block along the block axis. If the `writing-mode` is horizontal, it corresponds to the `height`; if the writing mode is vertical, it corresponds to the `width`. A related property is `inline-size`, which defines the other dimension of the element.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -9985,7 +9985,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitLogicalHeight?: Property.BlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`inline-size`** CSS property defines the size of an element's block along the inline axis. If the `writing-mode` is horizontal, it corresponds to the `width`; if the writing mode is vertical, it corresponds to the `height`. A related property is `block-size`, which defines the other dimension of the element.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -9993,7 +9993,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitLogicalWidth?: Property.InlineSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -10001,7 +10001,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitMarginAfter?: Property.MarginBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -10009,7 +10009,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitMarginBefore?: Property.MarginBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -10017,7 +10017,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitMarginEnd?: Property.MarginInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -10035,7 +10035,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /** **Syntax**: `<'border-image-width'>` */
   WebkitMaskBoxImageWidth?: Property.WebkitMaskBoxImageWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Syntax**: `[ <coord-box> | no-clip ]#`
    */
@@ -10047,37 +10047,37 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitMaskComposite?: Property.WebkitMaskComposite | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-image`** CSS property sets the image that is used as the mask layer for an element, hiding sections of the element on which the masking image is set based on the alpha channel of the mask image and, depending on the `mask-mode` property value, the luminance of the mask image's colors.
    *
    * **Syntax**: `<mask-reference>#`
    */
   WebkitMaskImage?: Property.WebkitMaskImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-origin`** CSS property sets the origin of a mask. This property determines the mask positioning area: the area within which a mask image is positioned. HTML elements can have masks contained within their content border box, padding box, or content box, whereas SVG elements (which don't have the associated CSS layout boxes) can have masks contained inside their fill, stroke, or view box. For elements rendered as multiple boxes, such as a `<span>` of text that spans more than one line, the `mask-origin` property specifies which boxes the `box-decoration-break` property operates on to determine the mask positioning area.
    *
    * **Syntax**: `<coord-box>#`
    */
   WebkitMaskOrigin?: Property.WebkitMaskOrigin | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer set by `mask-origin`, for each defined mask image.
    *
    * **Syntax**: `<position>#`
    */
   WebkitMaskPosition?: Property.WebkitMaskPosition<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-repeat`** CSS property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
    *
    * **Syntax**: `<repeat-style>#`
    */
   WebkitMaskRepeat?: Property.WebkitMaskRepeat | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-size`** CSS property specifies the sizes of specified mask images. Mask image sizes can be fully or partially constrained to preserve their intrinsic aspect ratios.
    *
    * **Syntax**: `<bg-size>#`
    */
   WebkitMaskSize?: Property.WebkitMaskSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block, depending on its writing mode. It corresponds to either the `max-width` or the `max-height` property, depending on the value of `writing-mode`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -10087,7 +10087,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /** **Syntax**: `<integer>` */
   WebkitOrder?: Property.WebkitOrder | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -10095,7 +10095,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitPaddingEnd?: Property.PaddingInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -10123,7 +10123,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitRubyPosition?: Property.RubyPosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2022.
+   * The **`scroll-snap-type`** CSS property is set on a scroll container, opting it into scroll snapping by setting the direction and strictness of snap point enforcement within the snap port.
    *
    * **Syntax**: `none | [ x | y | block | inline | both | pair ] [ mandatory | proximity ]?`
    *
@@ -10131,7 +10131,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitScrollSnapType?: Property.ScrollSnapType | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-margin`** CSS property sets a margin for a CSS shape created using `shape-outside`.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -10139,7 +10139,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitShapeMargin?: Property.ShapeMargin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
    * **Syntax**: `none | all | [ digits <integer [2,4]>? ]`
    *
@@ -10147,7 +10147,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextCombine?: Property.TextCombineUpright | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
    *
@@ -10155,7 +10155,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextDecorationColor?: Property.TextDecorationColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
    *
    * **Syntax**: `none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error`
    *
@@ -10163,7 +10163,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextDecorationLine?: Property.TextDecorationLine | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are set with `text-decoration-line`.
    *
    * **Syntax**: `solid | double | dotted | dashed | wavy`
    *
@@ -10171,7 +10171,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextDecorationStyle?: Property.TextDecorationStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-color`** CSS property sets the color of emphasis marks. This value can also be set using the `text-emphasis` shorthand.
    *
    * **Syntax**: `<color>`
    *
@@ -10179,7 +10179,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextEmphasisColor?: Property.TextEmphasisColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Similar to the text rendered by the `<ruby>` HTML element, if there isn't enough room for emphasis marks, the line height is increased.
    *
    * **Syntax**: `[ over | under ] && [ right | left ]?`
    *
@@ -10187,7 +10187,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextEmphasisPosition?: Property.TextEmphasisPosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
    * **Syntax**: `none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | <string>`
    *
@@ -10195,7 +10195,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextEmphasisStyle?: Property.TextEmphasisStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2016.
+   * The **`-webkit-text-fill-color`** CSS property specifies the fill color of characters of text. If this property is not set, the value of the `color` property is used.
    *
    * **Syntax**: `<color>`
    *
@@ -10203,7 +10203,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextFillColor?: Property.WebkitTextFillColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2020.
+   * The **`text-orientation`** CSS property sets the orientation of the text characters in a line. It only affects text in vertical mode (when `writing-mode` is not `horizontal-tb`). It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
    *
    * **Syntax**: `mixed | upright | sideways`
    *
@@ -10213,7 +10213,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /** **Syntax**: `auto | none | <percentage [0,∞]>` */
   WebkitTextSizeAdjust?: Property.WebkitTextSizeAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`-webkit-text-stroke-color`** CSS property specifies the stroke color of characters of text. If this property is not set, the value of the `color` property is used.
    *
    * **Syntax**: `<color>`
    *
@@ -10221,7 +10221,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextStrokeColor?: Property.WebkitTextStrokeColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`-webkit-text-stroke-width`** CSS property specifies the width of the stroke for text.
    *
    * **Syntax**: `<line-width>`
    *
@@ -10229,7 +10229,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitTextStrokeWidth?: Property.WebkitTextStrokeWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
    *
    * **Syntax**: `auto | [ from-font | under ] || [ left | right ]`
    *
@@ -10257,7 +10257,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitUserSelect?: Property.WebkitUserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
    *
    * **Syntax**: `horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr`
    *
@@ -10268,7 +10268,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
 
 export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`, and `animation-timeline`.
    *
    * **Syntax**: `<single-animation>#`
    *
@@ -10276,7 +10276,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   MozAnimation?: Property.Animation<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
    *
@@ -10284,7 +10284,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   MozAnimationDelay?: Property.AnimationDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
    *
@@ -10292,7 +10292,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   MozBorderImage?: Property.BorderImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
    *
@@ -10300,7 +10300,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   MozColumnRule?: Property.ColumnRule<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`columns`** CSS shorthand property sets the maximum number of columns to use when drawing an element's contents, along with the minimum width and maximum height of the element's columns.
    *
    * **Syntax**: `[ <'column-width'> || <'column-count'> ] [ / <'column-height'> ]?`
    *
@@ -10308,7 +10308,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   MozColumns?: Property.Columns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
    * **Syntax**: `<single-transition>#`
    *
@@ -10316,7 +10316,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   MozTransition?: Property.Transition<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex`** CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
@@ -10324,7 +10324,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   msFlex?: Property.Flex<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
    * **Syntax**: `<single-transition>#`
    *
@@ -10334,7 +10334,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
   /** **Syntax**: `<single-animation>#` */
   WebkitAnimation?: Property.WebkitAnimation<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
    *
@@ -10346,7 +10346,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
   /** **Syntax**: `<spread-shadow>#` */
   WebkitBoxShadow?: Property.WebkitBoxShadow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
    *
@@ -10354,7 +10354,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   WebkitColumnRule?: Property.ColumnRule<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`columns`** CSS shorthand property sets the maximum number of columns to use when drawing an element's contents, along with the minimum width and maximum height of the element's columns.
    *
    * **Syntax**: `[ <'column-width'> || <'column-count'> ] [ / <'column-height'> ]?`
    *
@@ -10372,7 +10372,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   WebkitLineClamp?: Property.WebkitLineClamp | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping a specified area of the image. It is a shorthand for all the `mask-*` properties. The property accepts one or more comma-separated values, where each value corresponds to a `<mask-layer>`.
    *
    * **Syntax**: `<mask-layer>#`
    */
@@ -10384,7 +10384,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   WebkitMaskBoxImage?: Property.WebkitMaskBoxImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis`** CSS shorthand property applies emphasis marks to text (except spaces and control characters).
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
@@ -10392,7 +10392,7 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   WebkitTextEmphasis?: Property.TextEmphasis | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`-webkit-text-stroke`** CSS shorthand property specifies the width and color of strokes for text characters.
    *
    * **Syntax**: `<line-width> || <color>`
    *
@@ -10443,7 +10443,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   insetArea?: Property.PositionArea | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block`** CSS shorthand property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -10453,7 +10453,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   offsetBlock?: Property.InsetBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -10463,7 +10463,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   offsetBlockEnd?: Property.InsetBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -10473,7 +10473,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   offsetBlockStart?: Property.InsetBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline`** CSS shorthand property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -10483,7 +10483,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   offsetInline?: Property.InsetInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -10493,7 +10493,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   offsetInlineEnd?: Property.InsetInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline-start`** CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -10553,7 +10553,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   textDecorationSkip?: Property.TextDecorationSkip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
    *
@@ -10563,7 +10563,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   KhtmlLineBreak?: Property.LineBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Syntax**: `<opacity-value>`
    *
@@ -10583,7 +10583,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   KhtmlUserSelect?: Property.UserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Syntax**: `<bg-clip>#`
    *
@@ -10593,7 +10593,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBackgroundClip?: Property.BackgroundClip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Syntax**: `<visual-box>#`
    *
@@ -10603,7 +10603,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBackgroundOrigin?: Property.BackgroundOrigin | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-size`** CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
    *
    * **Syntax**: `<bg-size>#`
    *
@@ -10613,7 +10613,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBackgroundSize?: Property.BackgroundSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-radius`** CSS shorthand property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage [0,∞]>{1,4} [ / <length-percentage [0,∞]>{1,4} ]?`
    *
@@ -10623,7 +10623,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadius?: Property.BorderRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -10633,7 +10633,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadiusBottomleft?: Property.BorderBottomLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -10643,7 +10643,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadiusBottomright?: Property.BorderBottomRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -10653,7 +10653,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadiusTopleft?: Property.BorderTopLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -10663,7 +10663,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadiusTopright?: Property.BorderTopRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `<spread-shadow>#`
    *
@@ -10673,7 +10673,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBoxShadow?: Property.BoxShadow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
    * **Syntax**: `auto | <integer [1,∞]>`
    *
@@ -10683,7 +10683,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozColumnCount?: Property.ColumnCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
    *
    * **Syntax**: `auto | balance | balance-all`
    *
@@ -10693,7 +10693,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozColumnFill?: Property.ColumnFill | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Syntax**: `<opacity-value>`
    *
@@ -10703,7 +10703,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozOpacity?: Property.Opacity | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`outline`** CSS shorthand property sets the style, color, and width of an element's outline.
    *
    * **Syntax**: `<'outline-width'> || <'outline-style'> || <'outline-color'>`
    *
@@ -10713,7 +10713,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozOutline?: Property.Outline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`outline-color`** CSS property sets the color of an element's outline.
    *
    * **Syntax**: `auto | <'border-top-color'>`
    *
@@ -10723,7 +10723,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozOutlineColor?: Property.OutlineColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `auto | <outline-line-style>`
    *
@@ -10733,7 +10733,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozOutlineStyle?: Property.OutlineStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -10743,7 +10743,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozOutlineWidth?: Property.OutlineWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`text-align-last`** CSS property sets how the last line of a block or a line, right before a forced line break, is aligned.
    *
    * **Syntax**: `auto | start | end | left | right | center | justify | match-parent`
    *
@@ -10753,7 +10753,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozTextAlignLast?: Property.TextAlignLast | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
    *
@@ -10763,7 +10763,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozTextDecorationColor?: Property.TextDecorationColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
    *
    * **Syntax**: `none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error`
    *
@@ -10773,7 +10773,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozTextDecorationLine?: Property.TextDecorationLine | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are set with `text-decoration-line`.
    *
    * **Syntax**: `solid | double | dotted | dashed | wavy`
    *
@@ -10783,7 +10783,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozTextDecorationStyle?: Property.TextDecorationStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
    * **Syntax**: `<time>#`
    *
@@ -10793,7 +10793,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozTransitionDelay?: Property.TransitionDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Syntax**: `<time [0s,∞]>#`
    *
@@ -10803,7 +10803,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozTransitionDuration?: Property.TransitionDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
    * **Syntax**: `none | <single-transition-property>#`
    *
@@ -10813,7 +10813,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozTransitionProperty?: Property.TransitionProperty | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -10823,7 +10823,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozTransitionTimingFunction?: Property.TransitionTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`, and `animation-timeline`.
    *
    * **Syntax**: `<single-animation>#`
    *
@@ -10833,7 +10833,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimation?: Property.Animation<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
    *
@@ -10843,7 +10843,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationDelay?: Property.AnimationDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -10853,7 +10853,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationDirection?: Property.AnimationDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-duration`** CSS property sets the length of time that an animation takes to complete one cycle.
    *
    * **Syntax**: `[ auto | <time [0s,∞]> ]#`
    *
@@ -10863,7 +10863,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationDuration?: Property.AnimationDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
    * **Syntax**: `<single-animation-fill-mode>#`
    *
@@ -10873,7 +10873,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationFillMode?: Property.AnimationFillMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -10883,7 +10883,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationIterationCount?: Property.AnimationIterationCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules that describe the animation to apply to an element. Multiple `@keyframes` at-rules are specified as a comma-separated list of names. If the specified name does not match any `@keyframes` at-rule, no properties are animated.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -10893,7 +10893,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationName?: Property.AnimationName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-play-state`** CSS property sets whether an animation is running or paused.
    *
    * **Syntax**: `<single-animation-play-state>#`
    *
@@ -10903,7 +10903,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationPlayState?: Property.AnimationPlayState | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -10913,7 +10913,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OAnimationTimingFunction?: Property.AnimationTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-size`** CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
    *
    * **Syntax**: `<bg-size>#`
    *
@@ -10923,7 +10923,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OBackgroundSize?: Property.BackgroundSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
    *
@@ -10933,7 +10933,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OBorderImage?: Property.BorderImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
    * **Syntax**: `fill | none | [contain | cover] || scale-down`
    *
@@ -10943,7 +10943,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OObjectFit?: Property.ObjectFit | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
    *
    * **Syntax**: `<position>`
    *
@@ -10953,7 +10953,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OObjectPosition?: Property.ObjectPosition<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2021.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<number [0,∞]> | <length [0,∞]>`
    *
@@ -10963,7 +10963,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OTabSize?: Property.TabSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users.
    *
    * **Syntax**: `[ clip | ellipsis | <string> | fade | <fade()> ]{1,2}`
    *
@@ -10973,7 +10973,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OTextOverflow?: Property.TextOverflow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
    *
@@ -10983,7 +10983,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OTransform?: Property.Transform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
    * **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?`
    *
@@ -10993,7 +10993,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OTransformOrigin?: Property.TransformOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
    * **Syntax**: `<single-transition>#`
    *
@@ -11003,7 +11003,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OTransition?: Property.Transition<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
    * **Syntax**: `<time>#`
    *
@@ -11013,7 +11013,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OTransitionDelay?: Property.TransitionDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Syntax**: `<time [0s,∞]>#`
    *
@@ -11023,7 +11023,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OTransitionDuration?: Property.TransitionDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
    * **Syntax**: `none | <single-transition-property>#`
    *
@@ -11033,7 +11033,7 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   OTransitionProperty?: Property.TransitionProperty | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -11136,7 +11136,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "accent-color"?: Property.AccentColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The CSS **`align-content`** property sets the distribution of space between and around content items along a flexbox's cross axis, or a grid or block-level element's block axis.
    *
    * **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
    *
@@ -11151,7 +11151,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "align-content"?: Property.AlignContent | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In flexbox, it controls the alignment of items on the cross axis. In grid layout, it controls the alignment of items on the block axis within their grid areas.
    *
    * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position>`
    *
@@ -11166,7 +11166,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "align-items"?: Property.AlignItems | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In grid, it aligns the item inside the grid area. In flexbox, it aligns the item on the cross axis.
    *
    * **Syntax**: `auto | <overflow-position>? [ normal | <self-position> ]| stretch | <baseline-position> | anchor-center`
    *
@@ -11223,7 +11223,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "anchor-scope"?: Property.AnchorScope | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2023.
+   * The **`animation-composition`** CSS property specifies the composite operation to use when multiple animations affect the same property simultaneously.
    *
    * **Syntax**: `<single-animation-composition>#`
    *
@@ -11249,7 +11249,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-delay-start"?: Property.AnimationDelayStart<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -11264,7 +11264,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-direction"?: Property.AnimationDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-duration`** CSS property sets the length of time that an animation takes to complete one cycle.
    *
    * **Syntax**: `[ auto | <time [0s,∞]> ]#`
    *
@@ -11279,7 +11279,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-duration"?: Property.AnimationDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
    * **Syntax**: `<single-animation-fill-mode>#`
    *
@@ -11294,7 +11294,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-fill-mode"?: Property.AnimationFillMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -11309,7 +11309,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-iteration-count"?: Property.AnimationIterationCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules that describe the animation to apply to an element. Multiple `@keyframes` at-rules are specified as a comma-separated list of names. If the specified name does not match any `@keyframes` at-rule, no properties are animated.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -11324,7 +11324,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-name"?: Property.AnimationName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-play-state`** CSS property sets whether an animation is running or paused.
    *
    * **Syntax**: `<single-animation-play-state>#`
    *
@@ -11387,7 +11387,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-timeline"?: Property.AnimationTimeline | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -11416,7 +11416,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-trigger"?: Property.AnimationTrigger | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`appearance`** CSS property specifies the rendered appearance of replaced UI widget elements such as form controls. Most commonly, such elements are given native, platform-specific styling based on the operating system's theme, or a primitive appearance with styles that can be overridden using CSS.
    *
    * **Syntax**: `none | auto | base | base-select | <compat-auto> | <compat-special>`
    *
@@ -11431,7 +11431,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   appearance?: Property.Appearance | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`aspect-ratio`** CSS property allows you to define the desired width-to-height ratio of an element's box.
    *
    * **Syntax**: `auto || <ratio>`
    *
@@ -11460,7 +11460,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "backdrop-filter"?: Property.BackdropFilter | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`backface-visibility`** CSS property sets whether the back face of an element is visible when turned towards the user.
    *
    * **Syntax**: `visible | hidden`
    *
@@ -11475,7 +11475,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "backface-visibility"?: Property.BackfaceVisibility | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-attachment`** CSS property sets whether a background image's position is fixed within the viewport, or scrolls with its containing block.
    *
    * **Syntax**: `<attachment>#`
    *
@@ -11489,7 +11489,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-attachment"?: Property.BackgroundAttachment | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`background-blend-mode`** CSS property sets how an element's background images should blend with each other and with the element's background color.
    *
    * **Syntax**: `<'mix-blend-mode'>#`
    *
@@ -11503,7 +11503,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-blend-mode"?: Property.BackgroundBlendMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Syntax**: `<bg-clip>#`
    *
@@ -11518,7 +11518,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-clip"?: Property.BackgroundClip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-color`** CSS property sets the background color of an element.
    *
    * **Syntax**: `<color>`
    *
@@ -11532,7 +11532,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-color"?: Property.BackgroundColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-image`** CSS property sets one or more background images on an element.
    *
    * **Syntax**: `<bg-image>#`
    *
@@ -11546,7 +11546,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-image"?: Property.BackgroundImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Syntax**: `<visual-box>#`
    *
@@ -11572,7 +11572,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-position-inline"?: Property.BackgroundPositionInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2016.
+   * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
    *
@@ -11586,7 +11586,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-position-x"?: Property.BackgroundPositionX<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2016.
+   * The **`background-position-y`** CSS property sets the initial vertical position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ top | bottom | y-start | y-end ]? <length-percentage>? ]! ]#`
    *
@@ -11600,7 +11600,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-position-y"?: Property.BackgroundPositionY<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-repeat`** CSS shorthand property sets how background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.
    *
    * **Syntax**: `<repeat-style>#`
    *
@@ -11654,7 +11654,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-repeat-y"?: Property.BackgroundRepeatY | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-size`** CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
    *
    * **Syntax**: `<bg-size>#`
    *
@@ -11713,7 +11713,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "block-ellipsis"?: Property.BlockEllipsis | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`block-size`** CSS property defines the size of an element's block along the block axis. If the `writing-mode` is horizontal, it corresponds to the `height`; if the writing mode is vertical, it corresponds to the `width`. A related property is `inline-size`, which defines the other dimension of the element.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -11776,7 +11776,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-end-clip"?: Property.BorderBlockEndClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -11790,7 +11790,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-end-color"?: Property.BorderBlockEndColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-end-style`** CSS property defines the style of the logical block-end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -11804,7 +11804,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-end-style"?: Property.BorderBlockEndStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -11824,7 +11824,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-start-clip"?: Property.BorderBlockStartClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -11838,7 +11838,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-start-color"?: Property.BorderBlockStartColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-start-style`** CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -11852,7 +11852,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-start-style"?: Property.BorderBlockStartStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -11872,7 +11872,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-bottom-clip"?: Property.BorderBottomClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -11886,7 +11886,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-bottom-color"?: Property.BorderBottomColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -11901,7 +11901,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-bottom-left-radius"?: Property.BorderBottomLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -11916,7 +11916,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-bottom-right-radius"?: Property.BorderBottomRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -11930,7 +11930,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-bottom-style"?: Property.BorderBottomStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-width`** CSS property sets the width of the bottom border of an element.
    *
    * **Syntax**: `<line-width>`
    *
@@ -11950,7 +11950,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-boundary"?: Property.BorderBoundary | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-collapse`** CSS property sets whether cells inside a `<table>` have shared or separate borders.
    *
    * **Syntax**: `separate | collapse`
    *
@@ -11964,7 +11964,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-collapse"?: Property.BorderCollapse | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`border-end-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -11978,7 +11978,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-end-end-radius"?: Property.BorderEndEndRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`border-end-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -11992,7 +11992,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-end-start-radius"?: Property.BorderEndStartRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-outset`** CSS property sets the distance by which an element's border image is set out from its border box.
    *
    * **Syntax**: `[ <length [0,∞]> | <number [0,∞]> ]{1,4}`
    *
@@ -12006,7 +12006,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-image-outset"?: Property.BorderImageOutset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
+   * The **`border-image-repeat`** CSS property defines how the images for the sides and the middle part of the border image are scaled and tiled. The middle region can be displayed by using the keyword "fill" in the `border-image-slice` property.
    *
    * **Syntax**: `[ stretch | repeat | round | space ]{1,2}`
    *
@@ -12020,7 +12020,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-image-repeat"?: Property.BorderImageRepeat | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions form the components of an element's border image.
    *
    * **Syntax**: `[<number [0,∞]> | <percentage [0,∞]>]{1,4} && fill?`
    *
@@ -12034,7 +12034,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-image-slice"?: Property.BorderImageSlice | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-source`** CSS property sets the source image used to create an element's border image.
    *
    * **Syntax**: `none | <image>`
    *
@@ -12048,7 +12048,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-image-source"?: Property.BorderImageSource | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-width`** CSS property sets the width of an element's border image.
    *
    * **Syntax**: `[ <length-percentage [0,∞]> | <number [0,∞]> | auto ]{1,4}`
    *
@@ -12068,7 +12068,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-end-clip"?: Property.BorderInlineEndClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -12083,7 +12083,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-end-color"?: Property.BorderInlineEndColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -12098,7 +12098,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-end-style"?: Property.BorderInlineEndStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -12119,7 +12119,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-start-clip"?: Property.BorderInlineStartClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -12134,7 +12134,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-start-color"?: Property.BorderInlineStartColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -12149,7 +12149,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-start-style"?: Property.BorderInlineStartStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -12169,7 +12169,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-left-clip"?: Property.BorderLeftClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -12183,7 +12183,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-left-color"?: Property.BorderLeftColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -12197,7 +12197,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-left-style"?: Property.BorderLeftStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-left-width`** CSS property sets the width of the left border of an element.
    *
    * **Syntax**: `<line-width>`
    *
@@ -12223,7 +12223,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-right-clip"?: Property.BorderRightClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-right-color`** CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties `border-color` or `border-right`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -12237,7 +12237,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-right-color"?: Property.BorderRightColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -12251,7 +12251,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-right-style"?: Property.BorderRightStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-right-width`** CSS property sets the width of the right border of an element.
    *
    * **Syntax**: `<line-width>`
    *
@@ -12279,7 +12279,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-shape"?: Property.BorderShape | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-spacing`** CSS property sets the distance between the borders of adjacent cells in a `<table>`. This property applies only when `border-collapse` is `separate`.
    *
    * **Syntax**: `<length [0,∞]>{1,2}`
    *
@@ -12293,7 +12293,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-spacing"?: Property.BorderSpacing<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`border-start-end-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius depending on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -12307,7 +12307,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-start-end-radius"?: Property.BorderStartEndRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`border-start-start-radius`** CSS property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's `writing-mode`, `direction`, and `text-orientation`. This is useful when building styles to work regardless of the text orientation and writing mode.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -12327,7 +12327,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-top-clip"?: Property.BorderTopClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -12341,7 +12341,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-top-color"?: Property.BorderTopColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -12356,7 +12356,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-top-left-radius"?: Property.BorderTopLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -12371,7 +12371,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-top-right-radius"?: Property.BorderTopRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -12385,7 +12385,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-top-style"?: Property.BorderTopStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-width`** CSS property sets the width of the top border of an element.
    *
    * **Syntax**: `<line-width>`
    *
@@ -12399,7 +12399,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-top-width"?: Property.BorderTopWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`bottom`** CSS property participates in setting the vertical position of a positioned element. This inset property has no effect on non-positioned elements.
    *
    * **Syntax**: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
    *
@@ -12458,7 +12458,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "box-shadow-spread"?: Property.BoxShadowSpread<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Syntax**: `content-box | border-box`
    *
@@ -12479,7 +12479,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "box-snap"?: Property.BoxSnap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2019.
+   * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
    * **Syntax**: `auto | avoid | always | all | avoid-page | page | left | right | recto | verso | avoid-column | column | avoid-region | region`
    *
@@ -12493,7 +12493,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "break-after"?: Property.BreakAfter | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2019.
+   * The **`break-before`** CSS property sets how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
    *
    * **Syntax**: `auto | avoid | always | all | avoid-page | page | left | right | recto | verso | avoid-column | column | avoid-region | region`
    *
@@ -12507,7 +12507,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "break-before"?: Property.BreakBefore | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2019.
+   * The **`break-inside`** CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
    *
    * **Syntax**: `auto | avoid | avoid-page | avoid-column | avoid-region`
    *
@@ -12521,7 +12521,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "break-inside"?: Property.BreakInside | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`caption-side`** CSS property puts the content of a table's `<caption>` on the specified side. The values are relative to the `writing-mode` of the table.
    *
    * **Syntax**: `top | bottom`
    *
@@ -12549,7 +12549,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "caret-animation"?: Property.CaretAnimation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`caret-color`** CSS property sets the color of the **insertion caret**, sometimes referred to as the **text input cursor**. This is the visible marker appearing at the insertion point where the next character typed will be added or where the next character deleted will be removed.
    *
    * **Syntax**: `auto | <color> [auto | <color>]?`
    *
@@ -12577,7 +12577,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "caret-shape"?: Property.CaretShape | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`clear`** CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The `clear` property applies to floating and non-floating elements.
    *
    * **Syntax**: `inline-start | inline-end | block-start | block-end | left | right | top | bottom | both-inline | both-block | both | none`
    *
@@ -12591,7 +12591,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   clear?: Property.Clear | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`clip-path`** CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.
    *
    * **Syntax**: `<clip-source> | [ <basic-shape> || <geometry-box> ] | none`
    *
@@ -12606,7 +12606,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "clip-path"?: Property.ClipPath | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`clip-rule`** CSS property determines, when parts of the path overlap other parts, which pixels in a mask's box are inside the clipping shape defined by a clip path and which are outside.
    *
    * **Syntax**: `nonzero | evenodd`
    *
@@ -12620,7 +12620,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "clip-rule"?: Property.ClipRule | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`color`** CSS property sets the foreground color value of an element's text and text decorations, and sets the `currentColor` value. `currentColor` may be used as an indirect value on _other_ properties and is the default for other color properties, such as `border-color`.
    *
    * **Syntax**: `<color>`
    *
@@ -12648,7 +12648,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "color-interpolation"?: Property.ColorInterpolation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`color-interpolation-filters`** CSS property specifies the color space for imaging operations performed via SVG filter effects. If explicitly declared, the value of the CSS property overrides any value given in the element's `color-interpolation-filters` attribute.
    *
    * **Syntax**: `auto | sRGB | linearRGB`
    *
@@ -12662,7 +12662,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "color-interpolation-filters"?: Property.ColorInterpolationFilters | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2022.
+   * The **`color-scheme`** CSS property allows an element to indicate which color schemes it can comfortably be rendered in. User agents change the following aspects of the UI chrome to match the used color scheme:
    *
    * **Syntax**: `normal | [ light | dark | <custom-ident> ]+ && only?`
    *
@@ -12676,7 +12676,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "color-scheme"?: Property.ColorScheme | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
    * **Syntax**: `auto | <integer [1,∞]>`
    *
@@ -12691,7 +12691,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "column-count"?: Property.ColumnCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
    *
    * **Syntax**: `auto | balance | balance-all`
    *
@@ -12706,7 +12706,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "column-fill"?: Property.ColumnFill | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
    *
    * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
    *
@@ -12748,7 +12748,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "column-rule-break"?: Property.ColumnRuleBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-color`** CSS property defines the colors of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-color-list> | <auto-line-color-list>`
    *
@@ -12819,7 +12819,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "column-rule-inset-junction-start"?: Property.ColumnRuleInsetJunctionStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-style`** CSS property defines the line style of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-style-list> | <auto-line-style-list>`
    *
@@ -12848,7 +12848,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "column-rule-visibility-items"?: Property.ColumnRuleVisibilityItems | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-width`** CSS property defines the widths of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-width-list> | <auto-line-width-list>`
    *
@@ -12863,7 +12863,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "column-rule-width"?: Property.ColumnRuleWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
    *
    * **Syntax**: `none | <integer [1,∞]> | all | auto`
    *
@@ -12878,7 +12878,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "column-span"?: Property.ColumnSpan | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2016.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout.
    *
    * **Syntax**: `auto | <box-size> | auto | <box-size>`
    *
@@ -12905,7 +12905,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "column-wrap"?: Property.ColumnWrap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`contain`** CSS property indicates that an element and its contents are, as much as possible, independent from the rest of the document tree. Containment enables isolating a subsection of the DOM, providing performance benefits by limiting calculations of layout, style, paint, size, or any combination to a DOM subtree rather than the entire page. Containment can also be used to scope CSS counters and quotes.
    *
    * **Syntax**: `none | strict | content | [ [size | inline-size] || layout || style || paint ]`
    *
@@ -12919,7 +12919,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   contain?: Property.Contain | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-block-size`** CSS logical property defines the block size of an element that a browser can use for layout when the element is subject to size containment.
    *
    * **Syntax**: `auto? [ none | <length [0,∞]> ]`
    *
@@ -12933,7 +12933,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "contain-intrinsic-block-size"?: Property.ContainIntrinsicBlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-height`** CSS property sets the height of an element that a browser can use for layout when the element is subject to size containment.
    *
    * **Syntax**: `auto? [ none | <length [0,∞]> ]`
    *
@@ -12947,7 +12947,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "contain-intrinsic-height"?: Property.ContainIntrinsicHeight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-inline-size`** CSS logical property defines the inline-size of an element that a browser can use for layout when the element is subject to size containment.
    *
    * **Syntax**: `auto? [ none | <length [0,∞]> ]`
    *
@@ -12961,7 +12961,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "contain-intrinsic-inline-size"?: Property.ContainIntrinsicInlineSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-width`** CSS property sets the width of an element that a browser will use for layout when the element is subject to size containment.
    *
    * **Syntax**: `auto? [ none | <length [0,∞]> ]`
    *
@@ -12975,7 +12975,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "contain-intrinsic-width"?: Property.ContainIntrinsicWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since February 2023.
+   * The **container-name** CSS property specifies a list of query container names used by the @container at-rule in a container query.
    *
    * **Syntax**: `none | <custom-ident>+`
    *
@@ -12989,7 +12989,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "container-name"?: Property.ContainerName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since February 2023.
+   * The **container-type** CSS property specifies the type of container context used in a container query.
    *
    * **Syntax**: `normal | [ [ size | inline-size ] || scroll-state ]`
    *
@@ -13003,7 +13003,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "container-type"?: Property.ContainerType | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`content`** CSS property replaces content with a generated value. It can be used to define what is rendered inside an element or pseudo-element. For elements, the `content` property specifies whether the element renders normally (`normal` or `none`) or is replaced with an image (and associated "alt" text). For pseudo-elements and margin boxes, `content` defines the content as images, text, both, or none, which determines whether the element renders at all.
    *
    * **Syntax**: `normal | none | [ <content-replacement> | <content-list> ] [/ <alt-text> ]? | <element()>`
    *
@@ -13159,7 +13159,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "corner-top-right-shape"?: Property.CornerTopRightShape | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`counter-increment`** CSS property can be used to increase or decrease the value of the named CSS counters by the specified values, or to prevent all counters or an individual counter's value from being changed.
    *
    * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
@@ -13173,7 +13173,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "counter-increment"?: Property.CounterIncrement | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`counter-reset`** CSS property creates named CSS counters and initializes their values. It can create both regular and reversed counters.
    *
    * **Syntax**: `[ <counter-name> <integer>? | <reversed-counter-name> <integer>? ]+ | none`
    *
@@ -13187,7 +13187,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "counter-reset"?: Property.CounterReset | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`counter-set`** CSS property sets CSS counters on the element to the given values.
    *
    * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
    *
@@ -13213,7 +13213,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "cue-before"?: Property.CueBefore | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2021.
+   * The **`cursor`** CSS property sets the mouse cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Syntax**: `[<cursor-image>,]* <cursor-predefined>`
    *
@@ -13227,7 +13227,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   cursor?: Property.Cursor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`cx`** CSS property defines the x-axis center point of an SVG `<circle>` or `<ellipse>` element. If present, it overrides the element's `cx` attribute.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -13241,7 +13241,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   cx?: Property.Cx<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`cy`** CSS property defines the y-axis center point of an SVG `<circle>` or `<ellipse>` elements. If present, it overrides the element's `cy` attribute.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -13269,7 +13269,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   d?: Property.D | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`direction`** CSS property sets the direction of text, table and grid columns, and horizontal overflow. Use `rtl` for languages written from right to left (like Hebrew or Arabic), and `ltr` for those written from left to right (like English and most other languages).
    *
    * **Syntax**: `ltr | rtl`
    *
@@ -13283,7 +13283,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   direction?: Property.Direction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`display`** CSS property sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex.
    *
    * **Syntax**: `[ <display-outside> || <display-inside> ] | <display-listitem> | <display-internal> | <display-box> | <display-legacy> | grid-lanes | inline-grid-lanes | <display-outside> || [ <display-inside> | math ]`
    *
@@ -13297,7 +13297,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   display?: Property.Display | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`dominant-baseline`** CSS property specifies the specific baseline used to align the box's text and inline-level contents. It also indicates the default alignment baseline of any boxes participating in baseline alignment in the box's alignment context. If present, it overrides the shape's `dominant-baseline` attribute.
    *
    * **Syntax**: `auto | <baseline-metric>`
    *
@@ -13325,7 +13325,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "dynamic-range-limit"?: Property.DynamicRangeLimit | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`empty-cells`** CSS property sets whether borders and backgrounds appear around `<table>` cells that have no visible content.
    *
    * **Syntax**: `show | hide`
    *
@@ -13371,7 +13371,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "field-sizing"?: Property.FieldSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`fill`** CSS property defines how SVG text content and the interior canvas of SVG shapes are filled or painted. If present, it overrides the element's `fill` attribute.
    *
    * **Syntax**: `<paint>`
    *
@@ -13403,7 +13403,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "fill-image"?: Property.FillImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`fill-opacity`** CSS property defines the opacity of the painting operation (color, gradient, pattern, etc.) applied to SVG shapes or text content elements to fill the element. The property defines the opacity of the element's `fill` only; it does not affect the stroke. If present, it overrides the element's `fill-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
    *
@@ -13435,7 +13435,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "fill-repeat"?: Property.FillRepeat | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`fill-rule`** CSS property defines the rule used to determine which parts of the SVG shape's canvas are included inside a shape to be filled. If present, it overrides the element's `fill-rule` attribute.
    *
    * **Syntax**: `nonzero | evenodd`
    *
@@ -13455,7 +13455,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "fill-size"?: Property.FillSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2016.
+   * The **`filter`** CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
    *
    * **Syntax**: `none | <filter-value-list>`
    *
@@ -13481,7 +13481,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "fit-tolerance"?: Property.FitTolerance<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-basis`** CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with `box-sizing`.
    *
    * **Syntax**: `content | <'width'>`
    *
@@ -13496,7 +13496,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "flex-basis"?: Property.FlexBasis<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
    * **Syntax**: `row | row-reverse | column | column-reverse`
    *
@@ -13511,7 +13511,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "flex-direction"?: Property.FlexDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-grow`** CSS property sets the flex grow factor, which specifies how much of the flex container's **positive free space**, if any, should be assigned to the flex item's main size.
    *
    * **Syntax**: `<number [0,∞]>`
    *
@@ -13540,7 +13540,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "flex-line-count"?: Property.FlexLineCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-shrink`** CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, the flex items can shrink to fit according to their `flex-shrink` value. Each flex line's negative free space is distributed between the line's flex items that have a `flex-shrink` value greater than `0`.
    *
    * **Syntax**: `<number [0,∞]>`
    *
@@ -13555,7 +13555,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "flex-shrink"?: Property.FlexShrink | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-wrap`** CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
    *
    * **Syntax**: `nowrap | [ wrap | wrap-reverse ] || balance`
    *
@@ -13570,7 +13570,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "flex-wrap"?: Property.FlexWrap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`float`** CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).
    *
    * **Syntax**: `block-start | block-end | inline-start | inline-end | snap-block | <snap-block()> | snap-inline | <snap-inline()> | left | right | top | bottom | none | footnote`
    *
@@ -13602,7 +13602,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "float-reference"?: Property.FloatReference | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`flood-color`** CSS property defines the color of the current filter primitive subregion in `<feFlood>` and `<feDropShadow>` elements within a `<filter>`. If present, it overrides the element's `flood-color` attribute.
    *
    * **Syntax**: `<color>`
    *
@@ -13616,7 +13616,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "flood-color"?: Property.FloodColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`flood-opacity`** CSS property defines the opacity of the current filter primitive subregion in `<feFlood>` and `<feDropShadow>` elements within a `<filter>`. If present, it overrides the element's `flood-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
    *
@@ -13653,7 +13653,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "flow-tolerance"?: Property.FitTolerance<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-family`** CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
    *
    * **Syntax**: `[ <font-family-name> | <generic-font-family> ]#`
    *
@@ -13667,7 +13667,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-family"?: Property.FontFamily | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
+   * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
    *
@@ -13682,7 +13682,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-feature-settings"?: Property.FontFeatureSettings | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-kerning`** CSS property sets the use of the kerning information stored in a font.
    *
    * **Syntax**: `auto | normal | none`
    *
@@ -13712,7 +13712,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-language-override"?: Property.FontLanguageOverride | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2020.
+   * The **`font-optical-sizing`** CSS property sets whether text rendering is optimized for viewing at different sizes.
    *
    * **Syntax**: `auto | none`
    *
@@ -13726,7 +13726,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-optical-sizing"?: Property.FontOpticalSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2022.
+   * The **`font-palette`** CSS property allows specifying one of the many palettes contained in a color font that a user agent may use for the font. Users can also override the values in a palette or create a new palette by using the `@font-palette-values` at-rule.
    *
    * **Syntax**: `normal | light | dark | <palette-identifier> | <palette-mix()>`
    *
@@ -13740,7 +13740,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-palette"?: Property.FontPalette | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-size`** CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative `<length>` units, such as `em`, `ex`, and so forth.
    *
    * **Syntax**: `<absolute-size> | <relative-size> | <length-percentage [0,∞]> | math`
    *
@@ -13768,7 +13768,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-size-adjust"?: Property.FontSizeAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2017.
+   * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
    * **Syntax**: `normal | <percentage [0,∞]> | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded | expanded | extra-expanded | ultra-expanded`
    *
@@ -13780,7 +13780,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-stretch"?: Property.FontStretch | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-style`** CSS property sets whether a font should be styled with a normal, italic, or oblique face from its `font-family`.
    *
    * **Syntax**: `normal | italic | left | right | oblique <angle [-90deg,90deg]>?`
    *
@@ -13808,7 +13808,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-synthesis-position"?: Property.FontSynthesisPosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`font-synthesis-small-caps`** CSS property lets you specify whether or not the browser may synthesize small-caps typeface when it is missing in a font family. Small-caps glyphs typically use the form of uppercase letters but are reduced to the size of lowercase letters.
    *
    * **Syntax**: `auto | none`
    *
@@ -13822,7 +13822,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-synthesis-small-caps"?: Property.FontSynthesisSmallCaps | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`font-synthesis-style`** CSS property lets you specify whether or not the browser may synthesize the oblique typeface when it is missing in a font family.
    *
    * **Syntax**: `auto | none | oblique-only`
    *
@@ -13836,7 +13836,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-synthesis-style"?: Property.FontSynthesisStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`font-synthesis-weight`** CSS property lets you specify whether or not the browser may synthesize the bold typeface when it is missing in a font family.
    *
    * **Syntax**: `auto | none`
    *
@@ -13850,7 +13850,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-synthesis-weight"?: Property.FontSynthesisWeight | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`font-variant-alternates`** CSS property controls the usage of alternate glyphs. These alternate glyphs may be referenced by alternative names defined in `@font-feature-values`.
    *
    * **Syntax**: `normal | [ stylistic(<font-feature-value-name>) || historical-forms || styleset(<font-feature-value-name>#) || character-variant(<font-feature-value-name>#) || swash(<font-feature-value-name>) || ornaments(<font-feature-value-name>) || annotation(<font-feature-value-name>) ]`
    *
@@ -13864,7 +13864,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-variant-alternates"?: Property.FontVariantAlternates | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-caps`** CSS property controls the use of alternate glyphs used for small or petite capitals or for titling.
    *
    * **Syntax**: `normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps`
    *
@@ -13878,7 +13878,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-variant-caps"?: Property.FontVariantCaps | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-east-asian`** CSS property controls the use of alternate glyphs for East Asian scripts, like Japanese and Chinese.
    *
    * **Syntax**: `normal | [ <east-asian-variant-values> || <east-asian-width-values> || ruby ]`
    *
@@ -13906,7 +13906,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-variant-emoji"?: Property.FontVariantEmoji | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in the textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
    *
@@ -13921,7 +13921,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-variant-ligatures"?: Property.FontVariantLigatures | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-numeric`** CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
    *
    * **Syntax**: `normal | [ <numeric-figure-values> || <numeric-spacing-values> || <numeric-fraction-values> || ordinal || slashed-zero ]`
    *
@@ -13935,7 +13935,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-variant-numeric"?: Property.FontVariantNumeric | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`font-variant-position`** CSS property controls the use of alternate, smaller glyphs that are positioned as superscript or subscript.
    *
    * **Syntax**: `normal | sub | super`
    *
@@ -13949,7 +13949,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-variant-position"?: Property.FontVariantPosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2018.
+   * The **`font-variation-settings`** CSS property provides low-level control over variable font characteristics by letting you specify the four letter axis names of the characteristics you want to vary along with their values.
    *
    * **Syntax**: `normal | [ <opentype-tag> <number> ]#`
    *
@@ -13963,7 +13963,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-variation-settings"?: Property.FontVariationSettings | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-weight`** CSS property sets the weight (or boldness) of the font. The weights available depend on the `font-family` that is currently set.
    *
    * **Syntax**: `<font-weight-absolute> | bolder | lighter`
    *
@@ -14032,7 +14032,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "frame-sizing"?: Property.FrameSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Syntax**: `<track-size>+`
    *
@@ -14046,7 +14046,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-auto-columns"?: Property.GridAutoColumns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-auto-flow`** CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
    *
    * **Syntax**: `[ row | column ] || dense`
    *
@@ -14060,7 +14060,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-auto-flow"?: Property.GridAutoFlow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Syntax**: `<track-size>+`
    *
@@ -14074,7 +14074,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-auto-rows"?: Property.GridAutoRows<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-column-end`** CSS property specifies a grid item's end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.
    *
    * **Syntax**: `<grid-line>`
    *
@@ -14088,13 +14088,13 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-column-end"?: Property.GridColumnEnd | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
    *
    * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
    */
   "grid-column-gap"?: Property.GridColumnGap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-column-start`** CSS property specifies a grid item's start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
    *
    * **Syntax**: `<grid-line>`
    *
@@ -14108,7 +14108,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-column-start"?: Property.GridColumnStart | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-row-end`** CSS property specifies a grid item's end position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line>`
    *
@@ -14122,13 +14122,13 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-row-end"?: Property.GridRowEnd | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
    *
    * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
    */
   "grid-row-gap"?: Property.GridRowGap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-row-start`** CSS property specifies a grid item's start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
    *
    * **Syntax**: `<grid-line>`
    *
@@ -14142,7 +14142,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-row-start"?: Property.GridRowStart | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-template-areas`** CSS property specifies named grid areas, establishing the cells in the grid and assigning them names.
    *
    * **Syntax**: `none | <string>+`
    *
@@ -14156,7 +14156,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-template-areas"?: Property.GridTemplateAreas | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-template-columns`** CSS property defines the line names and track sizing functions of the grid columns.
    *
    * **Syntax**: `none | <track-list> | <auto-track-list> | subgrid <line-name-list>?`
    *
@@ -14170,7 +14170,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-template-columns"?: Property.GridTemplateColumns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-template-rows`** CSS property defines the line names and track sizing functions of the grid rows.
    *
    * **Syntax**: `none | <track-list> | <auto-track-list> | subgrid <line-name-list>?`
    *
@@ -14198,7 +14198,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "hanging-punctuation"?: Property.HangingPunctuation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`height`** CSS property specifies the height of an element. By default, the property defines the height of the content area. If `box-sizing` is set to `border-box`, however, it instead determines the height of the border area.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -14212,7 +14212,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   height?: Property.Height<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
    *
    * **Syntax**: `auto | <string>`
    *
@@ -14263,7 +14263,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "hyphenate-limit-zone"?: Property.HyphenateLimitZone<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -14284,7 +14284,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "image-animation"?: Property.ImageAnimation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2020.
+   * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image.
    *
    * **Syntax**: `from-image | none | [ <angle> || flip ]`
    *
@@ -14298,7 +14298,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "image-orientation"?: Property.ImageOrientation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`image-rendering`** CSS property sets an image scaling algorithm. The property applies to an element itself, to any images set in its other properties, and to its descendants.
    *
    * **Syntax**: `auto | smooth | high-quality | pixelated | crisp-edges`
    *
@@ -14346,7 +14346,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "initial-letter-wrap"?: Property.InitialLetterWrap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`inline-size`** CSS property defines the size of an element's block along the inline axis. If the `writing-mode` is horizontal, it corresponds to the `width`; if the writing mode is vertical, it corresponds to the `height`. A related property is `block-size`, which defines the other dimension of the element.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -14373,7 +14373,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "input-security"?: Property.InputSecurity | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -14387,7 +14387,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "inset-block-end"?: Property.InsetBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -14401,7 +14401,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "inset-block-start"?: Property.InsetBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -14415,7 +14415,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "inset-inline-end"?: Property.InsetInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline-start`** CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -14485,7 +14485,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "interpolate-size"?: Property.InterpolateSize | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`isolation`** CSS property determines whether an element must create a new stacking context.
    *
    * **Syntax**: `<isolation-mode>`
    *
@@ -14499,7 +14499,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   isolation?: Property.Isolation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main axis of a flex container and the inline axis of grid and multicol containers.
    *
    * **Syntax**: `normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ]`
    *
@@ -14514,7 +14514,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "justify-content"?: Property.JustifyContent | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2016.
+   * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
    *
    * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ] | legacy | legacy && [ left | right | center ]`
    *
@@ -14528,7 +14528,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "justify-items"?: Property.JustifyItems | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The CSS **`justify-self`** property sets the way a box is justified inside its alignment container along the appropriate axis.
    *
    * **Syntax**: `auto | <overflow-position>? [ normal | <self-position> | left | right ] | stretch | <baseline-position> | anchor-center`
    *
@@ -14542,7 +14542,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "justify-self"?: Property.JustifySelf | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`left`** CSS property participates in specifying the horizontal position of a positioned element. This inset property has no effect on non-positioned elements.
    *
    * **Syntax**: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
    *
@@ -14556,7 +14556,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   left?: Property.Left<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`letter-spacing`** CSS property sets the spacing between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of `letter-spacing` spread characters further apart, while negative values of `letter-spacing` bring characters closer together.
    *
    * **Syntax**: `normal | <length-percentage>`
    *
@@ -14570,7 +14570,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "letter-spacing"?: Property.LetterSpacing<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`lighting-color`** CSS property defines the color of the light source for the `<feDiffuseLighting>` and `<feSpecularLighting>` SVG lighting filter primitives within an SVG `<filter>`. If present, it overrides the element's `lighting-color` attribute.
    *
    * **Syntax**: `<color>`
    *
@@ -14584,7 +14584,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "lighting-color"?: Property.LightingColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
    *
@@ -14611,7 +14611,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "line-grid"?: Property.LineGrid | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`line-height`** CSS property sets the height of a line box in horizontal writing modes. In vertical writing modes, it sets the width of a line box. It's commonly used to set the distance between lines of text. On block-level elements in horizontal writing modes, it specifies the preferred height of line boxes within the element, and on non-replaced inline elements, it specifies the height that is used to calculate line box height.
    *
    * **Syntax**: `normal | <number [0,∞]> | <length-percentage [0,∞]>`
    *
@@ -14659,7 +14659,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "link-parameters"?: Property.LinkParameters | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`list-style-image`** CSS property sets an image to be used as the list item marker.
    *
    * **Syntax**: `<image> | none`
    *
@@ -14673,7 +14673,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "list-style-image"?: Property.ListStyleImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`list-style-position`** CSS property sets the position of the `::marker` relative to a list item.
    *
    * **Syntax**: `inside | outside`
    *
@@ -14687,7 +14687,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "list-style-position"?: Property.ListStylePosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`list-style-type`** CSS property sets the marker (such as a disc, character, or custom counter style) of a list item element.
    *
    * **Syntax**: `<counter-style> | <string> | none`
    *
@@ -14701,7 +14701,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "list-style-type"?: Property.ListStyleType | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -14716,7 +14716,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-block-end"?: Property.MarginBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -14731,7 +14731,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-block-start"?: Property.MarginBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin-bottom`** CSS property sets the margin area on the bottom of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
    * **Syntax**: `<length-percentage> | auto | <anchor-size()>`
    *
@@ -14751,7 +14751,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-break"?: Property.MarginBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -14766,7 +14766,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-inline-end"?: Property.MarginInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -14781,7 +14781,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-inline-start"?: Property.MarginInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
    * **Syntax**: `<length-percentage> | auto | <anchor-size()>`
    *
@@ -14795,7 +14795,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-left"?: Property.MarginLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin-right`** CSS property sets the margin area on the right side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
    * **Syntax**: `<length-percentage> | auto | <anchor-size()>`
    *
@@ -14809,7 +14809,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-right"?: Property.MarginRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
    *
    * **Syntax**: `<length-percentage> | auto | <anchor-size()>`
    *
@@ -14837,7 +14837,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "margin-trim"?: Property.MarginTrim | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`marker-end`** CSS property points to a marker that will be drawn on the last vertex of the element's path; that is, at its ending vertex. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-end` attribute in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
    *
@@ -14851,7 +14851,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "marker-end"?: Property.MarkerEnd | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`marker-mid`** CSS property points to a marker that will be drawn on the middle vertices of the element's path; that is, at each of its vertices between the start and end vertices. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-mid` attribute in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
    *
@@ -14871,7 +14871,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "marker-side"?: Property.MarkerSide | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`marker-start`** CSS property points to a marker that will be drawn on the first vertex of the element's path; that is, at its starting vertex. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-start` attribute in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
    *
@@ -14968,7 +14968,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-border-width"?: Property.MaskBorderWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Syntax**: `[ <coord-box> | no-clip ]#`
    *
@@ -14983,7 +14983,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-clip"?: Property.MaskClip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-composite`** CSS property represents a compositing operation used on the current mask layer with the mask layers below it.
    *
    * **Syntax**: `<compositing-operator>#`
    *
@@ -14997,7 +14997,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-composite"?: Property.MaskComposite | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-image`** CSS property sets the image that is used as the mask layer for an element, hiding sections of the element on which the masking image is set based on the alpha channel of the mask image and, depending on the `mask-mode` property value, the luminance of the mask image's colors.
    *
    * **Syntax**: `<mask-reference>#`
    *
@@ -15026,7 +15026,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-mode"?: Property.MaskMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-origin`** CSS property sets the origin of a mask. This property determines the mask positioning area: the area within which a mask image is positioned. HTML elements can have masks contained within their content border box, padding box, or content box, whereas SVG elements (which don't have the associated CSS layout boxes) can have masks contained inside their fill, stroke, or view box. For elements rendered as multiple boxes, such as a `<span>` of text that spans more than one line, the `mask-origin` property specifies which boxes the `box-decoration-break` property operates on to determine the mask positioning area.
    *
    * **Syntax**: `<coord-box>#`
    *
@@ -15041,7 +15041,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-origin"?: Property.MaskOrigin | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer set by `mask-origin`, for each defined mask image.
    *
    * **Syntax**: `<position>#`
    *
@@ -15056,7 +15056,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-position"?: Property.MaskPosition<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-repeat`** CSS property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
    *
    * **Syntax**: `<repeat-style>#`
    *
@@ -15071,7 +15071,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-repeat"?: Property.MaskRepeat | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-size`** CSS property specifies the sizes of specified mask images. Mask image sizes can be fully or partially constrained to preserve their intrinsic aspect ratios.
    *
    * **Syntax**: `<bg-size>#`
    *
@@ -15086,7 +15086,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mask-size"?: Property.MaskSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`mask-type`** CSS property applies to the SVG `<mask>` element. It defines whether to use the _luminance_ (brightness) or _alpha_ (transparency) content of the mask. This property may be overridden by the `mask-mode` property. The `mask-type` property has no effect on image or gradient masks.
    *
    * **Syntax**: `luminance | alpha`
    *
@@ -15128,7 +15128,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "math-shift"?: Property.MathShift | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2023.
+   * The `math-style` property indicates whether MathML equations should render with normal or compact height.
    *
    * **Syntax**: `normal | compact`
    *
@@ -15142,7 +15142,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "math-style"?: Property.MathStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`max-block-size`** CSS property specifies the maximum size of an element in the direction opposite that of the writing direction as specified by `writing-mode`. That is, if the writing direction is horizontal, then `max-block-size` is equivalent to `max-height`; if the writing direction is vertical, `max-block-size` is the same as `max-width`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -15156,7 +15156,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "max-block-size"?: Property.MaxBlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`max-height`** CSS property sets the maximum height of an element. It prevents the used value of the `height` property from becoming larger than the value specified for `max-height`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -15170,7 +15170,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "max-height"?: Property.MaxHeight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block, depending on its writing mode. It corresponds to either the `max-width` or the `max-height` property, depending on the value of `writing-mode`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -15195,7 +15195,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "max-lines"?: Property.MaxLines | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`max-width`** CSS property sets the maximum width of an element. It prevents the used value of the `width` property from becoming larger than the value specified by `max-width`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -15209,7 +15209,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "max-width"?: Property.MaxWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`min-block-size`** CSS property defines the minimum horizontal or vertical size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -15223,7 +15223,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "min-block-size"?: Property.MinBlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`min-height`** CSS property sets the minimum height of an element. It prevents the used value of the `height` property from becoming smaller than the value specified for `min-height`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -15237,7 +15237,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "min-height"?: Property.MinHeight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`min-inline-size`** CSS property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the `min-width` or the `min-height` property, depending on the value of `writing-mode`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -15257,7 +15257,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "min-intrinsic-sizing"?: Property.MinIntrinsicSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -15271,7 +15271,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "min-width"?: Property.MinWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`mix-blend-mode`** CSS property sets how an element's content should blend with its _backdrop_ — the content rendered behind the element within the same stacking context.
    *
    * **Syntax**: `<blend-mode> | plus-lighter`
    *
@@ -15285,7 +15285,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "mix-blend-mode"?: Property.MixBlendMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -15300,7 +15300,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "motion-distance"?: Property.OffsetDistance<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`offset-path`** CSS property specifies a path for an element to follow and determines the element's positioning within the path's parent container or the SVG coordinate system. The path is a line, a curve, or a geometrical shape along which the element gets positioned or moves.
    *
    * **Syntax**: `none | <offset-path> || <coord-box>`
    *
@@ -15315,7 +15315,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "motion-path"?: Property.OffsetPath | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Syntax**: `[ auto | reverse ] || <angle>`
    *
@@ -15354,7 +15354,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "nav-up"?: Property.NavUp | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
    * **Syntax**: `fill | none | [contain | cover] || scale-down`
    *
@@ -15368,7 +15368,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "object-fit"?: Property.ObjectFit | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
    *
    * **Syntax**: `<position>`
    *
@@ -15396,7 +15396,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "object-view-box"?: Property.ObjectViewBox | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2023.
+   * The **`offset-anchor`** CSS property specifies the point inside the box of an element traveling along an `offset-path` that is actually moving along the path.
    *
    * **Syntax**: `auto | <position>`
    *
@@ -15410,7 +15410,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "offset-anchor"?: Property.OffsetAnchor<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-distance`** CSS property specifies a position along an `offset-path` for an element to be placed.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -15425,7 +15425,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "offset-distance"?: Property.OffsetDistance<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`offset-path`** CSS property specifies a path for an element to follow and determines the element's positioning within the path's parent container or the SVG coordinate system. The path is a line, a curve, or a geometrical shape along which the element gets positioned or moves.
    *
    * **Syntax**: `none | <offset-path> || <coord-box>`
    *
@@ -15440,7 +15440,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "offset-path"?: Property.OffsetPath | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2024.
+   * The **`offset-position`** CSS property defines the initial position of an element along a path. This property is typically used in combination with the `offset-path` property to create a motion effect. The value of `offset-position` determines where the element gets placed initially for moving along an offset path if an `offset-path` function such as `path()` does not specify its own starting position.
    *
    * **Syntax**: `normal | auto | <position>`
    *
@@ -15454,7 +15454,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "offset-position"?: Property.OffsetPosition<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Syntax**: `[ auto | reverse ] || <angle>`
    *
@@ -15469,7 +15469,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "offset-rotate"?: Property.OffsetRotate | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset-rotate`** CSS property defines the orientation/direction of the element as it is positioned along the `offset-path`.
    *
    * **Syntax**: `[ auto | reverse ] || <angle>`
    *
@@ -15484,7 +15484,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "offset-rotation"?: Property.OffsetRotate | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Syntax**: `<opacity-value>`
    *
@@ -15498,7 +15498,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   opacity?: Property.Opacity | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`order`** CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order. Items not given an explicit `order` value are assigned the default value of `0`.
    *
    * **Syntax**: `<integer>`
    *
@@ -15527,7 +15527,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   orphans?: Property.Orphans | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`outline-color`** CSS property sets the color of an element's outline.
    *
    * **Syntax**: `auto | <'border-top-color'>`
    *
@@ -15541,7 +15541,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "outline-color"?: Property.OutlineColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`outline-offset`** CSS property sets the amount of space between an outline and the edge or border of an element.
    *
    * **Syntax**: `<length> | inset`
    *
@@ -15555,7 +15555,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "outline-offset"?: Property.OutlineOffset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `auto | <outline-line-style>`
    *
@@ -15569,7 +15569,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "outline-style"?: Property.OutlineStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -15673,7 +15673,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "overflow-inline"?: Property.OverflowInline | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2018.
+   * The **`overflow-wrap`** CSS property applies to text, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Syntax**: `normal | break-word | anywhere`
    *
@@ -15688,7 +15688,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "overflow-wrap"?: Property.OverflowWrap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content. This property may also be set by using the `overflow` shorthand property.
    *
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
@@ -15702,7 +15702,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "overflow-x"?: Property.OverflowX | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content. This property may also be set by using the `overflow` shorthand property.
    *
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
@@ -15786,7 +15786,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "overscroll-behavior-y"?: Property.OverscrollBehaviorY | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-block-end`** CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -15800,7 +15800,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-block-end"?: Property.PaddingBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-block-start`** CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -15814,7 +15814,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-block-start"?: Property.PaddingBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -15828,7 +15828,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-bottom"?: Property.PaddingBottom<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -15843,7 +15843,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-inline-end"?: Property.PaddingInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -15858,7 +15858,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-inline-start"?: Property.PaddingInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding-left`** CSS property sets the width of the padding area to the left of an element.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -15872,7 +15872,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-left"?: Property.PaddingLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding-right`** CSS property sets the width of the padding area on the right of an element.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -15886,7 +15886,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-right"?: Property.PaddingRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding-top`** CSS property sets the height of the padding area on the top of an element.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -15900,7 +15900,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "padding-top"?: Property.PaddingTop<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since February 2023.
+   * The **`page`** CSS property is used to specify the named page, a specific type of page defined by the `@page` at-rule.
    *
    * **Syntax**: `auto | <custom-ident>`
    *
@@ -15914,7 +15914,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   page?: Property.Page | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`paint-order`** CSS property lets you control the order in which the fill and stroke (and painting markers) of text content and shapes are drawn.
    *
    * **Syntax**: `normal | [ fill || stroke || markers ]`
    *
@@ -15954,7 +15954,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "pause-before"?: Property.PauseBefore<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length [0,∞]>`
    *
@@ -15969,7 +15969,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   perspective?: Property.Perspective<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
    *
    * **Syntax**: `<position>`
    *
@@ -15984,7 +15984,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "perspective-origin"?: Property.PerspectiveOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`pointer-events`** CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
    *
    * **Syntax**: `auto | bounding-box | visiblePainted | visibleFill | visibleStroke | visible | painted | fill | stroke | all | none`
    *
@@ -16010,7 +16010,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "pointer-timeline-name"?: Property.PointerTimelineName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`position`** CSS property sets how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` physical properties and the `inset-block-start`, `inset-block-end`, `inset-inline-start`, and `inset-inline-end` flow-relative logical properties can be used to determine the final location of positioned elements.
    *
    * **Syntax**: `static | relative | absolute | sticky | fixed | <running()>`
    *
@@ -16109,7 +16109,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "print-color-adjust"?: Property.PrintColorAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The CSS **`quotes`** property sets how the browser should render quotation marks that are automatically added to the HTML `<q>` element or added using the `open-quotes` or `close-quotes` (or omitted using the `no-open-quote` and `no-close-quote`) values of the of the CSS `content` property.
    *
    * **Syntax**: `auto | none | bikeshed-this | [ <string> <string> ]+`
    *
@@ -16123,7 +16123,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   quotes?: Property.Quotes | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`r`** CSS property defines the radius of a circle. It can only be used with the SVG `<circle>` element. If present, it overrides the circle's `r` attribute.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -16197,7 +16197,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "rest-before"?: Property.RestBefore<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`right`** CSS property participates in specifying the horizontal position of a positioned element. This inset property has no effect on non-positioned elements.
    *
    * **Syntax**: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
    *
@@ -16211,7 +16211,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   right?: Property.Right<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2022.
+   * The **`rotate`** CSS property allows you to specify rotation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` property.
    *
    * **Syntax**: `none | <angle> | [ x | y | z | <number>{3} ] && <angle>`
    *
@@ -16225,7 +16225,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   rotate?: Property.Rotate | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
    *
    * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
    *
@@ -16428,7 +16428,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "rule-overlap"?: Property.RuleOverlap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`rx`** CSS property defines the x-axis, or horizontal, radius of an SVG `<ellipse>` and the horizontal curve of the corners of an SVG `<rect>` rectangle. If present, it overrides the shape's `rx` attribute.
    *
    * **Syntax**: `<length-percentage [0,∞]> | auto`
    *
@@ -16442,7 +16442,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   rx?: Property.Rx<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`ry`** CSS property defines the y-axis, or vertical, radius of an SVG `<ellipse>` and the vertical curve of the corners of an SVG `<rect>` rectangle. If present, it overrides the shape's `ry` attribute.
    *
    * **Syntax**: `<length-percentage [0,∞]> | auto`
    *
@@ -16456,7 +16456,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   ry?: Property.Ry<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2022.
+   * The **`scale`** CSS property allows you to specify scale transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Syntax**: `none | [ <number> | <percentage> ]{1,3}`
    *
@@ -16480,7 +16480,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-axis-lock"?: Property.ScrollAxisLock | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`scroll-behavior`** CSS property sets the behavior for a scrolling box when scrolling is triggered by the navigation or CSSOM scrolling APIs.
    *
    * **Syntax**: `auto | smooth`
    *
@@ -16508,7 +16508,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-initial-target"?: Property.ScrollInitialTarget | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16522,7 +16522,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-block-end"?: Property.ScrollMarginBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-margin-block-start` property defines the margin of the scroll snap area at the start of the block dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16536,7 +16536,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-block-start"?: Property.ScrollMarginBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16551,7 +16551,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-bottom"?: Property.ScrollMarginBottom<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-margin-inline-end` property defines the margin of the scroll snap area at the end of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16565,7 +16565,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-inline-end"?: Property.ScrollMarginInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-margin-inline-start` property defines the margin of the scroll snap area at the start of the inline dimension that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16579,7 +16579,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-inline-start"?: Property.ScrollMarginInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16594,7 +16594,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-left"?: Property.ScrollMarginLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16609,7 +16609,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-margin-right"?: Property.ScrollMarginRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16638,7 +16638,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-marker-group"?: Property.ScrollMarkerGroup | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-padding-block-end` property defines offsets for the end edge in the block dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -16652,7 +16652,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-block-end"?: Property.ScrollPaddingBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-padding-block-start` property defines offsets for the start edge in the block dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -16666,7 +16666,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-block-start"?: Property.ScrollPaddingBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-padding-bottom` property defines offsets for the bottom of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -16680,7 +16680,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-bottom"?: Property.ScrollPaddingBottom<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-padding-inline-end` property defines offsets for the end edge in the inline dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -16694,7 +16694,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-inline-end"?: Property.ScrollPaddingInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The `scroll-padding-inline-start` property defines offsets for the start edge in the inline dimension of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -16708,7 +16708,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-inline-start"?: Property.ScrollPaddingInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-padding-left` property defines offsets for the left of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -16722,7 +16722,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-left"?: Property.ScrollPaddingLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-padding-right` property defines offsets for the right of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -16736,7 +16736,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-right"?: Property.ScrollPaddingRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`scroll-padding-top`** property defines offsets for the top of the _optimal viewing region_ of the scrollport: the region used as the target region for placing things in view of the user. This allows the author to exclude regions of the scrollport that are obscured by other content (such as fixed-positioned toolbars or sidebars) or to put more breathing room between a targeted element and the edges of the scrollport.
    *
    * **Syntax**: `auto | <length-percentage [0,∞]>`
    *
@@ -16750,7 +16750,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-padding-top"?: Property.ScrollPaddingTop<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`scroll-snap-align`** CSS property specifies the box's snap position as an alignment of its snap area.
    *
    * **Syntax**: `[ none | start | end | center ]{1,2}`
    *
@@ -16764,7 +16764,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-align"?: Property.ScrollSnapAlign | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-bottom` property defines the bottom margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16779,7 +16779,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-margin-bottom"?: Property.ScrollMarginBottom<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-left` property defines the left margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16794,7 +16794,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-margin-left"?: Property.ScrollMarginLeft<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-right` property defines the right margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16809,7 +16809,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-margin-right"?: Property.ScrollMarginRight<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The `scroll-margin-top` property defines the top margin of the scroll snap area that is used for snapping this box to the snapport. The scroll snap area is determined by taking the transformed border box, finding its rectangular bounding box (axis-aligned in the scroll container's coordinate space), then adding the specified outsets.
    *
    * **Syntax**: `<length>`
    *
@@ -16824,7 +16824,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-margin-top"?: Property.ScrollMarginTop<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2022.
+   * The **`scroll-snap-stop`** CSS property defines whether or not the scroll container is allowed to "pass over" possible snap positions.
    *
    * **Syntax**: `normal | always`
    *
@@ -16838,7 +16838,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scroll-snap-stop"?: Property.ScrollSnapStop | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2022.
+   * The **`scroll-snap-type`** CSS property is set on a scroll container, opting it into scroll snapping by setting the direction and strictness of snap point enforcement within the snap port.
    *
    * **Syntax**: `none | [ x | y | block | inline | both | pair ] [ mandatory | proximity ]?`
    *
@@ -16937,7 +16937,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "scrollbar-width"?: Property.ScrollbarWidth | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-image-threshold`** CSS property sets the alpha channel threshold used to extract the shape using an image as the value for `shape-outside`.
    *
    * **Syntax**: `<opacity-value>`
    *
@@ -16957,7 +16957,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "shape-inside"?: Property.ShapeInside | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-margin`** CSS property sets a margin for a CSS shape created using `shape-outside`.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -16971,7 +16971,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "shape-margin"?: Property.ShapeMargin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-outside`** CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; `shape-outside` provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than rectangular boxes.
    *
    * **Syntax**: `none | [ <basic-shape> || <shape-box> ] | <image>`
    *
@@ -16991,7 +16991,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "shape-padding"?: Property.ShapePadding<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-rendering`** CSS property provides hints to the renderer about what tradeoffs to make when rendering shapes like paths, circles, or rectangles. It only has an effect on the `<circle>`, `<ellipse>`, `<line>`, `<path>`, `<polygon>`, `<polyline>`, and `<rect>` elements. If explicitly declared, the value of the CSS property overrides the any values of the element's `shape-rendering` attribute.
    *
    * **Syntax**: `auto | optimizeSpeed | crispEdges | geometricPrecision`
    *
@@ -17053,7 +17053,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "speak-as"?: Property.SpeakAs | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stop-color`** CSS property defines the color to use for an SVG `<stop>` element within a gradient. If present, it overrides the element's `stop-color` attribute.
    *
    * **Syntax**: `<'color'>`
    *
@@ -17065,7 +17065,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stop-color"?: Property.StopColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stop-opacity`** CSS property defines the opacity of a given color gradient stop in the SVG `<stop>` element within an SVG gradient. If present, it overrides the element's `stop-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
    *
@@ -17083,7 +17083,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "string-set"?: Property.StringSet | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke`** CSS property defines the color or SVG paint server used to draw an element's stroke. As such, `stroke` only has an effect on elements that can be given a stroke (for example, `<rect>` or `<ellipse>`); see the page on the SVG `stroke` attribute for a complete list. When declared, the CSS value overrides any value of the element's `stroke` SVG attribute.
    *
    * **Syntax**: `<paint>`
    *
@@ -17143,7 +17143,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-dashadjust"?: Property.StrokeDashadjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-dasharray`** CSS property defines a pattern of dashes and gaps used in the painting of the SVG shape's stroke. If present, it overrides the element's `stroke-dasharray` attribute.
    *
    * **Syntax**: `none | [<length-percentage> | <number>]+#`
    *
@@ -17163,7 +17163,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-dashcorner"?: Property.StrokeDashcorner<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-dashoffset`** CSS property defines an offset for the starting point of the rendering of an SVG element's associated dash array. If present, it overrides the element's `stroke-dashoffset` attribute.
    *
    * **Syntax**: `<length-percentage> | <number>`
    *
@@ -17183,7 +17183,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-image"?: Property.StrokeImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-linecap`** CSS property defines the shape to be used at the end of open subpaths of SVG elements' unclosed strokes. If present, it overrides the element's `stroke-linecap` attribute.
    *
    * **Syntax**: `butt | round | square`
    *
@@ -17197,7 +17197,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-linecap"?: Property.StrokeLinecap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-linejoin`** CSS property defines the shape to be used at the corners of an SVG element's stroked paths. If present, it overrides the element's `stroke-linejoin` attribute.
    *
    * **Syntax**: `[ crop | arcs | miter ] || [ bevel | round | fallback ]`
    *
@@ -17211,7 +17211,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-linejoin"?: Property.StrokeLinejoin | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-miterlimit`** CSS property defines a limit on the ratio of the miter length to the `stroke-width` when the shape to be used at the corners of an SVG element's stroked path is a mitered join. If the limit defined by this property is exceeded, the join is converted from `miter` to `bevel`, thus making the corner appear truncated.
    *
    * **Syntax**: `<number>`
    *
@@ -17225,7 +17225,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-miterlimit"?: Property.StrokeMiterlimit | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-opacity`** CSS property defines the opacity of an SVG shape's stroke. The effect is identical to that of `opacity`, except it is applied only to the stroke, not to the entire element. If present, it overrides the element's `stroke-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
    *
@@ -17263,7 +17263,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-size"?: Property.StrokeSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`stroke-width`** CSS property defines the width of a stroke applied to the SVG shape. If present, it overrides the element's `stroke-width` attribute.
    *
    * **Syntax**: `[ <length-percentage> | <line-width> | <number> ]#`
    *
@@ -17277,7 +17277,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-width"?: Property.StrokeWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2021.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<number [0,∞]> | <length [0,∞]>`
    *
@@ -17292,7 +17292,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "tab-size"?: Property.TabSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`table-layout`** CSS property sets the algorithm used to lay out `<table>` cells, rows, and columns.
    *
    * **Syntax**: `auto | fixed`
    *
@@ -17312,7 +17312,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-align-all"?: Property.TextAlignAll | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`text-align-last`** CSS property sets how the last line of a block or a line, right before a forced line break, is aligned.
    *
    * **Syntax**: `auto | start | end | left | right | center | justify | match-parent`
    *
@@ -17326,7 +17326,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-align-last"?: Property.TextAlignLast | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2016.
+   * The **`text-anchor`** CSS property aligns a box containing a string of text where the wrapping area is determined from the `inline-size` property, and the text is then placed relative to the anchor point of the element, which is defined using the `x` and `y` (or `dx` and `dy`) attributes. If present, the value of the CSS property overrides any value of the element's `text-anchor` attribute.
    *
    * **Syntax**: `start | middle | end`
    *
@@ -17396,7 +17396,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-box-trim"?: Property.TextBoxTrim | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
    * **Syntax**: `none | all | [ digits <integer [2,4]>? ]`
    *
@@ -17411,7 +17411,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-combine-upright"?: Property.TextCombineUpright | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
    *
@@ -17440,7 +17440,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-decoration-inset"?: Property.TextDecorationInset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
    *
    * **Syntax**: `none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error`
    *
@@ -17461,7 +17461,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-decoration-skip-box"?: Property.TextDecorationSkipBox | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
    *
    * **Syntax**: `auto | none | all`
    *
@@ -17491,7 +17491,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-decoration-skip-spaces"?: Property.TextDecorationSkipSpaces | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are set with `text-decoration-line`.
    *
    * **Syntax**: `solid | double | dotted | dashed | wavy`
    *
@@ -17506,7 +17506,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-decoration-style"?: Property.TextDecorationStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2021.
+   * The **`text-decoration-thickness`** CSS property sets the stroke thickness of the decoration line that is used on text in an element, such as a line-through, underline, or overline.
    *
    * **Syntax**: `auto | from-font | <length-percentage> | <line-width>`
    *
@@ -17520,7 +17520,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-decoration-thickness"?: Property.TextDecorationThickness<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-color`** CSS property sets the color of emphasis marks. This value can also be set using the `text-emphasis` shorthand.
    *
    * **Syntax**: `<color>`
    *
@@ -17535,7 +17535,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-emphasis-color"?: Property.TextEmphasisColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Similar to the text rendered by the `<ruby>` HTML element, if there isn't enough room for emphasis marks, the line height is increased.
    *
    * **Syntax**: `[ over | under ] && [ right | left ]?`
    *
@@ -17556,7 +17556,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-emphasis-skip"?: Property.TextEmphasisSkip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
    * **Syntax**: `none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | <string>`
    *
@@ -17591,7 +17591,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-group-align"?: Property.TextGroupAlign | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-indent`** CSS property sets the length of empty space (indentation) that is put before lines of text in a block.
    *
    * **Syntax**: `[ <length-percentage> ] && hanging? && each-line?`
    *
@@ -17619,7 +17619,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-justify"?: Property.TextJustify | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2020.
+   * The **`text-orientation`** CSS property sets the orientation of the text characters in a line. It only affects text in vertical mode (when `writing-mode` is not `horizontal-tb`). It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
    *
    * **Syntax**: `mixed | upright | sideways`
    *
@@ -17634,7 +17634,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-orientation"?: Property.TextOrientation | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users.
    *
    * **Syntax**: `[ clip | ellipsis | <string> | fade | <fade()> ]{1,2}`
    *
@@ -17648,7 +17648,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-overflow"?: Property.TextOverflow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-rendering`** CSS property provides information to the rendering engine about what to optimize for when rendering text.
    *
    * **Syntax**: `auto | optimizeSpeed | optimizeLegibility | geometricPrecision`
    *
@@ -17662,7 +17662,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-rendering"?: Property.TextRendering | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-shadow`** CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its `text-decoration`. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
    *
    * **Syntax**: `none | <shadow>#`
    *
@@ -17704,7 +17704,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-spacing-trim"?: Property.TextSpacingTrim | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-transform`** CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized. It also can help improve legibility for ruby.
    *
    * **Syntax**: `none | [capitalize | uppercase | lowercase ] || full-width || full-size-kana | math-auto`
    *
@@ -17718,7 +17718,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-transform"?: Property.TextTransform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2020.
+   * The **`text-underline-offset`** CSS property sets the offset distance of an underline text decoration line (applied using `text-decoration`) from its original position.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -17732,7 +17732,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-underline-offset"?: Property.TextUnderlineOffset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
    *
    * **Syntax**: `auto | [ from-font | under ] || [ left | right ]`
    *
@@ -17873,7 +17873,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "timeline-trigger-source"?: Property.TimelineTriggerSource | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`top`** CSS property sets the vertical position of a positioned element. This inset property has no effect on non-positioned elements.
    *
    * **Syntax**: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
    *
@@ -17887,7 +17887,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   top?: Property.Top<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2019.
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Syntax**: `auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation`
    *
@@ -17902,7 +17902,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "touch-action"?: Property.TouchAction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
    *
@@ -17917,7 +17917,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   transform?: Property.Transform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`transform-box`** CSS property defines the layout box to which the `transform`, individual transform properties `translate`, `scale`, and `rotate`, and `transform-origin` properties relate.
    *
    * **Syntax**: `content-box | border-box | fill-box | stroke-box | view-box`
    *
@@ -17931,7 +17931,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "transform-box"?: Property.TransformBox | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
    * **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?`
    *
@@ -17946,7 +17946,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "transform-origin"?: Property.TransformOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-style`** CSS property sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element.
    *
    * **Syntax**: `flat | preserve-3d`
    *
@@ -17975,7 +17975,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "transition-behavior"?: Property.TransitionBehavior | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
    * **Syntax**: `<time>#`
    *
@@ -17990,7 +17990,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "transition-delay"?: Property.TransitionDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Syntax**: `<time [0s,∞]>#`
    *
@@ -18005,7 +18005,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "transition-duration"?: Property.TransitionDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
    * **Syntax**: `none | <single-transition-property>#`
    *
@@ -18020,7 +18020,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "transition-property"?: Property.TransitionProperty | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -18035,7 +18035,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "transition-timing-function"?: Property.TransitionTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2022.
+   * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
    *
    * **Syntax**: `none | <length-percentage> [ <length-percentage> <length>? ]?`
    *
@@ -18063,7 +18063,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "trigger-scope"?: Property.TriggerScope | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`unicode-bidi`** CSS property, together with the `direction` property, determines how bidirectional text in a document is handled. For example, if a block of content contains both left-to-right and right-to-left text, the user-agent uses a complex Unicode algorithm to decide how to display the text. The `unicode-bidi` property overrides this algorithm and allows the developer to control the text embedding.
    *
    * **Syntax**: `normal | embed | isolate | bidi-override | isolate-override | plaintext`
    *
@@ -18092,7 +18092,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "user-select"?: Property.UserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`vector-effect`** CSS property suppresses specific transformation effects in SVG, thus permitting effects like a road on a map staying the same width no matter how the map is zoomed, or allowing a diagram key to retain its position and size regardless of other transforms. It can only be used with SVG elements that accept the `vector-effect` attribute. When used, the CSS value overrides any values of the element's `vector-effect` attribute.
    *
    * **Syntax**: `none | non-scaling-stroke | non-scaling-size | non-rotation | fixed-position`
    *
@@ -18200,7 +18200,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "view-transition-scope"?: Property.ViewTransitionScope | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`visibility`** CSS property shows or hides an element without changing the layout of a document. The property can also hide rows or columns in a `<table>`.
    *
    * **Syntax**: `visible | hidden | force-hidden | collapse`
    *
@@ -18262,7 +18262,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "voice-volume"?: Property.VoiceVolume | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`white-space-collapse`** CSS property controls how white space inside an element is collapsed.
    *
    * **Syntax**: `collapse | discard | preserve | preserve-breaks | preserve-spaces | break-spaces`
    *
@@ -18300,7 +18300,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   widows?: Property.Widows | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`width`** CSS property sets an element's width. By default, it sets the width of the content area, but if `box-sizing` is set to `border-box`, it sets the width of the border area.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -18314,7 +18314,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   width?: Property.Width<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`will-change`** CSS property enables optimizing animations by providing a rendering hint to a browser about how an element is expected to change.
    *
    * **Syntax**: `auto | <animateable-feature>#`
    *
@@ -18338,7 +18338,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "window-drag"?: Property.WindowDrag | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`word-break`** CSS property sets whether line breaks appear wherever the text would otherwise overflow its content box.
    *
    * **Syntax**: `normal | break-all | keep-all | manual | auto-phrase | break-word`
    *
@@ -18358,7 +18358,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "word-space-transform"?: Property.WordSpaceTransform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`word-spacing`** CSS property sets the spacing between words and between tags.
    *
    * **Syntax**: `normal | <length-percentage>`
    *
@@ -18372,7 +18372,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "word-spacing"?: Property.WordSpacing<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2018.
+   * The **`overflow-wrap`** CSS property applies to text, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
    * **Syntax**: `normal | break-word | anywhere`
    */
@@ -18412,7 +18412,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "wrap-through"?: Property.WrapThrough | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
    *
    * **Syntax**: `horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr`
    *
@@ -18427,7 +18427,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "writing-mode"?: Property.WritingMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`x`** CSS property defines the x-axis coordinate of the top left corner of the SVG `<rect>` shape, `<image>` image, `<foreignObject>` viewport or nested `<svg>` viewport relative to the nearest `<svg>` ancestor's user coordinate system. If present, it overrides the element's `x` attribute.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -18441,7 +18441,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   x?: Property.X<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`y`** CSS property defines the y-axis coordinate of the top left corner of the SVG `<rect>` shape, `<image>` image, `<foreignObject>` viewport and nested `<svg>` viewport relative to the nearest `<svg>` ancestor's user coordinate system. If present, it overrides the element's `y` attribute.
    *
    * **Syntax**: `<length-percentage>`
    *
@@ -18455,7 +18455,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   y?: Property.Y<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex and grid items. Overlapping elements with a larger z-index cover those with a smaller one.
    *
    * **Syntax**: `auto | <integer> | inherit`
    *
@@ -18486,7 +18486,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
 
 export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`all`** CSS shorthand property resets all of an element's properties except `unicode-bidi`, `direction`, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another cascade layer or stylesheet origin.
    *
    * **Syntax**: `initial | inherit | unset | revert | revert-layer | revert-rule`
    *
@@ -18500,7 +18500,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   all?: Property.All | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`, and `animation-timeline`.
    *
    * **Syntax**: `<single-animation>#`
    *
@@ -18515,7 +18515,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   animation?: Property.Animation<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
    *
@@ -18544,7 +18544,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "animation-range"?: Property.AnimationRange<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background`** CSS shorthand property sets all background style properties at once, such as color, image, origin, size, and repeat method.
    *
    * **Syntax**: `<bg-layer>#? , <final-bg-layer>`
    *
@@ -18558,7 +18558,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   background?: Property.Background<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-position`** CSS property sets the initial position for each background image.
    *
    * **Syntax**: `<bg-position>#`
    *
@@ -18578,7 +18578,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "block-step"?: Property.BlockStep<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border`** CSS shorthand property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18592,7 +18592,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   border?: Property.Border<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-block`** CSS shorthand property sets the individual logical block border property values in a single place in the style sheet.
    *
    * **Syntax**: `<'border-block-start'>`
    *
@@ -18612,7 +18612,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-block-clip"?: Property.BorderBlockClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>{1,2}`
    *
@@ -18626,7 +18626,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-block-color"?: Property.BorderBlockColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-end`** CSS shorthand property sets the individual logical block-end border property values in a single place in the style sheet.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18650,7 +18650,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-block-end-radius"?: Property.BorderBlockEndRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-block-start`** CSS shorthand property sets the individual logical block-start border property values in a single place in the style sheet.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18674,7 +18674,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-block-start-radius"?: Property.BorderBlockStartRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-block-style`** CSS property defines the style of the logical block borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>{1,2}`
    *
@@ -18688,7 +18688,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-block-style"?: Property.BorderBlockStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>{1,2}`
    *
@@ -18702,7 +18702,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-block-width"?: Property.BorderBlockWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom`** CSS shorthand property sets an element's bottom border. It sets the values of `border-bottom-width`, `border-bottom-style` and `border-bottom-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18732,7 +18732,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-clip"?: Property.BorderClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-color`** CSS shorthand property sets the color of an element's border.
    *
    * **Syntax**: `[ <color> | <image-1D> ]{1,4}`
    *
@@ -18746,7 +18746,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-color"?: Property.BorderColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
    *
@@ -18761,7 +18761,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-image"?: Property.BorderImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-inline`** CSS shorthand property sets the individual logical inline border property values in a single place in the style sheet.
    *
    * **Syntax**: `<'border-block-start'>`
    *
@@ -18781,7 +18781,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-inline-clip"?: Property.BorderInlineClip<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-color'>{1,2}`
    *
@@ -18795,7 +18795,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-inline-color"?: Property.BorderInlineColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end`** CSS shorthand property sets the individual logical inline-end border property values in a single place in the style sheet.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18819,7 +18819,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-inline-end-radius"?: Property.BorderInlineEndRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start`** CSS shorthand property sets the individual logical inline-start border property values in a single place in the style sheet.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18843,7 +18843,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-inline-start-radius"?: Property.BorderInlineStartRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-inline-style`** CSS property defines the style of the logical inline borders of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style` and `border-bottom-style`, or `border-left-style` and `border-right-style` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-style'>{1,2}`
    *
@@ -18857,7 +18857,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-inline-style"?: Property.BorderInlineStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'border-top-width'>{1,2}`
    *
@@ -18871,7 +18871,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-inline-width"?: Property.BorderInlineWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-left`** CSS shorthand property sets all the properties of an element's left border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18895,7 +18895,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-left-radius"?: Property.BorderLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-radius`** CSS shorthand property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage [0,∞]>{1,4} [ / <length-percentage [0,∞]>{1,4} ]?`
    *
@@ -18910,7 +18910,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-radius"?: Property.BorderRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-right`** CSS shorthand property sets all the properties of an element's right border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18934,7 +18934,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-right-radius"?: Property.BorderRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-style`** CSS shorthand property sets the line style for all four sides of an element's border.
    *
    * **Syntax**: `<'border-top-style'>{1,4}`
    *
@@ -18948,7 +18948,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-style"?: Property.BorderStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top`** CSS shorthand property sets all the properties of an element's top border.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
    *
@@ -18972,7 +18972,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-top-radius"?: Property.BorderTopRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-width`** CSS shorthand property sets the width of an element's border.
    *
    * **Syntax**: `<'border-top-width'>{1,4}`
    *
@@ -18986,7 +18986,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-width"?: Property.BorderWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `<spread-shadow>#`
    *
@@ -19007,7 +19007,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   caret?: Property.Caret | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
    *
@@ -19080,7 +19080,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "column-rule-inset-start"?: Property.ColumnRuleInsetStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`columns`** CSS shorthand property sets the maximum number of columns to use when drawing an element's contents, along with the minimum width and maximum height of the element's columns.
    *
    * **Syntax**: `[ <'column-width'> || <'column-count'> ] [ / <'column-height'> ]?`
    *
@@ -19095,7 +19095,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   columns?: Property.Columns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`contain-intrinsic-size`** CSS shorthand property sets the size of an element that a browser will use for layout when the element is subject to size containment.
    *
    * **Syntax**: `[ auto? [ none | <length [0,∞]> ] ]{1,2}`
    *
@@ -19109,7 +19109,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "contain-intrinsic-size"?: Property.ContainIntrinsicSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since February 2023.
+   * The **container** shorthand CSS property establishes the element as a query container and specifies the name and type of the containment context used in a container query.
    *
    * **Syntax**: `<'container-name'> [ / <'container-type'> ]?`
    *
@@ -19357,7 +19357,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   cue?: Property.Cue | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex`** CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
@@ -19372,7 +19372,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   flex?: Property.Flex<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-flow`** CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
    *
    * **Syntax**: `<'flex-direction'> || <'flex-wrap'>`
    *
@@ -19387,7 +19387,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "flex-flow"?: Property.FlexFlow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font`** CSS shorthand property sets all the different properties of an element's font. Alternatively, it sets an element's font to a system font.
    *
    * **Syntax**: `[ [ <'font-style'> || <font-variant-css2> || <'font-weight'> || <font-width-css3> ]? <'font-size'> [ / <'line-height'> ]? <'font-family'># ] | <system-font-family-name>`
    *
@@ -19401,7 +19401,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   font?: Property.Font | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2022.
+   * The **`font-synthesis`** CSS shorthand property lets you specify whether or not the browser may synthesize the bold, italic, small-caps, and/or subscript and superscript typefaces when they are missing in the specified font-family.
    *
    * **Syntax**: `none | [ weight || style || small-caps || position]`
    *
@@ -19415,7 +19415,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "font-synthesis"?: Property.FontSynthesis | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`font-variant`** CSS shorthand property allows you to set all the font variants for a font.
    *
    * **Syntax**: `normal | none | [ [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ] || [ small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps ] || [ stylistic(<font-feature-value-name>) || historical-forms || styleset(<font-feature-value-name>#) || character-variant(<font-feature-value-name>#) || swash(<font-feature-value-name>) || ornaments(<font-feature-value-name>) || annotation(<font-feature-value-name>) ] || [ <numeric-figure-values> || <numeric-spacing-values> || <numeric-fraction-values> || ordinal || slashed-zero ] || [ <east-asian-variant-values> || <east-asian-width-values> || ruby ] || [ sub | super ] || [ text | emoji | unicode ] ]`
    *
@@ -19429,7 +19429,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "font-variant"?: Property.FontVariant | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
    *
    * **Syntax**: `<'row-gap'> <'column-gap'>?`
    *
@@ -19443,7 +19443,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   gap?: Property.Gap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid`** CSS shorthand property sets all of the explicit and implicit grid properties in a single declaration.
    *
    * **Syntax**: `<'grid-template'> | <'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>? | [ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>`
    *
@@ -19457,7 +19457,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   grid?: Property.Grid | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-area`** CSS shorthand property specifies a grid item's size and location within a grid by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the edges of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]{0,3}`
    *
@@ -19471,7 +19471,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "grid-area"?: Property.GridArea | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-column`** CSS shorthand property specifies a grid item's size and location within a grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
    *
@@ -19485,13 +19485,13 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "grid-column"?: Property.GridColumn | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
    *
    * **Syntax**: `<'row-gap'> <'column-gap'>?`
    */
   "grid-gap"?: Property.GridGap<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
    *
@@ -19505,7 +19505,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "grid-row"?: Property.GridRow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since October 2017.
+   * The **`grid-template`** CSS shorthand property specifies the grid columns, grid rows, and grid areas.
    *
    * **Syntax**: `none | [ <'grid-template-rows'> / <'grid-template-columns'> ] | [ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?`
    *
@@ -19519,7 +19519,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "grid-template"?: Property.GridTemplate | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset`** CSS shorthand property corresponds to the `top`, `right`, `bottom`, and/or `left` properties. It has the same multi-value syntax of the `margin` shorthand.
    *
    * **Syntax**: `<'top'>{1,4}`
    *
@@ -19533,7 +19533,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   inset?: Property.Inset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block`** CSS shorthand property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -19547,7 +19547,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "inset-block"?: Property.InsetBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline`** CSS shorthand property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -19590,7 +19590,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "line-clamp"?: Property.LineClamp | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`list-style`** CSS shorthand property allows you to set all the list style properties at once.
    *
    * **Syntax**: `<'list-style-position'> || <'list-style-image'> || <'list-style-type'>`
    *
@@ -19604,7 +19604,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "list-style"?: Property.ListStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`margin`** CSS shorthand property sets the margin area on all four sides of an element.
    *
    * **Syntax**: `<'margin-top'>{1,4}`
    *
@@ -19618,7 +19618,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   margin?: Property.Margin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`margin-block`** CSS shorthand property defines the logical block start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>{1,2}`
    *
@@ -19632,7 +19632,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "margin-block"?: Property.MarginBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`margin-inline`** CSS shorthand property defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>{1,2}`
    *
@@ -19646,7 +19646,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "margin-inline"?: Property.MarginInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`marker`** CSS property points to a marker that will be drawn on the first, middle, and last vertices of the element's path; that is, at all of its vertices. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-start`, `marker`, and `marker-end` attributes in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
    *
@@ -19660,7 +19660,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   marker?: Property.Marker | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping a specified area of the image. It is a shorthand for all the `mask-*` properties. The property accepts one or more comma-separated values, where each value corresponds to a `<mask-layer>`.
    *
    * **Syntax**: `<mask-layer>#`
    *
@@ -19710,7 +19710,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "min-size"?: Property.MinSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path. The offset properties together help to define an _offset transform_, a transform that aligns a point in an element (offset-anchor) to an _offset position_ (offset-position) on a path (offset-path) at various points along the path (offset-distance) and optionally rotates the element (offset-rotate) to follow the direction of the path.
    *
    * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
    *
@@ -19725,7 +19725,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   motion?: Property.Offset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`offset`** CSS shorthand property sets all the properties required for animating an element along a defined path. The offset properties together help to define an _offset transform_, a transform that aligns a point in an element (offset-anchor) to an _offset position_ (offset-position) on a path (offset-path) at various points along the path (offset-distance) and optionally rotates the element (offset-rotate) to follow the direction of the path.
    *
    * **Syntax**: `[ <'offset-position'>? [ <'offset-path'> [ <'offset-distance'> || <'offset-rotate'> ]? ]? ]! [ / <'offset-anchor'> ]?`
    *
@@ -19740,7 +19740,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   offset?: Property.Offset<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`outline`** CSS shorthand property sets the style, color, and width of an element's outline.
    *
    * **Syntax**: `<'outline-width'> || <'outline-style'> || <'outline-color'>`
    *
@@ -19754,7 +19754,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   outline?: Property.Outline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow`** CSS shorthand property sets the desired behavior when content does not fit in the element's padding box (overflows) in the horizontal and/or vertical direction.
    *
    * **Syntax**: `<'overflow-block'>{1,2}`
    *
@@ -19808,7 +19808,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "overscroll-behavior"?: Property.OverscrollBehavior | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`padding`** CSS shorthand property sets the padding area on all four sides of an element at once.
    *
    * **Syntax**: `<'padding-top'>{1,4}`
    *
@@ -19822,7 +19822,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   padding?: Property.Padding<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`padding-block`** CSS shorthand property defines the logical block start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>{1,2}`
    *
@@ -19836,7 +19836,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "padding-block"?: Property.PaddingBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`padding-inline`** CSS shorthand property defines the logical inline start and end padding of an element, which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>{1,2}`
    *
@@ -19856,7 +19856,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   pause?: Property.Pause<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e., the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
    *
    * **Syntax**: `<'align-content'> <'justify-content'>?`
    *
@@ -19870,7 +19870,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "place-content"?: Property.PlaceContent | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`place-items`** CSS shorthand property aligns items along both block and inline directions at the same time.
    *
    * **Syntax**: `<'align-items'> <'justify-items'>?`
    *
@@ -19884,7 +19884,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "place-items"?: Property.PlaceItems | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`place-self`** CSS shorthand property allows you to align an individual item in both the block and inline directions at once (i.e., the `align-self` and `justify-self` properties). This property applies to block-level boxes, absolutely-positioned boxes, and grid items. If the second value is not present, the first value is also used for it.
    *
    * **Syntax**: `<'align-self'> <'justify-self'>?`
    *
@@ -20138,7 +20138,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "rule-width"?: Property.RuleWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2021.
+   * The **`scroll-margin`** CSS shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
    * **Syntax**: `<length>{1,4}`
    *
@@ -20153,7 +20153,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "scroll-margin"?: Property.ScrollMargin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`scroll-margin-block`** CSS shorthand property sets the scroll margins of an element in the block dimension.
    *
    * **Syntax**: `<length>{1,2}`
    *
@@ -20167,7 +20167,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "scroll-margin-block"?: Property.ScrollMarginBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`scroll-margin-inline`** CSS shorthand property sets the scroll margins of an element in the inline dimension.
    *
    * **Syntax**: `<length>{1,2}`
    *
@@ -20181,7 +20181,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "scroll-margin-inline"?: Property.ScrollMarginInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`scroll-padding`** CSS shorthand property sets scroll padding on all sides of an element at once. It specifies offsets that define the optimal viewing region of a scrollport within a scroll container.
    *
    * **Syntax**: `[ auto | <length-percentage [0,∞]> ]{1,4}`
    *
@@ -20195,7 +20195,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "scroll-padding"?: Property.ScrollPadding<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`scroll-padding-block`** CSS shorthand property sets the scroll padding of an element in the block dimension.
    *
    * **Syntax**: `[ auto | <length-percentage [0,∞]> ]{1,2}`
    *
@@ -20209,7 +20209,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "scroll-padding-block"?: Property.ScrollPaddingBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
+   * The **`scroll-padding-inline`** CSS shorthand property sets the scroll padding of an element in the inline dimension.
    *
    * **Syntax**: `[ auto | <length-percentage [0,∞]> ]{1,2}`
    *
@@ -20223,7 +20223,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "scroll-padding-inline"?: Property.ScrollPaddingInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2021.
+   * The **`scroll-margin`** CSS shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
    * **Syntax**: `<length>{1,4}`
    *
@@ -20262,7 +20262,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   size?: Property.Size<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-align`** CSS property sets the horizontal alignment of the inline-level content inside a block element or table-cell box. This means it works like `vertical-align` but in the horizontal direction.
    *
    * **Syntax**: `start | end | left | right | center | <string> | justify | match-parent | justify-all`
    *
@@ -20276,7 +20276,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "text-align"?: Property.TextAlign | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-decoration`** CSS shorthand property sets the appearance of decorative lines on text. It is a shorthand for `text-decoration-line`, `text-decoration-color`, `text-decoration-style`, and the newer `text-decoration-thickness` property.
    *
    * **Syntax**: `<'text-decoration-line'> || <'text-decoration-thickness'> || <'text-decoration-style'> || <'text-decoration-color'>`
    *
@@ -20290,7 +20290,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "text-decoration"?: Property.TextDecoration<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis`** CSS shorthand property applies emphasis marks to text (except spaces and control characters).
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
@@ -20311,7 +20311,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "text-spacing"?: Property.TextSpacing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
+   * The **`text-wrap`** CSS shorthand property controls how text inside an element is wrapped. The different values provide:
    *
    * **Syntax**: `<'text-wrap-mode'> || <'text-wrap-style'>`
    *
@@ -20373,7 +20373,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "timeline-trigger-range"?: Property.TimelineTriggerRange<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
    * **Syntax**: `<single-transition>#`
    *
@@ -20388,7 +20388,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   transition?: Property.Transition<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`vertical-align`** CSS shorthand property sets the vertical alignment of an inline, inline-block, or table-cell box.
    *
    * **Syntax**: `[ first | last] || <'alignment-baseline'> || <'baseline-shift'>`
    *
@@ -20416,7 +20416,7 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "view-timeline"?: Property.ViewTimeline | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`white-space`** CSS shorthand property sets how white space inside an element is handled.
    *
    * **Syntax**: `normal | pre | pre-wrap | pre-line | <'white-space-collapse'> || <'text-wrap-mode'> || <'white-space-trim'>`
    *
@@ -20436,7 +20436,7 @@ export interface StandardPropertiesHyphen<TLength = (string & {}) | 0, TTime = s
 
 export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -20444,7 +20444,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-direction"?: Property.AnimationDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-duration`** CSS property sets the length of time that an animation takes to complete one cycle.
    *
    * **Syntax**: `[ auto | <time [0s,∞]> ]#`
    *
@@ -20452,7 +20452,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-duration"?: Property.AnimationDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
    * **Syntax**: `<single-animation-fill-mode>#`
    *
@@ -20460,7 +20460,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-fill-mode"?: Property.AnimationFillMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -20468,7 +20468,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-iteration-count"?: Property.AnimationIterationCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules that describe the animation to apply to an element. Multiple `@keyframes` at-rules are specified as a comma-separated list of names. If the specified name does not match any `@keyframes` at-rule, no properties are animated.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -20476,7 +20476,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-name"?: Property.AnimationName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-play-state`** CSS property sets whether an animation is running or paused.
    *
    * **Syntax**: `<single-animation-play-state>#`
    *
@@ -20484,7 +20484,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-play-state"?: Property.AnimationPlayState | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -20492,7 +20492,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-animation-timing-function"?: Property.AnimationTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`appearance`** CSS property specifies the rendered appearance of replaced UI widget elements such as form controls. Most commonly, such elements are given native, platform-specific styling based on the operating system's theme, or a primitive appearance with styles that can be overridden using CSS.
    *
    * **Syntax**: `none | auto | base | base-select | <compat-auto> | <compat-special>`
    *
@@ -20500,7 +20500,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-appearance"?: Property.Appearance | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`backface-visibility`** CSS property sets whether the back face of an element is visible when turned towards the user.
    *
    * **Syntax**: `visible | hidden`
    *
@@ -20508,7 +20508,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-backface-visibility"?: Property.BackfaceVisibility | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -20516,7 +20516,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-end-color"?: Property.BorderInlineEndColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-style`** CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -20524,7 +20524,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-end-style"?: Property.BorderInlineEndStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -20532,7 +20532,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-end-width"?: Property.BorderInlineEndWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
    *
@@ -20540,7 +20540,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-start-color"?: Property.BorderInlineStartColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`border-inline-start-style`** CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-style`, `border-right-style`, `border-bottom-style`, or `border-left-style` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<line-style>`
    *
@@ -20548,7 +20548,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-border-start-style"?: Property.BorderInlineStartStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Syntax**: `content-box | border-box`
    *
@@ -20556,7 +20556,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-box-sizing"?: Property.BoxSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-color`** CSS property defines the colors of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-color-list> | <auto-line-color-list>`
    *
@@ -20564,7 +20564,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-column-rule-color"?: Property.ColumnRuleColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-style`** CSS property defines the line style of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-style-list> | <auto-line-style-list>`
    *
@@ -20572,7 +20572,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-column-rule-style"?: Property.ColumnRuleStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-width`** CSS property defines the widths of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-width-list> | <auto-line-width-list>`
    *
@@ -20580,13 +20580,13 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-column-rule-width"?: Property.ColumnRuleWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2016.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout.
    *
    * **Syntax**: `auto | <box-size> | auto | <box-size>`
    */
   "-moz-column-width"?: Property.ColumnWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
+   * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
    *
@@ -20602,7 +20602,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-font-language-override"?: Property.FontLanguageOverride | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -20610,7 +20610,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-hyphens"?: Property.Hyphens | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -20618,7 +20618,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-margin-end"?: Property.MarginInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -20626,7 +20626,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-margin-start"?: Property.MarginInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -20634,7 +20634,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-padding-end"?: Property.PaddingInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -20642,7 +20642,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-padding-start"?: Property.PaddingInlineStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length [0,∞]>`
    *
@@ -20650,7 +20650,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-perspective"?: Property.Perspective<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`perspective-origin`** CSS property determines the position at which the viewer is looking. It is used as the _vanishing point_ by the `perspective` property.
    *
    * **Syntax**: `<position>`
    *
@@ -20658,7 +20658,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-perspective-origin"?: Property.PerspectiveOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2021.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<number [0,∞]> | <length [0,∞]>`
    *
@@ -20674,7 +20674,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-text-size-adjust"?: Property.TextSizeAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
    *
@@ -20682,7 +20682,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-transform"?: Property.Transform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
    * **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?`
    *
@@ -20690,7 +20690,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-transform-origin"?: Property.TransformOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-style`** CSS property sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element.
    *
    * **Syntax**: `flat | preserve-3d`
    *
@@ -20706,7 +20706,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-user-select"?: Property.UserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-direction`** CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
    *
    * **Syntax**: `row | row-reverse | column | column-reverse`
    *
@@ -20714,7 +20714,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-flex-direction"?: Property.FlexDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex-grow`** CSS property sets the flex grow factor, which specifies how much of the flex container's **positive free space**, if any, should be assigned to the flex item's main size.
    *
    * **Syntax**: `<number [0,∞]>`
    *
@@ -20722,7 +20722,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-flex-positive"?: Property.FlexGrow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
    *
    * **Syntax**: `<track-size>+`
    *
@@ -20730,7 +20730,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-grid-columns"?: Property.GridAutoColumns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
    *
    * **Syntax**: `<track-size>+`
    *
@@ -20746,7 +20746,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-high-contrast-adjust"?: Property.ForcedColorAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -20754,7 +20754,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-hyphens"?: Property.Hyphens | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
    *
@@ -20762,7 +20762,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-line-break"?: Property.LineBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`order`** CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending `order` value and then by their source code order. Items not given an explicit `order` value are assigned the default value of `0`.
    *
    * **Syntax**: `<integer>`
    *
@@ -20770,7 +20770,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-order"?: Property.Order | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content. This property may also be set by using the `overflow` shorthand property.
    *
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
@@ -20778,7 +20778,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-overflow-x"?: Property.OverflowX | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content. This property may also be set by using the `overflow` shorthand property.
    *
    * **Syntax**: `visible | hidden | clip | scroll | auto`
    *
@@ -20786,7 +20786,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-overflow-y"?: Property.OverflowY | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2022.
+   * The **`scroll-snap-type`** CSS property is set on a scroll container, opting it into scroll snapping by setting the direction and strictness of snap point enforcement within the snap port.
    *
    * **Syntax**: `none | [ x | y | block | inline | both | pair ] [ mandatory | proximity ]?`
    *
@@ -20794,7 +20794,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-scroll-snap-type"?: Property.ScrollSnapType | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
    * **Syntax**: `none | all | [ digits <integer [2,4]>? ]`
    *
@@ -20802,7 +20802,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-text-combine-horizontal"?: Property.TextCombineUpright | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users.
    *
    * **Syntax**: `[ clip | ellipsis | <string> | fade | <fade()> ]{1,2}`
    *
@@ -20810,7 +20810,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-text-overflow"?: Property.TextOverflow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2019.
+   * The **`touch-action`** CSS property sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser).
    *
    * **Syntax**: `auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation`
    *
@@ -20818,7 +20818,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-touch-action"?: Property.TouchAction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
    *
@@ -20826,7 +20826,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-transform"?: Property.Transform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
    * **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?`
    *
@@ -20834,7 +20834,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-transform-origin"?: Property.TransformOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
    * **Syntax**: `<time>#`
    *
@@ -20842,7 +20842,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-transition-delay"?: Property.TransitionDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Syntax**: `<time [0s,∞]>#`
    *
@@ -20850,7 +20850,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-transition-duration"?: Property.TransitionDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
    * **Syntax**: `none | <single-transition-property>#`
    *
@@ -20858,7 +20858,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-transition-property"?: Property.TransitionProperty | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -20874,7 +20874,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-user-select"?: Property.UserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`word-break`** CSS property sets whether line breaks appear wherever the text would otherwise overflow its content box.
    *
    * **Syntax**: `normal | break-all | keep-all | manual | auto-phrase | break-word`
    *
@@ -20882,7 +20882,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-ms-word-break"?: Property.WordBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
    *
    * **Syntax**: `horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr`
    *
@@ -20912,7 +20912,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /** **Syntax**: `<easing-function>#` */
   "-webkit-animation-timing-function"?: Property.WebkitAnimationTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`appearance`** CSS property specifies the rendered appearance of replaced UI widget elements such as form controls. Most commonly, such elements are given native, platform-specific styling based on the operating system's theme, or a primitive appearance with styles that can be overridden using CSS.
    *
    * **Syntax**: `none | auto | base | base-select | <compat-auto> | <compat-special>`
    */
@@ -20938,7 +20938,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /** **Syntax**: `<border-radius>` */
   "-webkit-border-bottom-right-radius"?: Property.WebkitBorderBottomRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image-slice`** CSS property divides the image specified by `border-image-source` into regions. These regions form the components of an element's border image.
    *
    * **Syntax**: `[<number [0,∞]> | <percentage [0,∞]>]{1,4} && fill?`
    *
@@ -20960,7 +20960,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /** **Syntax**: `content-box | border-box` */
   "-webkit-box-sizing"?: Property.WebkitBoxSizing | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`clip-path`** CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.
    *
    * **Syntax**: `<clip-source> | [ <basic-shape> || <geometry-box> ] | none`
    *
@@ -20968,7 +20968,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-clip-path"?: Property.ClipPath | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
    * **Syntax**: `auto | <integer [1,∞]>`
    *
@@ -20976,7 +20976,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-column-count"?: Property.ColumnCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
    *
    * **Syntax**: `auto | balance | balance-all`
    *
@@ -20984,7 +20984,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-column-fill"?: Property.ColumnFill | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-color`** CSS property defines the colors of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-color-list> | <auto-line-color-list>`
    *
@@ -20992,7 +20992,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-column-rule-color"?: Property.ColumnRuleColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-style`** CSS property defines the line style of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-style-list> | <auto-line-style-list>`
    *
@@ -21000,7 +21000,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-column-rule-style"?: Property.ColumnRuleStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule-width`** CSS property defines the widths of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<line-width-list> | <auto-line-width-list>`
    *
@@ -21008,7 +21008,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-column-rule-width"?: Property.ColumnRuleWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`column-span`** CSS property makes it possible for an element to span across all columns when its value is set to `all`.
    *
    * **Syntax**: `none | <integer [1,∞]> | all | auto`
    *
@@ -21016,7 +21016,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-column-span"?: Property.ColumnSpan | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2016.
+   * The **`column-width`** CSS property sets the ideal column width in a multi-column layout.
    *
    * **Syntax**: `auto | <box-size> | auto | <box-size>`
    */
@@ -21034,7 +21034,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /** **Syntax**: `nowrap | [ wrap | wrap-reverse ] || balance` */
   "-webkit-flex-wrap"?: Property.WebkitFlexWrap | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
+   * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
    * **Syntax**: `normal | <feature-tag-value>#`
    *
@@ -21042,7 +21042,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-font-feature-settings"?: Property.FontFeatureSettings | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-kerning`** CSS property sets the use of the kerning information stored in a font.
    *
    * **Syntax**: `auto | normal | none`
    *
@@ -21050,7 +21050,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-font-kerning"?: Property.FontKerning | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in the textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
    * **Syntax**: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-values> ]`
    *
@@ -21058,7 +21058,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-font-variant-ligatures"?: Property.FontVariantLigatures | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphenate-character`** CSS property sets the character (or string) used at the end of a line before a hyphenation break.
    *
    * **Syntax**: `auto | <string>`
    *
@@ -21066,7 +21066,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-hyphenate-character"?: Property.HyphenateCharacter | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
+   * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
    * **Syntax**: `none | manual | auto`
    *
@@ -21084,7 +21084,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /** **Syntax**: `normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ]` */
   "-webkit-justify-content"?: Property.WebkitJustifyContent | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
    *
@@ -21092,7 +21092,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-line-break"?: Property.LineBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`block-size`** CSS property defines the size of an element's block along the block axis. If the `writing-mode` is horizontal, it corresponds to the `height`; if the writing mode is vertical, it corresponds to the `width`. A related property is `inline-size`, which defines the other dimension of the element.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -21100,7 +21100,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-logical-height"?: Property.BlockSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`inline-size`** CSS property defines the size of an element's block along the inline axis. If the `writing-mode` is horizontal, it corresponds to the `width`; if the writing mode is vertical, it corresponds to the `height`. A related property is `block-size`, which defines the other dimension of the element.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
    *
@@ -21108,7 +21108,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-logical-width"?: Property.InlineSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-block-end`** CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -21116,7 +21116,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-margin-after"?: Property.MarginBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-block-start`** CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -21124,7 +21124,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-margin-before"?: Property.MarginBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -21132,7 +21132,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-margin-end"?: Property.MarginInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`margin-inline-start`** CSS property defines the logical inline start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. It corresponds to the `margin-top`, `margin-right`, `margin-bottom`, or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'margin-top'>`
    *
@@ -21150,7 +21150,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /** **Syntax**: `<'border-image-width'>` */
   "-webkit-mask-box-image-width"?: Property.WebkitMaskBoxImageWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
    * **Syntax**: `[ <coord-box> | no-clip ]#`
    */
@@ -21162,37 +21162,37 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-mask-composite"?: Property.WebkitMaskComposite | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-image`** CSS property sets the image that is used as the mask layer for an element, hiding sections of the element on which the masking image is set based on the alpha channel of the mask image and, depending on the `mask-mode` property value, the luminance of the mask image's colors.
    *
    * **Syntax**: `<mask-reference>#`
    */
   "-webkit-mask-image"?: Property.WebkitMaskImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-origin`** CSS property sets the origin of a mask. This property determines the mask positioning area: the area within which a mask image is positioned. HTML elements can have masks contained within their content border box, padding box, or content box, whereas SVG elements (which don't have the associated CSS layout boxes) can have masks contained inside their fill, stroke, or view box. For elements rendered as multiple boxes, such as a `<span>` of text that spans more than one line, the `mask-origin` property specifies which boxes the `box-decoration-break` property operates on to determine the mask positioning area.
    *
    * **Syntax**: `<coord-box>#`
    */
   "-webkit-mask-origin"?: Property.WebkitMaskOrigin | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-position`** CSS property sets the initial position, relative to the mask position layer set by `mask-origin`, for each defined mask image.
    *
    * **Syntax**: `<position>#`
    */
   "-webkit-mask-position"?: Property.WebkitMaskPosition<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-repeat`** CSS property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
    *
    * **Syntax**: `<repeat-style>#`
    */
   "-webkit-mask-repeat"?: Property.WebkitMaskRepeat | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask-size`** CSS property specifies the sizes of specified mask images. Mask image sizes can be fully or partially constrained to preserve their intrinsic aspect ratios.
    *
    * **Syntax**: `<bg-size>#`
    */
   "-webkit-mask-size"?: Property.WebkitMaskSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`max-inline-size`** CSS property defines the horizontal or vertical maximum size of an element's block, depending on its writing mode. It corresponds to either the `max-width` or the `max-height` property, depending on the value of `writing-mode`.
    *
    * **Syntax**: `none | <box-size> | <anchor-size()>`
    *
@@ -21202,7 +21202,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /** **Syntax**: `<integer>` */
   "-webkit-order"?: Property.WebkitOrder | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -21210,7 +21210,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-padding-end"?: Property.PaddingInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`padding-inline-start`** CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
    *
@@ -21238,7 +21238,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-ruby-position"?: Property.RubyPosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2022.
+   * The **`scroll-snap-type`** CSS property is set on a scroll container, opting it into scroll snapping by setting the direction and strictness of snap point enforcement within the snap port.
    *
    * **Syntax**: `none | [ x | y | block | inline | both | pair ] [ mandatory | proximity ]?`
    *
@@ -21246,7 +21246,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-scroll-snap-type"?: Property.ScrollSnapType | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`shape-margin`** CSS property sets a margin for a CSS shape created using `shape-outside`.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
    *
@@ -21254,7 +21254,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-shape-margin"?: Property.ShapeMargin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
    * **Syntax**: `none | all | [ digits <integer [2,4]>? ]`
    *
@@ -21262,7 +21262,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-combine"?: Property.TextCombineUpright | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
    *
@@ -21270,7 +21270,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-decoration-color"?: Property.TextDecorationColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
    *
    * **Syntax**: `none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error`
    *
@@ -21278,7 +21278,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-decoration-line"?: Property.TextDecorationLine | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are set with `text-decoration-line`.
    *
    * **Syntax**: `solid | double | dotted | dashed | wavy`
    *
@@ -21286,7 +21286,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-decoration-style"?: Property.TextDecorationStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-color`** CSS property sets the color of emphasis marks. This value can also be set using the `text-emphasis` shorthand.
    *
    * **Syntax**: `<color>`
    *
@@ -21294,7 +21294,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-emphasis-color"?: Property.TextEmphasisColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Similar to the text rendered by the `<ruby>` HTML element, if there isn't enough room for emphasis marks, the line height is increased.
    *
    * **Syntax**: `[ over | under ] && [ right | left ]?`
    *
@@ -21302,7 +21302,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-emphasis-position"?: Property.TextEmphasisPosition | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
    * **Syntax**: `none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | <string>`
    *
@@ -21310,7 +21310,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-emphasis-style"?: Property.TextEmphasisStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2016.
+   * The **`-webkit-text-fill-color`** CSS property specifies the fill color of characters of text. If this property is not set, the value of the `color` property is used.
    *
    * **Syntax**: `<color>`
    *
@@ -21318,7 +21318,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-fill-color"?: Property.WebkitTextFillColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2020.
+   * The **`text-orientation`** CSS property sets the orientation of the text characters in a line. It only affects text in vertical mode (when `writing-mode` is not `horizontal-tb`). It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
    *
    * **Syntax**: `mixed | upright | sideways`
    *
@@ -21328,7 +21328,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /** **Syntax**: `auto | none | <percentage [0,∞]>` */
   "-webkit-text-size-adjust"?: Property.WebkitTextSizeAdjust | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`-webkit-text-stroke-color`** CSS property specifies the stroke color of characters of text. If this property is not set, the value of the `color` property is used.
    *
    * **Syntax**: `<color>`
    *
@@ -21336,7 +21336,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-stroke-color"?: Property.WebkitTextStrokeColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`-webkit-text-stroke-width`** CSS property specifies the width of the stroke for text.
    *
    * **Syntax**: `<line-width>`
    *
@@ -21344,7 +21344,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-text-stroke-width"?: Property.WebkitTextStrokeWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`text-underline-position`** CSS property specifies the position of the underline which is set using the `text-decoration` property's `underline` value.
    *
    * **Syntax**: `auto | [ from-font | under ] || [ left | right ]`
    *
@@ -21372,7 +21372,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-user-select"?: Property.WebkitUserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
    *
    * **Syntax**: `horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr`
    *
@@ -21383,7 +21383,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
 
 export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`, and `animation-timeline`.
    *
    * **Syntax**: `<single-animation>#`
    *
@@ -21391,7 +21391,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-moz-animation"?: Property.Animation<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
    *
@@ -21399,7 +21399,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-moz-animation-delay"?: Property.AnimationDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
    *
@@ -21407,7 +21407,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-moz-border-image"?: Property.BorderImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
    *
@@ -21415,7 +21415,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-moz-column-rule"?: Property.ColumnRule<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`columns`** CSS shorthand property sets the maximum number of columns to use when drawing an element's contents, along with the minimum width and maximum height of the element's columns.
    *
    * **Syntax**: `[ <'column-width'> || <'column-count'> ] [ / <'column-height'> ]?`
    *
@@ -21423,7 +21423,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-moz-columns"?: Property.Columns<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
    * **Syntax**: `<single-transition>#`
    *
@@ -21431,7 +21431,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-moz-transition"?: Property.Transition<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`flex`** CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
    *
    * **Syntax**: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
    *
@@ -21439,7 +21439,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-ms-flex"?: Property.Flex<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
    * **Syntax**: `<single-transition>#`
    *
@@ -21449,7 +21449,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
   /** **Syntax**: `<single-animation>#` */
   "-webkit-animation"?: Property.WebkitAnimation<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
    *
@@ -21461,7 +21461,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
   /** **Syntax**: `<spread-shadow>#` */
   "-webkit-box-shadow"?: Property.WebkitBoxShadow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
    *
@@ -21469,7 +21469,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-webkit-column-rule"?: Property.ColumnRule<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`columns`** CSS shorthand property sets the maximum number of columns to use when drawing an element's contents, along with the minimum width and maximum height of the element's columns.
    *
    * **Syntax**: `[ <'column-width'> || <'column-count'> ] [ / <'column-height'> ]?`
    *
@@ -21487,7 +21487,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-webkit-line-clamp"?: Property.WebkitLineClamp | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
+   * The **`mask`** CSS shorthand property hides an element (partially or fully) by masking or clipping a specified area of the image. It is a shorthand for all the `mask-*` properties. The property accepts one or more comma-separated values, where each value corresponds to a `<mask-layer>`.
    *
    * **Syntax**: `<mask-layer>#`
    */
@@ -21499,7 +21499,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-webkit-mask-box-image"?: Property.WebkitMaskBoxImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
+   * The **`text-emphasis`** CSS shorthand property applies emphasis marks to text (except spaces and control characters).
    *
    * **Syntax**: `<'text-emphasis-style'> || <'text-emphasis-color'>`
    *
@@ -21507,7 +21507,7 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-webkit-text-emphasis"?: Property.TextEmphasis | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+   * The **`-webkit-text-stroke`** CSS shorthand property specifies the width and color of strokes for text characters.
    *
    * **Syntax**: `<line-width> || <color>`
    *
@@ -21559,7 +21559,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "inset-area"?: Property.PositionArea | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block`** CSS shorthand property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -21569,7 +21569,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "offset-block"?: Property.InsetBlock<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -21579,7 +21579,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "offset-block-end"?: Property.InsetBlockEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-block-start`** CSS property defines the logical block start offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -21589,7 +21589,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "offset-block-start"?: Property.InsetBlockStart<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline`** CSS shorthand property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<'top'>{1,2}`
    *
@@ -21599,7 +21599,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "offset-inline"?: Property.InsetInline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline-end`** CSS property defines the logical inline end inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -21609,7 +21609,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "offset-inline-end"?: Property.InsetInlineEnd<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
+   * The **`inset-inline-start`** CSS property defines the logical inline start inset of an element, which maps to a physical offset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `auto | <length-percentage>`
    *
@@ -21669,7 +21669,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "text-decoration-skip"?: Property.TextDecorationSkip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
+   * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
    *
@@ -21679,7 +21679,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-khtml-line-break"?: Property.LineBreak | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Syntax**: `<opacity-value>`
    *
@@ -21699,7 +21699,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-khtml-user-select"?: Property.UserSelect | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
    * **Syntax**: `<bg-clip>#`
    *
@@ -21709,7 +21709,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-background-clip"?: Property.BackgroundClip | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-origin`** CSS property sets the background's origin: from the border start, inside the border, or inside the padding.
    *
    * **Syntax**: `<visual-box>#`
    *
@@ -21719,7 +21719,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-background-origin"?: Property.BackgroundOrigin | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-size`** CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
    *
    * **Syntax**: `<bg-size>#`
    *
@@ -21729,7 +21729,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-background-size"?: Property.BackgroundSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-radius`** CSS shorthand property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
    * **Syntax**: `<length-percentage [0,∞]>{1,4} [ / <length-percentage [0,∞]>{1,4} ]?`
    *
@@ -21739,7 +21739,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius"?: Property.BorderRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-left-radius`** CSS property rounds the bottom-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -21749,7 +21749,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius-bottomleft"?: Property.BorderBottomLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-bottom-right-radius`** CSS property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -21759,7 +21759,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius-bottomright"?: Property.BorderBottomRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-left-radius`** CSS property rounds the top-left corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -21769,7 +21769,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius-topleft"?: Property.BorderTopLeftRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-top-right-radius`** CSS property rounds the top-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.
    *
    * **Syntax**: `<border-radius>`
    *
@@ -21779,7 +21779,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius-topright"?: Property.BorderTopRightRadius<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `<spread-shadow>#`
    *
@@ -21789,7 +21789,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-box-shadow"?: Property.BoxShadow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-count`** CSS property breaks an element's content into the specified number of columns.
    *
    * **Syntax**: `auto | <integer [1,∞]>`
    *
@@ -21799,7 +21799,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-column-count"?: Property.ColumnCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
+   * The **`column-fill`** CSS property controls how an element's contents are balanced when broken into columns.
    *
    * **Syntax**: `auto | balance | balance-all`
    *
@@ -21809,7 +21809,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-column-fill"?: Property.ColumnFill | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
    * **Syntax**: `<opacity-value>`
    *
@@ -21819,7 +21819,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-opacity"?: Property.Opacity | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2023.
+   * The **`outline`** CSS shorthand property sets the style, color, and width of an element's outline.
    *
    * **Syntax**: `<'outline-width'> || <'outline-style'> || <'outline-color'>`
    *
@@ -21829,7 +21829,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-outline"?: Property.Outline<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`outline-color`** CSS property sets the color of an element's outline.
    *
    * **Syntax**: `auto | <'border-top-color'>`
    *
@@ -21839,7 +21839,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-outline-color"?: Property.OutlineColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`outline-style`** CSS property sets the style of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `auto | <outline-line-style>`
    *
@@ -21849,7 +21849,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-outline-style"?: Property.OutlineStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
    * **Syntax**: `<line-width>`
    *
@@ -21859,7 +21859,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-outline-width"?: Property.OutlineWidth<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+   * The **`text-align-last`** CSS property sets how the last line of a block or a line, right before a forced line break, is aligned.
    *
    * **Syntax**: `auto | start | end | left | right | center | justify | match-parent`
    *
@@ -21869,7 +21869,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-text-align-last"?: Property.TextAlignLast | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-color`** CSS property sets the color of decorations added to text by `text-decoration-line`.
    *
    * **Syntax**: `<color>`
    *
@@ -21879,7 +21879,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-text-decoration-color"?: Property.TextDecorationColor | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-line`** CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.
    *
    * **Syntax**: `none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error`
    *
@@ -21889,7 +21889,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-text-decoration-line"?: Property.TextDecorationLine | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`text-decoration-style`** CSS property sets the style of the lines specified by `text-decoration-line`. The style applies to all lines that are set with `text-decoration-line`.
    *
    * **Syntax**: `solid | double | dotted | dashed | wavy`
    *
@@ -21899,7 +21899,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-text-decoration-style"?: Property.TextDecorationStyle | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
    * **Syntax**: `<time>#`
    *
@@ -21909,7 +21909,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-transition-delay"?: Property.TransitionDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Syntax**: `<time [0s,∞]>#`
    *
@@ -21919,7 +21919,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-transition-duration"?: Property.TransitionDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
    * **Syntax**: `none | <single-transition-property>#`
    *
@@ -21929,7 +21929,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-transition-property"?: Property.TransitionProperty | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -21939,7 +21939,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-transition-timing-function"?: Property.TransitionTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`, and `animation-timeline`.
    *
    * **Syntax**: `<single-animation>#`
    *
@@ -21949,7 +21949,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation"?: Property.Animation<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
    * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
    *
@@ -21959,7 +21959,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-delay"?: Property.AnimationDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
    *
@@ -21969,7 +21969,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-direction"?: Property.AnimationDirection | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-duration`** CSS property sets the length of time that an animation takes to complete one cycle.
    *
    * **Syntax**: `[ auto | <time [0s,∞]> ]#`
    *
@@ -21979,7 +21979,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-duration"?: Property.AnimationDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
    * **Syntax**: `<single-animation-fill-mode>#`
    *
@@ -21989,7 +21989,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-fill-mode"?: Property.AnimationFillMode | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
    * **Syntax**: `<single-animation-iteration-count>#`
    *
@@ -21999,7 +21999,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-iteration-count"?: Property.AnimationIterationCount | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-name`** CSS property specifies the names of one or more `@keyframes` at-rules that describe the animation to apply to an element. Multiple `@keyframes` at-rules are specified as a comma-separated list of names. If the specified name does not match any `@keyframes` at-rule, no properties are animated.
    *
    * **Syntax**: `[ none | <keyframes-name> ]#`
    *
@@ -22009,7 +22009,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-name"?: Property.AnimationName | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-play-state`** CSS property sets whether an animation is running or paused.
    *
    * **Syntax**: `<single-animation-play-state>#`
    *
@@ -22019,7 +22019,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-play-state"?: Property.AnimationPlayState | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`animation-timing-function`** CSS property sets how an animation progresses through the duration of each cycle.
    *
    * **Syntax**: `<easing-function>#`
    *
@@ -22029,7 +22029,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-animation-timing-function"?: Property.AnimationTimingFunction | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`background-size`** CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
    *
    * **Syntax**: `<bg-size>#`
    *
@@ -22039,7 +22039,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-background-size"?: Property.BackgroundSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
    *
@@ -22049,7 +22049,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-border-image"?: Property.BorderImage | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
    * **Syntax**: `fill | none | [contain | cover] || scale-down`
    *
@@ -22059,7 +22059,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-object-fit"?: Property.ObjectFit | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
+   * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
    *
    * **Syntax**: `<position>`
    *
@@ -22069,7 +22069,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-object-position"?: Property.ObjectPosition<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2021.
+   * The **`tab-size`** CSS property is used to customize the width of tab characters (U+0009).
    *
    * **Syntax**: `<number [0,∞]> | <length [0,∞]>`
    *
@@ -22079,7 +22079,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-tab-size"?: Property.TabSize<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
+   * The **`text-overflow`** CSS property sets how hidden overflow content is signaled to users.
    *
    * **Syntax**: `[ clip | ellipsis | <string> | fade | <fade()> ]{1,2}`
    *
@@ -22089,7 +22089,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-text-overflow"?: Property.TextOverflow | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
    * **Syntax**: `none | <transform-list>`
    *
@@ -22099,7 +22099,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-transform"?: Property.Transform | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
    * **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?`
    *
@@ -22109,7 +22109,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-transform-origin"?: Property.TransformOrigin<TLength> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
    * **Syntax**: `<single-transition>#`
    *
@@ -22119,7 +22119,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-transition"?: Property.Transition<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-delay`** CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
    *
    * **Syntax**: `<time>#`
    *
@@ -22129,7 +22129,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-transition-delay"?: Property.TransitionDelay<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
    * **Syntax**: `<time [0s,∞]>#`
    *
@@ -22139,7 +22139,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-transition-duration"?: Property.TransitionDuration<TTime> | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
    * **Syntax**: `none | <single-transition-property>#`
    *
@@ -22149,7 +22149,7 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-o-transition-property"?: Property.TransitionProperty | undefined;
   /**
-   * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
+   * The **`transition-timing-function`** CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect.
    *
    * **Syntax**: `<easing-function>#`
    *
