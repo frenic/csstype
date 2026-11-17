@@ -421,15 +421,27 @@ export async function declarator(minTypesInDataTypes: number) {
             // `@font-feature-values`): share one declaration
             declaration = sameName[1];
           } else {
+            let uniqueName = declarationName;
+
             if (sameName) {
               warn(
                 'At-rule descriptor `%s` has different types in different at-rules; declaring both',
                 descriptor.name,
               );
+
+              // A second declaration with the same name would be a duplicate
+              // identifier, so qualify it with the at-rule name
+              uniqueName = toPascalCase(name) + declarationName;
+
+              let index = 2;
+              while (Array.from(atRuleDeclarations.values()).some(d => d.name === uniqueName)) {
+                uniqueName = toPascalCase(name) + declarationName + index;
+                index++;
+              }
             }
 
             declaration = {
-              name: declarationName,
+              name: uniqueName,
               export: false,
               types: declarable(types),
               generics,
