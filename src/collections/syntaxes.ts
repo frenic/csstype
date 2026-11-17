@@ -1,6 +1,6 @@
-import rawProperties from 'mdn-data/css/properties.json';
-import rawSyntaxes from 'mdn-data/css/syntaxes.json';
 import { Identifier } from '@mdn/browser-compat-data';
+import { properties as rawProperties, syntaxes as rawSyntaxes } from '../data/css';
+import { syntaxes as legacySyntaxes } from '../data/legacy';
 import { IExtendedProperty, properties as patchedProperties, syntaxes as patchedSyntaxes } from '../data/patches';
 import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from '../data/svg';
 import parse from '../syntax/parser';
@@ -19,7 +19,7 @@ export function getProperties() {
       shorthand:
         name in patchedProperties && typeof patchedProperties[name].shorthand === 'boolean'
           ? patchedProperties[name].shorthand
-          : Array.isArray(rawProperties[name].computed),
+          : Array.isArray(rawProperties[name].longhands),
     };
   }
 
@@ -39,7 +39,12 @@ export function isProperty(name: string) {
 }
 
 export function isSyntax(name: string) {
-  return name in rawSyntaxes || name in rawSvgSyntaxes || (name in patchedSyntaxes && !!patchedSyntaxes[name].syntax);
+  return (
+    name in rawSyntaxes ||
+    name in legacySyntaxes ||
+    name in rawSvgSyntaxes ||
+    (name in patchedSyntaxes && !!patchedSyntaxes[name].syntax)
+  );
 }
 
 const validatedPropertySyntaxes: string[] = [];
@@ -52,7 +57,7 @@ export function getPropertySyntax(name: string) {
     if (rawSyntax && !validatedPropertySyntaxes.includes(name)) {
       const compatibilityData = getPropertyData(name);
 
-      if (compatibilityData && !validatePatch(compatibilityData, rawProperties[name].syntax, patch.syntax)) {
+      if (compatibilityData && !validatePatch(compatibilityData, rawSyntax, patch.syntax)) {
         error(
           'The patched property `%s` did not patch the source with anything or was incomplete compared to source',
           name,
@@ -78,13 +83,15 @@ export function getSyntax(name: string) {
   const patch = patchedSyntaxes[name];
 
   const rawSyntax =
-    name in rawSyntaxes ? rawSyntaxes[name].syntax : rawSvgSyntaxes[name] && rawSvgSyntaxes[name].syntax;
+    (name in rawSyntaxes && rawSyntaxes[name].syntax) ||
+    (name in legacySyntaxes && legacySyntaxes[name].syntax) ||
+    (rawSvgSyntaxes[name] && rawSvgSyntaxes[name].syntax);
 
   if (patch && patch.syntax) {
     if (rawSyntax && !validatedSyntaxes.includes(name)) {
       const compatibilityData = getTypesData(name);
 
-      if (compatibilityData && !validatePatch(compatibilityData, rawSyntaxes[name].syntax, patch.syntax)) {
+      if (compatibilityData && !validatePatch(compatibilityData, rawSyntax, patch.syntax)) {
         error(
           'The patched syntax `%s` did not patch the source with anything or was incomplete compared to source',
           name,

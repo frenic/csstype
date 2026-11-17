@@ -411,15 +411,24 @@ export async function declarator(minTypesInDataTypes: number) {
         let declaration = atRuleDeclarations.get(types);
 
         if (!declaration) {
-          declaration = {
-            name: toPropertyDeclarationName(descriptor.name),
-            export: false,
-            types: declarable(types),
-            generics,
-            namespace: atRuleNamespace,
-          };
+          const declarationName = toPropertyDeclarationName(descriptor.name);
 
-          atRuleDeclarations.set(types, declaration);
+          // Descriptors with the same name in different at-rules (e.g.
+          // `font-display` in `@font-face` and `@font-feature-values`) share
+          // one declaration, and we assume here that they are identical
+          declaration = Array.from(atRuleDeclarations.values()).find(d => d.name === declarationName);
+
+          if (!declaration) {
+            declaration = {
+              name: declarationName,
+              export: false,
+              types: declarable(types),
+              generics,
+              namespace: atRuleNamespace,
+            };
+
+            atRuleDeclarations.set(types, declaration);
+          }
         }
 
         atRuleDefinitions[name].push({

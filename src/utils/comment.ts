@@ -1,13 +1,12 @@
 import { format } from 'prettier';
-import l10n from 'mdn-data/l10n/css.json';
 import { Identifier, SupportStatement } from '@mdn/browser-compat-data';
+import { mdnUrls as legacyMdnUrls } from '../data/legacy';
 import { IExtendedProperty } from '../data/patches';
 import { getCompats, getSupport, SupportedSimpleSupportStatement, versionAdded } from '../utils/compat';
 import { warn } from './logger';
 import { getSummary } from './urls';
 
 const BLANK_ROW = '';
-const L10N_TAGS_REGEX = /(<[^>]+>|\{\{[^\\}]+\}\})/;
 
 export async function composeCommentBlock(
   compatibilityData: Identifier | undefined,
@@ -18,8 +17,11 @@ export async function composeCommentBlock(
   const rows: string[] = [];
   const includeCompatibility = !vendor && !obsolete && compatibilityData;
 
-  if (data.mdn_url) {
-    const summary = await getSummary(data.mdn_url);
+  // BCD carries the MDN link; the 25 properties it lacks are in local legacy data
+  const mdnUrl = compatibilityData?.__compat?.mdn_url ?? (data.name ? legacyMdnUrls[data.name] : undefined);
+
+  if (mdnUrl) {
+    const summary = await getSummary(mdnUrl);
     if (summary) {
       rows.push(summary, BLANK_ROW);
     }
@@ -30,13 +32,8 @@ export async function composeCommentBlock(
   }
 
   if (typeof data.initial === 'string') {
-    if (data.initial in l10n) {
-      if (typeof l10n[data.initial]['en-US'] === 'string') {
-        rows.push(`**Initial value**: ${formatL10n(l10n[data.initial]['en-US'])}`, BLANK_ROW);
-      }
-    } else {
-      rows.push(`**Initial value**: \`${data.initial}\``, BLANK_ROW);
-    }
+    // Webref gives the initial value as raw spec text; no l10n lookup
+    rows.push(`**Initial value**: \`${data.initial}\``, BLANK_ROW);
   }
 
   // Skip compatibility table for obsolete and vendor properties
@@ -224,32 +221,4 @@ function versionDiff(a: string, b: string) {
   }
 
   return bNumber - aNumber;
-}
-
-function formatL10n(phrase: string) {
-  return phrase
-    .split(L10N_TAGS_REGEX)
-    .map(chunk => {
-      if (chunk === '<code>' || chunk === '</code>') {
-        return '`';
-      }
-
-      if (chunk.startsWith('<') && chunk.endsWith('>')) {
-        return '';
-      }
-
-      // References to another property
-      const curlyBlock = chunk.match(/\{\{cssxref\("([^"]*)"\)\}\}/);
-      if (curlyBlock) {
-        return `_${curlyBlock[1]}_`;
-      }
-
-      if (chunk.startsWith('{{') && chunk.endsWith('}}')) {
-        warn('Unknown curly bracket block `%s` in i10n', chunk);
-        return chunk;
-      }
-
-      return chunk;
-    })
-    .join('');
 }

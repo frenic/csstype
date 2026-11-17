@@ -1,4 +1,4 @@
-export interface IExtendedProperty extends Partial<MDN.Property> {
+export interface IExtendedProperty extends Partial<WebRef.PropertyFeature> {
   shorthand?: boolean;
 }
 
@@ -56,7 +56,7 @@ export const properties: { [property: string]: IExtendedProperty } = {
   },
 };
 
-export const syntaxes: { [property: string]: MDN.Syntax } = {
+export const syntaxes: { [name: string]: { syntax: string } } = {
   // Missing syntax
   'hex-color': {
     syntax: '<string>',

@@ -15,35 +15,23 @@ async function update() {
 
   console.info('Check for updates...');
 
-  const MDN_DATA = 'mdn-data';
   const MDN_COMPAT = '@mdn/browser-compat-data';
 
-  const currentMdnDataVersion = nextPackageJson.devDependencies[MDN_DATA];
   const currentMdnCompatVersion = nextPackageJson.devDependencies[MDN_COMPAT];
 
-  const [mdnDataMaster, mdnCompatMaster] = [
-    await getJsonAsync({
-      hostname: 'api.github.com',
-      path: '/repos/mdn/data/releases',
-      headers: { 'User-Agent': 'NodeJS' },
-    }),
-    await getJsonAsync({
-      hostname: 'api.github.com',
-      path: '/repos/mdn/browser-compat-data/releases',
-      headers: { 'User-Agent': 'NodeJS' },
-    }),
-  ];
+  const mdnCompatMaster = await getJsonAsync({
+    hostname: 'api.github.com',
+    path: '/repos/mdn/browser-compat-data/releases',
+    headers: { 'User-Agent': 'NodeJS' },
+  });
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const latestMdnDataVersion = (mdnDataMaster as any)[0].name.replace(/^v/, '');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const latestMdnCompatVersion = (mdnCompatMaster as any)[0].name.replace(/^v/, '');
 
-  if (currentMdnDataVersion !== latestMdnDataVersion || currentMdnCompatVersion !== latestMdnCompatVersion) {
+  if (currentMdnCompatVersion !== latestMdnCompatVersion) {
     console.info('Update found!');
     console.info('Upgrading...');
 
-    nextPackageJson.devDependencies[MDN_DATA] = latestMdnDataVersion;
     nextPackageJson.devDependencies[MDN_COMPAT] = latestMdnCompatVersion;
 
     await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');

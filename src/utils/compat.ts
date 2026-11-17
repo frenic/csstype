@@ -137,9 +137,9 @@ function alternativeKeywords(data: Identifier, value: string): string[] {
   return alternatives;
 }
 
-export function isDeprecated(data: { status?: string }, compat?: CompatStatement) {
-  // Assume not deprecated if is status i missing
-  return data.status === 'obsolete' || (!!compat && !!compat.status && compat.status.deprecated);
+export function isDeprecated(compat?: CompatStatement) {
+  // BCD decides: deprecated only when the compat statement says so
+  return !!compat && !!compat.status && compat.status.deprecated;
 }
 
 export function isAddedBySome(compat: CompatStatement): boolean {
