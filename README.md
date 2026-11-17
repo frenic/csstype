@@ -281,11 +281,4 @@ _If you're using CSS Custom Properties you can step directly to step 3._
 
 ## Contributing
 
-**Never modify `index.d.ts` and `index.js.flow` directly. They are generated automatically and committed so that we can easily follow any change it results in.** Therefor it's important that you run `$ git config merge.ours.driver true` after you've forked and cloned. That setting prevents merge conflicts when doing rebase.
-
-### Commands
-
-- `npm run build` Generates typings and type checks them
-- `npm run watch` Runs build on each save
-- `npm run test` Runs the tests
-- `npm run lazy` Type checks, lints and formats everything
+See [CONTRIBUTING.md](CONTRIBUTING.md). In short: never edit `index.d.ts` or `index.js.flow` by hand. They are generated. After cloning, run `git config merge.ours.driver true`.
