@@ -3,8 +3,9 @@ import { getHtmlAttributes, getSvgAttributes } from './collections/attributes';
 import { getDataTypesOf } from './collections/data-types';
 import { getGlobals, getHtmlProperties, getSvgProperties, isVendorProperty } from './collections/properties';
 import { getPseudos } from './collections/selectors';
-import { IDataType, Type, TypeType } from './syntax/typer';
+import { hasType, IDataType, Type, TypeType } from './syntax/typer';
 import { toCamelCase, toPascalCase, toVendorPrefixCase } from './utils/casing';
+import { warn } from './utils/logger';
 
 export interface IArray {
   type: Type.Array;
@@ -412,13 +413,21 @@ export async function declarator(minTypesInDataTypes: number) {
 
         if (!declaration) {
           const declarationName = toPropertyDeclarationName(descriptor.name);
+          const sameName = Array.from(atRuleDeclarations.entries()).find(([, d]) => d.name === declarationName);
 
-          // Descriptors with the same name in different at-rules (e.g.
-          // `font-display` in `@font-face` and `@font-feature-values`) share
-          // one declaration, and we assume here that they are identical
-          declaration = Array.from(atRuleDeclarations.values()).find(d => d.name === declarationName);
+          if (sameName && sameResolvedTypes(sameName[0], types)) {
+            // Same descriptor name with identical resolved types in different
+            // at-rules (e.g. `font-display` in `@font-face` and
+            // `@font-feature-values`): share one declaration
+            declaration = sameName[1];
+          } else {
+            if (sameName) {
+              warn(
+                'At-rule descriptor `%s` has different types in different at-rules; declaring both',
+                descriptor.name,
+              );
+            }
 
-          if (!declaration) {
             declaration = {
               name: declarationName,
               export: false,
@@ -895,6 +904,16 @@ function sorter(a: MixedType, b: MixedType) {
     return a.literal - b.literal;
   }
   return a.type - b.type;
+}
+
+function sameResolvedTypes(a: MixedType[], b: MixedType[]) {
+  const aTypes = a as TypeType[];
+  const bTypes = b as TypeType[];
+  return (
+    aTypes.length === bTypes.length &&
+    aTypes.every(type => hasType(bTypes, type)) &&
+    bTypes.every(type => hasType(aTypes, type))
+  );
 }
 
 function onlyContainsString(types: MixedType[]) {

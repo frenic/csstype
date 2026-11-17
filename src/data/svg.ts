@@ -1,5 +1,5 @@
-// This is originated from https://svgwg.org/svg2-draft/propidx.html to add SVG specific properties
-// and is a temporarily solution until https://github.com/mdn/data/issues/59 is solved
+// SVG specific properties, originated from https://svgwg.org/svg2-draft/propidx.html.
+// A temporary local list until the CSS data covers SVG properties too.
 
 import { properties as webrefProperties } from './css';
 

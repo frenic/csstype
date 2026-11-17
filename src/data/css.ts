@@ -1,6 +1,6 @@
 // The single read of `@webref/css` data. The package ships one big `css.json`,
-// so we read it synchronously (like the T07 tools did) instead of using the
-// async `listAll()` and refactoring the generator to ESM.
+// so we read it synchronously instead of using the async `listAll()` and
+// refactoring the generator to ESM.
 import rawCss from '@webref/css/css.json';
 
 // Indexed by name. A handful of features have different definitions for
