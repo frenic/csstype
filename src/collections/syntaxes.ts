@@ -1,6 +1,6 @@
 import { Identifier } from '@mdn/browser-compat-data';
 import { properties as rawProperties, syntaxes as rawSyntaxes } from '../data/css';
-import { syntaxes as legacySyntaxes } from '../data/legacy';
+import { properties as legacyProperties, syntaxes as legacySyntaxes } from '../data/legacy';
 import { IExtendedProperty, properties as patchedProperties, syntaxes as patchedSyntaxes } from '../data/patches';
 import { properties as rawSvgProperties, syntaxes as rawSvgSyntaxes } from '../data/svg';
 import parse from '../syntax/parser';
@@ -29,12 +29,22 @@ export function getProperties() {
     }
   }
 
+  // Local legacy properties webref lacks (vendor/obsolete features BCD keeps)
+  for (const name in legacyProperties) {
+    if (!(name in properties)) {
+      properties[name] = { syntax: legacyProperties[name].syntax, shorthand: false };
+    }
+  }
+
   return properties;
 }
 
 export function isProperty(name: string) {
   return (
-    name in rawProperties || name in rawSvgProperties || (name in patchedProperties && !!patchedProperties[name].syntax)
+    name in rawProperties ||
+    name in rawSvgProperties ||
+    name in legacyProperties ||
+    (name in patchedProperties && !!patchedProperties[name].syntax)
   );
 }
 
@@ -52,6 +62,9 @@ const validatedPropertySyntaxes: string[] = [];
 export function getPropertySyntax(name: string) {
   const patch = patchedProperties[name];
   const rawSyntax = rawProperties[name] && rawProperties[name].syntax;
+  // Webref vendor aliases without a syntax (e.g. `-webkit-box-align`) and
+  // legacy-only properties get their syntax from local legacy data
+  const legacySyntax = legacyProperties[name] && legacyProperties[name].syntax;
 
   if (patch && patch.syntax) {
     if (rawSyntax && !validatedPropertySyntaxes.includes(name)) {
@@ -68,6 +81,10 @@ export function getPropertySyntax(name: string) {
     }
 
     return patch.syntax;
+  }
+
+  if (!rawSyntax && legacySyntax) {
+    return legacySyntax;
   }
 
   if (!rawSyntax) {

@@ -122,18 +122,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   animationComposition?: Property.AnimationComposition | undefined;
   /**
-   * **Syntax**: `<time [0s,∞]>#`
-   *
-   * **Initial value**: `0s`
-   */
-  animationDelayEnd?: Property.AnimationDelayEnd<TTime> | undefined;
-  /**
-   * **Syntax**: `<time>#`
-   *
-   * **Initial value**: `0s`
-   */
-  animationDelayStart?: Property.AnimationDelayStart<TTime> | undefined;
-  /**
    * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
@@ -223,12 +211,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-play-state
    */
   animationPlayState?: Property.AnimationPlayState | undefined;
-  /**
-   * **Syntax**: `[ normal | [ <length-percentage> | <timeline-range-center-subject> <length-percentage>? ] ]#`
-   *
-   * **Initial value**: `normal`
-   */
-  animationRangeCenter?: Property.AnimationRangeCenter<TLength> | undefined;
   /**
    * The **`animation-range-end`** CSS property sets the point on the timeline where an animation should end.
    *
@@ -445,18 +427,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   backgroundOrigin?: Property.BackgroundOrigin | undefined;
   /**
-   * **Syntax**: `[ center | [ [ start | end ]? <length-percentage>? ]! ]#`
-   *
-   * **Initial value**: `0%`
-   */
-  backgroundPositionBlock?: Property.BackgroundPositionBlock<TLength> | undefined;
-  /**
-   * **Syntax**: `[ center | [ [ start | end ]? <length-percentage>? ]! ]#`
-   *
-   * **Initial value**: `0%`
-   */
-  backgroundPositionInline?: Property.BackgroundPositionInline<TLength> | undefined;
-  /**
    * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
@@ -498,18 +468,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-repeat
    */
   backgroundRepeat?: Property.BackgroundRepeat | undefined;
-  /**
-   * **Syntax**: `<repetition>#`
-   *
-   * **Initial value**: `repeat`
-   */
-  backgroundRepeatBlock?: Property.BackgroundRepeatBlock | undefined;
-  /**
-   * **Syntax**: `<repetition>#`
-   *
-   * **Initial value**: `repeat`
-   */
-  backgroundRepeatInline?: Property.BackgroundRepeatInline | undefined;
   /**
    * The **`background-repeat-x`** CSS property sets how background images are repeated, or not, along the horizontal axis.
    *
@@ -553,12 +511,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-size
    */
   backgroundSize?: Property.BackgroundSize<TLength> | undefined;
-  /**
-   * **Syntax**: `<bg-layer>#`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  backgroundTbd?: Property.BackgroundTbd<TLength> | undefined;
   /**
    * The **`baseline-shift`** CSS property repositions the dominant-baseline of a text element relative to the dominant-baseline of its parent text content element. The shifted element might be a sub- or superscript. If the property is present, the value overrides the element's `baseline-shift` attribute.
    *
@@ -613,54 +565,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   blockSize?: Property.BlockSize<TLength> | undefined;
   /**
-   * **Syntax**: `auto | center | start | end`
-   *
-   * **Initial value**: `auto`
-   */
-  blockStepAlign?: Property.BlockStepAlign | undefined;
-  /**
-   * **Syntax**: `margin-box | padding-box | content-box`
-   *
-   * **Initial value**: `margin-box`
-   */
-  blockStepInsert?: Property.BlockStepInsert | undefined;
-  /**
-   * **Syntax**: `up | down | nearest`
-   *
-   * **Initial value**: `up`
-   */
-  blockStepRound?: Property.BlockStepRound | undefined;
-  /**
-   * **Syntax**: `none | <length [0,∞]>`
-   *
-   * **Initial value**: `none`
-   */
-  blockStepSize?: Property.BlockStepSize<TLength> | undefined;
-  /**
-   * **Syntax**: `<content-list>`
-   *
-   * **Initial value**: `content(text)`
-   */
-  bookmarkLabel?: Property.BookmarkLabel | undefined;
-  /**
-   * **Syntax**: `none | <integer [1,∞]>`
-   *
-   * **Initial value**: `none`
-   */
-  bookmarkLevel?: Property.BookmarkLevel | undefined;
-  /**
-   * **Syntax**: `open | closed`
-   *
-   * **Initial value**: `open`
-   */
-  bookmarkState?: Property.BookmarkState | undefined;
-  /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  borderBlockEndClip?: Property.BorderBlockEndClip<TLength> | undefined;
-  /**
    * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -703,12 +607,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderBlockEndWidth?: Property.BorderBlockEndWidth<TLength> | undefined;
   /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  borderBlockStartClip?: Property.BorderBlockStartClip<TLength> | undefined;
-  /**
    * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -750,12 +648,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-start-width
    */
   borderBlockStartWidth?: Property.BorderBlockStartWidth<TLength> | undefined;
-  /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  borderBottomClip?: Property.BorderBottomClip<TLength> | undefined;
   /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -828,12 +720,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom-width
    */
   borderBottomWidth?: Property.BorderBottomWidth<TLength> | undefined;
-  /**
-   * **Syntax**: `none | parent | display`
-   *
-   * **Initial value**: `none`
-   */
-  borderBoundary?: Property.BorderBoundary | undefined;
   /**
    * The **`border-collapse`** CSS property sets whether cells inside a `<table>` have shared or separate borders.
    *
@@ -947,12 +833,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderImageWidth?: Property.BorderImageWidth<TLength> | undefined;
   /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  borderInlineEndClip?: Property.BorderInlineEndClip<TLength> | undefined;
-  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -998,12 +878,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineEndWidth?: Property.BorderInlineEndWidth<TLength> | undefined;
   /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  borderInlineStartClip?: Property.BorderInlineStartClip<TLength> | undefined;
-  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -1048,12 +922,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   borderInlineStartWidth?: Property.BorderInlineStartWidth<TLength> | undefined;
   /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  borderLeftClip?: Property.BorderLeftClip<TLength> | undefined;
-  /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -1095,18 +963,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-left-width
    */
   borderLeftWidth?: Property.BorderLeftWidth<TLength> | undefined;
-  /**
-   * **Syntax**: `all | [ sides | corners ] <length-percentage [0,∞]>? | [ top | right | bottom | left ] <length-percentage [0,∞]>`
-   *
-   * **Initial value**: `all`
-   */
-  borderLimit?: Property.BorderLimit | undefined;
-  /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  borderRightClip?: Property.BorderRightClip<TLength> | undefined;
   /**
    * The **`border-right-color`** CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties `border-color` or `border-right`.
    *
@@ -1205,12 +1061,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-start-start-radius
    */
   borderStartStartRadius?: Property.BorderStartStartRadius<TLength> | undefined;
-  /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  borderTopClip?: Property.BorderTopClip<TLength> | undefined;
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -1313,36 +1163,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   boxDecorationBreak?: Property.BoxDecorationBreak | undefined;
   /**
-   * **Syntax**: `<length [0,∞]>#`
-   *
-   * **Initial value**: `0`
-   */
-  boxShadowBlur?: Property.BoxShadowBlur<TLength> | undefined;
-  /**
-   * **Syntax**: `<color>#`
-   *
-   * **Initial value**: `currentcolor`
-   */
-  boxShadowColor?: Property.BoxShadowColor | undefined;
-  /**
-   * **Syntax**: `[ none | <length>{1,2} ]#`
-   *
-   * **Initial value**: `none`
-   */
-  boxShadowOffset?: Property.BoxShadowOffset<TLength> | undefined;
-  /**
-   * **Syntax**: `[ outset | inset ]#`
-   *
-   * **Initial value**: `outset`
-   */
-  boxShadowPosition?: Property.BoxShadowPosition | undefined;
-  /**
-   * **Syntax**: `<length>#`
-   *
-   * **Initial value**: `0`
-   */
-  boxShadowSpread?: Property.BoxShadowSpread<TLength> | undefined;
-  /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Syntax**: `content-box | border-box`
@@ -1357,12 +1177,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-sizing
    */
   boxSizing?: Property.BoxSizing | undefined;
-  /**
-   * **Syntax**: `none | block-start | block-end | center | baseline | last-baseline`
-   *
-   * **Initial value**: `none`
-   */
-  boxSnap?: Property.BoxSnap | undefined;
   /**
    * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
@@ -1926,12 +1740,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   continue?: Property.Continue | undefined;
   /**
-   * **Syntax**: `none | [ [ <custom-ident> <content-level>] [, <custom-ident> <content-level>]* ]?`
-   *
-   * **Initial value**: `none`
-   */
-  copyInto?: Property.CopyInto | undefined;
-  /**
    * The **`corner-bottom-left-shape`** CSS property specifies the shape of a box's bottom-left corner, within its `border-radius` area.
    *
    * **Syntax**: `<corner-shape-value>`
@@ -2086,18 +1894,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   counterSet?: Property.CounterSet | undefined;
   /**
-   * **Syntax**: `<url> <decibel>? | none`
-   *
-   * **Initial value**: `none`
-   */
-  cueAfter?: Property.CueAfter | undefined;
-  /**
-   * **Syntax**: `<url> <decibel>? | none`
-   *
-   * **Initial value**: `none`
-   */
-  cueBefore?: Property.CueBefore | undefined;
-  /**
    * The **`cursor`** CSS property sets the mouse cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Syntax**: `[<cursor-image>,]* <cursor-predefined>`
@@ -2224,24 +2020,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   emptyCells?: Property.EmptyCells | undefined;
   /**
-   * **Syntax**: `none | [ <'event-trigger-name'> <'event-trigger-source'> ]#`
-   *
-   * **Initial value**: `none`
-   */
-  eventTrigger?: Property.EventTrigger | undefined;
-  /**
-   * **Syntax**: `none | <dashed-ident>#`
-   *
-   * **Initial value**: `none`
-   */
-  eventTriggerName?: Property.EventTriggerName | undefined;
-  /**
-   * **Syntax**: `[ none | <event-function>+ [ / <event-function>+ ]? ]#`
-   *
-   * **Initial value**: `none`
-   */
-  eventTriggerSource?: Property.EventTriggerSource | undefined;
-  /**
    * The **`field-sizing`** CSS property enables you to control the sizing behavior of elements that are given a default preferred size, such as form control elements. This property enables you to override the default sizing behavior, allowing form controls to adjust in size to fit their contents.
    *
    * **Syntax**: `fixed | content`
@@ -2270,24 +2048,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fill?: Property.Fill | undefined;
   /**
-   * **Syntax**: `bounding-box | slice | clone`
-   *
-   * **Initial value**: `bounding-box`
-   */
-  fillBreak?: Property.FillBreak | undefined;
-  /**
-   * **Syntax**: `<color>`
-   *
-   * **Initial value**: `currentcolor`
-   */
-  fillColor?: Property.FillColor | undefined;
-  /**
-   * **Syntax**: `<paint>#`
-   *
-   * **Initial value**: `none`
-   */
-  fillImage?: Property.FillImage | undefined;
-  /**
    * The **`fill-opacity`** CSS property defines the opacity of the painting operation (color, gradient, pattern, etc.) applied to SVG shapes or text content elements to fill the element. The property defines the opacity of the element's `fill` only; it does not affect the stroke. If present, it overrides the element's `fill-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
@@ -2302,24 +2062,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fillOpacity?: Property.FillOpacity | undefined;
   /**
-   * **Syntax**: `match-parent | fill-box | stroke-box | content-box | padding-box | border-box`
-   *
-   * **Initial value**: `match-parent`
-   */
-  fillOrigin?: Property.FillOrigin | undefined;
-  /**
-   * **Syntax**: `<position>#`
-   *
-   * **Initial value**: `0% 0%`
-   */
-  fillPosition?: Property.FillPosition<TLength> | undefined;
-  /**
-   * **Syntax**: `<repeat-style>#`
-   *
-   * **Initial value**: `repeat`
-   */
-  fillRepeat?: Property.FillRepeat | undefined;
-  /**
    * The **`fill-rule`** CSS property defines the rule used to determine which parts of the SVG shape's canvas are included inside a shape to be filled. If present, it overrides the element's `fill-rule` attribute.
    *
    * **Syntax**: `nonzero | evenodd`
@@ -2333,12 +2075,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/fill-rule
    */
   fillRule?: Property.FillRule | undefined;
-  /**
-   * **Syntax**: `<bg-size>#`
-   *
-   * **Initial value**: `auto`
-   */
-  fillSize?: Property.FillSize<TLength> | undefined;
   /**
    * The **`filter`** CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
    *
@@ -2469,24 +2205,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   float?: Property.Float | undefined;
   /**
-   * **Syntax**: `<integer> | last | none`
-   *
-   * **Initial value**: `none`
-   */
-  floatDefer?: Property.FloatDefer | undefined;
-  /**
-   * **Syntax**: `<length-percentage>`
-   *
-   * **Initial value**: `0`
-   */
-  floatOffset?: Property.FloatOffset<TLength> | undefined;
-  /**
-   * **Syntax**: `inline | column | region | page`
-   *
-   * **Initial value**: `inline`
-   */
-  floatReference?: Property.FloatReference | undefined;
-  /**
    * The **`flood-color`** CSS property defines the color of the current filter primitive subregion in `<feFlood>` and `<feDropShadow>` elements within a `<filter>`. If present, it overrides the element's `flood-color` attribute.
    *
    * **Syntax**: `<color>`
@@ -2514,18 +2232,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flood-opacity
    */
   floodOpacity?: Property.FloodOpacity | undefined;
-  /**
-   * **Syntax**: `<custom-ident> | none`
-   *
-   * **Initial value**: `none`
-   */
-  flowFrom?: Property.FlowFrom | undefined;
-  /**
-   * **Syntax**: `none | <custom-ident> [element | content]?`
-   *
-   * **Initial value**: `none`
-   */
-  flowInto?: Property.FlowInto | undefined;
   /**
    * **Syntax**: `normal | <length-percentage [0,∞]> | infinite`
    *
@@ -2652,6 +2358,18 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-size-adjust
    */
   fontSizeAdjust?: Property.FontSizeAdjust | undefined;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * |              Chrome              |              Firefox               |              Safari              |               Edge                | IE  |
+   * | :------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-: |
+   * | **5** _(-webkit-font-smoothing)_ | **25** _(-moz-osx-font-smoothing)_ | **4** _(-webkit-font-smoothing)_ | **79** _(-webkit-font-smoothing)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-smooth
+   */
+  fontSmooth?: Property.FontSmooth<TLength> | undefined;
   /**
    * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
@@ -2876,18 +2594,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   fontWidth?: Property.FontWidth | undefined;
   /**
-   * **Syntax**: `block | inline | compact`
-   *
-   * **Initial value**: `block`
-   */
-  footnoteDisplay?: Property.FootnoteDisplay | undefined;
-  /**
-   * **Syntax**: `auto | line | block`
-   *
-   * **Initial value**: `auto`
-   */
-  footnotePolicy?: Property.FootnotePolicy | undefined;
-  /**
    * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
    *
    * **Syntax**: `auto | none | preserve-parent-color`
@@ -2973,12 +2679,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridColumnEnd?: Property.GridColumnEnd | undefined;
   /**
-   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
-   *
-   * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
-   */
-  gridColumnGap?: Property.GridColumnGap<TLength> | undefined;
-  /**
    * The **`grid-column-start`** CSS property specifies a grid item's start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
    *
    * **Syntax**: `<grid-line>`
@@ -3006,12 +2706,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/grid-row-end
    */
   gridRowEnd?: Property.GridRowEnd | undefined;
-  /**
-   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
-   *
-   * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
-   */
-  gridRowGap?: Property.GridRowGap<TLength> | undefined;
   /**
    * The **`grid-row-start`** CSS property specifies a grid item's start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
    *
@@ -3126,12 +2820,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   hyphenateLimitChars?: Property.HyphenateLimitChars | undefined;
   /**
-   * **Syntax**: `none | always | column | page | spread`
-   *
-   * **Initial value**: `none`
-   */
-  hyphenateLimitLast?: Property.HyphenateLimitLast | undefined;
-  /**
    * **Syntax**: `no-limit | <integer [0,∞]>`
    *
    * **Initial value**: `no-limit`
@@ -3141,12 +2829,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * |   No   |   No    | **27.3** |  No  | No  |
    */
   hyphenateLimitLines?: Property.HyphenateLimitLines | undefined;
-  /**
-   * **Syntax**: `<length-percentage>`
-   *
-   * **Initial value**: `0`
-   */
-  hyphenateLimitZone?: Property.HyphenateLimitZone<TLength> | undefined;
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
@@ -3162,12 +2844,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphens
    */
   hyphens?: Property.Hyphens | undefined;
-  /**
-   * **Syntax**: `normal | paused | stopped | running`
-   *
-   * **Initial value**: `normal`
-   */
-  imageAnimation?: Property.ImageAnimation | undefined;
   /**
    * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image.
    *
@@ -3197,14 +2873,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   imageRendering?: Property.ImageRendering | undefined;
   /**
-   * The **`image-resolution`** CSS property specifies the intrinsic resolution of all raster images used in or on the element. It affects content images such as replaced elements and generated content, and decorative images such as `background-image` images.
-   *
-   * **Syntax**: `[ from-image || <resolution> ] && snap?`
-   *
-   * **Initial value**: `1dppx`
-   */
-  imageResolution?: Property.ImageResolution | undefined;
-  /**
    * The **`initial-letter`** CSS property sets the size and sink for dropped, raised, and sunken initial letters. This property applies to `::first-letter` pseudo-elements and inline-level first children of block containers.
    *
    * **Syntax**: `normal | <number [1,∞]> <integer [1,∞]> | <number [1,∞]> && [ drop | raise ]?`
@@ -3218,18 +2886,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/initial-letter
    */
   initialLetter?: Property.InitialLetter | undefined;
-  /**
-   * **Syntax**: `[ border-box? [ alphabetic | ideographic | hanging | leading ]? ]!`
-   *
-   * **Initial value**: `alphabetic`
-   */
-  initialLetterAlign?: Property.InitialLetterAlign | undefined;
-  /**
-   * **Syntax**: `none | first | all | grid | <length-percentage>`
-   *
-   * **Initial value**: `none`
-   */
-  initialLetterWrap?: Property.InitialLetterWrap<TLength> | undefined;
   /**
    * The **`inline-size`** CSS property defines the size of an element's block along the inline axis. If the `writing-mode` is horizontal, it corresponds to the `width`; if the writing mode is vertical, it corresponds to the `height`. A related property is `block-size`, which defines the other dimension of the element.
    *
@@ -3245,18 +2901,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inline-size
    */
   inlineSize?: Property.InlineSize<TLength> | undefined;
-  /**
-   * **Syntax**: `normal | stretch`
-   *
-   * **Initial value**: `normal`
-   */
-  inlineSizing?: Property.InlineSizing | undefined;
-  /**
-   * **Syntax**: `auto | none`
-   *
-   * **Initial value**: `auto`
-   */
-  inputSecurity?: Property.InputSecurity | undefined;
   /**
    * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3484,18 +3128,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   lineBreak?: Property.LineBreak | undefined;
   /**
-   * **Syntax**: `leading | <text-edge>`
-   *
-   * **Initial value**: `leading`
-   */
-  lineFitEdge?: Property.LineFitEdge | undefined;
-  /**
-   * **Syntax**: `match-parent | create`
-   *
-   * **Initial value**: `match-parent`
-   */
-  lineGrid?: Property.LineGrid | undefined;
-  /**
    * The **`line-height`** CSS property sets the height of a line box in horizontal writing modes. In vertical writing modes, it sets the width of a line box. It's commonly used to set the distance between lines of text. On block-level elements in horizontal writing modes, it specifies the preferred height of line boxes within the element, and on non-replaced inline elements, it specifies the height that is used to calculate line box height.
    *
    * **Syntax**: `normal | <number [0,∞]> | <length-percentage [0,∞]>`
@@ -3509,26 +3141,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/line-height
    */
   lineHeight?: Property.LineHeight<TLength> | undefined;
-  /**
-   * The **`line-height-step`** CSS property sets the step unit for line box heights. When the property is set, line box heights are rounded up to the closest multiple of the unit.
-   *
-   * **Syntax**: `<length [0,∞]>`
-   *
-   * **Initial value**: `0`
-   */
-  lineHeightStep?: Property.LineHeightStep<TLength> | undefined;
-  /**
-   * **Syntax**: `<length>`
-   *
-   * **Initial value**: `0`
-   */
-  linePadding?: Property.LinePadding<TLength> | undefined;
-  /**
-   * **Syntax**: `none | baseline | contain`
-   *
-   * **Initial value**: `none`
-   */
-  lineSnap?: Property.LineSnap | undefined;
   /**
    * The **`link-parameters`** CSS property sets values of external resources, such as SVGs, whose attributes have been set with the `env()` CSS function
    *
@@ -3629,12 +3241,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-bottom
    */
   marginBottom?: Property.MarginBottom<TLength> | undefined;
-  /**
-   * **Syntax**: `auto | keep | discard`
-   *
-   * **Initial value**: `auto`
-   */
-  marginBreak?: Property.MarginBreak | undefined;
   /**
    * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -3750,12 +3356,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   markerMid?: Property.MarkerMid | undefined;
   /**
-   * **Syntax**: `match-self | match-parent`
-   *
-   * **Initial value**: `match-self`
-   */
-  markerSide?: Property.MarkerSide | undefined;
-  /**
    * The **`marker-start`** CSS property points to a marker that will be drawn on the first vertex of the element's path; that is, at its starting vertex. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-start` attribute in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
@@ -3769,14 +3369,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/marker-start
    */
   markerStart?: Property.MarkerStart | undefined;
-  /**
-   * The **`mask-border-mode`** CSS property specifies the blending mode used in a mask border.
-   *
-   * **Syntax**: `luminance | alpha`
-   *
-   * **Initial value**: `alpha`
-   */
-  maskBorderMode?: Property.MaskBorderMode | undefined;
   /**
    * The **`mask-border-outset`** CSS property specifies the distance by which an element's mask border is set out from its border box.
    *
@@ -4136,12 +3728,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   minInlineSize?: Property.MinInlineSize<TLength> | undefined;
   /**
-   * **Syntax**: `legacy | zero-if-scroll || zero-if-extrinsic`
-   *
-   * **Initial value**: `legacy`
-   */
-  minIntrinsicSizing?: Property.MinIntrinsicSizing | undefined;
-  /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
@@ -4214,30 +3800,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/offset-rotate
    */
   motionRotation?: Property.OffsetRotate | undefined;
-  /**
-   * **Syntax**: `auto | <id> [ current | root | <target-name> ]?`
-   *
-   * **Initial value**: `auto`
-   */
-  navDown?: Property.NavDown | undefined;
-  /**
-   * **Syntax**: `auto | <id> [ current | root | <target-name> ]?`
-   *
-   * **Initial value**: `auto`
-   */
-  navLeft?: Property.NavLeft | undefined;
-  /**
-   * **Syntax**: `auto | <id> [ current | root | <target-name> ]?`
-   *
-   * **Initial value**: `auto`
-   */
-  navRight?: Property.NavRight | undefined;
-  /**
-   * **Syntax**: `auto | <id> [ current | root | <target-name> ]?`
-   *
-   * **Initial value**: `auto`
-   */
-  navUp?: Property.NavUp | undefined;
   /**
    * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
@@ -4495,54 +4057,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-block
    */
   overflowBlock?: Property.OverflowBlock | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginBlockEnd?: Property.OverflowClipMarginBlockEnd<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginBlockStart?: Property.OverflowClipMarginBlockStart<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginBottom?: Property.OverflowClipMarginBottom<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginInlineEnd?: Property.OverflowClipMarginInlineEnd<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginInlineStart?: Property.OverflowClipMarginInlineStart<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginLeft?: Property.OverflowClipMarginLeft<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginRight?: Property.OverflowClipMarginRight<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginTop?: Property.OverflowClipMarginTop<TLength> | undefined;
   /**
    * The **`overflow-inline`** CSS property sets what shows when content overflows the inline start and end edges of a box. This may be nothing, a scroll bar, or the overflow content.
    *
@@ -4827,18 +4341,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   pathLength?: Property.PathLength<TLength> | undefined;
   /**
-   * **Syntax**: `<time [0s,∞]> | none | x-weak | weak | medium | strong | x-strong`
-   *
-   * **Initial value**: `none`
-   */
-  pauseAfter?: Property.PauseAfter<TTime> | undefined;
-  /**
-   * **Syntax**: `<time [0s,∞]> | none | x-weak | weak | medium | strong | x-strong`
-   *
-   * **Initial value**: `none`
-   */
-  pauseBefore?: Property.PauseBefore<TTime> | undefined;
-  /**
    * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length [0,∞]>`
@@ -4882,18 +4384,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/pointer-events
    */
   pointerEvents?: Property.PointerEvents | undefined;
-  /**
-   * **Syntax**: `[ block | inline | x | y ]#`
-   *
-   * **Initial value**: `block`
-   */
-  pointerTimelineAxis?: Property.PointerTimelineAxis | undefined;
-  /**
-   * **Syntax**: `[ none | <dashed-ident> ]#`
-   *
-   * **Initial value**: `none`
-   */
-  pointerTimelineName?: Property.PointerTimelineName | undefined;
   /**
    * The **`position`** CSS property sets how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` physical properties and the `inset-block-start`, `inset-block-end`, `inset-inline-start`, and `inset-inline-end` flow-relative logical properties can be used to determine the final location of positioned elements.
    *
@@ -5050,12 +4540,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   readingOrder?: Property.ReadingOrder | undefined;
   /**
-   * **Syntax**: `auto | break`
-   *
-   * **Initial value**: `auto`
-   */
-  regionFragment?: Property.RegionFragment | undefined;
-  /**
    * The **`resize`** CSS property sets whether an element is resizable, and if so, in which directions.
    *
    * **Syntax**: `none | both | horizontal | vertical | block | inline`
@@ -5069,18 +4553,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/resize
    */
   resize?: Property.Resize | undefined;
-  /**
-   * **Syntax**: `<time [0s,∞]> | none | x-weak | weak | medium | strong | x-strong`
-   *
-   * **Initial value**: `none`
-   */
-  restAfter?: Property.RestAfter<TTime> | undefined;
-  /**
-   * **Syntax**: `<time [0s,∞]> | none | x-weak | weak | medium | strong | x-strong`
-   *
-   * **Initial value**: `none`
-   */
-  restBefore?: Property.RestBefore<TTime> | undefined;
   /**
    * The **`right`** CSS property participates in specifying the horizontal position of a positioned element. This inset property has no effect on non-positioned elements.
    *
@@ -5263,12 +4735,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/ruby-align
    */
   rubyAlign?: Property.RubyAlign | undefined;
-  /**
-   * **Syntax**: `separate | merge | auto`
-   *
-   * **Initial value**: `separate`
-   */
-  rubyMerge?: Property.RubyMerge | undefined;
   /**
    * The **`ruby-overhang`** CSS property specifies whether or not a `<ruby>` annotation overhangs any surrounding text.
    *
@@ -5836,12 +5302,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   shapeImageThreshold?: Property.ShapeImageThreshold | undefined;
   /**
-   * **Syntax**: `auto | outside-shape | [ <basic-shape> || shape-box ] | <image> | display`
-   *
-   * **Initial value**: `auto`
-   */
-  shapeInside?: Property.ShapeInside | undefined;
-  /**
    * The **`shape-margin`** CSS property sets a margin for a CSS shape created using `shape-outside`.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
@@ -5870,12 +5330,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   shapeOutside?: Property.ShapeOutside | undefined;
   /**
-   * **Syntax**: `<length-percentage [0,∞]>`
-   *
-   * **Initial value**: `0`
-   */
-  shapePadding?: Property.ShapePadding<TLength> | undefined;
-  /**
    * The **`shape-rendering`** CSS property provides hints to the renderer about what tradeoffs to make when rendering shapes like paths, circles, or rectangles. It only has an effect on the `<circle>`, `<ellipse>`, `<line>`, `<path>`, `<polygon>`, `<polyline>`, and `<rect>` elements. If explicitly declared, the value of the CSS property overrides the any values of the element's `shape-rendering` attribute.
    *
    * **Syntax**: `auto | optimizeSpeed | crispEdges | geometricPrecision`
@@ -5889,30 +5343,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/shape-rendering
    */
   shapeRendering?: Property.ShapeRendering | undefined;
-  /**
-   * **Syntax**: `auto | left-to-right | right-to-left | top-to-bottom | bottom-to-top`
-   *
-   * **Initial value**: `auto`
-   */
-  sliderOrientation?: Property.SliderOrientation | undefined;
-  /**
-   * **Syntax**: `auto | focus | scroll`
-   *
-   * **Initial value**: `auto`
-   */
-  spatialNavigationAction?: Property.SpatialNavigationAction | undefined;
-  /**
-   * **Syntax**: `auto | contain`
-   *
-   * **Initial value**: `auto`
-   */
-  spatialNavigationContain?: Property.SpatialNavigationContain | undefined;
-  /**
-   * **Syntax**: `normal | grid`
-   *
-   * **Initial value**: `normal`
-   */
-  spatialNavigationFunction?: Property.SpatialNavigationFunction | undefined;
   /**
    * **Syntax**: `auto | never | always`
    *
@@ -5962,12 +5392,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   stopOpacity?: Property.StopOpacity | undefined;
   /**
-   * **Syntax**: `none | [ <custom-ident> <string>+ ]#`
-   *
-   * **Initial value**: `none`
-   */
-  stringSet?: Property.StringSet | undefined;
-  /**
    * The **`stroke`** CSS property defines the color or SVG paint server used to draw an element's stroke. As such, `stroke` only has an effect on elements that can be given a stroke (for example, `<rect>` or `<ellipse>`); see the page on the SVG `stroke` attribute for a complete list. When declared, the CSS value overrides any value of the element's `stroke` SVG attribute.
    *
    * **Syntax**: `<paint>`
@@ -5982,24 +5406,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   stroke?: Property.Stroke | undefined;
   /**
-   * **Syntax**: `center | inset | outset`
-   *
-   * **Initial value**: `center`
-   */
-  strokeAlign?: Property.StrokeAlign | undefined;
-  /**
-   * **Syntax**: `center | inner | outer`
-   *
-   * **Initial value**: `center`
-   */
-  strokeAlignment?: Property.StrokeAlignment | undefined;
-  /**
-   * **Syntax**: `bounding-box | slice | clone`
-   *
-   * **Initial value**: `bounding-box`
-   */
-  strokeBreak?: Property.StrokeBreak | undefined;
-  /**
    * **Syntax**: `<color>#`
    *
    * **Initial value**: `transparent`
@@ -6009,24 +5415,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * |   No   |   No    | **11.1** |  No  | No  |
    */
   strokeColor?: Property.StrokeColor | undefined;
-  /**
-   * **Syntax**: `none | <length>`
-   *
-   * **Initial value**: `none`
-   */
-  strokeDashCorner?: Property.StrokeDashCorner<TLength> | undefined;
-  /**
-   * **Syntax**: `none | [ stretch | compress ] || [ dashes || gaps ]`
-   *
-   * **Initial value**: `none`
-   */
-  strokeDashJustify?: Property.StrokeDashJustify | undefined;
-  /**
-   * **Syntax**: `none | [stretch | compress] [dashes | gaps]?`
-   *
-   * **Initial value**: `none`
-   */
-  strokeDashadjust?: Property.StrokeDashadjust | undefined;
   /**
    * The **`stroke-dasharray`** CSS property defines a pattern of dashes and gaps used in the painting of the SVG shape's stroke. If present, it overrides the element's `stroke-dasharray` attribute.
    *
@@ -6042,12 +5430,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeDasharray?: Property.StrokeDasharray<TLength> | undefined;
   /**
-   * **Syntax**: `none | <length>`
-   *
-   * **Initial value**: `none`
-   */
-  strokeDashcorner?: Property.StrokeDashcorner<TLength> | undefined;
-  /**
    * The **`stroke-dashoffset`** CSS property defines an offset for the starting point of the rendering of an SVG element's associated dash array. If present, it overrides the element's `stroke-dashoffset` attribute.
    *
    * **Syntax**: `<length-percentage> | <number>`
@@ -6061,12 +5443,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-dashoffset
    */
   strokeDashoffset?: Property.StrokeDashoffset<TLength> | undefined;
-  /**
-   * **Syntax**: `<paint>#`
-   *
-   * **Initial value**: `none`
-   */
-  strokeImage?: Property.StrokeImage | undefined;
   /**
    * The **`stroke-linecap`** CSS property defines the shape to be used at the end of open subpaths of SVG elements' unclosed strokes. If present, it overrides the element's `stroke-linecap` attribute.
    *
@@ -6124,30 +5500,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   strokeOpacity?: Property.StrokeOpacity | undefined;
   /**
-   * **Syntax**: `match-parent | fill-box | stroke-box | content-box | padding-box | border-box`
-   *
-   * **Initial value**: `match-parent`
-   */
-  strokeOrigin?: Property.StrokeOrigin | undefined;
-  /**
-   * **Syntax**: `<position>#`
-   *
-   * **Initial value**: `0% 0%`
-   */
-  strokePosition?: Property.StrokePosition<TLength> | undefined;
-  /**
-   * **Syntax**: `<repeat-style>#`
-   *
-   * **Initial value**: `repeat`
-   */
-  strokeRepeat?: Property.StrokeRepeat | undefined;
-  /**
-   * **Syntax**: `<bg-size>#`
-   *
-   * **Initial value**: `auto`
-   */
-  strokeSize?: Property.StrokeSize<TLength> | undefined;
-  /**
    * The **`stroke-width`** CSS property defines the width of a stroke applied to the SVG shape. If present, it overrides the element's `stroke-width` attribute.
    *
    * **Syntax**: `[ <length-percentage> | <line-width> | <number> ]#`
@@ -6190,12 +5542,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/table-layout
    */
   tableLayout?: Property.TableLayout | undefined;
-  /**
-   * **Syntax**: `start | end | left | right | center | <string> | justify | match-parent`
-   *
-   * **Initial value**: `start`
-   */
-  textAlignAll?: Property.TextAlignAll | undefined;
   /**
    * The **`text-align-last`** CSS property sets how the last line of a block or a line, right before a forced line break, is aligned.
    *
@@ -6340,12 +5686,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textDecorationLine?: Property.TextDecorationLine | undefined;
   /**
-   * **Syntax**: `none | all`
-   *
-   * **Initial value**: `none`
-   */
-  textDecorationSkipBox?: Property.TextDecorationSkipBox | undefined;
-  /**
    * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
    *
    * **Syntax**: `auto | none | all`
@@ -6359,12 +5699,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-skip-ink
    */
   textDecorationSkipInk?: Property.TextDecorationSkipInk | undefined;
-  /**
-   * **Syntax**: `auto | skip-all | [ skip-underline || skip-overline || skip-line-through ] | no-skip`
-   *
-   * **Initial value**: `auto`
-   */
-  textDecorationSkipSelf?: Property.TextDecorationSkipSelf | undefined;
   /**
    * **Syntax**: `none | all | [ start || end ]`
    *
@@ -6435,12 +5769,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   textEmphasisPosition?: Property.TextEmphasisPosition | undefined;
   /**
-   * **Syntax**: `spaces || punctuation || symbols || narrow`
-   *
-   * **Initial value**: `spaces punctuation`
-   */
-  textEmphasisSkip?: Property.TextEmphasisSkip | undefined;
-  /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
    * **Syntax**: `none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | <string>`
@@ -6469,12 +5797,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-fit
    */
   textFit?: Property.TextFit | undefined;
-  /**
-   * **Syntax**: `none | start | end | left | right | center`
-   *
-   * **Initial value**: `none`
-   */
-  textGroupAlign?: Property.TextGroupAlign | undefined;
   /**
    * The **`text-indent`** CSS property sets the length of empty space (indentation) that is put before lines of text in a block.
    *
@@ -7099,54 +6421,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   visibility?: Property.Visibility | undefined;
   /**
-   * **Syntax**: `<number> | left | center | right | leftwards | rightwards`
-   *
-   * **Initial value**: `center`
-   */
-  voiceBalance?: Property.VoiceBalance | undefined;
-  /**
-   * **Syntax**: `auto | <time [0s,∞]>`
-   *
-   * **Initial value**: `auto`
-   */
-  voiceDuration?: Property.VoiceDuration<TTime> | undefined;
-  /**
-   * **Syntax**: `[ <voice-family-name> | <generic-voice> ]# | preserve`
-   *
-   * **Initial value**: `implementation-dependent`
-   */
-  voiceFamily?: Property.VoiceFamily | undefined;
-  /**
-   * **Syntax**: `<frequency [0Hz,∞]> && absolute | [ [ x-low | low | medium | high | x-high ] || [ <frequency [0Hz,∞]> | <semitones> | <percentage> ] ]`
-   *
-   * **Initial value**: `medium`
-   */
-  voicePitch?: Property.VoicePitch | undefined;
-  /**
-   * **Syntax**: `<frequency [0Hz,∞]> && absolute | [ [ x-low | low | medium | high | x-high ] || [ <frequency [0Hz,∞]> | <semitones> | <percentage> ] ]`
-   *
-   * **Initial value**: `medium`
-   */
-  voiceRange?: Property.VoiceRange | undefined;
-  /**
-   * **Syntax**: `[ normal | x-slow | slow | medium | fast | x-fast ] || <percentage [0,∞]>`
-   *
-   * **Initial value**: `normal`
-   */
-  voiceRate?: Property.VoiceRate | undefined;
-  /**
-   * **Syntax**: `normal | strong | moderate | none | reduced`
-   *
-   * **Initial value**: `normal`
-   */
-  voiceStress?: Property.VoiceStress | undefined;
-  /**
-   * **Syntax**: `silent | [ [ x-soft | soft | medium | loud | x-loud ] || <decibel> ]`
-   *
-   * **Initial value**: `medium`
-   */
-  voiceVolume?: Property.VoiceVolume | undefined;
-  /**
    * The **`white-space-collapse`** CSS property controls how white space inside an element is collapsed.
    *
    * **Syntax**: `collapse | discard | preserve | preserve-breaks | preserve-spaces | break-spaces`
@@ -7237,12 +6511,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   wordBreak?: Property.WordBreak | undefined;
   /**
-   * **Syntax**: `none | [ space | ideographic-space ] && auto-phrase?`
-   *
-   * **Initial value**: `none`
-   */
-  wordSpaceTransform?: Property.WordSpaceTransform | undefined;
-  /**
    * The **`word-spacing`** CSS property sets the spacing between words and between tags.
    *
    * **Syntax**: `normal | <length-percentage>`
@@ -7263,24 +6531,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   wordWrap?: Property.WordWrap | undefined;
   /**
-   * **Syntax**: `auto | avoid | avoid-line | avoid-flex | line | flex`
-   *
-   * **Initial value**: `auto`
-   */
-  wrapAfter?: Property.WrapAfter | undefined;
-  /**
-   * **Syntax**: `auto | avoid | avoid-line | avoid-flex | line | flex`
-   *
-   * **Initial value**: `auto`
-   */
-  wrapBefore?: Property.WrapBefore | undefined;
-  /**
-   * **Syntax**: `auto | both | start | end | minimum | maximum | clear`
-   *
-   * **Initial value**: `auto`
-   */
-  wrapFlow?: Property.WrapFlow | undefined;
-  /**
    * **Syntax**: `auto | avoid`
    *
    * **Initial value**: `auto`
@@ -7290,12 +6540,6 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * |   No   |   No    | **27.3** |  No  | No  |
    */
   wrapInside?: Property.WrapInside | undefined;
-  /**
-   * **Syntax**: `wrap | none`
-   *
-   * **Initial value**: `wrap`
-   */
-  wrapThrough?: Property.WrapThrough | undefined;
   /**
    * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
    *
@@ -7457,12 +6701,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   backgroundPosition?: Property.BackgroundPosition<TLength> | undefined;
   /**
-   * **Syntax**: `<'block-step-size'> || <'block-step-insert'> || <'block-step-align'> || <'block-step-round'>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  blockStep?: Property.BlockStep<TLength> | undefined;
-  /**
    * The **`border`** CSS shorthand property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
@@ -7490,12 +6728,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block
    */
   borderBlock?: Property.BorderBlock<TLength> | undefined;
-  /**
-   * **Syntax**: `<'border-top-clip'>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  borderBlockClip?: Property.BorderBlockClip<TLength> | undefined;
   /**
    * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7611,12 +6843,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderBottomRadius?: Property.BorderBottomRadius<TLength> | undefined;
   /**
-   * **Syntax**: `<'border-top-clip'>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  borderClip?: Property.BorderClip<TLength> | undefined;
-  /**
    * The **`border-color`** CSS shorthand property sets the color of an element's border.
    *
    * **Syntax**: `[ <color> | <image-1D> ]{1,4}`
@@ -7659,12 +6885,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline
    */
   borderInline?: Property.BorderInline<TLength> | undefined;
-  /**
-   * **Syntax**: `<'border-top-clip'>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  borderInlineClip?: Property.BorderInlineClip<TLength> | undefined;
   /**
    * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7886,12 +7106,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   boxShadow?: Property.BoxShadow | undefined;
   /**
-   * **Syntax**: `<'caret-color'> || <'caret-animation'> || <'caret-shape'>`
-   *
-   * **Initial value**: `auto`
-   */
-  caret?: Property.Caret | undefined;
-  /**
    * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
@@ -8008,18 +7222,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   container?: Property.Container | undefined;
   /**
-   * **Syntax**: `<'corner-shape'> || <'border-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  corner?: Property.Corner<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerBlockEnd?: Property.CornerBlockEnd<TLength> | undefined;
-  /**
    * The **`corner-block-end-shape`** CSS property specifies the shape of both the corners on a box's block-end edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -8033,12 +7235,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-end-shape
    */
   cornerBlockEndShape?: Property.CornerBlockEndShape | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerBlockStart?: Property.CornerBlockStart<TLength> | undefined;
   /**
    * The **`corner-block-start-shape`** CSS property specifies the shape of both the corners on a box's block-start edge, within their `border-radius` area.
    *
@@ -8054,24 +7250,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   cornerBlockStartShape?: Property.CornerBlockStartShape | undefined;
   /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerBottom?: Property.CornerBottom<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerBottomLeft?: Property.CornerBottomLeft<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerBottomRight?: Property.CornerBottomRight<TLength> | undefined;
-  /**
    * The **`corner-bottom-shape`** CSS property specifies the shape of both the corners on a box's bottom edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -8085,24 +7263,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-shape
    */
   cornerBottomShape?: Property.CornerBottomShape | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerEndEnd?: Property.CornerEndEnd<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerEndStart?: Property.CornerEndStart<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerInlineEnd?: Property.CornerInlineEnd<TLength> | undefined;
   /**
    * The **`corner-inline-end-shape`** CSS property specifies the shape of both the corners on a box's inline-end edge, within their `border-radius` area.
    *
@@ -8118,12 +7278,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   cornerInlineEndShape?: Property.CornerInlineEndShape | undefined;
   /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerInlineStart?: Property.CornerInlineStart<TLength> | undefined;
-  /**
    * The **`corner-inline-start-shape`** CSS property specifies the shape of both the corners on a box's inline-start edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -8138,12 +7292,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   cornerInlineStartShape?: Property.CornerInlineStartShape | undefined;
   /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerLeft?: Property.CornerLeft<TLength> | undefined;
-  /**
    * The **`corner-left-shape`** CSS property specifies the shape of both the corners on a box's left-hand edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -8157,12 +7305,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-left-shape
    */
   cornerLeftShape?: Property.CornerLeftShape | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerRight?: Property.CornerRight<TLength> | undefined;
   /**
    * The **`corner-right-shape`** CSS property specifies the shape of both the corners on a box's right-hand edge, within their `border-radius` area.
    *
@@ -8192,36 +7334,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   cornerShape?: Property.CornerShape | undefined;
   /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerStartEnd?: Property.CornerStartEnd<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerStartStart?: Property.CornerStartStart<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerTop?: Property.CornerTop<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerTopLeft?: Property.CornerTopLeft<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  cornerTopRight?: Property.CornerTopRight<TLength> | undefined;
-  /**
    * The **`corner-top-shape`** CSS property specifies the shape of both the corners on a box's top edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -8235,12 +7347,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-shape
    */
   cornerTopShape?: Property.CornerTopShape | undefined;
-  /**
-   * **Syntax**: `<'cue-before'> <'cue-after'>?`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  cue?: Property.Cue | undefined;
   /**
    * The **`flex`** CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
    *
@@ -8369,12 +7475,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/grid-column
    */
   gridColumn?: Property.GridColumn | undefined;
-  /**
-   * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
-   *
-   * **Syntax**: `<'row-gap'> <'column-gap'>?`
-   */
-  gridGap?: Property.GridGap<TLength> | undefined;
   /**
    * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
@@ -8667,18 +7767,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   overflowClipMargin?: Property.OverflowClipMargin<TLength> | undefined;
   /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginBlock?: Property.OverflowClipMarginBlock<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  overflowClipMarginInline?: Property.OverflowClipMarginInline<TLength> | undefined;
-  /**
    * The **`overscroll-behavior`** CSS property controls what happens when scrolling reaches the edge of a scroll container.
    *
    * **Syntax**: `[ contain | none | auto | chain ]{1,2}`
@@ -8735,12 +7823,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   paddingInline?: Property.PaddingInline<TLength> | undefined;
   /**
-   * **Syntax**: `<'pause-before'> <'pause-after'>?`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  pause?: Property.Pause<TTime> | undefined;
-  /**
    * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e., the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
    *
    * **Syntax**: `<'align-content'> <'justify-content'>?`
@@ -8783,12 +7865,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   placeSelf?: Property.PlaceSelf | undefined;
   /**
-   * **Syntax**: `[ <'pointer-timeline-name'> <'pointer-timeline-axis'>? ]#`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  pointerTimeline?: Property.PointerTimeline | undefined;
-  /**
    * The **`position-try`** CSS shorthand property corresponds to the `position-try-order` and `position-try-fallbacks` properties.
    *
    * **Syntax**: `<'position-try-order'>? <'position-try-fallbacks'>`
@@ -8802,12 +7878,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-try
    */
   positionTry?: Property.PositionTry | undefined;
-  /**
-   * **Syntax**: `<'rest-before'> <'rest-after'>?`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  rest?: Property.Rest<TTime> | undefined;
   /**
    * The **`row-rule`** CSS shorthand property sets the width, style, and color of the line drawn between rows in multi-row grid, flex, and multi-col layouts.
    *
@@ -9190,12 +8260,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   textEmphasis?: Property.TextEmphasis | undefined;
   /**
-   * **Syntax**: `none | auto | <spacing-trim> || <autospace>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  textSpacing?: Property.TextSpacing | undefined;
-  /**
    * The **`text-wrap`** CSS shorthand property controls how text inside an element is wrapped. The different values provide:
    *
    * **Syntax**: `<'text-wrap-mode'> || <'text-wrap-style'>`
@@ -9251,12 +8315,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range
    */
   timelineTriggerActiveRange?: Property.TimelineTriggerActiveRange<TLength> | undefined;
-  /**
-   * **Syntax**: `[ <'timeline-trigger-activation-range'> [ / <'timeline-trigger-active-range'> ]? ]#`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  timelineTriggerRange?: Property.TimelineTriggerRange<TLength> | undefined;
   /**
    * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
@@ -9376,14 +8434,8 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `ease`
    */
   MozAnimationTimingFunction?: Property.AnimationTimingFunction | undefined;
-  /**
-   * The **`appearance`** CSS property specifies the rendered appearance of replaced UI widget elements such as form controls. Most commonly, such elements are given native, platform-specific styling based on the operating system's theme, or a primitive appearance with styles that can be overridden using CSS.
-   *
-   * **Syntax**: `none | auto | base | base-select | <compat-auto> | <compat-special>`
-   *
-   * **Initial value**: `none`
-   */
-  MozAppearance?: Property.Appearance | undefined;
+  /** **Syntax**: `none | button | button-arrow-down | button-arrow-next | button-arrow-previous | button-arrow-up | button-bevel | button-focus | caret | checkbox | checkbox-container | checkbox-label | checkmenuitem | dualbutton | groupbox | listbox | listitem | menuarrow | menubar | menucheckbox | menuimage | menuitem | menuitemtext | menulist | menulist-button | menulist-text | menulist-textfield | menupopup | menuradio | menuseparator | meterbar | meterchunk | progressbar | progressbar-vertical | progresschunk | progresschunk-vertical | radio | radio-container | radio-label | radiomenuitem | range | range-thumb | resizer | resizerpanel | scale-horizontal | scalethumbend | scalethumb-horizontal | scalethumbstart | scalethumbtick | scalethumb-vertical | scale-vertical | scrollbarbutton-down | scrollbarbutton-left | scrollbarbutton-right | scrollbarbutton-up | scrollbarthumb-horizontal | scrollbarthumb-vertical | scrollbartrack-horizontal | scrollbartrack-vertical | searchfield | separator | sheet | spinner | spinner-downbutton | spinner-textfield | spinner-upbutton | splitter | statusbar | statusbarpanel | tab | tabpanel | tabpanels | tab-scroll-arrow-back | tab-scroll-arrow-forward | textfield | textfield-multiline | toolbar | toolbarbutton | toolbarbutton-dropdown | toolbargripper | toolbox | tooltip | treeheader | treeheadercell | treeheadersortarrow | treeitem | treeline | treetwisty | treetwistyopen | treeview | -moz-mac-unified-toolbar | -moz-win-borderless-glass | -moz-win-browsertabbar-toolbox | -moz-win-communicationstext | -moz-win-communications-toolbox | -moz-win-exclude-glass | -moz-win-glass | -moz-win-mediatext | -moz-win-media-toolbox | -moz-window-button-box | -moz-window-button-box-maximized | -moz-window-button-close | -moz-window-button-maximize | -moz-window-button-minimize | -moz-window-button-restore | -moz-window-frame-bottom | -moz-window-frame-left | -moz-window-frame-right | -moz-window-titlebar | -moz-window-titlebar-maximized` */
+  MozAppearance?: Property.MozAppearance | undefined;
   /**
    * The **`backface-visibility`** CSS property sets whether the back face of an element is visible when turned towards the user.
    *
@@ -9511,6 +8563,18 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   MozMarginStart?: Property.MarginInlineStart<TLength> | undefined;
   /**
+   * The **`-moz-orient`** CSS property specifies the orientation of the element to which it's applied.
+   *
+   * **Syntax**: `inline | block | horizontal | vertical`
+   */
+  MozOrient?: Property.MozOrient | undefined;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   */
+  MozOsxFontSmoothing?: Property.FontSmooth<TLength> | undefined;
+  /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
@@ -9606,30 +8670,12 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `0`
    */
   msFlexPositive?: Property.FlexGrow | undefined;
-  /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
-   *
-   * **Syntax**: `<track-size>+`
-   *
-   * **Initial value**: `auto`
-   */
-  msGridColumns?: Property.GridAutoColumns<TLength> | undefined;
-  /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
-   *
-   * **Syntax**: `<track-size>+`
-   *
-   * **Initial value**: `auto`
-   */
-  msGridRows?: Property.GridAutoRows<TLength> | undefined;
-  /**
-   * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
-   *
-   * **Syntax**: `auto | none | preserve-parent-color`
-   *
-   * **Initial value**: `auto`
-   */
-  msHighContrastAdjust?: Property.ForcedColorAdjust | undefined;
+  /** **Syntax**: `none | <track-list> | <auto-track-list>` */
+  msGridColumns?: Property.MsGridColumns<TLength> | undefined;
+  /** **Syntax**: `none | <track-list> | <auto-track-list>` */
+  msGridRows?: Property.MsGridRows<TLength> | undefined;
+  /** **Syntax**: `auto | none` */
+  msHighContrastAdjust?: Property.MsHighContrastAdjust | undefined;
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
@@ -9670,14 +8716,8 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `visible`
    */
   msOverflowY?: Property.OverflowY | undefined;
-  /**
-   * The **`scroll-snap-type`** CSS property is set on a scroll container, opting it into scroll snapping by setting the direction and strictness of snap point enforcement within the snap port.
-   *
-   * **Syntax**: `none | [ x | y | block | inline | both | pair ] [ mandatory | proximity ]?`
-   *
-   * **Initial value**: `none`
-   */
-  msScrollSnapType?: Property.ScrollSnapType | undefined;
+  /** **Syntax**: `none | proximity | mandatory` */
+  msScrollSnapType?: Property.MsScrollSnapType | undefined;
   /**
    * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
@@ -9750,14 +8790,8 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `ease`
    */
   msTransitionTimingFunction?: Property.TransitionTimingFunction | undefined;
-  /**
-   * The **`user-select`** CSS property controls whether the user can select text. This doesn't have any effect on content loaded as part of a browser's user interface (its chrome), except in textboxes.
-   *
-   * **Syntax**: `auto | text | none | contain | all`
-   *
-   * **Initial value**: `auto`
-   */
-  msUserSelect?: Property.UserSelect | undefined;
+  /** **Syntax**: `none | element | text` */
+  msUserSelect?: Property.MsUserSelect | undefined;
   /**
    * The **`word-break`** CSS property sets whether line breaks appear wherever the text would otherwise overflow its content box.
    *
@@ -9818,6 +8852,12 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   WebkitBackgroundOrigin?: Property.WebkitBackgroundOrigin | undefined;
   /** **Syntax**: `<bg-size>#` */
   WebkitBackgroundSize?: Property.WebkitBackgroundSize<TLength> | undefined;
+  /**
+   * The **`-webkit-border-before`** CSS shorthand property sets the individual logical block start border property values in a single place in the style sheet.
+   *
+   * **Syntax**: `<'border-top'>`
+   */
+  WebkitBorderBefore?: Property.WebkitBorderBefore<TLength> | undefined;
   /** **Syntax**: `<border-radius>` */
   WebkitBorderBottomLeftRadius?: Property.WebkitBorderBottomLeftRadius<TLength> | undefined;
   /** **Syntax**: `<border-radius>` */
@@ -9834,6 +8874,8 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   WebkitBorderTopLeftRadius?: Property.WebkitBorderTopLeftRadius<TLength> | undefined;
   /** **Syntax**: `<border-radius>` */
   WebkitBorderTopRightRadius?: Property.WebkitBorderTopRightRadius<TLength> | undefined;
+  /** **Syntax**: `start | center | end | baseline | stretch` */
+  WebkitBoxAlign?: Property.WebkitBoxAlign | undefined;
   /**
    * The **`box-decoration-break`** CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
    *
@@ -9842,6 +8884,20 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `slice`
    */
   WebkitBoxDecorationBreak?: Property.BoxDecorationBreak | undefined;
+  /** **Syntax**: `<number>` */
+  WebkitBoxFlex?: Property.WebkitBoxFlex | undefined;
+  /** **Syntax**: `<integer>` */
+  WebkitBoxOrdinalGroup?: Property.WebkitBoxOrdinalGroup | undefined;
+  /** **Syntax**: `horizontal | vertical | inline-axis | block-axis | inherit` */
+  WebkitBoxOrient?: Property.WebkitBoxOrient | undefined;
+  /** **Syntax**: `start | center | end | justify` */
+  WebkitBoxPack?: Property.WebkitBoxPack | undefined;
+  /**
+   * The **`-webkit-box-reflect`** CSS property lets you reflect the content of an element in one specific direction.
+   *
+   * **Syntax**: `[ above | below | right | left ]? <length>? <image>?`
+   */
+  WebkitBoxReflect?: Property.WebkitBoxReflect<TLength> | undefined;
   /** **Syntax**: `content-box | border-box` */
   WebkitBoxSizing?: Property.WebkitBoxSizing | undefined;
   /**
@@ -9934,6 +8990,12 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `auto`
    */
   WebkitFontKerning?: Property.FontKerning | undefined;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   */
+  WebkitFontSmoothing?: Property.FontSmooth<TLength> | undefined;
   /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in the textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
@@ -10065,6 +9127,18 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    */
   WebkitMaskPosition?: Property.WebkitMaskPosition<TLength> | undefined;
   /**
+   * The `-webkit-mask-position-x` CSS property sets the initial horizontal position of a mask image.
+   *
+   * **Syntax**: `[ <length-percentage> | left | center | right ]#`
+   */
+  WebkitMaskPositionX?: Property.WebkitMaskPositionX<TLength> | undefined;
+  /**
+   * The `-webkit-mask-position-y` CSS property sets the initial vertical position of a mask image.
+   *
+   * **Syntax**: `[ <length-percentage> | top | center | bottom ]#`
+   */
+  WebkitMaskPositionY?: Property.WebkitMaskPositionY<TLength> | undefined;
+  /**
    * The **`mask-repeat`** CSS property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
    *
    * **Syntax**: `<repeat-style>#`
@@ -10138,6 +9212,12 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `0`
    */
   WebkitShapeMargin?: Property.ShapeMargin<TLength> | undefined;
+  /**
+   * **`-webkit-tap-highlight-color`** is a non-standard CSS property that sets the color of the highlight that appears over a link while it's being tapped. The highlighting indicates to the user that their tap is being successfully recognized, and indicates which element they're tapping on.
+   *
+   * **Syntax**: `<color>`
+   */
+  WebkitTapHighlightColor?: Property.WebkitTapHighlightColor | undefined;
   /**
    * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
@@ -10236,6 +9316,12 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Initial value**: `auto`
    */
   WebkitTextUnderlinePosition?: Property.TextUnderlinePosition | undefined;
+  /**
+   * The `-webkit-touch-callout` CSS property controls the display of the default callout shown when you touch and hold a touch target.
+   *
+   * **Syntax**: `default | none`
+   */
+  WebkitTouchCallout?: Property.WebkitTouchCallout | undefined;
   /** **Syntax**: `none | <transform-list>` */
   WebkitTransform?: Property.WebkitTransform | undefined;
   /** **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?` */
@@ -10250,6 +9336,8 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   WebkitTransitionProperty?: Property.WebkitTransitionProperty | undefined;
   /** **Syntax**: `<easing-function>#` */
   WebkitTransitionTimingFunction?: Property.WebkitTransitionTimingFunction | undefined;
+  /** **Syntax**: `read-only | read-write | read-write-plaintext-only` */
+  WebkitUserModify?: Property.WebkitUserModify | undefined;
   /**
    * The **`user-select`** CSS property controls whether the user can select text. This doesn't have any effect on content loaded as part of a browser's user interface (its chrome), except in textboxes.
    *
@@ -10407,6 +9495,70 @@ export interface VendorProperties<TLength = (string & {}) | 0, TTime = string & 
 
 export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | baseline | stretch`
+   *
+   * @deprecated
+   */
+  boxAlign?: Property.BoxAlign | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `normal | reverse | inherit`
+   *
+   * @deprecated
+   */
+  boxDirection?: Property.BoxDirection | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<number>`
+   *
+   * @deprecated
+   */
+  boxFlex?: Property.BoxFlex | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  boxFlexGroup?: Property.BoxFlexGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `single | multiple`
+   *
+   * @deprecated
+   */
+  boxLines?: Property.BoxLines | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  boxOrdinalGroup?: Property.BoxOrdinalGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `horizontal | vertical | inline-axis | block-axis | inherit`
+   *
+   * @deprecated
+   */
+  boxOrient?: Property.BoxOrient | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | justify`
+   *
+   * @deprecated
+   */
+  boxPack?: Property.BoxPack | undefined;
+  /**
    * Avoid using this feature in new projects. The CSS Masking specification deprecated the `clip` property. This feature may be a candidate for removal from web standards or browsers.
    *
    * **Syntax**: `<rect()> | auto`
@@ -10432,6 +9584,12 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    * @deprecated
    */
   glyphOrientationVertical?: Property.GlyphOrientationVertical | undefined;
+  /**
+   * **Syntax**: `auto | normal | active | inactive | disabled`
+   *
+   * @deprecated
+   */
+  imeMode?: Property.ImeMode | undefined;
   /**
    * The **`position-area`** CSS property enables an anchor-positioned element to be positioned relative to the edges of its associated anchor element by placing the positioned element on one or more tiles of an implicit 3x3 grid, where the anchoring element is the center cell.
    *
@@ -10553,6 +9711,70 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   textDecorationSkip?: Property.TextDecorationSkip | undefined;
   /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | baseline | stretch`
+   *
+   * @deprecated
+   */
+  KhtmlBoxAlign?: Property.BoxAlign | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `normal | reverse | inherit`
+   *
+   * @deprecated
+   */
+  KhtmlBoxDirection?: Property.BoxDirection | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<number>`
+   *
+   * @deprecated
+   */
+  KhtmlBoxFlex?: Property.BoxFlex | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  KhtmlBoxFlexGroup?: Property.BoxFlexGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `single | multiple`
+   *
+   * @deprecated
+   */
+  KhtmlBoxLines?: Property.BoxLines | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  KhtmlBoxOrdinalGroup?: Property.BoxOrdinalGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `horizontal | vertical | inline-axis | block-axis | inherit`
+   *
+   * @deprecated
+   */
+  KhtmlBoxOrient?: Property.BoxOrient | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | justify`
+   *
+   * @deprecated
+   */
+  KhtmlBoxPack?: Property.BoxPack | undefined;
+  /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
@@ -10663,6 +9885,54 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    */
   MozBorderRadiusTopright?: Property.BorderTopRightRadius<TLength> | undefined;
   /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | baseline | stretch`
+   *
+   * @deprecated
+   */
+  MozBoxAlign?: Property.BoxAlign | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `normal | reverse | inherit`
+   *
+   * @deprecated
+   */
+  MozBoxDirection?: Property.BoxDirection | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<number>`
+   *
+   * @deprecated
+   */
+  MozBoxFlex?: Property.BoxFlex | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  MozBoxOrdinalGroup?: Property.BoxOrdinalGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `horizontal | vertical | inline-axis | block-axis | inherit`
+   *
+   * @deprecated
+   */
+  MozBoxOrient?: Property.BoxOrient | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | justify`
+   *
+   * @deprecated
+   */
+  MozBoxPack?: Property.BoxPack | undefined;
+  /**
    * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `<spread-shadow>#`
@@ -10692,6 +9962,22 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    * @deprecated
    */
   MozColumnFill?: Property.ColumnFill | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `border-box | content-box | margin-box | padding-box`
+   *
+   * @deprecated
+   */
+  MozFloatEdge?: Property.MozFloatEdge | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `0 | 1`
+   *
+   * @deprecated
+   */
+  MozForceBrokenImageIcon?: Property.MozForceBrokenImageIcon | undefined;
   /**
    * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
@@ -10822,6 +10108,20 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
    * @deprecated
    */
   MozTransitionTimingFunction?: Property.TransitionTimingFunction | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `auto | none | enabled | disabled`
+   *
+   * @deprecated
+   */
+  MozUserInput?: Property.MozUserInput | undefined;
+  /**
+   * **Syntax**: `auto | normal | active | inactive | disabled`
+   *
+   * @deprecated
+   */
+  msImeMode?: Property.ImeMode | undefined;
   /**
    * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`, and `animation-timeline`.
    *
@@ -11045,6 +10345,30 @@ export interface ObsoleteProperties<TLength = (string & {}) | 0, TTime = string 
   /**
    * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
    *
+   * **Syntax**: `normal | reverse | inherit`
+   *
+   * @deprecated
+   */
+  WebkitBoxDirection?: Property.BoxDirection | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  WebkitBoxFlexGroup?: Property.BoxFlexGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `single | multiple`
+   *
+   * @deprecated
+   */
+  WebkitBoxLines?: Property.BoxLines | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
    * **Syntax**: `none | auto`
    *
    * **Initial value**: `See individual properties`
@@ -11237,18 +10561,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "animation-composition"?: Property.AnimationComposition | undefined;
   /**
-   * **Syntax**: `<time [0s,∞]>#`
-   *
-   * **Initial value**: `0s`
-   */
-  "animation-delay-end"?: Property.AnimationDelayEnd<TTime> | undefined;
-  /**
-   * **Syntax**: `<time>#`
-   *
-   * **Initial value**: `0s`
-   */
-  "animation-delay-start"?: Property.AnimationDelayStart<TTime> | undefined;
-  /**
    * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
@@ -11338,12 +10650,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-play-state
    */
   "animation-play-state"?: Property.AnimationPlayState | undefined;
-  /**
-   * **Syntax**: `[ normal | [ <length-percentage> | <timeline-range-center-subject> <length-percentage>? ] ]#`
-   *
-   * **Initial value**: `normal`
-   */
-  "animation-range-center"?: Property.AnimationRangeCenter<TLength> | undefined;
   /**
    * The **`animation-range-end`** CSS property sets the point on the timeline where an animation should end.
    *
@@ -11560,18 +10866,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "background-origin"?: Property.BackgroundOrigin | undefined;
   /**
-   * **Syntax**: `[ center | [ [ start | end ]? <length-percentage>? ]! ]#`
-   *
-   * **Initial value**: `0%`
-   */
-  "background-position-block"?: Property.BackgroundPositionBlock<TLength> | undefined;
-  /**
-   * **Syntax**: `[ center | [ [ start | end ]? <length-percentage>? ]! ]#`
-   *
-   * **Initial value**: `0%`
-   */
-  "background-position-inline"?: Property.BackgroundPositionInline<TLength> | undefined;
-  /**
    * The **`background-position-x`** CSS property sets the initial horizontal position for each background image. The position is relative to the position layer set by `background-origin`.
    *
    * **Syntax**: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
@@ -11613,18 +10907,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-repeat
    */
   "background-repeat"?: Property.BackgroundRepeat | undefined;
-  /**
-   * **Syntax**: `<repetition>#`
-   *
-   * **Initial value**: `repeat`
-   */
-  "background-repeat-block"?: Property.BackgroundRepeatBlock | undefined;
-  /**
-   * **Syntax**: `<repetition>#`
-   *
-   * **Initial value**: `repeat`
-   */
-  "background-repeat-inline"?: Property.BackgroundRepeatInline | undefined;
   /**
    * The **`background-repeat-x`** CSS property sets how background images are repeated, or not, along the horizontal axis.
    *
@@ -11668,12 +10950,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-size
    */
   "background-size"?: Property.BackgroundSize<TLength> | undefined;
-  /**
-   * **Syntax**: `<bg-layer>#`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "background-tbd"?: Property.BackgroundTbd<TLength> | undefined;
   /**
    * The **`baseline-shift`** CSS property repositions the dominant-baseline of a text element relative to the dominant-baseline of its parent text content element. The shifted element might be a sub- or superscript. If the property is present, the value overrides the element's `baseline-shift` attribute.
    *
@@ -11728,54 +11004,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "block-size"?: Property.BlockSize<TLength> | undefined;
   /**
-   * **Syntax**: `auto | center | start | end`
-   *
-   * **Initial value**: `auto`
-   */
-  "block-step-align"?: Property.BlockStepAlign | undefined;
-  /**
-   * **Syntax**: `margin-box | padding-box | content-box`
-   *
-   * **Initial value**: `margin-box`
-   */
-  "block-step-insert"?: Property.BlockStepInsert | undefined;
-  /**
-   * **Syntax**: `up | down | nearest`
-   *
-   * **Initial value**: `up`
-   */
-  "block-step-round"?: Property.BlockStepRound | undefined;
-  /**
-   * **Syntax**: `none | <length [0,∞]>`
-   *
-   * **Initial value**: `none`
-   */
-  "block-step-size"?: Property.BlockStepSize<TLength> | undefined;
-  /**
-   * **Syntax**: `<content-list>`
-   *
-   * **Initial value**: `content(text)`
-   */
-  "bookmark-label"?: Property.BookmarkLabel | undefined;
-  /**
-   * **Syntax**: `none | <integer [1,∞]>`
-   *
-   * **Initial value**: `none`
-   */
-  "bookmark-level"?: Property.BookmarkLevel | undefined;
-  /**
-   * **Syntax**: `open | closed`
-   *
-   * **Initial value**: `open`
-   */
-  "bookmark-state"?: Property.BookmarkState | undefined;
-  /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  "border-block-end-clip"?: Property.BorderBlockEndClip<TLength> | undefined;
-  /**
    * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -11818,12 +11046,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-block-end-width"?: Property.BorderBlockEndWidth<TLength> | undefined;
   /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  "border-block-start-clip"?: Property.BorderBlockStartClip<TLength> | undefined;
-  /**
    * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -11865,12 +11087,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-start-width
    */
   "border-block-start-width"?: Property.BorderBlockStartWidth<TLength> | undefined;
-  /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  "border-bottom-clip"?: Property.BorderBottomClip<TLength> | undefined;
   /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -11943,12 +11159,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom-width
    */
   "border-bottom-width"?: Property.BorderBottomWidth<TLength> | undefined;
-  /**
-   * **Syntax**: `none | parent | display`
-   *
-   * **Initial value**: `none`
-   */
-  "border-boundary"?: Property.BorderBoundary | undefined;
   /**
    * The **`border-collapse`** CSS property sets whether cells inside a `<table>` have shared or separate borders.
    *
@@ -12062,12 +11272,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-image-width"?: Property.BorderImageWidth<TLength> | undefined;
   /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  "border-inline-end-clip"?: Property.BorderInlineEndClip<TLength> | undefined;
-  /**
    * The **`border-inline-end-color`** CSS property defines the color of the logical inline-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -12113,12 +11317,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-end-width"?: Property.BorderInlineEndWidth<TLength> | undefined;
   /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  "border-inline-start-clip"?: Property.BorderInlineStartClip<TLength> | undefined;
-  /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -12163,12 +11361,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "border-inline-start-width"?: Property.BorderInlineStartWidth<TLength> | undefined;
   /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  "border-left-clip"?: Property.BorderLeftClip<TLength> | undefined;
-  /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
    * **Syntax**: `<color> | <image-1D>`
@@ -12210,18 +11402,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-left-width
    */
   "border-left-width"?: Property.BorderLeftWidth<TLength> | undefined;
-  /**
-   * **Syntax**: `all | [ sides | corners ] <length-percentage [0,∞]>? | [ top | right | bottom | left ] <length-percentage [0,∞]>`
-   *
-   * **Initial value**: `all`
-   */
-  "border-limit"?: Property.BorderLimit | undefined;
-  /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  "border-right-clip"?: Property.BorderRightClip<TLength> | undefined;
   /**
    * The **`border-right-color`** CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties `border-color` or `border-right`.
    *
@@ -12320,12 +11500,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-start-start-radius
    */
   "border-start-start-radius"?: Property.BorderStartStartRadius<TLength> | undefined;
-  /**
-   * **Syntax**: `none | [ <length-percentage [0,∞]> | <flex> ]+`
-   *
-   * **Initial value**: `none`
-   */
-  "border-top-clip"?: Property.BorderTopClip<TLength> | undefined;
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -12428,36 +11602,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "box-decoration-break"?: Property.BoxDecorationBreak | undefined;
   /**
-   * **Syntax**: `<length [0,∞]>#`
-   *
-   * **Initial value**: `0`
-   */
-  "box-shadow-blur"?: Property.BoxShadowBlur<TLength> | undefined;
-  /**
-   * **Syntax**: `<color>#`
-   *
-   * **Initial value**: `currentcolor`
-   */
-  "box-shadow-color"?: Property.BoxShadowColor | undefined;
-  /**
-   * **Syntax**: `[ none | <length>{1,2} ]#`
-   *
-   * **Initial value**: `none`
-   */
-  "box-shadow-offset"?: Property.BoxShadowOffset<TLength> | undefined;
-  /**
-   * **Syntax**: `[ outset | inset ]#`
-   *
-   * **Initial value**: `outset`
-   */
-  "box-shadow-position"?: Property.BoxShadowPosition | undefined;
-  /**
-   * **Syntax**: `<length>#`
-   *
-   * **Initial value**: `0`
-   */
-  "box-shadow-spread"?: Property.BoxShadowSpread<TLength> | undefined;
-  /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
    * **Syntax**: `content-box | border-box`
@@ -12472,12 +11616,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-sizing
    */
   "box-sizing"?: Property.BoxSizing | undefined;
-  /**
-   * **Syntax**: `none | block-start | block-end | center | baseline | last-baseline`
-   *
-   * **Initial value**: `none`
-   */
-  "box-snap"?: Property.BoxSnap | undefined;
   /**
    * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
@@ -13041,12 +12179,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   continue?: Property.Continue | undefined;
   /**
-   * **Syntax**: `none | [ [ <custom-ident> <content-level>] [, <custom-ident> <content-level>]* ]?`
-   *
-   * **Initial value**: `none`
-   */
-  "copy-into"?: Property.CopyInto | undefined;
-  /**
    * The **`corner-bottom-left-shape`** CSS property specifies the shape of a box's bottom-left corner, within its `border-radius` area.
    *
    * **Syntax**: `<corner-shape-value>`
@@ -13201,18 +12333,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "counter-set"?: Property.CounterSet | undefined;
   /**
-   * **Syntax**: `<url> <decibel>? | none`
-   *
-   * **Initial value**: `none`
-   */
-  "cue-after"?: Property.CueAfter | undefined;
-  /**
-   * **Syntax**: `<url> <decibel>? | none`
-   *
-   * **Initial value**: `none`
-   */
-  "cue-before"?: Property.CueBefore | undefined;
-  /**
    * The **`cursor`** CSS property sets the mouse cursor, if any, to show when the mouse pointer is over an element.
    *
    * **Syntax**: `[<cursor-image>,]* <cursor-predefined>`
@@ -13339,24 +12459,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "empty-cells"?: Property.EmptyCells | undefined;
   /**
-   * **Syntax**: `none | [ <'event-trigger-name'> <'event-trigger-source'> ]#`
-   *
-   * **Initial value**: `none`
-   */
-  "event-trigger"?: Property.EventTrigger | undefined;
-  /**
-   * **Syntax**: `none | <dashed-ident>#`
-   *
-   * **Initial value**: `none`
-   */
-  "event-trigger-name"?: Property.EventTriggerName | undefined;
-  /**
-   * **Syntax**: `[ none | <event-function>+ [ / <event-function>+ ]? ]#`
-   *
-   * **Initial value**: `none`
-   */
-  "event-trigger-source"?: Property.EventTriggerSource | undefined;
-  /**
    * The **`field-sizing`** CSS property enables you to control the sizing behavior of elements that are given a default preferred size, such as form control elements. This property enables you to override the default sizing behavior, allowing form controls to adjust in size to fit their contents.
    *
    * **Syntax**: `fixed | content`
@@ -13385,24 +12487,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   fill?: Property.Fill | undefined;
   /**
-   * **Syntax**: `bounding-box | slice | clone`
-   *
-   * **Initial value**: `bounding-box`
-   */
-  "fill-break"?: Property.FillBreak | undefined;
-  /**
-   * **Syntax**: `<color>`
-   *
-   * **Initial value**: `currentcolor`
-   */
-  "fill-color"?: Property.FillColor | undefined;
-  /**
-   * **Syntax**: `<paint>#`
-   *
-   * **Initial value**: `none`
-   */
-  "fill-image"?: Property.FillImage | undefined;
-  /**
    * The **`fill-opacity`** CSS property defines the opacity of the painting operation (color, gradient, pattern, etc.) applied to SVG shapes or text content elements to fill the element. The property defines the opacity of the element's `fill` only; it does not affect the stroke. If present, it overrides the element's `fill-opacity` attribute.
    *
    * **Syntax**: `<'opacity'>`
@@ -13417,24 +12501,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "fill-opacity"?: Property.FillOpacity | undefined;
   /**
-   * **Syntax**: `match-parent | fill-box | stroke-box | content-box | padding-box | border-box`
-   *
-   * **Initial value**: `match-parent`
-   */
-  "fill-origin"?: Property.FillOrigin | undefined;
-  /**
-   * **Syntax**: `<position>#`
-   *
-   * **Initial value**: `0% 0%`
-   */
-  "fill-position"?: Property.FillPosition<TLength> | undefined;
-  /**
-   * **Syntax**: `<repeat-style>#`
-   *
-   * **Initial value**: `repeat`
-   */
-  "fill-repeat"?: Property.FillRepeat | undefined;
-  /**
    * The **`fill-rule`** CSS property defines the rule used to determine which parts of the SVG shape's canvas are included inside a shape to be filled. If present, it overrides the element's `fill-rule` attribute.
    *
    * **Syntax**: `nonzero | evenodd`
@@ -13448,12 +12514,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/fill-rule
    */
   "fill-rule"?: Property.FillRule | undefined;
-  /**
-   * **Syntax**: `<bg-size>#`
-   *
-   * **Initial value**: `auto`
-   */
-  "fill-size"?: Property.FillSize<TLength> | undefined;
   /**
    * The **`filter`** CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
    *
@@ -13584,24 +12644,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   float?: Property.Float | undefined;
   /**
-   * **Syntax**: `<integer> | last | none`
-   *
-   * **Initial value**: `none`
-   */
-  "float-defer"?: Property.FloatDefer | undefined;
-  /**
-   * **Syntax**: `<length-percentage>`
-   *
-   * **Initial value**: `0`
-   */
-  "float-offset"?: Property.FloatOffset<TLength> | undefined;
-  /**
-   * **Syntax**: `inline | column | region | page`
-   *
-   * **Initial value**: `inline`
-   */
-  "float-reference"?: Property.FloatReference | undefined;
-  /**
    * The **`flood-color`** CSS property defines the color of the current filter primitive subregion in `<feFlood>` and `<feDropShadow>` elements within a `<filter>`. If present, it overrides the element's `flood-color` attribute.
    *
    * **Syntax**: `<color>`
@@ -13629,18 +12671,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flood-opacity
    */
   "flood-opacity"?: Property.FloodOpacity | undefined;
-  /**
-   * **Syntax**: `<custom-ident> | none`
-   *
-   * **Initial value**: `none`
-   */
-  "flow-from"?: Property.FlowFrom | undefined;
-  /**
-   * **Syntax**: `none | <custom-ident> [element | content]?`
-   *
-   * **Initial value**: `none`
-   */
-  "flow-into"?: Property.FlowInto | undefined;
   /**
    * **Syntax**: `normal | <length-percentage [0,∞]> | infinite`
    *
@@ -13767,6 +12797,18 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-size-adjust
    */
   "font-size-adjust"?: Property.FontSizeAdjust | undefined;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   *
+   * |              Chrome              |              Firefox               |              Safari              |               Edge                | IE  |
+   * | :------------------------------: | :--------------------------------: | :------------------------------: | :-------------------------------: | :-: |
+   * | **5** _(-webkit-font-smoothing)_ | **25** _(-moz-osx-font-smoothing)_ | **4** _(-webkit-font-smoothing)_ | **79** _(-webkit-font-smoothing)_ | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-smooth
+   */
+  "font-smooth"?: Property.FontSmooth<TLength> | undefined;
   /**
    * The **`font-stretch`** CSS property selects a normal, condensed, or expanded face from a font.
    *
@@ -13991,18 +13033,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "font-width"?: Property.FontWidth | undefined;
   /**
-   * **Syntax**: `block | inline | compact`
-   *
-   * **Initial value**: `block`
-   */
-  "footnote-display"?: Property.FootnoteDisplay | undefined;
-  /**
-   * **Syntax**: `auto | line | block`
-   *
-   * **Initial value**: `auto`
-   */
-  "footnote-policy"?: Property.FootnotePolicy | undefined;
-  /**
    * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
    *
    * **Syntax**: `auto | none | preserve-parent-color`
@@ -14088,12 +13118,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-column-end"?: Property.GridColumnEnd | undefined;
   /**
-   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
-   *
-   * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
-   */
-  "grid-column-gap"?: Property.GridColumnGap<TLength> | undefined;
-  /**
    * The **`grid-column-start`** CSS property specifies a grid item's start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
    *
    * **Syntax**: `<grid-line>`
@@ -14121,12 +13145,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/grid-row-end
    */
   "grid-row-end"?: Property.GridRowEnd | undefined;
-  /**
-   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
-   *
-   * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
-   */
-  "grid-row-gap"?: Property.GridRowGap<TLength> | undefined;
   /**
    * The **`grid-row-start`** CSS property specifies a grid item's start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
    *
@@ -14241,12 +13259,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "hyphenate-limit-chars"?: Property.HyphenateLimitChars | undefined;
   /**
-   * **Syntax**: `none | always | column | page | spread`
-   *
-   * **Initial value**: `none`
-   */
-  "hyphenate-limit-last"?: Property.HyphenateLimitLast | undefined;
-  /**
    * **Syntax**: `no-limit | <integer [0,∞]>`
    *
    * **Initial value**: `no-limit`
@@ -14256,12 +13268,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * |   No   |   No    | **27.3** |  No  | No  |
    */
   "hyphenate-limit-lines"?: Property.HyphenateLimitLines | undefined;
-  /**
-   * **Syntax**: `<length-percentage>`
-   *
-   * **Initial value**: `0`
-   */
-  "hyphenate-limit-zone"?: Property.HyphenateLimitZone<TLength> | undefined;
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
@@ -14277,12 +13283,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphens
    */
   hyphens?: Property.Hyphens | undefined;
-  /**
-   * **Syntax**: `normal | paused | stopped | running`
-   *
-   * **Initial value**: `normal`
-   */
-  "image-animation"?: Property.ImageAnimation | undefined;
   /**
    * The **`image-orientation`** CSS property specifies a layout-independent correction to the orientation of an image.
    *
@@ -14312,14 +13312,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "image-rendering"?: Property.ImageRendering | undefined;
   /**
-   * The **`image-resolution`** CSS property specifies the intrinsic resolution of all raster images used in or on the element. It affects content images such as replaced elements and generated content, and decorative images such as `background-image` images.
-   *
-   * **Syntax**: `[ from-image || <resolution> ] && snap?`
-   *
-   * **Initial value**: `1dppx`
-   */
-  "image-resolution"?: Property.ImageResolution | undefined;
-  /**
    * The **`initial-letter`** CSS property sets the size and sink for dropped, raised, and sunken initial letters. This property applies to `::first-letter` pseudo-elements and inline-level first children of block containers.
    *
    * **Syntax**: `normal | <number [1,∞]> <integer [1,∞]> | <number [1,∞]> && [ drop | raise ]?`
@@ -14333,18 +13325,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/initial-letter
    */
   "initial-letter"?: Property.InitialLetter | undefined;
-  /**
-   * **Syntax**: `[ border-box? [ alphabetic | ideographic | hanging | leading ]? ]!`
-   *
-   * **Initial value**: `alphabetic`
-   */
-  "initial-letter-align"?: Property.InitialLetterAlign | undefined;
-  /**
-   * **Syntax**: `none | first | all | grid | <length-percentage>`
-   *
-   * **Initial value**: `none`
-   */
-  "initial-letter-wrap"?: Property.InitialLetterWrap<TLength> | undefined;
   /**
    * The **`inline-size`** CSS property defines the size of an element's block along the inline axis. If the `writing-mode` is horizontal, it corresponds to the `width`; if the writing mode is vertical, it corresponds to the `height`. A related property is `block-size`, which defines the other dimension of the element.
    *
@@ -14360,18 +13340,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inline-size
    */
   "inline-size"?: Property.InlineSize<TLength> | undefined;
-  /**
-   * **Syntax**: `normal | stretch`
-   *
-   * **Initial value**: `normal`
-   */
-  "inline-sizing"?: Property.InlineSizing | undefined;
-  /**
-   * **Syntax**: `auto | none`
-   *
-   * **Initial value**: `auto`
-   */
-  "input-security"?: Property.InputSecurity | undefined;
   /**
    * The **`inset-block-end`** CSS property defines the logical block end offset of an element, which maps to a physical inset depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top`, `right`, `bottom`, or `left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -14599,18 +13567,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "line-break"?: Property.LineBreak | undefined;
   /**
-   * **Syntax**: `leading | <text-edge>`
-   *
-   * **Initial value**: `leading`
-   */
-  "line-fit-edge"?: Property.LineFitEdge | undefined;
-  /**
-   * **Syntax**: `match-parent | create`
-   *
-   * **Initial value**: `match-parent`
-   */
-  "line-grid"?: Property.LineGrid | undefined;
-  /**
    * The **`line-height`** CSS property sets the height of a line box in horizontal writing modes. In vertical writing modes, it sets the width of a line box. It's commonly used to set the distance between lines of text. On block-level elements in horizontal writing modes, it specifies the preferred height of line boxes within the element, and on non-replaced inline elements, it specifies the height that is used to calculate line box height.
    *
    * **Syntax**: `normal | <number [0,∞]> | <length-percentage [0,∞]>`
@@ -14624,26 +13580,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/line-height
    */
   "line-height"?: Property.LineHeight<TLength> | undefined;
-  /**
-   * The **`line-height-step`** CSS property sets the step unit for line box heights. When the property is set, line box heights are rounded up to the closest multiple of the unit.
-   *
-   * **Syntax**: `<length [0,∞]>`
-   *
-   * **Initial value**: `0`
-   */
-  "line-height-step"?: Property.LineHeightStep<TLength> | undefined;
-  /**
-   * **Syntax**: `<length>`
-   *
-   * **Initial value**: `0`
-   */
-  "line-padding"?: Property.LinePadding<TLength> | undefined;
-  /**
-   * **Syntax**: `none | baseline | contain`
-   *
-   * **Initial value**: `none`
-   */
-  "line-snap"?: Property.LineSnap | undefined;
   /**
    * The **`link-parameters`** CSS property sets values of external resources, such as SVGs, whose attributes have been set with the `env()` CSS function
    *
@@ -14744,12 +13680,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-bottom
    */
   "margin-bottom"?: Property.MarginBottom<TLength> | undefined;
-  /**
-   * **Syntax**: `auto | keep | discard`
-   *
-   * **Initial value**: `auto`
-   */
-  "margin-break"?: Property.MarginBreak | undefined;
   /**
    * The **`margin-inline-end`** CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality, and text orientation. In other words, it corresponds to the `margin-top`, `margin-right`, `margin-bottom` or `margin-left` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -14865,12 +13795,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "marker-mid"?: Property.MarkerMid | undefined;
   /**
-   * **Syntax**: `match-self | match-parent`
-   *
-   * **Initial value**: `match-self`
-   */
-  "marker-side"?: Property.MarkerSide | undefined;
-  /**
    * The **`marker-start`** CSS property points to a marker that will be drawn on the first vertex of the element's path; that is, at its starting vertex. The marker must have been defined using an SVG `<marker>` element, and can only be referenced with a `<url>` value. The value of the CSS property overrides any values of the `marker-start` attribute in the SVG.
    *
    * **Syntax**: `none | <marker-ref>`
@@ -14884,14 +13808,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/marker-start
    */
   "marker-start"?: Property.MarkerStart | undefined;
-  /**
-   * The **`mask-border-mode`** CSS property specifies the blending mode used in a mask border.
-   *
-   * **Syntax**: `luminance | alpha`
-   *
-   * **Initial value**: `alpha`
-   */
-  "mask-border-mode"?: Property.MaskBorderMode | undefined;
   /**
    * The **`mask-border-outset`** CSS property specifies the distance by which an element's mask border is set out from its border box.
    *
@@ -15251,12 +14167,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "min-inline-size"?: Property.MinInlineSize<TLength> | undefined;
   /**
-   * **Syntax**: `legacy | zero-if-scroll || zero-if-extrinsic`
-   *
-   * **Initial value**: `legacy`
-   */
-  "min-intrinsic-sizing"?: Property.MinIntrinsicSizing | undefined;
-  /**
    * The **`min-width`** CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
    *
    * **Syntax**: `auto | <box-size> | <anchor-size()>`
@@ -15329,30 +14239,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/offset-rotate
    */
   "motion-rotation"?: Property.OffsetRotate | undefined;
-  /**
-   * **Syntax**: `auto | <id> [ current | root | <target-name> ]?`
-   *
-   * **Initial value**: `auto`
-   */
-  "nav-down"?: Property.NavDown | undefined;
-  /**
-   * **Syntax**: `auto | <id> [ current | root | <target-name> ]?`
-   *
-   * **Initial value**: `auto`
-   */
-  "nav-left"?: Property.NavLeft | undefined;
-  /**
-   * **Syntax**: `auto | <id> [ current | root | <target-name> ]?`
-   *
-   * **Initial value**: `auto`
-   */
-  "nav-right"?: Property.NavRight | undefined;
-  /**
-   * **Syntax**: `auto | <id> [ current | root | <target-name> ]?`
-   *
-   * **Initial value**: `auto`
-   */
-  "nav-up"?: Property.NavUp | undefined;
   /**
    * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
@@ -15610,54 +14496,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-block
    */
   "overflow-block"?: Property.OverflowBlock | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-block-end"?: Property.OverflowClipMarginBlockEnd<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-block-start"?: Property.OverflowClipMarginBlockStart<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-bottom"?: Property.OverflowClipMarginBottom<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-inline-end"?: Property.OverflowClipMarginInlineEnd<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-inline-start"?: Property.OverflowClipMarginInlineStart<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-left"?: Property.OverflowClipMarginLeft<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-right"?: Property.OverflowClipMarginRight<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-top"?: Property.OverflowClipMarginTop<TLength> | undefined;
   /**
    * The **`overflow-inline`** CSS property sets what shows when content overflows the inline start and end edges of a box. This may be nothing, a scroll bar, or the overflow content.
    *
@@ -15942,18 +14780,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "path-length"?: Property.PathLength<TLength> | undefined;
   /**
-   * **Syntax**: `<time [0s,∞]> | none | x-weak | weak | medium | strong | x-strong`
-   *
-   * **Initial value**: `none`
-   */
-  "pause-after"?: Property.PauseAfter<TTime> | undefined;
-  /**
-   * **Syntax**: `<time [0s,∞]> | none | x-weak | weak | medium | strong | x-strong`
-   *
-   * **Initial value**: `none`
-   */
-  "pause-before"?: Property.PauseBefore<TTime> | undefined;
-  /**
    * The **`perspective`** CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
    *
    * **Syntax**: `none | <length [0,∞]>`
@@ -15997,18 +14823,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/pointer-events
    */
   "pointer-events"?: Property.PointerEvents | undefined;
-  /**
-   * **Syntax**: `[ block | inline | x | y ]#`
-   *
-   * **Initial value**: `block`
-   */
-  "pointer-timeline-axis"?: Property.PointerTimelineAxis | undefined;
-  /**
-   * **Syntax**: `[ none | <dashed-ident> ]#`
-   *
-   * **Initial value**: `none`
-   */
-  "pointer-timeline-name"?: Property.PointerTimelineName | undefined;
   /**
    * The **`position`** CSS property sets how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` physical properties and the `inset-block-start`, `inset-block-end`, `inset-inline-start`, and `inset-inline-end` flow-relative logical properties can be used to determine the final location of positioned elements.
    *
@@ -16165,12 +14979,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "reading-order"?: Property.ReadingOrder | undefined;
   /**
-   * **Syntax**: `auto | break`
-   *
-   * **Initial value**: `auto`
-   */
-  "region-fragment"?: Property.RegionFragment | undefined;
-  /**
    * The **`resize`** CSS property sets whether an element is resizable, and if so, in which directions.
    *
    * **Syntax**: `none | both | horizontal | vertical | block | inline`
@@ -16184,18 +14992,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/resize
    */
   resize?: Property.Resize | undefined;
-  /**
-   * **Syntax**: `<time [0s,∞]> | none | x-weak | weak | medium | strong | x-strong`
-   *
-   * **Initial value**: `none`
-   */
-  "rest-after"?: Property.RestAfter<TTime> | undefined;
-  /**
-   * **Syntax**: `<time [0s,∞]> | none | x-weak | weak | medium | strong | x-strong`
-   *
-   * **Initial value**: `none`
-   */
-  "rest-before"?: Property.RestBefore<TTime> | undefined;
   /**
    * The **`right`** CSS property participates in specifying the horizontal position of a positioned element. This inset property has no effect on non-positioned elements.
    *
@@ -16378,12 +15174,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/ruby-align
    */
   "ruby-align"?: Property.RubyAlign | undefined;
-  /**
-   * **Syntax**: `separate | merge | auto`
-   *
-   * **Initial value**: `separate`
-   */
-  "ruby-merge"?: Property.RubyMerge | undefined;
   /**
    * The **`ruby-overhang`** CSS property specifies whether or not a `<ruby>` annotation overhangs any surrounding text.
    *
@@ -16951,12 +15741,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "shape-image-threshold"?: Property.ShapeImageThreshold | undefined;
   /**
-   * **Syntax**: `auto | outside-shape | [ <basic-shape> || shape-box ] | <image> | display`
-   *
-   * **Initial value**: `auto`
-   */
-  "shape-inside"?: Property.ShapeInside | undefined;
-  /**
    * The **`shape-margin`** CSS property sets a margin for a CSS shape created using `shape-outside`.
    *
    * **Syntax**: `<length-percentage [0,∞]>`
@@ -16985,12 +15769,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "shape-outside"?: Property.ShapeOutside | undefined;
   /**
-   * **Syntax**: `<length-percentage [0,∞]>`
-   *
-   * **Initial value**: `0`
-   */
-  "shape-padding"?: Property.ShapePadding<TLength> | undefined;
-  /**
    * The **`shape-rendering`** CSS property provides hints to the renderer about what tradeoffs to make when rendering shapes like paths, circles, or rectangles. It only has an effect on the `<circle>`, `<ellipse>`, `<line>`, `<path>`, `<polygon>`, `<polyline>`, and `<rect>` elements. If explicitly declared, the value of the CSS property overrides the any values of the element's `shape-rendering` attribute.
    *
    * **Syntax**: `auto | optimizeSpeed | crispEdges | geometricPrecision`
@@ -17004,30 +15782,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/shape-rendering
    */
   "shape-rendering"?: Property.ShapeRendering | undefined;
-  /**
-   * **Syntax**: `auto | left-to-right | right-to-left | top-to-bottom | bottom-to-top`
-   *
-   * **Initial value**: `auto`
-   */
-  "slider-orientation"?: Property.SliderOrientation | undefined;
-  /**
-   * **Syntax**: `auto | focus | scroll`
-   *
-   * **Initial value**: `auto`
-   */
-  "spatial-navigation-action"?: Property.SpatialNavigationAction | undefined;
-  /**
-   * **Syntax**: `auto | contain`
-   *
-   * **Initial value**: `auto`
-   */
-  "spatial-navigation-contain"?: Property.SpatialNavigationContain | undefined;
-  /**
-   * **Syntax**: `normal | grid`
-   *
-   * **Initial value**: `normal`
-   */
-  "spatial-navigation-function"?: Property.SpatialNavigationFunction | undefined;
   /**
    * **Syntax**: `auto | never | always`
    *
@@ -17077,12 +15831,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stop-opacity"?: Property.StopOpacity | undefined;
   /**
-   * **Syntax**: `none | [ <custom-ident> <string>+ ]#`
-   *
-   * **Initial value**: `none`
-   */
-  "string-set"?: Property.StringSet | undefined;
-  /**
    * The **`stroke`** CSS property defines the color or SVG paint server used to draw an element's stroke. As such, `stroke` only has an effect on elements that can be given a stroke (for example, `<rect>` or `<ellipse>`); see the page on the SVG `stroke` attribute for a complete list. When declared, the CSS value overrides any value of the element's `stroke` SVG attribute.
    *
    * **Syntax**: `<paint>`
@@ -17097,24 +15845,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   stroke?: Property.Stroke | undefined;
   /**
-   * **Syntax**: `center | inset | outset`
-   *
-   * **Initial value**: `center`
-   */
-  "stroke-align"?: Property.StrokeAlign | undefined;
-  /**
-   * **Syntax**: `center | inner | outer`
-   *
-   * **Initial value**: `center`
-   */
-  "stroke-alignment"?: Property.StrokeAlignment | undefined;
-  /**
-   * **Syntax**: `bounding-box | slice | clone`
-   *
-   * **Initial value**: `bounding-box`
-   */
-  "stroke-break"?: Property.StrokeBreak | undefined;
-  /**
    * **Syntax**: `<color>#`
    *
    * **Initial value**: `transparent`
@@ -17124,24 +15854,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * |   No   |   No    | **11.1** |  No  | No  |
    */
   "stroke-color"?: Property.StrokeColor | undefined;
-  /**
-   * **Syntax**: `none | <length>`
-   *
-   * **Initial value**: `none`
-   */
-  "stroke-dash-corner"?: Property.StrokeDashCorner<TLength> | undefined;
-  /**
-   * **Syntax**: `none | [ stretch | compress ] || [ dashes || gaps ]`
-   *
-   * **Initial value**: `none`
-   */
-  "stroke-dash-justify"?: Property.StrokeDashJustify | undefined;
-  /**
-   * **Syntax**: `none | [stretch | compress] [dashes | gaps]?`
-   *
-   * **Initial value**: `none`
-   */
-  "stroke-dashadjust"?: Property.StrokeDashadjust | undefined;
   /**
    * The **`stroke-dasharray`** CSS property defines a pattern of dashes and gaps used in the painting of the SVG shape's stroke. If present, it overrides the element's `stroke-dasharray` attribute.
    *
@@ -17157,12 +15869,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-dasharray"?: Property.StrokeDasharray<TLength> | undefined;
   /**
-   * **Syntax**: `none | <length>`
-   *
-   * **Initial value**: `none`
-   */
-  "stroke-dashcorner"?: Property.StrokeDashcorner<TLength> | undefined;
-  /**
    * The **`stroke-dashoffset`** CSS property defines an offset for the starting point of the rendering of an SVG element's associated dash array. If present, it overrides the element's `stroke-dashoffset` attribute.
    *
    * **Syntax**: `<length-percentage> | <number>`
@@ -17176,12 +15882,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-dashoffset
    */
   "stroke-dashoffset"?: Property.StrokeDashoffset<TLength> | undefined;
-  /**
-   * **Syntax**: `<paint>#`
-   *
-   * **Initial value**: `none`
-   */
-  "stroke-image"?: Property.StrokeImage | undefined;
   /**
    * The **`stroke-linecap`** CSS property defines the shape to be used at the end of open subpaths of SVG elements' unclosed strokes. If present, it overrides the element's `stroke-linecap` attribute.
    *
@@ -17239,30 +15939,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "stroke-opacity"?: Property.StrokeOpacity | undefined;
   /**
-   * **Syntax**: `match-parent | fill-box | stroke-box | content-box | padding-box | border-box`
-   *
-   * **Initial value**: `match-parent`
-   */
-  "stroke-origin"?: Property.StrokeOrigin | undefined;
-  /**
-   * **Syntax**: `<position>#`
-   *
-   * **Initial value**: `0% 0%`
-   */
-  "stroke-position"?: Property.StrokePosition<TLength> | undefined;
-  /**
-   * **Syntax**: `<repeat-style>#`
-   *
-   * **Initial value**: `repeat`
-   */
-  "stroke-repeat"?: Property.StrokeRepeat | undefined;
-  /**
-   * **Syntax**: `<bg-size>#`
-   *
-   * **Initial value**: `auto`
-   */
-  "stroke-size"?: Property.StrokeSize<TLength> | undefined;
-  /**
    * The **`stroke-width`** CSS property defines the width of a stroke applied to the SVG shape. If present, it overrides the element's `stroke-width` attribute.
    *
    * **Syntax**: `[ <length-percentage> | <line-width> | <number> ]#`
@@ -17305,12 +15981,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/table-layout
    */
   "table-layout"?: Property.TableLayout | undefined;
-  /**
-   * **Syntax**: `start | end | left | right | center | <string> | justify | match-parent`
-   *
-   * **Initial value**: `start`
-   */
-  "text-align-all"?: Property.TextAlignAll | undefined;
   /**
    * The **`text-align-last`** CSS property sets how the last line of a block or a line, right before a forced line break, is aligned.
    *
@@ -17455,12 +16125,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-decoration-line"?: Property.TextDecorationLine | undefined;
   /**
-   * **Syntax**: `none | all`
-   *
-   * **Initial value**: `none`
-   */
-  "text-decoration-skip-box"?: Property.TextDecorationSkipBox | undefined;
-  /**
    * The **`text-decoration-skip-ink`** CSS property specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
    *
    * **Syntax**: `auto | none | all`
@@ -17474,12 +16138,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-skip-ink
    */
   "text-decoration-skip-ink"?: Property.TextDecorationSkipInk | undefined;
-  /**
-   * **Syntax**: `auto | skip-all | [ skip-underline || skip-overline || skip-line-through ] | no-skip`
-   *
-   * **Initial value**: `auto`
-   */
-  "text-decoration-skip-self"?: Property.TextDecorationSkipSelf | undefined;
   /**
    * **Syntax**: `none | all | [ start || end ]`
    *
@@ -17550,12 +16208,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "text-emphasis-position"?: Property.TextEmphasisPosition | undefined;
   /**
-   * **Syntax**: `spaces || punctuation || symbols || narrow`
-   *
-   * **Initial value**: `spaces punctuation`
-   */
-  "text-emphasis-skip"?: Property.TextEmphasisSkip | undefined;
-  /**
    * The **`text-emphasis-style`** CSS property sets the appearance of emphasis marks. It can also be set, and reset, using the `text-emphasis` shorthand.
    *
    * **Syntax**: `none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | <string>`
@@ -17584,12 +16236,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-fit
    */
   "text-fit"?: Property.TextFit | undefined;
-  /**
-   * **Syntax**: `none | start | end | left | right | center`
-   *
-   * **Initial value**: `none`
-   */
-  "text-group-align"?: Property.TextGroupAlign | undefined;
   /**
    * The **`text-indent`** CSS property sets the length of empty space (indentation) that is put before lines of text in a block.
    *
@@ -18214,54 +16860,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   visibility?: Property.Visibility | undefined;
   /**
-   * **Syntax**: `<number> | left | center | right | leftwards | rightwards`
-   *
-   * **Initial value**: `center`
-   */
-  "voice-balance"?: Property.VoiceBalance | undefined;
-  /**
-   * **Syntax**: `auto | <time [0s,∞]>`
-   *
-   * **Initial value**: `auto`
-   */
-  "voice-duration"?: Property.VoiceDuration<TTime> | undefined;
-  /**
-   * **Syntax**: `[ <voice-family-name> | <generic-voice> ]# | preserve`
-   *
-   * **Initial value**: `implementation-dependent`
-   */
-  "voice-family"?: Property.VoiceFamily | undefined;
-  /**
-   * **Syntax**: `<frequency [0Hz,∞]> && absolute | [ [ x-low | low | medium | high | x-high ] || [ <frequency [0Hz,∞]> | <semitones> | <percentage> ] ]`
-   *
-   * **Initial value**: `medium`
-   */
-  "voice-pitch"?: Property.VoicePitch | undefined;
-  /**
-   * **Syntax**: `<frequency [0Hz,∞]> && absolute | [ [ x-low | low | medium | high | x-high ] || [ <frequency [0Hz,∞]> | <semitones> | <percentage> ] ]`
-   *
-   * **Initial value**: `medium`
-   */
-  "voice-range"?: Property.VoiceRange | undefined;
-  /**
-   * **Syntax**: `[ normal | x-slow | slow | medium | fast | x-fast ] || <percentage [0,∞]>`
-   *
-   * **Initial value**: `normal`
-   */
-  "voice-rate"?: Property.VoiceRate | undefined;
-  /**
-   * **Syntax**: `normal | strong | moderate | none | reduced`
-   *
-   * **Initial value**: `normal`
-   */
-  "voice-stress"?: Property.VoiceStress | undefined;
-  /**
-   * **Syntax**: `silent | [ [ x-soft | soft | medium | loud | x-loud ] || <decibel> ]`
-   *
-   * **Initial value**: `medium`
-   */
-  "voice-volume"?: Property.VoiceVolume | undefined;
-  /**
    * The **`white-space-collapse`** CSS property controls how white space inside an element is collapsed.
    *
    * **Syntax**: `collapse | discard | preserve | preserve-breaks | preserve-spaces | break-spaces`
@@ -18352,12 +16950,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "word-break"?: Property.WordBreak | undefined;
   /**
-   * **Syntax**: `none | [ space | ideographic-space ] && auto-phrase?`
-   *
-   * **Initial value**: `none`
-   */
-  "word-space-transform"?: Property.WordSpaceTransform | undefined;
-  /**
    * The **`word-spacing`** CSS property sets the spacing between words and between tags.
    *
    * **Syntax**: `normal | <length-percentage>`
@@ -18378,24 +16970,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "word-wrap"?: Property.WordWrap | undefined;
   /**
-   * **Syntax**: `auto | avoid | avoid-line | avoid-flex | line | flex`
-   *
-   * **Initial value**: `auto`
-   */
-  "wrap-after"?: Property.WrapAfter | undefined;
-  /**
-   * **Syntax**: `auto | avoid | avoid-line | avoid-flex | line | flex`
-   *
-   * **Initial value**: `auto`
-   */
-  "wrap-before"?: Property.WrapBefore | undefined;
-  /**
-   * **Syntax**: `auto | both | start | end | minimum | maximum | clear`
-   *
-   * **Initial value**: `auto`
-   */
-  "wrap-flow"?: Property.WrapFlow | undefined;
-  /**
    * **Syntax**: `auto | avoid`
    *
    * **Initial value**: `auto`
@@ -18405,12 +16979,6 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * |   No   |   No    | **27.3** |  No  | No  |
    */
   "wrap-inside"?: Property.WrapInside | undefined;
-  /**
-   * **Syntax**: `wrap | none`
-   *
-   * **Initial value**: `wrap`
-   */
-  "wrap-through"?: Property.WrapThrough | undefined;
   /**
    * The **`writing-mode`** CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
    *
@@ -18572,12 +17140,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "background-position"?: Property.BackgroundPosition<TLength> | undefined;
   /**
-   * **Syntax**: `<'block-step-size'> || <'block-step-insert'> || <'block-step-align'> || <'block-step-round'>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "block-step"?: Property.BlockStep<TLength> | undefined;
-  /**
    * The **`border`** CSS shorthand property sets an element's border. It sets the values of `border-width`, `border-style`, and `border-color`.
    *
    * **Syntax**: `<line-width> || <line-style> || <color>`
@@ -18605,12 +17167,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block
    */
   "border-block"?: Property.BorderBlock<TLength> | undefined;
-  /**
-   * **Syntax**: `<'border-top-clip'>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "border-block-clip"?: Property.BorderBlockClip<TLength> | undefined;
   /**
    * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -18726,12 +17282,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-bottom-radius"?: Property.BorderBottomRadius<TLength> | undefined;
   /**
-   * **Syntax**: `<'border-top-clip'>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "border-clip"?: Property.BorderClip<TLength> | undefined;
-  /**
    * The **`border-color`** CSS shorthand property sets the color of an element's border.
    *
    * **Syntax**: `[ <color> | <image-1D> ]{1,4}`
@@ -18774,12 +17324,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline
    */
   "border-inline"?: Property.BorderInline<TLength> | undefined;
-  /**
-   * **Syntax**: `<'border-top-clip'>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "border-inline-clip"?: Property.BorderInlineClip<TLength> | undefined;
   /**
    * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -19001,12 +17545,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "box-shadow"?: Property.BoxShadow | undefined;
   /**
-   * **Syntax**: `<'caret-color'> || <'caret-animation'> || <'caret-shape'>`
-   *
-   * **Initial value**: `auto`
-   */
-  caret?: Property.Caret | undefined;
-  /**
    * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
@@ -19123,18 +17661,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   container?: Property.Container | undefined;
   /**
-   * **Syntax**: `<'corner-shape'> || <'border-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  corner?: Property.Corner<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-block-end"?: Property.CornerBlockEnd<TLength> | undefined;
-  /**
    * The **`corner-block-end-shape`** CSS property specifies the shape of both the corners on a box's block-end edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -19148,12 +17674,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-end-shape
    */
   "corner-block-end-shape"?: Property.CornerBlockEndShape | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-block-start"?: Property.CornerBlockStart<TLength> | undefined;
   /**
    * The **`corner-block-start-shape`** CSS property specifies the shape of both the corners on a box's block-start edge, within their `border-radius` area.
    *
@@ -19169,24 +17689,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "corner-block-start-shape"?: Property.CornerBlockStartShape | undefined;
   /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-bottom"?: Property.CornerBottom<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-bottom-left"?: Property.CornerBottomLeft<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-bottom-right"?: Property.CornerBottomRight<TLength> | undefined;
-  /**
    * The **`corner-bottom-shape`** CSS property specifies the shape of both the corners on a box's bottom edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -19200,24 +17702,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-shape
    */
   "corner-bottom-shape"?: Property.CornerBottomShape | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-end-end"?: Property.CornerEndEnd<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-end-start"?: Property.CornerEndStart<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-inline-end"?: Property.CornerInlineEnd<TLength> | undefined;
   /**
    * The **`corner-inline-end-shape`** CSS property specifies the shape of both the corners on a box's inline-end edge, within their `border-radius` area.
    *
@@ -19233,12 +17717,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "corner-inline-end-shape"?: Property.CornerInlineEndShape | undefined;
   /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-inline-start"?: Property.CornerInlineStart<TLength> | undefined;
-  /**
    * The **`corner-inline-start-shape`** CSS property specifies the shape of both the corners on a box's inline-start edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -19253,12 +17731,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "corner-inline-start-shape"?: Property.CornerInlineStartShape | undefined;
   /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-left"?: Property.CornerLeft<TLength> | undefined;
-  /**
    * The **`corner-left-shape`** CSS property specifies the shape of both the corners on a box's left-hand edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -19272,12 +17744,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-left-shape
    */
   "corner-left-shape"?: Property.CornerLeftShape | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-right"?: Property.CornerRight<TLength> | undefined;
   /**
    * The **`corner-right-shape`** CSS property specifies the shape of both the corners on a box's right-hand edge, within their `border-radius` area.
    *
@@ -19307,36 +17773,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "corner-shape"?: Property.CornerShape | undefined;
   /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-start-end"?: Property.CornerStartEnd<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-start-start"?: Property.CornerStartStart<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-shape'> || <'border-top-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-top"?: Property.CornerTop<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-top-left"?: Property.CornerTopLeft<TLength> | undefined;
-  /**
-   * **Syntax**: `<'corner-top-left-shape'> || <'border-top-left-radius'>`
-   *
-   * **Initial value**: `0`
-   */
-  "corner-top-right"?: Property.CornerTopRight<TLength> | undefined;
-  /**
    * The **`corner-top-shape`** CSS property specifies the shape of both the corners on a box's top edge, within their `border-radius` area.
    *
    * **Syntax**: `<'corner-top-left-shape'>{1,2}`
@@ -19350,12 +17786,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-shape
    */
   "corner-top-shape"?: Property.CornerTopShape | undefined;
-  /**
-   * **Syntax**: `<'cue-before'> <'cue-after'>?`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  cue?: Property.Cue | undefined;
   /**
    * The **`flex`** CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
    *
@@ -19484,12 +17914,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/grid-column
    */
   "grid-column"?: Property.GridColumn | undefined;
-  /**
-   * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
-   *
-   * **Syntax**: `<'row-gap'> <'column-gap'>?`
-   */
-  "grid-gap"?: Property.GridGap<TLength> | undefined;
   /**
    * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
@@ -19782,18 +18206,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "overflow-clip-margin"?: Property.OverflowClipMargin<TLength> | undefined;
   /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-block"?: Property.OverflowClipMarginBlock<TLength> | undefined;
-  /**
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   */
-  "overflow-clip-margin-inline"?: Property.OverflowClipMarginInline<TLength> | undefined;
-  /**
    * The **`overscroll-behavior`** CSS property controls what happens when scrolling reaches the edge of a scroll container.
    *
    * **Syntax**: `[ contain | none | auto | chain ]{1,2}`
@@ -19850,12 +18262,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "padding-inline"?: Property.PaddingInline<TLength> | undefined;
   /**
-   * **Syntax**: `<'pause-before'> <'pause-after'>?`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  pause?: Property.Pause<TTime> | undefined;
-  /**
    * The **`place-content`** CSS shorthand property allows you to align content along both the block and inline directions at once (i.e., the `align-content` and `justify-content` properties) in a relevant layout system such as Grid or Flexbox.
    *
    * **Syntax**: `<'align-content'> <'justify-content'>?`
@@ -19898,12 +18304,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "place-self"?: Property.PlaceSelf | undefined;
   /**
-   * **Syntax**: `[ <'pointer-timeline-name'> <'pointer-timeline-axis'>? ]#`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "pointer-timeline"?: Property.PointerTimeline | undefined;
-  /**
    * The **`position-try`** CSS shorthand property corresponds to the `position-try-order` and `position-try-fallbacks` properties.
    *
    * **Syntax**: `<'position-try-order'>? <'position-try-fallbacks'>`
@@ -19917,12 +18317,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-try
    */
   "position-try"?: Property.PositionTry | undefined;
-  /**
-   * **Syntax**: `<'rest-before'> <'rest-after'>?`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  rest?: Property.Rest<TTime> | undefined;
   /**
    * The **`row-rule`** CSS shorthand property sets the width, style, and color of the line drawn between rows in multi-row grid, flex, and multi-col layouts.
    *
@@ -20305,12 +18699,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "text-emphasis"?: Property.TextEmphasis | undefined;
   /**
-   * **Syntax**: `none | auto | <spacing-trim> || <autospace>`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "text-spacing"?: Property.TextSpacing | undefined;
-  /**
    * The **`text-wrap`** CSS shorthand property controls how text inside an element is wrapped. The different values provide:
    *
    * **Syntax**: `<'text-wrap-mode'> || <'text-wrap-style'>`
@@ -20366,12 +18754,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range
    */
   "timeline-trigger-active-range"?: Property.TimelineTriggerActiveRange<TLength> | undefined;
-  /**
-   * **Syntax**: `[ <'timeline-trigger-activation-range'> [ / <'timeline-trigger-active-range'> ]? ]#`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "timeline-trigger-range"?: Property.TimelineTriggerRange<TLength> | undefined;
   /**
    * The **`transition`** CSS shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`, and `transition-behavior`.
    *
@@ -20491,14 +18873,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `ease`
    */
   "-moz-animation-timing-function"?: Property.AnimationTimingFunction | undefined;
-  /**
-   * The **`appearance`** CSS property specifies the rendered appearance of replaced UI widget elements such as form controls. Most commonly, such elements are given native, platform-specific styling based on the operating system's theme, or a primitive appearance with styles that can be overridden using CSS.
-   *
-   * **Syntax**: `none | auto | base | base-select | <compat-auto> | <compat-special>`
-   *
-   * **Initial value**: `none`
-   */
-  "-moz-appearance"?: Property.Appearance | undefined;
+  /** **Syntax**: `none | button | button-arrow-down | button-arrow-next | button-arrow-previous | button-arrow-up | button-bevel | button-focus | caret | checkbox | checkbox-container | checkbox-label | checkmenuitem | dualbutton | groupbox | listbox | listitem | menuarrow | menubar | menucheckbox | menuimage | menuitem | menuitemtext | menulist | menulist-button | menulist-text | menulist-textfield | menupopup | menuradio | menuseparator | meterbar | meterchunk | progressbar | progressbar-vertical | progresschunk | progresschunk-vertical | radio | radio-container | radio-label | radiomenuitem | range | range-thumb | resizer | resizerpanel | scale-horizontal | scalethumbend | scalethumb-horizontal | scalethumbstart | scalethumbtick | scalethumb-vertical | scale-vertical | scrollbarbutton-down | scrollbarbutton-left | scrollbarbutton-right | scrollbarbutton-up | scrollbarthumb-horizontal | scrollbarthumb-vertical | scrollbartrack-horizontal | scrollbartrack-vertical | searchfield | separator | sheet | spinner | spinner-downbutton | spinner-textfield | spinner-upbutton | splitter | statusbar | statusbarpanel | tab | tabpanel | tabpanels | tab-scroll-arrow-back | tab-scroll-arrow-forward | textfield | textfield-multiline | toolbar | toolbarbutton | toolbarbutton-dropdown | toolbargripper | toolbox | tooltip | treeheader | treeheadercell | treeheadersortarrow | treeitem | treeline | treetwisty | treetwistyopen | treeview | -moz-mac-unified-toolbar | -moz-win-borderless-glass | -moz-win-browsertabbar-toolbox | -moz-win-communicationstext | -moz-win-communications-toolbox | -moz-win-exclude-glass | -moz-win-glass | -moz-win-mediatext | -moz-win-media-toolbox | -moz-window-button-box | -moz-window-button-box-maximized | -moz-window-button-close | -moz-window-button-maximize | -moz-window-button-minimize | -moz-window-button-restore | -moz-window-frame-bottom | -moz-window-frame-left | -moz-window-frame-right | -moz-window-titlebar | -moz-window-titlebar-maximized` */
+  "-moz-appearance"?: Property.MozAppearance | undefined;
   /**
    * The **`backface-visibility`** CSS property sets whether the back face of an element is visible when turned towards the user.
    *
@@ -20626,6 +19002,18 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-moz-margin-start"?: Property.MarginInlineStart<TLength> | undefined;
   /**
+   * The **`-moz-orient`** CSS property specifies the orientation of the element to which it's applied.
+   *
+   * **Syntax**: `inline | block | horizontal | vertical`
+   */
+  "-moz-orient"?: Property.MozOrient | undefined;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   */
+  "-moz-osx-font-smoothing"?: Property.FontSmooth<TLength> | undefined;
+  /**
    * The **`padding-inline-end`** CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.
    *
    * **Syntax**: `<'padding-top'>`
@@ -20721,30 +19109,12 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `0`
    */
   "-ms-flex-positive"?: Property.FlexGrow | undefined;
-  /**
-   * The **`grid-auto-columns`** CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
-   *
-   * **Syntax**: `<track-size>+`
-   *
-   * **Initial value**: `auto`
-   */
-  "-ms-grid-columns"?: Property.GridAutoColumns<TLength> | undefined;
-  /**
-   * The **`grid-auto-rows`** CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
-   *
-   * **Syntax**: `<track-size>+`
-   *
-   * **Initial value**: `auto`
-   */
-  "-ms-grid-rows"?: Property.GridAutoRows<TLength> | undefined;
-  /**
-   * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
-   *
-   * **Syntax**: `auto | none | preserve-parent-color`
-   *
-   * **Initial value**: `auto`
-   */
-  "-ms-high-contrast-adjust"?: Property.ForcedColorAdjust | undefined;
+  /** **Syntax**: `none | <track-list> | <auto-track-list>` */
+  "-ms-grid-columns"?: Property.MsGridColumns<TLength> | undefined;
+  /** **Syntax**: `none | <track-list> | <auto-track-list>` */
+  "-ms-grid-rows"?: Property.MsGridRows<TLength> | undefined;
+  /** **Syntax**: `auto | none` */
+  "-ms-high-contrast-adjust"?: Property.MsHighContrastAdjust | undefined;
   /**
    * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
    *
@@ -20785,14 +19155,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `visible`
    */
   "-ms-overflow-y"?: Property.OverflowY | undefined;
-  /**
-   * The **`scroll-snap-type`** CSS property is set on a scroll container, opting it into scroll snapping by setting the direction and strictness of snap point enforcement within the snap port.
-   *
-   * **Syntax**: `none | [ x | y | block | inline | both | pair ] [ mandatory | proximity ]?`
-   *
-   * **Initial value**: `none`
-   */
-  "-ms-scroll-snap-type"?: Property.ScrollSnapType | undefined;
+  /** **Syntax**: `none | proximity | mandatory` */
+  "-ms-scroll-snap-type"?: Property.MsScrollSnapType | undefined;
   /**
    * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
@@ -20865,14 +19229,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `ease`
    */
   "-ms-transition-timing-function"?: Property.TransitionTimingFunction | undefined;
-  /**
-   * The **`user-select`** CSS property controls whether the user can select text. This doesn't have any effect on content loaded as part of a browser's user interface (its chrome), except in textboxes.
-   *
-   * **Syntax**: `auto | text | none | contain | all`
-   *
-   * **Initial value**: `auto`
-   */
-  "-ms-user-select"?: Property.UserSelect | undefined;
+  /** **Syntax**: `none | element | text` */
+  "-ms-user-select"?: Property.MsUserSelect | undefined;
   /**
    * The **`word-break`** CSS property sets whether line breaks appear wherever the text would otherwise overflow its content box.
    *
@@ -20933,6 +19291,12 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   "-webkit-background-origin"?: Property.WebkitBackgroundOrigin | undefined;
   /** **Syntax**: `<bg-size>#` */
   "-webkit-background-size"?: Property.WebkitBackgroundSize<TLength> | undefined;
+  /**
+   * The **`-webkit-border-before`** CSS shorthand property sets the individual logical block start border property values in a single place in the style sheet.
+   *
+   * **Syntax**: `<'border-top'>`
+   */
+  "-webkit-border-before"?: Property.WebkitBorderBefore<TLength> | undefined;
   /** **Syntax**: `<border-radius>` */
   "-webkit-border-bottom-left-radius"?: Property.WebkitBorderBottomLeftRadius<TLength> | undefined;
   /** **Syntax**: `<border-radius>` */
@@ -20949,6 +19313,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   "-webkit-border-top-left-radius"?: Property.WebkitBorderTopLeftRadius<TLength> | undefined;
   /** **Syntax**: `<border-radius>` */
   "-webkit-border-top-right-radius"?: Property.WebkitBorderTopRightRadius<TLength> | undefined;
+  /** **Syntax**: `start | center | end | baseline | stretch` */
+  "-webkit-box-align"?: Property.WebkitBoxAlign | undefined;
   /**
    * The **`box-decoration-break`** CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
    *
@@ -20957,6 +19323,20 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `slice`
    */
   "-webkit-box-decoration-break"?: Property.BoxDecorationBreak | undefined;
+  /** **Syntax**: `<number>` */
+  "-webkit-box-flex"?: Property.WebkitBoxFlex | undefined;
+  /** **Syntax**: `<integer>` */
+  "-webkit-box-ordinal-group"?: Property.WebkitBoxOrdinalGroup | undefined;
+  /** **Syntax**: `horizontal | vertical | inline-axis | block-axis | inherit` */
+  "-webkit-box-orient"?: Property.WebkitBoxOrient | undefined;
+  /** **Syntax**: `start | center | end | justify` */
+  "-webkit-box-pack"?: Property.WebkitBoxPack | undefined;
+  /**
+   * The **`-webkit-box-reflect`** CSS property lets you reflect the content of an element in one specific direction.
+   *
+   * **Syntax**: `[ above | below | right | left ]? <length>? <image>?`
+   */
+  "-webkit-box-reflect"?: Property.WebkitBoxReflect<TLength> | undefined;
   /** **Syntax**: `content-box | border-box` */
   "-webkit-box-sizing"?: Property.WebkitBoxSizing | undefined;
   /**
@@ -21049,6 +19429,12 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `auto`
    */
   "-webkit-font-kerning"?: Property.FontKerning | undefined;
+  /**
+   * The **`font-smooth`** CSS property controls the application of anti-aliasing when fonts are rendered.
+   *
+   * **Syntax**: `auto | never | always | <absolute-size> | <length>`
+   */
+  "-webkit-font-smoothing"?: Property.FontSmooth<TLength> | undefined;
   /**
    * The **`font-variant-ligatures`** CSS property controls which ligatures and contextual forms are used in the textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
    *
@@ -21180,6 +19566,18 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    */
   "-webkit-mask-position"?: Property.WebkitMaskPosition<TLength> | undefined;
   /**
+   * The `-webkit-mask-position-x` CSS property sets the initial horizontal position of a mask image.
+   *
+   * **Syntax**: `[ <length-percentage> | left | center | right ]#`
+   */
+  "-webkit-mask-position-x"?: Property.WebkitMaskPositionX<TLength> | undefined;
+  /**
+   * The `-webkit-mask-position-y` CSS property sets the initial vertical position of a mask image.
+   *
+   * **Syntax**: `[ <length-percentage> | top | center | bottom ]#`
+   */
+  "-webkit-mask-position-y"?: Property.WebkitMaskPositionY<TLength> | undefined;
+  /**
    * The **`mask-repeat`** CSS property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
    *
    * **Syntax**: `<repeat-style>#`
@@ -21253,6 +19651,12 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `0`
    */
   "-webkit-shape-margin"?: Property.ShapeMargin<TLength> | undefined;
+  /**
+   * **`-webkit-tap-highlight-color`** is a non-standard CSS property that sets the color of the highlight that appears over a link while it's being tapped. The highlighting indicates to the user that their tap is being successfully recognized, and indicates which element they're tapping on.
+   *
+   * **Syntax**: `<color>`
+   */
+  "-webkit-tap-highlight-color"?: Property.WebkitTapHighlightColor | undefined;
   /**
    * The **`text-combine-upright`** CSS property sets the combination of characters into the space of a single character. If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.
    *
@@ -21351,6 +19755,12 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Initial value**: `auto`
    */
   "-webkit-text-underline-position"?: Property.TextUnderlinePosition | undefined;
+  /**
+   * The `-webkit-touch-callout` CSS property controls the display of the default callout shown when you touch and hold a touch target.
+   *
+   * **Syntax**: `default | none`
+   */
+  "-webkit-touch-callout"?: Property.WebkitTouchCallout | undefined;
   /** **Syntax**: `none | <transform-list>` */
   "-webkit-transform"?: Property.WebkitTransform | undefined;
   /** **Syntax**: `[ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] <length>? | [ [ center | left | right ] && [ center | top | bottom ] ] <length>?` */
@@ -21365,6 +19775,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   "-webkit-transition-property"?: Property.WebkitTransitionProperty | undefined;
   /** **Syntax**: `<easing-function>#` */
   "-webkit-transition-timing-function"?: Property.WebkitTransitionTimingFunction | undefined;
+  /** **Syntax**: `read-only | read-write | read-write-plaintext-only` */
+  "-webkit-user-modify"?: Property.WebkitUserModify | undefined;
   /**
    * The **`user-select`** CSS property controls whether the user can select text. This doesn't have any effect on content loaded as part of a browser's user interface (its chrome), except in textboxes.
    *
@@ -21523,6 +19935,70 @@ export interface VendorPropertiesHyphen<TLength = (string & {}) | 0, TTime = str
 
 export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | baseline | stretch`
+   *
+   * @deprecated
+   */
+  "box-align"?: Property.BoxAlign | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `normal | reverse | inherit`
+   *
+   * @deprecated
+   */
+  "box-direction"?: Property.BoxDirection | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<number>`
+   *
+   * @deprecated
+   */
+  "box-flex"?: Property.BoxFlex | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  "box-flex-group"?: Property.BoxFlexGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `single | multiple`
+   *
+   * @deprecated
+   */
+  "box-lines"?: Property.BoxLines | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  "box-ordinal-group"?: Property.BoxOrdinalGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `horizontal | vertical | inline-axis | block-axis | inherit`
+   *
+   * @deprecated
+   */
+  "box-orient"?: Property.BoxOrient | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | justify`
+   *
+   * @deprecated
+   */
+  "box-pack"?: Property.BoxPack | undefined;
+  /**
    * Avoid using this feature in new projects. The CSS Masking specification deprecated the `clip` property. This feature may be a candidate for removal from web standards or browsers.
    *
    * **Syntax**: `<rect()> | auto`
@@ -21548,6 +20024,12 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    * @deprecated
    */
   "glyph-orientation-vertical"?: Property.GlyphOrientationVertical | undefined;
+  /**
+   * **Syntax**: `auto | normal | active | inactive | disabled`
+   *
+   * @deprecated
+   */
+  "ime-mode"?: Property.ImeMode | undefined;
   /**
    * The **`position-area`** CSS property enables an anchor-positioned element to be positioned relative to the edges of its associated anchor element by placing the positioned element on one or more tiles of an implicit 3x3 grid, where the anchoring element is the center cell.
    *
@@ -21669,6 +20151,70 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "text-decoration-skip"?: Property.TextDecorationSkip | undefined;
   /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | baseline | stretch`
+   *
+   * @deprecated
+   */
+  "-khtml-box-align"?: Property.BoxAlign | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `normal | reverse | inherit`
+   *
+   * @deprecated
+   */
+  "-khtml-box-direction"?: Property.BoxDirection | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<number>`
+   *
+   * @deprecated
+   */
+  "-khtml-box-flex"?: Property.BoxFlex | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  "-khtml-box-flex-group"?: Property.BoxFlexGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `single | multiple`
+   *
+   * @deprecated
+   */
+  "-khtml-box-lines"?: Property.BoxLines | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  "-khtml-box-ordinal-group"?: Property.BoxOrdinalGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `horizontal | vertical | inline-axis | block-axis | inherit`
+   *
+   * @deprecated
+   */
+  "-khtml-box-orient"?: Property.BoxOrient | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | justify`
+   *
+   * @deprecated
+   */
+  "-khtml-box-pack"?: Property.BoxPack | undefined;
+  /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
    * **Syntax**: `auto | loose | normal | strict | anywhere`
@@ -21779,6 +20325,54 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    */
   "-moz-border-radius-topright"?: Property.BorderTopRightRadius<TLength> | undefined;
   /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | baseline | stretch`
+   *
+   * @deprecated
+   */
+  "-moz-box-align"?: Property.BoxAlign | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `normal | reverse | inherit`
+   *
+   * @deprecated
+   */
+  "-moz-box-direction"?: Property.BoxDirection | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<number>`
+   *
+   * @deprecated
+   */
+  "-moz-box-flex"?: Property.BoxFlex | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  "-moz-box-ordinal-group"?: Property.BoxOrdinalGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `horizontal | vertical | inline-axis | block-axis | inherit`
+   *
+   * @deprecated
+   */
+  "-moz-box-orient"?: Property.BoxOrient | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `start | center | end | justify`
+   *
+   * @deprecated
+   */
+  "-moz-box-pack"?: Property.BoxPack | undefined;
+  /**
    * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
    *
    * **Syntax**: `<spread-shadow>#`
@@ -21808,6 +20402,22 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    * @deprecated
    */
   "-moz-column-fill"?: Property.ColumnFill | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `border-box | content-box | margin-box | padding-box`
+   *
+   * @deprecated
+   */
+  "-moz-float-edge"?: Property.MozFloatEdge | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `0 | 1`
+   *
+   * @deprecated
+   */
+  "-moz-force-broken-image-icon"?: Property.MozForceBrokenImageIcon | undefined;
   /**
    * The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
    *
@@ -21938,6 +20548,20 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
    * @deprecated
    */
   "-moz-transition-timing-function"?: Property.TransitionTimingFunction | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `auto | none | enabled | disabled`
+   *
+   * @deprecated
+   */
+  "-moz-user-input"?: Property.MozUserInput | undefined;
+  /**
+   * **Syntax**: `auto | normal | active | inactive | disabled`
+   *
+   * @deprecated
+   */
+  "-ms-ime-mode"?: Property.ImeMode | undefined;
   /**
    * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`, and `animation-timeline`.
    *
@@ -22161,6 +20785,30 @@ export interface ObsoletePropertiesHyphen<TLength = (string & {}) | 0, TTime = s
   /**
    * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
    *
+   * **Syntax**: `normal | reverse | inherit`
+   *
+   * @deprecated
+   */
+  "-webkit-box-direction"?: Property.BoxDirection | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `<integer>`
+   *
+   * @deprecated
+   */
+  "-webkit-box-flex-group"?: Property.BoxFlexGroup | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
+   * **Syntax**: `single | multiple`
+   *
+   * @deprecated
+   */
+  "-webkit-box-lines"?: Property.BoxLines | undefined;
+  /**
+   * Avoid using this feature in new projects. This feature may be a candidate for removal from web standards or browsers.
+   *
    * **Syntax**: `none | auto`
    *
    * **Initial value**: `See individual properties`
@@ -22285,7 +20933,6 @@ export interface PropertiesHyphenFallback<TLength = (string & {}) | 0, TTime = s
 export type AtRules =
   | "@-webkit-keyframes"
   | "@annotation"
-  | "@apply"
   | "@bottom-center"
   | "@bottom-left"
   | "@bottom-left-corner"
@@ -22293,13 +20940,10 @@ export type AtRules =
   | "@bottom-right-corner"
   | "@character-variant"
   | "@charset"
-  | "@color-profile"
   | "@container"
-  | "@contents"
   | "@counter-style"
   | "@custom-media"
-  | "@custom-selector"
-  | "@else"
+  | "@document"
   | "@font-face"
   | "@font-feature-values"
   | "@font-palette-values"
@@ -22311,15 +20955,12 @@ export type AtRules =
   | "@left-bottom"
   | "@left-middle"
   | "@left-top"
-  | "@location"
   | "@media"
-  | "@mixin"
   | "@namespace"
   | "@navigation"
   | "@ornaments"
   | "@page"
   | "@position-try"
-  | "@private"
   | "@property"
   | "@right-bottom"
   | "@right-middle"
@@ -22329,24 +20970,20 @@ export type AtRules =
   | "@styleset"
   | "@stylistic"
   | "@supports"
-  | "@supports-condition"
   | "@swash"
   | "@top-center"
   | "@top-left"
   | "@top-left-corner"
   | "@top-right"
   | "@top-right-corner"
-  | "@view-transition"
-  | "@when";
+  | "@view-transition";
 
 export type AdvancedPseudos =
   | ":-moz-any()"
   | ":-moz-dir"
   | ":-webkit-any()"
   | "::cue"
-  | "::cue-region"
   | "::highlight"
-  | "::nth-fragment"
   | "::part"
   | "::picker"
   | "::scroll-button"
@@ -22357,7 +20994,6 @@ export type AdvancedPseudos =
   | "::view-transition-new"
   | "::view-transition-old"
   | ":active-view-transition-type"
-  | ":current"
   | ":dir"
   | ":has"
   | ":heading"
@@ -22365,17 +21001,11 @@ export type AdvancedPseudos =
   | ":host-context"
   | ":is"
   | ":lang"
-  | ":link-to"
-  | ":matches"
   | ":matches()"
   | ":not"
-  | ":nth"
   | ":nth-child"
-  | ":nth-col"
   | ":nth-last-child"
-  | ":nth-last-col"
   | ":nth-last-of-type"
-  | ":nth-of-page"
   | ":nth-of-type"
   | ":state"
   | ":where";
@@ -22396,6 +21026,10 @@ export type SimplePseudos =
   | ":-webkit-autofill"
   | ":-webkit-full-screen"
   | "::-moz-placeholder"
+  | "::-moz-progress-bar"
+  | "::-moz-range-progress"
+  | "::-moz-range-thumb"
+  | "::-moz-range-track"
   | "::-moz-selection"
   | "::-ms-backdrop"
   | "::-ms-browse"
@@ -22403,19 +21037,18 @@ export type SimplePseudos =
   | "::-webkit-backdrop"
   | "::-webkit-file-upload-button"
   | "::-webkit-input-placeholder"
+  | "::-webkit-progress-bar"
+  | "::-webkit-progress-value"
+  | "::-webkit-slider-runnable-track"
+  | "::-webkit-slider-thumb"
   | "::after"
   | "::backdrop"
   | "::before"
   | "::checkmark"
-  | "::clear-icon"
-  | "::color-swatch"
   | "::column"
   | "::cue"
-  | "::cue-region"
   | "::details-content"
-  | "::field-component"
   | "::field-content"
-  | "::field-separator"
   | "::file-selector-button"
   | "::first-letter"
   | "::first-line"
@@ -22424,31 +21057,21 @@ export type SimplePseudos =
   | "::marker"
   | "::picker-icon"
   | "::placeholder"
-  | "::reveal-icon"
   | "::scroll-marker"
   | "::scroll-marker-group"
   | "::search-text"
   | "::selection"
-  | "::slider-fill"
-  | "::slider-thumb"
-  | "::slider-track"
   | "::spelling-error"
-  | "::step-control"
-  | "::step-down"
-  | "::step-up"
   | "::target-text"
   | "::view-transition"
   | ":active"
   | ":active-view-transition"
   | ":after"
-  | ":animated-image"
   | ":any-link"
   | ":autofill"
   | ":before"
-  | ":blank"
   | ":buffering"
   | ":checked"
-  | ":current"
   | ":default"
   | ":defined"
   | ":disabled"
@@ -22458,7 +21081,6 @@ export type SimplePseudos =
   | ":first-child"
   | ":first-letter"
   | ":first-line"
-  | ":first-of-page"
   | ":first-of-type"
   | ":focus"
   | ":focus-visible"
@@ -22467,7 +21089,6 @@ export type SimplePseudos =
   | ":future"
   | ":has-slotted"
   | ":heading"
-  | ":high-value"
   | ":host"
   | ":hover"
   | ":in-range"
@@ -22476,19 +21097,15 @@ export type SimplePseudos =
   | ":interest-target"
   | ":invalid"
   | ":last-child"
-  | ":last-of-page"
   | ":last-of-type"
   | ":left"
   | ":link"
-  | ":local-link"
-  | ":low-value"
   | ":modal"
   | ":muted"
   | ":navigation-source"
   | ":only-child"
   | ":only-of-type"
   | ":open"
-  | ":optimal-value"
   | ":optional"
   | ":out-of-range"
   | ":past"
@@ -22504,18 +21121,11 @@ export type SimplePseudos =
   | ":root"
   | ":scope"
   | ":seeking"
-  | ":snapped"
-  | ":snapped-block"
-  | ":snapped-inline"
-  | ":snapped-x"
-  | ":snapped-y"
   | ":stalled"
-  | ":start-of-page"
   | ":target"
   | ":target-after"
   | ":target-before"
   | ":target-current"
-  | ":unchecked"
   | ":user-invalid"
   | ":user-valid"
   | ":valid"
@@ -22982,10 +21592,6 @@ export namespace Property {
 
   export type AnimationDelay<TTime = string & {}> = Globals | TTime | (string & {});
 
-  export type AnimationDelayEnd<TTime = string & {}> = Globals | TTime | (string & {});
-
-  export type AnimationDelayStart<TTime = string & {}> = Globals | TTime | (string & {});
-
   export type AnimationDirection = Globals | DataType.SingleAnimationDirection | (string & {});
 
   export type AnimationDuration<TTime = string & {}> = Globals | TTime | "auto" | (string & {});
@@ -22999,8 +21605,6 @@ export namespace Property {
   export type AnimationPlayState = Globals | "paused" | "running" | (string & {});
 
   export type AnimationRange<TLength = (string & {}) | 0> = Globals | DataType.TimelineRangeName | TLength | "normal" | (string & {});
-
-  export type AnimationRangeCenter<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {});
 
   export type AnimationRangeEnd<TLength = (string & {}) | 0> = Globals | DataType.TimelineRangeName | TLength | "normal" | (string & {});
 
@@ -23036,27 +21640,17 @@ export namespace Property {
 
   export type BackgroundPosition<TLength = (string & {}) | 0> = Globals | DataType.PositionOne<TLength> | (string & {});
 
-  export type BackgroundPositionBlock<TLength = (string & {}) | 0> = Globals | TLength | "center" | "end" | "start" | (string & {});
-
-  export type BackgroundPositionInline<TLength = (string & {}) | 0> = Globals | TLength | "center" | "end" | "start" | (string & {});
-
   export type BackgroundPositionX<TLength = (string & {}) | 0> = Globals | TLength | "center" | "left" | "right" | "x-end" | "x-start" | (string & {});
 
   export type BackgroundPositionY<TLength = (string & {}) | 0> = Globals | TLength | "bottom" | "center" | "top" | "y-end" | "y-start" | (string & {});
 
   export type BackgroundRepeat = Globals | DataType.RepeatStyle | (string & {});
 
-  export type BackgroundRepeatBlock = Globals | DataType.Repetition | (string & {});
-
-  export type BackgroundRepeatInline = Globals | DataType.Repetition | (string & {});
-
   export type BackgroundRepeatX = Globals | DataType.Repetition | (string & {});
 
   export type BackgroundRepeatY = Globals | DataType.Repetition | (string & {});
 
   export type BackgroundSize<TLength = (string & {}) | 0> = Globals | DataType.BgSize<TLength> | (string & {});
-
-  export type BackgroundTbd<TLength = (string & {}) | 0> = Globals | DataType.BgLayer<TLength> | (string & {});
 
   export type BaselineShift<TLength = (string & {}) | 0> = Globals | TLength | "bottom" | "center" | "sub" | "super" | "top" | (string & {});
 
@@ -23066,34 +21660,13 @@ export namespace Property {
 
   export type BlockSize<TLength = (string & {}) | 0> = Globals | DataType.BoxSize2<TLength> | "auto" | (string & {});
 
-  export type BlockStep<TLength = (string & {}) | 0> =
-    Globals | TLength | "auto" | "center" | "content-box" | "down" | "end" | "margin-box" | "nearest" | "none" | "padding-box" | "start" | "up" | (string & {});
-
-  export type BlockStepAlign = Globals | "auto" | "center" | "end" | "start";
-
-  export type BlockStepInsert = Globals | "content-box" | "margin-box" | "padding-box";
-
-  export type BlockStepRound = Globals | "down" | "nearest" | "up";
-
-  export type BlockStepSize<TLength = (string & {}) | 0> = Globals | TLength | "none";
-
-  export type BookmarkLabel = Globals | DataType.Quote | (string & {});
-
-  export type BookmarkLevel = Globals | "none" | (number & {}) | (string & {});
-
-  export type BookmarkState = Globals | "closed" | "open";
-
   export type Border<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
   export type BorderBlock<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
-  export type BorderBlockClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
-
   export type BorderBlockColor = Globals | DataType.Color | (string & {});
 
   export type BorderBlockEnd<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
-
-  export type BorderBlockEndClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
 
   export type BorderBlockEndColor = Globals | DataType.Color | (string & {});
 
@@ -23104,8 +21677,6 @@ export namespace Property {
   export type BorderBlockEndWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength>;
 
   export type BorderBlockStart<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
-
-  export type BorderBlockStartClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
 
   export type BorderBlockStartColor = Globals | DataType.Color | (string & {});
 
@@ -23121,8 +21692,6 @@ export namespace Property {
 
   export type BorderBottom<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
-  export type BorderBottomClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
-
   export type BorderBottomColor = Globals | DataType.Color | (string & {});
 
   export type BorderBottomLeftRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
@@ -23134,10 +21703,6 @@ export namespace Property {
   export type BorderBottomStyle = Globals | DataType.LineStyle;
 
   export type BorderBottomWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength>;
-
-  export type BorderBoundary = Globals | "display" | "none" | "parent";
-
-  export type BorderClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
 
   export type BorderCollapse = Globals | "collapse" | "separate";
 
@@ -23161,13 +21726,9 @@ export namespace Property {
 
   export type BorderInline<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
-  export type BorderInlineClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
-
   export type BorderInlineColor = Globals | DataType.Color | (string & {});
 
   export type BorderInlineEnd<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
-
-  export type BorderInlineEndClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
 
   export type BorderInlineEndColor = Globals | DataType.Color | (string & {});
 
@@ -23178,8 +21739,6 @@ export namespace Property {
   export type BorderInlineEndWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength>;
 
   export type BorderInlineStart<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
-
-  export type BorderInlineStartClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
 
   export type BorderInlineStartColor = Globals | DataType.Color | (string & {});
 
@@ -23195,8 +21754,6 @@ export namespace Property {
 
   export type BorderLeft<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
-  export type BorderLeftClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
-
   export type BorderLeftColor = Globals | DataType.Color | (string & {});
 
   export type BorderLeftRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
@@ -23205,13 +21762,9 @@ export namespace Property {
 
   export type BorderLeftWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength>;
 
-  export type BorderLimit = Globals | "all" | "corners" | "sides" | (string & {});
-
   export type BorderRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
   export type BorderRight<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
-
-  export type BorderRightClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
 
   export type BorderRightColor = Globals | DataType.Color | (string & {});
 
@@ -23233,8 +21786,6 @@ export namespace Property {
 
   export type BorderTop<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
 
-  export type BorderTopClip<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
-
   export type BorderTopColor = Globals | DataType.Color | (string & {});
 
   export type BorderTopLeftRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
@@ -23251,23 +21802,27 @@ export namespace Property {
 
   export type Bottom<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
+  export type BoxAlign = Globals | "baseline" | "center" | "end" | "start" | "stretch";
+
   export type BoxDecorationBreak = Globals | "clone" | "slice";
+
+  export type BoxDirection = Globals | "inherit" | "normal" | "reverse";
+
+  export type BoxFlex = Globals | (number & {}) | (string & {});
+
+  export type BoxFlexGroup = Globals | (number & {}) | (string & {});
+
+  export type BoxLines = Globals | "multiple" | "single";
+
+  export type BoxOrdinalGroup = Globals | (number & {}) | (string & {});
+
+  export type BoxOrient = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
+
+  export type BoxPack = Globals | "center" | "end" | "justify" | "start";
 
   export type BoxShadow = Globals | "none" | (string & {});
 
-  export type BoxShadowBlur<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
-
-  export type BoxShadowColor = Globals | DataType.Color | (string & {});
-
-  export type BoxShadowOffset<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {});
-
-  export type BoxShadowPosition = Globals | "inset" | "outset" | (string & {});
-
-  export type BoxShadowSpread<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
-
   export type BoxSizing = Globals | "border-box" | "content-box";
-
-  export type BoxSnap = Globals | "baseline" | "block-end" | "block-start" | "center" | "last-baseline" | "none";
 
   export type BreakAfter =
     Globals | "all" | "always" | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region" | "column" | "left" | "page" | "recto" | "region" | "right" | "verso";
@@ -23278,8 +21833,6 @@ export namespace Property {
   export type BreakInside = Globals | "auto" | "avoid" | "avoid-column" | "avoid-page" | "avoid-region";
 
   export type CaptionSide = Globals | "bottom" | "top";
-
-  export type Caret = Globals | DataType.Color | "auto" | "bar" | "block" | "manual" | "underscore" | (string & {});
 
   export type CaretAnimation = Globals | "auto" | "manual";
 
@@ -23375,71 +21928,35 @@ export namespace Property {
 
   export type Continue = Globals | "-webkit-legacy" | "collapse" | "discard" | "fragments" | "normal" | "overflow" | "paginate";
 
-  export type CopyInto = Globals | "none" | (string & {});
-
-  export type Corner<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
-  export type CornerBlockEnd<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
   export type CornerBlockEndShape = Globals | DataType.CornerShapeValue | (string & {});
-
-  export type CornerBlockStart<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
 
   export type CornerBlockStartShape = Globals | DataType.CornerShapeValue | (string & {});
 
-  export type CornerBottom<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
-  export type CornerBottomLeft<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
   export type CornerBottomLeftShape = Globals | DataType.CornerShapeValue;
-
-  export type CornerBottomRight<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
 
   export type CornerBottomRightShape = Globals | DataType.CornerShapeValue;
 
   export type CornerBottomShape = Globals | DataType.CornerShapeValue | (string & {});
 
-  export type CornerEndEnd<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
   export type CornerEndEndShape = Globals | DataType.CornerShapeValue;
-
-  export type CornerEndStart<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
 
   export type CornerEndStartShape = Globals | DataType.CornerShapeValue;
 
-  export type CornerInlineEnd<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
   export type CornerInlineEndShape = Globals | DataType.CornerShapeValue | (string & {});
-
-  export type CornerInlineStart<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
 
   export type CornerInlineStartShape = Globals | DataType.CornerShapeValue | (string & {});
 
-  export type CornerLeft<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
   export type CornerLeftShape = Globals | DataType.CornerShapeValue | (string & {});
-
-  export type CornerRight<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
 
   export type CornerRightShape = Globals | DataType.CornerShapeValue | (string & {});
 
   export type CornerShape = Globals | DataType.CornerShapeValue | (string & {});
 
-  export type CornerStartEnd<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
   export type CornerStartEndShape = Globals | DataType.CornerShapeValue;
-
-  export type CornerStartStart<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
 
   export type CornerStartStartShape = Globals | DataType.CornerShapeValue;
 
-  export type CornerTop<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
-  export type CornerTopLeft<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
-
   export type CornerTopLeftShape = Globals | DataType.CornerShapeValue;
-
-  export type CornerTopRight<TLength = (string & {}) | 0> = Globals | DataType.CornerShapeValue | TLength | (string & {});
 
   export type CornerTopRightShape = Globals | DataType.CornerShapeValue;
 
@@ -23450,12 +21967,6 @@ export namespace Property {
   export type CounterReset = Globals | "none" | (string & {});
 
   export type CounterSet = Globals | "none" | (string & {});
-
-  export type Cue = Globals | "none" | (string & {});
-
-  export type CueAfter = Globals | "none" | (string & {});
-
-  export type CueBefore = Globals | "none" | (string & {});
 
   export type Cursor = Globals | DataType.CursorPredefined | (string & {});
 
@@ -23487,33 +21998,13 @@ export namespace Property {
 
   export type EmptyCells = Globals | "hide" | "show";
 
-  export type EventTrigger = Globals | "none" | (string & {});
-
-  export type EventTriggerName = Globals | "none" | (string & {});
-
-  export type EventTriggerSource = Globals | "none" | (string & {});
-
   export type FieldSizing = Globals | "content" | "fixed";
 
   export type Fill = Globals | DataType.Paint;
 
-  export type FillBreak = Globals | "bounding-box" | "clone" | "slice";
-
-  export type FillColor = Globals | DataType.Color;
-
-  export type FillImage = Globals | DataType.Paint | (string & {});
-
   export type FillOpacity = Globals | (string & {}) | (number & {});
 
-  export type FillOrigin = Globals | "border-box" | "content-box" | "fill-box" | "match-parent" | "padding-box" | "stroke-box";
-
-  export type FillPosition<TLength = (string & {}) | 0> = Globals | DataType.PositionOne<TLength> | (string & {});
-
-  export type FillRepeat = Globals | DataType.RepeatStyle | (string & {});
-
   export type FillRule = Globals | "evenodd" | "nonzero";
-
-  export type FillSize<TLength = (string & {}) | 0> = Globals | DataType.BgSize<TLength> | (string & {});
 
   export type Filter = Globals | "none" | (string & {});
 
@@ -23551,19 +22042,9 @@ export namespace Property {
     | "top"
     | (string & {});
 
-  export type FloatDefer = Globals | "last" | "none" | (number & {}) | (string & {});
-
-  export type FloatOffset<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
-
-  export type FloatReference = Globals | "column" | "inline" | "page" | "region";
-
   export type FloodColor = Globals | DataType.Color;
 
   export type FloodOpacity = Globals | (string & {}) | (number & {});
-
-  export type FlowFrom = Globals | "none" | (string & {});
-
-  export type FlowInto = Globals | "none" | (string & {});
 
   export type Font = Globals | DataType.SystemFontFamilyName | (string & {});
 
@@ -23582,6 +22063,8 @@ export namespace Property {
   export type FontSize<TLength = (string & {}) | 0> = Globals | DataType.AbsoluteSize | TLength | "larger" | "math" | "smaller" | (string & {});
 
   export type FontSizeAdjust = Globals | "from-font" | "none" | (string & {}) | (number & {});
+
+  export type FontSmooth<TLength = (string & {}) | 0> = Globals | DataType.AbsoluteSize | TLength | "always" | "auto" | "never";
 
   export type FontStretch =
     | Globals
@@ -23700,10 +22183,6 @@ export namespace Property {
     | "ultra-expanded"
     | (string & {});
 
-  export type FootnoteDisplay = Globals | "block" | "compact" | "inline";
-
-  export type FootnotePolicy = Globals | "auto" | "block" | "line";
-
   export type ForcedColorAdjust = Globals | "auto" | "none" | "preserve-parent-color";
 
   export type FrameSizing = Globals | "auto" | "content-block-size" | "content-height" | "content-inline-size" | "content-width";
@@ -23726,17 +22205,11 @@ export namespace Property {
 
   export type GridColumnEnd = Globals | DataType.GridLine;
 
-  export type GridColumnGap<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | TLength | "normal" | (string & {});
-
   export type GridColumnStart = Globals | DataType.GridLine;
-
-  export type GridGap<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | TLength | "normal" | (string & {});
 
   export type GridRow = Globals | DataType.GridLine | (string & {});
 
   export type GridRowEnd = Globals | DataType.GridLine;
-
-  export type GridRowGap<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | TLength | "normal" | (string & {});
 
   export type GridRowStart = Globals | DataType.GridLine;
 
@@ -23756,33 +22229,19 @@ export namespace Property {
 
   export type HyphenateLimitChars = Globals | "auto" | (string & {}) | (number & {});
 
-  export type HyphenateLimitLast = Globals | "always" | "column" | "none" | "page" | "spread";
-
   export type HyphenateLimitLines = Globals | "no-limit" | (number & {}) | (string & {});
 
-  export type HyphenateLimitZone<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
-
   export type Hyphens = Globals | "auto" | "manual" | "none";
-
-  export type ImageAnimation = Globals | "normal" | "paused" | "running" | "stopped";
 
   export type ImageOrientation = Globals | "flip" | "from-image" | "none" | (string & {});
 
   export type ImageRendering = Globals | "-moz-crisp-edges" | "-webkit-optimize-contrast" | "auto" | "crisp-edges" | "high-quality" | "pixelated" | "smooth";
 
-  export type ImageResolution = Globals | "from-image" | (string & {});
+  export type ImeMode = Globals | "active" | "auto" | "disabled" | "inactive" | "normal";
 
   export type InitialLetter = Globals | "normal" | (string & {}) | (number & {});
 
-  export type InitialLetterAlign = Globals | "alphabetic" | "border-box" | "hanging" | "ideographic" | "leading" | (string & {});
-
-  export type InitialLetterWrap<TLength = (string & {}) | 0> = Globals | TLength | "all" | "first" | "grid" | "none" | (string & {});
-
   export type InlineSize<TLength = (string & {}) | 0> = Globals | DataType.BoxSize4<TLength> | "auto" | (string & {});
-
-  export type InlineSizing = Globals | "normal" | "stretch";
-
-  export type InputSecurity = Globals | "auto" | "none";
 
   export type Inset<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
@@ -23828,17 +22287,7 @@ export namespace Property {
 
   export type LineClamp = Globals | "auto" | "none" | (string & {}) | (number & {});
 
-  export type LineFitEdge = Globals | DataType.TextEdge | "leading";
-
-  export type LineGrid = Globals | "create" | "match-parent";
-
   export type LineHeight<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {}) | (number & {});
-
-  export type LineHeightStep<TLength = (string & {}) | 0> = Globals | TLength;
-
-  export type LinePadding<TLength = (string & {}) | 0> = Globals | TLength;
-
-  export type LineSnap = Globals | "baseline" | "contain" | "none";
 
   export type LinkParameters = Globals | "none" | (string & {});
 
@@ -23860,8 +22309,6 @@ export namespace Property {
 
   export type MarginBottom<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
-  export type MarginBreak = Globals | "auto" | "discard" | "keep";
-
   export type MarginInline<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
   export type MarginInlineEnd<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
@@ -23882,15 +22329,11 @@ export namespace Property {
 
   export type MarkerMid = Globals | "none" | (string & {});
 
-  export type MarkerSide = Globals | "match-parent" | "match-self";
-
   export type MarkerStart = Globals | "none" | (string & {});
 
   export type Mask<TLength = (string & {}) | 0> = Globals | DataType.MaskLayer<TLength> | (string & {});
 
   export type MaskBorder = Globals | "alpha" | "luminance" | "none" | "repeat" | "round" | "space" | "stretch" | (string & {}) | (number & {});
-
-  export type MaskBorderMode = Globals | "alpha" | "luminance";
 
   export type MaskBorderOutset<TLength = (string & {}) | 0> = Globals | TLength | (string & {}) | (number & {});
 
@@ -23944,8 +22387,6 @@ export namespace Property {
 
   export type MinInlineSize<TLength = (string & {}) | 0> = Globals | DataType.BoxSize4<TLength> | "auto" | (string & {});
 
-  export type MinIntrinsicSizing = Globals | "legacy" | "zero-if-extrinsic" | "zero-if-scroll" | (string & {});
-
   export type MinSize<TLength = (string & {}) | 0> = Globals | DataType.BoxSize<TLength> | "auto" | (string & {});
 
   export type MinWidth<TLength = (string & {}) | 0> = Globals | DataType.BoxSize7<TLength> | "auto" | (string & {});
@@ -23959,14 +22400,6 @@ export namespace Property {
   export type OffsetPath = Globals | DataType.PaintBox | "none" | "view-box" | (string & {});
 
   export type OffsetRotate = Globals | "auto" | "reverse" | (string & {});
-
-  export type NavDown = Globals | "auto" | (string & {});
-
-  export type NavLeft = Globals | "auto" | (string & {});
-
-  export type NavRight = Globals | "auto" | (string & {});
-
-  export type NavUp = Globals | "auto" | (string & {});
 
   export type ObjectFit = Globals | "contain" | "cover" | "fill" | "none" | "scale-down" | (string & {});
 
@@ -24001,26 +22434,6 @@ export namespace Property {
   export type OverflowBlock = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
   export type OverflowClipMargin<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginBlock<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginBlockEnd<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginBlockStart<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginBottom<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginInline<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginInlineEnd<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginInlineStart<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginLeft<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginRight<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
-
-  export type OverflowClipMarginTop<TLength = (string & {}) | 0> = Globals | DataType.VisualBox | TLength | (string & {});
 
   export type OverflowInline = Globals | "auto" | "clip" | "hidden" | "scroll" | "visible";
 
@@ -24076,12 +22489,6 @@ export namespace Property {
 
   export type PathLength<TLength = (string & {}) | 0> = Globals | TLength | "none";
 
-  export type Pause<TTime = string & {}> = Globals | TTime | "medium" | "none" | "strong" | "weak" | "x-strong" | "x-weak" | (string & {});
-
-  export type PauseAfter<TTime = string & {}> = Globals | TTime | "medium" | "none" | "strong" | "weak" | "x-strong" | "x-weak";
-
-  export type PauseBefore<TTime = string & {}> = Globals | TTime | "medium" | "none" | "strong" | "weak" | "x-strong" | "x-weak";
-
   export type Perspective<TLength = (string & {}) | 0> = Globals | TLength | "none";
 
   export type PerspectiveOrigin<TLength = (string & {}) | 0> = Globals | DataType.PositionOne<TLength> | (string & {});
@@ -24093,12 +22500,6 @@ export namespace Property {
   export type PlaceSelf = Globals | DataType.SelfPosition | "anchor-center" | "auto" | "baseline" | "normal" | "stretch" | (string & {});
 
   export type PointerEvents = Globals | "all" | "auto" | "bounding-box" | "fill" | "none" | "painted" | "stroke" | "visible" | "visibleFill" | "visiblePainted" | "visibleStroke";
-
-  export type PointerTimeline = Globals | "none" | (string & {});
-
-  export type PointerTimelineAxis = Globals | "block" | "inline" | "x" | "y" | (string & {});
-
-  export type PointerTimelineName = Globals | "none" | (string & {});
 
   export type Position = Globals | "-webkit-sticky" | "absolute" | "fixed" | "relative" | "static" | "sticky" | (string & {});
 
@@ -24122,15 +22523,7 @@ export namespace Property {
 
   export type ReadingOrder = Globals | (number & {}) | (string & {});
 
-  export type RegionFragment = Globals | "auto" | "break";
-
   export type Resize = Globals | "block" | "both" | "horizontal" | "inline" | "none" | "vertical";
-
-  export type Rest<TTime = string & {}> = Globals | TTime | "medium" | "none" | "strong" | "weak" | "x-strong" | "x-weak" | (string & {});
-
-  export type RestAfter<TTime = string & {}> = Globals | TTime | "medium" | "none" | "strong" | "weak" | "x-strong" | "x-weak";
-
-  export type RestBefore<TTime = string & {}> = Globals | TTime | "medium" | "none" | "strong" | "weak" | "x-strong" | "x-weak";
 
   export type Right<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {});
 
@@ -24169,8 +22562,6 @@ export namespace Property {
   export type RowRuleWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | (string & {});
 
   export type RubyAlign = Globals | "center" | "space-around" | "space-between" | "start";
-
-  export type RubyMerge = Globals | "auto" | "merge" | "separate";
 
   export type RubyOverhang = Globals | "auto" | "spaces";
 
@@ -24280,25 +22671,13 @@ export namespace Property {
 
   export type ShapeImageThreshold = Globals | (string & {}) | (number & {});
 
-  export type ShapeInside = Globals | "auto" | "display" | "outside-shape" | "shape-box" | (string & {});
-
   export type ShapeMargin<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
   export type ShapeOutside = Globals | DataType.ShapeBox | "none" | (string & {});
 
-  export type ShapePadding<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
-
   export type ShapeRendering = Globals | "auto" | "crispEdges" | "geometricPrecision" | "optimizeSpeed";
 
   export type Size<TLength = (string & {}) | 0> = Globals | DataType.BoxSize<TLength> | "auto" | (string & {});
-
-  export type SliderOrientation = Globals | "auto" | "bottom-to-top" | "left-to-right" | "right-to-left" | "top-to-bottom";
-
-  export type SpatialNavigationAction = Globals | "auto" | "focus" | "scroll";
-
-  export type SpatialNavigationContain = Globals | "auto" | "contain";
-
-  export type SpatialNavigationFunction = Globals | "grid" | "normal";
 
   export type Speak = Globals | "always" | "auto" | "never";
 
@@ -24308,31 +22687,13 @@ export namespace Property {
 
   export type StopOpacity = Globals | (string & {}) | (number & {});
 
-  export type StringSet = Globals | "none" | (string & {});
-
   export type Stroke = Globals | DataType.Paint;
-
-  export type StrokeAlign = Globals | "center" | "inset" | "outset";
-
-  export type StrokeAlignment = Globals | "center" | "inner" | "outer";
-
-  export type StrokeBreak = Globals | "bounding-box" | "clone" | "slice";
 
   export type StrokeColor = Globals | DataType.Color | (string & {});
 
-  export type StrokeDashCorner<TLength = (string & {}) | 0> = Globals | TLength | "none";
-
-  export type StrokeDashJustify = Globals | "compress" | "dashes" | "gaps" | "none" | "stretch" | (string & {});
-
-  export type StrokeDashadjust = Globals | "compress" | "none" | "stretch" | (string & {});
-
   export type StrokeDasharray<TLength = (string & {}) | 0> = Globals | TLength | "none" | (string & {}) | (number & {});
 
-  export type StrokeDashcorner<TLength = (string & {}) | 0> = Globals | TLength | "none";
-
   export type StrokeDashoffset<TLength = (string & {}) | 0> = Globals | TLength | (string & {}) | (number & {});
-
-  export type StrokeImage = Globals | DataType.Paint | (string & {});
 
   export type StrokeLinecap = Globals | "butt" | "round" | "square";
 
@@ -24341,14 +22702,6 @@ export namespace Property {
   export type StrokeMiterlimit = Globals | (number & {}) | (string & {});
 
   export type StrokeOpacity = Globals | (string & {}) | (number & {});
-
-  export type StrokeOrigin = Globals | "border-box" | "content-box" | "fill-box" | "match-parent" | "padding-box" | "stroke-box";
-
-  export type StrokePosition<TLength = (string & {}) | 0> = Globals | DataType.PositionOne<TLength> | (string & {});
-
-  export type StrokeRepeat = Globals | DataType.RepeatStyle | (string & {});
-
-  export type StrokeSize<TLength = (string & {}) | 0> = Globals | DataType.BgSize<TLength> | (string & {});
 
   export type StrokeWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | TLength | (string & {}) | (number & {});
 
@@ -24377,8 +22730,6 @@ export namespace Property {
     | "right"
     | "start"
     | (string & {});
-
-  export type TextAlignAll = Globals | "center" | "end" | "justify" | "left" | "match-parent" | "right" | "start" | (string & {});
 
   export type TextAlignLast = Globals | "auto" | "center" | "end" | "justify" | "left" | "match-parent" | "right" | "start";
 
@@ -24423,11 +22774,7 @@ export namespace Property {
 
   export type TextDecorationSkip = Globals | "auto" | "none";
 
-  export type TextDecorationSkipBox = Globals | "all" | "none";
-
   export type TextDecorationSkipInk = Globals | "all" | "auto" | "none";
-
-  export type TextDecorationSkipSelf = Globals | "auto" | "no-skip" | "skip-all" | "skip-line-through" | "skip-overline" | "skip-underline" | (string & {});
 
   export type TextDecorationSkipSpaces = Globals | "all" | "end" | "none" | "start" | (string & {});
 
@@ -24441,13 +22788,9 @@ export namespace Property {
 
   export type TextEmphasisPosition = Globals | "over" | "under" | (string & {});
 
-  export type TextEmphasisSkip = Globals | "narrow" | "punctuation" | "spaces" | "symbols" | (string & {});
-
   export type TextEmphasisStyle = Globals | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | (string & {});
 
   export type TextFit = Globals | "grow" | "none" | "shrink" | (string & {});
-
-  export type TextGroupAlign = Globals | "center" | "end" | "left" | "none" | "right" | "start";
 
   export type TextIndent<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
@@ -24462,8 +22805,6 @@ export namespace Property {
   export type TextShadow = Globals | "none" | (string & {});
 
   export type TextSizeAdjust = Globals | "auto" | "none" | (string & {});
-
-  export type TextSpacing = Globals | DataType.SpacingTrim | DataType.Autospace | "auto" | "none" | (string & {});
 
   export type TextSpacingTrim = Globals | DataType.SpacingTrim | "auto";
 
@@ -24496,8 +22837,6 @@ export namespace Property {
   export type TimelineTriggerActiveRangeStart<TLength = (string & {}) | 0> = Globals | DataType.TimelineRangeName | TLength | "auto" | "normal" | (string & {});
 
   export type TimelineTriggerName = Globals | "none" | (string & {});
-
-  export type TimelineTriggerRange<TLength = (string & {}) | 0> = Globals | DataType.TimelineRangeName | TLength | "normal" | (string & {});
 
   export type TimelineTriggerSource = Globals | "auto" | "none" | (string & {});
 
@@ -24586,22 +22925,6 @@ export namespace Property {
 
   export type Visibility = Globals | "collapse" | "force-hidden" | "hidden" | "visible";
 
-  export type VoiceBalance = Globals | "center" | "left" | "leftwards" | "right" | "rightwards" | (number & {}) | (string & {});
-
-  export type VoiceDuration<TTime = string & {}> = Globals | TTime | "auto";
-
-  export type VoiceFamily = Globals | "preserve" | (string & {});
-
-  export type VoicePitch = Globals | "high" | "low" | "medium" | "x-high" | "x-low" | (string & {});
-
-  export type VoiceRange = Globals | "high" | "low" | "medium" | "x-high" | "x-low" | (string & {});
-
-  export type VoiceRate = Globals | "fast" | "medium" | "normal" | "slow" | "x-fast" | "x-slow" | (string & {});
-
-  export type VoiceStress = Globals | "moderate" | "none" | "normal" | "reduced" | "strong";
-
-  export type VoiceVolume = Globals | "loud" | "medium" | "silent" | "soft" | "x-loud" | "x-soft" | (string & {});
-
   export type WhiteSpace =
     | Globals
     | "-moz-pre-wrap"
@@ -24637,21 +22960,11 @@ export namespace Property {
 
   export type WordBreak = Globals | "auto-phrase" | "break-all" | "break-word" | "keep-all" | "manual" | "normal";
 
-  export type WordSpaceTransform = Globals | "ideographic-space" | "none" | "space" | (string & {});
-
   export type WordSpacing<TLength = (string & {}) | 0> = Globals | TLength | "normal" | (string & {});
 
   export type WordWrap = Globals | "anywhere" | "break-word" | "normal";
 
-  export type WrapAfter = Globals | "auto" | "avoid" | "avoid-flex" | "avoid-line" | "flex" | "line";
-
-  export type WrapBefore = Globals | "auto" | "avoid" | "avoid-flex" | "avoid-line" | "flex" | "line";
-
-  export type WrapFlow = Globals | "auto" | "both" | "clear" | "end" | "maximum" | "minimum" | "start";
-
   export type WrapInside = Globals | "auto" | "avoid";
-
-  export type WrapThrough = Globals | "none" | "wrap";
 
   export type WritingMode = Globals | "horizontal-tb" | "sideways-lr" | "sideways-rl" | "vertical-lr" | "vertical-rl";
 
@@ -24662,6 +22975,137 @@ export namespace Property {
   export type ZIndex = Globals | "auto" | "inherit" | (number & {}) | (string & {});
 
   export type Zoom = Globals | (string & {}) | (number & {});
+
+  export type MozAppearance =
+    | Globals
+    | "-moz-mac-unified-toolbar"
+    | "-moz-win-borderless-glass"
+    | "-moz-win-browsertabbar-toolbox"
+    | "-moz-win-communications-toolbox"
+    | "-moz-win-communicationstext"
+    | "-moz-win-exclude-glass"
+    | "-moz-win-glass"
+    | "-moz-win-media-toolbox"
+    | "-moz-win-mediatext"
+    | "-moz-window-button-box"
+    | "-moz-window-button-box-maximized"
+    | "-moz-window-button-close"
+    | "-moz-window-button-maximize"
+    | "-moz-window-button-minimize"
+    | "-moz-window-button-restore"
+    | "-moz-window-frame-bottom"
+    | "-moz-window-frame-left"
+    | "-moz-window-frame-right"
+    | "-moz-window-titlebar"
+    | "-moz-window-titlebar-maximized"
+    | "button"
+    | "button-arrow-down"
+    | "button-arrow-next"
+    | "button-arrow-previous"
+    | "button-arrow-up"
+    | "button-bevel"
+    | "button-focus"
+    | "caret"
+    | "checkbox"
+    | "checkbox-container"
+    | "checkbox-label"
+    | "checkmenuitem"
+    | "dualbutton"
+    | "groupbox"
+    | "listbox"
+    | "listitem"
+    | "menuarrow"
+    | "menubar"
+    | "menucheckbox"
+    | "menuimage"
+    | "menuitem"
+    | "menuitemtext"
+    | "menulist"
+    | "menulist-button"
+    | "menulist-text"
+    | "menulist-textfield"
+    | "menupopup"
+    | "menuradio"
+    | "menuseparator"
+    | "meterbar"
+    | "meterchunk"
+    | "none"
+    | "progressbar"
+    | "progressbar-vertical"
+    | "progresschunk"
+    | "progresschunk-vertical"
+    | "radio"
+    | "radio-container"
+    | "radio-label"
+    | "radiomenuitem"
+    | "range"
+    | "range-thumb"
+    | "resizer"
+    | "resizerpanel"
+    | "scale-horizontal"
+    | "scale-vertical"
+    | "scalethumb-horizontal"
+    | "scalethumb-vertical"
+    | "scalethumbend"
+    | "scalethumbstart"
+    | "scalethumbtick"
+    | "scrollbarbutton-down"
+    | "scrollbarbutton-left"
+    | "scrollbarbutton-right"
+    | "scrollbarbutton-up"
+    | "scrollbarthumb-horizontal"
+    | "scrollbarthumb-vertical"
+    | "scrollbartrack-horizontal"
+    | "scrollbartrack-vertical"
+    | "searchfield"
+    | "separator"
+    | "sheet"
+    | "spinner"
+    | "spinner-downbutton"
+    | "spinner-textfield"
+    | "spinner-upbutton"
+    | "splitter"
+    | "statusbar"
+    | "statusbarpanel"
+    | "tab"
+    | "tab-scroll-arrow-back"
+    | "tab-scroll-arrow-forward"
+    | "tabpanel"
+    | "tabpanels"
+    | "textfield"
+    | "textfield-multiline"
+    | "toolbar"
+    | "toolbarbutton"
+    | "toolbarbutton-dropdown"
+    | "toolbargripper"
+    | "toolbox"
+    | "tooltip"
+    | "treeheader"
+    | "treeheadercell"
+    | "treeheadersortarrow"
+    | "treeitem"
+    | "treeline"
+    | "treetwisty"
+    | "treetwistyopen"
+    | "treeview";
+
+  export type MozFloatEdge = Globals | "border-box" | "content-box" | "margin-box" | "padding-box";
+
+  export type MozForceBrokenImageIcon = Globals | 0 | (string & {}) | 1;
+
+  export type MozOrient = Globals | "block" | "horizontal" | "inline" | "vertical";
+
+  export type MozUserInput = Globals | "auto" | "disabled" | "enabled" | "none";
+
+  export type MsGridColumns<TLength = (string & {}) | 0> = Globals | DataType.TrackBreadth<TLength> | "none" | (string & {});
+
+  export type MsGridRows<TLength = (string & {}) | 0> = Globals | DataType.TrackBreadth<TLength> | "none" | (string & {});
+
+  export type MsHighContrastAdjust = Globals | "auto" | "none";
+
+  export type MsScrollSnapType = Globals | "mandatory" | "none" | "proximity";
+
+  export type MsUserSelect = Globals | "element" | "none" | "text";
 
   export type WebkitAlignContent = Globals | DataType.ContentDistribution | DataType.ContentPosition | "baseline" | "normal" | (string & {});
 
@@ -24697,6 +23141,8 @@ export namespace Property {
 
   export type WebkitBackgroundSize<TLength = (string & {}) | 0> = Globals | DataType.BgSize<TLength> | (string & {});
 
+  export type WebkitBorderBefore<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | DataType.LineStyle | DataType.Color | (string & {});
+
   export type WebkitBorderBottomLeftRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
   export type WebkitBorderBottomRightRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
@@ -24706,6 +23152,18 @@ export namespace Property {
   export type WebkitBorderTopLeftRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
 
   export type WebkitBorderTopRightRadius<TLength = (string & {}) | 0> = Globals | TLength | (string & {});
+
+  export type WebkitBoxAlign = Globals | "baseline" | "center" | "end" | "start" | "stretch";
+
+  export type WebkitBoxFlex = Globals | (number & {}) | (string & {});
+
+  export type WebkitBoxOrdinalGroup = Globals | (number & {}) | (string & {});
+
+  export type WebkitBoxOrient = Globals | "block-axis" | "horizontal" | "inherit" | "inline-axis" | "vertical";
+
+  export type WebkitBoxPack = Globals | "center" | "end" | "justify" | "start";
+
+  export type WebkitBoxReflect<TLength = (string & {}) | 0> = Globals | TLength | "above" | "below" | "left" | "right" | (string & {});
 
   export type WebkitBoxShadow = Globals | "none" | (string & {});
 
@@ -24755,6 +23213,10 @@ export namespace Property {
 
   export type WebkitMaskPosition<TLength = (string & {}) | 0> = Globals | DataType.PositionOne<TLength> | (string & {});
 
+  export type WebkitMaskPositionX<TLength = (string & {}) | 0> = Globals | TLength | "center" | "left" | "right" | (string & {});
+
+  export type WebkitMaskPositionY<TLength = (string & {}) | 0> = Globals | TLength | "bottom" | "center" | "top" | (string & {});
+
   export type WebkitMaskRepeat = Globals | DataType.RepeatStyle | (string & {});
 
   export type WebkitMaskSize<TLength = (string & {}) | 0> = Globals | DataType.BgSize<TLength> | (string & {});
@@ -24765,6 +23227,8 @@ export namespace Property {
 
   export type WebkitPerspectiveOrigin<TLength = (string & {}) | 0> = Globals | DataType.PositionOne<TLength> | (string & {});
 
+  export type WebkitTapHighlightColor = Globals | DataType.Color;
+
   export type WebkitTextFillColor = Globals | DataType.Color;
 
   export type WebkitTextSizeAdjust = Globals | "auto" | "none" | (string & {});
@@ -24774,6 +23238,8 @@ export namespace Property {
   export type WebkitTextStrokeColor = Globals | DataType.Color;
 
   export type WebkitTextStrokeWidth<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength>;
+
+  export type WebkitTouchCallout = Globals | "default" | "none";
 
   export type WebkitTransform = Globals | "none" | (string & {});
 
@@ -24791,28 +23257,14 @@ export namespace Property {
 
   export type WebkitTransitionTimingFunction = Globals | DataType.EasingFunction | (string & {});
 
+  export type WebkitUserModify = Globals | "read-only" | "read-write" | "read-write-plaintext-only";
+
   export type WebkitUserSelect = Globals | "all" | "auto" | "contain" | "none" | "text";
 
   export type ColorRendering = Globals | "auto" | "optimizeQuality" | "optimizeSpeed";
 }
 
 export namespace AtRule {
-  export interface ColorProfile<TLength = (string & {}) | 0, TTime = string & {}> {
-    components?: string | undefined;
-    renderingIntent?: RenderingIntent | undefined;
-    src?: string | undefined;
-  }
-
-  export interface ColorProfileHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
-    components?: string | undefined;
-    "rendering-intent"?: RenderingIntent | undefined;
-    src?: string | undefined;
-  }
-
-  export type ColorProfileFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ColorProfile<TLength, TTime>>;
-
-  export type ColorProfileHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ColorProfileHyphen<TLength, TTime>>;
-
   export interface CounterStyle<TLength = (string & {}) | 0, TTime = string & {}> {
     additiveSymbols?: string | undefined;
     fallback?: string | undefined;
@@ -24850,9 +23302,7 @@ export namespace AtRule {
     fontDisplay?: FontDisplay | undefined;
     fontFamily?: string | undefined;
     fontFeatureSettings?: FontFeatureSettings | undefined;
-    fontLanguageOverride?: FontLanguageOverride | undefined;
-    fontNamedInstance?: FontNamedInstance | undefined;
-    fontSize?: FontSize | undefined;
+    fontStretch?: FontStretch | undefined;
     fontStyle?: FontStyle | undefined;
     fontVariationSettings?: FontVariationSettings | undefined;
     fontWeight?: FontWeight | undefined;
@@ -24860,10 +23310,6 @@ export namespace AtRule {
     lineGapOverride?: LineGapOverride | undefined;
     sizeAdjust?: string | undefined;
     src?: string | undefined;
-    subscriptPositionOverride?: SubscriptPositionOverride | undefined;
-    subscriptSizeOverride?: SubscriptSizeOverride | undefined;
-    superscriptPositionOverride?: SuperscriptPositionOverride | undefined;
-    superscriptSizeOverride?: SuperscriptSizeOverride | undefined;
     unicodeRange?: string | undefined;
   }
 
@@ -24874,9 +23320,7 @@ export namespace AtRule {
     "font-display"?: FontDisplay | undefined;
     "font-family"?: string | undefined;
     "font-feature-settings"?: FontFeatureSettings | undefined;
-    "font-language-override"?: FontLanguageOverride | undefined;
-    "font-named-instance"?: FontNamedInstance | undefined;
-    "font-size"?: FontSize | undefined;
+    "font-stretch"?: FontStretch | undefined;
     "font-style"?: FontStyle | undefined;
     "font-variation-settings"?: FontVariationSettings | undefined;
     "font-weight"?: FontWeight | undefined;
@@ -24884,28 +23328,12 @@ export namespace AtRule {
     "line-gap-override"?: LineGapOverride | undefined;
     "size-adjust"?: string | undefined;
     src?: string | undefined;
-    "subscript-position-override"?: SubscriptPositionOverride | undefined;
-    "subscript-size-override"?: SubscriptSizeOverride | undefined;
-    "superscript-position-override"?: SuperscriptPositionOverride | undefined;
-    "superscript-size-override"?: SuperscriptSizeOverride | undefined;
     "unicode-range"?: string | undefined;
   }
 
   export type FontFaceFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontFace<TLength, TTime>>;
 
   export type FontFaceHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontFaceHyphen<TLength, TTime>>;
-
-  export interface FontFeatureValues<TLength = (string & {}) | 0, TTime = string & {}> {
-    fontDisplay?: FontDisplay | undefined;
-  }
-
-  export interface FontFeatureValuesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
-    "font-display"?: FontDisplay | undefined;
-  }
-
-  export type FontFeatureValuesFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontFeatureValues<TLength, TTime>>;
-
-  export type FontFeatureValuesHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FontFeatureValuesHyphen<TLength, TTime>>;
 
   export interface FontPaletteValues<TLength = (string & {}) | 0, TTime = string & {}> {
     basePalette?: BasePalette | undefined;
@@ -24936,16 +23364,12 @@ export namespace AtRule {
   export type FunctionHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<FunctionHyphen<TLength, TTime>>;
 
   export interface Page<TLength = (string & {}) | 0, TTime = string & {}> {
-    bleed?: Bleed<TLength> | undefined;
-    marks?: Marks | undefined;
     pageMarginSafety?: PageMarginSafety | undefined;
     pageOrientation?: PageOrientation | undefined;
     size?: Size<TLength> | undefined;
   }
 
   export interface PageHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
-    bleed?: Bleed<TLength> | undefined;
-    marks?: Marks | undefined;
     "page-margin-safety"?: PageMarginSafety | undefined;
     "page-orientation"?: PageOrientation | undefined;
     size?: Size<TLength> | undefined;
@@ -24985,8 +23409,6 @@ export namespace AtRule {
 
   export type ViewTransitionHyphenFallback<TLength = (string & {}) | 0, TTime = string & {}> = Fallback<ViewTransitionHyphen<TLength, TTime>>;
 
-  type RenderingIntent = "absolute-colorimetric" | "perceptual" | "relative-colorimetric" | "saturation";
-
   type Range = "auto" | (string & {});
 
   type SpeakAs = "auto" | "bullets" | "numbers" | "spell-out" | "words" | (string & {});
@@ -25001,11 +23423,7 @@ export namespace AtRule {
 
   type FontDisplay = "auto" | "block" | "fallback" | "optional" | "swap";
 
-  type FontLanguageOverride = "normal" | (string & {});
-
-  type FontNamedInstance = "auto" | (string & {});
-
-  type FontSize = "auto" | (string & {}) | (number & {});
+  type FontStretch = DataType.FontStretchAbsolute | (string & {});
 
   type FontStyle = "auto" | "italic" | "left" | "normal" | "oblique" | "right" | (string & {});
 
@@ -25017,19 +23435,7 @@ export namespace AtRule {
 
   type LineGapOverride = "normal" | (string & {});
 
-  type SubscriptPositionOverride = "from-font" | "normal" | (string & {});
-
-  type SubscriptSizeOverride = "from-font" | "normal" | (string & {});
-
-  type SuperscriptPositionOverride = "from-font" | "normal" | (string & {});
-
-  type SuperscriptSizeOverride = "from-font" | "normal" | (string & {});
-
   type BasePalette = "dark" | "light" | (number & {}) | (string & {});
-
-  type Bleed<TLength> = TLength | "auto";
-
-  type Marks = "crop" | "cross" | "none" | (string & {});
 
   type PageMarginSafety = "add" | "clamp" | "none";
 
@@ -25285,6 +23691,9 @@ export namespace DataType {
   type EastAsianVariantValues = "jis04" | "jis78" | "jis83" | "jis90" | "simplified" | "traditional";
 
   type FinalBgLayer<TLength> = PositionOne<TLength> | RepeatStyle | Attachment | VisualBox | BgClip | Color | "none" | (string & {});
+
+  type FontStretchAbsolute =
+    "condensed" | "expanded" | "extra-condensed" | "extra-expanded" | "normal" | "semi-condensed" | "semi-expanded" | "ultra-condensed" | "ultra-expanded" | (string & {});
 
   type FontWeightAbsolute = "bold" | "normal" | (number & {}) | (string & {});
 

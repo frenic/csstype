@@ -30,18 +30,33 @@ describe('at-rules', () => {
     expect(literals).toEqual(expect.arrayContaining(['@media', '@container']));
   });
 
-  it('shares one declaration between same-name descriptors of different at-rules', async () => {
+  it('keeps descriptors that are in BCD and drops the ones that are not', async () => {
     const [, atRules] = await getDataTypesOf(dictionary => getAtRules(dictionary, 3));
 
-    // `font-display` exists as a descriptor of both `@font-face` and
-    // `@font-feature-values` in webref
+    // `font-display` is a BCD descriptor of `@font-face`…
     expect(atRules.rules['font-face']['font-display']).toBeDefined();
-    expect(atRules.rules['font-feature-values']['font-display']).toBeDefined();
+    // …but not of `@font-feature-values`, so it is dropped there
+    expect(atRules.rules['font-feature-values']).toBeUndefined();
 
     // The AtRule namespace must not declare the same type name twice
     const data = await declarator(3);
     const atRuleNamespace = data.namespaces.find(namespace => namespace.name === 'AtRule')!;
     const names = atRuleNamespace.body().map(declaration => declaration.name);
     expect(new Set(names).size).toBe(names.length);
+  });
+
+  it('drops at-rules BCD does not have and keeps nested BCD entries', async () => {
+    const [, atRules] = await getDataTypesOf(dictionary => getAtRules(dictionary, 3));
+
+    const literals = atRules.literals.map(literal => literal.literal);
+
+    // Draft at-rules with no browser support are not in BCD and get dropped
+    expect(literals).not.toContain('@mixin');
+    expect(literals).not.toContain('@when');
+
+    // Nested BCD entries: `@-webkit-keyframes` is prefix support on
+    // `@keyframes`, the page-margin boxes live under `css.at-rules.page`,
+    // and `@document` comes from local legacy data
+    expect(literals).toEqual(expect.arrayContaining(['@-webkit-keyframes', '@top-left', '@document']));
   });
 });

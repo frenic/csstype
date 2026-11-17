@@ -10,6 +10,7 @@ import {
   getTypesData,
   isAddedBySome,
   isDeprecated,
+  isGeneratedPropertyName,
 } from '../utils/compat';
 import { warn } from '../utils/logger';
 import { createPropertyDataTypeResolver, IDataTypeDictionary, resolveDataTypes } from './data-types';
@@ -126,6 +127,11 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
         ...compats.map(compat => filterMissingProperties(compatNames(compat, originalName, true))),
       );
       deprecated = compats.every(compat => isDeprecated(compat));
+    } else if (!isGeneratedPropertyName(originalName)) {
+      // BCD decides: no entry for this exact name, not even via the
+      // prefix/alternative_name support data of another property (BCD deletes
+      // features no browser has shipped), so the property is dropped
+      continue;
     }
 
     if (deprecated) {

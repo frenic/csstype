@@ -36,6 +36,86 @@ export function getSelectorsData(name: string) {
   return getData('selectors', name);
 }
 
+// Nested BCD entries, e.g. the page-margin boxes: `@top-left` lives under
+// `css.at-rules.page` as `at_top-left`
+export function getNestedAtRuleData(name: string): Identifier | undefined {
+  const direct = getAtRuleData(name);
+
+  if (direct) {
+    return direct;
+  }
+
+  const atRules = mdnBrowserCompatData.css['at-rules'];
+
+  for (const key of Object.keys(atRules)) {
+    for (const sub of Object.keys(atRules[key])) {
+      if (sub !== '__compat' && (sub === name || sub === 'at_' + name)) {
+        return atRules[key][sub];
+      }
+    }
+  }
+
+  return undefined;
+}
+
+const generatedNames: { [type: string]: Set<string> } = {};
+
+// Names a feature only has through the `prefix`/`alternative_name` support data
+// of another feature, e.g. `-webkit-box-align` via `box-align`, or
+// `@-webkit-keyframes` via `@keyframes`. `compatNames` only yields names whose
+// support statement has a `version_added`, so membership means "added by some browser".
+function getGeneratedNames(type: 'at-rules' | 'properties'): Set<string> {
+  if (!generatedNames[type]) {
+    const names = new Set<string>();
+    const category = mdnBrowserCompatData.css[type];
+
+    for (const key of Object.keys(category)) {
+      for (const compat of getCompats(category[key])) {
+        for (const name of compatNames(compat, key)) {
+          names.add(name);
+        }
+      }
+    }
+
+    generatedNames[type] = names;
+  }
+
+  return generatedNames[type];
+}
+
+export function isGeneratedAtRuleName(name: string) {
+  return getGeneratedNames('at-rules').has(name);
+}
+
+export function isGeneratedPropertyName(name: string) {
+  return getGeneratedNames('properties').has(name);
+}
+
+// BCD decides: an at-rule stays only if its own (possibly nested) entry says a
+// browser added it, or it is a prefixed/alternative name of a supported at-rule
+export function isAtRuleAddedBySome(name: string): boolean {
+  const data = getNestedAtRuleData(name);
+
+  if (data) {
+    return getCompats(data).some(isAddedBySome);
+  }
+
+  return isGeneratedAtRuleName(name);
+}
+
+// BCD decides: a selector stays only if its own entry says a browser added it.
+// `name` is the selector without colons, e.g. `-moz-range-thumb`
+export function isSelectorAddedBySome(name: string): boolean {
+  const data = getSelectorsData(name);
+  return !!data && getCompats(data).some(isAddedBySome);
+}
+
+// The selector without colons, e.g. `::-moz-range-thumb` → `-moz-range-thumb`
+export function selectorName(selector: string): string {
+  const colons = ':'.repeat(selector.lastIndexOf(':') + 1);
+  return selector.slice(colons.length);
+}
+
 export function getTypesData(name: string) {
   return getData('types', name);
 }
@@ -166,7 +246,7 @@ export async function alternativeSelectors(selector: string): Promise<string[]> 
 
   // Pseudo without ':'
   const colons = ':'.repeat(selector.lastIndexOf(':') + 1);
-  const name = selector.slice(colons.length);
+  const name = selectorName(selector);
   const compatibilityData = getSelectorsData(name);
 
   if (compatibilityData) {
