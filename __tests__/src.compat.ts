@@ -28,6 +28,11 @@ describe('compat BCD rules', () => {
 
     // No BCD entry and no prefix/alternative_name support generates it
     expect(isGeneratedPropertyName('-ms-overflow-style')).toBe(false);
+
+    // Alternative names in `*_context` subfeatures, e.g. `gap.grid_context`
+    expect(isGeneratedPropertyName('grid-gap')).toBe(true);
+    expect(isGeneratedPropertyName('grid-row-gap')).toBe(true);
+    expect(isGeneratedPropertyName('grid-column-gap')).toBe(true);
   });
 
   it('looks up nested at-rule entries only where BCD nests at-rules', () => {

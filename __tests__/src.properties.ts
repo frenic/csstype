@@ -36,4 +36,19 @@ describe('properties', () => {
     expect(isProperty('font-smooth')).toBe(true);
     expect(isProperty('-ms-overflow-style')).toBe(false);
   });
+
+  it('gives legacy aliases the syntax of their target', () => {
+    // Webref keeps `<visual-box>#` for the alias, without `text`
+    expect(getPropertySyntax('-webkit-background-clip')).toBe(getPropertySyntax('background-clip'));
+  });
+
+  it('treats a property as shorthand only when some browser ships one of its longhands', () => {
+    const properties = getProperties();
+
+    // `box-shadow-color` etc. are drafts with no BCD support
+    expect(properties['box-shadow'].shorthand).toBe(false);
+    // `text-align-last` ships
+    expect(properties['text-align'].shorthand).toBe(true);
+    expect(properties['margin'].shorthand).toBe(true);
+  });
 });

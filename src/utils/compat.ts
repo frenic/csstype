@@ -67,7 +67,8 @@ export function getNestedAtRuleData(name: string): Identifier | undefined {
 const generatedNames: { [type: string]: { added: Set<string>; removed: Set<string> } } = {};
 
 // Names a feature only has through the `prefix`/`alternative_name` support data
-// of another feature, e.g. `-webkit-box-align` via `box-align`, or
+// of another feature (or its `*_context` subfeatures, `grid-gap` via
+// `gap.grid_context`), e.g. `-webkit-box-align` via `box-align`, or
 // `@-webkit-keyframes` via `@keyframes`. Split into names still added by some
 // browser and names whose support was removed again (`-moz-user-modify` via
 // `user-modify`); the generator treats the latter as obsolete.
@@ -78,7 +79,7 @@ function getGeneratedNames(type: 'at-rules' | 'properties') {
     const category = mdnBrowserCompatData.css[type];
 
     for (const key of Object.keys(category)) {
-      for (const compat of getCompats(category[key])) {
+      for (const compat of [...getCompats(category[key]), ...contextCompats(category[key])]) {
         for (const name of compatNames(compat, key)) {
           added.add(name);
         }
@@ -92,6 +93,14 @@ function getGeneratedNames(type: 'at-rules' | 'properties') {
   }
 
   return generatedNames[type];
+}
+
+// Support data of `*_context` subfeatures, e.g. `gap.grid_context`, which holds
+// the `grid-gap` alternative name. Other subfeatures are values, not names.
+function contextCompats(data: Identifier): CompatStatement[] {
+  return Object.keys(data)
+    .filter(key => key.endsWith('_context'))
+    .flatMap(key => getCompats(data[key]));
 }
 
 export function isGeneratedAtRuleName(name: string) {

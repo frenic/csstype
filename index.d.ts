@@ -38,7 +38,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In flexbox, it controls the alignment of items on the cross axis. In grid layout, it controls the alignment of items on the block axis within their grid areas.
    *
-   * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position>`
+   * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position> | anchor-center`
    *
    * **Initial value**: `normal`
    *
@@ -68,7 +68,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`alignment-baseline`** CSS property specifies the specific baseline used to align the box's text and inline-level contents. **Baseline alignment** is the relationship among the baselines of multiple alignment subjects within an alignment context. When performing baseline alignment, the `alignment-baseline` property value specifies which baseline of the box is aligned to the corresponding baseline of its alignment context.
    *
-   * **Syntax**: `baseline | <baseline-metric>`
+   * **Syntax**: `baseline | <baseline-metric> | text-before-edge | text-after-edge`
    *
    * **Initial value**: `baseline`
    *
@@ -121,6 +121,21 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-composition
    */
   animationComposition?: Property.AnimationComposition | undefined;
+  /**
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   *
+   * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
+   *
+   * **Initial value**: `see individual properties`
+   *
+   * | Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :-----: | :-----: | :-----: | :----: | :----: |
+   * | **43**  | **16**  |  **9**  | **12** | **10** |
+   * | 3 _-x-_ | 5 _-x-_ | 4 _-x-_ |        |        |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-delay
+   */
+  animationDelay?: Property.AnimationDelay<TTime> | undefined;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
@@ -358,7 +373,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`background-blend-mode`** CSS property sets how an element's background images should blend with each other and with the element's background color.
    *
-   * **Syntax**: `<'mix-blend-mode'>#`
+   * **Syntax**: `[ <blend-mode> | plus-lighter ]#`
    *
    * **Initial value**: `normal`
    *
@@ -514,7 +529,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`baseline-shift`** CSS property repositions the dominant-baseline of a text element relative to the dominant-baseline of its parent text content element. The shifted element might be a sub- or superscript. If the property is present, the value overrides the element's `baseline-shift` attribute.
    *
-   * **Syntax**: `<length-percentage> | sub | super | top | center | bottom`
+   * **Syntax**: `<length-percentage> | sub | super | top | center | bottom | baseline`
    *
    * **Initial value**: `0`
    *
@@ -1162,6 +1177,21 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-decoration-break
    */
   boxDecorationBreak?: Property.BoxDecorationBreak | undefined;
+  /**
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
+   *
+   * **Syntax**: `<spread-shadow>#`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome  | Firefox | Safari  |  Edge  |  IE   |
+   * | :-----: | :-----: | :-----: | :----: | :---: |
+   * | **10**  |  **4**  | **5.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-shadow
+   */
+  boxShadow?: Property.BoxShadow | undefined;
   /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
@@ -2679,6 +2709,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    */
   gridColumnEnd?: Property.GridColumnEnd | undefined;
   /**
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
+   *
+   * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
+   */
+  gridColumnGap?: Property.GridColumnGap<TLength> | undefined;
+  /**
    * The **`grid-column-start`** CSS property specifies a grid item's start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
    *
    * **Syntax**: `<grid-line>`
@@ -2706,6 +2742,12 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/grid-row-end
    */
   gridRowEnd?: Property.GridRowEnd | undefined;
+  /**
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
+   *
+   * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
+   */
+  gridRowGap?: Property.GridRowGap<TLength> | undefined;
   /**
    * The **`grid-row-start`** CSS property specifies a grid item's start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
    *
@@ -3045,7 +3087,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
    *
-   * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ] | legacy | legacy && [ left | right | center ]`
+   * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ] | legacy | legacy && [ left | right | center ] | anchor-center`
    *
    * **Initial value**: `legacy`
    *
@@ -3744,7 +3786,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`mix-blend-mode`** CSS property sets how an element's content should blend with its _backdrop_ — the content rendered behind the element within the same stacking context.
    *
-   * **Syntax**: `<blend-mode> | plus-lighter`
+   * **Syntax**: `<blend-mode> | plus-darker | plus-lighter`
    *
    * **Initial value**: `normal`
    *
@@ -4057,6 +4099,20 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-block
    */
   overflowBlock?: Property.OverflowBlock | undefined;
+  /**
+   * The **`overflow-clip-margin`** CSS property determines how far outside its bounds an element with `overflow: clip` may be painted before being clipped. The bound defined by this property is called the _overflow clip edge_ of the box.
+   *
+   * **Syntax**: `<visual-box> || <length>`
+   *
+   * **Initial value**: `0px`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **90** | **102** |   No   | **90** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-clip-margin
+   */
+  overflowClipMargin?: Property.OverflowClipMargin<TLength> | undefined;
   /**
    * The **`overflow-inline`** CSS property sets what shows when content overflows the inline start and end edges of a box. This may be nothing, a scroll bar, or the overflow content.
    *
@@ -4457,7 +4513,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`position-visibility`** CSS property enables conditionally hiding an anchor-positioned element depending on, for example, whether it is overflowing its containing element or the viewport.
    *
-   * **Syntax**: `always | [ anchor-valid || anchor-visible || no-overflow ]`
+   * **Syntax**: `always | [ anchor-valid || anchor-visible || no-overflow ] | anchors-valid | anchors-visible`
    *
    * **Initial value**: `anchor-visible`
    *
@@ -4738,7 +4794,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`ruby-overhang`** CSS property specifies whether or not a `<ruby>` annotation overhangs any surrounding text.
    *
-   * **Syntax**: `auto | spaces`
+   * **Syntax**: `auto | none | spaces`
    *
    * **Initial value**: `auto`
    *
@@ -5756,7 +5812,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Similar to the text rendered by the `<ruby>` HTML element, if there isn't enough room for emphasis marks, the line height is increased.
    *
-   * **Syntax**: `[ over | under ] && [ right | left ]?`
+   * **Syntax**: `auto | [ over | under ] && [ right | left ]?`
    *
    * **Initial value**: `over right`
    *
@@ -5899,7 +5955,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`text-spacing-trim`** CSS property controls the internal spacing set on Chinese/Japanese/Korean (CJK) punctuation characters between adjacent characters (kerning) and at the start or end of text lines.
    *
-   * **Syntax**: `<spacing-trim> | auto`
+   * **Syntax**: `<spacing-trim> | auto | normal`
    *
    * **Initial value**: `normal`
    *
@@ -6381,7 +6437,7 @@ export interface StandardLonghandProperties<TLength = (string & {}) | 0, TTime =
   /**
    * The **`view-transition-name`** CSS property specifies the view transition snapshot that selected elements will participate in. This enables you to animate those elements separately from the rest of the page, which uses the default cross-fade animation during a view transition. You can then define custom animation styles for these elements.
    *
-   * **Syntax**: `none | <custom-ident>`
+   * **Syntax**: `none | match-element | <custom-ident>`
    *
    * **Initial value**: `none`
    *
@@ -6643,21 +6699,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation
    */
   animation?: Property.Animation<TTime> | undefined;
-  /**
-   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
-   *
-   * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
-   *
-   * **Initial value**: `see individual properties`
-   *
-   * | Chrome  | Firefox | Safari  |  Edge  |   IE   |
-   * | :-----: | :-----: | :-----: | :----: | :----: |
-   * | **43**  | **16**  |  **9**  | **12** | **10** |
-   * | 3 _-x-_ | 5 _-x-_ | 4 _-x-_ |        |        |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-delay
-   */
-  animationDelay?: Property.AnimationDelay<TTime> | undefined;
   /**
    * The **`animation-range`** CSS shorthand property is used to set the start and end of an animation's attachment range along its timeline, i.e., where along the timeline an animation will start and end.
    *
@@ -7091,21 +7132,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   borderWidth?: Property.BorderWidth<TLength> | undefined;
   /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
-   *
-   * **Syntax**: `<spread-shadow>#`
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome  | Firefox | Safari  |  Edge  |  IE   |
-   * | :-----: | :-----: | :-----: | :----: | :---: |
-   * | **10**  |  **4**  | **5.1** | **12** | **9** |
-   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-shadow
-   */
-  boxShadow?: Property.BoxShadow | undefined;
-  /**
    * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
@@ -7476,6 +7502,12 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    */
   gridColumn?: Property.GridColumn | undefined;
   /**
+   * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
+   *
+   * **Syntax**: `<'row-gap'> <'column-gap'>?`
+   */
+  gridGap?: Property.GridGap<TLength> | undefined;
+  /**
    * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
@@ -7752,20 +7784,6 @@ export interface StandardShorthandProperties<TLength = (string & {}) | 0, TTime 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow
    */
   overflow?: Property.Overflow | undefined;
-  /**
-   * The **`overflow-clip-margin`** CSS property determines how far outside its bounds an element with `overflow: clip` may be painted before being clipped. The bound defined by this property is called the _overflow clip edge_ of the box.
-   *
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **90** | **102** |   No   | **90** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-clip-margin
-   */
-  overflowClipMargin?: Property.OverflowClipMargin<TLength> | undefined;
   /**
    * The **`overscroll-behavior`** CSS property controls what happens when scrolling reaches the edge of a scroll container.
    *
@@ -8379,6 +8397,14 @@ export interface StandardProperties<TLength = (string & {}) | 0, TTime = string 
 
 export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   *
+   * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
+   *
+   * **Initial value**: `see individual properties`
+   */
+  MozAnimationDelay?: Property.AnimationDelay<TTime> | undefined;
+  /**
    * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
@@ -8810,15 +8836,15 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   msWritingMode?: Property.WritingMode | undefined;
   /** **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>` */
   WebkitAlignContent?: Property.WebkitAlignContent | undefined;
-  /** **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position>` */
+  /** **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position> | anchor-center` */
   WebkitAlignItems?: Property.WebkitAlignItems | undefined;
-  /** **Syntax**: `auto | <overflow-position>? [ normal | <self-position> ]| stretch | <baseline-position>` */
+  /** **Syntax**: `auto | <overflow-position>? [ normal | <self-position> ]| stretch | <baseline-position> | anchor-center` */
   WebkitAlignSelf?: Property.WebkitAlignSelf | undefined;
-  /** **Syntax**: `<time>#` */
+  /** **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#` */
   WebkitAnimationDelay?: Property.WebkitAnimationDelay<TTime> | undefined;
   /** **Syntax**: `<single-animation-direction>#` */
   WebkitAnimationDirection?: Property.WebkitAnimationDirection | undefined;
-  /** **Syntax**: `<time [0s,∞]>#` */
+  /** **Syntax**: `[ auto | <time [0s,∞]> ]#` */
   WebkitAnimationDuration?: Property.WebkitAnimationDuration<TTime> | undefined;
   /** **Syntax**: `<single-animation-fill-mode>#` */
   WebkitAnimationFillMode?: Property.WebkitAnimationFillMode | undefined;
@@ -8846,7 +8872,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   WebkitBackdropFilter?: Property.BackdropFilter | undefined;
   /** **Syntax**: `visible | hidden` */
   WebkitBackfaceVisibility?: Property.WebkitBackfaceVisibility | undefined;
-  /** **Syntax**: `<visual-box>#` */
+  /** **Syntax**: `<bg-clip>#` */
   WebkitBackgroundClip?: Property.WebkitBackgroundClip | undefined;
   /** **Syntax**: `<visual-box>#` */
   WebkitBackgroundOrigin?: Property.WebkitBackgroundOrigin | undefined;
@@ -8898,6 +8924,8 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
    * **Syntax**: `[ above | below | right | left ]? <length>? <image>?`
    */
   WebkitBoxReflect?: Property.WebkitBoxReflect<TLength> | undefined;
+  /** **Syntax**: `<spread-shadow>#` */
+  WebkitBoxShadow?: Property.WebkitBoxShadow | undefined;
   /** **Syntax**: `content-box | border-box` */
   WebkitBoxSizing?: Property.WebkitBoxSizing | undefined;
   /**
@@ -9099,7 +9127,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /**
    * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
-   * **Syntax**: `[ <coord-box> | no-clip ]#`
+   * **Syntax**: `[ <coord-box> | no-clip | border | content | padding | text ]#`
    */
   WebkitMaskClip?: Property.WebkitMaskClip | undefined;
   /**
@@ -9117,7 +9145,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /**
    * The **`mask-origin`** CSS property sets the origin of a mask. This property determines the mask positioning area: the area within which a mask image is positioned. HTML elements can have masks contained within their content border box, padding box, or content box, whereas SVG elements (which don't have the associated CSS layout boxes) can have masks contained inside their fill, stroke, or view box. For elements rendered as multiple boxes, such as a `<span>` of text that spans more than one line, the `mask-origin` property specifies which boxes the `box-decoration-break` property operates on to determine the mask positioning area.
    *
-   * **Syntax**: `<coord-box>#`
+   * **Syntax**: `[ <coord-box> | border | content | padding ]#`
    */
   WebkitMaskOrigin?: Property.WebkitMaskOrigin | undefined;
   /**
@@ -9261,7 +9289,7 @@ export interface VendorLonghandProperties<TLength = (string & {}) | 0, TTime = s
   /**
    * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Similar to the text rendered by the `<ruby>` HTML element, if there isn't enough room for emphasis marks, the line height is increased.
    *
-   * **Syntax**: `[ over | under ] && [ right | left ]?`
+   * **Syntax**: `auto | [ over | under ] && [ right | left ]?`
    *
    * **Initial value**: `over right`
    */
@@ -9364,14 +9392,6 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
    */
   MozAnimation?: Property.Animation<TTime> | undefined;
   /**
-   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
-   *
-   * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  MozAnimationDelay?: Property.AnimationDelay<TTime> | undefined;
-  /**
    * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
@@ -9431,8 +9451,6 @@ export interface VendorShorthandProperties<TLength = (string & {}) | 0, TTime = 
   WebkitBorderImage?: Property.BorderImage | undefined;
   /** **Syntax**: `<length-percentage [0,∞]>{1,4} [ / <length-percentage [0,∞]>{1,4} ]?` */
   WebkitBorderRadius?: Property.WebkitBorderRadius<TLength> | undefined;
-  /** **Syntax**: `<spread-shadow>#` */
-  WebkitBoxShadow?: Property.WebkitBoxShadow | undefined;
   /**
    * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
@@ -10483,7 +10501,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In flexbox, it controls the alignment of items on the cross axis. In grid layout, it controls the alignment of items on the block axis within their grid areas.
    *
-   * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position>`
+   * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position> | anchor-center`
    *
    * **Initial value**: `normal`
    *
@@ -10513,7 +10531,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`alignment-baseline`** CSS property specifies the specific baseline used to align the box's text and inline-level contents. **Baseline alignment** is the relationship among the baselines of multiple alignment subjects within an alignment context. When performing baseline alignment, the `alignment-baseline` property value specifies which baseline of the box is aligned to the corresponding baseline of its alignment context.
    *
-   * **Syntax**: `baseline | <baseline-metric>`
+   * **Syntax**: `baseline | <baseline-metric> | text-before-edge | text-after-edge`
    *
    * **Initial value**: `baseline`
    *
@@ -10566,6 +10584,21 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-composition
    */
   "animation-composition"?: Property.AnimationComposition | undefined;
+  /**
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   *
+   * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
+   *
+   * **Initial value**: `see individual properties`
+   *
+   * | Chrome  | Firefox | Safari  |  Edge  |   IE   |
+   * | :-----: | :-----: | :-----: | :----: | :----: |
+   * | **43**  | **16**  |  **9**  | **12** | **10** |
+   * | 3 _-x-_ | 5 _-x-_ | 4 _-x-_ |        |        |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-delay
+   */
+  "animation-delay"?: Property.AnimationDelay<TTime> | undefined;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
@@ -10803,7 +10836,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`background-blend-mode`** CSS property sets how an element's background images should blend with each other and with the element's background color.
    *
-   * **Syntax**: `<'mix-blend-mode'>#`
+   * **Syntax**: `[ <blend-mode> | plus-lighter ]#`
    *
    * **Initial value**: `normal`
    *
@@ -10959,7 +10992,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`baseline-shift`** CSS property repositions the dominant-baseline of a text element relative to the dominant-baseline of its parent text content element. The shifted element might be a sub- or superscript. If the property is present, the value overrides the element's `baseline-shift` attribute.
    *
-   * **Syntax**: `<length-percentage> | sub | super | top | center | bottom`
+   * **Syntax**: `<length-percentage> | sub | super | top | center | bottom | baseline`
    *
    * **Initial value**: `0`
    *
@@ -11607,6 +11640,21 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-decoration-break
    */
   "box-decoration-break"?: Property.BoxDecorationBreak | undefined;
+  /**
+   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
+   *
+   * **Syntax**: `<spread-shadow>#`
+   *
+   * **Initial value**: `none`
+   *
+   * | Chrome  | Firefox | Safari  |  Edge  |  IE   |
+   * | :-----: | :-----: | :-----: | :----: | :---: |
+   * | **10**  |  **4**  | **5.1** | **12** | **9** |
+   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-shadow
+   */
+  "box-shadow"?: Property.BoxShadow | undefined;
   /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
@@ -13124,6 +13172,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    */
   "grid-column-end"?: Property.GridColumnEnd | undefined;
   /**
+   * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
+   *
+   * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
+   */
+  "grid-column-gap"?: Property.GridColumnGap<TLength> | undefined;
+  /**
    * The **`grid-column-start`** CSS property specifies a grid item's start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.
    *
    * **Syntax**: `<grid-line>`
@@ -13151,6 +13205,12 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/grid-row-end
    */
   "grid-row-end"?: Property.GridRowEnd | undefined;
+  /**
+   * The **`row-gap`** CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
+   *
+   * **Syntax**: `normal | <length-percentage [0,∞]> | <line-width>`
+   */
+  "grid-row-gap"?: Property.GridRowGap<TLength> | undefined;
   /**
    * The **`grid-row-start`** CSS property specifies a grid item's start position within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start edge of its grid area.
    *
@@ -13490,7 +13550,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The CSS **`justify-items`** property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
    *
-   * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ] | legacy | legacy && [ left | right | center ]`
+   * **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ] | legacy | legacy && [ left | right | center ] | anchor-center`
    *
    * **Initial value**: `legacy`
    *
@@ -14189,7 +14249,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`mix-blend-mode`** CSS property sets how an element's content should blend with its _backdrop_ — the content rendered behind the element within the same stacking context.
    *
-   * **Syntax**: `<blend-mode> | plus-lighter`
+   * **Syntax**: `<blend-mode> | plus-darker | plus-lighter`
    *
    * **Initial value**: `normal`
    *
@@ -14502,6 +14562,20 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-block
    */
   "overflow-block"?: Property.OverflowBlock | undefined;
+  /**
+   * The **`overflow-clip-margin`** CSS property determines how far outside its bounds an element with `overflow: clip` may be painted before being clipped. The bound defined by this property is called the _overflow clip edge_ of the box.
+   *
+   * **Syntax**: `<visual-box> || <length>`
+   *
+   * **Initial value**: `0px`
+   *
+   * | Chrome | Firefox | Safari |  Edge  | IE  |
+   * | :----: | :-----: | :----: | :----: | :-: |
+   * | **90** | **102** |   No   | **90** | No  |
+   *
+   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-clip-margin
+   */
+  "overflow-clip-margin"?: Property.OverflowClipMargin<TLength> | undefined;
   /**
    * The **`overflow-inline`** CSS property sets what shows when content overflows the inline start and end edges of a box. This may be nothing, a scroll bar, or the overflow content.
    *
@@ -14902,7 +14976,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`position-visibility`** CSS property enables conditionally hiding an anchor-positioned element depending on, for example, whether it is overflowing its containing element or the viewport.
    *
-   * **Syntax**: `always | [ anchor-valid || anchor-visible || no-overflow ]`
+   * **Syntax**: `always | [ anchor-valid || anchor-visible || no-overflow ] | anchors-valid | anchors-visible`
    *
    * **Initial value**: `anchor-visible`
    *
@@ -15183,7 +15257,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`ruby-overhang`** CSS property specifies whether or not a `<ruby>` annotation overhangs any surrounding text.
    *
-   * **Syntax**: `auto | spaces`
+   * **Syntax**: `auto | none | spaces`
    *
    * **Initial value**: `auto`
    *
@@ -16201,7 +16275,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Similar to the text rendered by the `<ruby>` HTML element, if there isn't enough room for emphasis marks, the line height is increased.
    *
-   * **Syntax**: `[ over | under ] && [ right | left ]?`
+   * **Syntax**: `auto | [ over | under ] && [ right | left ]?`
    *
    * **Initial value**: `over right`
    *
@@ -16344,7 +16418,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`text-spacing-trim`** CSS property controls the internal spacing set on Chinese/Japanese/Korean (CJK) punctuation characters between adjacent characters (kerning) and at the start or end of text lines.
    *
-   * **Syntax**: `<spacing-trim> | auto`
+   * **Syntax**: `<spacing-trim> | auto | normal`
    *
    * **Initial value**: `normal`
    *
@@ -16826,7 +16900,7 @@ export interface StandardLonghandPropertiesHyphen<TLength = (string & {}) | 0, T
   /**
    * The **`view-transition-name`** CSS property specifies the view transition snapshot that selected elements will participate in. This enables you to animate those elements separately from the rest of the page, which uses the default cross-fade animation during a view transition. You can then define custom animation styles for these elements.
    *
-   * **Syntax**: `none | <custom-ident>`
+   * **Syntax**: `none | match-element | <custom-ident>`
    *
    * **Initial value**: `none`
    *
@@ -17088,21 +17162,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation
    */
   animation?: Property.Animation<TTime> | undefined;
-  /**
-   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
-   *
-   * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
-   *
-   * **Initial value**: `see individual properties`
-   *
-   * | Chrome  | Firefox | Safari  |  Edge  |   IE   |
-   * | :-----: | :-----: | :-----: | :----: | :----: |
-   * | **43**  | **16**  |  **9**  | **12** | **10** |
-   * | 3 _-x-_ | 5 _-x-_ | 4 _-x-_ |        |        |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-delay
-   */
-  "animation-delay"?: Property.AnimationDelay<TTime> | undefined;
   /**
    * The **`animation-range`** CSS shorthand property is used to set the start and end of an animation's attachment range along its timeline, i.e., where along the timeline an animation will start and end.
    *
@@ -17536,21 +17595,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "border-width"?: Property.BorderWidth<TLength> | undefined;
   /**
-   * The **`box-shadow`** CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
-   *
-   * **Syntax**: `<spread-shadow>#`
-   *
-   * **Initial value**: `none`
-   *
-   * | Chrome  | Firefox | Safari  |  Edge  |  IE   |
-   * | :-----: | :-----: | :-----: | :----: | :---: |
-   * | **10**  |  **4**  | **5.1** | **12** | **9** |
-   * | 1 _-x-_ |         | 3 _-x-_ |        |       |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-shadow
-   */
-  "box-shadow"?: Property.BoxShadow | undefined;
-  /**
    * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
    * **Syntax**: `<gap-rule-list> | <gap-auto-rule-list>`
@@ -17921,6 +17965,12 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    */
   "grid-column"?: Property.GridColumn | undefined;
   /**
+   * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
+   *
+   * **Syntax**: `<'row-gap'> <'column-gap'>?`
+   */
+  "grid-gap"?: Property.GridGap<TLength> | undefined;
+  /**
    * The **`grid-row`** CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
    *
    * **Syntax**: `<grid-line> [ / <grid-line> ]?`
@@ -18197,20 +18247,6 @@ export interface StandardShorthandPropertiesHyphen<TLength = (string & {}) | 0, 
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow
    */
   overflow?: Property.Overflow | undefined;
-  /**
-   * The **`overflow-clip-margin`** CSS property determines how far outside its bounds an element with `overflow: clip` may be painted before being clipped. The bound defined by this property is called the _overflow clip edge_ of the box.
-   *
-   * **Syntax**: `<visual-box> || <length>`
-   *
-   * **Initial value**: `0px`
-   *
-   * | Chrome | Firefox | Safari |  Edge  | IE  |
-   * | :----: | :-----: | :----: | :----: | :-: |
-   * | **90** | **102** |   No   | **90** | No  |
-   *
-   * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-clip-margin
-   */
-  "overflow-clip-margin"?: Property.OverflowClipMargin<TLength> | undefined;
   /**
    * The **`overscroll-behavior`** CSS property controls what happens when scrolling reaches the edge of a scroll container.
    *
@@ -18824,6 +18860,14 @@ export interface StandardPropertiesHyphen<TLength = (string & {}) | 0, TTime = s
 
 export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTime = string & {}> {
   /**
+   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
+   *
+   * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
+   *
+   * **Initial value**: `see individual properties`
+   */
+  "-moz-animation-delay"?: Property.AnimationDelay<TTime> | undefined;
+  /**
    * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
    * **Syntax**: `<single-animation-direction>#`
@@ -19255,15 +19299,15 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   "-ms-writing-mode"?: Property.WritingMode | undefined;
   /** **Syntax**: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>` */
   "-webkit-align-content"?: Property.WebkitAlignContent | undefined;
-  /** **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position>` */
+  /** **Syntax**: `normal | stretch | <baseline-position> | <overflow-position>? <self-position> | anchor-center` */
   "-webkit-align-items"?: Property.WebkitAlignItems | undefined;
-  /** **Syntax**: `auto | <overflow-position>? [ normal | <self-position> ]| stretch | <baseline-position>` */
+  /** **Syntax**: `auto | <overflow-position>? [ normal | <self-position> ]| stretch | <baseline-position> | anchor-center` */
   "-webkit-align-self"?: Property.WebkitAlignSelf | undefined;
-  /** **Syntax**: `<time>#` */
+  /** **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#` */
   "-webkit-animation-delay"?: Property.WebkitAnimationDelay<TTime> | undefined;
   /** **Syntax**: `<single-animation-direction>#` */
   "-webkit-animation-direction"?: Property.WebkitAnimationDirection | undefined;
-  /** **Syntax**: `<time [0s,∞]>#` */
+  /** **Syntax**: `[ auto | <time [0s,∞]> ]#` */
   "-webkit-animation-duration"?: Property.WebkitAnimationDuration<TTime> | undefined;
   /** **Syntax**: `<single-animation-fill-mode>#` */
   "-webkit-animation-fill-mode"?: Property.WebkitAnimationFillMode | undefined;
@@ -19291,7 +19335,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   "-webkit-backdrop-filter"?: Property.BackdropFilter | undefined;
   /** **Syntax**: `visible | hidden` */
   "-webkit-backface-visibility"?: Property.WebkitBackfaceVisibility | undefined;
-  /** **Syntax**: `<visual-box>#` */
+  /** **Syntax**: `<bg-clip>#` */
   "-webkit-background-clip"?: Property.WebkitBackgroundClip | undefined;
   /** **Syntax**: `<visual-box>#` */
   "-webkit-background-origin"?: Property.WebkitBackgroundOrigin | undefined;
@@ -19343,6 +19387,8 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
    * **Syntax**: `[ above | below | right | left ]? <length>? <image>?`
    */
   "-webkit-box-reflect"?: Property.WebkitBoxReflect<TLength> | undefined;
+  /** **Syntax**: `<spread-shadow>#` */
+  "-webkit-box-shadow"?: Property.WebkitBoxShadow | undefined;
   /** **Syntax**: `content-box | border-box` */
   "-webkit-box-sizing"?: Property.WebkitBoxSizing | undefined;
   /**
@@ -19544,7 +19590,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /**
    * The **`mask-clip`** CSS property determines the area which is affected by a mask. The painted content of an element must be restricted to this area.
    *
-   * **Syntax**: `[ <coord-box> | no-clip ]#`
+   * **Syntax**: `[ <coord-box> | no-clip | border | content | padding | text ]#`
    */
   "-webkit-mask-clip"?: Property.WebkitMaskClip | undefined;
   /**
@@ -19562,7 +19608,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /**
    * The **`mask-origin`** CSS property sets the origin of a mask. This property determines the mask positioning area: the area within which a mask image is positioned. HTML elements can have masks contained within their content border box, padding box, or content box, whereas SVG elements (which don't have the associated CSS layout boxes) can have masks contained inside their fill, stroke, or view box. For elements rendered as multiple boxes, such as a `<span>` of text that spans more than one line, the `mask-origin` property specifies which boxes the `box-decoration-break` property operates on to determine the mask positioning area.
    *
-   * **Syntax**: `<coord-box>#`
+   * **Syntax**: `[ <coord-box> | border | content | padding ]#`
    */
   "-webkit-mask-origin"?: Property.WebkitMaskOrigin | undefined;
   /**
@@ -19706,7 +19752,7 @@ export interface VendorLonghandPropertiesHyphen<TLength = (string & {}) | 0, TTi
   /**
    * The **`text-emphasis-position`** CSS property sets where emphasis marks are drawn. Similar to the text rendered by the `<ruby>` HTML element, if there isn't enough room for emphasis marks, the line height is increased.
    *
-   * **Syntax**: `[ over | under ] && [ right | left ]?`
+   * **Syntax**: `auto | [ over | under ] && [ right | left ]?`
    *
    * **Initial value**: `over right`
    */
@@ -19809,14 +19855,6 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
    */
   "-moz-animation"?: Property.Animation<TTime> | undefined;
   /**
-   * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
-   *
-   * **Syntax**: `[ <'animation-delay-start'> <'animation-delay-end'>? ]#`
-   *
-   * **Initial value**: `see individual properties`
-   */
-  "-moz-animation-delay"?: Property.AnimationDelay<TTime> | undefined;
-  /**
    * The **`border-image`** CSS shorthand property draws an image around a given element. It replaces the element's regular border.
    *
    * **Syntax**: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-image-outset'> ]? || <'border-image-repeat'>`
@@ -19876,8 +19914,6 @@ export interface VendorShorthandPropertiesHyphen<TLength = (string & {}) | 0, TT
   "-webkit-border-image"?: Property.BorderImage | undefined;
   /** **Syntax**: `<length-percentage [0,∞]>{1,4} [ / <length-percentage [0,∞]>{1,4} ]?` */
   "-webkit-border-radius"?: Property.WebkitBorderRadius<TLength> | undefined;
-  /** **Syntax**: `<spread-shadow>#` */
-  "-webkit-box-shadow"?: Property.WebkitBoxShadow | undefined;
   /**
    * The **`column-rule`** CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
    *
@@ -21585,11 +21621,11 @@ export namespace Property {
 
   export type AlignContent = Globals | DataType.ContentDistribution | DataType.ContentPosition | "baseline" | "normal" | (string & {});
 
-  export type AlignItems = Globals | DataType.SelfPosition | "baseline" | "normal" | "stretch" | (string & {});
+  export type AlignItems = Globals | DataType.SelfPosition | "anchor-center" | "baseline" | "normal" | "stretch" | (string & {});
 
   export type AlignSelf = Globals | DataType.SelfPosition | "anchor-center" | "auto" | "baseline" | "normal" | "stretch" | (string & {});
 
-  export type AlignmentBaseline = Globals | DataType.BaselineMetric | "baseline";
+  export type AlignmentBaseline = Globals | DataType.BaselineMetric | "baseline" | "text-after-edge" | "text-before-edge";
 
   export type All = Globals;
 
@@ -21663,7 +21699,7 @@ export namespace Property {
 
   export type BackgroundSize<TLength = (string & {}) | 0> = Globals | DataType.BgSize<TLength> | (string & {});
 
-  export type BaselineShift<TLength = (string & {}) | 0> = Globals | TLength | "bottom" | "center" | "sub" | "super" | "top" | (string & {});
+  export type BaselineShift<TLength = (string & {}) | 0> = Globals | TLength | "baseline" | "bottom" | "center" | "sub" | "super" | "top" | (string & {});
 
   export type BaselineSource = Globals | "auto" | "first" | "last";
 
@@ -22216,11 +22252,17 @@ export namespace Property {
 
   export type GridColumnEnd = Globals | DataType.GridLine;
 
+  export type GridColumnGap<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | TLength | "normal" | (string & {});
+
   export type GridColumnStart = Globals | DataType.GridLine;
+
+  export type GridGap<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | TLength | "normal" | (string & {});
 
   export type GridRow = Globals | DataType.GridLine | (string & {});
 
   export type GridRowEnd = Globals | DataType.GridLine;
+
+  export type GridRowGap<TLength = (string & {}) | 0> = Globals | DataType.LineWidth<TLength> | TLength | "normal" | (string & {});
 
   export type GridRowStart = Globals | DataType.GridLine;
 
@@ -22284,7 +22326,7 @@ export namespace Property {
 
   export type JustifyContent = Globals | DataType.ContentDistribution | DataType.ContentPosition | "left" | "normal" | "right" | (string & {});
 
-  export type JustifyItems = Globals | DataType.SelfPosition | "baseline" | "left" | "legacy" | "normal" | "right" | "stretch" | (string & {});
+  export type JustifyItems = Globals | DataType.SelfPosition | "anchor-center" | "baseline" | "left" | "legacy" | "normal" | "right" | "stretch" | (string & {});
 
   export type JustifySelf = Globals | DataType.SelfPosition2 | "anchor-center" | "auto" | "baseline" | "left" | "normal" | "right" | "stretch" | (string & {});
 
@@ -22402,7 +22444,7 @@ export namespace Property {
 
   export type MinWidth<TLength = (string & {}) | 0> = Globals | DataType.BoxSize7<TLength> | "auto" | (string & {});
 
-  export type MixBlendMode = Globals | DataType.BlendMode | "plus-lighter";
+  export type MixBlendMode = Globals | DataType.BlendMode | "plus-darker" | "plus-lighter";
 
   export type Offset<TLength = (string & {}) | 0> = Globals | DataType.PositionOne<TLength> | DataType.PaintBox | "auto" | "none" | "normal" | "view-box" | (string & {});
 
@@ -22506,7 +22548,7 @@ export namespace Property {
 
   export type PlaceContent = Globals | DataType.ContentDistribution | DataType.ContentPosition | "baseline" | "normal" | (string & {});
 
-  export type PlaceItems = Globals | DataType.SelfPosition | "baseline" | "normal" | "stretch" | (string & {});
+  export type PlaceItems = Globals | DataType.SelfPosition | "anchor-center" | "baseline" | "normal" | "stretch" | (string & {});
 
   export type PlaceSelf = Globals | DataType.SelfPosition | "anchor-center" | "auto" | "baseline" | "normal" | "stretch" | (string & {});
 
@@ -22522,7 +22564,7 @@ export namespace Property {
 
   export type PositionTryOrder = Globals | DataType.TrySize | "normal";
 
-  export type PositionVisibility = Globals | "always" | "anchor-valid" | "anchor-visible" | "no-overflow" | (string & {});
+  export type PositionVisibility = Globals | "always" | "anchor-valid" | "anchor-visible" | "anchors-valid" | "anchors-visible" | "no-overflow" | (string & {});
 
   export type PrintColorAdjust = Globals | "economy" | "exact";
 
@@ -22574,7 +22616,7 @@ export namespace Property {
 
   export type RubyAlign = Globals | "center" | "space-around" | "space-between" | "start";
 
-  export type RubyOverhang = Globals | "auto" | "spaces";
+  export type RubyOverhang = Globals | "auto" | "none" | "spaces";
 
   export type RubyPosition = Globals | "alternate" | "inter-character" | "over" | "under" | (string & {});
 
@@ -22797,7 +22839,7 @@ export namespace Property {
 
   export type TextEmphasisColor = Globals | DataType.Color;
 
-  export type TextEmphasisPosition = Globals | "over" | "under" | (string & {});
+  export type TextEmphasisPosition = Globals | "auto" | "over" | "under" | (string & {});
 
   export type TextEmphasisStyle = Globals | "circle" | "dot" | "double-circle" | "filled" | "none" | "open" | "sesame" | "triangle" | (string & {});
 
@@ -22817,7 +22859,7 @@ export namespace Property {
 
   export type TextSizeAdjust = Globals | "auto" | "none" | (string & {});
 
-  export type TextSpacingTrim = Globals | DataType.SpacingTrim | "auto";
+  export type TextSpacingTrim = Globals | DataType.SpacingTrim | "auto" | "normal";
 
   export type TextTransform = Globals | "capitalize" | "full-size-kana" | "full-width" | "lowercase" | "math-auto" | "none" | "uppercase" | (string & {});
 
@@ -22916,7 +22958,20 @@ export namespace Property {
   export type VectorEffect = Globals | "fixed-position" | "non-rotation" | "non-scaling-size" | "non-scaling-stroke" | "none";
 
   export type VerticalAlign<TLength = (string & {}) | 0> =
-    Globals | DataType.BaselineMetric | TLength | "baseline" | "bottom" | "center" | "first" | "last" | "sub" | "super" | "top" | (string & {});
+    | Globals
+    | DataType.BaselineMetric
+    | TLength
+    | "baseline"
+    | "bottom"
+    | "center"
+    | "first"
+    | "last"
+    | "sub"
+    | "super"
+    | "text-after-edge"
+    | "text-before-edge"
+    | "top"
+    | (string & {});
 
   export type ViewTimeline = Globals | "none" | (string & {});
 
@@ -22930,7 +22985,7 @@ export namespace Property {
 
   export type ViewTransitionGroup = Globals | "contain" | "nearest" | "normal" | (string & {});
 
-  export type ViewTransitionName = Globals | "none" | (string & {});
+  export type ViewTransitionName = Globals | "match-element" | "none" | (string & {});
 
   export type ViewTransitionScope = Globals | "all" | "none";
 
@@ -23122,9 +23177,9 @@ export namespace Property {
 
   export type WebkitAlignContent = Globals | DataType.ContentDistribution | DataType.ContentPosition | "baseline" | "normal" | (string & {});
 
-  export type WebkitAlignItems = Globals | DataType.SelfPosition | "baseline" | "normal" | "stretch" | (string & {});
+  export type WebkitAlignItems = Globals | DataType.SelfPosition | "anchor-center" | "baseline" | "normal" | "stretch" | (string & {});
 
-  export type WebkitAlignSelf = Globals | DataType.SelfPosition | "auto" | "baseline" | "normal" | "stretch" | (string & {});
+  export type WebkitAlignSelf = Globals | DataType.SelfPosition | "anchor-center" | "auto" | "baseline" | "normal" | "stretch" | (string & {});
 
   export type WebkitAnimation<TTime = string & {}> = Globals | DataType.SingleAnimation<TTime> | (string & {});
 
@@ -23132,7 +23187,7 @@ export namespace Property {
 
   export type WebkitAnimationDirection = Globals | DataType.SingleAnimationDirection | (string & {});
 
-  export type WebkitAnimationDuration<TTime = string & {}> = Globals | TTime | (string & {});
+  export type WebkitAnimationDuration<TTime = string & {}> = Globals | TTime | "auto" | (string & {});
 
   export type WebkitAnimationFillMode = Globals | DataType.SingleAnimationFillMode | (string & {});
 
@@ -23148,7 +23203,7 @@ export namespace Property {
 
   export type WebkitBackfaceVisibility = Globals | "hidden" | "visible";
 
-  export type WebkitBackgroundClip = Globals | DataType.VisualBox | (string & {});
+  export type WebkitBackgroundClip = Globals | DataType.BgClip | (string & {});
 
   export type WebkitBackgroundOrigin = Globals | DataType.VisualBox | (string & {});
 
@@ -23216,13 +23271,13 @@ export namespace Property {
 
   export type WebkitMaskBoxImageWidth<TLength = (string & {}) | 0> = Globals | TLength | "auto" | (string & {}) | (number & {});
 
-  export type WebkitMaskClip = Globals | DataType.PaintBox | "no-clip" | "view-box" | (string & {});
+  export type WebkitMaskClip = Globals | DataType.PaintBox | "border" | "content" | "no-clip" | "padding" | "text" | "view-box" | (string & {});
 
   export type WebkitMaskComposite = Globals | DataType.CompositingOperator | (string & {});
 
   export type WebkitMaskImage = Globals | "none" | (string & {});
 
-  export type WebkitMaskOrigin = Globals | DataType.PaintBox | "view-box" | (string & {});
+  export type WebkitMaskOrigin = Globals | DataType.PaintBox | "border" | "content" | "padding" | "view-box" | (string & {});
 
   export type WebkitMaskPosition<TLength = (string & {}) | 0> = Globals | DataType.PositionOne<TLength> | (string & {});
 
@@ -23887,7 +23942,7 @@ export namespace DataType {
 
   type PageSize = "A3" | "A4" | "A5" | "B4" | "B5" | "JIS-B4" | "JIS-B5" | "ledger" | "legal" | "letter";
 
-  type Paint = "child" | "none" | (string & {});
+  type Paint = Color | "child" | "context-fill" | "context-stroke" | "none" | (string & {});
 
   type PaintBox = VisualBox | "fill-box" | "stroke-box";
 

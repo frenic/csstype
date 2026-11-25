@@ -3,7 +3,7 @@
 exports[`Typescript 4.1 detects errors 1`] = `"31:9 - Type 'undefined' is not assignable to type 'HyphenateCharacter'."`;
 
 exports[`Typescript 4.1 detects errors 2`] = `
-"42:2 - Type 'readonly [undefined]' is not assignable to type '"auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | readonly HyphenateCharacter[] | undefined'.
+"42:2 - Type 'readonly [undefined]' is not assignable to type '"auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "revert-rule" | "unset" | readonly HyphenateCharacter[] | undefined'.
   Type 'readonly [undefined]' is not assignable to type 'readonly HyphenateCharacter[]'.
     Type 'undefined' is not assignable to type 'HyphenateCharacter'."
 `;
@@ -41,6 +41,6 @@ exports[`Typescript 4.1 detects errors 13`] = `"131:23 - This condition will alw
 
 exports[`Typescript 4.1 detects errors 14`] = `"145:25 - This condition will always return 'false' since the types 'string | 0' and '1' have no overlap."`;
 
-exports[`Typescript 4.1 detects errors 15`] = `"155:34 - Argument of type '1' is not assignable to parameter of type '0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "unset" | "-moz-fit-content" | "-moz-max-content" | "-moz-min-content" | "fit-content" | ... 6 more ... | [...]'."`;
+exports[`Typescript 4.1 detects errors 15`] = `"155:34 - Argument of type '1' is not assignable to parameter of type '0 | "auto" | "inherit" | (string & {}) | "-moz-initial" | "initial" | "revert" | "revert-layer" | "revert-rule" | "unset" | "stretch" | "contain" | "-moz-fit-content" | "-moz-max-content" | ... 9 more ... | [...]'."`;
 
 exports[`Typescript 4.1 detects errors 16`] = `"156:35 - Type '1' is not assignable to type 'Width<0 | (string & {})>'."`;
