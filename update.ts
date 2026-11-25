@@ -4,7 +4,13 @@ import packageJson from './package.json';
 import { FLOW_FILENAME, questionAsync, spawnAsync, TYPESCRIPT_FILENAME, writeFileAsync } from './utils';
 
 const NPM = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-const MDN_COMPAT = '@mdn/browser-compat-data';
+const DATA_PACKAGES = ['@mdn/browser-compat-data', '@webref/css'] as const;
+
+interface Bump {
+  name: (typeof DATA_PACKAGES)[number];
+  from: string;
+  to: string;
+}
 
 async function update(yes: boolean) {
   const nextPackageJson = { ...packageJson };
@@ -16,17 +22,37 @@ async function update(yes: boolean) {
 
   console.info('Check for updates...');
 
-  const currentMdnCompatVersion = nextPackageJson.devDependencies[MDN_COMPAT];
-  const latestMdnCompatVersion = await latestVersion(MDN_COMPAT);
+  const bumps: Bump[] = [];
 
-  if (currentMdnCompatVersion === latestMdnCompatVersion) {
+  for (const name of DATA_PACKAGES) {
+    const from = nextPackageJson.devDependencies[name];
+    const to = await latestVersion(name);
+
+    if (from === to) {
+      continue;
+    }
+
+    // A new major can change the data shape the generator expects, and
+    // `latest` could also point lower (webref 8.6 doesn't build with it)
+    if (!isMinorOrPatchBump(from, to)) {
+      console.warn(`${name} ${to} is available, but it isn't a minor or patch bump from ${from}. Update it by hand.`);
+      continue;
+    }
+
+    bumps.push({ name, from, to });
+  }
+
+  if (bumps.length === 0) {
     console.info('Nothing to update!');
     return;
   }
 
   console.info('Update found!');
-  console.info(`Upgrading ${MDN_COMPAT} from ${currentMdnCompatVersion} to ${latestMdnCompatVersion}...`);
-  nextPackageJson.devDependencies[MDN_COMPAT] = latestMdnCompatVersion;
+
+  for (const { name, from, to } of bumps) {
+    console.info(`Upgrading ${name} from ${from} to ${to}...`);
+    nextPackageJson.devDependencies[name] = to;
+  }
 
   try {
     await writeFileAsync('./package.json', JSON.stringify(nextPackageJson, null, 2) + '\n');
@@ -78,7 +104,7 @@ async function update(yes: boolean) {
     return;
   }
 
-  await spawnAsync('git', 'commit', '-am', `Bump ${MDN_COMPAT} to ${latestMdnCompatVersion}`);
+  await spawnAsync('git', 'commit', '-am', `Bump ${bumps.map(({ name, to }) => `${name} to ${to}`).join(' and ')}`);
 
   const [major, minor, patch] = nextPackageJson.version.split('.');
   const version = `${major}.${minor}.${Number(patch) + 1}`;
@@ -116,6 +142,23 @@ async function latestVersion(name: string) {
   } catch {
     throw new Error(`Could not read the latest version of ${name} from npm`);
   }
+}
+
+function isMinorOrPatchBump(from: string, to: string) {
+  const [fromMajor, ...fromRest] = from.split('.').map(Number);
+  const [toMajor, ...toRest] = to.split('.').map(Number);
+
+  if (fromMajor !== toMajor) {
+    return false;
+  }
+
+  for (let i = 0; i < Math.max(fromRest.length, toRest.length); i++) {
+    if ((toRest[i] ?? 0) !== (fromRest[i] ?? 0)) {
+      return (toRest[i] ?? 0) > (fromRest[i] ?? 0);
+    }
+  }
+
+  return false;
 }
 
 function diff(filename: string) {

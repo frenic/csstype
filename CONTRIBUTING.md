@@ -21,7 +21,7 @@ Be careful with output changes.
 | Path | What it is |
 | --- | --- |
 | `build.ts` | Entry point: generate → format with prettier → write files → run dist tests |
-| `update.ts` | Checks for new BCD releases, bumps, rebuilds. Interactive: asks y/n, commits and tags |
+| `update.ts` | Checks npm for new minor/patch releases of BCD and `@webref/css`, bumps, rebuilds. Interactive: asks y/n, commits and tags. `--yes`: no prompts, prints a diff summary and leaves the tree for review |
 | `src/declarator.ts` | Builds the declarations from all collections |
 | `src/collections/` | Properties, at-rules, selectors, data types, syntaxes, attributes |
 | `src/syntax/` | `parser.ts` (css-tree value syntax) and `typer.ts` (syntax → types) |
