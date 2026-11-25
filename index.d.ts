@@ -1,3 +1,6 @@
+// Descriptions in the JSDoc comments come from MDN Web Docs (https://developer.mozilla.org) by Mozilla Contributors,
+// licensed under CC-BY-SA 2.5 (https://creativecommons.org/licenses/by-sa/2.5/).
+
 export {};
 
 export type PropertyValue<TValue> =

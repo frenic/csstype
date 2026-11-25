@@ -17,3 +17,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+The descriptions in the JSDoc comments of `index.d.ts` come from MDN Web Docs
+(https://developer.mozilla.org) by Mozilla Contributors, and are licensed under
+CC-BY-SA 2.5 (https://creativecommons.org/licenses/by-sa/2.5/). The MIT license
+above does not apply to them.

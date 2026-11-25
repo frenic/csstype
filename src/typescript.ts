@@ -62,6 +62,14 @@ export default async function typescript(data: ReturnType<typeof declarator>) {
     namespaceOutput += `}${EOL}`;
   }
 
+  // The JSDoc summaries are MDN prose, which is CC-BY-SA 2.5 or later
+  // (https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Attrib_copyright_license)
+  const attribution =
+    '// Descriptions in the JSDoc comments come from MDN Web Docs (https://developer.mozilla.org) by Mozilla Contributors,' +
+    EOL +
+    '// licensed under CC-BY-SA 2.5 (https://creativecommons.org/licenses/by-sa/2.5/).' +
+    EOL;
+
   const disableAutoExport = 'export {};' + EOL;
 
   const propertyValue =
@@ -74,6 +82,8 @@ export default async function typescript(data: ReturnType<typeof declarator>) {
   const fallback = 'export type Fallback<T> = { [P in keyof T]: T[P] | readonly NonNullable<T[P]>[] };' + EOL;
 
   return (
+    attribution +
+    EOL +
     disableAutoExport +
     EOL +
     propertyValue +

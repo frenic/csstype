@@ -3,7 +3,7 @@
   "version": "3.2.4",
   "main": "",
   "types": "index.d.ts",
-  "description": "Strict TypeScript and Flow types for style based on MDN data",
+  "description": "Strict TypeScript and Flow types for style based on web platform data",
   "repository": "https://github.com/frenic/csstype",
   "author": "Fredrik Nicol <fredrik.nicol@gmail.com>",
   "license": "MIT",
