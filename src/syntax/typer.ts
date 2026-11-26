@@ -1,5 +1,5 @@
-import cssTypes from 'mdn-data/css/types.json';
 import { definitionSyntax, DSNode, DSNodeGroup } from 'css-tree';
+import { baseTypes } from '../data/types';
 import { isSyntax } from '../collections/syntaxes';
 
 export enum Type {
@@ -179,7 +179,7 @@ export default function typer(node: DSNodeGroup): TypeType[] {
               }
               break;
             default:
-              if (!isSyntax(node.name) && node.name in cssTypes) {
+              if (!isSyntax(node.name) && baseTypes.has(node.name)) {
                 if (!hasStringKeyword) {
                   types.push({ type: Type.String });
                   hasStringKeyword = true;

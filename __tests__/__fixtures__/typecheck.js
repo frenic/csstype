@@ -7,14 +7,14 @@ const css: CSS.Properties<> = {
   flexBasis: 'max-content',
   flexDirection: 'row',
   MozAppearance: 'button',
-  msOverflowStyle: 'scrollbar',
+  msUserSelect: 'none',
   color: '#abcdef',
 
   // Test custom string
   borderBottomWidth: 'calc(1px)',
   // This property has `TLength` (but not `string` itself) so
   // if this fails it may have something to do with default generic values
-  lineHeightStep: '2em',
+  perspective: '2em',
 };
 
 const cssWithFallbackValues: CSS.PropertiesFallback<> = {
@@ -23,7 +23,7 @@ const cssWithFallbackValues: CSS.PropertiesFallback<> = {
   flexBasis: ['max-content'],
   flexDirection: ['row'],
   MozAppearance: ['button'],
-  msOverflowStyle: ['scrollbar'],
+  msUserSelect: ['none'],
 };
 
 const cssWithHyphenProperties: CSS.PropertiesHyphen<> = {
@@ -32,7 +32,7 @@ const cssWithHyphenProperties: CSS.PropertiesHyphen<> = {
   'flex-basis': 'max-content',
   'flex-direction': 'row',
   '-moz-appearance': 'button',
-  '-ms-overflow-style': 'scrollbar',
+  '-ms-user-select': 'none',
 };
 
 const cssWithDifferentLength: CSS.Properties<number> = {

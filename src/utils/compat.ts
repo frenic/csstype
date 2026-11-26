@@ -36,6 +36,114 @@ export function getSelectorsData(name: string) {
   return getData('selectors', name);
 }
 
+// Nested BCD entries for at-rules: the page-margin boxes live under
+// `css.at-rules.page` (`@top-left` is `at_top-left`) and the `@font-feature-values`
+// sub-rules under `css.at-rules['font-feature-values']` (`@swash` is `swash`).
+// Sub-keys of other at-rules are descriptors (e.g. `view-transition/navigation`),
+// not at-rules, so they are not accepted here.
+export function getNestedAtRuleData(name: string): Identifier | undefined {
+  const direct = getAtRuleData(name);
+
+  if (direct) {
+    return direct;
+  }
+
+  const atRules = mdnBrowserCompatData.css['at-rules'];
+  const pageMarginBox = atRules.page && atRules.page['at_' + name];
+
+  if (pageMarginBox) {
+    return pageMarginBox;
+  }
+
+  const fontFeatureValues = atRules['font-feature-values'];
+
+  if (fontFeatureValues && name !== '__compat' && name in fontFeatureValues) {
+    return fontFeatureValues[name];
+  }
+
+  return undefined;
+}
+
+const generatedNames: { [type: string]: { added: Set<string>; removed: Set<string> } } = {};
+
+// Names a feature only has through the `prefix`/`alternative_name` support data
+// of another feature (or its `*_context` subfeatures, `grid-gap` via
+// `gap.grid_context`), e.g. `-webkit-box-align` via `box-align`, or
+// `@-webkit-keyframes` via `@keyframes`. Split into names still added by some
+// browser and names whose support was removed again (`-moz-user-modify` via
+// `user-modify`); the generator treats the latter as obsolete.
+function getGeneratedNames(type: 'at-rules' | 'properties') {
+  if (!generatedNames[type]) {
+    const added = new Set<string>();
+    const removed = new Set<string>();
+    const category = mdnBrowserCompatData.css[type];
+
+    for (const key of Object.keys(category)) {
+      for (const compat of [...getCompats(category[key]), ...contextCompats(category[key])]) {
+        for (const name of compatNames(compat, key)) {
+          added.add(name);
+        }
+        for (const name of compatNames(compat, key, true)) {
+          removed.add(name);
+        }
+      }
+    }
+
+    generatedNames[type] = { added, removed };
+  }
+
+  return generatedNames[type];
+}
+
+// Support data of `*_context` subfeatures, e.g. `gap.grid_context`, which holds
+// the `grid-gap` alternative name. Other subfeatures are values, not names.
+function contextCompats(data: Identifier): CompatStatement[] {
+  return Object.keys(data)
+    .filter(key => key.endsWith('_context'))
+    .flatMap(key => getCompats(data[key]));
+}
+
+export function isGeneratedAtRuleName(name: string) {
+  const { added, removed } = getGeneratedNames('at-rules');
+  return added.has(name) || removed.has(name);
+}
+
+export function isGeneratedPropertyName(name: string) {
+  const { added, removed } = getGeneratedNames('properties');
+  return added.has(name) || removed.has(name);
+}
+
+// True when only removed support data generates the name, e.g. `-moz-user-modify`
+export function isRemovedGeneratedPropertyName(name: string) {
+  const { added, removed } = getGeneratedNames('properties');
+  return removed.has(name) && !added.has(name);
+}
+
+// BCD decides: an at-rule stays only if its own (possibly nested) entry says a
+// browser added it, or it is a prefixed/alternative name of a supported at-rule
+export function isAtRuleAddedBySome(name: string): boolean {
+  const data = getNestedAtRuleData(name);
+
+  if (data) {
+    return getCompats(data).some(isAddedBySome);
+  }
+
+  return isGeneratedAtRuleName(name);
+}
+
+// BCD decides: a selector stays only if its own entry says a browser added it.
+// `name` is the selector without colons, e.g. `-moz-range-thumb`
+export function isSelectorAddedBySome(name: string): boolean {
+  const data = getSelectorsData(name);
+  return !!data && getCompats(data).some(isAddedBySome);
+}
+
+// The selector without colons, e.g. `::-moz-range-thumb` → `-moz-range-thumb`
+export function selectorName(selector: string): string {
+  const colons = ':'.repeat(selector.lastIndexOf(':') + 1);
+  return selector.slice(colons.length);
+}
+
 export function getTypesData(name: string) {
   return getData('types', name);
 }
@@ -137,9 +245,9 @@ function alternativeKeywords(data: Identifier, value: string): string[] {
   return alternatives;
 }
 
-export function isDeprecated(data: { status?: string }, compat?: CompatStatement) {
-  // Assume not deprecated if is status i missing
-  return data.status === 'obsolete' || (!!compat && !!compat.status && compat.status.deprecated);
+export function isDeprecated(compat?: CompatStatement) {
+  // BCD decides: deprecated only when the compat statement says so
+  return !!compat && !!compat.status && compat.status.deprecated;
 }
 
 export function isAddedBySome(compat: CompatStatement): boolean {
@@ -166,7 +274,7 @@ export async function alternativeSelectors(selector: string): Promise<string[]> 
 
   // Pseudo without ':'
   const colons = ':'.repeat(selector.lastIndexOf(':') + 1);
-  const name = selector.slice(colons.length);
+  const name = selectorName(selector);
   const compatibilityData = getSelectorsData(name);
 
   if (compatibilityData) {

@@ -10,6 +10,8 @@ import {
   getTypesData,
   isAddedBySome,
   isDeprecated,
+  isGeneratedPropertyName,
+  isRemovedGeneratedPropertyName,
 } from '../utils/compat';
 import { warn } from '../utils/logger';
 import { createPropertyDataTypeResolver, IDataTypeDictionary, resolveDataTypes } from './data-types';
@@ -53,7 +55,7 @@ export async function getGlobals(
 ): Promise<ResolvedType[]> {
   const dataTypes = resolveDataTypes(
     dataTypeDictionary,
-    typer(compatSyntax(getGlobalCompatibilityData(), parse(getPropertySyntax(ALL)))),
+    typer(compatSyntax(getGlobalCompatibilityData(), parse(getPropertySyntax(ALL)!))),
     minTypesInDataTypes,
   );
 
@@ -96,10 +98,17 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
     const data = propertiesMap[originalName];
 
     // Default values
-    let entities = parse(getPropertySyntax(originalName));
+    const syntax = getPropertySyntax(originalName);
+
+    if (!syntax) {
+      // No syntax anywhere (only some webref vendor aliases): nothing to type
+      continue;
+    }
+
+    let entities = parse(syntax);
     let currentNames: string[] = [originalName];
     let obsoleteNames: string[] = [];
-    let deprecated = isDeprecated(data);
+    let deprecated = false;
 
     const compatibilityData = getPropertyData(originalName);
 
@@ -118,7 +127,16 @@ export async function getHtmlProperties(dataTypeDictionary: IDataTypeDictionary,
       obsoleteNames = obsoleteNames.concat(
         ...compats.map(compat => filterMissingProperties(compatNames(compat, originalName, true))),
       );
-      deprecated = compats.every(compat => isDeprecated(data, compat));
+      deprecated = compats.every(compat => isDeprecated(compat));
+    } else if (!isGeneratedPropertyName(originalName)) {
+      // BCD decides: no entry for this exact name, not even via the
+      // prefix/alternative_name support data of another property (BCD deletes
+      // features no browser has shipped), so the property is dropped
+      continue;
+    } else if (isRemovedGeneratedPropertyName(originalName)) {
+      // Only removed support data generates this name (e.g. `-moz-user-modify`
+      // via `user-modify`), so it is obsolete like other removed names
+      deprecated = true;
     }
 
     if (deprecated) {

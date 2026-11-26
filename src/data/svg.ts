@@ -1,9 +1,17 @@
-// This is originated from https://svgwg.org/svg2-draft/propidx.html to add SVG specific properties
-// and is a temporarily solution until https://github.com/mdn/data/issues/59 is solved
+// SVG specific properties, originated from https://svgwg.org/svg2-draft/propidx.html.
+// A temporary local list until the CSS data covers SVG properties too.
 
-import styleProperties from 'mdn-data/css/properties.json';
+import { properties as webrefProperties } from './css';
 
-export const properties: { [property: string]: Pick<MDN.Property, 'syntax' | 'initial' | 'inherited' | 'media'> } = {
+// SVG properties that reuse a CSS definition read it from webref
+const cssProperty = (name: string) => {
+  const property = webrefProperties[name];
+  return { syntax: property?.syntax, initial: property?.initial };
+};
+
+export const properties: {
+  [property: string]: { syntax?: string; initial?: string; inherited?: boolean; media?: string };
+} = {
   'alignment-baseline': {
     syntax:
       'auto | baseline | before-edge | text-before-edge | middle | central | after-edge | text-after-edge | ideographic | alphabetic | hanging | mathematical',
@@ -17,15 +25,15 @@ export const properties: { [property: string]: Pick<MDN.Property, 'syntax' | 'in
     inherited: false,
     media: 'visual',
   },
-  clip: styleProperties.clip,
-  'clip-path': styleProperties['clip-path'],
+  clip: cssProperty('clip'),
+  'clip-path': cssProperty('clip-path'),
   'clip-rule': {
     syntax: 'nonzero | evenodd',
     initial: 'nonzero',
     inherited: true,
     media: 'visual',
   },
-  color: styleProperties.color,
+  color: cssProperty('color'),
   'color-interpolation': {
     syntax: 'auto | sRGB | linearRGB',
     initial: 'sRGB',
@@ -38,9 +46,9 @@ export const properties: { [property: string]: Pick<MDN.Property, 'syntax' | 'in
     inherited: true,
     media: 'visual',
   },
-  cursor: styleProperties.cursor,
-  direction: styleProperties.direction,
-  display: styleProperties.display,
+  cursor: cssProperty('cursor'),
+  direction: cssProperty('direction'),
+  display: cssProperty('display'),
   'dominant-baseline': {
     syntax:
       'auto | use-script | no-change | reset-size | ideographic | alphabetic | hanging | mathematical | central | middle | text-after-edge | text-before-edge',
@@ -66,7 +74,7 @@ export const properties: { [property: string]: Pick<MDN.Property, 'syntax' | 'in
     inherited: true,
     media: 'visual',
   },
-  filter: styleProperties.filter,
+  filter: cssProperty('filter'),
   'flood-color': {
     syntax: 'currentColor | <color>',
     initial: 'black',
@@ -79,29 +87,29 @@ export const properties: { [property: string]: Pick<MDN.Property, 'syntax' | 'in
     inherited: false,
     media: 'visual',
   },
-  font: styleProperties.font,
-  'font-family': styleProperties['font-family'],
-  'font-size': styleProperties['font-size'],
-  'font-size-adjust': styleProperties['font-size-adjust'],
-  'font-stretch': styleProperties['font-stretch'],
-  'font-style': styleProperties['font-style'],
-  'font-variant': styleProperties['font-variant'],
-  'font-weight': styleProperties['font-weight'],
+  font: cssProperty('font'),
+  'font-family': cssProperty('font-family'),
+  'font-size': cssProperty('font-size'),
+  'font-size-adjust': cssProperty('font-size-adjust'),
+  'font-stretch': cssProperty('font-stretch'),
+  'font-style': cssProperty('font-style'),
+  'font-variant': cssProperty('font-variant'),
+  'font-weight': cssProperty('font-weight'),
   'glyph-orientation-vertical': {
     syntax: 'auto | <angle> | <number>',
     initial: 'auto',
     inherited: true,
     media: 'visual',
   },
-  'image-rendering': styleProperties['image-rendering'],
-  'letter-spacing': styleProperties['letter-spacing'],
+  'image-rendering': cssProperty('image-rendering'),
+  'letter-spacing': cssProperty('letter-spacing'),
   'lighting-color': {
     syntax: 'currentColor | <color>',
     initial: 'white',
     inherited: false,
     media: 'visual',
   },
-  'line-height': styleProperties['line-height'],
+  'line-height': cssProperty('line-height'),
   marker: {
     syntax: 'none | <url>',
     initial: 'none | <url>',
@@ -126,11 +134,11 @@ export const properties: { [property: string]: Pick<MDN.Property, 'syntax' | 'in
     inherited: true,
     media: 'visual',
   },
-  mask: styleProperties.mask,
-  opacity: styleProperties.opacity,
-  overflow: styleProperties.overflow,
-  'paint-order': styleProperties['paint-order'],
-  'pointer-events': styleProperties['pointer-events'],
+  mask: cssProperty('mask'),
+  opacity: cssProperty('opacity'),
+  overflow: cssProperty('overflow'),
+  'paint-order': cssProperty('paint-order'),
+  'pointer-events': cssProperty('pointer-events'),
   'shape-rendering': {
     syntax: 'auto | optimizeSpeed | crispEdges | geometricPrecision',
     initial: 'auto',
@@ -203,22 +211,22 @@ export const properties: { [property: string]: Pick<MDN.Property, 'syntax' | 'in
     inherited: true,
     media: 'visual',
   },
-  'text-decoration': styleProperties['text-decoration'],
-  'text-rendering': styleProperties['text-rendering'],
-  'unicode-bidi': styleProperties['unicode-bidi'],
+  'text-decoration': cssProperty('text-decoration'),
+  'text-rendering': cssProperty('text-rendering'),
+  'unicode-bidi': cssProperty('unicode-bidi'),
   'vector-effect': {
     syntax: 'non-scaling-stroke | none',
     initial: 'none',
     inherited: false,
     media: 'visual',
   },
-  visibility: styleProperties.visibility,
-  'word-spacing': styleProperties['word-spacing'],
-  'white-space': styleProperties['white-space'],
-  'writing-mode': styleProperties['writing-mode'],
+  visibility: cssProperty('visibility'),
+  'word-spacing': cssProperty('word-spacing'),
+  'white-space': cssProperty('white-space'),
+  'writing-mode': cssProperty('writing-mode'),
 };
 
-export const syntaxes: MDN.Syntaxes = {
+export const syntaxes: { [name: string]: { syntax: string } } = {
   paint: {
     syntax: 'none | child | child(<integer>) | <color> | <url> [ none | <color> ]? | context-fill | context-stroke',
   },
